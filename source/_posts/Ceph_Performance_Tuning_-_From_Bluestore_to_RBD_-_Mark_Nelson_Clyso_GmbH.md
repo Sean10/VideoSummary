@@ -1,0 +1,61 @@
+---
+title: "Ceph Performance Tuning: From Bluestore to RBD - Mark Nelson, Clyso GmbH"
+date: 2023-05-18
+updated: 2023-05-19
+tags:
+categories:
+- "视频总结"
+subtitle: tech
+---
+
+
+---
+title: "Ceph Performance Tuning: From Bluestore to RBD - Mark Nelson, Clyso GmbH"
+date: 2023-05-18
+updated: 2023-05-19
+tags:
+categories:
+- "视频总结"
+subtitle: tech
+---
+
+
+### 会议纪要
+
+**会议主题：** Ceph性能调优及工具介绍
+
+**主讲人：** Mark Nelson
+
+**会议时间：** 会议最后一天，下午5点
+
+**会议内容总结：**
+
+1. **开场与自我介绍**
+   - Mark Nelson，Ceph性能团队成员，拥有10年相关经验，目前就职于Clyso。
+   - 讨论主题：Ceph性能调优及一般性能问题。
+
+2. **Ceph性能概述**
+   - 讨论了Ceph性能的复杂性，引用Neil Stevenson的话：“性能取决于具体情况”。
+   - 介绍了CBT（Ceph Benchmarking Tool），一个用于性能测试的工具，支持多种测试工具如fio, hsbench等。
+
+3. **性能调优工具**
+   - 介绍了CBT的功能，包括快速部署60 OSD集群，支持多种测试工具，以及详细的测试监控和诊断。
+   - 提到了同事正在开发的仪表板，用于更直观地展示测试结果。
+
+4. **性能优化案例**
+   - **硬件问题：** SSD固件升级解决了高Q等待时间问题，但问题后来复发，可能与SSD的写入行为有关。
+   - **软件问题：** PG计数对性能的影响，低PG计数导致资源争用和性能下降，建议使用足够的PG计数。
+   - **RBD快照修剪：** 通过优化共享blob的处理，显著减少了CPU使用率。
+   - **OSD线程优化：** 在资源有限的情况下，减少线程数可以提高效率。
+   - **PG日志与RocksDB交互：** 通过调整RocksDB参数和实验性日志原型，改善了随机写性能。
+
+5. **结论与建议**
+   - 强调了理解性能问题背后的行为和原因的重要性，而不仅仅是复制调优参数。
+   - 鼓励大家关注Ceph社区的博客和文档，以获取更多性能调优的信息和案例。
+
+**后续行动计划：**
+- 继续开发和完善性能调优工具，如CBT和仪表板。
+- 探索和实施更多的性能优化措施，特别是在硬件和软件交互方面。
+- 加强社区合作，分享和讨论性能调优的最佳实践。
+
+**会议结束：** 感谢大家的参与，Mark Nelson将继续参与其他会议和讨论。

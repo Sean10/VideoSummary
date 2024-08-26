@@ -1,0 +1,11 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+编译过程	/Users/sean10/Code/sean10.github.io/source/_drafts/LaTex学习记录.md	/^# 编译过程$/;"	function	line:44
+调用方法 ：	/Users/sean10/Code/sean10.github.io/source/_drafts/LaTex学习记录.md	/^# 调用方法 ：$/;"	function	line:61
+单个文件	/Users/sean10/Code/sean10.github.io/source/_drafts/LaTex学习记录.md	/^# 单个文件$/;"	function	line:62
+多个文件	/Users/sean10/Code/sean10.github.io/source/_drafts/LaTex学习记录.md	/^# 多个文件$/;"	function	line:64
+Reference	/Users/sean10/Code/sean10.github.io/source/_drafts/LaTex学习记录.md	/^# Reference$/;"	function	line:68
