@@ -7,13 +7,13 @@ title: ceph视频总结
 subtitle: youtube频道总结
 description: youtube频道总结
 author: ceph community
-email: 
+email: sean10reborn@gmail.com
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://videosummary.github.io
+url: https://sean10.github.io/VideoSummary/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -110,5 +110,5 @@ theme: indigo
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:Sean10/VideoSummary.github.io.git
+  repository: git@github.com:Sean10/VideoSummary.git
   branch: gh-pages
