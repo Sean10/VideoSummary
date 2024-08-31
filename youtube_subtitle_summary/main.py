@@ -274,33 +274,22 @@ def get_subtitles(urls: List):
         #     summary(full_to_half(f"{title}.en.ttml"))
         time.sleep(60)
 
-# 主函数
-def main():
-    # channel_id = 'YOUR_CHANNEL_ID'
-    # video_urls = get_video_urls(channel_id)
-    # download_subtitles(video_urls)
-    # video_urls = [""]
-    # summaries = summarize_and_translate(video_urls)
-    # print(summaries)
+def main_fectch_subtitle():
+    """
+    TODO:这里当前仅实现了根据之前获取的一次channel_info.json按顺序遍历的动作
+    需要考虑增加, 每次更新一次channel_info, 然后检测其中url比我已经触发过保存呃videos_meta.jsonl新的内容. 或者有差异的内容?
+    """
+    with open("channel_info.json", "r") as f:
+        channel_info = json.load(f)
+    urls = channel_info['entries']
+    urls = [item['url'] for item in channel_info['entries']]
+    urls = urls[start:]
+    get_subtitles(urls)
 
-    # channel_url = 'https://www.youtube.com/@Cephstorage'
-    ## channel_url = 'https://www.youtube.com/watch?v=U9Qgq6HqN6c&list=PLrBUGiINAakMz4n_oOeiueeUkGynQZCbK'
-    # videos = get_channel_videos(channel_url, "20240101", "today")
-    # "https://www.youtube.com/watch?v=bByZZk3DiXU",
-
-    # 目前主要实现方案
-    # with open("channel_info.json", "r") as f:
-    #     channel_info = json.load(f)
-    # urls = channel_info['entries']
-    # urls = [item['url'] for item in channel_info['entries']]
-    # urls = urls[start:]
-    # get_subtitles(urls)
-
-
-    # subtitle_file = "Ceph Developer Monthly ｜ 2024-08-07 [bByZZk3DiXU].en.srt"
-    # subtitle_file = "2015-APR-23_--_Ceph_Tech_Talks_-_Calamari.en.ttml"
-    # summary
-    # 按照时间顺序排序列出指定目录下所有文件名
+def main_summary():
+    """
+    最好支持根据文件存在, 获取哪些是未触发过总结的, 发起一次总结.
+    """
     from pathlib import Path
     # 指定目录
     directory = Path("subtitles_origin")
@@ -320,6 +309,30 @@ def main():
         history = summary(file, "summary")
         cnt += 1
 
+# 主函数
+def main():
+    # channel_id = 'YOUR_CHANNEL_ID'
+    # video_urls = get_video_urls(channel_id)
+    # download_subtitles(video_urls)
+    # video_urls = [""]
+    # summaries = summarize_and_translate(video_urls)
+    # print(summaries)
+
+    # channel_url = 'https://www.youtube.com/@Cephstorage'
+    ## channel_url = 'https://www.youtube.com/watch?v=U9Qgq6HqN6c&list=PLrBUGiINAakMz4n_oOeiueeUkGynQZCbK'
+    # videos = get_channel_videos(channel_url, "20240101", "today")
+    # "https://www.youtube.com/watch?v=bByZZk3DiXU",
+
+    # 目前主要实现方案
+
+
+
+    # subtitle_file = "Ceph Developer Monthly ｜ 2024-08-07 [bByZZk3DiXU].en.srt"
+    # subtitle_file = "2015-APR-23_--_Ceph_Tech_Talks_-_Calamari.en.ttml"
+    # summary
+    # 按照时间顺序排序列出指定目录下所有文件名
+    
+    # main_summary()
     # translate
     # if not history:
     #     print("返回了END, 错了")
