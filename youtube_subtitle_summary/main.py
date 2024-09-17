@@ -97,6 +97,9 @@ def summary(subtitle_file, mode="summary", history=None):
     model = "THUDM/glm-4-9b-chat"
     if mode == "summary" or mode == "translation":
         fullpath = os.path.join("subtitles_origin", subtitle_file)
+        if not os.path.exists(fullpath):
+            print(f"文件不存在: {fullpath}")
+            return history
         with open(fullpath, 'r', encoding='utf-8') as file:
             text = file.read()
 
