@@ -9,6 +9,7 @@ from typing_extensions import List
 import time
 import re
 import shlex
+import argparse
 
 # 从环境变量中获取API密钥
 YOUR_OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -16,38 +17,34 @@ YOUR_OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if YOUR_OPENAI_API_KEY is None:
     raise ValueError("OPENAI_API_KEY environment variable is not set")
 
-start=290
+start=0
+TIME_INTERVAL=30
 client = OpenAI(
     api_key = f"{YOUR_OPENAI_API_KEY}",
     base_url = "http://localhost:3000/v1",
-    
 )
-
-
 
 def get_channel_videos(channel_url, begin, end):
     ydl_opts = {
         'ignoreerrors': True,  # Continue on download errors
         # 'quiet': True,         # Suppress output
         'daterange': utils.DateRange(begin, end),
-        'sleep_interval': 60,
+        'sleep_interval': 30,
         'cachedir': "cache",
         'verbose': True,
         # 这条导致拿到的info只有标题和url了
         'extract_flat': True
     }
     
-    downloaded = {}
-    with jsonlines.open("videos_meta.jsonl", "r") as reader:
-        for item in reader:
-            downloaded[item['webpage_url']] = item
 
 
     with YoutubeDL(ydl_opts) as ydl:
         channel_info = ydl.extract_info(channel_url, download=False)
-        
         with open('channel_info.json', 'w', encoding='utf-8') as f:
             json.dump(channel_info, f, ensure_ascii=False, indent=4)
+    # with open('channel_info.json', 'r', encoding='utf-8') as f:
+    #     channel_info = json.load(f)
+
         # 将20240101 这个日期格式转换为 utc时间戳
         # end_date_timestamp = int(datetime.datetime.strptime(end_date, '%Y%m%d').timestamp())
 
@@ -55,26 +52,17 @@ def get_channel_videos(channel_url, begin, end):
             return []
         
         videos = []
-        for entry in channel_info['entries']:
-            if entry is not None:
-                video_info = {
-                    'title': entry.get('title', ''),
-                    'upload_date': entry.get('upload_date', ''),
-                    'webpage_url': entry.get('webpage_url', ''),
-                    'playlist_title': entry.get('playlist_title', ''),
-                    'timestamp': entry.get('timestamp', '')
-                }
-                # if end_date_timestamp > int(video_info['timestamp']):
-                #     print(f"达到日期, 结束")
-                #     break
+        # for entry in channel_info['entries']:
+            
+        #         # if end_date_timestamp > int(video_info['timestamp']):
+        #         #     print(f"达到日期, 结束")
+        #         #     break
 
-                if entry['webpage_url'] not in downloaded:
-                    # videos.append(video_info)
-                    print(f"Title: {video_info['title']}, Upload Date: {video_info['upload_date']}, URL: {video_info['webpage_url']}")
+                
 
-                    with jsonlines.open("videos_meta.jsonl", "a") as writer:
-                        writer.write(video_info)
-                        writer.flush()
+        #             with jsonlines.open("videos_meta.jsonl", "a") as writer:
+        #                 writer.write(video_info)
+                        # writer.flush()
         return videos
 
 
@@ -104,17 +92,19 @@ def summary(subtitle_file, mode="summary", history=None):
     # 星火 api乱, oneapi暂时不太好用
     # model = "SparkDesk-v3.5"
     # model = "generalv3.5"
-    model = "deepseek-chat"
-
+    # model = "deepseek-chat"
+    # model = "Qwen/Qwen1.5-7B-Chat"
+    model = "THUDM/glm-4-9b-chat"
     if mode == "summary" or mode == "translation":
         fullpath = os.path.join("subtitles_origin", subtitle_file)
         with open(fullpath, 'r', encoding='utf-8') as file:
             text = file.read()
 
     if mode == "summary":
-        prompt = """你是专业的存储领域分布式存储ceph的研发人员, 也是视频会议字幕总结人员, 麻烦将下文内容用中文总结, 编写出优质的会议纪要（会议记录）
+        prompt = """你是专业的存储领域分布式存储ceph的研发人员, 也是视频会议字幕翻译(负责英译中)及总结人员, 麻烦将下文内容用中文总结, 编写出优质的会议纪要（会议记录）
         注意保留部分计算机科学/ceph相关领域英文原文的关键词.
         需要涵盖会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划.
+        再次重复, 必须用中文回答.
         """
     elif mode == "translation":
         prompt = """你是专业的存储领域分布式存储ceph的研发人员, 也是计算机专业+英语专业的翻译人员, 麻烦将下文内容用中文翻译, 编写出优质的会议中文对话内容
@@ -150,13 +140,18 @@ def summary(subtitle_file, mode="summary", history=None):
     completion = client.chat.completions.create(
         model=model,
         messages=messages,
-        # temperature=0.5,
-        max_tokens=2048,
+        temperature=0.5,
+        max_tokens=4096,
         # 以下为deepseek可用
         # temperature=1.1,
         # max_tokens=4096,
     )
-
+    # 如果completion 报错
+    if completion.choices[0].message.content is None:
+        print(completion)
+        print(messages)
+        import sys
+        sys.exit(1)
     response_content = completion.choices[0].message.content
     # history.append({"role": "user", "content": text})
     history.append({"role": "assistant", "content": response_content})
@@ -272,7 +267,9 @@ def get_subtitles(urls: List):
             cnt += 1
         # if cnt < 40:
         #     summary(full_to_half(f"{title}.en.ttml"))
-        time.sleep(60)
+        time.sleep(TIME_INTERVAL)
+
+# 实现一个队videos_meta.jsonl的遍历, 然后获取到url作为主键, 然后进行去重. 输出一个没有重复的原内容的列表
 
 def main_fectch_subtitle():
     """
@@ -281,73 +278,134 @@ def main_fectch_subtitle():
     """
     with open("channel_info.json", "r") as f:
         channel_info = json.load(f)
-    urls = channel_info['entries']
-    urls = [item['url'] for item in channel_info['entries']]
+
+    downloaded = {}
+    with jsonlines.open("videos_meta.jsonl", "r") as reader:
+        for item in reader:
+            downloaded[item['webpage_url']] = item
+    urls = []
+    for entry in channel_info['entries']:
+        if entry is not None:
+            video_info = {
+                'title': entry.get('title', ''),
+                'upload_date': entry.get('upload_date', ''),
+                # 'webpage_url': entry.get('webpage_url', ''),
+                'webpage_url': entry.get('url', ''),
+
+                'playlist_title': entry.get('playlist_title', ''),
+                'timestamp': entry.get('timestamp', '')
+            }
+        
+        if entry['url'] not in downloaded:
+            urls.append(entry['url'])
+            print(f"Title: {video_info['title']}, Upload Date: {video_info['upload_date']}, URL: {video_info['webpage_url']}")
+    # urls = [item['url'] for item in channel_info['entries']]
+    print(urls)
     urls = urls[start:]
     get_subtitles(urls)
 
-def main_summary():
-    """
-    最好支持根据文件存在, 获取哪些是未触发过总结的, 发起一次总结.
-    """
+def get_latest_file(path, filter="*"):
     from pathlib import Path
     # 指定目录
-    directory = Path("subtitles_origin")
+    directory = Path(path)
 
     # 获取目录下的所有文件
-    files = directory.glob("*")
+    files = directory.glob(filter)
 
     # 根据文件的修改时间排序
     sorted_files = sorted(files, key=lambda f: f.stat().st_mtime)
 
     # 只保留文件名
     sorted_file_names = [file.name for file in sorted_files]
-    # files = os.listdir("subtitles_origin")
-    cnt = start
-    for file in sorted_file_names[start:700]:
-        print(cnt)
+    return sorted_file_names
+
+def main_translate(subtitle_file):
+    # 功能5. 支持上下文翻译
+    # translate
+    if not history:
+        print("返回了END, 错了")
+        import sys;sys.exit(1)
+    history = summary(subtitle_file, "translation")
+    
+    while history:
+        history = summary(subtitle_file, "translation_continue", history)
+        print("try first")
+    print("end")
+
+def main_summary():
+    """
+    最好支持根据文件存在, 获取哪些是未触发过总结的, 发起一次总结.
+    """
+
+    sorted_file_names = main_summary_diff()
+    # cnt = start
+    for file in sorted_file_names:
+        # print(cnt)
         history = summary(file, "summary")
-        cnt += 1
+        # cnt += 1
+
+# 实现一个扫描目录, 识别哪些文件已经被总结过
+# 扫描summary目录下, 哪些文件已经存在, 然后videos_meta.jsonl中的title中存在的文件, 后者应该是包含前者的关系, 取差
+def main_summary_diff():
+    need_summary = []
+    # 获取summary目录下所有文件
+    summary_files = os.listdir("summary")
+    # summary_files = sorted_file_names
+    summaryed = []
+    for title in summary_files:
+        title = title.replace(".md", "")
+        summaryed.append(title)
+
+    # 获取已下载的字幕文件列表
+    downloaded = {}
+    with jsonlines.open("videos_meta.jsonl", "r") as reader:
+        for item in reader:
+            title = utils._utils.sanitize_filename(item['title'], True)
+            title = title.replace(".en.ttml", "")
+            if title in downloaded:
+                print(f"已下载过: {title}")
+                continue
+            downloaded[title] = item
+
+            if title not in summaryed:
+                print(f"未总结: {title}")
+                need_summary.append(title+".en.ttml")
+            else:
+                print(f"已总结: {title}")
+        # title = utils._utils.sanitize_filename(file, True)
+        
+    return list(reversed(need_summary))
+
 
 # 主函数
 def main():
-    # channel_id = 'YOUR_CHANNEL_ID'
-    # video_urls = get_video_urls(channel_id)
-    # download_subtitles(video_urls)
-    # video_urls = [""]
-    # summaries = summarize_and_translate(video_urls)
-    # print(summaries)
+    parser = argparse.ArgumentParser(description="YouTube Subtitle Summary Tool")
+    parser.add_argument('--fetch', action='store_true', help='Fetch videos from channel')
+    parser.add_argument('--fetch-diff', action='store_true', help='Fetch videos from channel')
+    parser.add_argument('--summarize', action='store_true', help='Summarize subtitles')
+    parser.add_argument('--summarize-diff', action='store_true', help='Summarize subtitles')
+    parser.add_argument('--translate', type=str, help='Translate a specific subtitle file')
+    args = parser.parse_args()
 
-    # channel_url = 'https://www.youtube.com/@Cephstorage'
-    ## channel_url = 'https://www.youtube.com/watch?v=U9Qgq6HqN6c&list=PLrBUGiINAakMz4n_oOeiueeUkGynQZCbK'
-    # videos = get_channel_videos(channel_url, "20240101", "today")
-    # "https://www.youtube.com/watch?v=bByZZk3DiXU",
+    if args.fetch:
+        # 功能1. 采集channel_info.json中用于后续去重
+        channel_url = 'https://www.youtube.com/@Cephstorage'
+        videos = get_channel_videos(channel_url, "20220101", "today")
+    if args.fetch_diff:
+        # 功能2. 采集剩余范围内文件字幕
+        main_fectch_subtitle()
 
-    # 目前主要实现方案
+    if args.summarize_diff:
+        # 功能3. 扫描哪些文件未总结
+        main_summary_diff()
 
+    if args.summarize:
+        # 功能4. 触发总结
+        main_summary()
 
-
-    # subtitle_file = "Ceph Developer Monthly ｜ 2024-08-07 [bByZZk3DiXU].en.srt"
-    # subtitle_file = "2015-APR-23_--_Ceph_Tech_Talks_-_Calamari.en.ttml"
-    # summary
-    # 按照时间顺序排序列出指定目录下所有文件名
-    
-    # main_summary()
-    # translate
-    # if not history:
-    #     print("返回了END, 错了")
-    #     import sys;sys.exit(1)
-    # history = summary(subtitle_file, "translation")
-    
-    # while history:
-    #     history = summary(subtitle_file, "translation_continue", history)
-    #     print("try first")
-    # print("end")
-
-
-    # summary('MicroCeph from Development to Solutions ｜ Ceph Days NYC 2024.en.ttml')
-
-
+    if args.translate:
+        # 功能6, 指定文件进行总结输出
+        summary(args.translate)
 
 if __name__ == "__main__":
     main()

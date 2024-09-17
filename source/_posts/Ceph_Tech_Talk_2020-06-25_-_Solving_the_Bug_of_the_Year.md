@@ -9,17 +9,6 @@ subtitle: tech
 ---
 
 
----
-title: "Ceph Tech Talk 2020-06-25: Solving the Bug of the Year"
-date: 2020-06-25
-updated: 2020-06-26
-tags:
-categories:
-- "视频总结"
-subtitle: tech
----
-
-
 ### 会议纪要
 
 **会议主题：** 解决年度Bug的技术分享

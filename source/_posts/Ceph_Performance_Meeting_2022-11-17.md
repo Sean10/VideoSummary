@@ -9,17 +9,6 @@ subtitle: tech
 ---
 
 
----
-title: "Ceph Performance Meeting 2022-11-17"
-date: 2022-11-24
-updated: 2022-11-24
-tags:
-categories:
-- "视频总结"
-subtitle: tech
----
-
-
 ### 会议纪要
 
 #### 与会人员

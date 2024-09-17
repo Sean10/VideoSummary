@@ -9,17 +9,6 @@ subtitle: tech
 ---
 
 
----
-title: "Making RBD Snapshot-based Mirroring Robust for Disaster Recovery | Ceph Days NYC 2024"
-date: 2024-06-18
-updated: 2024-06-18
-tags:
-categories:
-- "视频总结"
-subtitle: tech
----
-
-
 ### 会议纪要
 
 #### 会议主题：RBD快照基础镜像功能的改进与灾难恢复解决方案

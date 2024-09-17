@@ -9,17 +9,6 @@ subtitle: tech
 ---
 
 
----
-title: "Ceph User + Dev Monthly Meeting 2024-05-23"
-date: 2024-05-31
-updated: 2024-05-31
-tags:
-categories:
-- "视频总结"
-subtitle: tech
----
-
-
 ### 会议纪要
 
 #### 会议概述

@@ -9,17 +9,6 @@ subtitle: tech
 ---
 
 
----
-title: "CDS Squid: Telemetry"
-date: 2023-07-25
-updated: 2023-07-26
-tags:
-categories:
-- "视频总结"
-subtitle: tech
----
-
-
 ### 会议纪要
 
 #### 会议概要

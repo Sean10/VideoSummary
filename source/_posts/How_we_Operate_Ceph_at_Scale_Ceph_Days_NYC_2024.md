@@ -9,17 +9,6 @@ subtitle: tech
 ---
 
 
----
-title: "How we Operate Ceph at Scale | Ceph Days NYC 2024"
-date: 2024-06-18
-updated: 2024-06-19
-tags:
-categories:
-- "视频总结"
-subtitle: tech
----
-
-
 ### 会议纪要
 
 #### 会议主题：DigitalOcean 大规模运营 Ceph 的实践

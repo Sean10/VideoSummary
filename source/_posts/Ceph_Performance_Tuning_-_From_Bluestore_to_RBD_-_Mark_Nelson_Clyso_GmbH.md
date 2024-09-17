@@ -9,17 +9,6 @@ subtitle: tech
 ---
 
 
----
-title: "Ceph Performance Tuning: From Bluestore to RBD - Mark Nelson, Clyso GmbH"
-date: 2023-05-18
-updated: 2023-05-19
-tags:
-categories:
-- "视频总结"
-subtitle: tech
----
-
-
 ### 会议纪要
 
 **会议主题：** Ceph性能调优及工具介绍

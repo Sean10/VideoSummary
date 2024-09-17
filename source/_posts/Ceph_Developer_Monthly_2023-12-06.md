@@ -9,17 +9,6 @@ subtitle: tech
 ---
 
 
----
-title: "Ceph Developer Monthly 2023-12-06"
-date: 2024-01-22
-updated: 2024-01-23
-tags:
-categories:
-- "视频总结"
-subtitle: tech
----
-
-
 ### 会议纪要
 
 **会议主题：** Ceph Manager模块加载问题讨论

@@ -9,17 +9,6 @@ subtitle: tech
 ---
 
 
----
-title: "Ceph Days NYC 2023: Ceph Telemetry - Observability in Action"
-date: 2023-05-17
-updated: 2023-05-18
-tags:
-categories:
-- "视频总结"
-subtitle: tech
----
-
-
 ### 会议纪要
 
 #### 会议概述

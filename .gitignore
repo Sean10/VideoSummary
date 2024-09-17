@@ -10,5 +10,9 @@ error.log
 **/venv
 **/video_infos
 **/video_meta.jsonl
+**/init
 
 env.sh
+**/db.json
+.deploy_git
+db.json

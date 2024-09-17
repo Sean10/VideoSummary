@@ -9,17 +9,6 @@ subtitle: tech
 ---
 
 
----
-title: "Attempting to Improve Discard Performance | Ceph Days NYC 2024"
-date: 2024-06-18
-updated: 2024-06-19
-tags:
-categories:
-- "视频总结"
-subtitle: tech
----
-
-
 ### 会议纪要
 
 #### 会议概述

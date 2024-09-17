@@ -9,17 +9,6 @@ subtitle: tech
 ---
 
 
----
-title: "Ceph Days NYC: State of the Cephalopod"
-date: 2023-05-19
-updated: 2023-05-20
-tags:
-categories:
-- "视频总结"
-subtitle: tech
----
-
-
 ### 会议纪要
 
 #### 会议概述

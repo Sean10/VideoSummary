@@ -9,17 +9,6 @@ subtitle: tech
 ---
 
 
----
-title: "Ceph Days NYC: An Introduction to MicroCeph"
-date: 2023-05-19
-updated: 2023-05-20
-tags:
-categories:
-- "视频总结"
-subtitle: tech
----
-
-
 ### 会议纪要
 
 #### 会议主题：Microsoft Snap 在 Ceph 集群管理中的应用
