@@ -21,7 +21,8 @@ subtitle: tech
 
 def process_jsonlines_file(file_path):
     current_post = os.listdir("../source/_posts")
-    current_post_title = [file.replace(".md", "") for file in current_post]
+    current_post_title = current_post
+    # current_post_title = [file.replace(".md", "") for file in current_post]
 
     need_insert_post = []
     with open(file_path, 'r') as file:
@@ -51,7 +52,6 @@ def process_jsonlines_file(file_path):
             rendered_template = render_template(title, upload_date, updated_date)
             need_insert_post.append((original_file_path, summary_file_path, rendered_template))
             print(f"need to insert to {summary_file_path}")
-
     # 正式修正文档
     for post in need_insert_post:
         with open(post[0], 'r') as summary_file:
@@ -61,7 +61,9 @@ def process_jsonlines_file(file_path):
         with open(post[1], 'w') as summary_file:
             summary_file.seek(0, 0)
             summary_file.write(post[2] +'\n\n'+ content)
-            print("succeed to insert to "+ summary_file_path)
+            print("succeed to insert to "+ post[1])
+    print(len(need_insert_post))
+    
 
 # Example usage
 process_jsonlines_file('videos_meta.jsonl')

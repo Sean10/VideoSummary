@@ -14,5 +14,5 @@ error.log
 
 env.sh
 **/db.json
-.deploy_git
 db.json
+.deploy_git
