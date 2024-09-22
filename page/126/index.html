@@ -150,11 +150,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_OSD_-_Scrub_Repair"
+            <article id="post-CDS_Hammer_Day_2_-_OSD_Tiering_-_Reduce_R_W_Latencies_on_Cache_Tier_Miss"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
+        <time class="post-time" title="2014-10-30 00:00:00" datetime="2014-10-29T16:00:00.000Z"  itemprop="datePublished">2014-10-30</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -168,7 +168,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_OSD_-_Scrub_Repair/">CDS G/H (Day 1) - OSD: Scrub &amp; Repair</a>
+      <a class="post-title-link" href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_OSD_Tiering_-_Reduce_R_W_Latencies_on_Cache_Tier_Miss/">CDS Hammer (Day 2) - OSD (Tiering): Reduce R/W Latencies on Cache Tier Miss</a>
     </h3>
   
 
@@ -179,22 +179,21 @@
 
     
         会议纪要
-会议时间： 2023年11月 (具体日期未提及)
-会议地点： 线上会议
-参会人员： (未提及具体姓名，以下用“与会者”代替)
-会议主题： Ceph 分布式存储系统中的 OSD Scrub 和
-Repair 功能讨论
+会议主题： Ceph 分布式存储优化讨论
+会议时间： 2023年11月（具体日期未提及）
+参会人员： 多位 Ceph 开发人员
 会议内容：
-一、主要议题
+一、讨论要点
 
-Scrub 和 Repair 问题：
+读取优化：
 
-当前 Scrub
-功能存在不一致性时，需要手动分析中央日志，难以识别具体问题。
-建议增加接口，让 O...
+当前代码中，当读取请求缺失缓存时，会进行提升操作，并将对象复制到所有
+OSD 实例。
+提议首先服务读取请求，然后在提升操作完成后进行复制，以减少读取延迟。
+针对异步读取，建议在读取操作可以完全由一个数据块满足时，使...
     
 
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_OSD_-_Scrub_Repair/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_OSD_Tiering_-_Reduce_R_W_Latencies_on_Cache_Tier_Miss/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -204,11 +203,11 @@ Scrub 和 Repair 问题：
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_librados_review"
+            <article id="post-CDS_Hammer_Day_2_-_Quota_Discussion"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
+        <time class="post-time" title="2014-10-30 00:00:00" datetime="2014-10-29T16:00:00.000Z"  itemprop="datePublished">2014-10-30</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -222,7 +221,7 @@ Scrub 和 Repair 问题：
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_librados_review/">CDS G/H (Day 1) - librados review</a>
+      <a class="post-title-link" href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_Quota_Discussion/">CDS Hammer (Day 2) - Quota Discussion</a>
     </h3>
   
 
@@ -233,69 +232,71 @@ Scrub 和 Repair 问题：
 
     
         会议纪要
-会议主题： Ceph 分布式存储项目会议，重点讨论
-Liberatos 代码库的审查、开发流程、技术领导角色引入、发布周期以及 OSD
-审查。
-会议关键细节：
-
-开发流程与参与方式：
-
-通过邮件列表（如
-self-dev@ceph.com、calamari-dev@ceph.com、packaging-maintainers@ceph.com）和
-IRC（irc.otc.net）参...
-    
-
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_librados_review/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_Wiki_IA"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Wiki_IA/">CDS G/H (Day 1) - Wiki IA</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： 2023年11月某日（具体日期未提及）
-会议地点： 线上会议
-参会人员：
-主持人（疑似Ceph研发人员）、Eric（新用户委员会主席，来自法国西部）、其他与会者
 会议主题：
-讨论Ceph社区资源整合和Wiki页面建设方案
+Ceph分布式存储系统中CFS配额支持的讨论以及配额与子树的关系
+会议时间： 2023年11月（具体日期未知）
+参会人员： Sage, Yanchon, Josh, John Craig,
+Lee（通过聊天室）
+会议内容：
+1. 配额支持讨论
+
+Sage介绍了CFS配额支持的实现方案，包括如何在目录创建时集成文件
+parents，并查找所有配额信息和状态。
+Sage提到...
+    
+
+        <a href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_Quota_Discussion/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_2_-_librbd_-_Shared_Flag_Object_Map"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-30 00:00:00" datetime="2014-10-29T16:00:00.000Z"  itemprop="datePublished">2014-10-30</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_librbd_-_Shared_Flag_Object_Map/">CDS Hammer (Day 2) - librbd: Shared Flag, Object Map</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议时间： 2023年XX月XX日
+参会人员： Maya, Josh, Jason, Foreign
+会议主题： Ceph RBD（Rados Block
+Device）的独占锁特性和对象映射功能讨论
 关键细节：
 
-主持人介绍了Ceph社区资源整合的需求，包括演讲者信息、事件日历、社区贡献者工具、程序指南、硬件兼容性指南、社区周边产品、贡献原因、学术...
+独占锁特性：
+
+RBD新增独占锁特性，默认情况下，除非标记为共享，否则所有图像都将应用此新功能位，表示它支持独占锁定。
+当独占锁定功能位启用时，任何对图像的写操作或可变...
     
 
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Wiki_IA/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_librbd_-_Shared_Flag_Object_Map/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -305,11 +306,11 @@ IRC（irc.otc.net）参...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_RDMA_Update"
+            <article id="post-CDS_Hammer_Day_1_-_Buffer_Encoding"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -323,7 +324,7 @@ IRC（irc.otc.net）参...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_RDMA_Update/">CDS G/H (Day 1) - RDMA Update</a>
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Buffer_Encoding/">CDS Hammer (Day 1) - Buffer Encoding</a>
     </h3>
   
 
@@ -334,20 +335,338 @@ IRC（irc.otc.net）参...
 
     
         会议纪要
-会议主题： RDMA更新及未来计划讨论
-会议时间： 2023年11月（具体日期未提及）
-参会人员： Matt, Benjamin, Seth,
-以及其他相关研发人员
+会议主题： Ceph 分布式存储缓冲编码优化讨论
+会议时间： 2023年某月某日
+参会人员： Sam、Matt、Alan 等
 会议内容：
-一、RDMA更新
+一、会议背景
+在 Ceph
+分布式存储集群的负载分析中，缓冲编码和编解码过程被指出是性能瓶颈之一。
+二、讨论议题
 
-Firefly升级：
-Firefly升级正在进行中，目前进展顺利。
-Excelio消息接口更改：
-Excelio更新了内部消息接口，从固定数组16个元素减少到4个，并允许动态分配更大的数...
+缓冲编码性能问题：
+
+缓冲列表追加路径深度，导致性能损耗。
+编码和编解码过程中存在函数调用开销。
+编码和编解码路径存在重复计算和冗...
     
 
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_RDMA_Update/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Buffer_Encoding/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_1_-_Import_Export_Local_Import"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/">CDS Hammer (Day 1) - Import/Export // Local Import</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议主题： Rados 导出/导入功能改进
+会议时间： 未知
+参会人员： Danny, Mike, John, Tara 等
+会议内容：
+一、Rados 导出/导入功能现状
+
+目前 Rados
+导出功能存在性能瓶颈，尤其是数据量大时，导出速度慢，且在不同文件系统上导出失败率较高。
+导入功能也存在问题，将数据重新导入新集群的速度较慢。
+
+二、改进方案
+
+导出功能：
+
+将 Rados ...
+    
+
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_1_-_Accelio_RDMA_Messenger"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Accelio_RDMA_Messenger/">CDS Hammer (Day 1) - Accelio RDMA Messenger</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议时间： 未知 会议地点： 未知
+参会人员： Matt、El、Melanox 团队、Ceph 团队
+会议主题： Accelio RDMA Messenger 工作讨论
+会议内容：
+
+Accelio RDMA Messenger 最新进展：
+
+Melanox 团队在 Accelio 中增加了多传输支持，并使 TCP
+传输更加功能丰富。
+他们正在开发新的显式流控制接口，以允许应用程序...
+    
+
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Accelio_RDMA_Messenger/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_1_-_Calamari_API_Roadmap"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Calamari_API_Roadmap/">CDS Hammer (Day 1) - Calamari API Roadmap</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议时间： 2014年（具体日期未提及）
+会议主题： Calamari API 路线图概述
+参会人员： Gregory（Dr.
+Mino）、Dan、Armando、Tim、James 等
+会议内容：
+一、Calamari API 概述
+
+Calamari 重新定义： 将 Calamari 定位为后端服务层和
+API 层，去除图形用户界面（GUI），以便更聚焦于 API 本身及其功能...
+    
+
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Calamari_API_Roadmap/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_1_-_OSD_-_Opportunistic_Whole-Object_Checksums"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_OSD_-_Opportunistic_Whole-Object_Checksums/">CDS Hammer (Day 1) - OSD: Opportunistic Whole-Object Checksums</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议主题： OSD 的机会主义全对象校验和
+会议时间： 2023年11月（具体日期未提及）
+参会人员： Marcel、Sam、Sage、Heather、David、Craig
+等
+会议内容：
+1. 会议背景
+
+目前 Ceph
+存储系统中，对存储在磁盘上的数据进行校验和计算较为昂贵，因此通常不进行校验。
+现有的机会主义校验和机制仅对块级别进行校验，且仅在读取或覆盖完整块时更新和验证。...
+    
+
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_OSD_-_Opportunistic_Whole-Object_Checksums/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_1_-_Clustered_SCSI_Target_Using_RBD"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Clustered_SCSI_Target_Using_RBD/">CDS Hammer (Day 1) - Clustered SCSI Target Using RBD</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议主题： Ceph分布式存储集群中RBD（RADOS Block
+Device）的集群化目标（Scuzzy Targets）实现方案讨论
+会议时间： 2023年11月某日
+参会人员：
+Christy（提案人）、Mike、Jason、Josh等
+会议内容：
+1. 当前状态与问题
+
+目前开源的Linux
+HBA目标设备支持主动/被动模式，广泛支持Pacemaker，但仅支持无级别的故...
+    
+
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Clustered_SCSI_Target_Using_RBD/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_1_-_RGW_-_Object_Versioning_Object_Snapshots"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_RGW_-_Object_Versioning_Object_Snapshots/">CDS Hammer (Day 1) - RGW: Object Versioning // Object Snapshots</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议主题： Rados Gateway
+对象版本化及后续议题讨论
+参会人员： Mike
+Bryant（蓝图负责人及实现人员）、其他研发人员
+会议内容：
+一、Rados Gateway 对象版本化
+
+项目背景：
+对象版本化是实现数据保护和版本控制的重要功能。
+实现方法： 采用 S3 对象版本化方案，通过 RESTful API
+实现。
+关键技术：
+
+列表对象及其版本
+读取和删除特定版...
+    
+
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_RGW_-_Object_Versioning_Object_Snapshots/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -361,7 +680,7 @@ Excelio更新了内部消息接口，从固定数组16个元素减少到4个，�
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/page/125/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/124/">124</a><a class="page-number" href="/VideoSummary/page/125/">125</a><span class="page-number current">126</span>
+    <a class="extend prev" rel="prev" href="/VideoSummary/page/125/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/124/">124</a><a class="page-number" href="/VideoSummary/page/125/">125</a><span class="page-number current">126</span><a class="page-number" href="/VideoSummary/page/127/">127</a><a class="page-number" href="/VideoSummary/page/128/">128</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="extend next" rel="next" href="/VideoSummary/page/127/">下一页</a>
     </div>
 </nav>
 

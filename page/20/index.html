@@ -150,6 +150,379 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-Ceph_RGW_Refactoring_Meeting_2023-03-08"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-03-09 00:00:00" datetime="2023-03-08T16:00:00.000Z"  itemprop="datePublished">2023-03-09</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2023/03/09/Ceph_RGW_Refactoring_Meeting_2023-03-08/">Ceph RGW Refactoring Meeting 2023-03-08</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议主题
+讨论关于Ceph分布式存储系统中端到端跟踪（end-to-end
+tracing）的实现和优化问题。
+主要议题
+
+端到端跟踪的通用性和特定实现问题：
+
+端到端跟踪技术本身不特定于某个领域，但其需要在代码中通过不同的API传递，并最终序列化到消息中。
+Omri的工作涉及将跟踪信息添加到cell对象中，以便在对象进入rados时可以提取和序列化跟踪信息。
+
+代码重构对跟踪实现...
+    
+
+        <a href="/VideoSummary/2023/03/09/Ceph_RGW_Refactoring_Meeting_2023-03-08/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Crimson_SeaStore_Meeting_2023-03-08"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-03-08 00:00:00" datetime="2023-03-07T16:00:00.000Z"  itemprop="datePublished">2023-03-08</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/">Ceph Crimson/SeaStore Meeting 2023-03-08</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议时间： [具体日期] 参会人员：
+[列出参会人员]
+主要议题：
+
+个人工作更新
+
+Junction: 正在处理 classic scrub 和
+Crimson scrub，同时更新了 grain cache
+的最终版本，并关注 max application size 的 bug
+问题。本周将重点审查
+lba3 optimization，并计划在未来几周内投入更多精力到
+mul...
+    
+
+        <a href="/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Orchestrator_2023-03-07"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-03-07 00:00:00" datetime="2023-03-06T16:00:00.000Z"  itemprop="datePublished">2023-03-07</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2023/03/07/Ceph_Orchestrator_2023-03-07/">Ceph Orchestrator 2023-03-07</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议主题：证书管理与安全存储讨论
+参会人员：[未列出]
+会议时间：[未列出]
+主要议题：
+
+证书管理现状分析
+
+当前视频管理着一些证书，如RGB前端证书和Grafana证书。
+证书目前存储在不同的位置，如配置资源或RSW规范中。
+
+证书管理需求
+
+需要跟踪和管理所有证书，特别是关注其到期时间。
+目标是能够监控证书的到期状态，并在接近到期时发出健康警告。
+
+安全存储方案讨论
+
+提议引...
+    
+
+        <a href="/VideoSummary/2023/03/07/Ceph_Orchestrator_2023-03-07/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Performance_Meeting_2023-03-02"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-03-06 00:00:00" datetime="2023-03-05T16:00:00.000Z"  itemprop="datePublished">2023-03-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2023/03/06/Ceph_Performance_Meeting_2023-03-02/">Ceph Performance Meeting 2023-03-02</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议概述
+本次会议是在两周后再次召开的，原因是会议主持人之前在纽约度假。会议主要回顾了最近两周的PR（Pull
+Request）列表，讨论了几个关键的议题，并决定了一些后续行动计划。
+主要讨论议题
+
+PR审查进度
+
+主持人接近完成了PR列表的审查，但尚未完全完成。
+提到了一个来自Casey的新PR，关于在rgw中切换回多态执行器的问题，Mark
+Hogan进行了测试，未发现明显的性...
+    
+
+        <a href="/VideoSummary/2023/03/06/Ceph_Performance_Meeting_2023-03-02/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_RGW_Refactoring_Meeting_2023-03-01"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-03-06 00:00:00" datetime="2023-03-05T16:00:00.000Z"  itemprop="datePublished">2023-03-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/">Ceph RGW Refactoring Meeting 2023-03-01</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+关键细节
+
+Reef 分支决策: 今天的上游领导会议决定分叉 Reef
+发布分支，预计今天完成。任何需要进入 Reef 的改动现在必须合并到 Main
+并通过 backboards。
+同步策略问题: Katie 报告了在禁用 bucket sink
+的情况下测试同步策略时遇到的问题。发现即使只有两个区域配置为同步，第三个区域仍在拉取数据，这似乎是一个回归问题。
+日志修剪问题:
+与同...
+    
+
+        <a href="/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Orchestrator_2023-02-28"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-03-02 00:00:00" datetime="2023-03-01T16:00:00.000Z"  itemprop="datePublished">2023-03-02</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2023/03/02/Ceph_Orchestrator_2023-02-28/">Ceph Orchestrator 2023-02-28</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+主要议题：
+
+单元测试覆盖率讨论
+call函数的问题修复与改进
+标签命名的讨论
+
+讨论细节：
+1. 单元测试覆盖率讨论： -
+讨论内容：
+John提出了关于单元测试覆盖率的问题，特别是针对一些高级别的命令函数（command
+functions）。他指出，由于这些函数涉及大量的模拟（mocking），其单元测试的价值值得商榷。
+- 决定事项：
+会议中决定，对于那些看起来不值得覆盖的...
+    
+
+        <a href="/VideoSummary/2023/03/02/Ceph_Orchestrator_2023-02-28/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2023Q1_Ceph社区季度总结"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-03-01 00:00:00" datetime="2023-02-28T16:00:00.000Z"  itemprop="datePublished">2023-03-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2023/03/01/2023Q1_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">2023Q1 Ceph社区季度总结</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Ceph社区2023Q1季度总结报告
+1. 主要活动和重点议题
+2023年第一季度，Ceph社区围绕以下主要活动和重点议题展开：
+
+Ceph Science Working
+Group会议：该会议旨在为来自不同背景的存储领域专业人士提供一个交流平台，讨论Ceph及其相关议题，如集群升级、问题解决等。
+Ceph Performance
+Meeting会议：会议重点讨论Ceph存储系统的更新与优...
+    
+
+        <a href="/VideoSummary/2023/03/01/2023Q1_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/" rel="tag">技术发展</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A4%BE%E5%8C%BA%E5%8A%A8%E6%80%81/" rel="tag">社区动态</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-Ceph_Crimson_SeaStore_Meeting_2023-02-22"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -306,376 +679,12 @@ flag）仅能强制停止其下的功能，但在某些情况下，即使使用�
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-Ceph_RGW_Refactoring_Meeting_2023-02-15"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2023-02-16 00:00:00" datetime="2023-02-15T16:00:00.000Z"  itemprop="datePublished">2023-02-16</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/">Ceph RGW Refactoring Meeting 2023-02-15</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-主要议题
-
-S3代理过滤器和Zipper的讨论：会议开始时，讨论了如何实现S3代理过滤器和Zipper的问题，这是为了在d4n之下进行集成。昨天的d4n会议中对此有大量讨论，但未解决，因此希望在今天的会议中继续讨论。
-Reef项目的进展：询问了Reef项目的现状，包括需要完成的功能和未合并的重要修复。
-Ragweed问题的修复：提到了Ragweed问题的修复进展，已经解决了Ragw...
-    
-
-        <a href="/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Crimson_SeaStore_Meeting_2023-02-08"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2023-02-14 00:00:00" datetime="2023-02-13T16:00:00.000Z"  itemprop="datePublished">2023-02-14</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2023/02/14/Ceph_Crimson_SeaStore_Meeting_2023-02-08/">Ceph Crimson/SeaStore Meeting 2023-02-08</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间：[具体日期]
-参会人员：[参会人员名单]
-主要议题：
-
-Ceph项目更新
-代码合并与修复
-技术讨论与问题解决
-Cephalicon会议准备
-
-讨论内容：
-
-代码合并与修复
-
-已合并修复一些非主要Bug。
-Ying Jen需要重新基于当前的Main分支进行PR（Pull
-Request），因为一些故障可能是由于之前的Bug导致的。
-当前的Main分支已合并，应该可以正常工作...
-    
-
-        <a href="/VideoSummary/2023/02/14/Ceph_Crimson_SeaStore_Meeting_2023-02-08/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Orchestrator_2023-02-14"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2023-02-14 00:00:00" datetime="2023-02-13T16:00:00.000Z"  itemprop="datePublished">2023-02-14</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2023/02/14/Ceph_Orchestrator_2023-02-14/">Ceph Orchestrator 2023-02-14</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-关键细节
-
-Redo Stuff:
-讨论了关于重新部署RGW的问题，确认第一个问题已经修复。
-性能问题:
-关注了第二个问题下的两个具体问题，特别是非自动重新部署的问题。
-图像更新: 讨论了People
-ID图像的更新问题，发现该图像长时间未更新，存在安全漏洞。
-自动化构建:
-提议设置自动构建以保持图像的更新，避免未来再次出现类似问题。
-IPv6支持:
-讨论了IPv6的支持问题，由于...
-    
-
-        <a href="/VideoSummary/2023/02/14/Ceph_Orchestrator_2023-02-14/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Performance_Meeting_2023-02-09"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2023-02-14 00:00:00" datetime="2023-02-13T16:00:00.000Z"  itemprop="datePublished">2023-02-14</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2023/02/14/Ceph_Performance_Meeting_2023-02-09/">Ceph Performance Meeting 2023-02-09</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-主要议题
-
-Ceph存储系统的更新与优化
-
-讨论了新的PR（Pull Request），包括分配器格式版本2（allocator format
-version 2）的实现和性能改进。
-探讨了混合分配器（Hybrid
-allocator）的工作原理和可能的改进方向。
-
-性能优化与测试
-
-讨论了如何通过改进分配器格式来减少磁盘空间的使用和提高性能。
-提到了单元测试的结果，显示在特定条件...
-    
-
-        <a href="/VideoSummary/2023/02/14/Ceph_Performance_Meeting_2023-02-09/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_RGW_Refactoring_Meeting_2023-02-08"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2023-02-14 00:00:00" datetime="2023-02-13T16:00:00.000Z"  itemprop="datePublished">2023-02-14</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2023/02/14/Ceph_RGW_Refactoring_Meeting_2023-02-08/">Ceph RGW Refactoring Meeting 2023-02-08</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题：Ceph存储系统开发讨论会
-日期：[具体日期]
-参会人员：[具体人员名单]
-会议内容总结：
-
-预取功能（Prefetching）讨论
-
-讨论了之前关于范围请求预取功能的拉取请求（Pull
-Request），该功能因OSD无法从EC池进行远程读取而受阻，但此问题已解决。
-建议有人重新审视并尝试该功能，因为网络压缩和加密问题已得到解决。
-
-云过渡问题讨论
-
-讨论了从Noba
-...
-    
-
-        <a href="/VideoSummary/2023/02/14/Ceph_RGW_Refactoring_Meeting_2023-02-08/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Orchestrator_Meeting_2023-02-07"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2023-02-08 00:00:00" datetime="2023-02-07T16:00:00.000Z"  itemprop="datePublished">2023-02-08</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2023/02/08/Ceph_Orchestrator_Meeting_2023-02-07/">Ceph Orchestrator Meeting 2023-02-07</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议概述
-本次会议主要讨论了Ceph存储系统中关于管理器（manager）的高可用性（HA）实现，特别是通过使用keepalived来管理虚拟IP的问题。会议中涉及了多个技术细节和潜在的解决方案，以及后续的行动计划。
-主要议题
-
-Keepalived与管理器集成：
-
-讨论了如何使用keepalived为管理器提供一个稳定的虚拟IP，以便外部Prometheus实例可以稳定地抓取数据...
-    
-
-        <a href="/VideoSummary/2023/02/08/Ceph_Orchestrator_Meeting_2023-02-07/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Performance_Meeting_2023-02-02"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2023-02-08 00:00:00" datetime="2023-02-07T16:00:00.000Z"  itemprop="datePublished">2023-02-08</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/">Ceph Performance Meeting 2023-02-02</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议概要
-本次会议主要讨论了Ceph存储系统的多个技术问题和改进措施，包括新提交的PR（Pull
-Request）、已关闭的PR、更新中的PR以及一些实验性的改进。会议还涉及了Ceph在实际生产环境中的性能问题和解决方案。
-主要议题
-
-新提交的PR
-
-Igor提出的PR关于在带前缀的访问中不使用真实的整个空间迭代器。Igor解释了该PR的背景和实验结果，强调了在特定情况下使用默认列...
-    
-
-        <a href="/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/page/19/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/18/">18</a><a class="page-number" href="/VideoSummary/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/VideoSummary/page/21/">21</a><a class="page-number" href="/VideoSummary/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/126/">126</a><a class="extend next" rel="next" href="/VideoSummary/page/21/">下一页</a>
+    <a class="extend prev" rel="prev" href="/VideoSummary/page/19/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/18/">18</a><a class="page-number" href="/VideoSummary/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/VideoSummary/page/21/">21</a><a class="page-number" href="/VideoSummary/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="extend next" rel="next" href="/VideoSummary/page/21/">下一页</a>
     </div>
 </nav>
 

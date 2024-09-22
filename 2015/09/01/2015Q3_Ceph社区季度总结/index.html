@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>2015Q3 Ceph社区季度总结 | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Ceph,社区动态,技术发展">
+    <meta name="description" content="2015Q3 Ceph 社区季度总结报告 1. 主要活动和重点议题 本季度，Ceph 社区围绕多个重点议题展开讨论和开发，包括：  CephFS 开发任务： 讨论了 CephFS 中适合新开发者入门的任务，如缓存状态导出、目录碎片对象检查工具等。 客户端开发任务： 讨论了客户端相关的开发任务，如异步接口集成、性能计数器扩展等。 Seth Mesos 框架： Intel 上海开发的 Seth Mes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2015Q3 Ceph社区季度总结">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/09/01/2015Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="2015Q3 Ceph 社区季度总结报告 1. 主要活动和重点议题 本季度，Ceph 社区围绕多个重点议题展开讨论和开发，包括：  CephFS 开发任务： 讨论了 CephFS 中适合新开发者入门的任务，如缓存状态导出、目录碎片对象检查工具等。 客户端开发任务： 讨论了客户端相关的开发任务，如异步接口集成、性能计数器扩展等。 Seth Mesos 框架： Intel 上海开发的 Seth Mes">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2015-08-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2015-08-31T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="社区动态">
+<meta property="article:tag" content="技术发展">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">2015Q3 Ceph社区季度总结</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">2015Q3 Ceph社区季度总结</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2015-08-31T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2015-09-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#q3-ceph-%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E6%8A%A5%E5%91%8A"><span class="post-toc-number">1.</span> <span class="post-toc-text">2015Q3 Ceph 社区季度总结报告</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E6%B4%BB%E5%8A%A8%E5%92%8C%E9%87%8D%E7%82%B9%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 主要活动和重点议题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95%E5%92%8C%E5%88%9B%E6%96%B0%E4%BA%AE%E7%82%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 技术发展和创新亮点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%87%8D%E8%A6%81%E7%9A%84%E5%86%B3%E7%AD%96%E5%92%8C%E9%87%8C%E7%A8%8B%E7%A2%91"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. 重要的决策和里程碑</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%A4%BE%E5%8C%BA%E8%B4%A1%E7%8C%AE%E5%92%8C%E5%90%88%E4%BD%9C%E6%83%85%E5%86%B5"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4. 社区贡献和合作情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%8B%E4%B8%80%E5%AD%A3%E5%BA%A6%E7%9A%84%E5%B1%95%E6%9C%9B%E5%92%8C%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">5. 下一季度的展望和计划</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-2015Q3_Ceph社区季度总结"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">2015Q3 Ceph社区季度总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2015-09-01 00:00:00" datetime="2015-08-31T16:00:00.000Z"  itemprop="datePublished">2015-09-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="q3-ceph-社区季度总结报告">2015Q3 Ceph 社区季度总结报告</h1>
+<h2 id="主要活动和重点议题">1. 主要活动和重点议题</h2>
+<p>本季度，Ceph 社区围绕多个重点议题展开讨论和开发，包括：</p>
+<ul>
+<li><strong>CephFS 开发任务</strong>： 讨论了 CephFS
+中适合新开发者入门的任务，如缓存状态导出、目录碎片对象检查工具等。</li>
+<li><strong>客户端开发任务</strong>：
+讨论了客户端相关的开发任务，如异步接口集成、性能计数器扩展等。</li>
+<li><strong>Seth Mesos 框架</strong>： Intel 上海开发的 Seth Mesos
+框架，旨在在 Apache Mesos 上扩展 Ceph
+集群，实现资源隔离和动态扩展。</li>
+<li><strong>RBD Journal</strong>： 讨论了 RBD Journal Blueprint
+的设计和实现，旨在提高 RBD 镜像的可靠性和可用性。</li>
+<li><strong>IO 提示功能</strong>： 讨论了 CephFS 中的 IO
+提示功能，以优化数据存储和访问。</li>
+<li><strong>硬件 API</strong>： 讨论了 Calamari 硬件 API
+的规划和实现，旨在使 Calamari
+能够了解其背后的存储，并在出现问题时进行分析。</li>
+<li><strong>Hadoop over Ceph RGW</strong>： 讨论了使用 Ceph RGW 作为
+Hadoop 存储后端的方案，以实现 Hadoop 与 Ceph 的集成。</li>
+<li><strong>客户端消息优先级</strong>：
+讨论了客户端消息优先级的问题，以解决当前 Ceph
+系统中存在的负载不均衡和性能问题。</li>
+<li><strong>RGW 多租户功能</strong>： 讨论了 RGW
+的多租户功能，以支持不同租户的独立命名空间、用户和存储桶。</li>
+<li><strong>对等速度提升</strong>： 讨论了 Ceph
+分布式存储性能讨论，特别是对等速度提升和一致性模型下的映射变更处理。</li>
+</ul>
+<h2 id="技术发展和创新亮点">2. 技术发展和创新亮点</h2>
+<p>本季度，Ceph 社区在以下技术领域取得了显著进展：</p>
+<ul>
+<li><strong>CephFS</strong>： 优化了 CephFS
+的性能和稳定性，并增加了新的功能，如 IO 提示、缓存层优化等。</li>
+<li><strong>RBD</strong>： 优化了 RBD 的性能，并增加了新的功能，如 RBD
+Journal、多对象事务支持等。</li>
+<li><strong>RGW</strong>： 优化了 RGW
+的性能，并增加了新的功能，如多租户功能、多站点配置等。</li>
+<li><strong>客户端</strong>：
+优化了客户端的性能和稳定性，并增加了新的功能，如异步接口、性能计数器等。</li>
+<li><strong>硬件 API</strong>： 开发了 Calamari 硬件 API，以使 Calamari
+能够了解其背后的存储。</li>
+</ul>
+<h2 id="重要的决策和里程碑">3. 重要的决策和里程碑</h2>
+<p>本季度，Ceph 社区做出了以下重要的决策和取得以下里程碑：</p>
+<ul>
+<li><strong>审批 RatOS 多对象事务支持机制</strong>： 审批了 RatOS
+的多对象事务支持机制，以简化客户端内部客户端的设计。</li>
+<li><strong>优化合并小对象为大文件的方案</strong>：
+评估了将多个小对象合并为 64MB
+大文件的方案，并研究如何实现小对象的引用计数。</li>
+<li><strong>改进 X-attr 存储结构</strong>： 评估了优化 X-attr
+存储结构的方法，以减少额外开销。</li>
+<li><strong>开发 CFS 数据扫描工具</strong>： 开发了 CFS
+数据扫描工具，用于扫描数据池中的对象，并尝试从数据池中恢复元数据。</li>
+<li><strong>开源 P.M. Store 代码</strong>： 开源了 P.M. Store
+代码，这是一个针对非易失性存储的新实验性 SD Back-end。</li>
+</ul>
+<h2 id="社区贡献和合作情况">4. 社区贡献和合作情况</h2>
+<p>本季度，Ceph 社区成员在以下方面做出了积极的贡献：</p>
+<ul>
+<li><strong>提交和审查代码</strong>：
+社区成员提交了大量代码，并审查了其他成员提交的代码。</li>
+<li><strong>编写文档</strong>：
+社区成员编写了大量的文档，以帮助其他用户了解 Ceph。</li>
+<li><strong>参与会议</strong>： 社区成员参加了多个会议，以讨论 Ceph
+的技术和社区发展。</li>
+<li><strong>解决问题和提供支持</strong>： 社区成员在邮件列表、论坛和 IRC
+上帮助其他用户解决 Ceph 相关的问题。</li>
+</ul>
+<h2 id="下一季度的展望和计划">5. 下一季度的展望和计划</h2>
+<p>下一季度，Ceph 社区将继续致力于以下工作：</p>
+<ul>
+<li><strong>优化 CephFS 和 RBD</strong>： 优化 CephFS 和 RBD
+的性能和稳定性，并增加新的功能。</li>
+<li><strong>开发 RGW 多租户功能</strong>： 完成 RGW
+的多租户功能开发，以支持不同租户的独立命名空间、用户和存储桶。</li>
+<li><strong>开发 Seth Mesos 框架</strong>： 完成 Seth Mesos
+框架的开发，以实现资源隔离和动态扩展。</li>
+<li><strong>优化客户端</strong>：
+优化客户端的性能和稳定性，并增加新的功能。</li>
+<li><strong>加强社区建设</strong>： 加强社区建设，吸引更多开发者参与
+Ceph 项目。</li>
+</ul>
+<p>Ceph 社区将继续致力于推动 Ceph
+的发展，为用户提供更稳定、更可靠的存储解决方案。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2015-08-31T16:00:00.000Z" itemprop="dateUpdated">2015-09-01 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/" rel="tag">技术发展</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A4%BE%E5%8C%BA%E5%8A%A8%E6%80%81/" rel="tag">社区动态</a></li></ul>
+
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/09/01/2015Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&title=《2015Q3 Ceph社区季度总结》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/09/01/2015Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&title=《2015Q3 Ceph社区季度总结》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2015/09/01/2015Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2015Q3 Ceph社区季度总结》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/09/01/2015Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2015/09/01/2015Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2015/09/24/2015-SEP-24_--_Ceph_Tech_Talks_-_Reference_Architectures/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">2015-SEP-24 -- Ceph Tech Talks: Reference Architectures</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2015/08/27/2015-AUG-27_--_Ceph_Tech_Talks_-_Ceph_Performance/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">2015-AUG-27 -- Ceph Tech Talks: Ceph Performance</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/09/01/2015Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&title=《2015Q3 Ceph社区季度总结》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/09/01/2015Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&title=《2015Q3 Ceph社区季度总结》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2015/09/01/2015Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2015Q3 Ceph社区季度总结》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/09/01/2015Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2015/09/01/2015Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2015/09/01/2015Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

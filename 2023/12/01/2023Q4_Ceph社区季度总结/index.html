@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>2023Q4 Ceph社区季度总结 | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Ceph,社区动态,技术发展">
+    <meta name="description" content="Ceph 社区 2023 年第四季度总结报告 1. 本季度主要活动和重点议题 1.1 Ceph RGW 重构会议  会议主题：探讨 IAM 未来方向、生命周期处理、SEF 日志记录等议题。 重点议题：  IAM 未来方向：账户所有权、使用会计、统计数据、账户层次结构、配额管理。 生命周期处理：多站点复制、删除操作记录、Rados QoS 控制。 SEF 日志记录：错误日志记录、日志级别、致命错误处">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2023Q4 Ceph社区季度总结">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/12/01/2023Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="Ceph 社区 2023 年第四季度总结报告 1. 本季度主要活动和重点议题 1.1 Ceph RGW 重构会议  会议主题：探讨 IAM 未来方向、生命周期处理、SEF 日志记录等议题。 重点议题：  IAM 未来方向：账户所有权、使用会计、统计数据、账户层次结构、配额管理。 生命周期处理：多站点复制、删除操作记录、Rados QoS 控制。 SEF 日志记录：错误日志记录、日志级别、致命错误处">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-11-30T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="社区动态">
+<meta property="article:tag" content="技术发展">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">2023Q4 Ceph社区季度总结</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">2023Q4 Ceph社区季度总结</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-11-30T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2023-12-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ceph-%E7%A4%BE%E5%8C%BA-2023-%E5%B9%B4%E7%AC%AC%E5%9B%9B%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E6%8A%A5%E5%91%8A"><span class="post-toc-number">1.</span> <span class="post-toc-text">Ceph 社区 2023
+年第四季度总结报告</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9C%AC%E5%AD%A3%E5%BA%A6%E4%B8%BB%E8%A6%81%E6%B4%BB%E5%8A%A8%E5%92%8C%E9%87%8D%E7%82%B9%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 本季度主要活动和重点议题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ceph-rgw-%E9%87%8D%E6%9E%84%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1.1 Ceph RGW 重构会议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%AF%8F%E5%91%A8-rgw-%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">1.2 每周 RGW 会议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ceph-%E5%BC%80%E5%8F%91%E8%80%85%E6%9C%88%E5%BA%A6%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">1.3 Ceph 开发者月度会议</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95%E5%92%8C%E5%88%9B%E6%96%B0%E4%BA%AE%E7%82%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 技术发展和创新亮点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#iam-%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">2.1 IAM 未来方向</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E4%B8%8E%E5%A4%8D%E5%88%B6"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.2 生命周期与复制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%80%9A%E7%9F%A5%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%9B%B4%E6%96%B0"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">2.3 通知数据模型的更新</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8A%A8%E6%80%81%E9%87%8D%E5%88%86%E7%89%87"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">2.4 动态重分片</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%87%8D%E8%A6%81%E7%9A%84%E5%86%B3%E7%AD%96%E5%92%8C%E9%87%8C%E7%A8%8B%E7%A2%91"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. 重要的决策和里程碑</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E7%AD%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">3.1 决策事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%87%8C%E7%A8%8B%E7%A2%91"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">3.2 里程碑</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%A4%BE%E5%8C%BA%E8%B4%A1%E7%8C%AE%E5%92%8C%E5%90%88%E4%BD%9C%E6%83%85%E5%86%B5"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4. 社区贡献和合作情况</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%A4%BE%E5%8C%BA%E8%B4%A1%E7%8C%AE"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">4.1 社区贡献</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%88%E4%BD%9C%E6%83%85%E5%86%B5"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">4.2 合作情况</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%8B%E4%B8%80%E5%AD%A3%E5%BA%A6%E5%B1%95%E6%9C%9B%E5%92%8C%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">5. 下一季度展望和计划</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E7%9B%AE%E6%A0%87"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">5.1 主要目标</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">5.2 行动计划</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-2023Q4_Ceph社区季度总结"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">2023Q4 Ceph社区季度总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-12-01 00:00:00" datetime="2023-11-30T16:00:00.000Z"  itemprop="datePublished">2023-12-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="ceph-社区-2023-年第四季度总结报告">Ceph 社区 2023
+年第四季度总结报告</h1>
+<h2 id="本季度主要活动和重点议题">1. 本季度主要活动和重点议题</h2>
+<h3 id="ceph-rgw-重构会议">1.1 Ceph RGW 重构会议</h3>
+<ul>
+<li><strong>会议主题</strong>：探讨 IAM 未来方向、生命周期处理、SEF
+日志记录等议题。</li>
+<li><strong>重点议题</strong>：
+<ul>
+<li>IAM
+未来方向：账户所有权、使用会计、统计数据、账户层次结构、配额管理。</li>
+<li>生命周期处理：多站点复制、删除操作记录、Rados QoS 控制。</li>
+<li>SEF 日志记录：错误日志记录、日志级别、致命错误处理。</li>
+</ul></li>
+</ul>
+<h3 id="每周-rgw-会议">1.2 每周 RGW 会议</h3>
+<ul>
+<li><strong>会议主题</strong>：讨论 RGW 的优化和改进。</li>
+<li><strong>重点议题</strong>：
+<ul>
+<li>通知和 SNS 主题策略：IAM 和 S3
+策略、服务控制策略、站点控制策略。</li>
+<li>持久通知性能：工作线程、性能瓶颈、Kafka 客户端统计信息。</li>
+</ul></li>
+</ul>
+<h3 id="ceph-开发者月度会议">1.3 Ceph 开发者月度会议</h3>
+<ul>
+<li><strong>会议主题</strong>：Ceph 的技术讨论和项目进展。</li>
+<li><strong>重点议题</strong>：
+<ul>
+<li>PG Remapper 工具：解决回填并发问题、优化回填过程。</li>
+<li>Ceph Dashboard 新功能：文件系统、卷组和子卷管理、快照管理等。</li>
+</ul></li>
+</ul>
+<h2 id="技术发展和创新亮点">2. 技术发展和创新亮点</h2>
+<h3 id="iam-未来方向">2.1 IAM 未来方向</h3>
+<ul>
+<li><strong>账户所有权</strong>：归属到根账户，而非用户。</li>
+<li><strong>使用会计和配额</strong>：账户级别进行使用会计和配额管理。</li>
+<li><strong>账户层次结构</strong>：通过组织单位（OU）管理账户和配额。</li>
+</ul>
+<h3 id="生命周期与复制">2.2 生命周期与复制</h3>
+<ul>
+<li><strong>生命周期处理</strong>：优化删除操作记录、控制生命周期处理速率、利用
+Rados QoS 控制。</li>
+</ul>
+<h3 id="通知数据模型的更新">2.3 通知数据模型的更新</h3>
+<ul>
+<li><strong>多站点通知数据模型</strong>：从旧数据模型迁移到新数据模型，支持两种数据模型的代码路径。</li>
+</ul>
+<h3 id="动态重分片">2.4 动态重分片</h3>
+<ul>
+<li><strong>减少分片数量</strong>：在重分片队列中添加时间戳以延迟执行。</li>
+</ul>
+<h2 id="重要的决策和里程碑">3. 重要的决策和里程碑</h2>
+<h3 id="决策事项">3.1 决策事项</h3>
+<ul>
+<li><strong>IAM
+未来方向</strong>：确定所有权归属、使用会计和配额管理策略、账户层次结构。</li>
+<li><strong>生命周期与复制</strong>：决定不记录删除操作、利用 Rados QoS
+控制、停止对非版本化桶的日志记录。</li>
+<li><strong>通知数据模型的更新</strong>：在升级完成后进行迁移、使用新的区域组特性、全局启用新格式。</li>
+</ul>
+<h3 id="里程碑">3.2 里程碑</h3>
+<ul>
+<li><strong>通知数据模型的更新</strong>：完成迁移、发布测试工具和结果。</li>
+<li><strong>生命周期与复制</strong>：完成生命周期处理问题的解决方案、实现
+Rados QoS 控制。</li>
+<li><strong>动态重分片</strong>：完成方案讨论、进行测试并评估线程增加的影响。</li>
+</ul>
+<h2 id="社区贡献和合作情况">4. 社区贡献和合作情况</h2>
+<h3 id="社区贡献">4.1 社区贡献</h3>
+<ul>
+<li><strong>Coverity 项目</strong>：解决多个高、中影响问题，提高 rgw
+代码质量。</li>
+<li><strong>librdkafka
+库问题</strong>：添加到子模块、静态链接解决动态链接问题。</li>
+<li><strong>数据日志推送异步处理</strong>：实现批处理机制、将单个条目转换为异步处理。</li>
+</ul>
+<h3 id="合作情况">4.2 合作情况</h3>
+<ul>
+<li><strong>与 AWS 合作</strong>：改进 AWS SNS
+主题管理权限、多站点环境下的通知复制问题。</li>
+<li><strong>与 CentOS 和 Ubuntu 合作</strong>：提交 bug 报告，请求更新
+librdkafka 版本。</li>
+</ul>
+<h2 id="下一季度展望和计划">5. 下一季度展望和计划</h2>
+<h3 id="主要目标">5.1 主要目标</h3>
+<ul>
+<li>完成通知数据模型的更新和迁移。</li>
+<li>继续优化生命周期与复制功能。</li>
+<li>推进动态重分片方案的实施。</li>
+<li>评估和解决 librdkafka 库问题。</li>
+<li>加强与社区的沟通与合作。</li>
+</ul>
+<h3 id="行动计划">5.2 行动计划</h3>
+<ul>
+<li>继续推进各个项目的开发和测试。</li>
+<li>定期召开社区会议，分享技术进展和讨论问题。</li>
+<li>积极参与和推动开源项目的发展。</li>
+<li>持续关注和解决社区成员提出的问题。</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-11-30T16:00:00.000Z" itemprop="dateUpdated">2023-12-01 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/" rel="tag">技术发展</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A4%BE%E5%8C%BA%E5%8A%A8%E6%80%81/" rel="tag">社区动态</a></li></ul>
+
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/12/01/2023Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&title=《2023Q4 Ceph社区季度总结》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/12/01/2023Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&title=《2023Q4 Ceph社区季度总结》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/12/01/2023Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2023Q4 Ceph社区季度总结》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/12/01/2023Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/12/01/2023Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2023/12/13/Ceph_RGW_Refactoring_Meeting_2023-12-13/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ceph RGW Refactoring Meeting 2023-12-13</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2023/11/29/Ceph_RGW_Refactoring_Meeting_2023-11-29/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Ceph RGW Refactoring Meeting 2023-11-29</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/12/01/2023Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&title=《2023Q4 Ceph社区季度总结》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/12/01/2023Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&title=《2023Q4 Ceph社区季度总结》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/12/01/2023Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2023Q4 Ceph社区季度总结》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/12/01/2023Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/12/01/2023Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2023/12/01/2023Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

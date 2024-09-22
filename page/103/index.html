@@ -150,11 +150,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_s_journey_at_SUSE_-_Lars_Marowsky_Bree_Marc_Koderer"
+            <article id="post-2018-07-19_Ceph_Performance_Weekly"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2018-04-23 00:00:00" datetime="2018-04-22T16:00:00.000Z"  itemprop="datePublished">2018-04-23</time>
+        <time class="post-time" title="2018-07-19 00:00:00" datetime="2018-07-18T16:00:00.000Z"  itemprop="datePublished">2018-07-19</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -168,7 +168,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2018/04/23/Ceph_s_journey_at_SUSE_-_Lars_Marowsky_Bree_Marc_Koderer/">Ceph&#39;s journey at SUSE - Lars Marowsky Brée, Marc Koderer</a>
+      <a class="post-title-link" href="/VideoSummary/2018/07/19/2018-07-19_Ceph_Performance_Weekly/">2018-07-19 Ceph Performance Weekly</a>
     </h3>
   
 
@@ -178,21 +178,22 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要：
-会议主题： Ceph 分布式存储产品回顾与发展展望
-会议时间： 2023年（具体日期未提及）
-参会人员： Ceph 社区成员、SUSE
-公司代表、客户代表等
+        会议纪要
+会议时间： 2023年X月X日
+参会人员： Josh, Greg, Neha, Sage, Mafia, Peng,
+Jason, Adams, 等
+会议主题： Ceph性能会议纪要
 会议内容：
-一、会议回顾与挑战
+1. 代码审查及进展
 
-SUSE 公司在 Linux 领域拥有超过 25 年的经验，与 Ceph 合作已有 4-5
-年。
-传统存储系统在可扩展性、成本和适应性方面存在不足，无法满足数据增长的需求。
-数据保护和管理成...
+PRs：
+
+Greg提交的优化MDS中最大导出大小的PR。
+Erratic的uptracker工作，以及Retic的clamp以避免在主日志PG中额外的引用计数。
+...
     
 
-        <a href="/VideoSummary/2018/04/23/Ceph_s_journey_at_SUSE_-_Lars_Marowsky_Bree_Marc_Koderer/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2018/07/19/2018-07-19_Ceph_Performance_Weekly/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -202,11 +203,11 @@ SUSE 公司在 Linux 领域拥有超过 25 年的经验，与 Ceph 合作已有 
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_the_future_of_Storage_-_Sage_Weil"
+            <article id="post-2018-Jun-28_-_-_Ceph_Performance_Weekly"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2018-04-23 00:00:00" datetime="2018-04-22T16:00:00.000Z"  itemprop="datePublished">2018-04-23</time>
+        <time class="post-time" title="2018-06-28 00:00:00" datetime="2018-06-27T16:00:00.000Z"  itemprop="datePublished">2018-06-28</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -220,7 +221,7 @@ SUSE 公司在 Linux 领域拥有超过 25 年的经验，与 Ceph 合作已有 
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2018/04/23/Ceph_the_future_of_Storage_-_Sage_Weil/">Ceph, the future of Storage - Sage Weil</a>
+      <a class="post-title-link" href="/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/">2018-Jun-28 :: Ceph Performance Weekly</a>
     </h3>
   
 
@@ -231,27 +232,20 @@ SUSE 公司在 Linux 领域拥有超过 25 年的经验，与 Ceph 合作已有 
 
     
         会议纪要
-会议时间
-[请填写会议日期]
-会议地点
-北京
-参会人员
+会议时间： 2023年某月某日
+参会人员： 大部分研发人员（Sage缺席）
+会议主题： 分布式存储Ceph项目进展和讨论
+关键细节及讨论议题：
 
-主持人：Ceph社区代表
-与会嘉宾：Ceph社区成员、开发者、用户及赞助商代表
+内存分配器：
 
-会议内容
-1. 开场致辞
-
-主持人对参会人员的到来表示感谢，并介绍了会议的赞助商和主办方。
-强调了Ceph作为统一存储系统的特点，包括支持对象、块和文件工作负载。
-
-2. Ceph简介
-
-Ceph是一个统一的存储系统，提供对象存储、块存储和文件...
+讨论了不同内存分配器的性能和碎片化问题，包括stupid allocator、bitmap
+allocator和libc malloc。
+通过测试发现，libc malloc在内存使用上表现不佳，而TC malloc和J
+...
     
 
-        <a href="/VideoSummary/2018/04/23/Ceph_the_future_of_Storage_-_Sage_Weil/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -261,11 +255,11 @@ Ceph是一个统一的存储系统，提供对象存储、块存储和文件...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Common_Support_Issues_And_How_To_Troubleshoot_Them_-_Michael_Hackett_Vikhyat_Umrao"
+            <article id="post-2018-Jun-27_-_-_Ceph_Testing_Weekly"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2018-04-23 00:00:00" datetime="2018-04-22T16:00:00.000Z"  itemprop="datePublished">2018-04-23</time>
+        <time class="post-time" title="2018-06-27 00:00:00" datetime="2018-06-26T16:00:00.000Z"  itemprop="datePublished">2018-06-27</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -279,7 +273,7 @@ Ceph是一个统一的存储系统，提供对象存储、块存储和文件...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2018/04/23/Common_Support_Issues_And_How_To_Troubleshoot_Them_-_Michael_Hackett_Vikhyat_Umrao/">Common Support Issues And How To Troubleshoot Them - Michael Hackett, Vikhyat Umrao</a>
+      <a class="post-title-link" href="/VideoSummary/2018/06/27/2018-Jun-27_-_-_Ceph_Testing_Weekly/">2018-Jun-27 :: Ceph Testing Weekly</a>
     </h3>
   
 
@@ -290,21 +284,19 @@ Ceph是一个统一的存储系统，提供对象存储、块存储和文件...
 
     
         会议纪要
-会议主题： Ceph存储常见支持问题和故障排除
-参会人员： - Rob，Red Hat存储软件维护工程师 -
-Nick，Red Hat存储软件维护工程师
-会议内容：
-一、慢请求问题
+会议时间： [未提及具体时间]
+参会人员： Ally, Rick, Ashley, Zach (远程度假), Ali,
+Yuri, Teresa
+会议主题： 项目进展、技术问题讨论、行动计划
+关键细节：
 
-问题描述：
-慢请求是指Ceph检测到请求处理时间过长的情况，默认为30秒，可调整。
-可能原因：
-
-硬件问题：磁盘驱动器老化、控制器驱动或固件问题、主机内核配置不当等。
-网络问题：网络设备配置错误、网络...
+人员缺席： Zach 由于度假缺席本次会议。
+文档准备： Ali 已经完成文档撰写，需要将文档推送到
+GitHub 分支，并处理一个关于目录路径变更的评论。
+单元测试： Ashl...
     
 
-        <a href="/VideoSummary/2018/04/23/Common_Support_Issues_And_How_To_Troubleshoot_Them_-_Michael_Hackett_Vikhyat_Umrao/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2018/06/27/2018-Jun-27_-_-_Ceph_Testing_Weekly/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -314,11 +306,11 @@ Nick，Red Hat存储软件维护工程师
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-DeepSea_-_Deployment_and_Management_of_Ceph_with_Salt_-_Joshua_Schmid"
+            <article id="post-2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2018-04-23 00:00:00" datetime="2018-04-22T16:00:00.000Z"  itemprop="datePublished">2018-04-23</time>
+        <time class="post-time" title="2018-06-27 00:00:00" datetime="2018-06-26T16:00:00.000Z"  itemprop="datePublished">2018-06-27</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -332,7 +324,7 @@ Nick，Red Hat存储软件维护工程师
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2018/04/23/DeepSea_-_Deployment_and_Management_of_Ceph_with_Salt_-_Joshua_Schmid/">DeepSea: Deployment and Management of Ceph with Salt - Joshua Schmid</a>
+      <a class="post-title-link" href="/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/">2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2</a>
     </h3>
   
 
@@ -343,74 +335,22 @@ Nick，Red Hat存储软件维护工程师
 
     
         会议纪要
-会议时间： [请填写具体日期和时间]
-会议地点： [请填写会议地点]
-参会人员： [请填写所有参会人员名单]
-会议主题： Ceph 部署管理框架 DeepSea
-的介绍和功能
-会议内容：
-1. 介绍与背景
-
-主讲人介绍：Josh，德国软件工程师，专注于部署和管理框架。
-DeepSea 简介：DeepSea 是一个基于 Salt 的 Ceph
-部署和管理框架，旨在简化 Ceph 集群...
-    
-
-        <a href="/VideoSummary/2018/04/23/DeepSea_-_Deployment_and_Management_of_Ceph_with_Salt_-_Joshua_Schmid/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-04-23 00:00:00" datetime="2018-04-22T16:00:00.000Z"  itemprop="datePublished">2018-04-23</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/">Doing QoS Before Ceph Cluster QoS is available - David Byte, Alex Lau</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： [请填写具体日期和时间]
-会议地点： [请填写会议地点]
-参会人员： [请填写参会人员名单]
 会议主题：
-分布式存储Ceph相关议题及视频会议字幕翻译讨论
-会议内容摘要：
-本次会议主要围绕以下议题展开讨论：
+Ceph分布式存储系统关键组件解析与性能优化
+会议时间： 2023年11月（具体日期未提及）
+参会人员： 未知
+会议内容：
+一、会议背景
+本次会议主要针对Ceph分布式存储系统中的一些关键组件进行解析，并探讨如何优化其性能。
+二、关键组件解析
 
-Ceph存储技术讨论：
+缓存机制：
 
-会议中提到了Ceph存储系统的多个级别和对抗者，以及如何处理不同级别的挑战。
-讨论了Ceph在处理大量数据（如葡萄干）时的效率和性能。
-...
+Ceph使用内存缓存来存储频繁访问的数据，提高访问效率。
+缓存分为LRU缓存和2Q缓存两种，2Q缓存具有更高的缓...
     
 
-        <a href="/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -420,11 +360,11 @@ Ceph存储技术讨论：
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Email_Storage_with_Ceph_-_Danny_Al_Gaaf"
+            <article id="post-2018-Jun-21_-_-_Ceph_Performance_Weekly"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2018-04-23 00:00:00" datetime="2018-04-22T16:00:00.000Z"  itemprop="datePublished">2018-04-23</time>
+        <time class="post-time" title="2018-06-21 00:00:00" datetime="2018-06-20T16:00:00.000Z"  itemprop="datePublished">2018-06-21</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -438,7 +378,7 @@ Ceph存储技术讨论：
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2018/04/23/Email_Storage_with_Ceph_-_Danny_Al_Gaaf/">Email Storage with Ceph - Danny Al Gaaf</a>
+      <a class="post-title-link" href="/VideoSummary/2018/06/21/2018-Jun-21_-_-_Ceph_Performance_Weekly/">2018-Jun-21 :: Ceph Performance Weekly</a>
     </h3>
   
 
@@ -449,21 +389,22 @@ Ceph存储技术讨论：
 
     
         会议纪要
-会议主题： 电子邮件存储解决方案评估与实施计划
-参会人员： Sam、Danny、RFC、Letitia、Celia、Mr. Dan
-Elraf、电信部门代表
-会议内容：
-一、当前电子邮件存储现状
+会议时间： 2023年11月X日
+参会人员： [请列出参会人员姓名]
+会议主题：
+讨论Ceph分布式存储系统中的关键技术优化，包括RBD、Blue
+Store、PG日志等。
+关键细节：
 
-现有平台：
-使用传统和网络附加存储，性能不佳，NFS操作效率低下。
-存储需求：
-系统包含4900万用户账户，存储约1.3PB的电子邮件，约6.7亿封邮件，且数据量持续增长。
-性能瓶颈：
-...
+RBD优化：
+
+讨论了RBD在磁盘上的性能表现，并对比了不同硬件配置下的性能差异。
+讨论了PG日志对性能的影响，并提出了优化方案，例如将PG日志存储在更快的存储设备上。
+
+Blue Store优化...
     
 
-        <a href="/VideoSummary/2018/04/23/Email_Storage_with_Ceph_-_Danny_Al_Gaaf/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2018/06/21/2018-Jun-21_-_-_Ceph_Performance_Weekly/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -473,11 +414,11 @@ Elraf、电信部门代表
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Erasure_Code_at_Scale_-_Thomas_William_Byrne"
+            <article id="post-2018-Jun-20_-_-_Ceph_Testing_Weekly"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2018-04-23 00:00:00" datetime="2018-04-22T16:00:00.000Z"  itemprop="datePublished">2018-04-23</time>
+        <time class="post-time" title="2018-06-20 00:00:00" datetime="2018-06-19T16:00:00.000Z"  itemprop="datePublished">2018-06-20</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -491,7 +432,7 @@ Elraf、电信部门代表
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2018/04/23/Erasure_Code_at_Scale_-_Thomas_William_Byrne/">Erasure Code at Scale - Thomas William Byrne</a>
+      <a class="post-title-link" href="/VideoSummary/2018/06/20/2018-Jun-20_-_-_Ceph_Testing_Weekly/">2018-Jun-20 :: Ceph Testing Weekly</a>
     </h3>
   
 
@@ -503,24 +444,17 @@ Elraf、电信部门代表
     
         会议纪要
 会议时间： 2023年11月（具体日期未提及）
-会议地点： 英国牛津郡Rutherford Appleton实验室
 参会人员：
-
-Ceph研发人员
-大型强子对撞机（LHC）实验相关人员
-高能物理研究所（IHEP）相关人员
-
+Zack、Mike、Robley、Anitra、Jenny、Paul、Greg等
 会议主题：
+讨论Ceph存储系统中Telltale测试框架的更新与改进，包括测试环境搭建、测试流程优化、开发模式探索等。
+关键细节：
 
-Ceph在大型强子对撞机（LHC）实验中的存储应用
-Ceph集群的性能优化和问题解决
-Ceph社区对纠删码的支持
-
-会议内容：
-一、Ceph在LH...
+Telltale测试框架现状：
+目前Telltale测试框架依赖于OpenStack基础设施，测试环境搭建...
     
 
-        <a href="/VideoSummary/2018/04/23/Erasure_Code_at_Scale_-_Thomas_William_Byrne/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2018/06/20/2018-Jun-20_-_-_Ceph_Testing_Weekly/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -530,11 +464,11 @@ Ceph社区对纠删码的支持
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Everything_You_Wanted_to_Know_About_RadosGW_-_Orit_Wassermann_Matt_Benjamin"
+            <article id="post-2018-Jun-13_-_-_Ceph_Testing_Weekly"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2018-04-23 00:00:00" datetime="2018-04-22T16:00:00.000Z"  itemprop="datePublished">2018-04-23</time>
+        <time class="post-time" title="2018-06-19 00:00:00" datetime="2018-06-18T16:00:00.000Z"  itemprop="datePublished">2018-06-19</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -548,7 +482,7 @@ Ceph社区对纠删码的支持
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2018/04/23/Everything_You_Wanted_to_Know_About_RadosGW_-_Orit_Wassermann_Matt_Benjamin/">Everything You Wanted to Know About RadosGW - Orit Wassermann, Matt Benjamin</a>
+      <a class="post-title-link" href="/VideoSummary/2018/06/19/2018-Jun-13_-_-_Ceph_Testing_Weekly/">2018-Jun-13 :: Ceph Testing Weekly</a>
     </h3>
   
 
@@ -559,71 +493,23 @@ Ceph社区对纠删码的支持
 
     
         会议纪要
-会议主题： Ceph 分布式存储系统更新与未来规划
-会议时间： 2023年10月10日
-会议地点： 远程
-参会人员： Joseph
-Lanza、Benjamin、Matthew、其他研发人员
-会议内容：
-一、对象存储概述
-
-对象存储位于块存储和文件系统之间，专为大规模对象和大量数据设计。
-对象组织在桶或容器中，桶不能包含其他桶。
-对象不可变，允许多副本存储，提高扩展性。
-支持版本控...
-    
-
-        <a href="/VideoSummary/2018/04/23/Everything_You_Wanted_to_Know_About_RadosGW_-_Orit_Wassermann_Matt_Benjamin/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-04-23 00:00:00" datetime="2018-04-22T16:00:00.000Z"  itemprop="datePublished">2018-04-23</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2018/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/">Extending Ceph&#39;s Reach - Tushar Gohad, Zhong Xin</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： 分布式存储Ceph的扩展与应用
 会议时间： 2023年11月（具体日期未提及）
-参会人员： 李浩，Tushar
-Goel（英特尔首席工程师），以及其他来自英特尔、红帽、思杰等公司的代表
-会议内容：
-1. 会议开场
-李浩首先对与会嘉宾表示感谢，并介绍了本次会议的演讲者Tushar
-Goel，他是英特尔的首席工程师，专注于软件定义存储领域已有五年以上。
-2. Ceph存储的...
+参会人员：
+多位Ceph社区成员，包括Zach、Greg、Rick、Ally、Tatiana、Yuri等。
+会议主题：
+
+检查上次会议的行动项完成情况
+讨论Ceph测试框架Tautology的改进和扩展
+探索使用Libcloud进行测试的可能性
+讨论Ceph RGW功能测试的改进
+讨论Ceph安全仪表板的测试
+
+关键细节：
+
+上次会议...
     
 
-        <a href="/VideoSummary/2018/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2018/06/19/2018-Jun-13_-_-_Ceph_Testing_Weekly/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -633,11 +519,11 @@ Goel，他是英特尔的首席工程师，专注于软件定义存储领域已�
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Experiences_building_a_distributed_shared_log_on_RADOS_-_Noah_Watkins"
+            <article id="post-2018-Jun-14_-_-_Ceph_Performance_Weekly"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2018-04-23 00:00:00" datetime="2018-04-22T16:00:00.000Z"  itemprop="datePublished">2018-04-23</time>
+        <time class="post-time" title="2018-06-18 00:00:00" datetime="2018-06-17T16:00:00.000Z"  itemprop="datePublished">2018-06-18</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -651,7 +537,7 @@ Goel，他是英特尔的首席工程师，专注于软件定义存储领域已�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2018/04/23/Experiences_building_a_distributed_shared_log_on_RADOS_-_Noah_Watkins/">Experiences building a distributed shared log on RADOS - Noah Watkins</a>
+      <a class="post-title-link" href="/VideoSummary/2018/06/18/2018-Jun-14_-_-_Ceph_Performance_Weekly/">2018-Jun-14 :: Ceph Performance Weekly</a>
     </h3>
   
 
@@ -662,27 +548,122 @@ Goel，他是英特尔的首席工程师，专注于软件定义存储领域已�
 
     
         会议纪要
-会议时间：
-[此处应填写会议具体时间]
-会议地点：
-[此处应填写会议具体地点]
-参会人员：
-
-[此处应填写参会人员姓名及职位]
-
-会议主题：
-本次会议主要围绕Ceph分布式存储技术及视频会议字幕翻译与总结工作展开。
+会议时间： 2023年[具体日期]
+参会人员： Ron, Christian, [其他参会人员]
+会议主题： Ceph分布式存储项目进展及讨论
 会议内容：
-一、Ceph分布式存储技术讨论
+1. 页面错误处理
 
-议题：
-讨论Ceph存储系统的最新进展、性能优化及潜在问题。
-讨论要点：
-
-引入了一些关于Ceph系统性能提升的探讨，如优...
+Ron汇报了关于页面错误的处理进展。他提交了一个包含改进的pull
+request，并进行了额外的性能分析。结果显示，通过使用大页（huge
+pages）技术，页面错误的数量减少了三分之二。
+发现文件写入器...
     
 
-        <a href="/VideoSummary/2018/04/23/Experiences_building_a_distributed_shared_log_on_RADOS_-_Noah_Watkins/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2018/06/18/2018-Jun-14_-_-_Ceph_Performance_Weekly/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2018-Jun-7_-_-_Ceph_Performance_Weekly"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-06-07 00:00:00" datetime="2018-06-06T16:00:00.000Z"  itemprop="datePublished">2018-06-07</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2018/06/07/2018-Jun-7_-_-_Ceph_Performance_Weekly/">2018-Jun-7 :: Ceph Performance Weekly</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议时间： 2023年11月某日
+参会人员： Igor、Adam、Radek、Josh、Igor、Sade等
+会议主题：
+讨论Ceph分布式存储系统开发进展，特别是内存分配器优化、缓存策略调整等议题。
+关键细节与议题：
+
+内存分配器优化：
+
+Igor持续在位图分配器上进行改进工作，Adam正在对其进行审查。
+讨论了新的“cash
+balance”工作，该工作对内存进行优化，以提高性...
+    
+
+        <a href="/VideoSummary/2018/06/07/2018-Jun-7_-_-_Ceph_Performance_Weekly/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2018-JUN-06_-_-_Ceph_Developer_Monthly"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-06-06 00:00:00" datetime="2018-06-05T16:00:00.000Z"  itemprop="datePublished">2018-06-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2018/06/06/2018-JUN-06_-_-_Ceph_Developer_Monthly/">2018-JUN-06 :: Ceph Developer Monthly</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议时间： 2023年11月 (具体日期未提及)
+参会人员： Careful, Tanglin, Pat, Jeff, Lenz, Greg,
+Stefan, etc.
+会议内容：
+一、Ceph-RBD性能优化
+
+讨论了Ceph-RBD的性能优化方案，包括：
+
+使用多个Tanglin进行独立操作，共享DPDK网络卡。
+使用RCU技术实现共享数据结构，提高并发访问效率。
+优化日志记录和内存使用...
+    
+
+        <a href="/VideoSummary/2018/06/06/2018-JUN-06_-_-_Ceph_Developer_Monthly/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -696,7 +677,7 @@ Goel，他是英特尔的首席工程师，专注于软件定义存储领域已�
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/page/102/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/101/">101</a><a class="page-number" href="/VideoSummary/page/102/">102</a><span class="page-number current">103</span><a class="page-number" href="/VideoSummary/page/104/">104</a><a class="page-number" href="/VideoSummary/page/105/">105</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/126/">126</a><a class="extend next" rel="next" href="/VideoSummary/page/104/">下一页</a>
+    <a class="extend prev" rel="prev" href="/VideoSummary/page/102/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/101/">101</a><a class="page-number" href="/VideoSummary/page/102/">102</a><span class="page-number current">103</span><a class="page-number" href="/VideoSummary/page/104/">104</a><a class="page-number" href="/VideoSummary/page/105/">105</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="extend next" rel="next" href="/VideoSummary/page/104/">下一页</a>
     </div>
 </nav>
 

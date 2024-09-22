@@ -150,11 +150,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Developer_Summit_Quincy_-_CephFS_Follow-up"
+            <article id="post-Ceph_Orchestrator_Meeting_2021-05-25"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-04-28 00:00:00" datetime="2021-04-27T16:00:00.000Z"  itemprop="datePublished">2021-04-28</time>
+        <time class="post-time" title="2021-05-26 00:00:00" datetime="2021-05-25T16:00:00.000Z"  itemprop="datePublished">2021-05-26</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -168,7 +168,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/04/28/Ceph_Developer_Summit_Quincy_-_CephFS_Follow-up/">Ceph Developer Summit Quincy: CephFS Follow-up</a>
+      <a class="post-title-link" href="/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/">Ceph Orchestrator Meeting 2021-05-25</a>
     </h3>
   
 
@@ -179,20 +179,20 @@
 
     
         会议纪要
-会议主题
-本次会议主要讨论了Ceph项目的上游Trello backlog
-board，并计划了即将到来的Quincy版本的工作内容。
-会议链接
-会议中提供了Trello board和Quincy feature
-search的链接，确保所有参与者都能访问相关资源。
-主要议题及讨论内容
+会议主题：Orchestrator 会议
+日期：[具体日期]
+参会人员：[具体人员名单]
+主要议题：
 
-Multi-MDS Export Thrashing
+Etsy Hosts 问题
 
-PR已准备好，但因MDS相关问题导致测...
+讨论了 Etsy Hosts 文件的回归问题，涉及 DeepSea、Ansible 和 Cephadm
+Octopus Tana。
+确认了两个相关的 Pull Request。
+讨论了 Podman 和 Docker 的行为差异，特别是关于 get ...
     
 
-        <a href="/VideoSummary/2021/04/28/Ceph_Developer_Summit_Quincy_-_CephFS_Follow-up/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -202,11 +202,11 @@ PR已准备好，但因MDS相关问题导致测...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Developer_Summit_Quincy_-_Orchestrator_Follow-up"
+            <article id="post-Ceph_Performance_Meeting_2021-05-20"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-04-28 00:00:00" datetime="2021-04-27T16:00:00.000Z"  itemprop="datePublished">2021-04-28</time>
+        <time class="post-time" title="2021-05-20 00:00:00" datetime="2021-05-19T16:00:00.000Z"  itemprop="datePublished">2021-05-20</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -220,7 +220,7 @@ PR已准备好，但因MDS相关问题导致测...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/04/28/Ceph_Developer_Summit_Quincy_-_Orchestrator_Follow-up/">Ceph Developer Summit Quincy: Orchestrator Follow-up</a>
+      <a class="post-title-link" href="/VideoSummary/2021/05/20/Ceph_Performance_Meeting_2021-05-20/">Ceph Performance Meeting 2021-05-20</a>
     </h3>
   
 
@@ -231,21 +231,23 @@ PR已准备好，但因MDS相关问题导致测...
 
     
         会议纪要
-会议主题
-跟进EDS（Enterprise Data Services）并制定Quincy的路线图。
-参会人员
-全体成员
-会议内容
+关键细节
 
-路线图制定
+性能相关PR: 本周没有新的性能相关的PR。
+关闭的PR: 本周有两个PR被关闭：
 
-会议开始时，主持人确认目标是制定Quincy的路线图。
-主持人已经通过Orchestrated Quincy和其他工具整理了CDS（Ceph
-Development
-Sprint）列表中的事项，并浏览了Tracker和Trello，总结...
+一个针对Crimson的优化，涉及客户端请求处理并行性。
+另一个是关于自动调优，让管理器自动设置容器内存限制。
+
+
+讨论的主要议题
+
+自动调优:
+讨论了自动调优的实现细节，特别是关于如何根据某些比例自动设置容器内存限制。
+DoWriteSmall PR: 讨论了DoWriteSmall...
     
 
-        <a href="/VideoSummary/2021/04/28/Ceph_Developer_Summit_Quincy_-_Orchestrator_Follow-up/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2021/05/20/Ceph_Performance_Meeting_2021-05-20/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -255,11 +257,11 @@ Sprint）列表中的事项，并浏览了Tracker和Trello，总结...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CephFS_Code_Walkthrough_-_CephFS_Mirroring_Part_2"
+            <article id="post-Ceph_Crimson_SeaStore_2021-05-19"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-04-27 00:00:00" datetime="2021-04-26T16:00:00.000Z"  itemprop="datePublished">2021-04-27</time>
+        <time class="post-time" title="2021-05-19 00:00:00" datetime="2021-05-18T16:00:00.000Z"  itemprop="datePublished">2021-05-19</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -273,7 +275,7 @@ Sprint）列表中的事项，并浏览了Tracker和Trello，总结...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/04/27/CephFS_Code_Walkthrough_-_CephFS_Mirroring_Part_2/">CephFS Code Walkthrough: CephFS Mirroring Part 2</a>
+      <a class="post-title-link" href="/VideoSummary/2021/05/19/Ceph_Crimson_SeaStore_2021-05-19/">Ceph Crimson/SeaStore 2021-05-19</a>
     </h3>
   
 
@@ -284,77 +286,80 @@ Sprint）列表中的事项，并浏览了Tracker和Trello，总结...
 
     
         会议纪要
-会议主题：Demurrer Daemon
-后续讨论
-参会人员：Ceph
-分布式存储研发团队
-会议时间：[具体时间]
-会议地点：[具体地点]
+会议主题：本周的 orchestrator
+会议
+参会人员：全体成员
+会议时间：本周
+主要议题：
+
+自我管理代理（self-adm agent）的深入探讨
+
+讨论了自我管理代理的需求、收益以及对架构的影响。
+分析了当前 cephadm 中的 reconciliation loop 的扩展性问题，特别是通过
+SSH 连接执行任务的效率问题。
+
+模型选择：推模型 vs 拉模型
+
+讨论了...
+    
+
+        <a href="/VideoSummary/2021/05/19/Ceph_Crimson_SeaStore_2021-05-19/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Orchestrator_Meeting_2021-05-18"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-05-18 00:00:00" datetime="2021-05-17T16:00:00.000Z"  itemprop="datePublished">2021-05-18</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/05/18/Ceph_Orchestrator_Meeting_2021-05-18/">Ceph Orchestrator Meeting 2021-05-18</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议主题：本周的 orchestrator
+会议
+参会人员：全体成员
+会议日期：[具体日期]
 会议内容总结：
 
-Demurrer Daemon 概述：
-
-Demurrer Daemon 负责在主集群和次集群之间同步快照。
-每个集群有一个 Demurrer Daemon，可以处理多个文件系统（multi-fs
-ready）。
-采用推送模型...
-    
-
-        <a href="/VideoSummary/2021/04/27/CephFS_Code_Walkthrough_-_CephFS_Mirroring_Part_2/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Tech_Talk_-_Cephadm"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-04-26 00:00:00" datetime="2021-04-25T16:00:00.000Z"  itemprop="datePublished">2021-04-26</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/04/26/Ceph_Tech_Talk_-_Cephadm/">Ceph Tech Talk: Cephadm</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-关键细节：
-
-讨论了关于Ceph存储集群的多个方面，包括软件升级、容器化部署、服务管理等。
-提到了与墨西哥城集群的合作，以及在东京的安全邮件系统。
-讨论了容器化部署的升级和管理，特别是与Ceph相关的容器化服务。
-强调了数据一致性和服务可用性的重要性。
-
 主要议题：
 
-软件升级和容器化部署：
+深入探讨 self-adm agent 的功能和必要性。
+讨论 cephadm 中的 reconciliation loop 的扩展性和性能问题。
+评估是否需要改进架构以支持更快的故障转移。
 
-讨论了如何升级和协调容器化部署，特别是在Ceph集群中的应用。
-提到了使用容器化技术来提...
+讨论细节：
+
+self-adm agent：讨论了 self-a...
     
 
-        <a href="/VideoSummary/2021/04/26/Ceph_Tech_Talk_-_Cephadm/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2021/05/18/Ceph_Orchestrator_Meeting_2021-05-18/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -364,11 +369,11 @@ ready）。
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Performance_Meeting_2021-04-22"
+            <article id="post-Ceph_Performance_Meeting_2021-05-13"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-04-23 00:00:00" datetime="2021-04-22T16:00:00.000Z"  itemprop="datePublished">2021-04-23</time>
+        <time class="post-time" title="2021-05-14 00:00:00" datetime="2021-05-13T16:00:00.000Z"  itemprop="datePublished">2021-05-14</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -382,7 +387,7 @@ ready）。
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/">Ceph Performance Meeting 2021-04-22</a>
+      <a class="post-title-link" href="/VideoSummary/2021/05/14/Ceph_Performance_Meeting_2021-05-13/">Ceph Performance Meeting 2021-05-13</a>
     </h3>
   
 
@@ -393,18 +398,25 @@ ready）。
 
     
         会议纪要
-会议概要
-本次会议是Ceph开发团队的定期会议，主要讨论了近期的工作进展、待处理的Pull
-Requests（PRs）以及一些技术细节。会议开始时，主持人欢迎大家回归，并简要回顾了过去几周的工作情况。
+与会人员
+
+Josh
+Corey（预计稍后加入）
+
 主要议题
 
-Pull Requests（PRs）讨论
+新项目讨论
 
-讨论了两个新的PR，均与o-node
-pinning和trimming相关。一个是Igor提交的，另一个是Adam提交的，但A...
+Josh提出一个即将开始的面试项目，需要收集大量数据以了解最有用的信息。
+讨论了如何使数据收集和模式变更变得容易，以避免系统脆弱性。
+
+数据存储和查询
+
+讨论了使用JSON格式存储数据，并利用数据库（如PostgreSQL）的JSON支持进行查询。
+提到了在大量性能数据下，可能需要对JSON数据进行索引以...
     
 
-        <a href="/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2021/05/14/Ceph_Performance_Meeting_2021-05-13/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -414,11 +426,11 @@ pinning和trimming相关。一个是Igor提交的，另一个是Adam提交的，
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Developer_Summit_Quincy_-_Dashboard_Follow-up"
+            <article id="post-Ceph_Crimson_SeaStore_2021-05-12"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-04-22 00:00:00" datetime="2021-04-21T16:00:00.000Z"  itemprop="datePublished">2021-04-22</time>
+        <time class="post-time" title="2021-05-12 00:00:00" datetime="2021-05-11T16:00:00.000Z"  itemprop="datePublished">2021-05-12</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -432,7 +444,7 @@ pinning和trimming相关。一个是Igor提交的，另一个是Adam提交的，
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/04/22/Ceph_Developer_Summit_Quincy_-_Dashboard_Follow-up/">Ceph Developer Summit Quincy: Dashboard Follow-up</a>
+      <a class="post-title-link" href="/VideoSummary/2021/05/12/Ceph_Crimson_SeaStore_2021-05-12/">Ceph Crimson/SeaStore 2021-05-12</a>
     </h3>
   
 
@@ -443,19 +455,16 @@ pinning和trimming相关。一个是Igor提交的，另一个是Adam提交的，
 
     
         会议纪要
-会议概要
-本次会议主要讨论了Ceph
-Dashboard的功能增强、用户体验改进以及未来的开发计划。会议涉及多个议题，包括嵌入式CLI工具、多集群管理、性能优化等。
-主要议题
+关键细节
 
-嵌入式CLI工具（UI Toolbox）
-
-讨论了在Ceph
-Dashboard中嵌入低级Seth命令的能力，以便用户在不离开UI的情况下执行CLI命令。
-强调了这一功能对开发者和用户的潜在价值，特别是在简...
+代码审查与性能分析：会议开始时，讨论了上周进行的代码审查工作，特别是对电阻指标和内部性能计数器的差异进行了调查。
+PR讨论：讨论了与Srihan合作的PR（Pull
+Request）#39772，并分享了相关链接。
+段错误调试：报告了在单元测试中发现的一个段错误，该错误出现在主分支中，目前仍在调试中。
+环境差异：讨论了环境差异可能导致的问题，特别是非确定性调度可能引发的...
     
 
-        <a href="/VideoSummary/2021/04/22/Ceph_Developer_Summit_Quincy_-_Dashboard_Follow-up/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2021/05/12/Ceph_Crimson_SeaStore_2021-05-12/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -465,11 +474,11 @@ Dashboard中嵌入低级Seth命令的能力，以便用户在不离开UI的情�
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Crimson_SeaStore_2021-04-21"
+            <article id="post-Ceph_Orchestrator_Meeting_2021-05-11"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-04-21 00:00:00" datetime="2021-04-20T16:00:00.000Z"  itemprop="datePublished">2021-04-21</time>
+        <time class="post-time" title="2021-05-11 00:00:00" datetime="2021-05-10T16:00:00.000Z"  itemprop="datePublished">2021-05-11</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -483,7 +492,7 @@ Dashboard中嵌入低级Seth命令的能力，以便用户在不离开UI的情�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/04/21/Ceph_Crimson_SeaStore_2021-04-21/">Ceph Crimson/SeaStore 2021-04-21</a>
+      <a class="post-title-link" href="/VideoSummary/2021/05/11/Ceph_Orchestrator_Meeting_2021-05-11/">Ceph Orchestrator Meeting 2021-05-11</a>
     </h3>
   
 
@@ -494,73 +503,25 @@ Dashboard中嵌入低级Seth命令的能力，以便用户在不离开UI的情�
 
     
         会议纪要
-会议概要
-本次会议主要讨论了Ceph项目的多个关键议题，包括代码审查、问题修复、功能实现以及配置优化等方面。会议中涉及的主要议题和决定事项如下：
-主要议题与讨论
-
-代码审查与问题修复
-
-Jihan Ritter的PR审查：会议开始时，提到了对Jihan
-Ritter的PR进行审查，并计划本周继续进行。
-Sam的PR验证：正在验证Sam的第二个PR，并修复相关的测试案例和构建错误。
-...
-    
-
-        <a href="/VideoSummary/2021/04/21/Ceph_Crimson_SeaStore_2021-04-21/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Developer_Monthly_2021-03-03"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-04-20 00:00:00" datetime="2021-04-19T16:00:00.000Z"  itemprop="datePublished">2021-04-20</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/04/20/Ceph_Developer_Monthly_2021-03-03/">Ceph Developer Monthly 2021-03-03</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题：Ceph分布式存储系统优化与测试改进
-日期：2021年3月
-参会人员：Kyle
-Vigor, 以及其他Ceph研发和测试团队成员
+会议主题：OpenStack与Ceph集成中的NFS模块问题讨论
+与会人员：OpenStack与Ceph开发团队成员
+会议时间：[具体时间]
+会议地点：在线会议
 主要议题：
 
-Ceph RGW性能优化与配置简化
+NFS模块现状与挑战
+OpenStack与Ceph集成中的NFS模块问题
+短期与长期解决方案讨论
+后续行动计划
 
 讨论内容：
 
-讨论了通过预设的Erasure
-Coded（EC）配置文件来简化用户配置，以提高性能和易用性。
-探讨了如何在集群启动时自动加载这些预设配置文件，并让用户可以直接使用，无需手动设置...
+NFS模块现状与挑战
+
+目前存在多个模块和限制，需要找到解决方案以推动OpenS...
     
 
-        <a href="/VideoSummary/2021/04/20/Ceph_Developer_Monthly_2021-03-03/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2021/05/11/Ceph_Orchestrator_Meeting_2021-05-11/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -570,11 +531,11 @@ Coded（EC）配置文件来简化用户配置，以提高性能和易用性。
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Developer_Summit_Quincy_-_RADOS_Follow-up"
+            <article id="post-Ceph_Developer_Monthly_2021-05-05"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-04-20 00:00:00" datetime="2021-04-19T16:00:00.000Z"  itemprop="datePublished">2021-04-20</time>
+        <time class="post-time" title="2021-05-06 00:00:00" datetime="2021-05-05T16:00:00.000Z"  itemprop="datePublished">2021-05-06</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -588,7 +549,7 @@ Coded（EC）配置文件来简化用户配置，以提高性能和易用性。
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/04/20/Ceph_Developer_Summit_Quincy_-_RADOS_Follow-up/">Ceph Developer Summit Quincy: RADOS Follow-up</a>
+      <a class="post-title-link" href="/VideoSummary/2021/05/06/Ceph_Developer_Monthly_2021-05-05/">Ceph Developer Monthly 2021-05-05</a>
     </h3>
   
 
@@ -599,18 +560,24 @@ Coded（EC）配置文件来简化用户配置，以提高性能和易用性。
 
     
         会议纪要
-会议概述
-本次会议是继CDS
-Raiders会议后的跟进会议，旨在回顾在CDS讨论的项目，并根据优先级将其整理到Trello看板中。会议开始前，主持人欢迎了所有参与者，并简要介绍了会议目的。
-主要议题与讨论
+会议主题：
 
-Trello看板整理：
+优化OSD Map以提升客户端使用效率
+增加通过标签或生成号来阻止实体列表的功能
 
-会议首先回顾了在Etherpad中列出的项目，并确保这些项目已正确转移到Trello看板上。
-讨论了各个项目的具体细节，包括仪表盘改进、崩溃遥测面板...
+讨论内容：
+1. 优化OSD
+Map以提升客户端使用效率
+
+问题描述：在高速集群（如全闪存集群）中，重新平衡或恢复操作完成后，集群会留下大量OSD
+Map。客户端可能无法及时获取这些更新，导致使用过时的OSD Map。
+解决方案讨论：
+
+原始方案：添加设置以限制构建增量OSD
+Map时...
     
 
-        <a href="/VideoSummary/2021/04/20/Ceph_Developer_Summit_Quincy_-_RADOS_Follow-up/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2021/05/06/Ceph_Developer_Monthly_2021-05-05/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -620,11 +587,11 @@ Trello看板整理：
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Orchestrator_Meeting_2021-04-20"
+            <article id="post-Ceph_Performance_Meeting_2021-05-06"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-04-20 00:00:00" datetime="2021-04-19T16:00:00.000Z"  itemprop="datePublished">2021-04-20</time>
+        <time class="post-time" title="2021-05-06 00:00:00" datetime="2021-05-05T16:00:00.000Z"  itemprop="datePublished">2021-05-06</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -638,7 +605,7 @@ Trello看板整理：
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/04/20/Ceph_Orchestrator_Meeting_2021-04-20/">Ceph Orchestrator Meeting 2021-04-20</a>
+      <a class="post-title-link" href="/VideoSummary/2021/05/06/Ceph_Performance_Meeting_2021-05-06/">Ceph Performance Meeting 2021-05-06</a>
     </h3>
   
 
@@ -650,18 +617,78 @@ Trello看板整理：
     
         会议纪要
 会议概述
-本次会议主要讨论了与Ceph分布式存储系统相关的多个议题，包括Ceph部署、Ganesha
-NFS服务配置、以及NVMe over
-Fabrics的实现细节。会议还涉及了后续行动计划和一些技术决策。
+本次会议主要讨论了Ceph存储系统的性能优化、缓存策略以及与Intel的合作等方面的问题。会议中，与会者分享了他们在实际操作中遇到的问题和解决方案，并对未来的工作方向进行了探讨。
 主要议题
 
-Ceph部署与Ganesha NFS服务配置
+Ceph性能问题：
 
-讨论了如何优化Ganesha NFS服务的部署，特别是在Ceph环境中。
-决定使用Ceph的调度机制来管理Gane...
+讨论了在OpenShift环境下Ceph的性能问题，特别是与IBM Cloud
+Packs的集成问题。
+提到了在RBD设备上运行XCD的复杂用例，以及Glust...
     
 
-        <a href="/VideoSummary/2021/04/20/Ceph_Orchestrator_Meeting_2021-04-20/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2021/05/06/Ceph_Performance_Meeting_2021-05-06/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Crimson_SeaStore_2021-05-05"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-05-05 00:00:00" datetime="2021-05-04T16:00:00.000Z"  itemprop="datePublished">2021-05-05</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/05/05/Ceph_Crimson_SeaStore_2021-05-05/">Ceph Crimson/SeaStore 2021-05-05</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+参会人员
+
+主持人：[姓名]
+参会人员：[姓名列表]
+
+会议日期与时间
+
+日期：[具体日期]
+时间：[开始时间]至[结束时间]
+
+主要议题
+
+PR审查与讨论
+
+主持人回顾了上周的PR审查工作，包括来自Redtech的PR以及与Redec的讨论。
+讨论了关于未来商店订单的进一步讨论，并提供了PR和防抖动PR的审查。
+
+OSD优化与改进
+
+Greg分享了在经典OSD中关于秘密处理器的改...
+    
+
+        <a href="/VideoSummary/2021/05/05/Ceph_Crimson_SeaStore_2021-05-05/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -675,7 +702,7 @@ Ceph部署与Ganesha NFS服务配置
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/page/48/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/47/">47</a><a class="page-number" href="/VideoSummary/page/48/">48</a><span class="page-number current">49</span><a class="page-number" href="/VideoSummary/page/50/">50</a><a class="page-number" href="/VideoSummary/page/51/">51</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/126/">126</a><a class="extend next" rel="next" href="/VideoSummary/page/50/">下一页</a>
+    <a class="extend prev" rel="prev" href="/VideoSummary/page/48/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/47/">47</a><a class="page-number" href="/VideoSummary/page/48/">48</a><span class="page-number current">49</span><a class="page-number" href="/VideoSummary/page/50/">50</a><a class="page-number" href="/VideoSummary/page/51/">51</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="extend next" rel="next" href="/VideoSummary/page/50/">下一页</a>
     </div>
 </nav>
 

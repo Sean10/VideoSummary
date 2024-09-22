@@ -150,11 +150,66 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Jewel_--_RADOS_metadata-only_journal_mode"
+            <article id="post-2016Q4_Ceph社区季度总结"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2015-08-04 00:00:00" datetime="2015-08-03T16:00:00.000Z"  itemprop="datePublished">2015-08-04</time>
+        <time class="post-time" title="2016-12-01 00:00:00" datetime="2016-11-30T16:00:00.000Z"  itemprop="datePublished">2016-12-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2016/12/01/2016Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">2016Q4 Ceph社区季度总结</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        2016年第四季度Ceph社区季度总结报告
+一、本季度Ceph社区的主要活动和重点议题
+在2016年第四季度，Ceph社区的主要活动和重点议题包括：
+
+内存池分配器优化：
+Sage介绍了新的内存池分配器，旨在解决内存碎片化问题，并通过统计内存分配情况来实现内存压力管理。
+Boost Pool和Slop Containers整合： Sage提出合并Boost
+Pool和Slop
+Contain...
+    
+
+        <a href="/VideoSummary/2016/12/01/2016Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/" rel="tag">技术发展</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A4%BE%E5%8C%BA%E5%8A%A8%E6%80%81/" rel="tag">社区动态</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2016-OCT-05_-_-_Ceph_Developer_Monthly"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-10-18 00:00:00" datetime="2016-10-17T16:00:00.000Z"  itemprop="datePublished">2016-10-18</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -168,7 +223,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_metadata-only_journal_mode/">CDS Jewel -- RADOS metadata-only journal mode</a>
+      <a class="post-title-link" href="/VideoSummary/2016/10/18/2016-OCT-05_-_-_Ceph_Developer_Monthly/">2016-OCT-05 :: Ceph Developer Monthly</a>
     </h3>
   
 
@@ -178,18 +233,20 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要：
+        会议纪要
+会议时间： 2023年11月（具体日期未提及）
+参会人员： Sage、Adam、Erika、Nitin、Josh等
 会议主题：
-Ceph分布式存储系统中元数据仅日志模式的讨论与决策
-关键细节：
+分布式存储Ceph的开发进展、讨论议题及后续行动计划
+一、主要议题
 
-讨论了在Ceph中实现元数据仅日志模式（metadata-only journal
-mode）的两种算法，旨在优化性能并减少写操作中的延迟。
-第一种算法在写操作中先将对象数据写入最终位置，然后将元数据提交到日志中。这种方法的优点是实现简单，但在特定情况下可能导致不一致性。
-第二种算法在写操作中先提交元...
+内存池分配器信息
+
+Sage介绍了新的内存池分配器，通过宏定义实现对象在正确内存池中的分配，并支持在编译时开启调试模式以追踪对象分配情况。
+该分配器旨在解决内存碎片化问题，并通过统计内存...
     
 
-        <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_metadata-only_journal_mode/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2016/10/18/2016-OCT-05_-_-_Ceph_Developer_Monthly/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -199,11 +256,11 @@ mode）的两种算法，旨在优化性能并减少写操作中的延迟。
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Jewel_--_RADOS_multi-object_transaction_support"
+            <article id="post-2016-SEP-07_-_-_Ceph_Developer_Monthly"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2015-08-04 00:00:00" datetime="2015-08-03T16:00:00.000Z"  itemprop="datePublished">2015-08-04</time>
+        <time class="post-time" title="2016-09-08 00:00:00" datetime="2016-09-07T16:00:00.000Z"  itemprop="datePublished">2016-09-08</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -217,7 +274,7 @@ mode）的两种算法，旨在优化性能并减少写操作中的延迟。
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/">CDS Jewel -- RADOS multi-object transaction support</a>
+      <a class="post-title-link" href="/VideoSummary/2016/09/08/2016-SEP-07_-_-_Ceph_Developer_Monthly/">2016-SEP-07 :: Ceph Developer Monthly</a>
     </h3>
   
 
@@ -227,128 +284,20 @@ mode）的两种算法，旨在优化性能并减少写操作中的延迟。
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-会议主题： RatOS多对象事务支持审批
-参会人员： Lee（RatOS研发人员）、Ratos团队
-会议内容：
-主要议题：
-
-RatOS多对象事务支持：
-
-Lee介绍了RatOS的多对象事务支持机制，该机制基于两阶段提交协议，旨在简化客户端内部客户端的设计。
-该机制支持客户端定义事务主体，引用对象列表以及对象上的RatOS操作。
-事务处理流程包括预提交、准备、提交和回滚阶段。
-
-错...
-    
-
-        <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Jewel_--_Scrub_Repair"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2015-08-04 00:00:00" datetime="2015-08-03T16:00:00.000Z"  itemprop="datePublished">2015-08-04</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/">CDS Jewel -- Scrub Repair</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间：
-（此处应填写会议具体时间）
+        会议时间： 2023年10月（具体日期未提及）
+会议主题： Ceph开发者月度会议
 参会人员：
-（此处应填写参会人员名单）
-会议主题：
-Ceph分布式存储系统中的数据修复与一致性检查
-关键细节：
-
-会议讨论了Ceph系统中数据修复（scrub）和一致性检查（repair）的优化问题。
-当前修复过程存在效率低下、错误猜测等问题。
-需要改进OSD（对象存储守护进程）的智能程度，以便更准确地识别和修复不一致的对象。
-
-讨论的主要议...
-    
-
-        <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Jewel_--_add_IOHints_in_CephFS"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2015-08-04 00:00:00" datetime="2015-08-03T16:00:00.000Z"  itemprop="datePublished">2015-08-04</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/08/04/CDS_Jewel_--_add_IOHints_in_CephFS/">CDS Jewel -- add IOHints in CephFS</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： Ceph分布式存储项目会议
-会议时间： 未知
-参会人员： 多名Ceph研发人员，包括John、Alan等
+Jeans、Sage、Victor、Jason、Marcus、Dan、Alfredo、Basam、Vera、Sam等
 会议内容：
-一、会议议程调整
-由于Greg休假且会议进度提前，本次会议将调整议程，由参会人员讨论IO提示功能（IO
-hint）相关内容。
-二、BP（BluePrint，蓝图）讨论
+一、RBD快照和一致性组
 
-BP提案： 讨论了基于Cedar
-Spring提案的通用框架，用于实现控制数据生命周...
+Sage提出了RBD快照和一致性组的设计方案，包括：
+
+在现有快照设计中添加“快照类型”字段，以区分用户快照和一致性组快照。
+在图像类中添加...
     
 
-        <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_add_IOHints_in_CephFS/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2016/09/08/2016-SEP-07_-_-_Ceph_Developer_Monthly/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -358,11 +307,11 @@ Spring提案的通用框架，用于实现控制数据生命周...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-2015-JUL-30_--_Ceph_Tech_Talks_-_CephFS"
+            <article id="post-2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2015-08-03 00:00:00" datetime="2015-08-02T16:00:00.000Z"  itemprop="datePublished">2015-08-03</time>
+        <time class="post-time" title="2016-09-01 00:00:00" datetime="2016-08-31T16:00:00.000Z"  itemprop="datePublished">2016-09-01</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -376,7 +325,7 @@ Spring提案的通用框架，用于实现控制数据生命周...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/08/03/2015-JUL-30_--_Ceph_Tech_Talks_-_CephFS/">2015-JUL-30 -- Ceph Tech Talks: CephFS</a>
+      <a class="post-title-link" href="/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/">2016-AUG-25 -- Ceph Tech Talk: Unified CI</a>
     </h3>
   
 
@@ -387,19 +336,170 @@ Spring提案的通用框架，用于实现控制数据生命周...
 
     
         会议纪要
-会议主题： Ceph 文件系统（CephFS）概述及最新进展
+会议主题： Ceph 分布式存储的构建和发布流程优化
+参会人员： Alfredo Lisa，其他相关人员
+会议内容：
+一、会议背景
+
+Alfredo Lisa 自过去一年半以来负责 Ceph 的构建和发布工作。
+早期使用 Jenkins
+进行构建，但随着团队和贡献者数量的增长，构建流程变得复杂，效率低下。
+
+二、当前构建系统存在的问题
+
+构建效率低下：
+每次构建都需要花费数天时间，...
+    
+
+        <a href="/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2016Q3_Ceph社区季度总结"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-09-01 00:00:00" datetime="2016-08-31T16:00:00.000Z"  itemprop="datePublished">2016-09-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2016/09/01/2016Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">2016Q3 Ceph社区季度总结</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152# 2016Q3 Ceph 社区季度总结报告## 一、本季度Ceph社区的主要活动和重点议题本季度，Ceph 社区的主要活动和重点议题包括：- **新的编码/解码框架和 Blue Store onode ...
+    
+
+        <a href="/VideoSummary/2016/09/01/2016Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/" rel="tag">技术发展</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A4%BE%E5%8C%BA%E5%8A%A8%E6%80%81/" rel="tag">社区动态</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2016-AUG-03_-_-_Ceph_Developer_Monthly"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-08-03 00:00:00" datetime="2016-08-02T16:00:00.000Z"  itemprop="datePublished">2016-08-03</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2016/08/03/2016-AUG-03_-_-_Ceph_Developer_Monthly/">2016-AUG-03 :: Ceph Developer Monthly</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议时间： 2023年11月（具体日期未提及）
+会议主题： Ceph 社区开发者月度会议
+参会人员： Alan Samuels（SanDisk）、Michael
+Silla（UCSC）、Jason、John、Sam、Marcel、David 等
+会议内容：
+1. 新的编码/解码框架和 Blue Store onode 序列化
+
+Alan Samuels 介绍了新的编码/解码框架和 Blue ...
+    
+
+        <a href="/VideoSummary/2016/08/03/2016-AUG-03_-_-_Ceph_Developer_Monthly/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2016-JUN-23_--_Ceph_Tech_Talks_-_OpenATTIC"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-07-22 00:00:00" datetime="2016-07-21T16:00:00.000Z"  itemprop="datePublished">2016-07-22</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2016/07/22/2016-JUN-23_--_Ceph_Tech_Talks_-_OpenATTIC/">2016-JUN-23 -- Ceph Tech Talks: OpenATTIC</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
 会议时间： 2023年11月（具体日期未提及）
-参会人员： Ceph 社区成员、开发者、用户等
+参会人员： Lens Scrimer（Open
+Attic），会议主持人
+会议主题： Open Attic与Ceph的集成
 会议内容：
-一、CephFS 简介
 
-CephFS 是 Ceph 存储系统的一个组件，提供 POSIX
-兼容的文件系统接口。
-CephFS 具有高可用性、可扩展性、分布式存储等特性。
-CephFS 使用 Rados 作为后端存...
+Open Attic介绍：
+
+Open
+Attic是一个开源的存储管理平台，旨在简化企业级存储的部署和管理。
+它支持多种存储协议和文件系统，包括NFS、iSCSI、CIFS和ZFS等。
+Open A...
     
 
-        <a href="/VideoSummary/2015/08/03/2015-JUL-30_--_Ceph_Tech_Talks_-_CephFS/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2016/07/22/2016-JUN-23_--_Ceph_Tech_Talks_-_OpenATTIC/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -409,11 +509,11 @@ CephFS 使用 Rados 作为后端存...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Jewel_--_Calamari_API_Storage_Hardware"
+            <article id="post-2016-JUN-21_--_Ceph_Tech_Talks_-_Bluestore"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2015-08-03 00:00:00" datetime="2015-08-02T16:00:00.000Z"  itemprop="datePublished">2015-08-03</time>
+        <time class="post-time" title="2016-06-23 00:00:00" datetime="2016-06-22T16:00:00.000Z"  itemprop="datePublished">2016-06-23</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -427,7 +527,7 @@ CephFS 使用 Rados 作为后端存...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/">CDS Jewel -- Calamari/API/Storage/Hardware</a>
+      <a class="post-title-link" href="/VideoSummary/2016/06/23/2016-JUN-21_--_Ceph_Tech_Talks_-_Bluestore/">2016-JUN-21 -- Ceph Tech Talks: Bluestore</a>
     </h3>
   
 
@@ -438,20 +538,75 @@ CephFS 使用 Rados 作为后端存...
 
     
         会议纪要
-一、硬件API规划与实现
+会议时间： 2023年11月 (具体日期未提及)
+会议主题： SEF Tech Talks - Blue Store
+后端存储介绍
+参会人员： Sage (主讲人) 及其他 SEF 团队成员
+会议内容：
+一、会议背景
+
+SEF
+是一个可扩展、高性能的分布式存储系统，提供对象、块和文件存储接口。
+SEF 的存储后端是 Rados，它使用文件系统来存储数据。
+传统的文件存储方式存在性能...
+    
+
+        <a href="/VideoSummary/2016/06/23/2016-JUN-21_--_Ceph_Tech_Talks_-_Bluestore/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2016-JUN-01_--_Ceph_Developer_Monthly"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-06-02 00:00:00" datetime="2016-06-01T16:00:00.000Z"  itemprop="datePublished">2016-06-02</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2016/06/02/2016-JUN-01_--_Ceph_Developer_Monthly/">2016-JUN-01 -- Ceph Developer Monthly</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议时间： 2023年11月某日
+参会人员： Sage, Marcus, Yuda, Greg, John, Sam
+等
 会议主题：
-讨论并规划Calamari硬件API的规划和实现。
-主要议题：
 
-动机：
-通过提供硬件API，使Calamari能够了解其背后的存储，以便在硬件出现问题时，能够分析影响并帮助管理员识别合适的硬件进行更换。
-API设计：
+Blue Store 缓存设计
+Messenger 2 协议
 
-提出了一些潜在的API端点和字段，包括设备ID、驱动器信息、制造商、版本、序列号等。
-讨论了如何使用全球ID作为持久标识符，...
+一、Blue Store 缓存设计
+讨论要点：
+
+I/O 路径更新： 自 Juwel 版本发布以来，I/O
+路径已完全重写，元数据结构略有不同，引入了逻辑引用和 Blob，Blob
+可...
     
 
-        <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2016/06/02/2016-JUN-01_--_Ceph_Developer_Monthly/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -461,14 +616,14 @@ API设计：
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Jewel_--_CephX_brute-force_protection"
+            <article id="post-2016Q2_Ceph社区季度总结"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2015-08-03 00:00:00" datetime="2015-08-02T16:00:00.000Z"  itemprop="datePublished">2015-08-03</time>
+        <time class="post-time" title="2016-06-01 00:00:00" datetime="2016-05-31T16:00:00.000Z"  itemprop="datePublished">2016-06-01</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
 
 
 
@@ -479,7 +634,7 @@ API设计：
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/08/03/CDS_Jewel_--_CephX_brute-force_protection/">CDS Jewel -- CephX brute-force protection</a>
+      <a class="post-title-link" href="/VideoSummary/2016/06/01/2016Q2_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">2016Q2 Ceph社区季度总结</a>
     </h3>
   
 
@@ -489,186 +644,27 @@ API设计：
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要：
-会议主题：
-安全讨论，特别是关于暴力破解保护和安全措施。
-关键细节：
+        Ceph
+社区2016年第二季度总结报告
+一、本季度Ceph社区的主要活动和重点议题
+本季度，Ceph社区主要聚焦于以下活动和重点议题：
 
-讨论背景： 近几个月与Sage关于安全性的讨论。
-主要议题：
-
-如何检测和防止系统内的暴力破解尝试。
-实现自动黑名单机制，针对频繁尝试错误认证的用户。
-如何识别攻击者，是否使用IP地址或TCP连接。
-是否应该在集群启动时或在系统重启时实施黑名单机制。
-是否应该有一个带有过期时间的黑名单机制。
-是否应该将管理网...
+Blue Store 缓存设计：
+探讨了I/O路径更新、缓存设计、缓存结构和缓存替换算法，旨在提高Ceph的I/O性能。
+Messenger 2 协议：
+讨论了降级攻击防范、Calamari项目与Seth
+Manager的集成，以及协议设计，强化了消息传...
     
 
-        <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_CephX_brute-force_protection/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2016/06/01/2016Q2_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Jewel_--_Non-Functional_Tests"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2015-08-03 00:00:00" datetime="2015-08-02T16:00:00.000Z"  itemprop="datePublished">2015-08-03</time>
-
+    <div class="post-footer">
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/" rel="tag">技术发展</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A4%BE%E5%8C%BA%E5%8A%A8%E6%80%81/" rel="tag">社区动态</a></li></ul>
 
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/08/03/CDS_Jewel_--_Non-Functional_Tests/">CDS Jewel -- Non-Functional Tests</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： 非功能性测试在Ceph开发过程中的应用
-与会人员：
-Ceph研发人员、视频会议字幕翻译及总结人员
-会议内容：
-1. 讨论背景
-
-介绍者自我介绍：UC Santa Cruz的博士研究生，Red
-Hat的暑期实习生，负责Ceph的非功能性测试项目。
-非功能性测试的定义：评估系统整体质量而非特定行为的测试，例如可扩展性、性能等。
-
-2. 项目目标
-
-将非功能性测试纳入Ceph...
-    
-
-        <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_Non-Functional_Tests/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Jewel_--_Peering_Speed_Improvements"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2015-08-03 00:00:00" datetime="2015-08-02T16:00:00.000Z"  itemprop="datePublished">2015-08-03</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/08/03/CDS_Jewel_--_Peering_Speed_Improvements/">CDS Jewel -- Peering Speed Improvements</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： Ceph
-分布式存储性能讨论，特别是对等速度提升和一致性模型下的映射变更处理。
-关键细节：
-
-讨论议题：
-
-在映射变更时，如何减少对等过程中的延迟。
-当前对等过程涉及多个步骤，包括获取信息、获取日志和获取缺失数据集。
-需要优化对等过程，以减少往返次数和提升性能。
-
-主要议题：
-
-优化对等过程：
-
-建议优化对等过程中的步骤，例如缓存信息以避免重复获取。
-可以利用历史信息来...
-    
-
-        <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_Peering_Speed_Improvements/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Jewel_--_RADOS_QoS"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2015-08-03 00:00:00" datetime="2015-08-02T16:00:00.000Z"  itemprop="datePublished">2015-08-03</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/08/03/CDS_Jewel_--_RADOS_QoS/">CDS Jewel -- RADOS QoS</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： Ceph分布式存储服务质量（QoS）策略讨论
-会议时间： 2023年11月（具体日期未提及）
-参会人员： Ray、Clark、Sam、Josh 等
-会议内容：
-一、QoS策略概述
-
-会议首先讨论了Ceph分布式存储中的服务质量（QoS）策略，旨在为不同类型的存储请求提供差异化的服务质量。
-当前Ceph的I/O调度器采用公平共享调度器，但需要进一步优化以支持QoS策略。
-...
-    
-
-        <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_RADOS_QoS/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
     </div>
     
 </article>
@@ -680,7 +676,7 @@ Hat的暑期实习生，负责Ceph的非功能性测试项目。
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/page/114/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/113/">113</a><a class="page-number" href="/VideoSummary/page/114/">114</a><span class="page-number current">115</span><a class="page-number" href="/VideoSummary/page/116/">116</a><a class="page-number" href="/VideoSummary/page/117/">117</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/126/">126</a><a class="extend next" rel="next" href="/VideoSummary/page/116/">下一页</a>
+    <a class="extend prev" rel="prev" href="/VideoSummary/page/114/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/113/">113</a><a class="page-number" href="/VideoSummary/page/114/">114</a><span class="page-number current">115</span><a class="page-number" href="/VideoSummary/page/116/">116</a><a class="page-number" href="/VideoSummary/page/117/">117</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="extend next" rel="next" href="/VideoSummary/page/116/">下一页</a>
     </div>
 </nav>
 

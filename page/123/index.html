@@ -150,11 +150,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Hammer_Day_1_-_librados_-_Expose_Checksums"
+            <article id="post-CDS_Infernalis_Day_2.2_--_OSD_-_RADOS_I_O_Hints"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -168,7 +168,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_librados_-_Expose_Checksums/">CDS Hammer (Day 1) - librados: Expose Checksums</a>
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_OSD_-_RADOS_I_O_Hints/">CDS Infernalis (Day 2.2) -- OSD: RADOS I/O Hints</a>
     </h3>
   
 
@@ -179,71 +179,21 @@
 
     
         会议纪要
-会议主题
-讨论如何实现端到端数据完整性检查，特别是针对LibreOSD的校验和暴露。
-关键细节
-
-议题背景：目前Ceph存储系统中，数据完整性校验的接口不足，导致无法在客户端生成数据时进行校验，从而在数据传输过程中可能发生损坏。
-解决方案：通过在LibreOSD中实现校验和暴露，使得客户端在数据生成时即可进行校验，并将校验信息传递至OSD，确保数据完整性。
-
-讨论的主要议题
-
-校验...
-    
-
-        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_librados_-_Expose_Checksums/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Hammer_Day_1_-_RGW_-_Bucket_Index_Scalability"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_RGW_-_Bucket_Index_Scalability/">CDS Hammer (Day 1) - RGW: Bucket Index Scalability</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： Ceph 分布式存储项目讨论
-会议时间： 2023年11月（具体日期未提及）
-参会人员： 未提及具体姓名，但提到了 Guang、Patrick
-等人
+会议主题： OSD I/O 提升方案讨论
+会议时间： 2023年X月X日
+参会人员： John, Ping, 研发团队
 会议内容：
-一、bucket 可扩展性
 
-背景： bucket 可扩展性是 Ceph
-分布式存储项目的一个重要议题，涉及 bucket 索引的扩展性。
-进展：
-目前该功能进展顺利，已经完成了大部分工作，但与多区域、多区的功...
+议题一：OSD I/O 提升方案
+
+John介绍了在Ceph中实现OSD
+I/O提升的方案，主要目标是提高客户端使用Ceph的效率。
+该方案利用了Ceph的认证框架、Live
+RBD和RBD库支持，并通过手动修改代码来实现。
+方案中使用了CodeBu...
     
 
-        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_RGW_-_Bucket_Index_Scalability/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_OSD_-_RADOS_I_O_Hints/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -253,11 +203,11 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage"
+            <article id="post-CDS_Infernalis_Day_2.2_--_OSD_-_Tiering"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -271,281 +221,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/">CDS Hammer (Day 1) - Towards Ceph Cold Storage</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： 冷存储在 Ceph 中的应用探讨
-参会人员： Matthias
-Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成员
-会议内容：
-一、背景
-Matthias 和 Marcelo 提出了关于将 Ceph
-应用于冷存储的蓝图，并希望通过本次会议讨论其可行性及实施方案。
-二、主要议题
-
-冷存储需求：
-
-能量感知的放置策略
-数据迁移最小化
-数据持久...
-    
-
-        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Hammer_Day_1_-_Tuethology"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Tuethology/">CDS Hammer (Day 1) - Tuethology</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间：[请填写会议时间] 会议地点：[请填写会议地点]
-参会人员：[请填写参会人员名单] 记录人：[请填写记录人姓名]
-一、会议议程
-
-介绍与讨论
-文档更新与改进
-功能更新与开发计划
-打包与发布流程
-管理与维护
-
-二、会议内容
-
-文档更新与改进
-
-目前文档更新困难，需要改进。
-将安装说明单独成文，并保持更新。
-记录设置toothy栈的过程，包括锁服务器和队列的设置。
-Alfre...
-    
-
-        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Tuethology/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-RH_InkTank_Ceph_Day_Sessions_Asaf_Wachtel_MELLANOX"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-07-25 00:00:00" datetime="2014-07-24T16:00:00.000Z"  itemprop="datePublished">2014-07-25</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Asaf_Wachtel_MELLANOX/">RH InkTank Ceph Day Sessions Asaf Wachtel MELLANOX</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间：
-[请填写会议时间]
-会议地点：
-[请填写会议地点]
-参会人员：
-
-Asaf（Melanox企业及云业务发展负责人）
-[其他参会人员姓名]
-
-会议议程：
-1. 介绍与背景
-
-Asaf介绍了Melanox公司，作为高性能服务器、存储和连接解决方案的领先提供商，Melanox提供从网络适配器到交换机、从10Gbps到56Gbps的全套产品。
-公司业务始于1999年，现有约15...
-    
-
-        <a href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Asaf_Wachtel_MELLANOX/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-RH_InkTank_Ceph_Day_Sessions_Mario_Blandini_HGST"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-07-25 00:00:00" datetime="2014-07-24T16:00:00.000Z"  itemprop="datePublished">2014-07-25</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Mario_Blandini_HGST/">RH InkTank Ceph Day Sessions Mario Blandini HGST</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： 2023年11月（具体日期未提及）
-会议地点： 未提及
-参会人员： HGST代表Mario，Karanvir
-Singh，以及Ceph社区成员
-会议主题：
-HGST的开放以太网驱动架构及其在Ceph中的应用
-会议内容：
-一、HGST公司介绍
-
-HGST是一家专注于存储解决方案的硬件公司，其产品包括硬盘驱动器、固态硬盘、PCIe闪存和软件。
-HGST认为，随着数据量的不断...
-    
-
-        <a href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Mario_Blandini_HGST/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-RH_InkTank_Ceph_Day_Sessions_Casey_Bodley_COHORTFS"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-07-25 00:00:00" datetime="2014-07-24T16:00:00.000Z"  itemprop="datePublished">2014-07-25</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Casey_Bodley_COHORTFS/">RH InkTank Ceph Day Sessions Casey Bodley COHORTFS</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： [请填写具体日期和时间]
-参会人员： Casey, Hassan 等
-会议主题： 可扩展的NFS上的元数据
-会议内容：
-一、会议背景
-
-Casey介绍了NFS（网络文件系统）的优势，包括其作为IETF标准、广泛的应用、成熟的技术和可扩展性。
-讨论了如何利用NFS的扩展性来提高数据存储的效率，例如通过RAD、对象条带化和Crush算法来优化数据放置。
-
-二、主要议题
-
-P...
-    
-
-        <a href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Casey_Bodley_COHORTFS/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-RH_InkTank_Ceph_Day_Sessions_Jeff_Darcy_REDHAT"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-07-25 00:00:00" datetime="2014-07-24T16:00:00.000Z"  itemprop="datePublished">2014-07-25</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Jeff_Darcy_REDHAT/">RH InkTank Ceph Day Sessions Jeff Darcy REDHAT</a>
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_OSD_-_Tiering/">CDS Infernalis (Day 2.2) -- OSD: Tiering</a>
     </h3>
   
 
@@ -558,19 +234,20 @@ P...
         会议纪要
 会议时间： [请填写会议具体时间]
 会议地点： [请填写会议具体地点]
-参会人员： [请填写参会人员名单]
-会议主题： Gluster与Ceph技术结合的实验性探索
+参会人员： - Sam A. - Shikang -
+其他Intel研发人员
+会议主题： -
+Ceph分布式存储系统中的分层存储和动态数据迁移
 会议内容：
+一、分层存储
 
-会议背景：
+背景：
 
-介绍者分享了在Inktank收购后，关于将Gluster和Ceph技术结合的实验性想法，这一想法已有两年之久。
-强调这是一个科学探索，而非工程应用，目的在于发现可能性，而非满足特定需求。
-
-...
+目前Ceph支持分层存储，包括热层、温层和冷层。
+会议讨论了如何扩展分层存储功能，使其能够将冷数据迁移到更便宜的存储系统中，例如不...
     
 
-        <a href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Jeff_Darcy_REDHAT/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_OSD_-_Tiering/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -580,11 +257,11 @@ P...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-RH_InkTank_Ceph_Day_Sessions_Kamesh_Pemmaraju_DELL"
+            <article id="post-CDS_Infernalis_Day_2.2_--_RBD_-_Kernel_RBD_client_supports_copy-on-read"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-07-25 00:00:00" datetime="2014-07-24T16:00:00.000Z"  itemprop="datePublished">2014-07-25</time>
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -598,7 +275,7 @@ P...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Kamesh_Pemmaraju_DELL/">RH InkTank Ceph Day Sessions Kamesh Pemmaraju DELL</a>
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_RBD_-_Kernel_RBD_client_supports_copy-on-read/">CDS Infernalis (Day 2.2) -- RBD: Kernel RBD client supports copy-on-read</a>
     </h3>
   
 
@@ -610,20 +287,22 @@ P...
     
         会议纪要
 会议时间： [请填写会议时间]
-会议地点： [请填写会议地点]
-参会人员： - Kamesh
-Pemeraju，戴尔公司高级产品经理，专注于OpenStack - [其他参会人员]
-会议主题：
-Ceph与OpenStack的结合，Ceph在不同场景下的应用，以及案例研究
+参会人员：Lee, Yin Chen, [其他参会人员]
+会议主题：RBD（Rados Block
+Device）相关功能改进讨论
 会议内容：
-一、Ceph与OpenStack的结合
 
-Ceph在OpenStack中的应用：
+RBD差异导出功能：
 
-Ceph与Ope...
+Lee提出了导出RBD克隆和父块差异的功能。
+目前该功能尚未实现，需要进一步开发。
+讨论了使用协作列表（collab
+list）提高性能的方案，并计划添加回调请求到类中。
+
+性能改进...
     
 
-        <a href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Kamesh_Pemmaraju_DELL/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_RBD_-_Kernel_RBD_client_supports_copy-on-read/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -633,11 +312,11 @@ Ceph与Ope...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-RH_InkTank_Ceph_Day_Sessions_Matt_Benjamin_COHORTFS"
+            <article id="post-CDS_Infernalis_Day_2.2_--_RBD_-_Add_metadata_mechanism_to_LibRBD"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-07-25 00:00:00" datetime="2014-07-24T16:00:00.000Z"  itemprop="datePublished">2014-07-25</time>
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -651,7 +330,7 @@ Ceph与Ope...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Matt_Benjamin_COHORTFS/">RH InkTank Ceph Day Sessions Matt Benjamin COHORTFS</a>
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_RBD_-_Add_metadata_mechanism_to_LibRBD/">CDS Infernalis (Day 2.2) -- RBD: Add metadata mechanism to LibRBD</a>
     </h3>
   
 
@@ -663,19 +342,332 @@ Ceph与Ope...
     
         会议纪要
 会议时间： [请填写会议时间]
-会议地点： [请填写会议地点]
-参会人员： Matt Benjamin（CTO of Word
-and），其他与会人员
-会议主题： Ceph项目进展及Accelio集成
+会议地点： [请填写会议地点] 参会人员：
+[请填写参会人员名单] 会议主题： 为Li
+RBD添加元数据机制
 会议内容：
-一、项目背景
 
-Word
-and是一家位于密歇根州安阿伯的初创公司，专注于将新功能引入并行NFS，以应对新的应用工作负载。
-该项目最初由NSF资助，后来扩展到SAP存储堆...
+议题概述： 会议主要讨论了为Li
+RBD添加元数据机制的蓝图，旨在解决不同场景下RBD卷配置不一致的问题，并提高配置的灵活性。
+关键细节：
+
+通过添加元数据机制，用户可以为每个RBD镜像配置不同的配置视图，例如不同的配置文件、快...
     
 
-        <a href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Matt_Benjamin_COHORTFS/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_RBD_-_Add_metadata_mechanism_to_LibRBD/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Infernalis_Day_2.2_--_RBD_-_export_diff_between_clone_parent"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_RBD_-_export_diff_between_clone_parent/">CDS Infernalis (Day 2.2) -- RBD: export diff between clone/parent</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议主题
+本次会议主要讨论了Ceph中OSD事务的实现方案，以及多对象事务在liberados系统中的应用。
+关键议题
+
+OSD事务实现：会议重点讨论了如何实现多对象事务，并确保事务的原子性、一致性、隔离性和持久性。
+事务协调：讨论了事务协调器的选择、事务的提交和回滚机制。
+死锁检测与避免：讨论了如何检测和避免事务中的死锁问题。
+事务日志：讨论了事务日志的存储位置和格式。
+
+决定事...
+    
+
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_RBD_-_export_diff_between_clone_parent/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2015Q1_Ceph社区季度总结"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2015-03-01 00:00:00" datetime="2015-02-28T16:00:00.000Z"  itemprop="datePublished">2015-03-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2015/03/01/2015Q1_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">2015Q1 Ceph社区季度总结</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Ceph Community 2015Q1
+季度总结报告
+1.
+本季度Ceph社区的主要活动和重点议题
+在2015年第一季度，Ceph社区围绕以下主要活动和重点议题展开：
+
+异步镜像机制设计：
+讨论并设计了Ceph的异步镜像机制，旨在实现RBD镜像在不同数据中心或地理位置的复制，保证数据一致性和灾难恢复能力。
+RBD功能改进：
+探讨并实现了RBD差异导出功能、性能优化、对象映射、异步操作等，...
+    
+
+        <a href="/VideoSummary/2015/03/01/2015Q1_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/" rel="tag">技术发展</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A4%BE%E5%8C%BA%E5%8A%A8%E6%80%81/" rel="tag">社区动态</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2015-FEB-26_--_Ceph_Tech_Talks_-_RBD"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2015-02-27 00:00:00" datetime="2015-02-26T16:00:00.000Z"  itemprop="datePublished">2015-02-27</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2015/02/27/2015-FEB-26_--_Ceph_Tech_Talks_-_RBD/">2015-FEB-26 -- Ceph Tech Talks: RBD</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议时间： 2023年11月（具体日期未提及）
+参会人员： Josh
+Durgan（技术深度解析）、Patrick（主持人）
+会议主题： Ceph存储系统中的RBD（Rados Block
+Device）技术解析
+会议内容：
+1. RBD概述
+
+RBD是Ceph系统中的一个块设备，常用于虚拟机存储。
+RBD可以通过用户空间库（如libvirt）或Linux内核模块与Ceph集群交互...
+    
+
+        <a href="/VideoSummary/2015/02/27/2015-FEB-26_--_Ceph_Tech_Talks_-_RBD/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2015-JAN-22_--_Ceph_Tech_Talk_-_RADOS"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2015-01-23 00:00:00" datetime="2015-01-22T16:00:00.000Z"  itemprop="datePublished">2015-01-23</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2015/01/23/2015-JAN-22_--_Ceph_Tech_Talk_-_RADOS/">2015-JAN-22 -- Ceph Tech Talk: RADOS</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议主题：ROS分布式存储系统介绍及内部架构解析
+会议时间：[请填写具体日期和时间]
+会议地点：[请填写会议地点]
+参会人员：[请填写参会人员名单]
+会议内容：
+
+ROS概述
+
+ROS（Rados Object
+Storage）是Ceph分布式存储系统的一部分，提供统一的存储解决方案。
+ROS支持对象存储、虚拟块存储和POSIX文件系统。
+ROS设计遵循以下原则：横向扩展、无单点故...
+    
+
+        <a href="/VideoSummary/2015/01/23/2015-JAN-22_--_Ceph_Tech_Talk_-_RADOS/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-IBM_@_Ceph_Day_London"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2015-01-14 00:00:00" datetime="2015-01-13T16:00:00.000Z"  itemprop="datePublished">2015-01-14</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2015/01/14/IBM_@_Ceph_Day_London/">IBM @ Ceph Day London</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议主题： IBM
+研究部门在软件定义存储（SDFS）领域的工作及未来规划
+会议时间： 2023年11月（具体日期未提及）
+参会人员： IBM 研究部门代表，SDFS 社区成员
+会议内容：
+一、IBM 研究部门在 SDFS 领域的工作
+
+IBM 研究实验室： 作为 IBM
+开设的第二家研究实验室，拥有大量物理学家，IT
+人员较少。云解决方案小组专注于大规模存储和云计算解决方案，为研...
+    
+
+        <a href="/VideoSummary/2015/01/14/IBM_@_Ceph_Day_London/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Wido_@_Ceph_Day_London"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2015-01-14 00:00:00" datetime="2015-01-13T16:00:00.000Z"  itemprop="datePublished">2015-01-14</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2015/01/14/Wido_@_Ceph_Day_London/">Wido @ Ceph Day London</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议时间： 2023年11月（具体日期未提及）
+与会人员：
+Weo（荷兰SEF社区成员、咨询公司421的CTO）
+会议主题： Ceph存储系统部署经验分享与最佳实践
+会议内容：
+一、Weo个人介绍及背景
+
+Weo来自荷兰，是SEF社区的早期成员，自2009年底开始参与SEF项目。
+他不仅是荷兰一家托管公司的共同所有者和CTO，还拥有自己的SEF咨询公司，提供培训和咨询服务。
+他帮助...
+    
+
+        <a href="/VideoSummary/2015/01/14/Wido_@_Ceph_Day_London/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -689,7 +681,7 @@ and是一家位于密歇根州安阿伯的初创公司，专注于将新功能�
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/page/122/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/121/">121</a><a class="page-number" href="/VideoSummary/page/122/">122</a><span class="page-number current">123</span><a class="page-number" href="/VideoSummary/page/124/">124</a><a class="page-number" href="/VideoSummary/page/125/">125</a><a class="page-number" href="/VideoSummary/page/126/">126</a><a class="extend next" rel="next" href="/VideoSummary/page/124/">下一页</a>
+    <a class="extend prev" rel="prev" href="/VideoSummary/page/122/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/121/">121</a><a class="page-number" href="/VideoSummary/page/122/">122</a><span class="page-number current">123</span><a class="page-number" href="/VideoSummary/page/124/">124</a><a class="page-number" href="/VideoSummary/page/125/">125</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="extend next" rel="next" href="/VideoSummary/page/124/">下一页</a>
     </div>
 </nav>
 

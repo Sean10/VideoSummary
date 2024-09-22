@@ -150,11 +150,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-2016-JAN-26_--_Ceph_Tech_Talks_-_High-Performance_Production_Databases_on_Ceph"
+            <article id="post-2017-MAR-01_-_-_Ceph_Performance_Weekly"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016-01-28 00:00:00" datetime="2016-01-27T16:00:00.000Z"  itemprop="datePublished">2016-01-28</time>
+        <time class="post-time" title="2017-03-15 00:00:00" datetime="2017-03-14T16:00:00.000Z"  itemprop="datePublished">2017-03-15</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -168,7 +168,221 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2016/01/28/2016-JAN-26_--_Ceph_Tech_Talks_-_High-Performance_Production_Databases_on_Ceph/">2016-JAN-26 -- Ceph Tech Talks: High-Performance Production Databases on Ceph</a>
+      <a class="post-title-link" href="/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/">2017-MAR-01 :: Ceph Performance Weekly</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议时间： 2023年11月某日
+参会人员： 会议主持人、研发人员、测试人员等
+会议内容：
+一、主要议题
+
+代码审查与Pull Request
+
+研发人员汇报了近期的工作进展，包括对代码库的拆分、修复Hanoi的bug、处理来自Narratives团队的Pull
+Request等。
+讨论了关于使用Wheless内存和清理代码的建议，以及与Boyd
+bag关于使用RAM作为日志存储的...
+    
+
+        <a href="/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2017-MAR-08_-_-_Ceph_Performance_Weekly"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-03-15 00:00:00" datetime="2017-03-14T16:00:00.000Z"  itemprop="datePublished">2017-03-15</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2017/03/15/2017-MAR-08_-_-_Ceph_Performance_Weekly/">2017-MAR-08 :: Ceph Performance Weekly</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议时间： 2023年11月某日
+参会人员： 所有Ceph研发人员
+会议主题： Ceph存储系统性能优化与改进
+会议内容：
+一、蓝店（BlueStore）性能优化
+
+RocksDB范围删除操作优化：
+将RocksDB接口更改为使用RocksDB范围删除操作，以提高蓝店性能。该操作在删除大量数据时效率更高，但可能比其他操作慢。计划在不久的将来实施，并可能添加配置选项以控制是否使用该操...
+    
+
+        <a href="/VideoSummary/2017/03/15/2017-MAR-08_-_-_Ceph_Performance_Weekly/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2017Q1_Ceph社区季度总结"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-03-01 00:00:00" datetime="2017-02-28T16:00:00.000Z"  itemprop="datePublished">2017-03-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2017/03/01/2017Q1_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">2017Q1 Ceph社区季度总结</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Ceph 社区 2017Q1
+季度总结报告
+1. 本季度 Ceph
+社区的主要活动和重点议题
+本季度 Ceph 社区主要聚焦于以下几个方面：
+
+Ceph 分布式存储项目进展： 包括内存池调整、Crush
+锁移除、RocksDB 性能测试及优化、Blue Store
+性能优化、并行事务提交等。
+RocksDB 性能测试及优化： 对比 RocksDB
+与其他存储引擎（如 Jetta
+Scale）...
+    
+
+        <a href="/VideoSummary/2017/03/01/2017Q1_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/" rel="tag">技术发展</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A4%BE%E5%8C%BA%E5%8A%A8%E6%80%81/" rel="tag">社区动态</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2017-FEB-22_-_-_Ceph_Performance_Weekly"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-02-28 00:00:00" datetime="2017-02-27T16:00:00.000Z"  itemprop="datePublished">2017-02-28</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2017/02/28/2017-FEB-22_-_-_Ceph_Performance_Weekly/">2017-FEB-22 :: Ceph Performance Weekly</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议时间： 2023年11月某日
+参会人员：
+Sage（缺席）、Howai、Nick、Ju、Hae（Nokia）
+会议主题：
+Ceph社区动态、性能测试、RBD性能优化、RGW性能测试
+会议内容：
+一、Ceph社区动态
+
+P Request进展：
+
+位图分配器锁定问题： 已有P
+Request关注位图分配器在高随机写负载下的锁定和解锁问题，期待后续进展。
+RDMA功能：
+Howai...
+    
+
+        <a href="/VideoSummary/2017/02/28/2017-FEB-22_-_-_Ceph_Performance_Weekly/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2017-FEB-23_--_Ceph_Tech_Talks_-_Big_Data_Analytics"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-02-28 00:00:00" datetime="2017-02-27T16:00:00.000Z"  itemprop="datePublished">2017-02-28</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2017/02/28/2017-FEB-23_--_Ceph_Tech_Talks_-_Big_Data_Analytics/">2017-FEB-23 -- Ceph Tech Talks: Big Data Analytics</a>
     </h3>
   
 
@@ -180,20 +394,20 @@
     
         会议纪要
 会议时间： 2023年11月（具体日期未提及）
-参会人员： 未知
-会议主题： 高性能数据库在Ceph上的运行实践
+会议主题： 使用Luxio加速SAP上的大数据分析
+会议参与者：
+Alexio项目工程师（姓名未提及）、参会者
 会议内容：
 
-公司背景：
-Medallia公司自2010年起，从70名员工发展到700名，致力于为全球客户提供实时数据分析服务。
-问题与挑战：
+主讲人介绍：
+主讲人是Luxio项目的软件工程师，毕业于卡内基梅隆大学，曾参与分布式和存储系统的研究。
+Luxio介绍：
 
-现有数据库部署在数百台服务器上，服务器配置分散，缺乏统一管理。
-数据库服务器维护成本高，升级风险大。
-需要构建一个可扩展、高...
+Luxio是一个开源项目，是大数据领域增长最快的开源项目之一。
+它可以将任何应用程序连...
     
 
-        <a href="/VideoSummary/2016/01/28/2016-JAN-26_--_Ceph_Tech_Talks_-_High-Performance_Production_Databases_on_Ceph/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2017/02/28/2017-FEB-23_--_Ceph_Tech_Talks_-_Big_Data_Analytics/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -203,11 +417,11 @@ Medallia公司自2010年起，从70名员工发展到700名，致力于为全球
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Day_Melbourne_Promo"
+            <article id="post-2017-FEB-15_-_-_Ceph_Performance_Weekly"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2015-11-17 00:00:00" datetime="2015-11-16T16:00:00.000Z"  itemprop="datePublished">2015-11-17</time>
+        <time class="post-time" title="2017-02-17 00:00:00" datetime="2017-02-16T16:00:00.000Z"  itemprop="datePublished">2017-02-17</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -221,7 +435,7 @@ Medallia公司自2010年起，从70名员工发展到700名，致力于为全球
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/11/17/Ceph_Day_Melbourne_Promo/">Ceph Day Melbourne Promo</a>
+      <a class="post-title-link" href="/VideoSummary/2017/02/17/2017-FEB-15_-_-_Ceph_Performance_Weekly/">2017-FEB-15 :: Ceph Performance Weekly</a>
     </h3>
   
 
@@ -232,16 +446,22 @@ Medallia公司自2010年起，从70名员工发展到700名，致力于为全球
 
     
         会议纪要
-会议主题： Ceph社区交流与备份存储性能提升探讨
-会议时间： 2023年[具体日期]
-会议地点： IMATS ft 和 Monash University in
-Melbourne
-参会人员： - Patrick
-McGarry：Ceph社区总监，负责Ceph上游社区相关事务 - Brad Hubbub：Red
-Hat支持交付部门员工 - Steve Gwinnett：Monas...
+会议时间： 2023年11月某日
+会议地点： 线上会议
+参会人员： Jeanne、Nick、Sage、Igor、Jaime、Ernesto
+等
+会议内容：
+一、本周工作进展
+
+Sage：
+对快速调度代码进行了拆分，成功移除了一些代码，有望提升性能。
+Igor： 正在研究减少镜像使用，以降低存储开销。
+Jaime：
+正在测试Ceph存储集群，发现快照删除时存在延迟问题。
+Ernest...
     
 
-        <a href="/VideoSummary/2015/11/17/Ceph_Day_Melbourne_Promo/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2017/02/17/2017-FEB-15_-_-_Ceph_Performance_Weekly/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -251,11 +471,11 @@ Hat支持交付部门员工 - Steve Gwinnett：Monas...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Brad_Hubbard_--_Troubleshooting_Ceph"
+            <article id="post-2017-FEB-08_-_-_Ceph_Performance_Weekly"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2015-11-13 00:00:00" datetime="2015-11-12T16:00:00.000Z"  itemprop="datePublished">2015-11-13</time>
+        <time class="post-time" title="2017-02-08 00:00:00" datetime="2017-02-07T16:00:00.000Z"  itemprop="datePublished">2017-02-08</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -269,7 +489,67 @@ Hat支持交付部门员工 - Steve Gwinnett：Monas...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/11/13/Brad_Hubbard_--_Troubleshooting_Ceph/">Brad Hubbard -- Troubleshooting Ceph</a>
+      <a class="post-title-link" href="/VideoSummary/2017/02/08/2017-FEB-08_-_-_Ceph_Performance_Weekly/">2017-FEB-08 :: Ceph Performance Weekly</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议时间： 2023年11月（具体日期未提及）
+会议地点： 线上会议
+参会人员：
+
+研发人员：多位，包括负责Ceph的分布式存储人员
+字幕翻译及总结人员：多位
+其他相关人员：多位
+
+会议内容：
+一、会议开始及技术问题
+
+会议开始时，由于技术问题，部分参会人员无法正常加入会议。
+会议主持人解释了技术问题的原因，并尝试解决问题。
+
+二、Ceph项目进展
+
+Ceph存储性能优化：
+
+项目...
+    
+
+        <a href="/VideoSummary/2017/02/08/2017-FEB-08_-_-_Ceph_Performance_Weekly/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2017-FEB-01_-_-_Ceph_Performance_Weekly"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-02-07 00:00:00" datetime="2017-02-06T16:00:00.000Z"  itemprop="datePublished">2017-02-07</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/">2017-FEB-01 :: Ceph Performance Weekly</a>
     </h3>
   
 
@@ -281,19 +561,19 @@ Hat支持交付部门员工 - Steve Gwinnett：Monas...
     
         会议纪要
 会议时间： [请填写会议时间]
-会议地点： [请填写会议地点]
-参会人员： Brad (Red Hat 支持团队)，Andrew
-(主持人)，以及其他相关团队成员
-会议主题： Ceph 分布式存储系统中 SEF (Simplified
-Erasure Coding) 问题调试
+参会人员： [请填写参会人员名单]
+会议主题： Ceph分布式存储性能优化及测试讨论
 会议内容：
-一、性能问题
+一、Ceph性能优化
 
-性能基准：
-建立性能基准对于了解性能下降至关重要。可以使用以下工具进行基准测试...
+部分重启优化： 团队正在测试Blue
+Store的部分重启功能，但测试结果尚不明确，需要进一步观察其效果。
+AIO读取优化：
+已合并AIO读取的优化，Bassam进行了回退以解决相关问题。
+Blue Store性能提升： Blue...
     
 
-        <a href="/VideoSummary/2015/11/13/Brad_Hubbard_--_Troubleshooting_Ceph/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -303,11 +583,11 @@ Erasure Coding) 问题调试
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Day_Melbourne_Roundtable_Q_A"
+            <article id="post-2017-JAN-26_--_Ceph_Tech_Talk_-_Getting_Started_with_Ceph_Development"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2015-11-13 00:00:00" datetime="2015-11-12T16:00:00.000Z"  itemprop="datePublished">2015-11-13</time>
+        <time class="post-time" title="2017-01-27 00:00:00" datetime="2017-01-26T16:00:00.000Z"  itemprop="datePublished">2017-01-27</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -321,7 +601,7 @@ Erasure Coding) 问题调试
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/11/13/Ceph_Day_Melbourne_Roundtable_Q_A/">Ceph Day Melbourne Roundtable Q&amp;A</a>
+      <a class="post-title-link" href="/VideoSummary/2017/01/27/2017-JAN-26_--_Ceph_Tech_Talk_-_Getting_Started_with_Ceph_Development/">2017-JAN-26 -- Ceph Tech Talk: Getting Started with Ceph Development</a>
     </h3>
   
 
@@ -332,18 +612,24 @@ Erasure Coding) 问题调试
 
     
         会议纪要
-会议主题： Ceph 存储系统讨论会
-会议时间： 2023年11月（具体日期未提及）
-参会人员： Ceph 开发者、用户、技术专家等
+会议时间： 2017年
+会议主题： Ceph 开发入门
+参会人员： Ceph 社区成员
 会议内容：
-1. 损坏编码（Erasure Coding）
 
-讨论了损坏编码中奇偶校验块的数量，以及如何确定最佳配置。
-强调了在不同存储介质（如闪存）上的性能差异。
-讨论了地理复制（Geo Replication）和异步复制（Asynchronous...
+会议背景： 这是 Ceph 社区 2017
+年的首场技术研讨会，旨在帮助新成员了解 Ceph 的开发流程。
+主要议题：
+
+如何获取 Ceph 源代码
+如何编译和构建 Ceph
+如何修复 Ceph 中的 bug
+如何进行单元测试和集成测试
+如何提交 pull request
+Ceph...
     
 
-        <a href="/VideoSummary/2015/11/13/Ceph_Day_Melbourne_Roundtable_Q_A/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2017/01/27/2017-JAN-26_--_Ceph_Tech_Talk_-_Getting_Started_with_Ceph_Development/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -353,11 +639,11 @@ Erasure Coding) 问题调试
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Patrick_McGarry_--_Ceph_Community_Update"
+            <article id="post-2016-DEC-07_-_-_Ceph_Performance_Weekly"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2015-11-13 00:00:00" datetime="2015-11-12T16:00:00.000Z"  itemprop="datePublished">2015-11-13</time>
+        <time class="post-time" title="2017-01-11 00:00:00" datetime="2017-01-10T16:00:00.000Z"  itemprop="datePublished">2017-01-11</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -371,7 +657,7 @@ Erasure Coding) 问题调试
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/11/13/Patrick_McGarry_--_Ceph_Community_Update/">Patrick McGarry -- Ceph Community Update</a>
+      <a class="post-title-link" href="/VideoSummary/2017/01/11/2016-DEC-07_-_-_Ceph_Performance_Weekly/">2016-DEC-07 :: Ceph Performance Weekly</a>
     </h3>
   
 
@@ -382,281 +668,22 @@ Erasure Coding) 问题调试
 
     
         会议纪要
-会议时间： 2015年SEF Day
-参会人员：
-Patrick（社区猴子，负责社区维护）、Gary（社区成员）、Red
-Hat及社区其他成员
-会议内容：
-一、社区发展
-
-社区活动： SEF社区活动丰富，包括SEF
-Day、Hackathon等，明年计划举办更多活动。
-社区指标：
-VectorGia公司提供的SEF指标平台，帮助社区了解性能、调优和硬件配置等信息。
-用户委员会：
-用...
-    
-
-        <a href="/VideoSummary/2015/11/13/Patrick_McGarry_--_Ceph_Community_Update/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Steve_Quenette_Blair_Bethwaite_--_Servicing_the_Fabric_and_the_Workshop"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2015-11-13 00:00:00" datetime="2015-11-12T16:00:00.000Z"  itemprop="datePublished">2015-11-13</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/11/13/Steve_Quenette_Blair_Bethwaite_--_Servicing_the_Fabric_and_the_Workshop/">Steve Quenette/Blair Bethwaite -- Servicing the Fabric and the Workshop</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间：
-（请在此处填写会议具体时间）
-会议地点：
-（请在此处填写会议具体地点）
-参会人员：
-（请在此处填写参会人员名单）
-会议主题：
-探讨ICT技术在科研和企业应用中的差异，以及如何通过Ceph等分布式存储技术实现大规模和性能提升。
-关键细节：
-
-科研与企业的ICT差异：
-
-科研ICT更注重规模和性能，需要构建支持研究者构建事物的平台。
-企业ICT更关注长尾用户，追求成本最低化...
-    
-
-        <a href="/VideoSummary/2015/11/13/Steve_Quenette_Blair_Bethwaite_--_Servicing_the_Fabric_and_the_Workshop/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Sudarshan_Ramachandran_--_When_10GbE_is_Not_Enough"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2015-11-13 00:00:00" datetime="2015-11-12T16:00:00.000Z"  itemprop="datePublished">2015-11-13</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/11/13/Sudarshan_Ramachandran_--_When_10GbE_is_Not_Enough/">Sudarshan Ramachandran -- When 10GbE is Not Enough</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： [请填写具体日期和时间]
-会议地点： [请填写具体地点]
-参会人员：
-Sudha（Mellanox区域负责人）、市场营销团队、研发团队、IT团队
-会议主题： Mellanox产品介绍及在存储领域的应用
-会议内容：
-一、Mellanox公司介绍
-
-Mellanox是一家拥有约32,000名员工的以色列公司，总部位于美国，年收入约50亿美元，年增长率约40%。
-Mellan...
-    
-
-        <a href="/VideoSummary/2015/11/13/Sudarshan_Ramachandran_--_When_10GbE_is_Not_Enough/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Venkat_Kolli_--_Ceph_on_All-Flash_Storage"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2015-11-13 00:00:00" datetime="2015-11-12T16:00:00.000Z"  itemprop="datePublished">2015-11-13</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/11/13/Venkat_Kolli_--_Ceph_on_All-Flash_Storage/">Venkat Kolli -- Ceph on All-Flash Storage</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： 未知 参会人员： Venkat
-Kali（Sandisk
-产品经理）、Simon（负责产品相关问题）、Andrews（主持人）、其他与会人员
-会议主题： Sandisk 无限闪存系统与 Ceph 的结合及优化
-会议内容：
-一、会议背景
-
-Sandisk 于两年半前开始研发无限闪存系统，主要针对 Seth 和
-OpenStack。
-无限闪存系统旨在提供高性能、大容量的全闪...
-    
-
-        <a href="/VideoSummary/2015/11/13/Venkat_Kolli_--_Ceph_on_All-Flash_Storage/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Tomohiko_Kimura_--_Walk_Through_a_Software-Defined_Everything_PoC"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2015-11-13 00:00:00" datetime="2015-11-12T16:00:00.000Z"  itemprop="datePublished">2015-11-13</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/11/13/Tomohiko_Kimura_--_Walk_Through_a_Software-Defined_Everything_PoC/">Tomohiko Kimura -- Walk Through a Software-Defined Everything PoC</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： 2023年11月（具体日期未提及）
+会议时间： 2023年10月27日
 会议地点： 线上会议
-参会人员： - Tamiko（软件定义网络和可视化专家） - Me
-Da Cunha（网络虚拟化代理开发工程师） - 其他参与者（未提及姓名）
+参会人员：
+Steve、Margie、Peng、Tom、NASA、Sage、Sam、Oakland、Mark、Say、Dora等
 会议主题：
-本次会议主要讨论了使用软件定义网络（SDN）和OpenStack
-Newton环境进行的一次Proof of
-Concept（POC）项目，旨在实现计算、存储...
-    
 
-        <a href="/VideoSummary/2015/11/13/Tomohiko_Kimura_--_Walk_Through_a_Software-Defined_Everything_PoC/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
+Ceph分布式存储系统性能优化
+RBD（RADOS Block Device）性能测试
+ZetaScale存储性能测试
+IO路径中关键功能的跟踪点分析
 
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Samual_Just_--_Recovery_erasure_coding_cache_tiering"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2015-11-10 00:00:00" datetime="2015-11-09T16:00:00.000Z"  itemprop="datePublished">2015-11-10</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2015/11/10/Samual_Just_--_Recovery_erasure_coding_cache_tiering/">Samual Just -- Recovery erasure coding cache tiering</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： 2023年11月X日
-会议地点： 线上会议
-参会人员： Sam, Jeff, Reyes (PTL),
-等其他相关人员
-会议主题： Ceph存储系统技术讨论
 会议内容：
-一、Reyes集群介绍
-
-Reyes集群架构：
-Reyes集群采用分布式存储架构，由多个OSD (Object Storage Device)
-组成，OSD之间通过CRUSH算法进行数据分布和冗余。
-R...
+一、关键功能跟踪...
     
 
-        <a href="/VideoSummary/2015/11/10/Samual_Just_--_Recovery_erasure_coding_cache_tiering/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2017/01/11/2016-DEC-07_-_-_Ceph_Performance_Weekly/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -670,7 +697,7 @@ R...
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/page/112/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/111/">111</a><a class="page-number" href="/VideoSummary/page/112/">112</a><span class="page-number current">113</span><a class="page-number" href="/VideoSummary/page/114/">114</a><a class="page-number" href="/VideoSummary/page/115/">115</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/126/">126</a><a class="extend next" rel="next" href="/VideoSummary/page/114/">下一页</a>
+    <a class="extend prev" rel="prev" href="/VideoSummary/page/112/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/111/">111</a><a class="page-number" href="/VideoSummary/page/112/">112</a><span class="page-number current">113</span><a class="page-number" href="/VideoSummary/page/114/">114</a><a class="page-number" href="/VideoSummary/page/115/">115</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="extend next" rel="next" href="/VideoSummary/page/114/">下一页</a>
     </div>
 </nav>
 

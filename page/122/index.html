@@ -150,11 +150,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Hammer_Day_2_-_OSD_Tiering_-_Reduce_R_W_Latencies_on_Cache_Tier_Miss"
+            <article id="post-CDS_Infernalis_Day_1_--_Ceph_Plugins"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-10-30 00:00:00" datetime="2014-10-29T16:00:00.000Z"  itemprop="datePublished">2014-10-30</time>
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -168,7 +168,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_OSD_Tiering_-_Reduce_R_W_Latencies_on_Cache_Tier_Miss/">CDS Hammer (Day 2) - OSD (Tiering): Reduce R/W Latencies on Cache Tier Miss</a>
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_Ceph_Plugins/">CDS Infernalis (Day 1) -- Ceph Plugins</a>
     </h3>
   
 
@@ -179,21 +179,19 @@
 
     
         会议纪要
-会议主题： Ceph 分布式存储优化讨论
-会议时间： 2023年11月（具体日期未提及）
-参会人员： 多位 Ceph 开发人员
-会议内容：
-一、讨论要点
+会议时间： 2023年11月X日
+参会人员： Luik、Verada、Mike、Josh等
+会议主题：
+在Ceph中添加私有键值存储作为可插拔模块，并讨论插件安装和升级的一般支持。
+关键细节：
 
-读取优化：
-
-当前代码中，当读取请求缺失缓存时，会进行提升操作，并将对象复制到所有
-OSD 实例。
-提议首先服务读取请求，然后在提升操作完成后进行复制，以减少读取延迟。
-针对异步读取，建议在读取操作可以完全由一个数据块满足时，使...
+现有插件系统：
+Ceph目前有两个插件系统，一个是CLS插件系统，用于在OSD上运行二进制程序；另一个是Azure代码插件系统，用于加载插件并在OSD上运行。
+新插件系统：
+SanDisk...
     
 
-        <a href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_OSD_Tiering_-_Reduce_R_W_Latencies_on_Cache_Tier_Miss/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_Ceph_Plugins/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -203,11 +201,11 @@ OSD 实例。
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Hammer_Day_2_-_Quota_Discussion"
+            <article id="post-CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-10-30 00:00:00" datetime="2014-10-29T16:00:00.000Z"  itemprop="datePublished">2014-10-30</time>
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -221,7 +219,325 @@ OSD 实例。
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_Quota_Discussion/">CDS Hammer (Day 2) - Quota Discussion</a>
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/">CDS Infernalis (Day 1) -- RGW: Active/Active Arch</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议主题： RGW（Rados
+Gateway）的Active-Active架构讨论
+参会人员： Yehuda（会议主持人）、其他研发人员
+会议内容：
+1. 当前架构概述
+
+介绍当前RGW的多区域、多区域架构，包括区域（Region）、区域组（Zone
+Group）、区域（Zone）等概念。
+解释了区域组的灾难恢复机制，即每个区域组内有一个主区域和一个或多个辅助区域，用于数据备份和...
+    
+
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Infernalis_Day_1_--_RGW_-_NFS"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_NFS/">CDS Infernalis (Day 1) -- RGW: NFS</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议时间： 2023年[具体日期]
+会议地点： [具体地点或线上会议平台]
+参会人员： [参会人员名单] 主持人：
+[主持人姓名] 会议主题： Rados Gateway (RGW)
+新功能：通过NFS导出数据
+会议内容：
+
+议题背景：
+
+讨论了RGW的新功能，即通过NFS导出数据。
+目前RGW无法直接进行NFS导出，需要通过抽象层或第三方工具实现。
+
+讨论方案：
+
+方案一：
+创建...
+    
+
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_NFS/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Infernalis_Day_1_--_RGW_-_Multitenancy"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Multitenancy/">CDS Infernalis (Day 1) -- RGW: Multitenancy</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议主题： RGW 多租户功能讨论
+会议时间： 2023年11月（具体日期未提及）
+参会人员： 多位 Ceph 领域研发人员及相关技术人员
+会议内容：
+一、多租户功能概述
+
+会议首先回顾了 RGW（Rados Gateway）的多租户功能，指出当前 RGW
+用户模块采用全局命名空间，所有用户和存储桶共享同一命名空间。
+为实现多租户功能，会议提出了以下方案：
+
+每个 RGW
+用户将拥...
+    
+
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Multitenancy/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Infernalis_Day_2.2_--_Cache_Tier_Improvements"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_Cache_Tier_Improvements/">CDS Infernalis (Day 2.2) -- Cache Tier Improvements</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议主题： Cash Tier改进与Proxy机制讨论
+会议时间： [请填写会议具体时间]
+参会人员： [请填写参会人员名单]
+会议内容：
+一、Cash Tier改进
+
+现状与问题：
+
+Intel团队在Hammer周期内对Cash
+Tier进行了大量改进，主要集中在读操作上，避免了不必要的提升（Promotion）。
+然而，对于写操作的Proxy机制仍需测试和完善。
+当最终决定提升...
+    
+
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_Cache_Tier_Improvements/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Infernalis_Day_1_--_Simple_ceph-mon_dm-crypt_key_management"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_Simple_ceph-mon_dm-crypt_key_management/">CDS Infernalis (Day 1) -- Simple ceph-mon dm-crypt key management</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+会议时间： 2023年11月某日
+参会人员： Milanis, Sam, Simulon, Dr. Bras,
+Danny
+会议主题：
+Ceph存储系统中OSD的dm-crypt密钥管理方案讨论
+关键细节：
+
+当前方案：
+使用theftdisk配置dm-crypt，加密密钥存储在etsy和csf
+keys中，但安全级别较低。
+目标： 设计一个比etsy
+keys更安全的密钥管理方案...
+    
+
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_Simple_ceph-mon_dm-crypt_key_management/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Infernalis_Day_2.2_--_LMDB_backend_for_Ceph"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_LMDB_backend_for_Ceph/">CDS Infernalis (Day 2.2) -- LMDB backend for Ceph</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要：
+会议主题： SEF（Storage Efficiency
+Framework）的LMDB键值存储后端方案讨论
+参会人员：
+Patrick、John（Intel）、Shinin、会议主持人
+会议内容：
+
+方案概述：
+
+John介绍了LMDB（Lightning Memory-Mapped
+Database）作为SEF的键值存储后端方案的蓝图。
+目前SEF的QAL（Quota and...
+    
+
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_LMDB_backend_for_Ceph/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Infernalis_Day_2.2_--_OSD_-_Peering_Latency"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_OSD_-_Peering_Latency/">CDS Infernalis (Day 2.2) -- OSD: Peering / Latency</a>
     </h3>
   
 
@@ -233,333 +549,23 @@ OSD 实例。
     
         会议纪要
 会议主题：
-Ceph分布式存储系统中CFS配额支持的讨论以及配额与子树的关系
-会议时间： 2023年11月（具体日期未知）
-参会人员： Sage, Yanchon, Josh, John Craig,
-Lee（通过聊天室）
-会议内容：
-1. 配额支持讨论
-
-Sage介绍了CFS配额支持的实现方案，包括如何在目录创建时集成文件
-parents，并查找所有配额信息和状态。
-Sage提到...
-    
-
-        <a href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_Quota_Discussion/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Hammer_Day_2_-_librbd_-_Shared_Flag_Object_Map"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-10-30 00:00:00" datetime="2014-10-29T16:00:00.000Z"  itemprop="datePublished">2014-10-30</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_librbd_-_Shared_Flag_Object_Map/">CDS Hammer (Day 2) - librbd: Shared Flag, Object Map</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： 2023年XX月XX日
-参会人员： Maya, Josh, Jason, Foreign
-会议主题： Ceph RBD（Rados Block
-Device）的独占锁特性和对象映射功能讨论
-关键细节：
-
-独占锁特性：
-
-RBD新增独占锁特性，默认情况下，除非标记为共享，否则所有图像都将应用此新功能位，表示它支持独占锁定。
-当独占锁定功能位启用时，任何对图像的写操作或可变...
-    
-
-        <a href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_librbd_-_Shared_Flag_Object_Map/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Hammer_Day_1_-_Buffer_Encoding"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Buffer_Encoding/">CDS Hammer (Day 1) - Buffer Encoding</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： Ceph 分布式存储缓冲编码优化讨论
-会议时间： 2023年某月某日
-参会人员： Sam、Matt、Alan 等
-会议内容：
-一、会议背景
-在 Ceph
-分布式存储集群的负载分析中，缓冲编码和编解码过程被指出是性能瓶颈之一。
-二、讨论议题
-
-缓冲编码性能问题：
-
-缓冲列表追加路径深度，导致性能损耗。
-编码和编解码过程中存在函数调用开销。
-编码和编解码路径存在重复计算和冗...
-    
-
-        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Buffer_Encoding/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Hammer_Day_1_-_Import_Export_Local_Import"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/">CDS Hammer (Day 1) - Import/Export // Local Import</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： Rados 导出/导入功能改进
-会议时间： 未知
-参会人员： Danny, Mike, John, Tara 等
-会议内容：
-一、Rados 导出/导入功能现状
-
-目前 Rados
-导出功能存在性能瓶颈，尤其是数据量大时，导出速度慢，且在不同文件系统上导出失败率较高。
-导入功能也存在问题，将数据重新导入新集群的速度较慢。
-
-二、改进方案
-
-导出功能：
-
-将 Rados ...
-    
-
-        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Hammer_Day_1_-_Accelio_RDMA_Messenger"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Accelio_RDMA_Messenger/">CDS Hammer (Day 1) - Accelio RDMA Messenger</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： 未知 会议地点： 未知
-参会人员： Matt、El、Melanox 团队、Ceph 团队
-会议主题： Accelio RDMA Messenger 工作讨论
-会议内容：
-
-Accelio RDMA Messenger 最新进展：
-
-Melanox 团队在 Accelio 中增加了多传输支持，并使 TCP
-传输更加功能丰富。
-他们正在开发新的显式流控制接口，以允许应用程序...
-    
-
-        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Accelio_RDMA_Messenger/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Hammer_Day_1_-_Calamari_API_Roadmap"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Calamari_API_Roadmap/">CDS Hammer (Day 1) - Calamari API Roadmap</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： 2014年（具体日期未提及）
-会议主题： Calamari API 路线图概述
-参会人员： Gregory（Dr.
-Mino）、Dan、Armando、Tim、James 等
-会议内容：
-一、Calamari API 概述
-
-Calamari 重新定义： 将 Calamari 定位为后端服务层和
-API 层，去除图形用户界面（GUI），以便更聚焦于 API 本身及其功能...
-    
-
-        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Calamari_API_Roadmap/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Hammer_Day_1_-_OSD_-_Opportunistic_Whole-Object_Checksums"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_OSD_-_Opportunistic_Whole-Object_Checksums/">CDS Hammer (Day 1) - OSD: Opportunistic Whole-Object Checksums</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： OSD 的机会主义全对象校验和
+Ceph分布式存储优化：更快的数据对等连接和降低尾部延迟
 会议时间： 2023年11月（具体日期未提及）
-参会人员： Marcel、Sam、Sage、Heather、David、Craig
-等
+参会人员： Sam
+Guang、Sage、以及其他未具名的研发人员
 会议内容：
-1. 会议背景
+主要议题：
 
-目前 Ceph
-存储系统中，对存储在磁盘上的数据进行校验和计算较为昂贵，因此通常不进行校验。
-现有的机会主义校验和机制仅对块级别进行校验，且仅在读取或覆盖完整块时更新和验证。...
+更快的数据对等连接：
+
+当前Ceph在对等连接过程中，存在多个往返延迟，主要步骤包括：
+
+构建需要通信的OSD列表。
+向OSD请求pg notify信息。
+确定具有权威pg...
     
 
-        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_OSD_-_Opportunistic_Whole-Object_Checksums/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_OSD_-_Peering_Latency/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -569,11 +575,11 @@ API 层，去除图形用户界面（GUI），以便更聚焦于 API 本身及�
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Hammer_Day_1_-_Clustered_SCSI_Target_Using_RBD"
+            <article id="post-CDS_Infernalis_Day_2.2_--_Ceph_Performance"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -587,7 +593,7 @@ API 层，去除图形用户界面（GUI），以便更聚焦于 API 本身及�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Clustered_SCSI_Target_Using_RBD/">CDS Hammer (Day 1) - Clustered SCSI Target Using RBD</a>
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_Ceph_Performance/">CDS Infernalis (Day 2.2) -- Ceph Performance</a>
     </h3>
   
 
@@ -598,19 +604,20 @@ API 层，去除图形用户界面（GUI），以便更聚焦于 API 本身及�
 
     
         会议纪要
-会议主题： Ceph分布式存储集群中RBD（RADOS Block
-Device）的集群化目标（Scuzzy Targets）实现方案讨论
-会议时间： 2023年11月某日
-参会人员：
-Christy（提案人）、Mike、Jason、Josh等
+会议时间： 2023年（具体日期未提及）
+会议主题： Ceph性能分析框架标准化
+参会人员： - 来自Intel的同事 - Mark Nelson -
+会议主持人及参与者
 会议内容：
-1. 当前状态与问题
+一、Ceph性能基准测试工具（CBT）与COSBench集成
 
-目前开源的Linux
-HBA目标设备支持主动/被动模式，广泛支持Pacemaker，但仅支持无级别的故...
+背景：
+
+目前的Ceph性能基准测试主要依赖于CBT工具，但CBT不支持对象存储基准测试。
+因此，COSBench（云对象存储基准测试工...
     
 
-        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Clustered_SCSI_Target_Using_RBD/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_Ceph_Performance/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -620,11 +627,11 @@ HBA目标设备支持主动/被动模式，广泛支持Pacemaker，但仅支持�
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Hammer_Day_1_-_RGW_-_Object_Versioning_Object_Snapshots"
+            <article id="post-CDS_Infernalis_Day_2.2_--_OSD_-_Newstore"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+        <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -638,7 +645,7 @@ HBA目标设备支持主动/被动模式，广泛支持Pacemaker，但仅支持�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_RGW_-_Object_Versioning_Object_Snapshots/">CDS Hammer (Day 1) - RGW: Object Versioning // Object Snapshots</a>
+      <a class="post-title-link" href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_OSD_-_Newstore/">CDS Infernalis (Day 2.2) -- OSD: Newstore</a>
     </h3>
   
 
@@ -649,24 +656,19 @@ HBA目标设备支持主动/被动模式，广泛支持Pacemaker，但仅支持�
 
     
         会议纪要
-会议主题： Rados Gateway
-对象版本化及后续议题讨论
-参会人员： Mike
-Bryant（蓝图负责人及实现人员）、其他研发人员
+会议主题： 新存储后端OSD讨论
+会议时间： 未知
+参会人员： Sage、其他研发人员
 会议内容：
-一、Rados Gateway 对象版本化
+1. 新存储后端OSD的动机和目标
 
-项目背景：
-对象版本化是实现数据保护和版本控制的重要功能。
-实现方法： 采用 S3 对象版本化方案，通过 RESTful API
-实现。
-关键技术：
-
-列表对象及其版本
-读取和删除特定版...
+现有的文件存储系统经过多年开发，功能复杂，难以修改和优化。
+目标是创建一个新的内部对象存储接口实现，以替换现有的对象存储，并支持多种后端。
+新实现将适用于硬盘和SSD，或两者的组合。
+主要目标是避免对新对象的重复写入和顺序写入，从而消除当前日志记...
     
 
-        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_RGW_-_Object_Versioning_Object_Snapshots/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_OSD_-_Newstore/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -680,7 +682,7 @@ Bryant（蓝图负责人及实现人员）、其他研发人员
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/page/121/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/120/">120</a><a class="page-number" href="/VideoSummary/page/121/">121</a><span class="page-number current">122</span><a class="page-number" href="/VideoSummary/page/123/">123</a><a class="page-number" href="/VideoSummary/page/124/">124</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/126/">126</a><a class="extend next" rel="next" href="/VideoSummary/page/123/">下一页</a>
+    <a class="extend prev" rel="prev" href="/VideoSummary/page/121/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/120/">120</a><a class="page-number" href="/VideoSummary/page/121/">121</a><span class="page-number current">122</span><a class="page-number" href="/VideoSummary/page/123/">123</a><a class="page-number" href="/VideoSummary/page/124/">124</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="extend next" rel="next" href="/VideoSummary/page/123/">下一页</a>
     </div>
 </nav>
 

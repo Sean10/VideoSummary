@@ -150,11 +150,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Orchestrator_Meeting_2022-05-04"
+            <article id="post-Ceph_Science_Working_Group_2022-05-24"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2022-05-04 00:00:00" datetime="2022-05-03T16:00:00.000Z"  itemprop="datePublished">2022-05-04</time>
+        <time class="post-time" title="2022-05-26 00:00:00" datetime="2022-05-25T16:00:00.000Z"  itemprop="datePublished">2022-05-26</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -168,53 +168,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/05/04/Ceph_Orchestrator_Meeting_2022-05-04/">Ceph Orchestrator Meeting 2022-05-04</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-当前问题：如果限制NFS导出到特定IP，尝试从这些特定IP挂载时会遭到拒绝。
-原因：后端NFS服务器仅看到HAProxy代理的IP，而非客户端ID。
-可能的解决方案：设置HAProxy以透明模式运行，使后端服务器能看到客户端IP，而非H8代理IP。
-实施难点：需要后端服务器支持代理协议，但当前的Ganesha服务器不支持，因此需要寻找其他方法。
-进一步研究：探索是否有其他方式可以设置HAP...
-    
-
-        <a href="/VideoSummary/2022/05/04/Ceph_Orchestrator_Meeting_2022-05-04/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Orchestrator_Meeting_2022-04-26"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2022-04-26 00:00:00" datetime="2022-04-25T16:00:00.000Z"  itemprop="datePublished">2022-04-26</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/04/26/Ceph_Orchestrator_Meeting_2022-04-26/">Ceph Orchestrator Meeting 2022-04-26</a>
+      <a class="post-title-link" href="/VideoSummary/2022/05/26/Ceph_Science_Working_Group_2022-05-24/">Ceph Science Working Group 2022-05-24</a>
     </h3>
   
 
@@ -226,16 +180,14 @@
     
         会议纪要：
 
-议题一：关于代码审查和功能开发进度的更新，具体如下：
-
-提及了需要重新审视和可能推迟的议题。
-讨论了站立会议的频率，提出可能减少会议次数以提高效率。
-对HNFS (Highly Non-homogeneous Storage System)
-的更新进行了简要讨论，确认了其基本功能正常，但存在一个与OpenStack团队相关的bug。
-讨论了升级顺序的问题，强调了核心组件如OSD...
+讨论了Ceph分布式存储系统在大型集群中遇到的scrubbing问题，特别是与HP
+Apollos硬件相关的问题。探讨了磁盘类型（旋转磁盘、闪存或NVMe）、对象大小（小对象或大对象）以及测试数据量（约25PB）。
+分析了默认的scrubbing和deep
+scrubbing参数是否适合当前的工作负载和硬件配置。提出可能需要调整这些参数以适应更大的文件和磁盘容量。
+提到了由于硬...
     
 
-        <a href="/VideoSummary/2022/04/26/Ceph_Orchestrator_Meeting_2022-04-26/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2022/05/26/Ceph_Science_Working_Group_2022-05-24/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -245,11 +197,11 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Reef_-_Crimson"
+            <article id="post-Ceph_Crimson_SeaStore_Meeting_2022-05-25"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2022-04-22 00:00:00" datetime="2022-04-21T16:00:00.000Z"  itemprop="datePublished">2022-04-22</time>
+        <time class="post-time" title="2022-05-25 00:00:00" datetime="2022-05-24T16:00:00.000Z"  itemprop="datePublished">2022-05-25</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -263,7 +215,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/04/22/CDS_Reef_-_Crimson/">CDS Reef: Crimson</a>
+      <a class="post-title-link" href="/VideoSummary/2022/05/25/Ceph_Crimson_SeaStore_Meeting_2022-05-25/">Ceph Crimson/SeaStore Meeting 2022-05-25</a>
     </h3>
   
 
@@ -273,18 +225,26 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议主要讨论了Crimson
-CDF项目2022年的进展，重点关注Quincy版本的稳定性和部署情况，以及Reef版本的开发重点。具体内容如下：
+        会议纪要：
 
-Quincy版本：
+更新状态：
 
-过去一年的主要工作集中在稳定性和部署上。
-Crimson现在支持Rook、SAFE和Seth ADM进行部署。
-开发了初步的Crimson RADOS技术套件，并进行了故障注入测试。
-对发现的问题进行了大量修复，特别是在排序...
+参会者正在致力于错误日志机制，目前专注于处理两个丢失的日志操作。
+
+代码审查和合并准备：
+
+接近完成Scrub调度的清理工作，预计还需要几天时间，之后将请求代码审查。
+
+GC（垃圾回收）开发：
+
+目前正在进行C*代的GC开发，仍在进行Red Pass阶段。
+
+小型PR（Pull Request）和测试：
+
+本周完成了两个小型PR，并进行了进一步的验证测试，以探究空...
     
 
-        <a href="/VideoSummary/2022/04/22/CDS_Reef_-_Crimson/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2022/05/25/Ceph_Crimson_SeaStore_Meeting_2022-05-25/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -294,11 +254,11 @@ Crimson现在支持Rook、SAFE和Seth ADM进行部署。
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Reef_-_Dashboard"
+            <article id="post-Ceph_Orchestrator_Meeting_2022-05-17"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2022-04-22 00:00:00" datetime="2022-04-21T16:00:00.000Z"  itemprop="datePublished">2022-04-22</time>
+        <time class="post-time" title="2022-05-25 00:00:00" datetime="2022-05-24T16:00:00.000Z"  itemprop="datePublished">2022-05-25</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -312,7 +272,7 @@ Crimson现在支持Rook、SAFE和Seth ADM进行部署。
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/04/22/CDS_Reef_-_Dashboard/">CDS Reef: Dashboard</a>
+      <a class="post-title-link" href="/VideoSummary/2022/05/25/Ceph_Orchestrator_Meeting_2022-05-17/">Ceph Orchestrator Meeting 2022-05-17</a>
     </h3>
   
 
@@ -322,23 +282,21 @@ Crimson现在支持Rook、SAFE和Seth ADM进行部署。
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Ceph Dashboard会议纪要
-会议概述
-本次会议主要讨论了Ceph
-Dashboard在Reef版本的开发进展，包括即将到来的里程碑、过去开发新功能时遇到的问题和经验，以及未来的行动计划。
-主要议题
+        会议纪要：
+主题：讨论关于Ceph Rook与NFS操作的问题及后续行动计划
 
-里程碑与进度
+问题描述：
 
-讨论了接下来一周的里程碑，包括Dashboard的开发进度和与过去版本的连接。
+当Rook Orchestrator模块启用时，NFS操作失败。John
+Mulligan的工作允许NFS
+CLI在没有Orchestrator模块的情况下工作，但用户如果启用了Orchestrator模块，NFS命令将失败。
 
-规模测试反馈
+当前状况和回归分析：
 
-分享了在Supercomputer
-Center进行的规模测试结果，特...
+在Pacific版本中，无论是否启用Orche...
     
 
-        <a href="/VideoSummary/2022/04/22/CDS_Reef_-_Dashboard/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2022/05/25/Ceph_Orchestrator_Meeting_2022-05-17/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -348,11 +306,11 @@ Center进行的规模测试结果，特...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Reef_-_Governance"
+            <article id="post-CephFS_Code_Walkthrough_-_Kernel_Client_Overview"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2022-04-22 00:00:00" datetime="2022-04-21T16:00:00.000Z"  itemprop="datePublished">2022-04-22</time>
+        <time class="post-time" title="2022-05-24 00:00:00" datetime="2022-05-23T16:00:00.000Z"  itemprop="datePublished">2022-05-24</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -366,7 +324,7 @@ Center进行的规模测试结果，特...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/04/22/CDS_Reef_-_Governance/">CDS Reef: Governance</a>
+      <a class="post-title-link" href="/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/">CephFS Code Walkthrough: Kernel Client Overview</a>
     </h3>
   
 
@@ -376,16 +334,13 @@ Center进行的规模测试结果，特...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
-治理结构：讨论了Ceph项目的治理结构，包括技术指导委员会（TSC）和项目管理委员会（PMC）。
-贡献流程：明确了代码提交、审核及合并的流程。
-测试与发布：强调了持续集成的重要性，并提到了使用Jenkins进行构建和测试。
-版本控制：指出了git作为版本控制系统的使用，以及GitHub作为代码托管平台。
-社区沟通：提及了通过邮件列表、IRC和定期会议等方式进行社区沟通。
-文档编写：强调了编...
+        The question was about the comment in the function
+self atomic open which said "if the file or sim link is
+non-existent, the vfs3 tries". The questioner wanted to know if VFS
+keeps retrying and wha...
     
 
-        <a href="/VideoSummary/2022/04/22/CDS_Reef_-_Governance/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -395,11 +350,11 @@ Center进行的规模测试结果，特...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Reef_-_Performance_Meeting"
+            <article id="post-Ceph_Crimson_Seastore_Meeting_2022-05-11"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2022-04-22 00:00:00" datetime="2022-04-21T16:00:00.000Z"  itemprop="datePublished">2022-04-22</time>
+        <time class="post-time" title="2022-05-24 00:00:00" datetime="2022-05-23T16:00:00.000Z"  itemprop="datePublished">2022-05-24</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -413,146 +368,7 @@ Center进行的规模测试结果，特...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/04/22/CDS_Reef_-_Performance_Meeting/">CDS Reef: Performance Meeting</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议主要讨论了Ceph存储系统的最新更新和问题修复，特别是162h版本的发布情况，以及针对特定性能问题的PR（Pull
-Request）的更新和审查。会议内容涵盖了以下要点：
-
-版本发布与问题跟踪：团队正在处理来自Quincy及Pacific
-162h版本的后续事宜，包括一个由Adam关闭的PR，该PR的内容被转移到其他VR和其他工作中，剩余部分不再必要或已被加入其他项目。
-代码审查：Cor...
-    
-
-        <a href="/VideoSummary/2022/04/22/CDS_Reef_-_Performance_Meeting/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Reef_-_RBD"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2022-04-22 00:00:00" datetime="2022-04-21T16:00:00.000Z"  itemprop="datePublished">2022-04-22</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/04/22/CDS_Reef_-_RBD/">CDS Reef: RBD</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-Mirroring Schedule
-Stagger：尝试错开快照计划和镜像计划，以在一段时间内产生一致的性能影响。
-State Machine Documentation：改善关于rbd
-mirroring的状态机文档，以便更好地为开发者提供一些部分的文档。
-Rbd Suite Movement to Using Sap
-Area：将rbd套件迁移到使用sap
-area，目前仍在进行中，...
-    
-
-        <a href="/VideoSummary/2022/04/22/CDS_Reef_-_RBD/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Reef_-_RADOS"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2022-04-22 00:00:00" datetime="2022-04-21T16:00:00.000Z"  itemprop="datePublished">2022-04-22</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/04/22/CDS_Reef_-_RADOS/">CDS Reef: RADOS</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-Configuration Profiles: PR link provided for
-implementation of configuration profiles on a pool level, aimed at reef
-but backportable to quincy.
-Automatic Key Rotation: Outstanding PR exists, with...
-    
-
-        <a href="/VideoSummary/2022/04/22/CDS_Reef_-_RADOS/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Orchestrator_Meeting_2022-04-18"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2022-04-22 00:00:00" datetime="2022-04-21T16:00:00.000Z"  itemprop="datePublished">2022-04-22</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/04/22/Ceph_Orchestrator_Meeting_2022-04-18/">Ceph Orchestrator Meeting 2022-04-18</a>
+      <a class="post-title-link" href="/VideoSummary/2022/05/24/Ceph_Crimson_Seastore_Meeting_2022-05-11/">Ceph Crimson/Seastore Meeting 2022-05-11</a>
     </h3>
   
 
@@ -563,20 +379,27 @@ Automatic Key Rotation: Outstanding PR exists, with...
 
     
         会议纪要
-会议概述
-本次会议由于参与人数较少，原计划讨论的问题优先级排序被推迟。会议主要讨论了两个相关议题，并计划在后续会议中继续讨论。
-主要议题
+会议主题: Ceph分布式存储开发团队周会
+参会人员: [未明确指出]
+会议内容概述
 
-配置文件的使用
+功能合并与代码审查
 
-讨论内容：讨论了当前使用的配置文件（如
-etcsef.com）的重要性。由于大多数守护进程（demons）从监视器（monitor）获取配置信息，因此对于配置文件的需求进行了质疑。
-主要观点：
+本周有人合并了一个包含多项修复的Pull Request
+(PR)，目前看来运作良好。
+初步操作管道已重新基础并正在等待审查。
 
-配置文件目前主要用于获取监视器...
+存储清理与分析
+
+讨论了后台树的审查和分析。
+提出了关于垃圾回收和空间计算调整的问题，需要确保逻辑上对其他参与者有意义。
+
+问题诊断与解决
+
+上...
     
 
-        <a href="/VideoSummary/2022/04/22/Ceph_Orchestrator_Meeting_2022-04-18/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2022/05/24/Ceph_Crimson_Seastore_Meeting_2022-05-11/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -586,11 +409,11 @@ etcsef.com）的重要性。由于大多数守护进程（demons）从监视器�
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Reef_-_Performance"
+            <article id="post-Ceph_Orchestrator_Meeting_-_2022-05-24"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2022-04-14 00:00:00" datetime="2022-04-13T16:00:00.000Z"  itemprop="datePublished">2022-04-14</time>
+        <time class="post-time" title="2022-05-24 00:00:00" datetime="2022-05-23T16:00:00.000Z"  itemprop="datePublished">2022-05-24</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -604,7 +427,96 @@ etcsef.com）的重要性。由于大多数守护进程（demons）从监视器�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/04/14/CDS_Reef_-_Performance/">CDS Reef: Performance</a>
+      <a class="post-title-link" href="/VideoSummary/2022/05/24/Ceph_Orchestrator_Meeting_-_2022-05-24/">Ceph Orchestrator Meeting: 2022-05-24</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        在会议中，讨论了以下内容：
+
+关于使用Docker镜像的问题。有提议考虑不再使用Docker镜像，因为可能会遇到速率限制问题。建议将Docker镜像复制到Clay，以避免这些问题。
+关于备份和回滚策略的讨论。提出了一种自动化的方法来创建和管理回滚按钮，以简化这个过程。
+关于软件包管理和版本控制的讨论。有建议使用特定的脚本或工具来自动化这个过程，并确保版本控制的准确性。
+关于硬件和网络问题的讨...
+    
+
+        <a href="/VideoSummary/2022/05/24/Ceph_Orchestrator_Meeting_-_2022-05-24/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Orchestrator_Meeting_2022-05-10"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2022-05-24 00:00:00" datetime="2022-05-23T16:00:00.000Z"  itemprop="datePublished">2022-05-24</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2022/05/24/Ceph_Orchestrator_Meeting_2022-05-10/">Ceph Orchestrator Meeting 2022-05-10</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Telemetry is super useful for us and it helps us make a better
+product, more robust, and have a higher quality.
+
+    
+
+        <a href="/VideoSummary/2022/05/24/Ceph_Orchestrator_Meeting_2022-05-10/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Performance_Meeting_2022-05-05"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2022-05-06 00:00:00" datetime="2022-05-05T16:00:00.000Z"  itemprop="datePublished">2022-05-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2022/05/06/Ceph_Performance_Meeting_2022-05-05/">Ceph Performance Meeting 2022-05-05</a>
     </h3>
   
 
@@ -615,20 +527,113 @@ etcsef.com）的重要性。由于大多数守护进程（demons）从监视器�
 
     
         会议纪要
-关键细节
+日期： [未提及具体日期，需补充]
+参会人员： [未提及，需补充]
+1. 已解决的问题和已完成的PRs
 
-新Pull Requests (PRs):
-
-Corey的PR涉及在RocksDB
-omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和内存泄漏的建议。
-另一个PR允许RGW使用DEOS作为后端存储，DEOS是一个基于Luster的高性能对象存储系统，目前还处于实验阶段。
-
-关闭的PRs:
-
-一个PR是对AVL分配器的最小化修复，解决了之前改变导致的分配问题...
+Adam的卓越PR：修复了Quarry's
+PR中出现的问题，主要是通过不做整个空间迭代器的边界检查，现在之前失败的测试已经通过。
+Cory的PR：已重新纳入pacific版本，并可能已回退主版本。该PR和atom六都将被纳入1628版本及master版本。目前进展顺利。
+参数...
     
 
-        <a href="/VideoSummary/2022/04/14/CDS_Reef_-_Performance/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2022/05/06/Ceph_Performance_Meeting_2022-05-05/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Tech_Talk_-_Telemetry_Dashboard"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2022-05-06 00:00:00" datetime="2022-05-05T16:00:00.000Z"  itemprop="datePublished">2022-05-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/">Ceph Tech Talk: Telemetry Dashboard</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+问题:
+如何通过telemetry.front.sepia链接访问开发者专用的crash dashboard？
+答案: 开发者需要通过启用sepia
+vpn来访问telemetry.front.sepia链接，进而搜索和查看crashes。
+
+
+    
+
+        <a href="/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_User_+_Dev_Meeting_2022-05-04"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2022-05-05 00:00:00" datetime="2022-05-04T16:00:00.000Z"  itemprop="datePublished">2022-05-05</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2022/05/05/Ceph_User_+_Dev_Meeting_2022-05-04/">Ceph User + Dev Meeting 2022-05-04</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        会议纪要
+
+会议主题：介绍和讨论IBM的NVM设备在SETH中的部署，以及相关插件系统的开发。
+参会人员：Martin
+Omar（IBM），会议主持人，及其他参与者。
+主要讨论内容：
+
+Martin介绍了他在IBM的工作，特别是关于NVMe存储设备（NVM）的项目。这些设备由IBM生产，具有在线压缩功能，逻辑块地址为22TB，但物理存储空间只有9.6TB。
+详细解释了存储设备的使用模型，与V...
+    
+
+        <a href="/VideoSummary/2022/05/05/Ceph_User_+_Dev_Meeting_2022-05-04/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -642,7 +647,7 @@ omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和�
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/page/30/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/29/">29</a><a class="page-number" href="/VideoSummary/page/30/">30</a><span class="page-number current">31</span><a class="page-number" href="/VideoSummary/page/32/">32</a><a class="page-number" href="/VideoSummary/page/33/">33</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/126/">126</a><a class="extend next" rel="next" href="/VideoSummary/page/32/">下一页</a>
+    <a class="extend prev" rel="prev" href="/VideoSummary/page/30/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/29/">29</a><a class="page-number" href="/VideoSummary/page/30/">30</a><span class="page-number current">31</span><a class="page-number" href="/VideoSummary/page/32/">32</a><a class="page-number" href="/VideoSummary/page/33/">33</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="extend next" rel="next" href="/VideoSummary/page/32/">下一页</a>
     </div>
 </nav>
 

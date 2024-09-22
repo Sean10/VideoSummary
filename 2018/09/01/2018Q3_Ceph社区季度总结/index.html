@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>2018Q3 Ceph社区季度总结 | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Ceph,社区动态,技术发展">
+    <meta name="description" content="Ceph 社区 2018Q3 季度总结报告 1. 本季度 Ceph 社区的主要活动和重点议题 1.1 Ceph 性能会议  主题： Ceph 分布式存储系统性能优化 重点议题： bufferless 的使用和优化，包括内存碎片化、迭代器失效、缓存行争用等问题。 行动计划： 清理 bufferless 接口，优化 small vector，探索使用 vector 进行优化的可能性。  1.2 新开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018Q3 Ceph社区季度总结">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/09/01/2018Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="Ceph 社区 2018Q3 季度总结报告 1. 本季度 Ceph 社区的主要活动和重点议题 1.1 Ceph 性能会议  主题： Ceph 分布式存储系统性能优化 重点议题： bufferless 的使用和优化，包括内存碎片化、迭代器失效、缓存行争用等问题。 行动计划： 清理 bufferless 接口，优化 small vector，探索使用 vector 进行优化的可能性。  1.2 新开发">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-08-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-08-31T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="社区动态">
+<meta property="article:tag" content="技术发展">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">2018Q3 Ceph社区季度总结</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">2018Q3 Ceph社区季度总结</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-08-31T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-09-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ceph-%E7%A4%BE%E5%8C%BA-2018q3-%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E6%8A%A5%E5%91%8A"><span class="post-toc-number">1.</span> <span class="post-toc-text">Ceph 社区 2018Q3
+季度总结报告</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9C%AC%E5%AD%A3%E5%BA%A6-ceph-%E7%A4%BE%E5%8C%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E6%B4%BB%E5%8A%A8%E5%92%8C%E9%87%8D%E7%82%B9%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 本季度 Ceph
+社区的主要活动和重点议题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ceph-%E6%80%A7%E8%83%BD%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1.1 Ceph 性能会议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%96%B0%E5%BC%80%E5%8F%91%E8%80%85%E4%BB%A3%E7%A0%81%E8%B5%B0%E6%9F%A5"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">1.2 新开发者代码走查</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ceph-%E6%80%A7%E8%83%BD%E5%91%A8%E4%BC%9A"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">1.3 Ceph 性能周会</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ceph-%E6%B5%8B%E8%AF%95%E5%91%A8%E4%BC%9A"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">1.4 Ceph 测试周会</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ceph-%E5%BC%80%E5%8F%91%E8%80%85%E6%9C%88%E4%BC%9A"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">1.5 Ceph 开发者月会</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95%E5%92%8C%E5%88%9B%E6%96%B0%E4%BA%AE%E7%82%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 技术发展和创新亮点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%87%8D%E8%A6%81%E7%9A%84%E5%86%B3%E7%AD%96%E5%92%8C%E9%87%8C%E7%A8%8B%E7%A2%91"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. 重要的决策和里程碑</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%A4%BE%E5%8C%BA%E8%B4%A1%E7%8C%AE%E5%92%8C%E5%90%88%E4%BD%9C%E6%83%85%E5%86%B5"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4. 社区贡献和合作情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%8B%E4%B8%80%E5%AD%A3%E5%BA%A6%E5%B1%95%E6%9C%9B%E5%92%8C%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">5. 下一季度展望和计划</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-2018Q3_Ceph社区季度总结"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">2018Q3 Ceph社区季度总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-01 00:00:00" datetime="2018-08-31T16:00:00.000Z"  itemprop="datePublished">2018-09-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="ceph-社区-2018q3-季度总结报告">Ceph 社区 2018Q3
+季度总结报告</h1>
+<h2 id="本季度-ceph-社区的主要活动和重点议题">1. 本季度 Ceph
+社区的主要活动和重点议题</h2>
+<h3 id="ceph-性能会议">1.1 Ceph 性能会议</h3>
+<ul>
+<li><strong>主题</strong>： Ceph 分布式存储系统性能优化</li>
+<li><strong>重点议题</strong>： bufferless
+的使用和优化，包括内存碎片化、迭代器失效、缓存行争用等问题。</li>
+<li><strong>行动计划</strong>： 清理 bufferless 接口，优化 small
+vector，探索使用 vector 进行优化的可能性。</li>
+</ul>
+<h3 id="新开发者代码走查">1.2 新开发者代码走查</h3>
+<ul>
+<li><strong>主题</strong>： Ceph 源代码组织结构及关键组件介绍</li>
+<li><strong>重点议题</strong>： Ceph
+源代码目录组织结构、消息传递机制、对象存储机制、守护进程、librados
+库等。</li>
+<li><strong>行动计划</strong>：
+发布会议内容文档，持续举办类似的技术分享会。</li>
+</ul>
+<h3 id="ceph-性能周会">1.3 Ceph 性能周会</h3>
+<ul>
+<li><strong>主题</strong>： Ceph
+性能优化、监控系统改进、内存管理优化、Ceph 与 SeaStar 的兼容性等</li>
+<li><strong>重点议题</strong>： 缓存平衡、内存分配器、PGs
+限制、日志优化、性能测试等。</li>
+<li><strong>行动计划</strong>： 继续优化性能，关注内存管理问题，优化
+Messenger 协议。</li>
+</ul>
+<h3 id="ceph-测试周会">1.4 Ceph 测试周会</h3>
+<ul>
+<li><strong>主题</strong>： Ceph 在容器化环境下的测试策略和框架</li>
+<li><strong>重点议题</strong>：
+测试框架选择、测试环境、测试策略等。</li>
+<li><strong>行动计划</strong>： 使用 Tautology
+测试框架，创建通用接口，实现测试隔离性。</li>
+</ul>
+<h3 id="ceph-开发者月会">1.5 Ceph 开发者月会</h3>
+<ul>
+<li><strong>主题</strong>： Ceph
+分布式存储系统中的多个功能改进和优化方案</li>
+<li><strong>重点议题</strong>： Ceph 存储池权限控制、Ceph
+容器存储接口（CSI）、Ceph 文件系统、Ceph MDS 工作负载分析、Ceph OSD
+同步问题等。</li>
+<li><strong>行动计划</strong>：
+设计新的角色和权限模型，开发新的命令行工具和 REST
+API，优化文件系统性能和可扩展性，改进 Ceph MDS 的缓存机制，设计新的 PG
+锁机制。</li>
+</ul>
+<h2 id="技术发展和创新亮点">2. 技术发展和创新亮点</h2>
+<ul>
+<li><strong>bufferless 优化</strong>： 通过清理接口、优化 small
+vector、探索使用 vector 进行优化等方式，提高了 bufferless
+的性能和稳定性。</li>
+<li><strong>Ceph 容器存储接口（CSI）</strong>： 将 Ceph CSI
+客户端模块迁移到 Ceph Manager 模块，统一存储管理，开发新的命令行工具和
+REST API，支持更灵活的存储管理。</li>
+<li><strong>Ceph 文件系统</strong>：
+将文件系统称为“卷”，将子文件系统称为“子卷”，允许多个文件系统共享相同的数据池，改进了
+Ceph 文件系统的性能和可扩展性。</li>
+<li><strong>Ceph MDS 工作负载分析</strong>： 收集更多 MDS
+性能指标，开发新的工具，分析 MDS 工作负载并生成模拟工作负载，改进 Ceph
+MDS 的缓存机制。</li>
+</ul>
+<h2 id="重要的决策和里程碑">3. 重要的决策和里程碑</h2>
+<ul>
+<li><strong>bufferless 接口清理</strong>： 由 Braddock
+负责，整理出不必要的功能，并尝试使用 small vector 进行优化。</li>
+<li><strong>SeaStar 优化</strong>： 由 Casey、Radek 和 key foo
+负责，尝试将 SeaStar 特定缓冲区的原子引用计数改为非原子引用计数。</li>
+<li><strong>Ceph CI Ansible 优化</strong>： 由 Nathan
+负责，改进工作流程、实现版本控制和集成测试等。</li>
+<li><strong>Ceph 容器存储接口（CSI）开发</strong>： 将 Ceph CSI
+客户端模块迁移到 Ceph Manager 模块，开发新的命令行工具和 REST API。</li>
+</ul>
+<h2 id="社区贡献和合作情况">4. 社区贡献和合作情况</h2>
+<ul>
+<li><strong>社区贡献</strong>： 本季度 Ceph
+社区活跃度高，众多开发者参与贡献代码和文档。</li>
+<li><strong>合作情况</strong>： 与 OpenSUSE、Red Hat、Intel
+等公司合作，共同推动 Ceph 的发展和优化。</li>
+</ul>
+<h2 id="下一季度展望和计划">5. 下一季度展望和计划</h2>
+<ul>
+<li><strong>继续优化 Ceph 性能</strong>：
+关注内存管理、日志优化、缓存平衡等问题，提高 Ceph 的性能和稳定性。</li>
+<li><strong>改进 Ceph 文件系统</strong>：
+优化文件系统性能和可扩展性，支持更多存储场景。</li>
+<li><strong>推动 Ceph 容器存储接口（CSI）发展</strong>： 完善 Ceph CSI
+功能，提高 Ceph 在容器化环境下的可用性。</li>
+<li><strong>加强社区建设</strong>：
+持续举办技术分享会、代码审查等活动，吸引更多开发者参与 Ceph 社区。</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-08-31T16:00:00.000Z" itemprop="dateUpdated">2018-09-01 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/" rel="tag">技术发展</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A4%BE%E5%8C%BA%E5%8A%A8%E6%80%81/" rel="tag">社区动态</a></li></ul>
+
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/09/01/2018Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&title=《2018Q3 Ceph社区季度总结》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/09/01/2018Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&title=《2018Q3 Ceph社区季度总结》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2018/09/01/2018Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018Q3 Ceph社区季度总结》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/09/01/2018Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2018/09/01/2018Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2018/09/06/Ceph_Testing_Weekly_2018-09-05/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ceph Testing Weekly 2018-09-05</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2018/08/23/2018-08-22_Ceph_Testing_Weekly/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">2018-08-22 Ceph Testing Weekly</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/09/01/2018Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&title=《2018Q3 Ceph社区季度总结》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/09/01/2018Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&title=《2018Q3 Ceph社区季度总结》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2018/09/01/2018Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018Q3 Ceph社区季度总结》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/09/01/2018Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2018/09/01/2018Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2018/09/01/2018Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>
