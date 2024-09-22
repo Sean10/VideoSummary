@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Ceph Crimson/SeaStor OSD 2020-09-09 | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 关键细节  会议开始时间: 未明确记录，但根据内容推断为近期。 参会人员: 包括但不限于Sam、Kofu等。 会议形式: 视频会议，部分参会者遇到网络问题。  讨论的主要议题  Ratio Test 进展:  讨论了Ratio Test的失败情况，分为自动响应失败和恢复阶段跟踪问题。 增加了功能以在转储前符号化电池信息，以便直接获取函数名而不是地址。  Subversion Submod">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ceph Crimson&#x2F;SeaStor OSD 2020-09-09">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/09/10/Ceph_Crimson_SeaStor_OSD_2020-09-09/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 关键细节  会议开始时间: 未明确记录，但根据内容推断为近期。 参会人员: 包括但不限于Sam、Kofu等。 会议形式: 视频会议，部分参会者遇到网络问题。  讨论的主要议题  Ratio Test 进展:  讨论了Ratio Test的失败情况，分为自动响应失败和恢复阶段跟踪问题。 增加了功能以在转储前符号化电池信息，以便直接获取函数名而不是地址。  Subversion Submod">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-09-10T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Ceph Crimson/SeaStor OSD 2020-09-09</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Ceph Crimson/SeaStor OSD 2020-09-09</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-09-09T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2020-09-10
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他备注</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">2.</span> <span class="post-toc-text">结束语</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Ceph_Crimson_SeaStor_OSD_2020-09-09"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Ceph Crimson/SeaStor OSD 2020-09-09</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-09-10 00:00:00" datetime="2020-09-09T16:00:00.000Z"  itemprop="datePublished">2020-09-10</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<h4 id="关键细节">关键细节</h4>
+<ul>
+<li><strong>会议开始时间</strong>:
+未明确记录，但根据内容推断为近期。</li>
+<li><strong>参会人员</strong>: 包括但不限于Sam、Kofu等。</li>
+<li><strong>会议形式</strong>: 视频会议，部分参会者遇到网络问题。</li>
+</ul>
+<h4 id="讨论的主要议题">讨论的主要议题</h4>
+<ol type="1">
+<li><strong>Ratio Test 进展</strong>:
+<ul>
+<li>讨论了Ratio
+Test的失败情况，分为自动响应失败和恢复阶段跟踪问题。</li>
+<li>增加了功能以在转储前符号化电池信息，以便直接获取函数名而不是地址。</li>
+</ul></li>
+<li><strong>Subversion Submodule 更新</strong>:
+<ul>
+<li>更新了Subversion子模块到最新的上游版本，希望放弃自定义的分支。</li>
+</ul></li>
+<li><strong>Map Tree Code 调试</strong>:
+<ul>
+<li>Kofu报告了在调试Map Tree代码方面的进展。</li>
+</ul></li>
+<li><strong>Journal Write Out Stream 元数据</strong>:
+<ul>
+<li>Sam正在编写代码，以便在日志写入流中包含足够的元数据，用于识别逻辑地址和类型。</li>
+</ul></li>
+<li><strong>Interruptable Future Wrapper</strong>:
+<ul>
+<li>正在开发一个可中断的未来包装器，目前仍在进行中。</li>
+</ul></li>
+<li><strong>BlueJeans 应用升级问题</strong>:
+<ul>
+<li>讨论了从BlueJeans应用版本1升级到版本2的问题，以及在Fedora
+32上的兼容性。</li>
+</ul></li>
+<li><strong>OSD通信压缩</strong>:
+<ul>
+<li>提到一个实习生正在研究压缩OSD通信，并寻求帮助。</li>
+</ul></li>
+</ol>
+<h4 id="决定的事项">决定的事项</h4>
+<ul>
+<li>将继续使用现有的tick方法来处理OSD map的订阅问题。</li>
+<li>将更新PR以使用tick方法添加新的定时器。</li>
+<li>将处理BlueJeans应用在Fedora 32上的兼容性问题。</li>
+<li>将帮助实习生解决OSD通信压缩的问题。</li>
+</ul>
+<h4 id="后续行动计划">后续行动计划</h4>
+<ul>
+<li>完成并提交符号化电池信息的API。</li>
+<li>继续调试Map Tree代码。</li>
+<li>完成Journal Write Out Stream元数据的编码工作。</li>
+<li>完成Interruptable Future Wrapper的开发。</li>
+<li>解决BlueJeans应用的兼容性问题。</li>
+<li>协助实习生解决OSD通信压缩的问题。</li>
+</ul>
+<h4 id="其他备注">其他备注</h4>
+<ul>
+<li>会议中存在一些背景噪音，但不影响主要讨论。</li>
+<li>部分参会者遇到网络问题，建议后续会议前检查网络连接。</li>
+</ul>
+<h3 id="结束语">结束语</h3>
+<p>会议在讨论了各项议题和后续行动计划后结束，参会者表示将按计划推进各自的工作，并期待下次会议的进展报告。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-09-10T16:00:00.000Z" itemprop="dateUpdated">2020-09-11 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/09/10/Ceph_Crimson_SeaStor_OSD_2020-09-09/&title=《Ceph Crimson/SeaStor OSD 2020-09-09》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/09/10/Ceph_Crimson_SeaStor_OSD_2020-09-09/&title=《Ceph Crimson/SeaStor OSD 2020-09-09》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2020/09/10/Ceph_Crimson_SeaStor_OSD_2020-09-09/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStor OSD 2020-09-09》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/09/10/Ceph_Crimson_SeaStor_OSD_2020-09-09/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2020/09/10/Ceph_Crimson_SeaStor_OSD_2020-09-09/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2020/09/11/Ceph_Performance_Meeting_2020-09-10/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ceph Performance Meeting 2020-09-10</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2020/09/10/Ceph_Docubetter_Meeting_2020-09-05/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Ceph Docubetter Meeting 2020-09-05</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/09/10/Ceph_Crimson_SeaStor_OSD_2020-09-09/&title=《Ceph Crimson/SeaStor OSD 2020-09-09》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/09/10/Ceph_Crimson_SeaStor_OSD_2020-09-09/&title=《Ceph Crimson/SeaStor OSD 2020-09-09》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2020/09/10/Ceph_Crimson_SeaStor_OSD_2020-09-09/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStor OSD 2020-09-09》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/09/10/Ceph_Crimson_SeaStor_OSD_2020-09-09/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2020/09/10/Ceph_Crimson_SeaStor_OSD_2020-09-09/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2020/09/10/Ceph_Crimson_SeaStor_OSD_2020-09-09/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

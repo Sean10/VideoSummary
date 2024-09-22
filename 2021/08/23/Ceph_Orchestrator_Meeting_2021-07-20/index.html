@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Ceph Orchestrator Meeting 2021-07-20 | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议基本信息  日期: [具体日期] 时间: [具体时间] 主持人: [主持人姓名] 参会人员: [参会人员名单] 会议记录: 本次会议已通过上游蓝牙账户进行录制，但目前无法访问。通常会议录像会发布到YouTube，但可能会有两周的延迟。  讨论议题  会议录像访问问题  讨论了如何访问和发布会议录像的问题。建议再次联系Mike以获取访问权限。  Ceph Orchestrator模板问">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ceph Orchestrator Meeting 2021-07-20">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-20/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议基本信息  日期: [具体日期] 时间: [具体时间] 主持人: [主持人姓名] 参会人员: [参会人员名单] 会议记录: 本次会议已通过上游蓝牙账户进行录制，但目前无法访问。通常会议录像会发布到YouTube，但可能会有两周的延迟。  讨论议题  会议录像访问问题  讨论了如何访问和发布会议录像的问题。建议再次联系Mike以获取访问权限。  Ceph Orchestrator模板问">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-08-23T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Ceph Orchestrator Meeting 2021-07-20</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Ceph Orchestrator Meeting 2021-07-20</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-08-22T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2021-08-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议基本信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他事项</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Ceph_Orchestrator_Meeting_2021-07-20"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Ceph Orchestrator Meeting 2021-07-20</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-08-23 00:00:00" datetime="2021-08-22T16:00:00.000Z"  itemprop="datePublished">2021-08-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议基本信息">会议基本信息</h4>
+<ul>
+<li><strong>日期</strong>: [具体日期]</li>
+<li><strong>时间</strong>: [具体时间]</li>
+<li><strong>主持人</strong>: [主持人姓名]</li>
+<li><strong>参会人员</strong>: [参会人员名单]</li>
+<li><strong>会议记录</strong>:
+本次会议已通过上游蓝牙账户进行录制，但目前无法访问。通常会议录像会发布到YouTube，但可能会有两周的延迟。</li>
+</ul>
+<h4 id="讨论议题">讨论议题</h4>
+<ol type="1">
+<li><strong>会议录像访问问题</strong>
+<ul>
+<li>讨论了如何访问和发布会议录像的问题。建议再次联系Mike以获取访问权限。</li>
+</ul></li>
+<li><strong>Ceph Orchestrator模板问题</strong>
+<ul>
+<li><strong>议题</strong>:
+用户修改模板后无法受益于新版本默认模板的问题。</li>
+<li><strong>讨论</strong>:
+<ul>
+<li>提出了两种解决方案：将所有开关放入Yammer文件或继续使用Ginger模板。</li>
+<li>讨论了两种方案的缺点：Yammer文件可能导致配置复杂，Ginger模板可能导致升级问题。</li>
+<li>提出了可能的改进方案，如分离标准和自定义模板，或在Yammer文件中增加spec对象以允许用户自定义。</li>
+</ul></li>
+<li><strong>决定</strong>:
+暂时不做出决定，将问题推迟到后续讨论，并考虑在升级后提供工具帮助用户比较和更新模板。</li>
+</ul></li>
+<li><strong>Manager循环卡顿问题</strong>
+<ul>
+<li><strong>议题</strong>: Manager在处理离线主机时会卡顿15分钟。</li>
+<li><strong>讨论</strong>:
+<ul>
+<li>分析了问题原因：Ceph在主机离线时尝试通过SSH连接，导致长时间卡顿。</li>
+<li>提出了可能的解决方案：减少超时时间或等待新的SSH库和代理的改进。</li>
+</ul></li>
+<li><strong>决定</strong>:
+暂时不采取行动，等待新SSH库和代理的改进，观察是否能解决问题。</li>
+</ul></li>
+</ol>
+<h4 id="后续行动计划">后续行动计划</h4>
+<ul>
+<li><strong>会议录像</strong>:
+再次联系Mike以获取会议录像的访问权限。</li>
+<li><strong>模板问题</strong>:
+推迟到后续讨论，考虑提供工具帮助用户在升级后比较和更新模板。</li>
+<li><strong>Manager卡顿问题</strong>:
+等待新SSH库和代理的改进，观察是否能解决问题。</li>
+</ul>
+<h4 id="其他事项">其他事项</h4>
+<ul>
+<li>会议结束，下次会议再见。</li>
+</ul>
+<hr />
+<p><strong>备注</strong>: 本次会议讨论了Ceph
+Orchestrator的模板管理和Manager的性能问题，提出了多种解决方案和改进建议，但决定暂时不采取具体行动，等待后续技术改进。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-08-23T16:00:00.000Z" itemprop="dateUpdated">2021-08-24 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-20/&title=《Ceph Orchestrator Meeting 2021-07-20》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-20/&title=《Ceph Orchestrator Meeting 2021-07-20》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-20/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Orchestrator Meeting 2021-07-20》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-20/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-20/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2021/08/23/Ceph_Orchestrator_2021-07-13/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ceph Orchestrator 2021-07-13</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-08-03/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Ceph Orchestrator Meeting 2021-08-03</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-20/&title=《Ceph Orchestrator Meeting 2021-07-20》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-20/&title=《Ceph Orchestrator Meeting 2021-07-20》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-20/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Orchestrator Meeting 2021-07-20》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-20/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-20/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-20/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

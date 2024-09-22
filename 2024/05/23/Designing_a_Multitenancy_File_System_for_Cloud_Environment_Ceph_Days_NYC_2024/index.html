@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Designing a Multitenancy File System for Cloud Environment | Ceph Days NYC 2024 | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议主题： 利用开源分布式存储系统Ceph为云环境构建多租户文件系统 主讲人： Mitch Hall（45 Drives首席架构师）、Brett KY（45 Drives技术总监） 会议内容总结：  项目背景与需求：  一家《财富》100强公司寻求新的云解决方案，用于远程编辑和存储媒体娱乐内容。 需求包括多租户支持、存储分层（HDD和SSD）、弹性扩展、数据加密、自动化管理以及支持NFS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Designing a Multitenancy File System for Cloud Environment | Ceph Days NYC 2024">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2024/05/23/Designing_a_Multitenancy_File_System_for_Cloud_Environment_Ceph_Days_NYC_2024/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议主题： 利用开源分布式存储系统Ceph为云环境构建多租户文件系统 主讲人： Mitch Hall（45 Drives首席架构师）、Brett KY（45 Drives技术总监） 会议内容总结：  项目背景与需求：  一家《财富》100强公司寻求新的云解决方案，用于远程编辑和存储媒体娱乐内容。 需求包括多租户支持、存储分层（HDD和SSD）、弹性扩展、数据加密、自动化管理以及支持NFS">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-05-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-05-22T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Designing a Multitenancy File System for Cloud Environment | Ceph Days NYC 2024</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Designing a Multitenancy File System for Cloud Environment | Ceph Days NYC 2024</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2024-05-22T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2024-05-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Designing_a_Multitenancy_File_System_for_Cloud_Environment_Ceph_Days_NYC_2024"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Designing a Multitenancy File System for Cloud Environment | Ceph Days NYC 2024</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2024-05-23 00:00:00" datetime="2024-05-22T16:00:00.000Z"  itemprop="datePublished">2024-05-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议主题：</strong>
+利用开源分布式存储系统Ceph为云环境构建多租户文件系统</p>
+<p><strong>主讲人：</strong> Mitch Hall（45 Drives首席架构师）、Brett
+KY（45 Drives技术总监）</p>
+<p><strong>会议内容总结：</strong></p>
+<ol type="1">
+<li><strong>项目背景与需求：</strong>
+<ul>
+<li>一家《财富》100强公司寻求新的云解决方案，用于远程编辑和存储媒体娱乐内容。</li>
+<li>需求包括多租户支持、存储分层（HDD和SSD）、弹性扩展、数据加密、自动化管理以及支持NFS、SMB、快照和配额等功能。</li>
+</ul></li>
+<li><strong>主要挑战：</strong>
+<ul>
+<li><strong>可扩展性：</strong> 需要支持数百至数千个多租户工作站。</li>
+<li><strong>多租户支持：</strong> 文件系统本身不天然支持多租户。</li>
+<li><strong>数据加密：</strong> 需要实现数据静态加密。</li>
+<li><strong>自动化：</strong> 需要从零开始开发自动化工具。</li>
+<li><strong>文件系统支持：</strong> 需要支持多种文件系统功能。</li>
+</ul></li>
+<li><strong>硬件与软件选择：</strong>
+<ul>
+<li>硬件：45
+Drives提供的存储节点和计算节点，每个存储节点配备30个硬盘槽和22个SSD槽。</li>
+<li>软件：Rocky Linux作为操作系统，Ceph
+Octopus作为分布式存储系统，Proxmox v7.1用于虚拟化。</li>
+</ul></li>
+<li><strong>数据隔离与安全：</strong>
+<ul>
+<li>使用Ceph的RADOS命名空间实现数据隔离，确保每个租户只能访问自己的数据。</li>
+<li>通过配置密钥环限制租户访问权限，确保数据安全。</li>
+</ul></li>
+<li><strong>加密与自动化：</strong>
+<ul>
+<li>使用DM-Crypt和自加密驱动器实现数据加密。</li>
+<li>开发自动化脚本和udev规则，确保驱动器在系统启动时正确解锁。</li>
+</ul></li>
+<li><strong>性能测试：</strong>
+<ul>
+<li>构建了测试环境，使用Filebench进行多种性能测试，包括随机读写、顺序读写和小文件操作。</li>
+<li>测试结果显示，虚拟化网关在处理随机IO时性能稳定，且延迟保持在较低水平。</li>
+</ul></li>
+<li><strong>部署与挑战：</strong>
+<ul>
+<li>在英国的数据中心实际部署时，发现网络配置与预期不符，通过现场调整代码解决了问题。</li>
+</ul></li>
+<li><strong>未来计划：</strong>
+<ul>
+<li>考虑将虚拟化层替换为容器化，以提高灵活性和效率。</li>
+<li>改进多MDS管理，实现更自动化的MDS分配和扩展。</li>
+</ul></li>
+</ol>
+<p><strong>后续行动计划：</strong> - 继续优化自动化工具和配置管理。 -
+探索容器化解决方案，提高系统灵活性和可管理性。 -
+完善MDS管理策略，确保高性能和稳定性。</p>
+<p><strong>备注：</strong> - 会议中提到的技术细节和工具包括Ceph、Rocky
+Linux、Proxmox、Samba、Ansible、Terraform等，这些关键词在总结中保留以供参考。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2024-05-22T16:00:00.000Z" itemprop="dateUpdated">2024-05-23 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/05/23/Designing_a_Multitenancy_File_System_for_Cloud_Environment_Ceph_Days_NYC_2024/&title=《Designing a Multitenancy File System for Cloud Environment | Ceph Days NYC 2024》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/05/23/Designing_a_Multitenancy_File_System_for_Cloud_Environment_Ceph_Days_NYC_2024/&title=《Designing a Multitenancy File System for Cloud Environment | Ceph Days NYC 2024》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2024/05/23/Designing_a_Multitenancy_File_System_for_Cloud_Environment_Ceph_Days_NYC_2024/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Designing a Multitenancy File System for Cloud Environment | Ceph Days NYC 2024》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/05/23/Designing_a_Multitenancy_File_System_for_Cloud_Environment_Ceph_Days_NYC_2024/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2024/05/23/Designing_a_Multitenancy_File_System_for_Cloud_Environment_Ceph_Days_NYC_2024/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2024/05/23/Community_Initiatives_and_Improving_Ceph_through_User_Feedback_Ceph_Days_NYC_2024/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Community Initiatives and Improving Ceph through User Feedback | Ceph Days NYC 2024</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2024/05/23/Practical_Business_Ceph_Examples_Ceph_Days_NYC_2024/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Practical Business Ceph Examples | Ceph Days NYC 2024</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/05/23/Designing_a_Multitenancy_File_System_for_Cloud_Environment_Ceph_Days_NYC_2024/&title=《Designing a Multitenancy File System for Cloud Environment | Ceph Days NYC 2024》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/05/23/Designing_a_Multitenancy_File_System_for_Cloud_Environment_Ceph_Days_NYC_2024/&title=《Designing a Multitenancy File System for Cloud Environment | Ceph Days NYC 2024》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2024/05/23/Designing_a_Multitenancy_File_System_for_Cloud_Environment_Ceph_Days_NYC_2024/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Designing a Multitenancy File System for Cloud Environment | Ceph Days NYC 2024》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/05/23/Designing_a_Multitenancy_File_System_for_Cloud_Environment_Ceph_Days_NYC_2024/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2024/05/23/Designing_a_Multitenancy_File_System_for_Cloud_Environment_Ceph_Days_NYC_2024/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2024/05/23/Designing_a_Multitenancy_File_System_for_Cloud_Environment_Ceph_Days_NYC_2024/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

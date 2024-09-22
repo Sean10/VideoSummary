@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>All things in Moderation | Ceph Days London 2024 | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议时间： [请填写会议时间] 会议地点： [请填写会议地点] 参会人员： Jack（Bloomberg存储工程团队） 会议主题： 在SEF对象存储上应用集群级服务质量（QoS）技术的经验分享 会议内容： 1. 背景  Bloomberg拥有大量SEF存储集群，分布在生产、开发、测试和遗留环境中。 由于集群处理请求和数据传输量巨大，需要实施QoS策略来优化性能和用户体验。  2. 自定义">
+<meta property="og:type" content="article">
+<meta property="og:title" content="All things in Moderation | Ceph Days London 2024">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2024/08/23/All_things_in_Moderation_Ceph_Days_London_2024/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议时间： [请填写会议时间] 会议地点： [请填写会议地点] 参会人员： Jack（Bloomberg存储工程团队） 会议主题： 在SEF对象存储上应用集群级服务质量（QoS）技术的经验分享 会议内容： 1. 背景  Bloomberg拥有大量SEF存储集群，分布在生产、开发、测试和遗留环境中。 由于集群处理请求和数据传输量巨大，需要实施QoS策略来优化性能和用户体验。  2. 自定义">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-08-23T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">All things in Moderation | Ceph Days London 2024</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">All things in Moderation | Ceph Days London 2024</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2024-08-22T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2024-08-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-All_things_in_Moderation_Ceph_Days_London_2024"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">All things in Moderation | Ceph Days London 2024</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2024-08-23 00:00:00" datetime="2024-08-22T16:00:00.000Z"  itemprop="datePublished">2024-08-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>会议纪要</strong></p>
+<p><strong>会议时间</strong>： [请填写会议时间]
+<strong>会议地点</strong>： [请填写会议地点] <strong>参会人员</strong>：
+Jack（Bloomberg存储工程团队） <strong>会议主题</strong>：
+在SEF对象存储上应用集群级服务质量（QoS）技术的经验分享</p>
+<p><strong>会议内容</strong>：</p>
+<p><strong>1. 背景</strong></p>
+<ul>
+<li>Bloomberg拥有大量SEF存储集群，分布在生产、开发、测试和遗留环境中。</li>
+<li>由于集群处理请求和数据传输量巨大，需要实施QoS策略来优化性能和用户体验。</li>
+</ul>
+<p><strong>2. 自定义QoS解决方案</strong></p>
+<ul>
+<li>由于现有解决方案无法满足Bloomberg的需求，团队自行开发了软件定义的QoS堆栈。</li>
+<li>该堆栈旨在实现以下目标：
+<ul>
+<li>为用户提供一致的性能体验。</li>
+<li>维护集群性能标准。</li>
+<li>为每个用户提供可配置的速率限制。</li>
+<li>支持多种环境，包括多站点集群。</li>
+</ul></li>
+</ul>
+<p><strong>3. QoS架构</strong></p>
+<ul>
+<li>系统架构包括：
+<ul>
+<li>用户</li>
+<li>SEF集群</li>
+<li>Haproxy代理（定制版本）</li>
+<li>自定义CIS日志服务器</li>
+<li>Reddis实例（用于存储数据）</li>
+<li>策略生成器</li>
+</ul></li>
+</ul>
+<p><strong>4. 遇到的问题及解决方案</strong></p>
+<ul>
+<li><strong>传输限制执行</strong>：
+<ul>
+<li>原始系统为完全被动式，只有在用户超过限制后才会采取措施。</li>
+<li>现已改进，通过向Haproxy代理发送超出限制的程度信息，调整暂停时间。</li>
+<li>正在探索更主动的解决方案，例如根据实例使用情况调整限制。</li>
+</ul></li>
+<li><strong>并发传输</strong>：
+<ul>
+<li>用户通过增加机器或硬件来提高传输速度。</li>
+<li>需要限制客户端打开的连接数量，以防止资源耗尽。</li>
+<li>正在研究防止创建新连接的方法。</li>
+</ul></li>
+<li><strong>昂贵请求</strong>：
+<ul>
+<li>下载大量对象或列出大存储桶中的对象可能导致性能问题。</li>
+<li>需要更深入地分析请求，例如根据服务时间或请求复杂性进行限制。</li>
+</ul></li>
+</ul>
+<p><strong>5. 未来计划</strong></p>
+<ul>
+<li>进一步改进传输限制执行和并发传输问题。</li>
+<li>研究更智能的请求分析方法，以处理昂贵请求。</li>
+<li>考虑开源自定义QoS解决方案。</li>
+</ul>
+<p><strong>6. 总结</strong></p>
+<ul>
+<li>自定义QoS解决方案在Bloomberg的SEF存储集群中取得了成功。</li>
+<li>通过不断改进和优化，该解决方案有助于提高性能和用户体验。</li>
+</ul>
+<p><strong>后续行动计划</strong>：</p>
+<ul>
+<li>Jack将分享更多关于QoS架构和实施细节的信息。</li>
+<li>团队将继续研究改进QoS解决方案的方法。</li>
+<li>考虑开源自定义QoS解决方案。</li>
+</ul>
+<p><strong>备注</strong>：</p>
+<ul>
+<li>会议中提到的关键计算机科学/CEPH领域英文原文关键词包括：SEF object
+storage, cluster wide quality of service, Haproxy, Reddis, rate
+limiting, connection limiting, expensive requests。</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2024-08-23T16:00:00.000Z" itemprop="dateUpdated">2024-08-24 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/08/23/All_things_in_Moderation_Ceph_Days_London_2024/&title=《All things in Moderation | Ceph Days London 2024》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/08/23/All_things_in_Moderation_Ceph_Days_London_2024/&title=《All things in Moderation | Ceph Days London 2024》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2024/08/23/All_things_in_Moderation_Ceph_Days_London_2024/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《All things in Moderation | Ceph Days London 2024》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/08/23/All_things_in_Moderation_Ceph_Days_London_2024/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2024/08/23/All_things_in_Moderation_Ceph_Days_London_2024/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2024/09/04/Ceph_RGW_Refactoring_Meeting_2024-08-28/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ceph RGW Refactoring Meeting 2024-08-28</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2024/08/23/Afternoon_Lightning_Talks_Ceph_Days_London_2024/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Afternoon Lightning Talks | Ceph Days London 2024</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/08/23/All_things_in_Moderation_Ceph_Days_London_2024/&title=《All things in Moderation | Ceph Days London 2024》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/08/23/All_things_in_Moderation_Ceph_Days_London_2024/&title=《All things in Moderation | Ceph Days London 2024》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2024/08/23/All_things_in_Moderation_Ceph_Days_London_2024/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《All things in Moderation | Ceph Days London 2024》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/08/23/All_things_in_Moderation_Ceph_Days_London_2024/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2024/08/23/All_things_in_Moderation_Ceph_Days_London_2024/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2024/08/23/All_things_in_Moderation_Ceph_Days_London_2024/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

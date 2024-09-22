@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>RADOS Object Class Development in C++ Lua - Noah Watkins, Red Hat | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议时间： [请填写会议具体时间] 会议地点： [请填写会议具体地点] 参会人员： [请填写参会人员名单] 会议主持人： Noah Watkins 会议主题： 基于 Ceph 的扩展功能与应用 会议内容： 1. 介绍与背景  Noah Watkins 介绍了自己作为 Red Hat 工程师，主要工作在 Rook 集成领域，今天将分享扩展应用程序功能的方法。 使用 Stuff 架构图展示了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RADOS Object Class Development in C++ Lua - Noah Watkins, Red Hat">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/RADOS_Object_Class_Development_in_C++_Lua_-_Noah_Watkins_Red_Hat/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议时间： [请填写会议具体时间] 会议地点： [请填写会议具体地点] 参会人员： [请填写参会人员名单] 会议主持人： Noah Watkins 会议主题： 基于 Ceph 的扩展功能与应用 会议内容： 1. 介绍与背景  Noah Watkins 介绍了自己作为 Red Hat 工程师，主要工作在 Rook 集成领域，今天将分享扩展应用程序功能的方法。 使用 Stuff 架构图展示了">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">RADOS Object Class Development in C++ Lua - Noah Watkins, Red Hat</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">RADOS Object Class Development in C++ Lua - Noah Watkins, Red Hat</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-05-24
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-RADOS_Object_Class_Development_in_C++_Lua_-_Noah_Watkins_Red_Hat"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">RADOS Object Class Development in C++ Lua - Noah Watkins, Red Hat</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-24 00:00:00" datetime="2019-05-23T16:00:00.000Z"  itemprop="datePublished">2019-05-24</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议时间</strong>： [请填写会议具体时间]</p>
+<p><strong>会议地点</strong>： [请填写会议具体地点]</p>
+<p><strong>参会人员</strong>： [请填写参会人员名单]</p>
+<p><strong>会议主持人</strong>： Noah Watkins</p>
+<p><strong>会议主题</strong>： 基于 Ceph 的扩展功能与应用</p>
+<p><strong>会议内容</strong>：</p>
+<p><strong>1. 介绍与背景</strong></p>
+<ul>
+<li>Noah Watkins 介绍了自己作为 Red Hat 工程师，主要工作在 Rook
+集成领域，今天将分享扩展应用程序功能的方法。</li>
+<li>使用 Stuff 架构图展示了客户端通过 API 访问集群的流程，并重点介绍了
+RBD（块设备功能）和 RBD LS（列出 RBD 管理的镜像）。</li>
+</ul>
+<p><strong>2. RBD 的工作原理</strong></p>
+<ul>
+<li>讨论了 RBD LS 如何工作，并指出 RBD LS 列出由 Stuff
+管理的镜像，但未讨论数据库的安装。</li>
+<li>解释了 Ceph
+将数据存储在对象中，并通过应用程序特定接口访问这些对象，例如 RBD 和
+RGW。</li>
+<li>强调了使用对象类（object
+classes）来扩展接口，即动态地将代码编译成对象并插入到 OSD 中。</li>
+</ul>
+<p><strong>3. 应用示例</strong></p>
+<ul>
+<li>以一个简单的客户端应用程序为例，演示了如何使用 liber8 O API
+读取对象并计算校验和。</li>
+<li>介绍了 Skyhook 项目，这是一个基于 Stuff
+的弹性数据库引擎，使用对象类来加速查询。</li>
+<li>展示了 Skyhook 在性能方面的提升，例如在查询 10%
+的亿级行时，性能提高了 6 倍。</li>
+<li>讨论了 Ceph 源代码树中提供的对象类示例，包括 Lua 对象类。</li>
+</ul>
+<p><strong>4. Lua 对象类</strong></p>
+<ul>
+<li>指出 Lua 对象类可以简化开发过程，并提供了与 C++ 相同的功能。</li>
+<li>介绍了 Lua 对象类的开发过程，包括编写 Lua 代码、编译和插入到 OSD
+中。</li>
+<li>强调了 Lua 对象类的安全性和错误处理。</li>
+</ul>
+<p><strong>5. 示例：缩略图生成</strong></p>
+<ul>
+<li>以缩略图生成为例，演示了如何使用对象类来处理图像数据。</li>
+<li>介绍了缓存缩略图以避免重复计算的概念。</li>
+</ul>
+<p><strong>6. 未来发展方向</strong></p>
+<ul>
+<li>讨论了正在开发的更多用例，例如 HDFS
+的多维数据切片和用于高能物理的存储系统。</li>
+<li>提到了使用 WebAssembly 作为 Lua 的替代方案。</li>
+</ul>
+<p><strong>7. 问答环节</strong></p>
+<ul>
+<li>回答了关于对象类与擦除池兼容性、脚本部署和 Lua 与 Haproxy
+集成等问题的疑问。</li>
+</ul>
+<p><strong>行动计划</strong>：</p>
+<ul>
+<li>[请填写行动计划，例如：进一步研究 Skyhook 项目、探索 Lua
+对象类的安全性、开发更多示例应用等。]</li>
+</ul>
+<p><strong>备注</strong>：</p>
+<ul>
+<li>会议中提到了许多 Ceph 相关的关键词，例如 RBD、RGW、liber8
+O、对象类、Lua、Skyhook 等。</li>
+<li>会议内容深入浅出，为开发人员提供了丰富的 Ceph
+扩展功能和应用案例。</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-05-23T16:00:00.000Z" itemprop="dateUpdated">2019-05-24 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/RADOS_Object_Class_Development_in_C++_Lua_-_Noah_Watkins_Red_Hat/&title=《RADOS Object Class Development in C++ Lua - Noah Watkins, Red Hat》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/RADOS_Object_Class_Development_in_C++_Lua_-_Noah_Watkins_Red_Hat/&title=《RADOS Object Class Development in C++ Lua - Noah Watkins, Red Hat》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2019/05/24/RADOS_Object_Class_Development_in_C++_Lua_-_Noah_Watkins_Red_Hat/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RADOS Object Class Development in C++ Lua - Noah Watkins, Red Hat》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/RADOS_Object_Class_Development_in_C++_Lua_-_Noah_Watkins_Red_Hat/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2019/05/24/RADOS_Object_Class_Development_in_C++_Lua_-_Noah_Watkins_Red_Hat/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2019/05/24/Practices_of_Using_NFS_Over_RGW_-_Enming_Zhang_UMCloud/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Practices of Using NFS Over RGW - Enming Zhang, UMCloud</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2019/05/24/Rapid_Design_and_Effective_Operating_of_a_General_Purpose_Object_Storage_at_RWTH_-_Jonas_Jansen/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Rapid Design and Effective Operating of a General Purpose Object Storage at RWTH - Jonas Jansen</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/RADOS_Object_Class_Development_in_C++_Lua_-_Noah_Watkins_Red_Hat/&title=《RADOS Object Class Development in C++ Lua - Noah Watkins, Red Hat》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/RADOS_Object_Class_Development_in_C++_Lua_-_Noah_Watkins_Red_Hat/&title=《RADOS Object Class Development in C++ Lua - Noah Watkins, Red Hat》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2019/05/24/RADOS_Object_Class_Development_in_C++_Lua_-_Noah_Watkins_Red_Hat/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RADOS Object Class Development in C++ Lua - Noah Watkins, Red Hat》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/RADOS_Object_Class_Development_in_C++_Lua_-_Noah_Watkins_Red_Hat/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2019/05/24/RADOS_Object_Class_Development_in_C++_Lua_-_Noah_Watkins_Red_Hat/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2019/05/24/RADOS_Object_Class_Development_in_C++_Lua_-_Noah_Watkins_Red_Hat/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

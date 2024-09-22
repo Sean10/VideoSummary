@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Ceph Day CERN 2019: Ceph at the Flatiron Institute - Andras Pataki | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议主题：Flatiron Institute的Ceph存储系统介绍与经验分享 主讲人：Andres Pataki 会议概要： Andres Pataki来自Simon西班牙Flatiron研究所，介绍了Flatiron研究所的背景、Ceph存储系统的使用情况、技术细节、性能表现、硬件与软件挑战以及未来展望。 关键细节：  Flatiron研究所背景：  Flatiron研究所是Simo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ceph Day CERN 2019: Ceph at the Flatiron Institute - Andras Pataki">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/08/25/Ceph_Day_CERN_2019_-_Ceph_at_the_Flatiron_Institute_-_Andras_Pataki/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议主题：Flatiron Institute的Ceph存储系统介绍与经验分享 主讲人：Andres Pataki 会议概要： Andres Pataki来自Simon西班牙Flatiron研究所，介绍了Flatiron研究所的背景、Ceph存储系统的使用情况、技术细节、性能表现、硬件与软件挑战以及未来展望。 关键细节：  Flatiron研究所背景：  Flatiron研究所是Simo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-25T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Ceph Day CERN 2019: Ceph at the Flatiron Institute - Andras Pataki</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Ceph Day CERN 2019: Ceph at the Flatiron Institute - Andras Pataki</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-08-24T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2020-08-25
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98flatiron-institute%E7%9A%84ceph%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D%E4%B8%8E%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Flatiron
+Institute的Ceph存储系统介绍与经验分享</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAandres-pataki"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：Andres Pataki</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议概要：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">关键细节：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">结论：</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Ceph_Day_CERN_2019_-_Ceph_at_the_Flatiron_Institute_-_Andras_Pataki"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Ceph Day CERN 2019: Ceph at the Flatiron Institute - Andras Pataki</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-08-25 00:00:00" datetime="2020-08-24T16:00:00.000Z"  itemprop="datePublished">2020-08-25</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<h4
+id="会议主题flatiron-institute的ceph存储系统介绍与经验分享">会议主题：Flatiron
+Institute的Ceph存储系统介绍与经验分享</h4>
+<h4 id="主讲人andres-pataki">主讲人：Andres Pataki</h4>
+<h4 id="会议概要">会议概要：</h4>
+<p>Andres
+Pataki来自Simon西班牙Flatiron研究所，介绍了Flatiron研究所的背景、Ceph存储系统的使用情况、技术细节、性能表现、硬件与软件挑战以及未来展望。</p>
+<h4 id="关键细节">关键细节：</h4>
+<ol type="1">
+<li><strong>Flatiron研究所背景</strong>：
+<ul>
+<li>Flatiron研究所是Simons基金会的一个研究部门，由Simons家族资助，该家族在对冲基金行业取得了巨大成功。</li>
+<li>研究所的使命是通过计算手段推进科学研究。</li>
+<li>研究所位于纽约市曼哈顿中城，靠近Flatiron大楼，拥有约150名科学家，涉及天体物理学、生物学、量子化学和数学等多个领域。</li>
+</ul></li>
+<li><strong>Ceph存储系统使用情况</strong>：
+<ul>
+<li>研究所使用Ceph存储系统处理多种计算任务，包括基因组数据、早期宇宙的MPI模拟等。</li>
+<li>集群规模：约40,000个核心，数百个GPU，存储空间约30PB。</li>
+<li>使用Ceph的FS（文件系统）侧，主要因为传统代码不支持对象存储。</li>
+</ul></li>
+<li><strong>技术细节与性能</strong>：
+<ul>
+<li>Ceph的恢复机制非常高效，特别是在处理多重故障时。</li>
+<li>通过CRUSH算法，Ceph能够并行恢复数据，大大缩短了恢复时间。</li>
+<li>性能测试显示，Ceph集群在处理大量数据时表现出色，但小文件性能仍有待提升。</li>
+</ul></li>
+<li><strong>硬件与软件挑战</strong>：
+<ul>
+<li>硬件方面，早期购买的NAS级硬盘存在数据 silently corrupted
+的问题。</li>
+<li>网络方面，早期40G接口存在丢包问题。</li>
+<li>软件方面，从Hammer版本升级到Mimic，并计划升级到Nautilus。</li>
+</ul></li>
+<li><strong>经验与教训</strong>：
+<ul>
+<li>硬件测试至关重要，早期硬件问题导致数据损坏。</li>
+<li>Ceph的滚动升级策略有效，未导致系统中断。</li>
+<li>灾难恢复案例显示，Ceph的高冗余模型确保了数据安全。</li>
+</ul></li>
+<li><strong>未来展望</strong>：
+<ul>
+<li>小文件性能改进是当前的主要挑战。</li>
+<li>考虑引入闪存存储，关注Ceph的Crimson项目。</li>
+<li>探索多站点支持，以便在不同地理位置之间实现统一文件系统。</li>
+</ul></li>
+</ol>
+<h4 id="决定事项">决定事项：</h4>
+<ul>
+<li>继续关注并测试Ceph的新版本和功能。</li>
+<li>优化小文件性能，考虑引入闪存存储。</li>
+<li>探索多站点支持，以实现更广泛的存储部署。</li>
+</ul>
+<h4 id="后续行动计划">后续行动计划：</h4>
+<ul>
+<li>定期进行硬件和软件测试，确保系统稳定性。</li>
+<li>持续监控和优化Ceph集群的性能。</li>
+<li>与Ceph开发团队保持沟通，获取早期支持和修复。</li>
+</ul>
+<h4 id="结论">结论：</h4>
+<p>Flatiron研究所通过使用Ceph存储系统，成功支持了多个科学研究项目，尽管面临硬件和软件挑战，但通过持续的优化和升级，确保了数据的安全和系统的稳定运行。未来，研究所将继续探索Ceph的新功能和优化方案，以满足不断增长的计算和存储需求。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-08-25T16:00:00.000Z" itemprop="dateUpdated">2020-08-26 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/08/25/Ceph_Day_CERN_2019_-_Ceph_at_the_Flatiron_Institute_-_Andras_Pataki/&title=《Ceph Day CERN 2019: Ceph at the Flatiron Institute - Andras Pataki》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/08/25/Ceph_Day_CERN_2019_-_Ceph_at_the_Flatiron_Institute_-_Andras_Pataki/&title=《Ceph Day CERN 2019: Ceph at the Flatiron Institute - Andras Pataki》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2020/08/25/Ceph_Day_CERN_2019_-_Ceph_at_the_Flatiron_Institute_-_Andras_Pataki/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Day CERN 2019: Ceph at the Flatiron Institute - Andras Pataki》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/08/25/Ceph_Day_CERN_2019_-_Ceph_at_the_Flatiron_Institute_-_Andras_Pataki/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2020/08/25/Ceph_Day_CERN_2019_-_Ceph_at_the_Flatiron_Institute_-_Andras_Pataki/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2020/08/25/Ceph_Day_CERN_2019_-_Ceph_Supporting_Genetic_Research_at_Wellcome_Sanger_Institute_-_Matthew_Vernon/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ceph Day CERN 2019: Ceph Supporting Genetic Research at Wellcome Sanger Institute - Matthew Vernon</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2020/08/25/Ceph_Day_CERN_2019_-_CephFS_-_looking_for_the_Swiss_Army_knife_of_POSIX_filesystems_-_Mattia_Belluco/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Ceph Day CERN 2019: CephFS: looking for the Swiss Army knife of POSIX filesystems - Mattia Belluco</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/08/25/Ceph_Day_CERN_2019_-_Ceph_at_the_Flatiron_Institute_-_Andras_Pataki/&title=《Ceph Day CERN 2019: Ceph at the Flatiron Institute - Andras Pataki》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/08/25/Ceph_Day_CERN_2019_-_Ceph_at_the_Flatiron_Institute_-_Andras_Pataki/&title=《Ceph Day CERN 2019: Ceph at the Flatiron Institute - Andras Pataki》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2020/08/25/Ceph_Day_CERN_2019_-_Ceph_at_the_Flatiron_Institute_-_Andras_Pataki/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Day CERN 2019: Ceph at the Flatiron Institute - Andras Pataki》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/08/25/Ceph_Day_CERN_2019_-_Ceph_at_the_Flatiron_Institute_-_Andras_Pataki/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2020/08/25/Ceph_Day_CERN_2019_-_Ceph_at_the_Flatiron_Institute_-_Andras_Pataki/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2020/08/25/Ceph_Day_CERN_2019_-_Ceph_at_the_Flatiron_Institute_-_Andras_Pataki/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

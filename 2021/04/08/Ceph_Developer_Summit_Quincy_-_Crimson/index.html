@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Ceph Developer Summit Quincy: Crimson | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 主题一：适应Ceph的Boost ASIO代码到C-Star Reactor  讨论内容：  现有代码依赖Boost ASIO，讨论如何将其适配到C-Star Reactor中。 探讨是否可以通过包装和适当的回调函数来直接在Reactor中运行。 初步认为需要进一步调查是否需要进行此项工作，特别是对于实时RBD（Live RBD）。  决定事项：  需要进一步调查和评估将Boost AS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ceph Developer Summit Quincy: Crimson">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/04/08/Ceph_Developer_Summit_Quincy_-_Crimson/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 主题一：适应Ceph的Boost ASIO代码到C-Star Reactor  讨论内容：  现有代码依赖Boost ASIO，讨论如何将其适配到C-Star Reactor中。 探讨是否可以通过包装和适当的回调函数来直接在Reactor中运行。 初步认为需要进一步调查是否需要进行此项工作，特别是对于实时RBD（Live RBD）。  决定事项：  需要进一步调查和评估将Boost AS">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-07T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Ceph Developer Summit Quincy: Crimson</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Ceph Developer Summit Quincy: Crimson</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-04-07T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2021-04-08
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E9%A2%98%E4%B8%80%E9%80%82%E5%BA%94ceph%E7%9A%84boost-asio%E4%BB%A3%E7%A0%81%E5%88%B0c-star-reactor"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">主题一：适应Ceph的Boost
+ASIO代码到C-Star Reactor</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E9%A2%98%E4%BA%8Crapid-car-diamond%E5%92%8Crapid-car-monitor%E8%AE%BE%E8%AE%A1"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主题二：Rapid
+CAR Diamond和Rapid CAR Monitor设计</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E9%A2%98%E4%B8%89crimson%E7%9A%84%E5%A4%9A%E6%A0%B8%E6%94%AF%E6%8C%81%E4%B8%8Em2n%E6%98%A0%E5%B0%84"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主题三：Crimson的多核支持与M2N映射</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E9%A2%98%E5%9B%9Bc-store%E7%9A%84%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%E5%92%8C%E6%9C%AA%E6%9D%A5%E5%B7%A5%E4%BD%9C"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主题四：C-Store的当前状态和未来工作</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%80%BB%E7%BB%93"><span class="post-toc-number">2.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Ceph_Developer_Summit_Quincy_-_Crimson"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Ceph Developer Summit Quincy: Crimson</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-04-08 00:00:00" datetime="2021-04-07T16:00:00.000Z"  itemprop="datePublished">2021-04-08</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<h4
+id="主题一适应ceph的boost-asio代码到c-star-reactor">主题一：适应Ceph的Boost
+ASIO代码到C-Star Reactor</h4>
+<ul>
+<li><strong>讨论内容</strong>：
+<ul>
+<li>现有代码依赖Boost ASIO，讨论如何将其适配到C-Star Reactor中。</li>
+<li>探讨是否可以通过包装和适当的回调函数来直接在Reactor中运行。</li>
+<li>初步认为需要进一步调查是否需要进行此项工作，特别是对于实时RBD（Live
+RBD）。</li>
+</ul></li>
+<li><strong>决定事项</strong>：
+<ul>
+<li>需要进一步调查和评估将Boost ASIO代码适配到C-Star
+Reactor的可行性和必要性。</li>
+<li>可能需要一个初始原型来验证代码的适配情况。</li>
+</ul></li>
+<li><strong>后续行动计划</strong>：
+<ul>
+<li>由熟悉Boost ASIO和C-Star的开发人员进行深入调查和原型开发。</li>
+</ul></li>
+</ul>
+<h4 id="主题二rapid-car-diamond和rapid-car-monitor设计">主题二：Rapid
+CAR Diamond和Rapid CAR Monitor设计</h4>
+<ul>
+<li><strong>讨论内容</strong>：
+<ul>
+<li>讨论了如何设计Replica Daemon和Rapid CAR Monitor来管理复制信息。</li>
+<li>现有设计涉及在Replica Monitor中维护Replica
+Daemon的信息，包括RDMA的IP地址和端口等。</li>
+</ul></li>
+<li><strong>决定事项</strong>：
+<ul>
+<li>需要重新考虑是否需要在Monitor中维护这些信息，可能通过RADOS对象和watch/notify机制来实现更为合适。</li>
+</ul></li>
+<li><strong>后续行动计划</strong>：
+<ul>
+<li>重新评估和设计Replica Daemon和Rapid CAR
+Monitor的管理机制，避免对Monitor的过度依赖。</li>
+<li>向社区征求反馈和建议，进一步优化设计。</li>
+</ul></li>
+</ul>
+<h4
+id="主题三crimson的多核支持与m2n映射">主题三：Crimson的多核支持与M2N映射</h4>
+<ul>
+<li><strong>讨论内容</strong>：
+<ul>
+<li>讨论了如何在Crimson中实现多核支持，包括处理客户端连接、PG状态和后端存储实现。</li>
+<li>探讨了是否需要在Messenger中实现多核支持，以及如何处理跨核通信。</li>
+</ul></li>
+<li><strong>决定事项</strong>：
+<ul>
+<li>决定先实现PG在多个核心上的分布，再考虑Messenger和C-Store的多核支持。</li>
+<li>需要实现一个跨核服务来管理PG到核心的映射。</li>
+</ul></li>
+<li><strong>后续行动计划</strong>：
+<ul>
+<li>开发跨核服务，实现PG到核心的映射。</li>
+<li>逐步实现Messenger和C-Store的多核支持。</li>
+</ul></li>
+</ul>
+<h4
+id="主题四c-store的当前状态和未来工作">主题四：C-Store的当前状态和未来工作</h4>
+<ul>
+<li><strong>讨论内容</strong>：
+<ul>
+<li>回顾了C-Store的当前进展，包括事务层、逻辑块映射、OMAP和垃圾回收等。</li>
+<li>讨论了如何支持ZNS设备和其他可变存储设备。</li>
+</ul></li>
+<li><strong>决定事项</strong>：
+<ul>
+<li>需要进一步的工作来优化C-Store的性能和稳定性，包括引入更多的性能指标和调试工具。</li>
+</ul></li>
+<li><strong>后续行动计划</strong>：
+<ul>
+<li>引入性能指标和调试工具，优化C-Store的性能和稳定性。</li>
+<li>探索和支持新的存储设备，如ZNS和持久内存。</li>
+</ul></li>
+</ul>
+<h3 id="总结">总结</h3>
+<p>本次会议涵盖了多个关键议题，包括Boost ASIO代码的适配、Rapid CAR
+Monitor的设计、Crimson的多核支持和C-Store的优化。每个议题都有明确的后续行动计划，旨在推动Ceph的进一步发展和优化。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-04-07T16:00:00.000Z" itemprop="dateUpdated">2021-04-08 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/08/Ceph_Developer_Summit_Quincy_-_Crimson/&title=《Ceph Developer Summit Quincy: Crimson》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/08/Ceph_Developer_Summit_Quincy_-_Crimson/&title=《Ceph Developer Summit Quincy: Crimson》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2021/04/08/Ceph_Developer_Summit_Quincy_-_Crimson/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Developer Summit Quincy: Crimson》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/08/Ceph_Developer_Summit_Quincy_-_Crimson/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2021/04/08/Ceph_Developer_Summit_Quincy_-_Crimson/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2021/04/09/Ceph_Developer_Summit_Quincy_-_Rook/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ceph Developer Summit Quincy: Rook</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2021/04/07/Ceph_Developer_Summit_Quincy_-_RADOS/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Ceph Developer Summit Quincy: RADOS</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/08/Ceph_Developer_Summit_Quincy_-_Crimson/&title=《Ceph Developer Summit Quincy: Crimson》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/08/Ceph_Developer_Summit_Quincy_-_Crimson/&title=《Ceph Developer Summit Quincy: Crimson》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2021/04/08/Ceph_Developer_Summit_Quincy_-_Crimson/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Developer Summit Quincy: Crimson》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/08/Ceph_Developer_Summit_Quincy_-_Crimson/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2021/04/08/Ceph_Developer_Summit_Quincy_-_Crimson/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2021/04/08/Ceph_Developer_Summit_Quincy_-_Crimson/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议概述 本次会议是在Cephlacon上举办的“拥抱Ceph”专题讨论会。会议由Laura Flores和Dan主持，Laura Flores是RADOS工程师，也是用户开发月度会议的主席，Dan是Ceph执行委员会的成员。会议邀请了五位来自不同组织的Ceph用户作为嘉宾，分享他们选择使用Ceph的关键因素、面临的挑战以及对新组织的建议。 嘉宾介绍  Wasil：Workday的高级软">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议概述 本次会议是在Cephlacon上举办的“拥抱Ceph”专题讨论会。会议由Laura Flores和Dan主持，Laura Flores是RADOS工程师，也是用户开发月度会议的主席，Dan是Ceph执行委员会的成员。会议邀请了五位来自不同组织的Ceph用户作为嘉宾，分享他们选择使用Ceph的关键因素、面临的挑战以及对新组织的建议。 嘉宾介绍  Wasil：Workday的高级软">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2023-05-05
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%98%89%E5%AE%BE%E4%BB%8B%E7%BB%8D"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">嘉宾介绍</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议总结</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议概述">会议概述</h4>
+<p>本次会议是在Cephlacon上举办的“拥抱Ceph”专题讨论会。会议由Laura
+Flores和Dan主持，Laura
+Flores是RADOS工程师，也是用户开发月度会议的主席，Dan是Ceph执行委员会的成员。会议邀请了五位来自不同组织的Ceph用户作为嘉宾，分享他们选择使用Ceph的关键因素、面临的挑战以及对新组织的建议。</p>
+<h4 id="嘉宾介绍">嘉宾介绍</h4>
+<ul>
+<li><strong>Wasil</strong>：Workday的高级软件工程师，负责存储团队，Workday是一个用于人力资源应用的云平台。</li>
+<li><strong>Andres</strong>：Flatiron
+Institute的高级数据科学家，该机构是Simons基金会的研究机构，专注于计算科学。</li>
+<li><strong>Luca</strong>：Posey超级计算中心的架构师，该中心支持澳大利亚所有大学，并将成为SKA望远镜的主要操作基地。</li>
+<li><strong>Matthew
+Leonard</strong>：Bloomberg工程的存储工程负责人，负责为全球7000名工程师提供存储资产。</li>
+<li><strong>Frank Yang</strong>：Patina
+Systems的首席技术官，该公司提供私有云解决方案和软件。</li>
+</ul>
+<h4 id="讨论内容">讨论内容</h4>
+<ol type="1">
+<li><strong>选择Ceph的关键因素</strong>
+<ul>
+<li><strong>Wasil</strong>：从AWS迁移到数据中心时需要块和对象存储，Ceph是OpenStack存储的默认选择，具有成本效益和灵活性。</li>
+<li><strong>Andres</strong>：Ceph的开源社区、可靠性优先设计、灵活性和活跃的社区支持是关键因素。</li>
+<li><strong>Luca</strong>：Ceph的可靠性、可扩展性无 downtime
+以及社区支持使其成为首选。</li>
+<li><strong>Matthew
+Leonard</strong>：Bloomberg早期采用OpenStack和Ceph，社区和开源特性使其持续使用Ceph。</li>
+<li><strong>Frank
+Yang</strong>：Ceph的S3支持、TCO优势、开源社区支持以及灵活性使其成为明显选择。</li>
+</ul></li>
+<li><strong>Ceph的开源特性带来的价值</strong>
+<ul>
+<li><strong>Wasil</strong>：能够自主实现安全特性并贡献给社区，Red
+Hat的支持加速了开源贡献过程。</li>
+<li><strong>Andres</strong>：技术人员喜欢能够深入代码，调试和实验的自由，无供应商锁定。</li>
+<li><strong>Luca</strong>：开源避免了与HPC供应商的沟通问题，社区支持快速解决问题。</li>
+<li><strong>Matthew
+Leonard</strong>：社区的知识库和活跃的开发者社区提供了强大的支持网络。</li>
+<li><strong>Frank
+Yang</strong>：社区支持、文档丰富，软件开发者可以直接访问源代码。</li>
+</ul></li>
+<li><strong>集成Ceph时的挑战</strong>
+<ul>
+<li><strong>Wasil</strong>：自动化工具的集成挑战，安全增强的需求。</li>
+<li><strong>Andres</strong>：硬件选择的不确定性，大规模系统的问题。</li>
+<li><strong>Luca</strong>：硬件选择和配置的复杂性，大规模系统的挑战。</li>
+<li><strong>Matthew
+Leonard</strong>：硬件和文档的复杂性，应用程序对S3协议的挑战。</li>
+<li><strong>Frank
+Yang</strong>：Ceph内部许多可调参数，硬件和环境差异带来的挑战。</li>
+</ul></li>
+<li><strong>吸引新组织的建议</strong>
+<ul>
+<li><strong>Wasil</strong>：Ceph需要更多成熟的基本功能，如RBD设备的复制支持。</li>
+<li><strong>Andres</strong>：改进文档，特别是入门指南，确保发布版本的数据可靠性。</li>
+<li><strong>Luca</strong>：改进文档，提供针对不同用户群体的指南，明确硬件建议。</li>
+<li><strong>Matthew
+Leonard</strong>：简化Ceph的使用流程，关注用户的工作流程和业务需求。</li>
+<li><strong>Frank
+Yang</strong>：使Ceph更易消费，提供基于工作流的文档和指南，增强安全性检查。</li>
+</ul></li>
+<li><strong>对决策者的建议</strong>
+<ul>
+<li><strong>Wasil</strong>：尝试运行POC，了解Ceph的维护和集成需求。</li>
+<li><strong>Andres</strong>：从小规模开始，理解Ceph的基本原理，考虑支持选项。</li>
+<li><strong>Luca</strong>：与社区沟通，避免硬件选择的错误，根据经验调整集群规模。</li>
+<li><strong>Matthew
+Leonard</strong>：Ceph是生活方式的选择，需要深入理解文档和硬件，社区支持至关重要。</li>
+<li><strong>Frank
+Yang</strong>：尝试Ceph，但需意识到生产环境中的长期承诺和投资。</li>
+</ul></li>
+</ol>
+<h4 id="后续行动计划">后续行动计划</h4>
+<ul>
+<li>改进Ceph的文档，特别是入门指南和硬件建议。</li>
+<li>简化Ceph的使用流程，关注用户的工作流程和业务需求。</li>
+<li>增强Ceph的安全性检查和错误预防机制。</li>
+</ul>
+<h4 id="会议总结">会议总结</h4>
+<p>会议涵盖了Ceph用户选择、价值、挑战和建议等多个方面，强调了Ceph的开源社区、灵活性和可靠性。同时，也指出了Ceph在文档、硬件选择和使用流程上的改进空间。会议最后，主持人感谢所有嘉宾的参与和贡献。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-05-04T16:00:00.000Z" itemprop="dateUpdated">2023-05-05 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&title=《Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&title=《Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2023/05/05/Critical_Troubleshooting_Tools_for_Rook_Clusters_-_Subham_Kumar_Rai_Parth_Arora_IBM/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Critical Troubleshooting Tools for Rook Clusters - Subham Kumar Rai &amp; Parth Arora, IBM</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Enhancing Observability in Rook Ceph - Deepika Upadhyay &amp; Gaurav Sitlani, Koor Technologies Inc.</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&title=《Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&title=《Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

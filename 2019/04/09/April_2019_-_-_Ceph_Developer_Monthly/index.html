@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>April 2019 :: Ceph Developer Monthly | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： - Adam（负责内存目标选项） - Shirred（负责内存目标选项） - Val（负责监控内存目标） - Mocha（负责蓝店内存管理） - Steve（负责OSD缓存） - Sebastian（负责Orchestrator） - Patrick（负责Orchestrator） - Dan（负责监控内存目标） - Jason">
+<meta property="og:type" content="article">
+<meta property="og:title" content="April 2019 :: Ceph Developer Monthly">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： - Adam（负责内存目标选项） - Shirred（负责内存目标选项） - Val（负责监控内存目标） - Mocha（负责蓝店内存管理） - Steve（负责OSD缓存） - Sebastian（负责Orchestrator） - Patrick（负责Orchestrator） - Dan（负责监控内存目标） - Jason">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-04-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-04-08T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">April 2019 :: Ceph Developer Monthly</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">April 2019 :: Ceph Developer Monthly</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-08T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-04-09
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-April_2019_-_-_Ceph_Developer_Monthly"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">April 2019 :: Ceph Developer Monthly</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-09 00:00:00" datetime="2019-04-08T16:00:00.000Z"  itemprop="datePublished">2019-04-09</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>会议纪要</strong></p>
+<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
+<p><strong>参会人员</strong>： - Adam（负责内存目标选项） -
+Shirred（负责内存目标选项） - Val（负责监控内存目标） -
+Mocha（负责蓝店内存管理） - Steve（负责OSD缓存） -
+Sebastian（负责Orchestrator） - Patrick（负责Orchestrator） -
+Dan（负责监控内存目标） - Jason（负责RBD MBD） - Neha（负责Octopus） -
+Mike（负责RBD MBD） - 其他相关人员</p>
+<p><strong>会议主题</strong>：</p>
+<ol type="1">
+<li><strong>监控内存目标</strong>：
+<ul>
+<li>讨论了为监控设置内存目标选项的需求，类似于USD中的内存目标选项。</li>
+<li>讨论了在蓝店中实现内存目标选项的现有方法，并考虑将其复制到监控中。</li>
+<li>讨论了使用优先级缓存接口来管理不同内存缓存的需求。</li>
+<li>决定由Shirred负责实现内存目标选项，并更新配置选项。</li>
+</ul></li>
+<li><strong>Orchestrator</strong>：
+<ul>
+<li>讨论了不同Orchestrator的实现现状，包括Ansible、Baroque、Kubernetes和DeepSea。</li>
+<li>讨论了在Barcelona Ceph会议上讨论Orchestrator路线图的计划。</li>
+<li>讨论了DeepSea和SSH Orchestrator的未来方向。</li>
+<li>讨论了使用SSH Orchestrator进行初始化部署的方案。</li>
+</ul></li>
+<li><strong>遥测</strong>：
+<ul>
+<li>讨论了遥测模块的功能和用途。</li>
+<li>讨论了从遥测数据中生成有用报告的需求，例如集群大小分布、安装版本分布和崩溃报告。</li>
+<li>讨论了使用Qivana和Kibana等工具进行数据分析和可视化。</li>
+<li>决定由End开发有用的报告，并考虑使用Qivana进行交互式查询。</li>
+</ul></li>
+<li><strong>RBD MBD</strong>：
+<ul>
+<li>讨论了RBD MBD在Kubernetes环境中的集成和优化。</li>
+<li>讨论了使用RBD MBD CLI进行操作的需求。</li>
+<li>讨论了在单个RBD MBD守护进程中支持多个RBD连接的需求。</li>
+<li>讨论了使用网络接口动态添加和删除块设备的需求。</li>
+<li>决定由Mike负责改进RBD MBD与Kubernetes的集成。</li>
+</ul></li>
+<li><strong>Octopus</strong>：
+<ul>
+<li>讨论了Octopus的待办事项列表，包括在线响应、内存优化、克隆、恢复和审计。</li>
+<li>讨论了将部分恢复和易于恢复的功能合并到Octopus的需求。</li>
+<li>讨论了优先级恢复和自适应恢复的需求。</li>
+<li>讨论了将Toshiba的RocksDB Roadmap集成到Ceph的需求。</li>
+</ul></li>
+</ol>
+<p><strong>后续行动计划</strong>：</p>
+<ul>
+<li>Shirred实现内存目标选项并更新配置选项。</li>
+<li>Sebastian和Patrick整理Orchestrator路线图，并在Barcelona
+Ceph会议上讨论。</li>
+<li>End开发有用的遥测报告。</li>
+<li>Mike改进RBD MBD与Kubernetes的集成。</li>
+<li>Neha和团队完成Octopus的待办事项列表。</li>
+<li>Adam和团队评估Toshiba的RocksDB Roadmap，并考虑集成。</li>
+</ul>
+<p><strong>其他事项</strong>：</p>
+<ul>
+<li>讨论了Ceph社区的贡献和代码审查流程。</li>
+<li>讨论了Ceph项目的长期发展方向。</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-04-08T16:00:00.000Z" itemprop="dateUpdated">2019-04-09 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&title=《April 2019 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&title=《April 2019 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《April 2019 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2019/04/09/2019-04-04_-_-_Ceph_Performance_meeting/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">2019-04-04 :: Ceph Performance meeting</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2019/02/24/2019-02-19_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">2019-02-19:: Crimson SeaStor/OSD Weekly Meeting</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&title=《April 2019 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&title=《April 2019 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《April 2019 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>CDS Jewel -- Calamari/API/Storage/Hardware | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 一、硬件API规划与实现 会议主题： 讨论并规划Calamari硬件API的规划和实现。 主要议题：  动机： 通过提供硬件API，使Calamari能够了解其背后的存储，以便在硬件出现问题时，能够分析影响并帮助管理员识别合适的硬件进行更换。 API设计：  提出了一些潜在的API端点和字段，包括设备ID、驱动器信息、制造商、版本、序列号等。 讨论了如何使用全球ID作为持久标识符，并确保">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CDS Jewel -- Calamari&#x2F;API&#x2F;Storage&#x2F;Hardware">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 一、硬件API规划与实现 会议主题： 讨论并规划Calamari硬件API的规划和实现。 主要议题：  动机： 通过提供硬件API，使Calamari能够了解其背后的存储，以便在硬件出现问题时，能够分析影响并帮助管理员识别合适的硬件进行更换。 API设计：  提出了一些潜在的API端点和字段，包括设备ID、驱动器信息、制造商、版本、序列号等。 讨论了如何使用全球ID作为持久标识符，并确保">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2015-08-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2015-08-03T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">CDS Jewel -- Calamari/API/Storage/Hardware</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">CDS Jewel -- Calamari/API/Storage/Hardware</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2015-08-02T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2015-08-03
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%80%E7%A1%AC%E4%BB%B6api%E8%A7%84%E5%88%92%E4%B8%8E%E5%AE%9E%E7%8E%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">一、硬件API规划与实现</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BA%8Ccalamari%E5%8C%85%E5%8F%91%E5%B8%83"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">二、Calamari包发布</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%89calamari%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">三、Calamari故障排除</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%9B%9B%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">四、其他讨论</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-CDS_Jewel_--_Calamari_API_Storage_Hardware"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CDS Jewel -- Calamari/API/Storage/Hardware</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2015-08-03 00:00:00" datetime="2015-08-02T16:00:00.000Z"  itemprop="datePublished">2015-08-03</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<h4 id="一硬件api规划与实现">一、硬件API规划与实现</h4>
+<p><strong>会议主题</strong>：
+讨论并规划Calamari硬件API的规划和实现。</p>
+<p><strong>主要议题</strong>：</p>
+<ul>
+<li><strong>动机</strong>：
+通过提供硬件API，使Calamari能够了解其背后的存储，以便在硬件出现问题时，能够分析影响并帮助管理员识别合适的硬件进行更换。</li>
+<li><strong>API设计</strong>：
+<ul>
+<li>提出了一些潜在的API端点和字段，包括设备ID、驱动器信息、制造商、版本、序列号等。</li>
+<li>讨论了如何使用全球ID作为持久标识符，并确保其在不同场景下的一致性。</li>
+<li>讨论了如何处理智能数据（Smart
+Data），包括存储位置、频率和缓存策略。</li>
+<li>讨论了如何与现有工具（如libblockid）集成。</li>
+</ul></li>
+</ul>
+<p><strong>决定事项</strong>：</p>
+<ul>
+<li>将智能数据存储在Calamari中，并定期查询设备以获取数据。</li>
+<li>使用libblockid等现有工具进行智能数据查询。</li>
+<li>考虑使用缓存机制以避免频繁查询设备。</li>
+</ul>
+<p><strong>后续行动计划</strong>：</p>
+<ul>
+<li>完成API的设计和实现。</li>
+<li>在Calamari中集成智能数据。</li>
+<li>测试API的功能。</li>
+</ul>
+<h4 id="二calamari包发布">二、Calamari包发布</h4>
+<p><strong>会议主题</strong>： 讨论Calamari包的发布和计划。</p>
+<p><strong>主要议题</strong>：</p>
+<ul>
+<li><strong>已发布包</strong>：
+Calamari的最新稳定版本已发布，并可在download.com/calamari下载。</li>
+<li><strong>安装指南</strong>： 提供了Calamari的安装指南，并链接到aether
+pad和GitHub的readme文件。</li>
+<li><strong>支持的平台</strong>： 目前支持SUSE、Ubuntu和CentOS。</li>
+<li><strong>未来计划</strong>：
+<ul>
+<li>推出Fedora 21+的包。</li>
+<li>探索其他发行版的支持。</li>
+</ul></li>
+</ul>
+<p><strong>决定事项</strong>：</p>
+<ul>
+<li>发布Calamari包。</li>
+<li>提供安装指南。</li>
+<li>探索其他发行版的支持。</li>
+</ul>
+<p><strong>后续行动计划</strong>：</p>
+<ul>
+<li>发布Fedora 21+的包。</li>
+<li>探索其他发行版的支持。</li>
+</ul>
+<h4 id="三calamari故障排除">三、Calamari故障排除</h4>
+<p><strong>会议主题</strong>： 讨论如何改进Calamari的故障排除。</p>
+<p><strong>主要议题</strong>：</p>
+<ul>
+<li><strong>salt问题</strong>：
+Calamari使用salt进行自动化，但salt的最新版本可能会与Calamari冲突。</li>
+<li><strong>故障排除文档</strong>：
+需要改进故障排除文档，使其更易于使用。</li>
+<li><strong>简化Calamari</strong>：
+简化Calamari的依赖关系，使其更易于安装和使用。</li>
+</ul>
+<p><strong>决定事项</strong>：</p>
+<ul>
+<li>改进故障排除文档。</li>
+<li>简化Calamari的依赖关系。</li>
+</ul>
+<p><strong>后续行动计划</strong>：</p>
+<ul>
+<li>改进故障排除文档。</li>
+<li>简化Calamari的依赖关系。</li>
+</ul>
+<h4 id="四其他讨论">四、其他讨论</h4>
+<ul>
+<li><strong>测试框架</strong>：
+讨论了Calamari测试框架的设置和运行。</li>
+<li><strong>Calamari的未来方向</strong>：
+讨论了Calamari的未来发展方向，包括集成其他工具和功能。</li>
+</ul>
+<p><strong>总结</strong>：</p>
+<p>本次会议讨论了Calamari硬件API的规划和实现、Calamari包的发布、Calamari的故障排除以及Calamari的未来发展方向。会议确定了后续行动计划，并讨论了相关技术问题。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2015-08-03T16:00:00.000Z" itemprop="dateUpdated">2015-08-04 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/&title=《CDS Jewel -- Calamari/API/Storage/Hardware》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/&title=《CDS Jewel -- Calamari/API/Storage/Hardware》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Jewel -- Calamari/API/Storage/Hardware》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2015/08/03/2015-JUL-30_--_Ceph_Tech_Talks_-_CephFS/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">2015-JUL-30 -- Ceph Tech Talks: CephFS</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_CephX_brute-force_protection/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CDS Jewel -- CephX brute-force protection</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/&title=《CDS Jewel -- Calamari/API/Storage/Hardware》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/&title=《CDS Jewel -- Calamari/API/Storage/Hardware》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Jewel -- Calamari/API/Storage/Hardware》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

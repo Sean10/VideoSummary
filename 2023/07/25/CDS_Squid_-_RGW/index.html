@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>CDS Squid: RGW | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要：Ceph RGW 会议 会议目的 本次会议旨在讨论Ceph S版本的规划，分享当前正在进行的一些项目，并将讨论内容更新到Ceph的Trello看板中。 主要议题与讨论内容  D4N数据缓存项目  该项目已进行较长时间，最近开始合并相关内容。 预计在S版本中将包含一些关键能力，如增加灵活性和访问缓存目录的额外功能。  Aeroflight集成  正在探索Aeroflight的前端集成，以实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CDS Squid: RGW">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RGW/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要：Ceph RGW 会议 会议目的 本次会议旨在讨论Ceph S版本的规划，分享当前正在进行的一些项目，并将讨论内容更新到Ceph的Trello看板中。 主要议题与讨论内容  D4N数据缓存项目  该项目已进行较长时间，最近开始合并相关内容。 预计在S版本中将包含一些关键能力，如增加灵活性和访问缓存目录的额外功能。  Aeroflight集成  正在探索Aeroflight的前端集成，以实">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-25T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">CDS Squid: RGW</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">CDS Squid: RGW</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-07-24T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2023-07-25
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81ceph-rgw-%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要：Ceph RGW 会议</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%9B%AE%E7%9A%84"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议目的</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E4%B8%8E%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题与讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-CDS_Squid_-_RGW"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CDS Squid: RGW</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-07-25 00:00:00" datetime="2023-07-24T16:00:00.000Z"  itemprop="datePublished">2023-07-25</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要ceph-rgw-会议">会议纪要：Ceph RGW 会议</h3>
+<h4 id="会议目的">会议目的</h4>
+<p>本次会议旨在讨论Ceph
+S版本的规划，分享当前正在进行的一些项目，并将讨论内容更新到Ceph的Trello看板中。</p>
+<h4 id="主要议题与讨论内容">主要议题与讨论内容</h4>
+<ol type="1">
+<li><strong>D4N数据缓存项目</strong>
+<ul>
+<li>该项目已进行较长时间，最近开始合并相关内容。</li>
+<li>预计在S版本中将包含一些关键能力，如增加灵活性和访问缓存目录的额外功能。</li>
+</ul></li>
+<li><strong>Aeroflight集成</strong>
+<ul>
+<li>正在探索Aeroflight的前端集成，以实现通过飞行接口查询RGW并进行数据检索。</li>
+<li>目标是实现端到端的概念验证，尽管目前存在一些技术限制，如CentOS版本问题。</li>
+</ul></li>
+<li><strong>POSIX文件后端和独立RGW部署</strong>
+<ul>
+<li>正在开发基于POSIX文件系统的RGW后端，并探索独立RGW部署的可能性。</li>
+<li>预计在S版本中将有一个最小可行产品（MVP）。</li>
+</ul></li>
+<li><strong>跟踪（Tracing）</strong>
+<ul>
+<li>使用Jaeger和OpenTracing库进行集成，已合并初步支持。</li>
+<li>计划扩展跟踪覆盖范围，特别是在多站点复制中，并考虑在生产集群中使用。</li>
+</ul></li>
+<li><strong>标记的Prometheus指标</strong>
+<ul>
+<li>目标是支持按用户或存储桶过滤RGW的计数器，尽管存在一些规模挑战。</li>
+<li>Ali正在构建一个原型进行规模测试。</li>
+</ul></li>
+<li><strong>多站点（Multi-site）</strong>
+<ul>
+<li>计划将存储桶索引日志从omap移出，以简化删除操作。</li>
+<li>还有其他多站点相关的计划，如产品化归档区域同步模块。</li>
+</ul></li>
+<li><strong>异步重构</strong>
+<ul>
+<li>持续进行异步模型的转换，最近在Reef版本中合并了更多可选yield的支持。</li>
+<li>目标包括减少RGW线程池的大小，并探索基于C++20协程的多站点原型。</li>
+</ul></li>
+<li><strong>QoS集成与Libreidos</strong>
+<ul>
+<li>目标是利用OSD中的QoS功能，确保客户端请求和后台工作的公平性。</li>
+</ul></li>
+<li><strong>测试</strong>
+<ul>
+<li>强调在错误和延迟情况下的改进测试，包括使用Warp工具和其他测试方法。</li>
+<li>对性能测试表示兴趣，希望能有可重复的结果以比较不同版本和进行性能优化。</li>
+</ul></li>
+<li><strong>生产检查工具</strong>
+<ul>
+<li>讨论了实时统计工具的需求，以帮助快速识别和解决性能问题。</li>
+</ul></li>
+</ol>
+<h4 id="决定事项">决定事项</h4>
+<ul>
+<li>所有讨论的内容将被整理并更新到Ceph的Trello看板中。</li>
+<li>将继续推进各个项目的开发和集成工作。</li>
+</ul>
+<h4 id="后续行动计划">后续行动计划</h4>
+<ul>
+<li>继续进行D4N数据缓存项目的开发和集成。</li>
+<li>探索和实现Aeroflight的前端集成。</li>
+<li>开发和测试基于POSIX文件系统的RGW后端。</li>
+<li>扩展跟踪功能，特别是在多站点复制中。</li>
+<li>进行标记的Prometheus指标的规模测试。</li>
+<li>推进多站点功能的开发和产品化。</li>
+<li>完成异步重构和QoS集成工作。</li>
+<li>加强错误和性能测试，确保软件质量和性能。</li>
+</ul>
+<h4 id="会议结束">会议结束</h4>
+<p>会议结束时，主持人确保所有讨论内容将被整理并更新到Trello看板中，并对所有参与者表示感谢。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-07-25T16:00:00.000Z" itemprop="dateUpdated">2023-07-26 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RGW/&title=《CDS Squid: RGW》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RGW/&title=《CDS Squid: RGW》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RGW/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Squid: RGW》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RGW/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RGW/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2023/07/25/CDS_Squid_-_RADOS/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">CDS Squid: RADOS</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2023/07/20/CDS_Squid_-_Documentation/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CDS Squid: Documentation</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RGW/&title=《CDS Squid: RGW》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RGW/&title=《CDS Squid: RGW》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RGW/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Squid: RGW》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RGW/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RGW/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RGW/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

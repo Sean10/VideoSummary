@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>A Glimpse of the New Ceph Messenger Built on Seastar - Yingxin Cheng &amp; Vivian Zhu, Intel | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议时间： 2023年X月X日 会议主题： Ceph 新消息传递组件（Crimson Messenger）的开发进展 参会人员： Intel，Ceph 团队成员 会议内容： 一、背景介绍  Ceph 核心对象层重构项目（Crimson）旨在提升在现代硬件上的性能。 现代硬件特点：多核心、NUMA 架构、高速存储设备（如 NVMe SSD、持久内存）、高速网络。 SAP 架构和 POSIX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Glimpse of the New Ceph Messenger Built on Seastar - Yingxin Cheng &amp; Vivian Zhu, Intel">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/A_Glimpse_of_the_New_Ceph_Messenger_Built_on_Seastar_-_Yingxin_Cheng_Vivian_Zhu_Intel/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议时间： 2023年X月X日 会议主题： Ceph 新消息传递组件（Crimson Messenger）的开发进展 参会人员： Intel，Ceph 团队成员 会议内容： 一、背景介绍  Ceph 核心对象层重构项目（Crimson）旨在提升在现代硬件上的性能。 现代硬件特点：多核心、NUMA 架构、高速存储设备（如 NVMe SSD、持久内存）、高速网络。 SAP 架构和 POSIX">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">A Glimpse of the New Ceph Messenger Built on Seastar - Yingxin Cheng &amp; Vivian Zhu, Intel</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">A Glimpse of the New Ceph Messenger Built on Seastar - Yingxin Cheng &amp; Vivian Zhu, Intel</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-05-24
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-A_Glimpse_of_the_New_Ceph_Messenger_Built_on_Seastar_-_Yingxin_Cheng_Vivian_Zhu_Intel"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">A Glimpse of the New Ceph Messenger Built on Seastar - Yingxin Cheng & Vivian Zhu, Intel</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-24 00:00:00" datetime="2019-05-23T16:00:00.000Z"  itemprop="datePublished">2019-05-24</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议时间</strong>： 2023年X月X日</p>
+<p><strong>会议主题</strong>： Ceph 新消息传递组件（Crimson
+Messenger）的开发进展</p>
+<p><strong>参会人员</strong>： Intel，Ceph 团队成员</p>
+<p><strong>会议内容</strong>：</p>
+<p><strong>一、背景介绍</strong></p>
+<ul>
+<li>Ceph 核心对象层重构项目（Crimson）旨在提升在现代硬件上的性能。</li>
+<li>现代硬件特点：多核心、NUMA 架构、高速存储设备（如 NVMe
+SSD、持久内存）、高速网络。</li>
+<li>SAP 架构和 POSIX 线程存在性能瓶颈，需要优化。</li>
+</ul>
+<p><strong>二、Crimson Messenger 的目标</strong></p>
+<ol type="1">
+<li>利用 C++ Star 框架实现同步编程，统一架构。</li>
+<li>实现跨核心通信的最小化，建立直接核心到核心连接。</li>
+<li>利用 C++ Star 框架进行性能验证和优化。</li>
+</ol>
+<p><strong>三、Crimson Messenger 的设计</strong></p>
+<ol type="1">
+<li>基于 C++ Star 框架，实现异步 I/O、任务调度、网络堆栈等功能。</li>
+<li>实现直接核心到核心连接，减少跨核心通信。</li>
+<li>利用 C++ Star 框架的异步编程模型，实现代码简洁、易于维护。</li>
+</ol>
+<p><strong>四、性能测试</strong></p>
+<ul>
+<li>与现有异步消息传递组件进行性能对比，Crimson Messenger
+在大部分场景下性能更优。</li>
+<li>利用 C++ Star 框架的异步编程模型，实现代码简洁、易于维护。</li>
+</ul>
+<p><strong>五、挑战和未来工作</strong></p>
+<ol type="1">
+<li>C++ Star 框架的功能不够完善，可能需要定制化实现。</li>
+<li>需要深入了解 C++ Star 框架的编程模型，才能正确实现代码。</li>
+<li>需要持续优化性能，并确保可靠性。</li>
+</ol>
+<p><strong>六、行动计划</strong></p>
+<ol type="1">
+<li>完成 Crimson Messenger 的核心功能。</li>
+<li>进行性能测试和优化。</li>
+<li>评估 C++ Star 框架的定制化需求。</li>
+<li>将 Crimson Messenger 集成到 Ceph 中。</li>
+</ol>
+<p><strong>七、总结</strong></p>
+<p>Crimson Messenger 是 Ceph 核心对象层重构项目的重要组成部分，旨在提升
+Ceph 在现代硬件上的性能。目前，Crimson Messenger
+已取得初步进展，但仍面临一些挑战。未来，Ceph 团队将继续努力，确保
+Crimson Messenger 的成功应用。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-05-23T16:00:00.000Z" itemprop="dateUpdated">2019-05-24 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/A_Glimpse_of_the_New_Ceph_Messenger_Built_on_Seastar_-_Yingxin_Cheng_Vivian_Zhu_Intel/&title=《A Glimpse of the New Ceph Messenger Built on Seastar - Yingxin Cheng & Vivian Zhu, Intel》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/A_Glimpse_of_the_New_Ceph_Messenger_Built_on_Seastar_-_Yingxin_Cheng_Vivian_Zhu_Intel/&title=《A Glimpse of the New Ceph Messenger Built on Seastar - Yingxin Cheng & Vivian Zhu, Intel》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2019/05/24/A_Glimpse_of_the_New_Ceph_Messenger_Built_on_Seastar_-_Yingxin_Cheng_Vivian_Zhu_Intel/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《A Glimpse of the New Ceph Messenger Built on Seastar - Yingxin Cheng & Vivian Zhu, Intel》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/A_Glimpse_of_the_New_Ceph_Messenger_Built_on_Seastar_-_Yingxin_Cheng_Vivian_Zhu_Intel/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2019/05/24/A_Glimpse_of_the_New_Ceph_Messenger_Built_on_Seastar_-_Yingxin_Cheng_Vivian_Zhu_Intel/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2019/05/24/200_Clusters_vs_1_Admin_-_Bartosz_Rabiega_OVH/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">200 Clusters vs 1 Admin - Bartosz Rabiega, OVH</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2019/05/24/A_Hitchhiker_s_Guide_to_Ceph_RGW_PubSub_Cats_vs._Dogs_-_a_Hybrid_Cloud_Storage_Story/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">A Hitchhiker&#39;s Guide to Ceph RGW PubSub &amp; Cats vs. Dogs - a Hybrid Cloud Storage Story</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/A_Glimpse_of_the_New_Ceph_Messenger_Built_on_Seastar_-_Yingxin_Cheng_Vivian_Zhu_Intel/&title=《A Glimpse of the New Ceph Messenger Built on Seastar - Yingxin Cheng & Vivian Zhu, Intel》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/A_Glimpse_of_the_New_Ceph_Messenger_Built_on_Seastar_-_Yingxin_Cheng_Vivian_Zhu_Intel/&title=《A Glimpse of the New Ceph Messenger Built on Seastar - Yingxin Cheng & Vivian Zhu, Intel》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2019/05/24/A_Glimpse_of_the_New_Ceph_Messenger_Built_on_Seastar_-_Yingxin_Cheng_Vivian_Zhu_Intel/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《A Glimpse of the New Ceph Messenger Built on Seastar - Yingxin Cheng & Vivian Zhu, Intel》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/A_Glimpse_of_the_New_Ceph_Messenger_Built_on_Seastar_-_Yingxin_Cheng_Vivian_Zhu_Intel/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2019/05/24/A_Glimpse_of_the_New_Ceph_Messenger_Built_on_Seastar_-_Yingxin_Cheng_Vivian_Zhu_Intel/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2019/05/24/A_Glimpse_of_the_New_Ceph_Messenger_Built_on_Seastar_-_Yingxin_Cheng_Vivian_Zhu_Intel/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

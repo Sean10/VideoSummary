@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>2019-05-24 :: Ceph Code Walkthrough: RGW Multisite Replication | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议主题：Ceph多站点代码走查 主讲人：[主讲人姓名] 会议时间：[会议日期] 会议内容总结：  高层次概述：  主讲人介绍了基于日志的复制工作原理，包括不同类型的多站点日志、读取模型和协同程序（co-routines）的工作方式。 讨论了元数据和数据同步的代码细节。  日志基础复制：  在两个不同集群（位于世界不同地区）之间，每个集群上放置一个Zone，并将它们链接在一起。 当一个Z">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019-05-24 :: Ceph Code Walkthrough: RGW Multisite Replication">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/06/22/2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议主题：Ceph多站点代码走查 主讲人：[主讲人姓名] 会议时间：[会议日期] 会议内容总结：  高层次概述：  主讲人介绍了基于日志的复制工作原理，包括不同类型的多站点日志、读取模型和协同程序（co-routines）的工作方式。 讨论了元数据和数据同步的代码细节。  日志基础复制：  在两个不同集群（位于世界不同地区）之间，每个集群上放置一个Zone，并将它们链接在一起。 当一个Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-06-22T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">2019-05-24 :: Ceph Code Walkthrough: RGW Multisite Replication</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">2019-05-24 :: Ceph Code Walkthrough: RGW Multisite Replication</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-06-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2020-06-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph%E5%A4%9A%E7%AB%99%E7%82%B9%E4%BB%A3%E7%A0%81%E8%B5%B0%E6%9F%A5"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph多站点代码走查</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BA%E4%B8%BB%E8%AE%B2%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：[主讲人姓名]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E4%BC%9A%E8%AE%AE%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：[会议日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">2019-05-24 :: Ceph Code Walkthrough: RGW Multisite Replication</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-06-22 00:00:00" datetime="2020-06-21T16:00:00.000Z"  itemprop="datePublished">2020-06-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议主题ceph多站点代码走查">会议主题：Ceph多站点代码走查</h4>
+<h4 id="主讲人主讲人姓名">主讲人：[主讲人姓名]</h4>
+<h4 id="会议时间会议日期">会议时间：[会议日期]</h4>
+<h4 id="会议内容总结">会议内容总结：</h4>
+<ol type="1">
+<li><strong>高层次概述</strong>：
+<ul>
+<li>主讲人介绍了基于日志的复制工作原理，包括不同类型的多站点日志、读取模型和协同程序（co-routines）的工作方式。</li>
+<li>讨论了元数据和数据同步的代码细节。</li>
+</ul></li>
+<li><strong>日志基础复制</strong>：
+<ul>
+<li>在两个不同集群（位于世界不同地区）之间，每个集群上放置一个Zone，并将它们链接在一起。</li>
+<li>当一个Zone（Zone
+A）进行更改时，它会在本地将更改写入日志，另一个Zone（Zone B）会从Zone
+A读取日志并获取最新副本。</li>
+</ul></li>
+<li><strong>主要日志类型</strong>：
+<ul>
+<li><strong>元数据日志</strong>：记录用户和桶的所有更改。</li>
+<li><strong>桶索引日志</strong>：存储在桶索引中，记录对象的所有更改。</li>
+<li><strong>数据更改日志</strong>：记录哪些桶及其分片有更改。</li>
+</ul></li>
+<li><strong>日志分片</strong>：
+<ul>
+<li>这些多站点日志被分片存储在多个Rados对象中，以分散读取和写入操作，以及在同一Zone内运行的不同网关之间分散复制工作。</li>
+</ul></li>
+<li><strong>线程模型</strong>：
+<ul>
+<li>每个源Zone都有一个元数据同步线程和一个数据同步线程。</li>
+<li>元数据同步有一个主Zone，其他Zone只从主Zone同步。</li>
+<li>数据同步是主动-主动模式，每个Zone都从其他Zone同步数据。</li>
+</ul></li>
+<li><strong>协同程序框架</strong>：
+<ul>
+<li>协同程序（co-routines）用于处理多个分片并行工作，避免线程阻塞。</li>
+<li>协同程序框架包括协同程序类、堆栈和调度管理器。</li>
+</ul></li>
+<li><strong>元数据同步</strong>：
+<ul>
+<li>元数据同步从主Zone读取元数据日志，并将其存储在本地。</li>
+<li>元数据同步包括全量同步和增量同步。</li>
+</ul></li>
+<li><strong>数据同步</strong>：
+<ul>
+<li>数据同步处理数据更改日志，并启动桶同步进程。</li>
+<li>数据同步也包括全量同步和增量同步。</li>
+</ul></li>
+<li><strong>桶同步</strong>：
+<ul>
+<li>桶同步从其他Zone读取桶索引日志，并处理日志条目。</li>
+<li>桶同步包括全量同步和增量同步。</li>
+</ul></li>
+<li><strong>问题与讨论</strong>：
+<ul>
+<li>讨论了协同程序的调用方式、日志分片的管理、错误处理和重试机制。</li>
+<li>解答了关于多部分对象处理、元数据同步的删除识别、Zone和Zone
+Group的配置等问题。</li>
+</ul></li>
+</ol>
+<h4 id="决定事项">决定事项：</h4>
+<ul>
+<li>需要对代码中的魔法数字（magic numbers）进行审查和优化。</li>
+<li>确认了协同程序框架的设计和使用方式。</li>
+</ul>
+<h4 id="后续行动计划">后续行动计划：</h4>
+<ul>
+<li>继续优化和审查代码中的魔法数字。</li>
+<li>深入理解协同程序框架的实现和应用。</li>
+<li>确保多站点复制的稳定性和性能。</li>
+</ul>
+<h4 id="会议结束">会议结束：</h4>
+<ul>
+<li>会议在预定时间内圆满结束，感谢所有参与者的积极参与和提问。</li>
+</ul>
+<hr />
+<p><strong>注：</strong>
+以上纪要涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。涉及的计算机科学/Ceph相关领域英文原文关键词已保留。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-06-22T16:00:00.000Z" itemprop="dateUpdated">2020-06-23 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/06/22/2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication/&title=《2019-05-24 :: Ceph Code Walkthrough: RGW Multisite Replication》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/06/22/2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication/&title=《2019-05-24 :: Ceph Code Walkthrough: RGW Multisite Replication》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2020/06/22/2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-05-24 :: Ceph Code Walkthrough: RGW Multisite Replication》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/06/22/2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2020/06/22/2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2020/06/24/Ceph_Crimson_SeaStor_OSD_2020-06-24/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ceph Crimson/SeaStor OSD 2020-06-24</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2020/06/22/Ceph_Orchestrator_Meeting_2020-06-22/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Ceph Orchestrator Meeting 2020-06-22</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/06/22/2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication/&title=《2019-05-24 :: Ceph Code Walkthrough: RGW Multisite Replication》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/06/22/2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication/&title=《2019-05-24 :: Ceph Code Walkthrough: RGW Multisite Replication》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2020/06/22/2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-05-24 :: Ceph Code Walkthrough: RGW Multisite Replication》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/06/22/2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2020/06/22/2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2020/06/22/2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

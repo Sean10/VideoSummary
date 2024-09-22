@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Geographical Redundancy with rbd-mirror: Best... - Florian Haas | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议主题： Ceph RBD镜像功能详解及最佳实践 会议时间： 2023年11月（具体日期未提及） 参会人员： Lorien（Ceph研发人员），以及通过Twitter提问的观众 会议内容： 一、RBD镜像功能概述  RBD镜像是一种异步复制Radice块设备内容到远程集群的功能，已存在三年。 主要应用于跨地域数据备份和灾难恢复。 与传统同步复制相比，RBD镜像不受网络延迟影响，更适用于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Geographical Redundancy with rbd-mirror: Best... - Florian Haas">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议主题： Ceph RBD镜像功能详解及最佳实践 会议时间： 2023年11月（具体日期未提及） 参会人员： Lorien（Ceph研发人员），以及通过Twitter提问的观众 会议内容： 一、RBD镜像功能概述  RBD镜像是一种异步复制Radice块设备内容到远程集群的功能，已存在三年。 主要应用于跨地域数据备份和灾难恢复。 与传统同步复制相比，RBD镜像不受网络延迟影响，更适用于">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Geographical Redundancy with rbd-mirror: Best... - Florian Haas</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Geographical Redundancy with rbd-mirror: Best... - Florian Haas</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-05-24
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Geographical Redundancy with rbd-mirror: Best... - Florian Haas</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-24 00:00:00" datetime="2019-05-23T16:00:00.000Z"  itemprop="datePublished">2019-05-24</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议主题</strong>： Ceph RBD镜像功能详解及最佳实践</p>
+<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
+<p><strong>参会人员</strong>：
+Lorien（Ceph研发人员），以及通过Twitter提问的观众</p>
+<p><strong>会议内容</strong>：</p>
+<p><strong>一、RBD镜像功能概述</strong></p>
+<ul>
+<li>RBD镜像是一种异步复制Radice块设备内容到远程集群的功能，已存在三年。</li>
+<li>主要应用于跨地域数据备份和灾难恢复。</li>
+<li>与传统同步复制相比，RBD镜像不受网络延迟影响，更适用于长距离复制。</li>
+</ul>
+<p><strong>二、RBD镜像工作原理</strong></p>
+<ul>
+<li>应用程序写入数据时，首先与主OSD通信，主OSD负责将数据复制到非主OSD。</li>
+<li>RBD镜像通过RBD层进行异步复制，使用RBD日志记录所有写操作。</li>
+<li>RBD镜像守护进程监控日志更新，并将其应用到远程集群的RBD镜像中。</li>
+</ul>
+<p><strong>三、RBD镜像配置</strong></p>
+<ul>
+<li><strong>启用RBD日志记录</strong>：
+使用<code>rbd feature enable pool/image journal</code>命令启用RBD日志记录。</li>
+<li><strong>配置RBD镜像守护进程</strong>：
+创建具有适当权限的RBD镜像守护进程身份，并将其配置为访问本地和远程集群。</li>
+<li><strong>连接RBD镜像实例</strong>：
+使用<code>rbd mirror pool peer add</code>命令连接RBD镜像实例，实现双向镜像。</li>
+<li><strong>启动RBD镜像服务</strong>：
+使用systemd或容器管理工具启动RBD镜像守护进程。</li>
+</ul>
+<p><strong>四、RBD镜像模式</strong></p>
+<ul>
+<li><strong>单向镜像</strong>： 数据只能从主集群复制到远程集群。</li>
+<li><strong>双向镜像</strong>：
+数据可以在主集群和远程集群之间双向复制。</li>
+</ul>
+<p><strong>五、RBD镜像性能</strong></p>
+<ul>
+<li>RBD镜像对读取性能影响较小，但对写入性能有一定影响，特别是在使用相同存储池的情况下。</li>
+<li>可以通过调整RBD日志记录参数来优化性能。</li>
+</ul>
+<p><strong>六、RBD镜像与云平台集成</strong></p>
+<ul>
+<li>可以将RBD镜像与OpenStack集成，实现跨地域数据备份和灾难恢复。</li>
+<li>需要配置OpenStack集群、RBD镜像、存储网络等，并确保OpenStack元数据也得到复制。</li>
+</ul>
+<p><strong>七、最佳实践</strong></p>
+<ul>
+<li>在启用RBD日志记录之前，评估其性能影响。</li>
+<li>选择合适的RBD镜像模式和存储池。</li>
+<li>使用自动化工具简化RBD镜像配置和管理。</li>
+</ul>
+<p><strong>后续行动计划</strong>：</p>
+<ul>
+<li>完善RBD镜像文档。</li>
+<li>优化RBD镜像性能。</li>
+<li>推进RBD镜像与其他云平台的集成。</li>
+</ul>
+<p><strong>关键词</strong>：
+RBD镜像、异步复制、日志记录、性能、OpenStack、灾难恢复</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-05-23T16:00:00.000Z" itemprop="dateUpdated">2019-05-24 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas/&title=《Geographical Redundancy with rbd-mirror: Best... - Florian Haas》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas/&title=《Geographical Redundancy with rbd-mirror: Best... - Florian Haas》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2019/05/24/Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Geographical Redundancy with rbd-mirror: Best... - Florian Haas》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2019/05/24/Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2019/05/24/Healthier_Ceph_Clusters_with_Ceph-medic_-_Alfredo_Deza_Red_Hat/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Healthier Ceph Clusters with Ceph-medic - Alfredo Deza, Red Hat</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2019/05/24/Highly_Available_Git_on_CephFS_with_Rook_Kubernetes_and_OpenStack_-_James_E._Blair_Red_Hat/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Highly Available Git on CephFS with Rook, Kubernetes, and OpenStack - James E. Blair, Red Hat</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas/&title=《Geographical Redundancy with rbd-mirror: Best... - Florian Haas》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas/&title=《Geographical Redundancy with rbd-mirror: Best... - Florian Haas》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2019/05/24/Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Geographical Redundancy with rbd-mirror: Best... - Florian Haas》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2019/05/24/Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2019/05/24/Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

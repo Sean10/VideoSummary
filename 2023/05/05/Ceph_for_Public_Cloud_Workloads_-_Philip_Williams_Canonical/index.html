@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Ceph for Public Cloud Workloads - Philip Williams, Canonical | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议主题：公共云存储成本与私有云解决方案的经济性比较 会议时间：[具体时间] 会议地点：[具体地点] 主讲人：[主讲人姓名] 会议内容总结：  背景介绍：  主讲人分享了关于公共云存储成本与私有云解决方案经济性的比较。他提到，尽管公共云因其灵活性和动态需求而受到欢迎，但对于某些存储密集型工作负载，如数据湖、备份和活跃档案，公共云的成本可能会非常高。  公共云存储成本分析：  主讲人以2.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ceph for Public Cloud Workloads - Philip Williams, Canonical">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议主题：公共云存储成本与私有云解决方案的经济性比较 会议时间：[具体时间] 会议地点：[具体地点] 主讲人：[主讲人姓名] 会议内容总结：  背景介绍：  主讲人分享了关于公共云存储成本与私有云解决方案经济性的比较。他提到，尽管公共云因其灵活性和动态需求而受到欢迎，但对于某些存储密集型工作负载，如数据湖、备份和活跃档案，公共云的成本可能会非常高。  公共云存储成本分析：  主讲人以2.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Ceph for Public Cloud Workloads - Philip Williams, Canonical</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Ceph for Public Cloud Workloads - Philip Williams, Canonical</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2023-05-05
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E5%85%AC%E5%85%B1%E4%BA%91%E5%AD%98%E5%82%A8%E6%88%90%E6%9C%AC%E4%B8%8E%E7%A7%81%E6%9C%89%E4%BA%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%9A%84%E7%BB%8F%E6%B5%8E%E6%80%A7%E6%AF%94%E8%BE%83"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：公共云存储成本与私有云解决方案的经济性比较</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BA%E4%B8%BB%E8%AE%B2%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主讲人：[主讲人姓名]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Ceph for Public Cloud Workloads - Philip Williams, Canonical</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<h4
+id="会议主题公共云存储成本与私有云解决方案的经济性比较">会议主题：公共云存储成本与私有云解决方案的经济性比较</h4>
+<h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
+<h4 id="会议地点具体地点">会议地点：[具体地点]</h4>
+<h4 id="主讲人主讲人姓名">主讲人：[主讲人姓名]</h4>
+<h4 id="会议内容总结">会议内容总结：</h4>
+<ol type="1">
+<li><strong>背景介绍</strong>：
+<ul>
+<li>主讲人分享了关于公共云存储成本与私有云解决方案经济性的比较。他提到，尽管公共云因其灵活性和动态需求而受到欢迎，但对于某些存储密集型工作负载，如数据湖、备份和活跃档案，公共云的成本可能会非常高。</li>
+</ul></li>
+<li><strong>公共云存储成本分析</strong>：
+<ul>
+<li>主讲人以2.5
+PB数据在公共云存储5年的成本为例，估算出接近400万美元的费用。他指出，公共云的定价模型复杂，数据输入免费或成本极低，但数据读取、处理和分发的成本较高。</li>
+</ul></li>
+<li><strong>私有云解决方案介绍</strong>：
+<ul>
+<li>主讲人介绍了使用Ceph集群的私有云解决方案，该方案在数据中心或合作位置部署，提供更高的控制和更低的成本。他提到了使用的硬件配置，包括Dell
+R740 xd2服务器、NVMe设备和网络设备等。</li>
+</ul></li>
+<li><strong>成本比较</strong>：
+<ul>
+<li>通过比较，主讲人展示了私有云解决方案在硬件、网络、数据传输和管理服务等方面的成本，总计约85万美元，远低于公共云的成本。</li>
+</ul></li>
+<li><strong>优势与控制</strong>：
+<ul>
+<li>主讲人强调了私有云解决方案在成本控制、数据访问速度和业务数据安全方面的优势。他提到，私有云可以作为不同云服务提供商之间的桥梁，提供更好的灵活性和控制。</li>
+</ul></li>
+<li><strong>未来展望与问题</strong>：
+<ul>
+<li>主讲人讨论了未来可能的数据迁移成本，并回答了观众关于硬件交付时间的问题。他提到，尽管硬件交付可能需要几个月的时间，但提前规划可以避免经济变化带来的影响。</li>
+</ul></li>
+</ol>
+<h4 id="决定事项">决定事项：</h4>
+<ul>
+<li>会议决定进一步探索和实施私有云解决方案，以降低存储成本并提高数据管理效率。</li>
+</ul>
+<h4 id="后续行动计划">后续行动计划：</h4>
+<ul>
+<li>研究并制定详细的私有云部署计划。</li>
+<li>与硬件供应商协商，确保硬件交付时间符合项目需求。</li>
+<li>继续监控公共云和私有云的成本变化，以便及时调整策略。</li>
+</ul>
+<h4 id="会议结束">会议结束：</h4>
+<ul>
+<li>主讲人感谢大家的参与，并鼓励大家就私有云解决方案提出更多问题和建议。</li>
+</ul>
+<p>[会议结束]</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-05-04T16:00:00.000Z" itemprop="dateUpdated">2023-05-05 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/&title=《Ceph for Public Cloud Workloads - Philip Williams, Canonical》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/&title=《Ceph for Public Cloud Workloads - Philip Williams, Canonical》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph for Public Cloud Workloads - Philip Williams, Canonical》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2023/05/05/Ceph_Security_BoF_-_JC_Lopez_IBM/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ceph Security BoF - JC Lopez, IBM</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Ceph in Scientific Computing and Large Clusters BoF</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/&title=《Ceph for Public Cloud Workloads - Philip Williams, Canonical》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/&title=《Ceph for Public Cloud Workloads - Philip Williams, Canonical》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph for Public Cloud Workloads - Philip Williams, Canonical》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

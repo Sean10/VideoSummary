@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>2019-08-15 :: Ceph Performance Meeting | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议时间： 2023年11月某日 参会人员： Igor、Sam、Jinping、Egor、Adam、Sonia、Josh等 会议主题： Ceph社区本周工作进展、关键议题讨论及后续行动计划 会议内容： 一、本周工作进展  Igor： 提交了关于优化BlueStore中设备空间利用的pull request，通过利用现有的路径模型来简化空间管理，提高效率。 Sam：  提交了关于BlueS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019-08-15 :: Ceph Performance Meeting">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议时间： 2023年11月某日 参会人员： Igor、Sam、Jinping、Egor、Adam、Sonia、Josh等 会议主题： Ceph社区本周工作进展、关键议题讨论及后续行动计划 会议内容： 一、本周工作进展  Igor： 提交了关于优化BlueStore中设备空间利用的pull request，通过利用现有的路径模型来简化空间管理，提高效率。 Sam：  提交了关于BlueS">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-08-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-08-15T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">2019-08-15 :: Ceph Performance Meeting</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">2019-08-15 :: Ceph Performance Meeting</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-14T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-08-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-2019-08-15_-_-_Ceph_Performance_Meeting"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">2019-08-15 :: Ceph Performance Meeting</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-15 00:00:00" datetime="2019-08-14T16:00:00.000Z"  itemprop="datePublished">2019-08-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>会议纪要</strong></p>
+<p><strong>会议时间</strong>： 2023年11月某日</p>
+<p><strong>参会人员</strong>：
+Igor、Sam、Jinping、Egor、Adam、Sonia、Josh等</p>
+<p><strong>会议主题</strong>：
+Ceph社区本周工作进展、关键议题讨论及后续行动计划</p>
+<p><strong>会议内容</strong>：</p>
+<p><strong>一、本周工作进展</strong></p>
+<ul>
+<li><strong>Igor</strong>： 提交了关于优化BlueStore中设备空间利用的pull
+request，通过利用现有的路径模型来简化空间管理，提高效率。</li>
+<li><strong>Sam</strong>：
+<ul>
+<li>提交了关于BlueStore QoS功能的pull
+request，通过添加跟踪点来收集数据，以便更准确地设置节流值。</li>
+<li>对BlueStore的NVMe性能进行了分析，发现并发性对性能有显著影响。</li>
+</ul></li>
+<li><strong>Jinping</strong>： 提交了关于BlueStore锁定的pull
+request，旨在减少锁定，提高性能。</li>
+<li><strong>Egor</strong>： 提交了关于BlueStore性能优化的pull
+request，包括减少锁获取和更新finisher。</li>
+<li><strong>Adam</strong>：
+<ul>
+<li>继续推进BlueStore的优化工作，包括将IOU
+ring相关的工作移到后台运行。</li>
+<li>对BlueStore的Object存储进行了优化，将对象拆分为更小的提交，以便更容易审查。</li>
+</ul></li>
+<li><strong>Sonia</strong>：
+<ul>
+<li>探索了使用4K块大小的BlueStore性能，发现在某些情况下，性能有所提升。</li>
+<li>对BlueStore的Alligator aging测试进行了改进。</li>
+</ul></li>
+</ul>
+<p><strong>二、讨论的主要议题</strong></p>
+<ul>
+<li><strong>BlueStore性能优化</strong>：
+<ul>
+<li>如何优化BlueStore的性能，包括锁管理、路径模型、节流值设置等。</li>
+<li>如何通过添加跟踪点来收集数据，以便更准确地设置节流值。</li>
+<li>如何根据不同的设备类型调整节流值。</li>
+</ul></li>
+<li><strong>BlueStore QoS功能</strong>：
+<ul>
+<li>如何实现BlueStore的QoS功能，以满足不同用户的需求。</li>
+<li>如何通过节流值控制不同用户的I/O请求。</li>
+</ul></li>
+<li><strong>BlueStore与RBD的兼容性</strong>：
+<ul>
+<li>如何确保BlueStore与RBD的兼容性。</li>
+<li>如何处理不同存储引擎之间的性能差异。</li>
+</ul></li>
+</ul>
+<p><strong>三、决定的事项</strong></p>
+<ul>
+<li><strong>Igor</strong>： 尽快审查Igor的优化pull request。</li>
+<li><strong>Sam</strong>： 将跟踪点集成到CDT中，并进行QoS实验。</li>
+<li><strong>Adam</strong>：
+继续推进BlueStore的优化工作，并与社区进行讨论。</li>
+<li><strong>Sonia</strong>：
+与社区讨论4K块大小对BlueStore性能的影响。</li>
+</ul>
+<p><strong>四、后续行动计划</strong></p>
+<ul>
+<li>继续优化BlueStore的性能。</li>
+<li>实现BlueStore的QoS功能。</li>
+<li>确保BlueStore与RBD的兼容性。</li>
+<li>对不同存储引擎进行性能测试。</li>
+</ul>
+<p><strong>五、其他事项</strong></p>
+<ul>
+<li>会议中讨论了BlueStore的Alligator
+aging测试，并决定对其进行改进。</li>
+<li>会议中讨论了BlueStore的4K块大小问题，并决定进行更多测试。</li>
+</ul>
+<p><strong>总结</strong>：</p>
+<p>本周Ceph社区在BlueStore性能优化、QoS功能实现等方面取得了进展，并讨论了后续的工作计划。社区将继续努力，为用户提供更好的存储解决方案。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-08-15T16:00:00.000Z" itemprop="dateUpdated">2019-08-16 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&title=《2019-08-15 :: Ceph Performance Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&title=《2019-08-15 :: Ceph Performance Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-08-15 :: Ceph Performance Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2019/08/19/2019-08-19_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">2019-08-19 :: Ceph Orchestration Meeting</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2019/08/14/2019-08-13_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">2019-08-13 :: Crimson SeaStor OSD Weekly Meeting</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&title=《2019-08-15 :: Ceph Performance Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&title=《2019-08-15 :: Ceph Performance Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-08-15 :: Ceph Performance Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议概述 本次会议由Matt Benjamin主持，他目前担任IBM的Program Director，负责Seth对象存储项目。会议主要讨论了Seth对象存储的能力、路线图和未来计划。 主要议题  Seth对象存储的能力  RGW (RADOS Gateway) 是一个高保真的S3和Swift兼容的HTTP对象存储，构建在Ceph集群之上。 主要能力包括：  单集群容量可达数百PB。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议概述 本次会议由Matt Benjamin主持，他目前担任IBM的Program Director，负责Seth对象存储项目。会议主要讨论了Seth对象存储的能力、路线图和未来计划。 主要议题  Seth对象存储的能力  RGW (RADOS Gateway) 是一个高保真的S3和Swift兼容的HTTP对象存储，构建在Ceph集群之上。 主要能力包括：  单集群容量可达数百PB。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2023-05-05
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议概述">会议概述</h4>
+<p>本次会议由Matt Benjamin主持，他目前担任IBM的Program
+Director，负责Seth对象存储项目。会议主要讨论了Seth对象存储的能力、路线图和未来计划。</p>
+<h4 id="主要议题">主要议题</h4>
+<ol type="1">
+<li><strong>Seth对象存储的能力</strong>
+<ul>
+<li><strong>RGW (RADOS Gateway)</strong>
+是一个高保真的S3和Swift兼容的HTTP对象存储，构建在Ceph集群之上。</li>
+<li>主要能力包括：
+<ul>
+<li>单集群容量可达数百PB。</li>
+<li>支持数十万个S3桶或容器。</li>
+<li>每个桶可存储至少5亿个对象，目标接近10亿。</li>
+<li>动态桶索引缩放。</li>
+</ul></li>
+</ul></li>
+<li><strong>近期开发和改进</strong>
+<ul>
+<li>过去两年中，对多站点复制能力进行了大规模重构和重写，以提高规模和鲁棒性。</li>
+<li>实现了S3 Select，支持结构化数据操作。</li>
+<li>对内部API进行了重大重构，称为“Zipper”。</li>
+<li>支持所有Amazon兼容的加密API。</li>
+<li>将计算密集型操作从索引存储移至RADOS上的队列操作。</li>
+</ul></li>
+<li><strong>未来计划和路线图</strong>
+<ul>
+<li>计划在2023年及以后更新C++20协程。</li>
+<li>增强多站点复制功能，包括并行同步和同步公平性。</li>
+<li>开发S3 Inventory，一种预生成的桶列表。</li>
+<li>开发D4N缓存层，与麻省开放云合作。</li>
+<li>扩展S3 Select功能，支持Parquet和JSON。</li>
+<li>实现端到端跟踪，使用Jaeger。</li>
+<li>实现索引恢复功能，用于版本和非版本桶。</li>
+</ul></li>
+<li><strong>新前端协议</strong>
+<ul>
+<li>计划支持HTTP/3和Apache Arrow Flight。</li>
+<li>开发动态脚本和安全脚本，允许用户注入脚本进行调试和复杂工作负载管理。</li>
+</ul></li>
+<li><strong>其他增强功能</strong>
+<ul>
+<li>增强S3过渡能力，支持远程S3的数据恢复。</li>
+<li>增强归档区域功能，包括数据去重。</li>
+<li>消除单主节点模型，采用共识协议。</li>
+</ul></li>
+</ol>
+<h4 id="决定事项">决定事项</h4>
+<ul>
+<li>确认了Seth对象存储的未来发展方向和技术路线图。</li>
+<li>确定了即将实施的关键功能和技术改进。</li>
+</ul>
+<h4 id="后续行动计划">后续行动计划</h4>
+<ul>
+<li>继续推进C++20协程的更新。</li>
+<li>完成多站点复制功能的增强。</li>
+<li>开发和测试新前端协议，如HTTP/3和Apache Arrow Flight。</li>
+<li>完善文档和社区支持，确保新功能的顺利实施和用户采用。</li>
+</ul>
+<h4 id="其他讨论">其他讨论</h4>
+<ul>
+<li>讨论了文档更新、过滤器编译、动态脚本插入等技术细节。</li>
+<li>确认了未来几年的发展目标和预期成果。</li>
+</ul>
+<h4 id="结论">结论</h4>
+<p>会议强调了Seth对象存储在未来的发展方向和技术创新，旨在提供更高效、更灵活的存储解决方案，满足不断变化的市场需求和技术挑战。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-05-04T16:00:00.000Z" itemprop="dateUpdated">2023-05-05 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/&title=《Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/&title=《Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2023/05/05/Ceph_QoS_Refinements_for_Background_Operations_Using_MClock/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Ceph QoS Refinements for Background Operations Using MClock</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/&title=《Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/&title=《Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024 | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 会议地点： 线上会议 参会人员： James Paage（Canonical公司首席工程师）、Luciano、其他IBM员工 会议主题： Sunbeam项目介绍 会议内容：  James Paage开场致辞：  对Bill的Ceph PODS展示表示祝贺。 介绍自己，作为Canonical公司首席工程师，负责OpenStack Ceph和O">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 会议地点： 线上会议 参会人员： James Paage（Canonical公司首席工程师）、Luciano、其他IBM员工 会议主题： Sunbeam项目介绍 会议内容：  James Paage开场致辞：  对Bill的Ceph PODS展示表示祝贺。 介绍自己，作为Canonical公司首席工程师，负责OpenStack Ceph和O">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-08-23T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2024-08-22T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2024-08-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2024-08-23 00:00:00" datetime="2024-08-22T16:00:00.000Z"  itemprop="datePublished">2024-08-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
+<p><strong>会议地点</strong>： 线上会议</p>
+<p><strong>参会人员</strong>： James
+Paage（Canonical公司首席工程师）、Luciano、其他IBM员工</p>
+<p><strong>会议主题</strong>： Sunbeam项目介绍</p>
+<p><strong>会议内容</strong>：</p>
+<ul>
+<li><strong>James Paage开场致辞</strong>：
+<ul>
+<li>对Bill的Ceph PODS展示表示祝贺。</li>
+<li>介绍自己，作为Canonical公司首席工程师，负责OpenStack
+Ceph和OVN团队的技术架构师。</li>
+<li>简述了自2010年加入Canonical以来在开源领域的参与经历，包括参与Eucalyptus和OpenStack项目。</li>
+<li>介绍了Ensemble项目（后更名为Juju），用于部署和操作分布式系统。</li>
+<li>介绍了Metal as a
+Service（MAS）和LXD项目，用于容器化OpenStack组件。</li>
+<li>介绍了OpenStack charms项目，用于部署和配置OpenStack。</li>
+<li>介绍了MicroStack项目，用于简化OpenStack部署。</li>
+<li>介绍了Ceph Snap，用于简化Ceph部署。</li>
+</ul></li>
+<li><strong>Sunbeam项目介绍</strong>：
+<ul>
+<li>Sunbeam项目是一个在Open Infrastructure
+Foundation技术委员会指导下孵化的项目，旨在实现任何规模（从个人电脑到多数据中心）的OpenStack部署。</li>
+<li>Sunbeam项目采用混合部署方法，结合了Juju和Kubernetes组件。</li>
+<li>Sunbeam项目使用Ceph
+Snap进行部署，并与Juju和Kubernetes平台集成。</li>
+<li>Sunbeam项目提供了MicroStack实现，用于简化Ceph部署。</li>
+<li>Sunbeam项目使用Juju charm进行Ceph集群管理。</li>
+<li>Sunbeam项目支持Cinder和Nova组件。</li>
+<li>Sunbeam项目支持Rados Gateway，并通过Kubernetes进行暴露。</li>
+</ul></li>
+<li><strong>Sunbeam项目优势</strong>：
+<ul>
+<li>快速、可重复的部署和操作。</li>
+<li>基于图像的部署，减少版本差异。</li>
+<li>提高安全性，通过Snap封装。</li>
+<li>简化软件，提高可维护性。</li>
+<li>提高易用性，降低知识门槛。</li>
+<li>提高可观察性和透明度。</li>
+<li>提供可选功能，如可观察性、验证工具等。</li>
+</ul></li>
+<li><strong>Sunbeam项目发布计划</strong>：
+<ul>
+<li>预计2023年底发布基于OpenStack Caracol和Ceph Squid的稳定版。</li>
+<li>预计2024年第一季度实现与Charmed OpenStack功能对等。</li>
+<li>未来将提供从Charmed OpenStack迁移到Sunbeam的路径。</li>
+</ul></li>
+</ul>
+<p><strong>后续行动计划</strong>：</p>
+<ul>
+<li>继续开发Sunbeam项目，并发布稳定版。</li>
+<li>完善迁移路径，支持从Charmed OpenStack迁移到Sunbeam。</li>
+<li>推广Sunbeam项目，并获取用户反馈。</li>
+</ul>
+<p><strong>会议总结</strong>：</p>
+<p>Sunbeam项目是一个具有潜力的OpenStack部署解决方案，它简化了部署和操作过程，并提供了多种功能。随着项目的不断发展，Sunbeam有望成为OpenStack部署的首选工具。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2024-08-23T16:00:00.000Z" itemprop="dateUpdated">2024-08-24 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/&title=《Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/&title=《Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2024/08/23/State_of_the_Cephalopod_Ceph_Days_London_2024/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">State of the Cephalopod| Ceph Days London 2024</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2024/08/23/Taming_a_Cephalopod_Swarm_Ceph_Days_London_2024/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Taming a Cephalopod Swarm | Ceph Days London 2024</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/&title=《Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/&title=《Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

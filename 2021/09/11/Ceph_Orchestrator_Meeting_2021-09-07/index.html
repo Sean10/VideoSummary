@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Ceph Orchestrator Meeting 2021-09-07 | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议主题：本周的Orchestrator周会 参会人员：全体成员 会议时间：本周 主要议题：  Agent介绍 - 由Edin进行 Repaving Oasis - 由Cory进行 测试重启 日志聚合需求  会议内容总结： 1. Agent介绍  目的：提高可扩展性和性能，解决当前使用SSH通信的慢速问题。 架构：  管理器将有一个HTTP端点，使用CherryPy。 主机上的Agent">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ceph Orchestrator Meeting 2021-09-07">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/09/11/Ceph_Orchestrator_Meeting_2021-09-07/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议主题：本周的Orchestrator周会 参会人员：全体成员 会议时间：本周 主要议题：  Agent介绍 - 由Edin进行 Repaving Oasis - 由Cory进行 测试重启 日志聚合需求  会议内容总结： 1. Agent介绍  目的：提高可扩展性和性能，解决当前使用SSH通信的慢速问题。 架构：  管理器将有一个HTTP端点，使用CherryPy。 主机上的Agent">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-11T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Ceph Orchestrator Meeting 2021-09-07</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Ceph Orchestrator Meeting 2021-09-07</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-09-10T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2021-09-11
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E6%9C%AC%E5%91%A8%E7%9A%84orchestrator%E5%91%A8%E4%BC%9A"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：本周的Orchestrator周会</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%A8%E4%BD%93%E6%88%90%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：全体成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E6%9C%AC%E5%91%A8"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：本周</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容总结：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#agent%E4%BB%8B%E7%BB%8D"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">1. Agent介绍</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#repaving-oasis"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">2. Repaving Oasis</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%B5%8B%E8%AF%95%E9%87%8D%E5%90%AF"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">3. 测试重启</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%97%A5%E5%BF%97%E8%81%9A%E5%90%88%E9%9C%80%E6%B1%82"><span class="post-toc-number">1.5.4.</span> <span class="post-toc-text">4. 日志聚合需求</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Ceph_Orchestrator_Meeting_2021-09-07"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Ceph Orchestrator Meeting 2021-09-07</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-09-11 00:00:00" datetime="2021-09-10T16:00:00.000Z"  itemprop="datePublished">2021-09-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<h4
+id="会议主题本周的orchestrator周会">会议主题：本周的Orchestrator周会</h4>
+<h4 id="参会人员全体成员">参会人员：全体成员</h4>
+<h4 id="会议时间本周">会议时间：本周</h4>
+<h4 id="主要议题">主要议题：</h4>
+<ol type="1">
+<li><strong>Agent介绍</strong> - 由Edin进行</li>
+<li><strong>Repaving Oasis</strong> - 由Cory进行</li>
+<li><strong>测试重启</strong></li>
+<li><strong>日志聚合需求</strong></li>
+</ol>
+<h4 id="会议内容总结">会议内容总结：</h4>
+<h5 id="agent介绍">1. Agent介绍</h5>
+<ul>
+<li><strong>目的</strong>：提高可扩展性和性能，解决当前使用SSH通信的慢速问题。</li>
+<li><strong>架构</strong>：
+<ul>
+<li>管理器将有一个HTTP端点，使用CherryPy。</li>
+<li>主机上的Agent将是一个非容器化的systemd单元，直接在主机上运行命令。</li>
+<li>Agent将通过HTTP将收集的所有数据发送到管理器。</li>
+<li>管理器和Agent之间通过原始套接字通信。</li>
+</ul></li>
+<li><strong>安全性</strong>：
+<ul>
+<li>需要确保消息加密和身份验证，防止消息被窃听和伪造。</li>
+<li>使用HTTPS和自签名证书来确保通信安全。</li>
+<li>使用密钥环进行身份验证。</li>
+</ul></li>
+<li><strong>元数据完整性</strong>：
+<ul>
+<li>需要确保元数据是最新的，避免重复部署守护进程。</li>
+<li>使用计数器来确保元数据的时效性。</li>
+</ul></li>
+<li><strong>离线主机处理</strong>：
+<ul>
+<li>通过超时机制快速检测离线主机。</li>
+<li>重新部署Agent以验证主机状态。</li>
+</ul></li>
+</ul>
+<h5 id="repaving-oasis">2. Repaving Oasis</h5>
+<ul>
+<li><strong>目的</strong>：自动化OSD的重铺过程，例如更改最小分配大小或使用db
+wal。</li>
+<li><strong>方法</strong>：
+<ul>
+<li>使用现有的驱动组定义来重新部署OSD。</li>
+<li>确保设备在释放后能被正确重新部署。</li>
+</ul></li>
+<li><strong>命令</strong>：
+<ul>
+<li>设想一个新的命令来启动重铺过程，例如<code>ceph osd repave</code>。</li>
+</ul></li>
+<li><strong>测试</strong>：
+<ul>
+<li>需要验证在混合OSD（SSD和硬盘）情况下的正确行为。</li>
+</ul></li>
+</ul>
+<h5 id="测试重启">3. 测试重启</h5>
+<ul>
+<li><strong>目的</strong>：避免在重启过程中出现Monmap问题。</li>
+<li><strong>方法</strong>：
+<ul>
+<li>使用现有的压力测试工具（如Thrasher）来测试重启过程。</li>
+</ul></li>
+</ul>
+<h5 id="日志聚合需求">4. 日志聚合需求</h5>
+<ul>
+<li><strong>目的</strong>：聚合集群中的日志，可能用于支持案例。</li>
+<li><strong>讨论</strong>：
+<ul>
+<li>对于是否需要在管理器模块中实现日志聚合存在分歧。</li>
+<li>建议使用外部工具（如EFK堆栈）来处理日志聚合。</li>
+</ul></li>
+</ul>
+<h4 id="决定事项">决定事项：</h4>
+<ul>
+<li>Agent的架构和安全性细节已经明确，后续将进行进一步的开发和测试。</li>
+<li>Repaving
+Oasis的初步方案已经提出，Cory将开始进行详细设计和开发。</li>
+<li>重启测试将使用现有的压力测试工具进行。</li>
+<li>日志聚合可能通过外部工具实现，而不是在管理器模块中。</li>
+</ul>
+<h4 id="后续行动计划">后续行动计划：</h4>
+<ul>
+<li>Edin将继续开发和完善Agent的功能。</li>
+<li>Cory将开始Repaving Oasis的详细设计和开发工作。</li>
+<li>使用Thrasher进行重启测试。</li>
+<li>考虑使用外部工具进行日志聚合，并可能提供相关文档。</li>
+</ul>
+<h4 id="会议结束">会议结束：</h4>
+<p>感谢大家的参与，下次会议再见。</p>
+<hr />
+<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-09-11T16:00:00.000Z" itemprop="dateUpdated">2021-09-12 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/09/11/Ceph_Orchestrator_Meeting_2021-09-07/&title=《Ceph Orchestrator Meeting 2021-09-07》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/09/11/Ceph_Orchestrator_Meeting_2021-09-07/&title=《Ceph Orchestrator Meeting 2021-09-07》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2021/09/11/Ceph_Orchestrator_Meeting_2021-09-07/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Orchestrator Meeting 2021-09-07》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/09/11/Ceph_Orchestrator_Meeting_2021-09-07/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2021/09/11/Ceph_Orchestrator_Meeting_2021-09-07/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2021/09/11/Ceph_Crimson_SeaStore_2021-09-08/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ceph Crimson/SeaStore 2021-09-08</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2021/09/11/Ceph_Performance_Meeting_2021-09-11/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Ceph Performance Meeting 2021-09-11</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/09/11/Ceph_Orchestrator_Meeting_2021-09-07/&title=《Ceph Orchestrator Meeting 2021-09-07》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/09/11/Ceph_Orchestrator_Meeting_2021-09-07/&title=《Ceph Orchestrator Meeting 2021-09-07》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2021/09/11/Ceph_Orchestrator_Meeting_2021-09-07/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Orchestrator Meeting 2021-09-07》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/09/11/Ceph_Orchestrator_Meeting_2021-09-07/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2021/09/11/Ceph_Orchestrator_Meeting_2021-09-07/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2021/09/11/Ceph_Orchestrator_Meeting_2021-09-07/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

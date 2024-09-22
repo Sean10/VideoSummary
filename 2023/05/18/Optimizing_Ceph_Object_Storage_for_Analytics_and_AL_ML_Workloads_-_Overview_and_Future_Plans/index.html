@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Optimizing Ceph Object Storage for Analytics and AL/ML Workloads - Overview and Future Plans | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议主题：优化 Ceph 以支持 AI 和 ML 工作负载 会议时间：[具体日期] 会议地点：[具体地点] 参会人员：  Kyle Bader - IBM 首席产品架构师，Ceph 存储工程经理 Matt - [具体职位] 其他参会人员 - [列出其他重要参会人员]  会议内容总结：  背景介绍  Kyle Bader 介绍了 Ceph 在数据湖分析、AI 和 ML 领域的应用历史和现状">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Optimizing Ceph Object Storage for Analytics and AL&#x2F;ML Workloads - Overview and Future Plans">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/18/Optimizing_Ceph_Object_Storage_for_Analytics_and_AL_ML_Workloads_-_Overview_and_Future_Plans/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议主题：优化 Ceph 以支持 AI 和 ML 工作负载 会议时间：[具体日期] 会议地点：[具体地点] 参会人员：  Kyle Bader - IBM 首席产品架构师，Ceph 存储工程经理 Matt - [具体职位] 其他参会人员 - [列出其他重要参会人员]  会议内容总结：  背景介绍  Kyle Bader 介绍了 Ceph 在数据湖分析、AI 和 ML 领域的应用历史和现状">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-18T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Optimizing Ceph Object Storage for Analytics and AL/ML Workloads - Overview and Future Plans</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Optimizing Ceph Object Storage for Analytics and AL/ML Workloads - Overview and Future Plans</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-05-17T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2023-05-18
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96-ceph-%E4%BB%A5%E6%94%AF%E6%8C%81-ai-%E5%92%8C-ml-%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：优化 Ceph
+以支持 AI 和 ML 工作负载</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Optimizing_Ceph_Object_Storage_for_Analytics_and_AL_ML_Workloads_-_Overview_and_Future_Plans"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Optimizing Ceph Object Storage for Analytics and AL/ML Workloads - Overview and Future Plans</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-05-18 00:00:00" datetime="2023-05-17T16:00:00.000Z"  itemprop="datePublished">2023-05-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议主题优化-ceph-以支持-ai-和-ml-工作负载">会议主题：优化 Ceph
+以支持 AI 和 ML 工作负载</h4>
+<h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
+<h4 id="会议地点具体地点">会议地点：[具体地点]</h4>
+<h4 id="参会人员">参会人员：</h4>
+<ul>
+<li><strong>Kyle Bader</strong> - IBM 首席产品架构师，Ceph
+存储工程经理</li>
+<li><strong>Matt</strong> - [具体职位]</li>
+<li><strong>其他参会人员</strong> - [列出其他重要参会人员]</li>
+</ul>
+<h4 id="会议内容总结">会议内容总结：</h4>
+<ol type="1">
+<li><strong>背景介绍</strong>
+<ul>
+<li>Kyle Bader 介绍了 Ceph 在数据湖分析、AI 和 ML
+领域的应用历史和现状。</li>
+<li>2017 年，Ceph
+团队与来自不同行业的四家客户（医疗、金融服务、电信和零售）合作，探讨如何优化
+Ceph 作为对象存储以支持大数据环境。</li>
+</ul></li>
+<li><strong>当前挑战与机遇</strong>
+<ul>
+<li>目前，大多数用户已将存储与数据处理环境解耦，数据湖通常位于对象存储（如
+Blob 存储）中。</li>
+<li>随着 AI 和 ML
+工作负载的增加，需要专门的硬件加速器进行推理和训练，这要求存储与计算资源分离。</li>
+</ul></li>
+<li><strong>Ceph 的优化方向</strong>
+<ul>
+<li><strong>扩展性</strong>：Ceph
+已经能够支持数十亿对象的存储，单个集群可达到数十 PB 的容量。</li>
+<li><strong>性能</strong>：通过测试，Ceph 在 10 节点磁盘集群上实现了 80
+GB/s 的吞吐量。</li>
+<li><strong>功能增强</strong>：引入了版本控制、MFA
+删除、对象锁定、桶通知、S3 Select 等功能，以更好地支持 AI 和 ML
+工作负载。</li>
+</ul></li>
+<li><strong>与 Massachusetts Open Cloud 的合作</strong>
+<ul>
+<li>与波士顿大学和东北大学的研究团队合作，开发了
+D4N（目录驱动的数据中心交付网络）和 Careers（智能预取器），以加速 S3
+上的高价值分析工作负载。</li>
+<li>这些技术通过在数据处理之前预取数据，提高了缓存的效率，并减少了延迟。</li>
+</ul></li>
+<li><strong>未来计划</strong>
+<ul>
+<li>计划将这些研究成果产品化，集成到 Ceph 的主线版本中。</li>
+<li>引入 Zipper 重构，允许 Ceph RGW 使用不同的后端存储，如 RADOS、S3
+或其他弹性缓存。</li>
+<li>探索新的前端接口，如 Apache Arrow 和
+Aeroflight，以提高数据处理的效率和灵活性。</li>
+</ul></li>
+</ol>
+<h4 id="决定事项">决定事项：</h4>
+<ul>
+<li>继续推进 Ceph 在 AI 和 ML
+领域的优化工作，特别是通过与学术界的合作，加速新技术的研发和集成。</li>
+<li>确保新功能的引入不会影响现有用户的兼容性和稳定性。</li>
+</ul>
+<h4 id="后续行动计划">后续行动计划：</h4>
+<ul>
+<li>持续进行性能测试和优化，确保 Ceph 能够满足不断增长的 AI 和 ML
+工作负载需求。</li>
+<li>与社区合作，收集用户反馈，不断改进和扩展 Ceph 的功能。</li>
+<li>定期更新文档和培训材料，帮助用户更好地理解和使用新功能。</li>
+</ul>
+<h4 id="会议结束">会议结束：</h4>
+<ul>
+<li>会议在热烈的讨论和掌声中结束，参会人员对 Ceph
+的未来发展充满期待。</li>
+</ul>
+<hr />
+<p><strong>备注</strong>：本会议纪要基于会议内容的概要总结，具体细节和数据可能需要进一步核实。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-05-18T16:00:00.000Z" itemprop="dateUpdated">2023-05-19 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/18/Optimizing_Ceph_Object_Storage_for_Analytics_and_AL_ML_Workloads_-_Overview_and_Future_Plans/&title=《Optimizing Ceph Object Storage for Analytics and AL/ML Workloads - Overview and Future Plans》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/18/Optimizing_Ceph_Object_Storage_for_Analytics_and_AL_ML_Workloads_-_Overview_and_Future_Plans/&title=《Optimizing Ceph Object Storage for Analytics and AL/ML Workloads - Overview and Future Plans》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/05/18/Optimizing_Ceph_Object_Storage_for_Analytics_and_AL_ML_Workloads_-_Overview_and_Future_Plans/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Optimizing Ceph Object Storage for Analytics and AL/ML Workloads - Overview and Future Plans》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/18/Optimizing_Ceph_Object_Storage_for_Analytics_and_AL_ML_Workloads_-_Overview_and_Future_Plans/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/05/18/Optimizing_Ceph_Object_Storage_for_Analytics_and_AL_ML_Workloads_-_Overview_and_Future_Plans/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2023/05/18/Enabling_Near-Data_Processing_in_Ceph_-_Rixin_Luo_Huawei/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Enabling Near-Data Processing in Ceph - Rixin Luo, Huawei</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2023/05/17/Ceph_Days_NYC_-_Optimizing_RGW_Object_Storage_Mixed_Media_through_Storage_Classes_and_Lua_Scripting/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Ceph Days NYC: Optimizing RGW Object Storage Mixed Media through Storage Classes and Lua Scripting</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/18/Optimizing_Ceph_Object_Storage_for_Analytics_and_AL_ML_Workloads_-_Overview_and_Future_Plans/&title=《Optimizing Ceph Object Storage for Analytics and AL/ML Workloads - Overview and Future Plans》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/18/Optimizing_Ceph_Object_Storage_for_Analytics_and_AL_ML_Workloads_-_Overview_and_Future_Plans/&title=《Optimizing Ceph Object Storage for Analytics and AL/ML Workloads - Overview and Future Plans》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/05/18/Optimizing_Ceph_Object_Storage_for_Analytics_and_AL_ML_Workloads_-_Overview_and_Future_Plans/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Optimizing Ceph Object Storage for Analytics and AL/ML Workloads - Overview and Future Plans》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/18/Optimizing_Ceph_Object_Storage_for_Analytics_and_AL_ML_Workloads_-_Overview_and_Future_Plans/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/05/18/Optimizing_Ceph_Object_Storage_for_Analytics_and_AL_ML_Workloads_-_Overview_and_Future_Plans/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2023/05/18/Optimizing_Ceph_Object_Storage_for_Analytics_and_AL_ML_Workloads_-_Overview_and_Future_Plans/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

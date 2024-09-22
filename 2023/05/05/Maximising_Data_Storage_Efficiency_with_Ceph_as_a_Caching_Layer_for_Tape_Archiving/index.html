@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Maximising Data Storage Efficiency with Ceph as a Caching Layer for Tape Archiving | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="会议纪要 会议基本信息  主讲人: Thomas Bennett 和 Martin Lever 公司: Solo, 位于南非开普敦 会议主题: 使用Ceph作为接口的存储解决方案  会议内容总结  公司背景: Solo公司由南非红天文台的研究人员创立，专注于开发创新的存储解决方案。 项目动机: 通过提交演讲来免除会议费用，同时展示他们在Ceph存储领域的创新应用。 项目目标: 开发类似Amazon">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maximising Data Storage Efficiency with Ceph as a Caching Layer for Tape Archiving">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Maximising_Data_Storage_Efficiency_with_Ceph_as_a_Caching_Layer_for_Tape_Archiving/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="会议纪要 会议基本信息  主讲人: Thomas Bennett 和 Martin Lever 公司: Solo, 位于南非开普敦 会议主题: 使用Ceph作为接口的存储解决方案  会议内容总结  公司背景: Solo公司由南非红天文台的研究人员创立，专注于开发创新的存储解决方案。 项目动机: 通过提交演讲来免除会议费用，同时展示他们在Ceph存储领域的创新应用。 项目目标: 开发类似Amazon">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Maximising Data Storage Efficiency with Ceph as a Caching Layer for Tape Archiving</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Maximising Data Storage Efficiency with Ceph as a Caching Layer for Tape Archiving</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2023-05-05
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议基本信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议内容总结</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">联系方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%8F%8D%E9%A6%88"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议反馈</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Maximising_Data_Storage_Efficiency_with_Ceph_as_a_Caching_Layer_for_Tape_Archiving"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Maximising Data Storage Efficiency with Ceph as a Caching Layer for Tape Archiving</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议基本信息">会议基本信息</h4>
+<ul>
+<li><strong>主讲人</strong>: Thomas Bennett 和 Martin Lever</li>
+<li><strong>公司</strong>: Solo, 位于南非开普敦</li>
+<li><strong>会议主题</strong>: 使用Ceph作为接口的存储解决方案</li>
+</ul>
+<h4 id="会议内容总结">会议内容总结</h4>
+<ul>
+<li><strong>公司背景</strong>:
+Solo公司由南非红天文台的研究人员创立，专注于开发创新的存储解决方案。</li>
+<li><strong>项目动机</strong>:
+通过提交演讲来免除会议费用，同时展示他们在Ceph存储领域的创新应用。</li>
+<li><strong>项目目标</strong>: 开发类似Amazon
+Glacier的存储解决方案，名为Solo
+Blue，该产品不依赖于BlueStore，而是完全独立的新产品。</li>
+<li><strong>客户介绍</strong>:
+主要客户是南非红天文台，该天文台拥有世界上最敏感的射电望远镜——Meerkat。天文台产生的数据量巨大，需要长期存储和维护。</li>
+<li><strong>技术挑战</strong>:
+数据量预计在未来几年内从18PB增长到60-200PB，需要有效的存储和管理策略。</li>
+<li><strong>解决方案概念</strong>:
+使用Ceph作为接口，通过S3协议管理和存档数据。数据在Ceph和磁带之间迁移，确保长期存储的同时保持数据的可访问性。</li>
+<li><strong>实施细节</strong>: 使用IBM TS
+4500磁带库，计划在Ceph集群上部署解决方案，并通过Ansible自动化安装和管理。</li>
+<li><strong>未来展望</strong>:
+计划在年中完成功能性系统，并探索S3版本控制、多池支持等高级功能。同时，考虑将部分管理功能集成到Ceph
+Gateway中，以便更好地服务于社区。</li>
+</ul>
+<h4 id="决定事项">决定事项</h4>
+<ul>
+<li><strong>技术选型</strong>:
+确定使用Ceph作为主要存储平台，结合磁带库进行长期数据存档。</li>
+<li><strong>项目进度</strong>:
+预计年中完成功能性系统的开发，并开始实际部署。</li>
+</ul>
+<h4 id="后续行动计划">后续行动计划</h4>
+<ul>
+<li><strong>系统开发</strong>: 继续开发和测试Solo
+Blue系统，确保其稳定性和性能。</li>
+<li><strong>社区合作</strong>: 探索与Ceph社区的合作机会，特别是在Ceph
+Gateway的集成和功能扩展方面。</li>
+<li><strong>用户反馈</strong>:
+收集用户和社区的反馈，优化产品设计和功能。</li>
+</ul>
+<h4 id="联系方式">联系方式</h4>
+<ul>
+<li>公司网站: <a target="_blank" rel="noopener" href="http://www.solo.co.za">Solo公司网站</a></li>
+</ul>
+<h4 id="会议反馈">会议反馈</h4>
+<ul>
+<li>会议中讨论了磁带存储的未来和其在现代存储解决方案中的应用，引起了与会者的广泛兴趣和讨论。</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-05-04T16:00:00.000Z" itemprop="dateUpdated">2023-05-05 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Maximising_Data_Storage_Efficiency_with_Ceph_as_a_Caching_Layer_for_Tape_Archiving/&title=《Maximising Data Storage Efficiency with Ceph as a Caching Layer for Tape Archiving》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Maximising_Data_Storage_Efficiency_with_Ceph_as_a_Caching_Layer_for_Tape_Archiving/&title=《Maximising Data Storage Efficiency with Ceph as a Caching Layer for Tape Archiving》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/05/05/Maximising_Data_Storage_Efficiency_with_Ceph_as_a_Caching_Layer_for_Tape_Archiving/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Maximising Data Storage Efficiency with Ceph as a Caching Layer for Tape Archiving》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Maximising_Data_Storage_Efficiency_with_Ceph_as_a_Caching_Layer_for_Tape_Archiving/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/05/05/Maximising_Data_Storage_Efficiency_with_Ceph_as_a_Caching_Layer_for_Tape_Archiving/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2023/05/05/Kubernetes_Stateful_Application_Disaster_Recovery_with_Zero_Data_Loss_-_Daniel_Parkes_IBM/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Kubernetes Stateful Application Disaster Recovery with Zero Data Loss - Daniel Parkes, IBM</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2023/05/05/MicroCeph_-_What_Why_and_Who_Is_It_for_-_Peter_Sabaini_Utkarsh_Bhatt_Canonical/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">MicroCeph: What, Why and Who Is It for - Peter Sabaini &amp; Utkarsh Bhatt, Canonical</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Maximising_Data_Storage_Efficiency_with_Ceph_as_a_Caching_Layer_for_Tape_Archiving/&title=《Maximising Data Storage Efficiency with Ceph as a Caching Layer for Tape Archiving》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Maximising_Data_Storage_Efficiency_with_Ceph_as_a_Caching_Layer_for_Tape_Archiving/&title=《Maximising Data Storage Efficiency with Ceph as a Caching Layer for Tape Archiving》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/05/05/Maximising_Data_Storage_Efficiency_with_Ceph_as_a_Caching_Layer_for_Tape_Archiving/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Maximising Data Storage Efficiency with Ceph as a Caching Layer for Tape Archiving》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Maximising_Data_Storage_Efficiency_with_Ceph_as_a_Caching_Layer_for_Tape_Archiving/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/05/05/Maximising_Data_Storage_Efficiency_with_Ceph_as_a_Caching_Layer_for_Tape_Archiving/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2023/05/05/Maximising_Data_Storage_Efficiency_with_Ceph_as_a_Caching_Layer_for_Tape_Archiving/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>
