@@ -18,6 +18,10 @@ import yaml
 import asyncio
 from asyncio import Queue
 import random
+import aiohttp
+from bs4 import BeautifulSoup
+from urllib.parse import urlparse
+# import markdown
 
 # 从环境变量中获取API密钥
 YOUR_OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -916,6 +920,105 @@ subtitle: quarterly-summary
 """)
             print(f"已生成季度总结报告: {output_file}")
 
+async def fetch_webpage(session, url):
+    async with session.get(url) as response:
+        return await response.text()
+
+
+async def crawl_webpages(urls, semaphore):
+    async with aiohttp.ClientSession() as session:
+        tasks = []
+        for url in urls:
+            task = asyncio.create_task(fetch_and_parse(session, url, semaphore))
+            tasks.append(task)
+        results = await asyncio.gather(*tasks)
+    return results
+
+async def fetch_and_parse(session, url, semaphore):
+    async with semaphore:
+        try:
+            content = await fetch_webpage(session, url)
+            parsed_content = content
+            return {'url': url, 'content': parsed_content}
+        except Exception as e:
+            print(f"Error fetching {url}: {e}")
+            return {'url': url, 'content': None}
+
+async def collect_prompt_info(urls):
+    semaphore = Semaphore(15)  # 限制并发请求数
+    results = await crawl_webpages(urls, semaphore)
+    
+    reference_dir = "reference"
+    os.makedirs(reference_dir, exist_ok=True)
+    
+    prompt_info = ""
+    for result in results:
+        if result['content']:
+            # 从 URL 中提取标题
+            parsed_url = urlparse(result['url'])
+            title = re.search(r'/p/(.*?)/export', parsed_url.path)
+            if title:
+                file_name = f"{title.group(1)}.md"
+            else:
+                file_name = os.path.basename(parsed_url.path) or 'index.md'
+            
+            file_path = os.path.join(reference_dir, file_name)
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(result['content'])
+            prompt_info += f"Content from {result['url']} saved to {file_path}\n"
+    
+    return prompt_info
+
+import os
+import re
+from pathlib import Path
+
+def split_reference_files():
+    reference_dir = Path("reference")
+    after_reference_dir = Path("after_reference")
+    after_reference_dir.mkdir(exist_ok=True)
+
+    date_pattern = re.compile(r'^\d{4}-\d{2}-\d{2}')
+    special_char_pattern = re.compile(r'^\*')
+
+    for file in reference_dir.glob('*.md'):
+        with file.open('r', encoding='utf-8') as f:
+            content = f.read()
+
+        sections = []
+        current_section = []
+        current_date = None
+
+        for line in content.split('\n'):
+            date_match = date_pattern.match(line)
+            special_char_match = special_char_pattern.match(line)
+
+            if date_match or special_char_match:
+                if current_section:
+                    sections.append((current_date, '\n'.join(current_section)))
+                    current_section = []
+                if date_match:
+                    current_date = date_match.group()
+                else:
+                    current_date = None
+            
+            current_section.append(line)
+
+        if current_section:
+            sections.append((current_date, '\n'.join(current_section)))
+
+        for date, section_content in sections:
+            if date:
+                output_file = after_reference_dir / f"{file.stem}_{date}.md"
+            else:
+                output_file = after_reference_dir / f"{file.stem}_no_date_{len(sections)}.md"
+            
+            with output_file.open('w', encoding='utf-8') as f:
+                f.write(f"# {date if date else 'No Date'}\n\n")
+                f.write(section_content)
+
+    print(f"Split {len(list(reference_dir.glob('*.md')))} files into {len(list(after_reference_dir.glob('*.md')))} sections.")
+
 # 修改主函数以支持异步
 async def main_async():
     parser = argparse.ArgumentParser(description="YouTube Subtitle Summary Tool")
@@ -929,6 +1032,8 @@ async def main_async():
     parser.add_argument('--add-metadata', action='store_true', help='Add Hexo metadata to summary files')
     parser.add_argument('--reflect', action='store_true', help='Reflect on and improve existing summaries')
     parser.add_argument('--quarterly-summary', action='store_true', help='Generate quarterly summary reports')
+    parser.add_argument('--collect-prompt', nargs='+', help='Collect prompt information from specified URLs')
+    parser.add_argument('--split-reference', action='store_true', help='Split reference files into sections')
     args = parser.parse_args()
 
     if args.fetch:
@@ -965,6 +1070,27 @@ async def main_async():
 
     if args.quarterly_summary:
         await process_quarterly_summaries()
+
+    if args.collect_prompt:
+        urls = [
+            'https://pad.ceph.com/p/ceph-user-dev-monthly-minutes/export/txt',
+            'https://pad.ceph.com/p/performance_weekly/export/txt',
+            'https://pad.ceph.com/p/performance_weekly_2014/export/txt',
+            'https://pad.ceph.com/p/performance_weekly_2015/export/txt',
+            'https://pad.ceph.com/p/performance_weekly_2016/export/txt',
+            'https://pad.ceph.com/p/performance_weekly_2017/export/txt',
+            'https://pad.ceph.com/p/performance_weekly_2018/export/txt',
+            'https://pad.ceph.com/p/performance_weekly_2019/export/txt',
+            'https://pad.ceph.com/p/performance_weekly_2020/export/txt',
+            'https://pad.ceph.com/p/performance_weekly_2022/export/txt',
+        ]
+        prompt_info = await collect_prompt_info(urls)
+        print("Collected prompt information:")
+        print(prompt_info)
+        print("Content has been saved to the 'reference' directory.")
+
+    if args.split_reference:
+        split_reference_files()
 
     # 在所有任务完成后，处理重试队列
     await process_retry_queue()
