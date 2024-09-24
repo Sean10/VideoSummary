@@ -40,21 +40,27 @@ async def fetch_pr_content(pr_url: str, semaphore: asyncio.Semaphore, output_dir
         owner, repo, _, pr_number = path_parts[1], path_parts[2], path_parts[3], int(path_parts[4])
         
         try:
-            print("start")
-            pr = await github.rest.pulls.get(owner=owner, repo=repo, pull_number=pr_number)
-            with open("temp_pr.txt", "w") as f:
-                f.write(json.dumps(pr))
-            file_name = escape_title(f"{pr.data.base.repo.full_name}_PR_{pr.data.number}.md")
+            print(f"开始获取 PR {pr_number} 的内容和评论")
+            pr = await github.rest.pulls.async_get(owner=owner, repo=repo, pull_number=pr_number)
+            comments = await github.rest.issues.async_list_comments(owner=owner, repo=repo, issue_number=pr_number)
+            with open("temp.json", "w") as f:
+                f.write(json.dumps(pr.json(), indent=4))
+            file_name = escape_title(f"{pr.parsed_data.base.repo.full_name}_PR_{pr.parsed_data.number}.md")
             output_path = output_dir / file_name
             with open(output_path, 'w', encoding='utf-8') as f:
-                f.write(f"# {pr.data.title}\n\n")
+                f.write(f"# {pr.parsed_data.title}\n\n")
                 f.write(f"PR URL: {pr_url}\n\n")
-                f.write(f"## Description\n\n{pr.data.body}\n\n")
-                f.write(f"## Files Changed\n\n")
-                for file in pr.data.changed_files:
-                    f.write(f"- {file.filename}\n")
+                f.write(f"## Description\n\n{pr.parsed_data.body}\n\n")
+                # f.write(f"## Files Changed\n\n")
+                # for file in pr.parsed_data.changed_files:
+                #     f.write(f"- {file.filename}\n")
+                
+                f.write("\n## Comments\n\n")
+                for comment in comments.parsed_data:
+                    f.write(f"### {comment.user.login} - {comment.created_at}\n\n")
+                    f.write(f"{comment.body}\n\n")
             
-            print(f"已保存 PR 内容: {output_path}")
+            print(f"已保存 PR 内容和评论: {output_path}")
             fetched_prs.add(pr_url)
             save_fetched_prs(fetched_prs)
             import sys
@@ -87,6 +93,7 @@ async def process_reference_files(reference_dir: Path, output_dir: Path):
         pr_links = await extract_github_pr_links(file)
         all_pr_links.update(pr_links)
 
+    all_pr_links = list(all_pr_links)[:3]
     total_prs = len(all_pr_links)
     progress_queue = asyncio.Queue()
 
