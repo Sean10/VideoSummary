@@ -30,69 +30,79 @@
 * 实现将总结发给gpt, 使其进行分类, 或根据季度进行汇总, 提供汇总的总结.
 * 将该工具导出的文档发布到github pages, 以便于查看.
 
+# 操作一次抓取到输出文章的流程
+
+```
+python run.py --fetch
+python run.py --fetch-diff
+python run.py --summarize
+# 执行反思并生成yaml front matter
+python run.py --reflect
+```
+
 # 使用步骤
 
 ```
 cd youtube_subtitle_summary
 ```
 1. **下载字幕**
-   使用以下命令从指定的 YouTube 频道下载字幕：
+   使用以下命令从指定的 YouTube 频道下载频道字幕信息：
    ```bash
-   python main.py --fetch
+   python run.py --fetch
    ```
 
 2. **下载新增字幕**
-   使用以下命令下载新增的字幕：
+   使用以下命令下载新增的字幕, 自动根据上面的频道视频信息元数据分析差异增量：
    ```bash
-   python main.py --fetch-diff
+   python run.py --fetch-diff
    ```
 
-3. **处理字幕**
+3. **处字幕**
    下载完成后，使用以下命令处理字幕并生成总结：
    ```bash
-   python main.py --summarize
+   python run.py --summarize
    ```
 
-4. **处理新增字幕**
-   使用以下命令处理新增的字幕并生成总结：
+4. **查询新增字幕**
+   使用以下命令查询新增的字幕：
    ```bash
-   python main.py --summarize-diff
+   python run.py --show-summarize-diff
    ```
 
 5. **翻译字幕（可选）**
    如果需要翻译某个特定的字幕文件，可以使用以下命令：
    ```bash
-   python main.py --translate subtitle_file.en.ttml
+   python run.py --translate subtitle_file.en.ttml
    ```
 
 6. **按内容分类文章**
    使用以下命令对文章进行内容分类：
    ```bash
-   python main.py --classify-content
+   python run.py --classify-content
    ```
 
 7. **按季度分类文章**
    使用以下命令对文章进行季度分类：
    ```bash
-   python main.py --classify-quarter
+   python run.py --classify-quarter
    ```
 
 8. **添加 Hexo 元数据**
    处理完字幕后，使用以下命令将生成的总结文件添加 Hexo 博客所需的标题元数据：
    ```bash
-   python main.py --add-metadata
+   python run.py --add-metadata
    ```
 
 9. **反思和改进总结**
-   使用以下命令对现有的总结进行反思和改进：
+   使用以下命令对现有的总结进行反思和改进, 并生成yaml front matter：
    ```bash
-   python main.py --reflect
+   python run.py --reflect
    ```
 
 10. **生成季度总结报告**
     使用以下命令生成季度总结报告：
     ```bash
-    python main.py --quarterly-summary
+    python run.py --quarterly-summary
     ```
 
 11. **部署 Hexo 博客**
@@ -100,6 +110,12 @@ cd youtube_subtitle_summary
     ```bash
     hexo deploy
     ```
+
+   注意生成过程中, 由于文章数过多, 需指定内存大小, 否则会触发oom
+   node --max-old-space-size=8192 node_modules/hexo-cli/bin/hexo gen -c 100  -d
+   生成测试用
+   node --max-old-space-size=8192 node_modules/hexo-cli/bin/hexo gen -c 100 
+
 
 # 常用命令
 

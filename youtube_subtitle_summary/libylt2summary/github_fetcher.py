@@ -17,8 +17,8 @@ if not GITHUB_TOKEN:
 github = GitHub(GITHUB_TOKEN)
 
 # 设置限速参数
-MAX_CONCURRENT_REQUESTS = 5
-REQUEST_DELAY = 1  # 秒
+MAX_CONCURRENT_REQUESTS = 2
+REQUEST_DELAY = 2  # 秒
 
 FETCHED_PRS_FILE = "fetched_prs.json"
 
@@ -43,10 +43,26 @@ async def fetch_pr_content(pr_url: str, semaphore: asyncio.Semaphore, output_dir
             print(f"开始获取 PR {pr_number} 的内容和评论")
             pr = await github.rest.pulls.async_get(owner=owner, repo=repo, pull_number=pr_number)
             comments = await github.rest.issues.async_list_comments(owner=owner, repo=repo, issue_number=pr_number)
-            with open("temp.json", "w") as f:
-                f.write(json.dumps(pr.json(), indent=4))
+            # with open("temp.json", "w") as f:
+            #     f.write(json.dumps(pr.json(), indent=4))
+
+            # print(f"准备创建目录: {output_dir}")
+            # output_dir.mkdir(parents=True, exist_ok=True)
+            # print(f"目录创建成功: {output_dir}")
+        
+            
             file_name = escape_title(f"{pr.parsed_data.base.repo.full_name}_PR_{pr.parsed_data.number}.md")
             output_path = output_dir / file_name
+            base_path = output_path.parent
+            base_path.mkdir(parents=True, exist_ok=True)
+            print(f"目录创建成功: {base_path}")
+
+            print(f"准备写入文件: {output_path}")
+
+            if not output_dir.exists():
+                print(f"警告：目录 {output_dir} 不存在，尝试再次创建")
+                output_dir.mkdir(parents=True, exist_ok=True)
+
             with open(output_path, 'w', encoding='utf-8') as f:
                 f.write(f"# {pr.parsed_data.title}\n\n")
                 f.write(f"PR URL: {pr_url}\n\n")
@@ -63,13 +79,15 @@ async def fetch_pr_content(pr_url: str, semaphore: asyncio.Semaphore, output_dir
             print(f"已保存 PR 内容和评论: {output_path}")
             fetched_prs.add(pr_url)
             save_fetched_prs(fetched_prs)
-            import sys
-            sys.exit(1)
             await asyncio.sleep(REQUEST_DELAY)  # 添加延迟以遵守速率限制
 
         except RequestFailed as e:
             print(f"Failed to fetch PR {pr_url}: {e}")
-        
+        except FileNotFoundError as e:
+            print(f"处理 PR {pr_url} 时发生错误: {e}")
+            print(f"当前工作目录: {os.getcwd()}")
+            print(f"output_dir 是否存在: {output_dir.exists()}")
+            print(f"output_dir 的权限: {oct(output_dir.stat().st_mode)[-3:]}")
         finally:
             await progress.put(1)  # 无论成功与否，都更新进度
 
@@ -93,7 +111,7 @@ async def process_reference_files(reference_dir: Path, output_dir: Path):
         pr_links = await extract_github_pr_links(file)
         all_pr_links.update(pr_links)
 
-    all_pr_links = list(all_pr_links)[:3]
+    # all_pr_links = list(all_pr_links)[:3]
     total_prs = len(all_pr_links)
     progress_queue = asyncio.Queue()
 
@@ -118,7 +136,10 @@ async def track_progress(progress_queue: asyncio.Queue, total: int):
 async def github_fetch_prs():
     reference_dir = Path("reference")
     output_dir = Path("reference_gh")
-    output_dir.mkdir(exist_ok=True)
+    output_dir.mkdir(parents=True, exist_ok=True)  # 添加这行来创建目录
 
     await process_reference_files(reference_dir, output_dir)
     print(f"PR contents have been saved to the '{output_dir}' directory.")
+    
+    import sys
+    sys.exit(1)

@@ -3,10 +3,12 @@ import aiohttp
 import asyncio
 import json
 import datetime
+import logging
 from asyncio import Queue, Semaphore
 from openai import AsyncOpenAI
 import re
 from yt_dlp import utils as yt_utils
+from markdownify import markdownify as md  # 新增导入
 
 YOUR_OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
@@ -22,6 +24,32 @@ client = AsyncOpenAI(
 MAX_RETRIES = 10
 RETRY_DELAY = 10
 MAX_RETRY_DELAY = 60
+
+def setup_logger(log_file='ylt2summary.log'):
+    """设置日志记录器"""
+    logger = logging.getLogger('ylt2summary')
+    logger.setLevel(logging.DEBUG)
+
+    # 创建文件处理器
+    file_handler = logging.FileHandler(log_file)
+    file_handler.setLevel(logging.DEBUG)
+
+    # 创建控制台处理器
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+
+    # 创建格式化器
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(formatter)
+    console_handler.setFormatter(formatter)
+
+    # 将处理器添加到记录器
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+
+    return logger
+
+logger = setup_logger()
 
 class RetryQueue:
     def __init__(self):
@@ -51,21 +79,21 @@ async def retry_with_exponential_backoff(func, *args, **kwargs):
             return await func(*args, **kwargs)
         except aiohttp.ClientResponseError as e:
             if e.status == 429:
-                print(f"遇到 429 错误（Too Many Requests）。等待 {RETRY_DELAY} 秒后重试...")
+                logger.warning(f"遇到 429 错误（Too Many Requests）。等待 {RETRY_DELAY} 秒后重试...")
                 await asyncio.sleep(RETRY_DELAY)
                 retries += 1
             else:
-                print(f"遇到错误: {e}. 重试中...")
+                logger.error(f"遇到错误: {e}. 重试中...")
                 await asyncio.sleep(delay)
                 retries += 1
                 delay = min(delay * 2, MAX_RETRY_DELAY)
         except Exception as e:
-            print(f"Error occurred: {e}. Retrying in {delay} seconds...")
+            logger.error(f"Error occurred: {e}. Retrying in {delay} seconds...")
             await asyncio.sleep(delay)
             retries += 1
             delay = min(delay * 2, MAX_RETRY_DELAY)
     
-    print(f"任务在 {MAX_RETRIES} 次尝试后失败。")
+    logger.critical(f"任务在 {MAX_RETRIES} 次尝试后失败。")
     return None
 
 async def process_retry_queue():
@@ -159,3 +187,12 @@ def get_metadata_from_jsonl(filename):
 
 def get_quarter(date):
     return (date.month - 1) // 3 + 1
+
+def html_to_markdown(html_content):
+    """
+    将HTML内容转换为Markdown格式。
+    
+    :param html_content: HTML格式的字符串
+    :return: Markdown格式的字符串
+    """
+    return md(html_content, heading_style="ATX")
