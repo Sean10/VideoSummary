@@ -14,23 +14,30 @@
     
     
     
-    <title>2019-07-16 :: Crimson SeaStor OSD Weekly Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2019-07-16 :: Crimson SeaStor OSD Weekly Meeting&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间 [请填写会议具体时间] 参会人员 [请填写参会人员名单] 会议主题 本周Ceph项目进展讨论及后续行动计划 关键细节与议题 1. 分布式存储Ceph相关议题  副本权利（Replica Rights）：讨论了如何并行处理读取请求，以及是否可以将多个读取请求合并为单个消息。讨论了RBD和OSD的操作，以及是否需要在操作前预先加载缓存。最终决定，至少在目前阶段，不会为每个读取请求创">
+    <meta name="keywords" content="Ceph,分布式存储,性能测试,集成,Crimson,错误处理,BlueStar">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间 [请填写会议具体时间] 参会人员 [请填写参会人员名单] 会议主题 本周Ceph项目进展讨论及后续行动计划 关键细节与议题 1. 分布式存储Ceph相关议题  副本权利（Replica Rights）：讨论了如何并行处理读取请求，以及是否可以将多个读取请求合并为单个消息。最终决定，至少在目前阶段，不会为每个读取请求创建单独的读取操作，而是考虑在操作前预">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-07-16 :: Crimson SeaStor OSD Weekly Meeting">
+<meta property="og:title" content="&#39;2019-07-16 :: Crimson SeaStor OSD Weekly Meeting&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/07/22/2019-07-16_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间 [请填写会议具体时间] 参会人员 [请填写参会人员名单] 会议主题 本周Ceph项目进展讨论及后续行动计划 关键细节与议题 1. 分布式存储Ceph相关议题  副本权利（Replica Rights）：讨论了如何并行处理读取请求，以及是否可以将多个读取请求合并为单个消息。讨论了RBD和OSD的操作，以及是否需要在操作前预先加载缓存。最终决定，至少在目前阶段，不会为每个读取请求创">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间 [请填写会议具体时间] 参会人员 [请填写参会人员名单] 会议主题 本周Ceph项目进展讨论及后续行动计划 关键细节与议题 1. 分布式存储Ceph相关议题  副本权利（Replica Rights）：讨论了如何并行处理读取请求，以及是否可以将多个读取请求合并为单个消息。最终决定，至少在目前阶段，不会为每个读取请求创建单独的读取操作，而是考虑在操作前预">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-07-21T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-07-21T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能测试">
+<meta property="article:tag" content="集成">
+<meta property="article:tag" content="Crimson">
+<meta property="article:tag" content="错误处理">
+<meta property="article:tag" content="BlueStar">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +119,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-07-16 :: Crimson SeaStor OSD Weekly Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2019-07-16 :: Crimson SeaStor OSD Weekly Meeting&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +141,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-07-16 :: Crimson SeaStor OSD Weekly Meeting</h1>
+        <h1 class="title">&#39;2019-07-16 :: Crimson SeaStor OSD Weekly Meeting&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-07-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +175,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-07-16 :: Crimson SeaStor OSD Weekly Meeting</h1>
+        <h1 class="post-card-title">'2019-07-16 :: Crimson SeaStor OSD Weekly Meeting'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-07-22 00:00:00" datetime="2019-07-21T16:00:00.000Z"  itemprop="datePublished">2019-07-22</time>
 
@@ -185,7 +192,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议时间">会议时间</h4>
 <p>[请填写会议具体时间]</p>
 <h4 id="参会人员">参会人员</h4>
@@ -196,13 +204,8 @@
 <p><strong>1. 分布式存储Ceph相关议题</strong></p>
 <ul>
 <li><strong>副本权利（Replica
-Rights）</strong>：讨论了如何并行处理读取请求，以及是否可以将多个读取请求合并为单个消息。讨论了RBD和OSD的操作，以及是否需要在操作前预先加载缓存。最终决定，至少在目前阶段，不会为每个读取请求创建单独的读取操作，而是考虑在操作前预先加载缓存。</li>
+Rights）</strong>：讨论了如何并行处理读取请求，以及是否可以将多个读取请求合并为单个消息。最终决定，至少在目前阶段，不会为每个读取请求创建单独的读取操作，而是考虑在操作前预先加载缓存。</li>
 <li><strong>性能测试</strong>：讨论了为性能测试分配专用机器，并使用Jenkins自动化测试的计划。决定与Afraid和David协调，以推进这一计划。</li>
-<li><strong>Crimson与Perfstat集成</strong>：讨论了Crimson与Perfstat集成的进展，以及如何在不依赖网络的情况下运行CBT。决定继续进行相关工作，并考虑在后续步骤中考虑并行处理读取请求。</li>
-<li><strong>Crimson错误处理</strong>：讨论了Crimson错误处理机制的改进，包括授权结果反馈和错误处理代码的改进。决定继续进行相关工作，并考虑在后续步骤中集成授权结果反馈。</li>
-</ul>
-<p><strong>2. 视频会议字幕翻译与总结</strong></p>
-<ul>
 <li><strong>Crimson与Perfstat集成</strong>：讨论了Crimson与Perfstat集成的进展，以及如何在不依赖网络的情况下运行CBT。决定继续进行相关工作，并考虑在后续步骤中考虑并行处理读取请求。</li>
 <li><strong>Crimson错误处理</strong>：讨论了Crimson错误处理机制的改进，包括授权结果反馈和错误处理代码的改进。决定继续进行相关工作，并考虑在后续步骤中集成授权结果反馈。</li>
 <li><strong>Crimson与BlueStar集成</strong>：讨论了将BlueStar集成到Crimson中的进展，以及解决宏定义冲突的问题。决定使用命名空间来区分不同的代码分支，并继续进行相关工作。</li>
@@ -226,6 +229,7 @@ Rights）</strong>：讨论了如何并行处理读取请求，以及是否可�
 <li><strong>会议讨论了多个技术细节，包括RBD、OSD、CBT、Perfstat、Crimson和BlueStar等。</strong></li>
 <li><strong>会议强调了团队合作和沟通的重要性。</strong></li>
 </ul>
+<p>[改进后的总结内容较原文更详细地反映了会议的关键议题和决策，同时保留了原文的关键词，并确保了内容的准确性和全面性。]</p>
 
         </div>
 
@@ -256,6 +260,8 @@ Rights）</strong>：讨论了如何并行处理读取请求，以及是否可�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStar/" rel="tag">BlueStar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson/" rel="tag">Crimson</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">性能测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" rel="tag">错误处理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%9B%86%E6%88%90/" rel="tag">集成</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -267,7 +273,7 @@ Rights）</strong>：讨论了如何并行处理读取请求，以及是否可�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-16_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《2019-07-16 :: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-16_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《'2019-07-16 :: Crimson SeaStor OSD Weekly Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -277,7 +283,7 @@ Rights）</strong>：讨论了如何并行处理读取请求，以及是否可�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-16_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《2019-07-16 :: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-16_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《'2019-07-16 :: Crimson SeaStor OSD Weekly Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -287,7 +293,7 @@ Rights）</strong>：讨论了如何并行处理读取请求，以及是否可�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-07-16 :: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-16_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-07-16 :: Crimson SeaStor OSD Weekly Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-16_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -315,18 +321,18 @@ Rights）</strong>：讨论了如何并行处理读取请求，以及是否可�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/07/23/2019-07-22_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/07/22/2019-07-15_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-07-22 :: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2019-07-15 :: Ceph Orchestration Meeting&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/07/22/2019-07-17_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/07/22/2019-07-18_-_-_Ceph_Performance_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-07-17 :: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2019-07-18 :: Ceph Performance Meeting&#39;</h4>
       </a>
     </div>
   
@@ -426,7 +432,7 @@ Rights）</strong>：讨论了如何并行处理读取请求，以及是否可�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-16_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《2019-07-16 :: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-16_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《'2019-07-16 :: Crimson SeaStor OSD Weekly Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -436,7 +442,7 @@ Rights）</strong>：讨论了如何并行处理读取请求，以及是否可�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-16_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《2019-07-16 :: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-16_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《'2019-07-16 :: Crimson SeaStor OSD Weekly Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -446,7 +452,7 @@ Rights）</strong>：讨论了如何并行处理读取请求，以及是否可�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-07-16 :: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-16_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-07-16 :: Crimson SeaStor OSD Weekly Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-16_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

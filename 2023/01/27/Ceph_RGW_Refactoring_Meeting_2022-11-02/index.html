@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph RGW Refactoring Meeting 2022-11-02 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph RGW 重构会议 2022-11-02 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：  讨论关于Ceph的多对象删除（multi-delete PR）的实现细节和性能优化。  参会人员：  Jason Corey Casey Rick 其他相关开发人员  主要讨论内容：  多对象删除并发限制  Corey提出在多对象删除操作中，当前实现会为每个对象启动一个新的协程进行并发删除，但需要设置一个上限来限制同时启动的协程数量。 建议引入一个新的配置参数来控制并发协程">
+    <meta name="keywords" content="Ceph,分布式存储,RGW,性能优化,多对象删除">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议讨论了Ceph RGW的多对象删除（multi-delete PR）实现细节和性能优化。主要内容包括：  多对象删除并发限制：Corey提出为每个对象启动新协程进行并发删除，但需要限制同时启动的协程数量。建议引入新的配置参数来控制并发协程数量，避免对集群造成过大的IOPS压力。 性能问题与优化：Corey指出使用旋转磁盘和Erasure Coding的多对象删除操">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph RGW Refactoring Meeting 2022-11-02">
+<meta property="og:title" content="Ceph RGW 重构会议 2022-11-02">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：  讨论关于Ceph的多对象删除（multi-delete PR）的实现细节和性能优化。  参会人员：  Jason Corey Casey Rick 其他相关开发人员  主要讨论内容：  多对象删除并发限制  Corey提出在多对象删除操作中，当前实现会为每个对象启动一个新的协程进行并发删除，但需要设置一个上限来限制同时启动的协程数量。 建议引入一个新的配置参数来控制并发协程">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议讨论了Ceph RGW的多对象删除（multi-delete PR）实现细节和性能优化。主要内容包括：  多对象删除并发限制：Corey提出为每个对象启动新协程进行并发删除，但需要限制同时启动的协程数量。建议引入新的配置参数来控制并发协程数量，避免对集群造成过大的IOPS压力。 性能问题与优化：Corey指出使用旋转磁盘和Erasure Coding的多对象删除操">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-26T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-01-26T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="多对象删除">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph RGW Refactoring Meeting 2022-11-02</div>
+        <div class="flex-col header-title ellipsis">Ceph RGW 重构会议 2022-11-02</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph RGW Refactoring Meeting 2022-11-02</h1>
+        <h1 class="title">Ceph RGW 重构会议 2022-11-02</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-01-26T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主要讨论内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">其他事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_RGW_Refactoring_Meeting_2022-11-02"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph RGW Refactoring Meeting 2022-11-02</h1>
+        <h1 class="post-card-title">Ceph RGW 重构会议 2022-11-02</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-01-27 00:00:00" datetime="2023-01-26T16:00:00.000Z"  itemprop="datePublished">2023-01-27</time>
 
@@ -185,68 +183,42 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题">会议主题：</h4>
-<ul>
-<li>讨论关于Ceph的多对象删除（multi-delete
-PR）的实现细节和性能优化。</li>
-</ul>
-<h4 id="参会人员">参会人员：</h4>
-<ul>
-<li>Jason</li>
-<li>Corey</li>
-<li>Casey</li>
-<li>Rick</li>
-<li>其他相关开发人员</li>
-</ul>
-<h4 id="主要讨论内容">主要讨论内容：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议讨论了Ceph RGW的多对象删除（multi-delete
+PR）实现细节和性能优化。主要内容包括：</p>
 <ol type="1">
-<li><strong>多对象删除并发限制</strong>
-<ul>
-<li>Corey提出在多对象删除操作中，当前实现会为每个对象启动一个新的协程进行并发删除，但需要设置一个上限来限制同时启动的协程数量。</li>
-<li>建议引入一个新的配置参数来控制并发协程的数量，以避免对集群造成过大的IOPS压力。</li>
-<li>Casey建议是否需要单独的配置变量，或可以考虑其他现有的配置方式。</li>
-</ul></li>
-<li><strong>性能问题与优化</strong>
-<ul>
-<li>Corey提到当前的生产集群使用的是旋转磁盘，且使用了Erasure
-Coding（8+3），多对象删除操作会导致大量的IOPS，影响集群性能。</li>
-<li>提出另一个配置对象的设想，即不让RGW在head对象中存储任何数据，仅存储元数据，以便删除操作可以在NVMe上进行，提高删除操作的性能。</li>
-<li>讨论了是否可以通过配置Zone
-placement来实现这一功能，而不是通过cephconfig变量。</li>
-</ul></li>
-<li><strong>存储类别的交互</strong>
-<ul>
-<li>讨论了存储类别（storage
-classes）的配置，以及如何通过配置不同的存储类别来影响head对象的数据存储。</li>
-<li>提到可以通过Bucket级别的配置来设置默认的存储类别，从而影响head对象的数据存储方式。</li>
-</ul></li>
-<li><strong>数据与元数据的存储策略</strong>
-<ul>
-<li>讨论了为什么数据需要与head对象一起存储，主要是为了减少或避免额外的RADOS操作，特别是对于小对象。</li>
-<li>提出在特定情况下，如使用快速存储（如NVMe）时，可以考虑分离数据和元数据的存储，以提高性能。</li>
-</ul></li>
+<li><p><strong>多对象删除并发限制</strong>：Corey提出为每个对象启动新协程进行并发删除，但需要限制同时启动的协程数量。建议引入新的配置参数来控制并发协程数量，避免对集群造成过大的IOPS压力。</p></li>
+<li><p><strong>性能问题与优化</strong>：Corey指出使用旋转磁盘和Erasure
+Coding的多对象删除操作会导致大量IOPS，影响集群性能。提出不存储数据在head对象中，仅存储元数据，以提高删除操作性能。</p></li>
+<li><p><strong>存储类别的交互</strong>：讨论了通过配置不同的存储类别来影响head对象的数据存储，以及如何设置默认的存储类别。</p></li>
+<li><p><strong>数据与元数据的存储策略</strong>：探讨了为什么数据需要与head对象一起存储，并提出在特定情况下可以考虑分离数据和元数据的存储。</p></li>
 </ol>
-<h4 id="决定事项">决定事项：</h4>
+<p>决定事项：</p>
 <ul>
-<li>Corey将开启一个新的PR，涉及上述讨论的配置变更，并在现有的PR中添加QoS相关的提交。</li>
-<li>将继续在GitHub上讨论这些变更的细节。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划：</h4>
-<ul>
-<li>Corey将提交新的PR并添加相关提交。</li>
+<li>Corey将开启一个新的PR，涉及上述讨论的配置变更，并在现有PR中添加QoS相关提交。</li>
 <li>开发团队将在GitHub上进一步讨论和审查这些变更。</li>
 </ul>
-<h4 id="其他事项">其他事项：</h4>
+<p>后续行动计划：</p>
 <ul>
-<li>提醒开发者注意即将到来的开发者月度会议和虚拟Cephalicon会议。</li>
+<li>Corey将提交新的PR并添加相关提交。</li>
+<li>开发团队将在GitHub上继续讨论和审查这些变更。</li>
 </ul>
-<h4 id="会议结束">会议结束：</h4>
-<ul>
-<li>会议在讨论完所有议题后结束，未有其他紧急讨论事项。</li>
-</ul>
+<p>会议还提醒开发者注意即将到来的开发者月度会议和虚拟Cephalicon会议。</p>
 <hr />
-<p>以上是本次会议的纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
+<p>在原始总结中，以下点是准确的：</p>
+<ul>
+<li>会议主题：讨论Ceph的多对象删除实现细节和性能优化。</li>
+<li>参会人员：包括Jason、Corey、Casey、Rick等开发人员。</li>
+<li>主要讨论内容：多对象删除并发限制、性能问题与优化、存储类别的交互、数据与元数据的存储策略。</li>
+<li>决定事项：Corey将开启新的PR，并添加相关提交。</li>
+<li>后续行动计划：继续在GitHub上讨论变更细节。</li>
+</ul>
+<p>可能的错误或遗漏：</p>
+<ul>
+<li>原始字幕内容中未提及的绩效计数器讨论。</li>
+<li>原始字幕内容中提到的Anthony和Intel的讨论未在总结中体现。</li>
+</ul>
+<p>改进后的总结更详细地反映了会议内容，包括所有关键细节和后续行动计划。</p>
 
         </div>
 
@@ -277,6 +249,8 @@ classes）的配置，以及如何通过配置不同的存储类别来影响head
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E5%AF%B9%E8%B1%A1%E5%88%A0%E9%99%A4/" rel="tag">多对象删除</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -288,7 +262,7 @@ classes）的配置，以及如何通过配置不同的存储类别来影响head
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/&title=《Ceph RGW Refactoring Meeting 2022-11-02》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/&title=《Ceph RGW 重构会议 2022-11-02》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -298,7 +272,7 @@ classes）的配置，以及如何通过配置不同的存储类别来影响head
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/&title=《Ceph RGW Refactoring Meeting 2022-11-02》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/&title=《Ceph RGW 重构会议 2022-11-02》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -308,7 +282,7 @@ classes）的配置，以及如何通过配置不同的存储类别来影响head
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2022-11-02》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW 重构会议 2022-11-02》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -338,7 +312,7 @@ classes）的配置，以及如何通过配置不同的存储类别来影响head
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2022-11-09</h4>
+        <h4 class="title">Ceph RGW重构会议纪要 2022-11-09</h4>
       </a>
     </div>
   
@@ -447,7 +421,7 @@ classes）的配置，以及如何通过配置不同的存储类别来影响head
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/&title=《Ceph RGW Refactoring Meeting 2022-11-02》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/&title=《Ceph RGW 重构会议 2022-11-02》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -457,7 +431,7 @@ classes）的配置，以及如何通过配置不同的存储类别来影响head
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/&title=《Ceph RGW Refactoring Meeting 2022-11-02》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/&title=《Ceph RGW 重构会议 2022-11-02》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -467,7 +441,7 @@ classes）的配置，以及如何通过配置不同的存储类别来影响head
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2022-11-02》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW 重构会议 2022-11-02》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 会议地点： 线上会议 参会人员： Raphael（来自澳大利亚莫纳什大学），Brett（来自澳大利亚莫纳什大学） 会议主题： 莫纳什大学在Ceph文件系统（CFS）方面的应用与实践 会议内容： 一、莫纳什大学简介 莫纳什大学是澳大利亚一所大型研究型大学，拥有超过70,000名学生和44,000名研究生。学校致力于提供高性能计算和可扩展存储服">
+    <meta name="keywords" content="性能测试,CephFS,分布式文件系统,莫纳什大学,存储解决方案">
+    <meta name="description" content="[改进后的中文总结内容] 改进后的中文总结 莫纳什大学的研究人员和工程师Rafael Lopez和Brett Milford在会议上分享了他们在Ceph文件系统（CFS）方面的应用与实践。以下是对会议内容的总结： 莫纳什大学简介 莫纳什大学是澳大利亚的一所大型研究型大学，拥有超过70,000名学生和44,000名研究生。学校的研究数据中心提供高性能计算和可扩展存储服务，支持医学、药学、信息技术和商">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CephFS as a Scalable Filer - Rafael Lopez &amp; Brett Milford, Monash University">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/CephFS_as_a_Scalable_Filer_-_Rafael_Lopez_Brett_Milford_Monash_University/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 会议地点： 线上会议 参会人员： Raphael（来自澳大利亚莫纳什大学），Brett（来自澳大利亚莫纳什大学） 会议主题： 莫纳什大学在Ceph文件系统（CFS）方面的应用与实践 会议内容： 一、莫纳什大学简介 莫纳什大学是澳大利亚一所大型研究型大学，拥有超过70,000名学生和44,000名研究生。学校致力于提供高性能计算和可扩展存储服">
+<meta property="og:description" content="[改进后的中文总结内容] 改进后的中文总结 莫纳什大学的研究人员和工程师Rafael Lopez和Brett Milford在会议上分享了他们在Ceph文件系统（CFS）方面的应用与实践。以下是对会议内容的总结： 莫纳什大学简介 莫纳什大学是澳大利亚的一所大型研究型大学，拥有超过70,000名学生和44,000名研究生。学校的研究数据中心提供高性能计算和可扩展存储服务，支持医学、药学、信息技术和商">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="性能测试">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="分布式文件系统">
+<meta property="article:tag" content="莫纳什大学">
+<meta property="article:tag" content="存储解决方案">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,47 +190,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>会议地点</strong>： 线上会议</p>
-<p><strong>参会人员</strong>：
-Raphael（来自澳大利亚莫纳什大学），Brett（来自澳大利亚莫纳什大学）</p>
-<p><strong>会议主题</strong>：
-莫纳什大学在Ceph文件系统（CFS）方面的应用与实践</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>一、莫纳什大学简介</strong></p>
-<p>莫纳什大学是澳大利亚一所大型研究型大学，拥有超过70,000名学生和44,000名研究生。学校致力于提供高性能计算和可扩展存储服务，主要研究领域包括医学、药学、信息技术和商业等。</p>
-<p><strong>二、莫纳什大学研究数据中心</strong></p>
-<p>莫纳什大学研究数据中心是学校的一个重要组织，专注于提供高性能计算和可扩展存储服务。主要服务包括：</p>
-<ul>
-<li><strong>Monash eResearch</strong>：
-一个全国性的高性能计算集群，专注于GPU风格的应用。</li>
-<li><strong>CBL</strong>： 另一个GPU密集型虚拟实验室。</li>
-<li><strong>研究云</strong>： 为研究社区提供基础设施即服务。</li>
-<li><strong>RDS</strong>：
-提供研究数据存储服务，包括数据收集和归档。</li>
-</ul>
-<p><strong>三、Ceph文件系统（CFS）在莫纳什大学的应用</strong></p>
-<p>莫纳什大学在CFS方面的应用主要包括以下几个方面：</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="改进后的中文总结">改进后的中文总结</h3>
+<p>莫纳什大学的研究人员和工程师Rafael Lopez和Brett
+Milford在会议上分享了他们在Ceph文件系统（CFS）方面的应用与实践。以下是对会议内容的总结：</p>
+<p><strong>莫纳什大学简介</strong></p>
+<p>莫纳什大学是澳大利亚的一所大型研究型大学，拥有超过70,000名学生和44,000名研究生。学校的研究数据中心提供高性能计算和可扩展存储服务，支持医学、药学、信息技术和商业等多个领域的研究。</p>
+<p><strong>Ceph文件系统（CFS）在莫纳什大学的应用</strong></p>
+<p>莫纳什大学在CFS方面的应用主要集中在以下几个方面：</p>
 <ul>
 <li><strong>CFS集群</strong>：
-莫纳什大学拥有多个CFS集群，用于存储和共享数据。</li>
+学校拥有多个CFS集群，用于存储和共享数据。</li>
 <li><strong>虚拟文件服务器</strong>：
 使用CFS和RBD构建虚拟文件服务器，提供NFS和SMB服务。</li>
-<li><strong>对象存储</strong>：
-使用CFS对象存储服务，用于存储大量数据。</li>
+<li><strong>对象存储</strong>： 利用CFS对象存储服务，存储大量数据。</li>
 </ul>
-<p><strong>四、CFS在莫纳什大学的性能测试</strong></p>
-<p>Raphael对CFS在不同场景下的性能进行了测试，并与虚拟文件服务器进行了比较。主要测试结果如下：</p>
-<ul>
-<li><strong>NFS和SMB</strong>：
-CFS在NFS和SMB性能方面优于虚拟文件服务器，特别是在读写带宽和IOPS方面。</li>
-<li><strong>元数据密集型任务</strong>：
-对于元数据密集型任务，如文件复制和目录遍历，CFS的性能明显优于虚拟文件服务器。</li>
-<li><strong>SMB</strong>：
-CFS在SMB性能方面也优于虚拟文件服务器，尤其是在读写带宽和IOPS方面。</li>
-</ul>
-<p><strong>五、CFS在莫纳什大学的挑战</strong></p>
+<p><strong>CFS性能测试</strong></p>
+<p>Rafael对CFS在不同场景下的性能进行了测试，并与虚拟文件服务器进行了比较。主要测试结果显示，CFS在NFS和SMB性能方面优于虚拟文件服务器，特别是在读写带宽和IOPS方面。对于元数据密集型任务，如文件复制和目录遍历，CFS的性能也明显优于虚拟文件服务器。</p>
+<p><strong>CFS在莫纳什大学的挑战</strong></p>
 <ul>
 <li><strong>Ceph版本</strong>： 莫纳什大学使用的是Red Hat Enterprise
 Ceph，存在一些包装问题。</li>
@@ -233,7 +215,7 @@ Ceph，存在一些包装问题。</li>
 提供原生Ceph访问和强制配额存在一些挑战。</li>
 <li><strong>备份</strong>： 备份大型文件系统存在一些挑战。</li>
 </ul>
-<p><strong>六、后续行动计划</strong></p>
+<p><strong>后续行动计划</strong></p>
 <ul>
 <li><strong>升级Ceph版本</strong>：
 考虑升级Ceph版本，以解决包装问题。</li>
@@ -242,7 +224,7 @@ Ceph，存在一些包装问题。</li>
 <li><strong>测试Ceph功能</strong>：
 测试Ceph的新功能，以进一步提高其可用性和可靠性。</li>
 </ul>
-<p><strong>七、会议总结</strong></p>
+<p><strong>会议总结</strong></p>
 <p>莫纳什大学在Ceph文件系统方面取得了显著成果，并成功将其应用于研究数据存储和共享。CFS在莫纳什大学的性能表现良好，但还存在一些挑战需要解决。莫纳什大学将继续优化Ceph配置，并探索新的技术，以进一步提高Ceph的性能和可靠性。</p>
 
         </div>
@@ -274,6 +256,8 @@ Ceph，存在一些包装问题。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" rel="tag">分布式文件系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">存储解决方案</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">性能测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%8E%AB%E7%BA%B3%E4%BB%80%E5%A4%A7%E5%AD%A6/" rel="tag">莫纳什大学</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -333,18 +317,18 @@ Ceph，存在一些包装问题。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/CRUSH-ing_the_OSD_Variance_Problem_-_Tom_Byrne_Storage_Sysadmin/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Ceph_BenchOps_-_Following_DevOps_Practices_for_Benchmarking_Ceph_-_Ivo_Jimenez_UC_Santa_Cruz/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CRUSH-ing the OSD Variance Problem - Tom Byrne, Storage Sysadmin</h4>
+        <h4 class="title">&#39;Ceph BenchOps: Following DevOps Practices for Benchmarking Ceph - Ivo Jimenez, UC Santa Cruz&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Ceph_BenchOps_-_Following_DevOps_Practices_for_Benchmarking_Ceph_-_Ivo_Jimenez_UC_Santa_Cruz/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Ceph_Manager_Dashboard_-_The_New_Way_To_Manage_Ceph_Gateway_Management_in_Ceph_Dashboard/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph BenchOps: Following DevOps Practices for Benchmarking Ceph - Ivo Jimenez, UC Santa Cruz</h4>
+        <h4 class="title">Ceph Manager Dashboard - The New Way To Manage Ceph &amp; Gateway Management in Ceph Dashboard</h4>
       </a>
     </div>
   

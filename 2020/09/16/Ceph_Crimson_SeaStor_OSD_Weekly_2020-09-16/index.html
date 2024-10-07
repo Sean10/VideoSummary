@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  Thresha Totology Basis Threat Test: 上周仍在进行相关工作，最新问题涉及BlueStore中的一个段错误。 DIO Errors PR: David Zaffman已审核并批准，但仍有需要解决的关注点。 Snapshots in CStore: 讨论了在CStore中支持快照的可能性，需要进一步学习和讨论。 Test Case for Tre">
+    <meta name="keywords" content="Ceph,BlueStore,Distributed Storage,CRUSH algorithm,Performance Testing">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  Thresha Totology Basis Threat Test: 上周仍在进行相关工作，最新问题涉及BlueStore中的一个段错误。 DIO Errors PR: David Zaffman已审核并批准，但提出了一些需要解决的问题。 Snapshots in CStore: 讨论了在CStore中支持快照的可能性，需要进一步研究和讨论。 Te">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;SeaStor OSD Weekly 2020-09-16">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/09/16/Ceph_Crimson_SeaStor_OSD_Weekly_2020-09-16/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  Thresha Totology Basis Threat Test: 上周仍在进行相关工作，最新问题涉及BlueStore中的一个段错误。 DIO Errors PR: David Zaffman已审核并批准，但仍有需要解决的关注点。 Snapshots in CStore: 讨论了在CStore中支持快照的可能性，需要进一步学习和讨论。 Test Case for Tre">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  Thresha Totology Basis Threat Test: 上周仍在进行相关工作，最新问题涉及BlueStore中的一个段错误。 DIO Errors PR: David Zaffman已审核并批准，但提出了一些需要解决的问题。 Snapshots in CStore: 讨论了在CStore中支持快照的可能性，需要进一步研究和讨论。 Te">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-15T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-09-16T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="BlueStore">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="CRUSH algorithm">
+<meta property="article:tag" content="Performance Testing">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,21 +190,22 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
 <li><strong>Thresha Totology Basis Threat Test</strong>:
 上周仍在进行相关工作，最新问题涉及BlueStore中的一个段错误。</li>
 <li><strong>DIO Errors PR</strong>: David
-Zaffman已审核并批准，但仍有需要解决的关注点。</li>
+Zaffman已审核并批准，但提出了一些需要解决的问题。</li>
 <li><strong>Snapshots in CStore</strong>:
-讨论了在CStore中支持快照的可能性，需要进一步学习和讨论。</li>
+讨论了在CStore中支持快照的可能性，需要进一步研究和讨论。</li>
 <li><strong>Test Case for Tree and Debug</strong>:
 正在编写测试用例，并考虑使用reader's bench重现问题。</li>
 <li><strong>Scrubbing</strong>:
 完成了昨天的scrubbing工作，有一个测试案例需要修复。</li>
 <li><strong>GC Stuff Debugging</strong>:
-正在调试GC相关问题，预计几天内完成，之后将打包成PR。</li>
+正在调试GC相关问题，预计几天内完成。</li>
 <li><strong>Transaction Manager Layer</strong>:
 正在进行性能测试，预计会有很多改进空间。</li>
 <li><strong>HSE Implementation</strong>:
@@ -223,7 +229,7 @@ Zaffman已审核并批准，但仍有需要解决的关注点。</li>
 <li><strong>BlueStore段错误</strong>:
 建议查看崩溃时的日志信息，而不是尝试重现。</li>
 <li><strong>CStore快照支持</strong>:
-需要进一步学习和讨论，以决定是否采用不同的方法。</li>
+需要进一步研究和讨论，以决定是否采用不同的方法。</li>
 <li><strong>Transaction Manager Layer</strong>:
 确认可以开始性能测试，尽管性能可能不佳。</li>
 </ul>
@@ -273,6 +279,8 @@ Zaffman已审核并批准，但仍有需要解决的关注点。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-algorithm/" rel="tag">CRUSH algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Testing/" rel="tag">Performance Testing</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要  日期: 2023年8月 参与者: 团队成员 会议主题: 讨论Ceph项目的更新、问题和改进  主要议题  Ceph版本更新  15.2.5版本发布: 预计很快发布，解决了从旧版本升级时OSD支持模块导致的健康警告问题。  QA问题讨论  问题编号47336: 讨论了由Paul创建的PR引起的测试套件失败问题。具体错误为“unexpected argument --y”，需要进">
+    <meta name="keywords" content="Ceph,Distributed Storage,CRUSH Algorithm,High Availability,Scalability">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概要  日期: 2020年9月 参与者: 团队成员 会议主题: 讨论Ceph项目的更新、问题和改进  主要议题  Ceph版本更新  15.2.5版本发布: 即将发布，解决了从旧版本升级时OSD支持模块导致的健康警告问题。  QA问题讨论  问题编号47336: 讨论了由Paul创建的PR引起的测试套件失败问题，具体错误为“unexpected argume">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2020-09-08">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/09/08/Ceph_Orchestrator_Meeting_2020-09-08/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要  日期: 2023年8月 参与者: 团队成员 会议主题: 讨论Ceph项目的更新、问题和改进  主要议题  Ceph版本更新  15.2.5版本发布: 预计很快发布，解决了从旧版本升级时OSD支持模块导致的健康警告问题。  QA问题讨论  问题编号47336: 讨论了由Paul创建的PR引起的测试套件失败问题。具体错误为“unexpected argument --y”，需要进">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概要  日期: 2020年9月 参与者: 团队成员 会议主题: 讨论Ceph项目的更新、问题和改进  主要议题  Ceph版本更新  15.2.5版本发布: 即将发布，解决了从旧版本升级时OSD支持模块导致的健康警告问题。  QA问题讨论  问题编号47336: 讨论了由Paul创建的PR引起的测试套件失败问题，具体错误为“unexpected argume">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-07T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-09-08T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="CRUSH Algorithm">
+<meta property="article:tag" content="High Availability">
+<meta property="article:tag" content="Scalability">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,10 +190,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概要">会议概要</h4>
 <ul>
-<li><strong>日期</strong>: 2023年8月</li>
+<li><strong>日期</strong>: 2020年9月</li>
 <li><strong>参与者</strong>: 团队成员</li>
 <li><strong>会议主题</strong>: 讨论Ceph项目的更新、问题和改进</li>
 </ul>
@@ -197,12 +203,12 @@
 <li><strong>Ceph版本更新</strong>
 <ul>
 <li><strong>15.2.5版本发布</strong>:
-预计很快发布，解决了从旧版本升级时OSD支持模块导致的健康警告问题。</li>
+即将发布，解决了从旧版本升级时OSD支持模块导致的健康警告问题。</li>
 </ul></li>
 <li><strong>QA问题讨论</strong>
 <ul>
 <li><strong>问题编号47336</strong>:
-讨论了由Paul创建的PR引起的测试套件失败问题。具体错误为“unexpected
+讨论了由Paul创建的PR引起的测试套件失败问题，具体错误为“unexpected
 argument --y”，需要进一步调查。</li>
 </ul></li>
 <li><strong>优化PR审查</strong>
@@ -222,8 +228,8 @@ Paul提交了一个大型优化PR，旨在改进Ceph的cfdmls实现，提高效�
 </ul></li>
 <li><strong>文档构建错误</strong>
 <ul>
-<li><strong>文档构建错误</strong>: 讨论了在构建包含2300行
-restructuredText 文件的文档时遇到的错误，需要进一步的技术调查。</li>
+<li><strong>文档构建错误</strong>:
+讨论了在构建包含2300行restructuredText文件的文档时遇到的错误，需要进一步的技术调查。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
@@ -289,6 +295,8 @@ restructuredText 文件的文档时遇到的错误，需要进一步的技术调
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-Algorithm/" rel="tag">CRUSH Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High-Availability/" rel="tag">High Availability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scalability/" rel="tag">Scalability</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -350,7 +358,7 @@ restructuredText 文件的文档时遇到的错误，需要进一步的技术调
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2020/09/10/Ceph_Docubetter_Meeting_2020-09-05/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Docubetter Meeting 2020-09-05</h4>
+        <h4 class="title">  Ceph Docubetter Meeting 2020-09-05  </h4>
       </a>
     </div>
   

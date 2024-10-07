@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="当前问题：如果限制NFS导出到特定IP，尝试从这些特定IP挂载时会遭到拒绝。 原因：后端NFS服务器仅看到HAProxy代理的IP，而非客户端ID。 可能的解决方案：设置HAProxy以透明模式运行，使后端服务器能看到客户端IP，而非H8代理IP。 实施难点：需要后端服务器支持代理协议，但当前的Ganesha服务器不支持，因此需要寻找其他方法。 进一步研究：探索是否有其他方式可以设置HAProx">
+    <meta name="keywords" content="Ceph,NFS,HAProxy,透明代理,Ganesha服务">
+    <meta name="description" content="[改进后的中文总结内容] 本次Ceph Orchestrator会议主要讨论了以下议题：  NFS导出限制IP问题：会议指出，当限制NFS导出到特定IP时，从这些特定IP挂载会遭到拒绝。原因是后端NFS服务器仅看到HAProxy代理的IP，而非客户端ID。可能的解决方案包括设置HAProxy以透明模式运行，或者寻找其他方法为Ganesha服务提供稳定的IP地址解决方案。 Ceph二进制重构：会议讨">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2022-05-04">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/05/04/Ceph_Orchestrator_Meeting_2022-05-04/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="当前问题：如果限制NFS导出到特定IP，尝试从这些特定IP挂载时会遭到拒绝。 原因：后端NFS服务器仅看到HAProxy代理的IP，而非客户端ID。 可能的解决方案：设置HAProxy以透明模式运行，使后端服务器能看到客户端IP，而非H8代理IP。 实施难点：需要后端服务器支持代理协议，但当前的Ganesha服务器不支持，因此需要寻找其他方法。 进一步研究：探索是否有其他方式可以设置HAProx">
+<meta property="og:description" content="[改进后的中文总结内容] 本次Ceph Orchestrator会议主要讨论了以下议题：  NFS导出限制IP问题：会议指出，当限制NFS导出到特定IP时，从这些特定IP挂载会遭到拒绝。原因是后端NFS服务器仅看到HAProxy代理的IP，而非客户端ID。可能的解决方案包括设置HAProxy以透明模式运行，或者寻找其他方法为Ganesha服务提供稳定的IP地址解决方案。 Ceph二进制重构：会议讨">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-03T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="NFS">
+<meta property="article:tag" content="HAProxy">
+<meta property="article:tag" content="透明代理">
+<meta property="article:tag" content="Ganesha服务">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,12 +183,22 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <ul>
-<li><strong>当前问题</strong>：如果限制NFS导出到特定IP，尝试从这些特定IP挂载时会遭到拒绝。</li>
-<li><strong>原因</strong>：后端NFS服务器仅看到HAProxy代理的IP，而非客户端ID。</li>
-<li><strong>可能的解决方案</strong>：设置HAProxy以透明模式运行，使后端服务器能看到客户端IP，而非H8代理IP。</li>
-<li><strong>实施难点</strong>：需要后端服务器支持代理协议，但当前的Ganesha服务器不支持，因此需要寻找其他方法。</li>
-<li><strong>进一步研究</strong>：探索是否有其他方式可以设置HAProxy在透明模式下工作，或者为Ganesha服务提供稳定的IP地址解决方案。</li>
+            <p>[改进后的中文总结内容]</p>
+<p>本次Ceph Orchestrator会议主要讨论了以下议题：</p>
+<ol type="1">
+<li><p><strong>NFS导出限制IP问题</strong>：会议指出，当限制NFS导出到特定IP时，从这些特定IP挂载会遭到拒绝。原因是后端NFS服务器仅看到HAProxy代理的IP，而非客户端ID。可能的解决方案包括设置HAProxy以透明模式运行，或者寻找其他方法为Ganesha服务提供稳定的IP地址解决方案。</p></li>
+<li><p><strong>Ceph二进制重构</strong>：会议讨论了Ceph二进制重构的进展，包括创建zip文件、单元测试和病理测试等。目前，重构工作已经接近完成，但需要解决一些边缘问题，例如二进制文件的后向兼容性。</p></li>
+<li><p><strong>单元测试和错误跟踪</strong>：会议强调了对单元测试的改进和对已知的二进制错误进行分类和跟踪的重要性。计划对现有代码进行覆盖分析，并优先处理已知的错误。</p></li>
+<li><p><strong>文档更新</strong>：会议讨论了文档更新问题，包括如何为最新版本的Cephadm二进制文件提供文档支持。计划创建一个专门的etherpad来跟踪与重构相关的所有问题。</p></li>
+<li><p><strong>NFS服务设置</strong>：会议讨论了在NFS服务设置中使用Ganesha服务时遇到的问题，特别是客户端IP访问限制。需要进一步调查透明代理模式和稳定的IP地址解决方案。</p></li>
+</ol>
+<p>会议决定采取以下行动：</p>
+<ul>
+<li>调查HAProxy透明模式的可能性，以解决NFS导出IP限制问题。</li>
+<li>完成Ceph二进制重构，并进行必要的测试和错误跟踪。</li>
+<li>更新文档以反映Cephadm二进制重构的变化。</li>
+<li>创造一个etherpad来跟踪重构相关的问题。</li>
+<li>调查Ganesha服务的NFS服务设置问题，并寻找可行的解决方案。</li>
 </ul>
 
         </div>
@@ -215,6 +230,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ganesha%E6%9C%8D%E5%8A%A1/" rel="tag">Ganesha服务</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/HAProxy/" rel="tag">HAProxy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS/" rel="tag">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%80%8F%E6%98%8E%E4%BB%A3%E7%90%86/" rel="tag">透明代理</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

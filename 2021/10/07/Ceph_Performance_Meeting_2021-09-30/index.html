@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2021-09-30 | ceph视频总结 | youtube频道总结</title>
+    <title> Ceph 性能会议 2021-09-30  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议主要讨论了一篇关于分布式存储系统性能优化的论文。会议参与者包括核心研发人员和相关领域的专家，共同探讨了论文的内容、其在Ceph存储系统中的潜在应用以及后续的行动计划。 讨论的主要议题  论文内容回顾：  论文详细介绍了两种应用程序类别：L-apps（延迟敏感型应用）和T-apps（吞吐量敏感型应用）。 论文提出了一种新的内核块队列实现，通过每个核心拥有自己的入口和出口队">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,SPDK,I/O调度">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议主要讨论了一篇关于分布式存储系统性能优化的论文，与会者包括Ceph核心研发人员和相关领域的专家，共同探讨了论文内容、其在Ceph存储系统中的潜在应用以及后续行动计划。 讨论的主要议题  论文内容回顾：  论文介绍了两种应用程序类别：L-apps（延迟敏感型应用）和T-apps（吞吐量敏感型应用）。 提出了一种新的内核块队列实现，通过每个核心拥有">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2021-09-30">
+<meta property="og:title" content=" Ceph 性能会议 2021-09-30 ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议主要讨论了一篇关于分布式存储系统性能优化的论文。会议参与者包括核心研发人员和相关领域的专家，共同探讨了论文的内容、其在Ceph存储系统中的潜在应用以及后续的行动计划。 讨论的主要议题  论文内容回顾：  论文详细介绍了两种应用程序类别：L-apps（延迟敏感型应用）和T-apps（吞吐量敏感型应用）。 论文提出了一种新的内核块队列实现，通过每个核心拥有自己的入口和出口队">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议主要讨论了一篇关于分布式存储系统性能优化的论文，与会者包括Ceph核心研发人员和相关领域的专家，共同探讨了论文内容、其在Ceph存储系统中的潜在应用以及后续行动计划。 讨论的主要议题  论文内容回顾：  论文介绍了两种应用程序类别：L-apps（延迟敏感型应用）和T-apps（吞吐量敏感型应用）。 提出了一种新的内核块队列实现，通过每个核心拥有">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-06T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-10-07T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="SPDK">
+<meta property="article:tag" content="I&#x2F;O调度">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2021-09-30</div>
+        <div class="flex-col header-title ellipsis"> Ceph 性能会议 2021-09-30 </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2021-09-30</h1>
+        <h1 class="title"> Ceph 性能会议 2021-09-30 </h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-10-06T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -142,7 +147,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93/">会议总结</a></li></ul>
 
             
         </h5>
@@ -168,12 +173,12 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2021-09-30</h1>
+        <h1 class="post-card-title"> Ceph 性能会议 2021-09-30 </h1>
         <div class="post-meta">
             <time class="post-time" title="2021-10-07 00:00:00" datetime="2021-10-06T16:00:00.000Z"  itemprop="datePublished">2021-10-07</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93/">会议总结</a></li></ul>
 
 
 
@@ -185,27 +190,26 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概述">会议概述</h4>
-<p>本次会议主要讨论了一篇关于分布式存储系统性能优化的论文。会议参与者包括核心研发人员和相关领域的专家，共同探讨了论文的内容、其在Ceph存储系统中的潜在应用以及后续的行动计划。</p>
+<p>本次会议主要讨论了一篇关于分布式存储系统性能优化的论文，与会者包括Ceph核心研发人员和相关领域的专家，共同探讨了论文内容、其在Ceph存储系统中的潜在应用以及后续行动计划。</p>
 <h4 id="讨论的主要议题">讨论的主要议题</h4>
 <ol type="1">
 <li><strong>论文内容回顾</strong>：
 <ul>
-<li>论文详细介绍了两种应用程序类别：L-apps（延迟敏感型应用）和T-apps（吞吐量敏感型应用）。</li>
-<li>论文提出了一种新的内核块队列实现，通过每个核心拥有自己的入口和出口队列来优化I/O调度。</li>
-<li>讨论了SPDK（Storage Performance Development
-Kit）在测试中的表现，以及其在实际应用中的局限性。</li>
+<li>论文介绍了两种应用程序类别：L-apps（延迟敏感型应用）和T-apps（吞吐量敏感型应用）。</li>
+<li>提出了一种新的内核块队列实现，通过每个核心拥有自己的入口和出口队列来优化I/O调度。</li>
+<li>讨论了SPDK在测试中的表现，以及其在实际应用中的局限性。</li>
 </ul></li>
 <li><strong>Ceph应用场景</strong>：
 <ul>
-<li>探讨了论文中的技术如何应用于Ceph的Crimson存储引擎，特别是在处理PG（Placement
-Group）状态迁移和I/O调度方面。</li>
-<li>讨论了在Ceph中如何区分和优先处理不同类型的I/O请求，以及如何通过动态队列管理来优化性能。</li>
+<li>探讨了论文中的技术如何应用于Ceph的Crimson存储引擎，特别是在处理PG状态迁移和I/O调度方面。</li>
+<li>讨论了在Ceph中区分和优先处理不同类型的I/O请求，以及如何通过动态队列管理来优化性能。</li>
 </ul></li>
 <li><strong>性能优化策略</strong>：
 <ul>
-<li>讨论了在Ceph中如何通过分类池（pool）来优化不同类型应用的性能。</li>
+<li>讨论了在Ceph中通过分类池来优化不同类型应用的性能。</li>
 <li>探讨了在Ceph中实施请求调度和应用调度的可行性，以及如何平衡延迟和吞吐量。</li>
 </ul></li>
 </ol>
@@ -249,6 +253,7 @@ Group）状态迁移和I/O调度方面。</li>
 </ul>
 <h4 id="会议总结">会议总结</h4>
 <p>会议对论文进行了深入的讨论，并探讨了其在Ceph中的应用前景。决定进行进一步的技术验证和实验，以评估论文中的技术在Ceph中的实际效果。会议强调了持续研究和社区合作的重要性，以推动Ceph存储系统的性能优化。</p>
+<hr />
 
         </div>
 
@@ -279,6 +284,8 @@ Group）状态迁移和I/O调度方面。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/I-O%E8%B0%83%E5%BA%A6/" rel="tag">I&#x2F;O调度</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SPDK/" rel="tag">SPDK</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -290,7 +297,7 @@ Group）状态迁移和I/O调度方面。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/&title=《Ceph Performance Meeting 2021-09-30》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/&title=《 Ceph 性能会议 2021-09-30 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -300,7 +307,7 @@ Group）状态迁移和I/O调度方面。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/&title=《Ceph Performance Meeting 2021-09-30》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/&title=《 Ceph 性能会议 2021-09-30 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -310,7 +317,7 @@ Group）状态迁移和I/O调度方面。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-09-30》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph 性能会议 2021-09-30 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -340,7 +347,7 @@ Group）状态迁移和I/O调度方面。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2021-09-23</h4>
+        <h4 class="title">Ceph 性能会议纪要 2021-09-23</h4>
       </a>
     </div>
   
@@ -349,7 +356,7 @@ Group）状态迁移和I/O调度方面。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/10/07/Ceph_Science_Working_Group_2021-09-22/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Science Working Group 2021-09-22</h4>
+        <h4 class="title">  Ceph Science Working Group 2021-09-22  </h4>
       </a>
     </div>
   
@@ -449,7 +456,7 @@ Group）状态迁移和I/O调度方面。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/&title=《Ceph Performance Meeting 2021-09-30》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/&title=《 Ceph 性能会议 2021-09-30 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -459,7 +466,7 @@ Group）状态迁移和I/O调度方面。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/&title=《Ceph Performance Meeting 2021-09-30》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/&title=《 Ceph 性能会议 2021-09-30 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -469,7 +476,7 @@ Group）状态迁移和I/O调度方面。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-09-30》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph 性能会议 2021-09-30 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

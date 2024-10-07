@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Ceph 存储系统 SEF（StorageOS）多集群监控功能更新及未来规划 会议时间： 2023年10月（具体日期未提及） 参会人员： 邀请了 Ceph 社区成员和 SEF 用户参与讨论。 会议内容： 一、多集群监控功能介绍  背景： 由于用户对集群规模的需求不断增长，导致多个 SEF 集群的管理成为现实需求。 现状： 通过 SEF 用户调查和社区反馈，确认了多集群管理已成">
+    <meta name="keywords" content="Ceph,分布式存储,CephFS,SEF,多集群监控">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph 存储系统 SEF（StorageOS）多集群监控功能更新及未来规划 会议时间： 2023年10月（具体日期未提及） 参会人员： Ceph 社区成员和 SEF 用户 会议内容： 一、多集群监控功能介绍  背景介绍：随着用户对集群规模需求的增长，多集群管理成为现实需求。 功能目标：提高操作友好性，提供单一来源的集群状态信息，实现基于事件的通知机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Taming a Cephalopod Swarm | Ceph Days London 2024">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2024/08/23/Taming_a_Cephalopod_Swarm_Ceph_Days_London_2024/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Ceph 存储系统 SEF（StorageOS）多集群监控功能更新及未来规划 会议时间： 2023年10月（具体日期未提及） 参会人员： 邀请了 Ceph 社区成员和 SEF 用户参与讨论。 会议内容： 一、多集群监控功能介绍  背景： 由于用户对集群规模的需求不断增长，导致多个 SEF 集群的管理成为现实需求。 现状： 通过 SEF 用户调查和社区反馈，确认了多集群管理已成">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph 存储系统 SEF（StorageOS）多集群监控功能更新及未来规划 会议时间： 2023年10月（具体日期未提及） 参会人员： Ceph 社区成员和 SEF 用户 会议内容： 一、多集群监控功能介绍  背景介绍：随着用户对集群规模需求的增长，多集群管理成为现实需求。 功能目标：提高操作友好性，提供单一来源的集群状态信息，实现基于事件的通知机">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-08-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="SEF">
+<meta property="article:tag" content="多集群监控">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,78 +183,45 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
 <p><strong>会议主题</strong>： Ceph 存储系统
 SEF（StorageOS）多集群监控功能更新及未来规划</p>
 <p><strong>会议时间</strong>： 2023年10月（具体日期未提及）</p>
-<p><strong>参会人员</strong>： 邀请了 Ceph 社区成员和 SEF
-用户参与讨论。</p>
+<p><strong>参会人员</strong>： Ceph 社区成员和 SEF 用户</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>一、多集群监控功能介绍</strong></p>
 <ol type="1">
-<li><strong>背景</strong>： 由于用户对集群规模的需求不断增长，导致多个
-SEF 集群的管理成为现实需求。</li>
-<li><strong>现状</strong>： 通过 SEF
-用户调查和社区反馈，确认了多集群管理已成为 Ceph 社区的实际情况。</li>
-<li><strong>原因</strong>：
-用户选择多集群管理的主要原因是基础设施复杂性、降低操作风险和满足合规性要求。</li>
-<li><strong>多集群概念</strong>：
-将不同集群分组，可能相关也可能不相关，其中联邦是相关集群的特定案例。</li>
-<li><strong>多集群功能目标</strong>：
-<ul>
-<li>提高操作友好性，降低认知负荷。</li>
-<li>提供单一来源的集群状态信息。</li>
-<li>基于事件的通知机制。</li>
-<li>简化多集群和镜像配置。</li>
-<li>提高安全性。</li>
-</ul></li>
-<li><strong>多集群功能实现</strong>：
-<ul>
-<li>新增多集群连接功能，支持连接多个集群。</li>
-<li>显示集群状态、警报、连接和容量信息。</li>
-<li>利用图表展示集群利用率。</li>
-<li>支持跨集群操作，例如迁移和复制。</li>
-</ul></li>
+<li>背景介绍：随着用户对集群规模需求的增长，多集群管理成为现实需求。</li>
+<li>功能目标：提高操作友好性，提供单一来源的集群状态信息，实现基于事件的通知机制，简化配置，提高安全性。</li>
+<li>功能实现：新增多集群连接功能，显示集群状态、警报、连接和容量信息，利用图表展示集群利用率，支持跨集群操作。</li>
 </ol>
 <p><strong>二、特定案例：RGW 多地域配置</strong></p>
 <ol type="1">
-<li><strong>RGW 多地域配置</strong>： 可在 Squid
-版本中使用，提供类似多集群功能的配置界面。</li>
-<li><strong>配置步骤</strong>：
-连接到不同地域，查看拓扑视图，进行数据迁移和配置。</li>
+<li>RGW 多地域配置：提供类似多集群功能的配置界面。</li>
+<li>配置步骤：连接到不同地域，查看拓扑视图，进行数据迁移和配置。</li>
 </ol>
 <p><strong>三、未来规划</strong></p>
 <ol type="1">
-<li><strong>SFS 改进</strong>：
-支持子卷、子卷组、快照和克隆等功能。</li>
-<li><strong>CS 镜像</strong>：
-支持跨集群文件系统（CephFS）的镜像功能。</li>
-<li><strong>RGW 改进</strong>：
-支持高级工作流、用户策略、桶策略、生命周期等功能。</li>
-<li><strong>服务器端安全</strong>：
-支持基于角色的访问控制（RBAC）和令牌管理。</li>
-<li><strong>UI/UX 改进</strong>： 使用 Angular Material 作为 UI
-框架，提升用户体验。</li>
+<li>SFS 改进：支持子卷、子卷组、快照和克隆等功能。</li>
+<li>CS 镜像：支持跨集群文件系统（CephFS）的镜像功能。</li>
+<li>RGW 改进：支持高级工作流、用户策略、桶策略、生命周期等功能。</li>
+<li>服务器端安全：支持基于角色的访问控制（RBAC）和令牌管理。</li>
+<li>UI/UX 改进：使用 Angular Material 作为 UI 框架，提升用户体验。</li>
 </ol>
 <p><strong>四、贡献方式</strong></p>
 <ol type="1">
-<li><strong>开发者会议</strong>：
-参加每月的开发者会议，分享应用和想法。</li>
-<li><strong>用户会议</strong>： 参加每月的用户会议，与 SEF
-团队直接互动。</li>
-<li><strong>Slack 社区</strong>： 加入 SEF Slack
-社区，获取帮助和支持。</li>
-<li><strong>GitHub 仓库</strong>： 贡献代码，参与 SEF 开发。</li>
+<li>开发者会议：参加每月的开发者会议，分享应用和想法。</li>
+<li>用户会议：参加每月的用户会议，与 SEF 团队直接互动。</li>
+<li>Slack 社区：加入 SEF Slack 社区，获取帮助和支持。</li>
+<li>GitHub 仓库：贡献代码，参与 SEF 开发。</li>
 </ol>
 <p><strong>五、讨论</strong></p>
 <ol type="1">
-<li><strong>多集群监控功能的用户体验</strong>：
-提出改进建议，例如更清晰的界面和更友好的操作方式。</li>
-<li><strong>RGW 多地域配置的改进</strong>：
-讨论如何简化配置过程，提高易用性。</li>
-<li><strong>SFS 和 CS 镜像功能的实现</strong>：
-讨论功能细节和实现方案。</li>
-<li><strong>UI/UX 改进的优先级</strong>： 确定改进重点和优先级。</li>
+<li>多集群监控功能的用户体验：提出改进建议，例如更清晰的界面和更友好的操作方式。</li>
+<li>RGW 多地域配置的改进：讨论如何简化配置过程，提高易用性。</li>
+<li>SFS 和 CS 镜像功能的实现：讨论功能细节和实现方案。</li>
+<li>UI/UX 改进的优先级：确定改进重点和优先级。</li>
 </ol>
 <p><strong>行动计划</strong>：</p>
 <ol type="1">
@@ -288,6 +260,8 @@ SEF 集群的管理成为现实需求。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SEF/" rel="tag">SEF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E9%9B%86%E7%BE%A4%E7%9B%91%E6%8E%A7/" rel="tag">多集群监控</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -347,18 +321,18 @@ SEF 集群的管理成为现实需求。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2024/08/23/State_of_the_Cephalopod_Ceph_Days_London_2024/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024</h4>
+        <h4 class="title">State of the Cephalopod| Ceph Days London 2024</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2024/08/23/Unlocking_Ceph_s_Potential_with_NVMe_oF_Integration_Ceph_Days_London_2024/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Unlocking Ceph&#39;s Potential with NVMe oF Integration | Ceph Days London 2024</h4>
+        <h4 class="title">Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024</h4>
       </a>
     </div>
   

@@ -14,23 +14,28 @@
     
     
     
-    <title>2019-04-01:: Ceph Orchestration Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2019-04-01:: Ceph Orchestration Meeting&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 8月某日（具体日期未知） 参会人员： 多位Ceph研发人员及字幕翻译人员 会议主题： 讨论Ceph项目进展、问题及解决方案 关键细节：  会议安排： 由于其他会议的重要性，原定于周六的Ceph on 2009会议可能无法进行。会议参与者将关注SAGE会议，并考虑在晚些时候安排面对面会议。 系统命名服务变更： 会议讨论了Hamill重构的进展，该重构需要根据新评论进行更新。这将">
+    <meta name="keywords" content="Ceph,CSI,Rook,Orchestration,CI">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 8月某日（具体日期未知） 参会人员： 多位Ceph研发人员及字幕翻译人员 会议主题： 讨论Ceph项目进展、问题及解决方案 关键细节：  会议安排： 由于其他会议的重要性，原定于周六的Ceph on 2009会议可能无法进行。会议参与者关注SAGE会议，并考虑在晚些时候安排面对面会议。 系统命名服务变更： 讨论了Hamill重构的进展，需要根据新评论">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-04-01:: Ceph Orchestration Meeting">
+<meta property="og:title" content="&#39;2019-04-01:: Ceph Orchestration Meeting&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/04/09/2019-04-01_-_-_Ceph_Orchestration_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 8月某日（具体日期未知） 参会人员： 多位Ceph研发人员及字幕翻译人员 会议主题： 讨论Ceph项目进展、问题及解决方案 关键细节：  会议安排： 由于其他会议的重要性，原定于周六的Ceph on 2009会议可能无法进行。会议参与者将关注SAGE会议，并考虑在晚些时候安排面对面会议。 系统命名服务变更： 会议讨论了Hamill重构的进展，该重构需要根据新评论进行更新。这将">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 8月某日（具体日期未知） 参会人员： 多位Ceph研发人员及字幕翻译人员 会议主题： 讨论Ceph项目进展、问题及解决方案 关键细节：  会议安排： 由于其他会议的重要性，原定于周六的Ceph on 2009会议可能无法进行。会议参与者关注SAGE会议，并考虑在晚些时候安排面对面会议。 系统命名服务变更： 讨论了Hamill重构的进展，需要根据新评论">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-04-08T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-04-09T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="CSI">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="Orchestration">
+<meta property="article:tag" content="CI">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-04-01:: Ceph Orchestration Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2019-04-01:: Ceph Orchestration Meeting&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-04-01:: Ceph Orchestration Meeting</h1>
+        <h1 class="title">&#39;2019-04-01:: Ceph Orchestration Meeting&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-04-08T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-04-01:: Ceph Orchestration Meeting</h1>
+        <h1 class="post-card-title">'2019-04-01:: Ceph Orchestration Meeting'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-04-09 00:00:00" datetime="2019-04-08T16:00:00.000Z"  itemprop="datePublished">2019-04-09</time>
 
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议时间</strong>： 8月某日（具体日期未知）</p>
 <p><strong>参会人员</strong>： 多位Ceph研发人员及字幕翻译人员</p>
 <p><strong>会议主题</strong>： 讨论Ceph项目进展、问题及解决方案</p>
@@ -193,27 +199,22 @@
 <ul>
 <li><strong>会议安排</strong>： 由于其他会议的重要性，原定于周六的Ceph
 on
-2009会议可能无法进行。会议参与者将关注SAGE会议，并考虑在晚些时候安排面对面会议。</li>
+2009会议可能无法进行。会议参与者关注SAGE会议，并考虑在晚些时候安排面对面会议。</li>
 <li><strong>系统命名服务变更</strong>：
-会议讨论了Hamill重构的进展，该重构需要根据新评论进行更新。这将对LM工作产生影响，因此需要优先处理。</li>
+讨论了Hamill重构的进展，需要根据新评论进行更新，这将影响LM工作，因此需要优先处理。</li>
 <li><strong>Rook项目进展</strong>：
-<ul>
-<li>讨论了Rook的CI和CSI支持，以及如何支持外部集群。</li>
-<li>讨论了Rook的版本管理，决定在CID版本变更时更新CRT版本。</li>
-<li>讨论了Rook与Toothpick的集成，以及如何支持Rook在Toothpick上的运行。</li>
-</ul></li>
+讨论了Rook的CI和CSI支持，外部集群支持，版本管理以及与Toothpick的集成。</li>
 <li><strong>CI问题</strong>：
-<ul>
-<li>讨论了CI效率低下的问题，以及如何改进CI。</li>
-<li>讨论了CI维护人员不足的问题，并计划在下周社区会议上提出。</li>
-<li>讨论了如何增加CI覆盖范围，以及如何利用Susie的资源。</li>
-</ul></li>
+讨论了CI效率低下和维护人员不足的问题，并计划增加CI覆盖范围。</li>
+<li><strong>Rook与Person 3和Terraform的兼容性</strong>。</li>
 </ul>
 <p><strong>主要议题</strong>：</p>
 <ul>
 <li>系统命名服务变更</li>
 <li>Rook项目进展</li>
 <li>CI问题</li>
+<li>Rook与Person 3的兼容性</li>
+<li>Rook与Terraform的集成</li>
 </ul>
 <p><strong>决定的事项</strong>：</p>
 <ul>
@@ -223,6 +224,7 @@ on
 <li>改进CI效率。</li>
 <li>解决CI维护人员不足的问题。</li>
 <li>增加CI覆盖范围。</li>
+<li>在下周社区会议上提出CI问题。</li>
 </ul>
 <p><strong>后续行动计划</strong>：</p>
 <ul>
@@ -233,11 +235,13 @@ on
 <li>解决CI维护人员不足的问题。</li>
 <li>增加CI覆盖范围。</li>
 <li>在下周社区会议上提出CI问题。</li>
+<li>探索Rook与Person 3和Terraform的集成。</li>
 </ul>
 <p><strong>其他</strong>：</p>
 <ul>
-<li>会议讨论了Rook与Person 3的兼容性。</li>
-<li>会议讨论了Rook与Terraform的集成。</li>
+<li>讨论了CI维护人员不足的问题，并计划在下周社区会议上提出。</li>
+<li>讨论了如何增加CI覆盖范围，以及如何利用Susie的资源。</li>
+<li>讨论了Rook与Toothpick的集成，以及如何支持Rook在Toothpick上的运行。</li>
 </ul>
 <p><strong>关键词</strong>：</p>
 <ul>
@@ -245,10 +249,19 @@ on
 <li>Rook</li>
 <li>CI</li>
 <li>CSI</li>
-<li>CI</li>
 <li>Toothpick</li>
 <li>Person 3</li>
 <li>Terraform</li>
+<li>Hamill</li>
+<li>LM</li>
+<li>CI</li>
+<li>Susie</li>
+<li>CI</li>
+<li>Rook</li>
+<li>OSD</li>
+<li>CRD</li>
+<li>Kubernetes</li>
+<li>Docker</li>
 </ul>
 
         </div>
@@ -280,6 +293,8 @@ on
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CI/" rel="tag">CI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CSI/" rel="tag">CSI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestration/" rel="tag">Orchestration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -291,7 +306,7 @@ on
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/09/2019-04-01_-_-_Ceph_Orchestration_Meeting/&title=《2019-04-01:: Ceph Orchestration Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/09/2019-04-01_-_-_Ceph_Orchestration_Meeting/&title=《'2019-04-01:: Ceph Orchestration Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -301,7 +316,7 @@ on
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/09/2019-04-01_-_-_Ceph_Orchestration_Meeting/&title=《2019-04-01:: Ceph Orchestration Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/09/2019-04-01_-_-_Ceph_Orchestration_Meeting/&title=《'2019-04-01:: Ceph Orchestration Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -311,7 +326,7 @@ on
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-04-01:: Ceph Orchestration Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/09/2019-04-01_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-04-01:: Ceph Orchestration Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/09/2019-04-01_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -339,18 +354,18 @@ on
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/04/09/2019-04-03_-_-_Ceph_Testing_meeting/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/04/09/2019-03-27_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-04-03 :: Ceph Testing meeting</h4>
+        <h4 class="title">&#39;2019-03-27:: Ceph Orchestration Meeting&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/04/09/2019-04-09_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/04/09/2019-03-28_-_-_Ceph_Performance_meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-04-09:: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2019-03-28 :: Ceph Performance meeting&#39;</h4>
       </a>
     </div>
   
@@ -450,7 +465,7 @@ on
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/09/2019-04-01_-_-_Ceph_Orchestration_Meeting/&title=《2019-04-01:: Ceph Orchestration Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/09/2019-04-01_-_-_Ceph_Orchestration_Meeting/&title=《'2019-04-01:: Ceph Orchestration Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -460,7 +475,7 @@ on
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/09/2019-04-01_-_-_Ceph_Orchestration_Meeting/&title=《2019-04-01:: Ceph Orchestration Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/09/2019-04-01_-_-_Ceph_Orchestration_Meeting/&title=《'2019-04-01:: Ceph Orchestration Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -470,7 +485,7 @@ on
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-04-01:: Ceph Orchestration Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/09/2019-04-01_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-04-01:: Ceph Orchestration Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/09/2019-04-01_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

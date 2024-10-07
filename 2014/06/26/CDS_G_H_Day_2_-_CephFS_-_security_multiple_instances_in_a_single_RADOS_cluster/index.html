@@ -14,23 +14,28 @@
     
     
     
-    <title>CDS G/H (Day 2) - CephFS: security &amp; multiple instances in a single RADOS cluster | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;CDS G/H (Day 2) - CephFS: security &amp; multiple instances in a single RADOS cluster&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Ceph集群中支持多个FFS文件系统的可能性探讨 会议时间： 未知 参会人员： 未知 会议内容： 一、会议背景 近期，开发人员讨论了在单个Raiders集群中添加对多个FFS文件系统支持的可行性。目前，关于如何实现这一功能存在两种不同的方法，它们在安全性、便利性和保证方面有所不同。 二、讨论的主要议题  多种文件系统支持的两种方法：  方法一： 倡导由Sage提出的方案，允许">
+    <meta name="keywords" content="Ceph,CephFS,安全性,多实例,Rados集群">
+    <meta name="description" content="[改进后的中文总结内容] 会议探讨了在单个Ceph Rados集群中支持多个CephFS文件系统的可能性。讨论了两种方法来实现这一功能：  方法一： 通过多个MDS映射来分配数据和元数据池，允许集群中存在任意数量的文件系统。这种方法在文件系统代码上更为简单，但在监视器方面需要更多的工作，且无法实现负载均衡。 方法二： 将多个文件系统作为目录实现，并提供一些语法糖来简化操作。这种方法不需要修改监视器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS G&#x2F;H (Day 2) - CephFS: security &amp; multiple instances in a single RADOS cluster">
+<meta property="og:title" content="&#39;CDS G&#x2F;H (Day 2) - CephFS: security &amp; multiple instances in a single RADOS cluster&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Ceph集群中支持多个FFS文件系统的可能性探讨 会议时间： 未知 参会人员： 未知 会议内容： 一、会议背景 近期，开发人员讨论了在单个Raiders集群中添加对多个FFS文件系统支持的可行性。目前，关于如何实现这一功能存在两种不同的方法，它们在安全性、便利性和保证方面有所不同。 二、讨论的主要议题  多种文件系统支持的两种方法：  方法一： 倡导由Sage提出的方案，允许">
+<meta property="og:description" content="[改进后的中文总结内容] 会议探讨了在单个Ceph Rados集群中支持多个CephFS文件系统的可能性。讨论了两种方法来实现这一功能：  方法一： 通过多个MDS映射来分配数据和元数据池，允许集群中存在任意数量的文件系统。这种方法在文件系统代码上更为简单，但在监视器方面需要更多的工作，且无法实现负载均衡。 方法二： 将多个文件系统作为目录实现，并提供一些语法糖来简化操作。这种方法不需要修改监视器">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2014-06-25T16:00:00.000Z">
 <meta property="article:modified_time" content="2014-06-25T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="安全性">
+<meta property="article:tag" content="多实例">
+<meta property="article:tag" content="Rados集群">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS G/H (Day 2) - CephFS: security &amp; multiple instances in a single RADOS cluster</div>
+        <div class="flex-col header-title ellipsis">&#39;CDS G/H (Day 2) - CephFS: security &amp; multiple instances in a single RADOS cluster&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS G/H (Day 2) - CephFS: security &amp; multiple instances in a single RADOS cluster</h1>
+        <h1 class="title">&#39;CDS G/H (Day 2) - CephFS: security &amp; multiple instances in a single RADOS cluster&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2014-06-25T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster</h1>
+        <h1 class="post-card-title">'CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster'</h1>
         <div class="post-meta">
             <time class="post-time" title="2014-06-26 00:00:00" datetime="2014-06-25T16:00:00.000Z"  itemprop="datePublished">2014-06-26</time>
 
@@ -185,52 +183,26 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题</strong>：
-Ceph集群中支持多个FFS文件系统的可能性探讨</p>
-<p><strong>会议时间</strong>： 未知</p>
-<p><strong>参会人员</strong>： 未知</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>一、会议背景</strong></p>
-<p>近期，开发人员讨论了在单个Raiders集群中添加对多个FFS文件系统支持的可行性。目前，关于如何实现这一功能存在两种不同的方法，它们在安全性、便利性和保证方面有所不同。</p>
-<p><strong>二、讨论的主要议题</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>会议探讨了在单个Ceph
+Rados集群中支持多个CephFS文件系统的可能性。讨论了两种方法来实现这一功能：</p>
 <ol type="1">
-<li><strong>多种文件系统支持的两种方法</strong>：
-<ul>
-<li><strong>方法一</strong>：
-倡导由Sage提出的方案，允许集群中存在任意数量的文件系统，通过多个MDS映射来指定每个文件系统的数据和元数据池。这种方法在文件系统代码上更为简单，但在监视器方面需要更多的工作。它能够提供有效的多租户功能，但每个文件系统都需要独立的元数据服务器和Rados池，无法实现负载均衡。</li>
-<li><strong>方法二</strong>：
-倡导将多个文件系统作为文件系统中的目录实现，并提供一些语法糖来简化操作。这种方法不需要修改监视器，可以利用客户端之间的负载均衡，但需要稳定的MDS实现和文件系统安全设置。</li>
-</ul></li>
-<li><strong>安全性期望</strong>：
-<ul>
-<li>如果通过多个MDS实现的多租户功能不足以保证安全性，那么实现这一功能的吸引力会降低。可能需要实施一个强大的安全系统，而不是对监视器进行大量更改。</li>
-<li>两种方法都需要解决客户端与服务器协议之间的信任问题，以防止潜在的安全漏洞。</li>
-</ul></li>
+<li><p><strong>方法一</strong>：
+通过多个MDS映射来分配数据和元数据池，允许集群中存在任意数量的文件系统。这种方法在文件系统代码上更为简单，但在监视器方面需要更多的工作，且无法实现负载均衡。</p></li>
+<li><p><strong>方法二</strong>：
+将多个文件系统作为目录实现，并提供一些语法糖来简化操作。这种方法不需要修改监视器，可以利用客户端之间的负载均衡，但需要稳定的MDS实现和文件系统安全设置。</p></li>
 </ol>
-<p><strong>三、决定的事项</strong></p>
+<p>会议强调了安全性期望的重要性，并决定：</p>
 <ol type="1">
 <li>邀请用户提供用例，以便更好地了解不同方法的优势和优先级。</li>
 <li>进一步讨论安全性期望，以确保满足用户的需求。</li>
 </ol>
-<p><strong>四、后续行动计划</strong></p>
+<p>后续行动计划包括：</p>
 <ol type="1">
 <li>收集用户用例，并进行分析。</li>
 <li>继续讨论安全性期望，并制定相应的解决方案。</li>
 <li>根据用户需求和安全性期望，选择合适的实现方法。</li>
 </ol>
-<p><strong>五、关键术语</strong></p>
-<ul>
-<li>FFS：文件系统</li>
-<li>MDS：元数据服务器</li>
-<li>Rados：Ceph的分布式存储系统</li>
-<li>Raiders：Ceph集群</li>
-<li>MDS映射：将文件系统映射到特定的MDS</li>
-<li>负载均衡：将工作负载分配到多个服务器</li>
-<li>多租户：允许多个用户或组织共享同一资源</li>
-</ul>
-<p><strong>六、总结</strong></p>
-<p>本次会议探讨了在Ceph集群中支持多个FFS文件系统的可能性。会议讨论了两种不同的实现方法，并强调了安全性期望的重要性。后续行动计划包括收集用户用例、讨论安全性期望并选择合适的实现方法。</p>
 
         </div>
 
@@ -261,6 +233,8 @@ Ceph集群中支持多个FFS文件系统的可能性探讨</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rados%E9%9B%86%E7%BE%A4/" rel="tag">Rados集群</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E5%AE%9E%E4%BE%8B/" rel="tag">多实例</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AE%89%E5%85%A8%E6%80%A7/" rel="tag">安全性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -272,7 +246,7 @@ Ceph集群中支持多个FFS文件系统的可能性探讨</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster/&title=《CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster/&title=《'CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -282,7 +256,7 @@ Ceph集群中支持多个FFS文件系统的可能性探讨</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster/&title=《CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster/&title=《'CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -292,7 +266,7 @@ Ceph集群中支持多个FFS文件系统的可能性探讨</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -320,9 +294,9 @@ Ceph集群中支持多个FFS文件系统的可能性探讨</p>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_forward_scrub/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_file_creation_object-level_backtraces/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS G/H (Day 2) - CephFS: forward scrub</h4>
+        <h4 class="title"> CDS G/H (Day 2) - CephFS: 文件创建与对象级回溯 </h4>
       </a>
     </div>
   
@@ -331,7 +305,7 @@ Ceph集群中支持多个FFS文件系统的可能性探讨</p>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_RBD_-_testing_overview_strategy/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS G/H (Day 2) - RBD: testing overview &amp; strategy</h4>
+        <h4 class="title"> CDS G/H (Day 2) - RBD: testing overview &amp; strategy </h4>
       </a>
     </div>
   
@@ -431,7 +405,7 @@ Ceph集群中支持多个FFS文件系统的可能性探讨</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster/&title=《CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster/&title=《'CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -441,7 +415,7 @@ Ceph集群中支持多个FFS文件系统的可能性探讨</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster/&title=《CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster/&title=《'CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -451,7 +425,7 @@ Ceph集群中支持多个FFS文件系统的可能性探讨</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

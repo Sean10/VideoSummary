@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2023-07-03 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph性能会议 2023-07-03 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间  日期：具体未提供 参与者：Igor, Casey, Adam, Corey Snyder, Paul, 以及其他相关人员  主要议题  GCC 13 修复与 RocksDB 更新  讨论了关于 GCC 13 的修复问题，特别是针对 RocksDB 的 FTBFS（无法构建从源）问题。 决定将修复合并到 Reef 分支，并确保未来更新 Main 分支时能同步这些更改。 讨论了">
+    <meta name="keywords" content="Ceph,RocksDB,Snappy库,RBD性能,Elastic Shared Blobs">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间  日期：2023年7月3日 参与者：Igor, Casey, Adam, Corey Snyder, Paul等  主要议题  GCC 13修复与RocksDB更新  讨论了GCC 13的修复问题，特别是针对RocksDB的FTBFS问题。 决定将修复合并到Reef分支，并确保未来更新Main分支时能同步这些更改。 讨论了RocksDB的版本管理和更新">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2023-07-03">
+<meta property="og:title" content="Ceph性能会议 2023-07-03">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/07/03/Ceph_Performance_Meeting_2023-07-03/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间  日期：具体未提供 参与者：Igor, Casey, Adam, Corey Snyder, Paul, 以及其他相关人员  主要议题  GCC 13 修复与 RocksDB 更新  讨论了关于 GCC 13 的修复问题，特别是针对 RocksDB 的 FTBFS（无法构建从源）问题。 决定将修复合并到 Reef 分支，并确保未来更新 Main 分支时能同步这些更改。 讨论了">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间  日期：2023年7月3日 参与者：Igor, Casey, Adam, Corey Snyder, Paul等  主要议题  GCC 13修复与RocksDB更新  讨论了GCC 13的修复问题，特别是针对RocksDB的FTBFS问题。 决定将修复合并到Reef分支，并确保未来更新Main分支时能同步这些更改。 讨论了RocksDB的版本管理和更新">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="Snappy库">
+<meta property="article:tag" content="RBD性能">
+<meta property="article:tag" content="Elastic Shared Blobs">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2023-07-03</div>
+        <div class="flex-col header-title ellipsis">Ceph性能会议 2023-07-03</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2023-07-03</h1>
+        <h1 class="title">Ceph性能会议 2023-07-03</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-07-02T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2023-07-03</h1>
+        <h1 class="post-card-title">Ceph性能会议 2023-07-03</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-07-03 00:00:00" datetime="2023-07-02T16:00:00.000Z"  itemprop="datePublished">2023-07-03</time>
 
@@ -185,66 +190,56 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议时间">会议时间</h4>
 <ul>
-<li>日期：具体未提供</li>
-<li>参与者：Igor, Casey, Adam, Corey Snyder, Paul, 以及其他相关人员</li>
+<li>日期：2023年7月3日</li>
+<li>参与者：Igor, Casey, Adam, Corey Snyder, Paul等</li>
 </ul>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
-<li><strong>GCC 13 修复与 RocksDB 更新</strong>
+<li><strong>GCC 13修复与RocksDB更新</strong>
 <ul>
-<li>讨论了关于 GCC 13 的修复问题，特别是针对 RocksDB 的
-FTBFS（无法构建从源）问题。</li>
-<li>决定将修复合并到 Reef 分支，并确保未来更新 Main
-分支时能同步这些更改。</li>
-<li>讨论了 RocksDB 的版本管理和更新策略，建议定期跟进 RocksDB
-的主要版本更新。</li>
+<li>讨论了GCC 13的修复问题，特别是针对RocksDB的FTBFS问题。</li>
+<li>决定将修复合并到Reef分支，并确保未来更新Main分支时能同步这些更改。</li>
+<li>讨论了RocksDB的版本管理和更新策略，建议定期跟进RocksDB的主要版本更新。</li>
 </ul></li>
-<li><strong>Snappy 库的问题与替代方案</strong>
+<li><strong>Snappy库的问题与替代方案</strong>
 <ul>
-<li>讨论了 Snappy 库在新的操作系统发行版中导致的编译问题，特别是与 RTTI
-支持的缺失有关。</li>
-<li>提出了几种解决方案，包括使用自定义的 Snappy 分支、禁用系统 Snappy
-库等。</li>
-<li>讨论了 Snappy 的性能和替代方案，建议考虑弃用 Snappy，特别是在 RGW
-中的使用。</li>
+<li>讨论了Snappy库在新的操作系统发行版中导致的编译问题，特别是与RTTI支持的缺失有关。</li>
+<li>提出了几种解决方案，包括使用自定义的Snappy分支、禁用系统Snappy库等。</li>
+<li>讨论了Snappy的性能和替代方案，建议考虑弃用Snappy，特别是在RGW中的使用。</li>
 </ul></li>
-<li><strong>Elastic Shared Blobs PR 的讨论</strong>
+<li><strong>Elastic Shared Blobs PR的讨论</strong>
 <ul>
-<li>讨论了关于 Elastic Shared Blobs 的 PR，特别是关于如何处理部分代码的
-ifdefs 问题。</li>
-<li>决定暂不合并 PR，而是先进行必要的修改以适应新的运行时条件。</li>
+<li>讨论了关于Elastic Shared
+Blobs的PR，特别是关于如何处理部分代码的ifdefs问题。</li>
+<li>决定暂不合并PR，而是先进行必要的修改以适应新的运行时条件。</li>
 </ul></li>
-<li><strong>RBD 性能测试结果分析</strong>
+<li><strong>RBD性能测试结果分析</strong>
 <ul>
-<li>讨论了 RBD 在 Reef 和 Quincy 版本中的性能测试结果，特别是关于 CPU
-使用率和 I/O 效率的问题。</li>
-<li>提出了一些假设和测试方向，包括调整内存目标大小、不同 I/O
-大小的测试等。</li>
+<li>讨论了RBD在Reef和Quincy版本中的性能测试结果，特别是关于CPU使用率和I/O效率的问题。</li>
+<li>提出了一些假设和测试方向，包括调整内存目标大小、不同I/O大小的测试等。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>确认了 RocksDB 的更新策略，建议定期跟进主要版本更新。</li>
-<li>对于 Snappy
-库的问题，决定先观察其他发行版的处理方式，再决定具体实施方案。</li>
-<li>Elastic Shared Blobs PR 将进行必要的修改后再考虑合并。</li>
+<li>确认了RocksDB的更新策略，建议定期跟进主要版本更新。</li>
+<li>对于Snappy库的问题，决定先观察其他发行版的处理方式，再决定具体实施方案。</li>
+<li>Elastic Shared Blobs PR将进行必要的修改后再考虑合并。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>继续监控和分析 RBD 性能测试结果，特别是关于 RocksDB 和 I/O
-效率的问题。</li>
-<li>跟进 Snappy 库的问题，特别是与其他发行版的协调和处理方式。</li>
-<li>修改并重新审查 Elastic Shared Blobs
+<li>继续监控和分析RBD性能测试结果，特别是关于RocksDB和I/O效率的问题。</li>
+<li>跟进Snappy库的问题，特别是与其他发行版的协调和处理方式。</li>
+<li>修改并重新审查Elastic Shared Blobs
 PR，确保其符合新的运行时条件后进行合并。</li>
 </ul>
 <h4 id="其他讨论">其他讨论</h4>
 <ul>
-<li>讨论了 Debian 和 Fedora 对于 Snappy
-库的处理方式，建议在主问题跟踪器中记录相关问题。</li>
-<li>讨论了 RBD 性能测试中的具体细节和可能的优化方向。</li>
+<li>讨论了Debian和Fedora对于Snappy库的处理方式，建议在主问题跟踪器中记录相关问题。</li>
+<li>讨论了RBD性能测试中的具体细节和可能的优化方向。</li>
 </ul>
 <h4 id="会议结束">会议结束</h4>
 <ul>
@@ -280,6 +275,8 @@ PR，确保其符合新的运行时条件后进行合并。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Elastic-Shared-Blobs/" rel="tag">Elastic Shared Blobs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD%E6%80%A7%E8%83%BD/" rel="tag">RBD性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Snappy%E5%BA%93/" rel="tag">Snappy库</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -291,7 +288,7 @@ PR，确保其符合新的运行时条件后进行合并。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/03/Ceph_Performance_Meeting_2023-07-03/&title=《Ceph Performance Meeting 2023-07-03》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/03/Ceph_Performance_Meeting_2023-07-03/&title=《Ceph性能会议 2023-07-03》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -301,7 +298,7 @@ PR，确保其符合新的运行时条件后进行合并。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/03/Ceph_Performance_Meeting_2023-07-03/&title=《Ceph Performance Meeting 2023-07-03》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/03/Ceph_Performance_Meeting_2023-07-03/&title=《Ceph性能会议 2023-07-03》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -311,7 +308,7 @@ PR，确保其符合新的运行时条件后进行合并。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2023-07-03》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/03/Ceph_Performance_Meeting_2023-07-03/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议 2023-07-03》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/03/Ceph_Performance_Meeting_2023-07-03/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -341,7 +338,7 @@ PR，确保其符合新的运行时条件后进行合并。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/07/03/Ceph_Code_Walkthroughs_-_SeaStore/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Code Walkthroughs: SeaStore</h4>
+        <h4 class="title">&#39;Ceph Code Walkthroughs: SeaStore&#39;</h4>
       </a>
     </div>
   
@@ -450,7 +447,7 @@ PR，确保其符合新的运行时条件后进行合并。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/03/Ceph_Performance_Meeting_2023-07-03/&title=《Ceph Performance Meeting 2023-07-03》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/03/Ceph_Performance_Meeting_2023-07-03/&title=《Ceph性能会议 2023-07-03》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -460,7 +457,7 @@ PR，确保其符合新的运行时条件后进行合并。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/03/Ceph_Performance_Meeting_2023-07-03/&title=《Ceph Performance Meeting 2023-07-03》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/03/Ceph_Performance_Meeting_2023-07-03/&title=《Ceph性能会议 2023-07-03》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -470,7 +467,7 @@ PR，确保其符合新的运行时条件后进行合并。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2023-07-03》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/03/Ceph_Performance_Meeting_2023-07-03/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议 2023-07-03》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/03/Ceph_Performance_Meeting_2023-07-03/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

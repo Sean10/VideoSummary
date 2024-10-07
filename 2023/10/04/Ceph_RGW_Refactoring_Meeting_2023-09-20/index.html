@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph RGW Refactoring Meeting 2023-09-20 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph RGW 重构会议 2023-09-20 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：每周RGW会议 日期：[具体日期] 参会人员：[参会人员名单] 主要议题：  通知和SNS主题策略  讨论内容：  Matt介绍了关于通知和SNS主题策略的讨论，涉及IAM和S3策略，特别是SNS API的使用。 讨论了服务控制策略（Service Control Policy, SCP）和站点控制策略（Site Control Policy），这些策略可能需要通过扩展API或">
+    <meta name="keywords" content="Ceph,RGW,Kafka,SNS 主题策略,持久通知性能">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：每周 RGW 会议 日期：2023-09-20 参会人员：[参会人员名单] 主要议题：  通知和 SNS 主题策略  讨论内容：  Matt 介绍了关于通知和 SNS 主题策略的讨论，涉及 IAM 和 S3 策略，特别是 SNS API 的使用。 讨论了服务控制策略（SCP）和站点控制策略（SCP），这些策略可能需要通过扩展 API 或仪表板来支持。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph RGW Refactoring Meeting 2023-09-20">
+<meta property="og:title" content="Ceph RGW 重构会议 2023-09-20">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-20/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：每周RGW会议 日期：[具体日期] 参会人员：[参会人员名单] 主要议题：  通知和SNS主题策略  讨论内容：  Matt介绍了关于通知和SNS主题策略的讨论，涉及IAM和S3策略，特别是SNS API的使用。 讨论了服务控制策略（Service Control Policy, SCP）和站点控制策略（Site Control Policy），这些策略可能需要通过扩展API或">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：每周 RGW 会议 日期：2023-09-20 参会人员：[参会人员名单] 主要议题：  通知和 SNS 主题策略  讨论内容：  Matt 介绍了关于通知和 SNS 主题策略的讨论，涉及 IAM 和 S3 策略，特别是 SNS API 的使用。 讨论了服务控制策略（SCP）和站点控制策略（SCP），这些策略可能需要通过扩展 API 或仪表板来支持。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-03T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-10-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Kafka">
+<meta property="article:tag" content="SNS 主题策略">
+<meta property="article:tag" content="持久通知性能">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph RGW Refactoring Meeting 2023-09-20</div>
+        <div class="flex-col header-title ellipsis">Ceph RGW 重构会议 2023-09-20</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph RGW Refactoring Meeting 2023-09-20</h1>
+        <h1 class="title">Ceph RGW 重构会议 2023-09-20</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-10-03T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E6%AF%8F%E5%91%A8rgw%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：每周RGW会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%97%A5%E6%9C%9F%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">日期：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[参会人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他讨论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">结论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8B%E6%AC%A1%E4%BC%9A%E8%AE%AE%E9%A2%84%E5%91%8A"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">下次会议预告：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E6%AF%8F%E5%91%A8-rgw-%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：每周 RGW 会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%97%A5%E6%9C%9F2023-09-20"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">日期：2023-09-20</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[参会人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他讨论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">结论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8B%E6%AC%A1%E4%BC%9A%E8%AE%AE%E9%A2%84%E5%91%8A"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">下次会议预告：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph RGW Refactoring Meeting 2023-09-20</h1>
+        <h1 class="post-card-title">Ceph RGW 重构会议 2023-09-20</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-10-04 00:00:00" datetime="2023-10-03T16:00:00.000Z"  itemprop="datePublished">2023-10-04</time>
 
@@ -185,37 +190,38 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题每周rgw会议">会议主题：每周RGW会议</h4>
-<h4 id="日期具体日期">日期：[具体日期]</h4>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议主题每周-rgw-会议">会议主题：每周 RGW 会议</h4>
+<h4 id="日期2023-09-20">日期：2023-09-20</h4>
 <h4 id="参会人员参会人员名单">参会人员：[参会人员名单]</h4>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
-<li><strong>通知和SNS主题策略</strong>
+<li><strong>通知和 SNS 主题策略</strong>
 <ul>
 <li><strong>讨论内容</strong>：
 <ul>
-<li>Matt介绍了关于通知和SNS主题策略的讨论，涉及IAM和S3策略，特别是SNS
-API的使用。</li>
-<li>讨论了服务控制策略（Service Control Policy,
-SCP）和站点控制策略（Site Control
-Policy），这些策略可能需要通过扩展API或仪表板来支持。</li>
+<li>Matt 介绍了关于通知和 SNS 主题策略的讨论，涉及 IAM 和 S3
+策略，特别是 SNS API 的使用。</li>
+<li>讨论了服务控制策略（SCP）和站点控制策略（SCP），这些策略可能需要通过扩展
+API 或仪表板来支持。</li>
 </ul></li>
 <li><strong>决定事项</strong>：
 <ul>
-<li>计划实现SNS主题策略，并考虑通过RGW管理命令和API来设置，如果标准IAM或S3
-REST API不支持。</li>
+<li>计划实现 SNS 主题策略，并考虑通过 RGW 管理命令和 API
+来设置，如果标准 IAM 或 S3 REST API 不支持。</li>
 </ul></li>
 <li><strong>后续行动</strong>：
 <ul>
-<li>继续探讨和实现SNS主题策略，并考虑添加相关API扩展。</li>
+<li>继续探讨和实现 SNS 主题策略，并考虑添加相关 API 扩展。</li>
 </ul></li>
 </ul></li>
 <li><strong>持久通知的性能</strong>
 <ul>
 <li><strong>讨论内容</strong>：
 <ul>
-<li>Yuvall介绍了持久通知性能的PR，讨论了当前使用单个工作线程从队列读取通知并发送至Kafka的机制。</li>
+<li>Yuvall 介绍了持久通知性能的
+PR，讨论了当前使用单个工作线程从队列读取通知并发送至 Kafka 的机制。</li>
 <li>讨论了增加更多工作线程的可能性，以及这可能带来的性能影响。</li>
 </ul></li>
 <li><strong>决定事项</strong>：
@@ -224,19 +230,21 @@ REST API不支持。</li>
 </ul></li>
 <li><strong>后续行动</strong>：
 <ul>
-<li>考虑添加更多Kafka客户端统计信息，以更好地理解系统性能和潜在瓶颈。</li>
+<li>考虑添加更多 Kafka
+客户端统计信息，以更好地理解系统性能和潜在瓶颈。</li>
 <li>进行测试以验证单线程是否是瓶颈，并评估增加线程的影响。</li>
 </ul></li>
 </ul></li>
 </ol>
 <h4 id="其他讨论">其他讨论：</h4>
 <ul>
-<li>讨论了队列填充的两种场景：队列未及时清空和Kafka代理响应慢。</li>
-<li>提出了通过增加Kafka客户端统计信息来更好地诊断问题。</li>
+<li>讨论了队列填充的两种场景：队列未及时清空和 Kafka 代理响应慢。</li>
+<li>提出了通过增加 Kafka 客户端统计信息来更好地诊断问题。</li>
 </ul>
 <h4 id="结论">结论：</h4>
 <ul>
-<li>会议决定继续探索和实现SNS主题策略，并通过增加Kafka客户端统计信息来优化持久通知的性能。</li>
+<li>会议决定继续探索和实现 SNS 主题策略，并通过增加 Kafka
+客户端统计信息来优化持久通知的性能。</li>
 <li>将继续进行性能测试，以验证单线程是否是瓶颈，并评估增加线程的影响。</li>
 </ul>
 <h4 id="下次会议预告">下次会议预告：</h4>
@@ -247,9 +255,6 @@ REST API不支持。</li>
 <ul>
 <li>感谢所有参会人员，下次会议再见。</li>
 </ul>
-<hr />
-<p><strong>注：</strong>
-以上纪要涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -280,6 +285,8 @@ REST API不支持。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kafka/" rel="tag">Kafka</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SNS-%E4%B8%BB%E9%A2%98%E7%AD%96%E7%95%A5/" rel="tag">SNS 主题策略</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8C%81%E4%B9%85%E9%80%9A%E7%9F%A5%E6%80%A7%E8%83%BD/" rel="tag">持久通知性能</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -291,7 +298,7 @@ REST API不支持。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-20/&title=《Ceph RGW Refactoring Meeting 2023-09-20》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-20/&title=《Ceph RGW 重构会议 2023-09-20》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -301,7 +308,7 @@ REST API不支持。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-20/&title=《Ceph RGW Refactoring Meeting 2023-09-20》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-20/&title=《Ceph RGW 重构会议 2023-09-20》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -311,7 +318,7 @@ REST API不支持。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2023-09-20》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-20/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW 重构会议 2023-09-20》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-20/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -341,7 +348,7 @@ REST API不支持。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-06/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2023-09-06</h4>
+        <h4 class="title">Ceph RGW 重构会议纪要 2023-09-06</h4>
       </a>
     </div>
   
@@ -350,7 +357,7 @@ REST API不支持。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-27/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2023-09-27</h4>
+        <h4 class="title">Ceph RGW 重构会议纪要 2023-09-27</h4>
       </a>
     </div>
   
@@ -450,7 +457,7 @@ REST API不支持。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-20/&title=《Ceph RGW Refactoring Meeting 2023-09-20》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-20/&title=《Ceph RGW 重构会议 2023-09-20》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -460,7 +467,7 @@ REST API不支持。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-20/&title=《Ceph RGW Refactoring Meeting 2023-09-20》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-20/&title=《Ceph RGW 重构会议 2023-09-20》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -470,7 +477,7 @@ REST API不支持。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2023-09-20》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-20/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW 重构会议 2023-09-20》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/10/04/Ceph_RGW_Refactoring_Meeting_2023-09-20/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

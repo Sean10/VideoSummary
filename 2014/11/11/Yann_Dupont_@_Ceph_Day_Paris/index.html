@@ -20,17 +20,27 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要： 会议主题： Ceph分布式存储在生产环境中的应用实践分享 参会人员： 来自法国布列塔尼的University City of N的IT服务部门代表 会议内容： 一、背景介绍  大学城N拥有21个学院和约5万名学生员工。 IT服务部门（IRT）负责管理校园网络、电话系统、存储等服务。 由于存储系统过于集中，存在数据丢失和系统故障的风险。  二、Ceph存储解决方案的引入  经过多次尝试，">
+    <meta name="keywords" content="Ceph,分布式存储,OpenStack,高可用性,CRUSH算法,可扩展性,网络拓扑,存储性能,硬件选择,安全性和稳定性">
+    <meta name="description" content="[改进后的中文总结内容] 在巴黎Ceph Day会议上，Yann Dupont分享了他在法国布列塔尼University City of N的IT服务部门使用Ceph分布式存储的生产环境中的实践经验。 会议要点：  背景介绍： University City of N拥有21个学院和约5万名学生员工，IT服务部门负责管理校园网络、电话系统、存储等服务。由于存储系统过于集中，存在数据丢失和系统故障的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Yann Dupont @ Ceph Day Paris">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2014/11/11/Yann_Dupont_@_Ceph_Day_Paris/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要： 会议主题： Ceph分布式存储在生产环境中的应用实践分享 参会人员： 来自法国布列塔尼的University City of N的IT服务部门代表 会议内容： 一、背景介绍  大学城N拥有21个学院和约5万名学生员工。 IT服务部门（IRT）负责管理校园网络、电话系统、存储等服务。 由于存储系统过于集中，存在数据丢失和系统故障的风险。  二、Ceph存储解决方案的引入  经过多次尝试，">
+<meta property="og:description" content="[改进后的中文总结内容] 在巴黎Ceph Day会议上，Yann Dupont分享了他在法国布列塔尼University City of N的IT服务部门使用Ceph分布式存储的生产环境中的实践经验。 会议要点：  背景介绍： University City of N拥有21个学院和约5万名学生员工，IT服务部门负责管理校园网络、电话系统、存储等服务。由于存储系统过于集中，存在数据丢失和系统故障的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2014-11-10T16:00:00.000Z">
 <meta property="article:modified_time" content="2014-11-11T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="OpenStack">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="可扩展性">
+<meta property="article:tag" content="网络拓扑">
+<meta property="article:tag" content="存储性能">
+<meta property="article:tag" content="硬件选择">
+<meta property="article:tag" content="安全性和稳定性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,64 +188,38 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要：</p>
-<p><strong>会议主题</strong>：
-Ceph分布式存储在生产环境中的应用实践分享</p>
-<p><strong>参会人员</strong>： 来自法国布列塔尼的University City of
-N的IT服务部门代表</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>一、背景介绍</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>在巴黎Ceph Day会议上，Yann Dupont分享了他在法国布列塔尼University
+City of N的IT服务部门使用Ceph分布式存储的生产环境中的实践经验。</p>
+<p><strong>会议要点</strong>：</p>
 <ul>
-<li>大学城N拥有21个学院和约5万名学生员工。</li>
-<li>IT服务部门（IRT）负责管理校园网络、电话系统、存储等服务。</li>
-<li>由于存储系统过于集中，存在数据丢失和系统故障的风险。</li>
+<li><strong>背景介绍</strong>： University City of
+N拥有21个学院和约5万名学生员工，IT服务部门负责管理校园网络、电话系统、存储等服务。由于存储系统过于集中，存在数据丢失和系统故障的风险。</li>
+<li><strong>Ceph存储解决方案的引入</strong>：
+经过多次尝试，IRT决定采用Ceph作为存储解决方案。初始部署时，由于缺乏最佳实践和指导，遇到了一些问题，如硬件选择不当、配置错误等。</li>
+<li><strong>部署架构</strong>：
+部署了5个独立的Ceph集群，分别用于不同用途，如实验、生产、备份等。使用LXC容器技术，将OSD部署在物理服务器上，提高了资源利用率。采用10GB网络带宽，并使用特定VLAN进行网络隔离。</li>
+<li><strong>性能优化</strong>：
+调整CRUSH规则，确保数据在不同数据中心之间分布。使用SSD进行日志存储，提高性能。使用Bcache进行数据缓存，减少IO压力。使用OpenStack等工具进行自动化管理。</li>
+<li><strong>经验教训</strong>：
+避免使用硬件RAID，选择可靠的硬件和软件。选择合适的Ceph版本和配置。关注Ceph的社区和邮件列表，及时了解最新动态。定期进行测试和评估，确保系统稳定可靠。</li>
+<li><strong>未来计划</strong>：
+测试Ceph的存储性能和可扩展性。探索Ceph的新功能，如数据迁移、快照等。与Ceph社区合作，共同推动Ceph的发展。</li>
 </ul>
-<p><strong>二、Ceph存储解决方案的引入</strong></p>
-<ul>
-<li>经过多次尝试，IRT决定采用Ceph作为存储解决方案。</li>
-<li>初始部署时，由于缺乏最佳实践和指导，遇到了一些问题，如硬件选择不当、配置错误等。</li>
-<li>通过学习Ceph的规则和最佳实践，IRT逐步优化了部署。</li>
-</ul>
-<p><strong>三、部署架构</strong></p>
-<ul>
-<li>部署了5个独立的Ceph集群，分别用于不同用途，如实验、生产、备份等。</li>
-<li>使用LXC容器技术，将OSD部署在物理服务器上，提高了资源利用率。</li>
-<li>采用10GB网络带宽，并使用特定VLAN进行网络隔离。</li>
-<li>部署了3代硬件，根据性能需求选择不同的配置。</li>
-</ul>
-<p><strong>四、性能优化</strong></p>
-<ul>
-<li>调整CRUSH规则，确保数据在不同数据中心之间分布。</li>
-<li>使用SSD进行日志存储，提高性能。</li>
-<li>使用Bcache进行数据缓存，减少IO压力。</li>
-<li>使用OpenStack等工具进行自动化管理。</li>
-</ul>
-<p><strong>五、经验教训</strong></p>
-<ul>
-<li>避免使用硬件RAID，选择可靠的硬件和软件。</li>
-<li>选择合适的Ceph版本和配置。</li>
-<li>关注Ceph的社区和邮件列表，及时了解最新动态。</li>
-<li>定期进行测试和评估，确保系统稳定可靠。</li>
-</ul>
-<p><strong>六、未来计划</strong></p>
-<ul>
-<li>测试Ceph的存储性能和可扩展性。</li>
-<li>探索Ceph的新功能，如数据迁移、快照等。</li>
-<li>与Ceph社区合作，共同推动Ceph的发展。</li>
-</ul>
-<p><strong>七、总结</strong></p>
-<p>Ceph是一个功能强大、可扩展的分布式存储系统，适用于各种场景。通过合理的规划和配置，可以构建高性能、高可靠的Ceph存储解决方案。</p>
 <p><strong>关键词</strong>：</p>
 <ul>
 <li>Ceph</li>
 <li>分布式存储</li>
-<li>CRUSH规则</li>
+<li>CRUSH算法</li>
 <li>LXC</li>
 <li>SSD</li>
 <li>Bcache</li>
 <li>OpenStack</li>
 <li>可扩展性</li>
 <li>高可靠性</li>
+<li>硬件选择</li>
+<li>网络拓扑</li>
+<li>安全性和稳定性</li>
 </ul>
 
         </div>
@@ -267,6 +251,8 @@ N的IT服务部门代表</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack/" rel="tag">OpenStack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">可扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E6%80%A7%E8%83%BD/" rel="tag">存储性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AE%89%E5%85%A8%E6%80%A7%E5%92%8C%E7%A8%B3%E5%AE%9A%E6%80%A7/" rel="tag">安全性和稳定性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A1%AC%E4%BB%B6%E9%80%89%E6%8B%A9/" rel="tag">硬件选择</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91/" rel="tag">网络拓扑</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -326,18 +312,18 @@ N的IT服务部门代表</p>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2014/11/21/Florian_Haas_@_Ceph_Day_London/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2014/12/01/2014Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Florian Haas @ Ceph Day London</h4>
+        <h4 class="title">2014Q4 Ceph社区季度总结</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2014/11/10/Loic_Dachary_@_Ceph_Day_Paris/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2014/11/10/Peter_Chadwick_@_Ceph_Day_Paris/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Loic Dachary @ Ceph Day Paris</h4>
+        <h4 class="title">Peter Chadwick @ Ceph Day Paris</h4>
       </a>
     </div>
   

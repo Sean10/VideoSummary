@@ -14,23 +14,28 @@
     
     
     
-    <title>CDS Pacific: RADOS | ceph视频总结 | youtube频道总结</title>
+    <title> CDS Pacific: RADOS  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议主要讨论了Ceph存储系统的多个关键议题，包括数据复制、分布式跟踪、自动化恢复设置、管理器模块优化等。会议采用了开放互动的方式，鼓励与会者提出和讨论新的想法和问题。 主要议题  数据复制（Replication）  三星电子的代表介绍了在SAP系统中数据复制的过去和现在，以及未来的主要挑战和下一步计划。 讨论了指纹索引的可扩展性问题，以及如何在不改变现有系统的情况下添加">
+    <meta name="keywords" content="Ceph,Distributed Storage,RADOS,Scalability,Data Replication">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph存储系统（特别是RADOS组件）的关键议题，涉及数据复制、分布式跟踪、自动化恢复设置、管理器模块优化等多个方面。与会者就以下主要议题进行了深入讨论：  数据复制（Replication）：讨论了在SAP系统中数据复制的过去和现在，以及未来的主要挑战和下一步计划。提出了使用新的哈希函数来决定数据位置的方法，以提高数据放置的效率。 分布式跟踪（Dis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Pacific: RADOS">
+<meta property="og:title" content=" CDS Pacific: RADOS ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/04/03/CDS_Pacific_-_RADOS/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议主要讨论了Ceph存储系统的多个关键议题，包括数据复制、分布式跟踪、自动化恢复设置、管理器模块优化等。会议采用了开放互动的方式，鼓励与会者提出和讨论新的想法和问题。 主要议题  数据复制（Replication）  三星电子的代表介绍了在SAP系统中数据复制的过去和现在，以及未来的主要挑战和下一步计划。 讨论了指纹索引的可扩展性问题，以及如何在不改变现有系统的情况下添加">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph存储系统（特别是RADOS组件）的关键议题，涉及数据复制、分布式跟踪、自动化恢复设置、管理器模块优化等多个方面。与会者就以下主要议题进行了深入讨论：  数据复制（Replication）：讨论了在SAP系统中数据复制的过去和现在，以及未来的主要挑战和下一步计划。提出了使用新的哈希函数来决定数据位置的方法，以提高数据放置的效率。 分布式跟踪（Dis">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-04-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="RADOS">
+<meta property="article:tag" content="Scalability">
+<meta property="article:tag" content="Data Replication">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Pacific: RADOS</div>
+        <div class="flex-col header-title ellipsis"> CDS Pacific: RADOS </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Pacific: RADOS</h1>
+        <h1 class="title"> CDS Pacific: RADOS </h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-04-02T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-CDS_Pacific_-_RADOS"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Pacific: RADOS</h1>
+        <h1 class="post-card-title"> CDS Pacific: RADOS </h1>
         <div class="post-meta">
             <time class="post-time" title="2020-04-03 00:00:00" datetime="2020-04-02T16:00:00.000Z"  itemprop="datePublished">2020-04-03</time>
 
@@ -185,52 +183,31 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概述">会议概述</h4>
-<p>本次会议主要讨论了Ceph存储系统的多个关键议题，包括数据复制、分布式跟踪、自动化恢复设置、管理器模块优化等。会议采用了开放互动的方式，鼓励与会者提出和讨论新的想法和问题。</p>
-<h4 id="主要议题">主要议题</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph存储系统（特别是RADOS组件）的关键议题，涉及数据复制、分布式跟踪、自动化恢复设置、管理器模块优化等多个方面。与会者就以下主要议题进行了深入讨论：</p>
 <ol type="1">
-<li><strong>数据复制（Replication）</strong>
-<ul>
-<li>三星电子的代表介绍了在SAP系统中数据复制的过去和现在，以及未来的主要挑战和下一步计划。</li>
-<li>讨论了指纹索引的可扩展性问题，以及如何在不改变现有系统的情况下添加新的元数据。</li>
-<li>提出了使用另一个哈希函数来决定数据位置的方法，以提高数据放置的效率。</li>
-</ul></li>
-<li><strong>分布式跟踪（Distributed Tracing）</strong>
-<ul>
-<li>讨论了基于Jaeger的分布式跟踪在OSD中的应用，以及如何优化依赖关系以确保功能的实现。</li>
-</ul></li>
-<li><strong>自动化恢复设置（Simple Adaptive Recovery Settings）</strong>
-<ul>
-<li>重新评估了自动化恢复设置的需求，并计划在未来的版本中实现。</li>
-</ul></li>
-<li><strong>管理器模块优化（Manager Modules Optimization）</strong>
-<ul>
-<li>讨论了如何减少CPU周期和处理冗余信息，特别是在网络支付时间特性中。</li>
-<li>提出了对管理器模块进行更深入的调查，以找出其他改进的机会。</li>
-</ul></li>
-<li><strong>平衡器（Balancer）</strong>
-<ul>
-<li>讨论了平衡器在考虑主OSD数量时的性能问题，并计划在未来的版本中进行改进。</li>
-</ul></li>
-<li><strong>自动化配置（Automated Provisioning）</strong>
-<ul>
-<li>讨论了自动化配置的需求，特别是在升级和格式转换的场景中。</li>
-</ul></li>
-<li><strong>Python子解释器（Python Subinterpreters）</strong>
-<ul>
-<li>讨论了Python子解释器在管理器模块中的应用问题，以及如何处理由于Python库的全局状态导致的冲突。</li>
-</ul></li>
+<li><p><strong>数据复制（Replication）</strong>：讨论了在SAP系统中数据复制的过去和现在，以及未来的主要挑战和下一步计划。提出了使用新的哈希函数来决定数据位置的方法，以提高数据放置的效率。</p></li>
+<li><p><strong>分布式跟踪（Distributed
+Tracing）</strong>：讨论了基于Jaeger的分布式跟踪在OSD中的应用，以及如何优化依赖关系以确保功能的实现。</p></li>
+<li><p><strong>自动化恢复设置（Simple Adaptive Recovery
+Settings）</strong>：重新评估了自动化恢复设置的需求，并计划在未来的版本中实现。</p></li>
+<li><p><strong>管理器模块优化（Manager Modules
+Optimization）</strong>：讨论了如何减少CPU周期和处理冗余信息，特别是在网络支付时间特性中。</p></li>
+<li><p><strong>平衡器（Balancer）</strong>：讨论了平衡器在考虑主OSD数量时的性能问题，并计划在未来的版本中进行改进。</p></li>
+<li><p><strong>自动化配置（Automated
+Provisioning）</strong>：讨论了自动化配置的需求，特别是在升级和格式转换的场景中。</p></li>
+<li><p><strong>Python子解释器（Python
+Subinterpreters）</strong>：讨论了Python子解释器在管理器模块中的应用问题，以及如何处理由于Python库的全局状态导致的冲突。</p></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
+<p>会议决定事项包括：</p>
 <ul>
 <li>继续推进数据复制和分布式跟踪的实现。</li>
 <li>优化管理器模块，减少CPU使用和冗余信息处理。</li>
-<li>改进平衡器，考虑主OSD的分布以提高性能。</li>
+<li>改进平衡器，确保其在考虑主OSD数量时的性能。</li>
 <li>探索自动化配置的新方法，特别是在升级和格式转换的场景中。</li>
-<li>解决Python子解释器的问题，可能通过等待Python社区的改进或内部优化来实现。</li>
+<li>解决Python子解释器的问题。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<p>后续行动计划包括：</p>
 <ul>
 <li>完成数据复制和分布式跟踪的实现，并进行测试。</li>
 <li>对管理器模块进行深入分析，找出并实施优化措施。</li>
@@ -238,7 +215,6 @@
 <li>探索自动化配置的新方法，特别是在升级和格式转换的场景中。</li>
 <li>监控Python社区的动态，等待可能的改进，或内部实施优化措施。</li>
 </ul>
-<h4 id="结论">结论</h4>
 <p>会议强调了Ceph存储系统在多个关键领域的持续改进和优化，以满足不断变化的技术需求和用户期望。通过开放的讨论和积极的行动计划，Ceph社区将继续推动存储技术的发展。</p>
 
         </div>
@@ -270,6 +246,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Data-Replication/" rel="tag">Data Replication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS/" rel="tag">RADOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scalability/" rel="tag">Scalability</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -281,7 +259,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/CDS_Pacific_-_RADOS/&title=《CDS Pacific: RADOS》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/CDS_Pacific_-_RADOS/&title=《 CDS Pacific: RADOS 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -291,7 +269,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/CDS_Pacific_-_RADOS/&title=《CDS Pacific: RADOS》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/CDS_Pacific_-_RADOS/&title=《 CDS Pacific: RADOS 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -301,7 +279,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Pacific: RADOS》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/CDS_Pacific_-_RADOS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 CDS Pacific: RADOS 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/CDS_Pacific_-_RADOS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -331,7 +309,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2020/04/03/CDS_Pacific_-_Performance/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Pacific: Performance</h4>
+        <h4 class="title">&#39;CDS Pacific: Performance&#39;</h4>
       </a>
     </div>
   
@@ -340,7 +318,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2020/04/02/CDS_Pacfic_-_CephFS/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Pacfic: CephFS</h4>
+        <h4 class="title">&#39;CDS Pacfic: CephFS&#39;</h4>
       </a>
     </div>
   
@@ -440,7 +418,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/CDS_Pacific_-_RADOS/&title=《CDS Pacific: RADOS》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/CDS_Pacific_-_RADOS/&title=《 CDS Pacific: RADOS 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -450,7 +428,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/CDS_Pacific_-_RADOS/&title=《CDS Pacific: RADOS》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/CDS_Pacific_-_RADOS/&title=《 CDS Pacific: RADOS 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -460,7 +438,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Pacific: RADOS》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/CDS_Pacific_-_RADOS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 CDS Pacific: RADOS 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/CDS_Pacific_-_RADOS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

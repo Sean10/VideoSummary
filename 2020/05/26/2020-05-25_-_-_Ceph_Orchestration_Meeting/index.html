@@ -14,23 +14,28 @@
     
     
     
-    <title>2020-05-25 :: Ceph Orchestration Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2020-05-25 :: Ceph Orchestration Meeting&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph存储系统的监控与升级策略讨论 会议地点：渥太华（Ottawa）与纽约（New York） 会议时间：具体日期未提及 参会人员：Erika、Cedrick、Josef（GM-Manager）等 主要议题： 1. 监控系统基础建设：讨论了直接监控（direct monitoring）的重要性，特别是在容器（containers）环境中，确保问题能够及时被发现和解决。 2.">
+    <meta name="keywords" content="Ceph,Monitoring,Upgrade Strategy,Documentation,Configuration Optimization">
+    <meta name="description" content="[改进后的中文总结内容] 在2020年5月25日的Ceph编排会议中，与会者Erika、Cedrick、Josef（GM-Manager）等讨论了Ceph存储系统的监控与升级策略。 主要议题包括： 1. 监控系统基础建设：强调在容器环境中直接监控的重要性，确保问题能及时被发现和解决。 2. 私有注册表：Cedrick提出了私有注册表的重要性，并讨论了其安全性和可用性。 3. 升级策略：讨论了优化升">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2020-05-25 :: Ceph Orchestration Meeting">
+<meta property="og:title" content="&#39;2020-05-25 :: Ceph Orchestration Meeting&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/05/26/2020-05-25_-_-_Ceph_Orchestration_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph存储系统的监控与升级策略讨论 会议地点：渥太华（Ottawa）与纽约（New York） 会议时间：具体日期未提及 参会人员：Erika、Cedrick、Josef（GM-Manager）等 主要议题： 1. 监控系统基础建设：讨论了直接监控（direct monitoring）的重要性，特别是在容器（containers）环境中，确保问题能够及时被发现和解决。 2.">
+<meta property="og:description" content="[改进后的中文总结内容] 在2020年5月25日的Ceph编排会议中，与会者Erika、Cedrick、Josef（GM-Manager）等讨论了Ceph存储系统的监控与升级策略。 主要议题包括： 1. 监控系统基础建设：强调在容器环境中直接监控的重要性，确保问题能及时被发现和解决。 2. 私有注册表：Cedrick提出了私有注册表的重要性，并讨论了其安全性和可用性。 3. 升级策略：讨论了优化升">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-25T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-05-25T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Monitoring">
+<meta property="article:tag" content="Upgrade Strategy">
+<meta property="article:tag" content="Documentation">
+<meta property="article:tag" content="Configuration Optimization">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2020-05-25 :: Ceph Orchestration Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2020-05-25 :: Ceph Orchestration Meeting&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2020-05-25 :: Ceph Orchestration Meeting</h1>
+        <h1 class="title">&#39;2020-05-25 :: Ceph Orchestration Meeting&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-05-25T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2020-05-25 :: Ceph Orchestration Meeting</h1>
+        <h1 class="post-card-title">'2020-05-25 :: Ceph Orchestration Meeting'</h1>
         <div class="post-meta">
             <time class="post-time" title="2020-05-26 00:00:00" datetime="2020-05-25T16:00:00.000Z"  itemprop="datePublished">2020-05-26</time>
 
@@ -178,36 +183,26 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要</p>
-<p>会议主题：Ceph存储系统的监控与升级策略讨论</p>
-<p>会议地点：渥太华（Ottawa）与纽约（New York）</p>
-<p>会议时间：具体日期未提及</p>
-<p>参会人员：Erika、Cedrick、Josef（GM-Manager）等</p>
-<p>主要议题： 1.
-<strong>监控系统基础建设</strong>：讨论了直接监控（direct
-monitoring）的重要性，特别是在容器（containers）环境中，确保问题能够及时被发现和解决。
-2. <strong>私有注册表（Private
-Registry）</strong>：Cedrick提到了私有注册表的必要性，以及如何确保其安全性和可用性。
+            <p>[改进后的中文总结内容]</p>
+<p>在2020年5月25日的Ceph编排会议中，与会者Erika、Cedrick、Josef（GM-Manager）等讨论了Ceph存储系统的监控与升级策略。</p>
+<p>主要议题包括： 1.
+<strong>监控系统基础建设</strong>：强调在容器环境中直接监控的重要性，确保问题能及时被发现和解决。
+2.
+<strong>私有注册表</strong>：Cedrick提出了私有注册表的重要性，并讨论了其安全性和可用性。
 3.
-<strong>升级策略</strong>：讨论了如何优化升级过程，包括连续交易更新服务（continous
-traded update service）和安全升级（safety and means that you cannot job
-in the upgrade）。强调了升级过程中的风险和必要性。 4.
-<strong>文档更新</strong>：提到了上游文档（upstream
-documentation）的升级需求，以及如何确保文档的及时更新和准确性。 5.
-<strong>配置优化</strong>：讨论了如何在支持配置（support
-configuration）中减少步骤，优化前序步骤（predecessor little
-steps），以提高效率和减少历史维度（historical dimension）的影响。</p>
-<p>决定事项： - 需要建立一个基础的监控系统，特别是在容器环境中。 -
-私有注册表的安全性和可用性需要进一步加强。 -
-升级过程需要优化，确保安全和高效。 -
-上游文档需要定期更新，确保信息的准确性和及时性。 -
-支持配置需要优化，减少不必要的步骤，提高效率。</p>
-<p>后续行动计划： - 制定详细的监控系统建设方案，并开始实施。 -
-对私有注册表进行安全性和可用性评估，并制定改进措施。 -
-制定升级过程的优化方案，并开始实施。 -
-定期更新上游文档，确保信息的准确性和及时性。 -
-优化支持配置，减少不必要的步骤，提高效率。</p>
-<p>会议结束语：Erika总结了会议内容，并强调了各项任务的重要性和紧迫性。会议在确认后续行动计划后结束。</p>
+<strong>升级策略</strong>：讨论了优化升级过程，包括连续交易更新服务（CTUS）和安全升级，强调风险和必要性。
+4.
+<strong>文档更新</strong>：提到了上游文档的升级需求，确保其准确性和及时性。
+5.
+<strong>配置优化</strong>：讨论了优化支持配置中减少步骤，以提高效率和减少历史维度的影响。</p>
+<p>决策事项： - 建立基础监控系统，尤其是针对容器环境。 -
+加强私有注册表的安全性和可用性。 - 优化升级过程，确保安全和高效。 -
+定期更新上游文档。 - 优化支持配置，减少不必要的步骤。</p>
+<p>后续行动计划： - 制定监控系统建设方案并实施。 -
+对私有注册表进行安全性和可用性评估并改进。 -
+制定升级过程优化方案并实施。 - 定期更新上游文档。 -
+优化支持配置，减少不必要的步骤。</p>
+<p>会议强调了对各项任务的重要性和紧迫性，并确认了后续行动计划。</p>
 
         </div>
 
@@ -238,6 +233,8 @@ steps），以提高效率和减少历史维度（historical dimension）的影�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Configuration-Optimization/" rel="tag">Configuration Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Documentation/" rel="tag">Documentation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Monitoring/" rel="tag">Monitoring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Upgrade-Strategy/" rel="tag">Upgrade Strategy</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -249,7 +246,7 @@ steps），以提高效率和减少历史维度（historical dimension）的影�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/05/26/2020-05-25_-_-_Ceph_Orchestration_Meeting/&title=《2020-05-25 :: Ceph Orchestration Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/05/26/2020-05-25_-_-_Ceph_Orchestration_Meeting/&title=《'2020-05-25 :: Ceph Orchestration Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -259,7 +256,7 @@ steps），以提高效率和减少历史维度（historical dimension）的影�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/05/26/2020-05-25_-_-_Ceph_Orchestration_Meeting/&title=《2020-05-25 :: Ceph Orchestration Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/05/26/2020-05-25_-_-_Ceph_Orchestration_Meeting/&title=《'2020-05-25 :: Ceph Orchestration Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -269,7 +266,7 @@ steps），以提高效率和减少历史维度（historical dimension）的影�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2020-05-25 :: Ceph Orchestration Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/05/26/2020-05-25_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2020-05-25 :: Ceph Orchestration Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/05/26/2020-05-25_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -299,7 +296,7 @@ steps），以提高效率和减少历史维度（historical dimension）的影�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2020/05/27/2020-05-27_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2020-05-27 :: Crimson SeaStor OSD Weekly Meeting</h4>
+        <h4 class="title">&#39;2020-05-27 :: Crimson SeaStor OSD Weekly Meeting&#39;</h4>
       </a>
     </div>
   
@@ -308,7 +305,7 @@ steps），以提高效率和减少历史维度（historical dimension）的影�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2020/05/21/2020-05-21_-_-_Ceph_Performance_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2020-05-21 :: Ceph Performance Meeting</h4>
+        <h4 class="title">&#39;2020-05-21 :: Ceph Performance Meeting&#39;</h4>
       </a>
     </div>
   
@@ -408,7 +405,7 @@ steps），以提高效率和减少历史维度（historical dimension）的影�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/05/26/2020-05-25_-_-_Ceph_Orchestration_Meeting/&title=《2020-05-25 :: Ceph Orchestration Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/05/26/2020-05-25_-_-_Ceph_Orchestration_Meeting/&title=《'2020-05-25 :: Ceph Orchestration Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -418,7 +415,7 @@ steps），以提高效率和减少历史维度（historical dimension）的影�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/05/26/2020-05-25_-_-_Ceph_Orchestration_Meeting/&title=《2020-05-25 :: Ceph Orchestration Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/05/26/2020-05-25_-_-_Ceph_Orchestration_Meeting/&title=《'2020-05-25 :: Ceph Orchestration Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -428,7 +425,7 @@ steps），以提高效率和减少历史维度（historical dimension）的影�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2020-05-25 :: Ceph Orchestration Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/05/26/2020-05-25_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2020-05-25 :: Ceph Orchestration Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/05/26/2020-05-25_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

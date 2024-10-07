@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 主要议题与讨论内容  技术问题与解决方案  Ceph存储系统中的问题：  上周主要工作集中在技术基础的测试上，遇到了一些与后台字段恢复相关的问题，这些问题是由于缺少某些操作导致的。 增加了对这些操作的支持，并发现对象不一定总是包含映射，这导致了一些运行时的错误。 计划增强新添加操作的错误处理支持，以减少错误消息的意外性。   EIO处理案例  正在研究在代码中的哪个位置应该进行EIO处理">
+    <meta name="keywords" content="Ceph,分布式存储,CRUSH算法,测试,Crimson">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 主要议题与讨论内容  技术问题与解决方案  会议上讨论了Ceph存储系统在技术基础测试中遇到的问题，特别是与后台字段恢复相关的问题。 提出增加对缺少操作的支持，并解决对象不包含映射导致的运行时错误。 计划增强新添加操作的错误处理支持，以减少意外错误消息。  EIO处理案例  讨论了在代码中处理EIO的位置，特别是在CRC不匹配和对象存储返回EIO的情况下。 传统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;SeaStor OSD 2020-08-19">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/08/19/Ceph_Crimson_SeaStor_OSD_2020-08-19/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 主要议题与讨论内容  技术问题与解决方案  Ceph存储系统中的问题：  上周主要工作集中在技术基础的测试上，遇到了一些与后台字段恢复相关的问题，这些问题是由于缺少某些操作导致的。 增加了对这些操作的支持，并发现对象不一定总是包含映射，这导致了一些运行时的错误。 计划增强新添加操作的错误处理支持，以减少错误消息的意外性。   EIO处理案例  正在研究在代码中的哪个位置应该进行EIO处理">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 主要议题与讨论内容  技术问题与解决方案  会议上讨论了Ceph存储系统在技术基础测试中遇到的问题，特别是与后台字段恢复相关的问题。 提出增加对缺少操作的支持，并解决对象不包含映射导致的运行时错误。 计划增强新添加操作的错误处理支持，以减少意外错误消息。  EIO处理案例  讨论了在代码中处理EIO的位置，特别是在CRC不匹配和对象存储返回EIO的情况下。 传统">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-18T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-08-18T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="Crimson">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,39 +190,37 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="主要议题与讨论内容">主要议题与讨论内容</h4>
 <ol type="1">
 <li><strong>技术问题与解决方案</strong>
 <ul>
-<li><strong>Ceph存储系统中的问题</strong>：
-<ul>
-<li>上周主要工作集中在技术基础的测试上，遇到了一些与后台字段恢复相关的问题，这些问题是由于缺少某些操作导致的。</li>
-<li>增加了对这些操作的支持，并发现对象不一定总是包含映射，这导致了一些运行时的错误。</li>
-<li>计划增强新添加操作的错误处理支持，以减少错误消息的意外性。</li>
-</ul></li>
+<li>会议上讨论了Ceph存储系统在技术基础测试中遇到的问题，特别是与后台字段恢复相关的问题。</li>
+<li>提出增加对缺少操作的支持，并解决对象不包含映射导致的运行时错误。</li>
+<li>计划增强新添加操作的错误处理支持，以减少意外错误消息。</li>
 </ul></li>
 <li><strong>EIO处理案例</strong>
 <ul>
-<li>正在研究在代码中的哪个位置应该进行EIO处理，特别是在CRC不匹配和对象存储返回EIO的情况下。</li>
-<li>传统上，这些处理在经典OSD中是通过rep_repair_primary函数完成的，而在Crimson中则需要在pg_backend中进行相应的处理。</li>
+<li>讨论了在代码中处理EIO的位置，特别是在CRC不匹配和对象存储返回EIO的情况下。</li>
+<li>传统上，这些处理在经典OSD中通过rep_repair_primary函数完成，在Crimson中则需要在pg_backend中进行相应处理。</li>
 </ul></li>
 <li><strong>CRUSH算法的扩展</strong>
 <ul>
 <li>讨论了在FAST
-2020会议上提出的一篇关于CRUSH算法扩展的论文，该论文解决了在非平凡集群扩展时数据迁移的问题。</li>
+2020会议上提出的一项关于CRUSH算法扩展的论文，该论文解决了非平凡集群扩展时数据迁移的问题。</li>
 <li>计划继续讨论该论文，并将其链接分享给团队成员以供进一步研究。</li>
 </ul></li>
 <li><strong>代码实现与测试</strong>
 <ul>
 <li>完成了字符串键布局操作，并正在处理树节点实现。</li>
-<li>正在解决单元测试中发现的一个bug，并考虑如何改进基于PG日志的恢复。</li>
+<li>解决了单元测试中发现的bug，并考虑如何改进基于PG日志的恢复。</li>
 <li>强调了测试的重要性，特别是对于Crimson的稳定性和功能验证。</li>
 </ul></li>
 <li><strong>后续行动计划</strong>
 <ul>
 <li>需要对Crimson中的问题进行分类，并创建相应的bug报告。</li>
-<li>强调了在病理运行中发现问题时，应及时创建bug报告的重要性。</li>
+<li>强调了在病理运行中发现问题时，应及时创建bug报告。</li>
 <li>计划继续优化代码，特别是错误处理和垃圾收集机制。</li>
 </ul></li>
 </ol>
@@ -238,8 +241,6 @@
 <ul>
 <li>会议结束时，团队成员被鼓励继续关注和参与Crimson的开发和测试工作，并保持沟通和协作。</li>
 </ul>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -270,6 +271,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson/" rel="tag">Crimson</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -331,7 +334,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2020/08/20/Ceph_Tech_Talk_2020-08-20_-_Edge_Application_-_Streaming_Multiple_Video_Sources/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Tech Talk 2020-08-20: Edge Application - Streaming Multiple Video Sources</h4>
+        <h4 class="title">Ceph Tech Talk 2020-08-20- 边缘应用 - 多视频源流式传输</h4>
       </a>
     </div>
   

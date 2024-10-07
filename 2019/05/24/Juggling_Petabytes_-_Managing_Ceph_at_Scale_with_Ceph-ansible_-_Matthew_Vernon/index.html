@@ -14,23 +14,28 @@
     
     
     
-    <title>Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 会议地点： 巴塞罗那 参会人员： 会议主讲人，Saenger研究院的Ceph存储团队，以及与会听众 会议主题： Saenger研究院的Ceph存储集群部署、管理及经验分享 会议内容： 一、Saenger研究院简介 Saenger研究院成立于1992年，专注于基因测序和基因组分析。在人类基因组测序中，Saenger研究院是最大的贡献者。研究院">
+    <meta name="keywords" content="Ceph,分布式存储,自动化,ansible,存储集群管理">
+    <meta name="description" content="[改进后的中文总结内容] Saenger研究院的Ceph存储集群部署、管理及经验分享会议纪要： 会议介绍了Saenger研究院的概况，包括其在基因测序和基因组分析领域的贡献，以及其高吞吐量计算集群和存储资源。Saenger研究院自2016年开始使用Ceph存储，目前拥有51个节点，18PB的原始容量，并拥有一个测试集群和一个灾备站点。 会议主要内容包括： 一、Ceph存储集群部署  使用Ansib">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon">
+<meta property="og:title" content="&#39;Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Juggling_Petabytes_-_Managing_Ceph_at_Scale_with_Ceph-ansible_-_Matthew_Vernon/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 会议地点： 巴塞罗那 参会人员： 会议主讲人，Saenger研究院的Ceph存储团队，以及与会听众 会议主题： Saenger研究院的Ceph存储集群部署、管理及经验分享 会议内容： 一、Saenger研究院简介 Saenger研究院成立于1992年，专注于基因测序和基因组分析。在人类基因组测序中，Saenger研究院是最大的贡献者。研究院">
+<meta property="og:description" content="[改进后的中文总结内容] Saenger研究院的Ceph存储集群部署、管理及经验分享会议纪要： 会议介绍了Saenger研究院的概况，包括其在基因测序和基因组分析领域的贡献，以及其高吞吐量计算集群和存储资源。Saenger研究院自2016年开始使用Ceph存储，目前拥有51个节点，18PB的原始容量，并拥有一个测试集群和一个灾备站点。 会议主要内容包括： 一、Ceph存储集群部署  使用Ansib">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="自动化">
+<meta property="article:tag" content="ansible">
+<meta property="article:tag" content="存储集群管理">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon</div>
+        <div class="flex-col header-title ellipsis">&#39;Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon</h1>
+        <h1 class="title">&#39;Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-05-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon</h1>
+        <h1 class="post-card-title">'Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-05-24 00:00:00" datetime="2019-05-23T16:00:00.000Z"  itemprop="datePublished">2019-05-24</time>
 
@@ -178,50 +183,43 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>会议地点</strong>： 巴塞罗那</p>
-<p><strong>参会人员</strong>：
-会议主讲人，Saenger研究院的Ceph存储团队，以及与会听众</p>
-<p><strong>会议主题</strong>：
-Saenger研究院的Ceph存储集群部署、管理及经验分享</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>一、Saenger研究院简介</strong></p>
-<p>Saenger研究院成立于1992年，专注于基因测序和基因组分析。在人类基因组测序中，Saenger研究院是最大的贡献者。研究院拥有约20,000个核心的计算集群，以及约15PB的Lustre存储和20PB的iRODS对象存储。</p>
-<p><strong>二、Ceph存储集群部署</strong></p>
-<p>Saenger研究院于2016年开始使用Ceph存储，目前拥有51个节点，18PB的原始容量。集群使用Supermicro服务器，配置有半TB的RAM、
-Mellanox
-100G网络和SAS驱动器。研究院还拥有一个测试集群和一个灾备站点。</p>
-<p><strong>三、Ceph存储集群管理</strong></p>
-<p>Saenger研究院使用Ansible进行集群管理，并基于Ceph Ansible
-Wall进行定制。他们还使用Collectd收集Ceph集群的指标，并使用Nagios进行监控。研究院还编写了脚本，用于监控OSD状态和硬盘健康状况。</p>
-<p><strong>四、Ceph存储集群升级</strong></p>
-<p>Saenger研究院已将Ceph集群从Jewel版本升级到Luminous版本，并计划在未来迁移到Nautilus版本。升级过程相对顺利，但迁移到BlueStore时遇到了一些挑战。</p>
-<p><strong>五、Ceph存储集群使用经验</strong></p>
-<p>Saenger研究院对Ceph存储集群非常满意，认为其具有以下优点：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>Saenger研究院的Ceph存储集群部署、管理及经验分享会议纪要：</p>
+<p>会议介绍了Saenger研究院的概况，包括其在基因测序和基因组分析领域的贡献，以及其高吞吐量计算集群和存储资源。Saenger研究院自2016年开始使用Ceph存储，目前拥有51个节点，18PB的原始容量，并拥有一个测试集群和一个灾备站点。</p>
+<p><strong>会议主要内容包括</strong>：</p>
+<p><strong>一、Ceph存储集群部署</strong></p>
 <ul>
-<li>易于扩展</li>
-<li>高可靠性</li>
-<li>高性能</li>
+<li>使用Ansible和Ceph Ansible Wall进行集群管理。</li>
+<li>集群配置包括Supermicro服务器、Mellanox 100G网络和SAS驱动器。</li>
+<li>使用Collectd收集指标，Nagios进行监控。</li>
+<li>编写脚本监控OSD状态和硬盘健康状况。</li>
 </ul>
-<p><strong>六、Ceph存储集群的挑战</strong></p>
-<p>Saenger研究院在使用Ceph存储集群时也遇到了一些挑战，主要包括：</p>
+<p><strong>二、Ceph存储集群升级</strong></p>
 <ul>
-<li>Rados Gateway服务管理复杂</li>
-<li>大型OMAP对象</li>
-<li>无法自动迁移数据到纠删码池</li>
-<li>无法自动缩减池大小</li>
-<li>部署过程复杂</li>
+<li>从Jewel版本升级到Luminous版本，并计划迁移到Nautilus版本。</li>
+<li>升级过程相对顺利，但迁移到BlueStore时遇到挑战。</li>
 </ul>
-<p><strong>七、行动计划</strong></p>
-<p>Saenger研究院将继续使用Ceph存储集群，并致力于解决上述挑战。他们计划：</p>
+<p><strong>三、Ceph存储集群使用经验</strong></p>
 <ul>
-<li>使用新的Ceph功能，例如纠删码和自动缩减池大小</li>
-<li>优化Rados Gateway服务管理</li>
-<li>简化部署过程</li>
+<li>Ceph存储集群易于扩展、高可靠性和高性能。</li>
+<li>主要用于存储基因测序数据，并通过Rados Gateway提供S3存储服务。</li>
 </ul>
-<p><strong>八、会议总结</strong></p>
-<p>本次会议分享了Saenger研究院在Ceph存储集群部署、管理及使用方面的经验。与会人员对Saenger研究院的经验进行了讨论，并提出了宝贵的建议。</p>
+<p><strong>四、Ceph存储集群的挑战</strong></p>
+<ul>
+<li>Rados Gateway服务管理复杂。</li>
+<li>大型OMAP对象处理。</li>
+<li>无法自动迁移数据到纠删码池。</li>
+<li>无法自动缩减池大小。</li>
+<li>部署过程复杂。</li>
+</ul>
+<p><strong>五、行动计划</strong></p>
+<ul>
+<li>使用Ceph的新功能，如纠删码和自动缩减池大小。</li>
+<li>优化Rados Gateway服务管理。</li>
+<li>简化部署过程。</li>
+</ul>
+<p><strong>六、会议总结</strong></p>
+<p>会议分享了Saenger研究院在Ceph存储集群部署、管理及使用方面的经验，并讨论了遇到的挑战和未来的改进计划。</p>
 
         </div>
 
@@ -252,6 +250,8 @@ Wall进行定制。他们还使用Collectd收集Ceph集群的指标，并使用N
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/ansible/" rel="tag">ansible</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86/" rel="tag">存储集群管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" rel="tag">自动化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -263,7 +263,7 @@ Wall进行定制。他们还使用Collectd收集Ceph集群的指标，并使用N
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Juggling_Petabytes_-_Managing_Ceph_at_Scale_with_Ceph-ansible_-_Matthew_Vernon/&title=《Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Juggling_Petabytes_-_Managing_Ceph_at_Scale_with_Ceph-ansible_-_Matthew_Vernon/&title=《'Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -273,7 +273,7 @@ Wall进行定制。他们还使用Collectd收集Ceph集群的指标，并使用N
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Juggling_Petabytes_-_Managing_Ceph_at_Scale_with_Ceph-ansible_-_Matthew_Vernon/&title=《Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Juggling_Petabytes_-_Managing_Ceph_at_Scale_with_Ceph-ansible_-_Matthew_Vernon/&title=《'Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -283,7 +283,7 @@ Wall进行定制。他们还使用Collectd收集Ceph集群的指标，并使用N
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Juggling_Petabytes_-_Managing_Ceph_at_Scale_with_Ceph-ansible_-_Matthew_Vernon/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Juggling_Petabytes_-_Managing_Ceph_at_Scale_with_Ceph-ansible_-_Matthew_Vernon/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -311,18 +311,18 @@ Wall进行定制。他们还使用Collectd收集Ceph集群的指标，并使用N
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/I_Need_More_Space_It_s_Not_You_It_s_BlueStore_-_Mohamad_Gebai_SUSE/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Keynote_-_A_Wonderful_Journey_On_Ceph_-_Luo_Kexue_Senior_Software_Engineer_ZTE_Corporation/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">I Need More Space, It&#39;s Not You It&#39;s BlueStore - Mohamad Gebai, SUSE</h4>
+        <h4 class="title">&#39;Keynote: A Wonderful Journey On Ceph - Luo Kexue, Senior Software Engineer, ZTE Corporation&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Keeping_up_a_Competitive_Ceph_RadosGW_S3_API_-_Javier_Munoz_Igalia/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Keynote_-_Pushing_the_Limits_of_Ceph_Performance_through_Software_Hardware_Innova..._-_Tushar_Gohad/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Keeping up a Competitive Ceph/RadosGW S3 API - Javier Muñoz, Igalia</h4>
+        <h4 class="title">  Keynote: Pushing the Limits of Ceph Performance through Software &amp; Hardware Innovation... - Tushar Gohad  </h4>
       </a>
     </div>
   
@@ -422,7 +422,7 @@ Wall进行定制。他们还使用Collectd收集Ceph集群的指标，并使用N
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Juggling_Petabytes_-_Managing_Ceph_at_Scale_with_Ceph-ansible_-_Matthew_Vernon/&title=《Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Juggling_Petabytes_-_Managing_Ceph_at_Scale_with_Ceph-ansible_-_Matthew_Vernon/&title=《'Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -432,7 +432,7 @@ Wall进行定制。他们还使用Collectd收集Ceph集群的指标，并使用N
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Juggling_Petabytes_-_Managing_Ceph_at_Scale_with_Ceph-ansible_-_Matthew_Vernon/&title=《Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Juggling_Petabytes_-_Managing_Ceph_at_Scale_with_Ceph-ansible_-_Matthew_Vernon/&title=《'Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -442,7 +442,7 @@ Wall进行定制。他们还使用Collectd收集Ceph集群的指标，并使用N
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Juggling_Petabytes_-_Managing_Ceph_at_Scale_with_Ceph-ansible_-_Matthew_Vernon/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Juggling_Petabytes_-_Managing_Ceph_at_Scale_with_Ceph-ansible_-_Matthew_Vernon/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

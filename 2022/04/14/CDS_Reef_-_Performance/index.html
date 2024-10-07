@@ -14,23 +14,28 @@
     
     
     
-    <title>CDS Reef: Performance | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;CDS Reef: Performance&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  新Pull Requests (PRs):  Corey的PR涉及在RocksDB omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和内存泄漏的建议。 另一个PR允许RGW使用DEOS作为后端存储，DEOS是一个基于Luster的高性能对象存储系统，目前还处于实验阶段。  关闭的PRs:  一个PR是对AVL分配器的最小化修复，解决了之前改变导致的分配问题。 另">
+    <meta name="keywords" content="Ceph,性能优化,RocksDB,PG日志,AVL分配器">
+    <meta name="description" content="[改进后的中文总结内容] 在本次CDS Reef性能会议中，主要讨论了以下几个关键议题： 新Pull Requests (PRs)  Corey的PR：涉及在RocksDB omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和内存泄漏的建议。 RGW使用DEOS作为后端存储的PR：DEOS是一个基于Luster的高性能对象存储系统，目前还处于实验阶段。 AVL分配器的修复PR：解决了之">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Reef: Performance">
+<meta property="og:title" content="&#39;CDS Reef: Performance&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Performance/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  新Pull Requests (PRs):  Corey的PR涉及在RocksDB omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和内存泄漏的建议。 另一个PR允许RGW使用DEOS作为后端存储，DEOS是一个基于Luster的高性能对象存储系统，目前还处于实验阶段。  关闭的PRs:  一个PR是对AVL分配器的最小化修复，解决了之前改变导致的分配问题。 另">
+<meta property="og:description" content="[改进后的中文总结内容] 在本次CDS Reef性能会议中，主要讨论了以下几个关键议题： 新Pull Requests (PRs)  Corey的PR：涉及在RocksDB omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和内存泄漏的建议。 RGW使用DEOS作为后端存储的PR：DEOS是一个基于Luster的高性能对象存储系统，目前还处于实验阶段。 AVL分配器的修复PR：解决了之">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-13T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-04-14T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="PG日志">
+<meta property="article:tag" content="AVL分配器">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Reef: Performance</div>
+        <div class="flex-col header-title ellipsis">&#39;CDS Reef: Performance&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Reef: Performance</h1>
+        <h1 class="title">&#39;CDS Reef: Performance&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-04-13T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%96%B0pull-requests-prs"><span class="post-toc-number">1.</span> <span class="post-toc-text">新Pull Requests (PRs)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">4.</span> <span class="post-toc-text">后续行动计划</span></a></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Reef: Performance</h1>
+        <h1 class="post-card-title">'CDS Reef: Performance'</h1>
         <div class="post-meta">
             <time class="post-time" title="2022-04-14 00:00:00" datetime="2022-04-13T16:00:00.000Z"  itemprop="datePublished">2022-04-14</time>
 
@@ -185,71 +190,35 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="关键细节">关键细节</h4>
-<ul>
-<li><strong>新Pull Requests (PRs)</strong>:
-<ul>
-<li>Corey的PR涉及在RocksDB
+            <p>[改进后的中文总结内容]</p>
+<p>在本次CDS Reef性能会议中，主要讨论了以下几个关键议题：</p>
+<h3 id="新pull-requests-prs">新Pull Requests (PRs)</h3>
+<ol type="1">
+<li><strong>Corey的PR</strong>：涉及在RocksDB
 omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和内存泄漏的建议。</li>
-<li>另一个PR允许RGW使用DEOS作为后端存储，DEOS是一个基于Luster的高性能对象存储系统，目前还处于实验阶段。</li>
-</ul></li>
-<li><strong>关闭的PRs</strong>:
-<ul>
-<li>一个PR是对AVL分配器的最小化修复，解决了之前改变导致的分配问题。</li>
-<li>另一个PR是早期尝试修复同一问题，但已被新的PR取代。</li>
-</ul></li>
-<li><strong>更新的PRs</strong>:
-<ul>
-<li>一个PR改变AVL分配器以基于时间阈值进行搜索，而不是当前的字节和循环计数。</li>
-<li>另一个PR涉及跟踪更新，Typica进行了审查。</li>
-</ul></li>
-</ul>
-<h4 id="讨论的主要议题">讨论的主要议题</h4>
-<ul>
-<li><strong>AVL分配器性能</strong>:
-<ul>
-<li>讨论了AVL分配器的搜索策略，特别是从近似匹配模式切换到最佳匹配模式的阈值设置。</li>
-<li>提出了基于时间的搜索限制，以简化调整过程。</li>
-</ul></li>
-<li><strong>PG日志优化</strong>:
-<ul>
-<li>讨论了PG日志的写入和存储问题，特别是与RocksDB的集成和性能影响。</li>
-<li>提出了使用RocksDB的写前日志机制来优化PG日志的存储和管理。</li>
-</ul></li>
-</ul>
-<h4 id="决定的事项">决定的事项</h4>
-<ul>
-<li><strong>AVL分配器</strong>:
-<ul>
-<li>决定继续探索基于时间的搜索限制，并可能支持两种限制方式以确保其有效性。</li>
-</ul></li>
-<li><strong>PG日志</strong>:
-<ul>
-<li>决定进一步研究和原型化使用RocksDB的写前日志机制来优化PG日志的存储和管理。</li>
-</ul></li>
-</ul>
-<h4 id="后续行动计划">后续行动计划</h4>
-<ul>
-<li><strong>AVL分配器</strong>:
-<ul>
-<li>继续测试和验证基于时间的搜索限制。</li>
-</ul></li>
-<li><strong>PG日志</strong>:
-<ul>
-<li>原型化并测试使用RocksDB的写前日志机制来优化PG日志的存储和管理。</li>
-</ul></li>
-<li><strong>会议安排</strong>:
-<ul>
-<li>下一次会议将首先讨论Corey关于RocksDB迭代器边界的工作，然后继续PG日志的讨论。</li>
-</ul></li>
-</ul>
-<h4 id="其他">其他</h4>
-<ul>
-<li>会议还涉及了其他一些技术细节和潜在的性能优化点，包括对RocksDB写前日志的深入讨论和可能的改进。</li>
-</ul>
-<p><strong>会议结束</strong>:
-感谢所有参与者的贡献，并祝愿大家有一个愉快的假期周末。下次会议再见。</p>
+<li><strong>RGW使用DEOS作为后端存储的PR</strong>：DEOS是一个基于Luster的高性能对象存储系统，目前还处于实验阶段。</li>
+<li><strong>AVL分配器的修复PR</strong>：解决了之前改变导致的分配问题。</li>
+<li><strong>AVL分配器的早期修复PR</strong>：已被新的PR取代。</li>
+<li><strong>AVL分配器基于时间的搜索阈值PR</strong>：改变AVL分配器以基于时间阈值进行搜索，而不是当前的字节和循环计数。</li>
+<li><strong>跟踪更新PR</strong>：Typica进行了审查。</li>
+</ol>
+<h3 id="讨论的主要议题">讨论的主要议题</h3>
+<ol type="1">
+<li><strong>AVL分配器性能</strong>：讨论了AVL分配器的搜索策略，特别是从近似匹配模式切换到最佳匹配模式的阈值设置。</li>
+<li><strong>PG日志优化</strong>：讨论了PG日志的写入和存储问题，特别是与RocksDB的集成和性能影响。</li>
+</ol>
+<h3 id="决定的事项">决定的事项</h3>
+<ol type="1">
+<li><strong>AVL分配器</strong>：决定继续探索基于时间的搜索限制，并可能支持两种限制方式以确保其有效性。</li>
+<li><strong>PG日志</strong>：决定进一步研究和原型化使用RocksDB的写前日志机制来优化PG日志的存储和管理。</li>
+</ol>
+<h3 id="后续行动计划">后续行动计划</h3>
+<ol type="1">
+<li><strong>AVL分配器</strong>：继续测试和验证基于时间的搜索限制。</li>
+<li><strong>PG日志</strong>：原型化并测试使用RocksDB的写前日志机制来优化PG日志的存储和管理。</li>
+<li><strong>会议安排</strong>：下一次会议将首先讨论Corey关于RocksDB迭代器边界的工作，然后继续PG日志的讨论。</li>
+</ol>
+<p>此次会议还涉及了其他一些技术细节和潜在的性能优化点，包括对RocksDB写前日志的深入讨论和可能的改进。</p>
 
         </div>
 
@@ -280,6 +249,8 @@ omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/AVL%E5%88%86%E9%85%8D%E5%99%A8/" rel="tag">AVL分配器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PG%E6%97%A5%E5%BF%97/" rel="tag">PG日志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -291,7 +262,7 @@ omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Performance/&title=《CDS Reef: Performance》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Performance/&title=《'CDS Reef: Performance'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -301,7 +272,7 @@ omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Performance/&title=《CDS Reef: Performance》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Performance/&title=《'CDS Reef: Performance'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -311,7 +282,7 @@ omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Reef: Performance》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Performance/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CDS Reef: Performance'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Performance/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -350,7 +321,7 @@ omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Reef: Rados Gateway</h4>
+        <h4 class="title">&#39;CDS Reef: Rados Gateway&#39;</h4>
       </a>
     </div>
   
@@ -450,7 +421,7 @@ omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Performance/&title=《CDS Reef: Performance》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Performance/&title=《'CDS Reef: Performance'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -460,7 +431,7 @@ omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Performance/&title=《CDS Reef: Performance》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Performance/&title=《'CDS Reef: Performance'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -470,7 +441,7 @@ omap迭代器中设置上下限，Casey正在审查并提出了避免拷贝和�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Reef: Performance》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Performance/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CDS Reef: Performance'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Performance/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

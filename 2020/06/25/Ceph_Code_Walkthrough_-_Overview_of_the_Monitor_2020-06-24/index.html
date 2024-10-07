@@ -14,23 +14,29 @@
     
     
     
-    <title>Ceph Code Walkthrough: Overview of the Monitor 2020-06-24 | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Code Walkthrough: Overview of the Monitor 2020-06-24&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph Monitor代码架构与系统组件概述 参会人员：Josh、Greg等 会议内容：  Ceph Monitor架构概述  主要组件：Ceph Monitor代码位于sourcetree内部，关键文件包括monitor.h和monitor.cc。 功能描述：Monitor是一个分布式系统，通过选举产生领导者（leader），领导者负责处理系统中的所有更新请求，并授予PMs">
+    <meta name="keywords" content="Ceph,Distributed Storage,CRUSH Algorithm,Monitor,Election Mechanism,Paxos Algorithm">
+    <meta name="description" content="[改进后的中文总结内容] Ceph Monitor代码架构与系统组件概述会议纪要： 会议主题：Ceph Monitor代码架构与系统组件概述 参会人员：Josh、Greg等 会议内容：  Ceph Monitor架构概述  Monitor代码位于sourcetree内部，主要文件包括monitor.h和monitor.cc。 Monitor是分布式系统，通过Elector和选举逻辑选举领导者，领导">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Code Walkthrough: Overview of the Monitor 2020-06-24">
+<meta property="og:title" content="&#39;Ceph Code Walkthrough: Overview of the Monitor 2020-06-24&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/06/25/Ceph_Code_Walkthrough_-_Overview_of_the_Monitor_2020-06-24/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph Monitor代码架构与系统组件概述 参会人员：Josh、Greg等 会议内容：  Ceph Monitor架构概述  主要组件：Ceph Monitor代码位于sourcetree内部，关键文件包括monitor.h和monitor.cc。 功能描述：Monitor是一个分布式系统，通过选举产生领导者（leader），领导者负责处理系统中的所有更新请求，并授予PMs">
+<meta property="og:description" content="[改进后的中文总结内容] Ceph Monitor代码架构与系统组件概述会议纪要： 会议主题：Ceph Monitor代码架构与系统组件概述 参会人员：Josh、Greg等 会议内容：  Ceph Monitor架构概述  Monitor代码位于sourcetree内部，主要文件包括monitor.h和monitor.cc。 Monitor是分布式系统，通过Elector和选举逻辑选举领导者，领导">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-24T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-06-24T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="CRUSH Algorithm">
+<meta property="article:tag" content="Monitor">
+<meta property="article:tag" content="Election Mechanism">
+<meta property="article:tag" content="Paxos Algorithm">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Code Walkthrough: Overview of the Monitor 2020-06-24</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Code Walkthrough: Overview of the Monitor 2020-06-24&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Code Walkthrough: Overview of the Monitor 2020-06-24</h1>
+        <h1 class="title">&#39;Ceph Code Walkthrough: Overview of the Monitor 2020-06-24&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-06-24T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,8 +165,8 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph-monitor%E4%BB%A3%E7%A0%81%E6%9E%B6%E6%9E%84%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph
-Monitor代码架构与系统组件概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98joshgreg%E7%AD%89"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：Josh、Greg等</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph-monitor%E4%BB%A3%E7%A0%81%E6%9E%B6%E6%9E%84%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议主题：Ceph
+Monitor代码架构与系统组件概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98joshgreg%E7%AD%89"><span class="post-toc-number">2.</span> <span class="post-toc-text">参会人员：Josh、Greg等</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">会议内容：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">4.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">5.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">6.</span> <span class="post-toc-text">会议结束：</span></a></li></ol>
         </nav>
     </aside>
 
@@ -169,7 +175,7 @@ Monitor代码架构与系统组件概述</span></a></li><li class="post-toc-item
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Code Walkthrough: Overview of the Monitor 2020-06-24</h1>
+        <h1 class="post-card-title">'Ceph Code Walkthrough: Overview of the Monitor 2020-06-24'</h1>
         <div class="post-meta">
             <time class="post-time" title="2020-06-25 00:00:00" datetime="2020-06-24T16:00:00.000Z"  itemprop="datePublished">2020-06-25</time>
 
@@ -186,56 +192,55 @@ Monitor代码架构与系统组件概述</span></a></li><li class="post-toc-item
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题ceph-monitor代码架构与系统组件概述">会议主题：Ceph
-Monitor代码架构与系统组件概述</h4>
-<h4 id="参会人员joshgreg等">参会人员：Josh、Greg等</h4>
-<h4 id="会议内容">会议内容：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>Ceph Monitor代码架构与系统组件概述会议纪要：</p>
+<h3 id="会议主题ceph-monitor代码架构与系统组件概述">会议主题：Ceph
+Monitor代码架构与系统组件概述</h3>
+<h3 id="参会人员joshgreg等">参会人员：Josh、Greg等</h3>
+<h3 id="会议内容">会议内容：</h3>
 <ol type="1">
 <li><strong>Ceph Monitor架构概述</strong>
 <ul>
-<li><strong>主要组件</strong>：Ceph
-Monitor代码位于<code>sourcetree</code>内部，关键文件包括<code>monitor.h</code>和<code>monitor.cc</code>。</li>
-<li><strong>功能描述</strong>：Monitor是一个分布式系统，通过选举产生领导者（leader），领导者负责处理系统中的所有更新请求，并授予PMs（Placement
-Groups）租约，以便它们可以为Ceph系统的客户端提供读取服务。</li>
+<li>Monitor代码位于<code>sourcetree</code>内部，主要文件包括<code>monitor.h</code>和<code>monitor.cc</code>。</li>
+<li>Monitor是分布式系统，通过Elector和选举逻辑选举领导者，领导者负责排序更新请求，并授予PM租约。</li>
 </ul></li>
 <li><strong>选举机制</strong>
 <ul>
-<li><strong>选举逻辑</strong>：所有Monitor通过Elector和选举逻辑组件进行领导者选举。</li>
-<li><strong>领导者职责</strong>：领导者负责排序所有传入的更新，并管理租约授予。</li>
+<li>监视器通过Elector和选举逻辑进行领导者选举。</li>
+<li>领导者负责管理更新排序和租约授予。</li>
 </ul></li>
 <li><strong>数据存储与消息处理</strong>
 <ul>
-<li><strong>数据存储</strong>：使用LevelDB作为Monitor的数据存储，通过MonitorDBStore类进行封装。</li>
-<li><strong>消息处理</strong>：创建基于MonitorMap的消息处理机制，用于处理所有消息。</li>
+<li>使用LevelDB作为数据存储，MonitorDBStore类进行封装。</li>
+<li>基于MonitorMap的消息处理机制。</li>
 </ul></li>
 <li><strong>启动与初始化</strong>
 <ul>
-<li><strong>启动流程</strong>：Monitor启动时进行一系列初始化操作，包括解析标志、创建数据存储、设置消息传递机制等。</li>
-<li><strong>Bootstrap过程</strong>：确保Monitor进入法定人数（quorum）并保持最新状态。</li>
+<li>Monitor启动流程包括解析标志、创建数据存储、设置消息传递机制等。</li>
+<li>Bootstrap过程确保Monitor进入法定人数并保持最新状态。</li>
 </ul></li>
 <li><strong>消息与请求处理</strong>
 <ul>
-<li><strong>消息类型</strong>：Monitor处理多种消息类型，包括命令类型。</li>
-<li><strong>请求处理</strong>：通过<code>handle_command</code>函数处理命令，最终分发到特定的Monitor组件进行处理。</li>
+<li>Monitor处理多种消息类型，通过<code>handle_command</code>函数处理命令。</li>
+<li>命令最终分发到特定的Monitor组件进行处理。</li>
 </ul></li>
 <li><strong>更新与提交</strong>
 <ul>
-<li><strong>更新机制</strong>：通过Paxos算法进行更新提议，一旦多数系统成员确认，更新即被提交。</li>
-<li><strong>定时器与提议</strong>：定期提议更新以保持系统进度，避免频繁更新导致系统过载。</li>
+<li>使用Paxos算法进行更新提议，一旦多数系统成员确认，更新即被提交。</li>
+<li>定期提议更新以保持系统进度。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项：</h4>
+<h3 id="决定事项">决定事项：</h3>
 <ul>
 <li>确认了Ceph Monitor的核心架构和关键组件。</li>
 <li>明确了选举机制、数据存储、消息处理和更新提交的具体流程。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划：</h4>
+<h3 id="后续行动计划">后续行动计划：</h3>
 <ul>
 <li>继续优化和更新Monitor的收集系统。</li>
 <li>深入研究特定Monitor组件的实现细节，如OSD Monitor。</li>
 </ul>
-<h4 id="会议结束">会议结束：</h4>
+<h3 id="会议结束">会议结束：</h3>
 <p>感谢Greg的详细讲解，参会人员对Ceph
 Monitor的架构和运作有了更深入的理解。会议在提问环节结束后圆满结束。</p>
 
@@ -268,6 +273,8 @@ Monitor的架构和运作有了更深入的理解。会议在提问环节结束�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-Algorithm/" rel="tag">CRUSH Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Election-Mechanism/" rel="tag">Election Mechanism</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Monitor/" rel="tag">Monitor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Paxos-Algorithm/" rel="tag">Paxos Algorithm</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -279,7 +286,7 @@ Monitor的架构和运作有了更深入的理解。会议在提问环节结束�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/06/25/Ceph_Code_Walkthrough_-_Overview_of_the_Monitor_2020-06-24/&title=《Ceph Code Walkthrough: Overview of the Monitor 2020-06-24》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/06/25/Ceph_Code_Walkthrough_-_Overview_of_the_Monitor_2020-06-24/&title=《'Ceph Code Walkthrough: Overview of the Monitor 2020-06-24'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -289,7 +296,7 @@ Monitor的架构和运作有了更深入的理解。会议在提问环节结束�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/06/25/Ceph_Code_Walkthrough_-_Overview_of_the_Monitor_2020-06-24/&title=《Ceph Code Walkthrough: Overview of the Monitor 2020-06-24》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/06/25/Ceph_Code_Walkthrough_-_Overview_of_the_Monitor_2020-06-24/&title=《'Ceph Code Walkthrough: Overview of the Monitor 2020-06-24'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -299,7 +306,7 @@ Monitor的架构和运作有了更深入的理解。会议在提问环节结束�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Code Walkthrough: Overview of the Monitor 2020-06-24》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/06/25/Ceph_Code_Walkthrough_-_Overview_of_the_Monitor_2020-06-24/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Code Walkthrough: Overview of the Monitor 2020-06-24'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/06/25/Ceph_Code_Walkthrough_-_Overview_of_the_Monitor_2020-06-24/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -338,7 +345,7 @@ Monitor的架构和运作有了更深入的理解。会议在提问环节结束�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2020/06/25/Ceph_Tech_Talk_2020-06-25_-_Solving_the_Bug_of_the_Year/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Tech Talk 2020-06-25: Solving the Bug of the Year</h4>
+        <h4 class="title">  Ceph Tech Talk 2020-06-25: Solving the Bug of the Year  </h4>
       </a>
     </div>
   
@@ -438,7 +445,7 @@ Monitor的架构和运作有了更深入的理解。会议在提问环节结束�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/06/25/Ceph_Code_Walkthrough_-_Overview_of_the_Monitor_2020-06-24/&title=《Ceph Code Walkthrough: Overview of the Monitor 2020-06-24》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/06/25/Ceph_Code_Walkthrough_-_Overview_of_the_Monitor_2020-06-24/&title=《'Ceph Code Walkthrough: Overview of the Monitor 2020-06-24'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -448,7 +455,7 @@ Monitor的架构和运作有了更深入的理解。会议在提问环节结束�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/06/25/Ceph_Code_Walkthrough_-_Overview_of_the_Monitor_2020-06-24/&title=《Ceph Code Walkthrough: Overview of the Monitor 2020-06-24》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/06/25/Ceph_Code_Walkthrough_-_Overview_of_the_Monitor_2020-06-24/&title=《'Ceph Code Walkthrough: Overview of the Monitor 2020-06-24'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -458,7 +465,7 @@ Monitor的架构和运作有了更深入的理解。会议在提问环节结束�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Code Walkthrough: Overview of the Monitor 2020-06-24》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/06/25/Ceph_Code_Walkthrough_-_Overview_of_the_Monitor_2020-06-24/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Code Walkthrough: Overview of the Monitor 2020-06-24'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/06/25/Ceph_Code_Walkthrough_-_Overview_of_the_Monitor_2020-06-24/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

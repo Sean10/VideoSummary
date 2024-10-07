@@ -14,23 +14,32 @@
     
     
     
-    <title>2019-06-27 :: Ceph Performance Meeting | ceph视频总结 | youtube频道总结</title>
+    <title> 2019-06-27 :: Ceph Performance Meeting  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要： 会议时间： 2023年11月某日 参会人员： Mark, Casey, David, Roman, Alfredo, Orlando, Kiki Foo, Radek 等 会议主题： Ceph 分布式存储项目进展及讨论 关键细节：  调试级别调整： 讨论了将 trim 和 boost 的调试级别提高到 20 以上的建议，并决定将 trim 整块代码放入单独的调试模块中。 性能优化：">
+    <meta name="keywords" content="Ceph,分布式存储,OpenStack,Rados,性能优化,Jenkins,BlueStore,测试,GitHub">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph分布式存储项目的性能优化和测试进展。以下为会议的关键细节： 关键细节：  调试级别调整： 讨论将trim和boost的调试级别提高到20以上，并决定将trim整块代码放入单独的调试模块中。 性能优化：  讨论禁用apptracker可能带来的20%到30%的性能提升。 分析删除操作优化，发现OST在删除PG时花费大量时间，并讨论优化扫描、预取和预">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-06-27 :: Ceph Performance Meeting">
+<meta property="og:title" content=" 2019-06-27 :: Ceph Performance Meeting ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/06/28/2019-06-27_-_-_Ceph_Performance_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要： 会议时间： 2023年11月某日 参会人员： Mark, Casey, David, Roman, Alfredo, Orlando, Kiki Foo, Radek 等 会议主题： Ceph 分布式存储项目进展及讨论 关键细节：  调试级别调整： 讨论了将 trim 和 boost 的调试级别提高到 20 以上的建议，并决定将 trim 整块代码放入单独的调试模块中。 性能优化：">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph分布式存储项目的性能优化和测试进展。以下为会议的关键细节： 关键细节：  调试级别调整： 讨论将trim和boost的调试级别提高到20以上，并决定将trim整块代码放入单独的调试模块中。 性能优化：  讨论禁用apptracker可能带来的20%到30%的性能提升。 分析删除操作优化，发现OST在删除PG时花费大量时间，并讨论优化扫描、预取和预">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-06-27T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-06-27T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="OpenStack">
+<meta property="article:tag" content="Rados">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="Jenkins">
+<meta property="article:tag" content="BlueStore">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="GitHub">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +121,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-06-27 :: Ceph Performance Meeting</div>
+        <div class="flex-col header-title ellipsis"> 2019-06-27 :: Ceph Performance Meeting </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +143,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-06-27 :: Ceph Performance Meeting</h1>
+        <h1 class="title"> 2019-06-27 :: Ceph Performance Meeting </h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-06-27T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +170,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-06-27 :: Ceph Performance Meeting</h1>
+        <h1 class="post-card-title"> 2019-06-27 :: Ceph Performance Meeting </h1>
         <div class="post-meta">
             <time class="post-time" title="2019-06-28 00:00:00" datetime="2019-06-27T16:00:00.000Z"  itemprop="datePublished">2019-06-28</time>
 
@@ -178,73 +187,66 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要：</p>
-<p><strong>会议时间</strong>： 2023年11月某日</p>
-<p><strong>参会人员</strong>： Mark, Casey, David, Roman, Alfredo,
-Orlando, Kiki Foo, Radek 等</p>
-<p><strong>会议主题</strong>： Ceph 分布式存储项目进展及讨论</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph分布式存储项目的性能优化和测试进展。以下为会议的关键细节：</p>
 <p><strong>关键细节</strong>：</p>
 <ul>
-<li><strong>调试级别调整</strong>： 讨论了将 trim 和 boost
-的调试级别提高到 20 以上的建议，并决定将 trim
-整块代码放入单独的调试模块中。</li>
+<li><strong>调试级别调整</strong>：
+讨论将trim和boost的调试级别提高到20以上，并决定将trim整块代码放入单独的调试模块中。</li>
 <li><strong>性能优化</strong>：
 <ul>
-<li>讨论了禁用 apptracker 可能带来的 20% 到 30% 的性能提升。</li>
-<li>分析了删除操作优化，发现 OST 在删除 PG
-时花费大量时间，并讨论了优化扫描、预取和预加载到缓存中的策略。</li>
-<li>讨论了 steno SD 或 SDHC
-卡的恢复最大活跃数，并决定增加并发回填以提升性能。</li>
-<li>讨论了 max backfills 和 max active
-之间的关系，并决定进行实验以确定是否需要增加 max backfills。</li>
-<li>讨论了优化 BlueStore 缓存，包括避免重复缓存和缓存旋转等。</li>
+<li>讨论禁用apptracker可能带来的20%到30%的性能提升。</li>
+<li>分析删除操作优化，发现OST在删除PG时花费大量时间，并讨论优化扫描、预取和预加载到缓存中的策略。</li>
+<li>讨论steno
+SD或SDHC卡的恢复最大活跃数，并决定增加并发回填以提升性能。</li>
+<li>讨论max backfills和max
+active之间的关系，并决定进行实验以确定是否需要增加max backfills。</li>
+<li>讨论优化BlueStore缓存，包括避免重复缓存和缓存旋转等。</li>
 </ul></li>
 <li><strong>性能测试</strong>：
 <ul>
-<li>讨论了在硅谷进行性能测试，并计划设置持续性能基准测试，以便在发布分支中测试新功能。</li>
-<li>讨论了 Jenkins 和 GitHub 的集成，以及使用 GitHub API
-进行结果发布。</li>
-<li>讨论了性能测试标签和回归检测，以及如何确定回归的阈值。</li>
+<li>讨论在硅谷进行性能测试，并计划设置持续性能基准测试。</li>
+<li>讨论Jenkins和GitHub的集成，以及使用GitHub API进行结果发布。</li>
+<li>讨论性能测试标签和回归检测，以及如何确定回归的阈值。</li>
 </ul></li>
 <li><strong>硬件测试</strong>：
 <ul>
-<li>讨论了 Intel 提供的新 Officalis 集群，包括 TLC 和 QLC
-驱动器的配置。</li>
-<li>讨论了将节点迁移到 Jenkins 以进行性能回归测试。</li>
-<li>讨论了将高效能节点用于 PR 测试。</li>
+<li>讨论Intel提供的新Officalis集群，包括TLC和QLC驱动器的配置。</li>
+<li>讨论将节点迁移到Jenkins以进行性能回归测试。</li>
+<li>讨论将高效能节点用于PR测试。</li>
 </ul></li>
 </ul>
 <p><strong>决定事项</strong>：</p>
 <ul>
-<li>将 trim 和 boost 的调试级别提高到 20 以上。</li>
-<li>将 trim 整块代码放入单独的调试模块中。</li>
-<li>禁用 apptracker 进行性能测试。</li>
+<li>将trim和boost的调试级别提高到20以上。</li>
+<li>将trim整块代码放入单独的调试模块中。</li>
+<li>禁用apptracker进行性能测试。</li>
 <li>优化删除操作，包括扫描、预取和预加载。</li>
 <li>增加并发回填以提升性能。</li>
-<li>进行实验以确定是否需要增加 max backfills。</li>
-<li>优化 BlueStore 缓存，包括避免重复缓存和缓存旋转。</li>
+<li>进行实验以确定是否需要增加max backfills。</li>
+<li>优化BlueStore缓存，包括避免重复缓存和缓存旋转。</li>
 <li>在硅谷进行性能测试，并设置持续性能基准测试。</li>
-<li>使用 Jenkins 和 GitHub 进行集成，并发布测试结果。</li>
-<li>使用 GitHub API 进行结果发布。</li>
+<li>使用Jenkins和GitHub进行集成，并发布测试结果。</li>
+<li>使用GitHub API进行结果发布。</li>
 <li>确定性能测试标签和回归检测的阈值。</li>
-<li>使用 Intel 提供的新 Officalis 集群进行测试。</li>
-<li>将节点迁移到 Jenkins 以进行性能回归测试。</li>
-<li>将高效能节点用于 PR 测试。</li>
+<li>使用Intel提供的新Officalis集群进行测试。</li>
+<li>将节点迁移到Jenkins以进行性能回归测试。</li>
+<li>将高效能节点用于PR测试。</li>
 </ul>
 <p><strong>后续行动计划</strong>：</p>
 <ul>
-<li>进行 trim 和 boost 调试级别调整的测试。</li>
-<li>进行禁用 apptracker 和优化删除操作的测试。</li>
-<li>进行 steno SD 或 SDHC 卡的恢复最大活跃数和 max backfills
-的实验。</li>
-<li>优化 BlueStore 缓存。</li>
+<li>进行trim和boost调试级别调整的测试。</li>
+<li>进行禁用apptracker和优化删除操作的测试。</li>
+<li>进行steno SD或SDHC卡的恢复最大活跃数和max backfills的实验。</li>
+<li>优化BlueStore缓存。</li>
 <li>设置持续性能基准测试。</li>
 <li>完成 Jenkins 和 GitHub 的集成。</li>
 <li>进行性能测试标签和回归检测的测试。</li>
-<li>准备 Intel 提供的新 Officalis 集群。</li>
+<li>准备Intel提供的新Officalis集群。</li>
 <li>将节点迁移到 Jenkins。</li>
 <li>将高效能节点用于 PR 测试。</li>
 </ul>
+<p>[改进后的中文总结内容结束]</p>
 
         </div>
 
@@ -275,6 +277,8 @@ Orlando, Kiki Foo, Radek 等</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Jenkins/" rel="tag">Jenkins</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack/" rel="tag">OpenStack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rados/" rel="tag">Rados</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -286,7 +290,7 @@ Orlando, Kiki Foo, Radek 等</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/06/28/2019-06-27_-_-_Ceph_Performance_Meeting/&title=《2019-06-27 :: Ceph Performance Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/06/28/2019-06-27_-_-_Ceph_Performance_Meeting/&title=《 2019-06-27 :: Ceph Performance Meeting 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -296,7 +300,7 @@ Orlando, Kiki Foo, Radek 等</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/06/28/2019-06-27_-_-_Ceph_Performance_Meeting/&title=《2019-06-27 :: Ceph Performance Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/06/28/2019-06-27_-_-_Ceph_Performance_Meeting/&title=《 2019-06-27 :: Ceph Performance Meeting 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -306,7 +310,7 @@ Orlando, Kiki Foo, Radek 等</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-06-27 :: Ceph Performance Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/06/28/2019-06-27_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 2019-06-27 :: Ceph Performance Meeting 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/06/28/2019-06-27_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -334,18 +338,18 @@ Orlando, Kiki Foo, Radek 等</p>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/06/28/2019-06-25_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/07/03/2019-07-02_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-06-25 :: Crimson SeaStor OSD Weekly Meeting</h4>
+        <h4 class="title">&#39;2019-07-02 :: Crimson SeaStor OSD Weekly Meeting&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/06/28/2019-06-24_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/06/28/2019-06-25_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-06-24:: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2019-06-25 :: Crimson SeaStor OSD Weekly Meeting&#39;</h4>
       </a>
     </div>
   
@@ -445,7 +449,7 @@ Orlando, Kiki Foo, Radek 等</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/06/28/2019-06-27_-_-_Ceph_Performance_Meeting/&title=《2019-06-27 :: Ceph Performance Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/06/28/2019-06-27_-_-_Ceph_Performance_Meeting/&title=《 2019-06-27 :: Ceph Performance Meeting 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -455,7 +459,7 @@ Orlando, Kiki Foo, Radek 等</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/06/28/2019-06-27_-_-_Ceph_Performance_Meeting/&title=《2019-06-27 :: Ceph Performance Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/06/28/2019-06-27_-_-_Ceph_Performance_Meeting/&title=《 2019-06-27 :: Ceph Performance Meeting 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -465,7 +469,7 @@ Orlando, Kiki Foo, Radek 等</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-06-27 :: Ceph Performance Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/06/28/2019-06-27_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 2019-06-27 :: Ceph Performance Meeting 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/06/28/2019-06-27_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

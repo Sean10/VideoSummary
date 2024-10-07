@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Tech Talk: Telemetry Dashboard | ceph视频总结 | youtube频道总结</title>
+    <title> Ceph Tech Talk: Telemetry Dashboard  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="问题: 如何通过telemetry.front.sepia链接访问开发者专用的crash dashboard？ 答案: 开发者需要通过启用sepia vpn来访问telemetry.front.sepia链接，进而搜索和查看crashes。">
+    <meta name="keywords" content="Ceph,Dashboard,Telemetry,Crash Reporting,Data Analysis">
+    <meta name="description" content="[改进后的中文总结内容] Ceph Tech Talk: Telemetry Dashboard 介绍了 Ceph 分布式存储系统的遥测功能，重点讨论了遥测数据收集、分析以及如何通过仪表板进行可视化展示。 主要内容包括：  遥测概述：Ceph 遥测允许集群自动收集匿名数据，包括配置、性能等，这些数据在公共仪表板上聚合展示，详细数据则在私有仪表板上提供。用户需明确同意许可协议才能启用遥测。 遥测数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Tech Talk: Telemetry Dashboard">
+<meta property="og:title" content=" Ceph Tech Talk: Telemetry Dashboard ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="问题: 如何通过telemetry.front.sepia链接访问开发者专用的crash dashboard？ 答案: 开发者需要通过启用sepia vpn来访问telemetry.front.sepia链接，进而搜索和查看crashes。">
+<meta property="og:description" content="[改进后的中文总结内容] Ceph Tech Talk: Telemetry Dashboard 介绍了 Ceph 分布式存储系统的遥测功能，重点讨论了遥测数据收集、分析以及如何通过仪表板进行可视化展示。 主要内容包括：  遥测概述：Ceph 遥测允许集群自动收集匿名数据，包括配置、性能等，这些数据在公共仪表板上聚合展示，详细数据则在私有仪表板上提供。用户需明确同意许可协议才能启用遥测。 遥测数据">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-05-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Dashboard">
+<meta property="article:tag" content="Telemetry">
+<meta property="article:tag" content="Crash Reporting">
+<meta property="article:tag" content="Data Analysis">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Tech Talk: Telemetry Dashboard</div>
+        <div class="flex-col header-title ellipsis"> Ceph Tech Talk: Telemetry Dashboard </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Tech Talk: Telemetry Dashboard</h1>
+        <h1 class="title"> Ceph Tech Talk: Telemetry Dashboard </h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-05-05T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Tech Talk: Telemetry Dashboard</h1>
+        <h1 class="post-card-title"> Ceph Tech Talk: Telemetry Dashboard </h1>
         <div class="post-meta">
             <time class="post-time" title="2022-05-06 00:00:00" datetime="2022-05-05T16:00:00.000Z"  itemprop="datePublished">2022-05-06</time>
 
@@ -178,12 +183,31 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <ul>
-<li><strong>问题</strong>:
-如何通过telemetry.front.sepia链接访问开发者专用的crash dashboard？</li>
-<li><strong>答案</strong>: 开发者需要通过启用sepia
-vpn来访问telemetry.front.sepia链接，进而搜索和查看crashes。</li>
-</ul>
+            <p>[改进后的中文总结内容]</p>
+<p>Ceph Tech Talk: Telemetry Dashboard 介绍了 Ceph
+分布式存储系统的遥测功能，重点讨论了遥测数据收集、分析以及如何通过仪表板进行可视化展示。</p>
+<p><strong>主要内容包括</strong>：</p>
+<ol type="1">
+<li><p><strong>遥测概述</strong>：Ceph
+遥测允许集群自动收集匿名数据，包括配置、性能等，这些数据在公共仪表板上聚合展示，详细数据则在私有仪表板上提供。用户需明确同意许可协议才能启用遥测。</p></li>
+<li><p><strong>遥测数据类型</strong>：遥测报告分为多个通道，包括基本通道、崩溃通道、设备通道、标识通道和性能通道。每个通道提供不同类型的信息，用户可以根据需要启用或禁用。</p></li>
+<li><p><strong>隐私保护</strong>：Ceph
+遥测非常重视用户隐私，收集的数据不包含任何敏感或标识信息，例如池名称、主机名称、对象名称或内容。所有数据都进行匿名化处理。</p></li>
+<li><p><strong>开发者利益</strong>：遥测数据帮助开发者了解 Ceph
+的实际使用情况、版本更新速度、用户部署的硬盘和 SSD
+模型等信息，有助于改进产品设计和解决新问题。</p></li>
+<li><p><strong>用户利益</strong>：用户可以通过遥测数据验证他们的安装，了解常见的部署模式，预防设备故障，并通过提供智能数据来帮助改进产品。</p></li>
+<li><p><strong>遥测架构</strong>：遥测数据由集群中的管理器收集，然后发送到遥测后端，后端由
+Apache 服务器、PostgreSQL 数据库和 Grafana 实例组成。</p></li>
+<li><p><strong>崩溃报告</strong>：遥测数据中的崩溃通道提供原始崩溃报告，包括崩溃
+ID、进程类型、版本、堆栈跟踪等信息。崩溃处理器对这些报告进行分析，生成签名并更新数据库。</p></li>
+<li><p><strong>成功案例</strong>：遥测数据帮助开发者发现和修复了多个问题，例如文件存储的弃用决策、RBD
+镜像部署的规模问题等。</p></li>
+<li><p><strong>改进方向</strong>：Ceph
+团队正在努力改进崩溃报告的签名生成和去重，以更好地帮助开发者解决问题。</p></li>
+</ol>
+<p><strong>标签</strong>： - Ceph - Telemetry - Dashboard - Data
+Analysis - Crash Reporting</p>
 
         </div>
 
@@ -214,6 +238,8 @@ vpn来访问telemetry.front.sepia链接，进而搜索和查看crashes。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crash-Reporting/" rel="tag">Crash Reporting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Dashboard/" rel="tag">Dashboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Data-Analysis/" rel="tag">Data Analysis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Telemetry/" rel="tag">Telemetry</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -225,7 +251,7 @@ vpn来访问telemetry.front.sepia链接，进而搜索和查看crashes。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/&title=《Ceph Tech Talk: Telemetry Dashboard》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/&title=《 Ceph Tech Talk: Telemetry Dashboard 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -235,7 +261,7 @@ vpn来访问telemetry.front.sepia链接，进而搜索和查看crashes。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/&title=《Ceph Tech Talk: Telemetry Dashboard》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/&title=《 Ceph Tech Talk: Telemetry Dashboard 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -245,7 +271,7 @@ vpn来访问telemetry.front.sepia链接，进而搜索和查看crashes。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Tech Talk: Telemetry Dashboard》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph Tech Talk: Telemetry Dashboard 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -275,7 +301,7 @@ vpn来访问telemetry.front.sepia链接，进而搜索和查看crashes。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/05/06/Ceph_Performance_Meeting_2022-05-05/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2022-05-05</h4>
+        <h4 class="title">Ceph性能会议 2022-05-05</h4>
       </a>
     </div>
   
@@ -384,7 +410,7 @@ vpn来访问telemetry.front.sepia链接，进而搜索和查看crashes。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/&title=《Ceph Tech Talk: Telemetry Dashboard》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/&title=《 Ceph Tech Talk: Telemetry Dashboard 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -394,7 +420,7 @@ vpn来访问telemetry.front.sepia链接，进而搜索和查看crashes。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/&title=《Ceph Tech Talk: Telemetry Dashboard》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/&title=《 Ceph Tech Talk: Telemetry Dashboard 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -404,7 +430,7 @@ vpn来访问telemetry.front.sepia链接，进而搜索和查看crashes。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Tech Talk: Telemetry Dashboard》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph Tech Talk: Telemetry Dashboard 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

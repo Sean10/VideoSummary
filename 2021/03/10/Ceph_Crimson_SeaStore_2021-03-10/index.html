@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Crimson/SeaStore  2021-03-10 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph Crimson/SeaStore 2021-03-10 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  上周工作回顾：  进行了一些清理工作，并继续处理客户端请求序列化测试。 与Shihan和Redec讨论了启动工作。 通过启动任务队列和线程（by pjid）改进了Alien Store性能，目前仍在审查第二部分PR。 调试了NPD的段错误报告，发现是由垃圾收集引起的RB树混乱，已找到Sum已修复的相关bug。 开发了一种方法来重现Chutney观察到的行为，发现LBA管理器的">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,单元测试,垃圾收集">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  上周工作回顾：  完成了一些清理工作，并继续处理客户端请求序列化测试。 与Shihan和Redec讨论了启动工作，并改进了Alien Store性能。 调试了NPD的段错误报告，发现由垃圾收集引起的RB树混乱，并修复了相关bug。 开发了一种方法来重现Chutney观察到的行为，修复了LBA管理器的小bug。 测试了PG流水线并行性PR，并阅读了关于">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Crimson&#x2F;SeaStore  2021-03-10">
+<meta property="og:title" content="Ceph Crimson&#x2F;SeaStore 2021-03-10">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  上周工作回顾：  进行了一些清理工作，并继续处理客户端请求序列化测试。 与Shihan和Redec讨论了启动工作。 通过启动任务队列和线程（by pjid）改进了Alien Store性能，目前仍在审查第二部分PR。 调试了NPD的段错误报告，发现是由垃圾收集引起的RB树混乱，已找到Sum已修复的相关bug。 开发了一种方法来重现Chutney观察到的行为，发现LBA管理器的">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  上周工作回顾：  完成了一些清理工作，并继续处理客户端请求序列化测试。 与Shihan和Redec讨论了启动工作，并改进了Alien Store性能。 调试了NPD的段错误报告，发现由垃圾收集引起的RB树混乱，并修复了相关bug。 开发了一种方法来重现Chutney观察到的行为，修复了LBA管理器的小bug。 测试了PG流水线并行性PR，并阅读了关于">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-09T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-03-09T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="单元测试">
+<meta property="article:tag" content="垃圾收集">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Crimson/SeaStore  2021-03-10</div>
+        <div class="flex-col header-title ellipsis">Ceph Crimson/SeaStore 2021-03-10</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Crimson/SeaStore  2021-03-10</h1>
+        <h1 class="title">Ceph Crimson/SeaStore 2021-03-10</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-03-09T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他事项</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">2.</span> <span class="post-toc-text">结束语</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他事项</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Crimson/SeaStore  2021-03-10</h1>
+        <h1 class="post-card-title">Ceph Crimson/SeaStore 2021-03-10</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-03-10 00:00:00" datetime="2021-03-09T16:00:00.000Z"  itemprop="datePublished">2021-03-10</time>
 
@@ -185,18 +190,17 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
 <li><strong>上周工作回顾</strong>：
 <ul>
-<li>进行了一些清理工作，并继续处理客户端请求序列化测试。</li>
-<li>与Shihan和Redec讨论了启动工作。</li>
-<li>通过启动任务队列和线程（by pjid）改进了Alien
-Store性能，目前仍在审查第二部分PR。</li>
-<li>调试了NPD的段错误报告，发现是由垃圾收集引起的RB树混乱，已找到Sum已修复的相关bug。</li>
-<li>开发了一种方法来重现Chutney观察到的行为，发现LBA管理器的下界或查找实现中的小bug，并修复了垃圾收集器使用日志游标的方式。</li>
-<li>测试了PG流水线并行性PR，修复了几个相关bug，并阅读了关于Sistor的源代码和文档。</li>
+<li>完成了一些清理工作，并继续处理客户端请求序列化测试。</li>
+<li>与Shihan和Redec讨论了启动工作，并改进了Alien Store性能。</li>
+<li>调试了NPD的段错误报告，发现由垃圾收集引起的RB树混乱，并修复了相关bug。</li>
+<li>开发了一种方法来重现Chutney观察到的行为，修复了LBA管理器的小bug。</li>
+<li>测试了PG流水线并行性PR，并阅读了关于Sistor的源代码和文档。</li>
 <li>解决了Honor 3中的问题，并支持了存储中的多设备。</li>
 </ul></li>
 <li><strong>本周计划</strong>：
@@ -211,7 +215,7 @@ Manager接口的全面支持。</li>
 <ul>
 <li><strong>单元测试的改进</strong>：
 <ul>
-<li>讨论了增加单元测试的必要性，特别是对Ethel Tree Node
+<li>讨论了增加单元测试的必要性，尤其是对Ethel Tree Node
 Manager接口的全面测试。</li>
 <li>讨论了如何修改单元测试以支持两种后端运行，以确保测试的全面性和可靠性。</li>
 </ul></li>
@@ -253,12 +257,9 @@ Manager接口的单元测试，以确保代码的稳定性和可靠性。</li>
 </ul>
 <h4 id="其他事项">其他事项</h4>
 <ul>
-<li><strong>讨论了Ethel
-Tree代码的复杂性</strong>，并提出了增加单元测试的必要性。</li>
-<li><strong>讨论了垃圾收集器和段错误问题的根本原因</strong>，并提出了增加超时机制的解决方案。</li>
+<li>讨论了Ethel Tree代码的复杂性，并提出了增加单元测试的必要性。</li>
+<li>讨论了垃圾收集器和段错误问题的根本原因，并提出了增加超时机制的解决方案。</li>
 </ul>
-<h3 id="结束语">结束语</h3>
-<p>会议结束时，所有决定的事项和后续行动计划都已明确，团队成员将继续推进各自的工作，并确保代码的稳定性和可靠性。感谢所有参与者的贡献，期待下次会议的进展。</p>
 
         </div>
 
@@ -289,6 +290,8 @@ Tree代码的复杂性</strong>，并提出了增加单元测试的必要性。<
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" rel="tag">单元测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/" rel="tag">垃圾收集</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -300,7 +303,7 @@ Tree代码的复杂性</strong>，并提出了增加单元测试的必要性。<
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/&title=《Ceph Crimson/SeaStore  2021-03-10》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/&title=《Ceph Crimson/SeaStore 2021-03-10》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -310,7 +313,7 @@ Tree代码的复杂性</strong>，并提出了增加单元测试的必要性。<
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/&title=《Ceph Crimson/SeaStore  2021-03-10》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/&title=《Ceph Crimson/SeaStore 2021-03-10》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -320,7 +323,7 @@ Tree代码的复杂性</strong>，并提出了增加单元测试的必要性。<
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore  2021-03-10》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore 2021-03-10》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -350,7 +353,7 @@ Tree代码的复杂性</strong>，并提出了增加单元测试的必要性。<
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Code Walkthroughs: Librbd Part 2</h4>
+        <h4 class="title">&#39;Ceph Code Walkthroughs: Librbd Part 2&#39;</h4>
       </a>
     </div>
   
@@ -459,7 +462,7 @@ Tree代码的复杂性</strong>，并提出了增加单元测试的必要性。<
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/&title=《Ceph Crimson/SeaStore  2021-03-10》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/&title=《Ceph Crimson/SeaStore 2021-03-10》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -469,7 +472,7 @@ Tree代码的复杂性</strong>，并提出了增加单元测试的必要性。<
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/&title=《Ceph Crimson/SeaStore  2021-03-10》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/&title=《Ceph Crimson/SeaStore 2021-03-10》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -479,7 +482,7 @@ Tree代码的复杂性</strong>，并提出了增加单元测试的必要性。<
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore  2021-03-10》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore 2021-03-10》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

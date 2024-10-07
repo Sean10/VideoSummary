@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员] 会议主题： Prometheus 监控工具介绍与Ceph应用 会议内容：  Prometheus 简介：  Prometheus 由SoundCloud于2012年开发，受Google内部项目Barkman启发。 Prometheus 是CNCF会员项目，广泛用于高维数值数据监控，不适用于文本指标分析。 Prometheus">
+    <meta name="keywords" content="Ceph,Monitoring,Storage,Prometheus,Distributed Systems">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员] 会议主题： Prometheus监控工具介绍与Ceph应用 会议内容：  Prometheus 简介：  Prometheus由SoundCloud于2012年开发，是CNCF会员项目，适用于高维数值数据监控。 Prometheus基于拉取模式，从端点拉取指标，具有可扩展性。 Prometheus包">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Monitoring Ceph with Prometheus - Jan Fajerski, SUSE">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Monitoring_Ceph_with_Prometheus_-_Jan_Fajerski_SUSE/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员] 会议主题： Prometheus 监控工具介绍与Ceph应用 会议内容：  Prometheus 简介：  Prometheus 由SoundCloud于2012年开发，受Google内部项目Barkman启发。 Prometheus 是CNCF会员项目，广泛用于高维数值数据监控，不适用于文本指标分析。 Prometheus">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员] 会议主题： Prometheus监控工具介绍与Ceph应用 会议内容：  Prometheus 简介：  Prometheus由SoundCloud于2012年开发，是CNCF会员项目，适用于高维数值数据监控。 Prometheus基于拉取模式，从端点拉取指标，具有可扩展性。 Prometheus包">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Monitoring">
+<meta property="article:tag" content="Storage">
+<meta property="article:tag" content="Prometheus">
+<meta property="article:tag" content="Distributed Systems">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,66 +183,51 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p><strong>会议纪要</strong></p>
 <p><strong>会议时间</strong>： [请填写会议时间]</p>
 <p><strong>参会人员</strong>： [请填写参会人员]</p>
-<p><strong>会议主题</strong>： Prometheus 监控工具介绍与Ceph应用</p>
+<p><strong>会议主题</strong>： Prometheus监控工具介绍与Ceph应用</p>
 <p><strong>会议内容</strong>：</p>
 <ul>
 <li><strong>Prometheus 简介</strong>：
 <ul>
-<li>Prometheus
-由SoundCloud于2012年开发，受Google内部项目Barkman启发。</li>
-<li>Prometheus
-是CNCF会员项目，广泛用于高维数值数据监控，不适用于文本指标分析。</li>
-<li>Prometheus 基于拉取模式，从端点拉取指标，具有可扩展性。</li>
-<li>Prometheus 包含强大的查询语言PromQL，具有丰富的功能。</li>
-<li>Prometheus 的关键组件包括：
-<ul>
-<li><strong>Exporter</strong>：
-暴露指标的组件，如Ceph的manager模块。</li>
-<li><strong>Alert Manager</strong>： 负责处理警报，支持集群。</li>
-</ul></li>
+<li>Prometheus由SoundCloud于2012年开发，是CNCF会员项目，适用于高维数值数据监控。</li>
+<li>Prometheus基于拉取模式，从端点拉取指标，具有可扩展性。</li>
+<li>Prometheus包含强大的查询语言PromQL，支持标签匹配、算术运算、聚合操作等。</li>
+<li>Prometheus的关键组件包括Exporter（暴露指标的组件）和Alert
+Manager（处理警报的组件）。</li>
 </ul></li>
 <li><strong>Prometheus 配置</strong>：
 <ul>
-<li>Prometheus 使用YAML文件进行配置，包括Scrape配置、Service
+<li>Prometheus使用YAML文件进行配置，包括Scrape配置、Service
 Discovery等。</li>
 <li>Service Discovery支持静态配置、Kubernetes、文件SD等。</li>
 <li>监控应具备弹性和可扩展性，可使用多个Prometheus实例进行水平扩展。</li>
 </ul></li>
 <li><strong>Prometheus 查询语言 (PromQL)</strong>：
 <ul>
-<li>PromQL
-是Prometheus的查询语言，支持标签匹配、算术运算、聚合操作等。</li>
-<li>PromQL 具有以下类型：
-<ul>
-<li><strong>瞬时向量</strong>： 每个指标在特定时间戳的值。</li>
-<li><strong>范围向量</strong>： 每个指标在时间范围内的值。</li>
-</ul></li>
-<li>示例查询：
-<ul>
-<li>计算文件系统使用率。</li>
-<li>计算指标每秒速率。</li>
-<li>联合不同Exporter的指标。</li>
-<li>使用预测线性进行趋势分析。</li>
-</ul></li>
+<li>PromQL是Prometheus的查询语言，支持瞬时向量、范围向量等类型。</li>
+<li>示例查询包括计算文件系统使用率、计算指标每秒速率、联合不同Exporter的指标等。</li>
 </ul></li>
 <li><strong>Prometheus 警报</strong>：
 <ul>
-<li>Prometheus 警报使用PromQL表达式，支持条件、持续时间、标签等。</li>
-<li>Prometheus 提供了默认的警报和仪表板，用户可以根据需求进行定制。</li>
+<li>Prometheus警报使用PromQL表达式，支持条件、持续时间、标签等。</li>
+<li>Prometheus提供了默认的警报和仪表板，用户可以根据需求进行定制。</li>
+</ul></li>
+<li><strong>Ceph监控与Prometheus结合</strong>：
+<ul>
+<li>Ceph的manager模块可以作为Exporter使用，暴露Ceph集群的指标。</li>
+<li>Prometheus可以监控Ceph集群的各种指标，如存储使用率、性能、可用性等。</li>
+<li>用户可以根据需要添加自定义警报和仪表板。</li>
 </ul></li>
 </ul>
 <p><strong>行动计划</strong>：</p>
-<ul>
-<li>[请填写行动计划，例如：]
 <ul>
 <li>推广Prometheus在Ceph集群中的应用。</li>
 <li>提供Prometheus配置和查询语言的文档。</li>
 <li>开发Ceph的Prometheus Exporter。</li>
 <li>收集用户反馈，改进Prometheus功能。</li>
-</ul></li>
 </ul>
 <p><strong>会议总结</strong>：</p>
 <p>本次会议介绍了Prometheus监控工具及其在Ceph集群中的应用。Prometheus具有强大的功能和易用性，是Ceph集群监控的理想选择。</p>
@@ -271,6 +261,8 @@ Discovery等。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Systems/" rel="tag">Distributed Systems</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Monitoring/" rel="tag">Monitoring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Prometheus/" rel="tag">Prometheus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage/" rel="tag">Storage</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -332,16 +324,16 @@ Discovery等。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2019/05/24/Messenger_V2_-_The_New_Ceph_Wire_Protocol_-_Ricardo_Dias_SUSE_Linux/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Messenger V2: The New Ceph Wire Protocol - Ricardo Dias, SUSE Linux</h4>
+        <h4 class="title">&#39;Messenger V2: The New Ceph Wire Protocol - Ricardo Dias, SUSE Linux&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Object_WORM_Feature_in_Ceph_Rados_Gateway_-_Zhang_Shaowen/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Object_Bucket_Provisioning_in_Rook-Ceph_-_Jonathan_Cope_Jeff_Vance_Red_Hat/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Object WORM Feature in Ceph Rados Gateway - Zhang Shaowen</h4>
+        <h4 class="title">Object Bucket Provisioning in Rook-Ceph - Jonathan Cope &amp; Jeff Vance, Red Hat</h4>
       </a>
     </div>
   

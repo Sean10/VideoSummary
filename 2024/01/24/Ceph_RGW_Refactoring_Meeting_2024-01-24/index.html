@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph RGW Refactoring Meeting 2024-01-24 | ceph视频总结 | youtube频道总结</title>
+    <title> Ceph RGW 重构会议纪要 2024-01-24  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：  用户对Topic的授权问题 Topic迁移问题  讨论内容： 1. 用户对Topic的授权问题  问题描述：当前系统中，任何用户都可以覆盖其他用户的Topic，没有进行用户身份验证。 解决方案：  引入全局配置参数，当没有设置策略时，不进行任何策略检查。 建议保持向后兼容性，通过文档说明用户需要设置策略以防止这种情况。 对于新系统，可以设置全局标志为true，强制执行正确的">
+    <meta name="keywords" content="Ceph,RGW,Ceph RGW,Topic 授权,Topic 迁移">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph RGW的Topic授权和Topic迁移问题。 Topic授权问题： - 问题描述：当前系统允许任何用户覆盖其他用户的Topic，缺乏用户身份验证。 - 解决方案： - 引入全局配置参数，当没有设置策略时，不进行任何策略检查。 - 保持向后兼容性，通过文档说明用户需要设置策略以防止未授权覆盖。 - 对于新系统，可以设置全局标志为true，强制执行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph RGW Refactoring Meeting 2024-01-24">
+<meta property="og:title" content=" Ceph RGW 重构会议纪要 2024-01-24 ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2024/01/24/Ceph_RGW_Refactoring_Meeting_2024-01-24/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：  用户对Topic的授权问题 Topic迁移问题  讨论内容： 1. 用户对Topic的授权问题  问题描述：当前系统中，任何用户都可以覆盖其他用户的Topic，没有进行用户身份验证。 解决方案：  引入全局配置参数，当没有设置策略时，不进行任何策略检查。 建议保持向后兼容性，通过文档说明用户需要设置策略以防止这种情况。 对于新系统，可以设置全局标志为true，强制执行正确的">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph RGW的Topic授权和Topic迁移问题。 Topic授权问题： - 问题描述：当前系统允许任何用户覆盖其他用户的Topic，缺乏用户身份验证。 - 解决方案： - 引入全局配置参数，当没有设置策略时，不进行任何策略检查。 - 保持向后兼容性，通过文档说明用户需要设置策略以防止未授权覆盖。 - 对于新系统，可以设置全局标志为true，强制执行">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-01-24T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Ceph RGW">
+<meta property="article:tag" content="Topic 授权">
+<meta property="article:tag" content="Topic 迁移">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph RGW Refactoring Meeting 2024-01-24</div>
+        <div class="flex-col header-title ellipsis"> Ceph RGW 重构会议纪要 2024-01-24 </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph RGW Refactoring Meeting 2024-01-24</h1>
+        <h1 class="title"> Ceph RGW 重构会议纪要 2024-01-24 </h1>
         <h5 class="subtitle">
             
                 <time datetime="2024-01-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论内容：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E7%94%A8%E6%88%B7%E5%AF%B9topic%E7%9A%84%E6%8E%88%E6%9D%83%E9%97%AE%E9%A2%98"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">1. 用户对Topic的授权问题</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#topic%E8%BF%81%E7%A7%BB%E9%97%AE%E9%A2%98"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2. Topic迁移问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议总结：</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_RGW_Refactoring_Meeting_2024-01-24"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph RGW Refactoring Meeting 2024-01-24</h1>
+        <h1 class="post-card-title"> Ceph RGW 重构会议纪要 2024-01-24 </h1>
         <div class="post-meta">
             <time class="post-time" title="2024-01-24 00:00:00" datetime="2024-01-23T16:00:00.000Z"  itemprop="datePublished">2024-01-24</time>
 
@@ -185,59 +183,34 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题">会议主题：</h4>
-<ol type="1">
-<li>用户对Topic的授权问题</li>
-<li>Topic迁移问题</li>
-</ol>
-<h4 id="讨论内容">讨论内容：</h4>
-<h5 id="用户对topic的授权问题">1. 用户对Topic的授权问题</h5>
-<ul>
-<li><strong>问题描述</strong>：当前系统中，任何用户都可以覆盖其他用户的Topic，没有进行用户身份验证。</li>
-<li><strong>解决方案</strong>：
-<ul>
-<li>引入全局配置参数，当没有设置策略时，不进行任何策略检查。</li>
-<li>建议保持向后兼容性，通过文档说明用户需要设置策略以防止这种情况。</li>
-<li>对于新系统，可以设置全局标志为true，强制执行正确的授权行为。</li>
-<li>对于Topic的创建，无论全局标志如何，只要用户存在，就进行策略检查。</li>
-<li>对于发布权限，依赖全局参数，默认允许发布，但管理员可以更改标志以强制执行发布策略。</li>
-</ul></li>
-<li><strong>决定事项</strong>：
-<ul>
-<li>对于Topic的创建和覆盖，进行严格的策略检查。</li>
-<li>发布权限依赖全局参数，默认允许发布。</li>
-<li>需要编写详细的发布说明，以通知用户这一变更。</li>
-</ul></li>
-</ul>
-<h5 id="topic迁移问题">2. Topic迁移问题</h5>
-<ul>
-<li><strong>问题描述</strong>：讨论是否在rgw启动或领域重载时进行迁移，还是作为外部工具进行。</li>
-<li><strong>解决方案</strong>：
-<ul>
-<li>建议在启动时进行迁移，以减少对用户的影响。</li>
-<li>对于通知迁移，建议懒惰迁移，即在访问时进行迁移。</li>
-<li>需要处理多站点配置中的元数据一致性问题。</li>
-</ul></li>
-<li><strong>决定事项</strong>：
-<ul>
-<li>在启动时进行Topic迁移。</li>
-<li>对于通知迁移，采用懒惰迁移策略，并在元数据主站点进行。</li>
-<li>需要构建迁移逻辑以容忍现有的元数据，避免冲突。</li>
-</ul></li>
-</ul>
-<h4 id="后续行动计划">后续行动计划：</h4>
-<ul>
-<li>编写详细的发布说明，通知用户关于Topic授权和迁移的变更。</li>
-<li>更新现有Tracker问题，根据讨论结果调整PR。</li>
-<li>考虑构建一个外部工具，帮助用户在升级前手动同步非主站点的Topic和通知配置。</li>
-</ul>
-<h4 id="会议总结">会议总结：</h4>
-<p>会议讨论了关于Topic授权和迁移的两个主要问题，并就如何保持向后兼容性、如何进行迁移以及如何处理多站点配置中的元数据一致性问题达成了共识。后续将根据会议决定编写发布说明，并考虑构建外部工具以帮助用户进行迁移。</p>
-<hr />
-<p><strong>参会人员</strong>：[参会人员名单]
-<strong>会议时间</strong>：[会议日期和时间]
-<strong>会议记录人</strong>：[记录人姓名]</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph RGW的Topic授权和Topic迁移问题。</p>
+<p><strong>Topic授权问题</strong>： -
+<strong>问题描述</strong>：当前系统允许任何用户覆盖其他用户的Topic，缺乏用户身份验证。
+- <strong>解决方案</strong>： -
+引入全局配置参数，当没有设置策略时，不进行任何策略检查。 -
+保持向后兼容性，通过文档说明用户需要设置策略以防止未授权覆盖。 -
+对于新系统，可以设置全局标志为true，强制执行正确的授权行为。 -
+对于Topic的创建，无论全局标志如何，只要用户存在，就进行策略检查。 -
+对于发布权限，依赖全局参数，默认允许发布，但管理员可以更改标志以强制执行发布策略。
+- <strong>决定事项</strong>： -
+对于Topic的创建和覆盖，进行严格的策略检查。 -
+发布权限依赖全局参数，默认允许发布。 -
+需要编写详细的发布说明，以通知用户这一变更。</p>
+<p><strong>Topic迁移问题</strong>： -
+<strong>问题描述</strong>：讨论是否在rgw启动或领域重载时进行迁移，还是作为外部工具进行。
+- <strong>解决方案</strong>： -
+建议在启动时进行迁移，以减少对用户的影响。 -
+对于通知迁移，建议懒惰迁移，即在访问时进行迁移。 -
+需要处理多站点配置中的元数据一致性问题。 - <strong>决定事项</strong>： -
+在启动时进行Topic迁移。 -
+对于通知迁移，采用懒惰迁移策略，并在元数据主站点进行。 -
+需要构建迁移逻辑以容忍现有的元数据，避免冲突。</p>
+<p><strong>后续行动计划</strong>： -
+编写详细的发布说明，通知用户关于Topic授权和迁移的变更。 -
+更新现有Tracker问题，根据讨论结果调整PR。 -
+考虑构建一个外部工具，帮助用户在升级前手动同步非主站点的Topic和通知配置。</p>
+<p>本次会议就Topic授权和迁移问题达成了共识，并确定了后续行动计划。</p>
 
         </div>
 
@@ -268,6 +241,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-RGW/" rel="tag">Ceph RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Topic-%E6%8E%88%E6%9D%83/" rel="tag">Topic 授权</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Topic-%E8%BF%81%E7%A7%BB/" rel="tag">Topic 迁移</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -279,7 +254,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/01/24/Ceph_RGW_Refactoring_Meeting_2024-01-24/&title=《Ceph RGW Refactoring Meeting 2024-01-24》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/01/24/Ceph_RGW_Refactoring_Meeting_2024-01-24/&title=《 Ceph RGW 重构会议纪要 2024-01-24 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -289,7 +264,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/01/24/Ceph_RGW_Refactoring_Meeting_2024-01-24/&title=《Ceph RGW Refactoring Meeting 2024-01-24》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/01/24/Ceph_RGW_Refactoring_Meeting_2024-01-24/&title=《 Ceph RGW 重构会议纪要 2024-01-24 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -299,7 +274,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2024-01-24》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/01/24/Ceph_RGW_Refactoring_Meeting_2024-01-24/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph RGW 重构会议纪要 2024-01-24 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/01/24/Ceph_RGW_Refactoring_Meeting_2024-01-24/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -329,7 +304,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2024/02/01/Ceph_RGW_Refactoring_Meeting_2024-01-31/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2024-01-31</h4>
+        <h4 class="title">Ceph RGW 重构会议 2024-01-31</h4>
       </a>
     </div>
   
@@ -438,7 +413,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/01/24/Ceph_RGW_Refactoring_Meeting_2024-01-24/&title=《Ceph RGW Refactoring Meeting 2024-01-24》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/01/24/Ceph_RGW_Refactoring_Meeting_2024-01-24/&title=《 Ceph RGW 重构会议纪要 2024-01-24 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -448,7 +423,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/01/24/Ceph_RGW_Refactoring_Meeting_2024-01-24/&title=《Ceph RGW Refactoring Meeting 2024-01-24》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/01/24/Ceph_RGW_Refactoring_Meeting_2024-01-24/&title=《 Ceph RGW 重构会议纪要 2024-01-24 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -458,7 +433,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2024-01-24》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/01/24/Ceph_RGW_Refactoring_Meeting_2024-01-24/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph RGW 重构会议纪要 2024-01-24 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/01/24/Ceph_RGW_Refactoring_Meeting_2024-01-24/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

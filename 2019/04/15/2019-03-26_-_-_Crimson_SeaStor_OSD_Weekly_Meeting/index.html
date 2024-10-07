@@ -14,23 +14,28 @@
     
     
     
-    <title>2019-03-26:: Crimson SeaStor OSD Weekly Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>  2019-03-26:: Crimson SeaStor OSD Weekly Meeting   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议主题： Ceph 分布式存储系统性能优化与 crimson OSD 项目的进展讨论 关键细节：  Crimson OSD 项目：  项目进展：已完成初步的 crimson OSD 实现，但仍有部分功能未完善。 性能测试：对比 crimson OSD 与经典 OSD 的性能，发现 crimson OSD 在某些场景下性">
+    <meta name="keywords" content="Ceph,OSD,Distributed Storage,Performance Optimization,Crimson OSD">
+    <meta name="description" content="改进后的中文总结内容 在2019年3月26日的Ceph Crimson SeaStor OSD每周会议上，研发人员和内容审核专家讨论了Ceph分布式存储系统性能优化与Crimson OSD项目的进展。以下是对会议内容的总结： 会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议主题： Ceph 分布式存储系统性能优化与 crimson OSD 项目的进展讨论 关键细节">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-03-26:: Crimson SeaStor OSD Weekly Meeting">
+<meta property="og:title" content="  2019-03-26:: Crimson SeaStor OSD Weekly Meeting  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/04/15/2019-03-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议主题： Ceph 分布式存储系统性能优化与 crimson OSD 项目的进展讨论 关键细节：  Crimson OSD 项目：  项目进展：已完成初步的 crimson OSD 实现，但仍有部分功能未完善。 性能测试：对比 crimson OSD 与经典 OSD 的性能，发现 crimson OSD 在某些场景下性">
+<meta property="og:description" content="改进后的中文总结内容 在2019年3月26日的Ceph Crimson SeaStor OSD每周会议上，研发人员和内容审核专家讨论了Ceph分布式存储系统性能优化与Crimson OSD项目的进展。以下是对会议内容的总结： 会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议主题： Ceph 分布式存储系统性能优化与 crimson OSD 项目的进展讨论 关键细节">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-04-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-04-14T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="Crimson OSD">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-03-26:: Crimson SeaStor OSD Weekly Meeting</div>
+        <div class="flex-col header-title ellipsis">  2019-03-26:: Crimson SeaStor OSD Weekly Meeting  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-03-26:: Crimson SeaStor OSD Weekly Meeting</h1>
+        <h1 class="title">  2019-03-26:: Crimson SeaStor OSD Weekly Meeting  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-04-14T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,8 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议时间：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议主题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">关键细节：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">讨论的主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定的事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6ceph-%E7%9B%B8%E5%85%B3%E9%A2%86%E5%9F%9F%E8%8B%B1%E6%96%87%E5%8E%9F%E6%96%87%E5%85%B3%E9%94%AE%E8%AF%8D"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">计算机科学&#x2F;ceph
-相关领域英文原文关键词：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结内容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议纪要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议主题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">关键细节：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">讨论的主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">决定的事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">后续行动计划：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -169,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-03-26:: Crimson SeaStor OSD Weekly Meeting</h1>
+        <h1 class="post-card-title">  2019-03-26:: Crimson SeaStor OSD Weekly Meeting  </h1>
         <div class="post-meta">
             <time class="post-time" title="2019-04-15 00:00:00" datetime="2019-04-14T16:00:00.000Z"  itemprop="datePublished">2019-04-15</time>
 
@@ -186,7 +190,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <h3 id="改进后的中文总结内容">改进后的中文总结内容</h3>
+<p>在2019年3月26日的Ceph Crimson SeaStor
+OSD每周会议上，研发人员和内容审核专家讨论了Ceph分布式存储系统性能优化与Crimson
+OSD项目的进展。以下是对会议内容的总结：</p>
+<h4 id="会议纪要">会议纪要</h4>
 <h4 id="会议时间">会议时间：</h4>
 <p>[请填写会议时间]</p>
 <h4 id="参会人员">参会人员：</h4>
@@ -197,19 +205,19 @@
 <ul>
 <li><strong>Crimson OSD 项目</strong>：
 <ul>
-<li>项目进展：已完成初步的 crimson OSD 实现，但仍有部分功能未完善。</li>
-<li>性能测试：对比 crimson OSD 与经典 OSD 的性能，发现 crimson OSD
-在某些场景下性能更优，但需要进一步优化。</li>
-<li>优化方向：减少线程切换，提高指令缓存命中率，优化内存使用。</li>
-<li>下一步计划：完成 crimson OSD
+<li>已完成初步的 crimson OSD 实现，但部分功能尚未完善。</li>
+<li>性能测试显示，在某些场景下，crimson OSD 的性能优于经典
+OSD，但需要进一步优化。</li>
+<li>优化方向包括减少线程切换，提高指令缓存命中率，优化内存使用。</li>
+<li>下一步计划是完成 crimson OSD
 的全部功能，进行更全面的性能测试，并与经典 OSD 进行公平的比较。</li>
 </ul></li>
 <li><strong>经典 OSD 优化</strong>：
 <ul>
-<li>优化方向：提高 CPU 使用效率，减少内存占用。</li>
-<li>测试方法：使用 perf stat 工具进行性能分析，观察 CPU
+<li>优化目标为提高 CPU 使用效率和减少内存占用。</li>
+<li>使用 perf stat 工具进行性能分析，观察 CPU
 使用率、内存占用等指标。</li>
-<li>下一步计划：调整 placement group 的数量，提高经典 OSD
+<li>下一步计划是调整 placement group 的数量，提高经典 OSD
 的并行处理能力。</li>
 </ul></li>
 </ul>
@@ -238,35 +246,24 @@
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
-<li>[请填写后续行动计划，例如：]
-<ul>
 <li>Crimson OSD 项目负责人：完成 crimson OSD
 的全部功能，并进行性能测试。</li>
 <li>Classic OSD 项目负责人：调整 classic OSD 的 placement group
 数量，并进行性能测试。</li>
 <li>全体成员：关注 crimson OSD 和 classic OSD
 的性能优化工作，提供反馈和建议。</li>
-</ul></li>
 </ul>
-<h4 id="计算机科学ceph-相关领域英文原文关键词">计算机科学/ceph
-相关领域英文原文关键词：</h4>
+<p>会议中，与会者还讨论了以下关键点：</p>
 <ul>
-<li>crimson OSD</li>
-<li>classic OSD</li>
-<li>performance optimization</li>
-<li>profiling</li>
-<li>CPU usage</li>
-<li>memory usage</li>
-<li>placement group</li>
-<li>perf stat</li>
-<li>instruction cache</li>
-<li>data cache</li>
-<li>task switching</li>
-<li>reactor</li>
-<li>application queue</li>
-<li>staging</li>
-<li>benchmarking</li>
+<li>如何通过优化 crimson OSD 的解码阶段来提高性能。</li>
+<li>如何使用 perf stat 工具进行性能分析，并如何使用它来比较 crimson OSD
+和经典 OSD 的性能。</li>
+<li>如何通过调整 placement group 的数量来优化经典 OSD 的性能。</li>
+<li>如何在 crimson OSD 中使用应用程序队列来提高性能。</li>
 </ul>
+<p>会议强调了性能优化和 crimson OSD 项目的进展对 Ceph
+分布式存储系统的重要性。与会者决定采取进一步的行动，以提高 Ceph
+的性能和可靠性。</p>
 
         </div>
 
@@ -297,6 +294,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson-OSD/" rel="tag">Crimson OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -308,7 +307,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/15/2019-03-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《2019-03-26:: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/15/2019-03-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《  2019-03-26:: Crimson SeaStor OSD Weekly Meeting  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -318,7 +317,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/15/2019-03-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《2019-03-26:: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/15/2019-03-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《  2019-03-26:: Crimson SeaStor OSD Weekly Meeting  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -328,7 +327,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-03-26:: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/15/2019-03-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  2019-03-26:: Crimson SeaStor OSD Weekly Meeting  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/15/2019-03-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -356,9 +355,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/04/15/2019-03-14_-_-_Ceph_Performance_meeting/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/04/15/2019-03-13_-_-_Ceph_DocuBetter_meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-03-14 :: Ceph Performance meeting</h4>
+        <h4 class="title">&#39;2019-03-13 :: Ceph DocuBetter meeting&#39;</h4>
       </a>
     </div>
   
@@ -367,7 +366,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2019/04/15/2019-04-15_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-04-15:: Ceph Orchestration Meeting</h4>
+        <h4 class="title"> 2019-04-15:: Ceph Orchestration Meeting </h4>
       </a>
     </div>
   
@@ -467,7 +466,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/15/2019-03-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《2019-03-26:: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/15/2019-03-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《  2019-03-26:: Crimson SeaStor OSD Weekly Meeting  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -477,7 +476,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/15/2019-03-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《2019-03-26:: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/15/2019-03-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《  2019-03-26:: Crimson SeaStor OSD Weekly Meeting  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -487,7 +486,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-03-26:: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/15/2019-03-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  2019-03-26:: Crimson SeaStor OSD Weekly Meeting  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/15/2019-03-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

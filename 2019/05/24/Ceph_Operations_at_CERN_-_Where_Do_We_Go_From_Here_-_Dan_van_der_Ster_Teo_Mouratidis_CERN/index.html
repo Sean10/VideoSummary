@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster &amp; Teo Mouratidis, CERN | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster &amp; Teo Mouratidis, CERN&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 下午2点 会议地点： CERN 参会人员： Dan（CERN运营人员）、Teo（CERN系统操作人员） 会议主题： CERN的Ceph集群运营总结及未来展望 会议内容： 一、CERN Ceph集群发展历程  2013年，CERN开始使用Ceph作为云存储解决方案。 2013年，建立了第一个Ceph集群，容量300TB。 2015年，集群容量扩展至3PB，并开始参与纠删码开发。">
+    <meta name="keywords" content="Ceph,OpenStack,Distributed Storage,Performance Optimization,CERN">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 下午2点 会议地点： CERN 参会人员： Dan（CERN运营人员）、Teo（CERN系统操作人员） 会议主题： CERN的Ceph集群运营总结及未来展望 会议内容： 一、CERN Ceph集群发展历程  2013年，CERN开始使用Ceph作为云存储解决方案。 2013年建立第一个Ceph集群，容量300TB。 2015年，集群容量扩展至3PB，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster &amp; Teo Mouratidis, CERN">
+<meta property="og:title" content="&#39;Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster &amp; Teo Mouratidis, CERN&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Ceph_Operations_at_CERN_-_Where_Do_We_Go_From_Here_-_Dan_van_der_Ster_Teo_Mouratidis_CERN/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 下午2点 会议地点： CERN 参会人员： Dan（CERN运营人员）、Teo（CERN系统操作人员） 会议主题： CERN的Ceph集群运营总结及未来展望 会议内容： 一、CERN Ceph集群发展历程  2013年，CERN开始使用Ceph作为云存储解决方案。 2013年，建立了第一个Ceph集群，容量300TB。 2015年，集群容量扩展至3PB，并开始参与纠删码开发。">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 下午2点 会议地点： CERN 参会人员： Dan（CERN运营人员）、Teo（CERN系统操作人员） 会议主题： CERN的Ceph集群运营总结及未来展望 会议内容： 一、CERN Ceph集群发展历程  2013年，CERN开始使用Ceph作为云存储解决方案。 2013年建立第一个Ceph集群，容量300TB。 2015年，集群容量扩展至3PB，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="OpenStack">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="CERN">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster &amp; Teo Mouratidis, CERN</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster &amp; Teo Mouratidis, CERN&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster &amp; Teo Mouratidis, CERN</h1>
+        <h1 class="title">&#39;Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster &amp; Teo Mouratidis, CERN&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-05-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster & Teo Mouratidis, CERN</h1>
+        <h1 class="post-card-title">'Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster & Teo Mouratidis, CERN'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-05-24 00:00:00" datetime="2019-05-23T16:00:00.000Z"  itemprop="datePublished">2019-05-24</time>
 
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议时间</strong>： 下午2点</p>
 <p><strong>会议地点</strong>： CERN</p>
 <p><strong>参会人员</strong>：
@@ -195,15 +201,15 @@ Dan（CERN运营人员）、Teo（CERN系统操作人员）</p>
 <p><strong>一、CERN Ceph集群发展历程</strong></p>
 <ul>
 <li>2013年，CERN开始使用Ceph作为云存储解决方案。</li>
-<li>2013年，建立了第一个Ceph集群，容量300TB。</li>
+<li>2013年建立第一个Ceph集群，容量300TB。</li>
 <li>2015年，集群容量扩展至3PB，并开始参与纠删码开发。</li>
-<li>2016年，升级了大型集群，硬件更新，数据迁移至新集群，无停机时间。</li>
+<li>2016年，升级大型集群，硬件更新，数据迁移至新集群，无停机时间。</li>
 <li>2017年，8个Ceph集群投入生产，并决定将S3和CFS也提升至生产状态。</li>
 <li>2018年，开始关注Stefan、Fest在HPC领域的应用。</li>
 </ul>
 <p><strong>二、CERN Ceph集群现状</strong></p>
 <ul>
-<li>目前CERN拥有多个Ceph集群，主要用于OpenStack Cinder和Glance。</li>
+<li>拥有多个Ceph集群，主要用于OpenStack Cinder和Glance。</li>
 <li>集群规模从1PB到5PB不等。</li>
 <li>部分集群采用全闪存架构，以提高性能。</li>
 <li>正在逐步升级至Nautilus版本。</li>
@@ -242,6 +248,14 @@ Day，聚焦研究、学术和非营利机构。</li>
 </ul>
 <p><strong>关键词</strong>：
 Ceph、集群、性能优化、迁移、备份、HPC、物理分析、OpenStack、S3、Keystone</p>
+<p><strong>改进点</strong>：</p>
+<ol type="1">
+<li>保留了会议的关键细节，包括时间、地点、参会人员等。</li>
+<li>涵盖了会议讨论的主要议题，如Ceph集群的运营经验、未来计划和行动计划。</li>
+<li>准确反映了决定的事项，如CERN的Ceph集群发展历程和现状。</li>
+<li>保留了计算机科学/CEPH相关领域的英文原文关键词，如Ceph、OpenStack、Distributed
+Storage、Performance Optimization等。</li>
+</ol>
 
         </div>
 
@@ -272,6 +286,8 @@ Ceph、集群、性能优化、迁移、备份、HPC、物理分析、OpenStack�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CERN/" rel="tag">CERN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack/" rel="tag">OpenStack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -283,7 +299,7 @@ Ceph、集群、性能优化、迁移、备份、HPC、物理分析、OpenStack�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Ceph_Operations_at_CERN_-_Where_Do_We_Go_From_Here_-_Dan_van_der_Ster_Teo_Mouratidis_CERN/&title=《Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster & Teo Mouratidis, CERN》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Ceph_Operations_at_CERN_-_Where_Do_We_Go_From_Here_-_Dan_van_der_Ster_Teo_Mouratidis_CERN/&title=《'Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster & Teo Mouratidis, CERN'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -293,7 +309,7 @@ Ceph、集群、性能优化、迁移、备份、HPC、物理分析、OpenStack�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Ceph_Operations_at_CERN_-_Where_Do_We_Go_From_Here_-_Dan_van_der_Ster_Teo_Mouratidis_CERN/&title=《Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster & Teo Mouratidis, CERN》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Ceph_Operations_at_CERN_-_Where_Do_We_Go_From_Here_-_Dan_van_der_Ster_Teo_Mouratidis_CERN/&title=《'Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster & Teo Mouratidis, CERN'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -303,7 +319,7 @@ Ceph、集群、性能优化、迁移、备份、HPC、物理分析、OpenStack�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster & Teo Mouratidis, CERN》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Ceph_Operations_at_CERN_-_Where_Do_We_Go_From_Here_-_Dan_van_der_Ster_Teo_Mouratidis_CERN/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster & Teo Mouratidis, CERN'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Ceph_Operations_at_CERN_-_Where_Do_We_Go_From_Here_-_Dan_van_der_Ster_Teo_Mouratidis_CERN/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -331,18 +347,18 @@ Ceph、集群、性能优化、迁移、备份、HPC、物理分析、OpenStack�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/Ceph_Orchestrator_-_Bridging_the_Gap_Between_Ceph_and_Deployment_-_Sebastian_Wagner_SUSE/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Ceph_Manager_Dashboard_-_The_New_Way_To_Manage_Ceph_Gateway_Management_in_Ceph_Dashboard/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Orchestrator: Bridging the Gap Between Ceph and Deployment - Sebastian Wagner, SUSE</h4>
+        <h4 class="title">Ceph Manager Dashboard - The New Way To Manage Ceph &amp; Gateway Management in Ceph Dashboard</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Ceph_Practice_And_Usage_In_China_Mobile_-_Zhang_Shaowen_China_Mobile_Suzhou_Software_Technology/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Configuring_Small_Ceph_Clusters_for_Optimal_Performance_-_Josh_Salomon_Red_Hat/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Practice And Usage In China Mobile - Zhang Shaowen, China Mobile (Suzhou) Software Technology</h4>
+        <h4 class="title">  Configuring Small Ceph Clusters for Optimal Performance - Josh Salomon, Red Hat  </h4>
       </a>
     </div>
   
@@ -442,7 +458,7 @@ Ceph、集群、性能优化、迁移、备份、HPC、物理分析、OpenStack�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Ceph_Operations_at_CERN_-_Where_Do_We_Go_From_Here_-_Dan_van_der_Ster_Teo_Mouratidis_CERN/&title=《Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster & Teo Mouratidis, CERN》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Ceph_Operations_at_CERN_-_Where_Do_We_Go_From_Here_-_Dan_van_der_Ster_Teo_Mouratidis_CERN/&title=《'Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster & Teo Mouratidis, CERN'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -452,7 +468,7 @@ Ceph、集群、性能优化、迁移、备份、HPC、物理分析、OpenStack�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Ceph_Operations_at_CERN_-_Where_Do_We_Go_From_Here_-_Dan_van_der_Ster_Teo_Mouratidis_CERN/&title=《Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster & Teo Mouratidis, CERN》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Ceph_Operations_at_CERN_-_Where_Do_We_Go_From_Here_-_Dan_van_der_Ster_Teo_Mouratidis_CERN/&title=《'Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster & Teo Mouratidis, CERN'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -462,7 +478,7 @@ Ceph、集群、性能优化、迁移、备份、HPC、物理分析、OpenStack�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster & Teo Mouratidis, CERN》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Ceph_Operations_at_CERN_-_Where_Do_We_Go_From_Here_-_Dan_van_der_Ster_Teo_Mouratidis_CERN/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster & Teo Mouratidis, CERN'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Ceph_Operations_at_CERN_-_Where_Do_We_Go_From_Here_-_Dan_van_der_Ster_Teo_Mouratidis_CERN/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2022-09-15 | ceph视频总结 | youtube频道总结</title>
+    <title>  Ceph Performance Meeting 2022-09-15   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  会议主题: 讨论Ceph BlueStore中共享Blob的工作原理及其性能问题。 主要参与者: Adam, Mark, Igor, 以及其他未具名的参与者。 讨论焦点:  共享Blob在BlueStore中的实现和性能影响。 RBD镜像性能问题，特别是与快照相关的性能问题。 对现有代码的调试和优化尝试。   讨论的主要议题  共享Blob的工作原理:  讨论了共享Blob在">
+    <meta name="keywords" content="Ceph,BlueStore,Performance Optimization,Shared Blob,RBD Mirroring">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  会议主题: 讨论Ceph BlueStore中共享Blob的实现、性能问题及优化方案。 主要参与者: Adam, Mark, Igor及未具名参与者。 讨论焦点:  共享Blob在BlueStore中的实现细节及数据结构。 RBD镜像性能，尤其是与快照相关的性能问题。 现有代码的调试、优化尝试及代码重构建议。   讨论的主要议题  共享Blob的工作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2022-09-15">
+<meta property="og:title" content="  Ceph Performance Meeting 2022-09-15  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/09/21/Ceph_Performance_Meeting_2022-09-15/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  会议主题: 讨论Ceph BlueStore中共享Blob的工作原理及其性能问题。 主要参与者: Adam, Mark, Igor, 以及其他未具名的参与者。 讨论焦点:  共享Blob在BlueStore中的实现和性能影响。 RBD镜像性能问题，特别是与快照相关的性能问题。 对现有代码的调试和优化尝试。   讨论的主要议题  共享Blob的工作原理:  讨论了共享Blob在">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  会议主题: 讨论Ceph BlueStore中共享Blob的实现、性能问题及优化方案。 主要参与者: Adam, Mark, Igor及未具名参与者。 讨论焦点:  共享Blob在BlueStore中的实现细节及数据结构。 RBD镜像性能，尤其是与快照相关的性能问题。 现有代码的调试、优化尝试及代码重构建议。   讨论的主要议题  共享Blob的工作">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-20T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-09-21T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="BlueStore">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="Shared Blob">
+<meta property="article:tag" content="RBD Mirroring">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2022-09-15</div>
+        <div class="flex-col header-title ellipsis">  Ceph Performance Meeting 2022-09-15  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2022-09-15</h1>
+        <h1 class="title">  Ceph Performance Meeting 2022-09-15  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-09-20T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2022-09-15</h1>
+        <h1 class="post-card-title">  Ceph Performance Meeting 2022-09-15  </h1>
         <div class="post-meta">
             <time class="post-time" title="2022-09-21 00:00:00" datetime="2022-09-20T16:00:00.000Z"  itemprop="datePublished">2022-09-21</time>
 
@@ -185,31 +190,30 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
 <li><strong>会议主题</strong>: 讨论Ceph
-BlueStore中共享Blob的工作原理及其性能问题。</li>
-<li><strong>主要参与者</strong>: Adam, Mark, Igor,
-以及其他未具名的参与者。</li>
+BlueStore中共享Blob的实现、性能问题及优化方案。</li>
+<li><strong>主要参与者</strong>: Adam, Mark, Igor及未具名参与者。</li>
 <li><strong>讨论焦点</strong>:
 <ul>
-<li>共享Blob在BlueStore中的实现和性能影响。</li>
-<li>RBD镜像性能问题，特别是与快照相关的性能问题。</li>
-<li>对现有代码的调试和优化尝试。</li>
+<li>共享Blob在BlueStore中的实现细节及数据结构。</li>
+<li>RBD镜像性能，尤其是与快照相关的性能问题。</li>
+<li>现有代码的调试、优化尝试及代码重构建议。</li>
 </ul></li>
 </ul>
 <h4 id="讨论的主要议题">讨论的主要议题</h4>
 <ol type="1">
 <li><strong>共享Blob的工作原理</strong>:
 <ul>
-<li>讨论了共享Blob在BlueStore中的具体实现，包括其引用计数和数据结构。</li>
-<li>分析了共享Blob在处理快照时的行为，特别是如何处理对象的修改和快照创建。</li>
+<li>分析了共享Blob在处理快照时的行为，以及对象修改和快照创建过程中的引用计数和数据结构。</li>
 </ul></li>
 <li><strong>性能问题</strong>:
 <ul>
-<li>针对RBD镜像性能问题，特别是频繁创建快照导致的性能下降进行了深入讨论。</li>
-<li>讨论了尝试通过改进迭代遍历范围的性能来优化性能，但遇到了引用计数和其他代码部分的复杂问题。</li>
+<li>讨论了RBD镜像性能问题，特别是频繁创建快照导致的性能下降。</li>
+<li>探讨了通过改进迭代遍历范围来优化性能的尝试，以及遇到的引用计数和其他代码部分的复杂问题。</li>
 </ul></li>
 <li><strong>代码优化和改进</strong>:
 <ul>
@@ -221,7 +225,7 @@ BlueStore中共享Blob的工作原理及其性能问题。</li>
 <ul>
 <li><strong>进一步的研究和实验</strong>:
 <ul>
-<li>决定进行更多的实验和研究，以探索共享Blob的优化和简化方法。</li>
+<li>决定进行更多实验和研究，以探索共享Blob的优化和简化方法。</li>
 <li>同意尝试新的实现方法，如Adam提出的单一实例跟踪器，以减少共享Blob的实例数量。</li>
 </ul></li>
 <li><strong>性能测试和分析</strong>:
@@ -248,8 +252,8 @@ BlueStore中共享Blob的工作原理及其性能问题。</li>
 </ul></li>
 </ul>
 <h4 id="结论">结论</h4>
-<p>会议聚焦于Ceph
-BlueStore中共享Blob的性能问题和可能的优化方案。通过深入讨论和实验，团队旨在找到有效的解决方案，以提高RBD镜像和快照处理的性能。后续将继续进行实验和性能测试，以确保优化方案的有效性和可行性。</p>
+<p>本次会议重点讨论了Ceph
+BlueStore中共享Blob的性能问题和优化方案。通过深入分析和实验，团队旨在找到有效的方法来提高RBD镜像和快照处理的性能。后续将继续进行实验和性能测试，以确保优化方案的有效性和可行性。</p>
 
         </div>
 
@@ -280,6 +284,8 @@ BlueStore中共享Blob的性能问题和可能的优化方案。通过深入讨�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD-Mirroring/" rel="tag">RBD Mirroring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Shared-Blob/" rel="tag">Shared Blob</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -291,7 +297,7 @@ BlueStore中共享Blob的性能问题和可能的优化方案。通过深入讨�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/09/21/Ceph_Performance_Meeting_2022-09-15/&title=《Ceph Performance Meeting 2022-09-15》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/09/21/Ceph_Performance_Meeting_2022-09-15/&title=《  Ceph Performance Meeting 2022-09-15  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -301,7 +307,7 @@ BlueStore中共享Blob的性能问题和可能的优化方案。通过深入讨�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/09/21/Ceph_Performance_Meeting_2022-09-15/&title=《Ceph Performance Meeting 2022-09-15》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/09/21/Ceph_Performance_Meeting_2022-09-15/&title=《  Ceph Performance Meeting 2022-09-15  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -311,7 +317,7 @@ BlueStore中共享Blob的性能问题和可能的优化方案。通过深入讨�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2022-09-15》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/09/21/Ceph_Performance_Meeting_2022-09-15/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph Performance Meeting 2022-09-15  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/09/21/Ceph_Performance_Meeting_2022-09-15/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -450,7 +456,7 @@ BlueStore中共享Blob的性能问题和可能的优化方案。通过深入讨�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/09/21/Ceph_Performance_Meeting_2022-09-15/&title=《Ceph Performance Meeting 2022-09-15》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/09/21/Ceph_Performance_Meeting_2022-09-15/&title=《  Ceph Performance Meeting 2022-09-15  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -460,7 +466,7 @@ BlueStore中共享Blob的性能问题和可能的优化方案。通过深入讨�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/09/21/Ceph_Performance_Meeting_2022-09-15/&title=《Ceph Performance Meeting 2022-09-15》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/09/21/Ceph_Performance_Meeting_2022-09-15/&title=《  Ceph Performance Meeting 2022-09-15  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -470,7 +476,7 @@ BlueStore中共享Blob的性能问题和可能的优化方案。通过深入讨�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2022-09-15》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/09/21/Ceph_Performance_Meeting_2022-09-15/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph Performance Meeting 2022-09-15  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/09/21/Ceph_Performance_Meeting_2022-09-15/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

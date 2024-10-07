@@ -20,17 +20,24 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：本周的 orchestrator 会议 参会人员：全体成员 会议日期：[具体日期] 会议内容总结：  主要议题：  深入探讨 self-adm agent 的功能和必要性。 讨论 cephadm 中的 reconciliation loop 的扩展性和性能问题。 评估是否需要改进架构以支持更快的故障转移。  讨论细节：  self-adm agent：讨论了 self-adm">
+    <meta name="keywords" content="Ceph,Orchestrator,Self,adm Agent,Reconciliation Loop,Push Model,Architecture Improvement">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：本周的 orchestrator 会议 参会人员：全体成员 会议日期：2021-05-18 会议内容总结：  主要议题：  探讨 self-adm agent 的功能和必要性。 讨论 cephadm 中的 reconciliation loop 的扩展性和性能问题。 评估是否需要改进架构以支持更快的故障转移。  讨论细节：  self-adm agen">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2021-05-18">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/05/18/Ceph_Orchestrator_Meeting_2021-05-18/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：本周的 orchestrator 会议 参会人员：全体成员 会议日期：[具体日期] 会议内容总结：  主要议题：  深入探讨 self-adm agent 的功能和必要性。 讨论 cephadm 中的 reconciliation loop 的扩展性和性能问题。 评估是否需要改进架构以支持更快的故障转移。  讨论细节：  self-adm agent：讨论了 self-adm">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：本周的 orchestrator 会议 参会人员：全体成员 会议日期：2021-05-18 会议内容总结：  主要议题：  探讨 self-adm agent 的功能和必要性。 讨论 cephadm 中的 reconciliation loop 的扩展性和性能问题。 评估是否需要改进架构以支持更快的故障转移。  讨论细节：  self-adm agen">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-17T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-05-18T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="Self">
+<meta property="article:tag" content="adm Agent">
+<meta property="article:tag" content="Reconciliation Loop">
+<meta property="article:tag" content="Push Model">
+<meta property="article:tag" content="Architecture Improvement">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -160,7 +167,7 @@
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E6%9C%AC%E5%91%A8%E7%9A%84-orchestrator-%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：本周的 orchestrator
-会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%A8%E4%BD%93%E6%88%90%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：全体成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%A5%E6%9C%9F%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议日期：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%A8%E4%BD%93%E6%88%90%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：全体成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%A5%E6%9C%9F2021-05-18"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议日期：2021-05-18</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -186,27 +193,28 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题本周的-orchestrator-会议">会议主题：本周的 orchestrator
 会议</h4>
 <h4 id="参会人员全体成员">参会人员：全体成员</h4>
-<h4 id="会议日期具体日期">会议日期：[具体日期]</h4>
+<h4 id="会议日期2021-05-18">会议日期：2021-05-18</h4>
 <h4 id="会议内容总结">会议内容总结：</h4>
 <ol type="1">
 <li><strong>主要议题</strong>：
 <ul>
-<li>深入探讨 self-adm agent 的功能和必要性。</li>
+<li>探讨 self-adm agent 的功能和必要性。</li>
 <li>讨论 cephadm 中的 reconciliation loop 的扩展性和性能问题。</li>
 <li>评估是否需要改进架构以支持更快的故障转移。</li>
 </ul></li>
 <li><strong>讨论细节</strong>：
 <ul>
-<li><strong>self-adm agent</strong>：讨论了 self-adm agent
-的潜在收益和架构影响。提出了是否需要实施该代理，以及如何实施的问题。</li>
-<li><strong>reconciliation loop</strong>：指出了当前 cephadm 中的
-reconciliation loop 在扩展性上的限制，特别是在创建 SSH
+<li><strong>self-adm agent</strong>：会议重点讨论了 self-adm agent
+的潜在收益和架构影响，包括是否需要实施该代理及其对架构的影响。</li>
+<li><strong>reconciliation loop</strong>：讨论了当前 cephadm 中
+reconciliation loop 的扩展性限制，特别是在创建 SSH
 连接和执行远程命令时的性能问题。</li>
-<li><strong>架构改进</strong>：讨论了如何改进架构以支持更快的故障转移，包括考虑使用
+<li><strong>架构改进</strong>：会议讨论了如何改进架构以支持更快的故障转移，包括考虑使用
 push 模型而不是 pull 模型，以及如何处理潜在的竞争条件和失败模式。</li>
 </ul></li>
 <li><strong>决定事项</strong>：
@@ -236,9 +244,9 @@ push 模型而不是 pull 模型，以及如何处理潜在的竞争条件和失
 <li>全体成员祝大家有一个愉快的周末。</li>
 </ul>
 <hr />
-<p>本次会议重点在于优化 ceph 的 orchestration 功能，特别是通过引入新的
+<p>本次会议重点在于优化 Ceph 的 orchestration 功能，特别是通过引入新的
 self-adm agent
-来解决现有的性能瓶颈问题。会议强调了详细的实施计划和考虑潜在的架构影响的重要性。</p>
+来解决现有的性能瓶颈问题。会议强调了详细的实施计划和考虑潜在的架构影响的重要性，并确定了后续的行动计划。</p>
 
         </div>
 
@@ -269,6 +277,8 @@ self-adm agent
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Architecture-Improvement/" rel="tag">Architecture Improvement</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Push-Model/" rel="tag">Push Model</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Reconciliation-Loop/" rel="tag">Reconciliation Loop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Self/" rel="tag">Self</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/adm-Agent/" rel="tag">adm Agent</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -339,7 +349,7 @@ self-adm agent
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/05/14/Ceph_Performance_Meeting_2021-05-13/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2021-05-13</h4>
+        <h4 class="title">Ceph 性能会议 2021-05-13</h4>
       </a>
     </div>
   

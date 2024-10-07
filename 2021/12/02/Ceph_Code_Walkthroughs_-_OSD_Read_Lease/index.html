@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Code Walkthroughs: OSD Read Lease | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Code Walkthroughs: OSD Read Lease&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph分布式存储系统中的读写一致性问题及解决方案 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  问题背景：  在Ceph中，使用RADOS时，写操作需要触及所有副本，确保所有副本一致。 读操作通常只从主副本（Primary）读取，但存在网络分区可能导致主副本未意识到集群状态变化，继续服务旧数据读取请求。  历史问题：  该问题已存在较长时间，最终在Oc">
+    <meta name="keywords" content="Ceph,分布式存储,OSD,读写一致性,租约机制">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph分布式存储系统中的读写一致性问题及解决方案 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  问题背景：  在Ceph中，写操作需触及所有副本以确保一致性，而读操作通常只从主副本读取。 网络分区可能导致主副本未意识到集群状态变化，继续服务旧数据读取请求，造成数据不一致。  历史问题：  该问题在Ceph早期版本中存在，最终在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Code Walkthroughs: OSD Read Lease">
+<meta property="og:title" content="&#39;Ceph Code Walkthroughs: OSD Read Lease&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/12/02/Ceph_Code_Walkthroughs_-_OSD_Read_Lease/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph分布式存储系统中的读写一致性问题及解决方案 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  问题背景：  在Ceph中，使用RADOS时，写操作需要触及所有副本，确保所有副本一致。 读操作通常只从主副本（Primary）读取，但存在网络分区可能导致主副本未意识到集群状态变化，继续服务旧数据读取请求。  历史问题：  该问题已存在较长时间，最终在Oc">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph分布式存储系统中的读写一致性问题及解决方案 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  问题背景：  在Ceph中，写操作需触及所有副本以确保一致性，而读操作通常只从主副本读取。 网络分区可能导致主副本未意识到集群状态变化，继续服务旧数据读取请求，造成数据不一致。  历史问题：  该问题在Ceph早期版本中存在，最终在">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-01T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-12-02T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="读写一致性">
+<meta property="article:tag" content="租约机制">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Code Walkthroughs: OSD Read Lease</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Code Walkthroughs: OSD Read Lease&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Code Walkthroughs: OSD Read Lease</h1>
+        <h1 class="title">&#39;Ceph Code Walkthroughs: OSD Read Lease&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-12-01T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Code Walkthroughs: OSD Read Lease</h1>
+        <h1 class="post-card-title">'Ceph Code Walkthroughs: OSD Read Lease'</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-12-02 00:00:00" datetime="2021-12-01T16:00:00.000Z"  itemprop="datePublished">2021-12-02</time>
 
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
 id="会议主题ceph分布式存储系统中的读写一致性问题及解决方案">会议主题：Ceph分布式存储系统中的读写一致性问题及解决方案</h4>
 <h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
@@ -194,42 +200,38 @@ id="会议主题ceph分布式存储系统中的读写一致性问题及解决方
 <ol type="1">
 <li><strong>问题背景</strong>：
 <ul>
-<li>在Ceph中，使用RADOS时，写操作需要触及所有副本，确保所有副本一致。</li>
-<li>读操作通常只从主副本（Primary）读取，但存在网络分区可能导致主副本未意识到集群状态变化，继续服务旧数据读取请求。</li>
+<li>在Ceph中，写操作需触及所有副本以确保一致性，而读操作通常只从主副本读取。</li>
+<li>网络分区可能导致主副本未意识到集群状态变化，继续服务旧数据读取请求，造成数据不一致。</li>
 </ul></li>
 <li><strong>历史问题</strong>：
 <ul>
-<li>该问题已存在较长时间，最终在Octopus版本中得到修复。</li>
-<li>修复方法涉及引入“租约”（leases）机制，通过租约间隔属性确保读写一致性。</li>
+<li>该问题在Ceph早期版本中存在，最终在Octopus版本中得到修复。</li>
 </ul></li>
 <li><strong>解决方案详述</strong>：
 <ul>
 <li><strong>租约机制</strong>：通过租约消息在主副本和副本之间同步状态，确保读操作的一致性。</li>
-<li><strong>时间戳处理</strong>：使用单调时钟（monotonic
-clock）处理时间戳，避免时钟偏差问题。</li>
-<li><strong>租约间隔设置</strong>：租约间隔可通过全局配置选项lease_ratio设置，乘以心跳间隔（heartbeat_grace）来确定。</li>
+<li><strong>时间戳处理</strong>：使用单调时钟处理时间戳，避免时钟偏差问题。</li>
+<li><strong>租约间隔设置</strong>：通过全局配置选项设置租约间隔。</li>
 </ul></li>
 <li><strong>新引入的PG状态</strong>：
 <ul>
-<li><strong>Laggy状态</strong>：当PG活跃但租约未及时更新时，PG进入Laggy状态，暂停读取请求，直到租约更新。</li>
-<li><strong>Wait状态</strong>：当PG正在进行 peering
-且前一个间隔的上限仍在未来时，PG进入Wait状态，暂停写操作，直到前一个间隔的租约过期。</li>
+<li><strong>Laggy状态</strong>：当PG活跃但租约未及时更新时，PG进入Laggy状态，暂停读取请求。</li>
+<li><strong>Wait状态</strong>：当PG正在进行peering且前一个间隔的上限仍在未来时，PG进入Wait状态，暂停写操作。</li>
 </ul></li>
 <li><strong>优化措施</strong>：
 <ul>
-<li><strong>快速关闭通知</strong>：OSD可以通过发送“标记我为死亡”消息给Monitor，或者通过连接拒绝回调机制快速标记OSD为死亡，从而加速租约过期处理。</li>
-<li><strong>历史记录处理</strong>：在 peering
-过程中，通过历史记录（pg_history）处理前一个间隔的租约状态，确保不会因为过早清除租约信息导致读写不一致。</li>
+<li><strong>快速关闭通知</strong>：OSD可以通过发送“标记我为死亡”消息快速标记OSD为死亡。</li>
+<li><strong>历史记录处理</strong>：在peering过程中，通过历史记录处理前一个间隔的租约状态。</li>
 </ul></li>
 <li><strong>测试与验证</strong>：
 <ul>
-<li>通过单元测试和功能测试验证了修复方案的有效性，确保在各种网络分区情况下读取操作的一致性。</li>
+<li>通过单元测试和功能测试验证了修复方案的有效性。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
 <li>确认Octopus版本中引入的租约机制和相关优化措施有效解决了读写一致性问题。</li>
-<li>需要进一步完善快速关闭通知机制，确保OSD能够及时发送死亡消息给Monitor。</li>
+<li>需要进一步完善快速关闭通知机制。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
@@ -239,8 +241,6 @@ clock）处理时间戳，避免时钟偏差问题。</li>
 </ul>
 <h4 id="会议结束语">会议结束语：</h4>
 <p>感谢所有参会人员的积极参与和讨论，本次会议对于理解Ceph中的读写一致性问题及其解决方案具有重要意义。期待后续的实施和验证工作能够顺利进行。</p>
-<hr />
-<p><strong>备注</strong>：本次会议纪要涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划，确保了会议内容的全面性和准确性。</p>
 
         </div>
 
@@ -271,6 +271,8 @@ clock）处理时间戳，避免时钟偏差问题。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A7%9F%E7%BA%A6%E6%9C%BA%E5%88%B6/" rel="tag">租约机制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%AF%BB%E5%86%99%E4%B8%80%E8%87%B4%E6%80%A7/" rel="tag">读写一致性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -282,7 +284,7 @@ clock）处理时间戳，避免时钟偏差问题。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/02/Ceph_Code_Walkthroughs_-_OSD_Read_Lease/&title=《Ceph Code Walkthroughs: OSD Read Lease》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/02/Ceph_Code_Walkthroughs_-_OSD_Read_Lease/&title=《'Ceph Code Walkthroughs: OSD Read Lease'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -292,7 +294,7 @@ clock）处理时间戳，避免时钟偏差问题。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/02/Ceph_Code_Walkthroughs_-_OSD_Read_Lease/&title=《Ceph Code Walkthroughs: OSD Read Lease》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/02/Ceph_Code_Walkthroughs_-_OSD_Read_Lease/&title=《'Ceph Code Walkthroughs: OSD Read Lease'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -302,7 +304,7 @@ clock）处理时间戳，避免时钟偏差问题。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Code Walkthroughs: OSD Read Lease》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/02/Ceph_Code_Walkthroughs_-_OSD_Read_Lease/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Code Walkthroughs: OSD Read Lease'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/02/Ceph_Code_Walkthroughs_-_OSD_Read_Lease/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -332,7 +334,7 @@ clock）处理时间戳，避免时钟偏差问题。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/12/06/CephFS_Code_Walkthrough_-_kclient_overview/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CephFS Code Walkthrough: kclient overview</h4>
+        <h4 class="title">CephFS代码解析：k客户端概述</h4>
       </a>
     </div>
   
@@ -441,7 +443,7 @@ clock）处理时间戳，避免时钟偏差问题。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/02/Ceph_Code_Walkthroughs_-_OSD_Read_Lease/&title=《Ceph Code Walkthroughs: OSD Read Lease》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/02/Ceph_Code_Walkthroughs_-_OSD_Read_Lease/&title=《'Ceph Code Walkthroughs: OSD Read Lease'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -451,7 +453,7 @@ clock）处理时间戳，避免时钟偏差问题。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/02/Ceph_Code_Walkthroughs_-_OSD_Read_Lease/&title=《Ceph Code Walkthroughs: OSD Read Lease》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/02/Ceph_Code_Walkthroughs_-_OSD_Read_Lease/&title=《'Ceph Code Walkthroughs: OSD Read Lease'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -461,7 +463,7 @@ clock）处理时间戳，避免时钟偏差问题。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Code Walkthroughs: OSD Read Lease》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/02/Ceph_Code_Walkthroughs_-_OSD_Read_Lease/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Code Walkthroughs: OSD Read Lease'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/02/Ceph_Code_Walkthroughs_-_OSD_Read_Lease/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

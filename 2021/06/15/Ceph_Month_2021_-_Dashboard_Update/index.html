@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Month 2021: Dashboard Update | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Month 2021: Dashboard Update&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph Dashboard 更新与未来规划 参会人员：Ernesto Puerta（Ceph Dashboard 组件负责人） 会议时间：[具体时间] 会议地点：[具体地点] 会议内容总结：  Pacific 版本亮点  Cepheum 集成：重点介绍了 Cepheum 集成，特别是与 Orchestrator 的整合，目前主要集中在 Cepheum 上。Rook 的支持仍在">
+    <meta name="keywords" content="Ceph,Dashboard,Orchestration,Pacific 版本,Quincy 版本">
+    <meta name="description" content="[改进后的中文总结内容] Ceph Dashboard 组件负责人 Ernesto Puerta 在 Ceph Month 2021 会议中介绍了 Dashboard 的最新更新和未来规划。以下是会议的关键点：  Pacific 版本亮点：  Cepheum 集成：与 Orchestrator 的整合，主要集中在 Cepheum 上，Rook 的支持预计将在 Quincy 版本中完成。 RGW 增">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Month 2021: Dashboard Update">
+<meta property="og:title" content="&#39;Ceph Month 2021: Dashboard Update&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph Dashboard 更新与未来规划 参会人员：Ernesto Puerta（Ceph Dashboard 组件负责人） 会议时间：[具体时间] 会议地点：[具体地点] 会议内容总结：  Pacific 版本亮点  Cepheum 集成：重点介绍了 Cepheum 集成，特别是与 Orchestrator 的整合，目前主要集中在 Cepheum 上。Rook 的支持仍在">
+<meta property="og:description" content="[改进后的中文总结内容] Ceph Dashboard 组件负责人 Ernesto Puerta 在 Ceph Month 2021 会议中介绍了 Dashboard 的最新更新和未来规划。以下是会议的关键点：  Pacific 版本亮点：  Cepheum 集成：与 Orchestrator 的整合，主要集中在 Cepheum 上，Rook 的支持预计将在 Quincy 版本中完成。 RGW 增">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-06-15T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Dashboard">
+<meta property="article:tag" content="Orchestration">
+<meta property="article:tag" content="Pacific 版本">
+<meta property="article:tag" content="Quincy 版本">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Month 2021: Dashboard Update</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Month 2021: Dashboard Update&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Month 2021: Dashboard Update</h1>
+        <h1 class="title">&#39;Ceph Month 2021: Dashboard Update&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-06-14T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,21 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph-dashboard-%E6%9B%B4%E6%96%B0%E4%B8%8E%E6%9C%AA%E6%9D%A5%E8%A7%84%E5%88%92"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph Dashboard
-更新与未来规划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98ernesto-puertaceph-dashboard-%E7%BB%84%E4%BB%B6%E8%B4%9F%E8%B4%A3%E4%BA%BA"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：Ernesto
-Puerta（Ceph Dashboard 组件负责人）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">联系方式：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议结束时间：[具体时间]</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Month_2021_-_Dashboard_Update"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Month 2021: Dashboard Update</h1>
+        <h1 class="post-card-title">'Ceph Month 2021: Dashboard Update'</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-06-15 00:00:00" datetime="2021-06-14T16:00:00.000Z"  itemprop="datePublished">2021-06-15</time>
 
@@ -187,45 +183,38 @@ Puerta（Ceph Dashboard 组件负责人）</span></a></li><li class="post-toc-it
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题ceph-dashboard-更新与未来规划">会议主题：Ceph Dashboard
-更新与未来规划</h4>
-<h4
-id="参会人员ernesto-puertaceph-dashboard-组件负责人">参会人员：Ernesto
-Puerta（Ceph Dashboard 组件负责人）</h4>
-<h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
-<h4 id="会议地点具体地点">会议地点：[具体地点]</h4>
-<h4 id="会议内容总结">会议内容总结：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>Ceph Dashboard 组件负责人 Ernesto Puerta 在 Ceph Month 2021
+会议中介绍了 Dashboard 的最新更新和未来规划。以下是会议的关键点：</p>
 <ol type="1">
-<li><strong>Pacific 版本亮点</strong>
+<li><strong>Pacific 版本亮点</strong>：
 <ul>
-<li><strong>Cepheum 集成</strong>：重点介绍了 Cepheum 集成，特别是与
-Orchestrator 的整合，目前主要集中在 Cepheum 上。Rook
-的支持仍在开发中，预计将在 Quincy 版本中完成。</li>
-<li><strong>RGW 增强</strong>：在 RGW
-方面投入了大量精力，包括支持高级工作流程，如多站点监控和多站点同步监控。</li>
-<li><strong>RESTful API</strong>：在 Pacific 版本中，Dashboard 的 API
-正式化，并承诺保持 API 的稳定性。</li>
-<li><strong>安全性改进</strong>：加强了 Dashboard
-的安全性，包括账户锁定、使用安全 cookies 存储敏感信息等。</li>
+<li><strong>Cepheum 集成</strong>：与 Orchestrator 的整合，主要集中在
+Cepheum 上，Rook 的支持预计将在 Quincy 版本中完成。</li>
+<li><strong>RGW
+增强</strong>：支持高级工作流程，如多站点监控和多站点同步监控。</li>
+<li><strong>RESTful API</strong>：Dashboard 的 API 正式化，并承诺保持
+API 的稳定性。</li>
+<li><strong>安全性改进</strong>：包括账户锁定、使用安全 cookies
+存储敏感信息等。</li>
 </ul></li>
-<li><strong>Quincy 版本规划</strong>
+<li><strong>Quincy 版本规划</strong>：
 <ul>
-<li><strong>用户工作流程</strong>：计划提供更多高级用户工作流程，如集群安装向导。</li>
+<li><strong>用户工作流程</strong>：提供更多高级用户工作流程，如集群安装向导。</li>
 <li><strong>多站点与多集群支持</strong>：增强对多站点和多集群的支持，包括
 RGW 镜像和 CephFS 镜像。</li>
 <li><strong>RGW
-高级工作流程</strong>：计划增加桶策略、生命周期管理、服务器端加密等功能。</li>
+高级工作流程</strong>：增加桶策略、生命周期管理、服务器端加密等功能。</li>
 <li><strong>可观测性增强</strong>：考虑增加日志聚合功能，以改善日志管理。</li>
 </ul></li>
-<li><strong>性能与用户体验改进</strong>
+<li><strong>性能与用户体验改进</strong>：
 <ul>
 <li><strong>性能优化</strong>：讨论了关于 RBD
 图像列表等性能问题，计划进行内部清理和重构以提高性能。</li>
 <li><strong>用户体验</strong>：计划改进 Dashboard
 的登录页面，使其对所有用户更加友好。</li>
 </ul></li>
-<li><strong>后续行动计划</strong>
+<li><strong>后续行动计划</strong>：
 <ul>
 <li><strong>社区参与</strong>：鼓励社区成员通过 IRC 频道和 GitHub 参与到
 Dashboard 的开发中。</li>
@@ -233,26 +222,8 @@ Dashboard 的开发中。</li>
 的开发经验和代码走查。</li>
 </ul></li>
 </ol>
-<h4 id="会议决定事项">会议决定事项：</h4>
-<ul>
-<li>确认了 Pacific 版本的主要更新和 Quincy 版本的发展方向。</li>
-<li>确定了性能优化和用户体验改进的具体计划。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划：</h4>
-<ul>
-<li>继续推进 Cepheum 和 Rook 的集成工作。</li>
-<li>加强 RGW 功能和多站点支持的开发。</li>
-<li>优化 Dashboard 的性能和安全性。</li>
-<li>增强社区参与和技术分享活动。</li>
-</ul>
-<h4 id="联系方式">联系方式：</h4>
-<ul>
-<li>IRC 频道：[具体频道]</li>
-<li>GitHub：[具体链接]</li>
-</ul>
-<h4 id="会议结束时间具体时间">会议结束时间：[具体时间]</h4>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
+<p>会议确认了 Pacific 版本的主要更新和 Quincy
+版本的发展方向，并确定了性能优化和用户体验改进的具体计划。</p>
 
         </div>
 
@@ -283,6 +254,8 @@ Dashboard 的开发中。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Dashboard/" rel="tag">Dashboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestration/" rel="tag">Orchestration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Pacific-%E7%89%88%E6%9C%AC/" rel="tag">Pacific 版本</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Quincy-%E7%89%88%E6%9C%AC/" rel="tag">Quincy 版本</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -294,7 +267,7 @@ Dashboard 的开发中。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/&title=《Ceph Month 2021: Dashboard Update》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/&title=《'Ceph Month 2021: Dashboard Update'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -304,7 +277,7 @@ Dashboard 的开发中。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/&title=《Ceph Month 2021: Dashboard Update》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/&title=《'Ceph Month 2021: Dashboard Update'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -314,7 +287,7 @@ Dashboard 的开发中。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Month 2021: Dashboard Update》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Month 2021: Dashboard Update'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -344,7 +317,7 @@ Dashboard 的开发中。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/06/16/Ceph_Month_2021_-_Project_Aquarium_-_An_easy-to-use_storage_appliance_wrapped_around_Ceph/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Month 2021: Project Aquarium - An easy-to-use storage appliance wrapped around Ceph</h4>
+        <h4 class="title">  Ceph Month 2021: Project Aquarium - An easy-to-use storage appliance wrapped around Ceph  </h4>
       </a>
     </div>
   
@@ -353,7 +326,7 @@ Dashboard 的开发中。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/06/15/Ceph_Month_2021_-_From_Open_Source_to_Open_Ended_in_Ceph_with_Lua/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Month 2021: From Open Source  to Open Ended in Ceph with Lua</h4>
+        <h4 class="title">&#39;Ceph Month 2021: From Open Source to Open Ended in Ceph with Lua&#39;</h4>
       </a>
     </div>
   
@@ -453,7 +426,7 @@ Dashboard 的开发中。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/&title=《Ceph Month 2021: Dashboard Update》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/&title=《'Ceph Month 2021: Dashboard Update'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -463,7 +436,7 @@ Dashboard 的开发中。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/&title=《Ceph Month 2021: Dashboard Update》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/&title=《'Ceph Month 2021: Dashboard Update'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -473,7 +446,7 @@ Dashboard 的开发中。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Month 2021: Dashboard Update》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Month 2021: Dashboard Update'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

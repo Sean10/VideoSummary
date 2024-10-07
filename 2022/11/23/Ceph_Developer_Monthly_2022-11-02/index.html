@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 主要议题  Crimson OSD 的用户界面保护措施  讨论了为防止用户意外启动 Crimson OSD 而导致生产集群复杂化的问题。 介绍了两种保护措施：  编辑 Crimson 实验性功能标志。 设置允许 Crimson OSD 映射标志。  这些措施旨在防止用户在不完全支持 Crimson OSD 的功能时意外使用它们。  Crimson 池的设计和功能限制  讨论了未来可能需要">
+    <meta name="keywords" content="Ceph,Crimson OSD,Documentation,User Interface,Debugging">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 主要议题  Crimson OSD 用户界面保护措施  讨论了为防止用户意外启动 Crimson OSD 而导致生产集群复杂化的问题。 引入了两种保护措施：编辑 Crimson 实验性功能标志和设置允许 Crimson OSD 映射标志。 这些措施旨在防止用户在不完全支持 Crimson OSD 的功能时意外使用它们。  Crimson 池的设计和功能限制  讨">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Developer Monthly 2022-11-02">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/11/23/Ceph_Developer_Monthly_2022-11-02/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 主要议题  Crimson OSD 的用户界面保护措施  讨论了为防止用户意外启动 Crimson OSD 而导致生产集群复杂化的问题。 介绍了两种保护措施：  编辑 Crimson 实验性功能标志。 设置允许 Crimson OSD 映射标志。  这些措施旨在防止用户在不完全支持 Crimson OSD 的功能时意外使用它们。  Crimson 池的设计和功能限制  讨论了未来可能需要">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 主要议题  Crimson OSD 用户界面保护措施  讨论了为防止用户意外启动 Crimson OSD 而导致生产集群复杂化的问题。 引入了两种保护措施：编辑 Crimson 实验性功能标志和设置允许 Crimson OSD 映射标志。 这些措施旨在防止用户在不完全支持 Crimson OSD 的功能时意外使用它们。  Crimson 池的设计和功能限制  讨">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-11-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Crimson OSD">
+<meta property="article:tag" content="Documentation">
+<meta property="article:tag" content="User Interface">
+<meta property="article:tag" content="Debugging">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他讨论</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">2.</span> <span class="post-toc-text">结论</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,18 +190,16 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
-<li><strong>Crimson OSD 的用户界面保护措施</strong>
+<li><strong>Crimson OSD 用户界面保护措施</strong>
 <ul>
 <li>讨论了为防止用户意外启动 Crimson OSD
 而导致生产集群复杂化的问题。</li>
-<li>介绍了两种保护措施：
-<ul>
-<li>编辑 Crimson 实验性功能标志。</li>
-<li>设置允许 Crimson OSD 映射标志。</li>
-</ul></li>
+<li>引入了两种保护措施：编辑 Crimson 实验性功能标志和设置允许 Crimson
+OSD 映射标志。</li>
 <li>这些措施旨在防止用户在不完全支持 Crimson OSD
 的功能时意外使用它们。</li>
 </ul></li>
@@ -204,12 +207,12 @@
 <ul>
 <li>讨论了未来可能需要在同一集群中混合使用 Crimson OSD 和常规 OSD
 的情况。</li>
-<li>介绍了基于每个池的设置，而不是整个集群的设置。</li>
-<li>限制了 Crimson 池的一些功能，如更改 PG 数量或使用 tiers。</li>
+<li>介绍了基于每个池的设置，限制了 Crimson 池的一些功能，如更改 PG
+数量或使用 tiers。</li>
 </ul></li>
 <li><strong>文档和未来支持</strong>
 <ul>
-<li>讨论了当前文档中对 Crimson 支持功能的描述不足，计划在未来的 Reef
+<li>认识到当前文档中对 Crimson 支持功能的描述不足，计划在未来的 Reef
 文档中详细说明支持的功能。</li>
 <li>强调了 Crimson OSD
 在支持某些功能时的变化，以及如何处理这些变化。</li>
@@ -222,8 +225,7 @@
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>实施了 Crimson OSD
-的用户界面保护措施，以防止意外启动和使用不完全支持的功能。</li>
+<li>实施了 Crimson OSD 的用户界面保护措施。</li>
 <li>更新了文档，计划在 Reef 文档中详细说明 Crimson 的支持功能。</li>
 <li>讨论了条件调试和智能日志记录的实现可能性，但尚未确定具体实施方案。</li>
 </ul>
@@ -241,7 +243,7 @@
 <li>探讨了使用系统工具如 SystemTap 和 DTrace
 来增强调试功能的可能性。</li>
 </ul>
-<h3 id="结论">结论</h3>
+<h4 id="结论">结论</h4>
 <p>会议主要围绕 Crimson OSD
 的功能保护、文档更新以及条件调试和智能日志记录的讨论展开。团队将继续致力于提高系统的稳定性和用户的使用体验。</p>
 <hr />
@@ -276,6 +278,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson-OSD/" rel="tag">Crimson OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Debugging/" rel="tag">Debugging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Documentation/" rel="tag">Documentation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/User-Interface/" rel="tag">User Interface</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -335,9 +339,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2022/12/01/2022Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2022/12/01/Ceph_Orchestrator_Meeting_2022-12-01/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2022Q4 Ceph社区季度总结</h4>
+        <h4 class="title">Ceph Orchestrator Meeting 2022-12-01</h4>
       </a>
     </div>
   
@@ -346,7 +350,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/11/23/Introduction_to_Container_Object_Storage_Interface_aka_COSI_for_ceph_RGW/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Introduction to Container Object Storage Interface aka COSI for ceph RGW</h4>
+        <h4 class="title">  Introduction to Container Object Storage Interface aka COSI for ceph RGW  </h4>
       </a>
     </div>
   

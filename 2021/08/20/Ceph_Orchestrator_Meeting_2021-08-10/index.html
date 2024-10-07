@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Orchestrator 会议 日期：[具体日期] 参会人员：[具体人员名单] 主要议题：  Rook CI 中 Manager Rook 模块的测试  讨论了如何在 Rook CI 中测试 Manager Rook 模块。 介绍了测试框架的使用，包括使用 Kubeadm、Minikube、Kcli 等工具设置固定集群。 强调了集成测试的重要性，特别是在 Rook 项目中自动检">
+    <meta name="keywords" content="Ceph,Orchestrator,Rook,CI/CD,Integration Testing">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Orchestrator 会议 日期：2021年8月10日 参会人员：[具体人员名单] 主要议题：  Rook CI 中 Manager Rook 模块的测试  讨论了在 Rook CI 中对 Manager Rook 模块的测试方法，包括使用 Kubeadm、Minikube、Kcli 等工具创建固定集群。 强调了集成测试的重要性，特别是在自动检测">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2021-08-10">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/08/20/Ceph_Orchestrator_Meeting_2021-08-10/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Orchestrator 会议 日期：[具体日期] 参会人员：[具体人员名单] 主要议题：  Rook CI 中 Manager Rook 模块的测试  讨论了如何在 Rook CI 中测试 Manager Rook 模块。 介绍了测试框架的使用，包括使用 Kubeadm、Minikube、Kcli 等工具设置固定集群。 强调了集成测试的重要性，特别是在 Rook 项目中自动检">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Orchestrator 会议 日期：2021年8月10日 参会人员：[具体人员名单] 主要议题：  Rook CI 中 Manager Rook 模块的测试  讨论了在 Rook CI 中对 Manager Rook 模块的测试方法，包括使用 Kubeadm、Minikube、Kcli 等工具创建固定集群。 强调了集成测试的重要性，特别是在自动检测">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-08-20T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="CI&#x2F;CD">
+<meta property="article:tag" content="Integration Testing">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98orchestrator-%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Orchestrator 会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%97%A5%E6%9C%9F%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">日期：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%B7%E4%BD%93%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[具体人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">其他事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98orchestrator-%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Orchestrator 会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%97%A5%E6%9C%9F2021%E5%B9%B48%E6%9C%8810%E6%97%A5"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">日期：2021年8月10日</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%B7%E4%BD%93%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[具体人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">其他事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,19 +190,20 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题orchestrator-会议">会议主题：Orchestrator 会议</h4>
-<h4 id="日期具体日期">日期：[具体日期]</h4>
+<h4 id="日期2021年8月10日">日期：2021年8月10日</h4>
 <h4 id="参会人员具体人员名单">参会人员：[具体人员名单]</h4>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
 <li><strong>Rook CI 中 Manager Rook 模块的测试</strong>
 <ul>
-<li>讨论了如何在 Rook CI 中测试 Manager Rook 模块。</li>
-<li>介绍了测试框架的使用，包括使用 Kubeadm、Minikube、Kcli
-等工具设置固定集群。</li>
-<li>强调了集成测试的重要性，特别是在 Rook 项目中自动检测潜在问题。</li>
-<li>提出了未来测试的改进方向，特别是关于 OSD 的管理和创建。</li>
+<li>讨论了在 Rook CI 中对 Manager Rook 模块的测试方法，包括使用
+Kubeadm、Minikube、Kcli 等工具创建固定集群。</li>
+<li>强调了集成测试的重要性，特别是在自动检测 Rook
+项目中的潜在问题。</li>
+<li>讨论了未来测试的改进方向，特别是关于 OSD 的管理和创建。</li>
 </ul></li>
 <li><strong>重置设计设置 OC Flex</strong>
 <ul>
@@ -228,7 +234,7 @@
 <li>确认了在维护模式下设置 noout 的做法，并在一定时间后重置。</li>
 <li>提出了改进存储私钥的方法，但认为这不是最高优先级。</li>
 <li>确认了需要引入 YAML 文档来简化区域和区域组的创建。</li>
-<li>提出了关于本地存储操作符的需求和设计，以及是否需要创建新的操作符。</li>
+<li>提出了关于本地存储操作符的需求和设计，并决定是否需要创建新的操作符。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
@@ -245,9 +251,6 @@
 <ul>
 <li>会议在讨论完所有议题后结束，并安排了下次会议的时间。</li>
 </ul>
-<hr />
-<p>以上是本次 Orchestrator
-会议的详细纪要，涵盖了会议的主要议题、决定事项和后续行动计划。</p>
 
         </div>
 
@@ -278,6 +281,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CI-CD/" rel="tag">CI&#x2F;CD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Integration-Testing/" rel="tag">Integration Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -337,18 +342,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2021/08/20/Ceph_Orchestrator_Meeting_2021-08-17/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2021/08/20/Ceph_Docubetter_Meeting_2021-08-11/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Orchestrator Meeting 2021-08-17</h4>
+        <h4 class="title">Ceph Docubetter Meeting 2021-08-11</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-19/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2021/08/20/Ceph_Orchestrator_Meeting_2021-08-17/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2021-08-19</h4>
+        <h4 class="title">Ceph Orchestrator Meeting 2021-08-17</h4>
       </a>
     </div>
   

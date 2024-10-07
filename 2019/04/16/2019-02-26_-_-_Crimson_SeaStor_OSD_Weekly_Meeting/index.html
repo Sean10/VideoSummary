@@ -14,23 +14,28 @@
     
     
     
-    <title>2019-02-26:: Crimson SeaStor OSD Weekly Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2019-02-26:: Crimson SeaStor OSD Weekly Meeting&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [会议时间] 参会人员： [参会人员名单] 会议内容： 1. Recovery State Machine - 议题：研发人员汇报了关于恢复状态机的最小实现工作，指出许多功能和特性依赖于状态机，且该状态机与scrubber、recovery等特性紧密耦合。 - 讨论：由于状态机的复杂性，预计需要更多时间进行测试和改进。 - 决定：继续推进状态机开发，并计划进行更深入的研究。">
+    <meta name="keywords" content="Ceph集群操作,Recovery State Machine,Ceph消息传递性能优化,Ceph消息传递协议,Ceph集群状态监控">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： [会议时间] 参会人员： [参会人员名单] 会议内容： 1. Recovery State Machine - 议题：研发人员汇报了关于恢复状态机的最小实现工作，指出许多功能和特性依赖于状态机，且该状态机与scrubber、recovery等特性紧密耦合。 - 讨论：由于状态机的复杂性，预计需要更多时间进行测试和改进。 - 决定：继续推进状态机开发，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-02-26:: Crimson SeaStor OSD Weekly Meeting">
+<meta property="og:title" content="&#39;2019-02-26:: Crimson SeaStor OSD Weekly Meeting&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/04/16/2019-02-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [会议时间] 参会人员： [参会人员名单] 会议内容： 1. Recovery State Machine - 议题：研发人员汇报了关于恢复状态机的最小实现工作，指出许多功能和特性依赖于状态机，且该状态机与scrubber、recovery等特性紧密耦合。 - 讨论：由于状态机的复杂性，预计需要更多时间进行测试和改进。 - 决定：继续推进状态机开发，并计划进行更深入的研究。">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： [会议时间] 参会人员： [参会人员名单] 会议内容： 1. Recovery State Machine - 议题：研发人员汇报了关于恢复状态机的最小实现工作，指出许多功能和特性依赖于状态机，且该状态机与scrubber、recovery等特性紧密耦合。 - 讨论：由于状态机的复杂性，预计需要更多时间进行测试和改进。 - 决定：继续推进状态机开发，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-04-15T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-04-16T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph集群操作">
+<meta property="article:tag" content="Recovery State Machine">
+<meta property="article:tag" content="Ceph消息传递性能优化">
+<meta property="article:tag" content="Ceph消息传递协议">
+<meta property="article:tag" content="Ceph集群状态监控">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-02-26:: Crimson SeaStor OSD Weekly Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2019-02-26:: Crimson SeaStor OSD Weekly Meeting&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-02-26:: Crimson SeaStor OSD Weekly Meeting</h1>
+        <h1 class="title">&#39;2019-02-26:: Crimson SeaStor OSD Weekly Meeting&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-04-15T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-02-26:: Crimson SeaStor OSD Weekly Meeting</h1>
+        <h1 class="post-card-title">'2019-02-26:: Crimson SeaStor OSD Weekly Meeting'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-04-16 00:00:00" datetime="2019-04-15T16:00:00.000Z"  itemprop="datePublished">2019-04-16</time>
 
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议时间">会议时间：</h4>
 <p>[会议时间]</p>
 <h4 id="参会人员">参会人员：</h4>
@@ -199,24 +205,18 @@
 <strong>决定</strong>：继续推进状态机开发，并计划进行更深入的研究。</p>
 <p><strong>2. Ceph集群操作</strong> -
 <strong>议题</strong>：讨论了如何使用现有的OSD进行迁移测试。 -
-<strong>讨论</strong>： -
-使用现有的OSD进行迁移测试，需要先准备OSD，然后启动。 -
-可以手动执行迁移命令，或者使用提供的图表进行操作。 -
-讨论了使用现有OSD进行迁移时的潜在问题，例如错误处理和状态跟踪。 -
-<strong>决定</strong>： -
-继续研究使用现有OSD进行迁移的方案，并解决相关问题。 -
-计划进行测试，以确保迁移过程顺利。</p>
+<strong>讨论</strong>：使用现有的OSD进行迁移测试，需要准备OSD并启动，可手动执行迁移命令或使用提供的图表进行操作，讨论了潜在问题如错误处理和状态跟踪。
+-
+<strong>决定</strong>：继续研究使用现有OSD进行迁移的方案，并解决相关问题。</p>
 <p><strong>3. Ceph消息传递</strong> -
 <strong>议题</strong>：讨论了Ceph消息传递的性能优化。 -
-<strong>讨论</strong>： -
-消息传递模块已合并一些性能优化，包括协议级别抽象和队列策略优化。 -
-讨论了使用CSTAR技术对消息传递模块进行优化的可能性。 -
-<strong>决定</strong>： - 继续研究CSTAR技术对消息传递模块的优化。 -
-计划进行性能测试，以评估优化效果。</p>
+<strong>讨论</strong>：消息传递模块已合并一些性能优化，包括协议级别抽象和队列策略优化。讨论了使用CSTAR技术对消息传递模块进行优化的可能性。
+-
+<strong>决定</strong>：继续研究CSTAR技术对消息传递模块的优化，并计划进行性能测试。</p>
 <p><strong>4. 其他事项</strong> -
 <strong>议题</strong>：讨论了字幕翻译和总结工作。 -
-<strong>讨论</strong>： - 翻译和总结工作进展顺利，但需要进一步优化流程。
-- <strong>决定</strong>： - 继续优化翻译和总结工作流程。</p>
+<strong>讨论</strong>：翻译和总结工作进展顺利，但需要进一步优化流程。 -
+<strong>决定</strong>：继续优化翻译和总结工作流程。</p>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
 <li><strong>Recovery State Machine</strong>：
@@ -269,6 +269,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92%E5%8D%8F%E8%AE%AE/" rel="tag">Ceph消息传递协议</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">Ceph消息传递性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E9%9B%86%E7%BE%A4%E6%93%8D%E4%BD%9C/" rel="tag">Ceph集群操作</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E9%9B%86%E7%BE%A4%E7%8A%B6%E6%80%81%E7%9B%91%E6%8E%A7/" rel="tag">Ceph集群状态监控</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Recovery-State-Machine/" rel="tag">Recovery State Machine</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -280,7 +282,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/16/2019-02-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《2019-02-26:: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/16/2019-02-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《'2019-02-26:: Crimson SeaStor OSD Weekly Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -290,7 +292,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/16/2019-02-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《2019-02-26:: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/16/2019-02-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《'2019-02-26:: Crimson SeaStor OSD Weekly Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -300,7 +302,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-02-26:: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/16/2019-02-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-02-26:: Crimson SeaStor OSD Weekly Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/16/2019-02-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -330,7 +332,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2019/04/16/2019-02-20_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-02-20:: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2019-02-20:: Ceph Orchestration Meeting&#39;</h4>
       </a>
     </div>
   
@@ -339,7 +341,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2019/04/16/2019-02-27_-_-_Ceph_Testing_meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-02-27 :: Ceph Testing meeting</h4>
+        <h4 class="title">2019-02-27 -- Ceph 测试会议</h4>
       </a>
     </div>
   
@@ -439,7 +441,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/16/2019-02-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《2019-02-26:: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/16/2019-02-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《'2019-02-26:: Crimson SeaStor OSD Weekly Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -449,7 +451,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/16/2019-02-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《2019-02-26:: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/16/2019-02-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&title=《'2019-02-26:: Crimson SeaStor OSD Weekly Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -459,7 +461,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-02-26:: Crimson SeaStor OSD Weekly Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/16/2019-02-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-02-26:: Crimson SeaStor OSD Weekly Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/16/2019-02-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

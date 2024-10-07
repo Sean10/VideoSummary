@@ -14,23 +14,28 @@
     
     
     
-    <title>Optimizing Ceph IO for High Throughput Particle Physics Workflows | ceph视频总结 | youtube频道总结</title>
+    <title>  Optimizing Ceph IO for High Throughput Particle Physics Workflows   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph存储系统在大型科学实验中的应用与优化 会议时间：[具体日期] 会议地点：[具体地点] 主讲人：Tom 参会人员：[参会人员名单] 会议内容总结：  主讲人介绍：  Tom来自英国的科学与技术设施委员会（Science and Technologies Facilities Council, STFC），该组织运营大型科学资源，如粒子加速器、硬X射线源和脉冲激光等。 ST">
+    <meta name="keywords" content="Ceph,Storage Cluster,High Throughput,Particle Physics,IO Optimization">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph存储系统在大型科学实验中的应用与优化 会议时间：[具体日期] 会议地点：[具体地点] 主讲人：Tom 参会人员：[参会人员名单] 会议内容总结：  主讲人介绍：  Tom来自英国的科学与技术设施委员会（STFC），负责设计和构建存储解决方案，支持设施用户和外部用户。  STFC背景：  STFC运营大型科学资源，支持大量数据密集型科学研究，并参">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Optimizing Ceph IO for High Throughput Particle Physics Workflows">
+<meta property="og:title" content="  Optimizing Ceph IO for High Throughput Particle Physics Workflows  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph存储系统在大型科学实验中的应用与优化 会议时间：[具体日期] 会议地点：[具体地点] 主讲人：Tom 参会人员：[参会人员名单] 会议内容总结：  主讲人介绍：  Tom来自英国的科学与技术设施委员会（Science and Technologies Facilities Council, STFC），该组织运营大型科学资源，如粒子加速器、硬X射线源和脉冲激光等。 ST">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph存储系统在大型科学实验中的应用与优化 会议时间：[具体日期] 会议地点：[具体地点] 主讲人：Tom 参会人员：[参会人员名单] 会议内容总结：  主讲人介绍：  Tom来自英国的科学与技术设施委员会（STFC），负责设计和构建存储解决方案，支持设施用户和外部用户。  STFC背景：  STFC运营大型科学资源，支持大量数据密集型科学研究，并参">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Storage Cluster">
+<meta property="article:tag" content="High Throughput">
+<meta property="article:tag" content="Particle Physics">
+<meta property="article:tag" content="IO Optimization">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Optimizing Ceph IO for High Throughput Particle Physics Workflows</div>
+        <div class="flex-col header-title ellipsis">  Optimizing Ceph IO for High Throughput Particle Physics Workflows  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Optimizing Ceph IO for High Throughput Particle Physics Workflows</h1>
+        <h1 class="title">  Optimizing Ceph IO for High Throughput Particle Physics Workflows  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%A4%A7%E5%9E%8B%E7%A7%91%E5%AD%A6%E5%AE%9E%E9%AA%8C%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph存储系统在大型科学实验中的应用与优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAtom"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主讲人：Tom</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">参会人员：[参会人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">后续行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%84%9F%E8%B0%A2%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">感谢人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E5%9C%A8%E5%A4%A7%E5%9E%8B%E7%A7%91%E5%AD%A6%E5%AE%9E%E9%AA%8C%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议主题：Ceph存储系统在大型科学实验中的应用与优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAtom"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主讲人：Tom</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">参会人员：[参会人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%84%9F%E8%B0%A2%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">感谢人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Optimizing Ceph IO for High Throughput Particle Physics Workflows</h1>
+        <h1 class="post-card-title">  Optimizing Ceph IO for High Throughput Particle Physics Workflows  </h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
@@ -185,9 +190,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4
-id="会议主题ceph存储系统在大型科学实验中的应用与优化">会议主题：Ceph存储系统在大型科学实验中的应用与优化</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
+<h3
+id="会议主题ceph存储系统在大型科学实验中的应用与优化">会议主题：Ceph存储系统在大型科学实验中的应用与优化</h3>
 <h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
 <h4 id="会议地点具体地点">会议地点：[具体地点]</h4>
 <h4 id="主讲人tom">主讲人：Tom</h4>
@@ -196,35 +202,23 @@ id="会议主题ceph存储系统在大型科学实验中的应用与优化">会�
 <ol type="1">
 <li><strong>主讲人介绍</strong>：
 <ul>
-<li>Tom来自英国的科学与技术设施委员会（Science and Technologies
-Facilities Council,
-STFC），该组织运营大型科学资源，如粒子加速器、硬X射线源和脉冲激光等。</li>
-<li>STFC旨在为学术界和商业用户提供免费的使用点访问，并参与UK Research
-and Innovation组织。</li>
+<li>Tom来自英国的科学与技术设施委员会（STFC），负责设计和构建存储解决方案，支持设施用户和外部用户。</li>
 </ul></li>
-<li><strong>公司背景</strong>：
+<li><strong>STFC背景</strong>：
 <ul>
-<li>STFC的科学计算部门支持大量数据密集型科学研究。</li>
-<li>公司拥有近十万核心的OpenStack，用于构建科学分析工作流程，并在其后运行多种Ceph版本以支持这些工作流程。</li>
+<li>STFC运营大型科学资源，支持大量数据密集型科学研究，并参与UK Research
+and Innovation组织。</li>
 </ul></li>
 <li><strong>Ceph集群Echo介绍</strong>：
 <ul>
-<li>Echo是STFC运行的最大的Ceph集群，已投入生产超过五年，从10PB增长到64.65PB。</li>
-<li>即将增加60PB的硬件，使其继续增长。</li>
-<li>Echo主要为LHC实验提供磁盘存储，是英国对LHC的主要贡献。</li>
-</ul></li>
-<li><strong>LHC和未来计划</strong>：
-<ul>
-<li>LHC目前处于第三次运行阶段，正在进行探测器和磁铁升级。</li>
-<li>未来的高亮度LHC将显著增加碰撞记录和数据率。</li>
-<li>为准备这一变化，STFC正在进行各种数据挑战，以确保基础设施的各个部分都已准备就绪。</li>
+<li>Echo是STFC运行的最大的Ceph集群，已投入生产超过五年，从10PB增长到64.65PB，主要用于LHC实验的磁盘存储。</li>
+<li>Echo使用XrootD作为数据传输框架，通过xrdCEPH和librados
+striper与Ceph集群交互。</li>
 </ul></li>
 <li><strong>Ceph集群Echo的优化</strong>：
 <ul>
-<li>Echo使用XrootD作为数据传输框架，通过xrdCEPH和librados
-striper直接与Ceph集群交互。</li>
 <li>发现小读取性能问题，并通过缓存和其他优化措施进行缓解。</li>
-<li>最终通过优化xrdCEPH和librados
+<li>通过优化xrdCEPH和librados
 striper，特别是移除锁定行为，显著提高了性能。</li>
 </ul></li>
 <li><strong>后续行动计划</strong>：
@@ -253,8 +247,6 @@ James等人在开发和实施优化措施中的关键贡献。</li>
 <ul>
 <li>会议在感谢和掌声中结束，准备进入下一个议程。</li>
 </ul>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -285,6 +277,8 @@ James等人在开发和实施优化措施中的关键贡献。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High-Throughput/" rel="tag">High Throughput</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/IO-Optimization/" rel="tag">IO Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Particle-Physics/" rel="tag">Particle Physics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Cluster/" rel="tag">Storage Cluster</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -296,7 +290,7 @@ James等人在开发和实施优化措施中的关键贡献。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/&title=《Optimizing Ceph IO for High Throughput Particle Physics Workflows》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/&title=《  Optimizing Ceph IO for High Throughput Particle Physics Workflows  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -306,7 +300,7 @@ James等人在开发和实施优化措施中的关键贡献。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/&title=《Optimizing Ceph IO for High Throughput Particle Physics Workflows》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/&title=《  Optimizing Ceph IO for High Throughput Particle Physics Workflows  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -316,7 +310,7 @@ James等人在开发和实施优化措施中的关键贡献。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Optimizing Ceph IO for High Throughput Particle Physics Workflows》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Optimizing Ceph IO for High Throughput Particle Physics Workflows  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -344,18 +338,18 @@ James等人在开发和实施优化措施中的关键贡献。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/05/Optimizing_CephFS_with_Combining_MDS_QoS_Scheduling_and_Static-Dynamic_Subtree_Partitioning/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Optimizing CephFS with Combining MDS QoS Scheduling and Static-Dynamic Subtree Partitioning</h4>
+        <h4 class="title">Ceph 新读平衡器介绍 - Laura Flores, IBM</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/05/Over_a_Billion_Requests_Served_per_Day_-_Ensuring_Everyone_Is_Happy_with_Our_Ceph_Clusters_.../" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Optimizing_CephFS_with_Combining_MDS_QoS_Scheduling_and_Static-Dynamic_Subtree_Partitioning/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Over a Billion Requests Served per Day: Ensuring Everyone Is Happy with Our Ceph Clusters’...</h4>
+        <h4 class="title">Optimizing CephFS with Combining MDS QoS Scheduling and Static-Dynamic Subtree Partitioning</h4>
       </a>
     </div>
   
@@ -455,7 +449,7 @@ James等人在开发和实施优化措施中的关键贡献。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/&title=《Optimizing Ceph IO for High Throughput Particle Physics Workflows》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/&title=《  Optimizing Ceph IO for High Throughput Particle Physics Workflows  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -465,7 +459,7 @@ James等人在开发和实施优化措施中的关键贡献。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/&title=《Optimizing Ceph IO for High Throughput Particle Physics Workflows》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/&title=《  Optimizing Ceph IO for High Throughput Particle Physics Workflows  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -475,7 +469,7 @@ James等人在开发和实施优化措施中的关键贡献。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Optimizing Ceph IO for High Throughput Particle Physics Workflows》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Optimizing Ceph IO for High Throughput Particle Physics Workflows  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

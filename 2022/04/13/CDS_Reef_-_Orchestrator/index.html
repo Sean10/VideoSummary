@@ -14,23 +14,28 @@
     
     
     
-    <title>CDS Reef: Orchestrator | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;CDS Reef: Orchestrator&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议主要讨论了Ceph Orchestrator的规划，包括团队提出的初始议题和后续行动计划。会议涉及多个关键议题，包括代理稳定化、服务循环透明度、升级历史记录、二进制文件重构、工作流程简化以及断开环境的支持等。 主要议题 代理稳定化  现状：代理（agent）是一个非容器化的守护进程，运行在每个主机上，用于加速指标收集。 问题：存在主机离线时的稳定性问题，需要进一步的稳定">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,自动化,Orchestrator">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议重点讨论了Ceph Orchestrator的规划和改进，包括团队提出的初始议题和后续行动计划。会议涵盖了多个关键议题，如代理稳定化、服务循环透明度、升级历史记录、二进制文件重构、工作流程简化以及断开环境的支持等。 主要议题 代理稳定化  现状：代理（agent）是一个非容器化的守护进程，运行在每个主机上，用于加速指标收集。 问题：存在主机离线">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Reef: Orchestrator">
+<meta property="og:title" content="&#39;CDS Reef: Orchestrator&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/04/13/CDS_Reef_-_Orchestrator/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议主要讨论了Ceph Orchestrator的规划，包括团队提出的初始议题和后续行动计划。会议涉及多个关键议题，包括代理稳定化、服务循环透明度、升级历史记录、二进制文件重构、工作流程简化以及断开环境的支持等。 主要议题 代理稳定化  现状：代理（agent）是一个非容器化的守护进程，运行在每个主机上，用于加速指标收集。 问题：存在主机离线时的稳定性问题，需要进一步的稳定">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议重点讨论了Ceph Orchestrator的规划和改进，包括团队提出的初始议题和后续行动计划。会议涵盖了多个关键议题，如代理稳定化、服务循环透明度、升级历史记录、二进制文件重构、工作流程简化以及断开环境的支持等。 主要议题 代理稳定化  现状：代理（agent）是一个非容器化的守护进程，运行在每个主机上，用于加速指标收集。 问题：存在主机离线">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-12T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-04-12T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="自动化">
+<meta property="article:tag" content="Orchestrator">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Reef: Orchestrator</div>
+        <div class="flex-col header-title ellipsis">&#39;CDS Reef: Orchestrator&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Reef: Orchestrator</h1>
+        <h1 class="title">&#39;CDS Reef: Orchestrator&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-04-12T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BB%A3%E7%90%86%E7%A8%B3%E5%AE%9A%E5%8C%96"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">代理稳定化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%BE%AA%E7%8E%AF%E9%80%8F%E6%98%8E%E5%BA%A6"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">服务循环透明度</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8D%87%E7%BA%A7%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">升级历史记录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E9%87%8D%E6%9E%84"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">二进制文件重构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E7%AE%80%E5%8C%96"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">工作流程简化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%96%AD%E5%BC%80%E7%8E%AF%E5%A2%83%E6%94%AF%E6%8C%81"><span class="post-toc-number">1.2.6.</span> <span class="post-toc-text">断开环境支持</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他讨论</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BB%A3%E7%90%86%E7%A8%B3%E5%AE%9A%E5%8C%96"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">代理稳定化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%BE%AA%E7%8E%AF%E9%80%8F%E6%98%8E%E5%BA%A6"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">服务循环透明度</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8D%87%E7%BA%A7%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">升级历史记录</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E9%87%8D%E6%9E%84"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">二进制文件重构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E7%AE%80%E5%8C%96"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">工作流程简化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%96%AD%E5%BC%80%E7%8E%AF%E5%A2%83%E6%94%AF%E6%8C%81"><span class="post-toc-number">1.2.6.</span> <span class="post-toc-text">断开环境支持</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他讨论</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Reef: Orchestrator</h1>
+        <h1 class="post-card-title">'CDS Reef: Orchestrator'</h1>
         <div class="post-meta">
             <time class="post-time" title="2022-04-13 00:00:00" datetime="2022-04-12T16:00:00.000Z"  itemprop="datePublished">2022-04-13</time>
 
@@ -185,42 +190,43 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="会议纪要">会议纪要</h1>
-<h2 id="会议概述">会议概述</h2>
-<p>本次会议主要讨论了Ceph
-Orchestrator的规划，包括团队提出的初始议题和后续行动计划。会议涉及多个关键议题，包括代理稳定化、服务循环透明度、升级历史记录、二进制文件重构、工作流程简化以及断开环境的支持等。</p>
-<h2 id="主要议题">主要议题</h2>
-<h3 id="代理稳定化">代理稳定化</h3>
+            <p>[改进后的中文总结内容]</p>
+<h2 id="会议纪要">会议纪要</h2>
+<h3 id="会议概述">会议概述</h3>
+<p>本次会议重点讨论了Ceph
+Orchestrator的规划和改进，包括团队提出的初始议题和后续行动计划。会议涵盖了多个关键议题，如代理稳定化、服务循环透明度、升级历史记录、二进制文件重构、工作流程简化以及断开环境的支持等。</p>
+<h3 id="主要议题">主要议题</h3>
+<h4 id="代理稳定化">代理稳定化</h4>
 <ul>
 <li><strong>现状</strong>：代理（agent）是一个非容器化的守护进程，运行在每个主机上，用于加速指标收集。</li>
 <li><strong>问题</strong>：存在主机离线时的稳定性问题，需要进一步的稳定化和功能增强。</li>
 <li><strong>计划</strong>：增强代理的稳定性，实现守护进程的部署和信息收集功能，使其能够异步执行，提高效率。</li>
 </ul>
-<h3 id="服务循环透明度">服务循环透明度</h3>
+<h4 id="服务循环透明度">服务循环透明度</h4>
 <ul>
 <li><strong>现状</strong>：当前服务事件和日志信息难以访问，不易于调试。</li>
 <li><strong>计划</strong>：改进日志和事件的可访问性，提供CLI命令来查看历史操作和当前状态，增强调试功能。</li>
 </ul>
-<h3 id="升级历史记录">升级历史记录</h3>
+<h4 id="升级历史记录">升级历史记录</h4>
 <ul>
 <li><strong>现状</strong>：升级过程中的状态信息在完成后消失，难以追踪。</li>
 <li><strong>计划</strong>：实现升级历史记录功能，记录升级的时间、版本等信息，便于后续查询和故障排查。</li>
 </ul>
-<h3 id="二进制文件重构">二进制文件重构</h3>
+<h4 id="二进制文件重构">二进制文件重构</h4>
 <ul>
 <li><strong>现状</strong>：当前二进制文件庞大且难以维护。</li>
 <li><strong>计划</strong>：进行二进制文件的重构，将其模块化，便于未来的维护和开发。</li>
 </ul>
-<h3 id="工作流程简化">工作流程简化</h3>
+<h4 id="工作流程简化">工作流程简化</h4>
 <ul>
 <li><strong>计划</strong>：自动化一些复杂的工作流程，如监控堆栈镜像的设置和多站点部署，提高用户体验。</li>
 </ul>
-<h3 id="断开环境支持">断开环境支持</h3>
+<h4 id="断开环境支持">断开环境支持</h4>
 <ul>
 <li><strong>现状</strong>：当前对断开环境的文档和支持有限。</li>
 <li><strong>计划</strong>：增强对断开环境的支持，确保在这些环境中的部署和运行更加顺畅。</li>
 </ul>
-<h2 id="决定事项">决定事项</h2>
+<h3 id="决定事项">决定事项</h3>
 <ul>
 <li>增强代理的稳定性和功能。</li>
 <li>改进服务循环的透明度和调试功能。</li>
@@ -229,7 +235,7 @@ Orchestrator的规划，包括团队提出的初始议题和后续行动计划�
 <li>自动化复杂的工作流程。</li>
 <li>增强对断开环境的支持。</li>
 </ul>
-<h2 id="后续行动计划">后续行动计划</h2>
+<h3 id="后续行动计划">后续行动计划</h3>
 <ul>
 <li>继续推进代理的稳定化和功能增强。</li>
 <li>开发和测试服务循环透明度的改进措施。</li>
@@ -238,12 +244,12 @@ Orchestrator的规划，包括团队提出的初始议题和后续行动计划�
 <li>自动化监控堆栈镜像设置和多站点部署流程。</li>
 <li>增强断开环境的文档和支持。</li>
 </ul>
-<h2 id="其他讨论">其他讨论</h2>
+<h3 id="其他讨论">其他讨论</h3>
 <ul>
 <li>讨论了性能和规模的问题，计划在未来进行更多的测试和优化。</li>
 <li>提及了资源感知调度的问题，计划在未来进行研究和开发。</li>
 </ul>
-<h2 id="会议结束">会议结束</h2>
+<h3 id="会议结束">会议结束</h3>
 <p>会议在讨论了所有议题后结束，感谢所有参与者的贡献，并期待未来的进展。</p>
 
         </div>
@@ -275,6 +281,8 @@ Orchestrator的规划，包括团队提出的初始议题和后续行动计划�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" rel="tag">自动化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -286,7 +294,7 @@ Orchestrator的规划，包括团队提出的初始议题和后续行动计划�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/13/CDS_Reef_-_Orchestrator/&title=《CDS Reef: Orchestrator》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/13/CDS_Reef_-_Orchestrator/&title=《'CDS Reef: Orchestrator'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -296,7 +304,7 @@ Orchestrator的规划，包括团队提出的初始议题和后续行动计划�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/13/CDS_Reef_-_Orchestrator/&title=《CDS Reef: Orchestrator》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/13/CDS_Reef_-_Orchestrator/&title=《'CDS Reef: Orchestrator'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -306,7 +314,7 @@ Orchestrator的规划，包括团队提出的初始议题和后续行动计划�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Reef: Orchestrator》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/13/CDS_Reef_-_Orchestrator/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CDS Reef: Orchestrator'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/13/CDS_Reef_-_Orchestrator/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -336,7 +344,7 @@ Orchestrator的规划，包括团队提出的初始议题和后续行动计划�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Reef: Rados Gateway</h4>
+        <h4 class="title">&#39;CDS Reef: Rados Gateway&#39;</h4>
       </a>
     </div>
   
@@ -345,7 +353,7 @@ Orchestrator的规划，包括团队提出的初始议题和后续行动计划�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/04/07/Ceph_Performance_Meeting_2022-04-07/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2022-04-07</h4>
+        <h4 class="title">Ceph 性能会议 2022-04-07</h4>
       </a>
     </div>
   
@@ -445,7 +453,7 @@ Orchestrator的规划，包括团队提出的初始议题和后续行动计划�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/13/CDS_Reef_-_Orchestrator/&title=《CDS Reef: Orchestrator》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/13/CDS_Reef_-_Orchestrator/&title=《'CDS Reef: Orchestrator'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -455,7 +463,7 @@ Orchestrator的规划，包括团队提出的初始议题和后续行动计划�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/13/CDS_Reef_-_Orchestrator/&title=《CDS Reef: Orchestrator》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/13/CDS_Reef_-_Orchestrator/&title=《'CDS Reef: Orchestrator'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -465,7 +473,7 @@ Orchestrator的规划，包括团队提出的初始议题和后续行动计划�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Reef: Orchestrator》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/13/CDS_Reef_-_Orchestrator/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CDS Reef: Orchestrator'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/13/CDS_Reef_-_Orchestrator/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

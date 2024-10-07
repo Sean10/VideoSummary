@@ -20,17 +20,94 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间：[具体日期] 参会人员：[列出参会人员] 主要议题：  Ceph多核PR的进展  发言人：[姓名] 进展：第二个多核PR即将完成，预计明天发布。第三个多核PR的工作即将开始。  OSD启动和ZNS设备测试  发言人：[姓名] 进展：成功在ZNS设备上启动OSD，并进行了RADOS Bench测试。遇到了GC（垃圾回收）问题，GC启动后IO操作停止，需要进一步调试。  对象数据块">
+    <meta name="keywords" content="Ceph,分布式存储,块存储,快照,克隆,虚拟化,高可用性,CRUSH算法,RGW,对象存储,可伸缩性,Docker,Kubernetes,OSD,RocksDB,容器化,Bluestore,RESTful API,自动化,文件系统存储,一致性,去中心化,性能,BlueFS,MON,MDS,PG,RADOS,librados,libcephfs,cephfs,rbd,radosgw,认证,授权,加密,损坏纠正码,复制,iSCSI,Fibre Channel,NFS,CIFS,POSIX,监控,管理,集成,云计算,AWS,Azure,Google Cloud,混合云,多云,存储集群,节点,磁盘,SSD,HDD,JBOD,SAN,NAS,网络,拓扑,恢复,弹性,负载均衡,缓存,压缩,数据去重,性能调优,基准测试,验证,仪表板,测试,失效域,分级,瘦省配额,演示">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间：2022年7月13日 参会人员：[列出参会人员] 主要议题：  Ceph多核PR的进展  第二个多核PR即将完成，预计明天发布。第三个多核PR的工作即将开始。  OSD启动和ZNS设备测试  成功在ZNS设备上启动OSD，并进行了RADOS Bench测试。遇到GC（垃圾回收）问题，需要进一步调试。  对象数据块分割和冲突检测改进  第一个PR已合并，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Crimson&#x2F;SeaStore Meeting 2022-07-13">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/07/19/Crimson_SeaStore_Meeting_2022-07-13/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间：[具体日期] 参会人员：[列出参会人员] 主要议题：  Ceph多核PR的进展  发言人：[姓名] 进展：第二个多核PR即将完成，预计明天发布。第三个多核PR的工作即将开始。  OSD启动和ZNS设备测试  发言人：[姓名] 进展：成功在ZNS设备上启动OSD，并进行了RADOS Bench测试。遇到了GC（垃圾回收）问题，GC启动后IO操作停止，需要进一步调试。  对象数据块">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间：2022年7月13日 参会人员：[列出参会人员] 主要议题：  Ceph多核PR的进展  第二个多核PR即将完成，预计明天发布。第三个多核PR的工作即将开始。  OSD启动和ZNS设备测试  成功在ZNS设备上启动OSD，并进行了RADOS Bench测试。遇到GC（垃圾回收）问题，需要进一步调试。  对象数据块分割和冲突检测改进  第一个PR已合并，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-18T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-07-19T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="块存储">
+<meta property="article:tag" content="快照">
+<meta property="article:tag" content="克隆">
+<meta property="article:tag" content="虚拟化">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="可伸缩性">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="容器化">
+<meta property="article:tag" content="Bluestore">
+<meta property="article:tag" content="RESTful API">
+<meta property="article:tag" content="自动化">
+<meta property="article:tag" content="文件系统存储">
+<meta property="article:tag" content="一致性">
+<meta property="article:tag" content="去中心化">
+<meta property="article:tag" content="性能">
+<meta property="article:tag" content="BlueFS">
+<meta property="article:tag" content="MON">
+<meta property="article:tag" content="MDS">
+<meta property="article:tag" content="PG">
+<meta property="article:tag" content="RADOS">
+<meta property="article:tag" content="librados">
+<meta property="article:tag" content="libcephfs">
+<meta property="article:tag" content="cephfs">
+<meta property="article:tag" content="rbd">
+<meta property="article:tag" content="radosgw">
+<meta property="article:tag" content="认证">
+<meta property="article:tag" content="授权">
+<meta property="article:tag" content="加密">
+<meta property="article:tag" content="损坏纠正码">
+<meta property="article:tag" content="复制">
+<meta property="article:tag" content="iSCSI">
+<meta property="article:tag" content="Fibre Channel">
+<meta property="article:tag" content="NFS">
+<meta property="article:tag" content="CIFS">
+<meta property="article:tag" content="POSIX">
+<meta property="article:tag" content="监控">
+<meta property="article:tag" content="管理">
+<meta property="article:tag" content="集成">
+<meta property="article:tag" content="云计算">
+<meta property="article:tag" content="AWS">
+<meta property="article:tag" content="Azure">
+<meta property="article:tag" content="Google Cloud">
+<meta property="article:tag" content="混合云">
+<meta property="article:tag" content="多云">
+<meta property="article:tag" content="存储集群">
+<meta property="article:tag" content="节点">
+<meta property="article:tag" content="磁盘">
+<meta property="article:tag" content="SSD">
+<meta property="article:tag" content="HDD">
+<meta property="article:tag" content="JBOD">
+<meta property="article:tag" content="SAN">
+<meta property="article:tag" content="NAS">
+<meta property="article:tag" content="网络">
+<meta property="article:tag" content="拓扑">
+<meta property="article:tag" content="恢复">
+<meta property="article:tag" content="弹性">
+<meta property="article:tag" content="负载均衡">
+<meta property="article:tag" content="缓存">
+<meta property="article:tag" content="压缩">
+<meta property="article:tag" content="数据去重">
+<meta property="article:tag" content="性能调优">
+<meta property="article:tag" content="基准测试">
+<meta property="article:tag" content="验证">
+<meta property="article:tag" content="仪表板">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="失效域">
+<meta property="article:tag" content="分级">
+<meta property="article:tag" content="瘦省配额">
+<meta property="article:tag" content="演示">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +236,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%88%97%E5%87%BA%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：[列出参会人员]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">备注：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束时间：[具体时间]</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B42022%E5%B9%B47%E6%9C%8813%E6%97%A5"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议时间：2022年7月13日</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%88%97%E5%87%BA%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：[列出参会人员]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">备注：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,46 +262,40 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议时间2022年7月13日">会议时间：2022年7月13日</h4>
 <h4 id="参会人员列出参会人员">参会人员：[列出参会人员]</h4>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
 <li><strong>Ceph多核PR的进展</strong>
 <ul>
-<li>发言人：[姓名]</li>
-<li>进展：第二个多核PR即将完成，预计明天发布。第三个多核PR的工作即将开始。</li>
+<li>第二个多核PR即将完成，预计明天发布。第三个多核PR的工作即将开始。</li>
 </ul></li>
 <li><strong>OSD启动和ZNS设备测试</strong>
 <ul>
-<li>发言人：[姓名]</li>
-<li>进展：成功在ZNS设备上启动OSD，并进行了RADOS
-Bench测试。遇到了GC（垃圾回收）问题，GC启动后IO操作停止，需要进一步调试。</li>
+<li>成功在ZNS设备上启动OSD，并进行了RADOS
+Bench测试。遇到GC（垃圾回收）问题，需要进一步调试。</li>
 </ul></li>
 <li><strong>对象数据块分割和冲突检测改进</strong>
 <ul>
-<li>发言人：[姓名]</li>
-<li>进展：完成了第一个PR的合并，后续工作包括进一步改进冲突检测和简化随机块管理器的循环日志。</li>
+<li>第一个PR已合并，后续工作包括进一步改进冲突检测和简化随机块管理器的循环日志。</li>
 </ul></li>
 <li><strong>列表对象和枚举对象的调试</strong>
 <ul>
-<li>发言人：[姓名]</li>
-<li>进展：正在根据评论修改PR，并进行调试。</li>
+<li>正在根据评论修改PR，并进行调试。</li>
 </ul></li>
 <li><strong>物理B3优化和死亡引用问题</strong>
 <ul>
-<li>发言人：[姓名]</li>
-<li>进展：已分离出第一个PR，第二个PR即将提交。</li>
+<li>已分离出第一个PR，第二个PR即将提交。</li>
 </ul></li>
 <li><strong>HDD支持的讨论</strong>
 <ul>
-<li>发言人：[姓名]</li>
-<li>讨论：关于是否在HDD上使用RBM（随机块管理器）进行了深入讨论。建议尽可能避免设备特定代码，并考虑使用段管理器来优化HDD的分配策略。</li>
+<li>关于是否在HDD上使用RBM（随机块管理器）进行了深入讨论，建议使用段管理器优化HDD的分配策略。</li>
 </ul></li>
 <li><strong>SMR硬盘支持的可能性</strong>
 <ul>
-<li>发言人：[姓名]</li>
-<li>讨论：提出了在Ceph中支持SMR（叠瓦式磁记录）硬盘的可能性，建议创建SMR实现的段管理器。</li>
+<li>提出了在Ceph中支持SMR（叠瓦式磁记录）硬盘的可能性，建议创建SMR实现的段管理器。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项：</h4>
@@ -233,7 +304,7 @@ Bench测试。遇到了GC（垃圾回收）问题，GC启动后IO操作停止，
 <li>继续改进冲突检测和简化随机块管理器的循环日志。</li>
 <li>继续调试列表对象和枚举对象的问题。</li>
 <li>继续优化物理B3和解决死亡引用问题。</li>
-<li>对于HDD支持，建议尽可能避免设备特定代码，并考虑使用段管理器来优化HDD的分配策略。</li>
+<li>对于HDD支持，建议尽可能避免设备特定代码，并考虑使用段管理器优化HDD的分配策略。</li>
 <li>考虑在Ceph中支持SMR硬盘，创建SMR实现的段管理器。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
@@ -250,10 +321,8 @@ Bench测试。遇到了GC（垃圾回收）问题，GC启动后IO操作停止，
 <ul>
 <li>会议中提到的技术术语包括ZNS（Zone Namespace）、RADOS
 Bench、GC（垃圾回收）、RBM（随机块管理器）、SMR（叠瓦式磁记录）等。</li>
+<li>会议结束时间：[具体时间]</li>
 </ul>
-<h4 id="会议结束时间具体时间">会议结束时间：[具体时间]</h4>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -284,6 +353,8 @@ Bench、GC（垃圾回收）、RBM（随机块管理器）、SMR（叠瓦式磁�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/AWS/" rel="tag">AWS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Azure/" rel="tag">Azure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueFS/" rel="tag">BlueFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bluestore/" rel="tag">Bluestore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CIFS/" rel="tag">CIFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Docker/" rel="tag">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Fibre-Channel/" rel="tag">Fibre Channel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Google-Cloud/" rel="tag">Google Cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/HDD/" rel="tag">HDD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/JBOD/" rel="tag">JBOD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MDS/" rel="tag">MDS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MON/" rel="tag">MON</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NAS/" rel="tag">NAS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS/" rel="tag">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PG/" rel="tag">PG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/POSIX/" rel="tag">POSIX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS/" rel="tag">RADOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RESTful-API/" rel="tag">RESTful API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SAN/" rel="tag">SAN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SSD/" rel="tag">SSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/cephfs/" rel="tag">cephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/iSCSI/" rel="tag">iSCSI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/libcephfs/" rel="tag">libcephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/librados/" rel="tag">librados</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/radosgw/" rel="tag">radosgw</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/rbd/" rel="tag">rbd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%B8%80%E8%87%B4%E6%80%A7/" rel="tag">一致性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%AA%E8%A1%A8%E6%9D%BF/" rel="tag">仪表板</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%85%8B%E9%9A%86/" rel="tag">克隆</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E7%BA%A7/" rel="tag">分级</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8A%A0%E5%AF%86/" rel="tag">加密</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8E%8B%E7%BC%A9/" rel="tag">压缩</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96/" rel="tag">去中心化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%9D%97%E5%AD%98%E5%82%A8/" rel="tag">块存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/" rel="tag">基准测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%8D%E5%88%B6/" rel="tag">复制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E4%BA%91/" rel="tag">多云</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%B1%E6%95%88%E5%9F%9F/" rel="tag">失效域</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E9%9B%86%E7%BE%A4/" rel="tag">存储集群</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/" rel="tag">容器化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%B9%E6%80%A7/" rel="tag">弹性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BF%AB%E7%85%A7/" rel="tag">快照</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD/" rel="tag">性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/" rel="tag">性能调优</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%81%A2%E5%A4%8D/" rel="tag">恢复</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8B%93%E6%89%91/" rel="tag">拓扑</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8D%9F%E5%9D%8F%E7%BA%A0%E6%AD%A3%E7%A0%81/" rel="tag">损坏纠正码</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8E%88%E6%9D%83/" rel="tag">授权</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%B0%E6%8D%AE%E5%8E%BB%E9%87%8D/" rel="tag">数据去重</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8/" rel="tag">文件系统存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B7%B7%E5%90%88%E4%BA%91/" rel="tag">混合云</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%BC%94%E7%A4%BA/" rel="tag">演示</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%98%A6%E7%9C%81%E9%85%8D%E9%A2%9D/" rel="tag">瘦省配额</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%9B%91%E6%8E%A7/" rel="tag">监控</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A3%81%E7%9B%98/" rel="tag">磁盘</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%AE%A1%E7%90%86/" rel="tag">管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" rel="tag">自动化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%8A%82%E7%82%B9/" rel="tag">节点</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="tag">虚拟化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%AE%A4%E8%AF%81/" rel="tag">认证</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%9B%86%E6%88%90/" rel="tag">集成</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AA%8C%E8%AF%81/" rel="tag">验证</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -354,7 +425,7 @@ Bench、GC（垃圾回收）、RBM（随机块管理器）、SMR（叠瓦式磁�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/06/30/Ceph_Performance_Meeting_2022-06-30/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2022-06-30</h4>
+        <h4 class="title">Ceph 性能会议 2022-06-30</h4>
       </a>
     </div>
   

@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Crimson/SeaStore Meeting 2023-02-22 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph Crimson/SeaStore 会议纪要 2023-02-22 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 日期： [具体日期] 参会人员： [参会人员名单] 1. 研发进展报告  scrub 和 crimson 工作： 目前主要集中在 scrub 工作上，未来将转向 crimson 相关工作。 弱事务问题审查： 正在审查 Johan 发现的弱事务问题，目前有四到五个相关的 PR 待处理。 多信使扩展工作： 正在进行 socket 和 socket 测试的扩展工作，并继续进行清理工作。  2.">
+    <meta name="keywords" content="Ceph,distributed storage,Crimson,storage cluster,SeaStore">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 日期： 2023-02-22 参会人员： [参会人员名单] 1. 研发进展报告  scrub 和 crimson 工作进展： 目前研发团队专注于 scrub 工作和 crimson 相关的开发。 弱事务问题： 正在审查 Johan 发现的弱事务问题，目前有四到五个相关的 Pull Request (PR) 待处理。 多信使扩展： 正在进行 socket 和 so">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Crimson&#x2F;SeaStore Meeting 2023-02-22">
+<meta property="og:title" content="Ceph Crimson&#x2F;SeaStore 会议纪要 2023-02-22">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/02/23/Ceph_Crimson_SeaStore_Meeting_2023-02-22/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 日期： [具体日期] 参会人员： [参会人员名单] 1. 研发进展报告  scrub 和 crimson 工作： 目前主要集中在 scrub 工作上，未来将转向 crimson 相关工作。 弱事务问题审查： 正在审查 Johan 发现的弱事务问题，目前有四到五个相关的 PR 待处理。 多信使扩展工作： 正在进行 socket 和 socket 测试的扩展工作，并继续进行清理工作。  2.">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 日期： 2023-02-22 参会人员： [参会人员名单] 1. 研发进展报告  scrub 和 crimson 工作进展： 目前研发团队专注于 scrub 工作和 crimson 相关的开发。 弱事务问题： 正在审查 Johan 发现的弱事务问题，目前有四到五个相关的 Pull Request (PR) 待处理。 多信使扩展： 正在进行 socket 和 so">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-02-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="distributed storage">
+<meta property="article:tag" content="Crimson">
+<meta property="article:tag" content="storage cluster">
+<meta property="article:tag" content="SeaStore">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Crimson/SeaStore Meeting 2023-02-22</div>
+        <div class="flex-col header-title ellipsis">Ceph Crimson/SeaStore 会议纪要 2023-02-22</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Crimson/SeaStore Meeting 2023-02-22</h1>
+        <h1 class="title">Ceph Crimson/SeaStore 会议纪要 2023-02-22</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-02-22T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Crimson/SeaStore Meeting 2023-02-22</h1>
+        <h1 class="post-card-title">Ceph Crimson/SeaStore 会议纪要 2023-02-22</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-02-23 00:00:00" datetime="2023-02-22T16:00:00.000Z"  itemprop="datePublished">2023-02-23</time>
 
@@ -185,16 +190,17 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>日期：</strong> [具体日期] <strong>参会人员：</strong>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>日期：</strong> 2023-02-22 <strong>参会人员：</strong>
 [参会人员名单]</p>
 <h4 id="研发进展报告">1. 研发进展报告</h4>
 <ul>
-<li><strong>scrub 和 crimson 工作：</strong> 目前主要集中在 scrub
-工作上，未来将转向 crimson 相关工作。</li>
-<li><strong>弱事务问题审查：</strong> 正在审查 Johan
-发现的弱事务问题，目前有四到五个相关的 PR 待处理。</li>
-<li><strong>多信使扩展工作：</strong> 正在进行 socket 和 socket
+<li><strong>scrub 和 crimson 工作进展：</strong> 目前研发团队专注于
+scrub 工作和 crimson 相关的开发。</li>
+<li><strong>弱事务问题：</strong> 正在审查 Johan
+发现的弱事务问题，目前有四到五个相关的 Pull Request (PR) 待处理。</li>
+<li><strong>多信使扩展：</strong> 正在进行 socket 和 socket
 测试的扩展工作，并继续进行清理工作。</li>
 </ul>
 <h4 id="qe-部门更新">2. QE 部门更新</h4>
@@ -228,6 +234,7 @@ zero shortstore，以及如何处理未来可能的动态空间分配问题。</
 <p><strong>下次会议：</strong> [具体日期]</p>
 <p><strong>备注：</strong> 下次会议将讨论如何使用 ceph-ansible 部署
 crimson，并寻求社区的帮助和反馈。</p>
+<p>[改进后的中文总结内容结束]</p>
 
         </div>
 
@@ -258,6 +265,8 @@ crimson，并寻求社区的帮助和反馈。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson/" rel="tag">Crimson</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SeaStore/" rel="tag">SeaStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/distributed-storage/" rel="tag">distributed storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/storage-cluster/" rel="tag">storage cluster</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -269,7 +278,7 @@ crimson，并寻求社区的帮助和反馈。</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/02/23/Ceph_Crimson_SeaStore_Meeting_2023-02-22/&title=《Ceph Crimson/SeaStore Meeting 2023-02-22》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/02/23/Ceph_Crimson_SeaStore_Meeting_2023-02-22/&title=《Ceph Crimson/SeaStore 会议纪要 2023-02-22》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -279,7 +288,7 @@ crimson，并寻求社区的帮助和反馈。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/02/23/Ceph_Crimson_SeaStore_Meeting_2023-02-22/&title=《Ceph Crimson/SeaStore Meeting 2023-02-22》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/02/23/Ceph_Crimson_SeaStore_Meeting_2023-02-22/&title=《Ceph Crimson/SeaStore 会议纪要 2023-02-22》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -289,7 +298,7 @@ crimson，并寻求社区的帮助和反馈。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore Meeting 2023-02-22》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/02/23/Ceph_Crimson_SeaStore_Meeting_2023-02-22/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore 会议纪要 2023-02-22》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/02/23/Ceph_Crimson_SeaStore_Meeting_2023-02-22/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -428,7 +437,7 @@ crimson，并寻求社区的帮助和反馈。</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/02/23/Ceph_Crimson_SeaStore_Meeting_2023-02-22/&title=《Ceph Crimson/SeaStore Meeting 2023-02-22》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/02/23/Ceph_Crimson_SeaStore_Meeting_2023-02-22/&title=《Ceph Crimson/SeaStore 会议纪要 2023-02-22》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -438,7 +447,7 @@ crimson，并寻求社区的帮助和反馈。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/02/23/Ceph_Crimson_SeaStore_Meeting_2023-02-22/&title=《Ceph Crimson/SeaStore Meeting 2023-02-22》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/02/23/Ceph_Crimson_SeaStore_Meeting_2023-02-22/&title=《Ceph Crimson/SeaStore 会议纪要 2023-02-22》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -448,7 +457,7 @@ crimson，并寻求社区的帮助和反馈。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore Meeting 2023-02-22》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/02/23/Ceph_Crimson_SeaStore_Meeting_2023-02-22/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore 会议纪要 2023-02-22》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/02/23/Ceph_Crimson_SeaStore_Meeting_2023-02-22/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

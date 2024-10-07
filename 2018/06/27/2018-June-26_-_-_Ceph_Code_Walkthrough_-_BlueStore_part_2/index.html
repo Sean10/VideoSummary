@@ -14,23 +14,28 @@
     
     
     
-    <title>2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2 | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Ceph分布式存储系统关键组件解析与性能优化 会议时间： 2023年11月（具体日期未提及） 参会人员： 未知 会议内容： 一、会议背景 本次会议主要针对Ceph分布式存储系统中的一些关键组件进行解析，并探讨如何优化其性能。 二、关键组件解析  缓存机制：  Ceph使用内存缓存来存储频繁访问的数据，提高访问效率。 缓存分为LRU缓存和2Q缓存两种，2Q缓存具有更高的缓存命中">
+    <meta name="keywords" content="Ceph,BlueStore,Distributed Storage,Performance Optimization,Transaction Management">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议深入探讨了Ceph分布式存储系统中BlueStore组件的设计和实现细节，重点关注了性能优化和关键组件的工作机制。 会议内容：  缓存机制：介绍了Ceph的缓存机制，包括LRU缓存和2Q缓存，以及如何根据数据访问模式调整缓存大小。 对象存储：讲解了对象存储的结构，包括如何使用Onode和Blob表示对象和数据块，以及共享Blob的引用计数管理。 事务处理：讨论了C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2">
+<meta property="og:title" content="&#39;2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Ceph分布式存储系统关键组件解析与性能优化 会议时间： 2023年11月（具体日期未提及） 参会人员： 未知 会议内容： 一、会议背景 本次会议主要针对Ceph分布式存储系统中的一些关键组件进行解析，并探讨如何优化其性能。 二、关键组件解析  缓存机制：  Ceph使用内存缓存来存储频繁访问的数据，提高访问效率。 缓存分为LRU缓存和2Q缓存两种，2Q缓存具有更高的缓存命中">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议深入探讨了Ceph分布式存储系统中BlueStore组件的设计和实现细节，重点关注了性能优化和关键组件的工作机制。 会议内容：  缓存机制：介绍了Ceph的缓存机制，包括LRU缓存和2Q缓存，以及如何根据数据访问模式调整缓存大小。 对象存储：讲解了对象存储的结构，包括如何使用Onode和Blob表示对象和数据块，以及共享Blob的引用计数管理。 事务处理：讨论了C">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-06-26T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-06-26T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="BlueStore">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="Transaction Management">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2</div>
+        <div class="flex-col header-title ellipsis">&#39;2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2</h1>
+        <h1 class="title">&#39;2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-06-26T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2</h1>
+        <h1 class="post-card-title">'2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2'</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-06-27 00:00:00" datetime="2018-06-26T16:00:00.000Z"  itemprop="datePublished">2018-06-27</time>
 
@@ -185,75 +183,33 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题</strong>：
-Ceph分布式存储系统关键组件解析与性能优化</p>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>参会人员</strong>： 未知</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议深入探讨了Ceph分布式存储系统中BlueStore组件的设计和实现细节，重点关注了性能优化和关键组件的工作机制。</p>
 <p><strong>会议内容</strong>：</p>
-<p><strong>一、会议背景</strong></p>
-<p>本次会议主要针对Ceph分布式存储系统中的一些关键组件进行解析，并探讨如何优化其性能。</p>
-<p><strong>二、关键组件解析</strong></p>
 <ol type="1">
-<li><strong>缓存机制</strong>：
+<li><strong>缓存机制</strong>：介绍了Ceph的缓存机制，包括LRU缓存和2Q缓存，以及如何根据数据访问模式调整缓存大小。</li>
+<li><strong>对象存储</strong>：讲解了对象存储的结构，包括如何使用Onode和Blob表示对象和数据块，以及共享Blob的引用计数管理。</li>
+<li><strong>事务处理</strong>：讨论了Ceph如何使用事务确保数据一致性，包括事务处理流程和操作。</li>
+<li><strong>写入操作</strong>：分析了Ceph中写入操作的性能优化，包括数据压缩、校验和等特性。</li>
+<li><strong>延迟I/O</strong>：介绍了延迟I/O的机制，以及如何合并多个I/O操作以提高效率。</li>
+<li><strong>性能优化</strong>：提出了多种性能优化方法，包括缓存优化、事务优化、写入优化和延迟I/O优化。</li>
+<li><strong>后续行动计划</strong>：包括对Ceph进行性能测试、根据测试结果进一步优化Ceph、撰写技术文档等。</li>
+</ol>
+<p><strong>关键细节</strong>：</p>
 <ul>
 <li>Ceph使用内存缓存来存储频繁访问的数据，提高访问效率。</li>
-<li>缓存分为LRU缓存和2Q缓存两种，2Q缓存具有更高的缓存命中率。</li>
-<li>缓存中的数据按照状态进行管理，包括空闲、清洁、写入中等状态。</li>
-</ul></li>
-<li><strong>对象存储</strong>：
-<ul>
 <li>对象存储使用Onode来表示对象，并使用Blob来表示数据块。</li>
-<li>Blob可以共享，即多个对象可以引用同一个Blob。</li>
-<li>共享Blob的引用计数由共享Blob结构管理。</li>
-</ul></li>
-<li><strong>事务处理</strong>：
-<ul>
 <li>Ceph使用事务来确保数据的一致性。</li>
-<li>事务处理流程包括准备、提交、完成和清理等阶段。</li>
-<li>事务处理过程中，会进行数据写入、数据读取和延迟I/O等操作。</li>
-</ul></li>
-<li><strong>写入操作</strong>：
-<ul>
 <li>写入操作会根据数据块大小进行优化，以减少I/O次数。</li>
-<li>写入操作会考虑数据压缩、校验和等特性。</li>
-</ul></li>
-<li><strong>延迟I/O</strong>：
+<li>延迟I/O用于处理小于块大小的写入操作，以合并多个I/O操作。</li>
+<li>通过优化缓存机制、事务处理、写入操作和延迟I/O等关键组件，可以有效提高Ceph分布式存储系统的性能。</li>
+</ul>
+<p><strong>改进点</strong>：</p>
 <ul>
-<li>延迟I/O用于处理小于块大小的写入操作。</li>
-<li>延迟I/O可以合并多个I/O操作，提高I/O效率。</li>
-</ul></li>
-</ol>
-<p><strong>三、性能优化</strong></p>
-<ol type="1">
-<li><strong>缓存优化</strong>：
-<ul>
-<li>使用更高效的缓存算法，如2Q缓存。</li>
-<li>根据数据访问模式调整缓存大小。</li>
-</ul></li>
-<li><strong>事务优化</strong>：
-<ul>
-<li>优化事务处理流程，减少延迟。</li>
-<li>使用更高效的锁机制，减少锁竞争。</li>
-</ul></li>
-<li><strong>写入优化</strong>：
-<ul>
-<li>优化写入操作，减少I/O次数。</li>
-<li>使用更高效的压缩算法。</li>
-</ul></li>
-<li><strong>延迟I/O优化</strong>：
-<ul>
-<li>优化延迟I/O合并策略，提高I/O效率。</li>
-</ul></li>
-</ol>
-<p><strong>四、后续行动计划</strong></p>
-<ol type="1">
-<li>对Ceph分布式存储系统进行性能测试，评估优化效果。</li>
-<li>根据测试结果，进一步优化Ceph分布式存储系统。</li>
-<li>撰写技术文档，记录优化过程和结果。</li>
-</ol>
-<p><strong>五、会议总结</strong></p>
-<p>本次会议对Ceph分布式存储系统中的关键组件进行了深入解析，并探讨了性能优化方法。通过优化缓存机制、事务处理、写入操作和延迟I/O等关键组件，可以有效提高Ceph分布式存储系统的性能。</p>
+<li>增加了关于缓存机制、对象存储、事务处理、写入操作和延迟I/O的详细描述。</li>
+<li>突出了性能优化方法和后续行动计划。</li>
+<li>保留了与Ceph和BlueStore相关的英文关键词。</li>
+</ul>
 
         </div>
 
@@ -284,6 +240,8 @@ Ceph分布式存储系统关键组件解析与性能优化</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Transaction-Management/" rel="tag">Transaction Management</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -295,7 +253,7 @@ Ceph分布式存储系统关键组件解析与性能优化</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/&title=《2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/&title=《'2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -305,7 +263,7 @@ Ceph分布式存储系统关键组件解析与性能优化</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/&title=《2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/&title=《'2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -315,7 +273,7 @@ Ceph分布式存储系统关键组件解析与性能优化</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -345,7 +303,7 @@ Ceph分布式存储系统关键组件解析与性能优化</p>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2018/06/27/2018-Jun-27_-_-_Ceph_Testing_Weekly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2018-Jun-27 :: Ceph Testing Weekly</h4>
+        <h4 class="title">&#39;2018-Jun-27 :: Ceph 测试周报&#39;</h4>
       </a>
     </div>
   
@@ -354,7 +312,7 @@ Ceph分布式存储系统关键组件解析与性能优化</p>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2018/06/21/2018-Jun-21_-_-_Ceph_Performance_Weekly/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2018-Jun-21 :: Ceph Performance Weekly</h4>
+        <h4 class="title">&#39;2018-Jun-21 :: Ceph Performance Weekly&#39;</h4>
       </a>
     </div>
   
@@ -454,7 +412,7 @@ Ceph分布式存储系统关键组件解析与性能优化</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/&title=《2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/&title=《'2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -464,7 +422,7 @@ Ceph分布式存储系统关键组件解析与性能优化</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/&title=《2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/&title=《'2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -474,7 +432,7 @@ Ceph分布式存储系统关键组件解析与性能优化</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-June-26 :: Ceph Code Walkthrough: BlueStore part 2'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/06/27/2018-June-26_-_-_Ceph_Code_Walkthrough_-_BlueStore_part_2/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -20,17 +20,23 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  PR创建与处理：Aaron创建了一个PR来处理同步问题，以便能够中断正在运行的命令，如HD和MD测试工具中的控制C命令，并使用内置的HPV服务器暴露指标。 Zone设备集成：讨论了集成Zone设备的方法，主要使用zoned和nvme pass-through ioctl，以及即将到来的异步ioctl。 调试与构建问题：讨论了调试构建与发布构建的差异，特别是调试构建中存在的问题">
+    <meta name="keywords" content="Ceph,distributed storage,CRUSH algorithm,high availability,scalability,performance">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  PR创建与处理：Aaron 创建了一个PR来处理同步问题，以实现中断正在运行的命令，如HD和MD测试工具中的C命令，并使用内置的HPV服务器暴露指标。 Zone设备集成：讨论了使用zoned和nvme pass-through ioctl以及即将到来的异步ioctl来集成Zone设备的方法。 调试与构建问题：讨论了调试构建与发布构建的差异，尤其是调试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;SeaStore 2021-06-23">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Crimson_SeaStore_2021-06-23/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  PR创建与处理：Aaron创建了一个PR来处理同步问题，以便能够中断正在运行的命令，如HD和MD测试工具中的控制C命令，并使用内置的HPV服务器暴露指标。 Zone设备集成：讨论了集成Zone设备的方法，主要使用zoned和nvme pass-through ioctl，以及即将到来的异步ioctl。 调试与构建问题：讨论了调试构建与发布构建的差异，特别是调试构建中存在的问题">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  PR创建与处理：Aaron 创建了一个PR来处理同步问题，以实现中断正在运行的命令，如HD和MD测试工具中的C命令，并使用内置的HPV服务器暴露指标。 Zone设备集成：讨论了使用zoned和nvme pass-through ioctl以及即将到来的异步ioctl来集成Zone设备的方法。 调试与构建问题：讨论了调试构建与发布构建的差异，尤其是调试">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-06-24T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="distributed storage">
+<meta property="article:tag" content="CRUSH algorithm">
+<meta property="article:tag" content="high availability">
+<meta property="article:tag" content="scalability">
+<meta property="article:tag" content="performance">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,13 +191,15 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
-<li><strong>PR创建与处理</strong>：Aaron创建了一个PR来处理同步问题，以便能够中断正在运行的命令，如HD和MD测试工具中的控制C命令，并使用内置的HPV服务器暴露指标。</li>
-<li><strong>Zone设备集成</strong>：讨论了集成Zone设备的方法，主要使用zoned和nvme
-pass-through ioctl，以及即将到来的异步ioctl。</li>
-<li><strong>调试与构建问题</strong>：讨论了调试构建与发布构建的差异，特别是调试构建中存在的问题，如无效范围的处理和比较x属性的支持。</li>
+<li><strong>PR创建与处理</strong>：Aaron
+创建了一个PR来处理同步问题，以实现中断正在运行的命令，如HD和MD测试工具中的C命令，并使用内置的HPV服务器暴露指标。</li>
+<li><strong>Zone设备集成</strong>：讨论了使用zoned和nvme pass-through
+ioctl以及即将到来的异步ioctl来集成Zone设备的方法。</li>
+<li><strong>调试与构建问题</strong>：讨论了调试构建与发布构建的差异，尤其是调试构建中存在的问题，如无效范围的处理和比较x属性的支持。</li>
 <li><strong>同步与元数据问题</strong>：修复了fretboard中的同步问题，并正在处理PG元数据加载中的分段错误问题。</li>
 <li><strong>性能监控</strong>：尝试通过系统度量基础设施暴露指标，并改进调试设施以更好地处理核心转储问题。</li>
 </ul>
@@ -256,6 +264,8 @@ ioctl的使用，并关注异步ioctl的发展。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-algorithm/" rel="tag">CRUSH algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/distributed-storage/" rel="tag">distributed storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/high-availability/" rel="tag">high availability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/performance/" rel="tag">performance</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/scalability/" rel="tag">scalability</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -317,7 +327,7 @@ ioctl的使用，并关注异步ioctl的发展。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/06/25/Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers</h4>
+        <h4 class="title">&#39;Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers&#39;</h4>
       </a>
     </div>
   
@@ -326,7 +336,7 @@ ioctl的使用，并关注异步ioctl的发展。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/06/24/Ceph_Month_2021_-_CephFS_+_fscrypt_-_filename_and_content_encryption/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Month 2021: CephFS + fscrypt: filename and content encryption</h4>
+        <h4 class="title">&#39;Ceph Month 2021: CephFS + fscrypt: filename and content encryption&#39;</h4>
       </a>
     </div>
   

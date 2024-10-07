@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 日期: [具体日期] 参会人员: [具体人员名单] 缺席人员: Brenda (因冲突无法参加) 会议主持人: [主持人姓名] 会议记录人: [记录人姓名] 主要议题  会议目的与议题确认  会议开始时，主持人确认Brenda无法参加，因此会议规模较小。 确认当天没有特定议题，主要讨论昨天已讨论的内容。  技术讨论  讨论了将所有Python内容打包到主RPM的提议，该提议在邮件列表中引">
+    <meta name="keywords" content="Ceph,分布式存储,技术讨论,ORchestration,软件打包">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 日期: 2023-03-28 参会人员: [具体人员名单] 缺席人员: Brenda (因冲突无法参加) 会议主持人: [主持人姓名] 会议记录人: [记录人姓名] 主要议题  会议目的与议题确认  会议确认Brenda无法参加，故参与者较少。 会议无特定议题，主要回顾前一天讨论的内容。  技术讨论  讨论提议将所有Python内容打包到主RPM，该提议在邮件列">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2023-03-28">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/03/28/Ceph_Orchestrator_Meeting_2023-03-28/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 日期: [具体日期] 参会人员: [具体人员名单] 缺席人员: Brenda (因冲突无法参加) 会议主持人: [主持人姓名] 会议记录人: [记录人姓名] 主要议题  会议目的与议题确认  会议开始时，主持人确认Brenda无法参加，因此会议规模较小。 确认当天没有特定议题，主要讨论昨天已讨论的内容。  技术讨论  讨论了将所有Python内容打包到主RPM的提议，该提议在邮件列表中引">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 日期: 2023-03-28 参会人员: [具体人员名单] 缺席人员: Brenda (因冲突无法参加) 会议主持人: [主持人姓名] 会议记录人: [记录人姓名] 主要议题  会议目的与议题确认  会议确认Brenda无法参加，故参与者较少。 会议无特定议题，主要回顾前一天讨论的内容。  技术讨论  讨论提议将所有Python内容打包到主RPM，该提议在邮件列">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-27T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-03-28T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="技术讨论">
+<meta property="article:tag" content="ORchestration">
+<meta property="article:tag" content="软件打包">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,8 +190,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>日期:</strong> [具体日期]</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>日期:</strong> 2023-03-28</p>
 <p><strong>参会人员:</strong> [具体人员名单]</p>
 <p><strong>缺席人员:</strong> Brenda (因冲突无法参加)</p>
 <p><strong>会议主持人:</strong> [主持人姓名]</p>
@@ -195,45 +201,41 @@
 <ol type="1">
 <li><strong>会议目的与议题确认</strong>
 <ul>
-<li>会议开始时，主持人确认Brenda无法参加，因此会议规模较小。</li>
-<li>确认当天没有特定议题，主要讨论昨天已讨论的内容。</li>
+<li>会议确认Brenda无法参加，故参与者较少。</li>
+<li>会议无特定议题，主要回顾前一天讨论的内容。</li>
 </ul></li>
 <li><strong>技术讨论</strong>
 <ul>
-<li>讨论了将所有Python内容打包到主RPM的提议，该提议在邮件列表中引起了一些反对意见。</li>
-<li>Seth在邮件列表中提出了新的方法，Casey
-Bodley和Caleb也参与了讨论，提供了技术细节。</li>
-<li>讨论了将包推送到Apple的方法，以及为什么某些RPMs和Rel中存在但不在Centos中。</li>
+<li>讨论提议将所有Python内容打包到主RPM，该提议在邮件列表中引起争议。</li>
+<li>Seth提出新方法，Casey Bodley和Caleb参与讨论，提供技术细节。</li>
+<li>讨论将包推送到Apple的方法，以及为什么某些RPMs和Rel中存在但不在Centos中。</li>
 </ul></li>
 <li><strong>会议工具迁移</strong>
 <ul>
 <li>确认本周是最后一次使用Blue
-Jeans进行会议，因为该服务将于4月1日关闭。</li>
+Jeans进行会议，因该服务将于4月1日关闭。</li>
 <li>主持人将调整社区日历中的会议链接，并提醒参会人员更新个人日历。</li>
 </ul></li>
 <li><strong>记录与版本控制</strong>
 <ul>
-<li>讨论了如何处理记录和版本控制的问题，特别是关于Python依赖的管理。</li>
-<li>提到了使用pip获取最新版本包的优势和潜在问题。</li>
+<li>讨论如何处理记录和版本控制，特别是Python依赖的管理。</li>
+<li>提到使用pip获取最新版本包的优势和潜在问题。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>确认本周会议结束后将不再使用Blue
-Jeans，并调整社区日历中的会议链接。</li>
-<li>将继续关注邮件列表中关于Python打包方法的讨论，并根据需要调整策略。</li>
+<li>本周会议结束后不再使用Blue Jeans，并调整社区日历中的会议链接。</li>
+<li>继续关注邮件列表中关于Python打包方法的讨论，并根据需要调整策略。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>主持人将调整社区日历中的会议链接，并提醒参会人员更新个人日历。</li>
-<li>参会人员将阅读邮件列表中关于Python打包方法的讨论，并在必要时参与进一步的讨论。</li>
+<li>主持人调整社区日历中的会议链接，并提醒参会人员更新个人日历。</li>
+<li>参会人员阅读邮件列表中关于Python打包方法的讨论，并在必要时参与进一步的讨论。</li>
 </ul>
 <p><strong>会议结束时间:</strong> [具体时间]</p>
 <p><strong>下次会议:</strong> [具体日期和时间]</p>
 <p><strong>备注:</strong>
 会议中提到的技术细节和具体人员意见将在后续的邮件列表讨论中进一步明确和处理。</p>
-<hr />
-<p><strong>会议记录完毕</strong></p>
 <p>[记录人签名]</p>
 <p>[日期]</p>
 
@@ -266,6 +268,8 @@ Jeans，并调整社区日历中的会议链接。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/ORchestration/" rel="tag">ORchestration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E8%AE%A8%E8%AE%BA/" rel="tag">技术讨论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%BD%AF%E4%BB%B6%E6%89%93%E5%8C%85/" rel="tag">软件打包</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -336,7 +340,7 @@ Jeans，并调整社区日历中的会议链接。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/03/24/Ceph_Performance_Meeting_2023-03-23/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2023-03-23</h4>
+        <h4 class="title">Ceph 性能会议 2023-03-23</h4>
       </a>
     </div>
   

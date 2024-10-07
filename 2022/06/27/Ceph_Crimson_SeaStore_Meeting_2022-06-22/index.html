@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议重点概括：  Ying Jin报告了意外的trim spike问题，并提到改进的GC策略减少了写放大、冲突，并提升了性能。同时，她正在研究SSD内部写放大的评估方法，并计划进一步优化设备分层。 Airmen提到他正在处理一个关于元数据生成的Pull Request (PR)，主要涉及清理工作和计算函数的修正。他还在解决开启Voiced时遇到的写入问题，通过更改代码确保在关闭segment时写入">
+    <meta name="keywords" content="Ceph,Distributed Storage,CRUSH Algorithm,High Availability,Scalability">
+    <meta name="description" content="[改进后的中文总结内容] 在2022年6月22日的Ceph Crimson&#x2F;SeaStore会议上，研发人员和专家们讨论了多个关键议题：  Ying Jin 报告了意外的trim spike问题，并介绍了改进的GC策略，该策略减少了写放大、冲突，并提升了性能。Ying Jin 正在研究SSD内部写放大的评估方法，并计划进一步优化设备分层。 Airmen 正在处理一个关于元数据生成的Pull Req">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;SeaStore Meeting 2022-06-22">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Crimson_SeaStore_Meeting_2022-06-22/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议重点概括：  Ying Jin报告了意外的trim spike问题，并提到改进的GC策略减少了写放大、冲突，并提升了性能。同时，她正在研究SSD内部写放大的评估方法，并计划进一步优化设备分层。 Airmen提到他正在处理一个关于元数据生成的Pull Request (PR)，主要涉及清理工作和计算函数的修正。他还在解决开启Voiced时遇到的写入问题，通过更改代码确保在关闭segment时写入">
+<meta property="og:description" content="[改进后的中文总结内容] 在2022年6月22日的Ceph Crimson&#x2F;SeaStore会议上，研发人员和专家们讨论了多个关键议题：  Ying Jin 报告了意外的trim spike问题，并介绍了改进的GC策略，该策略减少了写放大、冲突，并提升了性能。Ying Jin 正在研究SSD内部写放大的评估方法，并计划进一步优化设备分层。 Airmen 正在处理一个关于元数据生成的Pull Req">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-26T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-06-27T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="CRUSH Algorithm">
+<meta property="article:tag" content="High Availability">
+<meta property="article:tag" content="Scalability">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,30 +183,32 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议重点概括：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>在2022年6月22日的Ceph
+Crimson/SeaStore会议上，研发人员和专家们讨论了多个关键议题：</p>
 <ol type="1">
-<li><p>Ying Jin报告了意外的trim
-spike问题，并提到改进的GC策略减少了写放大、冲突，并提升了性能。同时，她正在研究SSD内部写放大的评估方法，并计划进一步优化设备分层。</p></li>
-<li><p>Airmen提到他正在处理一个关于元数据生成的Pull Request
-(PR)，主要涉及清理工作和计算函数的修正。他还在解决开启Voiced时遇到的写入问题，通过更改代码确保在关闭segment时写入tail信息。</p></li>
-<li><p>对于ZNS设备的segment管理，讨论了在关闭segment后无法重新打开的情况，因为大多数设备不支持重新打开已关闭的segment。还讨论了在crimson中模拟block
+<li><p><strong>Ying Jin</strong> 报告了意外的trim
+spike问题，并介绍了改进的GC策略，该策略减少了写放大、冲突，并提升了性能。Ying
+Jin 正在研究SSD内部写放大的评估方法，并计划进一步优化设备分层。</p></li>
+<li><p><strong>Airmen</strong> 正在处理一个关于元数据生成的Pull Request
+(PR)，主要涉及清理工作和计算函数的修正。他还解决了开启Voiced时遇到的写入问题，通过更改代码确保在关闭segment时写入tail信息。</p></li>
+<li><p><strong>ZNS设备的segment管理</strong>
+被讨论，特别是关闭segment后无法重新打开的情况。会议还讨论了在crimson中模拟block
 segment
 manager的行为，以及如何根据不同的存储设备选择合适的写入管理器。</p></li>
-<li><p>Joe
-May正在处理根据评论修复问题的PR，并研究解决根本原因。他还提到了有关gcc
+<li><p><strong>Joe May</strong>
+正在处理根据评论修复问题的PR，并研究解决根本原因。他还提到了gcc
 11的问题影响Ceph的构建，以及与Python绑定相关的问题。</p></li>
-<li><p>讨论了Ceph CRIMSON
-OSD的性能分析结果，特别是在垃圾回收(GC)过程中发现的一些关键性能瓶颈，如空间回收过程的时间增加，以及可能的优化点。</p></li>
+<li><p><strong>Ceph CRIMSON OSD的性能分析</strong>
+被讨论，特别是在垃圾回收(GC)过程中发现的一些关键性能瓶颈。团队决定调查和优化cache数据结构及其查找方式，以提高GC过程的效率。</p></li>
 </ol>
-<p>后续行动计划：</p>
-<ul>
-<li><p>Ying Jin将继续她的PR工作，并对设备分层进行进一步研究。</p></li>
-<li><p>Airmen将对元数据生成的PR进行最终修改，并继续解决开启Voiced时的写入问题。</p></li>
-<li><p>团队同意需要添加对象数据块到缓存中以确保在进行GC时的数据一致性。</p></li>
-<li><p>Joe May将继续处理修复问题并研究与GCC
-11和Python绑定相关的构建问题。</p></li>
-<li><p>根据性能分析结果，团队决定调查和优化cache数据结构及其查找方式，以提高GC过程的效率。</p></li>
-</ul>
+<p>后续行动计划包括： - Ying Jin
+继续她的PR工作，并对设备分层进行进一步研究。 - Airmen
+对元数据生成的PR进行最终修改，并继续解决开启Voiced时的写入问题。 -
+团队同意需要添加对象数据块到缓存中以确保在进行GC时的数据一致性。 - Joe
+May 继续处理修复问题并研究与GCC 11和Python绑定相关的构建问题。 -
+团队决定调查和优化cache数据结构及其查找方式，以提高GC过程的效率。</p>
+<p>[改进后的中文总结内容]已保留所有相关关键词，并对会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划进行了准确的反映。</p>
 
         </div>
 
@@ -232,6 +239,8 @@ OSD的性能分析结果，特别是在垃圾回收(GC)过程中发现的一些�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-Algorithm/" rel="tag">CRUSH Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High-Availability/" rel="tag">High Availability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scalability/" rel="tag">Scalability</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

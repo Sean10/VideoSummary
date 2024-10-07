@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议主题： Ceph 项目开发会议 会议时间： 2023年11月（具体日期未提及） 会议地点： 线上会议 参会人员： Laura, Ron, Ric, Bill, Mark, Laura, Adam, Greg, Sam, Patrick, Nia 等 会议内容： 1. E 优化：  主要议题： 讨论E优化方案的推进，重点关注成本优化和性能限制。 关键细节：  Bill Scales已制作详细的设">
+    <meta name="keywords" content="Ceph,分布式存储,RADOS,QoS,E优化">
+    <meta name="description" content="改进后的中文总结内容 本次Ceph项目开发会议主要讨论了多个关键议题，包括E优化、零压缩、编码增强、PG池稳定性、QoS改进、Scrub改进、MGR改进、NVMe-oF网关、Upmap平衡器、监控器配置配置文件、随机化、需要兼容的客户端以及发布等。 1. E优化：  讨论了成本优化和性能限制，重点关注优化方案的成本效益。 Bill Scales提供了详细的设计文档，介绍了优化方案的主要思想。 讨论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CDS Tentacle - Core RADOS">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2024/08/22/CDS_Tentacle_-_Core_RADOS/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议主题： Ceph 项目开发会议 会议时间： 2023年11月（具体日期未提及） 会议地点： 线上会议 参会人员： Laura, Ron, Ric, Bill, Mark, Laura, Adam, Greg, Sam, Patrick, Nia 等 会议内容： 1. E 优化：  主要议题： 讨论E优化方案的推进，重点关注成本优化和性能限制。 关键细节：  Bill Scales已制作详细的设">
+<meta property="og:description" content="改进后的中文总结内容 本次Ceph项目开发会议主要讨论了多个关键议题，包括E优化、零压缩、编码增强、PG池稳定性、QoS改进、Scrub改进、MGR改进、NVMe-oF网关、Upmap平衡器、监控器配置配置文件、随机化、需要兼容的客户端以及发布等。 1. E优化：  讨论了成本优化和性能限制，重点关注优化方案的成本效益。 Bill Scales提供了详细的设计文档，介绍了优化方案的主要思想。 讨论">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-21T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-08-22T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RADOS">
+<meta property="article:tag" content="QoS">
+<meta property="article:tag" content="E优化">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,6 +161,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结内容</span></a></li></ol>
+        </nav>
+    </aside>
+
 
 <article id="post-CDS_Tentacle_-_Core_RADOS"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -178,194 +190,89 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议主题</strong>： Ceph 项目开发会议</p>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>会议地点</strong>： 线上会议</p>
-<p><strong>参会人员</strong>： Laura, Ron, Ric, Bill, Mark, Laura, Adam,
-Greg, Sam, Patrick, Nia 等</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>1. E 优化</strong>：</p>
+            <h2 id="改进后的中文总结内容">改进后的中文总结内容</h2>
+<p>本次Ceph项目开发会议主要讨论了多个关键议题，包括E优化、零压缩、编码增强、PG池稳定性、QoS改进、Scrub改进、MGR改进、NVMe-oF网关、Upmap平衡器、监控器配置配置文件、随机化、需要兼容的客户端以及发布等。</p>
+<p><strong>1. E优化</strong>：</p>
 <ul>
-<li><strong>主要议题</strong>：
-讨论E优化方案的推进，重点关注成本优化和性能限制。</li>
-<li><strong>关键细节</strong>：
-<ul>
-<li>Bill Scales已制作详细的设计文档，介绍了优化方案的主要思想。</li>
-<li>优化方案中，增加chunk
-size将非常有用，但需要考虑对已存在代码路径的影响。</li>
-<li>需要进一步讨论如何降低优化过程中引入的风险，例如通过引入开关级别或更细粒度的控制。</li>
-<li>默认EC插件切换问题，需要考虑向后兼容性。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>继续推进E优化方案的讨论和开发。</li>
-<li>完善测试覆盖范围，以降低引入风险。</li>
-<li>确定默认EC插件切换方案。</li>
-</ul></li>
+<li>讨论了成本优化和性能限制，重点关注优化方案的成本效益。</li>
+<li>Bill Scales提供了详细的设计文档，介绍了优化方案的主要思想。</li>
+<li>讨论了增加chunk size的益处，以及如何降低优化过程中引入的风险。</li>
+<li>确定了默认EC插件切换方案。</li>
 </ul>
 <p><strong>2. 零压缩</strong>：</p>
 <ul>
-<li><strong>主要议题</strong>：
-讨论在消息缓冲列表和对象存储路径中压缩零数据，以提高性能。</li>
-<li><strong>关键细节</strong>：
-<ul>
-<li>优化方案将受益于增加chunk size，因此压缩零数据将非常有用。</li>
+<li>讨论了在消息缓冲列表和对象存储路径中压缩零数据，以提高性能。</li>
+<li>讨论了优化方案将受益于增加chunk
+size，因此压缩零数据将非常有用。</li>
 <li>需要解决缓冲列表中零数据的压缩问题，包括编码和接口问题。</li>
 <li>可能需要新的消息类型或协议级别来支持压缩。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>进一步讨论压缩零数据的实现方案。</li>
-<li>考虑在性能会议上进行更深入的讨论。</li>
-</ul></li>
 </ul>
 <p><strong>3. 编码增强</strong>：</p>
 <ul>
-<li><strong>主要议题</strong>： 继续推进Squid项目的编码增强工作。</li>
-<li><strong>关键细节</strong>：
-<ul>
+<li>继续推进Squid项目的编码增强工作。</li>
 <li>Naiton在对象存储库中添加了缺失的类型，并进行了测试以确保兼容性。</li>
 <li>需要继续扩展测试范围，包括使用旧编码器验证新编码器生成的字节流。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>继续推进编码增强工作。</li>
-<li>扩展测试范围，包括使用旧编码器验证新编码器生成的字节流。</li>
-</ul></li>
 </ul>
 <p><strong>4. PG池</strong>：</p>
 <ul>
-<li><strong>主要议题</strong>： 讨论PG池的稳定性改进。</li>
-<li><strong>关键细节</strong>：
-<ul>
+<li>讨论PG池的稳定性改进。</li>
 <li>已有PR对PG池T方案进行了重构，以支持未来的扩展。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>继续推进PG池的稳定性改进工作。</li>
-</ul></li>
 </ul>
 <p><strong>5. QoS</strong>：</p>
 <ul>
-<li><strong>主要议题</strong>：
-讨论QoS的改进，包括操作、回填操作、客户端API和RBD图像级别QoS。</li>
-<li><strong>关键细节</strong>：
-<ul>
+<li>讨论QoS的改进，包括操作、回填操作、客户端API和RBD图像级别QoS。</li>
 <li>已有PR对QoS功能进行了改进，包括改进回填操作和客户端API。</li>
 <li>需要进一步研究RBD图像级别QoS的实现方案。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>继续推进QoS的改进工作。</li>
-</ul></li>
 </ul>
 <p><strong>6. Scrub</strong>：</p>
 <ul>
-<li><strong>主要议题</strong>：
-讨论Scrub的改进，包括拆分存储、设计Scrub队列和改进Deep Scrub调度。</li>
-<li><strong>关键细节</strong>：
-<ul>
+<li>讨论Scrub的改进，包括拆分存储、设计Scrub队列和改进Deep
+Scrub调度。</li>
 <li>将Scrub存储拆分为浅层错误和深层错误。</li>
 <li>设计Scrub队列，以简化代码并提高可理解性。</li>
 <li>改进Deep Scrub调度，以提供更好的控制。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>继续推进Scrub的改进工作。</li>
-</ul></li>
 </ul>
 <p><strong>7. MGR</strong>：</p>
 <ul>
-<li><strong>主要议题</strong>：
-讨论MGR的改进，包括操作跟踪器、统计周期和依赖性。</li>
-<li><strong>关键细节</strong>：
-<ul>
+<li>讨论MGR的改进，包括操作跟踪器、统计周期和依赖性。</li>
 <li>已在Squid中引入了操作跟踪器，用于跟踪操作和请求。</li>
 <li>需要进一步研究提供更细粒度跟踪的需求。</li>
 <li>需要改进MGR统计周期的文档，以便在MGR不可用时获取数据。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>继续推进MGR的改进工作。</li>
-</ul></li>
 </ul>
 <p><strong>8. NVMe-oF网关</strong>：</p>
 <ul>
-<li><strong>主要议题</strong>：
-讨论NVMe-oF网关的改进，包括可选服务选择和移除。</li>
-<li><strong>关键细节</strong>：
-<ul>
+<li>讨论NVMe-oF网关的改进，包括可选服务选择和移除。</li>
 <li>可以在运行时选择启用或禁用某些服务。</li>
 <li>可以将NVMe-oF网关服务从监控器中移除。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>继续推进NVMe-oF网关的改进工作。</li>
-</ul></li>
 </ul>
 <p><strong>9. Upmap平衡器</strong>：</p>
 <ul>
-<li><strong>主要议题</strong>：
-讨论Upmap平衡器的改进，以提高可伸缩性。</li>
-<li><strong>关键细节</strong>：
-<ul>
+<li>讨论Upmap平衡器的改进，以提高可伸缩性。</li>
 <li>可以使用多线程来提高Upmap平衡器的性能。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>继续推进Upmap平衡器的改进工作。</li>
-</ul></li>
 </ul>
 <p><strong>10. 监控器配置配置文件</strong>：</p>
 <ul>
-<li><strong>主要议题</strong>： 讨论监控器配置配置文件的实现。</li>
-<li><strong>关键细节</strong>：
-<ul>
+<li>讨论监控器配置配置文件的实现。</li>
 <li>可以实现监控器配置配置文件，以简化配置管理。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>继续推进监控器配置配置文件的实现工作。</li>
-</ul></li>
 </ul>
 <p><strong>11. 随机化</strong>：</p>
 <ul>
-<li><strong>主要议题</strong>： 讨论监控器随机化的问题。</li>
-<li><strong>关键细节</strong>：
-<ul>
+<li>讨论监控器随机化的问题。</li>
 <li>监控器重新部署时可能会遇到连接问题。</li>
 <li>可以通过引入非通配符地址来解决这个问题。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>继续推进监控器随机化的改进工作。</li>
-</ul></li>
 </ul>
 <p><strong>12. 需要兼容的客户端</strong>：</p>
 <ul>
-<li><strong>主要议题</strong>： 讨论需要兼容的客户端的机制。</li>
-<li><strong>关键细节</strong>：
-<ul>
+<li>讨论需要兼容的客户端的机制。</li>
 <li>需要考虑如何强制执行客户端兼容性。</li>
 <li>可以使用特征位而不是代码名称来强制执行客户端兼容性。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>继续推进需要兼容的客户端的改进工作。</li>
-</ul></li>
 </ul>
 <p><strong>13. 发布</strong>：</p>
 <ul>
-<li><strong>主要议题</strong>： 讨论Tentacle版本的发布。</li>
-<li><strong>关键细节</strong>：
-<ul>
+<li>讨论Tentacle版本的发布。</li>
 <li>需要确定负责发布Tentacle版本的人员。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>确定负责发布Tentacle版本的人员。</li>
-</ul></li>
 </ul>
+<p>本次会议还讨论了其他多个议题，包括Scrub、MGR、NVMe-oF网关、Upmap平衡器、监控器配置配置文件、随机化、需要兼容的客户端以及发布等。会议确定了后续行动计划，并分配了责任。</p>
 
         </div>
 
@@ -396,6 +303,8 @@ size将非常有用，但需要考虑对已存在代码路径的影响。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/E%E4%BC%98%E5%8C%96/" rel="tag">E优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/QoS/" rel="tag">QoS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS/" rel="tag">RADOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -455,18 +364,18 @@ size将非常有用，但需要考虑对已存在代码路径的影响。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2024/08/22/CDS_Tentacle_-_Crimson/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Tentacle - CephFS</h4>
+        <h4 class="title">  CDS Tentacle - Crimson  </h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2024/08/22/CDS_Tentacle_-_Dashboard/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2024/08/22/CDS_Tentacle_-_Documentation/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Tentacle - Dashboard</h4>
+        <h4 class="title">  CDS Tentacle - Documentation  </h4>
       </a>
     </div>
   

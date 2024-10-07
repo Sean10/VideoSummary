@@ -14,23 +14,28 @@
     
     
     
-    <title>2017-MAR-01 :: Ceph Performance Weekly | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2017-MAR-01 :: Ceph 性能周报&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月某日 参会人员： 会议主持人、研发人员、测试人员等 会议内容： 一、主要议题  代码审查与Pull Request  研发人员汇报了近期的工作进展，包括对代码库的拆分、修复Hanoi的bug、处理来自Narratives团队的Pull Request等。 讨论了关于使用Wheless内存和清理代码的建议，以及与Boyd bag关于使用RAM作为日志存储的测试。">
+    <meta name="keywords" content="Ceph,分布式存储,性能测试,Blue Store,代码审查">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年11月某日 参会人员： 会议主持人、研发人员、测试人员等 会议内容： 一、主要议题  代码审查与Pull Request  研发人员介绍了近期对代码库的拆分、修复Hanoi的bug、处理来自Narratives团队的Pull Request等工作进展。 讨论了使用Wheless内存和清理代码的建议，以及与Boyd关于使用RAM作为日志存储的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017-MAR-01 :: Ceph Performance Weekly">
+<meta property="og:title" content="&#39;2017-MAR-01 :: Ceph 性能周报&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月某日 参会人员： 会议主持人、研发人员、测试人员等 会议内容： 一、主要议题  代码审查与Pull Request  研发人员汇报了近期的工作进展，包括对代码库的拆分、修复Hanoi的bug、处理来自Narratives团队的Pull Request等。 讨论了关于使用Wheless内存和清理代码的建议，以及与Boyd bag关于使用RAM作为日志存储的测试。">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年11月某日 参会人员： 会议主持人、研发人员、测试人员等 会议内容： 一、主要议题  代码审查与Pull Request  研发人员介绍了近期对代码库的拆分、修复Hanoi的bug、处理来自Narratives团队的Pull Request等工作进展。 讨论了使用Wheless内存和清理代码的建议，以及与Boyd关于使用RAM作为日志存储的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-03-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2017-03-14T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能测试">
+<meta property="article:tag" content="Blue Store">
+<meta property="article:tag" content="代码审查">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2017-MAR-01 :: Ceph Performance Weekly</div>
+        <div class="flex-col header-title ellipsis">&#39;2017-MAR-01 :: Ceph 性能周报&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2017-MAR-01 :: Ceph Performance Weekly</h1>
+        <h1 class="title">&#39;2017-MAR-01 :: Ceph 性能周报&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2017-03-14T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2017-MAR-01 :: Ceph Performance Weekly</h1>
+        <h1 class="post-card-title">'2017-MAR-01 :: Ceph 性能周报'</h1>
         <div class="post-meta">
             <time class="post-time" title="2017-03-15 00:00:00" datetime="2017-03-14T16:00:00.000Z"  itemprop="datePublished">2017-03-15</time>
 
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议时间</strong>： 2023年11月某日</p>
 <p><strong>参会人员</strong>： 会议主持人、研发人员、测试人员等</p>
 <p><strong>会议内容</strong>：</p>
@@ -193,22 +199,21 @@
 <ol type="1">
 <li><strong>代码审查与Pull Request</strong>
 <ul>
-<li>研发人员汇报了近期的工作进展，包括对代码库的拆分、修复Hanoi的bug、处理来自Narratives团队的Pull
-Request等。</li>
-<li>讨论了关于使用Wheless内存和清理代码的建议，以及与Boyd
-bag关于使用RAM作为日志存储的测试。</li>
-<li>针对一些低优先级的补丁，建议进行初步审查，但不必深入。</li>
+<li>研发人员介绍了近期对代码库的拆分、修复Hanoi的bug、处理来自Narratives团队的Pull
+Request等工作进展。</li>
+<li>讨论了使用Wheless内存和清理代码的建议，以及与Boyd关于使用RAM作为日志存储的测试。</li>
+<li>提出对低优先级补丁进行初步审查，但不必深入。</li>
 </ul></li>
 <li><strong>测试与性能</strong>
 <ul>
 <li>进行了简单的覆盖测试，并对Blue
 Store进行了测试，结果显示Boost在EC和RVD文件存储方面表现可接受。</li>
-<li>讨论了在测试中可能需要关注的性能问题，例如缓存缺失和位图分配器阻塞。</li>
+<li>讨论了测试中需关注的性能问题，如缓存缺失和位图分配器阻塞。</li>
 </ul></li>
 <li><strong>其他</strong>
 <ul>
-<li>讨论了关于测试GIF文件的问题，以及硬件设备的准备情况。</li>
-<li>讨论了关于性能测试的建议，包括对锁定PR和位图分配器提示的测试。</li>
+<li>讨论了测试GIF文件的问题和硬件设备的准备情况。</li>
+<li>讨论了性能测试的建议，包括对锁定PR和位图分配器提示的测试。</li>
 </ul></li>
 </ol>
 <p><strong>二、决定事项</strong></p>
@@ -226,7 +231,7 @@ Store进行了测试，结果显示Boost在EC和RVD文件存储方面表现可�
 <li>对锁定PR和位图分配器提示进行性能测试。</li>
 </ol>
 <p><strong>四、会议总结</strong></p>
-<p>本次会议主要讨论了代码审查、测试和性能等方面的问题。会议明确了后续行动计划，并要求相关人员按照计划推进工作。</p>
+<p>本次会议主要讨论了代码审查、测试和性能等方面的问题，明确了后续行动计划，并要求相关人员按照计划推进工作。会议内容涵盖了Ceph的代码审查、性能测试、硬件准备等关键议题，确保了Ceph项目的持续优化和改进。</p>
 
         </div>
 
@@ -257,6 +262,8 @@ Store进行了测试，结果显示Boost在EC和RVD文件存储方面表现可�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Blue-Store/" rel="tag">Blue Store</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5/" rel="tag">代码审查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">性能测试</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -268,7 +275,7 @@ Store进行了测试，结果显示Boost在EC和RVD文件存储方面表现可�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/&title=《2017-MAR-01 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/&title=《'2017-MAR-01 :: Ceph 性能周报'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -278,7 +285,7 @@ Store进行了测试，结果显示Boost在EC和RVD文件存储方面表现可�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/&title=《2017-MAR-01 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/&title=《'2017-MAR-01 :: Ceph 性能周报'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -288,7 +295,7 @@ Store进行了测试，结果显示Boost在EC和RVD文件存储方面表现可�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2017-MAR-01 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2017-MAR-01 :: Ceph 性能周报'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -318,7 +325,7 @@ Store进行了测试，结果显示Boost在EC和RVD文件存储方面表现可�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2017/04/06/2017-MAR-29_-_-_Ceph_Performance_Weekly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2017-MAR-29 :: Ceph Performance Weekly</h4>
+        <h4 class="title">&#39;2017-MAR-29 :: Ceph Performance Weekly&#39;</h4>
       </a>
     </div>
   
@@ -327,7 +334,7 @@ Store进行了测试，结果显示Boost在EC和RVD文件存储方面表现可�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2017/03/15/2017-MAR-08_-_-_Ceph_Performance_Weekly/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2017-MAR-08 :: Ceph Performance Weekly</h4>
+        <h4 class="title">&#39;2017-MAR-08 :: Ceph Performance Weekly&#39;</h4>
       </a>
     </div>
   
@@ -427,7 +434,7 @@ Store进行了测试，结果显示Boost在EC和RVD文件存储方面表现可�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/&title=《2017-MAR-01 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/&title=《'2017-MAR-01 :: Ceph 性能周报'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -437,7 +444,7 @@ Store进行了测试，结果显示Boost在EC和RVD文件存储方面表现可�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/&title=《2017-MAR-01 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/&title=《'2017-MAR-01 :: Ceph 性能周报'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -447,7 +454,7 @@ Store进行了测试，结果显示Boost在EC和RVD文件存储方面表现可�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2017-MAR-01 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2017-MAR-01 :: Ceph 性能周报'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/03/15/2017-MAR-01_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

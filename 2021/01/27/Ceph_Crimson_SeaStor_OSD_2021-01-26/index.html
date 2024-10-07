@@ -20,17 +20,23 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [具体日期] 参会人员： [参会人员名单] 会议主持： [主持人姓名] 会议内容：  上周工作回顾：  Ceph相关工作：  修复了Ceph管理工具（ceph-adm）中的问题，该问题被认为是Pacific版本发布的阻塞点。 重新审视了流水线文档，并根据Sam的评论进行了修改。 提供了Collection Manager的代码，以便审查和研究流水线设计文档。  其他工作：">
+    <meta name="keywords" content="Ceph,分布式存储,性能测试,高可用性,CRUSH算法,OSD">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： [具体日期] 参会人员： [参会人员名单] 会议主持： [主持人姓名] 会议内容：  上周工作回顾：  Ceph相关工作：  修复了Ceph管理工具（ceph-adm）中的问题，该问题被认为是Pacific版本发布的阻塞点。 根据Sam的评论，对流水线文档进行了重新审视和修改。 提供了Collection Manager的代码，以便审查和研究流水线设">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;SeaStor OSD 2021-01-26">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/01/27/Ceph_Crimson_SeaStor_OSD_2021-01-26/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [具体日期] 参会人员： [参会人员名单] 会议主持： [主持人姓名] 会议内容：  上周工作回顾：  Ceph相关工作：  修复了Ceph管理工具（ceph-adm）中的问题，该问题被认为是Pacific版本发布的阻塞点。 重新审视了流水线文档，并根据Sam的评论进行了修改。 提供了Collection Manager的代码，以便审查和研究流水线设计文档。  其他工作：">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： [具体日期] 参会人员： [参会人员名单] 会议主持： [主持人姓名] 会议内容：  上周工作回顾：  Ceph相关工作：  修复了Ceph管理工具（ceph-adm）中的问题，该问题被认为是Pacific版本发布的阻塞点。 根据Sam的评论，对流水线文档进行了重新审视和修改。 提供了Collection Manager的代码，以便审查和研究流水线设">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-26T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-01-26T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能测试">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="OSD">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +162,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Crimson_SeaStor_OSD_2021-01-26"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,7 +184,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
 <p><strong>会议时间：</strong> [具体日期]</p>
 <p><strong>参会人员：</strong> [参会人员名单]</p>
 <p><strong>会议主持：</strong> [主持人姓名]</p>
@@ -196,12 +196,12 @@
 <li><strong>Ceph相关工作：</strong>
 <ul>
 <li>修复了Ceph管理工具（ceph-adm）中的问题，该问题被认为是Pacific版本发布的阻塞点。</li>
-<li>重新审视了流水线文档，并根据Sam的评论进行了修改。</li>
+<li>根据Sam的评论，对流水线文档进行了重新审视和修改。</li>
 <li>提供了Collection Manager的代码，以便审查和研究流水线设计文档。</li>
 </ul></li>
 <li><strong>其他工作：</strong>
 <ul>
-<li>进行了3DS培训和性能测试工作，特别是针对Ceph的OSD（Object Storage
+<li>完成了3DS培训和性能测试工作，特别是针对Ceph的OSD（Object Storage
 Daemon）进行性能测试。</li>
 </ul></li>
 </ul></li>
@@ -212,7 +212,7 @@ Daemon）进行性能测试。</li>
 </ul></li>
 <li><strong>代码更新与问题讨论：</strong>
 <ul>
-<li>替换了biosequential代码到master分支，并实施了针对非幂等客户端请求重复问题的修复。</li>
+<li>将biosequential代码替换到master分支，并实施了针对非幂等客户端请求重复问题的修复。</li>
 <li>发现master分支的恢复代码存在一些bug，正在尝试调试以验证修复是否有效。</li>
 <li>讨论了关于master分支的bug问题，可能与某些恢复优化有关，但尚未找到根本原因。</li>
 </ul></li>
@@ -265,6 +265,8 @@ value实现的代码审查和初始化接口的添加。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">性能测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

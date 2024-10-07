@@ -14,23 +14,29 @@
     
     
     
-    <title>CDS Squid: RADOS | ceph视频总结 | youtube频道总结</title>
+    <title> CDS Squid: RADOS  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议是Ceph开发者会议的延续，主要讨论了Ceph管理器（MGR）的相关议题，包括性能问题、编码解码的可测试性、客户端之间的QoS（服务质量）、读取均衡器、可用性跟踪、Erasure编码配置文件的简化等。 主要议题及讨论内容  Op Tracker for MGR  讨论了MGR中操作跟踪器（Op Tracker）的重要性，特别是在处理性能问题时。 提出了将Op Track">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,CRUSH算法,对象存储,可扩展性">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议是Ceph开发者会议的延续，主要讨论了Ceph管理器（MGR）的性能问题、编码解码的可测试性、客户端之间的QoS、读取均衡器、可用性跟踪、Erasure编码配置文件的简化等议题。 主要议题及讨论内容  Op Tracker for MGR  讨论了在MGR中实现操作跟踪器（Op Tracker）的重要性，以监控和管理操作，尤其是在处理性能问题时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Squid: RADOS">
+<meta property="og:title" content=" CDS Squid: RADOS ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RADOS/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议是Ceph开发者会议的延续，主要讨论了Ceph管理器（MGR）的相关议题，包括性能问题、编码解码的可测试性、客户端之间的QoS（服务质量）、读取均衡器、可用性跟踪、Erasure编码配置文件的简化等。 主要议题及讨论内容  Op Tracker for MGR  讨论了MGR中操作跟踪器（Op Tracker）的重要性，特别是在处理性能问题时。 提出了将Op Track">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议是Ceph开发者会议的延续，主要讨论了Ceph管理器（MGR）的性能问题、编码解码的可测试性、客户端之间的QoS、读取均衡器、可用性跟踪、Erasure编码配置文件的简化等议题。 主要议题及讨论内容  Op Tracker for MGR  讨论了在MGR中实现操作跟踪器（Op Tracker）的重要性，以监控和管理操作，尤其是在处理性能问题时">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-24T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-25T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="可扩展性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Squid: RADOS</div>
+        <div class="flex-col header-title ellipsis"> CDS Squid: RADOS </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Squid: RADOS</h1>
+        <h1 class="title"> CDS Squid: RADOS </h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-07-24T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -142,7 +148,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a></li></ul>
 
             
         </h5>
@@ -159,7 +165,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E5%8F%8A%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题及讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议总结</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E5%8F%8A%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题及讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议总结</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9C%AC%E6%AC%A1%E4%BC%9A%E8%AE%AE%E6%88%90%E5%8A%9F%E8%AE%A8%E8%AE%BA%E4%BA%86ceph%E7%AE%A1%E7%90%86%E5%99%A8%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%8A%9F%E8%83%BD%E7%9A%84%E5%A4%9A%E4%B8%AA%E5%85%B3%E9%94%AE%E8%AE%AE%E9%A2%98%E5%B9%B6%E5%88%B6%E5%AE%9A%E4%BA%86%E7%9B%B8%E5%BA%94%E7%9A%84%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92%E4%BC%9A%E8%AE%AE%E5%BC%BA%E8%B0%83%E4%BA%86%E7%A4%BE%E5%8C%BA%E5%90%88%E4%BD%9C%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7%E5%B9%B6%E9%BC%93%E5%8A%B1%E6%89%80%E6%9C%89%E6%88%90%E5%91%98%E7%A7%AF%E6%9E%81%E5%8F%82%E4%B8%8E%E5%85%B1%E5%90%8C%E6%8E%A8%E5%8A%A8ceph%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%8F%91%E5%B1%95"><span class="post-toc-number"></span> <span class="post-toc-text">本次会议成功讨论了Ceph管理器及相关功能的多个关键议题，并制定了相应的行动计划。会议强调了社区合作的重要性，并鼓励所有成员积极参与，共同推动Ceph项目的发展。</span></a>
         </nav>
     </aside>
 
@@ -168,12 +174,12 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Squid: RADOS</h1>
+        <h1 class="post-card-title"> CDS Squid: RADOS </h1>
         <div class="post-meta">
             <time class="post-time" title="2023-07-25 00:00:00" datetime="2023-07-24T16:00:00.000Z"  itemprop="datePublished">2023-07-25</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a></li></ul>
 
 
 
@@ -185,23 +191,25 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概述">会议概述</h4>
-<p>本次会议是Ceph开发者会议的延续，主要讨论了Ceph管理器（MGR）的相关议题，包括性能问题、编码解码的可测试性、客户端之间的QoS（服务质量）、读取均衡器、可用性跟踪、Erasure编码配置文件的简化等。</p>
+<p>本次会议是Ceph开发者会议的延续，主要讨论了Ceph管理器（MGR）的性能问题、编码解码的可测试性、客户端之间的QoS、读取均衡器、可用性跟踪、Erasure编码配置文件的简化等议题。</p>
 <h4 id="主要议题及讨论内容">主要议题及讨论内容</h4>
 <ol type="1">
 <li><strong>Op Tracker for MGR</strong>
 <ul>
-<li>讨论了MGR中操作跟踪器（Op
-Tracker）的重要性，特别是在处理性能问题时。</li>
-<li>提出了将Op Tracker集成到MGR中的建议，以便更好地监控和管理操作。</li>
-<li>讨论了可能的技术挑战和解决方案，包括Python插件的性能分析工具。</li>
+<li>讨论了在MGR中实现操作跟踪器（Op
+Tracker）的重要性，以监控和管理操作，尤其是在处理性能问题时。</li>
+<li>提出了使用Python插件的性能分析工具来集成Op
+Tracker到MGR中的建议。</li>
+<li>讨论了可能的技术挑战，并鼓励志愿者参与此项目。</li>
 </ul></li>
 <li><strong>编码解码的可测试性</strong>
 <ul>
 <li>讨论了编码解码框架的可测试性问题，特别是在处理客户端和服务器版本兼容性时。</li>
-<li>提出了改进测试覆盖率的建议，包括强制注册新的可编码类。</li>
-<li>讨论了如何扩展测试框架以涵盖更多场景，例如不同的集群模式。</li>
+<li>提出了改进测试覆盖率的建议，包括强制注册新的可编码类，并扩展测试框架以涵盖更多场景。</li>
+<li>讨论了如何处理不同集群模式下的版本兼容性。</li>
 </ul></li>
 <li><strong>客户端之间的QoS</strong>
 <ul>
@@ -245,7 +253,8 @@ Tracker）的重要性，特别是在处理性能问题时。</li>
 <li>鼓励社区成员积极参与讨论，提出建议和反馈。</li>
 </ul>
 <h4 id="会议总结">会议总结</h4>
-<p>本次会议成功讨论了Ceph管理器及相关功能的多个关键议题，并制定了相应的行动计划。会议强调了社区合作的重要性，并鼓励所有成员积极参与，共同推动Ceph项目的发展。</p>
+<h2
+id="本次会议成功讨论了ceph管理器及相关功能的多个关键议题并制定了相应的行动计划会议强调了社区合作的重要性并鼓励所有成员积极参与共同推动ceph项目的发展">本次会议成功讨论了Ceph管理器及相关功能的多个关键议题，并制定了相应的行动计划。会议强调了社区合作的重要性，并鼓励所有成员积极参与，共同推动Ceph项目的发展。</h2>
 
         </div>
 
@@ -276,6 +285,8 @@ Tracker）的重要性，特别是在处理性能问题时。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">可扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -287,7 +298,7 @@ Tracker）的重要性，特别是在处理性能问题时。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RADOS/&title=《CDS Squid: RADOS》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RADOS/&title=《 CDS Squid: RADOS 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -297,7 +308,7 @@ Tracker）的重要性，特别是在处理性能问题时。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RADOS/&title=《CDS Squid: RADOS》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RADOS/&title=《 CDS Squid: RADOS 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -307,7 +318,7 @@ Tracker）的重要性，特别是在处理性能问题时。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Squid: RADOS》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RADOS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 CDS Squid: RADOS 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RADOS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -335,18 +346,18 @@ Tracker）的重要性，特别是在处理性能问题时。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/07/25/CDS_Squid_-_RBD/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/07/25/CDS_Squid_-_RGW/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Squid: RBD</h4>
+        <h4 class="title">&#39;CDS Squid: RGW&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/07/25/CDS_Squid_-_RGW/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/07/20/CDS_Squid_-_Documentation/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Squid: RGW</h4>
+        <h4 class="title">  CDS Squid: Documentation  </h4>
       </a>
     </div>
   
@@ -446,7 +457,7 @@ Tracker）的重要性，特别是在处理性能问题时。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RADOS/&title=《CDS Squid: RADOS》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RADOS/&title=《 CDS Squid: RADOS 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -456,7 +467,7 @@ Tracker）的重要性，特别是在处理性能问题时。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RADOS/&title=《CDS Squid: RADOS》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RADOS/&title=《 CDS Squid: RADOS 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -466,7 +477,7 @@ Tracker）的重要性，特别是在处理性能问题时。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Squid: RADOS》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RADOS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 CDS Squid: RADOS 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_RADOS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

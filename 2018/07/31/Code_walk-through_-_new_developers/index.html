@@ -14,23 +14,28 @@
     
     
     
-    <title>Code walk-through: new developers | ceph视频总结 | youtube频道总结</title>
+    <title>  Code walk-through: new developers   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写会议时间] 会议地点： [请填写会议地点] 参会人员： [请填写参会人员名单] 会议主题： Ceph 源代码组织结构及关键组件介绍 会议内容：  Ceph 源代码组织结构：  Ceph 源代码主要分为以下几个部分：  顶层目录： 包含许可证、编码风格文件、提交补丁流程等文档。 源代码目录： 包含所有源代码，包括各种守护进程、库、工具等。 文档目录： 包含使用文档和开发">
+    <meta name="keywords" content="分布式存储,Ceph开发,Ceph架构,Ceph源代码结构,Ceph组件">
+    <meta name="description" content="subtitle: Code_walk-through_-_new_developers [改进后的中文总结内容] 会议纪要 会议时间： [请填写会议时间] 会议地点： [请填写会议地点] 参会人员： [请填写参会人员名单] 会议主题： Ceph 源代码组织结构及关键组件介绍 会议内容：  Ceph 源代码组织结构：  Ceph 源代码主要分为顶层目录、源代码目录、文档目录和测试目录。 顶层目录包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Code walk-through: new developers">
+<meta property="og:title" content="  Code walk-through: new developers  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/07/31/Code_walk-through_-_new_developers/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写会议时间] 会议地点： [请填写会议地点] 参会人员： [请填写参会人员名单] 会议主题： Ceph 源代码组织结构及关键组件介绍 会议内容：  Ceph 源代码组织结构：  Ceph 源代码主要分为以下几个部分：  顶层目录： 包含许可证、编码风格文件、提交补丁流程等文档。 源代码目录： 包含所有源代码，包括各种守护进程、库、工具等。 文档目录： 包含使用文档和开发">
+<meta property="og:description" content="subtitle: Code_walk-through_-_new_developers [改进后的中文总结内容] 会议纪要 会议时间： [请填写会议时间] 会议地点： [请填写会议地点] 参会人员： [请填写参会人员名单] 会议主题： Ceph 源代码组织结构及关键组件介绍 会议内容：  Ceph 源代码组织结构：  Ceph 源代码主要分为顶层目录、源代码目录、文档目录和测试目录。 顶层目录包">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-07-30T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-07-31T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Ceph开发">
+<meta property="article:tag" content="Ceph架构">
+<meta property="article:tag" content="Ceph源代码结构">
+<meta property="article:tag" content="Ceph组件">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Code walk-through: new developers</div>
+        <div class="flex-col header-title ellipsis">  Code walk-through: new developers  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Code walk-through: new developers</h1>
+        <h1 class="title">  Code walk-through: new developers  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-07-30T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Code walk-through: new developers</h1>
+        <h1 class="post-card-title">  Code walk-through: new developers  </h1>
         <div class="post-meta">
             <time class="post-time" title="2018-07-31 00:00:00" datetime="2018-07-30T16:00:00.000Z"  itemprop="datePublished">2018-07-31</time>
 
@@ -178,7 +183,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
+            <p>subtitle: Code_walk-through_-_new_developers</p>
+<p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
 <p><strong>会议时间</strong>： [请填写会议时间]</p>
 <p><strong>会议地点</strong>： [请填写会议地点]</p>
 <p><strong>参会人员</strong>： [请填写参会人员名单]</p>
@@ -187,63 +194,34 @@
 <ol type="1">
 <li><strong>Ceph 源代码组织结构</strong>：
 <ul>
-<li>Ceph 源代码主要分为以下几个部分：
-<ul>
-<li><strong>顶层目录</strong>：
-包含许可证、编码风格文件、提交补丁流程等文档。</li>
-<li><strong>源代码目录</strong>：
-包含所有源代码，包括各种守护进程、库、工具等。</li>
-<li><strong>文档目录</strong>： 包含使用文档和开发文档。</li>
-<li><strong>测试目录</strong>： 包含测试脚本和测试用例。</li>
-</ul></li>
-<li><strong>重要目录</strong>：
-<ul>
-<li><strong>common</strong>：
-包含通用代码和库，供所有守护进程和客户端使用。</li>
-<li><strong>global</strong>：
-包含只适用于守护进程和命令行工具的代码。</li>
-<li><strong>message</strong>：
-包含消息传递相关的代码，包括消息类、消息格式、消息发送和接收等。</li>
-<li><strong>osd</strong>： 包含 OSD
-守护进程的代码，包括对象存储、数据复制、数据恢复等。</li>
-<li><strong>mon</strong>： 包含 MON 守护进程的代码，负责集群管理。</li>
-<li><strong>rgw</strong>： 包含 RGW 守护进程的代码，负责对象网关。</li>
-<li><strong>librados</strong>： 包含 librados
-库的代码，提供与对象存储交互的 API。</li>
-<li><strong>librgw</strong>： 包含 librgw 库的代码，提供与 RGW 交互的
-API。</li>
-</ul></li>
+<li>Ceph 源代码主要分为顶层目录、源代码目录、文档目录和测试目录。</li>
+<li>顶层目录包括许可证、编码风格文件和提交补丁流程等文档。</li>
+<li>源代码目录包含所有源代码，包括守护进程、库和工具等。</li>
+<li>文档目录包含使用文档和开发文档。</li>
+<li>测试目录包含测试脚本和测试用例。</li>
+<li>重要目录包括 common、global、message、osd、mon、rgw、librados 和
+librgw 等。</li>
 </ul></li>
 <li><strong>重要组件</strong>：
 <ul>
-<li><strong>消息传递</strong>： Ceph
-使用消息传递机制在守护进程之间进行通信。消息传递组件包括消息类、消息格式、消息发送和接收等。</li>
-<li><strong>对象存储</strong>： Ceph
-使用对象存储来存储数据。对象存储组件包括对象存储类、对象存储接口、对象存储后端（如文件存储、块存储、内存存储等）等。</li>
-<li><strong>守护进程</strong>： Ceph 包含多个守护进程，如 OSD、MON、RGW
+<li>消息传递：Ceph
+使用消息传递机制在守护进程之间进行通信，包括消息类、消息格式、消息发送和接收等。</li>
+<li>对象存储：Ceph
+使用对象存储来存储数据，包括对象存储类、对象存储接口和对象存储后端（如文件存储、块存储、内存存储等）。</li>
+<li>守护进程：Ceph 包含多个守护进程，如 OSD、MON、RGW
 等，负责不同的功能。</li>
-<li><strong>librados</strong>： librados 库提供与对象存储交互的
+<li>librados：librados 库提供与对象存储交互的
 API，用于读取、写入、删除对象等操作。</li>
 </ul></li>
 <li><strong>数据完整性</strong>：
 <ul>
-<li>Ceph 通过多种方式保证数据完整性，包括：
-<ul>
-<li><strong>网络层</strong>： 使用 CRC
-检查确保数据在传输过程中不被损坏。</li>
-<li><strong>后端存储</strong>：
-根据后端存储类型（如文件存储、块存储、内存存储等）使用不同的机制保证数据完整性。</li>
-</ul></li>
+<li>Ceph 通过网络层和后端存储层保证数据完整性，包括使用 CRC
+检查和不同后端存储类型的机制。</li>
 </ul></li>
 <li><strong>对象存储</strong>：
 <ul>
-<li>Ceph 使用对象存储来存储数据，对象存储组件包括：
-<ul>
-<li><strong>对象存储类</strong>： 封装对象存储接口。</li>
-<li><strong>对象存储接口</strong>： 定义对象存储操作。</li>
-<li><strong>对象存储后端</strong>：
-实现对象存储接口，提供不同的存储后端（如文件存储、块存储、内存存储等）。</li>
-</ul></li>
+<li>Ceph
+使用对象存储来存储数据，包括对象存储类、对象存储接口和对象存储后端。</li>
 </ul></li>
 </ol>
 <p><strong>行动计划</strong>：</p>
@@ -254,7 +232,7 @@ API，用于读取、写入、删除对象等操作。</li>
 <p><strong>备注</strong>：</p>
 <ul>
 <li>本次会议纪要仅供参考，具体内容请以会议录音或视频为准。</li>
-<li>会议中提到的英文关键词包括：source code organization, Ceph, message
+<li>会议中提到的英文关键词包括：source code organization, message
 passing, object storage, OSD, MON, RGW, librados, data integrity,
 attribute, object store, backend, message, messenger, dispatcher,
 protocol, configuration, context, transaction, operation, read, write,
@@ -394,63 +372,7 @@ metadata, object table, RocksDB, transaction, write, flush, object
 context, cache, attribute, read, write, object store, RocksDB, SST,
 index, key-value pair, BlueStore, object store, RocksDB, SST, index,
 cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object table, RocksDB, transaction, write, flush, object
-context, cache, attribute, read, write, object store, RocksDB, SST,
-index, key-value pair, BlueStore, object store, RocksDB, SST, index,
-cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object table, RocksDB, transaction, write, flush, object
-context, cache, attribute, read, write, object store, RocksDB, SST,
-index, key-value pair, BlueStore, object store, RocksDB, SST, index,
-cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object table, RocksDB, transaction, write, flush, object
-context, cache, attribute, read, write, object store, RocksDB, SST,
-index, key-value pair, BlueStore, object store, RocksDB, SST, index,
-cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object table, RocksDB, transaction, write, flush, object
-context, cache, attribute, read, write, object store, RocksDB, SST,
-index, key-value pair, BlueStore, object store, RocksDB, SST, index,
-cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object table, RocksDB, transaction, write, flush, object
-context, cache, attribute, read, write, object store, RocksDB, SST,
-index, key-value pair, BlueStore, object store, RocksDB, SST, index,
-cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object table, RocksDB, transaction, write, flush, object
-context, cache, attribute, read, write, object store, RocksDB, SST,
-index, key-value pair, BlueStore, object store, RocksDB, SST, index,
-cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object table, RocksDB, transaction, write, flush, object
-context, cache, attribute, read, write, object store, RocksDB, SST,
-index, key-value pair, BlueStore, object store, RocksDB, SST, index,
-cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object table, RocksDB, transaction, write, flush, object
-context, cache, attribute, read, write, object store, RocksDB, SST,
-index, key-value pair, BlueStore, object store, RocksDB, SST, index,
-cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object table, RocksDB, transaction, write, flush, object
-context, cache, attribute, read, write, object store, RocksDB, SST,
-index, key-value pair, BlueStore, object store, RocksDB, SST, index,
-cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object table, RocksDB, transaction, write, flush, object
-context, cache, attribute, read, write, object store, RocksDB, SST,
-index, key-value pair, BlueStore, object store, RocksDB, SST, index,
-cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object table, RocksDB, transaction, write, flush, object
-context, cache, attribute, read, write, object store, RocksDB, SST,
-index, key-value pair, BlueStore, object store, RocksDB, SST, index,
-cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object table, RocksDB, transaction, write, flush, object
-context, cache, attribute, read, write, object store, RocksDB, SST,
-index, key-value pair, BlueStore, object store, RocksDB, SST, index,
-cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object table, RocksDB, transaction, write, flush, object
-context, cache, attribute, read, write, object store, RocksDB, SST,
-index, key-value pair, BlueStore, object store, RocksDB, SST, index,
-cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object table, RocksDB, transaction, write, flush, object
-context, cache, attribute, read, write, object store, RocksDB, SST,
-index, key-value pair, BlueStore, object store, RocksDB, SST, index,
-cache, bloom filter, cache miss, transaction log, commit, disk, flush,
-metadata, object</li>
+metadata, object table, Roc</li>
 </ul>
 
         </div>
@@ -482,6 +404,8 @@ metadata, object</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E5%BC%80%E5%8F%91/" rel="tag">Ceph开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E6%9E%B6%E6%9E%84/" rel="tag">Ceph架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E6%BA%90%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/" rel="tag">Ceph源代码结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E7%BB%84%E4%BB%B6/" rel="tag">Ceph组件</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -493,7 +417,7 @@ metadata, object</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/07/31/Code_walk-through_-_new_developers/&title=《Code walk-through: new developers》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/07/31/Code_walk-through_-_new_developers/&title=《  Code walk-through: new developers  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -503,7 +427,7 @@ metadata, object</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/07/31/Code_walk-through_-_new_developers/&title=《Code walk-through: new developers》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/07/31/Code_walk-through_-_new_developers/&title=《  Code walk-through: new developers  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -513,7 +437,7 @@ metadata, object</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Code walk-through: new developers》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/07/31/Code_walk-through_-_new_developers/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Code walk-through: new developers  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/07/31/Code_walk-through_-_new_developers/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -543,7 +467,7 @@ metadata, object</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2018/07/31/Ceph_code_walk-through_-_OSD_async_recovery/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph code walk-through: OSD (async) recovery</h4>
+        <h4 class="title">&#39;Ceph code walk-through: OSD (async) recovery&#39;</h4>
       </a>
     </div>
   
@@ -652,7 +576,7 @@ metadata, object</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/07/31/Code_walk-through_-_new_developers/&title=《Code walk-through: new developers》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/07/31/Code_walk-through_-_new_developers/&title=《  Code walk-through: new developers  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -662,7 +586,7 @@ metadata, object</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/07/31/Code_walk-through_-_new_developers/&title=《Code walk-through: new developers》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/07/31/Code_walk-through_-_new_developers/&title=《  Code walk-through: new developers  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -672,7 +596,7 @@ metadata, object</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Code walk-through: new developers》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/07/31/Code_walk-through_-_new_developers/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Code walk-through: new developers  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/07/31/Code_walk-through_-_new_developers/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

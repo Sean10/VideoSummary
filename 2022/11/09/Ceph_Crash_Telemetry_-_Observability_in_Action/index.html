@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Telemetry项目更新，重点讨论Crash Telemetry 会议时间：[会议日期] 参会人员：[参会人员名单] 会议内容总结：  Telemetry项目概述  Telemetry服务允许集群报告匿名和非识别数据，包括安装和配置信息。 数据汇总后在公共仪表板上展示，网址为Telemetry Dash public.sef.com。 用户可以通过CLI命令self tele">
+    <meta name="keywords" content="Ceph,Telemetry,Crash Reporting,Observability,Data Analysis">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Telemetry项目更新，重点讨论Crash Telemetry 会议时间：[会议日期] 参会人员：[参会人员名单] 会议内容总结：  Telemetry项目概述  Telemetry服务允许集群收集匿名和非识别数据，用于分析和改进Ceph。 数据在公共仪表板上展示，用户可通过CLI或管理仪表板加入Telemetry服务。  Crash Teleme">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crash Telemetry - Observability in Action">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/11/09/Ceph_Crash_Telemetry_-_Observability_in_Action/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Telemetry项目更新，重点讨论Crash Telemetry 会议时间：[会议日期] 参会人员：[参会人员名单] 会议内容总结：  Telemetry项目概述  Telemetry服务允许集群报告匿名和非识别数据，包括安装和配置信息。 数据汇总后在公共仪表板上展示，网址为Telemetry Dash public.sef.com。 用户可以通过CLI命令self tele">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Telemetry项目更新，重点讨论Crash Telemetry 会议时间：[会议日期] 参会人员：[参会人员名单] 会议内容总结：  Telemetry项目概述  Telemetry服务允许集群收集匿名和非识别数据，用于分析和改进Ceph。 数据在公共仪表板上展示，用户可通过CLI或管理仪表板加入Telemetry服务。  Crash Teleme">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-08T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-11-09T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Telemetry">
+<meta property="article:tag" content="Crash Reporting">
+<meta property="article:tag" content="Observability">
+<meta property="article:tag" content="Data Analysis">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -186,7 +191,8 @@ Telemetry</span></a></li><li class="post-toc-item post-toc-level-4"><a class="po
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
 id="会议主题telemetry项目更新重点讨论crash-telemetry">会议主题：Telemetry项目更新，重点讨论Crash
 Telemetry</h4>
@@ -196,69 +202,54 @@ Telemetry</h4>
 <ol type="1">
 <li><strong>Telemetry项目概述</strong>
 <ul>
-<li>Telemetry服务允许集群报告匿名和非识别数据，包括安装和配置信息。</li>
-<li>数据汇总后在公共仪表板上展示，网址为<code>Telemetry Dash public.sef.com</code>。</li>
-<li>用户可以通过CLI命令<code>self telemetry on</code>或在Ceph管理仪表板中选择加入。</li>
+<li>Telemetry服务允许集群收集匿名和非识别数据，用于分析和改进Ceph。</li>
+<li>数据在公共仪表板上展示，用户可通过CLI或管理仪表板加入Telemetry服务。</li>
 </ul></li>
-<li><strong>Telemetry通道介绍</strong>
+<li><strong>Crash Telemetry通道</strong>
 <ul>
-<li><strong>Basic
-Channel</strong>：包含集群的基本信息，如内核版本、集群大小、守护进程数量等，默认开启。</li>
-<li><strong>Crash
-Channel</strong>：提供集群中所有崩溃的信息，包括崩溃的回溯和在Ceph代码中发生的位置，默认开启。</li>
-<li><strong>Device
-Channel</strong>：收集集群中所有驱动器的健康指标，主要是SMART数据和NVMe指标，默认开启。</li>
-<li><strong>Ident
-Channel</strong>：允许用户选择性地识别自己，默认关闭。</li>
-<li><strong>Perf
-Channel</strong>：在Quincy版本中新增，包含集群性能计数器的信息，默认关闭。</li>
+<li>提供崩溃信息，包括崩溃回溯和Ceph代码中的位置。</li>
+<li>默认开启，帮助开发者快速定位和修复问题。</li>
 </ul></li>
 <li><strong>隐私和数据安全</strong>
 <ul>
-<li>用户需要明确选择加入Telemetry报告，同意CDLA共享许可。</li>
-<li>报告不包含敏感或识别数据，如池或主机名、对象名或内容。</li>
-<li>集群被分配一个随机的UID，不报告FSID，不存储IP地址。</li>
+<li>用户需同意CDLA共享许可才能加入Telemetry。</li>
+<li>报告不包含敏感数据，如池名、主机名、对象名或内容。</li>
 </ul></li>
-<li><strong>Telemetry的动机和好处</strong>
+<li><strong>Telemetry动机和好处</strong>
 <ul>
-<li>对开发者：了解功能使用情况，升级节奏，版本采用率，硬件部署情况，设备健康指标数据集，崩溃数据帮助优先处理常见问题。</li>
-<li>对用户：验证安装，预先防范设备故障，减少停机时间，自动化处理崩溃报告节省时间。</li>
+<li>开发者：了解功能使用情况、升级节奏、版本采用率和设备健康状况。</li>
+<li>用户：验证安装、预防设备故障、减少停机时间、自动化处理崩溃报告。</li>
 </ul></li>
 <li><strong>Telemetry架构和流程</strong>
 <ul>
-<li>崩溃时，守护进程生成崩溃转储并写入本地磁盘，然后重启。</li>
-<li>每个节点上的crash daemon定期检查并将新崩溃报告给Ceph集群的crash
-manager模块。</li>
-<li>用户选择加入Telemetry和Crash
-Channel后，Telemetry每天查询数据库并编译报告发送至后端。</li>
+<li>崩溃时，守护进程生成崩溃转储，crash daemon定期检查并发送报告。</li>
+<li>用户加入Telemetry后，Telemetry每天查询数据库并发送报告。</li>
 </ul></li>
 <li><strong>后端处理和分析</strong>
 <ul>
-<li>后端使用crash
-processor处理崩溃报告，去除偏移和地址，应用搜索和替换模式，计算签名，并更新数据库。</li>
-<li>Redmine
-bot查询数据库，将崩溃签名映射到Redmine问题，更新或创建新问题，并识别回归问题。</li>
+<li>使用crash processor处理崩溃报告，去除偏移和地址，计算签名。</li>
+<li>Redmine bot查询数据库，将崩溃签名映射到Redmine问题。</li>
 </ul></li>
 <li><strong>用户交互和反馈</strong>
 <ul>
-<li>用户可以通过Redmine跟踪崩溃报告，未来将有工具提供集群崩溃的总体视图。</li>
-<li>对于非bug崩溃，建议参考Redmine和博客文章中的故障排除分析。</li>
+<li>用户可通过Redmine跟踪崩溃报告。</li>
+<li>提供工具帮助用户跟踪和管理集群崩溃。</li>
 </ul></li>
 <li><strong>仪表板演示和成功案例</strong>
 <ul>
-<li>内部仪表板允许搜索整个数据库，查看崩溃趋势，受影响的集群信息等。</li>
+<li>内部仪表板允许搜索整个数据库，查看崩溃趋势和受影响集群信息。</li>
 <li>成功案例包括Telemetry
 bot自动发现并报告问题，开发团队据此修复并回溯到旧版本。</li>
 </ul></li>
 </ol>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
-<li>继续优化Telemetry报告和后端处理流程。</li>
-<li>开发更多用户友好的工具，帮助用户跟踪和管理集群崩溃。</li>
-<li>鼓励用户选择加入Telemetry服务，提供更多支持和反馈。</li>
+<li>优化Telemetry报告和后端处理流程。</li>
+<li>开发更多用户友好的工具。</li>
+<li>鼓励用户加入Telemetry服务。</li>
 </ul>
 <h4 id="会议结束语">会议结束语：</h4>
-<p>感谢所有参与者的积极参与和贡献，Telemetry项目已经取得显著成效，期待未来更多的合作和改进。</p>
+<p>感谢所有参与者的积极参与和贡献，Telemetry项目取得显著成效，期待未来更多合作和改进。</p>
 
         </div>
 
@@ -289,6 +280,8 @@ bot自动发现并报告问题，开发团队据此修复并回溯到旧版本�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crash-Reporting/" rel="tag">Crash Reporting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Data-Analysis/" rel="tag">Data Analysis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Observability/" rel="tag">Observability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Telemetry/" rel="tag">Telemetry</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  日期: 不详 参与者: 不详 主要议题: 讨论了Ceph项目的多个方面，包括代码重构、性能优化、并发处理、文档更新等。  讨论的主要议题  代码重构与优化  重构对象上下文锁定（object context locking），使用GridLock，并提供了一个草稿PR供初步审查。 对omap3的补丁进行了更新，并计划进一步优化。 完成了对经典scrubbing的评论回复，并创">
+    <meta name="keywords" content="Ceph,CephFS,Distributed Storage,Performance Optimization,Code Refactoring">
+    <meta name="description" content="[改进后的中文总结内容] 在本次Ceph项目会议中，与会者讨论了多个关键议题，包括代码重构、性能优化、并发处理和文档更新。  代码重构与优化:  对对象上下文锁定（object context locking）进行了重构，采用GridLock机制，并提供草稿PR供审查。 更新了omap3补丁，并计划进一步优化。 完成了对经典scrubbing的评论回复，并创建squashed分支准备合并。 对cr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;SeaStor OSD 2020-11-11">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/11/24/Ceph_Crimson_SeaStor_OSD_2020-11-11/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  日期: 不详 参与者: 不详 主要议题: 讨论了Ceph项目的多个方面，包括代码重构、性能优化、并发处理、文档更新等。  讨论的主要议题  代码重构与优化  重构对象上下文锁定（object context locking），使用GridLock，并提供了一个草稿PR供初步审查。 对omap3的补丁进行了更新，并计划进一步优化。 完成了对经典scrubbing的评论回复，并创">
+<meta property="og:description" content="[改进后的中文总结内容] 在本次Ceph项目会议中，与会者讨论了多个关键议题，包括代码重构、性能优化、并发处理和文档更新。  代码重构与优化:  对对象上下文锁定（object context locking）进行了重构，采用GridLock机制，并提供草稿PR供审查。 更新了omap3补丁，并计划进一步优化。 完成了对经典scrubbing的评论回复，并创建squashed分支准备合并。 对cr">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-11-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="Code Refactoring">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">备注</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">2.</span> <span class="post-toc-text">结束语</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.</span> <span class="post-toc-text">后续行动计划：</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,57 +190,39 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="关键细节">关键细节</h4>
-<ul>
-<li><strong>日期</strong>: 不详</li>
-<li><strong>参与者</strong>: 不详</li>
-<li><strong>主要议题</strong>:
-讨论了Ceph项目的多个方面，包括代码重构、性能优化、并发处理、文档更新等。</li>
-</ul>
-<h4 id="讨论的主要议题">讨论的主要议题</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>在本次Ceph项目会议中，与会者讨论了多个关键议题，包括代码重构、性能优化、并发处理和文档更新。</p>
 <ol type="1">
-<li><strong>代码重构与优化</strong>
+<li><strong>代码重构与优化</strong>:
 <ul>
-<li>重构对象上下文锁定（object context
-locking），使用GridLock，并提供了一个草稿PR供初步审查。</li>
-<li>对omap3的补丁进行了更新，并计划进一步优化。</li>
-<li>完成了对经典scrubbing的评论回复，并创建了一个squashed分支准备合并。</li>
+<li>对对象上下文锁定（object context
+locking）进行了重构，采用GridLock机制，并提供草稿PR供审查。</li>
+<li>更新了omap3补丁，并计划进一步优化。</li>
+<li>完成了对经典scrubbing的评论回复，并创建squashed分支准备合并。</li>
 <li>对crimson的interruptable库进行了审查，并发布了审查意见。</li>
 </ul></li>
-<li><strong>性能与并发处理</strong>
+<li><strong>性能与并发处理</strong>:
 <ul>
-<li>讨论了如何通过改进并发处理来提高性能，特别是在处理多个并发I/O请求时。</li>
-<li>引入了基于UUID的nonce来改进journal的段管理，以确保在重用段时的正确性。</li>
+<li>讨论了通过改进并发处理来提高性能的方法，特别是在处理多个并发I/O请求时。</li>
+<li>引入了基于UUID的nonce来改进journal的段管理，确保在重用段时的正确性。</li>
 <li>实施了journal中的校验和（checksum）以增强原子性，并优化了段滚动机制以减少校验和计算的开销。</li>
 </ul></li>
-<li><strong>文档与计划</strong>
+<li><strong>文档与计划</strong>:
 <ul>
 <li>更新了关于多层设备系统的文档，重点关注原子保证和架构变化。</li>
 <li>讨论了事务管理器的计划，该管理器将支持持久内存和基于块的opt-in。</li>
 </ul></li>
 </ol>
-<h4 id="决定的事项">决定的事项</h4>
-<ul>
-<li>确认了多个PR的合并计划，并对代码进行了初步审查。</li>
-<li>确定了改进并发处理和性能优化的具体步骤。</li>
-<li>确认了文档更新的计划，并指定了相关人员进行后续工作。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<p>会议决定合并多个PR，并确定了改进并发处理和性能优化的具体步骤。同时，确认了文档更新的计划，并指定了相关人员完成后续工作。</p>
+<h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
 <li>继续进行代码重构和优化工作，特别是关于并发处理和性能提升的部分。</li>
 <li>完成并合并相关的PR，确保代码的质量和稳定性。</li>
 <li>继续更新和完善文档，确保所有变更和优化都有详细的记录和说明。</li>
 </ul>
-<h4 id="备注">备注</h4>
-<ul>
-<li>会议中提到了多个技术细节和具体实现，如GridLock、UUID
+<p>会议中提到了多个技术细节和具体实现，如GridLock、UUID
 nonce、checksumming、transaction
-manager等，这些关键词体现了会议的专业性和技术深度。</li>
-<li>会议参与者对各自负责的部分进行了详细的汇报和讨论，确保了项目的顺利进行和团队成员之间的有效沟通。</li>
-</ul>
-<h3 id="结束语">结束语</h3>
-<p>会议在确认了各项任务的进展和后续计划后结束，确保了项目的持续推进和团队成员之间的协作。感谢所有参与者的努力和贡献。</p>
+manager等，体现了会议的专业性和技术深度。与会者对各自负责的部分进行了详细的汇报和讨论，确保了项目的顺利进行和团队成员之间的有效沟通。</p>
 
         </div>
 
@@ -266,6 +253,8 @@ manager等，这些关键词体现了会议的专业性和技术深度。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Code-Refactoring/" rel="tag">Code Refactoring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -336,7 +325,7 @@ manager等，这些关键词体现了会议的专业性和技术深度。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2020/11/24/Ceph_Performance_Meeting_2020-11-12/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2020-11-12</h4>
+        <h4 class="title">Ceph性能会议纪要 2020-11-12</h4>
       </a>
     </div>
   

@@ -14,23 +14,100 @@
     
     
     
-    <title>Ceph Performance Meeting 2021-04-22 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 性能会议纪要 2021-04-22 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要 本次会议是Ceph开发团队的定期会议，主要讨论了近期的工作进展、待处理的Pull Requests（PRs）以及一些技术细节。会议开始时，主持人欢迎大家回归，并简要回顾了过去几周的工作情况。 主要议题  Pull Requests（PRs）讨论  讨论了两个新的PR，均与o-node pinning和trimming相关。一个是Igor提交的，另一个是Adam提交的，但Adam">
+    <meta name="keywords" content="Ceph,分布式存储,块存储,快照,克隆,虚拟化,高可用性,RGW,对象存储,CRUSH 算法,可伸缩性,Docker,Kubernetes,BlueStore,OSD,RocksDB,容器化,RESTful API,自动化,文件系统存储,一致性,去中心化,性能,BlueFS,MON,MDS,PG,RADOS,librados,libcephfs,cephfs,rbd,radosgw,认证,授权,加密,损坏纠正码,复制,iSCSI,Fibre Channel,NFS,CIFS,POSIX,监控,管理,集成,云计算,AWS,Azure,Google Cloud,混合云,多云,存储集群,节点,磁盘,SSD,HDD,JBOD,SAN,NAS,网络,恢复,弹性,负载均衡,缓存,压缩,基准测试,验证,仪表板,去重,分层,测试,失效域,性能调整,瘦分配,编排,拓扑结构">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议是 Ceph 开发团队的定期会议，主要讨论了近期的工作进展、待处理的 Pull Requests（PRs）以及一些技术细节。 主要议题  Pull Requests（PRs）讨论  讨论了两个新的 PR，均与 o-node pinning 和 trimming 相关。一个是 Igor 提交的，另一个是 Adam 提交的，但 Adam 本周不在，因此未能深入讨论。I">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2021-04-22">
+<meta property="og:title" content="Ceph 性能会议纪要 2021-04-22">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要 本次会议是Ceph开发团队的定期会议，主要讨论了近期的工作进展、待处理的Pull Requests（PRs）以及一些技术细节。会议开始时，主持人欢迎大家回归，并简要回顾了过去几周的工作情况。 主要议题  Pull Requests（PRs）讨论  讨论了两个新的PR，均与o-node pinning和trimming相关。一个是Igor提交的，另一个是Adam提交的，但Adam">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议是 Ceph 开发团队的定期会议，主要讨论了近期的工作进展、待处理的 Pull Requests（PRs）以及一些技术细节。 主要议题  Pull Requests（PRs）讨论  讨论了两个新的 PR，均与 o-node pinning 和 trimming 相关。一个是 Igor 提交的，另一个是 Adam 提交的，但 Adam 本周不在，因此未能深入讨论。I">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-04-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="块存储">
+<meta property="article:tag" content="快照">
+<meta property="article:tag" content="克隆">
+<meta property="article:tag" content="虚拟化">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="CRUSH 算法">
+<meta property="article:tag" content="可伸缩性">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="BlueStore">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="容器化">
+<meta property="article:tag" content="RESTful API">
+<meta property="article:tag" content="自动化">
+<meta property="article:tag" content="文件系统存储">
+<meta property="article:tag" content="一致性">
+<meta property="article:tag" content="去中心化">
+<meta property="article:tag" content="性能">
+<meta property="article:tag" content="BlueFS">
+<meta property="article:tag" content="MON">
+<meta property="article:tag" content="MDS">
+<meta property="article:tag" content="PG">
+<meta property="article:tag" content="RADOS">
+<meta property="article:tag" content="librados">
+<meta property="article:tag" content="libcephfs">
+<meta property="article:tag" content="cephfs">
+<meta property="article:tag" content="rbd">
+<meta property="article:tag" content="radosgw">
+<meta property="article:tag" content="认证">
+<meta property="article:tag" content="授权">
+<meta property="article:tag" content="加密">
+<meta property="article:tag" content="损坏纠正码">
+<meta property="article:tag" content="复制">
+<meta property="article:tag" content="iSCSI">
+<meta property="article:tag" content="Fibre Channel">
+<meta property="article:tag" content="NFS">
+<meta property="article:tag" content="CIFS">
+<meta property="article:tag" content="POSIX">
+<meta property="article:tag" content="监控">
+<meta property="article:tag" content="管理">
+<meta property="article:tag" content="集成">
+<meta property="article:tag" content="云计算">
+<meta property="article:tag" content="AWS">
+<meta property="article:tag" content="Azure">
+<meta property="article:tag" content="Google Cloud">
+<meta property="article:tag" content="混合云">
+<meta property="article:tag" content="多云">
+<meta property="article:tag" content="存储集群">
+<meta property="article:tag" content="节点">
+<meta property="article:tag" content="磁盘">
+<meta property="article:tag" content="SSD">
+<meta property="article:tag" content="HDD">
+<meta property="article:tag" content="JBOD">
+<meta property="article:tag" content="SAN">
+<meta property="article:tag" content="NAS">
+<meta property="article:tag" content="网络">
+<meta property="article:tag" content="恢复">
+<meta property="article:tag" content="弹性">
+<meta property="article:tag" content="负载均衡">
+<meta property="article:tag" content="缓存">
+<meta property="article:tag" content="压缩">
+<meta property="article:tag" content="基准测试">
+<meta property="article:tag" content="验证">
+<meta property="article:tag" content="仪表板">
+<meta property="article:tag" content="去重">
+<meta property="article:tag" content="分层">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="失效域">
+<meta property="article:tag" content="性能调整">
+<meta property="article:tag" content="瘦分配">
+<meta property="article:tag" content="编排">
+<meta property="article:tag" content="拓扑结构">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +189,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2021-04-22</div>
+        <div class="flex-col header-title ellipsis">Ceph 性能会议纪要 2021-04-22</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +211,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2021-04-22</h1>
+        <h1 class="title">Ceph 性能会议纪要 2021-04-22</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-04-22T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +236,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他事项</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">2.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">3.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">4.</span> <span class="post-toc-text">其他事项</span></a></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +245,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2021-04-22</h1>
+        <h1 class="post-card-title">Ceph 性能会议纪要 2021-04-22</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-04-23 00:00:00" datetime="2021-04-22T16:00:00.000Z"  itemprop="datePublished">2021-04-23</time>
 
@@ -185,44 +262,50 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概要">会议概要</h4>
-<p>本次会议是Ceph开发团队的定期会议，主要讨论了近期的工作进展、待处理的Pull
-Requests（PRs）以及一些技术细节。会议开始时，主持人欢迎大家回归，并简要回顾了过去几周的工作情况。</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议是 Ceph
+开发团队的定期会议，主要讨论了近期的工作进展、待处理的 Pull
+Requests（PRs）以及一些技术细节。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
-<li><strong>Pull Requests（PRs）讨论</strong>
+<li><p><strong>Pull Requests（PRs）讨论</strong></p>
 <ul>
-<li>讨论了两个新的PR，均与o-node
-pinning和trimming相关。一个是Igor提交的，另一个是Adam提交的，但Adam本周不在，因此未能深入讨论。Igor建议对两个方案进行独立审查。</li>
-<li>更新了关于RGW压缩和roxdb内存分配的PR，Gabriel的PR需要进一步的审查和测试。</li>
+<li>讨论了两个新的 PR，均与 o-node pinning 和 trimming 相关。一个是 Igor
+提交的，另一个是 Adam 提交的，但 Adam 本周不在，因此未能深入讨论。Igor
+建议对两个方案进行独立审查。</li>
+<li>更新了关于 RGW 压缩和 roxdb 内存分配的 PR，Gabriel 的 PR
+需要进一步的审查和测试。</li>
 </ul></li>
-<li><strong>技术细节讨论</strong>
+<li><p><strong>技术细节讨论</strong></p>
 <ul>
-<li>Gabriel讨论了在roxdb中进行对象计数的挑战，提出了使用估计大小和节点遍历的方法来改进进度显示。</li>
-<li>讨论了如何从PG
-map中获取对象计数信息，以及如何改进osd的启动过程显示。</li>
+<li>Gabriel 讨论了在 roxdb
+中进行对象计数的挑战，提出了使用估计大小和节点遍历的方法来改进进度显示。</li>
+<li>讨论了如何从 PG map 中获取对象计数信息，以及如何改进 osd
+的启动过程显示。</li>
 </ul></li>
-<li><strong>Crimson存储优化</strong>
+<li><p><strong>Crimson 存储优化</strong></p>
 <ul>
-<li>介绍了Crimson存储的最新进展，包括与IBM的合作和性能优化。目前Crimson在处理小随机读写方面更高效，但仍需解决多核利用率的问题。</li>
+<li>介绍了 Crimson 存储的最新进展，包括与 IBM 的合作和性能优化。目前
+Crimson 在处理小随机读写方面更高效，但仍需解决多核利用率的问题。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>对Igor和Adam的PR进行独立审查，计划在下一次性能会议上进一步讨论。</li>
-<li>Gabriel将继续测试和改进roxdb中的对象计数和进度显示方法。</li>
-<li>继续推进Crimson存储的多核优化工作。</li>
+<li>对 Igor 和 Adam 的 PR
+进行独立审查，计划在下一次性能会议上进一步讨论。</li>
+<li>Gabriel 将继续测试和改进 roldb 中的对象计数和进度显示方法。</li>
+<li>继续推进 Crimson 存储的多核优化工作。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>对Gabriel的PR进行详细审查和性能测试。</li>
-<li>继续研究和优化Crimson存储的多核利用率。</li>
-<li>下一次会议将讨论PR的进一步审查结果和Crimson存储的进展。</li>
+<li>对 Gabriel 的 PR 进行详细审查和性能测试。</li>
+<li>继续研究和优化 Crimson 存储的多核利用率。</li>
+<li>下一次会议将讨论 PR 的进一步审查结果和 Crimson 存储的进展。</li>
 </ul>
 <h4 id="其他事项">其他事项</h4>
 <ul>
-<li>确认了关于backfill和recovery reservations的邮件列表讨论的澄清。</li>
+<li>确认了关于 backfill 和 recovery reservations
+的邮件列表讨论的澄清。</li>
 <li>会议结束时，主持人提醒大家下周再见，并祝大家一周愉快。</li>
 </ul>
 <p>本次会议有效地总结了近期的工作进展，并为接下来的工作指明了方向。</p>
@@ -256,6 +339,8 @@ map中获取对象计数信息，以及如何改进osd的启动过程显示。</
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/AWS/" rel="tag">AWS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Azure/" rel="tag">Azure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueFS/" rel="tag">BlueFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CIFS/" rel="tag">CIFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-%E7%AE%97%E6%B3%95/" rel="tag">CRUSH 算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Docker/" rel="tag">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Fibre-Channel/" rel="tag">Fibre Channel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Google-Cloud/" rel="tag">Google Cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/HDD/" rel="tag">HDD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/JBOD/" rel="tag">JBOD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MDS/" rel="tag">MDS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MON/" rel="tag">MON</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NAS/" rel="tag">NAS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS/" rel="tag">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PG/" rel="tag">PG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/POSIX/" rel="tag">POSIX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS/" rel="tag">RADOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RESTful-API/" rel="tag">RESTful API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SAN/" rel="tag">SAN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SSD/" rel="tag">SSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/cephfs/" rel="tag">cephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/iSCSI/" rel="tag">iSCSI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/libcephfs/" rel="tag">libcephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/librados/" rel="tag">librados</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/radosgw/" rel="tag">radosgw</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/rbd/" rel="tag">rbd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%B8%80%E8%87%B4%E6%80%A7/" rel="tag">一致性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%AA%E8%A1%A8%E6%9D%BF/" rel="tag">仪表板</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%85%8B%E9%9A%86/" rel="tag">克隆</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B1%82/" rel="tag">分层</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8A%A0%E5%AF%86/" rel="tag">加密</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8E%8B%E7%BC%A9/" rel="tag">压缩</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96/" rel="tag">去中心化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8E%BB%E9%87%8D/" rel="tag">去重</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%9D%97%E5%AD%98%E5%82%A8/" rel="tag">块存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/" rel="tag">基准测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%8D%E5%88%B6/" rel="tag">复制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E4%BA%91/" rel="tag">多云</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%B1%E6%95%88%E5%9F%9F/" rel="tag">失效域</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E9%9B%86%E7%BE%A4/" rel="tag">存储集群</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/" rel="tag">容器化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%B9%E6%80%A7/" rel="tag">弹性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BF%AB%E7%85%A7/" rel="tag">快照</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD/" rel="tag">性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E8%B0%83%E6%95%B4/" rel="tag">性能调整</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%81%A2%E5%A4%8D/" rel="tag">恢复</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84/" rel="tag">拓扑结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8D%9F%E5%9D%8F%E7%BA%A0%E6%AD%A3%E7%A0%81/" rel="tag">损坏纠正码</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8E%88%E6%9D%83/" rel="tag">授权</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8/" rel="tag">文件系统存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B7%B7%E5%90%88%E4%BA%91/" rel="tag">混合云</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%98%A6%E5%88%86%E9%85%8D/" rel="tag">瘦分配</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%9B%91%E6%8E%A7/" rel="tag">监控</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A3%81%E7%9B%98/" rel="tag">磁盘</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%AE%A1%E7%90%86/" rel="tag">管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BC%96%E6%8E%92/" rel="tag">编排</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" rel="tag">自动化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%8A%82%E7%82%B9/" rel="tag">节点</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="tag">虚拟化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%AE%A4%E8%AF%81/" rel="tag">认证</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%9B%86%E6%88%90/" rel="tag">集成</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AA%8C%E8%AF%81/" rel="tag">验证</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -267,7 +352,7 @@ map中获取对象计数信息，以及如何改进osd的启动过程显示。</
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/&title=《Ceph Performance Meeting 2021-04-22》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/&title=《Ceph 性能会议纪要 2021-04-22》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -277,7 +362,7 @@ map中获取对象计数信息，以及如何改进osd的启动过程显示。</
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/&title=《Ceph Performance Meeting 2021-04-22》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/&title=《Ceph 性能会议纪要 2021-04-22》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -287,7 +372,7 @@ map中获取对象计数信息，以及如何改进osd的启动过程显示。</
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-04-22》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议纪要 2021-04-22》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -317,7 +402,7 @@ map中获取对象计数信息，以及如何改进osd的启动过程显示。</
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/04/26/Ceph_Tech_Talk_-_Cephadm/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Tech Talk: Cephadm</h4>
+        <h4 class="title">&#39;Ceph Tech Talk: Cephadm&#39;</h4>
       </a>
     </div>
   
@@ -326,7 +411,7 @@ map中获取对象计数信息，以及如何改进osd的启动过程显示。</
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/04/22/Ceph_Developer_Summit_Quincy_-_Dashboard_Follow-up/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Developer Summit Quincy: Dashboard Follow-up</h4>
+        <h4 class="title">&#39;Ceph Developer Summit Quincy: Dashboard Follow-up&#39;</h4>
       </a>
     </div>
   
@@ -426,7 +511,7 @@ map中获取对象计数信息，以及如何改进osd的启动过程显示。</
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/&title=《Ceph Performance Meeting 2021-04-22》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/&title=《Ceph 性能会议纪要 2021-04-22》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -436,7 +521,7 @@ map中获取对象计数信息，以及如何改进osd的启动过程显示。</
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/&title=《Ceph Performance Meeting 2021-04-22》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/&title=《Ceph 性能会议纪要 2021-04-22》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -446,7 +531,7 @@ map中获取对象计数信息，以及如何改进osd的启动过程显示。</
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-04-22》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议纪要 2021-04-22》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/23/Ceph_Performance_Meeting_2021-04-22/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

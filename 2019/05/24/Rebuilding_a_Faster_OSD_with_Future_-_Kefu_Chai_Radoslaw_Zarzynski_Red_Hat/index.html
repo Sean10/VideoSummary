@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Ceph Crimson 项目进展及未来方向 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议内容： 一、会议背景  技术发展： 随着固态硬盘（SSD）和NVMe接口的普及，存储速度得到了显著提升。然而，Ceph存储系统在处理高速存储设备时，面临着性能瓶颈。 CSD架构： Ceph存储驱动器（CSD）最初针对旋转硬盘设计，其I&#x2F;O性能有限。随着存储设备">
+    <meta name="keywords" content="Ceph,SSD,Crimson 项目,I/O 性能,用户空间驱动器">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph Crimson 项目进展及未来方向 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议内容： 一、会议背景  技术发展： 随着固态硬盘（SSD）和NVMe接口的普及，存储速度得到了显著提升。然而，Ceph存储系统在处理高速存储设备时，面临着性能瓶颈。 CSD架构： Ceph存储驱动器（CSD）最初针对旋转硬盘设计，其I">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Rebuilding a Faster OSD with Future - Kefu Chai &amp; Radoslaw Zarzynski, Red Hat">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Rebuilding_a_Faster_OSD_with_Future_-_Kefu_Chai_Radoslaw_Zarzynski_Red_Hat/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Ceph Crimson 项目进展及未来方向 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议内容： 一、会议背景  技术发展： 随着固态硬盘（SSD）和NVMe接口的普及，存储速度得到了显著提升。然而，Ceph存储系统在处理高速存储设备时，面临着性能瓶颈。 CSD架构： Ceph存储驱动器（CSD）最初针对旋转硬盘设计，其I&#x2F;O性能有限。随着存储设备">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph Crimson 项目进展及未来方向 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议内容： 一、会议背景  技术发展： 随着固态硬盘（SSD）和NVMe接口的普及，存储速度得到了显著提升。然而，Ceph存储系统在处理高速存储设备时，面临着性能瓶颈。 CSD架构： Ceph存储驱动器（CSD）最初针对旋转硬盘设计，其I">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="SSD">
+<meta property="article:tag" content="Crimson 项目">
+<meta property="article:tag" content="I&#x2F;O 性能">
+<meta property="article:tag" content="用户空间驱动器">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议主题</strong>： Ceph Crimson 项目进展及未来方向</p>
 <p><strong>会议时间</strong>： [请填写会议时间]</p>
 <p><strong>参会人员</strong>： [请填写参会人员名单]</p>
@@ -272,6 +278,8 @@ Ceph存储驱动器（CSD）最初针对旋转硬盘设计，其I/O性能有限�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson-%E9%A1%B9%E7%9B%AE/" rel="tag">Crimson 项目</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/I-O-%E6%80%A7%E8%83%BD/" rel="tag">I&#x2F;O 性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SSD/" rel="tag">SSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4%E9%A9%B1%E5%8A%A8%E5%99%A8/" rel="tag">用户空间驱动器</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -331,18 +339,18 @@ Ceph存储驱动器（CSD）最初针对旋转硬盘设计，其I/O性能有限�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/RWX_Storage_for_Container_Orchestrators_with_CephFS_and_Manila_-_Tom_Barron_Red_Hat/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Rapid_Processing_of_NASA_Satellite_Data_Stored_with_Ceph_-_Kevin_Hrpcek_Steve_Dutcher/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">RWX Storage for Container Orchestrators with CephFS and Manila - Tom Barron, Red Hat</h4>
+        <h4 class="title">Rapid Processing of NASA Satellite Data Stored with Ceph - Kevin Hrpcek &amp; Steve Dutcher</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Rapid_Processing_of_NASA_Satellite_Data_Stored_with_Ceph_-_Kevin_Hrpcek_Steve_Dutcher/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Releasing_Ceph_-_Deep_Dive_Into_Build_Infrastructure_-_Alfredo_Deza_Ken_Dreyer_RedHat/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Rapid Processing of NASA Satellite Data Stored with Ceph - Kevin Hrpcek &amp; Steve Dutcher</h4>
+        <h4 class="title">Releasing Ceph - Deep Dive Into Build Infrastructure - Alfredo Deza &amp; Ken Dreyer, RedHat</h4>
       </a>
     </div>
   

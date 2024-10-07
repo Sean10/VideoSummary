@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要 本次会议主要讨论了Ceph存储系统的性能优化、升级问题、以及一些具体的技术实现细节。会议中涉及了多个关键议题，包括Ceph集群的规模、监控工具的改进、Google Summer of Code项目、以及一些具体的代码实现问题。 关键讨论点  Ceph集群规模：  讨论了用户实际使用的Ceph集群规模，确认有用户至少使用1000个OSDs。 确认当前的性能和可扩展性优于预期的30">
+    <meta name="keywords" content="Ceph,分布式存储,代码实现,监控工具,升级流程">
+    <meta name="description" content="[改进后的中文总结内容] 本次Ceph Orchestrator会议主要讨论了Ceph存储系统的性能优化、升级问题以及一些具体的技术实现细节。以下是会议的关键内容： 会议概要  Ceph集群规模：确认有用户使用至少1000个OSDs的Ceph集群，并讨论了如何进一步扩展集群规模。 监控工具改进：讨论了完善监控工具（exporter）的重要性，以提升系统的监控能力。 Google Summer of">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2021-03-16">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/03/30/Ceph_Orchestrator_Meeting_2021-03-16/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要 本次会议主要讨论了Ceph存储系统的性能优化、升级问题、以及一些具体的技术实现细节。会议中涉及了多个关键议题，包括Ceph集群的规模、监控工具的改进、Google Summer of Code项目、以及一些具体的代码实现问题。 关键讨论点  Ceph集群规模：  讨论了用户实际使用的Ceph集群规模，确认有用户至少使用1000个OSDs。 确认当前的性能和可扩展性优于预期的30">
+<meta property="og:description" content="[改进后的中文总结内容] 本次Ceph Orchestrator会议主要讨论了Ceph存储系统的性能优化、升级问题以及一些具体的技术实现细节。以下是会议的关键内容： 会议概要  Ceph集群规模：确认有用户使用至少1000个OSDs的Ceph集群，并讨论了如何进一步扩展集群规模。 监控工具改进：讨论了完善监控工具（exporter）的重要性，以提升系统的监控能力。 Google Summer of">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-03-29T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="代码实现">
+<meta property="article:tag" content="监控工具">
+<meta property="article:tag" content="升级流程">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E8%AE%A8%E8%AE%BA%E7%82%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">关键讨论点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">[改进后的中文总结内容]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%9B%B8%E5%85%B3%E6%A0%87%E7%AD%BE"><span class="post-toc-number">2.</span> <span class="post-toc-text">相关标签</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,82 +190,69 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概要">会议概要</h4>
-<p>本次会议主要讨论了Ceph存储系统的性能优化、升级问题、以及一些具体的技术实现细节。会议中涉及了多个关键议题，包括Ceph集群的规模、监控工具的改进、Google
-Summer of Code项目、以及一些具体的代码实现问题。</p>
-<h4 id="关键讨论点">关键讨论点</h4>
+            <h2 id="改进后的中文总结内容">[改进后的中文总结内容]</h2>
+<p>本次Ceph
+Orchestrator会议主要讨论了Ceph存储系统的性能优化、升级问题以及一些具体的技术实现细节。以下是会议的关键内容：</p>
+<p><strong>会议概要</strong></p>
+<ul>
+<li><strong>Ceph集群规模</strong>：确认有用户使用至少1000个OSDs的Ceph集群，并讨论了如何进一步扩展集群规模。</li>
+<li><strong>监控工具改进</strong>：讨论了完善监控工具（exporter）的重要性，以提升系统的监控能力。</li>
+<li><strong>Google Summer of
+Code项目</strong>：讨论了项目的参与情况和共同导师的角色。</li>
+<li><strong>代码实现和升级问题</strong>：讨论了升级过程中的具体问题，包括错误处理和监控栈的改进。</li>
+<li><strong>网络和子网配置</strong>：讨论了Ceph中网络和子网配置的处理方法，以及将其集成到服务规范中的细节。</li>
+</ul>
+<p><strong>关键讨论点</strong></p>
 <ol type="1">
 <li><strong>Ceph集群规模</strong>：
 <ul>
-<li>讨论了用户实际使用的Ceph集群规模，确认有用户至少使用1000个OSDs。</li>
-<li>确认当前的性能和可扩展性优于预期的30个节点配置。</li>
+<li>用户已使用至少1000个OSDs的Ceph集群。</li>
+<li>讨论了如何进一步扩展集群规模。</li>
 </ul></li>
 <li><strong>监控工具改进</strong>：
 <ul>
-<li>讨论了需要进一步完善监控工具（exporter），以提升系统的监控能力。</li>
-<li>强调了监控工具对于系统性能和可扩展性的重要性。</li>
+<li>讨论了完善监控工具（exporter）的重要性。</li>
 </ul></li>
 <li><strong>Google Summer of Code项目</strong>：
 <ul>
-<li>讨论了项目参与情况，至少有三个人通过邮件联系表达了参与意愿。</li>
-<li>讨论了如何作为共同导师参与项目，以及如何处理通过LinkedIn联系的候选人。</li>
+<li>讨论了项目的参与情况和共同导师的角色。</li>
 </ul></li>
 <li><strong>代码实现和升级问题</strong>：
 <ul>
-<li>讨论了具体的代码实现问题，包括如何处理升级过程中的错误和如何改进升级流程。</li>
-<li>讨论了如何处理旧的监控容器和如何改进升级过程中的监控栈。</li>
+<li>讨论了升级过程中的具体问题，包括错误处理和监控栈的改进。</li>
 </ul></li>
 <li><strong>网络和子网配置</strong>：
 <ul>
-<li>讨论了如何在Ceph中更好地处理网络和子网配置，以及如何将这些配置集成到服务规范中。</li>
+<li>讨论了Ceph中网络和子网配置的处理方法，以及将其集成到服务规范中的细节。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
+<p><strong>决定事项</strong></p>
 <ol type="1">
-<li><strong>监控工具改进</strong>：
-<ul>
-<li>确认需要进一步完善监控工具，以提升系统的监控能力。</li>
-</ul></li>
-<li><strong>Google Summer of Code项目</strong>：
-<ul>
-<li>确认至少有三个人表达了参与意愿，并将作为共同导师参与项目。</li>
-</ul></li>
-<li><strong>代码实现和升级问题</strong>：
-<ul>
-<li>确认需要改进升级流程，特别是处理旧的监控容器和改进监控栈的升级。</li>
-</ul></li>
-<li><strong>网络和子网配置</strong>：
-<ul>
-<li>确认需要将网络和子网配置集成到服务规范中，并讨论了具体的实现细节。</li>
-</ul></li>
+<li>完善监控工具（exporter）以提升系统监控能力。</li>
+<li>作为共同导师参与Google Summer of Code项目。</li>
+<li>改进升级流程，特别是处理旧的监控容器和改进监控栈的升级。</li>
+<li>将网络和子网配置集成到服务规范中。</li>
 </ol>
-<h4 id="后续行动计划">后续行动计划</h4>
+<p><strong>后续行动计划</strong></p>
 <ol type="1">
-<li><strong>监控工具改进</strong>：
-<ul>
-<li>继续完善监控工具，确保其能够提供必要的监控数据。</li>
-</ul></li>
-<li><strong>Google Summer of Code项目</strong>：
-<ul>
-<li>作为共同导师参与项目，并处理通过LinkedIn联系的候选人。</li>
-</ul></li>
-<li><strong>代码实现和升级问题</strong>：
-<ul>
-<li>改进升级流程，确保升级过程中不会遗漏任何重要的配置或容器。</li>
-</ul></li>
-<li><strong>网络和子网配置</strong>：
-<ul>
-<li>将网络和子网配置集成到服务规范中，并确保其能够在实际部署中正常工作。</li>
-</ul></li>
+<li>完善监控工具。</li>
+<li>作为共同导师参与Google Summer of Code项目。</li>
+<li>改进升级流程。</li>
+<li>将网络和子网配置集成到服务规范中。</li>
 </ol>
-<h4 id="其他事项">其他事项</h4>
+<p><strong>其他事项</strong></p>
 <ul>
 <li>讨论了Ceph集群的健康警告问题，并计划进一步调查和解决。</li>
 <li>讨论了如何处理旧的配置选项，并计划在未来的版本中改进这一问题。</li>
 </ul>
-<h4 id="会议结束">会议结束</h4>
-<p>会议在确认所有议题讨论完毕后结束，并祝愿所有参与者有一个愉快的假期。</p>
+<h2 id="相关标签">相关标签</h2>
+<ul>
+<li>Ceph</li>
+<li>分布式存储</li>
+<li>监控工具</li>
+<li>代码实现</li>
+<li>升级流程</li>
+</ul>
 
         </div>
 
@@ -291,6 +283,8 @@ Summer of Code项目、以及一些具体的代码实现问题。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" rel="tag">代码实现</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8D%87%E7%BA%A7%E6%B5%81%E7%A8%8B/" rel="tag">升级流程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%9B%91%E6%8E%A7%E5%B7%A5%E5%85%B7/" rel="tag">监控工具</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [具体日期] 参会人员： [列出参会人员] 缺席人员： Sebastian, Miguel 会议议程  NFS Config Objects Rook Manager Test 问题 Saif EDM 的目标和时间线  会议内容  NFS Config Objects  Jeff Leighton 添加了此议题，但无人回应。  Rook Manager Test 问题  当前">
+    <meta name="keywords" content="Ceph,分布式存储,Rook,Saif EDM,管理与运维">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2020年7月6日 参会人员： [列出参会人员] 缺席人员： Sebastian, Miguel 会议议程  NFS配置对象 Rook Manager测试问题 Saif EDM的目标和时间线  会议内容  NFS配置对象  Jeff Leighton提出了该议题，但无人回应。  Rook Manager测试问题  当前Rook的Manager测试失败">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2020-07-06">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/07/06/Ceph_Orchestrator_Meeting_2020-07-06/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [具体日期] 参会人员： [列出参会人员] 缺席人员： Sebastian, Miguel 会议议程  NFS Config Objects Rook Manager Test 问题 Saif EDM 的目标和时间线  会议内容  NFS Config Objects  Jeff Leighton 添加了此议题，但无人回应。  Rook Manager Test 问题  当前">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2020年7月6日 参会人员： [列出参会人员] 缺席人员： Sebastian, Miguel 会议议程  NFS配置对象 Rook Manager测试问题 Saif EDM的目标和时间线  会议内容  NFS配置对象  Jeff Leighton提出了该议题，但无人回应。  Rook Manager测试问题  当前Rook的Manager测试失败">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-07-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="Saif EDM">
+<meta property="article:tag" content="管理与运维">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,55 +190,54 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间：</strong> [具体日期]<br />
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议时间：</strong> 2020年7月6日<br />
 <strong>参会人员：</strong> [列出参会人员]<br />
 <strong>缺席人员：</strong> Sebastian, Miguel</p>
 <h4 id="会议议程">会议议程</h4>
 <ol type="1">
-<li><strong>NFS Config Objects</strong></li>
-<li><strong>Rook Manager Test 问题</strong></li>
-<li><strong>Saif EDM 的目标和时间线</strong></li>
+<li><strong>NFS配置对象</strong></li>
+<li><strong>Rook Manager测试问题</strong></li>
+<li><strong>Saif EDM的目标和时间线</strong></li>
 </ol>
 <h4 id="会议内容">会议内容</h4>
 <ol type="1">
-<li><strong>NFS Config Objects</strong>
+<li><strong>NFS配置对象</strong>
 <ul>
-<li>Jeff Leighton 添加了此议题，但无人回应。</li>
+<li>Jeff Leighton提出了该议题，但无人回应。</li>
 </ul></li>
-<li><strong>Rook Manager Test 问题</strong>
+<li><strong>Rook Manager测试问题</strong>
 <ul>
-<li>当前 Rook 的 Manager Test 失败，该测试针对 master
-分支运行，以便在发布前发现早期破坏性更改。</li>
-<li>发现 OSD 创建问题，Miguel 在上周五提交了 PR，希望修复此问题。</li>
-<li>由于 Sebastian 本周不在，建议暂时禁用该测试，待 Sebastian
-回来后再处理。</li>
+<li>当前Rook的Manager测试失败，该测试针对master分支运行，以便在发布前发现早期破坏性更改。</li>
+<li>发现OSD创建问题，Miguel在上周五提交了PR，希望修复此问题。</li>
+<li>由于Sebastian本周不在，建议暂时禁用该测试，待Sebastian回来后再处理。</li>
 </ul></li>
-<li><strong>Saif EDM 的目标和时间线</strong>
+<li><strong>Saif EDM的目标和时间线</strong>
 <ul>
-<li>Saif EDM 被正式宣布为不使用 Rook 安装 Ceph 的首选方法。</li>
-<li>文档中已明确指出，安装时推荐使用 Saif EDM。</li>
+<li>Saif EDM被正式宣布为不使用Rook安装Ceph的推荐方法。</li>
+<li>文档中已明确指出，安装时推荐使用Saif EDM。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>暂时禁用 Rook Manager Test，待 Sebastian 回来后再处理。</li>
-<li>确认 Saif EDM 作为非 Rook 安装 Ceph 的主要方法。</li>
+<li>暂时禁用Rook Manager测试，待Sebastian回来后再处理。</li>
+<li>确认Saif EDM作为非Rook安装Ceph的主要方法。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>禁用 Rook Manager Test。</li>
-<li>继续关注 Saif EDM 的文档和实施情况。</li>
+<li>禁用Rook Manager测试。</li>
+<li>继续关注Saif EDM的文档和实施情况。</li>
 </ul>
 <h4 id="会议结束">会议结束</h4>
 <ul>
 <li>会议在无其他议题提出后结束。</li>
-<li>下次会议将在 Sebastian 和 Miguel 回归后进行。</li>
+<li>下次会议将在Sebastian和Miguel回归后进行。</li>
 </ul>
-<p><strong>会议总结：</strong> 本次会议主要讨论了 Rook Manager Test
-的问题和 Saif EDM 的实施情况，决定暂时禁用 Rook Manager Test，并确认
-Saif EDM 作为安装 Ceph
-的主要方法。下次会议将在关键人员回归后继续进行。</p>
+<p><strong>会议总结：</strong> 本次会议主要讨论了Rook
+Manager测试的问题和Saif EDM的实施情况。决定暂时禁用Rook
+Manager测试，并确认Saif
+EDM作为安装Ceph的主要方法。下次会议将在关键人员回归后继续进行。</p>
 
         </div>
 
@@ -264,6 +268,8 @@ Saif EDM 作为安装 Ceph
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Saif-EDM/" rel="tag">Saif EDM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%AE%A1%E7%90%86%E4%B8%8E%E8%BF%90%E7%BB%B4/" rel="tag">管理与运维</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -325,7 +331,7 @@ Saif EDM 作为安装 Ceph
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2020/07/08/Ceph_DocuBetter_Meeting_2020-07-08/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph DocuBetter Meeting 2020-07-08</h4>
+        <h4 class="title">Ceph DocuBetter 会议纪要 2020-07-08</h4>
       </a>
     </div>
   

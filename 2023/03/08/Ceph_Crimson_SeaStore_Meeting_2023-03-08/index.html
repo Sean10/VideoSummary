@@ -14,23 +14,59 @@
     
     
     
-    <title>Ceph Crimson/SeaStore Meeting 2023-03-08 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph Crimson/SeaStore 会议纪要 2023-03-08 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [具体日期] 参会人员： [列出参会人员] 主要议题：  个人工作更新  Junction: 正在处理 classic scrub 和 Crimson scrub，同时更新了 grain cache 的最终版本，并关注 max application size 的 bug 问题。本周将重点审查 lba3 optimization，并计划在未来几周内投入更多精力到 multip">
+    <meta name="keywords" content="Ceph,分布式存储,块存储,快照,克隆,虚拟化,RGW,对象存储,CRUSH 算法,可伸缩性,OSD,Bluestore,RESTful API,文件系统存储,一致性,去中心化,性能,MON,MDS,PG,RADOS,librados,libcephfs,cephfs,rbd,radosgw,认证,授权,加密,复制,云计算,可用性,Bluefs,Rocksdb,存储,纠错编码">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023-03-08 参会人员： [列出参会人员] 主要议题：  个人工作更新  Junction: 正在处理 classic scrub 和 Crimson scrub，同时更新了 grain cache 的最终版本，并关注 max application size 的 bug 问题。本周将重点审查 lba3 optimization，并计划在未来">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Crimson&#x2F;SeaStore Meeting 2023-03-08">
+<meta property="og:title" content="Ceph Crimson&#x2F;SeaStore 会议纪要 2023-03-08">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [具体日期] 参会人员： [列出参会人员] 主要议题：  个人工作更新  Junction: 正在处理 classic scrub 和 Crimson scrub，同时更新了 grain cache 的最终版本，并关注 max application size 的 bug 问题。本周将重点审查 lba3 optimization，并计划在未来几周内投入更多精力到 multip">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023-03-08 参会人员： [列出参会人员] 主要议题：  个人工作更新  Junction: 正在处理 classic scrub 和 Crimson scrub，同时更新了 grain cache 的最终版本，并关注 max application size 的 bug 问题。本周将重点审查 lba3 optimization，并计划在未来">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-07T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-03-08T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="块存储">
+<meta property="article:tag" content="快照">
+<meta property="article:tag" content="克隆">
+<meta property="article:tag" content="虚拟化">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="CRUSH 算法">
+<meta property="article:tag" content="可伸缩性">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="Bluestore">
+<meta property="article:tag" content="RESTful API">
+<meta property="article:tag" content="文件系统存储">
+<meta property="article:tag" content="一致性">
+<meta property="article:tag" content="去中心化">
+<meta property="article:tag" content="性能">
+<meta property="article:tag" content="MON">
+<meta property="article:tag" content="MDS">
+<meta property="article:tag" content="PG">
+<meta property="article:tag" content="RADOS">
+<meta property="article:tag" content="librados">
+<meta property="article:tag" content="libcephfs">
+<meta property="article:tag" content="cephfs">
+<meta property="article:tag" content="rbd">
+<meta property="article:tag" content="radosgw">
+<meta property="article:tag" content="认证">
+<meta property="article:tag" content="授权">
+<meta property="article:tag" content="加密">
+<meta property="article:tag" content="复制">
+<meta property="article:tag" content="云计算">
+<meta property="article:tag" content="可用性">
+<meta property="article:tag" content="Bluefs">
+<meta property="article:tag" content="Rocksdb">
+<meta property="article:tag" content="存储">
+<meta property="article:tag" content="纠错编码">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +148,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Crimson/SeaStore Meeting 2023-03-08</div>
+        <div class="flex-col header-title ellipsis">Ceph Crimson/SeaStore 会议纪要 2023-03-08</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +170,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Crimson/SeaStore Meeting 2023-03-08</h1>
+        <h1 class="title">Ceph Crimson/SeaStore 会议纪要 2023-03-08</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-03-07T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -142,7 +178,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a></li></ul>
 
             
         </h5>
@@ -168,12 +204,12 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Crimson/SeaStore Meeting 2023-03-08</h1>
+        <h1 class="post-card-title">Ceph Crimson/SeaStore 会议纪要 2023-03-08</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-03-08 00:00:00" datetime="2023-03-07T16:00:00.000Z"  itemprop="datePublished">2023-03-08</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a></li></ul>
 
 
 
@@ -185,8 +221,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间：</strong> [具体日期] <strong>参会人员：</strong>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议时间：</strong> 2023-03-08 <strong>参会人员：</strong>
 [列出参会人员]</p>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
@@ -198,11 +235,11 @@
 问题。本周将重点审查
 <code>lba3 optimization</code>，并计划在未来几周内投入更多精力到
 <code>multiple messenger</code> 项目中。</li>
-<li><strong>Harsh:</strong> 报告了 Crimson
-镜像配置集群时遇到的问题，已与 Nedson 讨论并确认问题不在 Crimson
-本身，而是与 reef build 相关。</li>
+<li><strong>Harsh:</strong> 报告了在配置 Crimson
+镜像集群时遇到的问题，确认问题与 reef build 相关，而非 Crimson
+本身。</li>
 <li><strong>Kevin:</strong> 完成了垂直系统修改和 CN storm
-系统的安装测试，请求团队进行审查。</li>
+系统的安装测试，并请求团队进行审查。</li>
 <li><strong>Rocky:</strong> 提到上周的 PR 主要关于 self volume 和
 surveillance，Adam King 正在审查中。</li>
 <li><strong>[其他人员]:</strong> 汇报了各自的工作进展和计划。</li>
@@ -210,14 +247,14 @@ surveillance，Adam King 正在审查中。</li>
 <li><strong>讨论文档：</strong>
 <ul>
 <li><strong>Joyhound</strong> 提出的文档关于在 systore
-中实现热数据缓存功能，旨在缓存频繁访问的数据。讨论了设计原则，包括利用应用程序访问模式的局部性，以及数据和元数据的访问模式差异。</li>
+中实现热数据缓存功能，讨论了设计原则，包括利用应用程序访问模式的局部性，以及数据和元数据的访问模式差异。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
-<li><strong>关于热数据缓存的讨论：</strong> 团队对 Joyhound
-的文档进行了深入讨论，涉及缓存策略、数据局部性、以及如何与现有 tiering
-系统集成。建议将缓存策略设计为可插拔的，以便未来调整和优化。</li>
+<li><strong>关于热数据缓存的讨论：</strong> 团队深入讨论了 Joyhound
+的文档，涉及缓存策略、数据局部性、以及如何与现有 tiering
+系统集成。建议将缓存策略设计为可插拔的。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
@@ -261,6 +298,8 @@ surveillance，Adam King 正在审查中。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bluefs/" rel="tag">Bluefs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bluestore/" rel="tag">Bluestore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-%E7%AE%97%E6%B3%95/" rel="tag">CRUSH 算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MDS/" rel="tag">MDS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MON/" rel="tag">MON</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PG/" rel="tag">PG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS/" rel="tag">RADOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RESTful-API/" rel="tag">RESTful API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rocksdb/" rel="tag">Rocksdb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/cephfs/" rel="tag">cephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/libcephfs/" rel="tag">libcephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/librados/" rel="tag">librados</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/radosgw/" rel="tag">radosgw</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/rbd/" rel="tag">rbd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%B8%80%E8%87%B4%E6%80%A7/" rel="tag">一致性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%85%8B%E9%9A%86/" rel="tag">克隆</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8A%A0%E5%AF%86/" rel="tag">加密</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96/" rel="tag">去中心化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">可用性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%9D%97%E5%AD%98%E5%82%A8/" rel="tag">块存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%8D%E5%88%B6/" rel="tag">复制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BF%AB%E7%85%A7/" rel="tag">快照</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD/" rel="tag">性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8E%88%E6%9D%83/" rel="tag">授权</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8/" rel="tag">文件系统存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BA%A0%E9%94%99%E7%BC%96%E7%A0%81/" rel="tag">纠错编码</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="tag">虚拟化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%AE%A4%E8%AF%81/" rel="tag">认证</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -272,7 +311,7 @@ surveillance，Adam King 正在审查中。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/&title=《Ceph Crimson/SeaStore Meeting 2023-03-08》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/&title=《Ceph Crimson/SeaStore 会议纪要 2023-03-08》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -282,7 +321,7 @@ surveillance，Adam King 正在审查中。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/&title=《Ceph Crimson/SeaStore Meeting 2023-03-08》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/&title=《Ceph Crimson/SeaStore 会议纪要 2023-03-08》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -292,7 +331,7 @@ surveillance，Adam King 正在审查中。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore Meeting 2023-03-08》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore 会议纪要 2023-03-08》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -322,7 +361,7 @@ surveillance，Adam King 正在审查中。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/03/09/Ceph_RGW_Refactoring_Meeting_2023-03-08/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2023-03-08</h4>
+        <h4 class="title"> Ceph RGW重构会议2023-03-08 </h4>
       </a>
     </div>
   
@@ -431,7 +470,7 @@ surveillance，Adam King 正在审查中。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/&title=《Ceph Crimson/SeaStore Meeting 2023-03-08》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/&title=《Ceph Crimson/SeaStore 会议纪要 2023-03-08》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -441,7 +480,7 @@ surveillance，Adam King 正在审查中。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/&title=《Ceph Crimson/SeaStore Meeting 2023-03-08》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/&title=《Ceph Crimson/SeaStore 会议纪要 2023-03-08》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -451,7 +490,7 @@ surveillance，Adam King 正在审查中。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore Meeting 2023-03-08》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore 会议纪要 2023-03-08》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/08/Ceph_Crimson_SeaStore_Meeting_2023-03-08/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

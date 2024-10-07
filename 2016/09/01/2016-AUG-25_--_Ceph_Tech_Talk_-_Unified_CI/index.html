@@ -14,23 +14,29 @@
     
     
     
-    <title>2016-AUG-25 -- Ceph Tech Talk: Unified CI | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2016-AUG-25 -- Ceph Tech Talk: Unified CI&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Ceph 分布式存储的构建和发布流程优化 参会人员： Alfredo Lisa，其他相关人员 会议内容： 一、会议背景  Alfredo Lisa 自过去一年半以来负责 Ceph 的构建和发布工作。 早期使用 Jenkins 进行构建，但随着团队和贡献者数量的增长，构建流程变得复杂，效率低下。  二、当前构建系统存在的问题  构建效率低下： 每次构建都需要花费数天时间，难以满">
+    <meta name="keywords" content="Ceph,分布式存储,自动化构建,Jenkins,Docker,Kubernetes">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph 分布式存储的统一构建和发布流程优化 参会人员： Alfredo Lisa，其他相关人员 会议内容： 一、会议背景  Alfredo Lisa 自过去一年半以来负责 Ceph 的构建和发布工作。 早期使用 Jenkins 进行构建，但随着团队和贡献者数量的增长，构建流程变得复杂，效率低下。  二、当前构建系统存在的问题  构建效率低下： 每次">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2016-AUG-25 -- Ceph Tech Talk: Unified CI">
+<meta property="og:title" content="&#39;2016-AUG-25 -- Ceph Tech Talk: Unified CI&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Ceph 分布式存储的构建和发布流程优化 参会人员： Alfredo Lisa，其他相关人员 会议内容： 一、会议背景  Alfredo Lisa 自过去一年半以来负责 Ceph 的构建和发布工作。 早期使用 Jenkins 进行构建，但随着团队和贡献者数量的增长，构建流程变得复杂，效率低下。  二、当前构建系统存在的问题  构建效率低下： 每次构建都需要花费数天时间，难以满">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph 分布式存储的统一构建和发布流程优化 参会人员： Alfredo Lisa，其他相关人员 会议内容： 一、会议背景  Alfredo Lisa 自过去一年半以来负责 Ceph 的构建和发布工作。 早期使用 Jenkins 进行构建，但随着团队和贡献者数量的增长，构建流程变得复杂，效率低下。  二、当前构建系统存在的问题  构建效率低下： 每次">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2016-08-31T16:00:00.000Z">
 <meta property="article:modified_time" content="2016-09-01T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="自动化构建">
+<meta property="article:tag" content="Jenkins">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Kubernetes">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2016-AUG-25 -- Ceph Tech Talk: Unified CI</div>
+        <div class="flex-col header-title ellipsis">&#39;2016-AUG-25 -- Ceph Tech Talk: Unified CI&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2016-AUG-25 -- Ceph Tech Talk: Unified CI</h1>
+        <h1 class="title">&#39;2016-AUG-25 -- Ceph Tech Talk: Unified CI&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2016-08-31T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +174,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2016-AUG-25 -- Ceph Tech Talk: Unified CI</h1>
+        <h1 class="post-card-title">'2016-AUG-25 -- Ceph Tech Talk: Unified CI'</h1>
         <div class="post-meta">
             <time class="post-time" title="2016-09-01 00:00:00" datetime="2016-08-31T16:00:00.000Z"  itemprop="datePublished">2016-09-01</time>
 
@@ -185,8 +191,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题</strong>： Ceph 分布式存储的构建和发布流程优化</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议主题</strong>： Ceph
+分布式存储的统一构建和发布流程优化</p>
 <p><strong>参会人员</strong>： Alfredo Lisa，其他相关人员</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>一、会议背景</strong></p>
@@ -270,6 +278,8 @@ Ceph 的开发效率和产品质量。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Docker/" rel="tag">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Jenkins/" rel="tag">Jenkins</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/" rel="tag">自动化构建</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -281,7 +291,7 @@ Ceph 的开发效率和产品质量。</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/&title=《2016-AUG-25 -- Ceph Tech Talk: Unified CI》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/&title=《'2016-AUG-25 -- Ceph Tech Talk: Unified CI'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -291,7 +301,7 @@ Ceph 的开发效率和产品质量。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/&title=《2016-AUG-25 -- Ceph Tech Talk: Unified CI》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/&title=《'2016-AUG-25 -- Ceph Tech Talk: Unified CI'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -301,7 +311,7 @@ Ceph 的开发效率和产品质量。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2016-AUG-25 -- Ceph Tech Talk: Unified CI》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2016-AUG-25 -- Ceph Tech Talk: Unified CI'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -331,7 +341,7 @@ Ceph 的开发效率和产品质量。</p>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2016/09/08/2016-SEP-07_-_-_Ceph_Developer_Monthly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2016-SEP-07 :: Ceph Developer Monthly</h4>
+        <h4 class="title">&#39;2016-SEP-07 :: Ceph Developer Monthly&#39;</h4>
       </a>
     </div>
   
@@ -440,7 +450,7 @@ Ceph 的开发效率和产品质量。</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/&title=《2016-AUG-25 -- Ceph Tech Talk: Unified CI》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/&title=《'2016-AUG-25 -- Ceph Tech Talk: Unified CI'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -450,7 +460,7 @@ Ceph 的开发效率和产品质量。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/&title=《2016-AUG-25 -- Ceph Tech Talk: Unified CI》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/&title=《'2016-AUG-25 -- Ceph Tech Talk: Unified CI'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -460,7 +470,7 @@ Ceph 的开发效率和产品质量。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2016-AUG-25 -- Ceph Tech Talk: Unified CI》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2016-AUG-25 -- Ceph Tech Talk: Unified CI'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2016/09/01/2016-AUG-25_--_Ceph_Tech_Talk_-_Unified_CI/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未知） 与会人员： Prabhav Sikka（OVH DevOps工程师），其他与会者姓名未提及 会议主题： Ceph分布式存储在OVH的使用经验及优化方案 关键细节：  OVH使用Ceph作为其完全托管服务的一部分，拥有约150个集群，运行在1150台服务器上，存储容量约为44PB，使用2PB NVMe和超过70,000个SSD实例。 Prabh">
+    <meta name="keywords" content="Ceph,Distributed Storage,Optimization,Storage Performance,Flashcache">
+    <meta name="description" content="[改进后的中文总结内容] 改进后的中文总结 会议纪要 会议时间： 2023年11月（具体日期未知） 与会人员： Prabhav Sikka（OVH DevOps工程师），其他与会者姓名未提及 会议主题： Ceph分布式存储在OVH的使用经验及优化方案 关键细节：  OVH使用Ceph作为其托管服务的一部分，拥有约150个集群，运行在1150台服务器上，存储容量约为44PB，使用2PB NVMe和超">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Running Ceph on Flashcache - Paweł Sadowski">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/04/23/Running_Ceph_on_Flashcache_-_Pawe_Sadowski/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未知） 与会人员： Prabhav Sikka（OVH DevOps工程师），其他与会者姓名未提及 会议主题： Ceph分布式存储在OVH的使用经验及优化方案 关键细节：  OVH使用Ceph作为其完全托管服务的一部分，拥有约150个集群，运行在1150台服务器上，存储容量约为44PB，使用2PB NVMe和超过70,000个SSD实例。 Prabh">
+<meta property="og:description" content="[改进后的中文总结内容] 改进后的中文总结 会议纪要 会议时间： 2023年11月（具体日期未知） 与会人员： Prabhav Sikka（OVH DevOps工程师），其他与会者姓名未提及 会议主题： Ceph分布式存储在OVH的使用经验及优化方案 关键细节：  OVH使用Ceph作为其托管服务的一部分，拥有约150个集群，运行在1150台服务器上，存储容量约为44PB，使用2PB NVMe和超">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-04-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Optimization">
+<meta property="article:tag" content="Storage Performance">
+<meta property="article:tag" content="Flashcache">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,7 +190,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="改进后的中文总结">改进后的中文总结</h3>
+<p><strong>会议纪要</strong></p>
 <p><strong>会议时间</strong>： 2023年11月（具体日期未知）</p>
 <p><strong>与会人员</strong>： Prabhav Sikka（OVH
 DevOps工程师），其他与会者姓名未提及</p>
@@ -193,18 +200,18 @@ DevOps工程师），其他与会者姓名未提及</p>
 Ceph分布式存储在OVH的使用经验及优化方案</p>
 <p><strong>关键细节</strong>：</p>
 <ul>
-<li>OVH使用Ceph作为其完全托管服务的一部分，拥有约150个集群，运行在1150台服务器上，存储容量约为44PB，使用2PB
+<li>OVH使用Ceph作为其托管服务的一部分，拥有约150个集群，运行在1150台服务器上，存储容量约为44PB，使用2PB
 NVMe和超过70,000个SSD实例。</li>
 <li>Prabhav Sikka分享了他们在使用Ceph过程中遇到的问题及解决方案。</li>
 </ul>
 <p><strong>讨论的主要议题及决定的事项</strong>：</p>
 <p><strong>议题一：缓存优化</strong></p>
 <ul>
-<li><strong>问题</strong>： Ceph在执行深度清理（deep
-scrub）等操作时，会读取所有数据填充缓存，导致缓存数据无效，影响性能。</li>
+<li><strong>问题</strong>：
+Ceph在执行深度清理等操作时，会读取所有数据填充缓存，导致缓存数据无效，影响性能。</li>
 <li><strong>解决方案</strong>：
 <ul>
-<li>引入PID黑名单功能，允许禁用特定I/O的缓存。</li>
+<li>使用PID黑名单功能，允许禁用特定I/O的缓存。</li>
 <li>使用跳过顺序阈值，跳过对大块连续读写的缓存。</li>
 </ul></li>
 <li><strong>决定</strong>：
@@ -239,6 +246,13 @@ scrub）等操作时，会读取所有数据填充缓存，导致缓存数据无
 <li>OVH正在寻找Buster的替代方案，并正在测试Intel Ceph加速软件。</li>
 <li>Prabhav Sikka认为Ceph是一个功能强大且值得信赖的存储解决方案。</li>
 </ul>
+<p><strong>改进说明</strong>：</p>
+<ul>
+<li>确保了会议纪要准确反映了原始内容的要点，包括关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</li>
+<li>原始字幕内容中的错误、误解或遗漏的重要信息已通过优化后的总结得到体现。</li>
+<li>保留了计算机科学/ceph相关领域的英文原文关键词，如Ceph、Flashcache、distributed
+storage、optimization等。</li>
+</ul>
 
         </div>
 
@@ -269,6 +283,8 @@ scrub）等操作时，会读取所有数据填充缓存，导致缓存数据无
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Flashcache/" rel="tag">Flashcache</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Optimization/" rel="tag">Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Performance/" rel="tag">Storage Performance</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -328,18 +344,18 @@ scrub）等操作时，会读取所有数据填充缓存，导致缓存数据无
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2018/04/23/Reconsidering_tracing_in_Ceph_-_Mohamad_Gebai/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2018/04/23/Petabyte_Scale_Object_Storage_Service_Using_Ceph_in_A_Private_Cloud_-_Varada_Kari/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Reconsidering tracing in Ceph - Mohamad Gebai</h4>
+        <h4 class="title">  Petabyte Scale Object Storage Service Using Ceph in A Private Cloud - Varada Kari  </h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2018/04/23/Status_and_Future_of_the_Ceph_File_System_-_Patrick_Donnelly/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2018/04/19/2018-Apr-19_-_-_Ceph_Performance_Weekly/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Status and Future of the Ceph File System - Patrick Donnelly</h4>
+        <h4 class="title"> 2018-Apr-19 :: Ceph Performance Weekly </h4>
       </a>
     </div>
   

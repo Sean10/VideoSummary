@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2021-07-29 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph性能会议纪要 2021-07-29 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 主要议题与讨论内容  PRs本周更新  本周唯一的PR来自会议主持人，主要涉及对memstor的重新架构，包括从几年前的pet store项目中引入的vector object。经过测试，发现buffer list的性能已经与vector object相当，甚至可能略优。 braddock提出了一项智能变更，允许alien store使用任何经典对象存储，不仅仅是blue store，这">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,蓝鲸存储,SMR存储技术">
+    <meta name="description" content="改进后的中文总结内容 会议纪要 主要议题与讨论内容  PRs本周更新  会议主持人提出对memstor的重新架构，引入了vector object，并发现buffer list性能与vector object相当，甚至略优。 braddock提出智能变更，允许alien store使用任何经典对象存储，包括blue store。 合并了关于设置osd client message cap的PR，预">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2021-07-29">
+<meta property="og:title" content="Ceph性能会议纪要 2021-07-29">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-29/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 主要议题与讨论内容  PRs本周更新  本周唯一的PR来自会议主持人，主要涉及对memstor的重新架构，包括从几年前的pet store项目中引入的vector object。经过测试，发现buffer list的性能已经与vector object相当，甚至可能略优。 braddock提出了一项智能变更，允许alien store使用任何经典对象存储，不仅仅是blue store，这">
+<meta property="og:description" content="改进后的中文总结内容 会议纪要 主要议题与讨论内容  PRs本周更新  会议主持人提出对memstor的重新架构，引入了vector object，并发现buffer list性能与vector object相当，甚至略优。 braddock提出智能变更，允许alien store使用任何经典对象存储，包括blue store。 合并了关于设置osd client message cap的PR，预">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-08-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="蓝鲸存储">
+<meta property="article:tag" content="SMR存储技术">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2021-07-29</div>
+        <div class="flex-col header-title ellipsis">Ceph性能会议纪要 2021-07-29</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2021-07-29</h1>
+        <h1 class="title">Ceph性能会议纪要 2021-07-29</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-08-22T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -142,7 +147,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/">存储技术</a></li></ul></li></ul>
 
             
         </h5>
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E4%B8%8E%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">主要议题与讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BF%A1%E6%81%AF"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他信息</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">2.</span> <span class="post-toc-text">结论</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结内容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E4%B8%8E%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">主要议题与讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BF%A1%E6%81%AF"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">其他信息</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,12 +173,12 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2021-07-29</h1>
+        <h1 class="post-card-title">Ceph性能会议纪要 2021-07-29</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-08-23 00:00:00" datetime="2021-08-22T16:00:00.000Z"  itemprop="datePublished">2021-08-23</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/">存储技术</a></li></ul></li></ul>
 
 
 
@@ -185,46 +190,48 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <h2 id="改进后的中文总结内容">改进后的中文总结内容</h2>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="主要议题与讨论内容">主要议题与讨论内容</h4>
 <ol type="1">
 <li><strong>PRs本周更新</strong>
 <ul>
-<li>本周唯一的PR来自会议主持人，主要涉及对<code>memstor</code>的重新架构，包括从几年前的<code>pet store</code>项目中引入的<code>vector object</code>。经过测试，发现<code>buffer list</code>的性能已经与<code>vector object</code>相当，甚至可能略优。</li>
-<li><code>braddock</code>提出了一项智能变更，允许<code>alien store</code>使用任何经典对象存储，不仅仅是<code>blue store</code>，这意味着现在可以运行<code>mem store</code>和<code>alien store</code>。</li>
-<li>一个关于设置<code>osd client message cap</code>的PR被合并，该变更在测试中表现合理，预计能解决生产环境中与心跳超时相关的问题。</li>
-<li>一个关于<code>AVX 512 erasure coding</code>的实现被作者关闭，原因是他们无法继续测试或更新该PR。</li>
+<li>会议主持人提出对<code>memstor</code>的重新架构，引入了<code>vector object</code>，并发现<code>buffer list</code>性能与<code>vector object</code>相当，甚至略优。</li>
+<li><code>braddock</code>提出智能变更，允许<code>alien store</code>使用任何经典对象存储，包括<code>blue store</code>。</li>
+<li>合并了关于设置<code>osd client message cap</code>的PR，预计能解决生产环境中与心跳超时相关的问题。</li>
+<li><code>AVX 512 erasure coding</code>的实现因作者无法继续测试而被关闭。</li>
 </ul></li>
 <li><strong>其他技术讨论</strong>
 <ul>
-<li>讨论了<code>pg log</code>的更新，特别是关于<code>acceptable rollback info</code>的变更，需要更多时间来理解和评估其潜在影响。</li>
-<li><code>rgw tracing</code>的优化正在积极讨论中，<code>bufferless c-string</code>的处理优化也得到了初步的审查。</li>
-<li>关于<code>finisher</code>的CPU自动释放优化，目前正在进行详细的讨论，以确定具体的优化策略。</li>
+<li>讨论了<code>pg log</code>的更新，特别是关于<code>acceptable rollback info</code>的变更。</li>
+<li><code>rgw tracing</code>优化和<code>bufferless c-string</code>处理优化正在讨论中。</li>
+<li>进行了关于<code>finisher</code>的CPU自动释放优化的详细讨论。</li>
 </ul></li>
 <li><strong>SMR存储技术</strong>
 <ul>
 <li>讨论了<code>SMR</code>（Shingled Magnetic
-Recording）存储技术在<code>blue store</code>中的实现状态和未来发展方向。目前，<code>SMR</code>的实现还处于初级阶段，需要进一步的工作来完善功能和性能。</li>
+Recording）存储技术在<code>blue store</code>中的实现状态和未来发展方向。</li>
+<li>目前<code>SMR</code>实现处于初级阶段，需要进一步的工作来完善功能和性能。</li>
 <li>讨论了如何更好地支持<code>SMR</code>硬件，包括可能的硬件测试环境和模拟测试方法。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>需要进一步研究和优化<code>memstor</code>在写路径上的效率问题。</li>
-<li>需要对<code>SMR</code>存储技术的实现进行更深入的代码审查和功能测试。</li>
+<li>进一步研究和优化<code>memstor</code>在写路径上的效率问题。</li>
+<li>对<code>SMR</code>存储技术的实现进行更深入的代码审查和功能测试。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
 <li>会议主持人将重新审视<code>memstor</code>的性能问题，并尝试找出其效率低下的原因。</li>
-<li>对于<code>SMR</code>存储技术，将安排一次代码审查会议，以确定下一步的开发方向和具体实施计划。</li>
-<li>将探索在现有测试环境中引入<code>SMR</code>硬件的可能性，以便进行更真实的性能测试。</li>
+<li>安排一次代码审查会议，以确定<code>SMR</code>存储技术的下一步开发方向和具体实施计划。</li>
+<li>探索在现有测试环境中引入<code>SMR</code>硬件的可能性，以便进行更真实的性能测试。</li>
 </ul>
 <h4 id="其他信息">其他信息</h4>
 <ul>
-<li>会议中还提到了关于<code>crimson</code>性能和效率的比较研究，特别是在小数据集和大数据集上的表现差异，以及<code>memstor</code>和<code>blue store</code>在不同场景下的效率对比。</li>
+<li>讨论了关于<code>crimson</code>性能和效率的比较研究，特别是在小数据集和大数据集上的表现差异，以及<code>memstor</code>和<code>blue store</code>在不同场景下的效率对比。</li>
 </ul>
 <h3 id="结论">结论</h3>
-<p>本次会议主要围绕<code>ceph</code>存储系统的性能优化和<code>SMR</code>存储技术的实现进行了深入讨论，确定了后续的研究和开发方向。会议强调了代码审查和性能测试的重要性，并计划通过实际硬件测试来验证和优化系统性能。</p>
+<p>本次会议主要围绕Ceph存储系统的性能优化和<code>SMR</code>存储技术的实现进行了深入讨论，确定了后续的研究和开发方向。会议强调了代码审查和性能测试的重要性，并计划通过实际硬件测试来验证和优化系统性能。</p>
 
         </div>
 
@@ -255,6 +262,8 @@ Recording）存储技术在<code>blue store</code>中的实现状态和未来发
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SMR%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/" rel="tag">SMR存储技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%93%9D%E9%B2%B8%E5%AD%98%E5%82%A8/" rel="tag">蓝鲸存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -266,7 +275,7 @@ Recording）存储技术在<code>blue store</code>中的实现状态和未来发
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-29/&title=《Ceph Performance Meeting 2021-07-29》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-29/&title=《Ceph性能会议纪要 2021-07-29》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -276,7 +285,7 @@ Recording）存储技术在<code>blue store</code>中的实现状态和未来发
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-29/&title=《Ceph Performance Meeting 2021-07-29》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-29/&title=《Ceph性能会议纪要 2021-07-29》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -286,7 +295,7 @@ Recording）存储技术在<code>blue store</code>中的实现状态和未来发
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-07-29》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议纪要 2021-07-29》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -316,7 +325,7 @@ Recording）存储技术在<code>blue store</code>中的实现状态和未来发
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-15/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2021-07-15</h4>
+        <h4 class="title">Ceph性能会议纪要 2021-07-15</h4>
       </a>
     </div>
   
@@ -325,7 +334,7 @@ Recording）存储技术在<code>blue store</code>中的实现状态和未来发
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/08/21/Ceph_Code_Walkthroughs_-_BlueStore_SMR/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Code Walkthroughs: BlueStore SMR</h4>
+        <h4 class="title">  Ceph Code Walkthroughs: BlueStore SMR  </h4>
       </a>
     </div>
   
@@ -425,7 +434,7 @@ Recording）存储技术在<code>blue store</code>中的实现状态和未来发
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-29/&title=《Ceph Performance Meeting 2021-07-29》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-29/&title=《Ceph性能会议纪要 2021-07-29》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -435,7 +444,7 @@ Recording）存储技术在<code>blue store</code>中的实现状态和未来发
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-29/&title=《Ceph Performance Meeting 2021-07-29》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-29/&title=《Ceph性能会议纪要 2021-07-29》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -445,7 +454,7 @@ Recording）存储技术在<code>blue store</code>中的实现状态和未来发
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-07-29》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议纪要 2021-07-29》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

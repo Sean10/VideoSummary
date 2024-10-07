@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写会议时间] 参会人员： Carl (Intel数据中心组织云解决方案架构师) 会议主题： Ceph存储系统中WAL和DB分区大小及所需空间 会议内容：  背景介绍： Carl介绍了Intel数据中心组织，并说明了本次会议将讨论Ceph存储系统中WAL和DB分区的大小以及所需空间。 问题提出： 由于对WAL和DB分区大小的疑问较多，且现有文档给出的建议过大，因此决定进行">
+    <meta name="keywords" content="Ceph,Benchmarking,Storage Optimization,Data Center,Cloud Solutions">
+    <meta name="description" content="[改进后的中文总结内容] 改进后的中文总结 在本次会议中，Intel数据中心组织的云解决方案架构师Carl Vietmeier讨论了Ceph存储系统中WAL（Write-Ahead Logging）和DB（Database）分区的大小以及所需空间配置。以下是会议的关键要点和改进后的内容： 会议背景和主题： Carl介绍了Intel数据中心组织，并提出了关于Ceph存储系统中WAL和DB分区大小的问">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Configuring Ceph Deployments with an Easy to Use Calculator - Karl Vietmeier, Intel Corporation">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Configuring_Ceph_Deployments_with_an_Easy_to_Use_Calculator_-_Karl_Vietmeier_Intel_Corporation/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写会议时间] 参会人员： Carl (Intel数据中心组织云解决方案架构师) 会议主题： Ceph存储系统中WAL和DB分区大小及所需空间 会议内容：  背景介绍： Carl介绍了Intel数据中心组织，并说明了本次会议将讨论Ceph存储系统中WAL和DB分区的大小以及所需空间。 问题提出： 由于对WAL和DB分区大小的疑问较多，且现有文档给出的建议过大，因此决定进行">
+<meta property="og:description" content="[改进后的中文总结内容] 改进后的中文总结 在本次会议中，Intel数据中心组织的云解决方案架构师Carl Vietmeier讨论了Ceph存储系统中WAL（Write-Ahead Logging）和DB（Database）分区的大小以及所需空间配置。以下是会议的关键要点和改进后的内容： 会议背景和主题： Carl介绍了Intel数据中心组织，并提出了关于Ceph存储系统中WAL和DB分区大小的问">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Benchmarking">
+<meta property="article:tag" content="Storage Optimization">
+<meta property="article:tag" content="Data Center">
+<meta property="article:tag" content="Cloud Solutions">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,42 +190,29 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： [请填写会议时间]</p>
-<p><strong>参会人员</strong>： Carl
-(Intel数据中心组织云解决方案架构师)</p>
-<p><strong>会议主题</strong>：
-Ceph存储系统中WAL和DB分区大小及所需空间</p>
-<p><strong>会议内容</strong>：</p>
-<ul>
-<li><strong>背景介绍</strong>：
-Carl介绍了Intel数据中心组织，并说明了本次会议将讨论Ceph存储系统中WAL和DB分区的大小以及所需空间。</li>
-<li><strong>问题提出</strong>：
-由于对WAL和DB分区大小的疑问较多，且现有文档给出的建议过大，因此决定进行实证测试以确定更合适的大小。</li>
-<li><strong>测试方法</strong>：
-使用现有的基准测试服务器和集群，对不同大小的对象进行测试，以确定WAL和DB分区的大小。</li>
-<li><strong>测试结果</strong>：
-<ul>
-<li>WAL大小主要取决于元数据量和处理速度。</li>
-<li>经过测试，建议将元数据大小设置为每个对象20KB，每个OSD需要约5GB的元数据空间。</li>
-<li>根据测试结果，文档中推荐的4%的空间可能过大，实际所需空间可能在2-3GB之间。</li>
-<li>WAL大小主要与数据变化率有关，建议设置80秒的缓冲区。</li>
-</ul></li>
-<li><strong>结论</strong>：
-<ul>
-<li>建议根据实际使用情况调整WAL和DB分区大小，并进行测试验证。</li>
-<li>WAL分区空间可能在2-3GB之间，DB分区空间约为5GB。</li>
-</ul></li>
-</ul>
-<p><strong>行动计划</strong>：</p>
-<ul>
-<li>将测试结果整理成文档，供相关人员参考。</li>
-<li>鼓励用户根据实际使用情况调整WAL和DB分区大小，并进行测试验证。</li>
-</ul>
-<p><strong>备注</strong>：</p>
-<ul>
-<li>会议中提到的一些关键词：WAL、DB、元数据、对象、OSD、RocksDB、CBT、I/O大小等。</li>
-</ul>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="改进后的中文总结">改进后的中文总结</h3>
+<p>在本次会议中，Intel数据中心组织的云解决方案架构师Carl
+Vietmeier讨论了Ceph存储系统中WAL（Write-Ahead
+Logging）和DB（Database）分区的大小以及所需空间配置。以下是会议的关键要点和改进后的内容：</p>
+<p><strong>会议背景和主题</strong>：
+Carl介绍了Intel数据中心组织，并提出了关于Ceph存储系统中WAL和DB分区大小的问题，这是一个常被用户询问的问题。</p>
+<p><strong>问题提出</strong>：
+由于对WAL和DB分区大小的疑问较多，且现有文档给出的建议过大，因此决定进行实证测试以确定更合适的大小。</p>
+<p><strong>测试方法</strong>：
+使用现有的基准测试服务器和集群，对不同大小的对象进行测试，以确定WAL和DB分区的大小。</p>
+<p><strong>测试结果</strong>： - WAL大小主要取决于元数据量和处理速度。 -
+建议将元数据大小设置为每个对象20KB，每个OSD需要约5GB的元数据空间。 -
+实际所需空间可能在2-3GB之间，而非文档中推荐的4%。 -
+WAL大小主要与数据变化率有关，建议设置80秒的缓冲区。</p>
+<p><strong>结论</strong>： -
+建议根据实际使用情况调整WAL和DB分区大小，并进行测试验证。 -
+WAL分区空间可能在2-3GB之间，DB分区空间约为5GB。</p>
+<p><strong>行动计划</strong>： - 将测试结果整理成文档，供相关人员参考。
+- 鼓励用户根据实际使用情况调整WAL和DB分区大小，并进行测试验证。</p>
+<p><strong>关键词和术语</strong>： - WAL - DB - 元数据 - OSD - RocksDB -
+CBT - I/O大小 - 缓冲区 - 网络带宽</p>
+<p>通过本次会议，我们得到了关于Ceph存储系统中WAL和DB分区大小配置的实证测试结果，为用户提供了更准确的配置建议，并强调了根据实际使用情况进行测试验证的重要性。</p>
 
         </div>
 
@@ -251,6 +243,8 @@ Carl介绍了Intel数据中心组织，并说明了本次会议将讨论Ceph存�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Benchmarking/" rel="tag">Benchmarking</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cloud-Solutions/" rel="tag">Cloud Solutions</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Data-Center/" rel="tag">Data Center</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Optimization/" rel="tag">Storage Optimization</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -310,18 +304,18 @@ Carl介绍了Intel数据中心组织，并说明了本次会议将讨论Ceph存�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/Day_2_Operations_-_Make_Friends_with_Your_Ceph_Cluster_-_Adrien_Gillard_Pictime_Groupe/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Configuring_Small_Ceph_Clusters_for_Optimal_Performance_-_Josh_Salomon_Red_Hat/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Day 2 Operations : Make Friends with Your Ceph Cluster - Adrien Gillard, Pictime Groupe</h4>
+        <h4 class="title">  Configuring Small Ceph Clusters for Optimal Performance - Josh Salomon, Red Hat  </h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Exploring_the_Performance_Limits_of_CephFS_in_Nautilus_-_Manoj_Pillai_Red_Hat/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Day_2_Operations_-_Make_Friends_with_Your_Ceph_Cluster_-_Adrien_Gillard_Pictime_Groupe/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Exploring the Performance Limits of CephFS in Nautilus - Manoj Pillai, Red Hat</h4>
+        <h4 class="title">&#39;Day 2 Operations : Make Friends with Your Ceph Cluster - Adrien Gillard, Pictime Groupe&#39;</h4>
       </a>
     </div>
   

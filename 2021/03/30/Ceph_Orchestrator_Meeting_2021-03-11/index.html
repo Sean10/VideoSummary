@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： 讨论关于Ceph多站点配置的设置和管理，以及相关的技术实现和用户界面设计。 参会人员： Juan Mi, Alfonso, Ernesto, Daniel等。 主要议题：  多站点配置的用户体验：  讨论了多站点配置的不同设置方式，包括复杂的YAML文件、CLI命令和GUI向导。 决定对于新用户和新的集群，使用CLI命令来设置领域（realm）和区域（zone）配置，然后再部">
+    <meta name="keywords" content="Ceph,分布式存储,Orchestrator,多站点配置,用户界面设计">
+    <meta name="description" content="[改进后的中文总结内容] Ceph Orchestrator Meeting 2021-03-11 纪要主要讨论了Ceph多站点配置的设置和管理，包括技术实现、用户体验、文档支持和网络配置等方面。 主要议题包括：  用户体验：讨论了多站点配置的设置方式，如YAML文件、CLI命令和GUI向导，决定对新用户和新的集群使用CLI命令设置领域和区域配置，再部署集群。 技术实现和测试：确定使用YAML规范">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2021-03-11">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/03/30/Ceph_Orchestrator_Meeting_2021-03-11/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： 讨论关于Ceph多站点配置的设置和管理，以及相关的技术实现和用户界面设计。 参会人员： Juan Mi, Alfonso, Ernesto, Daniel等。 主要议题：  多站点配置的用户体验：  讨论了多站点配置的不同设置方式，包括复杂的YAML文件、CLI命令和GUI向导。 决定对于新用户和新的集群，使用CLI命令来设置领域（realm）和区域（zone）配置，然后再部">
+<meta property="og:description" content="[改进后的中文总结内容] Ceph Orchestrator Meeting 2021-03-11 纪要主要讨论了Ceph多站点配置的设置和管理，包括技术实现、用户体验、文档支持和网络配置等方面。 主要议题包括：  用户体验：讨论了多站点配置的设置方式，如YAML文件、CLI命令和GUI向导，决定对新用户和新的集群使用CLI命令设置领域和区域配置，再部署集群。 技术实现和测试：确定使用YAML规范">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-03-29T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="多站点配置">
+<meta property="article:tag" content="用户界面设计">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +161,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA%E7%82%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">其他讨论点：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Orchestrator_Meeting_2021-03-11"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,60 +183,31 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题">会议主题：</h4>
-<p>讨论关于Ceph多站点配置的设置和管理，以及相关的技术实现和用户界面设计。</p>
-<h4 id="参会人员">参会人员：</h4>
-<p>Juan Mi, Alfonso, Ernesto, Daniel等。</p>
-<h4 id="主要议题">主要议题：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>Ceph Orchestrator Meeting 2021-03-11
+纪要主要讨论了Ceph多站点配置的设置和管理，包括技术实现、用户体验、文档支持和网络配置等方面。</p>
+<p><strong>主要议题包括</strong>：</p>
 <ol type="1">
-<li><strong>多站点配置的用户体验</strong>：
-<ul>
-<li>讨论了多站点配置的不同设置方式，包括复杂的YAML文件、CLI命令和GUI向导。</li>
-<li>决定对于新用户和新的集群，使用CLI命令来设置领域（realm）和区域（zone）配置，然后再部署集群。</li>
-</ul></li>
-<li><strong>技术实现和测试</strong>：
-<ul>
-<li>确定了对于Ceph开发团队来说，使用YAML规范进行QA测试和CI是最重要的。</li>
-<li>讨论了与Rook的兼容性问题，决定采用类似Rook的方法，即仅在初始部署时设置配置，不进行后续的协调。</li>
-</ul></li>
-<li><strong>文档和Ansible支持</strong>：
-<ul>
-<li>强调了确保文档的准确性和完整性的重要性，以便用户理解如何使用CLI命令设置多站点配置。</li>
-<li>讨论了如何确保Ansible能够部署和管理现有的多站点配置，特别是在升级时不会破坏现有配置。</li>
-</ul></li>
-<li><strong>网络配置和端口管理</strong>：
-<ul>
-<li>讨论了网络配置的复杂性，包括多节点部署时的端口分配和IP绑定问题。</li>
-<li>确认这些功能仍在开发中，将在后续版本中实现。</li>
-</ul></li>
-<li><strong>NFS版本3的支持</strong>：
-<ul>
-<li>讨论了是否应该在Ceph中支持NFS版本3，考虑到其复杂性和较少的使用场景。</li>
-<li>决定通过邮件列表征求社区意见，考虑是否完全移除对NFS版本3的支持。</li>
-</ul></li>
+<li><p><strong>用户体验</strong>：讨论了多站点配置的设置方式，如YAML文件、CLI命令和GUI向导，决定对新用户和新的集群使用CLI命令设置领域和区域配置，再部署集群。</p></li>
+<li><p><strong>技术实现和测试</strong>：确定使用YAML规范进行QA测试和CI测试的重要性，并讨论了与Rook的兼容性问题。</p></li>
+<li><p><strong>文档和Ansible支持</strong>：强调了确保文档准确性和完整性的重要性，并讨论了Ansible部署和管理多站点配置的问题。</p></li>
+<li><p><strong>网络配置和端口管理</strong>：讨论了网络配置的复杂性，确认这些功能仍在开发中。</p></li>
+<li><p><strong>NFS版本3的支持</strong>：讨论了是否支持NFS版本3，决定通过邮件列表征求社区意见。</p></li>
 </ol>
-<h4 id="决定事项">决定事项：</h4>
+<p><strong>决定事项</strong>：</p>
 <ul>
-<li>对于新用户和新的集群，推荐使用CLI命令来设置多站点配置。</li>
-<li>对于Ceph开发团队，将继续使用YAML规范进行QA测试和CI。</li>
-<li>将确保文档的准确性和完整性，以便用户理解如何使用CLI命令设置多站点配置。</li>
-<li>将考虑是否完全移除对NFS版本3的支持，并通过邮件列表征求社区意见。</li>
+<li>推荐使用CLI命令设置多站点配置。</li>
+<li>使用YAML规范进行QA测试和CI。</li>
+<li>确保文档准确性和完整性。</li>
+<li>考虑是否完全移除对NFS版本3的支持。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划：</h4>
+<p><strong>后续行动计划</strong>：</p>
 <ul>
-<li>Daniel将开始测试使用CLI命令部署多站点集群的过程。</li>
+<li>Daniel将测试使用CLI命令部署多站点集群。</li>
 <li>继续开发网络配置和端口管理功能。</li>
 <li>通过邮件列表征求社区意见，决定是否移除对NFS版本3的支持。</li>
 </ul>
-<h4 id="其他讨论点">其他讨论点：</h4>
-<ul>
-<li>讨论了服务收集（collecting
-services）的相关问题，包括服务类型的命名和服务放置的复杂性。</li>
-<li>讨论了如何处理服务的共置（colocation）问题，以及如何在不同服务类型之间平衡资源使用。</li>
-</ul>
-<h4 id="会议结束">会议结束：</h4>
-<p>会议在讨论完所有议题后结束，参会人员表示将按照会议决定开始后续的工作。</p>
+<p>会议还讨论了服务收集和共置的问题，以及如何处理不同服务类型之间的资源平衡。</p>
 
         </div>
 
@@ -269,6 +238,8 @@ services）的相关问题，包括服务类型的命名和服务放置的复杂
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE/" rel="tag">多站点配置</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/" rel="tag">用户界面设计</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -330,7 +301,7 @@ services）的相关问题，包括服务类型的命名和服务放置的复杂
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/04/01/Ceph_Tech_Talk_-_Persistent_Bucket_Notifications/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Tech Talk: Persistent Bucket Notifications</h4>
+        <h4 class="title">&#39;Ceph Tech Talk: Persistent Bucket Notifications&#39;</h4>
       </a>
     </div>
   

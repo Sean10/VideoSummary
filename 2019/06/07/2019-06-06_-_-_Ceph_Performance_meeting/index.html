@@ -14,23 +14,29 @@
     
     
     
-    <title>2019-06-06 :: Ceph Performance meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2019-06-06 :: Ceph 性能会议&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 会议地点： 线上会议 参会人员： Mark、Sam、Ronan、Igor、Casey、Adam、Roman、Alfredo等 会议内容： 1. 项目进展  拉取请求（Pull Requests，PRs）：  审批了由客户端操作触发的恢复操作优先级更高的PR，并要求进行更广泛的测试。 Jason提交的异步消息传递PR，避免了出站消息的SIS调">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,自动化测试,拉取请求,硬件分配">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph分布式存储性能方面的进展和计划。以下是会议的主要内容： 1. 项目进展  拉取请求（PRs）：会议审查了多个PR，包括客户端操作触发的恢复操作优先级、异步消息传递、垃圾收集、多站点sink公平性、OST并行清理PG on maps、对象溢出检测优化、RBD性能改进等。 更新：团队成员分享了各自的工作进展，包括避免Blue Store中重复缓存、I">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-06-06 :: Ceph Performance meeting">
+<meta property="og:title" content="&#39;2019-06-06 :: Ceph 性能会议&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/06/07/2019-06-06_-_-_Ceph_Performance_meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 会议地点： 线上会议 参会人员： Mark、Sam、Ronan、Igor、Casey、Adam、Roman、Alfredo等 会议内容： 1. 项目进展  拉取请求（Pull Requests，PRs）：  审批了由客户端操作触发的恢复操作优先级更高的PR，并要求进行更广泛的测试。 Jason提交的异步消息传递PR，避免了出站消息的SIS调">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph分布式存储性能方面的进展和计划。以下是会议的主要内容： 1. 项目进展  拉取请求（PRs）：会议审查了多个PR，包括客户端操作触发的恢复操作优先级、异步消息传递、垃圾收集、多站点sink公平性、OST并行清理PG on maps、对象溢出检测优化、RBD性能改进等。 更新：团队成员分享了各自的工作进展，包括避免Blue Store中重复缓存、I">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-06-06T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-06-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="自动化测试">
+<meta property="article:tag" content="拉取请求">
+<meta property="article:tag" content="硬件分配">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-06-06 :: Ceph Performance meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2019-06-06 :: Ceph 性能会议&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-06-06 :: Ceph Performance meeting</h1>
+        <h1 class="title">&#39;2019-06-06 :: Ceph 性能会议&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-06-06T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -142,7 +148,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93/">会议总结</a></li></ul>
 
             
         </h5>
@@ -161,12 +167,12 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-06-06 :: Ceph Performance meeting</h1>
+        <h1 class="post-card-title">'2019-06-06 :: Ceph 性能会议'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-06-07 00:00:00" datetime="2019-06-06T16:00:00.000Z"  itemprop="datePublished">2019-06-07</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93/">会议总结</a></li></ul>
 
 
 
@@ -178,53 +184,22 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>会议地点</strong>： 线上会议</p>
-<p><strong>参会人员</strong>：
-Mark、Sam、Ronan、Igor、Casey、Adam、Roman、Alfredo等</p>
-<p><strong>会议内容</strong>：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph分布式存储性能方面的进展和计划。以下是会议的主要内容：</p>
 <p><strong>1. 项目进展</strong></p>
 <ul>
-<li><strong>拉取请求（Pull Requests，PRs）</strong>：
-<ul>
-<li>审批了由客户端操作触发的恢复操作优先级更高的PR，并要求进行更广泛的测试。</li>
-<li>Jason提交的异步消息传递PR，避免了出站消息的SIS调用，对小操作性能提升10-15%，但对大操作无影响。</li>
-<li>Igor的垃圾收集PR，旨在避免Blue
-Store中blob计数过度增长，但需要更多测试和审查。</li>
-<li>多站点sink公平性PR，关于在网关和多个站点之间共享工作，需要测量以确认其按预期分配工作。</li>
-<li>其他PR，包括OST并行清理PG on
-maps、优化对象溢出检测、RBD性能改进、RGW允许RATOS
-GW管理员列出无序存储桶、负载均衡PG改进等。</li>
-</ul></li>
-<li><strong>更新</strong>：
-<ul>
-<li>Adam的更新，包括避免Blue Store中重复缓存、IO ring工作更新等。</li>
-<li>Roman关于用户空间IO get_event的更新，可能会带来性能提升。</li>
-<li>Auto-tuning MVS缓存的工作仍在进行中。</li>
-<li>Igor的更加激进的启动时调整PR，需要重新审查。</li>
-</ul></li>
+<li><strong>拉取请求（PRs）</strong>：会议审查了多个PR，包括客户端操作触发的恢复操作优先级、异步消息传递、垃圾收集、多站点sink公平性、OST并行清理PG
+on maps、对象溢出检测优化、RBD性能改进等。</li>
+<li><strong>更新</strong>：团队成员分享了各自的工作进展，包括避免Blue
+Store中重复缓存、IO ring工作更新、用户空间IO
+get_event的更新、Auto-tuning MVS缓存的工作等。</li>
 </ul>
 <p><strong>2. 讨论议题</strong></p>
 <ul>
-<li><strong>性能测试</strong>：
-<ul>
-<li>讨论了在PR提交时进行性能测试的计划，包括在CBT中添加标签、比较结果与基线等。</li>
-<li>讨论了使用Telemetry进行资源分配和结果查询的需求。</li>
-<li>讨论了使用新节点进行性能测试的硬件配置。</li>
-<li>讨论了将Telemetry用于PR测试的潜在优势。</li>
-</ul></li>
-<li><strong>硬件分配</strong>：
-<ul>
-<li>讨论了将新节点用于开发、性能测试和回归测试的方案。</li>
-<li>讨论了将节点分配给特定开发者的需求。</li>
-<li>讨论了将节点作为Jenkins从属节点使用的需求。</li>
-</ul></li>
-<li><strong>其他</strong>：
-<ul>
-<li>讨论了Xerox TV和RocksDB
+<li><strong>性能测试</strong>：讨论了在PR提交时进行性能测试的计划，包括使用Telemetry进行资源分配和结果查询、使用新节点进行性能测试的硬件配置等。</li>
+<li><strong>硬件分配</strong>：讨论了将新节点用于开发、性能测试和回归测试的方案，以及将节点分配给特定开发者的需求。</li>
+<li><strong>其他</strong>：讨论了Xerox TV和RocksDB
 sharding的进展，包括改进写放大和压缩结果。</li>
-</ul></li>
 </ul>
 <p><strong>3. 决定事项</strong></p>
 <ul>
@@ -244,13 +219,13 @@ sharding的进展，包括改进写放大和压缩结果。</li>
 </ul>
 <p><strong>5. 下次会议</strong></p>
 <ul>
-<li>下次会议将在2023年11月的某个时间举行。</li>
+<li>下次会议将在2019年6月7日举行。</li>
 </ul>
 <p><strong>备注</strong>：</p>
 <ul>
-<li>会议中提到了多个技术术语，如CBT、CBT gesture
+<li>会议中提到的技术术语包括CBT、CBT gesture
 notes、RocksDB、RATOS、Telemetry等，这些术语在存储领域和Ceph项目中都很常见。</li>
-<li>会议中提到了多个项目，如Crimson、Blue Store、IO
+<li>会议中提到的项目包括Crimson、Blue Store、IO
 ring、MVS缓存等，这些项目都是Ceph的重要组成部分。</li>
 </ul>
 
@@ -283,6 +258,8 @@ ring、MVS缓存等，这些项目都是Ceph的重要组成部分。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8B%89%E5%8F%96%E8%AF%B7%E6%B1%82/" rel="tag">拉取请求</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A1%AC%E4%BB%B6%E5%88%86%E9%85%8D/" rel="tag">硬件分配</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" rel="tag">自动化测试</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -294,7 +271,7 @@ ring、MVS缓存等，这些项目都是Ceph的重要组成部分。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/06/07/2019-06-06_-_-_Ceph_Performance_meeting/&title=《2019-06-06 :: Ceph Performance meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/06/07/2019-06-06_-_-_Ceph_Performance_meeting/&title=《'2019-06-06 :: Ceph 性能会议'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -304,7 +281,7 @@ ring、MVS缓存等，这些项目都是Ceph的重要组成部分。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/06/07/2019-06-06_-_-_Ceph_Performance_meeting/&title=《2019-06-06 :: Ceph Performance meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/06/07/2019-06-06_-_-_Ceph_Performance_meeting/&title=《'2019-06-06 :: Ceph 性能会议'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -314,7 +291,7 @@ ring、MVS缓存等，这些项目都是Ceph的重要组成部分。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-06-06 :: Ceph Performance meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/06/07/2019-06-06_-_-_Ceph_Performance_meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-06-06 :: Ceph 性能会议'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/06/07/2019-06-06_-_-_Ceph_Performance_meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -342,18 +319,18 @@ ring、MVS缓存等，这些项目都是Ceph的重要组成部分。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/06/07/2019-06-03_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/06/07/2019-06-05_-_-_Ceph_Developer_Monthly_part_1/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-06-03:: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2019-06-05 :: Ceph Developer Monthly part 1&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/06/07/2019-06-04_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/06/01/2019Q2_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-06-04 :: Crimson SeaStor OSD Weekly Meeting</h4>
+        <h4 class="title">2019Q2 Ceph社区季度总结</h4>
       </a>
     </div>
   
@@ -453,7 +430,7 @@ ring、MVS缓存等，这些项目都是Ceph的重要组成部分。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/06/07/2019-06-06_-_-_Ceph_Performance_meeting/&title=《2019-06-06 :: Ceph Performance meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/06/07/2019-06-06_-_-_Ceph_Performance_meeting/&title=《'2019-06-06 :: Ceph 性能会议'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -463,7 +440,7 @@ ring、MVS缓存等，这些项目都是Ceph的重要组成部分。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/06/07/2019-06-06_-_-_Ceph_Performance_meeting/&title=《2019-06-06 :: Ceph Performance meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/06/07/2019-06-06_-_-_Ceph_Performance_meeting/&title=《'2019-06-06 :: Ceph 性能会议'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -473,7 +450,7 @@ ring、MVS缓存等，这些项目都是Ceph的重要组成部分。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-06-06 :: Ceph Performance meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/06/07/2019-06-06_-_-_Ceph_Performance_meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-06-06 :: Ceph 性能会议'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/06/07/2019-06-06_-_-_Ceph_Performance_meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

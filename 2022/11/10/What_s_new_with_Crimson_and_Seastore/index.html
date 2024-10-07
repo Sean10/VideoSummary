@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Crimson项目介绍及近期开发工作 主讲人：Sam 会议内容总结：  Crimson项目概述：  Crimson项目的主要驱动因素是存储技术正朝着更高的IOP密度和更低的延迟发展，但CPU吞吐量并未同步提升。 项目目标：最小化每I&#x2F;O的CPU开销，包括跨核心通信、拷贝和上下文切换，并利用新兴存储技术如NVMe。  Crimson项目目标：  重写OSD守护进程，以解决CPU开">
+    <meta name="keywords" content="Ceph,Distributed Storage,Scalability,Crimson,Seastore">
+    <meta name="description" content="[改进后的中文总结内容] Ceph项目中的Crimson和Seastore是两个重要的研发方向，旨在提升Ceph存储系统的性能和可伸缩性。以下是会议内容的改进总结： 会议纪要 会议主题：Crimson项目介绍及近期开发工作 主讲人：Sam 会议内容总结：  Crimson项目概述：  Crimson项目旨在减少每I&#x2F;O的CPU开销，特别是针对新兴存储技术如NVMe。 项目重点在于优化CPU使用，提">
 <meta property="og:type" content="article">
 <meta property="og:title" content="What&#39;s new with Crimson and Seastore?">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/11/10/What_s_new_with_Crimson_and_Seastore/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Crimson项目介绍及近期开发工作 主讲人：Sam 会议内容总结：  Crimson项目概述：  Crimson项目的主要驱动因素是存储技术正朝着更高的IOP密度和更低的延迟发展，但CPU吞吐量并未同步提升。 项目目标：最小化每I&#x2F;O的CPU开销，包括跨核心通信、拷贝和上下文切换，并利用新兴存储技术如NVMe。  Crimson项目目标：  重写OSD守护进程，以解决CPU开">
+<meta property="og:description" content="[改进后的中文总结内容] Ceph项目中的Crimson和Seastore是两个重要的研发方向，旨在提升Ceph存储系统的性能和可伸缩性。以下是会议内容的改进总结： 会议纪要 会议主题：Crimson项目介绍及近期开发工作 主讲人：Sam 会议内容总结：  Crimson项目概述：  Crimson项目旨在减少每I&#x2F;O的CPU开销，特别是针对新兴存储技术如NVMe。 项目重点在于优化CPU使用，提">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-09T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-11-10T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Scalability">
+<meta property="article:tag" content="Crimson">
+<meta property="article:tag" content="Seastore">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98crimson%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%BF%91%E6%9C%9F%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Crimson项目介绍及近期开发工作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAsam"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：Sam</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束语：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98crimson%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%BF%91%E6%9C%9F%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Crimson项目介绍及近期开发工作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAsam"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：Sam</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,7 +190,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<p>Ceph项目中的Crimson和Seastore是两个重要的研发方向，旨在提升Ceph存储系统的性能和可伸缩性。以下是会议内容的改进总结：</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
 id="会议主题crimson项目介绍及近期开发工作">会议主题：Crimson项目介绍及近期开发工作</h4>
 <h4 id="主讲人sam">主讲人：Sam</h4>
@@ -193,56 +200,45 @@ id="会议主题crimson项目介绍及近期开发工作">会议主题：Crimson
 <ol type="1">
 <li><strong>Crimson项目概述</strong>：
 <ul>
-<li>Crimson项目的主要驱动因素是存储技术正朝着更高的IOP密度和更低的延迟发展，但CPU吞吐量并未同步提升。</li>
-<li>项目目标：最小化每I/O的CPU开销，包括跨核心通信、拷贝和上下文切换，并利用新兴存储技术如NVMe。</li>
-</ul></li>
-<li><strong>Crimson项目目标</strong>：
-<ul>
-<li>重写OSD守护进程，以解决CPU开销和利用新兴存储技术的问题。</li>
-<li>关键指标是每核心的IOPs，而非原始IOPs。</li>
+<li>Crimson项目旨在减少每I/O的CPU开销，特别是针对新兴存储技术如NVMe。</li>
+<li>项目重点在于优化CPU使用，提升每核心的IOPs，而非原始IOPs。</li>
 </ul></li>
 <li><strong>Crimson架构设计</strong>：
 <ul>
-<li>避免传统OSD线程模型中的核心切换，通过预分配每个核心的单个线程和分区数据结构来减少锁的使用。</li>
-<li>使用C-star用户空间调度库来处理异步I/O结果，减少回调的使用。</li>
+<li>通过预分配每个核心的单个线程和分区数据结构，避免核心切换，减少锁的使用。</li>
+<li>使用C-star用户空间调度库，利用异步I/O结果，减少回调的使用。</li>
 </ul></li>
 <li><strong>C-store组件</strong>：
 <ul>
-<li>C-store是一个新的对象存储实现，旨在避免CPU密集型的元数据设计，并利用新兴技术如NVMe和Zone
-Namespace Storage。</li>
-<li>ZNS是一种新的NVMe规范，旨在解决传统FTL闪存设计中的垃圾收集问题，减少写放大和尾延迟。</li>
+<li>C-store是针对Crimson的线程模型设计的对象存储实现，旨在避免CPU密集型元数据设计。</li>
+<li>利用Zone Namespace Storage（ZNS）减少写放大和尾延迟。</li>
 </ul></li>
 <li><strong>近期开发工作</strong>：
 <ul>
-<li>稳定化Blue Store RBD RADOS测试，分割病理学套件为Crimson
-RADOS和Crimson RADOS实验版。</li>
-<li>多核心支持：初始阶段专注于单核心实现，现已开始多核心数据结构分区和消息路由架构的开发。</li>
+<li>稳定化Blue Store RBD
+RADOS测试，实现多核心数据结构分区和消息路由架构。</li>
 <li>快照支持：基本I/O路径组件已实现，修剪和恢复组件正在进行中。</li>
-<li>用户保护措施：添加了实验性功能标志，防止用户意外创建Crimson
+<li>用户保护措施：添加实验性功能标志，防止用户意外创建Crimson
 OSDs。</li>
 </ul></li>
 <li><strong>下一步计划</strong>：
 <ul>
-<li>继续扩展测试覆盖范围，实现scrub功能以增强正确性验证。</li>
+<li>扩展测试覆盖范围，实现scrub功能，提升正确性验证。</li>
 <li>多核心支持的进一步改进，包括多反应器支持和性能测试。</li>
 <li>C-store的稳定性提升，包括多核心反应器支持和快照功能的实现。</li>
 </ul></li>
 <li><strong>问答环节</strong>：
 <ul>
-<li>对于想要尝试Crimson的开发者，建议使用vstart命令和Crimson标志进行部署。</li>
+<li>建议使用vstart命令和Crimson标志进行部署。</li>
 <li>Crimson未来将支持EC（Erasure
 Coding），但具体时间取决于后续工作进展。</li>
 </ul></li>
 </ol>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
-<li>继续推进Crimson和C-store的开发，特别是在多核心支持和性能优化方面。</li>
-<li>完善文档和测试，确保Crimson能够安全地用于特定生产环境中。</li>
-<li>定期发布性能测试数据，以便社区了解Crimson的进展和性能表现。</li>
-</ul>
-<h4 id="会议结束语">会议结束语：</h4>
-<ul>
-<li>Sam感谢大家的参与，并期待在Reef版本中进一步测试和使用Crimson。</li>
+<li>继续推进Crimson和Seastore的开发，特别是在多核心支持和性能优化方面。</li>
+<li>完善文档和测试，确保Crimson和Seastore能够安全地用于特定生产环境中。</li>
+<li>定期发布性能测试数据，以便社区了解Crimson和Seastore的进展和性能表现。</li>
 </ul>
 
         </div>
@@ -274,6 +270,8 @@ Coding），但具体时间取决于后续工作进展。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson/" rel="tag">Crimson</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scalability/" rel="tag">Scalability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Seastore/" rel="tag">Seastore</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

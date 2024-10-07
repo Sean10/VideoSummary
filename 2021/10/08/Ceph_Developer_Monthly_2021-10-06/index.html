@@ -20,17 +20,23 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph 十月会议 主要议题：  遥测与性能信息 SMR 驱动器的 Boost 支持 RBD 镜像公主集成  讨论内容： 1. 遥测与性能信息  背景：遥测模块收集用户集群的匿名数据，用于帮助开发者了解集群使用情况和识别问题。 性能通道（Perf Channel）：  收集内容：包括性能计数器、OSD 性能直方图、I&#x2F;O 速率、每个池的统计总和等。 目的：帮助开发者理解集群整体">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,遥测,RBD 镜像复制,SMR 驱动器">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph 十月会议 主要议题：  遥测与性能信息 SMR 驱动器的 Boost 支持 RBD 镜像复制集成  讨论内容： 1. 遥测与性能信息  背景：遥测模块收集用户集群的匿名数据，用于帮助开发者了解集群使用情况和识别问题。 性能通道：  收集内容：包括性能计数器、OSD 性能直方图、I&#x2F;O 速率、每个池的统计总和等。 目的：帮助开发者理解集群整体使">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Developer Monthly 2021-10-06">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/10/08/Ceph_Developer_Monthly_2021-10-06/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph 十月会议 主要议题：  遥测与性能信息 SMR 驱动器的 Boost 支持 RBD 镜像公主集成  讨论内容： 1. 遥测与性能信息  背景：遥测模块收集用户集群的匿名数据，用于帮助开发者了解集群使用情况和识别问题。 性能通道（Perf Channel）：  收集内容：包括性能计数器、OSD 性能直方图、I&#x2F;O 速率、每个池的统计总和等。 目的：帮助开发者理解集群整体">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph 十月会议 主要议题：  遥测与性能信息 SMR 驱动器的 Boost 支持 RBD 镜像复制集成  讨论内容： 1. 遥测与性能信息  背景：遥测模块收集用户集群的匿名数据，用于帮助开发者了解集群使用情况和识别问题。 性能通道：  收集内容：包括性能计数器、OSD 性能直方图、I&#x2F;O 速率、每个池的统计总和等。 目的：帮助开发者理解集群整体使">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-07T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-10-08T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="遥测">
+<meta property="article:tag" content="RBD 镜像复制">
+<meta property="article:tag" content="SMR 驱动器">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +165,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph-%E5%8D%81%E6%9C%88%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph 十月会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">讨论内容：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E9%81%A5%E6%B5%8B%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BF%A1%E6%81%AF"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">1. 遥测与性能信息</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#smr-%E9%A9%B1%E5%8A%A8%E5%99%A8%E7%9A%84-boost-%E6%94%AF%E6%8C%81"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">2. SMR 驱动器的 Boost 支持</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#rbd-%E9%95%9C%E5%83%8F%E5%85%AC%E4%B8%BB%E9%9B%86%E6%88%90"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">3. RBD 镜像公主集成</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">结论：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">[改进后的中文总结内容]</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph-%E5%8D%81%E6%9C%88%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">会议主题：Ceph 十月会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">讨论内容：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E9%81%A5%E6%B5%8B%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BF%A1%E6%81%AF"><span class="post-toc-number">1.1.3.1.</span> <span class="post-toc-text">1. 遥测与性能信息</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#smr-%E9%A9%B1%E5%8A%A8%E5%99%A8%E7%9A%84-boost-%E6%94%AF%E6%8C%81"><span class="post-toc-number">1.1.3.2.</span> <span class="post-toc-text">2. SMR 驱动器的 Boost 支持</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#rbd-%E9%95%9C%E5%83%8F%E5%A4%8D%E5%88%B6%E9%9B%86%E6%88%90"><span class="post-toc-number">1.1.3.3.</span> <span class="post-toc-text">3. RBD 镜像复制集成</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">结论：</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,34 +191,34 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <h2 id="改进后的中文总结内容">[改进后的中文总结内容]</h2>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题ceph-十月会议">会议主题：Ceph 十月会议</h4>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
 <li><strong>遥测与性能信息</strong></li>
 <li><strong>SMR 驱动器的 Boost 支持</strong></li>
-<li><strong>RBD 镜像公主集成</strong></li>
+<li><strong>RBD 镜像复制集成</strong></li>
 </ol>
 <h4 id="讨论内容">讨论内容：</h4>
 <h5 id="遥测与性能信息">1. 遥测与性能信息</h5>
 <ul>
 <li><strong>背景</strong>：遥测模块收集用户集群的匿名数据，用于帮助开发者了解集群使用情况和识别问题。</li>
-<li><strong>性能通道（Perf Channel）</strong>：
+<li><strong>性能通道</strong>：
 <ul>
 <li><strong>收集内容</strong>：包括性能计数器、OSD 性能直方图、I/O
 速率、每个池的统计总和等。</li>
 <li><strong>目的</strong>：帮助开发者理解集群整体使用情况，发现操作分布，识别集群使用变化，以及系统是否按预期执行。</li>
-<li><strong>客户用途</strong>：客户可以使用性能通道来揭示集群整体健康状况的详细上下文，识别工作负载模式，故障排除延迟、限流或内存管理问题，以及监控集群性能。</li>
-</ul></li>
 <li><strong>决定事项</strong>：
 <ul>
-<li>决定从按池收集改为按单个 PG 级别收集统计总和。</li>
+<li>从按池收集改为按单个 PG 级别收集统计总和。</li>
 <li>移除池名称以保护匿名性。</li>
 </ul></li>
 <li><strong>后续行动</strong>：
 <ul>
 <li>添加新的指标如 mempool 和 RocksDB 压缩统计。</li>
 <li>讨论数据不可用性的检测和相关指标的收集。</li>
+</ul></li>
 </ul></li>
 </ul>
 <h5 id="smr-驱动器的-boost-支持">2. SMR 驱动器的 Boost 支持</h5>
@@ -228,7 +234,7 @@
 <li>为 SMR 驱动器创建不同的 OSD 类别。</li>
 </ul></li>
 </ul>
-<h5 id="rbd-镜像公主集成">3. RBD 镜像公主集成</h5>
+<h5 id="rbd-镜像复制集成">3. RBD 镜像复制集成</h5>
 <ul>
 <li><strong>目标</strong>：启用用户监控异步复制的健康状况，检测异常，并提供跨集群复制的统一方式来传递指标和警报。</li>
 <li><strong>实现方式</strong>：使用 Prometheus 作为消费者，通过 HTTP
@@ -244,13 +250,14 @@
 <ul>
 <li>完成遥测模块的改进，特别是性能通道的指标收集和数据不可用性的检测。</li>
 <li>继续 SMR 驱动器支持的工作，包括构建和清理策略的优化。</li>
-<li>推进 RBD 镜像集成的工作，特别是 Prometheus
+<li>推进 RBD 镜像复制集成的工作，特别是 Prometheus
 端点的实现和统一指标的制定。</li>
 </ul>
 <h4 id="结论">结论：</h4>
 <p>会议讨论了多个关于 Ceph 的重要议题，包括遥测、性能优化、SMR
-驱动器支持和 RBD 镜像集成。每个议题都有明确的下一步行动计划，旨在提高
-Ceph 的性能和可用性。</p>
+驱动器支持和 RBD
+镜像复制集成。每个议题都有明确的下一步行动计划，旨在提高 Ceph
+的性能和可用性。</p>
 
         </div>
 
@@ -281,6 +288,8 @@ Ceph 的性能和可用性。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD-%E9%95%9C%E5%83%8F%E5%A4%8D%E5%88%B6/" rel="tag">RBD 镜像复制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SMR-%E9%A9%B1%E5%8A%A8%E5%99%A8/" rel="tag">SMR 驱动器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%81%A5%E6%B5%8B/" rel="tag">遥测</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -351,7 +360,7 @@ Ceph 的性能和可用性。</p>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/10/08/Ceph_Performance_Meeting_2021-10-07/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2021-10-07</h4>
+        <h4 class="title">Ceph性能会议纪要 2021-10-07</h4>
       </a>
     </div>
   

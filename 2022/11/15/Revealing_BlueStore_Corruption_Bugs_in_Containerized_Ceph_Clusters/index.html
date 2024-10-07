@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Cyborgs公司容器化Ceph存储系统开发中的数据损坏问题及改进建议 会议参与者：Cyborgs公司Ceph存储系统维护团队 会议日期：[具体日期] 会议地点：[具体地点] 会议内容总结：  公司及基础设施介绍  Cyborgs是一家日本公司，提供软件支持团队协作。 公司目前使用基于传统虚拟机的系统，已有10-20年的历史，存在存储容量和性能的限制。 正在开发新的基于Kube">
+    <meta name="keywords" content="Ceph,BlueStore,Containerization,Storage Systems,Data Corruption">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Cyborgs公司容器化Ceph存储系统开发中的数据损坏问题及改进建议 会议参与者：Cyborgs公司Ceph存储系统维护团队 会议日期：2022年11月15日 会议地点：[具体地点] 会议内容总结：  公司及基础设施介绍  Cyborgs公司，一家日本软件支持团队协作提供商，正面临传统虚拟机基础设施的存储容量和性能限制。 正在开发基于Kubernet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Revealing BlueStore Corruption Bugs in Containerized Ceph Clusters">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/11/15/Revealing_BlueStore_Corruption_Bugs_in_Containerized_Ceph_Clusters/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Cyborgs公司容器化Ceph存储系统开发中的数据损坏问题及改进建议 会议参与者：Cyborgs公司Ceph存储系统维护团队 会议日期：[具体日期] 会议地点：[具体地点] 会议内容总结：  公司及基础设施介绍  Cyborgs是一家日本公司，提供软件支持团队协作。 公司目前使用基于传统虚拟机的系统，已有10-20年的历史，存在存储容量和性能的限制。 正在开发新的基于Kube">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Cyborgs公司容器化Ceph存储系统开发中的数据损坏问题及改进建议 会议参与者：Cyborgs公司Ceph存储系统维护团队 会议日期：2022年11月15日 会议地点：[具体地点] 会议内容总结：  公司及基础设施介绍  Cyborgs公司，一家日本软件支持团队协作提供商，正面临传统虚拟机基础设施的存储容量和性能限制。 正在开发基于Kubernet">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-11-15T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="BlueStore">
+<meta property="article:tag" content="Containerization">
+<meta property="article:tag" content="Storage Systems">
+<meta property="article:tag" content="Data Corruption">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98cyborgs%E5%85%AC%E5%8F%B8%E5%AE%B9%E5%99%A8%E5%8C%96ceph%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E6%8D%9F%E5%9D%8F%E9%97%AE%E9%A2%98%E5%8F%8A%E6%94%B9%E8%BF%9B%E5%BB%BA%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Cyborgs公司容器化Ceph存储系统开发中的数据损坏问题及改进建议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%8F%82%E4%B8%8E%E8%80%85cyborgs%E5%85%AC%E5%8F%B8ceph%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E7%BB%B4%E6%8A%A4%E5%9B%A2%E9%98%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议参与者：Cyborgs公司Ceph存储系统维护团队</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%A5%E6%9C%9F%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议日期：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束语</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98cyborgs%E5%85%AC%E5%8F%B8%E5%AE%B9%E5%99%A8%E5%8C%96ceph%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E6%8D%9F%E5%9D%8F%E9%97%AE%E9%A2%98%E5%8F%8A%E6%94%B9%E8%BF%9B%E5%BB%BA%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Cyborgs公司容器化Ceph存储系统开发中的数据损坏问题及改进建议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%8F%82%E4%B8%8E%E8%80%85cyborgs%E5%85%AC%E5%8F%B8ceph%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E7%BB%B4%E6%8A%A4%E5%9B%A2%E9%98%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议参与者：Cyborgs公司Ceph存储系统维护团队</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%A5%E6%9C%9F2022%E5%B9%B411%E6%9C%8815%E6%97%A5"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议日期：2022年11月15日</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束语</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,41 +190,43 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
 id="会议主题cyborgs公司容器化ceph存储系统开发中的数据损坏问题及改进建议">会议主题：Cyborgs公司容器化Ceph存储系统开发中的数据损坏问题及改进建议</h4>
 <h4
 id="会议参与者cyborgs公司ceph存储系统维护团队">会议参与者：Cyborgs公司Ceph存储系统维护团队</h4>
-<h4 id="会议日期具体日期">会议日期：[具体日期]</h4>
+<h4 id="会议日期2022年11月15日">会议日期：2022年11月15日</h4>
 <h4 id="会议地点具体地点">会议地点：[具体地点]</h4>
 <h4 id="会议内容总结">会议内容总结：</h4>
 <ol type="1">
 <li><strong>公司及基础设施介绍</strong>
 <ul>
-<li>Cyborgs是一家日本公司，提供软件支持团队协作。</li>
-<li>公司目前使用基于传统虚拟机的系统，已有10-20年的历史，存在存储容量和性能的限制。</li>
-<li>正在开发新的基于Kubernetes的现代化容器化基础设施，使用Rook
+<li>Cyborgs公司，一家日本软件支持团队协作提供商，正面临传统虚拟机基础设施的存储容量和性能限制。</li>
+<li>正在开发基于Kubernetes的现代化容器化基础设施，采用Rook
 Ceph作为存储解决方案。</li>
 </ul></li>
 <li><strong>开发中遇到的问题</strong>
 <ul>
-<li>在容器化Ceph存储系统的开发过程中，发现了多种数据损坏相关的bug，包括OSD创建失败和重启后数据请求损坏等问题。</li>
-<li>这些问题主要在HDD上被检测到，推测是因为HDD的慢速特性更容易引发某些条件下的错误。</li>
+<li>容器化Ceph存储系统开发过程中，发现多种数据损坏相关的bug，包括OSD创建失败和重启后数据请求损坏等问题。</li>
+<li>这些问题主要在HDD上被检测到，可能与HDD的慢速特性有关。</li>
 </ul></li>
 <li><strong>开发策略</strong>
 <ul>
-<li>开发策略包括三个步骤：每次更改通过PR提交，触发基于虚拟机的集成测试，测试通过后应用到预生产系统，最终部署到生产系统。</li>
-<li>在开发过程中，频繁创建和重启OSD，每天进行多次集成测试，每周重启预生产环境的所有节点以验证基础设施的可用性和更新节点固件。</li>
+<li>开发策略包括三次测试：通过PR提交更改，触发基于虚拟机的集成测试，测试通过后应用到预生产系统，最终部署到生产系统。</li>
+<li>开发过程中频繁创建和重启OSD，每天进行多次集成测试，每周重启预生产环境所有节点以验证基础设施。</li>
 </ul></li>
 <li><strong>问题分析与改进建议</strong>
 <ul>
-<li>分析发现，这些问题在传统的非容器化Ceph集群中较少出现，推测与容器化环境中频繁的OSD创建和重启有关。</li>
-<li>提出的改进建议包括增加对OSD重启的应力测试，以及在QA过程中使用HDD以更好地检测潜在问题。</li>
+<li>分析显示，这些问题在传统的非容器化Ceph集群中较少出现，可能与容器化环境中频繁的OSD创建和重启有关。</li>
+<li>改进建议包括增加对OSD重启的应力测试，以及在QA过程中使用HDD以更好地检测潜在问题。</li>
 </ul></li>
 <li><strong>后续行动计划</strong>
 <ul>
-<li>将继续与Ceph社区合作，验证和修复已报告的bug。</li>
+<li>继续与Ceph社区合作，验证和修复已报告的bug。</li>
 <li>考虑在QA流程中增加更多的应力测试和使用HDD，以提高系统的稳定性和可靠性。</li>
+<li>与Ceph社区的QA工程师联系，讨论并实施改进建议。</li>
+<li>持续监控和更新Ceph存储系统的性能和稳定性。</li>
 </ul></li>
 </ol>
 <h4 id="会议结束语">会议结束语</h4>
@@ -231,9 +238,6 @@ Ceph作为存储解决方案。</li>
 <li>与Ceph社区的QA工程师联系，讨论并实施改进建议。</li>
 <li>持续监控和更新Ceph存储系统的性能和稳定性。</li>
 </ul>
-<hr />
-<p><strong>注：</strong>
-以上内容基于会议发言人的介绍和讨论，具体实施细节和时间表将根据后续讨论和决策确定。</p>
 
         </div>
 
@@ -264,6 +268,8 @@ Ceph作为存储解决方案。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Containerization/" rel="tag">Containerization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Data-Corruption/" rel="tag">Data Corruption</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Systems/" rel="tag">Storage Systems</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

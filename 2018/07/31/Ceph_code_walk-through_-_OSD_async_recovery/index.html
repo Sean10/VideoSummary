@@ -14,23 +14,29 @@
     
     
     
-    <title>Ceph code walk-through: OSD (async) recovery | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph code walk-through: OSD (async) recovery&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 会议主题： Ceph分布式存储系统中异步恢复机制的介绍和讨论 参会人员： Neha（主讲人）、其他Ceph研发人员 会议内容： 1. 会议背景与动机  传统的Ceph恢复过程是同步的，这会阻塞写操作，影响集群可用性。 为了解决这个问题，团队引入了异步恢复机制，允许在后台恢复对象，而不会阻塞写操作。  2. 异步恢复的关键概念  异步恢复目标">
+    <meta name="keywords" content="Ceph,分布式存储,CRUSH算法,性能优化,OSD,异步恢复">
+    <meta name="description" content="[改进后的中文总结内容] Ceph分布式存储系统中，传统的对象恢复过程是同步的，这会导致写操作被阻塞，从而影响集群的可用性。为了解决这个问题，Ceph团队引入了一种名为异步恢复的新机制。 会议内容概述：  会议背景与动机： 同步恢复机制会阻塞写操作，影响集群可用性。异步恢复机制旨在后台恢复对象，而不会阻塞写操作。 异步恢复的关键概念：  目标：恢复仅在非活跃OSD上缺失的对象。 选择标准：基于日志">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph code walk-through: OSD (async) recovery">
+<meta property="og:title" content="&#39;Ceph code walk-through: OSD (async) recovery&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/07/31/Ceph_code_walk-through_-_OSD_async_recovery/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 会议主题： Ceph分布式存储系统中异步恢复机制的介绍和讨论 参会人员： Neha（主讲人）、其他Ceph研发人员 会议内容： 1. 会议背景与动机  传统的Ceph恢复过程是同步的，这会阻塞写操作，影响集群可用性。 为了解决这个问题，团队引入了异步恢复机制，允许在后台恢复对象，而不会阻塞写操作。  2. 异步恢复的关键概念  异步恢复目标">
+<meta property="og:description" content="[改进后的中文总结内容] Ceph分布式存储系统中，传统的对象恢复过程是同步的，这会导致写操作被阻塞，从而影响集群的可用性。为了解决这个问题，Ceph团队引入了一种名为异步恢复的新机制。 会议内容概述：  会议背景与动机： 同步恢复机制会阻塞写操作，影响集群可用性。异步恢复机制旨在后台恢复对象，而不会阻塞写操作。 异步恢复的关键概念：  目标：恢复仅在非活跃OSD上缺失的对象。 选择标准：基于日志">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-07-30T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-07-31T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="异步恢复">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph code walk-through: OSD (async) recovery</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph code walk-through: OSD (async) recovery&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph code walk-through: OSD (async) recovery</h1>
+        <h1 class="title">&#39;Ceph code walk-through: OSD (async) recovery&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-07-30T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +167,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph code walk-through: OSD (async) recovery</h1>
+        <h1 class="post-card-title">'Ceph code walk-through: OSD (async) recovery'</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-07-31 00:00:00" datetime="2018-07-30T16:00:00.000Z"  itemprop="datePublished">2018-07-31</time>
 
@@ -178,49 +184,36 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要</p>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>会议主题</strong>：
-Ceph分布式存储系统中异步恢复机制的介绍和讨论</p>
-<p><strong>参会人员</strong>： Neha（主讲人）、其他Ceph研发人员</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>1. 会议背景与动机</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>Ceph分布式存储系统中，传统的对象恢复过程是同步的，这会导致写操作被阻塞，从而影响集群的可用性。为了解决这个问题，Ceph团队引入了一种名为异步恢复的新机制。</p>
+<p><strong>会议内容概述</strong>：</p>
 <ul>
-<li>传统的Ceph恢复过程是同步的，这会阻塞写操作，影响集群可用性。</li>
-<li>为了解决这个问题，团队引入了异步恢复机制，允许在后台恢复对象，而不会阻塞写操作。</li>
-</ul>
-<p><strong>2. 异步恢复的关键概念</strong></p>
+<li><strong>会议背景与动机</strong>：
+同步恢复机制会阻塞写操作，影响集群可用性。异步恢复机制旨在后台恢复对象，而不会阻塞写操作。</li>
+<li><strong>异步恢复的关键概念</strong>：
 <ul>
-<li><strong>异步恢复目标</strong>：
-恢复那些仅在某些非活跃OSD上缺失的对象。</li>
-<li><strong>选择异步恢复目标</strong>：
-基于日志差异、对象大小和恢复成本等因素。</li>
-<li><strong>OST异步恢复最小PG日志条目</strong>：
-用于确定是否允许同步恢复的阈值。</li>
-<li><strong>保持主副本大小</strong>：
-只有当有足够的主副本可用时，才考虑同步恢复。</li>
-</ul>
-<p><strong>3. 异步恢复的代码实现</strong></p>
+<li>目标：恢复仅在非活跃OSD上缺失的对象。</li>
+<li>选择标准：基于日志差异、对象大小和恢复成本等因素。</li>
+<li>最小PG日志条目：用于确定是否允许同步恢复的阈值。</li>
+<li>保持主副本大小：只有当有足够的主副本可用时，才考虑同步恢复。</li>
+</ul></li>
+<li><strong>异步恢复的代码实现</strong>：
 <ul>
-<li><strong>选择活跃OSD</strong>：
-修改了选择活跃OSD的算法，使其能够识别异步恢复目标。</li>
-<li><strong>处理写操作</strong>：
-修改了写操作的代码，使其在异步恢复目标上不会阻塞。</li>
-<li><strong>更新元数据</strong>：
-在异步恢复过程中，需要更新元数据结构，以确保恢复的准确性。</li>
-</ul>
-<p><strong>4. 恢复操作</strong></p>
+<li>选择活跃OSD：修改了选择活跃OSD的算法，使其能够识别异步恢复目标。</li>
+<li>处理写操作：修改了写操作的代码，使其在异步恢复目标上不会阻塞。</li>
+<li>更新元数据：在异步恢复过程中，需要更新元数据结构，以确保恢复的准确性。</li>
+</ul></li>
+<li><strong>恢复操作</strong>：
 <ul>
-<li><strong>启动恢复操作</strong>：
-使用<code>PGRecovery::run</code>函数启动恢复操作。</li>
-<li><strong>恢复副本</strong>：
-恢复操作会尝试从副本恢复丢失的对象。</li>
-</ul>
-<p><strong>5. 讨论与后续行动</strong></p>
+<li>启动恢复操作：使用<code>PGRecovery::run</code>函数启动恢复操作。</li>
+<li>恢复副本：恢复操作会尝试从副本恢复丢失的对象。</li>
+</ul></li>
+<li><strong>讨论与后续行动</strong>：
 <ul>
-<li>会议讨论了异步恢复的代码实现细节，并提出了改进建议。</li>
+<li>讨论了异步恢复的代码实现细节，并提出了改进建议。</li>
 <li>团队计划制作一个流程图，以更直观地展示异步恢复的工作原理。</li>
 <li>团队将根据讨论结果进一步改进异步恢复机制。</li>
+</ul></li>
 </ul>
 <p><strong>关键词</strong>：</p>
 <ul>
@@ -234,9 +227,11 @@ Ceph分布式存储系统中异步恢复机制的介绍和讨论</p>
 <li>元数据</li>
 <li>恢复操作</li>
 <li>副本</li>
+<li>Ceph</li>
+<li>分布式存储</li>
+<li>CRUSH算法</li>
+<li>性能优化</li>
 </ul>
-<p><strong>总结</strong>：</p>
-<p>本次会议介绍了Ceph分布式存储系统中异步恢复机制的原理和实现方法。通过异步恢复，可以减少恢复过程中对写操作的阻塞，提高集群可用性。团队将继续改进异步恢复机制，并制作流程图以便更好地理解其工作原理。</p>
 
         </div>
 
@@ -267,6 +262,8 @@ Ceph分布式存储系统中异步恢复机制的介绍和讨论</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%82%E6%AD%A5%E6%81%A2%E5%A4%8D/" rel="tag">异步恢复</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -278,7 +275,7 @@ Ceph分布式存储系统中异步恢复机制的介绍和讨论</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/07/31/Ceph_code_walk-through_-_OSD_async_recovery/&title=《Ceph code walk-through: OSD (async) recovery》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/07/31/Ceph_code_walk-through_-_OSD_async_recovery/&title=《'Ceph code walk-through: OSD (async) recovery'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -288,7 +285,7 @@ Ceph分布式存储系统中异步恢复机制的介绍和讨论</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/07/31/Ceph_code_walk-through_-_OSD_async_recovery/&title=《Ceph code walk-through: OSD (async) recovery》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/07/31/Ceph_code_walk-through_-_OSD_async_recovery/&title=《'Ceph code walk-through: OSD (async) recovery'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -298,7 +295,7 @@ Ceph分布式存储系统中异步恢复机制的介绍和讨论</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph code walk-through: OSD (async) recovery》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/07/31/Ceph_code_walk-through_-_OSD_async_recovery/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph code walk-through: OSD (async) recovery'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/07/31/Ceph_code_walk-through_-_OSD_async_recovery/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -326,9 +323,9 @@ Ceph分布式存储系统中异步恢复机制的介绍和讨论</p>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2018/08/03/2018-08-01_Ceph_Developer_Monthly/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2018/08/03/2018-08-02_-_-_Ceph_Code_walk-through_-_Intro_to_Teuthology_not_strictly_a_code_walkthrough/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2018-08-01 Ceph Developer Monthly</h4>
+        <h4 class="title">&#39;2018-08-02 :: Ceph Code walk-through: Intro to Teuthology (not strictly a code walkthrough)&#39;</h4>
       </a>
     </div>
   
@@ -337,7 +334,7 @@ Ceph分布式存储系统中异步恢复机制的介绍和讨论</p>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2018/07/31/Code_walk-through_-_new_developers/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Code walk-through: new developers</h4>
+        <h4 class="title">  Code walk-through: new developers  </h4>
       </a>
     </div>
   
@@ -437,7 +434,7 @@ Ceph分布式存储系统中异步恢复机制的介绍和讨论</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/07/31/Ceph_code_walk-through_-_OSD_async_recovery/&title=《Ceph code walk-through: OSD (async) recovery》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/07/31/Ceph_code_walk-through_-_OSD_async_recovery/&title=《'Ceph code walk-through: OSD (async) recovery'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -447,7 +444,7 @@ Ceph分布式存储系统中异步恢复机制的介绍和讨论</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/07/31/Ceph_code_walk-through_-_OSD_async_recovery/&title=《Ceph code walk-through: OSD (async) recovery》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/07/31/Ceph_code_walk-through_-_OSD_async_recovery/&title=《'Ceph code walk-through: OSD (async) recovery'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -457,7 +454,7 @@ Ceph分布式存储系统中异步恢复机制的介绍和讨论</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph code walk-through: OSD (async) recovery》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/07/31/Ceph_code_walk-through_-_OSD_async_recovery/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph code walk-through: OSD (async) recovery'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/07/31/Ceph_code_walk-through_-_OSD_async_recovery/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

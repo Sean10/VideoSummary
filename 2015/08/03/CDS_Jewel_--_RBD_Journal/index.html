@@ -20,17 +20,24 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年某月某日 会议地点： 线上会议 参会人员： Jason、Hank、John、Vanessa等 会议主题： RBD Journal Blueprint设计讨论 会议内容：  RBD Journal Blueprint概述  Jason介绍了RBD Journal Blueprint的设计，该设计旨在支持RBD镜像跨数据中心复制。 该设计目标是实现通用性，不仅适用于li">
+    <meta name="keywords" content="日志记录,RBD Journal Blueprint,Ceph 分布式存储,RBD 镜像复制,跨数据中心,Ceph RBD,RADOS Block Device">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年某月某日 会议地点： 线上会议 参会人员： Jason、Hank、John、Vanessa等 会议主题： RBD Journal Blueprint设计讨论 会议内容：  RBD Journal Blueprint概述 -Jason介绍了RBD Journal Blueprint的设计，旨在支持RBD镜像跨数据中心复制。 -该设计目标是实现">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CDS Jewel -- RBD Journal">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_RBD_Journal/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年某月某日 会议地点： 线上会议 参会人员： Jason、Hank、John、Vanessa等 会议主题： RBD Journal Blueprint设计讨论 会议内容：  RBD Journal Blueprint概述  Jason介绍了RBD Journal Blueprint的设计，该设计旨在支持RBD镜像跨数据中心复制。 该设计目标是实现通用性，不仅适用于li">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年某月某日 会议地点： 线上会议 参会人员： Jason、Hank、John、Vanessa等 会议主题： RBD Journal Blueprint设计讨论 会议内容：  RBD Journal Blueprint概述 -Jason介绍了RBD Journal Blueprint的设计，旨在支持RBD镜像跨数据中心复制。 -该设计目标是实现">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-08-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="日志记录">
+<meta property="article:tag" content="RBD Journal Blueprint">
+<meta property="article:tag" content="Ceph 分布式存储">
+<meta property="article:tag" content="RBD 镜像复制">
+<meta property="article:tag" content="跨数据中心">
+<meta property="article:tag" content="Ceph RBD">
+<meta property="article:tag" content="RADOS Block Device">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,40 +185,31 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要</p>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
 <p><strong>会议时间</strong>： 2023年某月某日</p>
 <p><strong>会议地点</strong>： 线上会议</p>
 <p><strong>参会人员</strong>： Jason、Hank、John、Vanessa等</p>
 <p><strong>会议主题</strong>： RBD Journal Blueprint设计讨论</p>
 <p><strong>会议内容</strong>：</p>
 <ol type="1">
-<li><strong>RBD Journal Blueprint概述</strong>
-<ul>
-<li>Jason介绍了RBD Journal
-Blueprint的设计，该设计旨在支持RBD镜像跨数据中心复制。</li>
-<li>该设计目标是实现通用性，不仅适用于lib
-rbd，未来也可能适用于MDS或其他客户端。</li>
-<li>设计基于liberated us
-API，与现有RBD代码和Journaling代码有所不同。</li>
-</ul></li>
-<li><strong>设计决策</strong>
-<ul>
-<li>使用RNG算法将日志条目分散到多个对象上，提高效率。</li>
-<li>引入软最大大小限制，当日志对象满时，将关闭整个活动集，而不是单个对象。</li>
-<li>支持多读者和潜在的多写者，例如RBD镜像多磁盘的场景。</li>
-<li>引入新的工具来帮助恢复损坏的日志对象。</li>
-</ul></li>
-<li><strong>与RBD的集成</strong>
-<ul>
-<li>新的RBD功能代码将允许动态启用和禁用日志记录功能。</li>
-<li>所有可变I/O操作（例如读写、快照操作）都将记录到日志中。</li>
-<li>首次打开镜像时，将进行回放模式，以同步日志。</li>
-</ul></li>
-<li><strong>后续行动</strong>
-<ul>
-<li>Jason将提供代码链接，供大家查看和讨论。</li>
-<li>团队将继续改进和优化RBD Journal Blueprint。</li>
-</ul></li>
+<li><p><strong>RBD Journal Blueprint概述</strong> -Jason介绍了RBD
+Journal Blueprint的设计，旨在支持RBD镜像跨数据中心复制。
+-该设计目标是实现通用性，不仅适用于lib
+rbd，未来也可能适用于MDS或其他客户端。 -设计基于liberated us
+API，与现有RBD代码和Journaling代码有所不同。</p></li>
+<li><p><strong>设计决策</strong>
+-使用RNG算法将日志条目分散到多个对象上，提高效率。
+-引入软最大大小限制，当日志对象满时，将关闭整个活动集，而不是单个对象。
+-支持多读者和潜在的多写者，例如RBD镜像多磁盘的场景。
+-引入新的工具来帮助恢复损坏的日志对象。</p></li>
+<li><p><strong>与RBD的集成</strong>
+-新的RBD功能代码将允许动态启用和禁用日志记录功能。
+-所有可变I/O操作（例如读写、快照操作）都将记录到日志中。
+-首次打开镜像时，将进行回放模式，以同步日志。</p></li>
+<li><p><strong>后续行动</strong>
+-Jason将提供代码链接，供大家查看和讨论。 -团队将继续改进和优化RBD
+Journal Blueprint。</p></li>
 </ol>
 <p><strong>关键术语</strong>：</p>
 <ul>
@@ -225,8 +223,8 @@ API，与现有RBD代码和Journaling代码有所不同。</li>
 <li>Replay mode</li>
 </ul>
 <p><strong>总结</strong>：</p>
-<p>本次会议讨论了RBD Journal
-Blueprint的设计和实现，并就相关技术细节进行了深入探讨。该设计旨在提高RBD镜像的可靠性和可用性，为跨数据中心复制提供支持。</p>
+<p>本次会议深入讨论了RBD Journal
+Blueprint的设计，旨在提升RBD镜像的可靠性和可用性，支持跨数据中心复制。设计采用了多种优化措施，包括日志条目分散、软最大大小限制和多读者支持等。团队将继续优化和改进该设计。</p>
 
         </div>
 
@@ -257,6 +255,8 @@ Blueprint的设计和实现，并就相关技术细节进行了深入探讨。�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-RBD/" rel="tag">Ceph RBD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">Ceph 分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS-Block-Device/" rel="tag">RADOS Block Device</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD-Journal-Blueprint/" rel="tag">RBD Journal Blueprint</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD-%E9%95%9C%E5%83%8F%E5%A4%8D%E5%88%B6/" rel="tag">RBD 镜像复制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/" rel="tag">日志记录</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%B7%A8%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83/" rel="tag">跨数据中心</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -316,18 +316,18 @@ Blueprint的设计和实现，并就相关技术细节进行了深入探讨。�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_PMStore/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_RADOS_QoS/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Jewel -- PMStore</h4>
+        <h4 class="title">CDS Jewel -- RADOS QoS</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_RGW_Multisite_Configuration/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_RGW_Multisite_Sync/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Jewel -- RGW Multisite Configuration</h4>
+        <h4 class="title">CDS Jewel -- RGW Multisite Sync</h4>
       </a>
     </div>
   

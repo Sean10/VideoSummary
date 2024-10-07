@@ -14,23 +14,28 @@
     
     
     
-    <title>CephFS Code Walkthrough: MDS Locker, Part 2 | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;CephFS Code Walkthrough: MDS Locker, Part 2&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议是关于Ceph分布式存储系统中MDS（Metadata Server）锁管理器（MDS Locker）内部机制的代码走读系列会议的第二部分。第一部分已于今年7月或8月举行。由于MDS Locker是一个非常庞大的主题，难以在一次会议中完全覆盖，因此预计还会有第三部分会议。 主要议题  文档更新：  会议中提到将编写一份关于MDS Locker内部实现的文档，并计划将其作">
+    <meta name="keywords" content="分布式存储,CephFS,Ceph 存储系统,MDS Locker,代码分析">
+    <meta name="description" content="[改进后的中文总结内容] CephFS代码走读系列的第二部分会议深入探讨了Ceph分布式存储系统中MDS（元数据服务器）锁管理器（MDS Locker）的内部机制。以下是会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划： 会议概述 本次会议是CephFS代码走读系列的第二部分，主题为MDS Locker。由于MDS Locker内容丰富，难以在一次会议中完全覆盖，预计还将有第三部分会议">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CephFS Code Walkthrough: MDS Locker, Part 2">
+<meta property="og:title" content="&#39;CephFS Code Walkthrough: MDS Locker, Part 2&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/12/09/CephFS_Code_Walkthrough_-_MDS_Locker_Part_2/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议是关于Ceph分布式存储系统中MDS（Metadata Server）锁管理器（MDS Locker）内部机制的代码走读系列会议的第二部分。第一部分已于今年7月或8月举行。由于MDS Locker是一个非常庞大的主题，难以在一次会议中完全覆盖，因此预计还会有第三部分会议。 主要议题  文档更新：  会议中提到将编写一份关于MDS Locker内部实现的文档，并计划将其作">
+<meta property="og:description" content="[改进后的中文总结内容] CephFS代码走读系列的第二部分会议深入探讨了Ceph分布式存储系统中MDS（元数据服务器）锁管理器（MDS Locker）的内部机制。以下是会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划： 会议概述 本次会议是CephFS代码走读系列的第二部分，主题为MDS Locker。由于MDS Locker内容丰富，难以在一次会议中完全覆盖，预计还将有第三部分会议">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-08T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-12-09T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="Ceph 存储系统">
+<meta property="article:tag" content="MDS Locker">
+<meta property="article:tag" content="代码分析">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CephFS Code Walkthrough: MDS Locker, Part 2</div>
+        <div class="flex-col header-title ellipsis">&#39;CephFS Code Walkthrough: MDS Locker, Part 2&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CephFS Code Walkthrough: MDS Locker, Part 2</h1>
+        <h1 class="title">&#39;CephFS Code Walkthrough: MDS Locker, Part 2&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-12-08T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他注意事项</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">5.</span> <span class="post-toc-text">其他注意事项</span></a></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CephFS Code Walkthrough: MDS Locker, Part 2</h1>
+        <h1 class="post-card-title">'CephFS Code Walkthrough: MDS Locker, Part 2'</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-12-09 00:00:00" datetime="2021-12-08T16:00:00.000Z"  itemprop="datePublished">2021-12-09</time>
 
@@ -185,12 +190,13 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概述">会议概述</h4>
-<p>本次会议是关于Ceph分布式存储系统中MDS（Metadata Server）锁管理器（MDS
-Locker）内部机制的代码走读系列会议的第二部分。第一部分已于今年7月或8月举行。由于MDS
-Locker是一个非常庞大的主题，难以在一次会议中完全覆盖，因此预计还会有第三部分会议。</p>
-<h4 id="主要议题">主要议题</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>CephFS代码走读系列的第二部分会议深入探讨了Ceph分布式存储系统中MDS（元数据服务器）锁管理器（MDS
+Locker）的内部机制。以下是会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划：</p>
+<h3 id="会议概述">会议概述</h3>
+<p>本次会议是CephFS代码走读系列的第二部分，主题为MDS Locker。由于MDS
+Locker内容丰富，难以在一次会议中完全覆盖，预计还将有第三部分会议。</p>
+<h3 id="主要议题">主要议题</h3>
 <ol type="1">
 <li><strong>文档更新</strong>：
 <ul>
@@ -200,50 +206,42 @@ Request提交，以便社区成员可以审查和提供反馈。</li>
 <li><strong>MDS Locker概述</strong>：
 <ul>
 <li>MDS使用日志（logs）来保护inode和dentry中的各种元数据。</li>
-<li>不同于单一的大锁，MDS为不同的元数据片段使用不同类型的锁。</li>
+<li>MDS不同于单一的大锁，而是为不同的元数据片段使用不同类型的锁。</li>
 <li>锁类型（log types）和锁类别（log classes）的定义和使用。</li>
 </ul></li>
 <li><strong>锁类型和锁类别</strong>：
 <ul>
-<li><strong>锁类型</strong>：MDS定义了多种锁类型，每种类型保护inode或dentry中的特定元数据片段。</li>
-<li><strong>锁类别</strong>：定义了不同锁类型的锁定行为，以处理分布式锁的需求。
-<ul>
-<li><strong>Local Lock</strong>：用于不需要分布式锁的数据。</li>
-<li><strong>Simple Lock</strong>：用于需要共享读和互斥写的数据。</li>
-<li><strong>Scatter Lock</strong>：用于需要共享读和共享写的数据。</li>
-<li><strong>File
-Lock</strong>：特殊情况，用于需要共享读和互斥写的数据。</li>
-</ul></li>
+<li>MDS定义了多种锁类型，每种类型保护inode或dentry中的特定元数据片段。</li>
+<li>锁类别定义了不同锁类型的锁定行为，以处理分布式锁的需求，包括Local
+Lock、Simple Lock、Scatter Lock和File Lock。</li>
 </ul></li>
 <li><strong>锁状态和状态机</strong>：
 <ul>
 <li>MDS定义了多种锁状态，每个状态决定了是否允许某种类型的锁。</li>
 <li>状态机（state
-machine）描述了锁从一种状态到另一种状态的转换过程。</li>
-<li>以Simple
-Lock为例，详细讲解了从初始状态到最终状态的转换过程，包括中间状态的作用和意义。</li>
+machine）描述了锁从一种状态到另一种状态的转换过程，以Simple
+Lock为例进行了详细讲解。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
+<h3 id="决定事项">决定事项</h3>
 <ul>
 <li>将继续编写和完善关于MDS Locker的文档，并计划将其作为Pull
-Request提交，以便社区成员可以审查和提供反馈。</li>
+Request提交。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<h3 id="后续行动计划">后续行动计划</h3>
 <ul>
 <li>预计将举行第三部分会议，继续深入探讨MDS
 Locker的内部机制，特别是Scatter Lock和File Lock的细节。</li>
 <li>社区成员应关注即将发布的Pull
 Request，并积极参与文档的审查和讨论。</li>
 </ul>
-<h4 id="其他注意事项">其他注意事项</h4>
+<h3 id="其他注意事项">其他注意事项</h3>
 <ul>
 <li>会议中提到的代码和文档将在后续通过Pull
 Request的形式发布，社区成员应关注并参与讨论。</li>
 <li>对于锁状态和状态机的理解，建议从Simple
 Lock开始，逐步深入，以便更好地理解复杂的锁机制。</li>
 </ul>
-<hr />
 <p>本次会议为Ceph社区成员提供了一个深入了解MDS
 Locker内部机制的机会，并为后续的文档编写和代码优化奠定了基础。</p>
 
@@ -276,6 +274,8 @@ Locker内部机制的机会，并为后续的文档编写和代码优化奠定�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/" rel="tag">Ceph 存储系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MDS-Locker/" rel="tag">MDS Locker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90/" rel="tag">代码分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -287,7 +287,7 @@ Locker内部机制的机会，并为后续的文档编写和代码优化奠定�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/09/CephFS_Code_Walkthrough_-_MDS_Locker_Part_2/&title=《CephFS Code Walkthrough: MDS Locker, Part 2》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/09/CephFS_Code_Walkthrough_-_MDS_Locker_Part_2/&title=《'CephFS Code Walkthrough: MDS Locker, Part 2'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -297,7 +297,7 @@ Locker内部机制的机会，并为后续的文档编写和代码优化奠定�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/09/CephFS_Code_Walkthrough_-_MDS_Locker_Part_2/&title=《CephFS Code Walkthrough: MDS Locker, Part 2》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/09/CephFS_Code_Walkthrough_-_MDS_Locker_Part_2/&title=《'CephFS Code Walkthrough: MDS Locker, Part 2'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -307,7 +307,7 @@ Locker内部机制的机会，并为后续的文档编写和代码优化奠定�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CephFS Code Walkthrough: MDS Locker, Part 2》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/09/CephFS_Code_Walkthrough_-_MDS_Locker_Part_2/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CephFS Code Walkthrough: MDS Locker, Part 2'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/09/CephFS_Code_Walkthrough_-_MDS_Locker_Part_2/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -337,7 +337,7 @@ Locker内部机制的机会，并为后续的文档编写和代码优化奠定�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/12/11/Ceph_Orchestrator_Meeting_-_2021-12-07/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Orchestrator Meeting: 2021-12-07</h4>
+        <h4 class="title">&#39;Ceph Orchestrator Meeting: 2021-12-07&#39;</h4>
       </a>
     </div>
   
@@ -346,7 +346,7 @@ Locker内部机制的机会，并为后续的文档编写和代码优化奠定�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/12/06/CephFS_Code_Walkthrough_-_kclient_overview/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CephFS Code Walkthrough: kclient overview</h4>
+        <h4 class="title">CephFS代码解析：k客户端概述</h4>
       </a>
     </div>
   
@@ -446,7 +446,7 @@ Locker内部机制的机会，并为后续的文档编写和代码优化奠定�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/09/CephFS_Code_Walkthrough_-_MDS_Locker_Part_2/&title=《CephFS Code Walkthrough: MDS Locker, Part 2》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/09/CephFS_Code_Walkthrough_-_MDS_Locker_Part_2/&title=《'CephFS Code Walkthrough: MDS Locker, Part 2'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -456,7 +456,7 @@ Locker内部机制的机会，并为后续的文档编写和代码优化奠定�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/09/CephFS_Code_Walkthrough_-_MDS_Locker_Part_2/&title=《CephFS Code Walkthrough: MDS Locker, Part 2》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/09/CephFS_Code_Walkthrough_-_MDS_Locker_Part_2/&title=《'CephFS Code Walkthrough: MDS Locker, Part 2'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -466,7 +466,7 @@ Locker内部机制的机会，并为后续的文档编写和代码优化奠定�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CephFS Code Walkthrough: MDS Locker, Part 2》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/09/CephFS_Code_Walkthrough_-_MDS_Locker_Part_2/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CephFS Code Walkthrough: MDS Locker, Part 2'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/09/CephFS_Code_Walkthrough_-_MDS_Locker_Part_2/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -20,17 +20,23 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：  优化OSD Map以提升客户端使用效率 增加通过标签或生成号来阻止实体列表的功能  讨论内容： 1. 优化OSD Map以提升客户端使用效率  问题描述：在高速集群（如全闪存集群）中，重新平衡或恢复操作完成后，集群会留下大量OSD Map。客户端可能无法及时获取这些更新，导致使用过时的OSD Map。 解决方案讨论：  原始方案：添加设置以限制构建增量OSD Map时的版本">
+    <meta name="keywords" content="Ceph,分布式存储,灾难恢复,OSD Map优化,客户端使用效率,集群隔离">
+    <meta name="description" content="改进后的中文总结内容 在2021年5月5日的Ceph开发者月度会议中，主要讨论了以下议题： 优化OSD Map以提升客户端使用效率  问题：在高速集群中，客户端可能无法及时获取更新的OSD Map，导致使用过时的信息。 解决方案：通过优化客户端请求OSD Map的行为，确保客户端只请求必要的版本，减少监控器的负担。此外，讨论了使用更轻量级的OSD Map版本，以减少传输数据量。  增加通过标签或生">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Developer Monthly 2021-05-05">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/05/06/Ceph_Developer_Monthly_2021-05-05/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：  优化OSD Map以提升客户端使用效率 增加通过标签或生成号来阻止实体列表的功能  讨论内容： 1. 优化OSD Map以提升客户端使用效率  问题描述：在高速集群（如全闪存集群）中，重新平衡或恢复操作完成后，集群会留下大量OSD Map。客户端可能无法及时获取这些更新，导致使用过时的OSD Map。 解决方案讨论：  原始方案：添加设置以限制构建增量OSD Map时的版本">
+<meta property="og:description" content="改进后的中文总结内容 在2021年5月5日的Ceph开发者月度会议中，主要讨论了以下议题： 优化OSD Map以提升客户端使用效率  问题：在高速集群中，客户端可能无法及时获取更新的OSD Map，导致使用过时的信息。 解决方案：通过优化客户端请求OSD Map的行为，确保客户端只请求必要的版本，减少监控器的负担。此外，讨论了使用更轻量级的OSD Map版本，以减少传输数据量。  增加通过标签或生">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-05-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="灾难恢复">
+<meta property="article:tag" content="OSD Map优化">
+<meta property="article:tag" content="客户端使用效率">
+<meta property="article:tag" content="集群隔离">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,9 +165,8 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论内容：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E4%BC%98%E5%8C%96osd-map%E4%BB%A5%E6%8F%90%E5%8D%87%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%88%E7%8E%87"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">1. 优化OSD
-Map以提升客户端使用效率</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%A2%9E%E5%8A%A0%E9%80%9A%E8%BF%87%E6%A0%87%E7%AD%BE%E6%88%96%E7%94%9F%E6%88%90%E5%8F%B7%E6%9D%A5%E9%98%BB%E6%AD%A2%E5%AE%9E%E4%BD%93%E5%88%97%E8%A1%A8%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.
-增加通过标签或生成号来阻止实体列表的功能</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议总结：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结内容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%98%E5%8C%96osd-map%E4%BB%A5%E6%8F%90%E5%8D%87%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%88%E7%8E%87"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">优化OSD
+Map以提升客户端使用效率</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%A2%9E%E5%8A%A0%E9%80%9A%E8%BF%87%E6%A0%87%E7%AD%BE%E6%88%96%E7%94%9F%E6%88%90%E5%8F%B7%E6%9D%A5%E9%98%BB%E6%AD%A2%E5%AE%9E%E4%BD%93%E5%88%97%E8%A1%A8%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">增加通过标签或生成号来阻止实体列表的功能</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -187,56 +192,36 @@ Map以提升客户端使用效率</span></a></li><li class="post-toc-item post-t
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题">会议主题：</h4>
-<ol type="1">
-<li>优化OSD Map以提升客户端使用效率</li>
-<li>增加通过标签或生成号来阻止实体列表的功能</li>
-</ol>
-<h4 id="讨论内容">讨论内容：</h4>
-<h5 id="优化osd-map以提升客户端使用效率">1. 优化OSD
-Map以提升客户端使用效率</h5>
+            <h2 id="改进后的中文总结内容">改进后的中文总结内容</h2>
+<p>在2021年5月5日的Ceph开发者月度会议中，主要讨论了以下议题：</p>
+<h3 id="优化osd-map以提升客户端使用效率">优化OSD
+Map以提升客户端使用效率</h3>
 <ul>
-<li><strong>问题描述</strong>：在高速集群（如全闪存集群）中，重新平衡或恢复操作完成后，集群会留下大量OSD
-Map。客户端可能无法及时获取这些更新，导致使用过时的OSD Map。</li>
-<li><strong>解决方案讨论</strong>：
-<ul>
-<li><strong>原始方案</strong>：添加设置以限制构建增量OSD
-Map时的版本。</li>
-<li><strong>替代方案</strong>：使用细粒度锁来提高监控器在服务OSD
-Map时的并行性。</li>
-<li><strong>讨论结果</strong>：决定不采用细粒度锁，而是优化客户端请求OSD
-Map的行为，确保客户端只请求必要的OSD Map版本，减少监控器的负担。</li>
-<li><strong>后续行动</strong>：更新客户端以优化其请求OSD
-Map的行为，并可能进一步优化监控器处理OSD Map请求的方式。</li>
-</ul></li>
+<li><strong>问题</strong>：在高速集群中，客户端可能无法及时获取更新的OSD
+Map，导致使用过时的信息。</li>
+<li><strong>解决方案</strong>：通过优化客户端请求OSD
+Map的行为，确保客户端只请求必要的版本，减少监控器的负担。此外，讨论了使用更轻量级的OSD
+Map版本，以减少传输数据量。</li>
 </ul>
-<h5 id="增加通过标签或生成号来阻止实体列表的功能">2.
-增加通过标签或生成号来阻止实体列表的功能</h5>
+<h3
+id="增加通过标签或生成号来阻止实体列表的功能">增加通过标签或生成号来阻止实体列表的功能</h3>
 <ul>
-<li><strong>问题描述</strong>：在灾难恢复场景中，需要能够阻止整个集群或特定应用程序访问共享存储端点，以实现无缝切换。</li>
-<li><strong>解决方案讨论</strong>：
-<ul>
-<li><strong>原始方案</strong>：使用现有的阻止列表功能，但发现其不适用于此场景。</li>
-<li><strong>替代方案</strong>：通过标签或生成号来阻止实体列表，以更广泛地隔离集群。</li>
-<li><strong>讨论结果</strong>：决定探索更简单的网络层阻止方案，而不是在存储系统中实现复杂的阻止机制。</li>
-<li><strong>后续行动</strong>：进一步研究IP范围阻止列表的可行性，并与社区讨论其实现细节和时间框架。</li>
-</ul></li>
+<li><strong>问题</strong>：在灾难恢复场景中，需要能够阻止整个集群或特定应用程序访问共享存储端点，以实现无缝切换。</li>
+<li><strong>解决方案</strong>：讨论了通过标签或生成号来阻止实体列表的可行性，以及更简单的网络层阻止方案。</li>
 </ul>
-<h4 id="决定事项">决定事项：</h4>
-<ul>
-<li>优化客户端请求OSD Map的行为，减少监控器的负担。</li>
-<li>探索网络层阻止方案，以简化灾难恢复过程中的集群隔离。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划：</h4>
+<h3 id="决定事项">决定事项</h3>
 <ul>
 <li>更新客户端代码以优化OSD Map请求。</li>
 <li>研究并实现IP范围阻止列表功能。</li>
 <li>与社区进一步讨论和细化阻止实体列表的方案。</li>
 </ul>
-<h4 id="会议总结">会议总结：</h4>
-<p>本次会议主要讨论了如何优化Ceph存储系统中的OSD
-Map使用和灾难恢复过程中的集群隔离问题。通过优化客户端行为和探索网络层阻止方案，旨在提高系统的性能和可靠性。后续将根据讨论结果进行具体实施和社区协作。</p>
+<h3 id="后续行动计划">后续行动计划</h3>
+<ul>
+<li>审计现有客户端以确定其从OSD Map解码哪些部分。</li>
+<li>探索创建仅包含客户端所需信息的OSD Map版本。</li>
+<li>评估和实施网络层阻止方案。</li>
+</ul>
+<p>会议强调了优化Ceph存储系统性能和可靠性的重要性，并讨论了如何通过改进客户端行为和探索网络层阻止方案来实现这一目标。</p>
 
         </div>
 
@@ -267,6 +252,8 @@ Map使用和灾难恢复过程中的集群隔离问题。通过优化客户端�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD-Map%E4%BC%98%E5%8C%96/" rel="tag">OSD Map优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%88%E7%8E%87/" rel="tag">客户端使用效率</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%81%BE%E9%9A%BE%E6%81%A2%E5%A4%8D/" rel="tag">灾难恢复</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%9B%86%E7%BE%A4%E9%9A%94%E7%A6%BB/" rel="tag">集群隔离</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -337,7 +324,7 @@ Map使用和灾难恢复过程中的集群隔离问题。通过优化客户端�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/05/06/Ceph_Performance_Meeting_2021-05-06/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2021-05-06</h4>
+        <h4 class="title">  Ceph Performance Meeting 2021-05-06  </h4>
       </a>
     </div>
   

@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：对象 Lambda (Object Lambda) 的讨论 与会人员：Ceph 研发团队成员 会议时间：[具体时间] 会议地点：[具体地点] 主要议题：  对象 Lambda 与 AWS 对象 Lambda 的比较  讨论了对象 Lambda 与 AWS 对象 Lambda 的差异，特别是 AWS 对象 Lambda 支持多种语言，并且通过不同的 URL 来处理对象的获取。 强">
+    <meta name="keywords" content="Ceph,RGW,Distributed Storage,AWS,Object Lambda">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：对象 Lambda (Object Lambda) 的讨论与 RGW 改进 与会人员：Ceph 研发团队成员 会议时间：[具体时间] 会议地点：[具体地点] 主要议题：  对象 Lambda 与 AWS 对象 Lambda 的比较  讨论了对象 Lambda 与 AWS 对象 Lambda 的差异性，包括 AWS 对象 Lambda 支持多种语言并通过">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph RGW Refactoring Meeting 2022-11-23">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-23/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：对象 Lambda (Object Lambda) 的讨论 与会人员：Ceph 研发团队成员 会议时间：[具体时间] 会议地点：[具体地点] 主要议题：  对象 Lambda 与 AWS 对象 Lambda 的比较  讨论了对象 Lambda 与 AWS 对象 Lambda 的差异，特别是 AWS 对象 Lambda 支持多种语言，并且通过不同的 URL 来处理对象的获取。 强">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：对象 Lambda (Object Lambda) 的讨论与 RGW 改进 与会人员：Ceph 研发团队成员 会议时间：[具体时间] 会议地点：[具体地点] 主要议题：  对象 Lambda 与 AWS 对象 Lambda 的比较  讨论了对象 Lambda 与 AWS 对象 Lambda 的差异性，包括 AWS 对象 Lambda 支持多种语言并通过">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-26T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-01-26T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="AWS">
+<meta property="article:tag" content="Object Lambda">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,8 +164,8 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E5%AF%B9%E8%B1%A1-lambda-object-lambda-%E7%9A%84%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：对象 Lambda
-(Object Lambda) 的讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8E%E4%BC%9A%E4%BA%BA%E5%91%98ceph-%E7%A0%94%E5%8F%91%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">与会人员：Ceph 研发团队成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8B%E6%AC%A1%E4%BC%9A%E8%AE%AE%E9%A2%84%E5%91%8A"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">下次会议预告：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E5%AF%B9%E8%B1%A1-lambda-object-lambda-%E7%9A%84%E8%AE%A8%E8%AE%BA%E4%B8%8E-rgw-%E6%94%B9%E8%BF%9B"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：对象
+Lambda (Object Lambda) 的讨论与 RGW 改进</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8E%E4%BC%9A%E4%BA%BA%E5%91%98ceph-%E7%A0%94%E5%8F%91%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">与会人员：Ceph 研发团队成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8B%E6%AC%A1%E4%BC%9A%E8%AE%AE%E9%A2%84%E5%91%8A"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">下次会议预告：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -186,9 +191,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题对象-lambda-object-lambda-的讨论">会议主题：对象 Lambda
-(Object Lambda) 的讨论</h4>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<h4
+id="会议主题对象-lambda-object-lambda-的讨论与-rgw-改进">会议主题：对象
+Lambda (Object Lambda) 的讨论与 RGW 改进</h4>
 <h4 id="与会人员ceph-研发团队成员">与会人员：Ceph 研发团队成员</h4>
 <h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
 <h4 id="会议地点具体地点">会议地点：[具体地点]</h4>
@@ -196,51 +203,48 @@
 <ol type="1">
 <li><strong>对象 Lambda 与 AWS 对象 Lambda 的比较</strong>
 <ul>
-<li>讨论了对象 Lambda 与 AWS 对象 Lambda 的差异，特别是 AWS 对象 Lambda
-支持多种语言，并且通过不同的 URL 来处理对象的获取。</li>
-<li>强调了在处理大型对象时的性能和资源分配问题，建议考虑外部处理以避免对
-RGW（RADOS Gateway）的性能影响。</li>
+<li>讨论了对象 Lambda 与 AWS 对象 Lambda 的差异性，包括 AWS 对象 Lambda
+支持多种语言并通过不同 URL 处理对象获取。</li>
+<li>强调了大型对象处理中的性能和资源分配问题，建议考虑外部处理以减轻
+RGW（RADOS Gateway）的性能压力。</li>
 </ul></li>
 <li><strong>处理方式的选择</strong>
 <ul>
-<li>探讨了内联处理与离线处理的优劣，特别是内联处理在某些场景下的必要性，如数据匿名化等。</li>
-<li>讨论了使用不同 URL
-来区分处理请求的可能性，以及如何实现这一机制。</li>
+<li>探讨了内联处理与离线处理的优劣，以及在内线处理中数据匿名化等场景的必要性。</li>
+<li>讨论了通过不同 URL 区分处理请求的可能性，以及实现该机制的方案。</li>
 </ul></li>
 <li><strong>技术方案的探索</strong>
 <ul>
-<li>提到了使用多站点（multi-site）方案的不可行性，以及考虑使用外部服务来处理对象
-Lambda 的可能性。</li>
-<li>讨论了与 IBM Fabric
-技术的结合，以及如何利用现有的服务器less函数套件来增强功能。</li>
+<li>分析了使用多站点方案的不可行性，并考虑使用外部服务来处理对象
+Lambda。</li>
+<li>探讨了与 IBM Fabric
+技术的结合，以及利用现有的服务器less函数套件来增强功能。</li>
 </ul></li>
 <li><strong>后续行动计划</strong>
 <ul>
-<li>继续探索和评估外部处理方案，特别是那些可以与 S3
-接口兼容的方案。</li>
+<li>继续探索和评估外部处理方案，尤其是与 S3 接口兼容的方案。</li>
 <li>考虑在 RGW
 之外建立一个弹性计算设施，以实现更好的资源管理和扩展性。</li>
 <li>讨论了与 Spark
-和其他大数据生态系统的集成，特别是如何优化数据处理和查询推送。</li>
+和其他大数据生态系统的集成，以及优化数据处理和查询推送。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
-<li>需要进一步研究和测试外部处理方案，以确定最佳实践。</li>
-<li>计划与相关团队（如 Ronancott
-团队）进行更深入的讨论，以探索技术整合的可能性。</li>
-<li>将持续关注和评估与 Spark
+<li>进一步研究和测试外部处理方案，以确保最佳实践。</li>
+<li>与 Ronancott 团队进行更深入的讨论，探索技术整合的可能性。</li>
+<li>持续关注和评估与 Spark
 和其他大数据工具的集成，以提高数据处理的效率和灵活性。</li>
 </ul>
 <h4 id="后续行动">后续行动：</h4>
 <ul>
 <li>安排与 Eric 的会议，讨论 aeroflight 技术的进一步开发和集成。</li>
-<li>继续与 Ali 合作，探索 Spark 连接器的开发和优化。</li>
+<li>与 Ali 合作，探索 Spark 连接器的开发和优化。</li>
 <li>评估和优化 S3 select 的功能，特别是在 Spark Catalyst 中的应用。</li>
 </ul>
 <h4 id="会议总结">会议总结：</h4>
-<p>本次会议主要围绕对象 Lambda
-的功能和实现进行了深入讨论，特别是在如何平衡性能和资源管理方面。团队决定探索外部处理方案，并继续优化与大数据生态系统的集成。会议强调了持续研究和测试的重要性，以确保技术方案的有效性和可行性。</p>
+<p>本次会议重点讨论了对象 Lambda
+的功能和实现，特别是在性能和资源管理方面的平衡。团队决定探索外部处理方案，并持续优化与大数据生态系统的集成。会议强调了持续研究和测试的重要性，以确保技术方案的有效性和可行性。</p>
 <h4 id="下次会议预告">下次会议预告：</h4>
 <ul>
 <li>讨论 aeroflight 技术的进展和 Spark 集成方案。</li>
@@ -277,6 +281,8 @@ Lambda 的可能性。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/AWS/" rel="tag">AWS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Object-Lambda/" rel="tag">Object Lambda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -338,7 +344,7 @@ Lambda 的可能性。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2022-11-02</h4>
+        <h4 class="title">Ceph RGW 重构会议 2022-11-02</h4>
       </a>
     </div>
   
@@ -347,7 +353,7 @@ Lambda 的可能性。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/01/25/Ceph_Crimson_SeaStore_Meeting_2023-01-25/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Crimson/SeaStore Meeting 2023-01-25</h4>
+        <h4 class="title">Ceph Crimson/SeaStore 会议纪要 2023-01-25</h4>
       </a>
     </div>
   

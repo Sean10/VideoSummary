@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 主要议题与讨论内容  代码审查与清理工作  上周主要进行了PR（Pull Request）的审查和代码清理工作。 尝试移除一些不必要的代码，并对PR进行了总结。 提交了一个PR，旨在将无日志的Cue添加到编辑存储中的Shouted Queue。  系统远程集成的控制接口  正在集成IOC TLF控制接口到系统远程设置中。 提交了补丁并进行了初步审查，需要进一步完善版本。  运行时异常修复">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,代码审查,问题修复">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 主要议题与讨论内容  代码审查与清理工作  主要进行了PR的审查和代码清理，尝试移除不必要的代码。 提交了一个PR，将无日志的Cue添加到编辑存储中的Shouted Queue。  系统远程集成的控制接口  集成IOC TLF控制接口到系统远程设置中，已提交补丁并初步审查。  运行时异常修复  修复了compare_xattr和pg_in_rs两个运行时异常，确">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;SeaStore 2021-06-30">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/08/24/Ceph_Crimson_SeaStore_2021-06-30/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 主要议题与讨论内容  代码审查与清理工作  上周主要进行了PR（Pull Request）的审查和代码清理工作。 尝试移除一些不必要的代码，并对PR进行了总结。 提交了一个PR，旨在将无日志的Cue添加到编辑存储中的Shouted Queue。  系统远程集成的控制接口  正在集成IOC TLF控制接口到系统远程设置中。 提交了补丁并进行了初步审查，需要进一步完善版本。  运行时异常修复">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 主要议题与讨论内容  代码审查与清理工作  主要进行了PR的审查和代码清理，尝试移除不必要的代码。 提交了一个PR，将无日志的Cue添加到编辑存储中的Shouted Queue。  系统远程集成的控制接口  集成IOC TLF控制接口到系统远程设置中，已提交补丁并初步审查。  运行时异常修复  修复了compare_xattr和pg_in_rs两个运行时异常，确">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-08-24T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="代码审查">
+<meta property="article:tag" content="问题修复">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,44 +190,39 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="主要议题与讨论内容">主要议题与讨论内容</h4>
 <ol type="1">
 <li><strong>代码审查与清理工作</strong>
 <ul>
-<li>上周主要进行了PR（Pull Request）的审查和代码清理工作。</li>
-<li>尝试移除一些不必要的代码，并对PR进行了总结。</li>
-<li>提交了一个PR，旨在将无日志的Cue添加到编辑存储中的Shouted
-Queue。</li>
+<li>主要进行了PR的审查和代码清理，尝试移除不必要的代码。</li>
+<li>提交了一个PR，将无日志的Cue添加到编辑存储中的Shouted Queue。</li>
 </ul></li>
 <li><strong>系统远程集成的控制接口</strong>
 <ul>
-<li>正在集成IOC TLF控制接口到系统远程设置中。</li>
-<li>提交了补丁并进行了初步审查，需要进一步完善版本。</li>
+<li>集成IOC TLF控制接口到系统远程设置中，已提交补丁并初步审查。</li>
 </ul></li>
 <li><strong>运行时异常修复</strong>
 <ul>
-<li>修复了两个运行时异常，一个是compare_xattr，另一个是pg_in_rs。</li>
-<li>当前的调试构建和发布构建都可以通过FIO和Reader's Bench进行测试。</li>
+<li>修复了compare_xattr和pg_in_rs两个运行时异常，确保调试和发布构建均能通过测试。</li>
 </ul></li>
 <li><strong>调试与性能问题</strong>
 <ul>
-<li>发现调试输出会导致运行缓慢，而禁用输出则会快速遇到问题。</li>
-<li>计划提交一个bug报告，以便更好地协调解决这些问题。</li>
+<li>发现调试输出导致运行缓慢，计划提交bug报告解决。</li>
 </ul></li>
 <li><strong>Crimson背景问题</strong>
 <ul>
-<li>发现了Trashing测试中的根本原因，并提交了补丁。</li>
-<li>解决了由于错误类型转换导致的core dumps问题。</li>
+<li>发现并解决了Trashing测试中的根本原因和core dumps问题。</li>
 </ul></li>
 <li><strong>PR142100审查</strong>
 <ul>
-<li>鼓励团队审查PR142100，特别关注mutable
+<li>鼓励团队审查PR142100，关注mutable
 specifier的使用，以避免性能问题。</li>
 </ul></li>
 <li><strong>实习生招聘</strong>
 <ul>
-<li>已经开始审查CVs，准备招聘实习生。</li>
+<li>已开始审查CVs，准备招聘实习生。</li>
 </ul></li>
 <li><strong>PR合并与测试</strong>
 <ul>
@@ -231,43 +231,39 @@ specifier的使用，以避免性能问题。</li>
 <li><strong>中断可处理的Future问题</strong>
 <ul>
 <li>解决了OSD
-maps显示和崩溃的问题，修复了C-store不尊重事务顺序的bug。</li>
+maps显示和崩溃问题，修复了C-store不尊重事务顺序的bug。</li>
 </ul></li>
 <li><strong>Extent Placement Manager改进</strong>
 <ul>
-<li>修改了Extent Placement Manager，以解决Yinshin和Sam的担忧。</li>
-<li>重新基于主分支进行了代码重构，并正在修复中断条件泄漏问题。</li>
+<li>修改了Extent Placement
+Manager，以解决Yinshin和Sam的担忧，并修复中断条件泄漏问题。</li>
 </ul></li>
 <li><strong>事务验证与缓存层问题</strong>
 <ul>
-<li>正在阅读事务验证PRs，并发现了一些缓存层的问题。</li>
-<li>正在修复这些问题，并将提交相关补丁。</li>
+<li>正在修复事务验证PRs中的缓存层问题。</li>
 </ul></li>
 <li><strong>Lease Message问题</strong>
 <ul>
-<li>讨论了Lease
-Message在特定情况下的处理问题，特别是与激活消息的顺序相关。</li>
-<li>需要确保消息处理的顺序，以避免潜在的bug。</li>
+<li>讨论了Lease Message在特定情况下的处理问题，确保消息处理顺序。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>提交bug报告，以便更好地协调解决性能和调试问题。</li>
+<li>提交bug报告，解决调试和性能问题。</li>
 <li>鼓励团队审查PR142100，关注mutable specifier的使用。</li>
 <li>尽快合并等待测试和审查的PR。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>继续完善和提交相关补丁，解决发现的各类问题。</li>
+<li>继续完善和提交相关补丁，解决各类问题。</li>
 <li>确保消息处理的顺序，特别是在处理Lease Message时。</li>
-<li>继续进行代码审查和清理工作，以提高系统稳定性和性能。</li>
+<li>继续进行代码审查和清理工作，提高系统稳定性和性能。</li>
 </ul>
 <h4 id="备注">备注</h4>
 <ul>
-<li>下周将不在办公室，将不会进行RADOS QA工作。</li>
+<li>下周将不在办公室，不会进行RADOS QA工作。</li>
 <li>需要进一步讨论和解决Lease Message相关的问题。</li>
 </ul>
-<p>会议结束，祝大家工作顺利。</p>
 
         </div>
 
@@ -298,6 +294,8 @@ Message在特定情况下的处理问题，特别是与激活消息的顺序相�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5/" rel="tag">代码审查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D/" rel="tag">问题修复</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -357,18 +355,18 @@ Message在特定情况下的处理问题，特别是与激活消息的顺序相�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2021/08/24/Ceph_Crimson_SeaStore_2021-07-07/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2021/08/26/Ceph_Tech_Talk_-_Going_NATS/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Crimson/SeaStore 2021-07-07</h4>
+        <h4 class="title">&#39;Ceph Tech Talk: Going NATS&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2021/08/24/Ceph_Orchestrator_Meeting_2021-06-29/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2021/08/24/Ceph_Crimson_SeaStore_2021-07-07/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Orchestrator Meeting 2021-06-29</h4>
+        <h4 class="title">Ceph Crimson/SeaStore 2021-07-07</h4>
       </a>
     </div>
   

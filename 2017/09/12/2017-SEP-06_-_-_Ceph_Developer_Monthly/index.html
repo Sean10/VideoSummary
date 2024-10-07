@@ -14,23 +14,34 @@
     
     
     
-    <title>2017-SEP-06 :: Ceph Developer Monthly | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2017-SEP-06 :: Ceph Developer Monthly&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议主题： SAP 开发者月度会议 会议时间： 2023年11月（具体日期未提及） 参会人员： 未知 会议内容： 一、Ceph 存储集群优化  跨数据中心复制：  讨论了实现跨数据中心复制时维护全局顺序的挑战。 提出了使用时间切片和定时器来同步客户端操作的机制。 讨论了如何确保在 OSD 故障时复制的一致性。 讨论了如何处理客户端操作的复制问题。  保证复制正确性：  讨论了在发生 OSD 故障时">
+    <meta name="keywords" content="Ceph,distributed storage,CRUSH algorithm,high availability,scalability,object storage,block storage,file system storage,consistency,decentralization,performance">
+    <meta name="description" content="[改进后的中文总结内容] 在本次Ceph开发者月度会议上，讨论了多个Ceph存储集群的优化方案，并制定了后续行动计划。以下为会议的主要内容： 一、Ceph存储集群优化  跨数据中心复制： 讨论了实现跨数据中心复制时维护全局顺序的挑战，并提出使用时间切片和定时器来同步客户端操作的机制。 保证复制正确性： 讨论了在发生OSD故障时保证复制正确性的方法，并提出了使用原始操作日志和快照来保证对象正确性的方">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017-SEP-06 :: Ceph Developer Monthly">
+<meta property="og:title" content="&#39;2017-SEP-06 :: Ceph Developer Monthly&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2017/09/12/2017-SEP-06_-_-_Ceph_Developer_Monthly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议主题： SAP 开发者月度会议 会议时间： 2023年11月（具体日期未提及） 参会人员： 未知 会议内容： 一、Ceph 存储集群优化  跨数据中心复制：  讨论了实现跨数据中心复制时维护全局顺序的挑战。 提出了使用时间切片和定时器来同步客户端操作的机制。 讨论了如何确保在 OSD 故障时复制的一致性。 讨论了如何处理客户端操作的复制问题。  保证复制正确性：  讨论了在发生 OSD 故障时">
+<meta property="og:description" content="[改进后的中文总结内容] 在本次Ceph开发者月度会议上，讨论了多个Ceph存储集群的优化方案，并制定了后续行动计划。以下为会议的主要内容： 一、Ceph存储集群优化  跨数据中心复制： 讨论了实现跨数据中心复制时维护全局顺序的挑战，并提出使用时间切片和定时器来同步客户端操作的机制。 保证复制正确性： 讨论了在发生OSD故障时保证复制正确性的方法，并提出了使用原始操作日志和快照来保证对象正确性的方">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-09-11T16:00:00.000Z">
 <meta property="article:modified_time" content="2017-09-11T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="distributed storage">
+<meta property="article:tag" content="CRUSH algorithm">
+<meta property="article:tag" content="high availability">
+<meta property="article:tag" content="scalability">
+<meta property="article:tag" content="object storage">
+<meta property="article:tag" content="block storage">
+<meta property="article:tag" content="file system storage">
+<meta property="article:tag" content="consistency">
+<meta property="article:tag" content="decentralization">
+<meta property="article:tag" content="performance">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +123,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2017-SEP-06 :: Ceph Developer Monthly</div>
+        <div class="flex-col header-title ellipsis">&#39;2017-SEP-06 :: Ceph Developer Monthly&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +145,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2017-SEP-06 :: Ceph Developer Monthly</h1>
+        <h1 class="title">&#39;2017-SEP-06 :: Ceph Developer Monthly&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2017-09-11T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +172,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2017-SEP-06 :: Ceph Developer Monthly</h1>
+        <h1 class="post-card-title">'2017-SEP-06 :: Ceph Developer Monthly'</h1>
         <div class="post-meta">
             <time class="post-time" title="2017-09-12 00:00:00" datetime="2017-09-11T16:00:00.000Z"  itemprop="datePublished">2017-09-12</time>
 
@@ -178,77 +189,38 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议主题</strong>： SAP 开发者月度会议</p>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>参会人员</strong>： 未知</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>一、Ceph 存储集群优化</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>在本次Ceph开发者月度会议上，讨论了多个Ceph存储集群的优化方案，并制定了后续行动计划。以下为会议的主要内容：</p>
+<p><strong>一、Ceph存储集群优化</strong></p>
 <ol type="1">
 <li><strong>跨数据中心复制</strong>：
-<ul>
-<li>讨论了实现跨数据中心复制时维护全局顺序的挑战。</li>
-<li>提出了使用时间切片和定时器来同步客户端操作的机制。</li>
-<li>讨论了如何确保在 OSD 故障时复制的一致性。</li>
-<li>讨论了如何处理客户端操作的复制问题。</li>
-</ul></li>
+讨论了实现跨数据中心复制时维护全局顺序的挑战，并提出使用时间切片和定时器来同步客户端操作的机制。</li>
 <li><strong>保证复制正确性</strong>：
-<ul>
-<li>讨论了在发生 OSD 故障时保证复制正确性的方法。</li>
-<li>提出了使用原始操作日志和快照来保证对象正确性的方法。</li>
-<li>讨论了在恢复和回填阶段如何保证复制正确性。</li>
-</ul></li>
-<li><strong>共享 RBD 客户端缓存</strong>：
-<ul>
-<li>讨论了共享 RBD 客户端缓存的设计。</li>
-<li>提出了使用共享内存和 IPC 机制来实现缓存共享。</li>
-<li>讨论了如何处理 VM 迁移和 VM 故障。</li>
-<li>讨论了如何处理文件系统或 SSD 错误。</li>
-</ul></li>
-<li><strong>统一 PG 日志修剪</strong>：
-<ul>
-<li>讨论了优化 PG 日志管理的方法。</li>
-<li>提出了使用时间戳和全局 LRU 来修剪 PG 日志。</li>
-<li>讨论了如何处理 PG 日志的并发访问和合并。</li>
-</ul></li>
+讨论了在发生OSD故障时保证复制正确性的方法，并提出了使用原始操作日志和快照来保证对象正确性的方法。</li>
+<li><strong>共享RBD客户端缓存</strong>：
+讨论了共享RBD客户端缓存的设计，并提出了使用共享内存和IPC机制来实现缓存共享。</li>
+<li><strong>统一PG日志修剪</strong>：
+讨论了优化PG日志管理的方法，并提出了使用时间戳和全局LRU来修剪PG日志。</li>
 <li><strong>去重</strong>：
-<ul>
-<li>讨论了在 Ceph 存储集群中实现数据去重的方法。</li>
-<li>提出了使用对象映射和内容地址存储池来实现去重。</li>
-<li>讨论了如何处理去重过程中的并发访问和失败。</li>
-</ul></li>
+讨论了在Ceph存储集群中实现数据去重的方法，并提出了使用对象映射和内容地址存储池来实现去重。</li>
 <li><strong>删除快照</strong>：
-<ul>
-<li>讨论了优化删除快照性能的方法。</li>
-<li>提出了从 OSD 映射中移除已删除快照的方法。</li>
-<li>讨论了如何处理请求中包含已删除快照的情况。</li>
-</ul></li>
+讨论了优化删除快照性能的方法，并提出了从OSD映射中移除已删除快照的方法。</li>
 </ol>
 <p><strong>二、其他议题</strong></p>
 <ol type="1">
-<li><strong>统一 QoS</strong>：
-<ul>
-<li>讨论了在 Ceph 存储集群中实现统一 QoS 的方法。</li>
-<li>提出了使用 QoS 策略和 QoS 表来实现 QoS 控制。</li>
-<li>讨论了如何处理 QoS 策略的动态更新和同步。</li>
-</ul></li>
-<li><strong>M Clock</strong>：
-<ul>
-<li>讨论了优化 M Clock 性能的方法。</li>
-<li>提出了使用分片和线程池来提高 M Clock 性能。</li>
-<li>讨论了如何处理 M Clock 中的重量控制和数据行插入。</li>
-</ul></li>
+<li><strong>统一QoS</strong>：
+讨论了在Ceph存储集群中实现统一QoS的方法，并提出了使用QoS策略和QoS表来实现QoS控制。</li>
+<li><strong>M Clock</strong>： 讨论了优化M
+Clock性能的方法，并提出了使用分片和线程池来提高M Clock性能。</li>
 </ol>
 <p><strong>三、行动计划</strong></p>
 <ul>
 <li>继续优化跨数据中心复制和保证复制正确性的方法。</li>
-<li>实现共享 RBD 客户端缓存和统一 PG 日志修剪。</li>
+<li>实现共享RBD客户端缓存和统一PG日志修剪。</li>
 <li>推进去重和删除快照的功能。</li>
-<li>实现统一 QoS 和 M Clock 优化。</li>
+<li>实现统一QoS和M Clock优化。</li>
 </ul>
-<p><strong>四、总结</strong></p>
-<p>本次会议讨论了 Ceph
-存储集群的多个优化方案，并制定了后续行动计划。这些优化方案将有助于提高
-Ceph 存储集群的性能和可靠性。</p>
+<p>本次会议讨论了Ceph存储集群的多个优化方案，并制定了后续行动计划。这些优化方案将有助于提高Ceph存储集群的性能和可靠性。</p>
 
         </div>
 
@@ -279,6 +251,8 @@ Ceph 存储集群的性能和可靠性。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-algorithm/" rel="tag">CRUSH algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/block-storage/" rel="tag">block storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/consistency/" rel="tag">consistency</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/decentralization/" rel="tag">decentralization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/distributed-storage/" rel="tag">distributed storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/file-system-storage/" rel="tag">file system storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/high-availability/" rel="tag">high availability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/object-storage/" rel="tag">object storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/performance/" rel="tag">performance</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/scalability/" rel="tag">scalability</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -290,7 +264,7 @@ Ceph 存储集群的性能和可靠性。</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/09/12/2017-SEP-06_-_-_Ceph_Developer_Monthly/&title=《2017-SEP-06 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/09/12/2017-SEP-06_-_-_Ceph_Developer_Monthly/&title=《'2017-SEP-06 :: Ceph Developer Monthly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -300,7 +274,7 @@ Ceph 存储集群的性能和可靠性。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/09/12/2017-SEP-06_-_-_Ceph_Developer_Monthly/&title=《2017-SEP-06 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/09/12/2017-SEP-06_-_-_Ceph_Developer_Monthly/&title=《'2017-SEP-06 :: Ceph Developer Monthly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -310,7 +284,7 @@ Ceph 存储集群的性能和可靠性。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2017-SEP-06 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/09/12/2017-SEP-06_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2017-SEP-06 :: Ceph Developer Monthly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/09/12/2017-SEP-06_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -449,7 +423,7 @@ Ceph 存储集群的性能和可靠性。</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/09/12/2017-SEP-06_-_-_Ceph_Developer_Monthly/&title=《2017-SEP-06 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/09/12/2017-SEP-06_-_-_Ceph_Developer_Monthly/&title=《'2017-SEP-06 :: Ceph Developer Monthly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -459,7 +433,7 @@ Ceph 存储集群的性能和可靠性。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/09/12/2017-SEP-06_-_-_Ceph_Developer_Monthly/&title=《2017-SEP-06 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/09/12/2017-SEP-06_-_-_Ceph_Developer_Monthly/&title=《'2017-SEP-06 :: Ceph Developer Monthly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -469,7 +443,7 @@ Ceph 存储集群的性能和可靠性。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2017-SEP-06 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/09/12/2017-SEP-06_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2017-SEP-06 :: Ceph Developer Monthly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/09/12/2017-SEP-06_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,28 @@
     
     
     
-    <title>2016-FEB-25 -- Ceph Tech Talks: CephFS | ceph视频总结 | youtube频道总结</title>
+    <title> 2016-FEB-25 -- Ceph Tech Talks: CephFS  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： SEFS（Ceph 文件系统）更新及未来规划 会议时间： 2016年第二季度 参会人员： SEFS 开发人员、技术爱好者 会议内容： 一、会议回顾  上次会议回顾：上次会议探讨了使用 Postgres、Aurora 和 Docker 在 Ceph 上的应用。 本次会议重点：SEFS 更新，预计将是下一个主要版本 Jewel 的最后一个重要更新。  二、SEFS 简介  SEF">
+    <meta name="keywords" content="CephFS,分布式文件系统,SEFS,Ceph 存储集群,CephFS 集成">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了 SEFS（Ceph 文件系统）的更新及未来规划。以下是会议的关键内容和决定事项： 会议回顾  上次会议探讨了 Postgres、Aurora 和 Docker 在 Ceph 上的应用。 本次会议重点为 SEFS 更新，预计将是下一个主要版本 Jewel 的最后一个重要更新。  SEFS 简介  SEFS 是 Ceph 文件系统接口，提供 POSIX 文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2016-FEB-25 -- Ceph Tech Talks: CephFS">
+<meta property="og:title" content=" 2016-FEB-25 -- Ceph Tech Talks: CephFS ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2016/02/25/2016-FEB-25_--_Ceph_Tech_Talks_-_CephFS/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： SEFS（Ceph 文件系统）更新及未来规划 会议时间： 2016年第二季度 参会人员： SEFS 开发人员、技术爱好者 会议内容： 一、会议回顾  上次会议回顾：上次会议探讨了使用 Postgres、Aurora 和 Docker 在 Ceph 上的应用。 本次会议重点：SEFS 更新，预计将是下一个主要版本 Jewel 的最后一个重要更新。  二、SEFS 简介  SEF">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了 SEFS（Ceph 文件系统）的更新及未来规划。以下是会议的关键内容和决定事项： 会议回顾  上次会议探讨了 Postgres、Aurora 和 Docker 在 Ceph 上的应用。 本次会议重点为 SEFS 更新，预计将是下一个主要版本 Jewel 的最后一个重要更新。  SEFS 简介  SEFS 是 Ceph 文件系统接口，提供 POSIX 文">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2016-02-24T16:00:00.000Z">
 <meta property="article:modified_time" content="2016-02-25T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="分布式文件系统">
+<meta property="article:tag" content="SEFS">
+<meta property="article:tag" content="Ceph 存储集群">
+<meta property="article:tag" content="CephFS 集成">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2016-FEB-25 -- Ceph Tech Talks: CephFS</div>
+        <div class="flex-col header-title ellipsis"> 2016-FEB-25 -- Ceph Tech Talks: CephFS </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2016-FEB-25 -- Ceph Tech Talks: CephFS</h1>
+        <h1 class="title"> 2016-FEB-25 -- Ceph Tech Talks: CephFS </h1>
         <h5 class="subtitle">
             
                 <time datetime="2016-02-24T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2016-FEB-25 -- Ceph Tech Talks: CephFS</h1>
+        <h1 class="post-card-title"> 2016-FEB-25 -- Ceph Tech Talks: CephFS </h1>
         <div class="post-meta">
             <time class="post-time" title="2016-02-25 00:00:00" datetime="2016-02-24T16:00:00.000Z"  itemprop="datePublished">2016-02-25</time>
 
@@ -178,63 +183,43 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议主题</strong>： SEFS（Ceph 文件系统）更新及未来规划</p>
-<p><strong>会议时间</strong>： 2016年第二季度</p>
-<p><strong>参会人员</strong>： SEFS 开发人员、技术爱好者</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>一、会议回顾</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了 SEFS（Ceph
+文件系统）的更新及未来规划。以下是会议的关键内容和决定事项：</p>
+<p><strong>会议回顾</strong></p>
 <ol type="1">
-<li>上次会议回顾：上次会议探讨了使用 Postgres、Aurora 和 Docker 在 Ceph
-上的应用。</li>
-<li>本次会议重点：SEFS 更新，预计将是下一个主要版本 Jewel
+<li>上次会议探讨了 Postgres、Aurora 和 Docker 在 Ceph 上的应用。</li>
+<li>本次会议重点为 SEFS 更新，预计将是下一个主要版本 Jewel
 的最后一个重要更新。</li>
 </ol>
-<p><strong>二、SEFS 简介</strong></p>
+<p><strong>SEFS 简介</strong></p>
 <ol type="1">
-<li>SEFS 是 Ceph 文件系统接口，是 Ceph
-集群提供的三个应用程序接口之一。</li>
-<li>SEFS 是 POSIX 文件系统，提供比传统 NFS 或 SMB
-文件系统更高的数据一致性。</li>
+<li>SEFS 是 Ceph 文件系统接口，提供 POSIX 文件系统支持，具有比传统 NFS
+或 SMB 文件系统更高的数据一致性。</li>
 <li>SEFS 将数据直接存储在 Rados 集群中，无需通过任何中间服务器。</li>
 </ol>
-<p><strong>三、SEFS 新特性</strong></p>
+<p><strong>SEFS 新特性</strong></p>
 <ol type="1">
-<li><strong>文件系统擦除和修复</strong>：
-<ul>
-<li>新增擦除和修复工具，用于检测和修复元数据损坏，例如对象丢失或损坏。</li>
-<li>提供在线和离线修复功能，以应对不同类型的损坏。</li>
-<li>旨在提高 SEFS 的稳定性和可靠性，使其更适合生产环境。</li>
-</ul></li>
-<li><strong>改进的授权</strong>：
-<ul>
-<li>扩展了授权功能，允许更细粒度地控制客户端对元数据的访问权限。</li>
-<li>可以限制客户端只能访问特定路径或使用特定用户 ID。</li>
-</ul></li>
-<li><strong>改进的文件布局</strong>：
-<ul>
-<li>支持将文件指向特定的 Rados
-命名空间，从而实现更细粒度的数据隔离。</li>
-<li>与 OpenStack Manila 集成，提供共享文件系统功能。</li>
-</ul></li>
-<li><strong>多个文件系统</strong>：
-<ul>
-<li>支持在单个 Ceph
-集群中创建多个文件系统，以提高可扩展性和容错性。</li>
-<li>可用于隔离工作负载、灾难恢复或提高可靠性。</li>
-</ul></li>
+<li><strong>文件系统擦除和修复</strong>：新增擦除和修复工具，用于检测和修复元数据损坏，包括对象丢失或损坏。</li>
+<li><strong>改进的授权</strong>：扩展授权功能，允许更细粒度地控制客户端对元数据的访问权限。</li>
+<li><strong>改进的文件布局</strong>：支持将文件指向特定的 Rados
+命名空间，实现更细粒度的数据隔离，并与 OpenStack Manila 集成。</li>
+<li><strong>多个文件系统</strong>：支持在单个 Ceph
+集群中创建多个文件系统，提高可扩展性和容错性。</li>
 </ol>
-<p><strong>四、后续行动计划</strong></p>
+<p><strong>后续行动计划</strong></p>
 <ol type="1">
 <li>继续改进 SEFS 的稳定性和可靠性。</li>
 <li>完善多文件系统功能，包括元数据命名空间和授权。</li>
 <li>推进 SEFS 与 OpenStack Manila 的集成。</li>
 <li>鼓励用户评估和测试 SEFS，并提供反馈。</li>
 </ol>
-<p><strong>五、会议总结</strong></p>
 <p>本次会议介绍了 SEFS 的新特性和未来规划，展示了 SEFS
 在文件存储领域的潜力和发展前景。SEFS
 的不断改进将为用户提供更稳定、可靠和可扩展的文件存储解决方案。</p>
+<hr />
+<p>[改进后的总结内容包含以下关键词：CephFS, SEFS, 分布式文件系统, Ceph
+存储集群, CephFS 集成]</p>
 
         </div>
 
@@ -265,6 +250,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-%E5%AD%98%E5%82%A8%E9%9B%86%E7%BE%A4/" rel="tag">Ceph 存储集群</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS-%E9%9B%86%E6%88%90/" rel="tag">CephFS 集成</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SEFS/" rel="tag">SEFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" rel="tag">分布式文件系统</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -276,7 +263,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2016/02/25/2016-FEB-25_--_Ceph_Tech_Talks_-_CephFS/&title=《2016-FEB-25 -- Ceph Tech Talks: CephFS》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2016/02/25/2016-FEB-25_--_Ceph_Tech_Talks_-_CephFS/&title=《 2016-FEB-25 -- Ceph Tech Talks: CephFS 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -286,7 +273,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2016/02/25/2016-FEB-25_--_Ceph_Tech_Talks_-_CephFS/&title=《2016-FEB-25 -- Ceph Tech Talks: CephFS》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2016/02/25/2016-FEB-25_--_Ceph_Tech_Talks_-_CephFS/&title=《 2016-FEB-25 -- Ceph Tech Talks: CephFS 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -296,7 +283,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2016-FEB-25 -- Ceph Tech Talks: CephFS》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2016/02/25/2016-FEB-25_--_Ceph_Tech_Talks_-_CephFS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 2016-FEB-25 -- Ceph Tech Talks: CephFS 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2016/02/25/2016-FEB-25_--_Ceph_Tech_Talks_-_CephFS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -335,7 +322,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2016/01/28/2016-JAN-26_--_Ceph_Tech_Talks_-_High-Performance_Production_Databases_on_Ceph/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2016-JAN-26 -- Ceph Tech Talks: High-Performance Production Databases on Ceph</h4>
+        <h4 class="title">&#39;2016-JAN-26 -- Ceph Tech Talks: High-Performance Production Databases on Ceph&#39;</h4>
       </a>
     </div>
   
@@ -435,7 +422,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2016/02/25/2016-FEB-25_--_Ceph_Tech_Talks_-_CephFS/&title=《2016-FEB-25 -- Ceph Tech Talks: CephFS》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2016/02/25/2016-FEB-25_--_Ceph_Tech_Talks_-_CephFS/&title=《 2016-FEB-25 -- Ceph Tech Talks: CephFS 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -445,7 +432,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2016/02/25/2016-FEB-25_--_Ceph_Tech_Talks_-_CephFS/&title=《2016-FEB-25 -- Ceph Tech Talks: CephFS》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2016/02/25/2016-FEB-25_--_Ceph_Tech_Talks_-_CephFS/&title=《 2016-FEB-25 -- Ceph Tech Talks: CephFS 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -455,7 +442,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2016-FEB-25 -- Ceph Tech Talks: CephFS》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2016/02/25/2016-FEB-25_--_Ceph_Tech_Talks_-_CephFS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 2016-FEB-25 -- Ceph Tech Talks: CephFS 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2016/02/25/2016-FEB-25_--_Ceph_Tech_Talks_-_CephFS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -20,17 +20,23 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 主要议题  RGW Multi-Site 配置支持  背景：当前配置 RGW（RADOS Gateway）多站点需要手动执行多个步骤，使用 RGW 管理二进制文件，过程繁琐。 目标：简化配置过程，通过 Safe ADM 自动完成多站点配置。 提案：Sebastian 提出在 Safe ADM 中引入新的层级结构，通过关键字 kind 区分不同类型的规范（spec）。  技术细节讨论  当">
+    <meta name="keywords" content="Ceph,Distributed Storage,Cephadm,RGW Multi,Site,Configuration Automation">
+    <meta name="description" content="[改进后的中文总结内容] 在2022年8月16日的Ceph Orchestrator会议上，与会者就几个关键议题进行了深入讨论：  RGW Multi-Site 配置支持：与会者讨论了简化RGW（RADOS Gateway）多站点配置的必要性，当前需要手动执行多个步骤，使用RGW管理二进制文件，过程繁琐。Sebastian提出了在Safe ADM中引入新的层级结构，通过关键字kind区分不同类型的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2022-08-16">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/08/17/Ceph_Orchestrator_Meeting_2022-08-16/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 主要议题  RGW Multi-Site 配置支持  背景：当前配置 RGW（RADOS Gateway）多站点需要手动执行多个步骤，使用 RGW 管理二进制文件，过程繁琐。 目标：简化配置过程，通过 Safe ADM 自动完成多站点配置。 提案：Sebastian 提出在 Safe ADM 中引入新的层级结构，通过关键字 kind 区分不同类型的规范（spec）。  技术细节讨论  当">
+<meta property="og:description" content="[改进后的中文总结内容] 在2022年8月16日的Ceph Orchestrator会议上，与会者就几个关键议题进行了深入讨论：  RGW Multi-Site 配置支持：与会者讨论了简化RGW（RADOS Gateway）多站点配置的必要性，当前需要手动执行多个步骤，使用RGW管理二进制文件，过程繁琐。Sebastian提出了在Safe ADM中引入新的层级结构，通过关键字kind区分不同类型的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-16T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-08-16T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Cephadm">
+<meta property="article:tag" content="RGW Multi">
+<meta property="article:tag" content="Site">
+<meta property="article:tag" content="Configuration Automation">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +162,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他议题</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">2.</span> <span class="post-toc-text">结论</span></a></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Orchestrator_Meeting_2022-08-16"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,72 +184,27 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="主要议题">主要议题</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>在2022年8月16日的Ceph
+Orchestrator会议上，与会者就几个关键议题进行了深入讨论：</p>
 <ol type="1">
-<li><strong>RGW Multi-Site 配置支持</strong>
-<ul>
-<li><strong>背景</strong>：当前配置 RGW（RADOS
-Gateway）多站点需要手动执行多个步骤，使用 RGW
-管理二进制文件，过程繁琐。</li>
-<li><strong>目标</strong>：简化配置过程，通过 Safe ADM
-自动完成多站点配置。</li>
-<li><strong>提案</strong>：Sebastian 提出在 Safe ADM
-中引入新的层级结构，通过关键字 <code>kind</code>
-区分不同类型的规范（spec）。</li>
-</ul></li>
-<li><strong>技术细节讨论</strong>
-<ul>
-<li><strong>当前实现</strong>：在 Python
-通用部署中，有不同的类支持各种规范，如 <code>host_spec</code> 和
-<code>service_spec</code>。</li>
-<li><strong>提案实现</strong>：添加一个通用的 <code>spec</code> 类，如
-<code>rgw_spec</code> 或
-<code>generic_spec</code>，作为所有不同规范的基类。</li>
-<li><strong>关键字
-<code>kind</code></strong>：用于指定规范的类型，如服务器、部署等，未来可扩展。</li>
-</ul></li>
-<li><strong>实施策略</strong>
-<ul>
-<li><strong>原子操作</strong>：确保配置过程的原子性，成功则全部成功，失败则回滚。</li>
-<li><strong>顺序依赖</strong>：确保创建顺序正确，如先创建 realm，再创建
-zone group，最后创建 zone。</li>
-<li><strong>向后兼容性</strong>：确保新实现不会破坏现有功能，特别是对于已有安装的升级。</li>
-</ul></li>
-<li><strong>前端与后端讨论</strong>
-<ul>
-<li><strong>前端</strong>：讨论了如何更好地呈现配置信息，是否需要引入类似
-Kubernetes 的 <code>kind</code> 和 <code>version</code> 概念。</li>
-<li><strong>后端</strong>：讨论了如何实现具体的创建命令，是否可以直接使用现有的
-RGW 管理模块。</li>
-</ul></li>
+<li><p><strong>RGW Multi-Site
+配置支持</strong>：与会者讨论了简化RGW（RADOS
+Gateway）多站点配置的必要性，当前需要手动执行多个步骤，使用RGW管理二进制文件，过程繁琐。Sebastian提出了在Safe
+ADM中引入新的层级结构，通过关键字<code>kind</code>区分不同类型的规范，以简化配置过程。</p></li>
+<li><p><strong>技术细节讨论</strong>：讨论了当前实现和相关提案，包括在Python通用部署中，不同的类支持各种规范，如<code>host_spec</code>和<code>service_spec</code>。Sebastian建议添加一个通用的<code>spec</code>类，如<code>rgw_spec</code>或<code>generic_spec</code>，作为所有不同规范的基类。</p></li>
+<li><p><strong>实施策略</strong>：确保配置过程的原子性，成功则全部成功，失败则回滚。同时，确保创建顺序正确，如先创建realm，再创建zone
+group，最后创建zone。还要保证向后兼容性，确保新实现不会破坏现有功能。</p></li>
+<li><p><strong>前端与后端讨论</strong>：讨论了如何更好地呈现配置信息，是否需要引入类似Kubernetes的<code>kind</code>和<code>version</code>概念。后端讨论了如何实现具体的创建命令，是否可以直接使用现有的RGW管理模块。</p></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
-<ul>
-<li><strong>实施方向</strong>：初步决定采用 Sebastian 的提案，引入
-<code>kind</code> 关键字，并确保向后兼容性。</li>
-<li><strong>后续行动</strong>：
-<ul>
-<li>进一步研究 RGW 管理模块的功能，确定是否可以直接使用。</li>
-<li>开发后端逻辑，实现基本的创建命令。</li>
-<li>暂缓前端讨论，待后端实现后再确定最佳呈现方式。</li>
-</ul></li>
-</ul>
-<h4 id="后续行动计划">后续行动计划</h4>
-<ul>
-<li><strong>后端开发</strong>：开始实现后端逻辑，确保基本的创建命令能够正常工作。</li>
-<li><strong>前端讨论</strong>：在后端实现基础上，进一步讨论和确定前端的最佳呈现方式。</li>
-<li><strong>文档更新</strong>：更新相关文档，确保用户能够理解新的配置方式。</li>
-</ul>
-<h4 id="其他议题">其他议题</h4>
-<ul>
-<li><strong>Podman 版本兼容性问题</strong>：讨论了如何处理特定版本
-Podman 的兼容性问题，提出了一些临时解决方案和未来可能的改进方向。</li>
-</ul>
-<h3 id="结论">结论</h3>
-<p>会议对 RGW Multi-Site
-配置支持的实现进行了深入讨论，确定了初步的实施方向和后续行动计划。同时，对
-Podman 版本兼容性问题进行了讨论，提出了一些临时解决方案。</p>
+<p>会议决定： -
+初步决定采用Sebastian的提案，引入<code>kind</code>关键字，并确保向后兼容性。
+-
+后续行动包括进一步研究RGW管理模块的功能，开发后端逻辑，实现基本的创建命令，暂缓前端讨论，待后端实现后再确定最佳呈现方式。</p>
+<p>其他议题： -
+讨论了Podman版本兼容性问题，提出了一些临时解决方案和未来可能的改进方向。</p>
+<p>会议对RGW
+Multi-Site配置支持的实现进行了深入讨论，确定了初步的实施方向和后续行动计划。同时，对Podman版本兼容性问题进行了讨论，提出了一些临时解决方案。</p>
 
         </div>
 
@@ -281,6 +235,8 @@ Podman 版本兼容性问题进行了讨论，提出了一些临时解决方案�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cephadm/" rel="tag">Cephadm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Configuration-Automation/" rel="tag">Configuration Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW-Multi/" rel="tag">RGW Multi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Site/" rel="tag">Site</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [此处应填写会议具体时间] 会议地点： [此处应填写会议具体地点] 参会人员：  [此处应填写参会人员姓名及职位]  会议主题： 本次会议主要围绕Ceph分布式存储技术及视频会议字幕翻译与总结工作展开。 会议内容： 一、Ceph分布式存储技术讨论  议题： 讨论Ceph存储系统的最新进展、性能优化及潜在问题。 讨论要点：  引入了一些关于Ceph系统性能提升的探讨，如优化存储">
+    <meta name="keywords" content="Ceph,RADOS,distributed storage,performance optimization,system architecture">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： [此处应填写会议具体时间] 会议地点： [此处应填写会议具体地点] 参会人员：  [此处应填写参会人员姓名及职位]  会议主题： 本次会议主要围绕Ceph分布式存储技术，特别是RADOS系统在构建分布式共享日志方面的经验进行讨论。 会议内容： 一、Ceph分布式存储技术讨论  议题：  讨论了Ceph存储系统的最新进展，包括性能优化和潜在问题。 分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Experiences building a distributed shared log on RADOS - Noah Watkins">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/04/23/Experiences_building_a_distributed_shared_log_on_RADOS_-_Noah_Watkins/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [此处应填写会议具体时间] 会议地点： [此处应填写会议具体地点] 参会人员：  [此处应填写参会人员姓名及职位]  会议主题： 本次会议主要围绕Ceph分布式存储技术及视频会议字幕翻译与总结工作展开。 会议内容： 一、Ceph分布式存储技术讨论  议题： 讨论Ceph存储系统的最新进展、性能优化及潜在问题。 讨论要点：  引入了一些关于Ceph系统性能提升的探讨，如优化存储">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： [此处应填写会议具体时间] 会议地点： [此处应填写会议具体地点] 参会人员：  [此处应填写参会人员姓名及职位]  会议主题： 本次会议主要围绕Ceph分布式存储技术，特别是RADOS系统在构建分布式共享日志方面的经验进行讨论。 会议内容： 一、Ceph分布式存储技术讨论  议题：  讨论了Ceph存储系统的最新进展，包括性能优化和潜在问题。 分析">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-04-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RADOS">
+<meta property="article:tag" content="distributed storage">
+<meta property="article:tag" content="performance optimization">
+<meta property="article:tag" content="system architecture">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议时间">会议时间：</h4>
 <p>[此处应填写会议具体时间]</p>
 <h4 id="会议地点">会议地点：</h4>
@@ -195,15 +201,18 @@
 <li>[此处应填写参会人员姓名及职位]</li>
 </ul>
 <h4 id="会议主题">会议主题：</h4>
-<p>本次会议主要围绕Ceph分布式存储技术及视频会议字幕翻译与总结工作展开。</p>
+<p>本次会议主要围绕Ceph分布式存储技术，特别是RADOS系统在构建分布式共享日志方面的经验进行讨论。</p>
 <h4 id="会议内容">会议内容：</h4>
 <p><strong>一、Ceph分布式存储技术讨论</strong></p>
 <ol type="1">
 <li><strong>议题</strong>：
-讨论Ceph存储系统的最新进展、性能优化及潜在问题。</li>
+<ul>
+<li>讨论了Ceph存储系统的最新进展，包括性能优化和潜在问题。</li>
+<li>分析了Ceph在构建分布式共享日志中的应用，特别是如何利用RADOS进行日志管理。</li>
+</ul></li>
 <li><strong>讨论要点</strong>：
 <ul>
-<li>引入了一些关于Ceph系统性能提升的探讨，如优化存储节点配置、调整集群规模等。</li>
+<li>引入了关于Ceph系统性能提升的探讨，如优化存储节点配置、调整集群规模等。</li>
 <li>讨论了Ceph集群中数据一致性、故障恢复等关键问题的解决方案。</li>
 <li>分析了Ceph在处理大数据场景下的性能瓶颈，并探讨了可能的优化方案。</li>
 </ul></li>
@@ -211,10 +220,12 @@
 <p><strong>二、视频会议字幕翻译与总结工作</strong></p>
 <ol type="1">
 <li><strong>议题</strong>：
-讨论视频会议字幕翻译的流程、质量及效率。</li>
+<ul>
+<li>讨论了视频会议字幕翻译的流程、质量及效率。</li>
+<li>分析了英译中翻译过程中可能遇到的问题，如专业术语、文化差异等。</li>
+</ul></li>
 <li><strong>讨论要点</strong>：
 <ul>
-<li>分析了英译中翻译过程中可能遇到的问题，如专业术语、文化差异等。</li>
 <li>讨论了提高字幕翻译效率的方法，如使用机器翻译辅助人工翻译等。</li>
 <li>强调了字幕翻译质量的重要性，并提出了相应的质量保证措施。</li>
 </ul></li>
@@ -277,6 +288,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS/" rel="tag">RADOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/distributed-storage/" rel="tag">distributed storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/performance-optimization/" rel="tag">performance optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/system-architecture/" rel="tag">system architecture</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -336,9 +349,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2018/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2018/04/23/Erasure_Code_at_Scale_-_Thomas_William_Byrne/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Extending Ceph&#39;s Reach - Tushar Gohad, Zhong Xin</h4>
+        <h4 class="title">Erasure Code at Scale - Thomas William Byrne</h4>
       </a>
     </div>
   

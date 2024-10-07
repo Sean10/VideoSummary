@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 - 今日的Orchestrator周会 会议时间：[具体日期] 参会人员：[参会人员名单] 主要议题：  德国构建问题  德国构建因容器未推送到CPR容器注册表而中断。 I容器构建也出现问题，导致目前无法合并任何内容。 需要联系David Galloway解决，因其是唯一有权访问quiet.io的人员。 建议联系Christina Venus团队成员协助。  Cepheidiam二进制文">
+    <meta name="keywords" content="Ceph,分布式存储,自动化,构建问题,文档整合">
+    <meta name="description" content="[改进后的中文总结内容] 本次 Ceph Orchestrator 周会主要讨论了以下议题：  德国构建问题：由于容器未推送到 CPR 容器注册表，以及 I 容器构建出现问题，导致无法合并任何内容。会议决定联系 David Galloway 解决问题，因为他是唯一有权访问 quiet.io 的人员。同时，建议联系 Christina Venus 团队成员协助。 Cepheidiam 二进制文件的重">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2020-08-17">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/08/17/Ceph_Orchestrator_Meeting_2020-08-17/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 - 今日的Orchestrator周会 会议时间：[具体日期] 参会人员：[参会人员名单] 主要议题：  德国构建问题  德国构建因容器未推送到CPR容器注册表而中断。 I容器构建也出现问题，导致目前无法合并任何内容。 需要联系David Galloway解决，因其是唯一有权访问quiet.io的人员。 建议联系Christina Venus团队成员协助。  Cepheidiam二进制文">
+<meta property="og:description" content="[改进后的中文总结内容] 本次 Ceph Orchestrator 周会主要讨论了以下议题：  德国构建问题：由于容器未推送到 CPR 容器注册表，以及 I 容器构建出现问题，导致无法合并任何内容。会议决定联系 David Galloway 解决问题，因为他是唯一有权访问 quiet.io 的人员。同时，建议联系 Christina Venus 团队成员协助。 Cepheidiam 二进制文件的重">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-16T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-08-17T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="自动化">
+<meta property="article:tag" content="构建问题">
+<meta property="article:tag" content="文档整合">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,14 +161,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81---%E4%BB%8A%E6%97%A5%E7%9A%84orchestrator%E5%91%A8%E4%BC%9A"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要 -
-今日的Orchestrator周会</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：[参会人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">其他讨论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">备注：</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Orchestrator_Meeting_2020-08-17"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -186,57 +183,29 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要---今日的orchestrator周会">会议纪要 -
-今日的Orchestrator周会</h3>
-<h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
-<h4 id="参会人员参会人员名单">参会人员：[参会人员名单]</h4>
-<h4 id="主要议题">主要议题：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次 Ceph Orchestrator 周会主要讨论了以下议题：</p>
 <ol type="1">
-<li><strong>德国构建问题</strong>
-<ul>
-<li>德国构建因容器未推送到CPR容器注册表而中断。</li>
-<li>I容器构建也出现问题，导致目前无法合并任何内容。</li>
-<li>需要联系David Galloway解决，因其是唯一有权访问quiet.io的人员。</li>
-<li>建议联系Christina Venus团队成员协助。</li>
-</ul></li>
-<li><strong>Cepheidiam二进制文件的重组</strong>
-<ul>
-<li>需要对Cepheidiam二进制文件进行重构。</li>
-<li>讨论了重构的必要性和步骤，建议逐步进行。</li>
-<li>涉及将self-adm作为一个适当的包进行分发，并确保其能在远程机器上正常工作。</li>
-</ul></li>
-<li><strong>文档整合</strong>
-<ul>
-<li>讨论了关于安装指南的整合问题。</li>
-<li>建议将现有的两个安装指南合并为一个，并分为基础安装和附加功能（如Ganesha和MDS）的多个页面。</li>
-<li>计划本周内开始整合工作，并发送Pull Request进行进一步讨论。</li>
-</ul></li>
+<li><p><strong>德国构建问题</strong>：由于容器未推送到 CPR
+容器注册表，以及 I 容器构建出现问题，导致无法合并任何内容。会议决定联系
+David Galloway 解决问题，因为他是唯一有权访问 quiet.io
+的人员。同时，建议联系 Christina Venus 团队成员协助。</p></li>
+<li><p><strong>Cepheidiam 二进制文件的重组</strong>：需要对 Cepheidiam
+二进制文件进行重构，讨论了重构的必要性和步骤，建议逐步进行。涉及将
+self-adm 作为适当的包进行分发，并确保其能在远程机器上正常工作。</p></li>
+<li><p><strong>文档整合</strong>：讨论了关于安装指南的整合问题。建议将现有的两个安装指南合并为一个，并分为基础安装和附加功能（如
+Ganesha 和 MDS）的多个页面。计划本周内开始整合工作，并发送 Pull Request
+进行进一步讨论。</p></li>
 </ol>
-<h4 id="决定事项">决定事项：</h4>
-<ul>
-<li>联系Christina Venus团队成员协助解决德国构建问题。</li>
-<li>开始对Cepheidiam二进制文件进行重构工作。</li>
-<li>合并现有的两个安装指南为一个，并分为基础和附加功能的不同页面。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划：</h4>
-<ul>
-<li>联系David Galloway或Christina Venus团队成员解决容器推送问题。</li>
-<li>开始Cepheidiam二进制文件的重构工作，并逐步实施。</li>
-<li>整合安装指南，并发送Pull Request进行团队讨论和反馈。</li>
-</ul>
-<h4 id="其他讨论">其他讨论：</h4>
-<ul>
-<li>讨论了文档的详细程度和新手友好性，强调了为初学者提供详细步骤的重要性。</li>
-<li>计划制作视频教程，以辅助文档说明。</li>
-</ul>
-<h4 id="会议结束">会议结束：</h4>
-<ul>
-<li>会议在无其他议题讨论的情况下结束，提醒团队成员享受本周和剩余的周一。</li>
-</ul>
-<h4 id="备注">备注：</h4>
-<ul>
-<li>会议记录中提到的“CPR容器注册表”、“Cepheidiam二进制文件”、“self-adm”等关键词保留了原文，以便于专业领域的准确理解。</li>
-</ul>
+<p>会议的决定事项包括： - 联系Christina
+Venus团队成员协助解决德国构建问题。 -
+开始对Cepheidiam二进制文件进行重构工作。 -
+合并现有的两个安装指南为一个，并分为基础和附加功能的不同页面。</p>
+<p>后续行动计划： - 联系David Galloway或Christina
+Venus团队成员解决容器推送问题。 -
+开始Cepheidiam二进制文件的重构工作，并逐步实施。 -
+整合安装指南，并发送Pull Request进行团队讨论和反馈。</p>
+<p>此外，会议还讨论了文档的详细程度和新手友好性，强调了为初学者提供详细步骤的重要性。计划制作视频教程，以辅助文档说明。</p>
 
         </div>
 
@@ -267,6 +236,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E6%A1%A3%E6%95%B4%E5%90%88/" rel="tag">文档整合</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%9E%84%E5%BB%BA%E9%97%AE%E9%A2%98/" rel="tag">构建问题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" rel="tag">自动化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

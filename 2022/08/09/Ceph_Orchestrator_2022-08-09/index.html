@@ -20,17 +20,25 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [具体日期] 参会人员： [具体人员名单] 主要议题： 1. PR审查与测试：会议讨论了关于启动由其自身虚拟IP地址支持的NFS守护进程的PR（Pull Request）。该PR由Adam提交，主要涉及对标志（flags）和一些重复代码的修改。尽管有这些改动，但预计功能性和接口的基本工作方式将保持不变。 决定事项： - PR状态：该PR目前被认为是准备进行测试的状态，特别是需">
+    <meta name="keywords" content="Ceph,OpenStack,测试,故障转移,网络文件系统,PR审查,Manila团队,虚拟IP">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2022年8月9日 参会人员： [具体人员名单] 主要议题： 1. PR审查与测试：会议重点讨论了由Adam提交的关于启动NFS守护进程的PR，该PR旨在通过虚拟IP地址启动NFS守护进程。讨论内容包括标志（flags）和重复代码的修改，以及对NFS服务器故障转移场景的验证。 2. OpenStack与Manila团队的协作：会议提到曾请求OpenS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator 2022-08-09">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/08/09/Ceph_Orchestrator_2022-08-09/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [具体日期] 参会人员： [具体人员名单] 主要议题： 1. PR审查与测试：会议讨论了关于启动由其自身虚拟IP地址支持的NFS守护进程的PR（Pull Request）。该PR由Adam提交，主要涉及对标志（flags）和一些重复代码的修改。尽管有这些改动，但预计功能性和接口的基本工作方式将保持不变。 决定事项： - PR状态：该PR目前被认为是准备进行测试的状态，特别是需">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2022年8月9日 参会人员： [具体人员名单] 主要议题： 1. PR审查与测试：会议重点讨论了由Adam提交的关于启动NFS守护进程的PR，该PR旨在通过虚拟IP地址启动NFS守护进程。讨论内容包括标志（flags）和重复代码的修改，以及对NFS服务器故障转移场景的验证。 2. OpenStack与Manila团队的协作：会议提到曾请求OpenS">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-08T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-08-09T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="OpenStack">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="故障转移">
+<meta property="article:tag" content="网络文件系统">
+<meta property="article:tag" content="PR审查">
+<meta property="article:tag" content="Manila团队">
+<meta property="article:tag" content="虚拟IP">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,14 +193,15 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间：</strong> [具体日期] <strong>参会人员：</strong>
-[具体人员名单]</p>
-<p><strong>主要议题：</strong> 1.
-<strong>PR审查与测试</strong>：会议讨论了关于启动由其自身虚拟IP地址支持的NFS守护进程的PR（Pull
-Request）。该PR由Adam提交，主要涉及对标志（flags）和一些重复代码的修改。尽管有这些改动，但预计功能性和接口的基本工作方式将保持不变。</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议时间：</strong> 2022年8月9日 <strong>参会人员：</strong>
+[具体人员名单] <strong>主要议题：</strong> 1.
+<strong>PR审查与测试</strong>：会议重点讨论了由Adam提交的关于启动NFS守护进程的PR，该PR旨在通过虚拟IP地址启动NFS守护进程。讨论内容包括标志（flags）和重复代码的修改，以及对NFS服务器故障转移场景的验证。
+2.
+<strong>OpenStack与Manila团队的协作</strong>：会议提到曾请求OpenStack团队对PR进行测试，但尚未收到回复。</p>
 <p><strong>决定事项：</strong> -
-<strong>PR状态</strong>：该PR目前被认为是准备进行测试的状态，特别是需要验证在NFS服务器故障转移场景下的功能。
+<strong>PR状态</strong>：该PR目前处于测试准备状态，需要进一步验证在NFS服务器故障转移场景下的功能。
 -
 <strong>后续测试</strong>：Adam将请求Manila团队进行进一步的测试，特别是关于故障转移场景的测试。</p>
 <p><strong>后续行动计划：</strong> -
@@ -239,6 +248,8 @@ Request）。该PR由Adam提交，主要涉及对标志（flags）和一些重�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Manila%E5%9B%A2%E9%98%9F/" rel="tag">Manila团队</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack/" rel="tag">OpenStack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PR%E5%AE%A1%E6%9F%A5/" rel="tag">PR审查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%85%E9%9A%9C%E8%BD%AC%E7%A7%BB/" rel="tag">故障转移</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BD%91%E7%BB%9C%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" rel="tag">网络文件系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%99%9A%E6%8B%9FIP/" rel="tag">虚拟IP</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

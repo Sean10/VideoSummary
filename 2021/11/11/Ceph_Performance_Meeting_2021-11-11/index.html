@@ -14,23 +14,38 @@
     
     
     
-    <title>Ceph Performance Meeting 2021-11-11 | ceph视频总结 | youtube频道总结</title>
+    <title>  Ceph性能会议 2021-11-11   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  新拉取请求（Pull Request）: Radic提交了一个引入基于Huge Page的读缓冲区的新拉取请求，这看起来很有趣，但尚不确定在何种情况下会带来帮助。 更新拉取请求: Adam的BlueFS细粒度锁定重试通过了本周的QA测试，之前失败的案例现在通过了。 优化请求超时: 对Beast库的优化拉取请求包含大量基准测试数据和讨论，Casey进行了审查，发现自定义分配器部">
+    <meta name="keywords" content="Ceph,分布式存储,RBD,RGW,性能优化,librados,libcephfs,cephfs,rbd,radosgw,代码审查,拉取请求,构建时间,快速关闭,客户端请求大小">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  拉取请求：本次会议讨论了多个拉取请求，包括基于Huge Page的读缓冲区、BlueFS细粒度锁定重试、Beast库优化请求超时、RGB性能问题、最小ALEX大小设置、blob fsck RAM使用减少、PG移除优化等。 性能问题：会议中提到了RGB性能问题，但未进行详细讨论。 构建时间优化：讨论了优化包构建时间，包括并行化构建和优化DWZ工具的可能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2021-11-11">
+<meta property="og:title" content="  Ceph性能会议 2021-11-11  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/11/11/Ceph_Performance_Meeting_2021-11-11/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  新拉取请求（Pull Request）: Radic提交了一个引入基于Huge Page的读缓冲区的新拉取请求，这看起来很有趣，但尚不确定在何种情况下会带来帮助。 更新拉取请求: Adam的BlueFS细粒度锁定重试通过了本周的QA测试，之前失败的案例现在通过了。 优化请求超时: 对Beast库的优化拉取请求包含大量基准测试数据和讨论，Casey进行了审查，发现自定义分配器部">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  拉取请求：本次会议讨论了多个拉取请求，包括基于Huge Page的读缓冲区、BlueFS细粒度锁定重试、Beast库优化请求超时、RGB性能问题、最小ALEX大小设置、blob fsck RAM使用减少、PG移除优化等。 性能问题：会议中提到了RGB性能问题，但未进行详细讨论。 构建时间优化：讨论了优化包构建时间，包括并行化构建和优化DWZ工具的可能">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-10T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-11-11T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RBD">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="librados">
+<meta property="article:tag" content="libcephfs">
+<meta property="article:tag" content="cephfs">
+<meta property="article:tag" content="rbd">
+<meta property="article:tag" content="radosgw">
+<meta property="article:tag" content="代码审查">
+<meta property="article:tag" content="拉取请求">
+<meta property="article:tag" content="构建时间">
+<meta property="article:tag" content="快速关闭">
+<meta property="article:tag" content="客户端请求大小">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +127,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2021-11-11</div>
+        <div class="flex-col header-title ellipsis">  Ceph性能会议 2021-11-11  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +149,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2021-11-11</h1>
+        <h1 class="title">  Ceph性能会议 2021-11-11  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-11-10T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +183,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2021-11-11</h1>
+        <h1 class="post-card-title">  Ceph性能会议 2021-11-11  </h1>
         <div class="post-meta">
             <time class="post-time" title="2021-11-11 00:00:00" datetime="2021-11-10T16:00:00.000Z"  itemprop="datePublished">2021-11-11</time>
 
@@ -185,49 +200,37 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
-<li><strong>新拉取请求（Pull Request）</strong>:
-Radic提交了一个引入基于Huge
-Page的读缓冲区的新拉取请求，这看起来很有趣，但尚不确定在何种情况下会带来帮助。</li>
-<li><strong>更新拉取请求</strong>:
-Adam的BlueFS细粒度锁定重试通过了本周的QA测试，之前失败的案例现在通过了。</li>
-<li><strong>优化请求超时</strong>:
-对Beast库的优化拉取请求包含大量基准测试数据和讨论，Casey进行了审查，发现自定义分配器部分并不真正有帮助，因此被移除。</li>
-<li><strong>性能问题</strong>:
-一个关于RGB性能的拉取请求被提及，但未详细讨论。</li>
-<li><strong>其他拉取请求</strong>: 包括设置最小ALEX大小、减少blob
-fsck的RAM使用、优化PG移除等，这些都在积极讨论和测试中。</li>
+<li><strong>拉取请求</strong>：本次会议讨论了多个拉取请求，包括基于Huge
+Page的读缓冲区、BlueFS细粒度锁定重试、Beast库优化请求超时、RGB性能问题、最小ALEX大小设置、blob
+fsck RAM使用减少、PG移除优化等。</li>
+<li><strong>性能问题</strong>：会议中提到了RGB性能问题，但未进行详细讨论。</li>
+<li><strong>构建时间优化</strong>：讨论了优化包构建时间，包括并行化构建和优化DWZ工具的可能性。</li>
+<li><strong>快速关闭（Fast
+Shutdown）</strong>：讨论了快速关闭的必要性和改进措施，如限制关闭时间。</li>
+<li><strong>客户端请求大小</strong>：讨论了客户端请求大小的优化，提出了限制最大请求大小和优化内存使用的建议。</li>
 </ul>
 <h4 id="讨论的主要议题">讨论的主要议题</h4>
 <ul>
-<li><strong>构建时间优化</strong>:
-讨论了如何优化包构建时间，特别是单线程部分，提出了并行化构建和优化DWZ工具的可能性。</li>
-<li><strong>快速关闭（Fast Shutdown）</strong>:
-讨论了快速关闭的必要性和实际效果，提出了可能的改进措施，如限制关闭时间。</li>
-<li><strong>客户端请求大小</strong>:
-讨论了客户端请求大小的优化，提出了限制最大请求大小和优化内存使用的建议。</li>
+<li><strong>拉取请求审查</strong>：会议对多个拉取请求进行了审查，包括Adam的BlueFS细粒度锁定重试，Casey对其进行了审查，并移除了不真正有帮助的自定义分配器部分。</li>
+<li><strong>性能优化</strong>：讨论了Beast库优化请求超时的拉取请求，Casey发现该请求对于自定义分配器部分并不真正有帮助，因此被移除。</li>
+<li><strong>快速关闭功能改进</strong>：讨论了快速关闭功能的改进，包括在系统处于完全静默状态时执行最小操作集，以及将关闭时间限制在几秒到几分钟内。</li>
 </ul>
 <h4 id="决定的事项">决定的事项</h4>
 <ul>
-<li><strong>继续测试和优化</strong>:
-对于所有提到的拉取请求，决定继续进行测试和优化，以确保性能和稳定性。</li>
-<li><strong>关注构建时间</strong>:
-决定进一步研究和优化包构建时间，特别是单线程部分。</li>
-<li><strong>考虑快速关闭的改进</strong>:
-考虑对快速关闭功能进行改进，以减少关闭时间和提高一致性。</li>
+<li><strong>继续测试和优化</strong>：对于所有提到的拉取请求，决定继续进行测试和优化，以确保性能和稳定性。</li>
+<li><strong>关注构建时间</strong>：决定进一步研究和优化包构建时间，特别是单线程部分。</li>
+<li><strong>考虑快速关闭的改进</strong>：考虑对快速关闭功能进行改进，以减少关闭时间并提高系统一致性。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li><strong>继续测试和审查拉取请求</strong>:
-对所有拉取请求进行进一步的测试和审查，确保它们符合性能和稳定性的要求。</li>
-<li><strong>优化构建时间</strong>:
-研究和实施构建时间的优化措施，特别是并行化和单线程部分的优化。</li>
-<li><strong>改进快速关闭功能</strong>:
-考虑实施改进措施，以优化快速关闭功能，减少关闭时间并提高系统一致性。</li>
-<li><strong>客户端请求大小优化</strong>:
-研究和实施客户端请求大小的优化，以减少内存使用并提高系统性能。</li>
+<li><strong>测试和审查拉取请求</strong>：对所有拉取请求进行进一步的测试和审查，确保它们符合性能和稳定性的要求。</li>
+<li><strong>优化构建时间</strong>：研究和实施构建时间的优化措施，特别是并行化和单线程部分的优化。</li>
+<li><strong>改进快速关闭功能</strong>：考虑实施改进措施，以优化快速关闭功能，减少关闭时间并提高系统一致性。</li>
+<li><strong>优化客户端请求大小</strong>：研究和实施客户端请求大小的优化，以减少内存使用并提高系统性能。</li>
 </ul>
 <p>本次会议涵盖了多个技术议题，涉及性能优化、构建时间优化和系统关闭策略等多个方面，后续行动计划旨在确保Ceph系统的性能和稳定性得到持续改进。</p>
 
@@ -260,6 +263,8 @@ fsck的RAM使用、优化PG移除等，这些都在积极讨论和测试中。</
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD/" rel="tag">RBD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/cephfs/" rel="tag">cephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/libcephfs/" rel="tag">libcephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/librados/" rel="tag">librados</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/radosgw/" rel="tag">radosgw</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/rbd/" rel="tag">rbd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5/" rel="tag">代码审查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AF%B7%E6%B1%82%E5%A4%A7%E5%B0%8F/" rel="tag">客户端请求大小</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BF%AB%E9%80%9F%E5%85%B3%E9%97%AD/" rel="tag">快速关闭</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8B%89%E5%8F%96%E8%AF%B7%E6%B1%82/" rel="tag">拉取请求</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%9E%84%E5%BB%BA%E6%97%B6%E9%97%B4/" rel="tag">构建时间</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -271,7 +276,7 @@ fsck的RAM使用、优化PG移除等，这些都在积极讨论和测试中。</
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/11/11/Ceph_Performance_Meeting_2021-11-11/&title=《Ceph Performance Meeting 2021-11-11》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/11/11/Ceph_Performance_Meeting_2021-11-11/&title=《  Ceph性能会议 2021-11-11  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -281,7 +286,7 @@ fsck的RAM使用、优化PG移除等，这些都在积极讨论和测试中。</
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/11/11/Ceph_Performance_Meeting_2021-11-11/&title=《Ceph Performance Meeting 2021-11-11》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/11/11/Ceph_Performance_Meeting_2021-11-11/&title=《  Ceph性能会议 2021-11-11  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -291,7 +296,7 @@ fsck的RAM使用、优化PG移除等，这些都在积极讨论和测试中。</
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-11-11》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/11/11/Ceph_Performance_Meeting_2021-11-11/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph性能会议 2021-11-11  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/11/11/Ceph_Performance_Meeting_2021-11-11/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -430,7 +435,7 @@ fsck的RAM使用、优化PG移除等，这些都在积极讨论和测试中。</
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/11/11/Ceph_Performance_Meeting_2021-11-11/&title=《Ceph Performance Meeting 2021-11-11》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/11/11/Ceph_Performance_Meeting_2021-11-11/&title=《  Ceph性能会议 2021-11-11  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -440,7 +445,7 @@ fsck的RAM使用、优化PG移除等，这些都在积极讨论和测试中。</
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/11/11/Ceph_Performance_Meeting_2021-11-11/&title=《Ceph Performance Meeting 2021-11-11》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/11/11/Ceph_Performance_Meeting_2021-11-11/&title=《  Ceph性能会议 2021-11-11  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -450,7 +455,7 @@ fsck的RAM使用、优化PG移除等，这些都在积极讨论和测试中。</
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-11-11》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/11/11/Ceph_Performance_Meeting_2021-11-11/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph性能会议 2021-11-11  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/11/11/Ceph_Performance_Meeting_2021-11-11/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

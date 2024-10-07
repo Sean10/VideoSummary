@@ -150,11 +150,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Orchestrator_2022-12-06"
+            <article id="post-NVMe-Over-Fabrics_Support_for_Ceph_-_Jonas_Pfefferle_IBM"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2023-01-05 00:00:00" datetime="2023-01-04T16:00:00.000Z"  itemprop="datePublished">2023-01-05</time>
+        <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -168,7 +168,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2023/01/05/Ceph_Orchestrator_2022-12-06/">Ceph Orchestrator 2022-12-06</a>
+      <a class="post-title-link" href="/VideoSummary/2023/05/05/NVMe-Over-Fabrics_Support_for_Ceph_-_Jonas_Pfefferle_IBM/">NVMe-Over-Fabrics Support for Ceph - Jonas Pfefferle, IBM</a>
     </h3>
   
 
@@ -178,243 +178,29 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
+        [改进后的中文总结内容]
+会议纪要
+会议主题：Ceph中NVMe-over-Fabrics（NVMe-oF）的支持概述
+主讲人：Jonas
+Pfefferle，IBM研究
 会议时间：[具体日期]
-参会人员：[具体人员名单]
-主要议题：
+会议地点：[具体地点]
+会议内容总结：
 
-OpenStack Tracker 更新
-NFS 相关问题讨论
+背景介绍：
 
-讨论内容：
-1. OpenStack Tracker 更新
-
-背景：讨论了关于在Ceph中定制每个OSD的crash设备类的问题。目前，SafeTangible使用批处理模式，通过传递OSD列表来准备和激活设备。
-当前问题：需要在CI环境中为SSD创建...
+Jonas介绍了NVMe-oF在Ceph中的应用，强调了其与现有RBD的区别和优势，包括提高互操作性、支持远程存储访问和利用DPU硬件加速。
+...
     
 
-        <a href="/VideoSummary/2023/01/05/Ceph_Orchestrator_2022-12-06/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Crimson_Seastore_Meeting_2022-11-30"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2022-12-02 00:00:00" datetime="2022-12-01T16:00:00.000Z"  itemprop="datePublished">2022-12-02</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/12/02/Ceph_Crimson_Seastore_Meeting_2022-11-30/">Ceph Crimson/Seastore Meeting 2022-11-30</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议概述
-本次会议主要讨论了Ceph存储系统的开发进展和相关技术问题，包括性能优化、代码审查、功能实现等方面。
-主要议题
-
-代码审查和功能迁移
-
-上周主要进行了代码审查工作。
-计划迁移Oh Map功能，并推进Split Protocol V2
-Messenger和Handshake的开发。
-
-性能回归问题
-
-发现共享存储支持下的性能有所下降，目前正在解决这一问题。
-通过添加Mall...
-    
-
-        <a href="/VideoSummary/2022/12/02/Ceph_Crimson_Seastore_Meeting_2022-11-30/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Performance_Meeting_2022-12-01"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2022-12-02 00:00:00" datetime="2022-12-01T16:00:00.000Z"  itemprop="datePublished">2022-12-02</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/">Ceph Performance Meeting 2022-12-01</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-关键细节
-
-依赖版本固定问题:
-会议讨论了由于上游库的版本升级导致测试中断的问题。主要关注点是版本固定（version
-pinning）的长期影响和潜在风险。
-版本固定策略:
-提出了一个策略，建议仅固定主要版本（major
-versions），以减少长期维护的复杂性。
-自动化工具:
-讨论了开发一个自动化工具来管理和更新依赖版本，以减少手动更新的负担。
-文档和追踪:
-强调了需要一个集...
-    
-
-        <a href="/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Orchestrator_Meeting_2022-12-01"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2022-12-01 00:00:00" datetime="2022-11-30T16:00:00.000Z"  itemprop="datePublished">2022-12-01</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/12/01/Ceph_Orchestrator_Meeting_2022-12-01/">Ceph Orchestrator Meeting 2022-12-01</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-关键细节
-
-会议主题:
-讨论测试中的依赖版本问题和测试实验室的故障
-参与者: 团队成员（具体姓名未提及）
-日期: 未明确提及
-
-讨论的主要议题
-
-依赖版本管理:
-
-团队成员注意到测试中断的原因之一是上游依赖库的版本号大幅更新，导致某些功能变更。
-讨论了是否应该制定一个通用策略，建议仅在必要时固定依赖版本，并尝试定期更新到最新的主版本。
-提出了一个自动化脚本的想法，用于检查和管理所有...
-    
-
-        <a href="/VideoSummary/2022/12/01/Ceph_Orchestrator_Meeting_2022-12-01/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-2022Q4_Ceph社区季度总结"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2022-12-01 00:00:00" datetime="2022-11-30T16:00:00.000Z"  itemprop="datePublished">2022-12-01</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/12/01/2022Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">2022Q4 Ceph社区季度总结</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Ceph 社区 2022Q4
-季度总结报告
-1. 主要活动和重点议题
-本季度，Ceph
-社区围绕多个重要议题展开了讨论和开发，以下是其中一些关键活动：
-
-Crimson OSD
-用户界面保护措施：社区讨论了防止用户意外启动 Crimson OSD
-导致生产集群复杂化的问题，并提出了两种保护措施：编辑实验性功能标志和设置允许映射标志。
-Crimson
-池的设计和功能限制：社区讨论了未来可能需要...
-    
-
-        <a href="/VideoSummary/2022/12/01/2022Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2023/05/05/NVMe-Over-Fabrics_Support_for_Ceph_-_Jonas_Pfefferle_IBM/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/" rel="tag">技术发展</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A4%BE%E5%8C%BA%E5%8A%A8%E6%80%81/" rel="tag">社区动态</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NVMe/" rel="tag">NVMe</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/oF/" rel="tag">oF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E9%9B%86%E7%BE%A4/" rel="tag">存储集群</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BD%91%E7%BB%9C%E5%AD%98%E5%82%A8/" rel="tag">网络存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E5%AD%98%E5%82%A8/" rel="tag">软件定义存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
 
     </div>
     
@@ -423,11 +209,11 @@ Crimson
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Developer_Monthly_2022-11-02"
+            <article id="post-New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2022-11-23 00:00:00" datetime="2022-11-22T16:00:00.000Z"  itemprop="datePublished">2022-11-23</time>
+        <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -441,7 +227,7 @@ Crimson
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/11/23/Ceph_Developer_Monthly_2022-11-02/">Ceph Developer Monthly 2022-11-02</a>
+      <a class="post-title-link" href="/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/">Ceph 新读平衡器介绍 - Laura Flores, IBM</a>
     </h3>
   
 
@@ -451,41 +237,37 @@ Crimson
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-主要议题
+        [改进后的中文总结内容]
+Ceph 新读平衡器介绍会议由 IBM 的 RADOS 工程师 Laura Flores
+主讲，主要讨论了 Ceph
+分布式存储系统中新引入的读平衡器，旨在优化存储性能和读取效率。
+会议要点：
 
-Crimson OSD 的用户界面保护措施
-
-讨论了为防止用户意外启动 Crimson OSD
-而导致生产集群复杂化的问题。
-介绍了两种保护措施：
-
-编辑 Crimson 实验性功能标志。
-设置允许 Crimson OSD 映射标志。
-
-这些措施旨在防止用户在不完全支持 Crimson OSD
-的功能时意外使用它们。
-
-Crimson 池的设计和功能限制
-
-讨论了未来可...
+读平衡的重要性：在分布式存储系统中，平衡读写请求对于优化性能至关重要。读平衡器专注于解决读取请求的不平衡问题，从而提高整体性能。
+现有平衡器的局限：现有的容量平衡器主要处理...
     
 
-        <a href="/VideoSummary/2022/11/23/Ceph_Developer_Monthly_2022-11-02/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%AE%97%E6%B3%95%E6%94%B9%E8%BF%9B/" rel="tag">算法改进</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%AF%BB%E5%B9%B3%E8%A1%A1%E5%99%A8/" rel="tag">读平衡器</a></li></ul>
+
+    </div>
+    
 </article>
 
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Introduction_to_Container_Object_Storage_Interface_aka_COSI_for_ceph_RGW"
+            <article id="post-Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2022-11-23 00:00:00" datetime="2022-11-22T16:00:00.000Z"  itemprop="datePublished">2022-11-23</time>
+        <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -499,7 +281,7 @@ Crimson 池的设计和功能限制
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/11/23/Introduction_to_Container_Object_Storage_Interface_aka_COSI_for_ceph_RGW/">Introduction to Container Object Storage Interface aka COSI for ceph RGW</a>
+      <a class="post-title-link" href="/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/">  Optimizing Ceph IO for High Throughput Particle Physics Workflows  </a>
     </h3>
   
 
@@ -509,82 +291,33 @@ Crimson 池的设计和功能限制
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-会议参与者
-
-主讲人:
-高级软件工程师，专注于Ceph存储与Kubernetes的集成。
-
-会议主题
-
-介绍CSI（Container Storage Interface）和Cosi项目。
-讨论Cosi项目的当前状态、架构、工作流程及未来计划。
-介绍Cosi驱动程序的开发进展。
-
-讨论内容
-
-CSI简介
-
-CSI是一个广泛使用的存储插件，已有超过五年的历史。
-主要用于暴露块和文件存...
-    
-
-        <a href="/VideoSummary/2022/11/23/Introduction_to_Container_Object_Storage_Interface_aka_COSI_for_ceph_RGW/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-NVMe-over-Fabrics_support_for_Ceph"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2022-11-23 00:00:00" datetime="2022-11-22T16:00:00.000Z"  itemprop="datePublished">2022-11-23</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/">NVMe-over-Fabrics support for Ceph</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： NVMe over Fabrics 支持在 Ceph
-中的实现
-主讲人： Jonas Pfefferle 和 Scott Bauer
-会议时间： [具体时间]
-参会人员： [参会人员名单]
+        [改进后的中文总结内容]
+会议纪要
+会议主题：Ceph存储系统在大型科学实验中的应用与优化
+会议时间：[具体日期]
+会议地点：[具体地点]
+主讲人：Tom
+参会人员：[参会人员名单]
 会议内容总结：
 
-背景介绍：
+主讲人介绍：
 
-Jonas Pfefferle 和 Scott Bauer 介绍了他们在 Ceph 中实现 NVMe over
-Fabrics 支持的工作。
-强调了这...
+Tom来自英国的科学与技术设施委员会（STFC），负责设计和构建存储解决方案，支持设施用户和外部用户。
+
+STFC背景：
+
+STFC运营大型科学资源，支持大量数据密集型科学研究...
     
 
-        <a href="/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High-Throughput/" rel="tag">High Throughput</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/IO-Optimization/" rel="tag">IO Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Particle-Physics/" rel="tag">Particle Physics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Cluster/" rel="tag">Storage Cluster</a></li></ul>
+
     </div>
     
 </article>
@@ -592,11 +325,11 @@ Fabrics 支持的工作。
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Troubleshooting_and_Debugging_in_the_rook-ceph_cluster"
+            <article id="post-Optimizing_CephFS_with_Combining_MDS_QoS_Scheduling_and_Static-Dynamic_Subtree_Partitioning"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2022-11-23 00:00:00" datetime="2022-11-22T16:00:00.000Z"  itemprop="datePublished">2022-11-23</time>
+        <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -610,7 +343,7 @@ Fabrics 支持的工作。
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/11/23/Troubleshooting_and_Debugging_in_the_rook-ceph_cluster/">Troubleshooting and Debugging in the rook-ceph cluster</a>
+      <a class="post-title-link" href="/VideoSummary/2023/05/05/Optimizing_CephFS_with_Combining_MDS_QoS_Scheduling_and_Static-Dynamic_Subtree_Partitioning/">Optimizing CephFS with Combining MDS QoS Scheduling and Static-Dynamic Subtree Partitioning</a>
     </h3>
   
 
@@ -620,25 +353,28 @@ Fabrics 支持的工作。
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
+        [改进后的中文总结内容]
+会议纪要
 会议概述
-本次会议主要讨论了Rook项目中的故障排查和调试方法，特别是如何处理Rook
-Ceph集群中的常见问题，并介绍了Crew插件的使用及其在故障排查中的应用。
-参会人员
-
-Deepika
-Upadhyay：Kotak的云存储工程师，Rook项目的核心贡献者。
-Shubham Doshi：Red
-Hat的软件工程师，Rook项目的核心贡献者。
-
+本次会议由Young主持，来自Lion公司的专业人员分享了他们在Ceph分布式存储系统上的优化工作。主要讨论了Ceph文件系统（CephFS）的性能优化，包括MDS
+QoS调度和静态-动态子树分区策略。
 主要议题
 
-Rook Ceph集...
+公司背景与Ceph应用介绍
+
+Lion公司是一家提供消息和通信服务的公司，拥有超过1.5亿日活跃用户。
+公司采用OpenStack和...
     
 
-        <a href="/VideoSummary/2022/11/23/Troubleshooting_and_Debugging_in_the_rook-ceph_cluster/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2023/05/05/Optimizing_CephFS_with_Combining_MDS_QoS_Scheduling_and_Static-Dynamic_Subtree_Partitioning/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Optimization/" rel="tag">Ceph Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Performance/" rel="tag">Ceph Performance</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Dynamic-Subtree-Partitioning/" rel="tag">Dynamic Subtree Partitioning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MDS-QoS-Scheduling/" rel="tag">MDS QoS Scheduling</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Static/" rel="tag">Static</a></li></ul>
+
     </div>
     
 </article>
@@ -646,11 +382,11 @@ Rook Ceph集...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Operating_Ceph_from_the_Ceph_Dashboard_-_past_present_and_future"
+            <article id="post-Over_a_Billion_Requests_Served_per_Day_-_Ensuring_Everyone_Is_Happy_with_Our_Ceph_Clusters_..."
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2022-11-22 00:00:00" datetime="2022-11-21T16:00:00.000Z"  itemprop="datePublished">2022-11-22</time>
+        <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -664,7 +400,7 @@ Rook Ceph集...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/11/22/Operating_Ceph_from_the_Ceph_Dashboard_-_past_present_and_future/">Operating Ceph from the Ceph Dashboard: past, present and future</a>
+      <a class="post-title-link" href="/VideoSummary/2023/05/05/Over_a_Billion_Requests_Served_per_Day_-_Ensuring_Everyone_Is_Happy_with_Our_Ceph_Clusters_.../">  Over a Billion Requests Served per Day: Ensuring Everyone Is Happy with Our Ceph Clusters’...  </a>
     </h3>
   
 
@@ -674,25 +410,302 @@ Rook Ceph集...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-会议主题：Ceph
-Dashboard 的功能介绍与历史回顾
-会议时间：待定
-主讲人：Nizamudi
-会议内容总结：
+        [改进后的中文总结内容]
+Bloomberg的存储工程团队在会议上介绍了他们开发的软件定义分布式QRS系统，旨在确保其Ceph存储集群的性能满足用户需求。以下是对会议内容的总结：
+会议概要
+主题：
+Bloomberg软件定义分布式QRS系统的介绍与实施细节
+时间： 具体时间
+地点： 具体地点
+参会人员： Nathan, Alex及相关技术和业务人员
+会议内容：
 
-Ceph Dashboard 简介
+介绍与背景
 
-Nizamudi 目前是 Red Hat 的软件工程师，自2020年起加入 Ceph Dashboard
-团队。
-Ceph Dashboard
-不仅仅是一个监控工具，而是一个全功能的分布式存储管理系统。
-Ceph Dashb...
+Nathan介...
     
 
-        <a href="/VideoSummary/2022/11/22/Operating_Ceph_from_the_Ceph_Dashboard_-_past_present_and_future/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2023/05/05/Over_a_Billion_Requests_Served_per_Day_-_Ensuring_Everyone_Is_Happy_with_Our_Ceph_Clusters_.../" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/QoS%E5%B9%B3%E5%8F%B0/" rel="tag">QoS平台</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%B4%A8%E9%87%8F%E6%9C%8D%E5%8A%A1/" rel="tag">质量服务</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E5%AD%98%E5%82%A8/" rel="tag">软件定义存储</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/">  Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM  </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+在本次会议纪要中，Rakshith
+R（现就职于IBM）探讨了如何通过Rook启用RBD工作负载的读取亲和性（Read
+Affinity）。会议涵盖了以下几个方面：
+
+CRUSH算法和CRUSH
+Maps简介：CRUSH算法是Ceph的核心，用于确定数据存储的位置。客户端写入数据时，对象ID通过CRUSH算法映射到PG（Placement
+Group），再映射到一组...
+    
+
+        <a href="/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD/" rel="tag">RBD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Read-Affinity/" rel="tag">Read Affinity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Rook_-_Why_Would_You_Ever_Deploy_Ceph_Inside_Kubernetes_-_Travis_Nielsen_IBM"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2023/05/05/Rook_-_Why_Would_You_Ever_Deploy_Ceph_Inside_Kubernetes_-_Travis_Nielsen_IBM/">&#39;Rook: Why Would You Ever Deploy Ceph Inside Kubernetes? - Travis Nielsen, IBM&#39;</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议概述
+Travis
+Nielsen作为Ceph项目的主要维护者和IBM存储团队的一员，在会上分享了在Kubernetes环境中部署Ceph的重要性及方法。他探讨了Ceph与Kubernetes结合的优势，并介绍了Rook在其中的管理作用。
+讨论的主要议题
+
+Kubernetes与存储的需求：
+
+Kubernetes原生并非为存储设计，但部署应用时需要存...
+    
+
+        <a href="/VideoSummary/2023/05/05/Rook_-_Why_Would_You_Ever_Deploy_Ceph_Inside_Kubernetes_-_Travis_Nielsen_IBM/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Container-Orchestration/" rel="tag">Container Orchestration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Scrubs_Scheduling_in_Reef_and_Beyond_-_Ronen_Friedman_IBM"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2023/05/05/Scrubs_Scheduling_in_Reef_and_Beyond_-_Ronen_Friedman_IBM/">Scrubs Scheduling in Reef and Beyond - Ronen Friedman, IBM</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议基本信息
+
+主讲人: London Friedman
+时间: 会议持续约40分钟
+主题: Ceph 存储系统中的 scrub 代码维护和改进
+
+会议内容总结
+
+Scrub 代码维护:
+
+London Friedman 过去三年持续维护 Ceph 中的 scrub 代码，并得到 Sam
+及其他贡献者的协助。
+在这段时间内，对 scrubbing 过程进行...
+    
+
+        <a href="/VideoSummary/2023/05/05/Scrubs_Scheduling_in_Reef_and_Beyond_-_Ronen_Friedman_IBM/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/" rel="tag">Ceph 存储系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scrub-%E4%BB%A3%E7%A0%81/" rel="tag">Scrub 代码</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Sponsored_Lightning_Talk_-_Advancing_Infrastructure_with_Ceph_Technology"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2023/05/05/Sponsored_Lightning_Talk_-_Advancing_Infrastructure_with_Ceph_Technology/">&#39;Sponsored Lightning Talk: Advancing Infrastructure with Ceph Technology&#39;</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+Ceph技术因其无限灵活性、高可扩展性和最优的总拥有成本（TCO）而备受青睐。Cliso公司，作为Ceph技术的坚定支持者，于此次会议中介绍了其战略和未来计划。
+会议中，Dan详细阐述了Ceph的优势与挑战。Ceph的优势在于其无限灵活性、高可扩展性和最优的TCO，支持块、对象和文件存储，并能处理容器，适用于多种云环境。然而，Ceph的使用复杂性仍然是一个问题，目前...
+    
+
+        <a href="/VideoSummary/2023/05/05/Sponsored_Lightning_Talk_-_Advancing_Infrastructure_with_Ceph_Technology/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cliso%E5%85%AC%E5%8F%B8/" rel="tag">Cliso公司</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%80%E6%BA%90/" rel="tag">开源</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Sponsored_Lightning_Talk_-_The_Enterprise_Ceph_Spectrum_-_Philip_Williams_Canonical"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2023/05/05/Sponsored_Lightning_Talk_-_The_Enterprise_Ceph_Spectrum_-_Philip_Williams_Canonical/">&#39;Sponsored Lightning Talk: The Enterprise Ceph Spectrum - Philip Williams, Canonical&#39;</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+在本次由 Canonical 主办的闪电演讲中，Phil Williams 详细介绍了 Ceph
+在企业级应用中的广泛使用和部署策略。以下是对会议内容的总结：
+Ceph 应用的多样性： Phil Williams 介绍了 Ceph
+在不同规模环境中的应用，从大型数据中心到单个开发者的工作站，涵盖了从数十到数百
+PB 的大型基础设施到小型零售店或分销中心的后端存储需求...
+    
+
+        <a href="/VideoSummary/2023/05/05/Sponsored_Lightning_Talk_-_The_Enterprise_Ceph_Spectrum_-_Philip_Williams_Canonical/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Canonical/" rel="tag">Canonical</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MicroCloud/" rel="tag">MicroCloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ubuntu/" rel="tag">Ubuntu</a></li></ul>
+
     </div>
     
 </article>
@@ -704,7 +717,7 @@ Ceph Dashb...
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/page/23/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/22/">22</a><a class="page-number" href="/VideoSummary/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/VideoSummary/page/25/">25</a><a class="page-number" href="/VideoSummary/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="extend next" rel="next" href="/VideoSummary/page/25/">下一页</a>
+    <a class="extend prev" rel="prev" href="/VideoSummary/page/23/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/22/">22</a><a class="page-number" href="/VideoSummary/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/VideoSummary/page/25/">25</a><a class="page-number" href="/VideoSummary/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/132/">132</a><a class="extend next" rel="next" href="/VideoSummary/page/25/">下一页</a>
     </div>
 </nav>
 

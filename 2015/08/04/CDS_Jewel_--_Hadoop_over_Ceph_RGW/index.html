@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要： 会议主题： Hadoop over Ceph RGW 状态更新 会议时间： 未提及 参会人员： Patrick、Yawn、Jen、Earning（远程） 会议内容： 1. Hadoop over Ceph RGW 设计回顾  该方案包括三个主要组件：Rgw Skidaway FS（Hadoop 兼容文件系统插件）、Rgw Skidaway Web Proxy（基于 Restful 服务">
+    <meta name="keywords" content="Ceph,RGW,Distributed Storage,Performance Testing,Hadoop">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要： 会议主题： Hadoop over Ceph RGW 状态更新 会议时间： 未提及 参会人员： Patrick、Yawn、Jen、Earning（远程） 会议内容： 1. Hadoop over Ceph RGW 设计回顾  该方案包括三个主要组件：Rgw Skidaway FS（Hadoop 兼容文件系统插件）、Rgw Skidaway Web Proxy（">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CDS Jewel -- Hadoop over Ceph RGW">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Hadoop_over_Ceph_RGW/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要： 会议主题： Hadoop over Ceph RGW 状态更新 会议时间： 未提及 参会人员： Patrick、Yawn、Jen、Earning（远程） 会议内容： 1. Hadoop over Ceph RGW 设计回顾  该方案包括三个主要组件：Rgw Skidaway FS（Hadoop 兼容文件系统插件）、Rgw Skidaway Web Proxy（基于 Restful 服务">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要： 会议主题： Hadoop over Ceph RGW 状态更新 会议时间： 未提及 参会人员： Patrick、Yawn、Jen、Earning（远程） 会议内容： 1. Hadoop over Ceph RGW 设计回顾  该方案包括三个主要组件：Rgw Skidaway FS（Hadoop 兼容文件系统插件）、Rgw Skidaway Web Proxy（">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Testing">
+<meta property="article:tag" content="Hadoop">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,19 +183,20 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要：</p>
 <p><strong>会议主题</strong>： Hadoop over Ceph RGW 状态更新</p>
 <p><strong>会议时间</strong>： 未提及</p>
 <p><strong>参会人员</strong>： Patrick、Yawn、Jen、Earning（远程）</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>1. Hadoop over Ceph RGW 设计回顾</strong></p>
 <ul>
-<li><p>该方案包括三个主要组件：Rgw Skidaway FS（Hadoop
+<li>该方案包括三个主要组件：Rgw Skidaway FS（Hadoop
 兼容文件系统插件）、Rgw Skidaway Web Proxy（基于 Restful
 服务的代理）、Rgw Skidaway with SSD Cache（使用 SSD
-缓存的后端存储）。</p></li>
-<li><p>设计流程：调度器请求数据位置，Rgw Skidaway Web Proxy
-返回最近的数据节点，调度器在数据节点附近的服务器上分配任务，任务尝试从最近的数据节点访问数据。</p></li>
+缓存的后端存储）。</li>
+<li>设计流程：调度器请求数据位置，Rgw Skidaway Web Proxy
+返回最近的数据节点，调度器在数据节点附近的服务器上分配任务，任务尝试从最近的数据节点访问数据。</li>
 </ul>
 <p><strong>2. 自 Infiniscale 以来更新</strong></p>
 <ul>
@@ -272,6 +278,8 @@ Skidaway 集群。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Hadoop/" rel="tag">Hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Testing/" rel="tag">Performance Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -331,9 +339,9 @@ Skidaway 集群。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_Ceph_0_day_for_performance_regression/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_Messenger_Priorities_for_Client/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Jewel -- Ceph 0 day for performance regression</h4>
+        <h4 class="title">CDS Jewel -- Messenger, Priorities for Client</h4>
       </a>
     </div>
   
@@ -342,7 +350,7 @@ Skidaway 集群。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_Optimize_newstore_for_massive_small_object_storage/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Jewel -- Optimize newstore for massive small object storage</h4>
+        <h4 class="title">CDS Jewel -- 优化大规模小对象存储</h4>
       </a>
     </div>
   

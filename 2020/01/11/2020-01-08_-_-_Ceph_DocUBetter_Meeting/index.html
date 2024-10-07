@@ -14,23 +14,28 @@
     
     
     
-    <title>2020-01-08:: Ceph DocUBetter Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2020-01-08:: Ceph DocUBetter Meeting&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间 新年伊始，具体日期未提及。 参会人员  会议主持人未明确提及，但提到了Brad和David。 其他参会人员包括Patrick、John Wilkins、Kafer等，具体角色未详细说明。  主要议题  Ceph文档更新  完成了Ceph入门指南的PR（Pull Request），感到松了一口气。 讨论了使用Rados命令存储和检索文件的计划，以及与Brad合作编写Rados速查">
+    <meta name="keywords" content="Ceph,文档更新,文档审查,Rados命令,文档管理">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间 2020年1月初 参会人员  会议主持人未明确提及，但提到了Brad和David。 其他参会人员包括Patrick、John Wilkins、Kafer等，具体角色未详细说明。  主要议题  Ceph文档更新  完成了Ceph入门指南的PR，感到松了一口气。 讨论了使用Rados命令存储和检索文件的计划，以及与Brad合作编写Rados速查表的计划。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2020-01-08:: Ceph DocUBetter Meeting">
+<meta property="og:title" content="&#39;2020-01-08:: Ceph DocUBetter Meeting&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_DocUBetter_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间 新年伊始，具体日期未提及。 参会人员  会议主持人未明确提及，但提到了Brad和David。 其他参会人员包括Patrick、John Wilkins、Kafer等，具体角色未详细说明。  主要议题  Ceph文档更新  完成了Ceph入门指南的PR（Pull Request），感到松了一口气。 讨论了使用Rados命令存储和检索文件的计划，以及与Brad合作编写Rados速查">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间 2020年1月初 参会人员  会议主持人未明确提及，但提到了Brad和David。 其他参会人员包括Patrick、John Wilkins、Kafer等，具体角色未详细说明。  主要议题  Ceph文档更新  完成了Ceph入门指南的PR，感到松了一口气。 讨论了使用Rados命令存储和检索文件的计划，以及与Brad合作编写Rados速查表的计划。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-10T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-01-10T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="文档更新">
+<meta property="article:tag" content="文档审查">
+<meta property="article:tag" content="Rados命令">
+<meta property="article:tag" content="文档管理">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2020-01-08:: Ceph DocUBetter Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2020-01-08:: Ceph DocUBetter Meeting&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2020-01-08:: Ceph DocUBetter Meeting</h1>
+        <h1 class="title">&#39;2020-01-08:: Ceph DocUBetter Meeting&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-01-10T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议时间</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">其他事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议时间</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">其他事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BF%AE%E6%AD%A3%E4%B8%8E%E8%A1%A5%E5%85%85"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">修正与补充</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2020-01-08:: Ceph DocUBetter Meeting</h1>
+        <h1 class="post-card-title">'2020-01-08:: Ceph DocUBetter Meeting'</h1>
         <div class="post-meta">
             <time class="post-time" title="2020-01-11 00:00:00" datetime="2020-01-10T16:00:00.000Z"  itemprop="datePublished">2020-01-11</time>
 
@@ -185,9 +190,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议时间">会议时间</h4>
-<p>新年伊始，具体日期未提及。</p>
+<p>2020年1月初</p>
 <h4 id="参会人员">参会人员</h4>
 <ul>
 <li>会议主持人未明确提及，但提到了Brad和David。</li>
@@ -198,7 +204,7 @@ Wilkins、Kafer等，具体角色未详细说明。</li>
 <ol type="1">
 <li><strong>Ceph文档更新</strong>
 <ul>
-<li>完成了Ceph入门指南的PR（Pull Request），感到松了一口气。</li>
+<li>完成了Ceph入门指南的PR，感到松了一口气。</li>
 <li>讨论了使用Rados命令存储和检索文件的计划，以及与Brad合作编写Rados速查表的计划。</li>
 <li>提到了12月11日的会议记录被意外翻译成中文的问题，正在调查原因。</li>
 </ul></li>
@@ -226,18 +232,24 @@ required”的PR，并根据需要请求其他人的审查。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>继续与Brad合作编写Rados速查表。</li>
+<li>与Brad合作编写Rados速查表。</li>
 <li>清理和更新旧的文档PR，重点关注近两年的更新。</li>
 <li>根据需要请求专业人员的文档审查。</li>
-<li>如果医院检查结果需要紧急手术，将及时通知团队。</li>
+<li>如有紧急手术，将及时通知团队。</li>
 </ul>
 <h4 id="其他事项">其他事项</h4>
 <ul>
-<li>讨论了不同国家对某些日常物品的不同称呼，如厨房台面在澳大利亚称为“bench”。</li>
-<li>提到了澳大利亚的森林火灾情况，以及对当地居民的影响。</li>
+<li>讨论了澳大利亚的森林火灾情况，以及对当地居民的影响。</li>
 </ul>
 <h4 id="会议结束">会议结束</h4>
 <p>会议在讨论完所有议题后结束，主持人感谢大家的参与，并祝愿医院检查顺利。</p>
+<h4 id="修正与补充">修正与补充</h4>
+<ul>
+<li>原总结中未提及12月11日会议记录被翻译成中文的问题，以及后续的调查情况。</li>
+<li>原总结中未提及与Brad合作编写Rados速查表的计划。</li>
+<li>原总结中未提及关于文档审查流程的具体讨论。</li>
+<li>原总结中未提及关于个人健康状况的讨论。</li>
+</ul>
 
         </div>
 
@@ -268,6 +280,8 @@ required”的PR，并根据需要请求其他人的审查。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rados%E5%91%BD%E4%BB%A4/" rel="tag">Rados命令</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E6%A1%A3%E5%AE%A1%E6%9F%A5/" rel="tag">文档审查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E6%A1%A3%E6%9B%B4%E6%96%B0/" rel="tag">文档更新</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86/" rel="tag">文档管理</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -279,7 +293,7 @@ required”的PR，并根据需要请求其他人的审查。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_DocUBetter_Meeting/&title=《2020-01-08:: Ceph DocUBetter Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_DocUBetter_Meeting/&title=《'2020-01-08:: Ceph DocUBetter Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -289,7 +303,7 @@ required”的PR，并根据需要请求其他人的审查。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_DocUBetter_Meeting/&title=《2020-01-08:: Ceph DocUBetter Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_DocUBetter_Meeting/&title=《'2020-01-08:: Ceph DocUBetter Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -299,7 +313,7 @@ required”的PR，并根据需要请求其他人的审查。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2020-01-08:: Ceph DocUBetter Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_DocUBetter_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2020-01-08:: Ceph DocUBetter Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_DocUBetter_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -327,18 +341,18 @@ required”的PR，并根据需要请求其他人的审查。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2020/01/11/2020-01-07_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2020-01-08 :: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2020-01-07 :: Crimson SeaStor OSD Weekly Meeting&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2020/01/10/2019-12-16_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-12-16 :: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2020-01-08 :: Ceph Orchestration Meeting&#39;</h4>
       </a>
     </div>
   
@@ -438,7 +452,7 @@ required”的PR，并根据需要请求其他人的审查。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_DocUBetter_Meeting/&title=《2020-01-08:: Ceph DocUBetter Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_DocUBetter_Meeting/&title=《'2020-01-08:: Ceph DocUBetter Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -448,7 +462,7 @@ required”的PR，并根据需要请求其他人的审查。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_DocUBetter_Meeting/&title=《2020-01-08:: Ceph DocUBetter Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_DocUBetter_Meeting/&title=《'2020-01-08:: Ceph DocUBetter Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -458,7 +472,7 @@ required”的PR，并根据需要请求其他人的审查。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2020-01-08:: Ceph DocUBetter Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_DocUBetter_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2020-01-08:: Ceph DocUBetter Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/01/11/2020-01-08_-_-_Ceph_DocUBetter_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

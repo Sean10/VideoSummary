@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Dell 对 Red Hat OpenStack 的赞助及 Ceph 存储解决方案的讨论 会议时间： 2023年11月（具体日期未提及） 参会人员： Paul（Dell 代表）、Steve Smith（HPC 业务负责人）、Ross（主持人） 会议内容： 一、Dell 对 Red Hat OpenStack 的赞助  Dell 对 Red Hat OpenStack 的赞助源">
+    <meta name="keywords" content="Ceph,分布式存储,OpenStack,存储解决方案,Dell">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： Dell 对 Red Hat OpenStack 的赞助及 Ceph 存储解决方案的讨论 会议时间： 2023年11月（具体日期未提及） 参会人员： Paul（Dell 代表）、Steve Smith（HPC 业务负责人）、Ross（主持人） 会议内容： 一、Dell 对 Red Hat OpenStack 的赞助  Dell 认识到 OpenSta">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dell @ Ceph Day London">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2014/12/22/Dell_@_Ceph_Day_London/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Dell 对 Red Hat OpenStack 的赞助及 Ceph 存储解决方案的讨论 会议时间： 2023年11月（具体日期未提及） 参会人员： Paul（Dell 代表）、Steve Smith（HPC 业务负责人）、Ross（主持人） 会议内容： 一、Dell 对 Red Hat OpenStack 的赞助  Dell 对 Red Hat OpenStack 的赞助源">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： Dell 对 Red Hat OpenStack 的赞助及 Ceph 存储解决方案的讨论 会议时间： 2023年11月（具体日期未提及） 参会人员： Paul（Dell 代表）、Steve Smith（HPC 业务负责人）、Ross（主持人） 会议内容： 一、Dell 对 Red Hat OpenStack 的赞助  Dell 认识到 OpenSta">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2014-12-21T16:00:00.000Z">
 <meta property="article:modified_time" content="2014-12-21T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="OpenStack">
+<meta property="article:tag" content="存储解决方案">
+<meta property="article:tag" content="Dell">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议主题</strong>： Dell 对 Red Hat OpenStack 的赞助及 Ceph
 存储解决方案的讨论</p>
 <p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
@@ -194,31 +200,27 @@
 <p><strong>会议内容</strong>：</p>
 <p><strong>一、Dell 对 Red Hat OpenStack 的赞助</strong></p>
 <ul>
-<li>Dell 对 Red Hat OpenStack 的赞助源于三年前在 World Hosting Day
-会议上的交流。</li>
 <li>Dell 认识到 OpenStack 在存储领域的潜力，并希望通过赞助活动推广
 OpenStack。</li>
 <li>Dell 认为OpenStack 允许客户以更低的成本实现更多功能，符合 Dell
 的业务理念。</li>
+<li>Dell 通过赞助活动，利用其渠道合作伙伴和销售团队的力量，推广
+OpenStack 及其存储解决方案。</li>
 </ul>
 <p><strong>二、Ceph 存储解决方案</strong></p>
 <ul>
-<li><p>Dell 强调 Ceph 作为 OpenStack
-的一部分，在存储领域的重要性。</p></li>
-<li><p>Steve Smith 从 HPC 业务的角度，分享了 Ceph
-在高性能计算领域的应用。</p></li>
-<li><p>会议讨论了以下关键议题：</p>
+<li>Dell 强调 Ceph 作为 OpenStack 的一部分，在存储领域的重要性。</li>
+<li>Steve Smith 从 HPC 业务的角度，分享了 Ceph
+在高性能计算领域的应用。</li>
+<li><strong>关键议题</strong>：
 <ul>
-<li><strong>业务目标和规模</strong>： 在部署 Ceph
-之前，需要明确业务目标和系统规模，包括存储容量、IOPS、吞吐量等。</li>
-<li><strong>架构设计</strong>：
-需要考虑数据冗余、可靠性、可扩展性等因素，并选择合适的硬件和软件配置。</li>
-<li><strong>硬件配置</strong>： 推荐使用 Intel Xeon E5-2620/2630/2640 V3
-处理器、64GB 内存、近线 SAS 硬盘等。</li>
-<li><strong>网络配置</strong>： 前端网络使用 10G
-网络即可，后端网络需要至少 10G 网络，并支持 40G 或 100G 网络。</li>
-<li><strong>软件配置</strong>： 使用 Ceph
-存储软件，并注意配置文件和参数优化。</li>
+<li>明确业务目标和系统规模，包括存储容量、IOPS、吞吐量等。</li>
+<li>考虑数据冗余、可靠性、可扩展性等因素，选择合适的硬件和软件配置。</li>
+<li>优化硬件配置，推荐使用 Intel Xeon E5-2620/2630/2640 V3 处理器、64GB
+内存、近线 SAS 硬盘等。</li>
+<li>配置网络，前端网络使用 10G 网络，后端网络需要至少 10G 网络，并支持
+40G 或 100G 网络。</li>
+<li>使用 Ceph 存储软件，并注意配置文件和参数优化。</li>
 </ul></li>
 </ul>
 <p><strong>三、挑战与机遇</strong></p>
@@ -226,8 +228,6 @@ OpenStack。</li>
 <li>会议讨论了 Ceph 存储在数据存储、安全、可靠性等方面的挑战。</li>
 <li>Dell 强调 Ceph 具备应对这些挑战的能力，并鼓励客户尽早部署
 Ceph。</li>
-<li>Dell 认为，随着数据量的不断增长，Ceph
-将成为存储领域的重要解决方案。</li>
 </ul>
 <p><strong>四、行动计划</strong></p>
 <ul>
@@ -236,12 +236,8 @@ Ceph。</li>
 </ul>
 <p><strong>五、其他</strong></p>
 <ul>
-<li><p>会议还讨论了以下内容：</p>
-<ul>
-<li>Ceph 在研究数据存储中的应用</li>
-<li>Ceph 与其他存储解决方案的比较</li>
-<li>Ceph 的未来发展趋势</li>
-</ul></li>
+<li>会议还讨论了 Ceph 在研究数据存储中的应用、Ceph
+与其他存储解决方案的比较以及 Ceph 的未来发展趋势。</li>
 </ul>
 <p><strong>总结</strong>：</p>
 <p>本次会议深入讨论了 Ceph 存储解决方案，并分享了 Dell
@@ -277,6 +273,8 @@ Ceph。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Dell/" rel="tag">Dell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack/" rel="tag">OpenStack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">存储解决方案</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -336,9 +334,9 @@ Ceph。</p>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2015/01/14/Wido_@_Ceph_Day_London/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2015/01/14/IBM_@_Ceph_Day_London/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Wido @ Ceph Day London</h4>
+        <h4 class="title"> IBM @ Ceph Day London </h4>
       </a>
     </div>
   
@@ -347,7 +345,7 @@ Ceph。</p>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2014/12/22/Mellanox_@_Ceph_Day_London/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Mellanox @ Ceph Day London</h4>
+        <h4 class="title">  Mellanox @ Ceph Day London  </h4>
       </a>
     </div>
   

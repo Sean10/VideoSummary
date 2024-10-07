@@ -150,11 +150,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-Teuthology_Training_-_Analyzing_Test_Results"
+            <article id="post-Ceph_Month_2021_-_Evaluation_of_RBD_replication_options_@CERN"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-03-16 00:00:00" datetime="2021-03-15T16:00:00.000Z"  itemprop="datePublished">2021-03-16</time>
+        <time class="post-time" title="2021-06-22 00:00:00" datetime="2021-06-21T16:00:00.000Z"  itemprop="datePublished">2021-06-22</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -168,7 +168,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/">Teuthology Training: Analyzing Test Results</a>
+      <a class="post-title-link" href="/VideoSummary/2021/06/22/Ceph_Month_2021_-_Evaluation_of_RBD_replication_options_@CERN/">  Ceph Month 2021: Evaluation of RBD replication options @CERN  </a>
     </h3>
   
 
@@ -178,390 +178,26 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-会议概述
-本次会议是关于病理学培训的第二部分，重点讨论病理学失败分析，特别是测试运行后的处理方法。会议强调了开发者在使用病理学（Pathology）进行测试时需要理解测试结果的意义，包括测试通过或失败的情况。
-主要议题
+        [改进后的中文总结内容]
+CERN的SAFE项目中，Archer作为研究员，对RBD复制选项进行了评估。以下是会议内容的总结：
 
-基本指导原则：
+项目背景与目标：SAFE项目使用四个Ceph集群，为OpenStack
+Cinder提供支持，管理约7000个卷，总容量达8TB。目标是实现Cinder卷的灾难恢复，允许用户在不同集群之间进行复制。
+技术细节与挑战：
 
-每个失败都需要被审查。
-区分失败和死亡任务（dead
-jobs），死亡任务是指未能在规定时间内正确终止的任务。
+RBD复制模式：
 
-工具和资源：
-
-Sentry：...
+日志模式（Journal...
     
 
-        <a href="/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Teuthology_Training_-_Developing_Tests"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-03-16 00:00:00" datetime="2021-03-15T16:00:00.000Z"  itemprop="datePublished">2021-03-16</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/03/16/Teuthology_Training_-_Developing_Tests/">Teuthology Training: Developing Tests</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题：Ceph测试开发培训
-会议时间：2023年某月某日
-参会人员：Ceph研发团队成员
-会议内容总结：
-
-测试类型介绍：
-
-讨论了不同类型的测试，包括单元测试、集成测试和升级测试等。
-强调了单元测试的重要性，因其执行速度快，反馈迅速。
-详细介绍了集成测试的编写方式，特别是使用脚本（如Bash和Python）对Ceph集群进行测试。
-
-集成测试的编写与执行：
-
-介绍了如何编写集...
-    
-
-        <a href="/VideoSummary/2021/03/16/Teuthology_Training_-_Developing_Tests/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Teuthology_Training_-_Introduction"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-03-16 00:00:00" datetime="2021-03-15T16:00:00.000Z"  itemprop="datePublished">2021-03-16</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/03/16/Teuthology_Training_-_Introduction/">Teuthology Training: Introduction</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议概述
-会议主题为“IDEA技术培训系列”，由Greg主持，旨在介绍Ceph测试框架Toothology的使用和相关测试流程。会议强调了互动性，鼓励与会者在任何时候提出问题。
-主要议题
-
-Toothology框架介绍
-
-Toothology是一个用于测试Ceph的分布式系统测试框架，已有10年历史。
-该框架解决了早期Ceph测试中缺乏系统化测试工具的问题。
-Toothology基...
-    
-
-        <a href="/VideoSummary/2021/03/16/Teuthology_Training_-_Introduction/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Code_Walkthroughs_-_Librbd_Part_2"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-03-10 00:00:00" datetime="2021-03-09T16:00:00.000Z"  itemprop="datePublished">2021-03-10</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/">Ceph Code Walkthroughs: Librbd Part 2</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议概述
-会议日期：2月23日
-会议主题：Ceph RBD（Live RBD）代码走读第二部分
-主讲人：Jason
-参会人员：Ceph社区成员
-主要议题
-
-RBD I/O路径概述
-
-I/O请求处理流程：从API层开始，经过多个可插拔层（如QoS、独占锁、刷新状态机等），最终到达核心层处理对象请求。
-librbd.cc文件：作为C和C++
-API的入口点，负责将I/O请求重定向到li...
-    
-
-        <a href="/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Crimson_SeaStore_2021-03-10"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-03-10 00:00:00" datetime="2021-03-09T16:00:00.000Z"  itemprop="datePublished">2021-03-10</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/">Ceph Crimson/SeaStore  2021-03-10</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-关键细节
-
-上周工作回顾：
-
-进行了一些清理工作，并继续处理客户端请求序列化测试。
-与Shihan和Redec讨论了启动工作。
-通过启动任务队列和线程（by pjid）改进了Alien
-Store性能，目前仍在审查第二部分PR。
-调试了NPD的段错误报告，发现是由垃圾收集引起的RB树混乱，已找到Sum已修复的相关bug。
-开发了一种方法来重现Chutney观察到的行为，发现LBA管...
-    
-
-        <a href="/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Developer_Monthly_2021-02-03"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-03-09 00:00:00" datetime="2021-03-08T16:00:00.000Z"  itemprop="datePublished">2021-03-09</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/03/09/Ceph_Developer_Monthly_2021-02-03/">Ceph Developer Monthly 2021-02-03</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题：Ceph
-镜像指标与跨服务共享
-讨论内容： - 目标与挑战： 在
-Kubernetes 环境中，如何实现一致的告警机制，特别是针对 RGW 多站点或 Ceph
-镜像等场景。 - 实现思路： 讨论了如何跟踪和分类
-SLA（服务级别协议），以及如何在工程上实现这些 SLA
-的报告和度量，以便于构建 Grafana 仪表板进行监控。 -
-技术细节： 探讨了在 Ceph Mana...
-    
-
-        <a href="/VideoSummary/2021/03/09/Ceph_Developer_Monthly_2021-02-03/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-What_s_New_in_Pacific_Ceph_Release_-_Sage_Weil"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-03-09 00:00:00" datetime="2021-03-08T16:00:00.000Z"  itemprop="datePublished">2021-03-09</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/03/09/What_s_New_in_Pacific_Ceph_Release_-_Sage_Weil/">What&#39;s New in Pacific Ceph Release - Sage Weil</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： Ceph最新版本Pacific的功能更新与计划
-会议时间： 近期
-会议地点： 线上会议
-参会人员： Ceph社区成员、研发人员、用户
-会议内容总结：
-
-Ceph概述：
-
-Ceph是软件定义的统一存储系统，支持对象、块和文件存储。
-基于开源软件，运行在标准硬件上，避免供应商锁定，支持扩展和创新。
-设计强调可靠性和数据耐久性，通过复制和纠删码保护数据。
-
-Pacific版本...
-    
-
-        <a href="/VideoSummary/2021/03/09/What_s_New_in_Pacific_Ceph_Release_-_Sage_Weil/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-2021Q1_Ceph社区季度总结"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-03-01 00:00:00" datetime="2021-02-28T16:00:00.000Z"  itemprop="datePublished">2021-03-01</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/03/01/2021Q1_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">2021Q1 Ceph社区季度总结</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Ceph社区2021Q1季度总结报告
-1.
-本季度Ceph社区的主要活动和重点议题
-本季度Ceph社区活动丰富多样，主要活动和重点议题包括：
-
-Teuthology框架的内部结构与调度机制：对Toothology框架的内部结构和调度机制进行了深入讨论，包括拓扑代码的整体结构、远程机器交互以及调度机制的改进等方面。
-Ceph Crimson
-2021-02-23会议：讨论了客户端请求序列器的优...
-    
-
-        <a href="/VideoSummary/2021/03/01/2021Q1_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2021/06/22/Ceph_Month_2021_-_Evaluation_of_RBD_replication_options_@CERN/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/" rel="tag">技术发展</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A4%BE%E5%8C%BA%E5%8A%A8%E6%80%81/" rel="tag">社区动态</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CERN/" rel="tag">CERN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Disaster-Recovery/" rel="tag">Disaster Recovery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack-Cinder/" rel="tag">OpenStack Cinder</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD-Replication/" rel="tag">RBD Replication</a></li></ul>
 
     </div>
     
@@ -570,11 +206,11 @@ Ceph Crimson
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Crimson_2021-02-23"
+            <article id="post-Ceph_Month_2021_-_Qemu_-_librbd_vs_krbd_performance"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-02-26 00:00:00" datetime="2021-02-25T16:00:00.000Z"  itemprop="datePublished">2021-02-26</time>
+        <time class="post-time" title="2021-06-21 00:00:00" datetime="2021-06-20T16:00:00.000Z"  itemprop="datePublished">2021-06-21</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -588,7 +224,7 @@ Ceph Crimson
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/02/26/Ceph_Crimson_2021-02-23/">Ceph Crimson 2021-02-23</a>
+      <a class="post-title-link" href="/VideoSummary/2021/06/21/Ceph_Month_2021_-_Qemu_-_librbd_vs_krbd_performance/">  Ceph Month 2021: Qemu: librbd vs krbd performance  </a>
     </h3>
   
 
@@ -598,25 +234,92 @@ Ceph Crimson
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
+        [改进后的中文总结内容]
+会议纪要
+会议主题：
+本次会议主要讨论和比较了Ceph存储系统中librbd和krbd两种客户端在不同场景下的性能表现。
+会议目的：
+为了解答客户关于librbd和krbd性能差异的疑问，特别是针对特定工作负载（Kimu
+workloads），会议旨在通过数据收集和比较，展示这两种客户端的性能特点。
+主要讨论内容：
+
+测试目标和方法：
+
+定义了四个主要测试场景，包括...
+    
+
+        <a href="/VideoSummary/2021/06/21/Ceph_Month_2021_-_Qemu_-_librbd_vs_krbd_performance/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/krbd/" rel="tag">krbd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/librbd/" rel="tag">librbd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF/" rel="tag">客户端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E6%AF%94%E8%BE%83/" rel="tag">性能比较</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Crimson_SeaStore_2021-06-16"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-06-16 00:00:00" datetime="2021-06-15T16:00:00.000Z"  itemprop="datePublished">2021-06-16</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/06/16/Ceph_Crimson_SeaStore_2021-06-16/"> Ceph Crimson/SeaStore 2021-06-16 </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
 关键细节
 
-参会人员: 包括Sherhan在内的团队成员。
-时间: 最近一周。
-主要议题: 讨论了客户端请求序列器（client request
-sequencer）的优化、单元测试的添加、3D课堂项目的构建问题、以及Ceph存储系统中的并发优化。
+设备管理支持：
 
-讨论的主要议题
+讨论了为支持设备管理而定义zone space和其他结构的需求。
+参考了FTL库和SPDK中的定义，以获取灵感。
 
-客户端请求序列器优化:
+PR审查与更新：
 
-Sherhan和团队成员正在优化客户端请求序列器，并尝试添加单元测试。
-讨论了在不同构建...
+审查并更新了一个成熟的PR，涉及管理多个zones的支持。
+修复了单元测试中的bug，并移除了catch extent。
+
+单元测试问题：
+
+发现单元测试存在问题，但系统API测试未报告此问题...
     
 
-        <a href="/VideoSummary/2021/02/26/Ceph_Crimson_2021-02-23/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2021/06/16/Ceph_Crimson_SeaStore_2021-06-16/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
     </div>
     
 </article>
@@ -624,11 +327,11 @@ Sherhan和团队成员正在优化客户端请求序列器，并尝试添加单�
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Crimson_SeaStor_OSD_2021-01-26"
+            <article id="post-Ceph_Month_2021_-_Project_Aquarium_-_An_easy-to-use_storage_appliance_wrapped_around_Ceph"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-01-27 00:00:00" datetime="2021-01-26T16:00:00.000Z"  itemprop="datePublished">2021-01-27</time>
+        <time class="post-time" title="2021-06-16 00:00:00" datetime="2021-06-15T16:00:00.000Z"  itemprop="datePublished">2021-06-16</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -642,7 +345,7 @@ Sherhan和团队成员正在优化客户端请求序列器，并尝试添加单�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/01/27/Ceph_Crimson_SeaStor_OSD_2021-01-26/">Ceph Crimson/SeaStor OSD 2021-01-26</a>
+      <a class="post-title-link" href="/VideoSummary/2021/06/16/Ceph_Month_2021_-_Project_Aquarium_-_An_easy-to-use_storage_appliance_wrapped_around_Ceph/">  Ceph Month 2021: Project Aquarium - An easy-to-use storage appliance wrapped around Ceph  </a>
     </h3>
   
 
@@ -652,26 +355,373 @@ Sherhan和团队成员正在优化客户端请求序列器，并尝试添加单�
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-会议时间： [具体日期]
-参会人员： [参会人员名单]
-会议主持： [主持人姓名]
-会议内容：
+        [改进后的中文总结内容]
+会议纪要：Project Aquarium
+介绍与讨论
+会议概述
+本次会议由Alex Saddle主持，他是Souza公司的软件工程经理和Project
+Aquarium的产品负责人。会议重点介绍了Project
+Aquarium的目标、架构、演示以及未来发展规划。
+关键细节
 
-上周工作回顾：
-
-Ceph相关工作：
-
-修复了Ceph管理工具（ceph-adm）中的问题，该问题被认为是Pacific版本发布的阻塞点。
-重新审视了流水线文档，并根据Sam的评论进行了修改。
-提供了Collection Manager的代码，以便审查和研究流水线设计文档。
-
-其他工作...
+项目名称：Project Aquarium
+项目目标：简化Ceph的开发、部署和管理，提...
     
 
-        <a href="/VideoSummary/2021/01/27/Ceph_Crimson_SeaStor_OSD_2021-01-26/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2021/06/16/Ceph_Month_2021_-_Project_Aquarium_-_An_easy-to-use_storage_appliance_wrapped_around_Ceph/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Management/" rel="tag">Ceph Management</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Project-Aquarium/" rel="tag">Project Aquarium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Appliance/" rel="tag">Storage Appliance</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Month_2021_-_Dashboard_Update"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-06-15 00:00:00" datetime="2021-06-14T16:00:00.000Z"  itemprop="datePublished">2021-06-15</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/">&#39;Ceph Month 2021: Dashboard Update&#39;</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+Ceph Dashboard 组件负责人 Ernesto Puerta 在 Ceph Month 2021
+会议中介绍了 Dashboard 的最新更新和未来规划。以下是会议的关键点：
+
+Pacific 版本亮点：
+
+Cepheum 集成：与 Orchestrator 的整合，主要集中在
+Cepheum 上，Rook 的支持预计将在 Quincy 版本中完成。
+RG...
+    
+
+        <a href="/VideoSummary/2021/06/15/Ceph_Month_2021_-_Dashboard_Update/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Dashboard/" rel="tag">Dashboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestration/" rel="tag">Orchestration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Pacific-%E7%89%88%E6%9C%AC/" rel="tag">Pacific 版本</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Quincy-%E7%89%88%E6%9C%AC/" rel="tag">Quincy 版本</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Month_2021_-_From_Open_Source_to_Open_Ended_in_Ceph_with_Lua"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-06-15 00:00:00" datetime="2021-06-14T16:00:00.000Z"  itemprop="datePublished">2021-06-15</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/06/15/Ceph_Month_2021_-_From_Open_Source_to_Open_Ended_in_Ceph_with_Lua/">&#39;Ceph Month 2021: From Open Source to Open Ended in Ceph with Lua&#39;</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议主题：Ceph中Lua的集成与应用
+参会人员：Ceph研发团队及相关领域专家
+会议时间：[具体时间]
+会议地点：[具体地点]
+会议内容总结：
+
+Seth简介：
+
+Seth是一个开源且免费的工具，旨在提供灵活的存储解决方案。
+Ceph作为一个包含250万行C++代码的大型项目，具有复杂的架构和依赖关系。
+
+Ceph的开放性：
+
+尽管Ceph是开源的，但并...
+    
+
+        <a href="/VideoSummary/2021/06/15/Ceph_Month_2021_-_From_Open_Source_to_Open_Ended_in_Ceph_with_Lua/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Lua/" rel="tag">Lua</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Open-Source/" rel="tag">Open Source</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Month_2021_-_RBD_latency_with_QD=1_bs=4k"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-06-15 00:00:00" datetime="2021-06-14T16:00:00.000Z"  itemprop="datePublished">2021-06-15</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/06/15/Ceph_Month_2021_-_RBD_latency_with_QD=1_bs=4k/">&#39;Ceph Month 2021: RBD latency with QD=1 bs=4k&#39;</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议主题： RBD性能优化与低延迟配置讨论
+主讲人： Widow
+日期： [具体日期未提供]
+参会人员： [具体人员未提供]
+主要议题： 1. RBD性能测试配置：
+讨论了使用队列深度（Q Depth）为1和块大小为4K的RBD性能测试。 2.
+单线程IO延迟的重要性：
+强调了单线程IO延迟对于许多应用程序的重要性，特别是在PHP
+Web服务器、Maria...
+    
+
+        <a href="/VideoSummary/2021/06/15/Ceph_Month_2021_-_RBD_latency_with_QD=1_bs=4k/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD/" rel="tag">RBD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BD%8E%E5%BB%B6%E8%BF%9F/" rel="tag">低延迟</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A1%AC%E4%BB%B6%E9%85%8D%E7%BD%AE/" rel="tag">硬件配置</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Orchestrator_Meeting_2021-06-15"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-06-15 00:00:00" datetime="2021-06-14T16:00:00.000Z"  itemprop="datePublished">2021-06-15</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/06/15/Ceph_Orchestrator_Meeting_2021-06-15/">Ceph Orchestrator Meeting 2021-06-15</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议主题：Ceph
+Dashboard 配置与 RGW 连接优化
+参会人员：Alfonso、Sage、Casey、Jehuda
+等
+会议时间：2021年6月15日
+会议地点：视频会议
+主要议题：
+
+Ceph Dashboard 中 Selfie IDM 网络设置的 Pull
+Request
+RGW 连接凭证的配置与优化
+NFS 导出创建的 CLI 命令优化...
+    
+
+        <a href="/VideoSummary/2021/06/15/Ceph_Orchestrator_Meeting_2021-06-15/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Configuration-Optimization/" rel="tag">Configuration Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Dashboard/" rel="tag">Dashboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-06-14 00:00:00" datetime="2021-06-13T16:00:00.000Z"  itemprop="datePublished">2021-06-14</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/">  Ceph Month 2021: 5 more ways to break your ceph cluster  </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议概述
+Vito，421的创始人，主持了本次Ceph Month
+2021会议，主题为“破坏你的Ceph集群的五种新方法及一个额外提示”。本次会议回顾了Vito之前关于“破坏Ceph集群的十种方法”的演讲，并分享了新的研究和经验教训。
+讨论的主要议题
+
+自动化工具的误用：
+
+案例分析：自动化脚本未正确检查监控器数量，导致监控器被错误移除，包括监控数据库，...
+    
+
+        <a href="/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86/" rel="tag">Ceph集群管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/" rel="tag">存储技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%85%E9%9A%9C%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/" rel="tag">故障案例分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" rel="tag">最佳实践</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Month_2021_-_RBD_Update"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-06-14 00:00:00" datetime="2021-06-13T16:00:00.000Z"  itemprop="datePublished">2021-06-14</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/06/14/Ceph_Month_2021_-_RBD_Update/">&#39;Ceph Month 2021: RBD Update&#39;</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+Ceph Month
+2021会议中，RBD团队技术负责人Ilya介绍了RBD的更新情况，包括以下关键点：
+
+即时导入（Instant
+Import）：支持从外部数据源导入图像，包括本地和远程文件，以及兼容Amazon
+S3的对象存储中的文件。支持的数据源格式包括raw、qcow2等，但不支持压缩、加密等高级功能。
+内置加密（Built-in
+Encryption）...
+    
+
+        <a href="/VideoSummary/2021/06/14/Ceph_Month_2021_-_RBD_Update/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD/" rel="tag">RBD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
     </div>
     
 </article>
@@ -683,7 +733,7 @@ Ceph相关工作：
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/page/53/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/52/">52</a><a class="page-number" href="/VideoSummary/page/53/">53</a><span class="page-number current">54</span><a class="page-number" href="/VideoSummary/page/55/">55</a><a class="page-number" href="/VideoSummary/page/56/">56</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="extend next" rel="next" href="/VideoSummary/page/55/">下一页</a>
+    <a class="extend prev" rel="prev" href="/VideoSummary/page/53/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/52/">52</a><a class="page-number" href="/VideoSummary/page/53/">53</a><span class="page-number current">54</span><a class="page-number" href="/VideoSummary/page/55/">55</a><a class="page-number" href="/VideoSummary/page/56/">56</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/132/">132</a><a class="extend next" rel="next" href="/VideoSummary/page/55/">下一页</a>
     </div>
 </nav>
 

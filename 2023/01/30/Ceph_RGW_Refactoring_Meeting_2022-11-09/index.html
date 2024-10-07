@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph RGW Refactoring Meeting 2022-11-09 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph RGW重构会议纪要 2022-11-09 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="Ceph 开发会议纪要 会议概要 本次会议主要讨论了关于Ceph存储系统中Sal（存储抽象层）的依赖管理和组织结构问题，特别是如何处理外部树（out-of-tree）驱动程序的依赖关系。会议还涉及了代码清理、模块化以及版本控制等议题。 主要议题  依赖管理与组织结构  讨论了如何组织Sal的依赖，特别是外部树驱动程序的依赖问题。 探讨了是否应该让外部树驱动程序依赖于self common库，以及如">
+    <meta name="keywords" content="Ceph,RGW,版本控制,模块化,代码清理">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph存储系统中RGW（Rados Gateway）的代码重构问题，包括依赖管理、模块化、版本控制、代码清理等方面。 主要议题  依赖管理与组织结构  讨论了如何组织RGW的依赖，特别是处理外部树（out-of-tree）驱动程序的依赖关系。 探讨了是否应该让外部树驱动程序依赖于self common库，以及如何避免这种依赖。 讨论了如何处理编码解码（">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph RGW Refactoring Meeting 2022-11-09">
+<meta property="og:title" content="Ceph RGW重构会议纪要 2022-11-09">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="Ceph 开发会议纪要 会议概要 本次会议主要讨论了关于Ceph存储系统中Sal（存储抽象层）的依赖管理和组织结构问题，特别是如何处理外部树（out-of-tree）驱动程序的依赖关系。会议还涉及了代码清理、模块化以及版本控制等议题。 主要议题  依赖管理与组织结构  讨论了如何组织Sal的依赖，特别是外部树驱动程序的依赖问题。 探讨了是否应该让外部树驱动程序依赖于self common库，以及如">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph存储系统中RGW（Rados Gateway）的代码重构问题，包括依赖管理、模块化、版本控制、代码清理等方面。 主要议题  依赖管理与组织结构  讨论了如何组织RGW的依赖，特别是处理外部树（out-of-tree）驱动程序的依赖关系。 探讨了是否应该让外部树驱动程序依赖于self common库，以及如何避免这种依赖。 讨论了如何处理编码解码（">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-01-30T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="版本控制">
+<meta property="article:tag" content="模块化">
+<meta property="article:tag" content="代码清理">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph RGW Refactoring Meeting 2022-11-09</div>
+        <div class="flex-col header-title ellipsis">Ceph RGW重构会议纪要 2022-11-09</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph RGW Refactoring Meeting 2022-11-09</h1>
+        <h1 class="title">Ceph RGW重构会议纪要 2022-11-09</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-01-29T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ceph-%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">Ceph 开发会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">关键词</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">2.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">3.</span> <span class="post-toc-text">后续行动计划</span></a></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph RGW Refactoring Meeting 2022-11-09</h1>
+        <h1 class="post-card-title">Ceph RGW重构会议纪要 2022-11-09</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-01-30 00:00:00" datetime="2023-01-29T16:00:00.000Z"  itemprop="datePublished">2023-01-30</time>
 
@@ -185,14 +190,14 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="ceph-开发会议纪要">Ceph 开发会议纪要</h1>
-<h2 id="会议概要">会议概要</h2>
-<p>本次会议主要讨论了关于Ceph存储系统中Sal（存储抽象层）的依赖管理和组织结构问题，特别是如何处理外部树（out-of-tree）驱动程序的依赖关系。会议还涉及了代码清理、模块化以及版本控制等议题。</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph存储系统中RGW（Rados
+Gateway）的代码重构问题，包括依赖管理、模块化、版本控制、代码清理等方面。</p>
 <h2 id="主要议题">主要议题</h2>
 <ol type="1">
 <li><strong>依赖管理与组织结构</strong>
 <ul>
-<li>讨论了如何组织Sal的依赖，特别是外部树驱动程序的依赖问题。</li>
+<li>讨论了如何组织RGW的依赖，特别是处理外部树（out-of-tree）驱动程序的依赖关系。</li>
 <li>探讨了是否应该让外部树驱动程序依赖于self
 common库，以及如何避免这种依赖。</li>
 <li>讨论了如何处理编码解码（encode/decode）和配置（config）相关的依赖。</li>
@@ -250,20 +255,6 @@ specific的代码移动到store rados目录下。</li>
 store与rgw的循环依赖问题。</li>
 </ul></li>
 </ol>
-<h2 id="关键词">关键词</h2>
-<ul>
-<li>Ceph</li>
-<li>Sal</li>
-<li>外部树驱动程序（out-of-tree drivers）</li>
-<li>self common库</li>
-<li>编码解码（encode/decode）</li>
-<li>配置（config）</li>
-<li>模块化</li>
-<li>版本控制</li>
-<li>代码清理</li>
-</ul>
-<h2 id="结论">结论</h2>
-<p>本次会议明确了Ceph存储系统中Sal层的依赖管理和组织结构问题，特别是如何处理外部树驱动程序的依赖关系。通过模块化和版本控制策略，以及代码清理工作，将有助于提高系统的稳定性和可维护性。</p>
 
         </div>
 
@@ -294,6 +285,8 @@ store与rgw的循环依赖问题。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E6%B8%85%E7%90%86/" rel="tag">代码清理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="tag">模块化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" rel="tag">版本控制</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -305,7 +298,7 @@ store与rgw的循环依赖问题。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/&title=《Ceph RGW Refactoring Meeting 2022-11-09》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/&title=《Ceph RGW重构会议纪要 2022-11-09》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -315,7 +308,7 @@ store与rgw的循环依赖问题。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/&title=《Ceph RGW Refactoring Meeting 2022-11-09》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/&title=《Ceph RGW重构会议纪要 2022-11-09》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -325,7 +318,7 @@ store与rgw的循环依赖问题。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2022-11-09》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW重构会议纪要 2022-11-09》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -355,7 +348,7 @@ store与rgw的循环依赖问题。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/01/31/Ceph_Performance_Meeting_2023-01-26/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2023-01-26</h4>
+        <h4 class="title">Ceph性能会议纪要 2023-01-26</h4>
       </a>
     </div>
   
@@ -364,7 +357,7 @@ store与rgw的循环依赖问题。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/01/27/Ceph_RGW_Refactoring_Meeting_2022-11-02/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2022-11-02</h4>
+        <h4 class="title">Ceph RGW 重构会议 2022-11-02</h4>
       </a>
     </div>
   
@@ -464,7 +457,7 @@ store与rgw的循环依赖问题。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/&title=《Ceph RGW Refactoring Meeting 2022-11-09》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/&title=《Ceph RGW重构会议纪要 2022-11-09》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -474,7 +467,7 @@ store与rgw的循环依赖问题。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/&title=《Ceph RGW Refactoring Meeting 2022-11-09》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/&title=《Ceph RGW重构会议纪要 2022-11-09》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -484,7 +477,7 @@ store与rgw的循环依赖问题。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2022-11-09》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW重构会议纪要 2022-11-09》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

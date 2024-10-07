@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="Centralized Logging Solutions:  Graylog: Has to be configured manually, lacks dynamic log collection. Elasticsearch and Logstash: Offer customization and better visualization, but require running bea">
+    <meta name="keywords" content="Ceph,分布式存储,Prometheus,日志管理,可观察性">
+    <meta name="description" content="[改进后的中文总结内容] 本次Ceph开发者月度会议主要讨论了以下几个方面：  集中式日志解决方案：  讨论了现有的集中式日志解决方案，包括Graylog、Elasticsearch和Logstash、Loki等，并比较了它们的优缺点。 讨论了集中式日志对于多集群管理和调试的重要性。 讨论了如何通过配置参数和模式识别来减少日志的冗余，并利用条件触发来优化日志管理。  指标收集和可观察性：  讨论了">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Developer Monthly 2022-03-02">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/06/03/Ceph_Developer_Monthly_2022-03-02/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="Centralized Logging Solutions:  Graylog: Has to be configured manually, lacks dynamic log collection. Elasticsearch and Logstash: Offer customization and better visualization, but require running bea">
+<meta property="og:description" content="[改进后的中文总结内容] 本次Ceph开发者月度会议主要讨论了以下几个方面：  集中式日志解决方案：  讨论了现有的集中式日志解决方案，包括Graylog、Elasticsearch和Logstash、Loki等，并比较了它们的优缺点。 讨论了集中式日志对于多集群管理和调试的重要性。 讨论了如何通过配置参数和模式识别来减少日志的冗余，并利用条件触发来优化日志管理。  指标收集和可观察性：  讨论了">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-06-02T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Prometheus">
+<meta property="article:tag" content="日志管理">
+<meta property="article:tag" content="可观察性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,46 +183,41 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <ol type="1">
-<li><strong>Centralized Logging Solutions</strong>:
+            <p>[改进后的中文总结内容]</p>
+<p>本次Ceph开发者月度会议主要讨论了以下几个方面：</p>
+<ol type="1">
+<li><strong>集中式日志解决方案</strong>：
 <ul>
-<li><strong>Graylog</strong>: Has to be configured manually, lacks
-dynamic log collection.</li>
-<li><strong>Elasticsearch and Logstash</strong>: Offer customization and
-better visualization, but require running beats daemon on every
-node.</li>
-<li><strong>Loki</strong>: Simpler integration with native grafana
-interface.</li>
+<li>讨论了现有的集中式日志解决方案，包括Graylog、Elasticsearch和Logstash、Loki等，并比较了它们的优缺点。</li>
+<li>讨论了集中式日志对于多集群管理和调试的重要性。</li>
+<li>讨论了如何通过配置参数和模式识别来减少日志的冗余，并利用条件触发来优化日志管理。</li>
 </ul></li>
-<li><strong>Traceability and Observability</strong>:
+<li><strong>指标收集和可观察性</strong>：
 <ul>
-<li>Trace points can help in reducing the overhead of processing
-logs.</li>
-<li>Tracing gives the possibility of focusing on specific flows and
-turning on traces under certain conditions.</li>
+<li>讨论了Prometheus在收集和监控Ceph集群指标方面的作用。</li>
+<li>讨论了如何解决Prometheus在扩展到大规模集群时的性能问题。</li>
+<li>讨论了如何将更多指标和计数器暴露给Prometheus，并考虑了使用C++代码直接收集指标的方法。</li>
 </ul></li>
-<li><strong>Dynamic Filtering and Conditional Tracing</strong>:
+<li><strong>未来工作</strong>：
 <ul>
-<li>The idea of conditional tracing based on observed conditions to
-reduce the volume of logs.</li>
-<li>Dynamic filtering capabilities like those seen in dtrace for
-efficient log management and debugging.</li>
+<li>讨论了将动态代码或脚本集成到日志和跟踪中的可能性，以实现更灵活的条件注入。</li>
+<li>讨论了在C++环境中实现这些动态功能的安全性和可行性。</li>
+<li>讨论了通过社区反馈来了解不同的使用案例和角色，以便更好地设计日志和跟踪系统。</li>
 </ul></li>
-<li><strong>Future Work</strong>:
+<li><strong>社区反馈</strong>：
 <ul>
-<li>Explore integrating dynamic code or scripting into logging and
-tracing to allow for flexible condition injection.</li>
-<li>Consider the feasibility and safety of such dynamic capabilities in
-a C++ environment.</li>
-</ul></li>
-<li><strong>Community Feedback</strong>:
-<ul>
-<li>Send out emails to both dev list and user list to gather more
-feedback on centralized logging solutions.</li>
-<li>Understand different use cases and roles these solutions can
-serve.</li>
+<li>讨论了通过向开发者列表和用户列表发送邮件来收集更多反馈。</li>
+<li>讨论了理解不同的使用案例和角色，以便这些解决方案可以更好地服务于社区。</li>
 </ul></li>
 </ol>
+<p>本次会议还讨论了其他一些话题，例如：</p>
+<ul>
+<li>指标收集的拓扑结构，特别是关于如何收集计数器和指标的讨论。</li>
+<li>将Prometheus作为主端点收集指标的可行性。</li>
+<li>如何解决现有指标的冗余问题，并考虑减少高频数据流。</li>
+<li>利用DTrace等工具实现动态过滤和条件跟踪的可能性。</li>
+</ul>
+<p>会议决定将讨论的结果整理成文档，并通过邮件列表和邮件发送给更广泛的社区，以便进一步讨论和改进。</p>
 
         </div>
 
@@ -248,6 +248,8 @@ serve.</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Prometheus/" rel="tag">Prometheus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E8%A7%82%E5%AF%9F%E6%80%A7/" rel="tag">可观察性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/" rel="tag">日志管理</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -318,7 +320,7 @@ serve.</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/06/03/Ceph_Developer_Monthly_2022-05-04/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Developer Monthly 2022-05-04</h4>
+        <h4 class="title">  Ceph Developer Monthly 2022-05-04  </h4>
       </a>
     </div>
   

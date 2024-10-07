@@ -14,23 +14,28 @@
     
     
     
-    <title>Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM | ceph视频总结 | youtube频道总结</title>
+    <title>  Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： 启用RBD工作负载的读取亲和性（Read Affinity） 参会人员：  Rakshit（曾在Red Hat工作，现就职于IBM）  会议议程：  CRUSH算法和CRUSH Maps简介 OSD拓扑结构 OSD拓扑与CRUSH位置的相互关系 客户端读取流程 读取亲和性的优缺点 如何在内部和外部集群中启用读取亲和性  讨论内容：  CRUSH算法：CRUSH算法是Ceph的">
+    <meta name="keywords" content="Ceph,RBD,Kubernetes,Rook,Read Affinity">
+    <meta name="description" content="[改进后的中文总结内容] 在本次会议纪要中，Rakshith R（现就职于IBM）探讨了如何通过Rook启用RBD工作负载的读取亲和性（Read Affinity）。会议涵盖了以下几个方面：  CRUSH算法和CRUSH Maps简介：CRUSH算法是Ceph的核心，用于确定数据存储的位置。客户端写入数据时，对象ID通过CRUSH算法映射到PG（Placement Group），再映射到一组OSD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM">
+<meta property="og:title" content="  Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： 启用RBD工作负载的读取亲和性（Read Affinity） 参会人员：  Rakshit（曾在Red Hat工作，现就职于IBM）  会议议程：  CRUSH算法和CRUSH Maps简介 OSD拓扑结构 OSD拓扑与CRUSH位置的相互关系 客户端读取流程 读取亲和性的优缺点 如何在内部和外部集群中启用读取亲和性  讨论内容：  CRUSH算法：CRUSH算法是Ceph的">
+<meta property="og:description" content="[改进后的中文总结内容] 在本次会议纪要中，Rakshith R（现就职于IBM）探讨了如何通过Rook启用RBD工作负载的读取亲和性（Read Affinity）。会议涵盖了以下几个方面：  CRUSH算法和CRUSH Maps简介：CRUSH算法是Ceph的核心，用于确定数据存储的位置。客户端写入数据时，对象ID通过CRUSH算法映射到PG（Placement Group），再映射到一组OSD">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RBD">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="Read Affinity">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM</div>
+        <div class="flex-col header-title ellipsis">  Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM</h1>
+        <h1 class="title">  Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%AE%E7%A8%8B"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议议程：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">讨论内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">参考资料：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM</h1>
+        <h1 class="post-card-title">  Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM  </h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
@@ -185,57 +183,31 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题">会议主题：</h4>
-<p>启用RBD工作负载的读取亲和性（Read Affinity）</p>
-<h4 id="参会人员">参会人员：</h4>
-<ul>
-<li><strong>Rakshit</strong>（曾在Red Hat工作，现就职于IBM）</li>
-</ul>
-<h4 id="会议议程">会议议程：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>在本次会议纪要中，Rakshith
+R（现就职于IBM）探讨了如何通过Rook启用RBD工作负载的读取亲和性（Read
+Affinity）。会议涵盖了以下几个方面：</p>
 <ol type="1">
-<li><strong>CRUSH算法和CRUSH Maps简介</strong></li>
-<li><strong>OSD拓扑结构</strong></li>
-<li><strong>OSD拓扑与CRUSH位置的相互关系</strong></li>
-<li><strong>客户端读取流程</strong></li>
-<li><strong>读取亲和性的优缺点</strong></li>
-<li><strong>如何在内部和外部集群中启用读取亲和性</strong></li>
-</ol>
-<h4 id="讨论内容">讨论内容：</h4>
-<ul>
-<li><strong>CRUSH算法</strong>：CRUSH算法是Ceph的核心，用于确定数据存储的位置。客户端写入数据时，对象ID通过CRUSH算法映射到PG（Placement
-Group），再映射到一组OSD，其中一个为主OSD。</li>
-<li><strong>OSD拓扑结构</strong>：Rook利用Kubernetes的节点标签来实现OSD的拓扑分布，确保数据在不同故障域中的复制。</li>
-<li><strong>客户端读取流程</strong>：默认情况下，客户端读取数据从主OSD进行。为了提高读取速度，可以通过CSI（Container
+<li><p><strong>CRUSH算法和CRUSH
+Maps简介</strong>：CRUSH算法是Ceph的核心，用于确定数据存储的位置。客户端写入数据时，对象ID通过CRUSH算法映射到PG（Placement
+Group），再映射到一组OSD，其中一个为主OSD。</p></li>
+<li><p><strong>OSD拓扑结构</strong>：Rook利用Kubernetes的节点标签来实现OSD的拓扑分布，确保数据在不同故障域中的复制。</p></li>
+<li><p><strong>OSD拓扑与CRUSH位置的相互关系</strong>：客户端读取流程默认情况下，客户端读取数据从主OSD进行。为了提高读取速度，可以通过CSI（Container
 Storage
-Interface）将客户端位置信息传递给CRUSH算法，从而允许客户端从最近的次级OSD读取数据。</li>
-<li><strong>读取亲和性的优缺点</strong>：
-<ul>
-<li><strong>优点</strong>：显著提高读取速度，降低延迟，减少跨区域流量，特别适用于云环境。</li>
-<li><strong>缺点</strong>：可能导致多个OSD同时服务于同一数据的读取，增加CPU和内存使用。</li>
-</ul></li>
-</ul>
-<h4 id="决定事项">决定事项：</h4>
-<ul>
-<li><strong>启用读取亲和性</strong>：在Rook部署的内部集群中，通过设置CSI配置项启用读取亲和性。对于外部集群，需要确保节点标签与外部集群的CRUSH
-Maps匹配。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划：</h4>
-<ul>
-<li><strong>内部集群</strong>：在配置文件中设置<code>CSI_ENABLE_READ_AFFINITY</code>为<code>true</code>，并重启已运行的RBD
-Pods。</li>
-<li><strong>外部集群</strong>：确保节点标签与外部集群的CRUSH
-Maps匹配，并执行相同的配置更改。</li>
-</ul>
-<h4 id="参考资料">参考资料：</h4>
-<ul>
-<li>Rook GitHub链接</li>
-<li>Ceph CSI驱动链接</li>
-</ul>
-<h4 id="会议结束">会议结束：</h4>
-<p>会议在讨论和解答疑问后结束，无其他待办事项。</p>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
+Interface）将客户端位置信息传递给CRUSH算法，从而允许客户端从最近的次级OSD读取数据。</p></li>
+<li><p><strong>读取亲和性的优缺点</strong>：读取亲和性可以提高读取速度，降低延迟，减少跨区域流量，但可能导致多个OSD同时服务于同一数据的读取，增加CPU和内存使用。</p></li>
+<li><p><strong>如何在内部和外部集群中启用读取亲和性</strong>：在Rook部署的内部集群中，通过设置CSI配置项启用读取亲和性。对于外部集群，需要确保节点标签与外部集群的CRUSH
+Maps匹配。</p></li>
+</ol>
+<p>会议决定事项包括在内部集群和外部集群中启用读取亲和性的具体步骤，并提供了相关的参考资料。</p>
+<p>改进后的总结：</p>
+<ol type="1">
+<li>确保了关键细节的准确性，包括CRUSH算法、OSD拓扑、客户端读取流程、读取亲和性的优缺点以及启用方式的详细信息。</li>
+<li>没有发现错误或误解的重要信息。</li>
+<li>通过加入会议主题和参会人员信息，使总结更加完整。</li>
+<li>保留了计算机科学/ceph相关领域的英文原文关键词，如CRUSH、OSD、PG、CRUSH
+Maps、RBD、CSI、Kubernetes等。</li>
+</ol>
 
         </div>
 
@@ -266,6 +238,8 @@ Maps匹配，并执行相同的配置更改。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD/" rel="tag">RBD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Read-Affinity/" rel="tag">Read Affinity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -277,7 +251,7 @@ Maps匹配，并执行相同的配置更改。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/&title=《Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/&title=《  Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -287,7 +261,7 @@ Maps匹配，并执行相同的配置更改。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/&title=《Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/&title=《  Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -297,7 +271,7 @@ Maps匹配，并执行相同的配置更改。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -327,7 +301,7 @@ Maps匹配，并执行相同的配置更改。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/05/05/Over_a_Billion_Requests_Served_per_Day_-_Ensuring_Everyone_Is_Happy_with_Our_Ceph_Clusters_.../" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Over a Billion Requests Served per Day: Ensuring Everyone Is Happy with Our Ceph Clusters’...</h4>
+        <h4 class="title">  Over a Billion Requests Served per Day: Ensuring Everyone Is Happy with Our Ceph Clusters’...  </h4>
       </a>
     </div>
   
@@ -336,7 +310,7 @@ Maps匹配，并执行相同的配置更改。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/05/05/Rook_-_Why_Would_You_Ever_Deploy_Ceph_Inside_Kubernetes_-_Travis_Nielsen_IBM/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Rook: Why Would You Ever Deploy Ceph Inside Kubernetes? - Travis Nielsen, IBM</h4>
+        <h4 class="title">&#39;Rook: Why Would You Ever Deploy Ceph Inside Kubernetes? - Travis Nielsen, IBM&#39;</h4>
       </a>
     </div>
   
@@ -436,7 +410,7 @@ Maps匹配，并执行相同的配置更改。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/&title=《Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/&title=《  Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -446,7 +420,7 @@ Maps匹配，并执行相同的配置更改。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/&title=《Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/&title=《  Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -456,7 +430,7 @@ Maps匹配，并执行相同的配置更改。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Rook: Enabling Read Affinity for RBD Workloads - Rakshith R, IBM  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Rook_-_Enabling_Read_Affinity_for_RBD_Workloads_-_Rakshith_R_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

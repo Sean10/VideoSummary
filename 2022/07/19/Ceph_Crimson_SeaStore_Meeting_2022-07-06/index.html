@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Crimson/SeaStore Meeting 2022-07-06 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph Crimson/SeaStore 会议纪要 2022-07-06 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 会议地点： 线上会议 参会人员： Yingjin（C-Store精英），Fair，Marvin，Kingston，Aravind，Jinyu，Juan，Sam等 会议内容： 一、人员变动与项目进展  人员变动： Yingjin 将成为 C-Store 精英，负责 C-Store 项目的领导工作。 项目进展：  C-Store 项目： Yin">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,CRUSH 算法,可伸缩性">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2022年7月6日（具体日期未提及） 会议地点： 线上会议 参会人员： Yingjin、Fair、Marvin、Kingston、Aravind、Jinyu、Juan、Sam等 会议内容： 一、人员变动与项目进展  人员变动： Yingjin 将担任 C-Store 精英，负责 C-Store 项目的领导工作。 项目进展：  C-Store 项目：Y">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Crimson&#x2F;SeaStore Meeting 2022-07-06">
+<meta property="og:title" content="Ceph Crimson&#x2F;SeaStore 会议纪要 2022-07-06">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/07/19/Ceph_Crimson_SeaStore_Meeting_2022-07-06/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 会议地点： 线上会议 参会人员： Yingjin（C-Store精英），Fair，Marvin，Kingston，Aravind，Jinyu，Juan，Sam等 会议内容： 一、人员变动与项目进展  人员变动： Yingjin 将成为 C-Store 精英，负责 C-Store 项目的领导工作。 项目进展：  C-Store 项目： Yin">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2022年7月6日（具体日期未提及） 会议地点： 线上会议 参会人员： Yingjin、Fair、Marvin、Kingston、Aravind、Jinyu、Juan、Sam等 会议内容： 一、人员变动与项目进展  人员变动： Yingjin 将担任 C-Store 精英，负责 C-Store 项目的领导工作。 项目进展：  C-Store 项目：Y">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-18T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-07-19T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH 算法">
+<meta property="article:tag" content="可伸缩性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Crimson/SeaStore Meeting 2022-07-06</div>
+        <div class="flex-col header-title ellipsis">Ceph Crimson/SeaStore 会议纪要 2022-07-06</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Crimson/SeaStore Meeting 2022-07-06</h1>
+        <h1 class="title">Ceph Crimson/SeaStore 会议纪要 2022-07-06</h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-07-18T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Crimson/SeaStore Meeting 2022-07-06</h1>
+        <h1 class="post-card-title">Ceph Crimson/SeaStore 会议纪要 2022-07-06</h1>
         <div class="post-meta">
             <time class="post-time" title="2022-07-19 00:00:00" datetime="2022-07-18T16:00:00.000Z"  itemprop="datePublished">2022-07-19</time>
 
@@ -185,38 +190,36 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议时间</strong>： 2022年7月6日（具体日期未提及）</p>
 <p><strong>会议地点</strong>： 线上会议</p>
 <p><strong>参会人员</strong>：
-Yingjin（C-Store精英），Fair，Marvin，Kingston，Aravind，Jinyu，Juan，Sam等</p>
+Yingjin、Fair、Marvin、Kingston、Aravind、Jinyu、Juan、Sam等</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>一、人员变动与项目进展</strong></p>
 <ol type="1">
-<li><strong>人员变动</strong>： Yingjin 将成为 C-Store 精英，负责
+<li><strong>人员变动</strong>： Yingjin 将担任 C-Store 精英，负责
 C-Store 项目的领导工作。</li>
 <li><strong>项目进展</strong>：
 <ul>
-<li><strong>C-Store 项目</strong>： Yingjin 将继续负责 C-Store
-项目，并担任 C-Store 的技术领袖。</li>
-<li><strong>ZNS 驱动开发</strong>：
+<li>C-Store 项目：Yingjin 继续负责 C-Store 项目，并担任技术领袖。</li>
+<li>ZNS 驱动开发：
 <ul>
 <li>Aravind 正在开发 ZNS 驱动，已提交三个补丁，但遇到 make check
 失败问题。</li>
 <li>Kingston 提到 ZNS
 区的更新问题，由于关闭操作会导致磁盘无法再次打开，需要进行修改。</li>
-<li>会议讨论了 ZNS
-驱动的关闭操作（finish）与磁盘容量浪费的问题，并决定修改 ZNS
+<li>会议讨论了 ZNS 驱动的关闭操作与磁盘容量浪费的问题，决定修改 ZNS
 管理器，使其在写入数据时填充空间，以避免浪费。</li>
 </ul></li>
-<li><strong>垃圾回收器改进</strong>： Jinyu
-提出了关于垃圾回收器改进的想法，建议在 GC
+<li>垃圾回收器改进：Jinyu 提出关于垃圾回收器改进的想法，建议在 GC
 事务中添加判断逻辑，以避免将不满足时间局部性原则的 extent 添加到 Aerial
 中。</li>
-<li><strong>对象存储改进</strong>： Juan 正在调试对象存储相关的
-PR，并尝试实现固定 KBB 树优化。</li>
-<li><strong>性能测试</strong>： Sam 询问如何测试 ZNS 驱动，建议使用 fio
-或 rados-bench 等工具进行性能测试。</li>
+<li>对象存储改进：Juan 正在调试对象存储相关的 PR，并尝试实现 KBB
+树优化。</li>
+<li>性能测试：Sam 询问如何测试 ZNS 驱动，建议使用 fio 或 rados-bench
+等工具进行性能测试。</li>
 </ul></li>
 </ol>
 <p><strong>二、讨论与决策</strong></p>
@@ -233,7 +236,7 @@ PR，并尝试实现固定 KBB 树优化。</li>
 </ul></li>
 <li><strong>对象存储改进</strong>：
 <ul>
-<li>Juan 将继续调试对象存储相关的 PR，并尝试实现固定 KBB 树优化。</li>
+<li>Juan 将继续调试对象存储相关的 PR，并尝试实现 KBB 树优化。</li>
 </ul></li>
 </ol>
 <p><strong>三、行动计划</strong></p>
@@ -241,7 +244,7 @@ PR，并尝试实现固定 KBB 树优化。</li>
 <li>Aravind 修改 ZNS 管理器，并提交补丁。</li>
 <li>Sam 审查 Aravind 提交的补丁，并请求代码审查。</li>
 <li>Jinyu 将垃圾回收器改进方案提交给相关团队进行讨论。</li>
-<li>Juan 继续调试对象存储相关的 PR，并尝试实现固定 KBB 树优化。</li>
+<li>Juan 继续调试对象存储相关的 PR，并尝试实现 KBB 树优化。</li>
 </ol>
 <p><strong>四、其他事项</strong></p>
 <ol type="1">
@@ -283,6 +286,8 @@ PR，并尝试实现固定 KBB 树优化。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-%E7%AE%97%E6%B3%95/" rel="tag">CRUSH 算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -294,7 +299,7 @@ PR，并尝试实现固定 KBB 树优化。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/07/19/Ceph_Crimson_SeaStore_Meeting_2022-07-06/&title=《Ceph Crimson/SeaStore Meeting 2022-07-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/07/19/Ceph_Crimson_SeaStore_Meeting_2022-07-06/&title=《Ceph Crimson/SeaStore 会议纪要 2022-07-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -304,7 +309,7 @@ PR，并尝试实现固定 KBB 树优化。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/07/19/Ceph_Crimson_SeaStore_Meeting_2022-07-06/&title=《Ceph Crimson/SeaStore Meeting 2022-07-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/07/19/Ceph_Crimson_SeaStore_Meeting_2022-07-06/&title=《Ceph Crimson/SeaStore 会议纪要 2022-07-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -314,7 +319,7 @@ PR，并尝试实现固定 KBB 树优化。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore Meeting 2022-07-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/07/19/Ceph_Crimson_SeaStore_Meeting_2022-07-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore 会议纪要 2022-07-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/07/19/Ceph_Crimson_SeaStore_Meeting_2022-07-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -453,7 +458,7 @@ PR，并尝试实现固定 KBB 树优化。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/07/19/Ceph_Crimson_SeaStore_Meeting_2022-07-06/&title=《Ceph Crimson/SeaStore Meeting 2022-07-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/07/19/Ceph_Crimson_SeaStore_Meeting_2022-07-06/&title=《Ceph Crimson/SeaStore 会议纪要 2022-07-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -463,7 +468,7 @@ PR，并尝试实现固定 KBB 树优化。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/07/19/Ceph_Crimson_SeaStore_Meeting_2022-07-06/&title=《Ceph Crimson/SeaStore Meeting 2022-07-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/07/19/Ceph_Crimson_SeaStore_Meeting_2022-07-06/&title=《Ceph Crimson/SeaStore 会议纪要 2022-07-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -473,7 +478,7 @@ PR，并尝试实现固定 KBB 树优化。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore Meeting 2022-07-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/07/19/Ceph_Crimson_SeaStore_Meeting_2022-07-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore 会议纪要 2022-07-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/07/19/Ceph_Crimson_SeaStore_Meeting_2022-07-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

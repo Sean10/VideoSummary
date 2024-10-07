@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  日期: [具体日期] 参会人员: [参会人员名单] 主持人: [主持人姓名]  讨论的主要议题  文档更新  讨论了在文档中明确提及和记录每个功能的引入时间、版本和贡献者的重要性。 决定开始在新的功能引入时添加文档注释，以便追踪功能的历史和来源。  NFS Manager模块的使用  讨论了如何在不启用Orchestration模块的情况下使用NFS Manager模块。 确">
+    <meta name="keywords" content="Ceph,Distributed Storage,Orchestrator,Documentation,NFS Manager">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  日期: 2022-02-01 参会人员: [参会人员名单] 主持人: [主持人姓名]  讨论的主要议题  文档更新  讨论了在文档中记录每个功能的引入时间、版本和贡献者的必要性。 决定开始在新功能引入时添加文档注释，以便追踪功能的历史和来源。  NFS Manager模块的使用  讨论了在不启用Orchestration模块的情况下使用NFS Man">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2022-02-01">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/02/02/Ceph_Orchestrator_Meeting_2022-02-01/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  日期: [具体日期] 参会人员: [参会人员名单] 主持人: [主持人姓名]  讨论的主要议题  文档更新  讨论了在文档中明确提及和记录每个功能的引入时间、版本和贡献者的重要性。 决定开始在新的功能引入时添加文档注释，以便追踪功能的历史和来源。  NFS Manager模块的使用  讨论了如何在不启用Orchestration模块的情况下使用NFS Manager模块。 确">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  日期: 2022-02-01 参会人员: [参会人员名单] 主持人: [主持人姓名]  讨论的主要议题  文档更新  讨论了在文档中记录每个功能的引入时间、版本和贡献者的必要性。 决定开始在新功能引入时添加文档注释，以便追踪功能的历史和来源。  NFS Manager模块的使用  讨论了在不启用Orchestration模块的情况下使用NFS Man">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-01T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-02-01T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="Documentation">
+<meta property="article:tag" content="NFS Manager">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,10 +190,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
-<li><strong>日期</strong>: [具体日期]</li>
+<li><strong>日期</strong>: 2022-02-01</li>
 <li><strong>参会人员</strong>: [参会人员名单]</li>
 <li><strong>主持人</strong>: [主持人姓名]</li>
 </ul>
@@ -196,16 +202,15 @@
 <ol type="1">
 <li><strong>文档更新</strong>
 <ul>
-<li>讨论了在文档中明确提及和记录每个功能的引入时间、版本和贡献者的重要性。</li>
-<li>决定开始在新的功能引入时添加文档注释，以便追踪功能的历史和来源。</li>
+<li>讨论了在文档中记录每个功能的引入时间、版本和贡献者的必要性。</li>
+<li>决定开始在新功能引入时添加文档注释，以便追踪功能的历史和来源。</li>
 </ul></li>
 <li><strong>NFS Manager模块的使用</strong>
 <ul>
-<li>讨论了如何在不启用Orchestration模块的情况下使用NFS
-Manager模块。</li>
-<li>确定了Rook团队的需求，即他们希望在不依赖Orchestration模块的情况下管理NFS导出。</li>
-<li>提出了两种解决方案：添加新的命令（如<code>nfs cluster register</code>和<code>unregister</code>）或使用现有的命令但添加一个选项（如<code>--no-orchestration</code>）。</li>
-<li>最终决定简化流程，仅移除导出命令对Orchestration模块的依赖，并处理集群ID验证。</li>
+<li>讨论了在不启用Orchestration模块的情况下使用NFS Manager模块。</li>
+<li>确定了Rook团队的需求，他们希望在无需依赖Orchestration模块的情况下管理NFS导出。</li>
+<li>提出了两种解决方案：添加新的命令（如<code>nfs cluster register</code>和<code>unregister</code>）或使用现有命令并添加一个选项（如<code>--no-orchestration</code>）。</li>
+<li>最终决定简化流程，只移除导出命令对Orchestration模块的依赖，并处理集群ID验证。</li>
 </ul></li>
 <li><strong>自然排序问题</strong>
 <ul>
@@ -234,9 +239,6 @@ Manager模块。</li>
 <ul>
 <li>下次会议预定于[具体日期]举行。</li>
 </ul>
-<hr />
-<p><strong>注意</strong>:
-本次会议记录涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划，确保了会议内容的准确性和完整性。</p>
 
         </div>
 
@@ -267,6 +269,8 @@ Manager模块。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Documentation/" rel="tag">Documentation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS-Manager/" rel="tag">NFS Manager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -328,7 +332,7 @@ Manager模块。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/02/03/Ceph_Performance_Meeting_2022-02-03/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2022-02-03</h4>
+        <h4 class="title">Ceph性能会议2022-02-03</h4>
       </a>
     </div>
   
@@ -337,7 +341,7 @@ Manager模块。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/02/02/Ceph_Performance_Meeting_2022-01-27/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2022-01-27</h4>
+        <h4 class="title">Ceph 性能会议 2022-01-27</h4>
       </a>
     </div>
   

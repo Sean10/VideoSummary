@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29 | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议是一次关于Ceph文件系统（CephFS）代码的详细讲解，由Patrick主讲。会议主要围绕CephFS的元数据服务器（MDS）进行，探讨了MDS的核心组件、代码结构以及关键功能。 主要议题  CephFS代码结构：  CephFS的主要代码位于Ceph源码树中，特别是mds目录下。 涉及的主要组件包括MDS本身、客户端目录（client）以及OSD对象缓存器（osdc">
+    <meta name="keywords" content="Ceph,CephFS,Distributed Storage,Metadata Servers,Ceph Code Walkthrough">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议由Patrick Donnelly主讲，深入讲解了Ceph文件系统（CephFS）的元数据服务器（MDS）代码结构和工作机制。会议主要围绕MDS的核心组件、启动流程、状态管理以及与FS Map和MDS Map的交互展开。 主要议题  CephFS代码结构：  CephFS代码主要位于Ceph源码树中的mds目录。 主要组件包括MDS本身、客户端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29">
+<meta property="og:title" content="&#39;Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/09/30/Ceph_Code_Walkthrough_-_Patrick_Donnelly_-_Metadata_Servers_2020-09-29/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议是一次关于Ceph文件系统（CephFS）代码的详细讲解，由Patrick主讲。会议主要围绕CephFS的元数据服务器（MDS）进行，探讨了MDS的核心组件、代码结构以及关键功能。 主要议题  CephFS代码结构：  CephFS的主要代码位于Ceph源码树中，特别是mds目录下。 涉及的主要组件包括MDS本身、客户端目录（client）以及OSD对象缓存器（osdc">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议由Patrick Donnelly主讲，深入讲解了Ceph文件系统（CephFS）的元数据服务器（MDS）代码结构和工作机制。会议主要围绕MDS的核心组件、启动流程、状态管理以及与FS Map和MDS Map的交互展开。 主要议题  CephFS代码结构：  CephFS代码主要位于Ceph源码树中的mds目录。 主要组件包括MDS本身、客户端">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-09-30T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Metadata Servers">
+<meta property="article:tag" content="Ceph Code Walkthrough">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29</h1>
+        <h1 class="title">&#39;Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-09-29T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29</h1>
+        <h1 class="post-card-title">'Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29'</h1>
         <div class="post-meta">
             <time class="post-time" title="2020-09-30 00:00:00" datetime="2020-09-29T16:00:00.000Z"  itemprop="datePublished">2020-09-30</time>
 
@@ -185,27 +190,29 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概述">会议概述</h4>
-<p>本次会议是一次关于Ceph文件系统（CephFS）代码的详细讲解，由Patrick主讲。会议主要围绕CephFS的元数据服务器（MDS）进行，探讨了MDS的核心组件、代码结构以及关键功能。</p>
+<p>本次会议由Patrick
+Donnelly主讲，深入讲解了Ceph文件系统（CephFS）的元数据服务器（MDS）代码结构和工作机制。会议主要围绕MDS的核心组件、启动流程、状态管理以及与FS
+Map和MDS Map的交互展开。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>CephFS代码结构</strong>：
 <ul>
-<li>CephFS的主要代码位于Ceph源码树中，特别是<code>mds</code>目录下。</li>
-<li>涉及的主要组件包括MDS本身、客户端目录（<code>client</code>）以及OSD对象缓存器（<code>osdc</code>）。</li>
+<li>CephFS代码主要位于Ceph源码树中的<code>mds</code>目录。</li>
+<li>主要组件包括MDS本身、客户端目录（<code>client</code>）和OSD对象缓存器（<code>osdc</code>）。</li>
 </ul></li>
 <li><strong>MDS启动与状态管理</strong>：
 <ul>
-<li>MDS的启动从<code>main</code>函数开始，配置信号处理、解析参数并进行全局初始化。</li>
-<li>MDS启动后处于待机状态，等待被分配到CephFS集群中的一个位置。</li>
-<li>MDS通过监听新的MDS地图来处理状态转换，如从待机状态到活动状态。</li>
+<li>MDS启动从<code>main</code>函数开始，进行信号处理、参数解析和全局初始化。</li>
+<li>MDS启动后处于待机状态，等待分配到CephFS集群中的位置。</li>
+<li>MDS通过监听新的MDS地图来处理状态转换。</li>
 </ul></li>
 <li><strong>MDS Rank</strong>：
 <ul>
 <li>MDS
-Rank是一个较新的抽象概念，用于管理MDS在CephFS文件系统中的状态。</li>
-<li>处理MDS在故障转移和恢复过程中的状态转换，如重放、重新加入等。</li>
+Rank用于管理MDS在CephFS文件系统中的状态，包括故障转移和恢复过程中的状态转换。</li>
 </ul></li>
 <li><strong>FS Map与MDS Map</strong>：
 <ul>
@@ -214,7 +221,7 @@ Rank是一个较新的抽象概念，用于管理MDS在CephFS文件系统中的�
 </ul></li>
 <li><strong>MDS Server</strong>：
 <ul>
-<li>处理客户端请求的主要模块，包括客户端重新连接、会话管理以及客户端请求处理。</li>
+<li>处理客户端请求的主要模块，包括客户端重新连接、会话管理和请求处理。</li>
 </ul></li>
 <li><strong>MDS Locker</strong>：
 <ul>
@@ -241,8 +248,6 @@ Rank是一个较新的抽象概念，用于管理MDS在CephFS文件系统中的�
 </ul>
 <h4 id="会议结束">会议结束</h4>
 <p>感谢Patrick的精彩讲解和所有参与者的积极参与。希望大家继续关注和支持Ceph项目。</p>
-<hr />
-<p>本次会议纪要由专业的存储领域分布式存储Ceph的研发人员和视频会议字幕总结人员共同完成，确保了内容的准确性和专业性。</p>
 
         </div>
 
@@ -273,6 +278,8 @@ Rank是一个较新的抽象概念，用于管理MDS在CephFS文件系统中的�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Code-Walkthrough/" rel="tag">Ceph Code Walkthrough</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Metadata-Servers/" rel="tag">Metadata Servers</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -284,7 +291,7 @@ Rank是一个较新的抽象概念，用于管理MDS在CephFS文件系统中的�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/09/30/Ceph_Code_Walkthrough_-_Patrick_Donnelly_-_Metadata_Servers_2020-09-29/&title=《Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/09/30/Ceph_Code_Walkthrough_-_Patrick_Donnelly_-_Metadata_Servers_2020-09-29/&title=《'Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -294,7 +301,7 @@ Rank是一个较新的抽象概念，用于管理MDS在CephFS文件系统中的�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/09/30/Ceph_Code_Walkthrough_-_Patrick_Donnelly_-_Metadata_Servers_2020-09-29/&title=《Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/09/30/Ceph_Code_Walkthrough_-_Patrick_Donnelly_-_Metadata_Servers_2020-09-29/&title=《'Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -304,7 +311,7 @@ Rank是一个较新的抽象概念，用于管理MDS在CephFS文件系统中的�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/09/30/Ceph_Code_Walkthrough_-_Patrick_Donnelly_-_Metadata_Servers_2020-09-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/09/30/Ceph_Code_Walkthrough_-_Patrick_Donnelly_-_Metadata_Servers_2020-09-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -334,7 +341,7 @@ Rank是一个较新的抽象概念，用于管理MDS在CephFS文件系统中的�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2020/10/01/Ceph_Performance_Meeting_2020-10-01/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2020-10-01</h4>
+        <h4 class="title">Ceph 性能会议 2020-10-01</h4>
       </a>
     </div>
   
@@ -443,7 +450,7 @@ Rank是一个较新的抽象概念，用于管理MDS在CephFS文件系统中的�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/09/30/Ceph_Code_Walkthrough_-_Patrick_Donnelly_-_Metadata_Servers_2020-09-29/&title=《Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/09/30/Ceph_Code_Walkthrough_-_Patrick_Donnelly_-_Metadata_Servers_2020-09-29/&title=《'Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -453,7 +460,7 @@ Rank是一个较新的抽象概念，用于管理MDS在CephFS文件系统中的�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/09/30/Ceph_Code_Walkthrough_-_Patrick_Donnelly_-_Metadata_Servers_2020-09-29/&title=《Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/09/30/Ceph_Code_Walkthrough_-_Patrick_Donnelly_-_Metadata_Servers_2020-09-29/&title=《'Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -463,7 +470,7 @@ Rank是一个较新的抽象概念，用于管理MDS在CephFS文件系统中的�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/09/30/Ceph_Code_Walkthrough_-_Patrick_Donnelly_-_Metadata_Servers_2020-09-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/09/30/Ceph_Code_Walkthrough_-_Patrick_Donnelly_-_Metadata_Servers_2020-09-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

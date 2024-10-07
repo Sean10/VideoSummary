@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月某日 参会人员： Sage, Marcus, Yuda, Greg, John, Sam 等 会议主题：  Blue Store 缓存设计 Messenger 2 协议  一、Blue Store 缓存设计 讨论要点：  I&#x2F;O 路径更新： 自 Juwel 版本发布以来，I&#x2F;O 路径已完全重写，元数据结构略有不同，引入了逻辑引用和 Blob，Blob 可压缩或">
+    <meta name="keywords" content="Ceph,Blue Store,Messenger 2 协议,缓存设计,安全性">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph的Blue Store缓存设计和Messenger 2协议的改进。 一、Blue Store 缓存设计 讨论要点：  I&#x2F;O路径更新：自Juwell版本发布以来，I&#x2F;O路径已完全重写，元数据结构略有不同，引入了逻辑引用和Blob，Blob可压缩或非压缩，可能包含校验数据。 缓存设计：Blue Store需要高效地修剪，并管理自己的缓冲区缓存。主要">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2016-JUN-01 -- Ceph Developer Monthly">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2016/06/02/2016-JUN-01_--_Ceph_Developer_Monthly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月某日 参会人员： Sage, Marcus, Yuda, Greg, John, Sam 等 会议主题：  Blue Store 缓存设计 Messenger 2 协议  一、Blue Store 缓存设计 讨论要点：  I&#x2F;O 路径更新： 自 Juwel 版本发布以来，I&#x2F;O 路径已完全重写，元数据结构略有不同，引入了逻辑引用和 Blob，Blob 可压缩或">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph的Blue Store缓存设计和Messenger 2协议的改进。 一、Blue Store 缓存设计 讨论要点：  I&#x2F;O路径更新：自Juwell版本发布以来，I&#x2F;O路径已完全重写，元数据结构略有不同，引入了逻辑引用和Blob，Blob可压缩或非压缩，可能包含校验数据。 缓存设计：Blue Store需要高效地修剪，并管理自己的缓冲区缓存。主要">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2016-06-01T16:00:00.000Z">
 <meta property="article:modified_time" content="2016-06-02T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Blue Store">
+<meta property="article:tag" content="Messenger 2 协议">
+<meta property="article:tag" content="缓存设计">
+<meta property="article:tag" content="安全性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%80blue-store-%E7%BC%93%E5%AD%98%E8%AE%BE%E8%AE%A1"><span class="post-toc-number">2.</span> <span class="post-toc-text">一、Blue Store 缓存设计</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%8Cmessenger-2-%E5%8D%8F%E8%AE%AE"><span class="post-toc-number">3.</span> <span class="post-toc-text">二、Messenger 2 协议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%89%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">4.</span> <span class="post-toc-text">三、其他事项</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">[改进后的中文总结内容]</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%80blue-store-%E7%BC%93%E5%AD%98%E8%AE%BE%E8%AE%A1"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">一、Blue Store 缓存设计</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%8Cmessenger-2-%E5%8D%8F%E8%AE%AE"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">二、Messenger 2 协议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%89%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">三、其他事项</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,66 +190,51 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： 2023年11月某日</p>
-<p><strong>参会人员</strong>： Sage, Marcus, Yuda, Greg, John, Sam
-等</p>
-<p><strong>会议主题</strong>：</p>
-<ol type="1">
-<li><strong>Blue Store 缓存设计</strong></li>
-<li><strong>Messenger 2 协议</strong></li>
-</ol>
+            <h2 id="改进后的中文总结内容">[改进后的中文总结内容]</h2>
+<p>本次会议主要讨论了Ceph的Blue Store缓存设计和Messenger
+2协议的改进。</p>
 <h3 id="一blue-store-缓存设计">一、Blue Store 缓存设计</h3>
 <p><strong>讨论要点</strong>：</p>
 <ul>
-<li><strong>I/O 路径更新</strong>： 自 Juwel 版本发布以来，I/O
-路径已完全重写，元数据结构略有不同，引入了逻辑引用和 Blob，Blob
-可压缩或非压缩，可能包含校验数据。</li>
-<li><strong>缓存设计</strong>： Blue Store
-需要高效地修剪，并管理自己的缓冲区缓存。主要问题是如何在 Blue Store
-中实现缓存，以及使用哪种缓存替换算法。</li>
-<li><strong>缓存结构</strong>：
+<li>I/O路径更新：自Juwell版本发布以来，I/O路径已完全重写，元数据结构略有不同，引入了逻辑引用和Blob，Blob可压缩或非压缩，可能包含校验数据。</li>
+<li>缓存设计：Blue
+Store需要高效地修剪，并管理自己的缓冲区缓存。主要问题是如何在Blue
+Store中实现缓存，以及使用哪种缓存替换算法。</li>
+<li>缓存结构：
 <ul>
-<li><strong>全局缓存</strong>：
-简单易实现，但可能导致缓存争用和性能下降。</li>
-<li><strong>按集合缓存</strong>：
-每个集合拥有独立的缓存，但需要额外的锁和复杂的缓存大小调整机制。</li>
-<li><strong>分片缓存</strong>： 将缓存分成多个分片，每个分片由不同的 CPU
-核心访问，可以提高并发性和性能。</li>
+<li>全局缓存：简单易实现，但可能导致缓存争用和性能下降。</li>
+<li>按集合缓存：每个集合拥有独立的缓存，但需要额外的锁和复杂的缓存大小调整机制。</li>
+<li>分片缓存：将缓存分成多个分片，每个分片由不同的CPU核心访问，可以提高并发性和性能。</li>
 </ul></li>
-<li><strong>缓存替换算法</strong>：
+<li>缓存替换算法：
 <ul>
-<li><strong>LRU 算法</strong>：
-简单易实现，但可能导致热点数据被替换。</li>
-<li><strong>MultiQ 算法</strong>： 基于多个 LRU
-列表，可以根据数据的热度进行分层，提高缓存利用率。</li>
+<li>LRU算法：简单易实现，但可能导致热点数据被替换。</li>
+<li>MultiQ算法：基于多个LRU列表，可以根据数据的热度进行分层，提高缓存利用率。</li>
 </ul></li>
 </ul>
 <p><strong>决定事项</strong>：</p>
 <ul>
 <li>采用分片缓存结构。</li>
-<li>使用 MultiQ 算法作为缓存替换算法。</li>
+<li>使用MultiQ算法作为缓存替换算法。</li>
 </ul>
 <p><strong>后续行动计划</strong>：</p>
 <ul>
 <li>完善缓存管理代码。</li>
-<li>评估 MultiQ 算法的性能。</li>
+<li>评估MultiQ算法的性能。</li>
 </ul>
 <h3 id="二messenger-2-协议">二、Messenger 2 协议</h3>
 <p><strong>讨论要点</strong>：</p>
 <ul>
-<li><strong>降级攻击</strong>： 如何防止在 Exchange
-中删除消息时影响加密等操作。</li>
-<li><strong>Calamari 项目</strong>： 讨论了 Calamari
-项目的未来发展方向，包括与 Seth Manager 的集成。</li>
-<li><strong>协议设计</strong>：
+<li>降级攻击：如何防止在Exchange中删除消息时影响加密等操作。</li>
+<li>Calamari 项目：讨论了Calamari项目的未来发展方向，包括与Seth
+Manager的集成。</li>
+<li>协议设计：
 <ul>
-<li><strong>签名</strong>： 在消息头中添加签名，以增强安全性。</li>
-<li><strong>协商</strong>：
-客户端和服务器协商支持的协议版本和功能。</li>
-<li><strong>连接</strong>： 建立连接并进行身份验证。</li>
-<li><strong>消息传递</strong>： 交换消息。</li>
-<li><strong>断开连接</strong>： 断开连接并清理资源。</li>
+<li>签名：在消息头中添加签名，以增强安全性。</li>
+<li>协商：客户端和服务器协商支持的协议版本和功能。</li>
+<li>连接：建立连接并进行身份验证。</li>
+<li>消息传递：交换消息。</li>
+<li>断开连接：断开连接并清理资源。</li>
 </ul></li>
 </ul>
 <p><strong>决定事项</strong>：</p>
@@ -262,9 +252,6 @@
 <ul>
 <li>讨论了其他一些议题，包括性能优化、安全性等。</li>
 </ul>
-<p><strong>总结</strong>：</p>
-<p>本次会议讨论了 Blue Store 缓存设计和 Messenger 2
-协议，并做出了相应的决策和行动计划。会议内容丰富，讨论深入，为后续工作奠定了基础。</p>
 
         </div>
 
@@ -295,6 +282,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Blue-Store/" rel="tag">Blue Store</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Messenger-2-%E5%8D%8F%E8%AE%AE/" rel="tag">Messenger 2 协议</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AE%89%E5%85%A8%E6%80%A7/" rel="tag">安全性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BC%93%E5%AD%98%E8%AE%BE%E8%AE%A1/" rel="tag">缓存设计</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -356,7 +345,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2016/06/23/2016-JUN-21_--_Ceph_Tech_Talks_-_Bluestore/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2016-JUN-21 -- Ceph Tech Talks: Bluestore</h4>
+        <h4 class="title"> 2016-JUN-21 -- Ceph Tech Talks: Bluestore </h4>
       </a>
     </div>
   

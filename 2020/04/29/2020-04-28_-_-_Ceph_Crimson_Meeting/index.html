@@ -14,23 +14,28 @@
     
     
     
-    <title>2020-04-28 :: Ceph Crimson Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2020-04-28 :: Ceph Crimson Meeting&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间：[具体日期] 参会人员：[列出参会人员] 会议主持：[主持人姓名] 主要议题：  项目进展更新  Ceph存储系统优化：讨论了关于Ceph存储系统中的树状结构（tree-based）恢复机制的优化工作。 调试与修复：提到了在elbe tree相关代码中的调试工作，以及对PT log based recovery的bug修复。  技术细节讨论  空间与计算效率：探讨了如何通过确保">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,CRUSH算法,可伸缩性">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间：2020年4月28日 参会人员：[列出参会人员] 会议主持：[主持人姓名] 主要议题：  项目进展更新  Ceph存储系统优化：讨论了Ceph存储系统中树状结构恢复机制的优化工作。 调试与修复：提到了在elbe tree相关代码中的调试工作，以及对PT log based recovery的bug修复。  技术细节讨论  空间与计算效率：探讨了如何通过">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2020-04-28 :: Ceph Crimson Meeting">
+<meta property="og:title" content="&#39;2020-04-28 :: Ceph Crimson Meeting&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/04/29/2020-04-28_-_-_Ceph_Crimson_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间：[具体日期] 参会人员：[列出参会人员] 会议主持：[主持人姓名] 主要议题：  项目进展更新  Ceph存储系统优化：讨论了关于Ceph存储系统中的树状结构（tree-based）恢复机制的优化工作。 调试与修复：提到了在elbe tree相关代码中的调试工作，以及对PT log based recovery的bug修复。  技术细节讨论  空间与计算效率：探讨了如何通过确保">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间：2020年4月28日 参会人员：[列出参会人员] 会议主持：[主持人姓名] 主要议题：  项目进展更新  Ceph存储系统优化：讨论了Ceph存储系统中树状结构恢复机制的优化工作。 调试与修复：提到了在elbe tree相关代码中的调试工作，以及对PT log based recovery的bug修复。  技术细节讨论  空间与计算效率：探讨了如何通过">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-04-29T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="可伸缩性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2020-04-28 :: Ceph Crimson Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2020-04-28 :: Ceph Crimson Meeting&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2020-04-28 :: Ceph Crimson Meeting</h1>
+        <h1 class="title">&#39;2020-04-28 :: Ceph Crimson Meeting&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-04-28T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%88%97%E5%87%BA%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：[列出参会人员]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E6%8C%81%E4%B8%BB%E6%8C%81%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议主持：[主持人姓名]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">其他事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B42020%E5%B9%B44%E6%9C%8828%E6%97%A5"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议时间：2020年4月28日</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%88%97%E5%87%BA%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：[列出参会人员]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E6%8C%81%E4%B8%BB%E6%8C%81%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议主持：[主持人姓名]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">其他事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2020-04-28 :: Ceph Crimson Meeting</h1>
+        <h1 class="post-card-title">'2020-04-28 :: Ceph Crimson Meeting'</h1>
         <div class="post-meta">
             <time class="post-time" title="2020-04-29 00:00:00" datetime="2020-04-28T16:00:00.000Z"  itemprop="datePublished">2020-04-29</time>
 
@@ -185,22 +190,22 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议时间2020年4月28日">会议时间：2020年4月28日</h4>
 <h4 id="参会人员列出参会人员">参会人员：[列出参会人员]</h4>
 <h4 id="会议主持主持人姓名">会议主持：[主持人姓名]</h4>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
 <li><strong>项目进展更新</strong>
 <ul>
-<li><strong>Ceph存储系统优化</strong>：讨论了关于Ceph存储系统中的树状结构（tree-based）恢复机制的优化工作。</li>
+<li><strong>Ceph存储系统优化</strong>：讨论了Ceph存储系统中树状结构恢复机制的优化工作。</li>
 <li><strong>调试与修复</strong>：提到了在elbe
 tree相关代码中的调试工作，以及对PT log based recovery的bug修复。</li>
 </ul></li>
 <li><strong>技术细节讨论</strong>
 <ul>
-<li><strong>空间与计算效率</strong>：探讨了如何通过确保树索引（tree
-index）的唯一性来提高空间和计算效率。</li>
+<li><strong>空间与计算效率</strong>：探讨了如何通过确保树索引的唯一性来提高空间和计算效率。</li>
 <li><strong>模板类型系统</strong>：讨论了定义模板类型系统以组织逻辑，控制代码复杂度。</li>
 <li><strong>节点间比较优化</strong>：讨论了在树结构中，父节点与子节点之间的字符串比较优化策略。</li>
 </ul></li>
@@ -231,7 +236,6 @@ Doc），以便跟踪其他团队成员的工作进展。</li>
 <ul>
 <li>会议在[具体时间]结束，主持人感谢大家的参与，并鼓励团队成员继续保持沟通和协作。</li>
 </ul>
-<hr />
 <p><strong>备注</strong>：会议中提到的具体技术细节和代码优化方案需要进一步的技术文档和代码审查来确认和实施。</p>
 
         </div>
@@ -263,6 +267,8 @@ Doc），以便跟踪其他团队成员的工作进展。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -274,7 +280,7 @@ Doc），以便跟踪其他团队成员的工作进展。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/29/2020-04-28_-_-_Ceph_Crimson_Meeting/&title=《2020-04-28 :: Ceph Crimson Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/29/2020-04-28_-_-_Ceph_Crimson_Meeting/&title=《'2020-04-28 :: Ceph Crimson Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -284,7 +290,7 @@ Doc），以便跟踪其他团队成员的工作进展。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/29/2020-04-28_-_-_Ceph_Crimson_Meeting/&title=《2020-04-28 :: Ceph Crimson Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/29/2020-04-28_-_-_Ceph_Crimson_Meeting/&title=《'2020-04-28 :: Ceph Crimson Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -294,7 +300,7 @@ Doc），以便跟踪其他团队成员的工作进展。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2020-04-28 :: Ceph Crimson Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/29/2020-04-28_-_-_Ceph_Crimson_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2020-04-28 :: Ceph Crimson Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/29/2020-04-28_-_-_Ceph_Crimson_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -324,16 +330,16 @@ Doc），以便跟踪其他团队成员的工作进展。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2020/04/29/2020-04-27_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2020-04-27 :: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2020-04-27 :: Ceph Orchestration Meeting&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2020/04/13/2020-04-06_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2020/04/29/2020-04-_23_-_-_Ceph_Performance_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2020-04-06 :: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2020-04- 23 :: Ceph Performance Meeting&#39;</h4>
       </a>
     </div>
   
@@ -433,7 +439,7 @@ Doc），以便跟踪其他团队成员的工作进展。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/29/2020-04-28_-_-_Ceph_Crimson_Meeting/&title=《2020-04-28 :: Ceph Crimson Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/29/2020-04-28_-_-_Ceph_Crimson_Meeting/&title=《'2020-04-28 :: Ceph Crimson Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -443,7 +449,7 @@ Doc），以便跟踪其他团队成员的工作进展。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/29/2020-04-28_-_-_Ceph_Crimson_Meeting/&title=《2020-04-28 :: Ceph Crimson Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/29/2020-04-28_-_-_Ceph_Crimson_Meeting/&title=《'2020-04-28 :: Ceph Crimson Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -453,7 +459,7 @@ Doc），以便跟踪其他团队成员的工作进展。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2020-04-28 :: Ceph Crimson Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/29/2020-04-28_-_-_Ceph_Crimson_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2020-04-28 :: Ceph Crimson Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/29/2020-04-28_-_-_Ceph_Crimson_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

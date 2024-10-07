@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2021-08-19 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 性能会议 2021-08-19 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要 本次会议主要讨论了Ceph存储系统中关于分布式存储的一些关键议题，特别是围绕着如何优化使用不同类型的存储设备（如QLC驱动器）以及如何处理大量小对象的存储问题。会议还涉及了Ceph的开发进度和未来的行动计划。 主要讨论议题  动态增加存储池大小：  讨论了通过添加新的OSDs（Object Storage Daemons）来动态增加存储池大小的可能性，以及这种做法的灵活性和潜在">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,存储池,开发进度">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要围绕 Ceph 分布式存储系统中的性能优化和开发进度展开讨论。主要议题包括：  动态扩展存储池：讨论了通过增加新的 OSD 来动态扩展存储池大小的可能性，以及这种方法的灵活性和挑战。 存储池数量增加：讨论了用户对增加存储池数量的需求，并考虑了可能的解决方案。 RGW 存储池使用：分析了用户对 RGW 存储池的使用模式和常见配置。 多站点配置中的区域使用：讨论了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2021-08-19">
+<meta property="og:title" content="Ceph 性能会议 2021-08-19">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-19/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要 本次会议主要讨论了Ceph存储系统中关于分布式存储的一些关键议题，特别是围绕着如何优化使用不同类型的存储设备（如QLC驱动器）以及如何处理大量小对象的存储问题。会议还涉及了Ceph的开发进度和未来的行动计划。 主要讨论议题  动态增加存储池大小：  讨论了通过添加新的OSDs（Object Storage Daemons）来动态增加存储池大小的可能性，以及这种做法的灵活性和潜在">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要围绕 Ceph 分布式存储系统中的性能优化和开发进度展开讨论。主要议题包括：  动态扩展存储池：讨论了通过增加新的 OSD 来动态扩展存储池大小的可能性，以及这种方法的灵活性和挑战。 存储池数量增加：讨论了用户对增加存储池数量的需求，并考虑了可能的解决方案。 RGW 存储池使用：分析了用户对 RGW 存储池的使用模式和常见配置。 多站点配置中的区域使用：讨论了">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-08-20T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="存储池">
+<meta property="article:tag" content="开发进度">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2021-08-19</div>
+        <div class="flex-col header-title ellipsis">Ceph 性能会议 2021-08-19</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2021-08-19</h1>
+        <h1 class="title">Ceph 性能会议 2021-08-19</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-08-19T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A8%E8%AE%BA%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要讨论议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">备注</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Performance_Meeting_2021-08-19"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2021-08-19</h1>
+        <h1 class="post-card-title">Ceph 性能会议 2021-08-19</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-08-20 00:00:00" datetime="2021-08-19T16:00:00.000Z"  itemprop="datePublished">2021-08-20</time>
 
@@ -185,56 +183,36 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概要">会议概要</h4>
-<p>本次会议主要讨论了Ceph存储系统中关于分布式存储的一些关键议题，特别是围绕着如何优化使用不同类型的存储设备（如QLC驱动器）以及如何处理大量小对象的存储问题。会议还涉及了Ceph的开发进度和未来的行动计划。</p>
-<h4 id="主要讨论议题">主要讨论议题</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要围绕 Ceph
+分布式存储系统中的性能优化和开发进度展开讨论。主要议题包括：</p>
 <ol type="1">
-<li><strong>动态增加存储池大小</strong>：
-<ul>
-<li>讨论了通过添加新的OSDs（Object Storage
-Daemons）来动态增加存储池大小的可能性，以及这种做法的灵活性和潜在的挑战。</li>
-</ul></li>
-<li><strong>存储池数量的增加请求</strong>：
-<ul>
-<li>收到了关于需要大幅增加可创建存储池数量的反馈，讨论了可能的解决方案，如为每个存储类别创建两个不同的存储池。</li>
-</ul></li>
-<li><strong>RGW（RADOS Gateway）存储池的使用</strong>：
-<ul>
-<li>探讨了实际用户或客户是否创建多个RGW存储池，以及这些存储池的常见使用模式。</li>
-</ul></li>
-<li><strong>多站点配置中的区域（Zone）使用</strong>：
-<ul>
-<li>讨论了在多站点配置中，区域的使用频率和可能遇到的问题，特别是在存储池数量限制方面。</li>
-</ul></li>
-<li><strong>性能优化策略</strong>：
-<ul>
-<li>讨论了通过分离存储池来提高性能的策略，特别是在处理大量小对象时。</li>
-</ul></li>
-<li><strong>Ceph开发进度和未来计划</strong>：
-<ul>
-<li>回顾了最近的开发工作，包括对RocksDB缓存的更改、文件元数据更新的处理以及一些性能改进的实施。</li>
-<li>讨论了未来的工作计划，如处理RocksDB缓存的变化和准备提交的一些改进。</li>
-</ul></li>
+<li><strong>动态扩展存储池</strong>：讨论了通过增加新的 OSD
+来动态扩展存储池大小的可能性，以及这种方法的灵活性和挑战。</li>
+<li><strong>存储池数量增加</strong>：讨论了用户对增加存储池数量的需求，并考虑了可能的解决方案。</li>
+<li><strong>RGW 存储池使用</strong>：分析了用户对 RGW
+存储池的使用模式和常见配置。</li>
+<li><strong>多站点配置中的区域使用</strong>：讨论了区域在多站点配置中的使用频率和潜在问题。</li>
+<li><strong>性能优化策略</strong>：讨论了通过分离存储池来提高性能的策略，特别是在处理大量小对象时。</li>
+<li><strong>Ceph
+开发进度和未来计划</strong>：回顾了最近的开发工作，包括对 RocksDB
+缓存的改进、文件元数据更新的处理以及性能改进的实施，并讨论了未来的工作计划。</li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
+<p>会议决定事项包括：</p>
 <ul>
-<li>确认了通过增加新的OSDs来动态扩展存储池大小的可行性。</li>
-<li>同意需要进一步研究和实验来解决存储池数量限制的问题。</li>
-<li>确定了需要继续讨论和优化RGW存储池的使用和管理。</li>
+<li>确认通过增加新的 OSD 来动态扩展存储池大小的可行性。</li>
+<li>同意进一步研究和实验以解决存储池数量限制的问题。</li>
+<li>继续讨论和优化 RGW 存储池的使用和管理。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<p>后续行动计划包括：</p>
 <ul>
 <li>继续研究和实验，以找到最佳的存储池管理和优化策略。</li>
-<li>邀请Intel的专家参与未来的讨论，以获取更多关于QLC驱动器和OpenCSD技术的反馈。</li>
-<li>继续推进Ceph的开发工作，特别是关于RocksDB缓存的改进和性能优化。</li>
+<li>邀请英特尔专家参与讨论，以获取关于 QLC 驱动器和 OpenCSD
+技术的反馈。</li>
+<li>推进 Ceph 的开发工作，特别是关于 RocksDB 缓存的改进和性能优化。</li>
 </ul>
-<h4 id="备注">备注</h4>
-<ul>
-<li>会议中提到的“OpenCSD”和“QLC驱动器”是讨论中的关键技术术语，这些术语在存储技术领域具有特定的含义和应用。</li>
-<li>会议强调了需要持续关注和适应新的硬件技术，以优化Ceph的性能和功能。</li>
-</ul>
-<p>本次会议为Ceph存储系统的未来发展提供了重要的方向和决策基础，特别是在处理复杂存储需求和新技术集成方面。</p>
+<p>会议强调了需要持续关注和适应新的硬件技术，以优化 Ceph
+的性能和功能。</p>
 
         </div>
 
@@ -265,6 +243,8 @@ Daemons）来动态增加存储池大小的可能性，以及这种做法的灵�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E6%B1%A0/" rel="tag">存储池</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%80%E5%8F%91%E8%BF%9B%E5%BA%A6/" rel="tag">开发进度</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -276,7 +256,7 @@ Daemons）来动态增加存储池大小的可能性，以及这种做法的灵�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-19/&title=《Ceph Performance Meeting 2021-08-19》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-19/&title=《Ceph 性能会议 2021-08-19》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -286,7 +266,7 @@ Daemons）来动态增加存储池大小的可能性，以及这种做法的灵�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-19/&title=《Ceph Performance Meeting 2021-08-19》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-19/&title=《Ceph 性能会议 2021-08-19》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -296,7 +276,7 @@ Daemons）来动态增加存储池大小的可能性，以及这种做法的灵�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-08-19》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-19/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2021-08-19》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-19/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -324,18 +304,18 @@ Daemons）来动态增加存储池大小的可能性，以及这种做法的灵�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2021/08/20/Ceph_Orchestrator_Meeting_2021-08-10/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-12/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Orchestrator Meeting 2021-08-10</h4>
+        <h4 class="title">Ceph性能会议2021-08-12</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-12/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2021/06/25/Ceph_Month_2021_-_Ceph_Community_Ambassador_BoF/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2021-08-12</h4>
+        <h4 class="title">&#39;Ceph Month 2021: Ceph Community Ambassador BoF&#39;</h4>
       </a>
     </div>
   
@@ -435,7 +415,7 @@ Daemons）来动态增加存储池大小的可能性，以及这种做法的灵�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-19/&title=《Ceph Performance Meeting 2021-08-19》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-19/&title=《Ceph 性能会议 2021-08-19》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -445,7 +425,7 @@ Daemons）来动态增加存储池大小的可能性，以及这种做法的灵�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-19/&title=《Ceph Performance Meeting 2021-08-19》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-19/&title=《Ceph 性能会议 2021-08-19》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -455,7 +435,7 @@ Daemons）来动态增加存储池大小的可能性，以及这种做法的灵�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-08-19》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-19/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2021-08-19》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/20/Ceph_Performance_Meeting_2021-08-19/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

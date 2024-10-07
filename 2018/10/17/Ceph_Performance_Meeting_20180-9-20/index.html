@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 20180-9-20 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph性能会议2018-9-20 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： Radek、Sage、Greg、Fisher、Justin、Steph、Mark、Igor、Adrian、Marcus、Dieter、Freeman、Matt、Shelby等 会议主题： Ceph分布式存储系统开发讨论 关键细节：  Pull Requests：  Sage移除了一些不再使用的死代码，包括mutex性能计数器，以">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,QoS,内存分配">
+    <meta name="description" content="[改进后的中文总结内容] 在Ceph性能会议中，与会人员讨论了一系列关于Ceph分布式存储系统的性能优化和内存分配的问题。以下是会议的关键细节和讨论的主要内容： 关键细节：  Pull Requests： Sage移除了不再使用的死代码，并优化了MDS的性能；讨论了容器与slab分配的优化以及使用持久内存作为RBD持久缓存的改进。 内存分配问题： 讨论了Ceph在内存分配方面的挑战，包括buffe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 20180-9-20">
+<meta property="og:title" content="Ceph性能会议2018-9-20">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/10/17/Ceph_Performance_Meeting_20180-9-20/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： Radek、Sage、Greg、Fisher、Justin、Steph、Mark、Igor、Adrian、Marcus、Dieter、Freeman、Matt、Shelby等 会议主题： Ceph分布式存储系统开发讨论 关键细节：  Pull Requests：  Sage移除了一些不再使用的死代码，包括mutex性能计数器，以">
+<meta property="og:description" content="[改进后的中文总结内容] 在Ceph性能会议中，与会人员讨论了一系列关于Ceph分布式存储系统的性能优化和内存分配的问题。以下是会议的关键细节和讨论的主要内容： 关键细节：  Pull Requests： Sage移除了不再使用的死代码，并优化了MDS的性能；讨论了容器与slab分配的优化以及使用持久内存作为RBD持久缓存的改进。 内存分配问题： 讨论了Ceph在内存分配方面的挑战，包括buffe">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-10-16T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-10-17T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="QoS">
+<meta property="article:tag" content="内存分配">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 20180-9-20</div>
+        <div class="flex-col header-title ellipsis">Ceph性能会议2018-9-20</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 20180-9-20</h1>
+        <h1 class="title">Ceph性能会议2018-9-20</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-10-16T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 20180-9-20</h1>
+        <h1 class="post-card-title">Ceph性能会议2018-9-20</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-10-17 00:00:00" datetime="2018-10-16T16:00:00.000Z"  itemprop="datePublished">2018-10-17</time>
 
@@ -178,38 +183,23 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>参会人员</strong>：
-Radek、Sage、Greg、Fisher、Justin、Steph、Mark、Igor、Adrian、Marcus、Dieter、Freeman、Matt、Shelby等</p>
-<p><strong>会议主题</strong>： Ceph分布式存储系统开发讨论</p>
+            <p>[改进后的中文总结内容]</p>
+<p>在Ceph性能会议中，与会人员讨论了一系列关于Ceph分布式存储系统的性能优化和内存分配的问题。以下是会议的关键细节和讨论的主要内容：</p>
 <p><strong>关键细节</strong>：</p>
 <ul>
 <li><strong>Pull Requests</strong>：
-<ul>
-<li>Sage移除了一些不再使用的死代码，包括mutex性能计数器，以避免堆分配。</li>
-<li>有关OST碎片线程提交的改进，提高了调试日志的速度，并对某些情况下的性能提升了100%。</li>
-<li>有关容器与slab分配的优化，以及使用持久内存作为RBD持久缓存的改进。</li>
-</ul></li>
+Sage移除了不再使用的死代码，并优化了MDS的性能；讨论了容器与slab分配的优化以及使用持久内存作为RBD持久缓存的改进。</li>
 <li><strong>内存分配问题</strong>：
-<ul>
-<li>讨论了Ceph在内存分配方面的挑战，包括buffer列表的碎片化、对象池的使用以及TC
+讨论了Ceph在内存分配方面的挑战，包括buffer列表的碎片化、对象池的使用以及TC
 Malloc分配器。</li>
-<li>讨论了使用对象池来优化内存分配的可行性，以及如何处理内存在不同线程之间的流动。</li>
-<li>讨论了使用环形缓冲区来处理内存分配的可行性，以及如何与零拷贝管道兼容。</li>
-</ul></li>
 <li><strong>性能优化</strong>：
-<ul>
-<li>讨论了Ceph在性能方面的挑战，包括CPU使用率、I/O吞吐量以及内存使用率。</li>
-<li>讨论了使用性能计数器来跟踪内存分配和释放，以及如何使用基准测试来评估性能。</li>
-<li>讨论了使用QoS框架来优化性能，以及如何将QoS应用于不同的工作负载。</li>
-</ul></li>
+讨论了Ceph在性能方面的挑战，包括CPU使用率、I/O吞吐量以及内存使用率。讨论了使用性能计数器、基准测试和QoS框架来优化性能。</li>
 </ul>
 <p><strong>决定的事项</strong>：</p>
 <ul>
 <li>Sage将负责合并PRS并解释相关改进。</li>
 <li>Mark将继续解决内存分配问题，并探索使用对象池和环形缓冲区的可行性。</li>
-<li>Marcus将负责创建一个“邪恶列表”，列出Ceph中存在内存分配问题的代码。</li>
+<li>Marcus将创建一个“邪恶列表”，列出Ceph中存在内存分配问题的代码。</li>
 <li>Matt将负责使用性能计数器和基准测试来评估Ceph的性能。</li>
 <li>Shelby将负责使用QoS框架来优化Ceph的性能。</li>
 </ul>
@@ -220,12 +210,6 @@ Malloc分配器。</li>
 <li>Marcus将创建一个“邪恶列表”。</li>
 <li>Matt将使用性能计数器和基准测试来评估Ceph的性能。</li>
 <li>Shelby将使用QoS框架来优化Ceph的性能。</li>
-</ul>
-<p><strong>其他事项</strong>：</p>
-<ul>
-<li>讨论了Ceph与其他存储系统的比较，以及Ceph的优势和劣势。</li>
-<li>讨论了Ceph社区的贡献和协作。</li>
-<li>讨论了Ceph未来的发展方向。</li>
 </ul>
 <p><strong>关键词</strong>：</p>
 <ul>
@@ -278,6 +262,8 @@ Malloc分配器。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/QoS/" rel="tag">QoS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/" rel="tag">内存分配</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -289,7 +275,7 @@ Malloc分配器。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/17/Ceph_Performance_Meeting_20180-9-20/&title=《Ceph Performance Meeting 20180-9-20》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/17/Ceph_Performance_Meeting_20180-9-20/&title=《Ceph性能会议2018-9-20》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -299,7 +285,7 @@ Malloc分配器。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/17/Ceph_Performance_Meeting_20180-9-20/&title=《Ceph Performance Meeting 20180-9-20》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/17/Ceph_Performance_Meeting_20180-9-20/&title=《Ceph性能会议2018-9-20》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -309,7 +295,7 @@ Malloc分配器。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 20180-9-20》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/17/Ceph_Performance_Meeting_20180-9-20/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议2018-9-20》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/17/Ceph_Performance_Meeting_20180-9-20/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -339,16 +325,16 @@ Malloc分配器。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2018/10/17/Ceph_Performance_Meeting_2018-09-27/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2018-09-27</h4>
+        <h4 class="title">Ceph性能会议纪要 2018-09-27</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2018/10/17/Ceph_Testing_Meeting_2018-09-26/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2018/10/10/2018-08-28_-_-_Ceph_Code_walk-through_-_MonClient_Monitor/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Testing Meeting 2018-09-26</h4>
+        <h4 class="title">&#39;2018-08-28 :: Ceph Code walk-through: MonClient/Monitor&#39;</h4>
       </a>
     </div>
   
@@ -448,7 +434,7 @@ Malloc分配器。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/17/Ceph_Performance_Meeting_20180-9-20/&title=《Ceph Performance Meeting 20180-9-20》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/17/Ceph_Performance_Meeting_20180-9-20/&title=《Ceph性能会议2018-9-20》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -458,7 +444,7 @@ Malloc分配器。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/17/Ceph_Performance_Meeting_20180-9-20/&title=《Ceph Performance Meeting 20180-9-20》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/17/Ceph_Performance_Meeting_20180-9-20/&title=《Ceph性能会议2018-9-20》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -468,7 +454,7 @@ Malloc分配器。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 20180-9-20》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/17/Ceph_Performance_Meeting_20180-9-20/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议2018-9-20》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/17/Ceph_Performance_Meeting_20180-9-20/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

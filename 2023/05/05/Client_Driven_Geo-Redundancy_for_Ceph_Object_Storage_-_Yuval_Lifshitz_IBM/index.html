@@ -20,17 +20,23 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Redis Gateway在IBM中的应用及多站点复制改进 会议时间：[具体日期] 参会人员：  Yuval（IBM，Redis Gateway项目负责人） Liave和Omar（学生，参与项目开发） 其他相关技术人员  会议内容：  项目背景：  Yuval介绍了Redis Gateway项目，该项目是由Red Hat和Reichmann University在以色列的合作项">
+    <meta name="keywords" content="Distributed Storage,Data Replication,Ceph Object Storage,Geo,Redundancy,Client Notifications">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：基于客户端的Ceph对象存储地理冗余 - Yuval Lifshitz, IBM 会议时间：[具体日期] 参会人员：  Yuval（IBM，Redis Gateway项目负责人） Liave和Omar（学生，参与项目开发） 其他相关技术人员  会议内容：  项目背景：  Yuval介绍了Redis Gateway项目，该项目是由Red Hat和Reic">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Client Driven Geo-Redundancy for Ceph Object Storage - Yuval Lifshitz, IBM">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Client_Driven_Geo-Redundancy_for_Ceph_Object_Storage_-_Yuval_Lifshitz_IBM/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Redis Gateway在IBM中的应用及多站点复制改进 会议时间：[具体日期] 参会人员：  Yuval（IBM，Redis Gateway项目负责人） Liave和Omar（学生，参与项目开发） 其他相关技术人员  会议内容：  项目背景：  Yuval介绍了Redis Gateway项目，该项目是由Red Hat和Reichmann University在以色列的合作项">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：基于客户端的Ceph对象存储地理冗余 - Yuval Lifshitz, IBM 会议时间：[具体日期] 参会人员：  Yuval（IBM，Redis Gateway项目负责人） Liave和Omar（学生，参与项目开发） 其他相关技术人员  会议内容：  项目背景：  Yuval介绍了Redis Gateway项目，该项目是由Red Hat和Reic">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Data Replication">
+<meta property="article:tag" content="Ceph Object Storage">
+<meta property="article:tag" content="Geo">
+<meta property="article:tag" content="Redundancy">
+<meta property="article:tag" content="Client Notifications">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,8 +165,8 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98redis-gateway%E5%9C%A8ibm%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%8F%8A%E5%A4%9A%E7%AB%99%E7%82%B9%E5%A4%8D%E5%88%B6%E6%94%B9%E8%BF%9B"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Redis
-Gateway在IBM中的应用及多站点复制改进</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E5%9F%BA%E4%BA%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84ceph%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E5%9C%B0%E7%90%86%E5%86%97%E4%BD%99---yuval-lifshitz-ibm"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：基于客户端的Ceph对象存储地理冗余
+- Yuval Lifshitz, IBM</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -186,10 +192,11 @@ Gateway在IBM中的应用及多站点复制改进</span></a></li><li class="post
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
-id="会议主题redis-gateway在ibm中的应用及多站点复制改进">会议主题：Redis
-Gateway在IBM中的应用及多站点复制改进</h4>
+id="会议主题基于客户端的ceph对象存储地理冗余---yuval-lifshitz-ibm">会议主题：基于客户端的Ceph对象存储地理冗余
+- Yuval Lifshitz, IBM</h4>
 <h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
 <h4 id="参会人员">参会人员：</h4>
 <ul>
@@ -207,29 +214,23 @@ University在以色列的合作项目Connect的一部分。</li>
 </ul></li>
 <li><strong>多站点复制的挑战</strong>：
 <ul>
-<li>多站点（multi-site）设置在集群中是一个复杂且常有问题的系统。</li>
-<li>地理复制（Geo replication）和地理冗余（Geo
-redundancies）面临网络问题、性能问题、数据日志和集群间通信问题。</li>
-<li>动态重分片（dynamic resharding）和其他问题增加了系统的复杂性。</li>
+<li>多站点设置在集群中复杂且问题常出，包括网络、性能、数据同步和集群间通信问题。</li>
+<li>动态重分片等增加了系统的复杂性。</li>
 </ul></li>
 <li><strong>用户控制的需求</strong>：
 <ul>
 <li>当前系统高度异步，用户难以了解数据何时安全同步。</li>
-<li>项目旨在通过增加新的桶通知（bucket
-notifications）来增强用户对复制系统的控制。</li>
+<li>项目旨在通过增加新的桶通知来增强用户对复制系统的控制。</li>
 </ul></li>
 <li><strong>解决方案介绍</strong>：
 <ul>
 <li>在Redis
-Gateway中增加新的桶通知类型，通知用户对象何时安全同步到一个区域（Zone）。</li>
+Gateway中增加新的桶通知类型，通知用户对象何时安全同步到一个区域。</li>
 <li>通过Kafka或其他通知机制，用户可以订阅这些通知并据此采取行动。</li>
 </ul></li>
 <li><strong>演示和实施细节</strong>：
 <ul>
-<li>演示了如何在两个站点（Zone A和Zone
-B）之间设置主题（topic）和通知。</li>
-<li>展示了对象上传到主站点（Zone A）后，如何在备份站点（Zone
-B）同步并发送通知。</li>
+<li>演示了如何在两个站点之间设置主题和通知，以及对象上传后如何在备份站点同步并发送通知。</li>
 </ul></li>
 <li><strong>后续改进和行动计划</strong>：
 <ul>
@@ -257,7 +258,6 @@ Python库的包装器，以简化端到端的功能。</li>
 <li>Yuval感谢大家的参与，并鼓励大家提出问题和建议。</li>
 <li>会议在掌声中结束。</li>
 </ul>
-<hr />
 <p><strong>备注</strong>：本会议纪要基于Yuval的介绍和讨论内容整理，旨在记录会议的关键细节和后续行动计划。</p>
 
         </div>
@@ -289,6 +289,8 @@ Python库的包装器，以简化端到端的功能。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Object-Storage/" rel="tag">Ceph Object Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Client-Notifications/" rel="tag">Client Notifications</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Data-Replication/" rel="tag">Data Replication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Geo/" rel="tag">Geo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Redundancy/" rel="tag">Redundancy</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -348,18 +350,18 @@ Python库的包装器，以简化端到端的功能。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/05/Ceph_on_Windows_-_Alessandro_Pilotti_Cloudbase_Solutions/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Chasing_Bad_Checksums_-_A_Journey_Through_Ceph_TCMalloc_and_the_Linux_Kernel_-_Dan_Hill_Canonical/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph on Windows - Alessandro Pilotti, Cloudbase Solutions</h4>
+        <h4 class="title">&#39;Chasing Bad Checksums: A Journey Through Ceph, TCMalloc, and the Linux Kernel - Dan Hill, Canonical&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/05/Chasing_Bad_Checksums_-_A_Journey_Through_Ceph_TCMalloc_and_the_Linux_Kernel_-_Dan_Hill_Canonical/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Crimson_Project_Update_-_Samuel_Just_IBM/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Chasing Bad Checksums: A Journey Through Ceph, TCMalloc, and the Linux Kernel - Dan Hill, Canonical</h4>
+        <h4 class="title">Crimson项目更新 - Samuel Just, IBM</h4>
       </a>
     </div>
   

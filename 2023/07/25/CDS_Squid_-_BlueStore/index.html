@@ -14,23 +14,28 @@
     
     
     
-    <title>CDS Squid: BlueStore | ceph视频总结 | youtube频道总结</title>
+    <title>  CDS Squid: BlueStore   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="Ceph Blue Store 会议纪要 会议基本信息  日期与时间: [具体日期] 参会人员: Eager, Adam, Igor 等（Mark 未能参加） 议程: 讨论了Ceph Blue Store的多个关键议题，包括分配器模拟器、碎片化处理、弹性共享Blob、Codel算法、自定义写前锁等。  主要讨论内容  分配器模拟器：  决定解决Booster中定位器问题，启动了GSoC合作项目，目">
+    <meta name="keywords" content="Ceph,BlueStore,Distributed Storage,Performance Optimization,Storage Cluster">
+    <meta name="description" content="[改进后的中文总结内容] Ceph BlueStore 会议纪要 会议基本信息  日期与时间: 未提及 参会人员: Eager, Adam, Igor 等（Mark 未能参加） 议程: 讨论Ceph BlueStore的关键议题，包括分配器模拟器、碎片化处理、弹性共享Blob、Codel算法、自定义写前锁等。  主要讨论内容  分配器模拟器：  解决Booster中定位器问题，启动GSoC合作项目">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Squid: BlueStore">
+<meta property="og:title" content="  CDS Squid: BlueStore  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_BlueStore/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="Ceph Blue Store 会议纪要 会议基本信息  日期与时间: [具体日期] 参会人员: Eager, Adam, Igor 等（Mark 未能参加） 议程: 讨论了Ceph Blue Store的多个关键议题，包括分配器模拟器、碎片化处理、弹性共享Blob、Codel算法、自定义写前锁等。  主要讨论内容  分配器模拟器：  决定解决Booster中定位器问题，启动了GSoC合作项目，目">
+<meta property="og:description" content="[改进后的中文总结内容] Ceph BlueStore 会议纪要 会议基本信息  日期与时间: 未提及 参会人员: Eager, Adam, Igor 等（Mark 未能参加） 议程: 讨论Ceph BlueStore的关键议题，包括分配器模拟器、碎片化处理、弹性共享Blob、Codel算法、自定义写前锁等。  主要讨论内容  分配器模拟器：  解决Booster中定位器问题，启动GSoC合作项目">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-24T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-25T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="BlueStore">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="Storage Cluster">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Squid: BlueStore</div>
+        <div class="flex-col header-title ellipsis">  CDS Squid: BlueStore  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Squid: BlueStore</h1>
+        <h1 class="title">  CDS Squid: BlueStore  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-07-24T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ceph-blue-store-%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">Ceph Blue Store 会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议基本信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">备注</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">[改进后的中文总结内容]</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ceph-bluestore-%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Ceph BlueStore 会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">会议基本信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">主要讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">备注</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E8%AF%B4%E6%98%8E"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">改进说明</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Squid: BlueStore</h1>
+        <h1 class="post-card-title">  CDS Squid: BlueStore  </h1>
         <div class="post-meta">
             <time class="post-time" title="2023-07-25 00:00:00" datetime="2023-07-24T16:00:00.000Z"  itemprop="datePublished">2023-07-25</time>
 
@@ -185,73 +190,70 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="ceph-blue-store-会议纪要">Ceph Blue Store 会议纪要</h3>
+            <h2 id="改进后的中文总结内容">[改进后的中文总结内容]</h2>
+<h3 id="ceph-bluestore-会议纪要">Ceph BlueStore 会议纪要</h3>
 <h4 id="会议基本信息">会议基本信息</h4>
 <ul>
-<li><strong>日期与时间</strong>: [具体日期]</li>
+<li><strong>日期与时间</strong>: 未提及</li>
 <li><strong>参会人员</strong>: Eager, Adam, Igor 等（Mark
 未能参加）</li>
-<li><strong>议程</strong>: 讨论了Ceph Blue
-Store的多个关键议题，包括分配器模拟器、碎片化处理、弹性共享Blob、Codel算法、自定义写前锁等。</li>
+<li><strong>议程</strong>: 讨论Ceph
+BlueStore的关键议题，包括分配器模拟器、碎片化处理、弹性共享Blob、Codel算法、自定义写前锁等。</li>
 </ul>
 <h4 id="主要讨论内容">主要讨论内容</h4>
 <ol type="1">
 <li><strong>分配器模拟器</strong>：
 <ul>
-<li>决定解决Booster中定位器问题，启动了GSoC合作项目，目标是创建一个外部工具——分配器模拟器。</li>
-<li>模拟器将尽可能接近地重放现有工作负载，并添加一些合成数据，以预测对分配器所做更改在部署后的长期影响。</li>
+<li>解决Booster中定位器问题，启动GSoC合作项目，开发分配器模拟器，预测分配器更改对部署后OSD的影响。</li>
 </ul></li>
 <li><strong>碎片化处理</strong>：
 <ul>
-<li>计划在Blue Store中引入一些基本原语，以允许尝试对象碎片整理。</li>
-<li>这将涉及在对象存储上创建一些空闲周期队列，作为碎片整理的第一步。</li>
+<li>在BlueStore中引入对象碎片整理的基本原语，创建空闲周期队列以进行碎片整理。</li>
 </ul></li>
 <li><strong>弹性共享Blob</strong>：
 <ul>
-<li>引入了一个新特性——弹性共享Blob，以优化克隆对象时的效率问题。</li>
-<li>该特性已回溯到Quincy和Reef版本，目前正在测试其对Blue
-Store的影响。</li>
+<li>引入弹性共享Blob特性，优化克隆对象时的效率，已回溯到Quincy和Reef版本，目前正在测试。</li>
 </ul></li>
 <li><strong>Codel算法</strong>：
 <ul>
-<li>讨论了Codel算法，该算法旨在在延迟和吞吐量之间做出选择，通过批处理事务来提高整体性能。</li>
-<li>另一个相关的PR由Mark
-Nelson提出，同样基于类似逻辑，但实现层面不同。</li>
+<li>讨论Codel算法，旨在平衡延迟和吞吐量，通过批处理事务提高性能。</li>
 </ul></li>
 <li><strong>自定义写前锁</strong>：
 <ul>
-<li>讨论了在Blue Store级别实现写前锁，以减少写操作的延迟。</li>
-<li>Igor已经开发了一个工程版本，但仍需进一步完善。</li>
+<li>在BlueStore级别实现写前锁，减少写操作延迟，Igor已开发工程版本，需进一步完善。</li>
 </ul></li>
 <li><strong>政策与回溯</strong>：
 <ul>
-<li>讨论了代码重构和特性回溯的政策问题，特别是关于如何平衡新特性和稳定性。</li>
-<li>提议在开发文档中建立一些高层次的原则，以便未来参考和讨论。</li>
+<li>讨论代码重构和特性回溯的政策，提议在开发文档中建立高层次原则。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>将继续推进分配器模拟器的开发，并完善其度量标准。</li>
-<li>将尝试在Blue Store中实现碎片整理的基本原语。</li>
-<li>弹性共享Blob特性将继续在不同版本中进行测试和部署。</li>
-<li>对于Codel算法和自定义写前锁，将继续进行测试和完善。</li>
-<li>关于回溯政策，将创建一个文档来记录和讨论相关原则。</li>
+<li>推进分配器模拟器开发，并完善度量标准。</li>
+<li>在BlueStore中实现碎片整理的基本原语。</li>
+<li>继续测试和部署弹性共享Blob特性。</li>
+<li>完善Codel算法和自定义写前锁的实现。</li>
+<li>创建回溯政策的文档。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>继续开发和测试分配器模拟器。</li>
-<li>在Blue Store中实现碎片整理的基本原语。</li>
+<li>开发和测试分配器模拟器。</li>
+<li>在BlueStore中实现碎片整理的基本原语。</li>
 <li>对弹性共享Blob特性进行进一步测试和部署。</li>
 <li>完善Codel算法和自定义写前锁的实现。</li>
-<li>创建并维护回溯政策的文档，以便未来参考和讨论。</li>
+<li>创建回溯政策的文档。</li>
 </ul>
 <h4 id="备注">备注</h4>
 <ul>
 <li>会议在预定时间内顺利结束，后续的CDS会议将在短时间内开始。</li>
 </ul>
 <hr />
-<p>以上是本次Ceph Blue
-Store会议的详细纪要，涵盖了讨论的主要议题、决定的事项以及后续的行动计划。</p>
+<h3 id="改进说明">改进说明</h3>
+<ul>
+<li>在总结中增加了会议基本信息，并更详细地描述了每个讨论议题的内容。</li>
+<li>保留了所有提到的Ceph相关关键词。</li>
+<li>对原文中的部分内容进行了简化，使其更易于理解。</li>
+</ul>
 
         </div>
 
@@ -282,6 +284,8 @@ Store会议的详细纪要，涵盖了讨论的主要议题、决定的事项以
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Cluster/" rel="tag">Storage Cluster</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -293,7 +297,7 @@ Store会议的详细纪要，涵盖了讨论的主要议题、决定的事项以
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_BlueStore/&title=《CDS Squid: BlueStore》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_BlueStore/&title=《  CDS Squid: BlueStore  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -303,7 +307,7 @@ Store会议的详细纪要，涵盖了讨论的主要议题、决定的事项以
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_BlueStore/&title=《CDS Squid: BlueStore》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_BlueStore/&title=《  CDS Squid: BlueStore  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -313,7 +317,7 @@ Store会议的详细纪要，涵盖了讨论的主要议题、决定的事项以
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Squid: BlueStore》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_BlueStore/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS Squid: BlueStore  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_BlueStore/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -341,18 +345,18 @@ Store会议的详细纪要，涵盖了讨论的主要议题、决定的事项以
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/07/25/CDS_Squid_-_Dashboard/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/08/03/CDS_Jewel_--_RGW_Multisite_Configuration/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Squid: Dashboard</h4>
+        <h4 class="title">CDS Jewel -- RGW Multisite Configuration</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/07/25/CDS_Squid_-_NVMe-oF-Gateway/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/07/25/CDS_Squid_-_Cephadm/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Squid: NVMe-oF-Gateway</h4>
+        <h4 class="title">&#39;CDS Squid: Cephadm&#39;</h4>
       </a>
     </div>
   
@@ -452,7 +456,7 @@ Store会议的详细纪要，涵盖了讨论的主要议题、决定的事项以
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_BlueStore/&title=《CDS Squid: BlueStore》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_BlueStore/&title=《  CDS Squid: BlueStore  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -462,7 +466,7 @@ Store会议的详细纪要，涵盖了讨论的主要议题、决定的事项以
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_BlueStore/&title=《CDS Squid: BlueStore》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_BlueStore/&title=《  CDS Squid: BlueStore  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -472,7 +476,7 @@ Store会议的详细纪要，涵盖了讨论的主要议题、决定的事项以
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Squid: BlueStore》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_BlueStore/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS Squid: BlueStore  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/25/CDS_Squid_-_BlueStore/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

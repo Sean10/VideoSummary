@@ -20,17 +20,24 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题 本次会议主要讨论了Ceph管理器（Manager）和指标收集的扩展性问题，以及如何改进这一过程。 主要议题  指标收集的扩展性问题：  Paul在进行扩展性测试时发现，Ceph管理器在处理大量指标时存在性能瓶颈。 目前，Ceph管理器每秒需要处理约50MB的数据，这对于大型集群来说是一个显著的瓶颈。  改进方案讨论：  短期解决方案：  减少需要导出的指标数量，仅导出在Graf">
+    <meta name="keywords" content="Ceph,分布式存储,扩展性,Prometheus,指标收集,管理器,蓝图">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 本次会议主要讨论了Ceph管理器（Manager）和指标收集的扩展性问题，以及如何改进这一过程，以提升Ceph分布式存储系统的高可用性和可扩展性。 主要议题  指标收集的扩展性问题：  Paul在进行扩展性测试时发现，Ceph管理器在处理大量指标时存在性能瓶颈，每秒需要处理约50MB的数据，对大型集群来说是一个显著的瓶颈。 会议讨论了如何减轻这一瓶颈，并提出了几">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Developer Monthly 2022-02-02">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/02/03/Ceph_Developer_Monthly_2022-02-02/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题 本次会议主要讨论了Ceph管理器（Manager）和指标收集的扩展性问题，以及如何改进这一过程。 主要议题  指标收集的扩展性问题：  Paul在进行扩展性测试时发现，Ceph管理器在处理大量指标时存在性能瓶颈。 目前，Ceph管理器每秒需要处理约50MB的数据，这对于大型集群来说是一个显著的瓶颈。  改进方案讨论：  短期解决方案：  减少需要导出的指标数量，仅导出在Graf">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 本次会议主要讨论了Ceph管理器（Manager）和指标收集的扩展性问题，以及如何改进这一过程，以提升Ceph分布式存储系统的高可用性和可扩展性。 主要议题  指标收集的扩展性问题：  Paul在进行扩展性测试时发现，Ceph管理器在处理大量指标时存在性能瓶颈，每秒需要处理约50MB的数据，对大型集群来说是一个显著的瓶颈。 会议讨论了如何减轻这一瓶颈，并提出了几">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-02-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="扩展性">
+<meta property="article:tag" content="Prometheus">
+<meta property="article:tag" content="指标收集">
+<meta property="article:tag" content="管理器">
+<meta property="article:tag" content="蓝图">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +166,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">备注</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">备注</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,15 +192,15 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题">会议主题</h4>
-<p>本次会议主要讨论了Ceph管理器（Manager）和指标收集的扩展性问题，以及如何改进这一过程。</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p>本次会议主要讨论了Ceph管理器（Manager）和指标收集的扩展性问题，以及如何改进这一过程，以提升Ceph分布式存储系统的高可用性和可扩展性。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>指标收集的扩展性问题</strong>：
 <ul>
-<li>Paul在进行扩展性测试时发现，Ceph管理器在处理大量指标时存在性能瓶颈。</li>
-<li>目前，Ceph管理器每秒需要处理约50MB的数据，这对于大型集群来说是一个显著的瓶颈。</li>
+<li>Paul在进行扩展性测试时发现，Ceph管理器在处理大量指标时存在性能瓶颈，每秒需要处理约50MB的数据，对大型集群来说是一个显著的瓶颈。</li>
+<li>会议讨论了如何减轻这一瓶颈，并提出了几种解决方案。</li>
 </ul></li>
 <li><strong>改进方案讨论</strong>：
 <ul>
@@ -238,7 +245,6 @@ exporter）来避免在每个服务中嵌入导出逻辑。</li>
 <li>会议中提到了一些技术细节和挑战，需要在后续的实验和设计中进一步探讨和解决。</li>
 <li>需要定期回顾和评估实验结果，以确保解决方案的有效性和可行性。</li>
 </ul>
-<hr />
 <p>本次会议记录涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划，旨在为Ceph存储系统的优化和扩展提供清晰的指导和方向。</p>
 
         </div>
@@ -270,6 +276,8 @@ exporter）来避免在每个服务中嵌入导出逻辑。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Prometheus/" rel="tag">Prometheus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8C%87%E6%A0%87%E6%94%B6%E9%9B%86/" rel="tag">指标收集</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%AE%A1%E7%90%86%E5%99%A8/" rel="tag">管理器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%93%9D%E5%9B%BE/" rel="tag">蓝图</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -331,7 +339,7 @@ exporter）来避免在每个服务中嵌入导出逻辑。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/02/12/Ceph_Orchestrator_Meeting_2022-02-07/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Orchestrator Meeting 2022-02-07</h4>
+        <h4 class="title">  Ceph Orchestrator Meeting 2022-02-07  </h4>
       </a>
     </div>
   
@@ -340,7 +348,7 @@ exporter）来避免在每个服务中嵌入导出逻辑。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/02/03/Ceph_Performance_Meeting_2022-02-03/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2022-02-03</h4>
+        <h4 class="title">Ceph性能会议2022-02-03</h4>
       </a>
     </div>
   

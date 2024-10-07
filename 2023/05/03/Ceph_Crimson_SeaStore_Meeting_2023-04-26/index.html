@@ -20,17 +20,25 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [具体日期] 参会人员： Rocky, Isaiah, June, Phil 会议议题： 1. 项目进展汇报 2. 技术问题讨论 3. 后续行动计划 会议内容：  自我介绍：  June 加入了 Hari 团队，并参与了 GitHub 命令的相关工作。  项目进展：  Rocky 在 Cephalocon 后主要跟进代码审查工作。 Engine 汇报了 mod core sy">
+    <meta name="keywords" content="Ceph,分布式存储,块存储,高可用性,对象存储,CRUSH 算法,可扩展性,文件系统存储">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年4月26日 参会人员： Rocky, Isaiah, June, Phil 会议议题： 1. 项目进展汇报 2. 技术问题讨论 3. 后续行动计划 会议内容：  自我介绍：  June 加入 Hari 团队，参与 GitHub 命令相关工作。  项目进展：  Rocky 主要跟进 Cephalocon 后的代码审查工作。 Engine 报告">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;SeaStore Meeting 2023-04-26">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/03/Ceph_Crimson_SeaStore_Meeting_2023-04-26/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [具体日期] 参会人员： Rocky, Isaiah, June, Phil 会议议题： 1. 项目进展汇报 2. 技术问题讨论 3. 后续行动计划 会议内容：  自我介绍：  June 加入了 Hari 团队，并参与了 GitHub 命令的相关工作。  项目进展：  Rocky 在 Cephalocon 后主要跟进代码审查工作。 Engine 汇报了 mod core sy">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年4月26日 参会人员： Rocky, Isaiah, June, Phil 会议议题： 1. 项目进展汇报 2. 技术问题讨论 3. 后续行动计划 会议内容：  自我介绍：  June 加入 Hari 团队，参与 GitHub 命令相关工作。  项目进展：  Rocky 主要跟进 Cephalocon 后的代码审查工作。 Engine 报告">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-02T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="块存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="CRUSH 算法">
+<meta property="article:tag" content="可扩展性">
+<meta property="article:tag" content="文件系统存储">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,8 +193,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间：</strong> [具体日期]</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议时间：</strong> 2023年4月26日</p>
 <p><strong>参会人员：</strong> Rocky, Isaiah, June, Phil</p>
 <p><strong>会议议题：</strong> 1. 项目进展汇报 2. 技术问题讨论 3.
 后续行动计划</p>
@@ -194,23 +203,23 @@
 <ol type="1">
 <li><strong>自我介绍：</strong>
 <ul>
-<li>June 加入了 Hari 团队，并参与了 GitHub 命令的相关工作。</li>
+<li>June 加入 Hari 团队，参与 GitHub 命令相关工作。</li>
 </ul></li>
 <li><strong>项目进展：</strong>
 <ul>
-<li>Rocky 在 Cephalocon 后主要跟进代码审查工作。</li>
-<li>Engine 汇报了 mod core system 和 connection reference 的变更，感谢
+<li>Rocky 主要跟进 Cephalocon 后的代码审查工作。</li>
+<li>Engine 报告了 mod core system 和 connection reference 的变更，感谢
 Sam 的贡献。已审查并合并了 circular Journal space for random block
 manager，以及 mod core messenger 的多核 socket
 接受和连接功能。单元测试已完成，当前挑战是确保内存分配正确。</li>
-<li>Engine 还提到了 OSD
-操作消息缓冲列表的跨云约束可能未正确执行，但未触发任何故障。</li>
-<li>Engine 将跳过下一次会议，因为即将放假。</li>
+<li>Engine 提到 OSD
+操作消息缓冲列表的跨云约束可能未正确执行，但未触发故障。</li>
+<li>Engine 将因放假而跳过下一次会议。</li>
 </ul></li>
 <li><strong>技术讨论：</strong>
 <ul>
 <li>讨论了 buffer lists 使用 Atomic reference Counting
-的问题，认为虽然可能存在性能问题，但只要不频繁操作引用计数，可能不需要立即修复。建议进行性能分析。</li>
+的性能问题，认为只要不频繁操作引用计数，可能不需要立即修复，建议进行性能分析。</li>
 <li>讨论了 c-star allocator
 的工作原理，指出在释放其他核心分配的内存时需要发送消息回其他核心，但确实有效。</li>
 <li>讨论了 PR 中的 lva point
@@ -226,7 +235,7 @@ debug 构建中的 get connection pipeline 问题。 - 确保 PR
 的测试通过后尽快合并。 - 通过 debug 输出检查 SMP 设置的正确性。</p>
 <p><strong>会议结束：</strong> -
 会议在确认无其他议题后结束，祝大家下周工作顺利。</p>
-<p><strong>备注：</strong> - 保留了部分计算机科学/ceph
+<p><strong>备注：</strong> - 会议保留了部分计算机科学/ceph
 相关领域英文原文的关键词，如 Cephalocon, mod core system, connection
 reference, Atomic reference Counting 等。</p>
 
@@ -259,6 +268,8 @@ reference, Atomic reference Counting 等。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-%E7%AE%97%E6%B3%95/" rel="tag">CRUSH 算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">可扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%9D%97%E5%AD%98%E5%82%A8/" rel="tag">块存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8/" rel="tag">文件系统存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -318,9 +329,9 @@ reference, Atomic reference Counting 等。</p>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/05/Using_EBPF_to_Develop_a_Powerful_Tool_for_Diagnosing_Ceph_Performance_Issues/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Troubleshooting_a_Cephadm_Deployment_-_Michel_Raabe_B1_Systems_GmbH/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Using EBPF to Develop a Powerful Tool for Diagnosing Ceph Performance Issues</h4>
+        <h4 class="title">Troubleshooting a Cephadm Deployment - Michel Raabe, B1 Systems GmbH</h4>
       </a>
     </div>
   

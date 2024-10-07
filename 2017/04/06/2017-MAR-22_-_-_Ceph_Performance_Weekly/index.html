@@ -14,23 +14,28 @@
     
     
     
-    <title>2017-MAR-22 :: Ceph Performance Weekly | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2017-MAR-22 :: Ceph Performance Weekly&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月某日 参会人员： 全体研发人员 会议主题： 讨论Ceph分布式存储的最新进展和待办事项 关键细节  新特性与需求：  Igor的PR清理： 对Ashley基于早期PR的清理工作，旨在将kV sinks red和blue store分成两部分，以提高性能。目前编译存在问题，需要进一步定义和测试。 零拷贝工作： 持续进行DM和nascent messenger的零">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,OSD,蓝存储">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年11月某日 参会人员： 全体研发人员 会议主题： 讨论Ceph分布式存储的最新进展和待办事项 关键细节  新特性与需求：  Igor的PR清理： 讨论了Ashley基于早期PR的清理工作，旨在将kV sinks red和blue store分成两部分，以提高性能。目前编译存在问题，需要进一步定义和测试。 零拷贝工作： 持续进行DM和nasc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017-MAR-22 :: Ceph Performance Weekly">
+<meta property="og:title" content="&#39;2017-MAR-22 :: Ceph Performance Weekly&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2017/04/06/2017-MAR-22_-_-_Ceph_Performance_Weekly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月某日 参会人员： 全体研发人员 会议主题： 讨论Ceph分布式存储的最新进展和待办事项 关键细节  新特性与需求：  Igor的PR清理： 对Ashley基于早期PR的清理工作，旨在将kV sinks red和blue store分成两部分，以提高性能。目前编译存在问题，需要进一步定义和测试。 零拷贝工作： 持续进行DM和nascent messenger的零">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年11月某日 参会人员： 全体研发人员 会议主题： 讨论Ceph分布式存储的最新进展和待办事项 关键细节  新特性与需求：  Igor的PR清理： 讨论了Ashley基于早期PR的清理工作，旨在将kV sinks red和blue store分成两部分，以提高性能。目前编译存在问题，需要进一步定义和测试。 零拷贝工作： 持续进行DM和nasc">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-04-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2017-04-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="蓝存储">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2017-MAR-22 :: Ceph Performance Weekly</div>
+        <div class="flex-col header-title ellipsis">&#39;2017-MAR-22 :: Ceph Performance Weekly&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2017-MAR-22 :: Ceph Performance Weekly</h1>
+        <h1 class="title">&#39;2017-MAR-22 :: Ceph Performance Weekly&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2017-04-05T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2017-MAR-22 :: Ceph Performance Weekly</h1>
+        <h1 class="post-card-title">'2017-MAR-22 :: Ceph Performance Weekly'</h1>
         <div class="post-meta">
             <time class="post-time" title="2017-04-06 00:00:00" datetime="2017-04-05T16:00:00.000Z"  itemprop="datePublished">2017-04-06</time>
 
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议时间</strong>： 2023年11月某日</p>
 <p><strong>参会人员</strong>： 全体研发人员</p>
 <p><strong>会议主题</strong>：
@@ -195,18 +201,18 @@
 <li><strong>新特性与需求</strong>：
 <ul>
 <li><strong>Igor的PR清理</strong>：
-对Ashley基于早期PR的清理工作，旨在将kV sinks red和blue
+讨论了Ashley基于早期PR的清理工作，旨在将kV sinks red和blue
 store分成两部分，以提高性能。目前编译存在问题，需要进一步定义和测试。</li>
 <li><strong>零拷贝工作</strong>： 持续进行DM和nascent
 messenger的零拷贝工作，预计将有更多相关工作。</li>
 <li><strong>PG重映射</strong>：
 Sage提出的PG重映射功能，允许用户在PG已映射后重新映射，以优化分布。这是一个长期需求的解决方案。</li>
-<li><strong>SSD对齐</strong>： 忘记设置Alexey
-SSD对齐为16KB，考虑将其降低到8KB或4KB，以减少内存和数据库压力。</li>
+<li><strong>SSD对齐</strong>：
+调整SSD对齐设置，以减少内存和数据库压力。</li>
 <li><strong>固定延迟权限</strong>：
 合并了固定延迟权限的修复，可能改善性能并解决一系列问题。</li>
 <li><strong>RC锁定机制</strong>：
-RC锁定机制的改进可能不会带来显著性能提升，已被移出热路径。</li>
+改进的RC锁定机制可能不会带来显著性能提升，已被移出热路径。</li>
 <li><strong>LP T&amp;G工作</strong>： LP T&amp;G工作分为两部分：在BOS
 D中引入大量tracing和直接messenger / men's
 store，以分离代码并专注于找到延迟。</li>
@@ -217,7 +223,7 @@ store，以分离代码并专注于找到延迟。</li>
 <li><strong>静态指针</strong>：
 讨论了静态指针的概念，以及在OSD客户端接口中使用静态指针的潜在优势。</li>
 <li><strong>BlueStore优化</strong>：
-讨论了BlueStore中与大量对象和元数据相关的性能问题，包括压缩和锁定问题。讨论了将大型对象键分区到数据库以减少压缩的可行性。</li>
+讨论了BlueStore中与大量对象和元数据相关的性能问题，包括压缩和锁定问题。</li>
 <li><strong>CRC32 for PVC架构</strong>：
 讨论了CRC32在PVC架构中的应用。</li>
 <li><strong>X to be arm range Keys operator interface</strong>：
@@ -289,6 +295,8 @@ Sage正在测试X to be arm range Keys operator interface。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%93%9D%E5%AD%98%E5%82%A8/" rel="tag">蓝存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -300,7 +308,7 @@ Sage正在测试X to be arm range Keys operator interface。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/04/06/2017-MAR-22_-_-_Ceph_Performance_Weekly/&title=《2017-MAR-22 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/04/06/2017-MAR-22_-_-_Ceph_Performance_Weekly/&title=《'2017-MAR-22 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -310,7 +318,7 @@ Sage正在测试X to be arm range Keys operator interface。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/04/06/2017-MAR-22_-_-_Ceph_Performance_Weekly/&title=《2017-MAR-22 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/04/06/2017-MAR-22_-_-_Ceph_Performance_Weekly/&title=《'2017-MAR-22 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -320,7 +328,7 @@ Sage正在测试X to be arm range Keys operator interface。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2017-MAR-22 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/04/06/2017-MAR-22_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2017-MAR-22 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/04/06/2017-MAR-22_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -350,7 +358,7 @@ Sage正在测试X to be arm range Keys operator interface。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2017/04/06/2017-APR-05_-_-_Ceph_Performance_Weekly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2017-APR-05 :: Ceph Performance Weekly</h4>
+        <h4 class="title">&#39;2017-APR-05 :: Ceph Performance Weekly&#39;</h4>
       </a>
     </div>
   
@@ -359,7 +367,7 @@ Sage正在测试X to be arm range Keys operator interface。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2017/04/06/2017-MAR-23_--_Ceph_Tech_Talks_-_Ceph_at_Scale_Writing_Applications_with_Language_Bindings/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2017-MAR-23 -- Ceph Tech Talks: Ceph at Scale &amp; Writing Applications with Language Bindings</h4>
+        <h4 class="title">&#39;2017-MAR-23 -- Ceph Tech Talks: Ceph at Scale &amp; Writing Applications with Language Bindings&#39;</h4>
       </a>
     </div>
   
@@ -459,7 +467,7 @@ Sage正在测试X to be arm range Keys operator interface。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/04/06/2017-MAR-22_-_-_Ceph_Performance_Weekly/&title=《2017-MAR-22 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/04/06/2017-MAR-22_-_-_Ceph_Performance_Weekly/&title=《'2017-MAR-22 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -469,7 +477,7 @@ Sage正在测试X to be arm range Keys operator interface。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/04/06/2017-MAR-22_-_-_Ceph_Performance_Weekly/&title=《2017-MAR-22 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/04/06/2017-MAR-22_-_-_Ceph_Performance_Weekly/&title=《'2017-MAR-22 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -479,7 +487,7 @@ Sage正在测试X to be arm range Keys operator interface。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2017-MAR-22 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/04/06/2017-MAR-22_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2017-MAR-22 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/04/06/2017-MAR-22_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

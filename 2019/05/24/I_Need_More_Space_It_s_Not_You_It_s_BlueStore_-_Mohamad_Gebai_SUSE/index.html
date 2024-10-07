@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： “空间不足，问题不在于你，而在于BlueStore的故事” 会议时间： （请在此处填写会议具体时间） 会议地点： （请在此处填写会议地点） 参会人员：  主讲人：Mohammed Dubai，Sousa软件工程师 与会人员：（请在此处填写与会人员名单）  会议内容： 1. 会议概述 Mohammed Dubai分享了几个来自Sousa用户邮件列表的案例，探讨了用户在使用Cep">
+    <meta name="keywords" content="Ceph,BlueStore,Ceph Storage,Storage Optimization,Data Distribution">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： “空间不足，问题不在于你，而在于BlueStore的故事” 会议时间： （请在此处填写会议具体时间） 会议地点： （请在此处填写会议地点） 参会人员：  主讲人：Mohammed Dubai，SUSE软件工程师 与会人员：（请在此处填写与会人员名单）  会议内容： 1. 会议概述 Mohammed Dubai分享了来自SUSE用户邮件列表的案例，探讨">
 <meta property="og:type" content="article">
 <meta property="og:title" content="I Need More Space, It&#39;s Not You It&#39;s BlueStore - Mohamad Gebai, SUSE">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/I_Need_More_Space_It_s_Not_You_It_s_BlueStore_-_Mohamad_Gebai_SUSE/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： “空间不足，问题不在于你，而在于BlueStore的故事” 会议时间： （请在此处填写会议具体时间） 会议地点： （请在此处填写会议地点） 参会人员：  主讲人：Mohammed Dubai，Sousa软件工程师 与会人员：（请在此处填写与会人员名单）  会议内容： 1. 会议概述 Mohammed Dubai分享了几个来自Sousa用户邮件列表的案例，探讨了用户在使用Cep">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： “空间不足，问题不在于你，而在于BlueStore的故事” 会议时间： （请在此处填写会议具体时间） 会议地点： （请在此处填写会议地点） 参会人员：  主讲人：Mohammed Dubai，SUSE软件工程师 与会人员：（请在此处填写与会人员名单）  会议内容： 1. 会议概述 Mohammed Dubai分享了来自SUSE用户邮件列表的案例，探讨">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="BlueStore">
+<meta property="article:tag" content="Ceph Storage">
+<meta property="article:tag" content="Storage Optimization">
+<meta property="article:tag" content="Data Distribution">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题">会议主题：</h4>
 <p>“空间不足，问题不在于你，而在于BlueStore的故事”</p>
 <h4 id="会议时间">会议时间：</h4>
@@ -194,12 +200,12 @@
 <p>（请在此处填写会议地点）</p>
 <h4 id="参会人员">参会人员：</h4>
 <ul>
-<li>主讲人：Mohammed Dubai，Sousa软件工程师</li>
+<li>主讲人：Mohammed Dubai，SUSE软件工程师</li>
 <li>与会人员：（请在此处填写与会人员名单）</li>
 </ul>
 <h4 id="会议内容">会议内容：</h4>
 <p><strong>1. 会议概述</strong> Mohammed
-Dubai分享了几个来自Sousa用户邮件列表的案例，探讨了用户在使用Ceph存储时遇到的空间使用问题。</p>
+Dubai分享了来自SUSE用户邮件列表的案例，探讨了用户在使用Ceph存储时遇到的空间使用问题，并深入分析了相关原因和解决方案。</p>
 <p><strong>2. 关键案例分析</strong></p>
 <p><strong>案例一：FDF命令分析</strong> -
 <strong>问题描述</strong>：用户使用FDF命令查看空间使用情况，发现使用率高达92%，但实际可用的空间只有1.5GB。
@@ -213,8 +219,8 @@ balancer进行数据均衡，确保数据分布均匀。</p>
 <strong>原因分析</strong>：XFS文件系统的元数据占用空间，且删除文件后空间未被正确释放。
 - <strong>解决方案</strong>：在文件系统上运行FS
 trim命令，释放未使用的块。</p>
-<p><strong>案例三：Radios和对象存储</strong> -
-<strong>问题描述</strong>：用户使用Radios向存储池推送100个100字节的对象，发现实际存储空间使用率远高于预期。
+<p><strong>案例三：Rados和对象存储</strong> -
+<strong>问题描述</strong>：用户使用Rados向存储池推送100个100字节的对象，发现实际存储空间使用率远高于预期。
 -
 <strong>原因分析</strong>：BlueStore的最小分配单位是64KB，导致大量小对象产生大量开销。
 -
@@ -234,7 +240,7 @@ trim命令。</li>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
 <li>与会人员根据会议内容，结合自身实际情况，优化Ceph存储配置和应用设计。</li>
-<li>针对案例中提到的问题，Sousa团队将进一步完善相关功能，提高存储效率。</li>
+<li>针对案例中提到的问题，SUSE团队将进一步完善相关功能，提高存储效率。</li>
 </ul>
 <h4 id="会议总结">会议总结：</h4>
 <p>本次会议针对Ceph存储空间使用问题进行了深入探讨，分享了多个案例及解决方案，有助于与会人员更好地了解和解决空间使用问题。</p>
@@ -268,6 +274,8 @@ trim命令。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Storage/" rel="tag">Ceph Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Data-Distribution/" rel="tag">Data Distribution</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Optimization/" rel="tag">Storage Optimization</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -327,18 +335,18 @@ trim命令。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Healthier_Ceph_Clusters_with_Ceph-medic_-_Alfredo_Deza_Red_Hat/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Hands On with Rook: Ceph &amp; Kubernetes - Maxime Guyot, Root Pi &amp; John Studarus, Packet Host</h4>
+        <h4 class="title">Healthier Ceph Clusters with Ceph-medic - Alfredo Deza, Red Hat</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Juggling_Petabytes_-_Managing_Ceph_at_Scale_with_Ceph-ansible_-_Matthew_Vernon/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Keeping_up_a_Competitive_Ceph_RadosGW_S3_API_-_Javier_Munoz_Igalia/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Juggling Petabytes: Managing Ceph at Scale with Ceph-ansible - Matthew Vernon</h4>
+        <h4 class="title">  Keeping up a Competitive Ceph/RadosGW S3 API - Javier Muñoz, Igalia  </h4>
       </a>
     </div>
   

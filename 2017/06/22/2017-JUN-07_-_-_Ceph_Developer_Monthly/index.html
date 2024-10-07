@@ -14,23 +14,28 @@
     
     
     
-    <title>2017-JUN-07 :: Ceph Developer Monthly | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2017-JUN-07 :: Ceph Developer Monthly&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议时间： 2023年6月（具体日期未提及） 会议主题： Ceph开发者月度会议 参会人员： Ceph社区开发者 会议内容： 一、RBD持久缓存更新  现阶段PR基于Jason的草图，包含基于文件的缓存框架，通过boss进行缓存逻辑处理。 缓存逻辑包括：日志存储、缓存事件存储和元存储。 当前性能表现不佳，IOPS下降。 下一步计划：  优化缓存策略，例如使用更智能的刷新策略。 支持unicast和">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,CRUSH算法,可扩展性">
+    <meta name="description" content="[改进后的中文总结内容] 在2017年6月的Ceph开发者月度会议上，社区开发者和相关人员讨论了多个与Ceph分布式存储相关的议题，包括RBD持久缓存、存储池标签、系统D、SethOSD和BlueStore元数据等。以下是对会议内容的详细总结： 一、RBD持久缓存更新  会议讨论了基于Jason草图的RBD持久缓存更新，该缓存框架通过boss进行处理，包含日志存储、缓存事件存储和元存储。 当前性能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017-JUN-07 :: Ceph Developer Monthly">
+<meta property="og:title" content="&#39;2017-JUN-07 :: Ceph Developer Monthly&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2017/06/22/2017-JUN-07_-_-_Ceph_Developer_Monthly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议时间： 2023年6月（具体日期未提及） 会议主题： Ceph开发者月度会议 参会人员： Ceph社区开发者 会议内容： 一、RBD持久缓存更新  现阶段PR基于Jason的草图，包含基于文件的缓存框架，通过boss进行缓存逻辑处理。 缓存逻辑包括：日志存储、缓存事件存储和元存储。 当前性能表现不佳，IOPS下降。 下一步计划：  优化缓存策略，例如使用更智能的刷新策略。 支持unicast和">
+<meta property="og:description" content="[改进后的中文总结内容] 在2017年6月的Ceph开发者月度会议上，社区开发者和相关人员讨论了多个与Ceph分布式存储相关的议题，包括RBD持久缓存、存储池标签、系统D、SethOSD和BlueStore元数据等。以下是对会议内容的详细总结： 一、RBD持久缓存更新  会议讨论了基于Jason草图的RBD持久缓存更新，该缓存框架通过boss进行处理，包含日志存储、缓存事件存储和元存储。 当前性能">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-06-21T16:00:00.000Z">
 <meta property="article:modified_time" content="2017-06-21T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="可扩展性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2017-JUN-07 :: Ceph Developer Monthly</div>
+        <div class="flex-col header-title ellipsis">&#39;2017-JUN-07 :: Ceph Developer Monthly&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2017-JUN-07 :: Ceph Developer Monthly</h1>
+        <h1 class="title">&#39;2017-JUN-07 :: Ceph Developer Monthly&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2017-06-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2017-JUN-07 :: Ceph Developer Monthly</h1>
+        <h1 class="post-card-title">'2017-JUN-07 :: Ceph Developer Monthly'</h1>
         <div class="post-meta">
             <time class="post-time" title="2017-06-22 00:00:00" datetime="2017-06-21T16:00:00.000Z"  itemprop="datePublished">2017-06-22</time>
 
@@ -178,98 +183,43 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议时间</strong>： 2023年6月（具体日期未提及）</p>
-<p><strong>会议主题</strong>： Ceph开发者月度会议</p>
-<p><strong>参会人员</strong>： Ceph社区开发者</p>
-<p><strong>会议内容</strong>：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>在2017年6月的Ceph开发者月度会议上，社区开发者和相关人员讨论了多个与Ceph分布式存储相关的议题，包括RBD持久缓存、存储池标签、系统D、SethOSD和BlueStore元数据等。以下是对会议内容的详细总结：</p>
 <p><strong>一、RBD持久缓存更新</strong></p>
 <ul>
-<li>现阶段PR基于Jason的草图，包含基于文件的缓存框架，通过boss进行缓存逻辑处理。</li>
-<li>缓存逻辑包括：日志存储、缓存事件存储和元存储。</li>
+<li>会议讨论了基于Jason草图的RBD持久缓存更新，该缓存框架通过boss进行处理，包含日志存储、缓存事件存储和元存储。</li>
 <li>当前性能表现不佳，IOPS下降。</li>
-<li>下一步计划：
-<ul>
-<li>优化缓存策略，例如使用更智能的刷新策略。</li>
-<li>支持unicast和scatter-gather功能。</li>
-<li>学习更多内存缓存模块。</li>
-</ul></li>
+<li>下一步计划包括优化缓存策略、支持unicast和scatter-gather功能，以及学习更多内存缓存模块。</li>
 </ul>
 <p><strong>二、存储池标签元数据</strong></p>
 <ul>
-<li>目的：提高存储池可识别性和易用性。</li>
-<li>方案：为存储池添加标签功能，将元数据与存储池关联。</li>
-<li>讨论点：
-<ul>
-<li>是否使用“应用”标签，还是使用更通用的元数据映射。</li>
-<li>是否强制要求标签，还是提供健康警告。</li>
-<li>如何处理兼容性问题。</li>
-</ul></li>
-<li>结论：
-<ul>
-<li>添加“应用”标签和元数据映射，但不强制要求。</li>
-<li>提供健康警告，提示未标记的存储池。</li>
-<li>使用升级路径处理兼容性问题。</li>
-</ul></li>
+<li>会议讨论了为存储池添加标签功能，以提高存储池的可识别性和易用性。</li>
+<li>讨论了是否使用“应用”标签，还是使用更通用的元数据映射，以及是否强制要求标签等问题。</li>
+<li>结论为添加“应用”标签和元数据映射，但不强制要求，并提供健康警告。</li>
 </ul>
 <p><strong>三、系统D改进</strong></p>
 <ul>
-<li>目的：简化集群部署和配置。</li>
-<li>问题：系统D对自定义集群名称的支持不完整，且存在兼容性问题。</li>
-<li>讨论点：
-<ul>
-<li>是否移除系统D对自定义集群名称的支持。</li>
-<li>如何处理兼容性问题。</li>
-</ul></li>
-<li>结论：
-<ul>
-<li>移除系统D对自定义集群名称的支持。</li>
-<li>使用升级路径处理兼容性问题。</li>
-</ul></li>
+<li>讨论了简化集群部署和配置的改进措施。</li>
+<li>系统D对自定义集群名称的支持不完整，且存在兼容性问题。</li>
+<li>结论为移除系统D对自定义集群名称的支持，并使用升级路径处理兼容性问题。</li>
 </ul>
 <p><strong>四、集群默认工具</strong></p>
 <ul>
-<li>问题：集群创建时默认安装的工具过多，且部分工具未启用SSO。</li>
-<li>讨论点：
-<ul>
-<li>是否移除默认安装的工具。</li>
-<li>如何处理SSO问题。</li>
-</ul></li>
-<li>结论：
-<ul>
-<li>移除默认安装的工具。</li>
-<li>对SSO进行改进。</li>
-</ul></li>
+<li>讨论了集群创建时默认安装的工具过多，且部分工具未启用SSO的问题。</li>
+<li>结论为移除默认安装的工具，并对SSO进行改进。</li>
 </ul>
 <p><strong>五、SethOSD部署工具</strong></p>
 <ul>
-<li>目的：简化OSD部署和配置。</li>
-<li>问题：SethOSD部署工具过于复杂，且对LVM支持不完整。</li>
-<li>讨论点：
-<ul>
-<li>是否使用LVM作为部署工具。</li>
-<li>如何简化部署流程。</li>
-</ul></li>
-<li>结论：
-<ul>
-<li>使用LVM作为部署工具。</li>
-<li>简化部署流程，例如使用标签识别设备。</li>
-</ul></li>
+<li>讨论了简化OSD部署和配置的问题。</li>
+<li>SethOSD部署工具过于复杂，且对LVM支持不完整。</li>
+<li>结论为使用LVM作为部署工具，并简化部署流程。</li>
 </ul>
 <p><strong>六、BlueStore元数据</strong></p>
 <ul>
-<li>问题：BlueStore元数据过多，导致性能下降。</li>
-<li>讨论点：
-<ul>
-<li>是否使用LMDB作为元数据存储后端。</li>
-<li>如何优化元数据存储。</li>
-</ul></li>
-<li>结论：
-<ul>
-<li>尝试使用LMDB作为元数据存储后端。</li>
-<li>继续研究优化元数据存储的方法。</li>
-</ul></li>
+<li>讨论了BlueStore元数据过多，导致性能下降的问题。</li>
+<li>结论为尝试使用LMDB作为元数据存储后端，并继续研究优化元数据存储的方法。</li>
 </ul>
-<p><strong>后续行动计划</strong>：</p>
+<p><strong>后续行动计划</strong></p>
 <ul>
 <li>完成RBD持久缓存优化。</li>
 <li>实现存储池标签功能。</li>
@@ -277,8 +227,7 @@
 <li>简化SethOSD部署工具。</li>
 <li>尝试使用LMDB作为元数据存储后端。</li>
 </ul>
-<p><strong>总结</strong>：</p>
-<p>本次会议讨论了多个Ceph相关议题，包括RBD持久缓存、存储池标签、系统D、SethOSD和BlueStore元数据等。会议达成了多项共识，并制定了后续行动计划，以进一步改进Ceph的性能和易用性。</p>
+<p>本次会议讨论了多个Ceph相关议题，并制定了后续行动计划，以进一步改进Ceph的性能和易用性。</p>
 
         </div>
 
@@ -309,6 +258,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">可扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -320,7 +271,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/06/22/2017-JUN-07_-_-_Ceph_Developer_Monthly/&title=《2017-JUN-07 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/06/22/2017-JUN-07_-_-_Ceph_Developer_Monthly/&title=《'2017-JUN-07 :: Ceph Developer Monthly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -330,7 +281,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/06/22/2017-JUN-07_-_-_Ceph_Developer_Monthly/&title=《2017-JUN-07 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/06/22/2017-JUN-07_-_-_Ceph_Developer_Monthly/&title=《'2017-JUN-07 :: Ceph Developer Monthly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -340,7 +291,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2017-JUN-07 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/06/22/2017-JUN-07_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2017-JUN-07 :: Ceph Developer Monthly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/06/22/2017-JUN-07_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -370,7 +321,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2017/08/29/2017-AUG-02_-_-_Ceph_Developer_Monthly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2017-AUG-02 :: Ceph Developer Monthly</h4>
+        <h4 class="title">&#39;2017-AUG-02 :: Ceph Developer Monthly&#39;</h4>
       </a>
     </div>
   
@@ -379,7 +330,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2017/06/21/2017-JUN-01_-_-_Ceph_Performance_Weekly/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2017-JUN-01 :: Ceph Performance Weekly</h4>
+        <h4 class="title">&#39;2017-JUN-01 :: Ceph Performance Weekly&#39;</h4>
       </a>
     </div>
   
@@ -479,7 +430,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/06/22/2017-JUN-07_-_-_Ceph_Developer_Monthly/&title=《2017-JUN-07 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/06/22/2017-JUN-07_-_-_Ceph_Developer_Monthly/&title=《'2017-JUN-07 :: Ceph Developer Monthly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -489,7 +440,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/06/22/2017-JUN-07_-_-_Ceph_Developer_Monthly/&title=《2017-JUN-07 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/06/22/2017-JUN-07_-_-_Ceph_Developer_Monthly/&title=《'2017-JUN-07 :: Ceph Developer Monthly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -499,7 +450,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2017-JUN-07 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/06/22/2017-JUN-07_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2017-JUN-07 :: Ceph Developer Monthly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/06/22/2017-JUN-07_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

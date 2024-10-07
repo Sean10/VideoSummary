@@ -150,11 +150,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-Next_Generation_Erasure_Coding_Ceph_Days_London_2024"
+            <article id="post-Ceph_RGW_Refactoring_Meeting_2024-10-02"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2024-08-23 00:00:00" datetime="2024-08-22T16:00:00.000Z"  itemprop="datePublished">2024-08-23</time>
+        <time class="post-time" title="2024-10-02 00:00:00" datetime="2024-10-01T16:00:00.000Z"  itemprop="datePublished">2024-10-02</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -168,7 +168,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2024/08/23/Next_Generation_Erasure_Coding_Ceph_Days_London_2024/">Next Generation Erasure Coding | Ceph Days London 2024</a>
+      <a class="post-title-link" href="/VideoSummary/2024/10/02/Ceph_RGW_Refactoring_Meeting_2024-10-02/">Ceph RGW重构会议 2024-10-02</a>
     </h3>
   
 
@@ -178,24 +178,28 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-会议时间： [请填写会议时间]
-参会人员：
-Bill（存储开发人员），Seth（其他参会人员）
-会议主题： Ceph分布式存储中Erasure
-Coding优化方案讨论
-会议内容：
+        [改进后的中文总结内容]
+会议纪要
+会议主题：Ceph分布式存储系统中的多站点和版本问题讨论
+参会人员：Jane及其他相关研发人员
+主要议题及讨论内容：
 
-背景介绍：
+多站点和版本问题
 
-当前Ceph存储系统中，对象存储使用Erasure
-Coding，块存储和文件存储使用Replicated Pools。
-Erasure Coding的优势在于降低存储成本，但性能不如R...
+问题描述：Jane报告了一个关于多站点配置中版本桶的问题。在删除多个对象版本后，生命周期管理（LC）在次要站点触发清理，但发现残留的OLH条目（Object
+Log
+History）未被清除，导致新上传的对象无法被正确...
     
 
-        <a href="/VideoSummary/2024/08/23/Next_Generation_Erasure_Coding_Ceph_Days_London_2024/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2024/10/02/Ceph_RGW_Refactoring_Meeting_2024-10-02/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E7%AB%99%E7%82%B9/" rel="tag">多站点</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" rel="tag">版本控制</a></li></ul>
+
     </div>
     
 </article>
@@ -203,11 +207,11 @@ Erasure Coding的优势在于降低存储成本，但性能不如R...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-State_of_the_Cephalopod_Ceph_Days_London_2024"
+            <article id="post-Ceph_RGW_Refactoring_Meeting_2024-09-25"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2024-08-23 00:00:00" datetime="2024-08-22T16:00:00.000Z"  itemprop="datePublished">2024-08-23</time>
+        <time class="post-time" title="2024-09-25 00:00:00" datetime="2024-09-24T16:00:00.000Z"  itemprop="datePublished">2024-09-25</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -221,7 +225,7 @@ Erasure Coding的优势在于降低存储成本，但性能不如R...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2024/08/23/State_of_the_Cephalopod_Ceph_Days_London_2024/">State of the Cephalopod| Ceph Days London 2024</a>
+      <a class="post-title-link" href="/VideoSummary/2024/09/25/Ceph_RGW_Refactoring_Meeting_2024-09-25/">Ceph RGW Refactoring Meeting 2024-09-25</a>
     </h3>
   
 
@@ -231,397 +235,32 @@ Erasure Coding的优势在于降低存储成本，但性能不如R...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-会议主题： Ceph 项目状态更新
-会议时间： 2023年（具体日期未提及）
-参会人员： Niha Oja（IBM 高级开发经理，SEF
-执行委员会成员），以及其他来自 Ceph 社区和企业的参与者。
-会议内容：
-一、开场与感谢
-
-Niha Oja 对组织此次会议的各方表示感谢，包括 Tony Phil、Danny
-Orit、Gorov Suan，以及对 Ceph 社区和贡献者的认...
-    
-
-        <a href="/VideoSummary/2024/08/23/State_of_the_Cephalopod_Ceph_Days_London_2024/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2024-08-23 00:00:00" datetime="2024-08-22T16:00:00.000Z"  itemprop="datePublished">2024-08-23</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/">Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： 2023年11月（具体日期未提及）
-会议地点： 线上会议
-参会人员： James
-Paage（Canonical公司首席工程师）、Luciano、其他IBM员工
-会议主题： Sunbeam项目介绍
-会议内容：
-
-James Paage开场致辞：
-
-对Bill的Ceph PODS展示表示祝贺。
-介绍自己，作为Canonical公司首席工程师，负责OpenStack
-Cep...
-    
-
-        <a href="/VideoSummary/2024/08/23/Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Taming_a_Cephalopod_Swarm_Ceph_Days_London_2024"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2024-08-23 00:00:00" datetime="2024-08-22T16:00:00.000Z"  itemprop="datePublished">2024-08-23</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2024/08/23/Taming_a_Cephalopod_Swarm_Ceph_Days_London_2024/">Taming a Cephalopod Swarm | Ceph Days London 2024</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： Ceph 存储系统
-SEF（StorageOS）多集群监控功能更新及未来规划
-会议时间： 2023年10月（具体日期未提及）
-参会人员： 邀请了 Ceph 社区成员和 SEF
-用户参与讨论。
-会议内容：
-一、多集群监控功能介绍
-
-背景： 由于用户对集群规模的需求不断增长，导致多个
-SEF 集群的管理成为现实需求。
-现状： 通过 SEF
-用户调查和社区反馈，确认了多集群管...
-    
-
-        <a href="/VideoSummary/2024/08/23/Taming_a_Cephalopod_Swarm_Ceph_Days_London_2024/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Unlocking_Ceph_s_Potential_with_NVMe_oF_Integration_Ceph_Days_London_2024"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2024-08-23 00:00:00" datetime="2024-08-22T16:00:00.000Z"  itemprop="datePublished">2024-08-23</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2024/08/23/Unlocking_Ceph_s_Potential_with_NVMe_oF_Integration_Ceph_Days_London_2024/">Unlocking Ceph&#39;s Potential with NVMe oF Integration | Ceph Days London 2024</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： NVMe over Fabrics (NVMe-oF)
-项目的进展与讨论
-参会人员： NVMe-oF 项目成员、Ceph 研发人员等
-会议内容：
-一、NVMe-oF 介绍
-
-NVMe-oF 是一种基于网络协议的存储访问方式，允许用户通过网络访问本地
-NVMe 设备。
-NVMe-oF
-具有高性能、低延迟和可扩展性等优点，适用于数据中心存储场景。
-
-二、NVMe-oF 项目...
-    
-
-        <a href="/VideoSummary/2024/08/23/Unlocking_Ceph_s_Potential_with_NVMe_oF_Integration_Ceph_Days_London_2024/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Tenctacle_-_BlueStore"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2024-08-22 00:00:00" datetime="2024-08-21T16:00:00.000Z"  itemprop="datePublished">2024-08-22</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2024/08/22/CDS_Tenctacle_-_BlueStore/">CDS Tenctacle - BlueStore</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： Blue Store (Tentacle)
-项目进展及未来计划
-会议时间： 2023年11月（具体日期未提及）
-参会人员： Adam, Mat Vander Millan (Digital Ocean),
-Gary, Igor, Sam 等
-会议内容：
-一、项目进展
-
-性能退化问题：
-
-开发了抓取工具，用于捕获OSD操作日志，分析性能退化原因。
-通过抓取工具获取了80百...
-    
-
-        <a href="/VideoSummary/2024/08/22/CDS_Tenctacle_-_BlueStore/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Tentacle_-_Cephadm"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2024-08-22 00:00:00" datetime="2024-08-21T16:00:00.000Z"  itemprop="datePublished">2024-08-22</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2024/08/22/CDS_Tentacle_-_Cephadm/">CDS Tentacle - Cephadm</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： 2023年11月X日
-会议地点： 线上会议
-参会人员： 项目团队成员
-会议主题：
-讨论Ceph项目T版本的关键功能改进和开发计划
-会议内容：
-一、已进行中的工作
-
-标签IDE折扣：
-允许为服务分配多个标签，实现更灵活的资源分配和故障域管理。
-OSD替换改进：
-
-无替换标记：
-允许标记即将替换的磁盘，避免其被误选为OSD。
-一次性规格：
-提供一次性OSD部署机制，方便用户...
-    
-
-        <a href="/VideoSummary/2024/08/22/CDS_Tentacle_-_Cephadm/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Tentacle_-_CephFS"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2024-08-22 00:00:00" datetime="2024-08-21T16:00:00.000Z"  itemprop="datePublished">2024-08-22</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/">CDS Tentacle - CephFS</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： 2023年11月（具体日期未提及）
-参会人员： 多位Ceph研发人员，包括负责self FS for the
-tentacle release的团队成员
-会议主题：
-
-self FS for the tentacle release相关议题
-Ceph相关功能讨论
-
-会议内容：
-1. sensor directory功能
-
-Patrick介绍了sensor
-directo...
-    
-
-        <a href="/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_Tentacle_-_Core_RADOS"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2024-08-22 00:00:00" datetime="2024-08-21T16:00:00.000Z"  itemprop="datePublished">2024-08-22</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2024/08/22/CDS_Tentacle_-_Core_RADOS/">CDS Tentacle - Core RADOS</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议主题： Ceph 项目开发会议
-会议时间： 2023年11月（具体日期未提及）
-会议地点： 线上会议
-参会人员： Laura, Ron, Ric, Bill, Mark, Laura, Adam,
-Greg, Sam, Patrick, Nia 等
-会议内容：
-1. E 优化：
-
+        [改进后的中文总结内容]
+会议纪要
+会议主题：Ceph
+版本发布流程及多区域复制讨论
+参会人员：Ceph 开发团队成员
+会议时间：2024年9月25日
 主要议题：
-讨论E优化方案的推进，重点关注成本优化和性能限制。
-关键细节：
 
-Bill Scales已制作详...
+Ceph 版本发布流程
+
+讨论了创建候选版本（release
+candidates）和最终版本（G8）的过程。
+解释了从主分支（squid branch）创建发布分支（squid release
+branch）的步骤。
+讨论了哪...
     
 
-        <a href="/VideoSummary/2024/08/22/CDS_Tentacle_-_Core_RADOS/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2024/09/25/Ceph_RGW_Refactoring_Meeting_2024-09-25/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-RGW/" rel="tag">Ceph RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83/" rel="tag">Ceph版本发布</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8A%A0%E5%AF%86%E5%AF%B9%E8%B1%A1%E5%A4%8D%E5%88%B6/" rel="tag">加密对象复制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E5%8C%BA%E5%9F%9F%E5%A4%8D%E5%88%B6/" rel="tag">多区域复制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%B4%A2%E5%BC%95%E5%AD%98%E5%82%A8%E4%BC%98%E5%8C%96/" rel="tag">索引存储优化</a></li></ul>
+
     </div>
     
 </article>
@@ -629,11 +268,11 @@ Bill Scales已制作详...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_Tentacle_-_Dashboard"
+            <article id="post-Ceph_User_+_Dev_Monthly_Meeting_2024-09-25"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2024-08-22 00:00:00" datetime="2024-08-21T16:00:00.000Z"  itemprop="datePublished">2024-08-22</time>
+        <time class="post-time" title="2024-09-25 00:00:00" datetime="2024-09-24T16:00:00.000Z"  itemprop="datePublished">2024-09-25</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -647,7 +286,7 @@ Bill Scales已制作详...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2024/08/22/CDS_Tentacle_-_Dashboard/">CDS Tentacle - Dashboard</a>
+      <a class="post-title-link" href="/VideoSummary/2024/09/25/Ceph_User_+_Dev_Monthly_Meeting_2024-09-25/">Ceph User + Dev Monthly Meeting 2024-09-25</a>
     </h3>
   
 
@@ -657,30 +296,431 @@ Bill Scales已制作详...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-会议时间： 2023年X月X日
-会议地点： 线上会议
-参会人员： 全体开发者
-会议主题： Dashboard 开发者峰会
-会议内容：
-一、Scripx 和 Squid 改进
+        [改进后的中文总结内容]
+Ceph
+用户及开发者月度会议纪要
+会议概述
+本次Ceph用户及开发者月度会议主要讨论了Ceph分布式存储系统的关键议题，包括禁用扩展模式、碳设计系统在Ceph仪表板中的应用，以及将upmap
+remap PG
+remapper集成到平衡器中。会议还涉及了Ceph未来版本计划和技术细节的讨论。
+主要议题
 
-Scripx：
+禁用扩展模式
 
-改进了导航布局。
-正在撰写博客文章介绍改进内容，目前处于审核阶段。
-增加了 SFS
-相关功能，包括快照和克隆管理、快照调度、文件系统管理助手等。
-修复了一些 bug。
+主讲人：Junior
+内容概要：
 
-Squid：
-
-增加...
+定义了扩...
     
 
-        <a href="/VideoSummary/2024/08/22/CDS_Tentacle_-_Dashboard/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2024/09/25/Ceph_User_+_Dev_Monthly_Meeting_2024-09-25/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_RGW_Refactoring_Meeting_2024-09-11"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2024-09-12 00:00:00" datetime="2024-09-11T16:00:00.000Z"  itemprop="datePublished">2024-09-12</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2024/09/12/Ceph_RGW_Refactoring_Meeting_2024-09-11/">Ceph RGW 重构会议纪要 2024-09-11</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+Ceph 会议纪要
+会议概要
+本次会议主要讨论了Ceph项目中RGW（RADOS
+Gateway）的发布状态、Resharding的进展、云恢复功能的实现细节以及日志记录的标准化问题。
+主要议题及讨论内容
+
+RGW发布状态
+
+RGW发布已获得批准，预计将在未来一周内完成。目前遇到的问题是Python版本或依赖项的变更导致Ragweed测试失败，所有分支的作业都受到影...
+    
+
+        <a href="/VideoSummary/2024/09/12/Ceph_RGW_Refactoring_Meeting_2024-09-11/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Resharding/" rel="tag">Resharding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BA%91%E6%81%A2%E5%A4%8D/" rel="tag">云恢复</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95%E6%A0%87%E5%87%86%E5%8C%96/" rel="tag">日志记录标准化</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_RGW_Refactoring_Meeting_2024-08-21"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2024-09-04 00:00:00" datetime="2024-09-03T16:00:00.000Z"  itemprop="datePublished">2024-09-04</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2024/09/04/Ceph_RGW_Refactoring_Meeting_2024-08-21/">Ceph RGW 重构会议 2024-08-21</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议时间： 2024年8月21日
+参会人员： [请列出参会人员姓名]
+会议主题： Ceph 分布式存储 RGW
+组件重构进展及议题讨论
+一、议题一：Ceph 追踪功能进展
+
+当前追踪功能： 包括 Squid 前端请求追踪、RGW
+追踪、OSD 追踪、Jager 排序通过 SEF
+ADM、多部分上传追踪、端到端追踪、条件追踪（使用 Lua 脚本）等。
+正在进...
+    
+
+        <a href="/VideoSummary/2024/09/04/Ceph_RGW_Refactoring_Meeting_2024-08-21/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/" rel="tag">会议纪要</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%87%8D%E6%9E%84/" rel="tag">重构</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_RGW_Refactoring_Meeting_2024-09-04"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2024-09-04 00:00:00" datetime="2024-09-03T16:00:00.000Z"  itemprop="datePublished">2024-09-04</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2024/09/04/Ceph_RGW_Refactoring_Meeting_2024-09-04/">Ceph RGW 重构会议 2024-09-04</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议时间： 2023年11月（具体日期未提及）
+参会人员： Gabby（演示者）、Matt、Kyle、Seth等
+会议主题： ddop（数据去重优化项目）演示及讨论
+会议内容：
+
+ddop项目概述：
+
+ddop项目旨在优化Ceph存储中的数据去重功能，提高存储效率和性能。
+第一阶段将支持大于4MB的对象进行去重。
+ddop基于ref计数和manifest共...
+    
+
+        <a href="/VideoSummary/2024/09/04/Ceph_RGW_Refactoring_Meeting_2024-09-04/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E7%89%87/" rel="tag">分片</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">可扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%B0%E6%8D%AE%E5%8E%BB%E9%87%8D/" rel="tag">数据去重</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_RGW_Refactoring_Meeting_2024-08-28"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2024-09-04 00:00:00" datetime="2024-09-03T16:00:00.000Z"  itemprop="datePublished">2024-09-04</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2024/09/04/Ceph_RGW_Refactoring_Meeting_2024-08-28/">Ceph RGW 重构会议 2024-08-28</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议时间： 2024-08-28
+参会人员： [请填写参会人员名单]
+会议主题： Ceph RGW 的 Bucket 日志功能讨论
+会议内容：
+
+Bucket 日志功能介绍：
+
+会议首先介绍了 AWS 的 Bucket
+日志功能，该功能允许将桶的操作（如读取、写入、设置策略等）记录到另一个桶中，形成日志。
+讨论了 AWS
+实现中的局限性，包括日志数量、滚动...
+    
+
+        <a href="/VideoSummary/2024/09/04/Ceph_RGW_Refactoring_Meeting_2024-08-28/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bucket-%E6%97%A5%E5%BF%97/" rel="tag">Bucket 日志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-RGW/" rel="tag">Ceph RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2024Q3_Ceph社区季度总结"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2024-09-01 00:00:00" datetime="2024-08-31T16:00:00.000Z"  itemprop="datePublished">2024-09-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2024/09/01/2024Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">2024Q3 Ceph社区季度总结</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Ceph 社区 2024
+年第三季度总结报告
+1. 本季度 Ceph
+社区的主要活动和重点议题
+本季度，Ceph 社区活跃，主要活动和重点议题如下：
+
+Ceph Days London 2024： 举办了多场会议，包括 Ceph
+存储系统 SEF（StorageOS）多集群监控功能更新及未来规划、Sanger Institute
+的 Ceph 存储使用经验分享、Crimson 性能测试及优化...
+    
+
+        <a href="/VideoSummary/2024/09/01/2024Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/" rel="tag">技术发展</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A4%BE%E5%8C%BA%E5%8A%A8%E6%80%81/" rel="tag">社区动态</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Afternoon_Lightning_Talks_Ceph_Days_London_2024"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2024-08-23 00:00:00" datetime="2024-08-22T16:00:00.000Z"  itemprop="datePublished">2024-08-23</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2024/08/23/Afternoon_Lightning_Talks_Ceph_Days_London_2024/">  Afternoon Lightning Talks | Ceph Days London 2024  </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议时间： [请填写会议时间]
+会议地点： [请填写会议地点]
+参会人员： Gabriel Miss Williams (Rosen Franklin
+Institute 研究软件工程师)，Lee Sanders (IBM)，Mike Burkart (Ceph
+产品经理)
+会议主题： 分布式存储Ceph相关技术探讨
+会议内容：
+一、Gabriel Mis...
+    
+
+        <a href="/VideoSummary/2024/08/23/Afternoon_Lightning_Talks_Ceph_Days_London_2024/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/HPC%E9%9B%86%E7%BE%A4/" rel="tag">HPC集群</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/VMware%E9%9B%86%E6%88%90/" rel="tag">VMware集成</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/" rel="tag">性能分析</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-All_things_in_Moderation_Ceph_Days_London_2024"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2024-08-23 00:00:00" datetime="2024-08-22T16:00:00.000Z"  itemprop="datePublished">2024-08-23</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2024/08/23/All_things_in_Moderation_Ceph_Days_London_2024/">  All things in Moderation | Ceph Days London 2024  </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议时间： [请填写会议时间]
+会议地点： [请填写会议地点] 参会人员：
+Jack（Bloomberg存储工程团队） 会议主题：
+在SEF对象存储上应用集群级服务质量（QoS）技术的经验分享
+会议内容：
+1. 背景
+
+Bloomberg拥有大量SEF存储集群，涵盖生产、开发、测试和遗留环境。
+由于处理请求和数据传输量巨大，团队开发了软件定义的QoS堆栈以...
+    
+
+        <a href="/VideoSummary/2024/08/23/All_things_in_Moderation_Ceph_Days_London_2024/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/QoS%E6%8A%80%E6%9C%AF/" rel="tag">QoS技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SEF%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">SEF对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%B4%A8%E9%87%8F%E6%9C%8D%E5%8A%A1/" rel="tag">质量服务</a></li></ul>
+
     </div>
     
 </article>
@@ -692,7 +732,7 @@ Squid：
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="page-number current">2</span><a class="page-number" href="/VideoSummary/page/3/">3</a><a class="page-number" href="/VideoSummary/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="extend next" rel="next" href="/VideoSummary/page/3/">下一页</a>
+    <a class="extend prev" rel="prev" href="/VideoSummary/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="page-number current">2</span><a class="page-number" href="/VideoSummary/page/3/">3</a><a class="page-number" href="/VideoSummary/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/132/">132</a><a class="extend next" rel="next" href="/VideoSummary/page/3/">下一页</a>
     </div>
 </nav>
 

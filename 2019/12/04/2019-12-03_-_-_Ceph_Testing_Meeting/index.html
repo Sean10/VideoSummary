@@ -14,23 +14,28 @@
     
     
     
-    <title>2019-12-03 :: Ceph Testing Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2019-12-03 :: Ceph 测试会议&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要 本次会议主要讨论了Ceph存储系统的多个分支（如Nautilus、Luminous等）的开发状态、Python 3迁移、以及后续的测试和发布计划。 主要议题  Nautilus分支状态：  Yuri报告Nautilus即将发布，目前由Sage和David负责升级和测试。 讨论了Nautilus的发布笔记和可能的向后兼容性问题。  Luminous分支的Python 3迁移：">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,CRUSH 算法,可伸缩性">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概要 本次Ceph测试会议主要讨论了Ceph存储系统各分支（如Nautilus、Luminous等）的开发状态、Python 3迁移、以及后续的测试和发布计划。 主要议题  Nautilus分支状态：  由Sage和David负责升级和测试，即将发布。 讨论了Nautilus的发布笔记和向后兼容性问题。  Luminous分支的Python 3迁移：  正在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-12-03 :: Ceph Testing Meeting">
+<meta property="og:title" content="&#39;2019-12-03 :: Ceph 测试会议&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/12/04/2019-12-03_-_-_Ceph_Testing_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要 本次会议主要讨论了Ceph存储系统的多个分支（如Nautilus、Luminous等）的开发状态、Python 3迁移、以及后续的测试和发布计划。 主要议题  Nautilus分支状态：  Yuri报告Nautilus即将发布，目前由Sage和David负责升级和测试。 讨论了Nautilus的发布笔记和可能的向后兼容性问题。  Luminous分支的Python 3迁移：">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概要 本次Ceph测试会议主要讨论了Ceph存储系统各分支（如Nautilus、Luminous等）的开发状态、Python 3迁移、以及后续的测试和发布计划。 主要议题  Nautilus分支状态：  由Sage和David负责升级和测试，即将发布。 讨论了Nautilus的发布笔记和向后兼容性问题。  Luminous分支的Python 3迁移：  正在">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-03T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-12-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH 算法">
+<meta property="article:tag" content="可伸缩性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-12-03 :: Ceph Testing Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2019-12-03 :: Ceph 测试会议&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-12-03 :: Ceph Testing Meeting</h1>
+        <h1 class="title">&#39;2019-12-03 :: Ceph 测试会议&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-12-03T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">5.</span> <span class="post-toc-text">其他讨论</span></a></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-12-03 :: Ceph Testing Meeting</h1>
+        <h1 class="post-card-title">'2019-12-03 :: Ceph 测试会议'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-12-04 00:00:00" datetime="2019-12-03T16:00:00.000Z"  itemprop="datePublished">2019-12-04</time>
 
@@ -185,58 +190,58 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概要">会议概要</h4>
-<p>本次会议主要讨论了Ceph存储系统的多个分支（如Nautilus、Luminous等）的开发状态、Python
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
+<h3 id="会议概要">会议概要</h3>
+<p>本次Ceph测试会议主要讨论了Ceph存储系统各分支（如Nautilus、Luminous等）的开发状态、Python
 3迁移、以及后续的测试和发布计划。</p>
-<h4 id="主要议题">主要议题</h4>
+<h3 id="主要议题">主要议题</h3>
 <ol type="1">
 <li><strong>Nautilus分支状态</strong>：
 <ul>
-<li>Yuri报告Nautilus即将发布，目前由Sage和David负责升级和测试。</li>
-<li>讨论了Nautilus的发布笔记和可能的向后兼容性问题。</li>
+<li>由Sage和David负责升级和测试，即将发布。</li>
+<li>讨论了Nautilus的发布笔记和向后兼容性问题。</li>
 </ul></li>
 <li><strong>Luminous分支的Python 3迁移</strong>：
 <ul>
-<li>Yuri提到正在处理Luminous分支的几个PR，需要进行测试。</li>
-<li>讨论了Luminous分支的Python 3迁移状态和可能的测试需求。</li>
+<li>正在处理几个PR，需要进行测试。</li>
+<li>讨论了Luminous分支的Python 3迁移状态和测试需求。</li>
 </ul></li>
 <li><strong>Master分支的兼容性和测试</strong>：
 <ul>
-<li>讨论了Master分支的兼容性问题，特别是与Python 3的兼容性。</li>
+<li>讨论了Master分支与Python 3的兼容性问题。</li>
 <li>讨论了Jenkins实例中使用的CentOS 7.6和7.8镜像的需求。</li>
 </ul></li>
 <li><strong>后续行动计划</strong>：
 <ul>
 <li>决定对Nautilus、Mimic和Luminous分支进行Python 3的向后移植。</li>
-<li>讨论了如何处理分支的测试和发布，特别是关于如何处理旧版本的向后兼容性问题。</li>
+<li>讨论了如何处理分支的测试和发布，特别是关于旧版本的向后兼容性问题。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
+<h3 id="决定事项">决定事项</h3>
 <ul>
-<li>Nautilus即将发布，需要关注其发布笔记和向后兼容性。</li>
-<li>Luminous分支的Python 3迁移正在进行中，需要进行更多的测试。</li>
-<li>需要为Master分支准备更多的CentOS镜像以支持测试。</li>
-<li>决定对Nautilus、Mimic和Luminous进行Python
-3的向后移植，并确保这些分支的稳定性和兼容性。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划</h4>
-<ul>
-<li>Yuri将继续处理Luminous分支的PR，并添加测试标签。</li>
-<li>Pierre将负责Nautilus分支的PR工作。</li>
-<li>需要为Master分支准备更多的CentOS镜像。</li>
+<li>关注Nautilus的发布笔记和向后兼容性。</li>
+<li>进行Luminous分支的Python 3迁移测试。</li>
+<li>为Master分支准备更多的CentOS镜像以支持测试。</li>
 <li>对Nautilus、Mimic和Luminous进行Python
 3的向后移植，并确保这些分支的稳定性和兼容性。</li>
 </ul>
-<h4 id="其他讨论">其他讨论</h4>
+<h3 id="后续行动计划">后续行动计划</h3>
+<ul>
+<li>Yuri将继续处理Luminous分支的PR，并添加测试标签。</li>
+<li>Pierre将负责Nautilus分支的PR工作。</li>
+<li>为Master分支准备更多的CentOS镜像。</li>
+<li>对Nautilus、Mimic和Luminous进行Python
+3的向后移植，并确保这些分支的稳定性和兼容性。</li>
+</ul>
+<h3 id="其他讨论">其他讨论</h3>
 <ul>
 <li>讨论了Ceph的发布周期和命名规则，下一个版本将是Octopus。</li>
 <li>讨论了资源锁定机制和测试套件的优化问题。</li>
+<li>讨论了Ceph的升级测试套件的复杂性，以及如何减少资源锁定的需求。</li>
+<li>讨论了Ceph在不同操作系统上的测试需求。</li>
 </ul>
-<h4 id="会议结束">会议结束</h4>
 <p>会议在讨论了所有议题后结束，团队成员将继续按照会议决定的事项推进工作。</p>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -267,6 +272,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-%E7%AE%97%E6%B3%95/" rel="tag">CRUSH 算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -278,7 +285,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/12/04/2019-12-03_-_-_Ceph_Testing_Meeting/&title=《2019-12-03 :: Ceph Testing Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/12/04/2019-12-03_-_-_Ceph_Testing_Meeting/&title=《'2019-12-03 :: Ceph 测试会议'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -288,7 +295,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/12/04/2019-12-03_-_-_Ceph_Testing_Meeting/&title=《2019-12-03 :: Ceph Testing Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/12/04/2019-12-03_-_-_Ceph_Testing_Meeting/&title=《'2019-12-03 :: Ceph 测试会议'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -298,7 +305,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-12-03 :: Ceph Testing Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/12/04/2019-12-03_-_-_Ceph_Testing_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-12-03 :: Ceph 测试会议'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/12/04/2019-12-03_-_-_Ceph_Testing_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -326,9 +333,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/12/05/2019-12-03_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/12/05/2019-12-05_-_-_Ceph_Performance_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-12-03 :: Crimson SeaStor OSD Weekly Meeting</h4>
+        <h4 class="title">&#39;2019-12-05 :: Ceph 性能会议&#39;</h4>
       </a>
     </div>
   
@@ -337,7 +344,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2019/12/03/2019-11-02_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-11-02 :: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2019-11-02 :: Ceph Orchestration Meeting&#39;</h4>
       </a>
     </div>
   
@@ -437,7 +444,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/12/04/2019-12-03_-_-_Ceph_Testing_Meeting/&title=《2019-12-03 :: Ceph Testing Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/12/04/2019-12-03_-_-_Ceph_Testing_Meeting/&title=《'2019-12-03 :: Ceph 测试会议'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -447,7 +454,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/12/04/2019-12-03_-_-_Ceph_Testing_Meeting/&title=《2019-12-03 :: Ceph Testing Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/12/04/2019-12-03_-_-_Ceph_Testing_Meeting/&title=《'2019-12-03 :: Ceph 测试会议'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -457,7 +464,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-12-03 :: Ceph Testing Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/12/04/2019-12-03_-_-_Ceph_Testing_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-12-03 :: Ceph 测试会议'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/12/04/2019-12-03_-_-_Ceph_Testing_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

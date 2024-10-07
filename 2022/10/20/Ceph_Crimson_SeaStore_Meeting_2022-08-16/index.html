@@ -14,23 +14,101 @@
     
     
     
-    <title>Ceph Crimson/SeaStore Meeting 2022-08-16 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph Crimson/SeaStore 会议纪要 2022-08-16 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 日期： [具体日期] 参会人员： [具体人员名单] 会议主要内容：  OSD Map 共享优化  讨论了创建一个外部指针模拟，以高效共享 OSD Maps 的解决方案。目前已有初步方案，正在进行多核处理优化。  GNS 补丁更新  Aaron 提交了 GNS 补丁的第二版，根据评审意见进行了修改。讨论了关于新函数 advance 的使用和命名问题，决定将其分为两个调用：advance 和">
+    <meta name="keywords" content="Ceph,RGW,Docker,Kubernetes,OSD,RESTful API,MON,MDS,PG,RADOS,librados,libcephfs,cephfs,rbd,radosgw,iSCSI,Fibre Channel,NFS,CIFS,POSIX,AWS,Azure,Google Cloud,SSD,HDD,JBOD,SAN,NAS,distributed storage,CRUSH algorithm,high availability,scalability,object storage,block storage,file system storage,consistency,decentralization,performance,cloud,bluestore,bluefs,rocksdb,performance tuning,authentication,authorization,encryption,erasure coding,replication,snapshots,clones,thin provisioning,monitoring,dashboard,management,orchestration,automation,integration,containerization,virtualization,cloud computing,hybrid cloud,multi,storage cluster,node,disk,network,topology,failure domain,recovery,resilience,load balancing,caching,compression,deduplication,tiering,benchmarking,testing,validation">
+    <meta name="description" content="[改进后的中文总结内容] 在 2022 年 8 月 16 日的 Ceph Crimson&#x2F;SeaStore 会议中，团队讨论了一系列技术议题和后续行动计划。以下是对会议内容的总结： 会议主要内容：  OSD Map 共享优化：讨论了创建外部指针模拟以高效共享 OSD Maps 的解决方案，并进行了多核处理优化。 GNS 补丁更新：Aaron 提交了 GNS 补丁的第二版，解决了评审意见，并讨论了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Crimson&#x2F;SeaStore Meeting 2022-08-16">
+<meta property="og:title" content="Ceph Crimson&#x2F;SeaStore 会议纪要 2022-08-16">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Crimson_SeaStore_Meeting_2022-08-16/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 日期： [具体日期] 参会人员： [具体人员名单] 会议主要内容：  OSD Map 共享优化  讨论了创建一个外部指针模拟，以高效共享 OSD Maps 的解决方案。目前已有初步方案，正在进行多核处理优化。  GNS 补丁更新  Aaron 提交了 GNS 补丁的第二版，根据评审意见进行了修改。讨论了关于新函数 advance 的使用和命名问题，决定将其分为两个调用：advance 和">
+<meta property="og:description" content="[改进后的中文总结内容] 在 2022 年 8 月 16 日的 Ceph Crimson&#x2F;SeaStore 会议中，团队讨论了一系列技术议题和后续行动计划。以下是对会议内容的总结： 会议主要内容：  OSD Map 共享优化：讨论了创建外部指针模拟以高效共享 OSD Maps 的解决方案，并进行了多核处理优化。 GNS 补丁更新：Aaron 提交了 GNS 补丁的第二版，解决了评审意见，并讨论了">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-10-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-10-20T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="RESTful API">
+<meta property="article:tag" content="MON">
+<meta property="article:tag" content="MDS">
+<meta property="article:tag" content="PG">
+<meta property="article:tag" content="RADOS">
+<meta property="article:tag" content="librados">
+<meta property="article:tag" content="libcephfs">
+<meta property="article:tag" content="cephfs">
+<meta property="article:tag" content="rbd">
+<meta property="article:tag" content="radosgw">
+<meta property="article:tag" content="iSCSI">
+<meta property="article:tag" content="Fibre Channel">
+<meta property="article:tag" content="NFS">
+<meta property="article:tag" content="CIFS">
+<meta property="article:tag" content="POSIX">
+<meta property="article:tag" content="AWS">
+<meta property="article:tag" content="Azure">
+<meta property="article:tag" content="Google Cloud">
+<meta property="article:tag" content="SSD">
+<meta property="article:tag" content="HDD">
+<meta property="article:tag" content="JBOD">
+<meta property="article:tag" content="SAN">
+<meta property="article:tag" content="NAS">
+<meta property="article:tag" content="distributed storage">
+<meta property="article:tag" content="CRUSH algorithm">
+<meta property="article:tag" content="high availability">
+<meta property="article:tag" content="scalability">
+<meta property="article:tag" content="object storage">
+<meta property="article:tag" content="block storage">
+<meta property="article:tag" content="file system storage">
+<meta property="article:tag" content="consistency">
+<meta property="article:tag" content="decentralization">
+<meta property="article:tag" content="performance">
+<meta property="article:tag" content="cloud">
+<meta property="article:tag" content="bluestore">
+<meta property="article:tag" content="bluefs">
+<meta property="article:tag" content="rocksdb">
+<meta property="article:tag" content="performance tuning">
+<meta property="article:tag" content="authentication">
+<meta property="article:tag" content="authorization">
+<meta property="article:tag" content="encryption">
+<meta property="article:tag" content="erasure coding">
+<meta property="article:tag" content="replication">
+<meta property="article:tag" content="snapshots">
+<meta property="article:tag" content="clones">
+<meta property="article:tag" content="thin provisioning">
+<meta property="article:tag" content="monitoring">
+<meta property="article:tag" content="dashboard">
+<meta property="article:tag" content="management">
+<meta property="article:tag" content="orchestration">
+<meta property="article:tag" content="automation">
+<meta property="article:tag" content="integration">
+<meta property="article:tag" content="containerization">
+<meta property="article:tag" content="virtualization">
+<meta property="article:tag" content="cloud computing">
+<meta property="article:tag" content="hybrid cloud">
+<meta property="article:tag" content="multi">
+<meta property="article:tag" content="storage cluster">
+<meta property="article:tag" content="node">
+<meta property="article:tag" content="disk">
+<meta property="article:tag" content="network">
+<meta property="article:tag" content="topology">
+<meta property="article:tag" content="failure domain">
+<meta property="article:tag" content="recovery">
+<meta property="article:tag" content="resilience">
+<meta property="article:tag" content="load balancing">
+<meta property="article:tag" content="caching">
+<meta property="article:tag" content="compression">
+<meta property="article:tag" content="deduplication">
+<meta property="article:tag" content="tiering">
+<meta property="article:tag" content="benchmarking">
+<meta property="article:tag" content="testing">
+<meta property="article:tag" content="validation">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +190,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Crimson/SeaStore Meeting 2022-08-16</div>
+        <div class="flex-col header-title ellipsis">Ceph Crimson/SeaStore 会议纪要 2022-08-16</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +212,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Crimson/SeaStore Meeting 2022-08-16</h1>
+        <h1 class="title">Ceph Crimson/SeaStore 会议纪要 2022-08-16</h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-10-19T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +237,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议主要内容：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">2.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">3.</span> <span class="post-toc-text">后续行动计划：</span></a></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +246,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Crimson/SeaStore Meeting 2022-08-16</h1>
+        <h1 class="post-card-title">Ceph Crimson/SeaStore 会议纪要 2022-08-16</h1>
         <div class="post-meta">
             <time class="post-time" title="2022-10-20 00:00:00" datetime="2022-10-19T16:00:00.000Z"  itemprop="datePublished">2022-10-20</time>
 
@@ -185,52 +263,28 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>日期：</strong> [具体日期] <strong>参会人员：</strong>
-[具体人员名单]</p>
-<p><strong>会议主要内容：</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>在 2022 年 8 月 16 日的 Ceph Crimson/SeaStore
+会议中，团队讨论了一系列技术议题和后续行动计划。以下是对会议内容的总结：</p>
+<h3 id="会议主要内容">会议主要内容：</h3>
 <ol type="1">
-<li><strong>OSD Map 共享优化</strong>
-<ul>
-<li>讨论了创建一个外部指针模拟，以高效共享 OSD Maps
-的解决方案。目前已有初步方案，正在进行多核处理优化。</li>
-</ul></li>
-<li><strong>GNS 补丁更新</strong>
-<ul>
-<li>Aaron 提交了 GNS
-补丁的第二版，根据评审意见进行了修改。讨论了关于新函数
-<code>advance</code>
-的使用和命名问题，决定将其分为两个调用：<code>advance</code> 和
-<code>write</code>。</li>
-<li>针对 CI 中 ZNS 构建失败的问题，建议 Aaron 发送邮件给 Seth 和 David
-Galloway，请求更新 CI 机器上的内核版本以支持 ZNS。</li>
-</ul></li>
-<li><strong>ZNS 测试进展</strong>
-<ul>
-<li>Aaron 报告了在物理 ZNS
-驱动上进行的测试情况，计划进行更长时间的测试，并保持更新。</li>
-</ul></li>
-<li><strong>事务管理器优化</strong>
-<ul>
-<li>讨论了事务管理器中的一些特定机制，特别是与随机块管理器实现相关的部分。目前正在准备设备清除的更改，并优化异步清理接口。</li>
-</ul></li>
-<li><strong>Key Range Remove 和 Omap 合并策略</strong>
-<ul>
-<li>讨论了 Key Range Remove 的复杂性，并找到了更好的 Omap
-合并策略，以确保 B+ 树结构的稳定性。</li>
-</ul></li>
-<li><strong>测试环境更新</strong>
-<ul>
-<li>报告了测试环境中的进展，目前 60%
-的测试已通过，正在解决系统挂起的问题。</li>
-</ul></li>
-<li><strong>其他更新</strong>
-<ul>
-<li>讨论了 Fish Bay Tree 代码的优化，以及提交的两个 PR
-以修复发现的次要问题。</li>
-</ul></li>
+<li><p><strong>OSD Map
+共享优化</strong>：讨论了创建外部指针模拟以高效共享 OSD Maps
+的解决方案，并进行了多核处理优化。</p></li>
+<li><p><strong>GNS 补丁更新</strong>：Aaron 提交了 GNS
+补丁的第二版，解决了评审意见，并讨论了 <code>advance</code>
+函数的使用和命名问题。</p></li>
+<li><p><strong>ZNS 测试进展</strong>：Aaron 报告了在物理 ZNS
+驱动上的测试情况，并计划进行更长时间的测试。</p></li>
+<li><p><strong>事务管理器优化</strong>：讨论了事务管理器中的特定机制，包括设备清除和异步清理接口的优化。</p></li>
+<li><p><strong>Key Range Remove 和 Omap 合并策略</strong>：讨论了 Key
+Range Remove 的复杂性，并找到了更好的 Omap 合并策略。</p></li>
+<li><p><strong>测试环境更新</strong>：报告了测试环境中的进展，目前 60%
+的测试已通过，正在解决系统挂起的问题。</p></li>
+<li><p><strong>其他更新</strong>：讨论了 Fish Bay Tree
+代码的优化，并提交了两个 PR 以修复发现的次要问题。</p></li>
 </ol>
-<p><strong>决定事项：</strong></p>
+<h3 id="决定事项">决定事项：</h3>
 <ul>
 <li>Aaron 将发送邮件给 Seth 和 David Galloway，请求更新 CI
 机器上的内核版本以支持 ZNS。</li>
@@ -238,17 +292,14 @@ Galloway，请求更新 CI 机器上的内核版本以支持 ZNS。</li>
 函数的使用和命名问题，将其分为两个调用：<code>advance</code> 和
 <code>write</code>。</li>
 </ul>
-<p><strong>后续行动计划：</strong></p>
+<h3 id="后续行动计划">后续行动计划：</h3>
 <ul>
-<li>Aaron 将继续进行 ZNS 的长时间测试，并保持更新。</li>
+<li>Aaron 将继续进行 ZNS 的长时间测试。</li>
 <li>继续优化事务管理器和异步清理接口。</li>
 <li>完成 Key Range Remove 和 Omap 合并策略的改进。</li>
 <li>解决测试环境中的系统挂起问题，并完成剩余的测试。</li>
 </ul>
-<p><strong>会议结束：</strong>
-会议在讨论了所有议题后结束，所有参会人员祝大家一周愉快。</p>
-<p><strong>备注：</strong> - 请相关人员按照会议决定和行动计划推进工作。
-- 如有任何问题或需要进一步讨论的事项，请及时沟通。</p>
+<p>会议在讨论了所有议题后结束，所有参会人员祝大家一周愉快。</p>
 
         </div>
 
@@ -279,6 +330,8 @@ Galloway，请求更新 CI 机器上的内核版本以支持 ZNS。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/AWS/" rel="tag">AWS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Azure/" rel="tag">Azure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CIFS/" rel="tag">CIFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-algorithm/" rel="tag">CRUSH algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Docker/" rel="tag">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Fibre-Channel/" rel="tag">Fibre Channel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Google-Cloud/" rel="tag">Google Cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/HDD/" rel="tag">HDD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/JBOD/" rel="tag">JBOD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MDS/" rel="tag">MDS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MON/" rel="tag">MON</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NAS/" rel="tag">NAS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS/" rel="tag">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PG/" rel="tag">PG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/POSIX/" rel="tag">POSIX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS/" rel="tag">RADOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RESTful-API/" rel="tag">RESTful API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SAN/" rel="tag">SAN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SSD/" rel="tag">SSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/authentication/" rel="tag">authentication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/authorization/" rel="tag">authorization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/automation/" rel="tag">automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/benchmarking/" rel="tag">benchmarking</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/block-storage/" rel="tag">block storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/bluefs/" rel="tag">bluefs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/bluestore/" rel="tag">bluestore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/caching/" rel="tag">caching</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/cephfs/" rel="tag">cephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/clones/" rel="tag">clones</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/cloud/" rel="tag">cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/cloud-computing/" rel="tag">cloud computing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/compression/" rel="tag">compression</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/consistency/" rel="tag">consistency</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/containerization/" rel="tag">containerization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/dashboard/" rel="tag">dashboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/decentralization/" rel="tag">decentralization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/deduplication/" rel="tag">deduplication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/disk/" rel="tag">disk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/distributed-storage/" rel="tag">distributed storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/encryption/" rel="tag">encryption</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/erasure-coding/" rel="tag">erasure coding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/failure-domain/" rel="tag">failure domain</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/file-system-storage/" rel="tag">file system storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/high-availability/" rel="tag">high availability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/hybrid-cloud/" rel="tag">hybrid cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/iSCSI/" rel="tag">iSCSI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/integration/" rel="tag">integration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/libcephfs/" rel="tag">libcephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/librados/" rel="tag">librados</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/load-balancing/" rel="tag">load balancing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/management/" rel="tag">management</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/monitoring/" rel="tag">monitoring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/multi/" rel="tag">multi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/network/" rel="tag">network</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/node/" rel="tag">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/object-storage/" rel="tag">object storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/orchestration/" rel="tag">orchestration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/performance/" rel="tag">performance</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/performance-tuning/" rel="tag">performance tuning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/radosgw/" rel="tag">radosgw</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/rbd/" rel="tag">rbd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/recovery/" rel="tag">recovery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/replication/" rel="tag">replication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/resilience/" rel="tag">resilience</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/rocksdb/" rel="tag">rocksdb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/scalability/" rel="tag">scalability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/snapshots/" rel="tag">snapshots</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/storage-cluster/" rel="tag">storage cluster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/testing/" rel="tag">testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/thin-provisioning/" rel="tag">thin provisioning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/tiering/" rel="tag">tiering</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/topology/" rel="tag">topology</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/validation/" rel="tag">validation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/virtualization/" rel="tag">virtualization</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -290,7 +343,7 @@ Galloway，请求更新 CI 机器上的内核版本以支持 ZNS。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Crimson_SeaStore_Meeting_2022-08-16/&title=《Ceph Crimson/SeaStore Meeting 2022-08-16》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Crimson_SeaStore_Meeting_2022-08-16/&title=《Ceph Crimson/SeaStore 会议纪要 2022-08-16》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -300,7 +353,7 @@ Galloway，请求更新 CI 机器上的内核版本以支持 ZNS。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Crimson_SeaStore_Meeting_2022-08-16/&title=《Ceph Crimson/SeaStore Meeting 2022-08-16》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Crimson_SeaStore_Meeting_2022-08-16/&title=《Ceph Crimson/SeaStore 会议纪要 2022-08-16》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -310,7 +363,7 @@ Galloway，请求更新 CI 机器上的内核版本以支持 ZNS。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore Meeting 2022-08-16》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Crimson_SeaStore_Meeting_2022-08-16/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore 会议纪要 2022-08-16》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Crimson_SeaStore_Meeting_2022-08-16/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -449,7 +502,7 @@ Galloway，请求更新 CI 机器上的内核版本以支持 ZNS。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Crimson_SeaStore_Meeting_2022-08-16/&title=《Ceph Crimson/SeaStore Meeting 2022-08-16》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Crimson_SeaStore_Meeting_2022-08-16/&title=《Ceph Crimson/SeaStore 会议纪要 2022-08-16》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -459,7 +512,7 @@ Galloway，请求更新 CI 机器上的内核版本以支持 ZNS。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Crimson_SeaStore_Meeting_2022-08-16/&title=《Ceph Crimson/SeaStore Meeting 2022-08-16》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Crimson_SeaStore_Meeting_2022-08-16/&title=《Ceph Crimson/SeaStore 会议纪要 2022-08-16》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -469,7 +522,7 @@ Galloway，请求更新 CI 机器上的内核版本以支持 ZNS。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore Meeting 2022-08-16》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Crimson_SeaStore_Meeting_2022-08-16/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore 会议纪要 2022-08-16》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Crimson_SeaStore_Meeting_2022-08-16/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

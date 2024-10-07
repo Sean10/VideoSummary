@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间：[请填写具体日期和时间] 会议地点：[请填写会议地点] 参会人员：Brenda Martinez（自力更生工场代表） 会议主题：自力更生工场在巴西政府项目中的Ceph使用经验分享 会议内容： 一、背景介绍 Brenda Martinez介绍了自力更生工场，这是一家巴西政府下属的IT公司，为公共机构和巴西公民提供解决方案。自力更生工场拥有自己的数据中心，并开发了基于OpenSta">
+    <meta name="keywords" content="Ceph,OpenStack,Kubernetes,Distributed Storage,Brazil">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间：[请填写具体日期和时间] 会议地点：[请填写会议地点] 参会人员：Brenda Martinez（自力更生工场代表） 会议主题：自力更生工场在巴西政府项目中的Ceph使用经验分享 会议内容： 一、背景介绍 自力更生工场是巴西政府下属的IT公司，提供公共机构和巴西公民的解决方案。公司拥有自己的数据中心，并开发了基于OpenStack、Kubernetes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Brazilian Government Case - Brenno Martinez, Serpro">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Brazilian_Government_Case_-_Brenno_Martinez_Serpro/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间：[请填写具体日期和时间] 会议地点：[请填写会议地点] 参会人员：Brenda Martinez（自力更生工场代表） 会议主题：自力更生工场在巴西政府项目中的Ceph使用经验分享 会议内容： 一、背景介绍 Brenda Martinez介绍了自力更生工场，这是一家巴西政府下属的IT公司，为公共机构和巴西公民提供解决方案。自力更生工场拥有自己的数据中心，并开发了基于OpenSta">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间：[请填写具体日期和时间] 会议地点：[请填写会议地点] 参会人员：Brenda Martinez（自力更生工场代表） 会议主题：自力更生工场在巴西政府项目中的Ceph使用经验分享 会议内容： 一、背景介绍 自力更生工场是巴西政府下属的IT公司，提供公共机构和巴西公民的解决方案。公司拥有自己的数据中心，并开发了基于OpenStack、Kubernetes">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="OpenStack">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Brazil">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,29 +183,27 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要</p>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
 <p>会议时间：[请填写具体日期和时间] 会议地点：[请填写会议地点]
 参会人员：Brenda Martinez（自力更生工场代表）</p>
 <p>会议主题：自力更生工场在巴西政府项目中的Ceph使用经验分享</p>
 <p>会议内容：</p>
-<p>一、背景介绍 Brenda
-Martinez介绍了自力更生工场，这是一家巴西政府下属的IT公司，为公共机构和巴西公民提供解决方案。自力更生工场拥有自己的数据中心，并开发了基于OpenStack、Kubernetes等技术的云解决方案“estelí”，意为造船厂。</p>
+<p>一、背景介绍
+自力更生工场是巴西政府下属的IT公司，提供公共机构和巴西公民的解决方案。公司拥有自己的数据中心，并开发了基于OpenStack、Kubernetes等技术的云解决方案“estelí”。</p>
 <p>二、Ceph使用历程 1.
-2017年初，自力更生工场开发团队请求使用Ceph对象存储来存储巴西驾驶执照数据，目前已有超过6000万份驾驶执照，每份执照包含照片、签名、指纹和二维码。
-2. 由于预算限制，自力更生工场在一开始没有为Ceph购买新的硬件。 3.
-在测试阶段，Ceph集群出现了一些性能问题，如操作缓慢、OSD频繁上下线、Keystone服务不稳定等。</p>
+自2017年初，自力更生工场使用Ceph对象存储存储巴西驾驶执照数据，已有超过6000万份驾驶执照。
+2. 首次使用Ceph时，由于预算限制，没有购买新的硬件。 3.
+在测试阶段，Ceph集群出现性能问题，包括操作缓慢、OSD频繁上下线和Keystone服务不稳定。</p>
 <p>三、问题分析与解决方案 1.
-发现问题主要原因是单个桶中存储了过多的对象（数千万），导致性能问题。 2.
-采取的解决方案： - 限制每个桶的对象数量（100个桶，每个桶10万个对象）。 -
-增加Keystone服务器数量，并优化代码以复用令牌。 -
-经过6个月的努力，升级了硬件，并添加了支持动态rashard的版本（从Java升级到luminous）。</p>
+发现性能问题的原因是个别桶中存储了过多的对象（数千万）。 2.
+解决方案包括：限制每个桶的对象数量、增加Keystone服务器数量、优化代码以复用令牌、升级硬件和软件版本。</p>
 <p>四、Ceph应用现状 1.
-目前，Ceph为巴西驾驶执照提供对象存储服务，确保了驾驶执照数据的安全。 2.
-Ceph还为云解决方案中的容器提供块和文件系统存储服务。 3.
-Ceph将很快为Hadoop集群提供存储服务。 4.
-自力更生工场正在实施多站点环境。</p>
+Ceph为巴西驾驶执照提供对象存储服务，确保数据安全。 2.
+Ceph为云解决方案中的容器提供块和文件系统存储服务。 3.
+Ceph将很快为Hadoop集群提供存储服务。 4. 正在实施多站点环境。</p>
 <p>五、总结
-自力更生工场在Ceph的使用过程中遇到了一些挑战，但通过不断优化和升级硬件，成功解决了性能问题。Ceph已成为自力更生工场存储解决方案的重要组成部分，为各类应用提供了稳定可靠的服务。</p>
+自力更生工场在Ceph的使用过程中遇到挑战，但通过优化和升级硬件，成功解决了性能问题。Ceph已成为其存储解决方案的重要组成部分。</p>
 <p>后续行动计划： 1. 持续优化Ceph集群性能，确保稳定运行。 2.
 推广Ceph在更多领域的应用，如大数据、人工智能等。 3.
 与Ceph社区保持紧密合作，共同推动Ceph技术的发展。</p>
@@ -234,6 +237,8 @@ Ceph将很快为Hadoop集群提供存储服务。 4.
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Brazil/" rel="tag">Brazil</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack/" rel="tag">OpenStack</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -293,18 +298,18 @@ Ceph将很快为Hadoop集群提供存储服务。 4.
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/Affordable_NVMe_Performance_on_Ceph_Ceph_on_NVMe_-_True..._-_Wido_den_Hollander_Piotr_Dalek/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/A_Hitchhiker_s_Guide_to_Ceph_RGW_PubSub_Cats_vs._Dogs_-_a_Hybrid_Cloud_Storage_Story/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Affordable NVMe Performance on Ceph &amp; Ceph on NVMe - True... - Wido den Hollander &amp; Piotr Dalek</h4>
+        <h4 class="title">Ceph RGW PubSub 与混合云存储：猫狗之争——混合云存储之旅</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/CRUSH-ing_the_OSD_Variance_Problem_-_Tom_Byrne_Storage_Sysadmin/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Ceph_BenchOps_-_Following_DevOps_Practices_for_Benchmarking_Ceph_-_Ivo_Jimenez_UC_Santa_Cruz/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CRUSH-ing the OSD Variance Problem - Tom Byrne, Storage Sysadmin</h4>
+        <h4 class="title">&#39;Ceph BenchOps: Following DevOps Practices for Benchmarking Ceph - Ivo Jimenez, UC Santa Cruz&#39;</h4>
       </a>
     </div>
   

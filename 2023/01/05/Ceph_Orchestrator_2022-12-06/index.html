@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间：[具体日期] 参会人员：[具体人员名单] 主要议题：  OpenStack Tracker 更新 NFS 相关问题讨论  讨论内容： 1. OpenStack Tracker 更新  背景：讨论了关于在Ceph中定制每个OSD的crash设备类的问题。目前，SafeTangible使用批处理模式，通过传递OSD列表来准备和激活设备。 当前问题：需要在CI环境中为SSD创建cra">
+    <meta name="keywords" content="Ceph,OpenStack,Distributed Storage,NFS,Regression">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间：[具体日期] 参会人员：[具体人员名单] 主要议题：  OpenStack Tracker 更新 NFS 相关问题讨论  讨论内容： 1. OpenStack Tracker 更新  背景：讨论了在Ceph中定制每个OSD的crash设备类的问题。SafeTangible使用批处理模式，通过传递OSD列表来准备和激活设备。 当前问题：CI环境中为SSD">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator 2022-12-06">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/01/05/Ceph_Orchestrator_2022-12-06/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间：[具体日期] 参会人员：[具体人员名单] 主要议题：  OpenStack Tracker 更新 NFS 相关问题讨论  讨论内容： 1. OpenStack Tracker 更新  背景：讨论了关于在Ceph中定制每个OSD的crash设备类的问题。目前，SafeTangible使用批处理模式，通过传递OSD列表来准备和激活设备。 当前问题：需要在CI环境中为SSD创建cra">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间：[具体日期] 参会人员：[具体人员名单] 主要议题：  OpenStack Tracker 更新 NFS 相关问题讨论  讨论内容： 1. OpenStack Tracker 更新  背景：讨论了在Ceph中定制每个OSD的crash设备类的问题。SafeTangible使用批处理模式，通过传递OSD列表来准备和激活设备。 当前问题：CI环境中为SSD">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-01-05T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="OpenStack">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="NFS">
+<meta property="article:tag" content="Regression">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
 <h4 id="参会人员具体人员名单">参会人员：[具体人员名单]</h4>
 <h4 id="主要议题">主要议题：</h4>
@@ -196,12 +202,12 @@
 <h4 id="讨论内容">讨论内容：</h4>
 <h5 id="openstack-tracker-更新">1. OpenStack Tracker 更新</h5>
 <ul>
-<li><strong>背景</strong>：讨论了关于在Ceph中定制每个OSD的crash设备类的问题。目前，SafeTangible使用批处理模式，通过传递OSD列表来准备和激活设备。</li>
-<li><strong>当前问题</strong>：需要在CI环境中为SSD创建crash层次结构并应用规则，但由于缺乏对不同crash设备类的支持，无法完全复制过去的功能。</li>
+<li><strong>背景</strong>：讨论了在Ceph中定制每个OSD的crash设备类的问题。SafeTangible使用批处理模式，通过传递OSD列表来准备和激活设备。</li>
+<li><strong>当前问题</strong>：CI环境中为SSD创建crash层次结构并应用规则时，由于缺乏对不同crash设备类的支持，无法完全复制过去的功能。</li>
 <li><strong>解决方案</strong>：
 <ul>
 <li>创建了一个新的tracker来比较过去和现在的实现。</li>
-<li>讨论了是否需要为设备类引入不同的语法，或者使现有的路径处理更智能以支持每个OSD的设备类。</li>
+<li>讨论了是否引入不同的语法为设备类，或优化现有路径处理以支持每个OSD的设备类。</li>
 <li>建议使用字典格式在spec中定义设备类，并优化批处理模式以减少OSD部署时间。</li>
 <li>决定通过分组设备类来优化set
 volume命令的执行，最多可能需要三个批处理命令。</li>
@@ -231,6 +237,8 @@ volume命令的执行。</li>
 <li>更新tracker，记录会议中的讨论和决定。</li>
 <li>进行NFS相关的调试和实验，以确定问题的根本原因并寻找解决方案。</li>
 <li>考虑旧版本的兼容性问题，并与相关团队合作解决。</li>
+<li>讨论团队过渡问题，以及如何更好地支持新成员和处理项目中的问题。</li>
+<li>更新测试套件，处理剩余的小问题。</li>
 </ul>
 <h4 id="其他事项">其他事项：</h4>
 <ul>
@@ -277,6 +285,8 @@ volume命令的执行。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS/" rel="tag">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack/" rel="tag">OpenStack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Regression/" rel="tag">Regression</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

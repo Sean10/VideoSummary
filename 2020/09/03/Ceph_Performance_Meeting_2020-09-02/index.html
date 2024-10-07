@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2020-09-02 | ceph视频总结 | youtube频道总结</title>
+    <title> Ceph 性能会议纪要  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="Ceph 开发会议纪要 会议概要 本次会议主要讨论了Ceph存储系统中的多个技术议题，包括新的Pull Request（PR）、BlueStore的性能优化、OSD（Object Storage Daemon）的CPU效率提升以及未来可能的改进方向。 主要讨论议题 1. 新的Pull Request (PR)  PR1: 来自Josh的PR旨在加速Monitor中的caps和cap更新。Joao已">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,BlueStore,OSD">
+    <meta name="description" content="[改进后的中文总结内容] 会议概要 本次会议主要讨论了Ceph存储系统中的技术议题，涵盖了新的Pull Request（PR）、BlueStore性能优化、OSD CPU效率提升以及未来的改进方向。 主要讨论议题 1. 新的Pull Request (PR)  PR1：Josh的PR旨在加速Monitor中的caps和cap更新，Joao已进行评审，默认行为未改变，仅在特定情况下提供跳过解析的选项">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2020-09-02">
+<meta property="og:title" content=" Ceph 性能会议纪要 ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/09/03/Ceph_Performance_Meeting_2020-09-02/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="Ceph 开发会议纪要 会议概要 本次会议主要讨论了Ceph存储系统中的多个技术议题，包括新的Pull Request（PR）、BlueStore的性能优化、OSD（Object Storage Daemon）的CPU效率提升以及未来可能的改进方向。 主要讨论议题 1. 新的Pull Request (PR)  PR1: 来自Josh的PR旨在加速Monitor中的caps和cap更新。Joao已">
+<meta property="og:description" content="[改进后的中文总结内容] 会议概要 本次会议主要讨论了Ceph存储系统中的技术议题，涵盖了新的Pull Request（PR）、BlueStore性能优化、OSD CPU效率提升以及未来的改进方向。 主要讨论议题 1. 新的Pull Request (PR)  PR1：Josh的PR旨在加速Monitor中的caps和cap更新，Joao已进行评审，默认行为未改变，仅在特定情况下提供跳过解析的选项">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-09-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="BlueStore">
+<meta property="article:tag" content="OSD">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2020-09-02</div>
+        <div class="flex-col header-title ellipsis"> Ceph 性能会议纪要 </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2020-09-02</h1>
+        <h1 class="title"> Ceph 性能会议纪要 </h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-09-02T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -142,7 +147,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a></li></ul>
 
             
         </h5>
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ceph-%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">Ceph 开发会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A8%E8%AE%BA%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要讨论议题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%96%B0%E7%9A%84pull-request-pr"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">1. 新的Pull Request (PR)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#bluestore%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2. BlueStore性能优化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#osd-cpu%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">3. OSD CPU效率提升</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9C%AA%E6%9D%A5%E6%94%B9%E8%BF%9B%E6%96%B9%E5%90%91"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">4. 未来改进方向</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A8%E8%AE%BA%E8%AE%AE%E9%A2%98"><span class="post-toc-number">2.</span> <span class="post-toc-text">主要讨论议题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%96%B0%E7%9A%84pull-request-pr"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 新的Pull Request (PR)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#bluestore%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. BlueStore性能优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#osd-cpu%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3. OSD CPU效率提升</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9C%AA%E6%9D%A5%E6%94%B9%E8%BF%9B%E6%96%B9%E5%90%91"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">4. 未来改进方向</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">5.</span> <span class="post-toc-text">结论</span></a></li></ol>
         </nav>
     </aside>
 
@@ -168,12 +173,12 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2020-09-02</h1>
+        <h1 class="post-card-title"> Ceph 性能会议纪要 </h1>
         <div class="post-meta">
             <time class="post-time" title="2020-09-03 00:00:00" datetime="2020-09-02T16:00:00.000Z"  itemprop="datePublished">2020-09-03</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a></li></ul>
 
 
 
@@ -185,48 +190,48 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="ceph-开发会议纪要">Ceph 开发会议纪要</h1>
-<h2 id="会议概要">会议概要</h2>
-<p>本次会议主要讨论了Ceph存储系统中的多个技术议题，包括新的Pull
-Request（PR）、BlueStore的性能优化、OSD（Object Storage
-Daemon）的CPU效率提升以及未来可能的改进方向。</p>
-<h2 id="主要讨论议题">主要讨论议题</h2>
-<h3 id="新的pull-request-pr">1. 新的Pull Request (PR)</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议概要">会议概要</h3>
+<p>本次会议主要讨论了Ceph存储系统中的技术议题，涵盖了新的Pull
+Request（PR）、BlueStore性能优化、OSD
+CPU效率提升以及未来的改进方向。</p>
+<h3 id="主要讨论议题">主要讨论议题</h3>
+<h4 id="新的pull-request-pr">1. 新的Pull Request (PR)</h4>
 <ul>
-<li><strong>PR1</strong>:
-来自Josh的PR旨在加速Monitor中的caps和cap更新。Joao已进行评审，默认行为未改变，仅在特定情况下提供跳过解析的选项。</li>
-<li><strong>PR2</strong>:
-修改OSD异步恢复最小开销的默认值。该PR建议降低阈值以增加异步恢复，基于Red
+<li><strong>PR1</strong>：Josh的PR旨在加速Monitor中的caps和cap更新，Joao已进行评审，默认行为未改变，仅在特定情况下提供跳过解析的选项。</li>
+<li><strong>PR2</strong>：修改OSD异步恢复最小开销的默认值，建议降低阈值以增加异步恢复，基于Red
 Hat内部测试，发现默认值100在某些RGW工作负载下导致大量异步恢复。</li>
 </ul>
-<h3 id="bluestore性能优化">2. BlueStore性能优化</h3>
+<h4 id="bluestore性能优化">2. BlueStore性能优化</h4>
 <ul>
 <li>讨论了BlueStore在处理大量对象创建和删除时的性能瓶颈，特别是使用RocksDB时的解析和锁定问题。</li>
 <li>提出了使用更大缓冲区减少写放大和尝试将部分数据移出RocksDB的建议。</li>
 </ul>
-<h3 id="osd-cpu效率提升">3. OSD CPU效率提升</h3>
+<h4 id="osd-cpu效率提升">3. OSD CPU效率提升</h4>
 <ul>
 <li>讨论了如何减少OSD的CPU使用，特别是在处理大量小对象时的效率问题。</li>
 <li>提出了从字符串操作转向二进制格式操作的建议，以减少动态内存分配和提高比较效率。</li>
 </ul>
-<h3 id="未来改进方向">4. 未来改进方向</h3>
+<h4 id="未来改进方向">4. 未来改进方向</h4>
 <ul>
 <li>讨论了可能的硬件优化，如使用Optane
 DIMMs，以及软件层面的改进，如简化数据结构和减少不必要的灵活性。</li>
 <li>提出了对BlueStore和OSD进行更深入的性能分析和优化，特别是在处理小对象和频繁更新的场景。</li>
 </ul>
-<h2 id="决定事项">决定事项</h2>
+<h3 id="决定事项">决定事项</h3>
 <ul>
 <li>继续探讨和实验BlueStore的性能优化，特别是在减少RocksDB的使用和优化OSD的CPU效率方面。</li>
 <li>计划在下一次会议中进一步讨论OSD的内存使用优化和BlueStore的结构简化。</li>
 </ul>
-<h2 id="后续行动计划">后续行动计划</h2>
+<h3 id="后续行动计划">后续行动计划</h3>
 <ul>
 <li>更新现有文档，总结本次会议的讨论点和未来研究方向。</li>
 <li>准备下一次会议的讨论主题，包括具体的性能优化实验和可能的技术改进。</li>
 </ul>
-<h2 id="结论">结论</h2>
+<h3 id="结论">结论</h3>
 <p>本次会议为Ceph存储系统的未来发展提供了宝贵的讨论和建议，特别是在性能优化和CPU效率提升方面。期待下一次会议的进一步讨论和成果。</p>
+<hr />
+<p>请注意，原始字幕内容中包含了一些技术细节和讨论，这些内容在总结中并未全部体现，但已尽量保留关键信息。</p>
 
         </div>
 
@@ -257,6 +262,8 @@ DIMMs，以及软件层面的改进，如简化数据结构和减少不必要的
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -268,7 +275,7 @@ DIMMs，以及软件层面的改进，如简化数据结构和减少不必要的
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/09/03/Ceph_Performance_Meeting_2020-09-02/&title=《Ceph Performance Meeting 2020-09-02》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/09/03/Ceph_Performance_Meeting_2020-09-02/&title=《 Ceph 性能会议纪要 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -278,7 +285,7 @@ DIMMs，以及软件层面的改进，如简化数据结构和减少不必要的
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/09/03/Ceph_Performance_Meeting_2020-09-02/&title=《Ceph Performance Meeting 2020-09-02》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/09/03/Ceph_Performance_Meeting_2020-09-02/&title=《 Ceph 性能会议纪要 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -288,7 +295,7 @@ DIMMs，以及软件层面的改进，如简化数据结构和减少不必要的
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2020-09-02》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/09/03/Ceph_Performance_Meeting_2020-09-02/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph 性能会议纪要 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/09/03/Ceph_Performance_Meeting_2020-09-02/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -427,7 +434,7 @@ DIMMs，以及软件层面的改进，如简化数据结构和减少不必要的
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/09/03/Ceph_Performance_Meeting_2020-09-02/&title=《Ceph Performance Meeting 2020-09-02》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/09/03/Ceph_Performance_Meeting_2020-09-02/&title=《 Ceph 性能会议纪要 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -437,7 +444,7 @@ DIMMs，以及软件层面的改进，如简化数据结构和减少不必要的
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/09/03/Ceph_Performance_Meeting_2020-09-02/&title=《Ceph Performance Meeting 2020-09-02》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/09/03/Ceph_Performance_Meeting_2020-09-02/&title=《 Ceph 性能会议纪要 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -447,7 +454,7 @@ DIMMs，以及软件层面的改进，如简化数据结构和减少不必要的
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2020-09-02》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/09/03/Ceph_Performance_Meeting_2020-09-02/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph 性能会议纪要 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/09/03/Ceph_Performance_Meeting_2020-09-02/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

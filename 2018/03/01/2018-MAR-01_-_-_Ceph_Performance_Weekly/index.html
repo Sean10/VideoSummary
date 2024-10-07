@@ -14,23 +14,31 @@
     
     
     
-    <title>2018-MAR-01 :: Ceph Performance Weekly | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2018-MAR-01 :: Ceph Performance Weekly&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月某日 参会人员： Mark、Sarah、Peter、David、Ian 等多位研发人员 会议主题： 讨论Ceph分布式存储系统中元数据管理、缓存策略、性能优化等问题。 主要议题及讨论内容： 1. 元数据管理  RocksDB元数据空间占用： 会议讨论了不同工作负载下RocksDB元数据空间占用情况，发现元数据空间占用与对象数量密切相关，特别是对于RGW对象，元">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,性能优化,BlueStore,RocksDB,缓存策略,元数据管理">
+    <meta name="description" content="[改进后的中文总结内容] 在本次Ceph性能周会中，参会人员就Ceph分布式存储系统中的元数据管理、缓存策略和性能优化等问题进行了深入讨论。以下是会议的主要议题、决定的事项和后续行动计划： 主要议题及讨论内容：  元数据管理：  讨论了RocksDB元数据空间占用情况，发现与对象数量密切相关，尤其是对于RGW对象，元数据空间占用较大。 讨论了RocksDB和BlueStore的缓存策略，包括缓存大">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018-MAR-01 :: Ceph Performance Weekly">
+<meta property="og:title" content="&#39;2018-MAR-01 :: Ceph Performance Weekly&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/03/01/2018-MAR-01_-_-_Ceph_Performance_Weekly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月某日 参会人员： Mark、Sarah、Peter、David、Ian 等多位研发人员 会议主题： 讨论Ceph分布式存储系统中元数据管理、缓存策略、性能优化等问题。 主要议题及讨论内容： 1. 元数据管理  RocksDB元数据空间占用： 会议讨论了不同工作负载下RocksDB元数据空间占用情况，发现元数据空间占用与对象数量密切相关，特别是对于RGW对象，元">
+<meta property="og:description" content="[改进后的中文总结内容] 在本次Ceph性能周会中，参会人员就Ceph分布式存储系统中的元数据管理、缓存策略和性能优化等问题进行了深入讨论。以下是会议的主要议题、决定的事项和后续行动计划： 主要议题及讨论内容：  元数据管理：  讨论了RocksDB元数据空间占用情况，发现与对象数量密切相关，尤其是对于RGW对象，元数据空间占用较大。 讨论了RocksDB和BlueStore的缓存策略，包括缓存大">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-02-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-03-01T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="BlueStore">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="缓存策略">
+<meta property="article:tag" content="元数据管理">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2018-MAR-01 :: Ceph Performance Weekly</div>
+        <div class="flex-col header-title ellipsis">&#39;2018-MAR-01 :: Ceph Performance Weekly&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +142,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2018-MAR-01 :: Ceph Performance Weekly</h1>
+        <h1 class="title">&#39;2018-MAR-01 :: Ceph Performance Weekly&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-02-28T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +164,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-2018-MAR-01_-_-_Ceph_Performance_Weekly"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2018-MAR-01 :: Ceph Performance Weekly</h1>
+        <h1 class="post-card-title">'2018-MAR-01 :: Ceph Performance Weekly'</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-03-01 00:00:00" datetime="2018-02-28T16:00:00.000Z"  itemprop="datePublished">2018-03-01</time>
 
@@ -185,81 +186,50 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： 2023年11月某日</p>
-<p><strong>参会人员</strong>： Mark、Sarah、Peter、David、Ian
-等多位研发人员</p>
-<p><strong>会议主题</strong>：
-讨论Ceph分布式存储系统中元数据管理、缓存策略、性能优化等问题。</p>
+            <p>[改进后的中文总结内容]</p>
+<p>在本次Ceph性能周会中，参会人员就Ceph分布式存储系统中的元数据管理、缓存策略和性能优化等问题进行了深入讨论。以下是会议的主要议题、决定的事项和后续行动计划：</p>
 <p><strong>主要议题及讨论内容</strong>：</p>
-<p><strong>1. 元数据管理</strong></p>
-<ul>
-<li><strong>RocksDB元数据空间占用</strong>：
-会议讨论了不同工作负载下RocksDB元数据空间占用情况，发现元数据空间占用与对象数量密切相关，特别是对于RGW对象，元数据空间占用较大。</li>
-<li><strong>缓存策略</strong>：
-讨论了RocksDB和BlueStore的缓存策略，包括缓存大小、缓存优先级等。目前，Ceph默认将50%的内存分配给BlueStore，50%分配给RocksDB。会议认为，这种分配方式在大多数情况下是合理的，但对于特定场景可能需要调整。</li>
-<li><strong>缓存优化</strong>：
-讨论了如何优化缓存策略，例如根据对象数量和键值对数量动态调整缓存大小，以及利用RocksDB接口查询索引和过滤器大小以分配缓存内存。</li>
-</ul>
-<p><strong>2. 性能优化</strong></p>
-<ul>
-<li><strong>压缩优化</strong>：
-讨论了RocksDB的压缩优化，包括是否在RocksDB中压缩块缓存，以及如何平衡压缩带来的CPU开销和存储空间占用。</li>
-<li><strong>日志优化</strong>：
-讨论了日志优化，包括减少日志条目数量，以及是否禁用日志操作。</li>
-<li><strong>锁优化</strong>：
-讨论了锁优化，包括减少锁争用，以及使用无锁数据结构。</li>
-</ul>
-<p><strong>3. 其他</strong></p>
-<ul>
-<li><strong>Ceph Star</strong>： 讨论了Ceph
-Star的进展情况，以及如何将Ceph Star与现有存储引擎集成。</li>
-<li><strong>性能回归</strong>：
-讨论了性能回归问题，以及如何避免性能回归。</li>
-</ul>
-<p><strong>决定的事项</strong>：</p>
-<ul>
+<ol type="1">
 <li><strong>元数据管理</strong>：
+<ul>
+<li>讨论了RocksDB元数据空间占用情况，发现与对象数量密切相关，尤其是对于RGW对象，元数据空间占用较大。</li>
+<li>讨论了RocksDB和BlueStore的缓存策略，包括缓存大小、缓存优先级等。</li>
+<li>讨论了优化缓存策略的方法，如动态调整缓存大小和利用RocksDB接口查询索引和过滤器大小以分配缓存内存。</li>
+</ul></li>
+<li><strong>性能优化</strong>：
+<ul>
+<li>讨论了RocksDB的压缩优化，包括是否在RocksDB中压缩块缓存，以及如何平衡压缩带来的CPU开销和存储空间占用。</li>
+<li>讨论了日志优化，包括减少日志条目数量，以及是否禁用日志操作。</li>
+<li>讨论了锁优化，包括减少锁争用，以及使用无锁数据结构。</li>
+</ul></li>
+<li><strong>其他</strong>：
+<ul>
+<li>讨论了Ceph Star的进展情况，以及如何将Ceph
+Star与现有存储引擎集成。</li>
+<li>讨论了性能回归问题，以及如何避免性能回归。</li>
+</ul></li>
+</ol>
+<p><strong>决定的事项</strong>：</p>
 <ul>
 <li>继续使用默认的50/50缓存分配策略。</li>
 <li>根据对象数量和键值对数量动态调整缓存大小。</li>
 <li>利用RocksDB接口查询索引和过滤器大小以分配缓存内存。</li>
-</ul></li>
-<li><strong>性能优化</strong>：
-<ul>
 <li>进行压缩优化，平衡CPU开销和存储空间占用。</li>
 <li>进行日志优化，减少日志条目数量。</li>
 <li>进行锁优化，减少锁争用。</li>
-</ul></li>
-<li><strong>其他</strong>：
-<ul>
 <li>加快Ceph Star的进展。</li>
 <li>避免性能回归。</li>
-</ul></li>
 </ul>
 <p><strong>后续行动计划</strong>：</p>
 <ul>
-<li><strong>Mark</strong>：
-<ul>
 <li>发布RocksDB元数据空间占用测试数据。</li>
 <li>尝试根据对象数量和键值对数量动态调整缓存大小。</li>
-</ul></li>
-<li><strong>Sarah</strong>：
-<ul>
 <li>进行RocksDB压缩优化。</li>
 <li>进行日志优化。</li>
-</ul></li>
-<li><strong>Peter</strong>：
-<ul>
 <li>进行锁优化。</li>
-</ul></li>
-<li><strong>David</strong>：
-<ul>
 <li>继续推进Ceph Star相关工作。</li>
-</ul></li>
 </ul>
-<p><strong>总结</strong>：</p>
-<p>本次会议讨论了Ceph分布式存储系统中元数据管理、缓存策略、性能优化等问题，并制定了相应的解决方案和后续行动计划。会议认为，通过优化元数据管理、缓存策略和性能，可以提高Ceph的效率和性能。</p>
+<p>本次会议通过讨论和决策，为Ceph分布式存储系统的元数据管理、缓存策略和性能优化提供了明确的解决方案和后续行动计划，有助于提高Ceph的效率和性能。</p>
 
         </div>
 
@@ -290,6 +260,8 @@ Star的进展情况，以及如何将Ceph Star与现有存储引擎集成。</li
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%85%83%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/" rel="tag">元数据管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5/" rel="tag">缓存策略</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -301,7 +273,7 @@ Star的进展情况，以及如何将Ceph Star与现有存储引擎集成。</li
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/03/01/2018-MAR-01_-_-_Ceph_Performance_Weekly/&title=《2018-MAR-01 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/03/01/2018-MAR-01_-_-_Ceph_Performance_Weekly/&title=《'2018-MAR-01 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -311,7 +283,7 @@ Star的进展情况，以及如何将Ceph Star与现有存储引擎集成。</li
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/03/01/2018-MAR-01_-_-_Ceph_Performance_Weekly/&title=《2018-MAR-01 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/03/01/2018-MAR-01_-_-_Ceph_Performance_Weekly/&title=《'2018-MAR-01 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -321,7 +293,7 @@ Star的进展情况，以及如何将Ceph Star与现有存储引擎集成。</li
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-MAR-01 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/03/01/2018-MAR-01_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-MAR-01 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/03/01/2018-MAR-01_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -351,7 +323,7 @@ Star的进展情况，以及如何将Ceph Star与现有存储引擎集成。</li
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2018/03/08/2018-MAR-07_-_-_Ceph_Developer_Monthly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2018-MAR-07 :: Ceph Developer Monthly</h4>
+        <h4 class="title">&#39;2018-MAR-07 :: Ceph Developer Monthly&#39;</h4>
       </a>
     </div>
   
@@ -460,7 +432,7 @@ Star的进展情况，以及如何将Ceph Star与现有存储引擎集成。</li
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/03/01/2018-MAR-01_-_-_Ceph_Performance_Weekly/&title=《2018-MAR-01 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/03/01/2018-MAR-01_-_-_Ceph_Performance_Weekly/&title=《'2018-MAR-01 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -470,7 +442,7 @@ Star的进展情况，以及如何将Ceph Star与现有存储引擎集成。</li
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/03/01/2018-MAR-01_-_-_Ceph_Performance_Weekly/&title=《2018-MAR-01 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/03/01/2018-MAR-01_-_-_Ceph_Performance_Weekly/&title=《'2018-MAR-01 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -480,7 +452,7 @@ Star的进展情况，以及如何将Ceph Star与现有存储引擎集成。</li
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-MAR-01 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/03/01/2018-MAR-01_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-MAR-01 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/03/01/2018-MAR-01_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

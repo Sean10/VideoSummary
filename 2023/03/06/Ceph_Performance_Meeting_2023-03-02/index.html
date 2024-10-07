@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议是在两周后再次召开的，原因是会议主持人之前在纽约度假。会议主要回顾了最近两周的PR（Pull Request）列表，讨论了几个关键的议题，并决定了一些后续行动计划。 主要讨论议题  PR审查进度  主持人接近完成了PR列表的审查，但尚未完全完成。 提到了一个来自Casey的新PR，关于在rgw中切换回多态执行器的问题，Mark Hogan进行了测试，未发现明显的性能提升">
+    <meta name="keywords" content="Ceph,性能优化,RocksDB,存储集群,PR审查">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议于2023年3月2日召开，主要回顾了最近两周的Pull Request（PR）审查进度，并讨论了多个关键议题，包括RocksDB更新、PR审查、新的基准测试工具、读取平衡器性能改进以及QAT加密性能问题。会议还决定了后续行动计划。 主要讨论议题  PR审查进度  主持人接近完成PR列表的审查，但尚未完全完成。 讨论了Casey关于在rgw中切换">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Performance Meeting 2023-03-02">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/03/06/Ceph_Performance_Meeting_2023-03-02/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议是在两周后再次召开的，原因是会议主持人之前在纽约度假。会议主要回顾了最近两周的PR（Pull Request）列表，讨论了几个关键的议题，并决定了一些后续行动计划。 主要讨论议题  PR审查进度  主持人接近完成了PR列表的审查，但尚未完全完成。 提到了一个来自Casey的新PR，关于在rgw中切换回多态执行器的问题，Mark Hogan进行了测试，未发现明显的性能提升">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议于2023年3月2日召开，主要回顾了最近两周的Pull Request（PR）审查进度，并讨论了多个关键议题，包括RocksDB更新、PR审查、新的基准测试工具、读取平衡器性能改进以及QAT加密性能问题。会议还决定了后续行动计划。 主要讨论议题  PR审查进度  主持人接近完成PR列表的审查，但尚未完全完成。 讨论了Casey关于在rgw中切换">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-03-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="存储集群">
+<meta property="article:tag" content="PR审查">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +161,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A8%E8%AE%BA%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要讨论议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Performance_Meeting_2023-03-02"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,26 +183,27 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概述">会议概述</h4>
-<p>本次会议是在两周后再次召开的，原因是会议主持人之前在纽约度假。会议主要回顾了最近两周的PR（Pull
-Request）列表，讨论了几个关键的议题，并决定了一些后续行动计划。</p>
-<h4 id="主要讨论议题">主要讨论议题</h4>
+            <p>[改进后的中文总结内容]</p>
+<p><strong>会议纪要</strong></p>
+<p><strong>会议概述</strong></p>
+<p>本次会议于2023年3月2日召开，主要回顾了最近两周的Pull
+Request（PR）审查进度，并讨论了多个关键议题，包括RocksDB更新、PR审查、新的基准测试工具、读取平衡器性能改进以及QAT加密性能问题。会议还决定了后续行动计划。</p>
+<p><strong>主要讨论议题</strong></p>
 <ol type="1">
 <li><strong>PR审查进度</strong>
 <ul>
-<li>主持人接近完成了PR列表的审查，但尚未完全完成。</li>
-<li>提到了一个来自Casey的新PR，关于在rgw中切换回多态执行器的问题，Mark
+<li>主持人接近完成PR列表的审查，但尚未完全完成。</li>
+<li>讨论了Casey关于在rgw中切换回多态执行器的PR，Mark
 Hogan进行了测试，未发现明显的性能提升，但仍计划在Reef之后进行切换。</li>
 </ul></li>
 <li><strong>已关闭的PR</strong>
 <ul>
-<li>讨论了几个已关闭的PR，包括Igor的一个csq更改，使用更大的读取块在cue列表条目中，预计会有小的性能改进。</li>
-<li>另一个重要的PR是关于更新Facebook的RocksDB，将在稍后讨论。</li>
+<li>讨论了Igor的一个csq更改，使用更大的读取块在cue列表条目中，预计会有小的性能改进。</li>
+<li>讨论了关于更新Facebook的RocksDB的PR。</li>
 </ul></li>
 <li><strong>新的和更新的PR</strong>
 <ul>
-<li>讨论了几个新的和更新的PR，包括替换RBD配置的PR，加密添加qat批处理的PR等。</li>
+<li>讨论了替换RBD配置的PR，加密添加qat批处理的PR等。</li>
 </ul></li>
 <li><strong>RocksDB更新</strong>
 <ul>
@@ -223,14 +222,14 @@ Hogan进行了测试，未发现明显的性能提升，但仍计划在Reef之�
 <li>讨论了QAT加密的性能问题，特别是关于是否需要在插件中进行等待的设计问题。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
+<p><strong>决定事项</strong></p>
 <ul>
 <li>计划在Reef之后切换回多态执行器。</li>
 <li>RocksDB的更新将在接下来的几个月中进行大量测试，如果出现问题，可能会回滚。</li>
 <li>将进行一个小集群的测试，以证明读取平衡器的性能改进。</li>
 <li>将进行QAT加密的性能测试，以评估是否需要进行等待。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<p><strong>后续行动计划</strong></p>
 <ul>
 <li>继续完成PR列表的审查。</li>
 <li>进行RocksDB的更新测试，并监控内存泄漏和其他问题。</li>
@@ -238,13 +237,13 @@ Hogan进行了测试，未发现明显的性能提升，但仍计划在Reef之�
 <li>在小集群上进行读取平衡器的性能测试。</li>
 <li>进行QAT加密的性能测试，以评估是否需要进行等待。</li>
 </ul>
-<h4 id="其他讨论">其他讨论</h4>
+<p><strong>其他讨论</strong></p>
 <ul>
 <li>讨论了关于Spinner设置的首次写入问题，建议尝试禁用首次写入以减少开销。</li>
 <li>讨论了Blue
 Store的日志问题，建议尝试使用新的日志实现来减少对RocksDB的依赖。</li>
 </ul>
-<h4 id="会议结束">会议结束</h4>
+<p><strong>会议结束</strong></p>
 <p>会议在讨论了所有议题后结束，感谢所有参与者的贡献，并期待下一次会议。</p>
 
         </div>
@@ -276,6 +275,8 @@ Store的日志问题，建议尝试使用新的日志实现来减少对RocksDB�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PR%E5%AE%A1%E6%9F%A5/" rel="tag">PR审查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E9%9B%86%E7%BE%A4/" rel="tag">存储集群</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -335,9 +336,9 @@ Store的日志问题，建议尝试使用新的日志实现来减少对RocksDB�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/03/07/Ceph_Orchestrator_2023-03-07/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/03/06/CDS_Infernalis_Day_1_--_RGW_-_NFS/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Orchestrator 2023-03-07</h4>
+        <h4 class="title">&#39;CDS Infernalis (Day 1) -- RGW: NFS&#39;</h4>
       </a>
     </div>
   
@@ -346,7 +347,7 @@ Store的日志问题，建议尝试使用新的日志实现来减少对RocksDB�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2023-03-01</h4>
+        <h4 class="title">  Ceph RGW Refactoring Meeting 2023-03-01  </h4>
       </a>
     </div>
   

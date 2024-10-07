@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2018-10-11 | ceph视频总结 | youtube频道总结</title>
+    <title> Ceph 性能会议 2018-10-11  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月某日 参会人员： Radek、Adam、Braddock、Adam（视频会议字幕翻译及总结人员）、Matt、Kyle、Nick 会议主题： Ceph分布式存储项目进展及讨论 会议内容： 一、PRS进展  Radek和Adam正在开发两阶段提交机制和编码相关功能，预计将大幅提升性能，减少缓冲区指针的错误使用。 该机制将消除整数字段中的跳转检查，这对于性能调优尤为">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,两阶段提交,缓存机制">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2018年10月11日 参会人员： Radek、Adam、Braddock、Adam（视频会议字幕翻译及总结人员）、Matt、Kyle、Nick 会议主题： Ceph分布式存储项目进展及讨论 会议内容： 一、PRS进展  Radek和Adam正在开发两阶段提交机制和编码相关功能，预计将大幅提升性能，减少缓冲区指针的错误使用。 该机制将消除整数字段中的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2018-10-11">
+<meta property="og:title" content=" Ceph 性能会议 2018-10-11 ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-11/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月某日 参会人员： Radek、Adam、Braddock、Adam（视频会议字幕翻译及总结人员）、Matt、Kyle、Nick 会议主题： Ceph分布式存储项目进展及讨论 会议内容： 一、PRS进展  Radek和Adam正在开发两阶段提交机制和编码相关功能，预计将大幅提升性能，减少缓冲区指针的错误使用。 该机制将消除整数字段中的跳转检查，这对于性能调优尤为">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2018年10月11日 参会人员： Radek、Adam、Braddock、Adam（视频会议字幕翻译及总结人员）、Matt、Kyle、Nick 会议主题： Ceph分布式存储项目进展及讨论 会议内容： 一、PRS进展  Radek和Adam正在开发两阶段提交机制和编码相关功能，预计将大幅提升性能，减少缓冲区指针的错误使用。 该机制将消除整数字段中的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-10-17T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-10-17T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="两阶段提交">
+<meta property="article:tag" content="缓存机制">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2018-10-11</div>
+        <div class="flex-col header-title ellipsis"> Ceph 性能会议 2018-10-11 </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2018-10-11</h1>
+        <h1 class="title"> Ceph 性能会议 2018-10-11 </h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-10-17T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2018-10-11</h1>
+        <h1 class="post-card-title"> Ceph 性能会议 2018-10-11 </h1>
         <div class="post-meta">
             <time class="post-time" title="2018-10-18 00:00:00" datetime="2018-10-17T16:00:00.000Z"  itemprop="datePublished">2018-10-18</time>
 
@@ -185,8 +190,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： 2023年11月某日</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议时间</strong>： 2018年10月11日</p>
 <p><strong>参会人员</strong>：
 Radek、Adam、Braddock、Adam（视频会议字幕翻译及总结人员）、Matt、Kyle、Nick</p>
 <p><strong>会议主题</strong>： Ceph分布式存储项目进展及讨论</p>
@@ -248,6 +254,7 @@ Map中添加Numa节点级别，以允许OSD智能地映射到正确的Numa节点
 </ul>
 <p><strong>总结</strong>：</p>
 <p>本次会议讨论了Ceph分布式存储项目的多个方面，包括PRS进展、其他PR讨论、分布式数据缓存PR、Numa节点优化以及其他事项。会议确定了下一步行动计划，以推动Ceph项目的进展。</p>
+<hr />
 
         </div>
 
@@ -278,6 +285,8 @@ Map中添加Numa节点级别，以允许OSD智能地映射到正确的Numa节点
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%B8%A4%E9%98%B6%E6%AE%B5%E6%8F%90%E4%BA%A4/" rel="tag">两阶段提交</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/" rel="tag">缓存机制</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -289,7 +298,7 @@ Map中添加Numa节点级别，以允许OSD智能地映射到正确的Numa节点
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-11/&title=《Ceph Performance Meeting 2018-10-11》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-11/&title=《 Ceph 性能会议 2018-10-11 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -299,7 +308,7 @@ Map中添加Numa节点级别，以允许OSD智能地映射到正确的Numa节点
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-11/&title=《Ceph Performance Meeting 2018-10-11》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-11/&title=《 Ceph 性能会议 2018-10-11 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -309,7 +318,7 @@ Map中添加Numa节点级别，以允许OSD智能地映射到正确的Numa节点
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2018-10-11》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-11/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph 性能会议 2018-10-11 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-11/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -337,18 +346,18 @@ Map中添加Numa节点级别，以允许OSD智能地映射到正确的Numa节点
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2018/10/24/Ceph_Virtual_Cluster_on_Blender_+_Python/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-18/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Virtual Cluster on Blender + Python</h4>
+        <h4 class="title"> Ceph性能会议纪要 2018-10-18 </h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-18/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2018/10/18/Ceph_Testing_Meeting_2018-10-10/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2018-10-18</h4>
+        <h4 class="title">Ceph 测试会议 2018-10-10</h4>
       </a>
     </div>
   
@@ -448,7 +457,7 @@ Map中添加Numa节点级别，以允许OSD智能地映射到正确的Numa节点
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-11/&title=《Ceph Performance Meeting 2018-10-11》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-11/&title=《 Ceph 性能会议 2018-10-11 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -458,7 +467,7 @@ Map中添加Numa节点级别，以允许OSD智能地映射到正确的Numa节点
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-11/&title=《Ceph Performance Meeting 2018-10-11》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-11/&title=《 Ceph 性能会议 2018-10-11 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -468,7 +477,7 @@ Map中添加Numa节点级别，以允许OSD智能地映射到正确的Numa节点
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2018-10-11》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-11/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph 性能会议 2018-10-11 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/18/Ceph_Performance_Meeting_2018-10-11/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

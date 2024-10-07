@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph分布式存储中的图像实时迁移、导入和即时恢复 会议时间：[具体时间] 会议地点：[具体地点] 参会人员：来自IBM研究（Haifa, Israel）的研发团队成员，包括发言人及其同事Effie。 会议内容总结：  图像实时迁移（Image Live Migration）简介  功能自Nautilus版本开始引入，最初用于同一集群内不同存储池之间的图像迁移。 在Pacifi">
+    <meta name="keywords" content="Ceph,RBD,Live Migration,Image Import,Instant Restore">
+    <meta name="description" content="[改进后的中文总结内容] 改进后的中文总结 会议主题：使用Ceph RBD进行图像实时迁移、导入和即时恢复 会议时间：[具体时间] 会议地点：[具体地点] 参会人员：来自IBM研究（Haifa, Israel）的研发团队成员，包括发言人Danny Harnik及其同事Effie。 会议内容总结：  图像实时迁移（Image Live Migration）  自Nautilus版本开始引入，支持同一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="It’s Alive! Image Live Migration, Live Import and Instant Restore with Ceph RBD - Danny Harnik, IBM">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/It_s_Alive_Image_Live_Migration_Live_Import_and_Instant_Restore_with_Ceph_RBD_-_Danny_Harnik_IBM/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph分布式存储中的图像实时迁移、导入和即时恢复 会议时间：[具体时间] 会议地点：[具体地点] 参会人员：来自IBM研究（Haifa, Israel）的研发团队成员，包括发言人及其同事Effie。 会议内容总结：  图像实时迁移（Image Live Migration）简介  功能自Nautilus版本开始引入，最初用于同一集群内不同存储池之间的图像迁移。 在Pacifi">
+<meta property="og:description" content="[改进后的中文总结内容] 改进后的中文总结 会议主题：使用Ceph RBD进行图像实时迁移、导入和即时恢复 会议时间：[具体时间] 会议地点：[具体地点] 参会人员：来自IBM研究（Haifa, Israel）的研发团队成员，包括发言人Danny Harnik及其同事Effie。 会议内容总结：  图像实时迁移（Image Live Migration）  自Nautilus版本开始引入，支持同一">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RBD">
+<meta property="article:tag" content="Live Migration">
+<meta property="article:tag" content="Image Import">
+<meta property="article:tag" content="Instant Restore">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,8 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8%E4%B8%AD%E7%9A%84%E5%9B%BE%E5%83%8F%E5%AE%9E%E6%97%B6%E8%BF%81%E7%A7%BB%E5%AF%BC%E5%85%A5%E5%92%8C%E5%8D%B3%E6%97%B6%E6%81%A2%E5%A4%8D"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph分布式存储中的图像实时迁移、导入和即时恢复</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E6%9D%A5%E8%87%AAibm%E7%A0%94%E7%A9%B6haifa-israel%E7%9A%84%E7%A0%94%E5%8F%91%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98%E5%8C%85%E6%8B%AC%E5%8F%91%E8%A8%80%E4%BA%BA%E5%8F%8A%E5%85%B6%E5%90%8C%E4%BA%8Beffie"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">参会人员：来自IBM研究（Haifa,
-Israel）的研发团队成员，包括发言人及其同事Effie。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结</span></a></li></ol>
         </nav>
     </aside>
 
@@ -186,43 +190,28 @@ Israel）的研发团队成员，包括发言人及其同事Effie。</span></a><
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4
-id="会议主题ceph分布式存储中的图像实时迁移导入和即时恢复">会议主题：Ceph分布式存储中的图像实时迁移、导入和即时恢复</h4>
-<h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
-<h4 id="会议地点具体地点">会议地点：[具体地点]</h4>
-<h4
-id="参会人员来自ibm研究haifa-israel的研发团队成员包括发言人及其同事effie">参会人员：来自IBM研究（Haifa,
-Israel）的研发团队成员，包括发言人及其同事Effie。</h4>
-<h4 id="会议内容总结">会议内容总结：</h4>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="改进后的中文总结">改进后的中文总结</h3>
+<p><strong>会议主题</strong>：使用Ceph
+RBD进行图像实时迁移、导入和即时恢复</p>
+<p><strong>会议时间</strong>：[具体时间]</p>
+<p><strong>会议地点</strong>：[具体地点]</p>
+<p><strong>参会人员</strong>：来自IBM研究（Haifa,
+Israel）的研发团队成员，包括发言人Danny Harnik及其同事Effie。</p>
+<p><strong>会议内容总结</strong>：</p>
 <ol type="1">
-<li><strong>图像实时迁移（Image Live Migration）简介</strong>
+<li><strong>图像实时迁移（Image Live Migration）</strong>
 <ul>
-<li>功能自Nautilus版本开始引入，最初用于同一集群内不同存储池之间的图像迁移。</li>
-<li>在Pacific版本中扩展到外部源，支持从外部源实时迁移图像到Ceph集群。</li>
+<li>自Nautilus版本开始引入，支持同一集群内不同存储池之间的图像迁移，Pacific版本扩展到外部源。</li>
+<li>仅支持Librbd，适用于OpenStack、KVM虚拟化等。</li>
+<li>使用后复制迁移技术，允许在数据迁移过程中立即在目标端开始工作。</li>
+<li>主要应用场景包括集群间实时迁移、即时导入到Ceph和备份与即时恢复。</li>
 </ul></li>
-<li><strong>支持的客户端类型</strong>
+<li><strong>外部NBD源的实时迁移</strong>
 <ul>
-<li>仅支持Librbd，不支持krbd。适用于OpenStack、KVM虚拟化、NBD RBD及NVMe
-over Fabrics。</li>
-</ul></li>
-<li><strong>图像实时迁移的工作原理</strong>
-<ul>
-<li>采用后复制迁移（post-copy
-migration）技术，允许在数据迁移过程中立即在目标端开始工作。</li>
-<li>写操作直接指向目标端，读操作初始指向目标端，若数据不存在则从源端获取。</li>
-</ul></li>
-<li><strong>主要应用场景</strong>
-<ul>
-<li><strong>集群间实时迁移</strong>：适用于拥有多个Ceph集群的部署，支持跨集群的实时数据迁移和负载均衡。</li>
-<li><strong>即时导入到Ceph</strong>：允许从外部源（如NAS设备）快速导入图像到Ceph，实现即时使用。</li>
-<li><strong>备份与即时恢复</strong>：通过差异备份和即时恢复功能，实现高效的备份和快速的数据恢复。</li>
-</ul></li>
-<li><strong>新功能介绍</strong>
-<ul>
-<li><strong>外部NBD源的实时迁移</strong>：新增NBD格式支持，通过chemo
+<li>新增NBD格式支持，通过chemo
 NBD服务器连接，实现更灵活的图像导入。</li>
-<li><strong>备份与即时恢复的POC</strong>：使用qcow2格式进行差异备份，并通过chemo
+<li>提供备份与即时恢复的POC，使用qcow2格式进行差异备份，并通过chemo
 NBD实现即时恢复。</li>
 </ul></li>
 <li><strong>未来计划与改进方向</strong>
@@ -232,23 +221,13 @@ NBD实现即时恢复。</li>
 <li>改进备份与恢复流程，特别是增加对Ceph原生导出格式的索引支持，以实现更高效的即时恢复。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项：</h4>
-<ul>
-<li>继续推动图像实时迁移功能的开发和优化。</li>
-<li>完善文档和教程，确保用户能够充分利用新功能。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划：</h4>
-<ul>
-<li>完成并上线相关PR。</li>
-<li>开发和测试对克隆图像的集群间迁移支持。</li>
-<li>研究和实施对Ceph原生导出格式的索引支持，以优化备份与恢复流程。</li>
-</ul>
-<h4 id="会议结束">会议结束：</h4>
-<ul>
-<li>会议在提问和讨论环节后圆满结束，发言人感谢所有参与者的积极参与和反馈。</li>
-</ul>
-<hr />
-<p><strong>备注</strong>：本次会议详细讨论了Ceph分布式存储中的图像实时迁移、导入和即时恢复功能，强调了其在多集群部署和数据备份恢复中的重要性，并提出了未来的改进方向和行动计划。</p>
+<p><strong>决定事项</strong>： - 继续推动图像实时迁移功能的开发和优化。
+- 完善文档和教程，确保用户能够充分利用新功能。</p>
+<p><strong>后续行动计划</strong>： - 完成并上线相关PR。 -
+开发和测试对克隆图像的集群间迁移支持。 -
+研究和实施对Ceph原生导出格式的索引支持，以优化备份与恢复流程。</p>
+<p><strong>会议结束</strong>： -
+会议在提问和讨论环节后圆满结束，发言人感谢所有参与者的积极参与和反馈。</p>
 
         </div>
 
@@ -279,6 +258,8 @@ NBD实现即时恢复。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Image-Import/" rel="tag">Image Import</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Instant-Restore/" rel="tag">Instant Restore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Live-Migration/" rel="tag">Live Migration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD/" rel="tag">RBD</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -347,9 +328,9 @@ NBD实现即时恢复。</li>
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/05/Keynote_-_Ceph_-_The_Future_of_the_Storage_TODAY/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Keynote: Ceph: The Future of the Storage TODAY</h4>
+        <h4 class="title">拥抱Ceph：公司采用Ceph存储解决方案的关键因素</h4>
       </a>
     </div>
   

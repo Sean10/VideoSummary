@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2022-12-01 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 性能会议 2022-12-01 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  依赖版本固定问题: 会议讨论了由于上游库的版本升级导致测试中断的问题。主要关注点是版本固定（version pinning）的长期影响和潜在风险。 版本固定策略: 提出了一个策略，建议仅固定主要版本（major versions），以减少长期维护的复杂性。 自动化工具: 讨论了开发一个自动化工具来管理和更新依赖版本，以减少手动更新的负担。 文档和追踪: 强调了需要一个集中的位">
+    <meta name="keywords" content="Ceph,分布式存储,测试,版本控制,自动化工具">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  依赖版本管理: 会议重点讨论了由于上游库版本升级导致的测试中断问题，并提出了版本固定的长期影响和潜在风险。 版本固定策略: 建议仅固定主要版本，以减少长期维护复杂性。 自动化工具: 讨论开发自动化工具来管理和更新依赖版本。 文档和追踪: 强调创建集中位置记录和管理固定版本信息，并定期审查更新。  讨论的主要议题  版本固定与更新: 讨论如何处理依赖库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2022-12-01">
+<meta property="og:title" content="Ceph 性能会议 2022-12-01">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  依赖版本固定问题: 会议讨论了由于上游库的版本升级导致测试中断的问题。主要关注点是版本固定（version pinning）的长期影响和潜在风险。 版本固定策略: 提出了一个策略，建议仅固定主要版本（major versions），以减少长期维护的复杂性。 自动化工具: 讨论了开发一个自动化工具来管理和更新依赖版本，以减少手动更新的负担。 文档和追踪: 强调了需要一个集中的位">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  依赖版本管理: 会议重点讨论了由于上游库版本升级导致的测试中断问题，并提出了版本固定的长期影响和潜在风险。 版本固定策略: 建议仅固定主要版本，以减少长期维护复杂性。 自动化工具: 讨论开发自动化工具来管理和更新依赖版本。 文档和追踪: 强调创建集中位置记录和管理固定版本信息，并定期审查更新。  讨论的主要议题  版本固定与更新: 讨论如何处理依赖库">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-12-01T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-12-02T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="版本控制">
+<meta property="article:tag" content="自动化工具">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2022-12-01</div>
+        <div class="flex-col header-title ellipsis">Ceph 性能会议 2022-12-01</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2022-12-01</h1>
+        <h1 class="title">Ceph 性能会议 2022-12-01</h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-12-01T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2022-12-01</h1>
+        <h1 class="post-card-title">Ceph 性能会议 2022-12-01</h1>
         <div class="post-meta">
             <time class="post-time" title="2022-12-02 00:00:00" datetime="2022-12-01T16:00:00.000Z"  itemprop="datePublished">2022-12-02</time>
 
@@ -185,51 +190,50 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
-<li><strong>依赖版本固定问题</strong>:
-会议讨论了由于上游库的版本升级导致测试中断的问题。主要关注点是版本固定（version
-pinning）的长期影响和潜在风险。</li>
+<li><strong>依赖版本管理</strong>:
+会议重点讨论了由于上游库版本升级导致的测试中断问题，并提出了版本固定的长期影响和潜在风险。</li>
 <li><strong>版本固定策略</strong>:
-提出了一个策略，建议仅固定主要版本（major
-versions），以减少长期维护的复杂性。</li>
+建议仅固定主要版本，以减少长期维护复杂性。</li>
 <li><strong>自动化工具</strong>:
-讨论了开发一个自动化工具来管理和更新依赖版本，以减少手动更新的负担。</li>
+讨论开发自动化工具来管理和更新依赖版本。</li>
 <li><strong>文档和追踪</strong>:
-强调了需要一个集中的位置来记录和管理所有固定版本的信息，以及定期审查和更新这些依赖的必要性。</li>
+强调创建集中位置记录和管理固定版本信息，并定期审查更新。</li>
 </ul>
 <h4 id="讨论的主要议题">讨论的主要议题</h4>
 <ul>
 <li><strong>版本固定与更新</strong>:
-讨论了如何处理依赖库的版本固定，以及如何定期更新这些依赖以避免技术债务。</li>
+讨论如何处理依赖库的版本固定，以及如何定期更新依赖以避免技术债务。</li>
 <li><strong>自动化与文档</strong>:
-探讨了通过自动化工具来管理依赖版本的可行性，并强调了文档的重要性，以便团队成员能够追踪和管理这些信息。</li>
+探讨通过自动化工具管理依赖版本的可行性，并强调文档的重要性。</li>
 </ul>
 <h4 id="决定的事项">决定的事项</h4>
 <ul>
 <li><strong>版本固定策略</strong>:
-决定尝试实施一个策略，即仅固定主要版本，除非次要版本存在问题。</li>
+决定仅固定主要版本，除非次要版本存在问题。</li>
 <li><strong>自动化工具开发</strong>:
-同意开发一个自动化工具来帮助管理和更新依赖版本。</li>
+同意开发自动化工具来帮助管理和更新依赖版本。</li>
 <li><strong>文档更新</strong>:
-决定在文档中创建一个专门的页面来记录所有固定的依赖版本，并定期更新。</li>
+决定在文档中创建记录所有固定依赖版本的专门页面，并定期更新。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
 <li><strong>开发自动化工具</strong>:
-开始开发一个自动化工具来扫描和管理所有依赖版本。</li>
+开始开发自动化工具来扫描和管理所有依赖版本。</li>
 <li><strong>更新文档</strong>:
-在开发文档中创建一个新页面，用于记录和管理所有依赖版本的固定信息。</li>
+创建文档页面，记录和管理所有依赖版本的固定信息。</li>
 <li><strong>定期审查</strong>:
-设定每三个月或六个月的时间表，团队成员将审查和尝试更新这些依赖版本。</li>
+设定每三个月或六个月审查和更新依赖版本的时间表。</li>
 </ul>
 <h4 id="其他讨论">其他讨论</h4>
 <ul>
 <li><strong>测试实验室问题</strong>:
-讨论了当前测试实验室中遇到的一些具体问题，特别是与NFS相关的测试失败，并计划通过冻结节点和手动检查来进一步诊断问题。</li>
-<li><strong>合并请求</strong>: 讨论了合并一些长期待定的拉取请求（pull
-requests），尽管存在一些测试失败的风险，但认为这些请求已经过充分审查和测试。</li>
+讨论了测试实验室中遇到的具体问题，特别是与NFS相关的测试失败。</li>
+<li><strong>合并请求</strong>:
+讨论了合并一些长期待定的拉取请求，尽管存在测试失败的风险，但认为这些请求已经过充分审查和测试。</li>
 </ul>
 <p>会议结束时，团队成员同意按照上述行动计划推进工作，并期待在下一次会议中看到进展。</p>
 
@@ -262,6 +266,8 @@ requests），尽管存在一些测试失败的风险，但认为这些请求已
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" rel="tag">版本控制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7/" rel="tag">自动化工具</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -273,7 +279,7 @@ requests），尽管存在一些测试失败的风险，但认为这些请求已
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/&title=《Ceph Performance Meeting 2022-12-01》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/&title=《Ceph 性能会议 2022-12-01》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -283,7 +289,7 @@ requests），尽管存在一些测试失败的风险，但认为这些请求已
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/&title=《Ceph Performance Meeting 2022-12-01》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/&title=《Ceph 性能会议 2022-12-01》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -293,7 +299,7 @@ requests），尽管存在一些测试失败的风险，但认为这些请求已
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2022-12-01》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2022-12-01》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -330,9 +336,9 @@ requests），尽管存在一些测试失败的风险，但认为这些请求已
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2022/12/01/Ceph_Orchestrator_Meeting_2022-12-01/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2022/12/01/2022Q4_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Orchestrator Meeting 2022-12-01</h4>
+        <h4 class="title">2022Q4 Ceph社区季度总结</h4>
       </a>
     </div>
   
@@ -432,7 +438,7 @@ requests），尽管存在一些测试失败的风险，但认为这些请求已
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/&title=《Ceph Performance Meeting 2022-12-01》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/&title=《Ceph 性能会议 2022-12-01》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -442,7 +448,7 @@ requests），尽管存在一些测试失败的风险，但认为这些请求已
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/&title=《Ceph Performance Meeting 2022-12-01》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/&title=《Ceph 性能会议 2022-12-01》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -452,7 +458,7 @@ requests），尽管存在一些测试失败的风险，但认为这些请求已
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2022-12-01》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2022-12-01》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/12/02/Ceph_Performance_Meeting_2022-12-01/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

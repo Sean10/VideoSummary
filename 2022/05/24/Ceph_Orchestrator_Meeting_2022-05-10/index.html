@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="Telemetry is super useful for us and it helps us make a better product, more robust, and have a higher quality.">
+    <meta name="keywords" content="Ceph,分布式存储,指标收集,开源社区,调试与优化">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph的指标收集（Telemetry）项目，包括其功能、架构、隐私保护措施以及实际应用案例。 会议要点：  指标收集概述：Ceph的指标收集功能允许集群自动收集匿名数据，包括安装配置、硬件健康状态等，并汇总至公共和私有仪表板，帮助开发者了解用户行为、硬件使用情况以及软件性能。 隐私保护：默认情况下，指标收集功能是关闭的，用户需要明确同意许可协议才能启用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2022-05-10">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/05/24/Ceph_Orchestrator_Meeting_2022-05-10/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="Telemetry is super useful for us and it helps us make a better product, more robust, and have a higher quality.">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph的指标收集（Telemetry）项目，包括其功能、架构、隐私保护措施以及实际应用案例。 会议要点：  指标收集概述：Ceph的指标收集功能允许集群自动收集匿名数据，包括安装配置、硬件健康状态等，并汇总至公共和私有仪表板，帮助开发者了解用户行为、硬件使用情况以及软件性能。 隐私保护：默认情况下，指标收集功能是关闭的，用户需要明确同意许可协议才能启用">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-05-24T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="指标收集">
+<meta property="article:tag" content="开源社区">
+<meta property="article:tag" content="调试与优化">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,8 +183,27 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Telemetry is super useful for us and it helps us make a better
-product, more robust, and have a higher quality.</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph的指标收集（Telemetry）项目，包括其功能、架构、隐私保护措施以及实际应用案例。</p>
+<p><strong>会议要点</strong>：</p>
+<ol type="1">
+<li><p><strong>指标收集概述</strong>：Ceph的指标收集功能允许集群自动收集匿名数据，包括安装配置、硬件健康状态等，并汇总至公共和私有仪表板，帮助开发者了解用户行为、硬件使用情况以及软件性能。</p></li>
+<li><p><strong>隐私保护</strong>：默认情况下，指标收集功能是关闭的，用户需要明确同意许可协议才能启用。收集的数据不包含敏感或可识别信息，如池名、主机名、对象名或对象内容，并通过赋予集群随机UID、删除磁盘序列号等措施进行匿名化处理。</p></li>
+<li><p><strong>数据渠道</strong>：指标收集分为多个渠道，包括基本信息、崩溃信息、设备信息、标识信息以及性能信息等。用户可以根据需要开启或关闭特定渠道。</p></li>
+<li><p><strong>崩溃信息分析</strong>：通过收集崩溃信息，开发者可以快速发现新问题，优先处理常见故障，并通过版本对比发现问题和解决方案的回归。</p></li>
+<li><p><strong>成功案例</strong>：会议展示了多个使用指标收集功能解决实际问题的案例，包括通过数据发现软件缺陷、优化性能、指导用户部署等。</p></li>
+<li><p><strong>未来计划</strong>：Ceph社区计划进一步改进指标收集功能，包括收集数据可用性评分、优化崩溃签名去重、探索人工智能工具以改善数据去重等。</p></li>
+</ol>
+<p><strong>改进后的总结</strong>：</p>
+<p>本次会议详细介绍了Ceph的指标收集项目，强调了其在产品开发、性能优化和用户支持中的重要作用。通过收集和分析匿名数据，Ceph社区能够更好地了解用户需求，及时解决软件问题，并推动项目持续发展。会议还强调了隐私保护的重要性，并介绍了相关措施。此外，会议还展示了多个成功案例，并讨论了未来改进计划。</p>
+<p><strong>相关标签</strong>：</p>
+<ul>
+<li>Ceph</li>
+<li>分布式存储</li>
+<li>指标收集</li>
+<li>调试与优化</li>
+<li>开源社区</li>
+</ul>
 
         </div>
 
@@ -210,6 +234,8 @@ product, more robust, and have a higher quality.</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%80%E6%BA%90%E7%A4%BE%E5%8C%BA/" rel="tag">开源社区</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8C%87%E6%A0%87%E6%94%B6%E9%9B%86/" rel="tag">指标收集</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%B0%83%E8%AF%95%E4%B8%8E%E4%BC%98%E5%8C%96/" rel="tag">调试与优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -271,7 +297,7 @@ product, more robust, and have a higher quality.</p>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/05/24/Ceph_Orchestrator_Meeting_-_2022-05-24/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Orchestrator Meeting: 2022-05-24</h4>
+        <h4 class="title">  Ceph Orchestrator Meeting: 2022-05-24  </h4>
       </a>
     </div>
   
@@ -280,7 +306,7 @@ product, more robust, and have a higher quality.</p>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/05/06/Ceph_Performance_Meeting_2022-05-05/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2022-05-05</h4>
+        <h4 class="title">Ceph性能会议 2022-05-05</h4>
       </a>
     </div>
   

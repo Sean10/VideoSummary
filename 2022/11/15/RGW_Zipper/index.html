@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要：项目 Zipper 讨论 关键细节：  项目名称：Zipper 目的：将 Ceph 的 RGW（RADOS Gateway）中的 S3 实现与其他存储系统（如 ISP 存储源或云存储）集成，提供一个灵活的 API 框架，支持堆叠过滤器以实现如分层或缓存等功能。 技术方法：通过解耦 RGW 的协议层与存储层，开发一个横跨 RGW 的 API（称为 Zipper API），以便在协议层和存储">
+    <meta name="keywords" content="Ceph,分布式存储,RGW,S3 API,存储集成">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要：项目 Zipper 讨论 关键细节：  项目名称：Zipper 目的：将 Ceph 的 RGW（RADOS Gateway）中的 S3 实现与其他存储系统（如 ISP 存储源或云存储）集成，通过灵活的 API 框架支持堆叠过滤器实现分层或缓存等功能。 技术方法：通过解耦 RGW 的协议层与存储层，开发一个横跨 RGW 的 API（称为 Zipper API），以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RGW Zipper">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/11/15/RGW_Zipper/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要：项目 Zipper 讨论 关键细节：  项目名称：Zipper 目的：将 Ceph 的 RGW（RADOS Gateway）中的 S3 实现与其他存储系统（如 ISP 存储源或云存储）集成，提供一个灵活的 API 框架，支持堆叠过滤器以实现如分层或缓存等功能。 技术方法：通过解耦 RGW 的协议层与存储层，开发一个横跨 RGW 的 API（称为 Zipper API），以便在协议层和存储">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要：项目 Zipper 讨论 关键细节：  项目名称：Zipper 目的：将 Ceph 的 RGW（RADOS Gateway）中的 S3 实现与其他存储系统（如 ISP 存储源或云存储）集成，通过灵活的 API 框架支持堆叠过滤器实现分层或缓存等功能。 技术方法：通过解耦 RGW 的协议层与存储层，开发一个横跨 RGW 的 API（称为 Zipper API），以">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-11-15T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="S3 API">
+<meta property="article:tag" content="存储集成">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,37 +190,36 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要项目-zipper-讨论">会议纪要：项目 Zipper 讨论</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要项目-zipper-讨论">会议纪要：项目 Zipper 讨论</h3>
 <h4 id="关键细节">关键细节：</h4>
 <ul>
 <li><strong>项目名称</strong>：Zipper</li>
 <li><strong>目的</strong>：将 Ceph 的 RGW（RADOS Gateway）中的 S3
-实现与其他存储系统（如 ISP 存储源或云存储）集成，提供一个灵活的 API
-框架，支持堆叠过滤器以实现如分层或缓存等功能。</li>
+实现与其他存储系统（如 ISP 存储源或云存储）集成，通过灵活的 API
+框架支持堆叠过滤器实现分层或缓存等功能。</li>
 <li><strong>技术方法</strong>：通过解耦 RGW
 的协议层与存储层，开发一个横跨 RGW 的 API（称为 Zipper
-API），以便在协议层和存储层之间插入其他存储插件。</li>
+API），以便插入其他存储插件。</li>
 </ul>
 <h4 id="讨论的主要议题">讨论的主要议题：</h4>
 <ul>
 <li><strong>架构设计</strong>：
 <ul>
-<li>顶部为协议层。</li>
-<li>中间为核心层，提供所有对象协议通用的操作。</li>
-<li>底部为存储层，实现完整的 Zipper API，提供数据和元数据的存储。</li>
+<li>协议层、核心层和存储层的三层架构设计。</li>
+<li>存储插件和过滤器通过 Zipper API 实现功能。</li>
 </ul></li>
 <li><strong>插件和过滤器</strong>：
 <ul>
-<li>存储插件（如 Rados Store）和过滤器（如 D4N Filter）通过 Zipper API
-实现功能。</li>
-<li>过滤器不需实现整个 API，未覆盖的部分将通过默认实现传递。</li>
+<li>插件可以是内建或外建的，通过可加载的库实现。</li>
+<li>过滤器通过默认实现传递未覆盖的部分。</li>
 </ul></li>
 </ul>
 <h4 id="决定的事项">决定的事项：</h4>
 <ul>
 <li><strong>API
 实现</strong>：提供一组纯虚拟基类，涵盖对象存储操作所需的各种概念。</li>
-<li><strong>插件管理</strong>：插件可以是内建或外建的，只需在运行时提供可加载的库。</li>
+<li><strong>插件管理</strong>：插件支持在运行时加载。</li>
 <li><strong>配置管理</strong>：使用 JSON 文档进行配置，确保集群中的每个
 RGW 实例都能访问相同的配置信息。</li>
 </ul>
@@ -237,9 +241,6 @@ RGW 实例都能访问相同的配置信息。</li>
 <li>会议主持人感谢大家的参与，并邀请大家在会后通过电子邮件或 Google Chat
 提出任何问题。</li>
 </ul>
-<hr />
-<p>以上是关于项目 Zipper
-的会议纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -270,6 +271,8 @@ RGW 实例都能访问相同的配置信息。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/S3-API/" rel="tag">S3 API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E9%9B%86%E6%88%90/" rel="tag">存储集成</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

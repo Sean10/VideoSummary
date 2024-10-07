@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Ceph 的限制和约束 会议时间： 2023年11月（具体日期未提及） 参会人员： Las（Sousa 公司 Ceph 研发人员）及其他未提及人员 会议内容：  Ceph 的优势：  适用于超大规模存储系统，如 CERN 等。 具备高可用性和可靠性。 支持多种存储协议，如 POSIX 文件系统、对象存储等。 具备良好的扩展性。  Ceph 的限制：  对于小规模集群，性能可能">
+    <meta name="keywords" content="Ceph,分布式存储,存储优化,存储架构,限制与挑战">
+    <meta name="description" content="[改进后的中文总结内容] 改进后的中文总结内容 会议纪要 会议主题： Ceph 的限制与挑战 会议时间： 2023年11月（具体日期未提及） 参会人员： Las（SUSE 公司 Ceph 研发人员）及其他未提及人员 会议内容：  Ceph 的优势：  适用于超大规模存储系统，如 CERN 等。 具备高可用性和可靠性。 支持多种存储协议，如 POSIX 文件系统、对象存储等。 具备良好的扩展性。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Failing Better - When Not To Ceph and Lessons Learned - Lars Marowsky-Brée, SUSE">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Failing_Better_-_When_Not_To_Ceph_and_Lessons_Learned_-_Lars_Marowsky-Bree_SUSE/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Ceph 的限制和约束 会议时间： 2023年11月（具体日期未提及） 参会人员： Las（Sousa 公司 Ceph 研发人员）及其他未提及人员 会议内容：  Ceph 的优势：  适用于超大规模存储系统，如 CERN 等。 具备高可用性和可靠性。 支持多种存储协议，如 POSIX 文件系统、对象存储等。 具备良好的扩展性。  Ceph 的限制：  对于小规模集群，性能可能">
+<meta property="og:description" content="[改进后的中文总结内容] 改进后的中文总结内容 会议纪要 会议主题： Ceph 的限制与挑战 会议时间： 2023年11月（具体日期未提及） 参会人员： Las（SUSE 公司 Ceph 研发人员）及其他未提及人员 会议内容：  Ceph 的优势：  适用于超大规模存储系统，如 CERN 等。 具备高可用性和可靠性。 支持多种存储协议，如 POSIX 文件系统、对象存储等。 具备良好的扩展性。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="存储优化">
+<meta property="article:tag" content="存储架构">
+<meta property="article:tag" content="限制与挑战">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,10 +183,12 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议主题</strong>： Ceph 的限制和约束</p>
+            <p>[改进后的中文总结内容]</p>
+<p><strong>改进后的中文总结内容</strong></p>
+<p><strong>会议纪要</strong></p>
+<p><strong>会议主题</strong>： Ceph 的限制与挑战</p>
 <p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>参会人员</strong>： Las（Sousa 公司 Ceph
+<p><strong>参会人员</strong>： Las（SUSE 公司 Ceph
 研发人员）及其他未提及人员</p>
 <p><strong>会议内容</strong>：</p>
 <ul>
@@ -215,6 +222,22 @@
 <li>需要考虑数据恢复时间和成本。</li>
 <li>需要关注性能和延迟。</li>
 </ul></li>
+<li><strong>Ceph 的架构设计</strong>：
+<ul>
+<li>Ceph 设计之初即针对超大规模存储系统，以 CRUSH
+算法、高可用性、可扩展性、对象存储、块存储和文件系统存储等为核心特性。</li>
+<li>Ceph
+在一致性、去中心化、性能和安全性方面进行了权衡，提供了高可靠性但可能牺牲一些性能。</li>
+<li>Ceph 的分布式存储架构依赖于 OSD、MON、MDS、PG、RADOS 等组件，并通过
+librados、libcephfs、cephfs、rbd、radosgw、RGW 等工具提供功能。</li>
+</ul></li>
+<li><strong>Ceph 的性能优化</strong>：
+<ul>
+<li>Ceph
+的性能优化需要考虑网络带宽、延迟、硬件选择、缓存策略等因素。</li>
+<li>需要根据实际工作负载和性能需求调整 Ceph 的配置参数。</li>
+<li>需要关注 Ceph 的性能监控和调优。</li>
+</ul></li>
 </ul>
 <p><strong>行动计划</strong>：</p>
 <ul>
@@ -222,10 +245,11 @@
 <li>根据实际需求选择合适的硬件和网络。</li>
 <li>制定数据恢复策略。</li>
 <li>关注性能和延迟。</li>
+<li>优化 Ceph 的配置参数和性能监控。</li>
 </ul>
 <p><strong>会议总结</strong>：</p>
 <p>Ceph
-是一款功能强大的分布式存储系统，适用于多种场景。但同时也存在一些限制和约束。在部署和使用
+是一款功能强大的分布式存储系统，适用于多种场景。但同时也存在一些限制和挑战。在部署和使用
 Ceph 时，需要充分了解其特性和限制，并根据实际需求进行合理规划。</p>
 
         </div>
@@ -257,6 +281,8 @@ Ceph 时，需要充分了解其特性和限制，并根据实际需求进行合
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E4%BC%98%E5%8C%96/" rel="tag">存储优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E6%9E%B6%E6%9E%84/" rel="tag">存储架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%99%90%E5%88%B6%E4%B8%8E%E6%8C%91%E6%88%98/" rel="tag">限制与挑战</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -316,18 +342,18 @@ Ceph 时，需要充分了解其特性和限制，并根据实际需求进行合
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/Exploring_the_Performance_Limits_of_CephFS_in_Nautilus_-_Manoj_Pillai_Red_Hat/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Day_2_Operations_-_Make_Friends_with_Your_Ceph_Cluster_-_Adrien_Gillard_Pictime_Groupe/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Exploring the Performance Limits of CephFS in Nautilus - Manoj Pillai, Red Hat</h4>
+        <h4 class="title">&#39;Day 2 Operations : Make Friends with Your Ceph Cluster - Adrien Gillard, Pictime Groupe&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Getting_Started_as_a_Rook-Ceph_Developer_-_Blaine_Gardner_SUSE/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Getting Started as a Rook-Ceph Developer - Blaine Gardner, SUSE</h4>
+        <h4 class="title">&#39;Geographical Redundancy with rbd-mirror: Best... - Florian Haas&#39;</h4>
       </a>
     </div>
   

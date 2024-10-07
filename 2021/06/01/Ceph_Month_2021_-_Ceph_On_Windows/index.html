@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Month 2021: Ceph On Windows | ceph视频总结 | youtube频道总结</title>
+    <title>  Ceph Month 2021: Ceph On Windows   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph与Windows服务器的集成 会议时间：约7分钟 会议参与者：Ceph研发团队、SUSE团队（Lars和Mike）、社区成员 会议背景： Ceph作为最受欢迎的开源分布式存储解决方案之一，与Windows服务器的市场需求相结合，特别是在企业环境中，Windows服务器占有较大市场份额。因此，实现Ceph与Windows服务器的无缝集成，对于满足企业级存储需求至关重要。">
+    <meta name="keywords" content="Ceph,分布式存储,虚拟化,性能优化,Windows服务器集成">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph与Windows服务器的集成方案，以下为会议关键要点：  会议主题：Ceph与Windows服务器的集成。 会议背景：Ceph作为分布式存储解决方案，与Windows服务器在企业环境中的广泛使用相结合，具有重要意义。 讨论的主要议题：  用户需求与市场背景：Windows服务器占企业市场份额大，需要与Ceph集成以满足存储需求。 技术目标与架构设">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Month 2021: Ceph On Windows">
+<meta property="og:title" content="  Ceph Month 2021: Ceph On Windows  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph与Windows服务器的集成 会议时间：约7分钟 会议参与者：Ceph研发团队、SUSE团队（Lars和Mike）、社区成员 会议背景： Ceph作为最受欢迎的开源分布式存储解决方案之一，与Windows服务器的市场需求相结合，特别是在企业环境中，Windows服务器占有较大市场份额。因此，实现Ceph与Windows服务器的无缝集成，对于满足企业级存储需求至关重要。">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph与Windows服务器的集成方案，以下为会议关键要点：  会议主题：Ceph与Windows服务器的集成。 会议背景：Ceph作为分布式存储解决方案，与Windows服务器在企业环境中的广泛使用相结合，具有重要意义。 讨论的主要议题：  用户需求与市场背景：Windows服务器占企业市场份额大，需要与Ceph集成以满足存储需求。 技术目标与架构设">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-31T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-06-01T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="虚拟化">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="Windows服务器集成">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Month 2021: Ceph On Windows</div>
+        <div class="flex-col header-title ellipsis">  Ceph Month 2021: Ceph On Windows  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Month 2021: Ceph On Windows</h1>
+        <h1 class="title">  Ceph Month 2021: Ceph On Windows  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-05-31T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph%E4%B8%8Ewindows%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%9B%86%E6%88%90"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph与Windows服务器的集成</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E7%BA%A67%E5%88%86%E9%92%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：约7分钟</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%8F%82%E4%B8%8E%E8%80%85ceph%E7%A0%94%E5%8F%91%E5%9B%A2%E9%98%9Fsuse%E5%9B%A2%E9%98%9Flars%E5%92%8Cmike%E7%A4%BE%E5%8C%BA%E6%88%90%E5%91%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议参与者：Ceph研发团队、SUSE团队（Lars和Mike）、社区成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%83%8C%E6%99%AF"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议背景：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">讨论的主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定的事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议总结：</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Month_2021_-_Ceph_On_Windows"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Month 2021: Ceph On Windows</h1>
+        <h1 class="post-card-title">  Ceph Month 2021: Ceph On Windows  </h1>
         <div class="post-meta">
             <time class="post-time" title="2021-06-01 00:00:00" datetime="2021-05-31T16:00:00.000Z"  itemprop="datePublished">2021-06-01</time>
 
@@ -185,64 +183,35 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4
-id="会议主题ceph与windows服务器的集成">会议主题：Ceph与Windows服务器的集成</h4>
-<h4 id="会议时间约7分钟">会议时间：约7分钟</h4>
-<h4
-id="会议参与者ceph研发团队suse团队lars和mike社区成员">会议参与者：Ceph研发团队、SUSE团队（Lars和Mike）、社区成员</h4>
-<h4 id="会议背景">会议背景：</h4>
-<p>Ceph作为最受欢迎的开源分布式存储解决方案之一，与Windows服务器的市场需求相结合，特别是在企业环境中，Windows服务器占有较大市场份额。因此，实现Ceph与Windows服务器的无缝集成，对于满足企业级存储需求至关重要。</p>
-<h4 id="讨论的主要议题">讨论的主要议题：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph与Windows服务器的集成方案，以下为会议关键要点：</p>
 <ol type="1">
-<li><strong>用户需求与市场背景</strong>：
+<li><strong>会议主题</strong>：Ceph与Windows服务器的集成。</li>
+<li><strong>会议背景</strong>：Ceph作为分布式存储解决方案，与Windows服务器在企业环境中的广泛使用相结合，具有重要意义。</li>
+<li><strong>讨论的主要议题</strong>：
 <ul>
-<li>Windows服务器在企业中占有较大市场份额，需要与Ceph集成以实现存储解决方案的统一。</li>
-<li>现有解决方案如Sapphire Sketch Gateway存在性能和可扩展性问题。</li>
+<li><strong>用户需求与市场背景</strong>：Windows服务器占企业市场份额大，需要与Ceph集成以满足存储需求。</li>
+<li><strong>技术目标与架构设计</strong>：目标是在Windows上实现接近Linux的用户体验，性能超越现有解决方案，支持主流Windows版本。</li>
+<li><strong>技术实现细节</strong>：包括用户空间组件rbd-wimbd和内核驱动程序VMBD，配置文件位置与Linux一致。</li>
+<li><strong>性能与稳定性</strong>：性能测试显示，新解决方案在某些情况下甚至超过了Linux原生RBD性能。</li>
+<li><strong>安装与部署</strong>：提供MSI安装程序，支持自动化部署，如通过Ansible
+playbook。</li>
+<li><strong>虚拟化支持</strong>：支持Hyper-V和OpenStack，允许在Windows环境中无缝使用Ceph。</li>
 </ul></li>
-<li><strong>技术目标与架构设计</strong>：
-<ul>
-<li>目标是使Windows上的用户体验尽可能接近Linux，减少学习曲线。</li>
-<li>性能上要超越现有的Ice CSI Gateway，并尽可能接近Linux原生性能。</li>
-<li>支持Windows Server 2016、2019及即将发布的2022版本，以及Windows
-10用于开发目的。</li>
-</ul></li>
-<li><strong>技术实现细节</strong>：
-<ul>
-<li>用户空间组件包括rbd-wimbd，通过用户空间DLL连接到VMBD内核模块。</li>
-<li>内核驱动程序VMBD允许创建由网络存储支持的存储，并显示为操作系统内的磁盘。</li>
-<li>配置文件在Windows上的位置与Linux上的/etc相对应，位于Program
-Data目录下。</li>
-</ul></li>
-<li><strong>性能与稳定性</strong>：
-<ul>
-<li>性能测试显示，新解决方案在某些情况下甚至超过了Linux原生RBD性能。</li>
-<li>稳定性方面，已用于生产环境，未收到稳定性问题的报告。</li>
-</ul></li>
-<li><strong>安装与部署</strong>：
-<ul>
-<li>提供MSI安装程序，支持自动化部署，如通过Ansible playbook。</li>
-<li>持续集成构建可在GitHub上获取，确保始终使用最新版本。</li>
-</ul></li>
-<li><strong>虚拟化支持</strong>：
-<ul>
-<li>支持Hyper-V和OpenStack，允许在Windows环境中无缝使用Ceph。</li>
-</ul></li>
-</ol>
-<h4 id="决定的事项">决定的事项：</h4>
+<li><strong>决定的事项</strong>：
 <ul>
 <li>确认了Ceph与Windows服务器集成的技术路线和实现细节。</li>
 <li>确定了支持的Windows版本和性能目标。</li>
 <li>确定了安装程序和部署流程。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划：</h4>
+</ul></li>
+<li><strong>后续行动计划</strong>：
 <ul>
 <li>继续优化性能和稳定性。</li>
 <li>推广新解决方案，收集用户反馈。</li>
 <li>准备参加未来的技术会议，如Cephalocon，以进一步推广和获取市场反馈。</li>
-</ul>
-<h4 id="会议总结">会议总结：</h4>
-<p>本次会议详细讨论了Ceph与Windows服务器的集成方案，包括技术实现、性能优化、安装部署等方面。通过与SUSE的合作，已经取得了显著进展，并准备将解决方案推向市场。感谢所有参与者的贡献，期待未来的进一步合作和成果。</p>
+</ul></li>
+</ol>
+<p>会议总结：Ceph与Windows服务器的集成方案在技术实现、性能优化、安装部署等方面取得了显著进展，为满足企业级存储需求提供了可靠的选择。</p>
 
         </div>
 
@@ -273,6 +242,8 @@ Data目录下。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%9B%86%E6%88%90/" rel="tag">Windows服务器集成</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="tag">虚拟化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -284,7 +255,7 @@ Data目录下。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/&title=《Ceph Month 2021: Ceph On Windows》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/&title=《  Ceph Month 2021: Ceph On Windows  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -294,7 +265,7 @@ Data目录下。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/&title=《Ceph Month 2021: Ceph On Windows》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/&title=《  Ceph Month 2021: Ceph On Windows  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -304,7 +275,7 @@ Data目录下。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Month 2021: Ceph On Windows》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph Month 2021: Ceph On Windows  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -332,18 +303,18 @@ Data目录下。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2021/06/01/2021Q2_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Month 2021: Ceph Project Update</h4>
+        <h4 class="title">2021Q2 Ceph社区季度总结</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Open_Discussion/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Month 2021: Open Discussion</h4>
+        <h4 class="title">&#39;Ceph Month 2021: Ceph Project Update&#39;</h4>
       </a>
     </div>
   
@@ -443,7 +414,7 @@ Data目录下。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/&title=《Ceph Month 2021: Ceph On Windows》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/&title=《  Ceph Month 2021: Ceph On Windows  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -453,7 +424,7 @@ Data目录下。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/&title=《Ceph Month 2021: Ceph On Windows》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/&title=《  Ceph Month 2021: Ceph On Windows  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -463,7 +434,7 @@ Data目录下。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Month 2021: Ceph On Windows》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph Month 2021: Ceph On Windows  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

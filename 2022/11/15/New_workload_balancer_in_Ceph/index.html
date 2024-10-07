@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议参与者  Joe Solomon: 前架构师，现为Red Hat的CTO办公室新兴技术团队成员。 Laura Flores: Red Hat的RADOS核心团队成员，曾参与Telemetry管理模块、BlueStore等工作，目前专注于上游测试。  会议主题  介绍即将在Reef版本中引入的新rebalancer。  讨论内容  动机与背景  在分布式存储系统中，高负载下性能受限于最">
+    <meta name="keywords" content="Ceph,Distributed Storage,Performance Optimization,CRUSH Algorithm,Workload Balancer">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议参与者  Joe Solomon：前架构师，现为Red Hat的CTO办公室新兴技术团队成员。 Laura Flores：Red Hat的RADOS核心团队成员，专注于上游测试。  会议主题  介绍Reef版本中即将引入的新工作负载平衡器。  讨论内容  动机与背景  当前Ceph在高负载下性能受限于最弱环节。 现有容量平衡器保证OSD间容量均匀分布，但未解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="New workload balancer in Ceph">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/11/15/New_workload_balancer_in_Ceph/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议参与者  Joe Solomon: 前架构师，现为Red Hat的CTO办公室新兴技术团队成员。 Laura Flores: Red Hat的RADOS核心团队成员，曾参与Telemetry管理模块、BlueStore等工作，目前专注于上游测试。  会议主题  介绍即将在Reef版本中引入的新rebalancer。  讨论内容  动机与背景  在分布式存储系统中，高负载下性能受限于最">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议参与者  Joe Solomon：前架构师，现为Red Hat的CTO办公室新兴技术团队成员。 Laura Flores：Red Hat的RADOS核心团队成员，专注于上游测试。  会议主题  介绍Reef版本中即将引入的新工作负载平衡器。  讨论内容  动机与背景  当前Ceph在高负载下性能受限于最弱环节。 现有容量平衡器保证OSD间容量均匀分布，但未解">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-11-15T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="CRUSH Algorithm">
+<meta property="article:tag" content="Workload Balancer">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,48 +190,45 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议参与者">会议参与者</h4>
 <ul>
-<li><strong>Joe Solomon</strong>: 前架构师，现为Red
-Hat的CTO办公室新兴技术团队成员。</li>
-<li><strong>Laura Flores</strong>: Red
-Hat的RADOS核心团队成员，曾参与Telemetry管理模块、BlueStore等工作，目前专注于上游测试。</li>
+<li>Joe Solomon：前架构师，现为Red Hat的CTO办公室新兴技术团队成员。</li>
+<li>Laura Flores：Red Hat的RADOS核心团队成员，专注于上游测试。</li>
 </ul>
 <h4 id="会议主题">会议主题</h4>
 <ul>
-<li>介绍即将在Reef版本中引入的新rebalancer。</li>
+<li>介绍Reef版本中即将引入的新工作负载平衡器。</li>
 </ul>
 <h4 id="讨论内容">讨论内容</h4>
 <ol type="1">
 <li><strong>动机与背景</strong>
 <ul>
-<li>在分布式存储系统中，高负载下性能受限于最弱环节。</li>
-<li>现有容量平衡器确保OSD间容量均匀分布，但未解决读取平衡问题。</li>
+<li>当前Ceph在高负载下性能受限于最弱环节。</li>
+<li>现有容量平衡器保证OSD间容量均匀分布，但未解决读取平衡问题。</li>
 <li>CRUSH算法在大型集群中平衡读取，但在小型集群中表现不佳。</li>
 </ul></li>
 <li><strong>现有问题与改进</strong>
 <ul>
-<li>收集了多种系统的OSD Mark文件进行测试。</li>
-<li>重构了现有平衡器代码，使其更易于理解和修改。</li>
-<li>创建了新的工作负载平衡器，考虑读取操作。</li>
+<li>对多种系统OSD Mark文件进行测试。</li>
+<li>重构现有平衡器代码，提高可读性和可修改性。</li>
+<li>创建新的工作负载平衡器，考虑读取操作。</li>
 </ul></li>
 <li><strong>新rebalancer设计</strong>
 <ul>
-<li>新rebalancer将在Reef版本中引入，主要针对小型集群。</li>
-<li>设计基于池的读取平衡，考虑读写工作负载的差异。</li>
-<li>未来版本计划考虑设备大小和动态响应性能波动。</li>
+<li>新rebalancer主要针对小型集群，设计基于池的读取平衡。</li>
+<li>考虑读写工作负载差异，未来版本将考虑设备大小和性能波动。</li>
 </ul></li>
 <li><strong>功能与实现</strong>
 <ul>
-<li>引入新的命令来改变PG的主OSD，不涉及数据移动。</li>
+<li>引入新命令改变PG的主OSD，不涉及数据移动。</li>
 <li>实现两个主要函数：<code>calc desired primary distribution</code>和<code>balanced primaries</code>。</li>
-<li>这些函数位于OSD map代码中，便于未来贡献和优化。</li>
 </ul></li>
 <li><strong>演示与测试</strong>
 <ul>
-<li>展示了如何在不同场景下使用新rebalancer改善读取平衡。</li>
-<li>强调了未来将进行更多的上游测试和性能测试。</li>
+<li>展示了新rebalancer在不同场景下改善读取平衡。</li>
+<li>强调未来将进行更多上游测试和性能测试。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
@@ -251,7 +253,7 @@ Hat的RADOS核心团队成员，曾参与Telemetry管理模块、BlueStore等工
 <li>分享了相关GitHub仓库链接，以便进一步交流和反馈。</li>
 </ul>
 <hr />
-<p>此会议纪要涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划，确保了信息的完整性和准确性。</p>
+<p>本次会议纪要准确反映了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划，并保留了Ceph相关领域的英文原文关键词。</p>
 
         </div>
 
@@ -282,6 +284,8 @@ Hat的RADOS核心团队成员，曾参与Telemetry管理模块、BlueStore等工
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-Algorithm/" rel="tag">CRUSH Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Workload-Balancer/" rel="tag">Workload Balancer</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -343,7 +347,7 @@ Hat的RADOS核心团队成员，曾参与Telemetry管理模块、BlueStore等工
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/11/15/DisTRaC_-_Accelerating_High-Performance_Compute_Processing_for_Temporary_Data_Storage/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">DisTRaC: Accelerating High-Performance Compute Processing for Temporary Data Storage</h4>
+        <h4 class="title">&#39;DisTRaC: Accelerating High-Performance Compute Processing for Temporary Data Storage&#39;</h4>
       </a>
     </div>
   

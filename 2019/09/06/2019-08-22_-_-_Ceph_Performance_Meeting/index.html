@@ -14,23 +14,28 @@
     
     
     
-    <title>2019-08-22 :: Ceph Performance Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2019-08-22 :: Ceph性能会议&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议主题： Ceph分布式存储项目进展及讨论 会议内容：  项目进展：  已合并的PR：  增加East Heart缓冲区大小至64K Sage的64K Yarn调整  待处理的PR：  Casey的关于扩展LTTE Angie跟踪点的PR Alec关于64K大小的Yarn的PR Sam的关于扩展LTTE Angie跟踪">
+    <meta name="keywords" content="Ceph,分布式存储,对象存储,性能优化,基准测试">
+    <meta name="description" content="[改进后的中文总结内容] 2019年8月22日，Ceph项目团队召开了一次性能会议，讨论了Ceph分布式存储项目的进展、讨论的主要议题、决定的事项以及后续的行动计划。 会议内容：  项目进展：  已合并的Pull Requests (PR) 包括增加East Heart缓冲区大小至64K，Sage的64K Yarn调整等。 待处理的PR包括Casey关于扩展LTTE Angie跟踪点的PR，Ale">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-08-22 :: Ceph Performance Meeting">
+<meta property="og:title" content="&#39;2019-08-22 :: Ceph性能会议&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/09/06/2019-08-22_-_-_Ceph_Performance_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议主题： Ceph分布式存储项目进展及讨论 会议内容：  项目进展：  已合并的PR：  增加East Heart缓冲区大小至64K Sage的64K Yarn调整  待处理的PR：  Casey的关于扩展LTTE Angie跟踪点的PR Alec关于64K大小的Yarn的PR Sam的关于扩展LTTE Angie跟踪">
+<meta property="og:description" content="[改进后的中文总结内容] 2019年8月22日，Ceph项目团队召开了一次性能会议，讨论了Ceph分布式存储项目的进展、讨论的主要议题、决定的事项以及后续的行动计划。 会议内容：  项目进展：  已合并的Pull Requests (PR) 包括增加East Heart缓冲区大小至64K，Sage的64K Yarn调整等。 待处理的PR包括Casey关于扩展LTTE Angie跟踪点的PR，Ale">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-09-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-09-05T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="基准测试">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-08-22 :: Ceph Performance Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2019-08-22 :: Ceph性能会议&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-08-22 :: Ceph Performance Meeting</h1>
+        <h1 class="title">&#39;2019-08-22 :: Ceph性能会议&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-09-05T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-08-22 :: Ceph Performance Meeting</h1>
+        <h1 class="post-card-title">'2019-08-22 :: Ceph性能会议'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-09-06 00:00:00" datetime="2019-09-05T16:00:00.000Z"  itemprop="datePublished">2019-09-06</time>
 
@@ -178,60 +183,31 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： [请填写会议时间]</p>
-<p><strong>参会人员</strong>： [请填写参会人员名单]</p>
-<p><strong>会议主题</strong>： Ceph分布式存储项目进展及讨论</p>
+            <p>[改进后的中文总结内容]</p>
+<p>2019年8月22日，Ceph项目团队召开了一次性能会议，讨论了Ceph分布式存储项目的进展、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 <p><strong>会议内容</strong>：</p>
 <ul>
 <li><strong>项目进展</strong>：
 <ul>
-<li>已合并的PR：
-<ul>
-<li>增加East Heart缓冲区大小至64K</li>
-<li>Sage的64K Yarn调整</li>
-</ul></li>
-<li>待处理的PR：
-<ul>
-<li>Casey的关于扩展LTTE Angie跟踪点的PR</li>
-<li>Alec关于64K大小的Yarn的PR</li>
-<li>Sam的关于扩展LTTE Angie跟踪点的PR</li>
-<li>雷达后端复制的PR（Radek审查，有关于CPU使用率的担忧）</li>
-<li>Ken Adams的PR（Josh审查，表示感谢）</li>
-<li>调整MVS缓存内存限制的PR（仍在进行中）</li>
-<li>分布式数据缓存RGW的PR（Mark Hogan正在工作）</li>
-</ul></li>
-<li>其他进展：
-<ul>
-<li>Igor更新了其新的较小版本的Blue
-Store，该版本可以智能地选择文件存储位置。</li>
-<li>Eager功能正在开发中。</li>
-<li>Sam的PR旨在扩展LTTE Angie跟踪点，但存在一些关于安全性的担忧。</li>
-<li>雷达后端的PR已通过审查，但仍有一些关于CPU使用率的担忧。</li>
-<li>Ken Adams的PR已通过Josh的审查。</li>
-<li>MVS缓存内存限制的调整PR仍在进行中。</li>
-<li>分布式数据缓存RGW的PR由Mark Hogan负责。</li>
-</ul></li>
+<li>已合并的Pull Requests (PR) 包括增加East
+Heart缓冲区大小至64K，Sage的64K Yarn调整等。</li>
+<li>待处理的PR包括Casey关于扩展LTTE
+Angie跟踪点的PR，Alec关于64K大小的Yarn的PR，Sam关于扩展LTTE
+Angie跟踪点的PR，雷达后端复制的PR，Ken
+Adams的PR，调整MVS缓存内存限制的PR，分布式数据缓存RGW的PR等。</li>
+<li>其他进展包括Igor更新了新的较小版本的Blue
+Store，Eager功能正在开发中，Sam的PR旨在扩展LTTE
+Angie跟踪点，雷达后端的PR已通过审查，MVS缓存内存限制的调整PR仍在进行中，分布式数据缓存RGW的PR由Mark
+Hogan负责。</li>
 </ul></li>
 <li><strong>讨论议题</strong>：
 <ul>
 <li><strong>新的S3基准测试</strong>：
-<ul>
-<li>会议讨论了新的S3基准测试，该测试旨在提供一个轻量级、快速、易于使用的工具，以展示Ceph的功能。</li>
-<li>该测试旨在解决现有基准测试工具的不足，例如GetPut的速度较慢，并且需要大量的CPU资源。</li>
-<li>测试结果表明，Ceph在多分片情况下具有更高的性能。</li>
-</ul></li>
+讨论了新的S3基准测试，旨在提供一个轻量级、快速、易于使用的工具，以展示Ceph的功能。</li>
 <li><strong>桶重组</strong>：
-<ul>
-<li>会议讨论了桶重组的性能问题，特别是关于CPU使用率和延迟的问题。</li>
-<li>讨论了将桶重组检查移至后台线程的提案，以减少性能影响。</li>
-<li>讨论了通过调整重组算法来提高性能的提案。</li>
-</ul></li>
+讨论了桶重组的性能问题，特别是关于CPU使用率和延迟的问题。</li>
 <li><strong>对象存储优化</strong>：
-<ul>
-<li>讨论了对象存储优化，特别是关于减少写放大和空间放大的问题。</li>
-<li>讨论了使用T-rex DB等工具来优化对象存储的提案。</li>
-</ul></li>
+讨论了对象存储优化，特别是关于减少写放大和空间放大的问题。</li>
 </ul></li>
 <li><strong>决定事项</strong>：
 <ul>
@@ -239,17 +215,14 @@ Store，该版本可以智能地选择文件存储位置。</li>
 <li>将继续优化桶重组和对象存储。</li>
 <li>将审查和合并待处理的PR。</li>
 </ul></li>
-</ul>
-<p><strong>后续行动计划</strong>：</p>
+<li><strong>后续行动计划</strong>：
 <ul>
 <li>继续开发新的S3基准测试。</li>
 <li>优化桶重组和对象存储。</li>
 <li>审查和合并待处理的PR。</li>
-<li>讨论和实施关于桶重组和对象存储优化的提案。</li>
+</ul></li>
 </ul>
-<p><strong>备注</strong>：</p>
-<ul>
-<li>会议中提到了一些计算机科学/ceph相关领域英文原文的关键词，例如：
+<p><strong>会议中提到的关键词</strong>：</p>
 <ul>
 <li>Ceph</li>
 <li>Blue Store</li>
@@ -269,8 +242,8 @@ Store，该版本可以智能地选择文件存储位置。</li>
 <li>OMAP</li>
 <li>Write amplification</li>
 <li>Space amplification</li>
-</ul></li>
 </ul>
+<p>改进后的总结更准确地反映了原始内容的要点，包括会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。同时，保留了计算机科学/ceph相关领域的英文原文关键词，以便读者更好地理解会议内容。</p>
 
         </div>
 
@@ -301,6 +274,8 @@ Store，该版本可以智能地选择文件存储位置。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/" rel="tag">基准测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -312,7 +287,7 @@ Store，该版本可以智能地选择文件存储位置。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-22_-_-_Ceph_Performance_Meeting/&title=《2019-08-22 :: Ceph Performance Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-22_-_-_Ceph_Performance_Meeting/&title=《'2019-08-22 :: Ceph性能会议'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -322,7 +297,7 @@ Store，该版本可以智能地选择文件存储位置。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-22_-_-_Ceph_Performance_Meeting/&title=《2019-08-22 :: Ceph Performance Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-22_-_-_Ceph_Performance_Meeting/&title=《'2019-08-22 :: Ceph性能会议'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -332,7 +307,7 @@ Store，该版本可以智能地选择文件存储位置。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-08-22 :: Ceph Performance Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-22_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-08-22 :: Ceph性能会议'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-22_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -360,18 +335,18 @@ Store，该版本可以智能地选择文件存储位置。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/09/06/2019-09-02_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/09/06/2019-08-21_-_-_Ceph_Testing_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-09-02 :: Ceph Orchestration Meeting</h4>
+        <h4 class="title"> 2019-08-21 :: Ceph Testing Meeting </h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/09/06/2019-09-03_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/09/06/2019-08-26_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-09-03 :: Crimson SeaStor OSD Weekly Meeting</h4>
+        <h4 class="title">  2019-08-26 :: Ceph Orchestration Meeting  </h4>
       </a>
     </div>
   
@@ -471,7 +446,7 @@ Store，该版本可以智能地选择文件存储位置。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-22_-_-_Ceph_Performance_Meeting/&title=《2019-08-22 :: Ceph Performance Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-22_-_-_Ceph_Performance_Meeting/&title=《'2019-08-22 :: Ceph性能会议'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -481,7 +456,7 @@ Store，该版本可以智能地选择文件存储位置。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-22_-_-_Ceph_Performance_Meeting/&title=《2019-08-22 :: Ceph Performance Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-22_-_-_Ceph_Performance_Meeting/&title=《'2019-08-22 :: Ceph性能会议'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -491,7 +466,7 @@ Store，该版本可以智能地选择文件存储位置。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-08-22 :: Ceph Performance Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-22_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-08-22 :: Ceph性能会议'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-22_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

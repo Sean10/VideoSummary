@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Developer Summit Quincy: CI | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 开发者峰会 Quincy：CI | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：测试基础设施改进讨论 参会人员：David Galloway等 会议时间：[具体时间] 会议地点：[具体地点] 主要议题：  Jenkins作业和构建器的可靠性改进  讨论了Jenkins作业中存在的竞争条件问题，建议增加详细日志记录并延长日志存储时间。 提出了设置预生产环境，以便在实际部署前更广泛地测试更改。  测试环境的改进  讨论了如何改进测试节点升级或添加新补丁包时的现">
+    <meta name="keywords" content="Ceph,Jenkins,CI/CD,Cephadm,测试基础设施">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：测试基础设施改进讨论 参会人员：David Galloway等 会议时间：[具体时间] 会议地点：[具体地点] 主要议题：  Jenkins作业和构建器的可靠性改进：  讨论了Jenkins作业中存在的竞争条件问题，建议增加详细日志记录并延长日志存储时间。 提出了设置预生产环境，以便在实际部署前更广泛地测试更改。  测试环境的改进：  讨论了如何改进测">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Developer Summit Quincy: CI">
+<meta property="og:title" content="Ceph 开发者峰会 Quincy：CI">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CI/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：测试基础设施改进讨论 参会人员：David Galloway等 会议时间：[具体时间] 会议地点：[具体地点] 主要议题：  Jenkins作业和构建器的可靠性改进  讨论了Jenkins作业中存在的竞争条件问题，建议增加详细日志记录并延长日志存储时间。 提出了设置预生产环境，以便在实际部署前更广泛地测试更改。  测试环境的改进  讨论了如何改进测试节点升级或添加新补丁包时的现">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：测试基础设施改进讨论 参会人员：David Galloway等 会议时间：[具体时间] 会议地点：[具体地点] 主要议题：  Jenkins作业和构建器的可靠性改进：  讨论了Jenkins作业中存在的竞争条件问题，建议增加详细日志记录并延长日志存储时间。 提出了设置预生产环境，以便在实际部署前更广泛地测试更改。  测试环境的改进：  讨论了如何改进测">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-11T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-04-12T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Jenkins">
+<meta property="article:tag" content="CI&#x2F;CD">
+<meta property="article:tag" content="Cephadm">
+<meta property="article:tag" content="测试基础设施">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Developer Summit Quincy: CI</div>
+        <div class="flex-col header-title ellipsis">Ceph 开发者峰会 Quincy：CI</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Developer Summit Quincy: CI</h1>
+        <h1 class="title">Ceph 开发者峰会 Quincy：CI</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-04-11T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Developer Summit Quincy: CI</h1>
+        <h1 class="post-card-title">Ceph 开发者峰会 Quincy：CI</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-04-12 00:00:00" datetime="2021-04-11T16:00:00.000Z"  itemprop="datePublished">2021-04-12</time>
 
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
 id="会议主题测试基础设施改进讨论">会议主题：测试基础设施改进讨论</h4>
 <h4 id="参会人员david-galloway等">参会人员：David Galloway等</h4>
@@ -193,44 +199,44 @@ id="会议主题测试基础设施改进讨论">会议主题：测试基础设�
 <h4 id="会议地点具体地点">会议地点：[具体地点]</h4>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
-<li><strong>Jenkins作业和构建器的可靠性改进</strong>
+<li><strong>Jenkins作业和构建器的可靠性改进</strong>：
 <ul>
 <li>讨论了Jenkins作业中存在的竞争条件问题，建议增加详细日志记录并延长日志存储时间。</li>
 <li>提出了设置预生产环境，以便在实际部署前更广泛地测试更改。</li>
 </ul></li>
-<li><strong>测试环境的改进</strong>
+<li><strong>测试环境的改进</strong>：
 <ul>
 <li>讨论了如何改进测试节点升级或添加新补丁包时的现有设置。</li>
 <li>提出了使用临时Jenkins实例进行更详细的测试。</li>
 </ul></li>
-<li><strong>PR标签和优先级</strong>
+<li><strong>PR标签和优先级</strong>：
 <ul>
 <li>讨论了如何标记对构建器测试设置修复重要的PR，以便更容易识别和优先审查。</li>
 </ul></li>
-<li><strong>日志和调试改进</strong>
+<li><strong>日志和调试改进</strong>：
 <ul>
 <li>讨论了如何改进Jenkins日志，使其更易于调试，特别是在make
 check测试中。</li>
 <li>提出了使用CTest输出机器可读信息，以便更容易识别失败的单个测试。</li>
 </ul></li>
-<li><strong>元数据和机器信息</strong>
+<li><strong>元数据和机器信息</strong>：
 <ul>
 <li>讨论了在Jenkins作业中包含更多关于运行作业的机器的元数据，以便更好地识别特定发行版或机器类型上的问题。</li>
 </ul></li>
-<li><strong>已知竞争条件的处理</strong>
+<li><strong>已知竞争条件的处理</strong>：
 <ul>
 <li>讨论了如何处理已知的难以调试的竞争条件，建议Jenkins能够自动重新运行遇到已知问题的作业。</li>
 </ul></li>
-<li><strong>集成测试和Cephadm的改进</strong>
+<li><strong>集成测试和Cephadm的改进</strong>：
 <ul>
 <li>讨论了如何改进集成测试，特别是通过Cephadm部署和管理集群的能力。</li>
 <li>提出了增加更多工具和框架，如CBT，以收集更多运行时的资源利用信息。</li>
 </ul></li>
-<li><strong>容器构建过程的改进</strong>
+<li><strong>容器构建过程的改进</strong>：
 <ul>
 <li>讨论了容器构建过程的脆弱性，建议将Dockerfile移到Ceph树中，以简化容器构建过程。</li>
 </ul></li>
-<li><strong>降级测试</strong>
+<li><strong>降级测试</strong>：
 <ul>
 <li>讨论了降级测试的重要性，建议创建一个专门的降级测试套件。</li>
 </ul></li>
@@ -295,6 +301,8 @@ CBT等，是Ceph分布式存储系统开发和测试中的关键组件。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CI-CD/" rel="tag">CI&#x2F;CD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cephadm/" rel="tag">Cephadm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Jenkins/" rel="tag">Jenkins</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/" rel="tag">测试基础设施</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -306,7 +314,7 @@ CBT等，是Ceph分布式存储系统开发和测试中的关键组件。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CI/&title=《Ceph Developer Summit Quincy: CI》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CI/&title=《Ceph 开发者峰会 Quincy：CI》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -316,7 +324,7 @@ CBT等，是Ceph分布式存储系统开发和测试中的关键组件。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CI/&title=《Ceph Developer Summit Quincy: CI》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CI/&title=《Ceph 开发者峰会 Quincy：CI》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -326,7 +334,7 @@ CBT等，是Ceph分布式存储系统开发和测试中的关键组件。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Developer Summit Quincy: CI》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CI/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 开发者峰会 Quincy：CI》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CI/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -356,7 +364,7 @@ CBT等，是Ceph分布式存储系统开发和测试中的关键组件。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/04/14/Ceph_Orchestrator_Meeting_2021-04-13/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Orchestrator Meeting 2021-04-13</h4>
+        <h4 class="title">  Ceph Orchestrator Meeting 2021-04-13  </h4>
       </a>
     </div>
   
@@ -365,7 +373,7 @@ CBT等，是Ceph分布式存储系统开发和测试中的关键组件。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CephFS/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Developer Summit Quincy: CephFS</h4>
+        <h4 class="title">&#39;Ceph Developer Summit Quincy: CephFS&#39;</h4>
       </a>
     </div>
   
@@ -465,7 +473,7 @@ CBT等，是Ceph分布式存储系统开发和测试中的关键组件。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CI/&title=《Ceph Developer Summit Quincy: CI》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CI/&title=《Ceph 开发者峰会 Quincy：CI》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -475,7 +483,7 @@ CBT等，是Ceph分布式存储系统开发和测试中的关键组件。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CI/&title=《Ceph Developer Summit Quincy: CI》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CI/&title=《Ceph 开发者峰会 Quincy：CI》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -485,7 +493,7 @@ CBT等，是Ceph分布式存储系统开发和测试中的关键组件。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Developer Summit Quincy: CI》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CI/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 开发者峰会 Quincy：CI》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CI/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

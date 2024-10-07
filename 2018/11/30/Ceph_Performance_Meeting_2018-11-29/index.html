@@ -14,23 +14,29 @@
     
     
     
-    <title>Ceph Performance Meeting 2018-11-29 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 性能会议纪要 2018-11-29 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： Greg, Mark, Sage, Erratic, George, Radek 等 会议主题： Ceph分布式存储项目进展及讨论 关键细节：  会议开始： 由于Mark的麦克风问题，会议开始时未能听到其声音，后来问题解决。 两周工作进展： 本次会议回顾了过去两周的Pull Requests (PRs)，并讨论了合并的PRs。">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,CRUSH 算法,性能优化,可伸缩性">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2018年11月29日 参会人员： Greg, Mark, Sage, Erratic, George, Radek 等 会议主题： Ceph 分布式存储项目进展及讨论 关键细节：  会议开始： 由于 Mark 的麦克风问题，会议开始时未能听到其声音，后来问题解决。 两周工作进展： 会议回顾了过去两周的 Pull Requests (PRs)，并讨论">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2018-11-29">
+<meta property="og:title" content="Ceph 性能会议纪要 2018-11-29">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/11/30/Ceph_Performance_Meeting_2018-11-29/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： Greg, Mark, Sage, Erratic, George, Radek 等 会议主题： Ceph分布式存储项目进展及讨论 关键细节：  会议开始： 由于Mark的麦克风问题，会议开始时未能听到其声音，后来问题解决。 两周工作进展： 本次会议回顾了过去两周的Pull Requests (PRs)，并讨论了合并的PRs。">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2018年11月29日 参会人员： Greg, Mark, Sage, Erratic, George, Radek 等 会议主题： Ceph 分布式存储项目进展及讨论 关键细节：  会议开始： 由于 Mark 的麦克风问题，会议开始时未能听到其声音，后来问题解决。 两周工作进展： 会议回顾了过去两周的 Pull Requests (PRs)，并讨论">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-11-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-11-30T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH 算法">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="可伸缩性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2018-11-29</div>
+        <div class="flex-col header-title ellipsis">Ceph 性能会议纪要 2018-11-29</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2018-11-29</h1>
+        <h1 class="title">Ceph 性能会议纪要 2018-11-29</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-11-29T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -142,7 +148,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a></li></ul>
 
             
         </h5>
@@ -168,12 +174,12 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2018-11-29</h1>
+        <h1 class="post-card-title">Ceph 性能会议纪要 2018-11-29</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-11-30 00:00:00" datetime="2018-11-29T16:00:00.000Z"  itemprop="datePublished">2018-11-30</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a></li></ul>
 
 
 
@@ -185,71 +191,71 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议时间</strong>： 2018年11月29日</p>
 <p><strong>参会人员</strong>： Greg, Mark, Sage, Erratic, George, Radek
 等</p>
-<p><strong>会议主题</strong>： Ceph分布式存储项目进展及讨论</p>
+<p><strong>会议主题</strong>： Ceph 分布式存储项目进展及讨论</p>
 <p><strong>关键细节</strong>：</p>
 <ul>
-<li><strong>会议开始</strong>：
-由于Mark的麦克风问题，会议开始时未能听到其声音，后来问题解决。</li>
-<li><strong>两周工作进展</strong>： 本次会议回顾了过去两周的Pull
-Requests (PRs)，并讨论了合并的PRs。</li>
-<li><strong>PG状态统计</strong>：
-讨论了PG状态统计的合并情况，尽管某些PR已合并，但仍有部分PR需要处理。</li>
-<li><strong>复杂性问题</strong>：
-讨论了Ceph中某些复杂性问题，特别是与Buffer List相关的性能问题。</li>
-<li><strong>Crimson项目</strong>：
-讨论了Crimson项目的进展，该项目旨在简化Ceph的I/O路径，并使用C
-Star缓冲区。</li>
-<li><strong>LVM性能问题</strong>：
-讨论了用户在LVM设备上部署Ceph时遇到性能下降的问题，可能与XFS和NVMe驱动程序有关。</li>
-<li><strong>Buffer List优化</strong>： 讨论了Buffer
-List的优化方案，包括减少共享行为和使用内存复制等。</li>
-<li><strong>PG日志恢复</strong>：
-讨论了PG日志恢复的优化方案，包括实现不基于日志的PG，并重构相关代码。</li>
+<li><strong>会议开始</strong>： 由于 Mark
+的麦克风问题，会议开始时未能听到其声音，后来问题解决。</li>
+<li><strong>两周工作进展</strong>： 会议回顾了过去两周的 Pull Requests
+(PRs)，并讨论了合并的 PRs。</li>
+<li><strong>PG 状态统计</strong>： 讨论了 PG
+状态统计的合并情况，尽管某些 PR 已合并，但仍有部分 PR 需要处理。</li>
+<li><strong>复杂性问题</strong>： 讨论了 Ceph 中某些复杂性问题，特别是与
+Buffer List 相关的性能问题。</li>
+<li><strong>Crimson 项目</strong>： 讨论了 Crimson
+项目的进展，该项目旨在简化 Ceph 的 I/O 路径，并使用 C Star 缓冲区。</li>
+<li><strong>LVM 性能问题</strong>： 讨论了用户在 LVM 设备上部署 Ceph
+时遇到性能下降的问题，可能与 XFS 和 NVMe 驱动程序有关。</li>
+<li><strong>Buffer List 优化</strong>： 讨论了 Buffer List
+的优化方案，包括减少共享行为和使用内存复制等。</li>
+<li><strong>PG 日志恢复</strong>： 讨论了 PG
+日志恢复的优化方案，包括实现不基于日志的 PG，并重构相关代码。</li>
 </ul>
 <p><strong>讨论的主要议题</strong>：</p>
 <ul>
-<li><strong>Buffer List的复杂性问题</strong>： 会议上重点讨论了Buffer
-List的复杂性问题，包括共享行为、内存复制等。</li>
-<li><strong>Crimson项目的进展</strong>：
-讨论了Crimson项目的进展，以及如何简化Ceph的I/O路径。</li>
-<li><strong>LVM性能问题</strong>：
-讨论了用户在LVM设备上部署Ceph时遇到性能下降的问题，并提出了可能的解决方案。</li>
-<li><strong>Buffer List优化方案</strong>： 讨论了多种优化Buffer
-List的方案，包括减少共享行为和使用内存复制等。</li>
-<li><strong>PG日志恢复的优化方案</strong>：
-讨论了PG日志恢复的优化方案，包括实现不基于日志的PG，并重构相关代码。</li>
+<li><strong>Buffer List 的复杂性问题</strong>： 会议上重点讨论了 Buffer
+List 的复杂性问题，包括共享行为、内存复制等。</li>
+<li><strong>Crimson 项目的进展</strong>： 讨论了 Crimson
+项目的进展，以及如何简化 Ceph 的 I/O 路径。</li>
+<li><strong>LVM 性能问题</strong>： 讨论了用户在 LVM 设备上部署 Ceph
+时遇到性能下降的问题，并提出了可能的解决方案。</li>
+<li><strong>Buffer List 优化方案</strong>： 讨论了多种优化 Buffer List
+的方案，包括减少共享行为和使用内存复制等。</li>
+<li><strong>PG 日志恢复的优化方案</strong>： 讨论了 PG
+日志恢复的优化方案，包括实现不基于日志的 PG，并重构相关代码。</li>
 </ul>
 <p><strong>决定的事项</strong>：</p>
 <ul>
-<li><strong>继续优化Buffer List</strong>： 会议决定继续优化Buffer
+<li><strong>继续优化 Buffer List</strong>： 会议决定继续优化 Buffer
 List，包括减少共享行为和使用内存复制等。</li>
-<li><strong>关注Crimson项目的进展</strong>：
-会议决定关注Crimson项目的进展，并评估其对Ceph性能的影响。</li>
-<li><strong>调查LVM性能问题的原因</strong>：
-会议决定调查LVM性能问题的原因，并寻找可能的解决方案。</li>
-<li><strong>重构PG日志恢复相关代码</strong>：
-会议决定重构PG日志恢复相关代码，以优化性能。</li>
+<li><strong>关注 Crimson 项目的进展</strong>： 会议决定关注 Crimson
+项目的进展，并评估其对 Ceph 性能的影响。</li>
+<li><strong>调查 LVM 性能问题的原因</strong>： 会议决定调查 LVM
+性能问题的原因，并寻找可能的解决方案。</li>
+<li><strong>重构 PG 日志恢复相关代码</strong>： 会议决定重构 PG
+日志恢复相关代码，以优化性能。</li>
 </ul>
 <p><strong>后续行动计划</strong>：</p>
 <ul>
-<li><strong>Greg</strong>： 调查Buffer
-List的优化方案，并编写相关代码。</li>
-<li><strong>Mark</strong>：
-关注Crimson项目的进展，并评估其对Ceph性能的影响。</li>
-<li><strong>Sage</strong>：
-调查LVM性能问题的原因，并寻找可能的解决方案。</li>
-<li><strong>Erratic</strong>：
-与其他团队成员合作，重构PG日志恢复相关代码。</li>
+<li><strong>Greg</strong>： 调查 Buffer List
+的优化方案，并编写相关代码。</li>
+<li><strong>Mark</strong>： 关注 Crimson 项目的进展，并评估其对 Ceph
+性能的影响。</li>
+<li><strong>Sage</strong>： 调查 LVM
+性能问题的原因，并寻找可能的解决方案。</li>
+<li><strong>Erratic</strong>： 与其他团队成员合作，重构 PG
+日志恢复相关代码。</li>
 </ul>
 <p><strong>备注</strong>：</p>
 <ul>
-<li>会议中提到了Ceph中的一些技术术语，如PG、Buffer
-List、Crimson等。</li>
-<li>会议中讨论了一些开源项目的进展，如LVM、XFS等。</li>
+<li>会议中提到了 Ceph 中的一些技术术语，如 PG、Buffer List、Crimson
+等。</li>
+<li>会议中讨论了一些开源项目的进展，如 LVM、XFS 等。</li>
 </ul>
 
         </div>
@@ -281,6 +287,8 @@ List、Crimson等。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-%E7%AE%97%E6%B3%95/" rel="tag">CRUSH 算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -292,7 +300,7 @@ List、Crimson等。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/11/30/Ceph_Performance_Meeting_2018-11-29/&title=《Ceph Performance Meeting 2018-11-29》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/11/30/Ceph_Performance_Meeting_2018-11-29/&title=《Ceph 性能会议纪要 2018-11-29》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -302,7 +310,7 @@ List、Crimson等。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/11/30/Ceph_Performance_Meeting_2018-11-29/&title=《Ceph Performance Meeting 2018-11-29》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/11/30/Ceph_Performance_Meeting_2018-11-29/&title=《Ceph 性能会议纪要 2018-11-29》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -312,7 +320,7 @@ List、Crimson等。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2018-11-29》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/11/30/Ceph_Performance_Meeting_2018-11-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议纪要 2018-11-29》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/11/30/Ceph_Performance_Meeting_2018-11-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -349,9 +357,9 @@ List、Crimson等。</li>
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2018/11/30/Ceph_code_walkthrough_-_BlueStore_cache_autotuning/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2018/11/29/Ceph_Testing_Weekly_2018-11-28/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph code walkthrough: BlueStore cache autotuning</h4>
+        <h4 class="title">Ceph Testing Weekly 2018-11-28</h4>
       </a>
     </div>
   
@@ -451,7 +459,7 @@ List、Crimson等。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/11/30/Ceph_Performance_Meeting_2018-11-29/&title=《Ceph Performance Meeting 2018-11-29》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/11/30/Ceph_Performance_Meeting_2018-11-29/&title=《Ceph 性能会议纪要 2018-11-29》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -461,7 +469,7 @@ List、Crimson等。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/11/30/Ceph_Performance_Meeting_2018-11-29/&title=《Ceph Performance Meeting 2018-11-29》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/11/30/Ceph_Performance_Meeting_2018-11-29/&title=《Ceph 性能会议纪要 2018-11-29》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -471,7 +479,7 @@ List、Crimson等。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2018-11-29》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/11/30/Ceph_Performance_Meeting_2018-11-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议纪要 2018-11-29》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/11/30/Ceph_Performance_Meeting_2018-11-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

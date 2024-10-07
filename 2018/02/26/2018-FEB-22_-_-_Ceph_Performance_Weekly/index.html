@@ -14,23 +14,31 @@
     
     
     
-    <title>2018-FEB-22 :: Ceph Performance Weekly | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2018-FEB-22 :: Ceph Performance Weekly&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： Peter, Mark, Assaf, David, John, Josh, 等 会议主题： Ceph分布式存储性能优化与问题解决 关键细节：  性能优化：  Peter修复了OP Tracker缓慢的问题，性能提升明显。 Mark对标记压缩进行优化，提高了插入和删除效率。 Assaf对RBD进行优化，避免了不必要的内存分配。">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,RocksDB,缓存,蓝存储,优化,故障转移">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： Peter, Mark, Assaf, David, John, Josh 等 会议主题： Ceph分布式存储性能优化与问题解决 关键细节：  性能优化：  Peter修复了OP Tracker缓慢的问题，显著提升了性能。 Mark对标记压缩进行了优化，提高了插入和删除效率。 Assaf对RBD进行了优">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018-FEB-22 :: Ceph Performance Weekly">
+<meta property="og:title" content="&#39;2018-FEB-22 :: Ceph Performance Weekly&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/02/26/2018-FEB-22_-_-_Ceph_Performance_Weekly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： Peter, Mark, Assaf, David, John, Josh, 等 会议主题： Ceph分布式存储性能优化与问题解决 关键细节：  性能优化：  Peter修复了OP Tracker缓慢的问题，性能提升明显。 Mark对标记压缩进行优化，提高了插入和删除效率。 Assaf对RBD进行优化，避免了不必要的内存分配。">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： Peter, Mark, Assaf, David, John, Josh 等 会议主题： Ceph分布式存储性能优化与问题解决 关键细节：  性能优化：  Peter修复了OP Tracker缓慢的问题，显著提升了性能。 Mark对标记压缩进行了优化，提高了插入和删除效率。 Assaf对RBD进行了优">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-02-25T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-02-26T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="缓存">
+<meta property="article:tag" content="蓝存储">
+<meta property="article:tag" content="优化">
+<meta property="article:tag" content="故障转移">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2018-FEB-22 :: Ceph Performance Weekly</div>
+        <div class="flex-col header-title ellipsis">&#39;2018-FEB-22 :: Ceph Performance Weekly&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +142,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2018-FEB-22 :: Ceph Performance Weekly</h1>
+        <h1 class="title">&#39;2018-FEB-22 :: Ceph Performance Weekly&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-02-25T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +176,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2018-FEB-22 :: Ceph Performance Weekly</h1>
+        <h1 class="post-card-title">'2018-FEB-22 :: Ceph Performance Weekly'</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-02-26 00:00:00" datetime="2018-02-25T16:00:00.000Z"  itemprop="datePublished">2018-02-26</time>
 
@@ -185,45 +193,44 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>参会人员</strong>： Peter, Mark, Assaf, David, John, Josh,
+<p><strong>参会人员</strong>： Peter, Mark, Assaf, David, John, Josh
 等</p>
 <p><strong>会议主题</strong>： Ceph分布式存储性能优化与问题解决</p>
 <p><strong>关键细节</strong>：</p>
 <ul>
 <li><strong>性能优化</strong>：
 <ul>
-<li>Peter修复了OP Tracker缓慢的问题，性能提升明显。</li>
-<li>Mark对标记压缩进行优化，提高了插入和删除效率。</li>
-<li>Assaf对RBD进行优化，避免了不必要的内存分配。</li>
-<li>John对PG日志进行优化，提高了性能。</li>
-<li>David发现并修复了与流调试相关的性能问题。</li>
-<li>Josh对个人对象恢复进行优化。</li>
+<li>Peter修复了OP Tracker缓慢的问题，显著提升了性能。</li>
+<li>Mark对标记压缩进行了优化，提高了插入和删除效率。</li>
+<li>Assaf对RBD进行了优化，避免了不必要的内存分配。</li>
+<li>John对PG日志进行了优化，提升了性能。</li>
+<li>David解决了与流调试相关的性能问题。</li>
+<li>Josh对个人对象恢复进行了优化。</li>
 </ul></li>
 <li><strong>问题解决</strong>：
 <ul>
 <li>Peter通过减少缓存修剪频率，提高了性能。</li>
 <li>Mark优化了BlueStore缓存，减少了内存占用。</li>
-<li>Mark对BlueStore进行重构，简化了代码结构。</li>
+<li>Mark对BlueStore进行了重构，简化了代码结构。</li>
 <li>Peter合并了配置归一化检查和配置选项观察者。</li>
 <li>Assaf优化了对象映射，提高了性能。</li>
-<li>John对BlueStore后端进行更新。</li>
-<li>Josh对BlueStore缓存进行优化。</li>
+<li>John对BlueStore后端进行了更新。</li>
+<li>Josh对BlueStore缓存进行了优化。</li>
 </ul></li>
 <li><strong>讨论议题</strong>：
 <ul>
 <li><strong>BlueStore缓存</strong>：
 <ul>
-<li>目前BlueStore缓存存在复杂性和性能问题。</li>
-<li>讨论了是否应该移除BlueStore缓存，仅使用RocksDB缓存进行元数据存储。</li>
+<li>讨论了BlueStore缓存存在的复杂性和性能问题，考虑移除BlueStore缓存，仅使用RocksDB缓存进行元数据存储。</li>
 <li>认为需要更多数据来了解RocksDB缓存中Bloom过滤器的大小和内存占用。</li>
-<li>认为应该禁用PG元项的Bloom过滤器，并部署测试集群来获取数据。</li>
+<li>讨论了禁用PG元项的Bloom过滤器，并部署测试集群来获取数据。</li>
 </ul></li>
 <li><strong>缓存配置</strong>：
 <ul>
-<li>讨论了缓存配置的复杂性和用户理解难度。</li>
-<li>认为应该简化缓存配置，并提供一个用户友好的设置。</li>
+<li>讨论了缓存配置的复杂性和用户理解难度，认为应该简化缓存配置，并提供一个用户友好的设置。</li>
 <li>认为可以尝试使用简单的启发式方法或更复杂的在线优化模型。</li>
 </ul></li>
 <li><strong>其他</strong>：
@@ -232,17 +239,18 @@
 <li>讨论了编码/解码和CRC计算的优化。</li>
 </ul></li>
 </ul></li>
-</ul>
-<p><strong>决定的事项</strong>：</p>
+<li><strong>决定的事项</strong>：
 <ul>
-<li>Peter将继续测试和优化OP Tracker性能。</li>
-<li>Mark将继续优化标记压缩和BlueStore缓存。</li>
-<li>Assaf将继续优化对象映射。</li>
-<li>John将继续优化PG日志。</li>
-<li>Josh将继续优化个人对象恢复。</li>
-<li>讨论了BlueStore缓存的移除和RocksDB缓存的优化。</li>
-<li>讨论了缓存配置的简化。</li>
-<li>讨论了FIO瓶颈和异步消息传递的性能优化。</li>
+<li>继续测试和优化OP Tracker性能。</li>
+<li>继续优化标记压缩和BlueStore缓存。</li>
+<li>继续优化对象映射。</li>
+<li>继续优化PG日志。</li>
+<li>继续优化个人对象恢复。</li>
+<li>讨论BlueStore缓存的移除和RocksDB缓存的优化。</li>
+<li>讨论缓存配置的简化。</li>
+<li>讨论FIO瓶颈和异步消息传递的性能优化。</li>
+<li>收集更多数据来了解RocksDB缓存中Bloom过滤器的大小和内存占用。</li>
+</ul></li>
 </ul>
 <p><strong>后续行动计划</strong>：</p>
 <ul>
@@ -286,6 +294,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BC%98%E5%8C%96/" rel="tag">优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%85%E9%9A%9C%E8%BD%AC%E7%A7%BB/" rel="tag">故障转移</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%93%9D%E5%AD%98%E5%82%A8/" rel="tag">蓝存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -297,7 +307,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/02/26/2018-FEB-22_-_-_Ceph_Performance_Weekly/&title=《2018-FEB-22 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/02/26/2018-FEB-22_-_-_Ceph_Performance_Weekly/&title=《'2018-FEB-22 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -307,7 +317,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/02/26/2018-FEB-22_-_-_Ceph_Performance_Weekly/&title=《2018-FEB-22 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/02/26/2018-FEB-22_-_-_Ceph_Performance_Weekly/&title=《'2018-FEB-22 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -317,7 +327,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-FEB-22 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/02/26/2018-FEB-22_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-FEB-22 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/02/26/2018-FEB-22_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -356,7 +366,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2018/02/21/2018-FEB-15_-_-_Ceph_Performance_Weekly/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2018-FEB-15 :: Ceph Performance Weekly</h4>
+        <h4 class="title">&#39;2018-FEB-15 :: Ceph Performance Weekly&#39;</h4>
       </a>
     </div>
   
@@ -456,7 +466,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/02/26/2018-FEB-22_-_-_Ceph_Performance_Weekly/&title=《2018-FEB-22 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/02/26/2018-FEB-22_-_-_Ceph_Performance_Weekly/&title=《'2018-FEB-22 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -466,7 +476,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/02/26/2018-FEB-22_-_-_Ceph_Performance_Weekly/&title=《2018-FEB-22 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/02/26/2018-FEB-22_-_-_Ceph_Performance_Weekly/&title=《'2018-FEB-22 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -476,7 +486,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-FEB-22 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/02/26/2018-FEB-22_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-FEB-22 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/02/26/2018-FEB-22_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,29 @@
     
     
     
-    <title>2017-DEC-06 :: Ceph Developer Monthly | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2017-DEC-06 :: Ceph Developer Monthly&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议时间： 2023年11月（具体日期未提及） 参会人员： Josh、Greg、Leo、Eric、Derek、Casey、Adam 等 会议主题： Ceph 项目进展及未来规划 会议内容： 一、Ceph 路线图概述  存储技术发展趋势： 硬盘容量增加，NVMe 成为主流，闪存部署增加，未来将全面转向闪存。 性能重构： 为了充分利用 NVMe 等高性能设备，需要进行性能重构，主要方向包括：  采用">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,对象存储,CRUSH 算法,可扩展性">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了 Ceph 项目的进展和未来规划，涵盖了多个关键议题： 一、Ceph 路线图概述  存储技术发展趋势： 硬盘容量增加，NVMe 成为主流，闪存部署增加，未来将全面转向闪存。 性能重构：  采用 DPDK 和 SPDK 进行网络和存储 IO。 对 OSD 进行大量重构，使其更加模块化、异步和事件驱动。 探索使用未来编程框架，以简化代码并提高可维护性。  代">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017-DEC-06 :: Ceph Developer Monthly">
+<meta property="og:title" content="&#39;2017-DEC-06 :: Ceph Developer Monthly&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2017/12/19/2017-DEC-06_-_-_Ceph_Developer_Monthly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议时间： 2023年11月（具体日期未提及） 参会人员： Josh、Greg、Leo、Eric、Derek、Casey、Adam 等 会议主题： Ceph 项目进展及未来规划 会议内容： 一、Ceph 路线图概述  存储技术发展趋势： 硬盘容量增加，NVMe 成为主流，闪存部署增加，未来将全面转向闪存。 性能重构： 为了充分利用 NVMe 等高性能设备，需要进行性能重构，主要方向包括：  采用">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了 Ceph 项目的进展和未来规划，涵盖了多个关键议题： 一、Ceph 路线图概述  存储技术发展趋势： 硬盘容量增加，NVMe 成为主流，闪存部署增加，未来将全面转向闪存。 性能重构：  采用 DPDK 和 SPDK 进行网络和存储 IO。 对 OSD 进行大量重构，使其更加模块化、异步和事件驱动。 探索使用未来编程框架，以简化代码并提高可维护性。  代">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-12-18T16:00:00.000Z">
 <meta property="article:modified_time" content="2017-12-19T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="CRUSH 算法">
+<meta property="article:tag" content="可扩展性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2017-DEC-06 :: Ceph Developer Monthly</div>
+        <div class="flex-col header-title ellipsis">&#39;2017-DEC-06 :: Ceph Developer Monthly&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2017-DEC-06 :: Ceph Developer Monthly</h1>
+        <h1 class="title">&#39;2017-DEC-06 :: Ceph Developer Monthly&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2017-12-18T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +167,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2017-DEC-06 :: Ceph Developer Monthly</h1>
+        <h1 class="post-card-title">'2017-DEC-06 :: Ceph Developer Monthly'</h1>
         <div class="post-meta">
             <time class="post-time" title="2017-12-19 00:00:00" datetime="2017-12-18T16:00:00.000Z"  itemprop="datePublished">2017-12-19</time>
 
@@ -178,17 +184,14 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>参会人员</strong>： Josh、Greg、Leo、Eric、Derek、Casey、Adam
-等</p>
-<p><strong>会议主题</strong>： Ceph 项目进展及未来规划</p>
-<p><strong>会议内容</strong>：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了 Ceph
+项目的进展和未来规划，涵盖了多个关键议题：</p>
 <p><strong>一、Ceph 路线图概述</strong></p>
 <ul>
 <li><strong>存储技术发展趋势</strong>： 硬盘容量增加，NVMe
 成为主流，闪存部署增加，未来将全面转向闪存。</li>
-<li><strong>性能重构</strong>： 为了充分利用 NVMe
-等高性能设备，需要进行性能重构，主要方向包括：
+<li><strong>性能重构</strong>：
 <ul>
 <li>采用 DPDK 和 SPDK 进行网络和存储 IO。</li>
 <li>对 OSD 进行大量重构，使其更加模块化、异步和事件驱动。</li>
@@ -235,9 +238,8 @@
 <li>提到了 Red Hat 正在进行的 Ceph 仪表板开发项目。</li>
 <li>提到了 Ceph 对象存储网关 (RGW) 的云同步功能。</li>
 </ul>
-<p><strong>总结</strong>：</p>
 <p>本次会议讨论了 Ceph
-项目的多个重要议题，包括性能重构、撕裂技术改进、不同类型的存储池等。会议明确了后续行动计划，并鼓励大家积极参与相关开发工作。</p>
+项目的多个重要议题，并明确了后续行动计划，鼓励大家积极参与相关开发工作。</p>
 
         </div>
 
@@ -268,6 +270,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-%E7%AE%97%E6%B3%95/" rel="tag">CRUSH 算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">可扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -279,7 +283,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/12/19/2017-DEC-06_-_-_Ceph_Developer_Monthly/&title=《2017-DEC-06 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/12/19/2017-DEC-06_-_-_Ceph_Developer_Monthly/&title=《'2017-DEC-06 :: Ceph Developer Monthly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -289,7 +293,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/12/19/2017-DEC-06_-_-_Ceph_Developer_Monthly/&title=《2017-DEC-06 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/12/19/2017-DEC-06_-_-_Ceph_Developer_Monthly/&title=《'2017-DEC-06 :: Ceph Developer Monthly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -299,7 +303,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2017-DEC-06 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/12/19/2017-DEC-06_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2017-DEC-06 :: Ceph Developer Monthly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/12/19/2017-DEC-06_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -329,7 +333,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2018/01/04/2018-JAN-03_-_-_Ceph_Developer_Monthly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2018-JAN-03 :: Ceph Developer Monthly</h4>
+        <h4 class="title">&#39;2018-JAN-03 :: Ceph Developer Monthly&#39;</h4>
       </a>
     </div>
   
@@ -338,7 +342,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2017/12/18/2017-NOV-01_-_-_Ceph_Developer_Monthly/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2017-NOV-01 :: Ceph Developer Monthly</h4>
+        <h4 class="title">&#39;2017-NOV-01 :: Ceph Developer Monthly&#39;</h4>
       </a>
     </div>
   
@@ -438,7 +442,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/12/19/2017-DEC-06_-_-_Ceph_Developer_Monthly/&title=《2017-DEC-06 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/12/19/2017-DEC-06_-_-_Ceph_Developer_Monthly/&title=《'2017-DEC-06 :: Ceph Developer Monthly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -448,7 +452,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/12/19/2017-DEC-06_-_-_Ceph_Developer_Monthly/&title=《2017-DEC-06 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/12/19/2017-DEC-06_-_-_Ceph_Developer_Monthly/&title=《'2017-DEC-06 :: Ceph Developer Monthly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -458,7 +462,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2017-DEC-06 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/12/19/2017-DEC-06_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2017-DEC-06 :: Ceph Developer Monthly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/12/19/2017-DEC-06_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

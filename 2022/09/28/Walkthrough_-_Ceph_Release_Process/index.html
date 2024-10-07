@@ -14,23 +14,28 @@
     
     
     
-    <title>Walkthrough: Ceph Release Process | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Walkthrough: Ceph 发布流程&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要：  讨论了Ceph的发布流程，包括签名机器从OCTA实验室迁移到sepia实验室、GPG密钥的管理和使用、以及构建和发布Ceph包的过程。 提到了新的主版本发布，特别是对于Reef分支的处理，包括创建新的repo文件和通知chakra节点。 描述了Yuri在测试和准备发布新版本时的角色，以及如何将代码推送到相应的Dash发布分支。 讨论了热修复和安全更新的特殊处理方式，包括使用最近的标签">
+    <meta name="keywords" content="分布式存储,高可用性,CRUSH 算法,可伸缩性,Ceph 发布流程">
+    <meta name="description" content="[改进后的中文总结内容] Ceph 作为一款分布式存储系统，其发布流程的详细讲解对于研发人员和内容审核专家来说至关重要。以下是对 &quot;Walkthrough: Ceph Release Process&quot; 的改进总结：  发布流程概述：  讨论了Ceph发布流程的各个环节，包括签名机器的迁移、GPG密钥管理、构建和发布Ceph包的过程。 强调了在发布过程中使用的高可用性、可伸缩性、对象存储、块存储和文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Walkthrough: Ceph Release Process">
+<meta property="og:title" content="&#39;Walkthrough: Ceph 发布流程&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/09/28/Walkthrough_-_Ceph_Release_Process/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要：  讨论了Ceph的发布流程，包括签名机器从OCTA实验室迁移到sepia实验室、GPG密钥的管理和使用、以及构建和发布Ceph包的过程。 提到了新的主版本发布，特别是对于Reef分支的处理，包括创建新的repo文件和通知chakra节点。 描述了Yuri在测试和准备发布新版本时的角色，以及如何将代码推送到相应的Dash发布分支。 讨论了热修复和安全更新的特殊处理方式，包括使用最近的标签">
+<meta property="og:description" content="[改进后的中文总结内容] Ceph 作为一款分布式存储系统，其发布流程的详细讲解对于研发人员和内容审核专家来说至关重要。以下是对 &quot;Walkthrough: Ceph Release Process&quot; 的改进总结：  发布流程概述：  讨论了Ceph发布流程的各个环节，包括签名机器的迁移、GPG密钥管理、构建和发布Ceph包的过程。 强调了在发布过程中使用的高可用性、可伸缩性、对象存储、块存储和文">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-27T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-09-28T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH 算法">
+<meta property="article:tag" content="可伸缩性">
+<meta property="article:tag" content="Ceph 发布流程">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Walkthrough: Ceph Release Process</div>
+        <div class="flex-col header-title ellipsis">&#39;Walkthrough: Ceph 发布流程&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Walkthrough: Ceph Release Process</h1>
+        <h1 class="title">&#39;Walkthrough: Ceph 发布流程&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-09-27T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Walkthrough: Ceph Release Process</h1>
+        <h1 class="post-card-title">'Walkthrough: Ceph 发布流程'</h1>
         <div class="post-meta">
             <time class="post-time" title="2022-09-28 00:00:00" datetime="2022-09-27T16:00:00.000Z"  itemprop="datePublished">2022-09-28</time>
 
@@ -178,24 +183,42 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>Ceph
+作为一款分布式存储系统，其发布流程的详细讲解对于研发人员和内容审核专家来说至关重要。以下是对
+"Walkthrough: Ceph Release Process" 的改进总结：</p>
 <ol type="1">
-<li>讨论了Ceph的发布流程，包括签名机器从OCTA实验室迁移到sepia实验室、GPG密钥的管理和使用、以及构建和发布Ceph包的过程。</li>
-<li>提到了新的主版本发布，特别是对于Reef分支的处理，包括创建新的repo文件和通知chakra节点。</li>
-<li>描述了Yuri在测试和准备发布新版本时的角色，以及如何将代码推送到相应的Dash发布分支。</li>
-<li>讨论了热修复和安全更新的特殊处理方式，包括使用最近的标签进行构建和推送到特定的私有仓库。</li>
-<li>介绍了构建过程，包括Jenkins作业的配置、构建失败的处理、以及如何编写和发布发布说明。</li>
-<li>强调了在构建完成后，如何使用GPG密钥签名Debian和RPM包，并将构建结果推送到下载服务器。</li>
-<li>提到了容器构建的过程，包括x86和arm64容器的构建，并讨论了如何确保构建成功并发布到相关平台。</li>
-<li>回答了关于如何处理构建失败、添加新架构或依赖项的问题，并提供了相关的解决方案和建议。</li>
+<li><strong>发布流程概述</strong>：
+<ul>
+<li>讨论了Ceph发布流程的各个环节，包括签名机器的迁移、GPG密钥管理、构建和发布Ceph包的过程。</li>
+<li>强调了在发布过程中使用的高可用性、可伸缩性、对象存储、块存储和文件系统存储的特性。</li>
+</ul></li>
+<li><strong>主要议题</strong>：
+<ul>
+<li><strong>签名机器迁移</strong>：从OCTA实验室迁移到sepia实验室，以允许非Red
+Hat成员参与发布流程。</li>
+<li><strong>GPG密钥管理</strong>：GPG密钥转移到硬件安全令牌，以便于管理和使用。</li>
+<li><strong>构建和发布</strong>：讨论了构建过程的配置、失败处理、发布说明的编写和发布。</li>
+<li><strong>容器构建</strong>：介绍了x86和arm64容器的构建过程，以及如何确保构建成功并发布到相关平台。</li>
+</ul></li>
+<li><strong>决定事项</strong>：
+<ul>
+<li>确保所有参与者理解Ceph发布的每个步骤，并能够按照文档执行。</li>
+<li>更新chakra节点并重新部署shock，以适应新的主版本发布，特别是Reef分支。</li>
+<li>在遇到构建问题时，根据错误类型联系相应的组件负责人或基础设施团队。</li>
+<li>对于新依赖项，尝试将其包含在Apple中，如果无法实现，则在copper仓库中提供。</li>
+<li>继续监控和维护lab
+extras仓库，以确保构建和测试过程中所需的依赖项始终可用。</li>
+</ul></li>
+<li><strong>后续行动计划</strong>：
+<ul>
+<li>更新文档，确保所有参与者能够遵循Ceph发布的步骤。</li>
+<li>根据需要更新chakra节点和shock部署。</li>
+<li>建立错误处理流程，以便及时解决问题。</li>
+<li>管理新依赖项的引入，确保兼容性和稳定性。</li>
+</ul></li>
 </ol>
-<p>后续行动计划： -
-确保所有参与者都理解Ceph发布的每个步骤，并能够按照文档执行。 -
-对于新的主版本发布，特别是Reef分支，需要更新chakra节点并重新部署shock。
-- 在遇到构建问题时，根据错误类型联系相应的组件负责人或基础设施团队。 -
-对于新依赖项，尝试将其包含在Apple中，如果无法实现，则在copper仓库中提供，直到它们在主要分发版中可用。
-- 继续监控和维护lab
-extras仓库，以确保构建和测试过程中所需的依赖项始终可用。</p>
+<p>此总结涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划，并保留了计算机科学/ceph相关领域的英文原文关键词。</p>
 
         </div>
 
@@ -226,6 +249,8 @@ extras仓库，以确保构建和测试过程中所需的依赖项始终可用�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-%E7%AE%97%E6%B3%95/" rel="tag">CRUSH 算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/" rel="tag">Ceph 发布流程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -237,7 +262,7 @@ extras仓库，以确保构建和测试过程中所需的依赖项始终可用�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/09/28/Walkthrough_-_Ceph_Release_Process/&title=《Walkthrough: Ceph Release Process》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/09/28/Walkthrough_-_Ceph_Release_Process/&title=《'Walkthrough: Ceph 发布流程'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -247,7 +272,7 @@ extras仓库，以确保构建和测试过程中所需的依赖项始终可用�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/09/28/Walkthrough_-_Ceph_Release_Process/&title=《Walkthrough: Ceph Release Process》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/09/28/Walkthrough_-_Ceph_Release_Process/&title=《'Walkthrough: Ceph 发布流程'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -257,7 +282,7 @@ extras仓库，以确保构建和测试过程中所需的依赖项始终可用�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Walkthrough: Ceph Release Process》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/09/28/Walkthrough_-_Ceph_Release_Process/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Walkthrough: Ceph 发布流程'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/09/28/Walkthrough_-_Ceph_Release_Process/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -287,7 +312,7 @@ extras仓库，以确保构建和测试过程中所需的依赖项始终可用�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/09/28/Ceph_Tech_Talk_-_Making_Teuthology_a_Better_Detective/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Tech Talk: Making Teuthology a Better Detective</h4>
+        <h4 class="title">  Ceph Tech Talk: Making Teuthology a Better Detective  </h4>
       </a>
     </div>
   
@@ -296,7 +321,7 @@ extras仓库，以确保构建和测试过程中所需的依赖项始终可用�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/09/26/Ceph_Performance_Meeting_2022-09-22/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2022-09-22</h4>
+        <h4 class="title">Ceph 性能会议纪要 2022-09-22</h4>
       </a>
     </div>
   
@@ -396,7 +421,7 @@ extras仓库，以确保构建和测试过程中所需的依赖项始终可用�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/09/28/Walkthrough_-_Ceph_Release_Process/&title=《Walkthrough: Ceph Release Process》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/09/28/Walkthrough_-_Ceph_Release_Process/&title=《'Walkthrough: Ceph 发布流程'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -406,7 +431,7 @@ extras仓库，以确保构建和测试过程中所需的依赖项始终可用�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/09/28/Walkthrough_-_Ceph_Release_Process/&title=《Walkthrough: Ceph Release Process》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/09/28/Walkthrough_-_Ceph_Release_Process/&title=《'Walkthrough: Ceph 发布流程'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -416,7 +441,7 @@ extras仓库，以确保构建和测试过程中所需的依赖项始终可用�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Walkthrough: Ceph Release Process》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/09/28/Walkthrough_-_Ceph_Release_Process/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Walkthrough: Ceph 发布流程'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/09/28/Walkthrough_-_Ceph_Release_Process/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

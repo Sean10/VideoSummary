@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： P.M. Store 新型 OSD 后端方案讨论 会议时间： 2023年11月某日 参会人员： Lucas, Nora, Bob, 等 会议内容： 1. 项目背景与目标 - Lucas 和 Nora 介绍了 P.M. Store，这是一个针对非易失性存储的新实验性 SD Back-end。 - 该方案旨在利用开源 p.m. 库，专门设计用于与非易失性存储设备（如 SSD）协同">
+    <meta name="keywords" content="Ceph,OSD,存储性能,内存映射,非易失性存储">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： P.M. Store 新型 OSD 后端方案讨论 会议时间： 2023年11月某日 参会人员： Lucas, Nora, Bob, 等 会议内容： 1. 项目背景与目标 - Lucas 和 Nora 介绍了 P.M. Store，这是一个针对非易失性存储（如 SSD）的实验性 OSD 后端。 - 该方案使用开源 p.m. 库，旨在提高存储性能，同时保">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CDS Jewel -- PMStore">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_PMStore/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： P.M. Store 新型 OSD 后端方案讨论 会议时间： 2023年11月某日 参会人员： Lucas, Nora, Bob, 等 会议内容： 1. 项目背景与目标 - Lucas 和 Nora 介绍了 P.M. Store，这是一个针对非易失性存储的新实验性 SD Back-end。 - 该方案旨在利用开源 p.m. 库，专门设计用于与非易失性存储设备（如 SSD）协同">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： P.M. Store 新型 OSD 后端方案讨论 会议时间： 2023年11月某日 参会人员： Lucas, Nora, Bob, 等 会议内容： 1. 项目背景与目标 - Lucas 和 Nora 介绍了 P.M. Store，这是一个针对非易失性存储（如 SSD）的实验性 OSD 后端。 - 该方案使用开源 p.m. 库，旨在提高存储性能，同时保">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-08-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="存储性能">
+<meta property="article:tag" content="内存映射">
+<meta property="article:tag" content="非易失性存储">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,40 +190,35 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议主题</strong>： P.M. Store 新型 OSD 后端方案讨论</p>
 <p><strong>会议时间</strong>： 2023年11月某日</p>
 <p><strong>参会人员</strong>： Lucas, Nora, Bob, 等</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>1. 项目背景与目标</strong> - Lucas 和 Nora 介绍了 P.M.
-Store，这是一个针对非易失性存储的新实验性 SD Back-end。 -
-该方案旨在利用开源 p.m. 库，专门设计用于与非易失性存储设备（如
-SSD）协同工作。 -
-目标是提高存储性能，同时保持与现有存储代码库和对象处理集成的兼容性。</p>
+Store，这是一个针对非易失性存储（如 SSD）的实验性 OSD 后端。 -
+该方案使用开源 p.m. 库，旨在提高存储性能，同时保持与现有 Ceph
+代码库的兼容性。</p>
 <p><strong>2. 技术方案</strong> -
-使用内存映射文件存储对象，文件分为固定大小的块以应对碎片化。 -
-利用内存映射库处理块，默认数据块大小为1MB，元数据块大小为8KB。 -
-对象中包含指向块的 ID 和读写方法的向量。 -
-使用内存映射文件，通过简单的内存复制操作进行读写。 -
-读取性能目前相当不错，基本实现已完成，并计划开源。</p>
+使用内存映射文件存储对象，以固定大小的块处理碎片化。 - 对象包含指向块的
+ID 和读写方法的向量，通过内存映射文件进行读写操作。 -
+初步实现已完成，并计划开源。</p>
 <p><strong>3. 挑战与解决方案</strong> -
-发现一些边缘情况，正在通过生命周期测试进行修复。 -
-优化键序列化，以更有效地处理块更新。 -
-使用事务性用户空间块设备，允许通过 futon 内存策略进行目录读写。 -
+正在解决边缘情况，并进行生命周期测试。 -
+优化键序列化，使用事务性用户空间块设备进行目录读写。 -
 对象和集合的索引存储在内存中，启动时从每个块的元数据重建。</p>
-<p><strong>4. 性能与测试</strong> - Lucas 指出，对于 4TB 的 OSD
-磁盘，如果其容量为 60%，则扫描整个 OSD
-存储所需时间可能在几分钟到几小时之间。 -
-讨论了将元数据持久化存储在磁盘上的可能性，以及如何优化零拷贝操作。</p>
+<p><strong>4. 性能与测试</strong> - 讨论了 4TB OSD
+磁盘扫描所需时间的问题。 -
+讨论了将元数据持久化存储在磁盘上的可能性，以及优化零拷贝操作。</p>
 <p><strong>5. 后续计划</strong> - Lucas 将在 GitHub 上开源 P.M. Store
 代码，并邀请大家测试。 -
 讨论了可能的优化，例如异步读写接口和改进的锁定机制。</p>
 <p><strong>6. 其他讨论</strong> -
 讨论了对象存储接口的回调机制，以及是否支持异步读写。 -
 讨论了扩展地址顺序阶段，以支持同步和异步版本。</p>
-<p><strong>会议结论</strong>： - P.M. Store
-是一个很有潜力的项目，有望提高 Ceph 的存储性能。 -
-需要进一步优化和测试，以提高性能和稳定性。 - Lucas
+<p><strong>会议结论</strong>： - P.M. Store 是一个有潜力的项目，有望提高
+Ceph 的存储性能。 - 需要进一步优化和测试，以提高性能和稳定性。 - Lucas
 将开源代码，并邀请大家参与测试和讨论。</p>
 
         </div>
@@ -250,6 +250,8 @@ SSD）协同工作。 -
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84/" rel="tag">内存映射</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E6%80%A7%E8%83%BD/" rel="tag">存储性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%9D%9E%E6%98%93%E5%A4%B1%E6%80%A7%E5%AD%98%E5%82%A8/" rel="tag">非易失性存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -309,18 +311,18 @@ SSD）协同工作。 -
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_Passive_Monitors/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_Non-Functional_Tests/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Jewel -- Passive Monitors</h4>
+        <h4 class="title">  CDS Jewel -- Non-Functional Tests  </h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_RBD_Journal/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_Passive_Monitors/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Jewel -- RBD Journal</h4>
+        <h4 class="title">  CDS Jewel -- Passive Monitors  </h4>
       </a>
     </div>
   

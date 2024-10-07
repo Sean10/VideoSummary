@@ -14,23 +14,28 @@
     
     
     
-    <title>CDS Jewel -- Scrub Repair | ceph视频总结 | youtube频道总结</title>
+    <title> CDS Jewel -- Scrub Repair  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： （此处应填写会议具体时间） 参会人员： （此处应填写参会人员名单） 会议主题： Ceph分布式存储系统中的数据修复与一致性检查 关键细节：  会议讨论了Ceph系统中数据修复（scrub）和一致性检查（repair）的优化问题。 当前修复过程存在效率低下、错误猜测等问题。 需要改进OSD（对象存储守护进程）的智能程度，以便更准确地识别和修复不一致的对象。  讨论的主要议题：">
+    <meta name="keywords" content="Ceph,Scrub,一致性检查,Repair,数据修复">
+    <meta name="description" content="[改进后的中文总结内容] 在&quot;CDS Jewel -- Scrub Repair&quot;会议纪要中，讨论了Ceph分布式存储系统中数据修复和一致性检查的优化问题。以下是会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划： 关键细节：  会议重点讨论了Ceph系统中数据修复（scrub）和一致性检查（repair）的优化问题。 目前的修复过程效率低下，且存在错误猜测等问题。 需要提升OSD（对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Jewel -- Scrub Repair">
+<meta property="og:title" content=" CDS Jewel -- Scrub Repair ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： （此处应填写会议具体时间） 参会人员： （此处应填写参会人员名单） 会议主题： Ceph分布式存储系统中的数据修复与一致性检查 关键细节：  会议讨论了Ceph系统中数据修复（scrub）和一致性检查（repair）的优化问题。 当前修复过程存在效率低下、错误猜测等问题。 需要改进OSD（对象存储守护进程）的智能程度，以便更准确地识别和修复不一致的对象。  讨论的主要议题：">
+<meta property="og:description" content="[改进后的中文总结内容] 在&quot;CDS Jewel -- Scrub Repair&quot;会议纪要中，讨论了Ceph分布式存储系统中数据修复和一致性检查的优化问题。以下是会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划： 关键细节：  会议重点讨论了Ceph系统中数据修复（scrub）和一致性检查（repair）的优化问题。 目前的修复过程效率低下，且存在错误猜测等问题。 需要提升OSD（对象">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Scrub">
+<meta property="article:tag" content="一致性检查">
+<meta property="article:tag" content="Repair">
+<meta property="article:tag" content="数据修复">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Jewel -- Scrub Repair</div>
+        <div class="flex-col header-title ellipsis"> CDS Jewel -- Scrub Repair </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Jewel -- Scrub Repair</h1>
+        <h1 class="title"> CDS Jewel -- Scrub Repair </h1>
         <h5 class="subtitle">
             
                 <time datetime="2015-08-03T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议时间：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议主题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">关键细节：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">讨论的主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定的事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.</span> <span class="post-toc-text">关键细节：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">2.</span> <span class="post-toc-text">讨论的主要议题：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">决定的事项：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">4.</span> <span class="post-toc-text">后续行动计划：</span></a></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Jewel -- Scrub Repair</h1>
+        <h1 class="post-card-title"> CDS Jewel -- Scrub Repair </h1>
         <div class="post-meta">
             <time class="post-time" title="2015-08-04 00:00:00" datetime="2015-08-03T16:00:00.000Z"  itemprop="datePublished">2015-08-04</time>
 
@@ -185,25 +190,21 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议时间">会议时间：</h4>
-<p>（此处应填写会议具体时间）</p>
-<h4 id="参会人员">参会人员：</h4>
-<p>（此处应填写参会人员名单）</p>
-<h4 id="会议主题">会议主题：</h4>
-<p>Ceph分布式存储系统中的数据修复与一致性检查</p>
-<h4 id="关键细节">关键细节：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>在"CDS Jewel -- Scrub
+Repair"会议纪要中，讨论了Ceph分布式存储系统中数据修复和一致性检查的优化问题。以下是会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划：</p>
+<h3 id="关键细节">关键细节：</h3>
 <ul>
-<li>会议讨论了Ceph系统中数据修复（scrub）和一致性检查（repair）的优化问题。</li>
-<li>当前修复过程存在效率低下、错误猜测等问题。</li>
-<li>需要改进OSD（对象存储守护进程）的智能程度，以便更准确地识别和修复不一致的对象。</li>
+<li>会议重点讨论了Ceph系统中数据修复（scrub）和一致性检查（repair）的优化问题。</li>
+<li>目前的修复过程效率低下，且存在错误猜测等问题。</li>
+<li>需要提升OSD（对象存储守护进程）的智能程度，以更精确地识别和修复不一致的对象。</li>
 </ul>
-<h4 id="讨论的主要议题">讨论的主要议题：</h4>
+<h3 id="讨论的主要议题">讨论的主要议题：</h3>
 <ol type="1">
 <li><strong>修复流程重构</strong>：
 <ul>
-<li>重新设计修复流程，使其能够对单个对象进行修复操作。</li>
-<li>在修复模式下，scrub应能够对单个对象执行修复操作。</li>
+<li>重构修复流程，使其能够对单个对象进行修复操作。</li>
+<li>优化scrub操作，使其在修复模式下能够对单个对象执行修复。</li>
 </ul></li>
 <li><strong>不一致对象查询</strong>：
 <ul>
@@ -213,15 +214,15 @@
 <li><strong>不一致对象信息获取</strong>：
 <ul>
 <li>获取PG中不一致对象的信息，并确保信息可持久化。</li>
-<li>可考虑将信息存储为临时对象或隐藏元数据对象。</li>
+<li>考虑将信息存储为临时对象或隐藏元数据对象。</li>
 </ul></li>
 <li><strong>智能修复</strong>：
 <ul>
 <li>允许通过预准备的现有对象进行有针对性的修复。</li>
-<li>使用JSON格式存储不一致信息，以便实现向后兼容性。</li>
+<li>使用JSON格式存储不一致信息，以实现向后兼容性。</li>
 </ul></li>
 </ol>
-<h4 id="决定的事项">决定的事项：</h4>
+<h3 id="决定的事项">决定的事项：</h3>
 <ol type="1">
 <li><strong>修复流程优化</strong>：
 <ul>
@@ -239,7 +240,7 @@
 <li>使用JSON格式存储不一致信息。</li>
 </ul></li>
 </ol>
-<h4 id="后续行动计划">后续行动计划：</h4>
+<h3 id="后续行动计划">后续行动计划：</h3>
 <ol type="1">
 <li><strong>开发与测试</strong>：
 <ul>
@@ -287,6 +288,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Repair/" rel="tag">Repair</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scrub/" rel="tag">Scrub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%B8%80%E8%87%B4%E6%80%A7%E6%A3%80%E6%9F%A5/" rel="tag">一致性检查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%B0%E6%8D%AE%E4%BF%AE%E5%A4%8D/" rel="tag">数据修复</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -298,7 +301,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/&title=《CDS Jewel -- Scrub Repair》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/&title=《 CDS Jewel -- Scrub Repair 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -308,7 +311,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/&title=《CDS Jewel -- Scrub Repair》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/&title=《 CDS Jewel -- Scrub Repair 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -318,7 +321,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Jewel -- Scrub Repair》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 CDS Jewel -- Scrub Repair 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -348,7 +351,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Jewel -- RADOS multi-object transaction support</h4>
+        <h4 class="title">CDS Jewel -- RADOS多对象事务支持</h4>
       </a>
     </div>
   
@@ -457,7 +460,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/&title=《CDS Jewel -- Scrub Repair》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/&title=《 CDS Jewel -- Scrub Repair 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -467,7 +470,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/&title=《CDS Jewel -- Scrub Repair》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/&title=《 CDS Jewel -- Scrub Repair 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -477,7 +480,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Jewel -- Scrub Repair》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 CDS Jewel -- Scrub Repair 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

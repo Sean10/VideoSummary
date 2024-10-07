@@ -14,23 +14,28 @@
     
     
     
-    <title>CDS Hammer (Day 1) - Import/Export // Local Import | ceph视频总结 | youtube频道总结</title>
+    <title>  CDS Hammer (Day 1) - Import/Export // Local Import   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Rados 导出&#x2F;导入功能改进 会议时间： 未知 参会人员： Danny, Mike, John, Tara 等 会议内容： 一、Rados 导出&#x2F;导入功能现状  目前 Rados 导出功能存在性能瓶颈，尤其是数据量大时，导出速度慢，且在不同文件系统上导出失败率较高。 导入功能也存在问题，将数据重新导入新集群的速度较慢。  二、改进方案  导出功能：  将 Rados 导出功">
+    <meta name="keywords" content="Ceph,Rados,导出/导入,分片,指纹验证">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： Rados 导出&#x2F;导入功能改进 会议时间： 未知 参会人员： Danny, Mike, John, Tara 等 会议内容： 一、Rados 导出&#x2F;导入功能现状  Rados 导出功能存在性能瓶颈，数据量大时导出速度慢，且在不同文件系统上导出失败率较高。 导入功能也存在问题，将数据重新导入新集群的速度较慢。  二、改进方案  导出功能：  采用类似">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Hammer (Day 1) - Import&#x2F;Export &#x2F;&#x2F; Local Import">
+<meta property="og:title" content="  CDS Hammer (Day 1) - Import&#x2F;Export &#x2F;&#x2F; Local Import  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Rados 导出&#x2F;导入功能改进 会议时间： 未知 参会人员： Danny, Mike, John, Tara 等 会议内容： 一、Rados 导出&#x2F;导入功能现状  目前 Rados 导出功能存在性能瓶颈，尤其是数据量大时，导出速度慢，且在不同文件系统上导出失败率较高。 导入功能也存在问题，将数据重新导入新集群的速度较慢。  二、改进方案  导出功能：  将 Rados 导出功">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： Rados 导出&#x2F;导入功能改进 会议时间： 未知 参会人员： Danny, Mike, John, Tara 等 会议内容： 一、Rados 导出&#x2F;导入功能现状  Rados 导出功能存在性能瓶颈，数据量大时导出速度慢，且在不同文件系统上导出失败率较高。 导入功能也存在问题，将数据重新导入新集群的速度较慢。  二、改进方案  导出功能：  采用类似">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2014-10-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2014-10-29T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Rados">
+<meta property="article:tag" content="导出&#x2F;导入">
+<meta property="article:tag" content="分片">
+<meta property="article:tag" content="指纹验证">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Hammer (Day 1) - Import/Export // Local Import</div>
+        <div class="flex-col header-title ellipsis">  CDS Hammer (Day 1) - Import/Export // Local Import  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Hammer (Day 1) - Import/Export // Local Import</h1>
+        <h1 class="title">  CDS Hammer (Day 1) - Import/Export // Local Import  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2014-10-28T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Hammer (Day 1) - Import/Export // Local Import</h1>
+        <h1 class="post-card-title">  CDS Hammer (Day 1) - Import/Export // Local Import  </h1>
         <div class="post-meta">
             <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
 
@@ -178,25 +183,25 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要</p>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
 <p><strong>会议主题</strong>： Rados 导出/导入功能改进</p>
 <p><strong>会议时间</strong>： 未知</p>
 <p><strong>参会人员</strong>： Danny, Mike, John, Tara 等</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>一、Rados 导出/导入功能现状</strong></p>
 <ol type="1">
-<li>目前 Rados
-导出功能存在性能瓶颈，尤其是数据量大时，导出速度慢，且在不同文件系统上导出失败率较高。</li>
+<li>Rados
+导出功能存在性能瓶颈，数据量大时导出速度慢，且在不同文件系统上导出失败率较高。</li>
 <li>导入功能也存在问题，将数据重新导入新集群的速度较慢。</li>
 </ol>
 <p><strong>二、改进方案</strong></p>
 <ol type="1">
 <li><strong>导出功能</strong>：
 <ul>
-<li>将 Rados 导出功能改为类似 RBD 导出和 RBD
-差分的流式导出，提高灵活性。</li>
+<li>采用类似 RBD 导出和 RBD 差分的流式导出，提高灵活性。</li>
 <li>支持快照导出，导出特定快照状态的数据。</li>
-<li>支持分片导出，将对象空间划分为多个部分，并行导出。</li>
+<li>支持分片导出，并行导出数据。</li>
 <li>添加指纹验证功能，确保导出的数据完整性。</li>
 </ul></li>
 <li><strong>导入功能</strong>：
@@ -226,7 +231,7 @@
 <p><strong>五、会议总结</strong></p>
 <p>本次会议讨论了 Rados
 导出/导入功能的改进方案，并制定了相应的行动计划。改进后的功能将提高
-Rados 的数据迁移和备份能力。</p>
+Rados 的数据迁移和备份能力，并确保数据完整性。</p>
 
         </div>
 
@@ -257,6 +262,8 @@ Rados 的数据迁移和备份能力。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rados/" rel="tag">Rados</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E7%89%87/" rel="tag">分片</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%BC%E5%87%BA-%E5%AF%BC%E5%85%A5/" rel="tag">导出&#x2F;导入</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8C%87%E7%BA%B9%E9%AA%8C%E8%AF%81/" rel="tag">指纹验证</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -268,7 +275,7 @@ Rados 的数据迁移和备份能力。</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/&title=《CDS Hammer (Day 1) - Import/Export // Local Import》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/&title=《  CDS Hammer (Day 1) - Import/Export // Local Import  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -278,7 +285,7 @@ Rados 的数据迁移和备份能力。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/&title=《CDS Hammer (Day 1) - Import/Export // Local Import》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/&title=《  CDS Hammer (Day 1) - Import/Export // Local Import  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -288,7 +295,7 @@ Rados 的数据迁移和备份能力。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Hammer (Day 1) - Import/Export // Local Import》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS Hammer (Day 1) - Import/Export // Local Import  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -316,18 +323,18 @@ Rados 的数据迁移和备份能力。</p>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Buffer_Encoding/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Calamari_API_Roadmap/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Hammer (Day 1) - Buffer Encoding</h4>
+        <h4 class="title">CDS Hammer (Day 1) - Calamari API Roadmap</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Accelio_RDMA_Messenger/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_RGW_-_Bucket_Index_Scalability/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Hammer (Day 1) - Accelio RDMA Messenger</h4>
+        <h4 class="title">&#39;CDS Hammer (Day 1) - RGW: Bucket Index Scalability&#39;</h4>
       </a>
     </div>
   
@@ -427,7 +434,7 @@ Rados 的数据迁移和备份能力。</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/&title=《CDS Hammer (Day 1) - Import/Export // Local Import》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/&title=《  CDS Hammer (Day 1) - Import/Export // Local Import  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -437,7 +444,7 @@ Rados 的数据迁移和备份能力。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/&title=《CDS Hammer (Day 1) - Import/Export // Local Import》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/&title=《  CDS Hammer (Day 1) - Import/Export // Local Import  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -447,7 +454,7 @@ Rados 的数据迁移和备份能力。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Hammer (Day 1) - Import/Export // Local Import》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS Hammer (Day 1) - Import/Export // Local Import  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

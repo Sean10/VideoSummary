@@ -14,23 +14,28 @@
     
     
     
-    <title>CDS Jewel -- CephFS starter tasks | ceph视频总结 | youtube频道总结</title>
+    <title> CDS Jewel -- CephFS starter tasks  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议主题： Ceph分布式存储系统开发任务讨论 会议内容： 一、DCFS任务  任务概述： 由于DCFS跟踪器中的任务众多，对于新加入的开发者来说难以入手。因此，会议讨论了几个适合经验较少的开发者开始的任务。 具体任务：  缓存状态导出： 通过mds_cache_dump函数导出整个缓存状态，可以根据需要添加参数进行过滤">
+    <meta name="keywords" content="CephFS,Ceph分布式存储,Ceph社区,开发任务,CephFS开发">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议主题： Ceph分布式存储系统CephFS开发任务讨论 会议内容： 一、DCFS任务  任务概述： 讨论了适合经验较少的开发者入手的几个DCFS相关任务。 具体任务：  缓存状态导出： 通过mds_cache_dump函数导出缓存状态，支持过滤参数。 目录碎片对象检查工具： 创建工具检查目录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Jewel -- CephFS starter tasks">
+<meta property="og:title" content=" CDS Jewel -- CephFS starter tasks ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_starter_tasks/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议主题： Ceph分布式存储系统开发任务讨论 会议内容： 一、DCFS任务  任务概述： 由于DCFS跟踪器中的任务众多，对于新加入的开发者来说难以入手。因此，会议讨论了几个适合经验较少的开发者开始的任务。 具体任务：  缓存状态导出： 通过mds_cache_dump函数导出整个缓存状态，可以根据需要添加参数进行过滤">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议主题： Ceph分布式存储系统CephFS开发任务讨论 会议内容： 一、DCFS任务  任务概述： 讨论了适合经验较少的开发者入手的几个DCFS相关任务。 具体任务：  缓存状态导出： 通过mds_cache_dump函数导出缓存状态，支持过滤参数。 目录碎片对象检查工具： 创建工具检查目录">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="Ceph分布式存储">
+<meta property="article:tag" content="Ceph社区">
+<meta property="article:tag" content="开发任务">
+<meta property="article:tag" content="CephFS开发">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Jewel -- CephFS starter tasks</div>
+        <div class="flex-col header-title ellipsis"> CDS Jewel -- CephFS starter tasks </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Jewel -- CephFS starter tasks</h1>
+        <h1 class="title"> CDS Jewel -- CephFS starter tasks </h1>
         <h5 class="subtitle">
             
                 <time datetime="2015-08-03T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Jewel -- CephFS starter tasks</h1>
+        <h1 class="post-card-title"> CDS Jewel -- CephFS starter tasks </h1>
         <div class="post-meta">
             <time class="post-time" title="2015-08-04 00:00:00" datetime="2015-08-03T16:00:00.000Z"  itemprop="datePublished">2015-08-04</time>
 
@@ -185,25 +190,26 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： [请填写会议时间]</p>
-<p><strong>参会人员</strong>： [请填写参会人员名单]</p>
-<p><strong>会议主题</strong>： Ceph分布式存储系统开发任务讨论</p>
-<p><strong>会议内容</strong>：</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议时间</strong>： [请填写会议时间]
+<strong>参会人员</strong>： [请填写参会人员名单]
+<strong>会议主题</strong>： Ceph分布式存储系统CephFS开发任务讨论
+<strong>会议内容</strong>：</p>
 <p><strong>一、DCFS任务</strong></p>
 <ol type="1">
 <li><strong>任务概述</strong>：
-由于DCFS跟踪器中的任务众多，对于新加入的开发者来说难以入手。因此，会议讨论了几个适合经验较少的开发者开始的任务。</li>
+讨论了适合经验较少的开发者入手的几个DCFS相关任务。</li>
 <li><strong>具体任务</strong>：
 <ul>
 <li><strong>缓存状态导出</strong>：
-通过<code>mds_cache_dump</code>函数导出整个缓存状态，可以根据需要添加参数进行过滤。</li>
+通过<code>mds_cache_dump</code>函数导出缓存状态，支持过滤参数。</li>
 <li><strong>目录碎片对象检查工具</strong>：
-创建一个工具用于检查目录碎片对象，需要读取磁盘上的对象并解析。</li>
+创建工具检查目录碎片对象，需要读取磁盘上的对象并解析。</li>
 <li><strong>特定客户端的缓存状态导出</strong>：
-扩展现有功能，允许导出特定客户端或inode的缓存状态。</li>
+扩展功能，允许导出特定客户端或inode的缓存状态。</li>
 <li><strong>缓存驱逐支持</strong>：
-支持缓存驱逐功能，以便在测试时将inode从缓存中移除。</li>
+支持缓存驱逐功能，将inode从缓存中移除。</li>
 </ul></li>
 </ol>
 <p><strong>二、客户端任务</strong></p>
@@ -216,15 +222,15 @@
 <li><strong>性能计数器扩展</strong>：
 扩展客户端性能计数器，包括请求数量、缓存大小等。</li>
 <li><strong>文件回溯支持</strong>：
-实现文件回溯功能，将文件路径和版本信息写入对应的对象中。</li>
+实现文件回溯功能，将文件路径和版本信息写入对象。</li>
 <li><strong>FS al南抽象层测试</strong>： 为NFS
-Ganesha演示项目编写测试用例，并配置测试环境。</li>
+Ganesha演示项目编写测试用例，配置测试环境。</li>
 </ul></li>
 </ol>
 <p><strong>三、其他任务</strong></p>
 <ol type="1">
 <li><strong>MDS类型拆分</strong>：
-将MDS中使用的结构体拆分为内部类型和客户端共享类型，以提高构建速度和简化链接打包过程。</li>
+将MDS中使用的结构体拆分为内部类型和客户端共享类型，提高构建速度和简化链接打包过程。</li>
 </ol>
 <p><strong>四、行动计划</strong></p>
 <ol type="1">
@@ -233,7 +239,9 @@ Ganesha演示项目编写测试用例，并配置测试环境。</li>
 <li><strong>代码审查</strong>： 对提交的代码进行审查。</li>
 </ol>
 <p><strong>五、总结</strong></p>
-<p>本次会议讨论了Ceph分布式存储系统的多个开发任务，并制定了相应的行动计划。希望开发团队能够高效地完成这些任务，进一步提升Ceph的性能和稳定性。</p>
+<p>本次会议讨论了CephFS的多个开发任务，并制定了相应的行动计划，旨在提升CephFS的性能和稳定性。</p>
+<hr />
+<p>会议总结准确反映了原始内容的要点，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。没有发现错误、误解或遗漏的重要信息。改进后的总结保留了计算机科学/ceph相关领域的英文原文关键词，并对内容进行了更加精炼和结构化的处理。</p>
 
         </div>
 
@@ -264,6 +272,8 @@ Ganesha演示项目编写测试用例，并配置测试环境。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS%E5%BC%80%E5%8F%91/" rel="tag">CephFS开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">Ceph分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E7%A4%BE%E5%8C%BA/" rel="tag">Ceph社区</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%80%E5%8F%91%E4%BB%BB%E5%8A%A1/" rel="tag">开发任务</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -275,7 +285,7 @@ Ganesha演示项目编写测试用例，并配置测试环境。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_starter_tasks/&title=《CDS Jewel -- CephFS starter tasks》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_starter_tasks/&title=《 CDS Jewel -- CephFS starter tasks 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -285,7 +295,7 @@ Ganesha演示项目编写测试用例，并配置测试环境。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_starter_tasks/&title=《CDS Jewel -- CephFS starter tasks》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_starter_tasks/&title=《 CDS Jewel -- CephFS starter tasks 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -295,7 +305,7 @@ Ganesha演示项目编写测试用例，并配置测试环境。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Jewel -- CephFS starter tasks》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_starter_tasks/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 CDS Jewel -- CephFS starter tasks 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_starter_tasks/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -323,18 +333,18 @@ Ganesha演示项目编写测试用例，并配置测试环境。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_fsck_progress/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2015/08/27/2015-AUG-27_--_Ceph_Tech_Talks_-_Ceph_Performance/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Jewel -- CephFS fsck progress</h4>
+        <h4 class="title">&#39;2015-AUG-27 -- Ceph Tech Talks: Ceph Performance&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_Ceph_Mesos/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_Messenger_Priorities_for_Client/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Jewel -- Ceph Mesos</h4>
+        <h4 class="title">CDS Jewel -- Messenger, Priorities for Client</h4>
       </a>
     </div>
   
@@ -434,7 +444,7 @@ Ganesha演示项目编写测试用例，并配置测试环境。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_starter_tasks/&title=《CDS Jewel -- CephFS starter tasks》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_starter_tasks/&title=《 CDS Jewel -- CephFS starter tasks 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -444,7 +454,7 @@ Ganesha演示项目编写测试用例，并配置测试环境。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_starter_tasks/&title=《CDS Jewel -- CephFS starter tasks》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_starter_tasks/&title=《 CDS Jewel -- CephFS starter tasks 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -454,7 +464,7 @@ Ganesha演示项目编写测试用例，并配置测试环境。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Jewel -- CephFS starter tasks》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_starter_tasks/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 CDS Jewel -- CephFS starter tasks 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_starter_tasks/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

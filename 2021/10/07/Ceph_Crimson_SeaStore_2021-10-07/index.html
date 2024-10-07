@@ -20,17 +20,31 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间  日期：具体日期未提供 时间：具体时间未提供  参会人员  主持人：未明确 参会人员：会议中提到的有Schwein、Barth、Greg、Doodle、Chen May等  主要议题及讨论内容  Schwein的设备PR审查  主持人正在审查Schwein的设备PR，并已推送了一些清理代码的提交。 目前还在审查最后的提交，预计在接下来的20到30分钟内重新推送一个实际可运行的版">
+    <meta name="keywords" content="Ceph,分布式存储,RBD,块存储,高可用性,CRUSH算法,CephFS,对象存储,可扩展性,文件系统存储,一致性,去中心化,性能,RADOS">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间  日期：未提供具体日期 时间：未提供具体时间  参会人员  主持人：未明确 参会人员：Schwein、Barth、Greg、Doodle、Chen May等  主要议题及讨论内容  Schwein的设备PR审查  主持人正在审查Schwein提交的设备PR，并推送了一些清理代码的提交。 强调了编译器的重要性，简化了复合4位28位组合的转换。  Bart">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;SeaStore 2021-10-07">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Crimson_SeaStore_2021-10-07/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间  日期：具体日期未提供 时间：具体时间未提供  参会人员  主持人：未明确 参会人员：会议中提到的有Schwein、Barth、Greg、Doodle、Chen May等  主要议题及讨论内容  Schwein的设备PR审查  主持人正在审查Schwein的设备PR，并已推送了一些清理代码的提交。 目前还在审查最后的提交，预计在接下来的20到30分钟内重新推送一个实际可运行的版">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间  日期：未提供具体日期 时间：未提供具体时间  参会人员  主持人：未明确 参会人员：Schwein、Barth、Greg、Doodle、Chen May等  主要议题及讨论内容  Schwein的设备PR审查  主持人正在审查Schwein提交的设备PR，并推送了一些清理代码的提交。 强调了编译器的重要性，简化了复合4位28位组合的转换。  Bart">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-06T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-10-07T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RBD">
+<meta property="article:tag" content="块存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="可扩展性">
+<meta property="article:tag" content="文件系统存储">
+<meta property="article:tag" content="一致性">
+<meta property="article:tag" content="去中心化">
+<meta property="article:tag" content="性能">
+<meta property="article:tag" content="RADOS">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,47 +199,44 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议时间">会议时间</h4>
 <ul>
-<li>日期：具体日期未提供</li>
-<li>时间：具体时间未提供</li>
+<li>日期：未提供具体日期</li>
+<li>时间：未提供具体时间</li>
 </ul>
 <h4 id="参会人员">参会人员</h4>
 <ul>
 <li>主持人：未明确</li>
-<li>参会人员：会议中提到的有Schwein、Barth、Greg、Doodle、Chen
-May等</li>
+<li>参会人员：Schwein、Barth、Greg、Doodle、Chen May等</li>
 </ul>
 <h4 id="主要议题及讨论内容">主要议题及讨论内容</h4>
 <ol type="1">
 <li><strong>Schwein的设备PR审查</strong>
 <ul>
-<li>主持人正在审查Schwein的设备PR，并已推送了一些清理代码的提交。</li>
-<li>目前还在审查最后的提交，预计在接下来的20到30分钟内重新推送一个实际可运行的版本。</li>
-<li>强调了编译器的重要性，例如通过直接暴露段（segment）来简化复合4位28位组合的转换。</li>
+<li>主持人正在审查Schwein提交的设备PR，并推送了一些清理代码的提交。</li>
+<li>强调了编译器的重要性，简化了复合4位28位组合的转换。</li>
 </ul></li>
 <li><strong>Barth的集群问题</strong>
 <ul>
 <li>Barth尝试使用上游构建版本17.0.0-7998启动集群，但遇到添加OSD的问题。</li>
-<li>建议Barth创建一个包含详细步骤的bug报告，以便进一步调查。</li>
-<li>讨论了如何从Shaman下载构建版本的问题，建议询问Mark。</li>
+<li>建议Barth创建一个详细的bug报告以便进一步调查。</li>
 </ul></li>
-<li><strong>三手（Three Hand）的多设备PR和日志批处理PR</strong>
+<li><strong>三手的多设备PR和日志批处理PR</strong>
 <ul>
-<li>讨论了多设备PR和更新日志批处理PR，但发现对延迟没有改善，反而变得更糟。</li>
-<li>使用perf工具进行性能分析时遇到问题，建议进一步研究如何使用perf。</li>
-<li>讨论了日志批处理代码是否实际进行批处理的问题，建议观察磁盘统计数据以验证。</li>
+<li>讨论了多设备PR和日志批处理PR，但发现对延迟没有改善，反而变得更糟。</li>
+<li>建议进一步研究perf工具的使用，并验证日志批处理代码的效果。</li>
 </ul></li>
 <li><strong>C-Store在Toothology中的应用</strong>
 <ul>
 <li>强调了将C-Store
 OSD引入Toothology的重要性，建议开始进行相关测试。</li>
-<li>提供了访问实验室的wiki链接，以便开始相关工作。</li>
+<li>提供了访问实验室的wiki链接以便开始相关工作。</li>
 </ul></li>
 <li><strong>Greg的工作进展</strong>
 <ul>
-<li>Greg正在研究Ciladb如何处理消息传递，以便在多反应器工作中避免潜在问题。</li>
+<li>Greg正在研究Ciladb如何处理消息传递，以避免在多反应器工作中出现潜在问题。</li>
 </ul></li>
 <li><strong>Doodle的工作进展</strong>
 <ul>
@@ -240,7 +251,7 @@ GC和范围放置策略的工作。</li>
 <h4 id="决定事项">决定事项</h4>
 <ul>
 <li>Barth需要创建一个详细的bug报告，以便进一步调查集群启动问题。</li>
-<li>需要进一步研究perf工具的使用，以解决性能分析中的问题。</li>
+<li>需要进一步研究perf工具的使用，并验证日志批处理代码的效果。</li>
 <li>开始进行C-Store OSD在Toothology中的测试工作。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
@@ -286,6 +297,8 @@ OSD在Toothology中的测试工作，并访问提供的wiki链接以获取实验
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS/" rel="tag">RADOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD/" rel="tag">RBD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%B8%80%E8%87%B4%E6%80%A7/" rel="tag">一致性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96/" rel="tag">去中心化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">可扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%9D%97%E5%AD%98%E5%82%A8/" rel="tag">块存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD/" rel="tag">性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8/" rel="tag">文件系统存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -354,9 +367,9 @@ OSD在Toothology中的测试工作，并访问提供的wiki链接以获取实验
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2021/10/07/Ceph_Orchestrator_Meeting_2021-10-05/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2021/10/07/Ceph_Orchestrator_Meeting_2021-09-28/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Orchestrator Meeting 2021-10-05</h4>
+        <h4 class="title">Ceph Orchestrator Meeting 2021-09-28</h4>
       </a>
     </div>
   

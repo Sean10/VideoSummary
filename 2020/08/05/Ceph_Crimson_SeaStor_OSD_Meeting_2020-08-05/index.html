@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要 本次会议主要讨论了Ceph分布式存储系统的开发进展、遇到的问题以及后续的行动计划。会议中涉及了多个技术议题，包括代码重构、测试结果分析、PR（Pull Request）更新、内存数据结构管理等。 主要议题  代码重构与测试  上周创建了一个Ceph的PR，修复了一些问题以启用小规模运行测试。 最新的测试结果显示，测试被一些在Bluestore中的失败所阻塞，但这些失败与Ceph">
+    <meta name="keywords" content="Ceph,分布式存储,Bluestore,Pull Request,内存数据结构管理">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概要 本次会议主要讨论了Ceph分布式存储系统的发展，重点关注了代码重构、测试结果分析、Pull Request更新、内存数据结构管理等议题。 主要议题  代码重构与测试  创建了一个修复问题的Pull Request，以启用小规模运行测试。 测试结果显示，部分失败与Bluestore相关，但并非Ceph核心问题。 计划进一步调查Bluestore中的失败原">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;SeaStor OSD Meeting 2020-08-05">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/08/05/Ceph_Crimson_SeaStor_OSD_Meeting_2020-08-05/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要 本次会议主要讨论了Ceph分布式存储系统的开发进展、遇到的问题以及后续的行动计划。会议中涉及了多个技术议题，包括代码重构、测试结果分析、PR（Pull Request）更新、内存数据结构管理等。 主要议题  代码重构与测试  上周创建了一个Ceph的PR，修复了一些问题以启用小规模运行测试。 最新的测试结果显示，测试被一些在Bluestore中的失败所阻塞，但这些失败与Ceph">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概要 本次会议主要讨论了Ceph分布式存储系统的发展，重点关注了代码重构、测试结果分析、Pull Request更新、内存数据结构管理等议题。 主要议题  代码重构与测试  创建了一个修复问题的Pull Request，以启用小规模运行测试。 测试结果显示，部分失败与Bluestore相关，但并非Ceph核心问题。 计划进一步调查Bluestore中的失败原">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-08-05T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Bluestore">
+<meta property="article:tag" content="Pull Request">
+<meta property="article:tag" content="内存数据结构管理">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,30 +190,30 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概要">会议概要</h4>
-<p>本次会议主要讨论了Ceph分布式存储系统的开发进展、遇到的问题以及后续的行动计划。会议中涉及了多个技术议题，包括代码重构、测试结果分析、PR（Pull
-Request）更新、内存数据结构管理等。</p>
+<p>本次会议主要讨论了Ceph分布式存储系统的发展，重点关注了代码重构、测试结果分析、Pull
+Request更新、内存数据结构管理等议题。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>代码重构与测试</strong>
 <ul>
-<li>上周创建了一个Ceph的PR，修复了一些问题以启用小规模运行测试。</li>
-<li>最新的测试结果显示，测试被一些在Bluestore中的失败所阻塞，但这些失败与Ceph本身无关。</li>
-<li>计划今天下午进一步调查这些失败的原因。</li>
+<li>创建了一个修复问题的Pull Request，以启用小规模运行测试。</li>
+<li>测试结果显示，部分失败与Bluestore相关，但并非Ceph核心问题。</li>
+<li>计划进一步调查Bluestore中的失败原因。</li>
 </ul></li>
-<li><strong>PR更新与审查</strong>
+<li><strong>Pull Request更新与审查</strong>
 <ul>
-<li>根据评论更新了PR，请求团队成员进行审查。</li>
-<li>讨论了在旧节点中启动扩展映射树（extend map
-tree）的问题，决定不存储在外部映射树中。</li>
+<li>根据评论更新了Pull Request，并请求团队成员审查。</li>
+<li>讨论了在旧节点中启动扩展映射树的问题，决定不在外部映射树中存储。</li>
 <li>代码重构涉及Sam的RBA pin
-patch，发现了一些问题，等待Sam更新后重新重构。</li>
+patch，发现了一些问题，等待更新后重新重构。</li>
 </ul></li>
 <li><strong>内存数据结构管理</strong>
 <ul>
-<li>讨论了在固定KV节点布局中使用cipher_le64的问题，由于缺乏常量操作接口，需要提供自己的包装结构。</li>
-<li>讨论了在事务结束后保持对扩展的引用的安全性问题，建议在同一事务内保持引用，但不要在事务间保持。</li>
+<li>讨论了在固定KV节点布局中使用cipher_le64的问题，因缺乏常量操作接口，需要提供自己的包装结构。</li>
+<li>讨论了在事务结束后保持对扩展的引用的安全性，建议在同一事务内保持引用，但不要在事务间保持。</li>
 </ul></li>
 <li><strong>未来工作计划</strong>
 <ul>
@@ -219,14 +224,14 @@ future），并实现一系列错误率版本的未来设施。</li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>需要进一步调查Bluestore中的测试失败原因。</li>
-<li>PR需要根据团队反馈进行进一步的修改和审查。</li>
-<li>在内存数据结构管理中，需要避免在事务间保持对节点的引用，以防止潜在的问题。</li>
+<li>调查Bluestore中的测试失败原因。</li>
+<li>完成Pull Request的修改和审查。</li>
+<li>在内存数据结构管理中，避免在事务间保持对节点的引用。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>今天下午对Bluestore中的测试失败进行详细调查。</li>
-<li>继续更新和审查PR，确保代码质量和功能正确性。</li>
+<li>调查Bluestore的测试失败原因。</li>
+<li>继续更新和审查Pull Request。</li>
 <li>开发和实现可中断的叙述未来及相关设施。</li>
 <li>实现跟踪设施，确保在树查找中节点的可用性。</li>
 </ul>
@@ -234,13 +239,12 @@ future），并实现一系列错误率版本的未来设施。</li>
 <ul>
 <li>Ceph</li>
 <li>Bluestore</li>
-<li>PR (Pull Request)</li>
+<li>Pull Request (Pull Request)</li>
 <li>extend map tree</li>
 <li>RBA pin patch</li>
 <li>cipher_le64</li>
 <li>interruptible narrative future</li>
 </ul>
-<p>会议结束时，团队成员表示将继续关注各自负责的任务，并保持沟通以确保项目的顺利进行。</p>
 
         </div>
 
@@ -271,6 +275,8 @@ future），并实现一系列错误率版本的未来设施。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bluestore/" rel="tag">Bluestore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Pull-Request/" rel="tag">Pull Request</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%85%E5%AD%98%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AE%A1%E7%90%86/" rel="tag">内存数据结构管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -332,7 +338,7 @@ future），并实现一系列错误率版本的未来设施。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2020/08/06/Ceph_Performance_Meeting_2020-08-06/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2020-08-06</h4>
+        <h4 class="title">Ceph性能会议 2020-08-06</h4>
       </a>
     </div>
   
@@ -341,7 +347,7 @@ future），并实现一系列错误率版本的未来设施。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2020/08/03/Ceph_Orchestrator_Meeting_2020-08-03/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Orchestrator Meeting 2020-08-03</h4>
+        <h4 class="title">  Ceph Orchestrator Meeting 2020-08-03  </h4>
       </a>
     </div>
   

@@ -14,23 +14,31 @@
     
     
     
-    <title>2019-11-27 :: Ceph Orchestration Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2019-11-27 :: Ceph Orchestration Meeting&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 日期： [未提供具体日期] 参会人员： Sebastian, Keifa, 以及其他相关人员 会议目的： 讨论Ceph Orchestrator的性能问题及后续行动计划。 主要议题及讨论内容：  会议时间调整：  Sebastian提出由于Paul无法参加晚间会议，建议调整会议时间或取消。 决定取消当前会议，后续会议将在Sebastian休假回来后重新安排。  Ceph Orchestr">
+    <meta name="keywords" content="Ceph,分布式存储,Dashboard,Ceph Orchestrator,性能问题,线程池,parallel SSH,pssh">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 日期： 2019-11-27 参会人员： Sebastian, Keifa, 以及其他相关人员 会议目的： 讨论Ceph Orchestrator的性能问题及后续行动计划。 主要议题及讨论内容：  会议时间调整：  由于Paul无法参加晚间会议，Sebastian提出调整会议时间或取消。 会议决定取消当前会议，后续会议将在Sebastian休假回来后重新安排。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-11-27 :: Ceph Orchestration Meeting">
+<meta property="og:title" content="&#39;2019-11-27 :: Ceph Orchestration Meeting&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/11/27/2019-11-27_-_-_Ceph_Orchestration_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 日期： [未提供具体日期] 参会人员： Sebastian, Keifa, 以及其他相关人员 会议目的： 讨论Ceph Orchestrator的性能问题及后续行动计划。 主要议题及讨论内容：  会议时间调整：  Sebastian提出由于Paul无法参加晚间会议，建议调整会议时间或取消。 决定取消当前会议，后续会议将在Sebastian休假回来后重新安排。  Ceph Orchestr">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 日期： 2019-11-27 参会人员： Sebastian, Keifa, 以及其他相关人员 会议目的： 讨论Ceph Orchestrator的性能问题及后续行动计划。 主要议题及讨论内容：  会议时间调整：  由于Paul无法参加晚间会议，Sebastian提出调整会议时间或取消。 会议决定取消当前会议，后续会议将在Sebastian休假回来后重新安排。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-11-26T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-11-27T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Dashboard">
+<meta property="article:tag" content="Ceph Orchestrator">
+<meta property="article:tag" content="性能问题">
+<meta property="article:tag" content="线程池">
+<meta property="article:tag" content="parallel SSH">
+<meta property="article:tag" content="pssh">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-11-27 :: Ceph Orchestration Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2019-11-27 :: Ceph Orchestration Meeting&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +142,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-11-27 :: Ceph Orchestration Meeting</h1>
+        <h1 class="title">&#39;2019-11-27 :: Ceph Orchestration Meeting&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-11-26T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +176,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-11-27 :: Ceph Orchestration Meeting</h1>
+        <h1 class="post-card-title">'2019-11-27 :: Ceph Orchestration Meeting'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-11-27 00:00:00" datetime="2019-11-26T16:00:00.000Z"  itemprop="datePublished">2019-11-27</time>
 
@@ -185,8 +193,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>日期：</strong> [未提供具体日期]</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>日期：</strong> 2019-11-27</p>
 <p><strong>参会人员：</strong> Sebastian, Keifa, 以及其他相关人员</p>
 <p><strong>会议目的：</strong> 讨论Ceph
 Orchestrator的性能问题及后续行动计划。</p>
@@ -194,8 +203,8 @@ Orchestrator的性能问题及后续行动计划。</p>
 <ol type="1">
 <li><strong>会议时间调整：</strong>
 <ul>
-<li>Sebastian提出由于Paul无法参加晚间会议，建议调整会议时间或取消。</li>
-<li>决定取消当前会议，后续会议将在Sebastian休假回来后重新安排。</li>
+<li>由于Paul无法参加晚间会议，Sebastian提出调整会议时间或取消。</li>
+<li>会议决定取消当前会议，后续会议将在Sebastian休假回来后重新安排。</li>
 </ul></li>
 <li><strong>Ceph Orchestrator性能问题：</strong>
 <ul>
@@ -273,6 +282,8 @@ SSH”、“pssh”等，是计算机科学和Ceph分布式存储领域的关键
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Orchestrator/" rel="tag">Ceph Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Dashboard/" rel="tag">Dashboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/parallel-SSH/" rel="tag">parallel SSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/pssh/" rel="tag">pssh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98/" rel="tag">性能问题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" rel="tag">线程池</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -284,7 +295,7 @@ SSH”、“pssh”等，是计算机科学和Ceph分布式存储领域的关键
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/11/27/2019-11-27_-_-_Ceph_Orchestration_Meeting/&title=《2019-11-27 :: Ceph Orchestration Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/11/27/2019-11-27_-_-_Ceph_Orchestration_Meeting/&title=《'2019-11-27 :: Ceph Orchestration Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -294,7 +305,7 @@ SSH”、“pssh”等，是计算机科学和Ceph分布式存储领域的关键
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/11/27/2019-11-27_-_-_Ceph_Orchestration_Meeting/&title=《2019-11-27 :: Ceph Orchestration Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/11/27/2019-11-27_-_-_Ceph_Orchestration_Meeting/&title=《'2019-11-27 :: Ceph Orchestration Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -304,7 +315,7 @@ SSH”、“pssh”等，是计算机科学和Ceph分布式存储领域的关键
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-11-27 :: Ceph Orchestration Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/11/27/2019-11-27_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-11-27 :: Ceph Orchestration Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/11/27/2019-11-27_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -332,18 +343,18 @@ SSH”、“pssh”等，是计算机科学和Ceph分布式存储领域的关键
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/11/27/2019-11-25_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/11/27/2019-11-26_-_-_Ceph_Testing_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-11-25 :: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2019-11-26 :: Ceph 测试会议&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/11/27/2019-11-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/11/25/2019-11-19_-_-_Ceph_Testing_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-11-26 :: Crimson SeaStor OSD Weekly Meeting</h4>
+        <h4 class="title">&#39;2019-11-19 :: Ceph 测试会议&#39;</h4>
       </a>
     </div>
   
@@ -443,7 +454,7 @@ SSH”、“pssh”等，是计算机科学和Ceph分布式存储领域的关键
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/11/27/2019-11-27_-_-_Ceph_Orchestration_Meeting/&title=《2019-11-27 :: Ceph Orchestration Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/11/27/2019-11-27_-_-_Ceph_Orchestration_Meeting/&title=《'2019-11-27 :: Ceph Orchestration Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -453,7 +464,7 @@ SSH”、“pssh”等，是计算机科学和Ceph分布式存储领域的关键
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/11/27/2019-11-27_-_-_Ceph_Orchestration_Meeting/&title=《2019-11-27 :: Ceph Orchestration Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/11/27/2019-11-27_-_-_Ceph_Orchestration_Meeting/&title=《'2019-11-27 :: Ceph Orchestration Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -463,7 +474,7 @@ SSH”、“pssh”等，是计算机科学和Ceph分布式存储领域的关键
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-11-27 :: Ceph Orchestration Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/11/27/2019-11-27_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-11-27 :: Ceph Orchestration Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/11/27/2019-11-27_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2023-01-26 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph性能会议纪要 2023-01-26 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 主要议题  Etherpad 归档问题：  每年都会将Etherpad内容归档到前一年的文档中并重新开始。 发现一个配置问题导致复制粘贴操作在服务器端 silently fails，导致2021年的记录丢失。 2022年的记录已通过本地保存的副本恢复。 已调整服务器缓冲区大小，以防止未来再次发生类似问题。  新Pull Request讨论：  来自Igor的两个新PR：  第一个PR涉及">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,延迟问题,写放大问题">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 主要议题  Etherpad 归档问题：  每年将 Etherpad 内容归档到前一年文档中，发现2021年记录丢失，原因是服务器端复制粘贴操作失败。 通过调整服务器缓冲区大小，解决了未来可能发生的类似问题。  新Pull Request讨论：  Igor 提交的两个新 PR：  第一个 PR 涉及多块读取时不重置预取缓冲区，讨论了性能统计改进，但实际性能提升不">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2023-01-26">
+<meta property="og:title" content="Ceph性能会议纪要 2023-01-26">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/01/31/Ceph_Performance_Meeting_2023-01-26/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 主要议题  Etherpad 归档问题：  每年都会将Etherpad内容归档到前一年的文档中并重新开始。 发现一个配置问题导致复制粘贴操作在服务器端 silently fails，导致2021年的记录丢失。 2022年的记录已通过本地保存的副本恢复。 已调整服务器缓冲区大小，以防止未来再次发生类似问题。  新Pull Request讨论：  来自Igor的两个新PR：  第一个PR涉及">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 主要议题  Etherpad 归档问题：  每年将 Etherpad 内容归档到前一年文档中，发现2021年记录丢失，原因是服务器端复制粘贴操作失败。 通过调整服务器缓冲区大小，解决了未来可能发生的类似问题。  新Pull Request讨论：  Igor 提交的两个新 PR：  第一个 PR 涉及多块读取时不重置预取缓冲区，讨论了性能统计改进，但实际性能提升不">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-30T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-01-31T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="延迟问题">
+<meta property="article:tag" content="写放大问题">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2023-01-26</div>
+        <div class="flex-col header-title ellipsis">Ceph性能会议纪要 2023-01-26</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2023-01-26</h1>
+        <h1 class="title">Ceph性能会议纪要 2023-01-26</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-01-30T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2023-01-26</h1>
+        <h1 class="post-card-title">Ceph性能会议纪要 2023-01-26</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-01-31 00:00:00" datetime="2023-01-30T16:00:00.000Z"  itemprop="datePublished">2023-01-31</time>
 
@@ -185,57 +190,60 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>Etherpad 归档问题</strong>：
 <ul>
-<li>每年都会将Etherpad内容归档到前一年的文档中并重新开始。</li>
-<li>发现一个配置问题导致复制粘贴操作在服务器端 silently
-fails，导致2021年的记录丢失。</li>
-<li>2022年的记录已通过本地保存的副本恢复。</li>
-<li>已调整服务器缓冲区大小，以防止未来再次发生类似问题。</li>
+<li>每年将 Etherpad
+内容归档到前一年文档中，发现2021年记录丢失，原因是服务器端复制粘贴操作失败。</li>
+<li>通过调整服务器缓冲区大小，解决了未来可能发生的类似问题。</li>
 </ul></li>
 <li><strong>新Pull Request讨论</strong>：
 <ul>
-<li>来自Igor的两个新PR：
+<li>Igor 提交的两个新 PR：
 <ul>
-<li>第一个PR涉及在多块读取时不重置预取缓冲区，讨论了其在性能统计上的改进，但实际性能提升不明显。</li>
-<li>第二个PR关于在飞行中启用RocksDB删除操作，讨论了其在实验中的应用和潜在的改进。</li>
+<li>第一个 PR
+涉及多块读取时不重置预取缓冲区，讨论了性能统计改进，但实际性能提升不明显。</li>
+<li>第二个 PR 关于在飞行中启用 RocksDB
+删除操作，讨论了实验应用和潜在改进。</li>
 </ul></li>
-<li>其他PR包括启用4K分配单元、用户边界迭代器等，讨论了其对性能的影响和后续的QA需求。</li>
+<li>讨论其他
+PR，包括启用4K分配单元、用户边界迭代器等，评估其对性能的影响和后续 QA
+需求。</li>
 </ul></li>
 <li><strong>延迟峰值问题</strong>：
 <ul>
-<li>讨论了在升级到Pacific版本后出现的延迟峰值问题，最终确定是由于消息传递层的throttle机制导致的。</li>
-<li>该throttle机制在Nautilus版本中被禁用，但在Pacific版本中被重新启用，导致了一些性能问题。</li>
-<li>通过调整throttle设置和禁用该机制，延迟问题得到了改善。</li>
+<li>升级到 Pacific 版本后出现的延迟峰值问题，确定是由消息传递层的
+throttle 机制导致。</li>
+<li>通过调整或禁用 throttle 机制优化性能。</li>
 </ul></li>
 <li><strong>写放大问题</strong>：
 <ul>
-<li>讨论了写放大问题，通过perf
-dump数据分析，发现升级到Pacific后，写操作的平均大小有所增加。</li>
-<li>讨论了可能的原因，包括碎片化和元数据增加等，但尚未找到确切的原因。</li>
-<li>提出了进一步分析RocksDB日志和监控数据的建议。</li>
+<li>通过 perf dump 数据分析，发现升级到 Pacific
+后，写操作的平均大小有所增加。</li>
+<li>讨论可能原因，包括碎片化和元数据增加，但尚未找到确切原因。</li>
+<li>提出进一步分析 RocksDB 日志和监控数据的建议。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>调整Etherpad归档流程，确保未来不再丢失记录。</li>
-<li>继续审查和测试新的Pull Request，特别是涉及性能改进的PR。</li>
-<li>解决延迟峰值问题，通过调整或禁用throttle机制来优化性能。</li>
-<li>进一步分析写放大问题，通过详细的日志分析和监控数据来寻找根本原因。</li>
+<li>调整 Etherpad 归档流程，确保数据安全性和完整性。</li>
+<li>继续审查和测试新的 Pull Request。</li>
+<li>解决延迟峰值问题，优化性能。</li>
+<li>进一步分析写放大问题，寻找根本原因并提出解决方案。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>完成对新PR的审查和测试，确保其对性能的影响得到充分评估。</li>
-<li>继续监控和分析延迟峰值问题，确保所有相关设置和配置都已优化。</li>
-<li>深入分析写放大问题，包括RocksDB日志和性能统计数据，以确定问题的根本原因并提出解决方案。</li>
-<li>定期回顾和更新Etherpad归档流程，确保数据的安全性和完整性。</li>
+<li>完成对新 PR 的审查和测试。</li>
+<li>监控和分析延迟峰值问题，确保配置和配置已优化。</li>
+<li>深入分析写放大问题，确定问题的根本原因并提出解决方案。</li>
+<li>定期回顾和更新 Etherpad 归档流程。</li>
 </ul>
 <h3 id="结论">结论</h3>
-<p>本次会议讨论了多个关键议题，包括Etherpad归档问题、新Pull
-Request的审查、延迟峰值问题和写放大问题。通过详细的讨论和分析，团队确定了后续的行动计划，并将继续监控和优化系统性能。感谢所有参与者的贡献和努力。</p>
+<p>本次会议讨论了多个关键议题，包括 Etherpad 归档问题、新 Pull Request
+的审查、延迟峰值问题和写放大问题。通过讨论，团队确定了后续行动计划，并将继续监控和优化系统性能。</p>
 
         </div>
 
@@ -266,6 +274,8 @@ Request的审查、延迟峰值问题和写放大问题。通过详细的讨论�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%99%E6%94%BE%E5%A4%A7%E9%97%AE%E9%A2%98/" rel="tag">写放大问题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/" rel="tag">延迟问题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -277,7 +287,7 @@ Request的审查、延迟峰值问题和写放大问题。通过详细的讨论�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/31/Ceph_Performance_Meeting_2023-01-26/&title=《Ceph Performance Meeting 2023-01-26》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/31/Ceph_Performance_Meeting_2023-01-26/&title=《Ceph性能会议纪要 2023-01-26》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -287,7 +297,7 @@ Request的审查、延迟峰值问题和写放大问题。通过详细的讨论�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/31/Ceph_Performance_Meeting_2023-01-26/&title=《Ceph Performance Meeting 2023-01-26》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/31/Ceph_Performance_Meeting_2023-01-26/&title=《Ceph性能会议纪要 2023-01-26》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -297,7 +307,7 @@ Request的审查、延迟峰值问题和写放大问题。通过详细的讨论�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2023-01-26》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/31/Ceph_Performance_Meeting_2023-01-26/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议纪要 2023-01-26》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/31/Ceph_Performance_Meeting_2023-01-26/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -327,7 +337,7 @@ Request的审查、延迟峰值问题和写放大问题。通过详细的讨论�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/02/01/Ceph_Science_Working_Group_2023-01-31/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Science Working Group 2023-01-31</h4>
+        <h4 class="title">  Ceph Science Working Group 2023-01-31  </h4>
       </a>
     </div>
   
@@ -336,7 +346,7 @@ Request的审查、延迟峰值问题和写放大问题。通过详细的讨论�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/01/30/Ceph_RGW_Refactoring_Meeting_2022-11-09/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2022-11-09</h4>
+        <h4 class="title">Ceph RGW重构会议纪要 2022-11-09</h4>
       </a>
     </div>
   
@@ -436,7 +446,7 @@ Request的审查、延迟峰值问题和写放大问题。通过详细的讨论�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/31/Ceph_Performance_Meeting_2023-01-26/&title=《Ceph Performance Meeting 2023-01-26》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/31/Ceph_Performance_Meeting_2023-01-26/&title=《Ceph性能会议纪要 2023-01-26》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -446,7 +456,7 @@ Request的审查、延迟峰值问题和写放大问题。通过详细的讨论�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/31/Ceph_Performance_Meeting_2023-01-26/&title=《Ceph Performance Meeting 2023-01-26》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/31/Ceph_Performance_Meeting_2023-01-26/&title=《Ceph性能会议纪要 2023-01-26》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -456,7 +466,7 @@ Request的审查、延迟峰值问题和写放大问题。通过详细的讨论�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2023-01-26》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/31/Ceph_Performance_Meeting_2023-01-26/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议纪要 2023-01-26》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/31/Ceph_Performance_Meeting_2023-01-26/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

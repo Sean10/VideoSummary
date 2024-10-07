@@ -14,23 +14,28 @@
     
     
     
-    <title>CephFS Code Walkthrough: MDS Journal Machinery | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;CephFS Code Walkthrough: MDS Journal Machinery&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph MDS 日志结构与优化讨论 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  MDS 日志概述：  MDS 日志（Metadata Journal）是 MDS（Metadata Server）的主要元数据变更持有者。 任何需要持久化的元数据变更都会记录在 MDS 日志中。 日志包含近期元数据变更、客户端会话信息、导出导入状态、清除状态同步等。  客">
+    <meta name="keywords" content="Ceph,CephFS,MDS,Journal,Metadata">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph MDS 日志结构与优化讨论 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  MDS 日志概述：  MDS 日志是 CephFS 中 MDS（Metadata Server）的主要元数据变更记录者。 日志记录了近期元数据变更、客户端会话信息、导出导入状态、清除状态同步等。 MDS 日志作为循环缓冲区，在逻辑上无限扩展，但在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CephFS Code Walkthrough: MDS Journal Machinery">
+<meta property="og:title" content="&#39;CephFS Code Walkthrough: MDS Journal Machinery&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/10/07/CephFS_Code_Walkthrough_-_MDS_Journal_Machinery/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph MDS 日志结构与优化讨论 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  MDS 日志概述：  MDS 日志（Metadata Journal）是 MDS（Metadata Server）的主要元数据变更持有者。 任何需要持久化的元数据变更都会记录在 MDS 日志中。 日志包含近期元数据变更、客户端会话信息、导出导入状态、清除状态同步等。  客">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph MDS 日志结构与优化讨论 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  MDS 日志概述：  MDS 日志是 CephFS 中 MDS（Metadata Server）的主要元数据变更记录者。 日志记录了近期元数据变更、客户端会话信息、导出导入状态、清除状态同步等。 MDS 日志作为循环缓冲区，在逻辑上无限扩展，但在">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-06T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-10-07T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="MDS">
+<meta property="article:tag" content="Journal">
+<meta property="article:tag" content="Metadata">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CephFS Code Walkthrough: MDS Journal Machinery</div>
+        <div class="flex-col header-title ellipsis">&#39;CephFS Code Walkthrough: MDS Journal Machinery&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CephFS Code Walkthrough: MDS Journal Machinery</h1>
+        <h1 class="title">&#39;CephFS Code Walkthrough: MDS Journal Machinery&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-10-06T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -169,7 +174,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CephFS Code Walkthrough: MDS Journal Machinery</h1>
+        <h1 class="post-card-title">'CephFS Code Walkthrough: MDS Journal Machinery'</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-10-07 00:00:00" datetime="2021-10-06T16:00:00.000Z"  itemprop="datePublished">2021-10-07</time>
 
@@ -186,7 +191,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题ceph-mds-日志结构与优化讨论">会议主题：Ceph MDS
 日志结构与优化讨论</h4>
 <h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
@@ -195,33 +201,23 @@
 <ol type="1">
 <li><strong>MDS 日志概述</strong>：
 <ul>
-<li>MDS 日志（Metadata Journal）是 MDS（Metadata
-Server）的主要元数据变更持有者。</li>
-<li>任何需要持久化的元数据变更都会记录在 MDS 日志中。</li>
-<li>日志包含近期元数据变更、客户端会话信息、导出导入状态、清除状态同步等。</li>
+<li>MDS 日志是 CephFS 中 MDS（Metadata
+Server）的主要元数据变更记录者。</li>
+<li>日志记录了近期元数据变更、客户端会话信息、导出导入状态、清除状态同步等。</li>
+<li>MDS
+日志作为循环缓冲区，在逻辑上无限扩展，但在物理上只占用有限的对象集。</li>
 </ul></li>
 <li><strong>客户端会话信息</strong>：
 <ul>
-<li>新客户端连接时，MDS
-会记录会话信息到日志中，这对故障恢复特别重要。</li>
-<li>MDS 需要知道所有连接的客户端，以确保客户端重新获取其 caps
-并重新建立状态。</li>
+<li>MDS 记录新客户端连接的会话信息，这对故障恢复至关重要。</li>
+<li>MDS 需要知道所有连接的客户端，以确保它们能够重新获取 caps
+并重建状态。</li>
 </ul></li>
 <li><strong>日志结构与管理</strong>：
 <ul>
-<li>MDS
-日志在逻辑上是一个循环缓冲区，但在物理上只占用有限的对象集。</li>
-<li>日志对象的大小通常为 4MB，当一个日志对象满后，MDS
-会移动到下一个日志对象。</li>
-</ul></li>
-<li><strong>日志指针</strong>：
-<ul>
-<li>日志指针是一个双指针结构，用于指示当前 MDS 日志的位置。</li>
-<li>日志指针的存在是为了便于进行灾难恢复或日志重置。</li>
-</ul></li>
-<li><strong>日志头部信息</strong>：
-<ul>
-<li>日志头部包含写入位置、过期位置和修剪位置等信息，这些信息用于管理日志对象的生命周期。</li>
+<li>日志对象大小通常为 4MB，满后 MDS 会移动到下一个对象。</li>
+<li>日志指针用于指示当前日志的位置，便于灾难恢复或日志重置。</li>
+<li>日志头部包含写入位置、过期位置和修剪位置等信息。</li>
 </ul></li>
 <li><strong>日志事件类型</strong>：
 <ul>
@@ -230,8 +226,8 @@ Server）的主要元数据变更持有者。</li>
 </ul></li>
 <li><strong>日志优化</strong>：
 <ul>
-<li>近期优化包括将打开文件表移出 MDS 日志，以减少日志大小和提高 MDS
-故障转移时间。</li>
+<li>近期优化包括将打开文件表移出 MDS
+日志，减少日志大小和提高故障转移时间。</li>
 <li>未来可能的优化包括将递归 unlink RPC
 移出日志，以及重新考虑客户端会话的日志记录方式。</li>
 </ul></li>
@@ -257,8 +253,6 @@ Server）的主要元数据变更持有者。</li>
 <ul>
 <li>会议在讨论了所有议题后结束，感谢所有参与者的参与，并约定下次会议时间。</li>
 </ul>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -289,6 +283,8 @@ Server）的主要元数据变更持有者。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Journal/" rel="tag">Journal</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MDS/" rel="tag">MDS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Metadata/" rel="tag">Metadata</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -300,7 +296,7 @@ Server）的主要元数据变更持有者。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/10/07/CephFS_Code_Walkthrough_-_MDS_Journal_Machinery/&title=《CephFS Code Walkthrough: MDS Journal Machinery》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/10/07/CephFS_Code_Walkthrough_-_MDS_Journal_Machinery/&title=《'CephFS Code Walkthrough: MDS Journal Machinery'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -310,7 +306,7 @@ Server）的主要元数据变更持有者。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/10/07/CephFS_Code_Walkthrough_-_MDS_Journal_Machinery/&title=《CephFS Code Walkthrough: MDS Journal Machinery》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/10/07/CephFS_Code_Walkthrough_-_MDS_Journal_Machinery/&title=《'CephFS Code Walkthrough: MDS Journal Machinery'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -320,7 +316,7 @@ Server）的主要元数据变更持有者。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CephFS Code Walkthrough: MDS Journal Machinery》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/10/07/CephFS_Code_Walkthrough_-_MDS_Journal_Machinery/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CephFS Code Walkthrough: MDS Journal Machinery'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/10/07/CephFS_Code_Walkthrough_-_MDS_Journal_Machinery/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -350,7 +346,7 @@ Server）的主要元数据变更持有者。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/10/08/Ceph_Performance_Meeting_2021-10-07/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2021-10-07</h4>
+        <h4 class="title">Ceph性能会议纪要 2021-10-07</h4>
       </a>
     </div>
   
@@ -359,7 +355,7 @@ Server）的主要元数据变更持有者。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/10/07/Ceph_Code_Walkthroughs_-_Paddles/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Code Walkthroughs: Paddles</h4>
+        <h4 class="title">  Ceph Code Walkthroughs: Paddles  </h4>
       </a>
     </div>
   
@@ -459,7 +455,7 @@ Server）的主要元数据变更持有者。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/10/07/CephFS_Code_Walkthrough_-_MDS_Journal_Machinery/&title=《CephFS Code Walkthrough: MDS Journal Machinery》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/10/07/CephFS_Code_Walkthrough_-_MDS_Journal_Machinery/&title=《'CephFS Code Walkthrough: MDS Journal Machinery'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -469,7 +465,7 @@ Server）的主要元数据变更持有者。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/10/07/CephFS_Code_Walkthrough_-_MDS_Journal_Machinery/&title=《CephFS Code Walkthrough: MDS Journal Machinery》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/10/07/CephFS_Code_Walkthrough_-_MDS_Journal_Machinery/&title=《'CephFS Code Walkthrough: MDS Journal Machinery'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -479,7 +475,7 @@ Server）的主要元数据变更持有者。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CephFS Code Walkthrough: MDS Journal Machinery》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/10/07/CephFS_Code_Walkthrough_-_MDS_Journal_Machinery/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CephFS Code Walkthrough: MDS Journal Machinery'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/10/07/CephFS_Code_Walkthrough_-_MDS_Journal_Machinery/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

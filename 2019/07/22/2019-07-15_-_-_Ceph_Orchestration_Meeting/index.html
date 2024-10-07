@@ -14,23 +14,28 @@
     
     
     
-    <title>2019-07-15 :: Ceph Orchestration Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2019-07-15 :: Ceph Orchestration Meeting&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年X月X日 参会人员： Sebastia, Travis, Bart, Joshua, Yanis, Kieffer, Conor, Blaine, Hansel 会议主题： Ceph 驱动器组讨论、Rook 项目进展、社区发布计划 会议内容： 一、驱动器组讨论  背景： 周五在 container holla 上讨论了驱动器组（drive groups）的问题，但并">
+    <meta name="keywords" content="Ceph 驱动器组,Rook 项目,Ceph 集成,Orchestrator 性能,驱动器组元描述">
+    <meta name="description" content="[改进后的中文总结内容] 在2019年7月15日的Ceph Orchestration Meeting中，参会人员讨论了多个关键议题，包括Ceph驱动器组、Rook项目进展和社区发布计划。 会议内容：  驱动器组讨论：  讨论了驱动器组的全局信息处理方式，以及如何在本地和全局层面进行处理。 讨论结果包括在Sapphire层或Orchestrator层以上完成驱动器组元描述，由Orchestrato">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-07-15 :: Ceph Orchestration Meeting">
+<meta property="og:title" content="&#39;2019-07-15 :: Ceph Orchestration Meeting&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/07/22/2019-07-15_-_-_Ceph_Orchestration_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年X月X日 参会人员： Sebastia, Travis, Bart, Joshua, Yanis, Kieffer, Conor, Blaine, Hansel 会议主题： Ceph 驱动器组讨论、Rook 项目进展、社区发布计划 会议内容： 一、驱动器组讨论  背景： 周五在 container holla 上讨论了驱动器组（drive groups）的问题，但并">
+<meta property="og:description" content="[改进后的中文总结内容] 在2019年7月15日的Ceph Orchestration Meeting中，参会人员讨论了多个关键议题，包括Ceph驱动器组、Rook项目进展和社区发布计划。 会议内容：  驱动器组讨论：  讨论了驱动器组的全局信息处理方式，以及如何在本地和全局层面进行处理。 讨论结果包括在Sapphire层或Orchestrator层以上完成驱动器组元描述，由Orchestrato">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-07-21T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-07-21T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph 驱动器组">
+<meta property="article:tag" content="Rook 项目">
+<meta property="article:tag" content="Ceph 集成">
+<meta property="article:tag" content="Orchestrator 性能">
+<meta property="article:tag" content="驱动器组元描述">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-07-15 :: Ceph Orchestration Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2019-07-15 :: Ceph Orchestration Meeting&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-07-15 :: Ceph Orchestration Meeting</h1>
+        <h1 class="title">&#39;2019-07-15 :: Ceph Orchestration Meeting&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-07-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-07-15 :: Ceph Orchestration Meeting</h1>
+        <h1 class="post-card-title">'2019-07-15 :: Ceph Orchestration Meeting'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-07-22 00:00:00" datetime="2019-07-21T16:00:00.000Z"  itemprop="datePublished">2019-07-22</time>
 
@@ -178,60 +183,33 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： 2023年X月X日</p>
-<p><strong>参会人员</strong>： Sebastia, Travis, Bart, Joshua, Yanis,
-Kieffer, Conor, Blaine, Hansel</p>
-<p><strong>会议主题</strong>： Ceph 驱动器组讨论、Rook
-项目进展、社区发布计划</p>
+            <p>[改进后的中文总结内容]</p>
+<p>在2019年7月15日的Ceph Orchestration
+Meeting中，参会人员讨论了多个关键议题，包括Ceph驱动器组、Rook项目进展和社区发布计划。</p>
 <p><strong>会议内容</strong>：</p>
-<p><strong>一、驱动器组讨论</strong></p>
+<ol type="1">
+<li><strong>驱动器组讨论</strong>：
 <ul>
-<li><strong>背景</strong>： 周五在 container holla
-上讨论了驱动器组（drive groups）的问题，但并非讨论的最佳场所。</li>
-<li><strong>主要议题</strong>：
-<ul>
-<li>是否需要全局信息将驱动器组转换为安全卷。</li>
-<li>如何在本地和全局层面处理驱动器组。</li>
-<li>驱动器组元描述应该在 Sapphire 层还是 Orchestrator 层完成。</li>
-<li>Orchestrator 应如何处理驱动器组。</li>
+<li>讨论了驱动器组的全局信息处理方式，以及如何在本地和全局层面进行处理。</li>
+<li>讨论结果包括在Sapphire层或Orchestrator层以上完成驱动器组元描述，由Orchestrator负责处理驱动器组，并确保其一致性和可靠性。</li>
 </ul></li>
-<li><strong>讨论结果</strong>：
+<li><strong>Rook项目进展</strong>：
 <ul>
-<li>需要进一步讨论驱动器组在全局层面的处理方式。</li>
-<li>建议在 Sapphire 层或 Orchestrator 层以上完成驱动器组元描述。</li>
-<li>Orchestrator 应负责处理驱动器组，并确保其一致性和可靠性。</li>
-<li>需要考虑如何将驱动器组描述传递给 Orchestrator，并避免增加
-Orchestrator 的负担。</li>
+<li>讨论了Rook
+1.1版本发布计划，目标是在8月中旬完成特性开发，8月底发布1.1版本。</li>
+<li>确定了最低SEF版本为Mimic 13.4，以支持新的功能。</li>
+<li>讨论了Rook与Ceph集成，包括对RGW的关键修复和Dashboard中Orchestrator性能的优化。</li>
 </ul></li>
-</ul>
-<p><strong>二、Rook 项目进展</strong></p>
+<li><strong>后续行动计划</strong>：
 <ul>
-<li><strong>Rook 1.1 版本发布计划</strong>：
-<ul>
-<li>目标：8月中旬完成特性开发，8月底发布 1.1 版本。</li>
-<li>需要确定最低 SEF 版本，以支持新的功能。</li>
-<li>建议将最低 SEF 版本设置为 Mimic 13.4，以支持安全卷。</li>
+<li>Sebastia和Joshua将继续讨论驱动器组的问题，并完善相关文档。</li>
+<li>Kieffer将优化Orchestrator的性能，并实现Orchestrator
+API的introspection功能。</li>
+<li>Blaine将负责Rook 1.1版本的发布计划。</li>
+<li>所有参与者将根据讨论结果，继续推进Ceph和Rook项目的开发。</li>
 </ul></li>
-<li><strong>Rook 与 Ceph 集成</strong>：
-<ul>
-<li>Rook 1.1 版本将包含针对 RGW 的关键修复。</li>
-<li>需要考虑如何在 Dashboard 中优化 Orchestrator 的性能。</li>
-<li>需要实现 Orchestrator API 的 introspection 功能，以便 UI 能够了解
-Orchestrator 的实现。</li>
-</ul></li>
-</ul>
-<p><strong>三、后续行动计划</strong></p>
-<ul>
-<li>Sebastia 和 Joshua 将继续讨论驱动器组的问题，并完善相关文档。</li>
-<li>Kieffer 将优化 Orchestrator 的性能，并实现 Orchestrator API 的
-introspection 功能。</li>
-<li>Blaine 将负责 Rook 1.1 版本的发布计划。</li>
-<li>所有参与者将根据讨论结果，继续推进 Ceph 和 Rook 项目的开发。</li>
-</ul>
-<p><strong>会议总结</strong>：</p>
-<p>本次会议讨论了 Ceph 驱动器组和 Rook
-项目的进展，并制定了后续行动计划。会议取得了积极成果，为项目的进一步发展奠定了基础。</p>
+</ol>
+<p>会议总结了Ceph驱动器组和Rook项目的进展，并制定了后续行动计划，为项目的进一步发展奠定了基础。</p>
 
         </div>
 
@@ -262,6 +240,8 @@ introspection 功能。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-%E9%9B%86%E6%88%90/" rel="tag">Ceph 集成</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-%E9%A9%B1%E5%8A%A8%E5%99%A8%E7%BB%84/" rel="tag">Ceph 驱动器组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator-%E6%80%A7%E8%83%BD/" rel="tag">Orchestrator 性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook-%E9%A1%B9%E7%9B%AE/" rel="tag">Rook 项目</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%A9%B1%E5%8A%A8%E5%99%A8%E7%BB%84%E5%85%83%E6%8F%8F%E8%BF%B0/" rel="tag">驱动器组元描述</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -273,7 +253,7 @@ introspection 功能。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-15_-_-_Ceph_Orchestration_Meeting/&title=《2019-07-15 :: Ceph Orchestration Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-15_-_-_Ceph_Orchestration_Meeting/&title=《'2019-07-15 :: Ceph Orchestration Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -283,7 +263,7 @@ introspection 功能。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-15_-_-_Ceph_Orchestration_Meeting/&title=《2019-07-15 :: Ceph Orchestration Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-15_-_-_Ceph_Orchestration_Meeting/&title=《'2019-07-15 :: Ceph Orchestration Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -293,7 +273,7 @@ introspection 功能。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-07-15 :: Ceph Orchestration Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-15_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-07-15 :: Ceph Orchestration Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-15_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -321,18 +301,18 @@ introspection 功能。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/07/22/2019-07-18_-_-_Ceph_Performance_Meeting/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/07/23/2019-07-22_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-07-18 :: Ceph Performance Meeting</h4>
+        <h4 class="title"> 2019-07-22 :: Ceph Orchestration Meeting </h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/07/22/July_2019_-_-_Ceph_Developer_Monthly/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/07/22/2019-07-16_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">July 2019 :: Ceph Developer Monthly</h4>
+        <h4 class="title">&#39;2019-07-16 :: Crimson SeaStor OSD Weekly Meeting&#39;</h4>
       </a>
     </div>
   
@@ -432,7 +412,7 @@ introspection 功能。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-15_-_-_Ceph_Orchestration_Meeting/&title=《2019-07-15 :: Ceph Orchestration Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-15_-_-_Ceph_Orchestration_Meeting/&title=《'2019-07-15 :: Ceph Orchestration Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -442,7 +422,7 @@ introspection 功能。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-15_-_-_Ceph_Orchestration_Meeting/&title=《2019-07-15 :: Ceph Orchestration Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-15_-_-_Ceph_Orchestration_Meeting/&title=《'2019-07-15 :: Ceph Orchestration Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -452,7 +432,7 @@ introspection 功能。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-07-15 :: Ceph Orchestration Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-15_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-07-15 :: Ceph Orchestration Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/07/22/2019-07-15_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,28 @@
     
     
     
-    <title>S3select: Computational Storage in S3 | ceph视频总结 | youtube频道总结</title>
+    <title>  S3select: Computational Storage in S3   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：S3 Select 介绍 主讲人：Gar Salomon  职位：Dorado 的 Gateway 团队成员 经验：过去三年致力于 S3 Select 的开发  会议内容概述 Gar Salomon 介绍了 S3 Select 的概念、工作原理、优势以及未来的发展方向。S3 Select 是一种新的 S3 能力，允许客户端将 SQL 语句推送到存储层，从而只提取所需的数据，显著">
+    <meta name="keywords" content="性能优化,数据存储,S3 Select,SQL查询,AWS服务">
+    <meta name="description" content="[改进后的中文总结内容] Gar Salomon 在会议上介绍了 S3 Select 的概念、工作原理、优势以及未来的发展方向。S3 Select 是 AWS S3 的一种新能力，允许客户端将 SQL 语句推送到存储层，从而只提取所需的数据，提高性能并降低成本。 会议内容概述  S3 Select 简介  引入时间：2020年7月 功能：允许客户端推送 SQL 语句到存储层 优势：提高性能，减少成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="S3select: Computational Storage in S3">
+<meta property="og:title" content="  S3select: Computational Storage in S3  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：S3 Select 介绍 主讲人：Gar Salomon  职位：Dorado 的 Gateway 团队成员 经验：过去三年致力于 S3 Select 的开发  会议内容概述 Gar Salomon 介绍了 S3 Select 的概念、工作原理、优势以及未来的发展方向。S3 Select 是一种新的 S3 能力，允许客户端将 SQL 语句推送到存储层，从而只提取所需的数据，显著">
+<meta property="og:description" content="[改进后的中文总结内容] Gar Salomon 在会议上介绍了 S3 Select 的概念、工作原理、优势以及未来的发展方向。S3 Select 是 AWS S3 的一种新能力，允许客户端将 SQL 语句推送到存储层，从而只提取所需的数据，提高性能并降低成本。 会议内容概述  S3 Select 简介  引入时间：2020年7月 功能：允许客户端推送 SQL 语句到存储层 优势：提高性能，减少成">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-13T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-11-14T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="数据存储">
+<meta property="article:tag" content="S3 Select">
+<meta property="article:tag" content="SQL查询">
+<meta property="article:tag" content="AWS服务">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">S3select: Computational Storage in S3</div>
+        <div class="flex-col header-title ellipsis">  S3select: Computational Storage in S3  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">S3select: Computational Storage in S3</h1>
+        <h1 class="title">  S3select: Computational Storage in S3  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-11-13T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98s3-select-%E4%BB%8B%E7%BB%8D"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：S3 Select 介绍</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAgar-salomon"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：Gar Salomon</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议内容概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E8%AE%A8%E8%AE%BA%E7%82%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">关键讨论点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">[改进后的中文总结内容]</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议内容概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D%E4%BF%9D%E7%95%99"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">关键词保留</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E7%82%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">改进点</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">S3select: Computational Storage in S3</h1>
+        <h1 class="post-card-title">  S3select: Computational Storage in S3  </h1>
         <div class="post-meta">
             <time class="post-time" title="2022-11-14 00:00:00" datetime="2022-11-13T16:00:00.000Z"  itemprop="datePublished">2022-11-14</time>
 
@@ -185,84 +190,91 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题s3-select-介绍">会议主题：S3 Select 介绍</h4>
-<h4 id="主讲人gar-salomon">主讲人：Gar Salomon</h4>
-<ul>
-<li><strong>职位</strong>：Dorado 的 Gateway 团队成员</li>
-<li><strong>经验</strong>：过去三年致力于 S3 Select 的开发</li>
-</ul>
-<h4 id="会议内容概述">会议内容概述</h4>
-<p>Gar Salomon 介绍了 S3 Select
-的概念、工作原理、优势以及未来的发展方向。S3 Select 是一种新的 S3
-能力，允许客户端将 SQL
-语句推送到存储层，从而只提取所需的数据，显著提高性能并降低成本。</p>
-<h4 id="关键讨论点">关键讨论点</h4>
+            <h2 id="改进后的中文总结内容">[改进后的中文总结内容]</h2>
+<p>Gar Salomon 在会议上介绍了 S3 Select
+的概念、工作原理、优势以及未来的发展方向。S3 Select 是 AWS S3
+的一种新能力，允许客户端将 SQL
+语句推送到存储层，从而只提取所需的数据，提高性能并降低成本。</p>
+<h3 id="会议内容概述">会议内容概述</h3>
 <ol type="1">
 <li><strong>S3 Select 简介</strong>
 <ul>
-<li><strong>引入时间</strong>：2020年7月</li>
-<li><strong>功能</strong>：允许客户端推送 SQL 语句到存储层</li>
-<li><strong>优势</strong>：提高性能，减少成本</li>
+<li>引入时间：2020年7月</li>
+<li>功能：允许客户端推送 SQL 语句到存储层</li>
+<li>优势：提高性能，减少成本</li>
 </ul></li>
 <li><strong>为什么需要 S3 Select</strong>
 <ul>
-<li><strong>传统方法</strong>：数据移动到操作地点</li>
-<li><strong>S3 Select 方法</strong>：操作推送到数据附近</li>
-<li><strong>优势</strong>：减少内存消耗，优化大数据生态系统</li>
+<li>传统方法：数据移动到操作地点</li>
+<li>S3 Select 方法：操作推送到数据附近</li>
+<li>优势：减少内存消耗，优化大数据生态系统</li>
 </ul></li>
 <li><strong>S3 Select 的工作原理</strong>
 <ul>
-<li><strong>嵌入式系统</strong>：集成到 GET 对象模型中</li>
-<li><strong>处理流程</strong>：对象被获取并由 S3 Select
-模型处理每个片段</li>
-<li><strong>支持格式</strong>：CSV, JSON, Parquet</li>
+<li>集成到 GET 对象模型中</li>
+<li>对象被获取并由 S3 Select 模型处理每个片段</li>
+<li>支持格式：CSV, JSON, Parquet</li>
 </ul></li>
 <li><strong>SQL 在机器学习中的作用</strong>
 <ul>
-<li><strong>数据处理</strong>：SQL 是处理数据的主要语言</li>
-<li><strong>数据格式</strong>：数据必须格式化以供机器学习算法使用</li>
+<li>SQL 是处理数据的主要语言</li>
+<li>数据必须格式化以供机器学习算法使用</li>
 </ul></li>
 <li><strong>S3 Select 的软件设计特点</strong>
 <ul>
-<li><strong>引擎设计</strong>：头文件代码，单文件函数，内存高效使用</li>
-<li><strong>数据类型处理</strong>：不同数据类型的读取器与 SQL
-引擎解耦</li>
+<li>引擎设计：头文件代码，单文件函数，内存高效使用</li>
+<li>数据类型处理：不同数据类型的读取器与 SQL 引擎解耦</li>
 </ul></li>
 <li><strong>数据类型处理流程</strong>
 <ul>
-<li><strong>CSV</strong>：简单格式，不支持数据类型</li>
-<li><strong>JSON</strong>：支持数据类型和模式</li>
-<li><strong>Parquet</strong>：高级对象，包含元数据，支持直接访问特定数据</li>
+<li>CSV：简单格式，不支持数据类型</li>
+<li>JSON：支持数据类型和模式</li>
+<li>Parquet：高级对象，包含元数据，支持直接访问特定数据</li>
 </ul></li>
 <li><strong>并行处理和优化</strong>
 <ul>
-<li><strong>并行查询</strong>：通过分割数据范围并行处理查询</li>
-<li><strong>优化器</strong>：未来可能集成到 Spark, Presto
-等分析应用中</li>
+<li>通过分割数据范围并行处理查询</li>
+<li>未来可能集成到 Spark, Presto 等分析应用中</li>
 </ul></li>
 <li><strong>验证和测试</strong>
 <ul>
-<li><strong>表达式生成器</strong>：生成复杂表达式以验证引擎</li>
-<li><strong>SQL 生成器</strong>：生成复杂 SQL 语句以测试系统</li>
+<li>表达式生成器：生成复杂表达式以验证引擎</li>
+<li>SQL 生成器：生成复杂 SQL 语句以测试系统</li>
+</ul></li>
+<li><strong>未来工作</strong>
+<ul>
+<li>集成 S3 Select 到 Spark, Presto 等分析应用中</li>
+<li>优化方向：作为优化器，提高查询性能</li>
+</ul></li>
+<li><strong>开发和测试</strong>
+<ul>
+<li>继续开发和测试 S3 Select 的功能</li>
+<li>探索与现有分析应用的集成可能性</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
+<h3 id="关键词保留">关键词保留</h3>
 <ul>
-<li><strong>未来工作</strong>：集成 S3 Select 到 Spark, Presto
-等分析应用中</li>
-<li><strong>优化方向</strong>：作为优化器，提高查询性能</li>
+<li>[S3 Select]</li>
+<li>[数据存储]</li>
+<li>[SQL查询]</li>
+<li>[性能优化]</li>
+<li>[AWS服务]</li>
+<li>[Parquet]</li>
+<li>[CSV]</li>
+<li>[JSON]</li>
+<li>[Spark]</li>
+<li>[Presto]</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<h3 id="改进点">改进点</h3>
 <ul>
-<li><strong>开发和测试</strong>：继续开发和测试 S3 Select 的功能</li>
-<li><strong>集成工作</strong>：探索与现有分析应用的集成可能性</li>
+<li>原总结中缺少了对数据类型处理流程的详细描述，如 CSV、JSON 和
+Parquet。</li>
+<li>原总结中未提及 S3 Select
+的软件设计特点，如头文件代码和单文件函数。</li>
+<li>原总结中未提及 S3 Select 的验证和测试方法，如表达式生成器和 SQL
+生成器。</li>
+<li>原总结中未提及 S3 Select 的未来工作，如集成到 Spark 和 Presto。</li>
 </ul>
-<h4 id="会议结束">会议结束</h4>
-<p>Gar Salomon 欢迎任何问题和反馈，并鼓励大家查看 GitHub
-仓库以获取更多信息。</p>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -293,6 +305,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/AWS%E6%9C%8D%E5%8A%A1/" rel="tag">AWS服务</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/S3-Select/" rel="tag">S3 Select</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SQL%E6%9F%A5%E8%AF%A2/" rel="tag">SQL查询</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/" rel="tag">数据存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -304,7 +318,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/&title=《S3select: Computational Storage in S3》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/&title=《  S3select: Computational Storage in S3  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -314,7 +328,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/&title=《S3select: Computational Storage in S3》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/&title=《  S3select: Computational Storage in S3  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -324,7 +338,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《S3select: Computational Storage in S3》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  S3select: Computational Storage in S3  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -463,7 +477,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/&title=《S3select: Computational Storage in S3》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/&title=《  S3select: Computational Storage in S3  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -473,7 +487,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/&title=《S3select: Computational Storage in S3》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/&title=《  S3select: Computational Storage in S3  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -483,7 +497,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《S3select: Computational Storage in S3》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  S3select: Computational Storage in S3  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

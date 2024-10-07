@@ -14,23 +14,28 @@
     
     
     
-    <title>Doing QoS Before Ceph Cluster QoS is available - David Byte, Alex Lau | ceph视频总结 | youtube频道总结</title>
+    <title>在Ceph集群QoS可用之前实现QoS - David Byte, Alex Lau | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写具体日期和时间] 会议地点： [请填写会议地点] 参会人员： [请填写参会人员名单] 会议主题： 分布式存储Ceph相关议题及视频会议字幕翻译讨论 会议内容摘要： 本次会议主要围绕以下议题展开讨论：  Ceph存储技术讨论：  会议中提到了Ceph存储系统的多个级别和对抗者，以及如何处理不同级别的挑战。 讨论了Ceph在处理大量数据（如葡萄干）时的效率和性能。 提到了">
+    <meta name="keywords" content="分布式存储,Ceph存储,QoS,视频会议字幕翻译,自动节点分割（ANS）">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： [请填写具体日期和时间] 会议地点： [请填写会议地点] 参会人员： [请填写参会人员名单] 会议主题： 分析Ceph存储系统QoS实现策略，并讨论视频会议字幕翻译工作 会议内容摘要： 本次会议主要围绕以下议题展开讨论：  Ceph存储技术讨论：  讨论了Ceph存储系统的多层级架构和挑战，以及如何在不同的层级上应对。 分析了Ceph在处理大量数据时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Doing QoS Before Ceph Cluster QoS is available - David Byte, Alex Lau">
+<meta property="og:title" content="在Ceph集群QoS可用之前实现QoS - David Byte, Alex Lau">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写具体日期和时间] 会议地点： [请填写会议地点] 参会人员： [请填写参会人员名单] 会议主题： 分布式存储Ceph相关议题及视频会议字幕翻译讨论 会议内容摘要： 本次会议主要围绕以下议题展开讨论：  Ceph存储技术讨论：  会议中提到了Ceph存储系统的多个级别和对抗者，以及如何处理不同级别的挑战。 讨论了Ceph在处理大量数据（如葡萄干）时的效率和性能。 提到了">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： [请填写具体日期和时间] 会议地点： [请填写会议地点] 参会人员： [请填写参会人员名单] 会议主题： 分析Ceph存储系统QoS实现策略，并讨论视频会议字幕翻译工作 会议内容摘要： 本次会议主要围绕以下议题展开讨论：  Ceph存储技术讨论：  讨论了Ceph存储系统的多层级架构和挑战，以及如何在不同的层级上应对。 分析了Ceph在处理大量数据时">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-04-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Ceph存储">
+<meta property="article:tag" content="QoS">
+<meta property="article:tag" content="视频会议字幕翻译">
+<meta property="article:tag" content="自动节点分割（ANS）">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Doing QoS Before Ceph Cluster QoS is available - David Byte, Alex Lau</div>
+        <div class="flex-col header-title ellipsis">在Ceph集群QoS可用之前实现QoS - David Byte, Alex Lau</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Doing QoS Before Ceph Cluster QoS is available - David Byte, Alex Lau</h1>
+        <h1 class="title">在Ceph集群QoS可用之前实现QoS - David Byte, Alex Lau</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-04-22T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Doing QoS Before Ceph Cluster QoS is available - David Byte, Alex Lau</h1>
+        <h1 class="post-card-title">在Ceph集群QoS可用之前实现QoS - David Byte, Alex Lau</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-04-23 00:00:00" datetime="2018-04-22T16:00:00.000Z"  itemprop="datePublished">2018-04-23</time>
 
@@ -185,46 +190,47 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议时间</strong>： [请填写具体日期和时间]</p>
 <p><strong>会议地点</strong>： [请填写会议地点]</p>
 <p><strong>参会人员</strong>： [请填写参会人员名单]</p>
 <p><strong>会议主题</strong>：
-分布式存储Ceph相关议题及视频会议字幕翻译讨论</p>
+分析Ceph存储系统QoS实现策略，并讨论视频会议字幕翻译工作</p>
 <p><strong>会议内容摘要</strong>：</p>
 <p>本次会议主要围绕以下议题展开讨论：</p>
 <ol type="1">
 <li><strong>Ceph存储技术讨论</strong>：
 <ul>
-<li>会议中提到了Ceph存储系统的多个级别和对抗者，以及如何处理不同级别的挑战。</li>
-<li>讨论了Ceph在处理大量数据（如葡萄干）时的效率和性能。</li>
-<li>提到了ANS（自动节点分割）等关键技术。</li>
+<li>讨论了Ceph存储系统的多层级架构和挑战，以及如何在不同的层级上应对。</li>
+<li>分析了Ceph在处理大量数据时的性能和效率，特别是针对“葡萄干”这类数据。</li>
+<li>讨论了自动节点分割（ANS）等关键技术。</li>
 </ul></li>
 <li><strong>视频会议字幕翻译</strong>：
 <ul>
-<li>会议涉及到英译中的字幕翻译工作，讨论了翻译过程中的难点和解决方案。</li>
+<li>讨论了英译中字幕翻译过程中的难点和解决方案。</li>
 <li>提到了Spivak 2等翻译工具的使用。</li>
 </ul></li>
 <li><strong>行动计划</strong>：
 <ul>
-<li>确定了对Ceph存储技术的进一步研究和优化计划。</li>
+<li>确定了对Ceph存储系统QoS实现策略的进一步研究和优化计划。</li>
 <li>安排了字幕翻译工作的具体分工和时间节点。</li>
 </ul></li>
 </ol>
 <p><strong>关键细节</strong>：</p>
 <ul>
-<li><strong>Ceph相关关键词</strong>： Ceph, 分布式存储, 自动节点分割
-(ANS), 对抗者 (adversaries), 葡萄干 (raisins)</li>
+<li><strong>Ceph相关关键词</strong>： Ceph, 分布式存储, QoS,
+自动节点分割 (ANS), 对抗者 (adversaries), 葡萄干 (raisins)</li>
 <li><strong>字幕翻译关键词</strong>： 英译中, Spivak 2, 翻译工具</li>
 </ul>
 <p><strong>决定事项</strong>：</p>
 <ul>
-<li>对Ceph存储系统进行深入研究，以提高其性能和效率。</li>
+<li>对Ceph存储系统进行深入研究，以提高其QoS性能。</li>
 <li>安排字幕翻译人员，确保视频会议字幕的准确性和及时性。</li>
 </ul>
 <p><strong>后续行动计划</strong>：</p>
 <ul>
-<li>[具体日期]： 完成Ceph存储系统性能优化方案。</li>
+<li>[具体日期]： 完成Ceph存储系统QoS性能优化方案。</li>
 <li>[具体日期]： 确定字幕翻译人员并分配任务。</li>
 <li>[具体日期]： 定期召开会议，跟踪项目进度。</li>
 </ul>
@@ -233,6 +239,8 @@
 <li>会议中多次出现音乐和掌声，表明会议氛围活跃。</li>
 <li>部分内容可能涉及隐私或敏感信息，请妥善处理。</li>
 </ul>
+<p>[标签] - Ceph存储 - 分布式存储 - QoS优化 - 自动节点分割（ANS） -
+视频会议字幕翻译</p>
 
         </div>
 
@@ -263,6 +271,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E5%AD%98%E5%82%A8/" rel="tag">Ceph存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/QoS/" rel="tag">QoS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E8%8A%82%E7%82%B9%E5%88%86%E5%89%B2%EF%BC%88ANS%EF%BC%89/" rel="tag">自动节点分割（ANS）</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%A7%86%E9%A2%91%E4%BC%9A%E8%AE%AE%E5%AD%97%E5%B9%95%E7%BF%BB%E8%AF%91/" rel="tag">视频会议字幕翻译</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -274,7 +284,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/&title=《Doing QoS Before Ceph Cluster QoS is available - David Byte, Alex Lau》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/&title=《在Ceph集群QoS可用之前实现QoS - David Byte, Alex Lau》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -284,7 +294,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/&title=《Doing QoS Before Ceph Cluster QoS is available - David Byte, Alex Lau》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/&title=《在Ceph集群QoS可用之前实现QoS - David Byte, Alex Lau》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -294,7 +304,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Doing QoS Before Ceph Cluster QoS is available - David Byte, Alex Lau》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在Ceph集群QoS可用之前实现QoS - David Byte, Alex Lau》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -324,7 +334,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2018/04/23/DeepSea_-_Deployment_and_Management_of_Ceph_with_Salt_-_Joshua_Schmid/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">DeepSea: Deployment and Management of Ceph with Salt - Joshua Schmid</h4>
+        <h4 class="title">&#39;DeepSea: Deployment and Management of Ceph with Salt - Joshua Schmid&#39;</h4>
       </a>
     </div>
   
@@ -333,7 +343,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2018/04/23/Email_Storage_with_Ceph_-_Danny_Al_Gaaf/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Email Storage with Ceph - Danny Al Gaaf</h4>
+        <h4 class="title">  Email Storage with Ceph - Danny Al Gaaf  </h4>
       </a>
     </div>
   
@@ -433,7 +443,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/&title=《Doing QoS Before Ceph Cluster QoS is available - David Byte, Alex Lau》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/&title=《在Ceph集群QoS可用之前实现QoS - David Byte, Alex Lau》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -443,7 +453,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/&title=《Doing QoS Before Ceph Cluster QoS is available - David Byte, Alex Lau》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/&title=《在Ceph集群QoS可用之前实现QoS - David Byte, Alex Lau》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -453,7 +463,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Doing QoS Before Ceph Cluster QoS is available - David Byte, Alex Lau》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在Ceph集群QoS可用之前实现QoS - David Byte, Alex Lau》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/04/23/Doing_QoS_Before_Ceph_Cluster_QoS_is_available_-_David_Byte_Alex_Lau/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

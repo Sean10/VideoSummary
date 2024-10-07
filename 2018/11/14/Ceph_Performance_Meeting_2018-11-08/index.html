@@ -20,17 +20,28 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月某日 会议主题： Ceph社区开发讨论 参会人员： Jesse, Radek, Casey, Adam, Mark等 会议内容： 1. Pull Request (PR) 审查进度  Jesse 仍在努力审查Pull Requests，但进度有所滞后。 Radek 介绍了为读取或副本存储池引入的新快捷方式，并进行了一些基准测试。 Casey 正在改进Dashb">
+    <meta name="keywords" content="Ceph,分布式存储,块存储,高可用性,CRUSH算法,对象存储,可伸缩性,文件系统存储,一致性,去中心化,性能">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2018年11月8日 会议主题： Ceph社区开发讨论 参会人员： Jesse, Radek, Casey, Adam, Mark等 会议内容： 1. Pull Request (PR) 审查进度  Jesse 仍在努力审查Pull Requests，但进度有所滞后。 Radek 介绍了为读取或副本存储池引入的新快捷方式，并进行了一些基准测试。 Ca">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Performance Meeting 2018-11-08">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/11/14/Ceph_Performance_Meeting_2018-11-08/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月某日 会议主题： Ceph社区开发讨论 参会人员： Jesse, Radek, Casey, Adam, Mark等 会议内容： 1. Pull Request (PR) 审查进度  Jesse 仍在努力审查Pull Requests，但进度有所滞后。 Radek 介绍了为读取或副本存储池引入的新快捷方式，并进行了一些基准测试。 Casey 正在改进Dashb">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2018年11月8日 会议主题： Ceph社区开发讨论 参会人员： Jesse, Radek, Casey, Adam, Mark等 会议内容： 1. Pull Request (PR) 审查进度  Jesse 仍在努力审查Pull Requests，但进度有所滞后。 Radek 介绍了为读取或副本存储池引入的新快捷方式，并进行了一些基准测试。 Ca">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-11-13T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-11-14T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="块存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="可伸缩性">
+<meta property="article:tag" content="文件系统存储">
+<meta property="article:tag" content="一致性">
+<meta property="article:tag" content="去中心化">
+<meta property="article:tag" content="性能">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,8 +196,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： 2023年11月某日</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议时间</strong>： 2018年11月8日</p>
 <p><strong>会议主题</strong>： Ceph社区开发讨论</p>
 <p><strong>参会人员</strong>： Jesse, Radek, Casey, Adam, Mark等</p>
 <p><strong>会议内容</strong>：</p>
@@ -197,6 +209,8 @@
 介绍了为读取或副本存储池引入的新快捷方式，并进行了一些基准测试。</li>
 <li>Casey 正在改进Dashboard服务。</li>
 <li>Adam 正在处理RGW相关的工作，并完成了测试。</li>
+<li>Mark 提到了自适应节流和IO节流器的进展。</li>
+<li>讨论了在Ceph中使用C++标准库的建议。</li>
 <li>其他PR的审查情况尚不明确。</li>
 </ul>
 <p><strong>2. Vector Strings的替代方案</strong></p>
@@ -224,6 +238,8 @@
 <li>Casey 将改进Dashboard服务。</li>
 <li>Adam 将完成RGW相关的工作。</li>
 <li>所有成员将继续审查Pull Requests。</li>
+<li>将讨论Vector Strings的替代方案。</li>
+<li>成员们可以申请使用新的性能测试硬件。</li>
 </ul>
 <p><strong>后续会议</strong>：</p>
 <ul>
@@ -259,6 +275,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%B8%80%E8%87%B4%E6%80%A7/" rel="tag">一致性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96/" rel="tag">去中心化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%9D%97%E5%AD%98%E5%82%A8/" rel="tag">块存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD/" rel="tag">性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8/" rel="tag">文件系统存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -320,7 +338,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2018/11/14/2018-NOV-07_-_-_Ceph_Developer_Monthly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2018-NOV-07 :: Ceph Developer Monthly</h4>
+        <h4 class="title"> 2018-NOV-07 :: Ceph Developer Monthly </h4>
       </a>
     </div>
   

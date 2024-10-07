@@ -14,23 +14,31 @@
     
     
     
-    <title>2016-MAR-02 :: Ceph Developer Monthly | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2016-MAR-02 :: Ceph 开发者月度会议&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议主题： Ceph 开发者月度会议（APAC 版） 会议时间： 2023年11月（具体日期未提及） 参会人员： 多位 Ceph 开发者，包括 Sage、Marcus、Patrick、Noah 等。 会议内容： 1. 网络加密：  讨论了为 Ceph 添加网络加密的需求，特别是考虑到当前的政治气候。 提出通过扩展当前的消息协议来实现加密，使用现有的会话密钥进行加密。 讨论了加密对消息吞吐量的影响，">
+    <meta name="keywords" content="Ceph,开发者月度会议,网络加密,同步消息协议,发布流程,Paddle 和 Pulpito,Lua 支持,Ceph Jel">
+    <meta name="description" content="[改进后的中文总结内容] 改进后的中文总结 在 2023 年 11 月举行的 Ceph 开发者月度会议（APAC 版）中，多位 Ceph 开发者参与了讨论，包括 Sage、Marcus、Patrick、Noah 等。会议主要围绕以下议题展开： 1. 网络加密：  讨论了为 Ceph 添加网络加密的需求，特别是在当前的政治气候下。 提出通过扩展当前的消息协议来实现加密，并使用现有的会话密钥进行加密。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2016-MAR-02 :: Ceph Developer Monthly">
+<meta property="og:title" content="&#39;2016-MAR-02 :: Ceph 开发者月度会议&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2016/03/03/2016-MAR-02_-_-_Ceph_Developer_Monthly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议主题： Ceph 开发者月度会议（APAC 版） 会议时间： 2023年11月（具体日期未提及） 参会人员： 多位 Ceph 开发者，包括 Sage、Marcus、Patrick、Noah 等。 会议内容： 1. 网络加密：  讨论了为 Ceph 添加网络加密的需求，特别是考虑到当前的政治气候。 提出通过扩展当前的消息协议来实现加密，使用现有的会话密钥进行加密。 讨论了加密对消息吞吐量的影响，">
+<meta property="og:description" content="[改进后的中文总结内容] 改进后的中文总结 在 2023 年 11 月举行的 Ceph 开发者月度会议（APAC 版）中，多位 Ceph 开发者参与了讨论，包括 Sage、Marcus、Patrick、Noah 等。会议主要围绕以下议题展开： 1. 网络加密：  讨论了为 Ceph 添加网络加密的需求，特别是在当前的政治气候下。 提出通过扩展当前的消息协议来实现加密，并使用现有的会话密钥进行加密。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2016-03-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2016-03-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="开发者月度会议">
+<meta property="article:tag" content="网络加密">
+<meta property="article:tag" content="同步消息协议">
+<meta property="article:tag" content="发布流程">
+<meta property="article:tag" content="Paddle 和 Pulpito">
+<meta property="article:tag" content="Lua 支持">
+<meta property="article:tag" content="Ceph Jel">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2016-MAR-02 :: Ceph Developer Monthly</div>
+        <div class="flex-col header-title ellipsis">&#39;2016-MAR-02 :: Ceph 开发者月度会议&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +142,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2016-MAR-02 :: Ceph Developer Monthly</h1>
+        <h1 class="title">&#39;2016-MAR-02 :: Ceph 开发者月度会议&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2016-03-02T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,12 +164,19 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A0%87%E7%AD%BE"><span class="post-toc-number">2.</span> <span class="post-toc-text">标签</span></a></li></ol>
+        </nav>
+    </aside>
+
 
 <article id="post-2016-MAR-02_-_-_Ceph_Developer_Monthly"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2016-MAR-02 :: Ceph Developer Monthly</h1>
+        <h1 class="post-card-title">'2016-MAR-02 :: Ceph 开发者月度会议'</h1>
         <div class="post-meta">
             <time class="post-time" title="2016-03-03 00:00:00" datetime="2016-03-02T16:00:00.000Z"  itemprop="datePublished">2016-03-03</time>
 
@@ -178,17 +193,17 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议主题</strong>： Ceph 开发者月度会议（APAC 版）</p>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>参会人员</strong>： 多位 Ceph 开发者，包括
-Sage、Marcus、Patrick、Noah 等。</p>
-<p><strong>会议内容</strong>：</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="改进后的中文总结">改进后的中文总结</h3>
+<p>在 2023 年 11 月举行的 Ceph 开发者月度会议（APAC 版）中，多位 Ceph
+开发者参与了讨论，包括 Sage、Marcus、Patrick、Noah
+等。会议主要围绕以下议题展开：</p>
 <p><strong>1. 网络加密</strong>：</p>
 <ul>
-<li>讨论了为 Ceph 添加网络加密的需求，特别是考虑到当前的政治气候。</li>
-<li>提出通过扩展当前的消息协议来实现加密，使用现有的会话密钥进行加密。</li>
+<li>讨论了为 Ceph 添加网络加密的需求，特别是在当前的政治气候下。</li>
+<li>提出通过扩展当前的消息协议来实现加密，并使用现有的会话密钥进行加密。</li>
 <li>讨论了加密对消息吞吐量的影响，以及如何利用处理器加速功能来提高加密效率。</li>
-<li>将该功能建议添加到 Google 夏季代码项目中。</li>
+<li>建议将该功能添加到 Google 夏季代码项目中。</li>
 </ul>
 <p><strong>2. 同步消息协议</strong>：</p>
 <ul>
@@ -221,17 +236,19 @@ Sage、Marcus、Patrick、Noah 等。</p>
 <li>讨论了 Ceph Jel 的状态，以及即将到来的 RC 版本。</li>
 <li>介绍了 Ceph Hackathon 的相关信息，包括时间、地点和主题。</li>
 </ul>
-<p><strong>行动计划</strong>：</p>
+<p>会议制定了后续行动计划，包括 Sage 收集 Ceph Hackathon
+的主题建议，Marcus 将同步消息协议的幻灯片发送给 Adam 和
+Casey，其他开发者将继续推进各自的开发工作。</p>
+<h3 id="标签">标签</h3>
 <ul>
-<li>Sage 将收集 Ceph Hackathon 的主题建议。</li>
-<li>Marcus 将将同步消息协议的幻灯片发送给 Adam 和 Casey。</li>
-<li>其他开发者将继续推进各自的开发工作。</li>
+<li>Ceph</li>
+<li>开发者月度会议</li>
+<li>网络加密</li>
+<li>同步消息协议</li>
+<li>发布流程</li>
+<li>Paddle 和 Pulpito</li>
+<li>Lua 支持</li>
 </ul>
-<p><strong>会议总结</strong>：</p>
-<p>本次会议讨论了多个 Ceph
-开发相关的议题，包括网络加密、同步消息协议、发布流程、Paddle 和
-Pulpito、Lua
-支持等。与会者就相关议题进行了深入讨论，并制定了后续的行动计划。</p>
 
         </div>
 
@@ -262,6 +279,8 @@ Pulpito、Lua
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Jel/" rel="tag">Ceph Jel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Lua-%E6%94%AF%E6%8C%81/" rel="tag">Lua 支持</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Paddle-%E5%92%8C-Pulpito/" rel="tag">Paddle 和 Pulpito</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/" rel="tag">发布流程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%90%8C%E6%AD%A5%E6%B6%88%E6%81%AF%E5%8D%8F%E8%AE%AE/" rel="tag">同步消息协议</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%80%E5%8F%91%E8%80%85%E6%9C%88%E5%BA%A6%E4%BC%9A%E8%AE%AE/" rel="tag">开发者月度会议</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BD%91%E7%BB%9C%E5%8A%A0%E5%AF%86/" rel="tag">网络加密</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -273,7 +292,7 @@ Pulpito、Lua
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2016/03/03/2016-MAR-02_-_-_Ceph_Developer_Monthly/&title=《2016-MAR-02 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2016/03/03/2016-MAR-02_-_-_Ceph_Developer_Monthly/&title=《'2016-MAR-02 :: Ceph 开发者月度会议'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -283,7 +302,7 @@ Pulpito、Lua
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2016/03/03/2016-MAR-02_-_-_Ceph_Developer_Monthly/&title=《2016-MAR-02 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2016/03/03/2016-MAR-02_-_-_Ceph_Developer_Monthly/&title=《'2016-MAR-02 :: Ceph 开发者月度会议'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -293,7 +312,7 @@ Pulpito、Lua
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2016-MAR-02 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2016/03/03/2016-MAR-02_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2016-MAR-02 :: Ceph 开发者月度会议'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2016/03/03/2016-MAR-02_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -323,7 +342,7 @@ Pulpito、Lua
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2016/03/30/Ceph_Promo_Video/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Promo Video</h4>
+        <h4 class="title">Ceph promo Video</h4>
       </a>
     </div>
   
@@ -432,7 +451,7 @@ Pulpito、Lua
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2016/03/03/2016-MAR-02_-_-_Ceph_Developer_Monthly/&title=《2016-MAR-02 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2016/03/03/2016-MAR-02_-_-_Ceph_Developer_Monthly/&title=《'2016-MAR-02 :: Ceph 开发者月度会议'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -442,7 +461,7 @@ Pulpito、Lua
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2016/03/03/2016-MAR-02_-_-_Ceph_Developer_Monthly/&title=《2016-MAR-02 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2016/03/03/2016-MAR-02_-_-_Ceph_Developer_Monthly/&title=《'2016-MAR-02 :: Ceph 开发者月度会议'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -452,7 +471,7 @@ Pulpito、Lua
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2016-MAR-02 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2016/03/03/2016-MAR-02_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2016-MAR-02 :: Ceph 开发者月度会议'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2016/03/03/2016-MAR-02_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

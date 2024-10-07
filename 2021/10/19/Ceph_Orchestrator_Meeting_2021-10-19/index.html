@@ -20,17 +20,24 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Orchestrator 周会 日期：[具体日期] 参会人员：[具体人员名单] 主要议题：  NFS 功能缺失讨论  讨论了 NFS LGW 导出功能在 self-ansible 支持中的缺失，特别是导出单个桶和一组关联到单个用户的桶的能力。 确认当前 Ceph 的 NFS 模块仅支持在桶级别导出，且用户总是桶的所有者。 提议增加功能，允许通过用户名创建导出，以便用户可以导出其">
+    <meta name="keywords" content="Ceph,分布式存储,NFS,Orchestrator,Rook,CLI,ELSO">
+    <meta name="description" content="[改进后的中文总结内容] Ceph Orchestrator 会议于2021年10月19日举行，主要讨论了以下议题：  NFS功能缺失：  讨论了在Ceph中NFS LGW导出功能在self-ansible支持中的缺失，特别是导出单个桶和与单个用户关联的一组桶的能力。 确认当前Ceph的NFS模块仅支持在桶级别导出，且用户总是桶的所有者。 提议通过增加功能，允许通过用户名创建导出，以便用户可以导出">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2021-10-19">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/10/19/Ceph_Orchestrator_Meeting_2021-10-19/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Orchestrator 周会 日期：[具体日期] 参会人员：[具体人员名单] 主要议题：  NFS 功能缺失讨论  讨论了 NFS LGW 导出功能在 self-ansible 支持中的缺失，特别是导出单个桶和一组关联到单个用户的桶的能力。 确认当前 Ceph 的 NFS 模块仅支持在桶级别导出，且用户总是桶的所有者。 提议增加功能，允许通过用户名创建导出，以便用户可以导出其">
+<meta property="og:description" content="[改进后的中文总结内容] Ceph Orchestrator 会议于2021年10月19日举行，主要讨论了以下议题：  NFS功能缺失：  讨论了在Ceph中NFS LGW导出功能在self-ansible支持中的缺失，特别是导出单个桶和与单个用户关联的一组桶的能力。 确认当前Ceph的NFS模块仅支持在桶级别导出，且用户总是桶的所有者。 提议通过增加功能，允许通过用户名创建导出，以便用户可以导出">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-18T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-10-19T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="NFS">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="CLI">
+<meta property="article:tag" content="ELSO">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +163,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98orchestrator-%E5%91%A8%E4%BC%9A"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Orchestrator 周会</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%97%A5%E6%9C%9F%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">日期：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%B7%E4%BD%93%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[具体人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">备注：</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Orchestrator_Meeting_2021-10-19"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,61 +185,42 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题orchestrator-周会">会议主题：Orchestrator 周会</h4>
-<h4 id="日期具体日期">日期：[具体日期]</h4>
-<h4 id="参会人员具体人员名单">参会人员：[具体人员名单]</h4>
-<h4 id="主要议题">主要议题：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>Ceph Orchestrator 会议于2021年10月19日举行，主要讨论了以下议题：</p>
 <ol type="1">
-<li><strong>NFS 功能缺失讨论</strong>
+<li><strong>NFS功能缺失</strong>：
 <ul>
-<li>讨论了 NFS LGW 导出功能在 self-ansible
-支持中的缺失，特别是导出单个桶和一组关联到单个用户的桶的能力。</li>
-<li>确认当前 Ceph 的 NFS
-模块仅支持在桶级别导出，且用户总是桶的所有者。</li>
-<li>提议增加功能，允许通过用户名创建导出，以便用户可以导出其所有的桶。</li>
+<li>讨论了在Ceph中NFS
+LGW导出功能在self-ansible支持中的缺失，特别是导出单个桶和与单个用户关联的一组桶的能力。</li>
+<li>确认当前Ceph的NFS模块仅支持在桶级别导出，且用户总是桶的所有者。</li>
+<li>提议通过增加功能，允许通过用户名创建导出，以便用户可以导出其所有的桶。</li>
 </ul></li>
-<li><strong>CLI 命令调整</strong>
+<li><strong>CLI命令调整</strong>：
 <ul>
-<li>讨论了 NFS 导出创建命令的参数顺序问题，建议调整以提高直观性。</li>
-<li>决定即使可能破坏向后兼容性，也要改进 CLI
-命令，确保用户使用命名参数而非依赖顺序。</li>
+<li>讨论了NFS导出创建命令的参数顺序问题，建议调整以提高直观性。</li>
+<li>决定即使可能破坏向后兼容性，也要改进CLI命令，确保用户使用命名参数而非依赖顺序。</li>
 </ul></li>
-<li><strong>Rook 支持讨论</strong>
+<li><strong>Rook支持讨论</strong>：
 <ul>
-<li>询问了 Rook 是否支持类似 NFS LGW 用户的导出功能，确认 Rook 支持定义
-NFS 服务器，但导出管理不涉及。</li>
+<li>询问了Rook是否支持类似NFS
+LGW用户的导出功能，确认Rook支持定义NFS服务器，但导出管理不涉及。</li>
 </ul></li>
-<li><strong>ELSO 项目进展</strong>
+<li><strong>ELSO项目进展</strong>：
 <ul>
-<li>讨论了 ELSO 项目的进展，特别是与 Topol VM 和 Top LVM Operator
-的集成。</li>
-<li>确认 Top LVM 项目社区活跃，但 Topol VM Operator
-社区不理想，可能需要重新设计或创建新的 Operator。</li>
-<li>计划与 Topol VM Operator
-团队进行会议，讨论可能的贡献和必要的更改。</li>
+<li>讨论了ELSO项目的进展，特别是与Topol VM和Top LVM
+Operator的集成。</li>
+<li>确认Top LVM项目社区活跃，但Topol VM
+Operator社区不理想，可能需要重新设计或创建新的Operator。</li>
+<li>计划与Topol VM
+Operator团队进行会议，讨论可能的贡献和必要的更改。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项：</h4>
-<ul>
-<li>改进 NFS 导出功能的 CLI 命令，增加通过用户名导出的能力。</li>
-<li>确保用户在使用 CLI 时使用命名参数，以适应可能的命令调整。</li>
-<li>安排与 Topol VM Operator 团队的会议，讨论项目贡献和设计更改。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划：</h4>
-<ul>
-<li>实施 NFS 导出功能的改进，包括 CLI 命令的调整。</li>
-<li>跟进与 Topol VM Operator
-团队的会议，确定项目贡献和设计更改的可行性。</li>
-<li>监控 Rook 对 NFS 导出功能的支持情况，确保与 Ceph 的集成顺畅。</li>
-</ul>
-<h4 id="备注">备注：</h4>
-<ul>
-<li>会议中提到的技术术语和项目名称（如 Ceph, NFS, Rook, Topol VM, Top
-LVM）保持英文原文，以确保专业性和准确性。</li>
-</ul>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
+<p>会议决定： - 改进NFS导出功能的CLI命令，增加通过用户名导出的能力。 -
+确保用户在使用CLI时使用命名参数，以适应可能的命令调整。 - 安排与Topol VM
+Operator团队的会议，讨论项目贡献和设计更改。</p>
+<p>后续行动计划： - 实施 NFS 导出功能的改进，包括 CLI 命令的调整。 -
+跟进与 Topol VM Operator 团队的会议，确定项目贡献和设计更改的可行性。 -
+监控 Rook 对 NFS 导出功能的支持情况，确保与 Ceph 的集成顺畅。</p>
 
         </div>
 
@@ -270,6 +251,8 @@ LVM）保持英文原文，以确保专业性和准确性。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CLI/" rel="tag">CLI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/ELSO/" rel="tag">ELSO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS/" rel="tag">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -331,7 +314,7 @@ LVM）保持英文原文，以确保专业性和准确性。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/10/21/Ceph_Performance_Meeting_2021-10-21/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2021-10-21</h4>
+        <h4 class="title"> Ceph Performance Meeting 2021-10-21 </h4>
       </a>
     </div>
   
@@ -340,7 +323,7 @@ LVM）保持英文原文，以确保专业性和准确性。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/10/18/Ceph_Crimson_SeaStore_2021-10-13/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Crimson/SeaStore 2021-10-13</h4>
+        <h4 class="title">  Ceph Crimson/SeaStore 2021-10-13  </h4>
       </a>
     </div>
   

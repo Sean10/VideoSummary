@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概览 本次会议主要讨论了Ceph Orchestrator的多个议题，包括Cephadm集成、容器注册表管理、Manila与Ceph及Ganesha的交互等。 主要议题及讨论内容  Cephadm集成  冬季项目已经开始，Cephadm已添加了新的集成功能。 已有两名学生对项目感兴趣，期待更多集成到视频中的可能性。  容器注册表管理  讨论了如何处理容器注册表版本列表，特别是自定义注">
+    <meta name="keywords" content="Ceph Orchestrator,Cephadm,Container Registry Management,Manila Integration,Ganesha Interaction">
+    <meta name="description" content="[改进后的中文总结内容] 本次Ceph Orchestrator会议主要围绕Ceph Orchestrator的多个议题展开讨论，包括Cephadm集成、容器注册表管理、Manila与Ceph及Ganesha的交互等。  Cephadm集成  冬季项目已启动，Cephadm新增了新的集成功能。 已有两名学生加入项目，并期待更多功能集成到视频演示中。  容器注册表管理  讨论了如何处理容器注册表版本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2021-10-12">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/10/12/Ceph_Orchestrator_Meeting_2021-10-12/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概览 本次会议主要讨论了Ceph Orchestrator的多个议题，包括Cephadm集成、容器注册表管理、Manila与Ceph及Ganesha的交互等。 主要议题及讨论内容  Cephadm集成  冬季项目已经开始，Cephadm已添加了新的集成功能。 已有两名学生对项目感兴趣，期待更多集成到视频中的可能性。  容器注册表管理  讨论了如何处理容器注册表版本列表，特别是自定义注">
+<meta property="og:description" content="[改进后的中文总结内容] 本次Ceph Orchestrator会议主要围绕Ceph Orchestrator的多个议题展开讨论，包括Cephadm集成、容器注册表管理、Manila与Ceph及Ganesha的交互等。  Cephadm集成  冬季项目已启动，Cephadm新增了新的集成功能。 已有两名学生加入项目，并期待更多功能集成到视频演示中。  容器注册表管理  讨论了如何处理容器注册表版本">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-11T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-10-12T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph Orchestrator">
+<meta property="article:tag" content="Cephadm">
+<meta property="article:tag" content="Container Registry Management">
+<meta property="article:tag" content="Manila Integration">
+<meta property="article:tag" content="Ganesha Interaction">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A7%88"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概览</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E5%8F%8A%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题及讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA%E7%82%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他讨论点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">2.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA%E7%82%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">其他讨论点</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,16 +190,14 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概览">会议概览</h4>
-<p>本次会议主要讨论了Ceph
-Orchestrator的多个议题，包括Cephadm集成、容器注册表管理、Manila与Ceph及Ganesha的交互等。</p>
-<h4 id="主要议题及讨论内容">主要议题及讨论内容</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次Ceph Orchestrator会议主要围绕Ceph
+Orchestrator的多个议题展开讨论，包括Cephadm集成、容器注册表管理、Manila与Ceph及Ganesha的交互等。</p>
 <ol type="1">
 <li><strong>Cephadm集成</strong>
 <ul>
-<li>冬季项目已经开始，Cephadm已添加了新的集成功能。</li>
-<li>已有两名学生对项目感兴趣，期待更多集成到视频中的可能性。</li>
+<li>冬季项目已启动，Cephadm新增了新的集成功能。</li>
+<li>已有两名学生加入项目，并期待更多功能集成到视频演示中。</li>
 </ul></li>
 <li><strong>容器注册表管理</strong>
 <ul>
@@ -229,14 +232,8 @@ demon的当前状态。</li>
 <li>讨论了Ingress demon的状态和其在生产环境中的适用性。</li>
 <li>探讨了如何处理Orchestrator命令的异步性质，以及如何确保数据路径的连续性。</li>
 </ul>
-<h4 id="会议结束">会议结束</h4>
-<ul>
-<li>会议在讨论了所有议题后圆满结束，参与者对未来的工作方向有了更清晰的认识。</li>
-<li>感谢所有参与者的贡献，并期待下周的进一步讨论和进展。</li>
-</ul>
-<hr />
-<p>以上是本次Ceph
-Orchestrator会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
+<p>本次会议对Ceph
+Orchestrator的未来发展方向提供了清晰的指引，并确定了后续的工作重点。</p>
 
         </div>
 
@@ -267,6 +264,8 @@ Orchestrator会议的详细纪要，涵盖了会议的关键细节、讨论的�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Orchestrator/" rel="tag">Ceph Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cephadm/" rel="tag">Cephadm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Container-Registry-Management/" rel="tag">Container Registry Management</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ganesha-Interaction/" rel="tag">Ganesha Interaction</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Manila-Integration/" rel="tag">Manila Integration</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

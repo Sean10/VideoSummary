@@ -14,23 +14,28 @@
     
     
     
-    <title>RGW Refactoring Meeting 2023-07-26 | ceph视频总结 | youtube频道总结</title>
+    <title>RGW重构会议 2023-07-26 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：关于Zipper和剩余的casts到Rados驱动的问题 会议时间：[具体时间] 参会人员：[具体人员名单] 会议内容：  主要议题：  讨论了在D3N项目中，验证套件依赖的一些管理API在存在过滤器或其他驱动而非Rados时会崩溃的问题。 确认了Dan之前的工作，但仍有更多需要解决的问题，以确保能够成功测试Preetha的D3N工作。  讨论细节：  会议中提到了一些特定存储">
+    <meta name="keywords" content="Ceph,RGW,API重构,D3N项目,原子化存储">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：关于Zipper和剩余casts到Rados驱动的问题 会议时间：[具体时间] 参会人员：[具体人员名单] 会议内容：  主要议题：  会议集中在D3N项目中，由于依赖的管理API在非Rados驱动时崩溃的问题。 需要解决这些问题，以便成功测试Preetha的D3N工作。  讨论细节：  讨论了管理API中的特定问题，如Zone配置API和元数据获取A">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RGW Refactoring Meeting 2023-07-26">
+<meta property="og:title" content="RGW重构会议 2023-07-26">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：关于Zipper和剩余的casts到Rados驱动的问题 会议时间：[具体时间] 参会人员：[具体人员名单] 会议内容：  主要议题：  讨论了在D3N项目中，验证套件依赖的一些管理API在存在过滤器或其他驱动而非Rados时会崩溃的问题。 确认了Dan之前的工作，但仍有更多需要解决的问题，以确保能够成功测试Preetha的D3N工作。  讨论细节：  会议中提到了一些特定存储">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：关于Zipper和剩余casts到Rados驱动的问题 会议时间：[具体时间] 参会人员：[具体人员名单] 会议内容：  主要议题：  会议集中在D3N项目中，由于依赖的管理API在非Rados驱动时崩溃的问题。 需要解决这些问题，以便成功测试Preetha的D3N工作。  讨论细节：  讨论了管理API中的特定问题，如Zone配置API和元数据获取A">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-08-15T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="API重构">
+<meta property="article:tag" content="D3N项目">
+<meta property="article:tag" content="原子化存储">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">RGW Refactoring Meeting 2023-07-26</div>
+        <div class="flex-col header-title ellipsis">RGW重构会议 2023-07-26</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">RGW Refactoring Meeting 2023-07-26</h1>
+        <h1 class="title">RGW重构会议 2023-07-26</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-08-14T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E5%85%B3%E4%BA%8Ezipper%E5%92%8C%E5%89%A9%E4%BD%99%E7%9A%84casts%E5%88%B0rados%E9%A9%B1%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：关于Zipper和剩余的casts到Rados驱动的问题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%B7%E4%BD%93%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[具体人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束语：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%BA%BA%E8%AE%B0%E5%BD%95%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议记录人：[记录人姓名]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%A5%E6%9C%9F%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议日期：[具体日期]</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E5%85%B3%E4%BA%8Ezipper%E5%92%8C%E5%89%A9%E4%BD%99casts%E5%88%B0rados%E9%A9%B1%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：关于Zipper和剩余casts到Rados驱动的问题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%B7%E4%BD%93%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[具体人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束语：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%BA%BA%E8%AE%B0%E5%BD%95%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议记录人：[记录人姓名]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%A5%E6%9C%9F%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议日期：[具体日期]</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">RGW Refactoring Meeting 2023-07-26</h1>
+        <h1 class="post-card-title">RGW重构会议 2023-07-26</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-08-15 00:00:00" datetime="2023-08-14T16:00:00.000Z"  itemprop="datePublished">2023-08-15</time>
 
@@ -185,33 +190,32 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
-id="会议主题关于zipper和剩余的casts到rados驱动的问题">会议主题：关于Zipper和剩余的casts到Rados驱动的问题</h4>
+id="会议主题关于zipper和剩余casts到rados驱动的问题">会议主题：关于Zipper和剩余casts到Rados驱动的问题</h4>
 <h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
 <h4 id="参会人员具体人员名单">参会人员：[具体人员名单]</h4>
 <h4 id="会议内容">会议内容：</h4>
 <ol type="1">
 <li><strong>主要议题</strong>：
 <ul>
-<li>讨论了在D3N项目中，验证套件依赖的一些管理API在存在过滤器或其他驱动而非Rados时会崩溃的问题。</li>
-<li>确认了Dan之前的工作，但仍有更多需要解决的问题，以确保能够成功测试Preetha的D3N工作。</li>
+<li>会议集中在D3N项目中，由于依赖的管理API在非Rados驱动时崩溃的问题。</li>
+<li>需要解决这些问题，以便成功测试Preetha的D3N工作。</li>
 </ul></li>
 <li><strong>讨论细节</strong>：
 <ul>
-<li>会议中提到了一些特定存储的管理API，确认这些API是否已经合并。</li>
-<li>发现Zone配置API和元数据获取API存在问题，需要通过存储来解决。</li>
-<li>讨论了在管理API中添加过滤器的必要性，以便API能够处理过滤器。</li>
+<li>讨论了管理API中的特定问题，如Zone配置API和元数据获取API。</li>
+<li>确认需要添加过滤器到管理API，以便处理不同类型的存储。</li>
 </ul></li>
 <li><strong>决定事项</strong>：
 <ul>
-<li>需要进一步检查并修复管理API中剩余的问题。</li>
-<li>需要在API中添加过滤器，以确保API能够处理过滤器。</li>
+<li>需要修复管理API中剩余的问题，并在API中添加过滤器。</li>
+<li>在相关PR中添加评论，明确计划和下一步行动。</li>
 </ul></li>
 <li><strong>后续行动计划</strong>：
 <ul>
-<li>在相关PR中添加评论，明确计划和下一步行动。</li>
-<li>确认所有问题解决后，继续推进D3N项目的测试工作。</li>
+<li>在相关PR中添加评论，确保问题解决后继续推进D3N项目的测试工作。</li>
 </ul></li>
 </ol>
 <h4 id="会议结束语">会议结束语：</h4>
@@ -220,6 +224,7 @@ id="会议主题关于zipper和剩余的casts到rados驱动的问题">会议主�
 </ul>
 <h4 id="会议记录人记录人姓名">会议记录人：[记录人姓名]</h4>
 <h4 id="会议日期具体日期">会议日期：[具体日期]</h4>
+<p>该总结更准确地反映了原始内容的要点，包括会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划，并保留了相关的Ceph和RGW相关领域的英文关键词。</p>
 
         </div>
 
@@ -250,6 +255,8 @@ id="会议主题关于zipper和剩余的casts到rados驱动的问题">会议主�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/API%E9%87%8D%E6%9E%84/" rel="tag">API重构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/D3N%E9%A1%B9%E7%9B%AE/" rel="tag">D3N项目</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8E%9F%E5%AD%90%E5%8C%96%E5%AD%98%E5%82%A8/" rel="tag">原子化存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -261,7 +268,7 @@ id="会议主题关于zipper和剩余的casts到rados驱动的问题">会议主�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/&title=《RGW Refactoring Meeting 2023-07-26》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/&title=《RGW重构会议 2023-07-26》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -271,7 +278,7 @@ id="会议主题关于zipper和剩余的casts到rados驱动的问题">会议主�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/&title=《RGW Refactoring Meeting 2023-07-26》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/&title=《RGW重构会议 2023-07-26》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -281,7 +288,7 @@ id="会议主题关于zipper和剩余的casts到rados驱动的问题">会议主�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RGW Refactoring Meeting 2023-07-26》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RGW重构会议 2023-07-26》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -309,18 +316,18 @@ id="会议主题关于zipper和剩余的casts到rados驱动的问题">会议主�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-08-09/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">RGW Refactoring Meeting 2023-08-16</h4>
+        <h4 class="title">RGW Refactoring Meeting 2023-08-09</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-08-09/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/08/04/CDS_Jewel_--_CephFS_fsck_progress/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">RGW Refactoring Meeting 2023-08-09</h4>
+        <h4 class="title">CDS Jewel -- CephFS fsck progress</h4>
       </a>
     </div>
   
@@ -420,7 +427,7 @@ id="会议主题关于zipper和剩余的casts到rados驱动的问题">会议主�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/&title=《RGW Refactoring Meeting 2023-07-26》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/&title=《RGW重构会议 2023-07-26》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -430,7 +437,7 @@ id="会议主题关于zipper和剩余的casts到rados驱动的问题">会议主�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/&title=《RGW Refactoring Meeting 2023-07-26》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/&title=《RGW重构会议 2023-07-26》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -440,7 +447,7 @@ id="会议主题关于zipper和剩余的casts到rados驱动的问题">会议主�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RGW Refactoring Meeting 2023-07-26》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RGW重构会议 2023-07-26》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

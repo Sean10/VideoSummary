@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： DevOps实践在基础设施团队中的应用 会议时间： [请填写会议具体时间] 参会人员： [请填写参会人员名单] 会议内容： 一、DevOps概述  DevOps的定义：  DevOps并非一个产品、部门或可雇佣的职位，而是一种文化，强调不同背景和职位的人共同协作，从想象、开发、部署到运营整个系统。 如Ken McGraw所言：“DevOps是一种文化，其中人们无论职位或背景如">
+    <meta name="keywords" content="Ceph,Distributed Storage,High Availability,Automation,DevOps">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： DevOps实践在Ceph集群运维中的应用 会议时间： 2019-05-24 参会人员： [请填写参会人员名单] 会议内容： 一、DevOps概述  DevOps的定义：  DevOps并非一个产品、部门或职位，而是一种强调团队合作、自动化和协作的文化，旨在从开发到运营的整体系统管理。 如Ken McGraw所言：“DevOps是一种文化，其中人们无">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Using Devops Practices for Operating CEPH - Anders Bruvik, Safespring">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Using_Devops_Practices_for_Operating_CEPH_-_Anders_Bruvik_Safespring/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： DevOps实践在基础设施团队中的应用 会议时间： [请填写会议具体时间] 参会人员： [请填写参会人员名单] 会议内容： 一、DevOps概述  DevOps的定义：  DevOps并非一个产品、部门或可雇佣的职位，而是一种文化，强调不同背景和职位的人共同协作，从想象、开发、部署到运营整个系统。 如Ken McGraw所言：“DevOps是一种文化，其中人们无论职位或背景如">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： DevOps实践在Ceph集群运维中的应用 会议时间： 2019-05-24 参会人员： [请填写参会人员名单] 会议内容： 一、DevOps概述  DevOps的定义：  DevOps并非一个产品、部门或职位，而是一种强调团队合作、自动化和协作的文化，旨在从开发到运营的整体系统管理。 如Ken McGraw所言：“DevOps是一种文化，其中人们无">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="High Availability">
+<meta property="article:tag" content="Automation">
+<meta property="article:tag" content="DevOps">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,16 +190,17 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题</strong>： DevOps实践在基础设施团队中的应用</p>
-<p><strong>会议时间</strong>： [请填写会议具体时间]</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议主题</strong>： DevOps实践在Ceph集群运维中的应用</p>
+<p><strong>会议时间</strong>： 2019-05-24</p>
 <p><strong>参会人员</strong>： [请填写参会人员名单]</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>一、DevOps概述</strong></p>
 <ol type="1">
 <li><strong>DevOps的定义</strong>：
 <ul>
-<li>DevOps并非一个产品、部门或可雇佣的职位，而是一种文化，强调不同背景和职位的人共同协作，从想象、开发、部署到运营整个系统。</li>
+<li>DevOps并非一个产品、部门或职位，而是一种强调团队合作、自动化和协作的文化，旨在从开发到运营的整体系统管理。</li>
 <li>如Ken
 McGraw所言：“DevOps是一种文化，其中人们无论职位或背景如何，都一起工作，以想象、开发、部署和运营一个操作系统。”</li>
 </ul></li>
@@ -214,8 +220,7 @@ McGraw所言：“DevOps是一种文化，其中人们无论职位或背景如�
 </ul></li>
 <li><strong>自动化测试</strong>：
 <ul>
-<li>转变传统测试模式，将大量手动测试转变为自动化单元测试。</li>
-<li>将系统分解为可测试的小部件，对每个部件进行独立测试，并确保其可重新部署。</li>
+<li>将手动测试转变为自动化单元测试。</li>
 <li>利用容器化和配置管理工具，实现自动化部署。</li>
 </ul></li>
 <li><strong>监控</strong>：
@@ -227,7 +232,7 @@ McGraw所言：“DevOps是一种文化，其中人们无论职位或背景如�
 <ol type="1">
 <li><strong>基础设施团队的工作</strong>：
 <ul>
-<li>开发和维护基础设施。</li>
+<li>开发和维护Ceph集群。</li>
 <li>构建和部署系统。</li>
 </ul></li>
 <li><strong>基础设施团队的优势</strong>：
@@ -244,16 +249,20 @@ McGraw所言：“DevOps是一种文化，其中人们无论职位或背景如�
 </ul></li>
 <li><strong>实施自动化测试</strong>：
 <ul>
-<li>开发自动化测试脚本，对系统进行测试。</li>
+<li>开发自动化测试脚本，对Ceph集群进行测试。</li>
 <li>利用容器化和配置管理工具，实现自动化部署。</li>
 </ul></li>
 <li><strong>监控系统性能</strong>：
 <ul>
-<li>对系统进行监控，确保其正常运行。</li>
+<li>对Ceph集群进行监控，确保其正常运行。</li>
 </ul></li>
 </ol>
 <p><strong>五、总结</strong></p>
-<p>本次会议介绍了DevOps在基础设施团队中的应用，强调了自动化、测试和协作的重要性。参会人员应积极推动DevOps实践，以提高团队效率和系统稳定性。</p>
+<p>本次会议介绍了DevOps在Ceph集群运维中的应用，强调了自动化、测试和协作的重要性。参会人员应积极推动DevOps实践，以提高团队效率和系统稳定性。</p>
+<p>[改进后的总结内容中保留了以下关键词：DevOps, Ceph, Distributed
+Storage, High Availability, Automation, Pipeline, Automated Testing,
+Monitoring, Containerization, Configuration Management, Culture,
+Teamwork, Scalability, Performance, and Cloud Computing.]</p>
 
         </div>
 
@@ -284,6 +293,8 @@ McGraw所言：“DevOps是一种文化，其中人们无论职位或背景如�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Automation/" rel="tag">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/DevOps/" rel="tag">DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High-Availability/" rel="tag">High Availability</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -343,18 +354,18 @@ McGraw所言：“DevOps是一种文化，其中人们无论职位或背景如�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/Unlimited_Fileserver_with_Samba_CTDB_and_CephFS_-_Robert_Sander_Heinlein_Support_GmbH/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Upgrade_and_Scale-Out_an_In-production_Ceph_Cluster_on_Mixed_Arm_Micro-server_Platform_-_Aaron_Joue/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Unlimited Fileserver with Samba CTDB and CephFS - Robert Sander, Heinlein Support GmbH</h4>
+        <h4 class="title">在混合 Arm 微服务器平台上升级和扩展生产中的 Ceph 集群 - Aaron Joue</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Upgrade_and_Scale-Out_an_In-production_Ceph_Cluster_on_Mixed_Arm_Micro-server_Platform_-_Aaron_Joue/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/What_are_caps_And_Why_Won_t_my_Client_Drop_Them_-_Gregory_Farnum_Red_Hat/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Upgrade and Scale-Out an In-production Ceph Cluster on Mixed Arm Micro-server Platform - Aaron Joue</h4>
+        <h4 class="title">  What are “caps”? (And Why Won’t my Client Drop Them?) - Gregory Farnum, Red Hat  </h4>
       </a>
     </div>
   

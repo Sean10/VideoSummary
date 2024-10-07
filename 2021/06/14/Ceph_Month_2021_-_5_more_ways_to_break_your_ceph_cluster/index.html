@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Month 2021: 5 more ways to break your ceph cluster | ceph视频总结 | youtube频道总结</title>
+    <title>  Ceph Month 2021: 5 more ways to break your ceph cluster   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议由Vito，421的创始人，主持，主题为“破坏你的Ceph集群的五种新方法及一个额外提示”。会议回顾了Vito几年前关于“破坏Ceph集群的十种方法”的演讲，并分享了新的研究成果和经验教训。 讨论的主要议题  自动化工具的误用：  案例分析：自动化脚本未正确检查监控器数量，导致监控器被错误移除，包括监控数据库，造成严重停机。 教训：自动化工具的使用需谨慎，确保所有必要的">
+    <meta name="keywords" content="分布式存储,存储技术,Ceph集群管理,故障案例分析,最佳实践">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概述 Vito，421的创始人，主持了本次Ceph Month 2021会议，主题为“破坏你的Ceph集群的五种新方法及一个额外提示”。本次会议回顾了Vito之前关于“破坏Ceph集群的十种方法”的演讲，并分享了新的研究和经验教训。 讨论的主要议题  自动化工具的误用：  案例分析：自动化脚本未正确检查监控器数量，导致监控器被错误移除，包括监控数据库，造成严">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Month 2021: 5 more ways to break your ceph cluster">
+<meta property="og:title" content="  Ceph Month 2021: 5 more ways to break your ceph cluster  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议由Vito，421的创始人，主持，主题为“破坏你的Ceph集群的五种新方法及一个额外提示”。会议回顾了Vito几年前关于“破坏Ceph集群的十种方法”的演讲，并分享了新的研究成果和经验教训。 讨论的主要议题  自动化工具的误用：  案例分析：自动化脚本未正确检查监控器数量，导致监控器被错误移除，包括监控数据库，造成严重停机。 教训：自动化工具的使用需谨慎，确保所有必要的">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概述 Vito，421的创始人，主持了本次Ceph Month 2021会议，主题为“破坏你的Ceph集群的五种新方法及一个额外提示”。本次会议回顾了Vito之前关于“破坏Ceph集群的十种方法”的演讲，并分享了新的研究和经验教训。 讨论的主要议题  自动化工具的误用：  案例分析：自动化脚本未正确检查监控器数量，导致监控器被错误移除，包括监控数据库，造成严">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-13T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-06-14T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="存储技术">
+<meta property="article:tag" content="Ceph集群管理">
+<meta property="article:tag" content="故障案例分析">
+<meta property="article:tag" content="最佳实践">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Month 2021: 5 more ways to break your ceph cluster</div>
+        <div class="flex-col header-title ellipsis">  Ceph Month 2021: 5 more ways to break your ceph cluster  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Month 2021: 5 more ways to break your ceph cluster</h1>
+        <h1 class="title">  Ceph Month 2021: 5 more ways to break your ceph cluster  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-06-13T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Month 2021: 5 more ways to break your ceph cluster</h1>
+        <h1 class="post-card-title">  Ceph Month 2021: 5 more ways to break your ceph cluster  </h1>
         <div class="post-meta">
             <time class="post-time" title="2021-06-14 00:00:00" datetime="2021-06-13T16:00:00.000Z"  itemprop="datePublished">2021-06-14</time>
 
@@ -185,9 +190,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概述">会议概述</h4>
-<p>本次会议由Vito，421的创始人，主持，主题为“破坏你的Ceph集群的五种新方法及一个额外提示”。会议回顾了Vito几年前关于“破坏Ceph集群的十种方法”的演讲，并分享了新的研究成果和经验教训。</p>
+<p>Vito，421的创始人，主持了本次Ceph Month
+2021会议，主题为“破坏你的Ceph集群的五种新方法及一个额外提示”。本次会议回顾了Vito之前关于“破坏Ceph集群的十种方法”的演讲，并分享了新的研究和经验教训。</p>
 <h4 id="讨论的主要议题">讨论的主要议题</h4>
 <ol type="1">
 <li><strong>自动化工具的误用</strong>：
@@ -263,6 +270,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86/" rel="tag">Ceph集群管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/" rel="tag">存储技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%85%E9%9A%9C%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/" rel="tag">故障案例分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" rel="tag">最佳实践</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -274,7 +283,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/&title=《Ceph Month 2021: 5 more ways to break your ceph cluster》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/&title=《  Ceph Month 2021: 5 more ways to break your ceph cluster  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -284,7 +293,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/&title=《Ceph Month 2021: 5 more ways to break your ceph cluster》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/&title=《  Ceph Month 2021: 5 more ways to break your ceph cluster  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -294,7 +303,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Month 2021: 5 more ways to break your ceph cluster》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph Month 2021: 5 more ways to break your ceph cluster  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -333,7 +342,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/06/14/Ceph_Month_2021_-_RBD_Update/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Month 2021: RBD Update</h4>
+        <h4 class="title">&#39;Ceph Month 2021: RBD Update&#39;</h4>
       </a>
     </div>
   
@@ -433,7 +442,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/&title=《Ceph Month 2021: 5 more ways to break your ceph cluster》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/&title=《  Ceph Month 2021: 5 more ways to break your ceph cluster  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -443,7 +452,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/&title=《Ceph Month 2021: 5 more ways to break your ceph cluster》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/&title=《  Ceph Month 2021: 5 more ways to break your ceph cluster  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -453,7 +462,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Month 2021: 5 more ways to break your ceph cluster》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph Month 2021: 5 more ways to break your ceph cluster  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

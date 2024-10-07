@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Code Walkthroughs: Ceph Manager | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Code Walkthroughs: Ceph Manager&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph Manager 架构与功能概述 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  Ceph Manager 的创建背景与目的  Ceph Manager 最初是为了减轻 Ceph Monitor 的负担而创建的，特别是在大型集群中，Monitor 需要处理大量的统计数据收集任务，这些任务原本由 OSD 和 MDS 等守护进程处理。 Manager">
+    <meta name="keywords" content="分布式存储,Ceph Manager,代码实现,Ceph 架构,Python 模块">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph Manager 架构与功能概述 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  Ceph Manager 的背景与目的  Ceph Manager 的主要目的是减轻 Ceph Monitor 的负担，特别是在大型集群中。 Manager 被设计为无状态服务，独立运行，并能根据需要将信息持久化到 Monitor 或 Rad">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Code Walkthroughs: Ceph Manager">
+<meta property="og:title" content="&#39;Ceph Code Walkthroughs: Ceph Manager&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/12/14/Ceph_Code_Walkthroughs_-_Ceph_Manager/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph Manager 架构与功能概述 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  Ceph Manager 的创建背景与目的  Ceph Manager 最初是为了减轻 Ceph Monitor 的负担而创建的，特别是在大型集群中，Monitor 需要处理大量的统计数据收集任务，这些任务原本由 OSD 和 MDS 等守护进程处理。 Manager">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph Manager 架构与功能概述 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  Ceph Manager 的背景与目的  Ceph Manager 的主要目的是减轻 Ceph Monitor 的负担，特别是在大型集群中。 Manager 被设计为无状态服务，独立运行，并能根据需要将信息持久化到 Monitor 或 Rad">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-13T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-12-13T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Ceph Manager">
+<meta property="article:tag" content="代码实现">
+<meta property="article:tag" content="Ceph 架构">
+<meta property="article:tag" content="Python 模块">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Code Walkthroughs: Ceph Manager</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Code Walkthroughs: Ceph Manager&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Code Walkthroughs: Ceph Manager</h1>
+        <h1 class="title">&#39;Ceph Code Walkthroughs: Ceph Manager&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-12-13T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -169,7 +174,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Code Walkthroughs: Ceph Manager</h1>
+        <h1 class="post-card-title">'Ceph Code Walkthroughs: Ceph Manager'</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-12-14 00:00:00" datetime="2021-12-13T16:00:00.000Z"  itemprop="datePublished">2021-12-14</time>
 
@@ -186,63 +191,57 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题ceph-manager-架构与功能概述">会议主题：Ceph Manager
 架构与功能概述</h4>
 <h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
 <h4 id="参会人员参会人员名单">参会人员：[参会人员名单]</h4>
 <h4 id="会议内容总结">会议内容总结：</h4>
 <ol type="1">
-<li><strong>Ceph Manager 的创建背景与目的</strong>
+<li><strong>Ceph Manager 的背景与目的</strong>
 <ul>
-<li>Ceph Manager 最初是为了减轻 Ceph Monitor
-的负担而创建的，特别是在大型集群中，Monitor
-需要处理大量的统计数据收集任务，这些任务原本由 OSD 和 MDS
-等守护进程处理。</li>
-<li>Manager 被设计为一个无状态的服务，不需要通过 Paxos
-协议或持久化到磁盘，可以独立运行，并能根据需要将信息持久化到 Monitor 或
-Rados 中。</li>
+<li>Ceph Manager 的主要目的是减轻 Ceph Monitor
+的负担，特别是在大型集群中。</li>
+<li>Manager 被设计为无状态服务，独立运行，并能根据需要将信息持久化到
+Monitor 或 Rados 中。</li>
 </ul></li>
 <li><strong>Manager 的核心组件与技术栈</strong>
 <ul>
-<li>Manager 主要使用 C++ 和 Python 编写，核心组件类似于其他 Ceph
-守护进程，使用相同的网络通信基础设施。</li>
-<li>Manager 作为一个选择客户端连接到
-Monitor，并订阅相关的应用以获取集群信息。</li>
+<li>Manager 使用 C++ 和 Python 编写，核心组件类似于其他 Ceph
+守护进程。</li>
+<li>它连接到 Monitor 并订阅相关应用以获取集群信息。</li>
 </ul></li>
 <li><strong>Manager 的运行模式</strong>
 <ul>
-<li>Manager 设计为活动-备用模式，其中只有一个 Manager
-实例是活动的，负责与 Monitor 通信并发送心跳以表明其存活状态。</li>
-<li>如果活动 Manager 停止响应，Monitor 会选择另一个备用 Manager 成为活动
-Manager。</li>
+<li>Manager 设计为活动-备用模式，只有一个实例是活动的，负责与 Monitor
+通信并发送心跳。</li>
+<li>如果活动 Manager 停止响应，Monitor 会选择备用 Manager
+成为活动实例。</li>
 </ul></li>
 <li><strong>Manager 的功能扩展</strong>
 <ul>
-<li>除了处理集群统计数据，Manager
-还支持多种模块，包括预测、编排、内部集群任务（如平衡
-EGs）以及管理长时间运行的操作（如 RBD 或 CephFS）。</li>
+<li>Manager
+支持多种模块，包括预测、编排、内部集群任务以及管理长时间运行的操作。</li>
 </ul></li>
 <li><strong>Manager 的代码结构与初始化流程</strong>
 <ul>
 <li>Manager 的入口点在 <code>src/mgr/Mgr.cc</code>
-文件中，遵循典型的守护进程设置流程，包括解析命令行参数、环境变量、初始化网络地址绑定等。</li>
+文件中，遵循典型的守护进程设置流程。</li>
 <li>Manager 初始化时会创建一个 Manager Standby
-类，该类包含与集群通信所需的基础设施，如 Messenger、Monitor
-客户端、Objecter 等。</li>
+类，包含与集群通信所需的基础设施。</li>
 </ul></li>
 <li><strong>Python 模块的集成与管理</strong>
 <ul>
 <li>Manager 使用 Python 模块来扩展功能，这些模块在 Manager
 启动时从磁盘加载。</li>
-<li>Python 模块运行在自己的主线程中，使用独立的 Python
-解释器，避免模块间的状态共享和潜在的冲突。</li>
+<li>Python 模块运行在自己的主线程中，使用独立的 Python 解释器。</li>
 </ul></li>
 <li><strong>后续行动计划</strong>
 <ul>
-<li>继续深入研究 Manager 的各个模块和功能细节。</li>
+<li>深入研究 Manager 的各个模块和功能细节。</li>
 <li>探索 Manager 在处理集群统计数据和性能指标方面的优化潜力。</li>
-<li>定期回顾和更新 Manager 的文档，确保其与代码实现保持一致。</li>
+<li>定期回顾和更新 Manager 的文档。</li>
 </ul></li>
 </ol>
 <h4 id="会议结论">会议结论：</h4>
@@ -287,6 +286,8 @@ EGs）以及管理长时间运行的操作（如 RBD 或 CephFS）。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Manager/" rel="tag">Ceph Manager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-%E6%9E%B6%E6%9E%84/" rel="tag">Ceph 架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Python-%E6%A8%A1%E5%9D%97/" rel="tag">Python 模块</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" rel="tag">代码实现</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -298,7 +299,7 @@ EGs）以及管理长时间运行的操作（如 RBD 或 CephFS）。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/14/Ceph_Code_Walkthroughs_-_Ceph_Manager/&title=《Ceph Code Walkthroughs: Ceph Manager》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/14/Ceph_Code_Walkthroughs_-_Ceph_Manager/&title=《'Ceph Code Walkthroughs: Ceph Manager'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -308,7 +309,7 @@ EGs）以及管理长时间运行的操作（如 RBD 或 CephFS）。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/14/Ceph_Code_Walkthroughs_-_Ceph_Manager/&title=《Ceph Code Walkthroughs: Ceph Manager》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/14/Ceph_Code_Walkthroughs_-_Ceph_Manager/&title=《'Ceph Code Walkthroughs: Ceph Manager'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -318,7 +319,7 @@ EGs）以及管理长时间运行的操作（如 RBD 或 CephFS）。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Code Walkthroughs: Ceph Manager》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/14/Ceph_Code_Walkthroughs_-_Ceph_Manager/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Code Walkthroughs: Ceph Manager'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/14/Ceph_Code_Walkthroughs_-_Ceph_Manager/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -348,7 +349,7 @@ EGs）以及管理长时间运行的操作（如 RBD 或 CephFS）。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2021-12-23</h4>
+        <h4 class="title">  Ceph 性能会议 2021-12-23  </h4>
       </a>
     </div>
   
@@ -457,7 +458,7 @@ EGs）以及管理长时间运行的操作（如 RBD 或 CephFS）。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/14/Ceph_Code_Walkthroughs_-_Ceph_Manager/&title=《Ceph Code Walkthroughs: Ceph Manager》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/14/Ceph_Code_Walkthroughs_-_Ceph_Manager/&title=《'Ceph Code Walkthroughs: Ceph Manager'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -467,7 +468,7 @@ EGs）以及管理长时间运行的操作（如 RBD 或 CephFS）。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/14/Ceph_Code_Walkthroughs_-_Ceph_Manager/&title=《Ceph Code Walkthroughs: Ceph Manager》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/14/Ceph_Code_Walkthroughs_-_Ceph_Manager/&title=《'Ceph Code Walkthroughs: Ceph Manager'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -477,7 +478,7 @@ EGs）以及管理长时间运行的操作（如 RBD 或 CephFS）。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Code Walkthroughs: Ceph Manager》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/14/Ceph_Code_Walkthroughs_-_Ceph_Manager/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Code Walkthroughs: Ceph Manager'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/14/Ceph_Code_Walkthroughs_-_Ceph_Manager/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,28 @@
     
     
     
-    <title>CDS Hammer (Day 1) - Towards Ceph Cold Storage | ceph视频总结 | youtube频道总结</title>
+    <title>  CDS Hammer (Day 1) - Towards Ceph Cold Storage   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： 冷存储在 Ceph 中的应用探讨 参会人员： Matthias Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成员 会议内容： 一、背景 Matthias 和 Marcelo 提出了关于将 Ceph 应用于冷存储的蓝图，并希望通过本次会议讨论其可行性及实施方案。 二、主要议题  冷存储需求：  能量感知的放置策略 数据迁移最小化 数据持久性 可">
+    <meta name="keywords" content="Ceph,分布式存储,CRUSH算法,冷存储,数据持久性">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： 探讨将 Ceph 应用于冷存储的可行性和实施方案 参会人员： Matthias Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成员 会议内容： 一、背景 Matthias 和 Marcelo 提出了将 Ceph 应用于冷存储的蓝图，并希望通过本次会议讨论其可行性及实施方案。 二、主要议题  冷存储需求：  能量感知的放">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Hammer (Day 1) - Towards Ceph Cold Storage">
+<meta property="og:title" content="  CDS Hammer (Day 1) - Towards Ceph Cold Storage  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： 冷存储在 Ceph 中的应用探讨 参会人员： Matthias Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成员 会议内容： 一、背景 Matthias 和 Marcelo 提出了关于将 Ceph 应用于冷存储的蓝图，并希望通过本次会议讨论其可行性及实施方案。 二、主要议题  冷存储需求：  能量感知的放置策略 数据迁移最小化 数据持久性 可">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： 探讨将 Ceph 应用于冷存储的可行性和实施方案 参会人员： Matthias Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成员 会议内容： 一、背景 Matthias 和 Marcelo 提出了将 Ceph 应用于冷存储的蓝图，并希望通过本次会议讨论其可行性及实施方案。 二、主要议题  冷存储需求：  能量感知的放">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2014-10-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2014-10-29T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="冷存储">
+<meta property="article:tag" content="数据持久性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Hammer (Day 1) - Towards Ceph Cold Storage</div>
+        <div class="flex-col header-title ellipsis">  CDS Hammer (Day 1) - Towards Ceph Cold Storage  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Hammer (Day 1) - Towards Ceph Cold Storage</h1>
+        <h1 class="title">  CDS Hammer (Day 1) - Towards Ceph Cold Storage  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2014-10-28T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Hammer (Day 1) - Towards Ceph Cold Storage</h1>
+        <h1 class="post-card-title">  CDS Hammer (Day 1) - Towards Ceph Cold Storage  </h1>
         <div class="post-meta">
             <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
 
@@ -185,13 +190,15 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题</strong>： 冷存储在 Ceph 中的应用探讨</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议主题</strong>： 探讨将 Ceph
+应用于冷存储的可行性和实施方案</p>
 <p><strong>参会人员</strong>： Matthias
 Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成员</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>一、背景</strong></p>
-<p>Matthias 和 Marcelo 提出了关于将 Ceph
+<p>Matthias 和 Marcelo 提出了将 Ceph
 应用于冷存储的蓝图，并希望通过本次会议讨论其可行性及实施方案。</p>
 <p><strong>二、主要议题</strong></p>
 <ol type="1">
@@ -293,6 +300,8 @@ Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%B7%E5%AD%98%E5%82%A8/" rel="tag">冷存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E6%80%A7/" rel="tag">数据持久性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -304,7 +313,7 @@ Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/&title=《CDS Hammer (Day 1) - Towards Ceph Cold Storage》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/&title=《  CDS Hammer (Day 1) - Towards Ceph Cold Storage  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -314,7 +323,7 @@ Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/&title=《CDS Hammer (Day 1) - Towards Ceph Cold Storage》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/&title=《  CDS Hammer (Day 1) - Towards Ceph Cold Storage  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -324,7 +333,7 @@ Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Hammer (Day 1) - Towards Ceph Cold Storage》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS Hammer (Day 1) - Towards Ceph Cold Storage  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -352,9 +361,9 @@ Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_RGW_-_Bucket_Index_Scalability/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_RGW_-_Object_Versioning_Object_Snapshots/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Hammer (Day 1) - RGW: Bucket Index Scalability</h4>
+        <h4 class="title">  CDS Hammer (Day 1) - RGW: Object Versioning // Object Snapshots  </h4>
       </a>
     </div>
   
@@ -363,7 +372,7 @@ Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Tuethology/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Hammer (Day 1) - Tuethology</h4>
+        <h4 class="title"> CDS Hammer (Day 1) - Tuethology </h4>
       </a>
     </div>
   
@@ -463,7 +472,7 @@ Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/&title=《CDS Hammer (Day 1) - Towards Ceph Cold Storage》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/&title=《  CDS Hammer (Day 1) - Towards Ceph Cold Storage  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -473,7 +482,7 @@ Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/&title=《CDS Hammer (Day 1) - Towards Ceph Cold Storage》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/&title=《  CDS Hammer (Day 1) - Towards Ceph Cold Storage  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -483,7 +492,7 @@ Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Hammer (Day 1) - Towards Ceph Cold Storage》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS Hammer (Day 1) - Towards Ceph Cold Storage  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

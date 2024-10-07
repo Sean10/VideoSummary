@@ -14,23 +14,29 @@
     
     
     
-    <title>Ceph Performance Meeting 2023-03-23 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 性能会议 2023-03-23 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要  日期: [具体日期] 参与者: [参与者姓名] 主持人: [主持人姓名]  主要议题  硬件需求确认:  讨论内容: 确认Laura是否已经获得进行测试所需的硬件。 决定: Laura仍需获取硬件。  性能测试结果分享:  讨论内容: 分享了在NVMe集群上进行的测试，特别是在RBD池中增加PG数量后，性能显著提升的情况。 决定: 需要进一步分析PG锁争用是否是性能提升的主要">
+    <meta name="keywords" content="Ceph,分布式存储,性能测试,CRUSH 算法,负载均衡,自动缩放">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概要  日期: 2023-03-23 参与者: Laura, Mark, Josh, Anthony, Casey, Igor, David Galloway 等 主持人: [主持人姓名未提及]  主要议题  硬件需求确认:  讨论内容: Laura需要硬件进行测试，目前尚未获得。 决定: Laura需继续获取硬件。  性能测试结果分享:  讨论内容: La">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2023-03-23">
+<meta property="og:title" content="Ceph 性能会议 2023-03-23">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/03/24/Ceph_Performance_Meeting_2023-03-23/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要  日期: [具体日期] 参与者: [参与者姓名] 主持人: [主持人姓名]  主要议题  硬件需求确认:  讨论内容: 确认Laura是否已经获得进行测试所需的硬件。 决定: Laura仍需获取硬件。  性能测试结果分享:  讨论内容: 分享了在NVMe集群上进行的测试，特别是在RBD池中增加PG数量后，性能显著提升的情况。 决定: 需要进一步分析PG锁争用是否是性能提升的主要">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概要  日期: 2023-03-23 参与者: Laura, Mark, Josh, Anthony, Casey, Igor, David Galloway 等 主持人: [主持人姓名未提及]  主要议题  硬件需求确认:  讨论内容: Laura需要硬件进行测试，目前尚未获得。 决定: Laura需继续获取硬件。  性能测试结果分享:  讨论内容: La">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-03-24T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能测试">
+<meta property="article:tag" content="CRUSH 算法">
+<meta property="article:tag" content="负载均衡">
+<meta property="article:tag" content="自动缩放">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2023-03-23</div>
+        <div class="flex-col header-title ellipsis">Ceph 性能会议 2023-03-23</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2023-03-23</h1>
+        <h1 class="title">Ceph 性能会议 2023-03-23</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-03-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +165,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">其他讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">备注</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">其他讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">备注</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%BB%BA%E8%AE%AE"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">改进建议</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +174,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2023-03-23</h1>
+        <h1 class="post-card-title">Ceph 性能会议 2023-03-23</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-03-24 00:00:00" datetime="2023-03-23T16:00:00.000Z"  itemprop="datePublished">2023-03-24</time>
 
@@ -185,25 +191,27 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概要">会议概要</h4>
 <ul>
-<li><strong>日期</strong>: [具体日期]</li>
-<li><strong>参与者</strong>: [参与者姓名]</li>
-<li><strong>主持人</strong>: [主持人姓名]</li>
+<li><strong>日期</strong>: 2023-03-23</li>
+<li><strong>参与者</strong>: Laura, Mark, Josh, Anthony, Casey, Igor,
+David Galloway 等</li>
+<li><strong>主持人</strong>: [主持人姓名未提及]</li>
 </ul>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>硬件需求确认</strong>:
 <ul>
 <li><strong>讨论内容</strong>:
-确认Laura是否已经获得进行测试所需的硬件。</li>
-<li><strong>决定</strong>: Laura仍需获取硬件。</li>
+Laura需要硬件进行测试，目前尚未获得。</li>
+<li><strong>决定</strong>: Laura需继续获取硬件。</li>
 </ul></li>
 <li><strong>性能测试结果分享</strong>:
 <ul>
 <li><strong>讨论内容</strong>:
-分享了在NVMe集群上进行的测试，特别是在RBD池中增加PG数量后，性能显著提升的情况。</li>
+Laura在NVMe集群上进行的测试显示，增加RBD池中的PG数量显著提升了性能。</li>
 <li><strong>决定</strong>:
 需要进一步分析PG锁争用是否是性能提升的主要原因。</li>
 </ul></li>
@@ -217,8 +225,7 @@
 <ul>
 <li><strong>行动项</strong>:
 Laura将提供关于如何设置主要重新平衡器的详细指导，以便进行进一步的测试。</li>
-<li><strong>预期结果</strong>:
-通过测试，验证平衡器在不同场景下的效果。</li>
+<li><strong>预期结果</strong>: 验证平衡器在不同场景下的效果。</li>
 </ul></li>
 </ol>
 <h4 id="其他讨论">其他讨论</h4>
@@ -226,7 +233,7 @@ Laura将提供关于如何设置主要重新平衡器的详细指导，以便进
 <li><strong>新PRs</strong>:
 讨论了多个新的和更新的PRs，包括文档更改、性能改进和实验性功能。</li>
 <li><strong>硬件测试</strong>:
-确认将继续为Laura获取硬件，以便进行更深入的测试。</li>
+将为Laura获取硬件，以便进行更深入的测试。</li>
 <li><strong>会议平台变更</strong>: 下一次会议将尝试使用Jitsi平台。</li>
 </ul>
 <h4 id="后续行动">后续行动</h4>
@@ -238,13 +245,21 @@ Laura将提供关于如何设置主要重新平衡器的详细指导，以便进
 </ul>
 <h4 id="会议结束">会议结束</h4>
 <ul>
-<li><strong>时间</strong>: [具体结束时间]</li>
-<li><strong>下次会议</strong>: [下次会议的具体日期和时间]</li>
+<li><strong>时间</strong>: [具体结束时间未提及]</li>
+<li><strong>下次会议</strong>: [下次会议的具体日期和时间未提及]</li>
 </ul>
 <h4 id="备注">备注</h4>
 <ul>
 <li>会议中提到的具体测试数据和性能指标需要进一步验证和分析。</li>
 <li>对于平衡器和自动缩放器的深入研究将进一步指导未来的优化方向。</li>
+<li>讨论了如何通过更改主键来优化性能，而无需移动数据。</li>
+<li>讨论了在kvsync线程中实施等待机制以减少数据同步次数的实验性PR。</li>
+<li>讨论了Reef版本中的性能回归问题。</li>
+</ul>
+<h4 id="改进建议">改进建议</h4>
+<ul>
+<li>建议在总结中明确提及主持人的姓名和下次会议的具体日期和时间。</li>
+<li>建议在总结中提及关于PG锁争用、平衡器和自动缩放器的具体研究结果和结论。</li>
 </ul>
 
         </div>
@@ -276,6 +291,8 @@ Laura将提供关于如何设置主要重新平衡器的详细指导，以便进
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-%E7%AE%97%E6%B3%95/" rel="tag">CRUSH 算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">性能测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E7%BC%A9%E6%94%BE/" rel="tag">自动缩放</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -287,7 +304,7 @@ Laura将提供关于如何设置主要重新平衡器的详细指导，以便进
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/24/Ceph_Performance_Meeting_2023-03-23/&title=《Ceph Performance Meeting 2023-03-23》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/24/Ceph_Performance_Meeting_2023-03-23/&title=《Ceph 性能会议 2023-03-23》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -297,7 +314,7 @@ Laura将提供关于如何设置主要重新平衡器的详细指导，以便进
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/24/Ceph_Performance_Meeting_2023-03-23/&title=《Ceph Performance Meeting 2023-03-23》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/24/Ceph_Performance_Meeting_2023-03-23/&title=《Ceph 性能会议 2023-03-23》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -307,7 +324,7 @@ Laura将提供关于如何设置主要重新平衡器的详细指导，以便进
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2023-03-23》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/24/Ceph_Performance_Meeting_2023-03-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2023-03-23》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/24/Ceph_Performance_Meeting_2023-03-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -446,7 +463,7 @@ Laura将提供关于如何设置主要重新平衡器的详细指导，以便进
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/24/Ceph_Performance_Meeting_2023-03-23/&title=《Ceph Performance Meeting 2023-03-23》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/24/Ceph_Performance_Meeting_2023-03-23/&title=《Ceph 性能会议 2023-03-23》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -456,7 +473,7 @@ Laura将提供关于如何设置主要重新平衡器的详细指导，以便进
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/24/Ceph_Performance_Meeting_2023-03-23/&title=《Ceph Performance Meeting 2023-03-23》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/24/Ceph_Performance_Meeting_2023-03-23/&title=《Ceph 性能会议 2023-03-23》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -466,7 +483,7 @@ Laura将提供关于如何设置主要重新平衡器的详细指导，以便进
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2023-03-23》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/24/Ceph_Performance_Meeting_2023-03-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2023-03-23》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/24/Ceph_Performance_Meeting_2023-03-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

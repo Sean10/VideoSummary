@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：公共云存储成本与私有云解决方案的经济性比较 会议时间：[具体时间] 会议地点：[具体地点] 主讲人：[主讲人姓名] 会议内容总结：  背景介绍：  主讲人分享了关于公共云存储成本与私有云解决方案经济性的比较。他提到，尽管公共云因其灵活性和动态需求而受到欢迎，但对于某些存储密集型工作负载，如数据湖、备份和活跃档案，公共云的成本可能会非常高。  公共云存储成本分析：  主讲人以2.">
+    <meta name="keywords" content="Ceph,分布式存储,成本效益,公共云,私有云">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph在公共云工作负载中的应用 - 公共云与私有云解决方案的经济性比较 会议时间：[具体时间] 会议地点：[具体地点] 主讲人：Philip Williams, Canonical 会议内容总结：  背景介绍：  Philip Williams探讨了公共云和私有云在存储成本方面的差异，指出公共云虽然灵活，但对于存储密集型工作负载来说成本可能很高。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph for Public Cloud Workloads - Philip Williams, Canonical">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：公共云存储成本与私有云解决方案的经济性比较 会议时间：[具体时间] 会议地点：[具体地点] 主讲人：[主讲人姓名] 会议内容总结：  背景介绍：  主讲人分享了关于公共云存储成本与私有云解决方案经济性的比较。他提到，尽管公共云因其灵活性和动态需求而受到欢迎，但对于某些存储密集型工作负载，如数据湖、备份和活跃档案，公共云的成本可能会非常高。  公共云存储成本分析：  主讲人以2.">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph在公共云工作负载中的应用 - 公共云与私有云解决方案的经济性比较 会议时间：[具体时间] 会议地点：[具体地点] 主讲人：Philip Williams, Canonical 会议内容总结：  背景介绍：  Philip Williams探讨了公共云和私有云在存储成本方面的差异，指出公共云虽然灵活，但对于存储密集型工作负载来说成本可能很高。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="成本效益">
+<meta property="article:tag" content="公共云">
+<meta property="article:tag" content="私有云">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,9 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E5%85%AC%E5%85%B1%E4%BA%91%E5%AD%98%E5%82%A8%E6%88%90%E6%9C%AC%E4%B8%8E%E7%A7%81%E6%9C%89%E4%BA%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%9A%84%E7%BB%8F%E6%B5%8E%E6%80%A7%E6%AF%94%E8%BE%83"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：公共云存储成本与私有云解决方案的经济性比较</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BA%E4%B8%BB%E8%AE%B2%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主讲人：[主讲人姓名]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph%E5%9C%A8%E5%85%AC%E5%85%B1%E4%BA%91%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8---%E5%85%AC%E5%85%B1%E4%BA%91%E4%B8%8E%E7%A7%81%E6%9C%89%E4%BA%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%9A%84%E7%BB%8F%E6%B5%8E%E6%80%A7%E6%AF%94%E8%BE%83"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph在公共云工作负载中的应用
+- 公共云与私有云解决方案的经济性比较</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAphilip-williams-canonical"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主讲人：Philip Williams,
+Canonical</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,44 +192,48 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
-id="会议主题公共云存储成本与私有云解决方案的经济性比较">会议主题：公共云存储成本与私有云解决方案的经济性比较</h4>
+id="会议主题ceph在公共云工作负载中的应用---公共云与私有云解决方案的经济性比较">会议主题：Ceph在公共云工作负载中的应用
+- 公共云与私有云解决方案的经济性比较</h4>
 <h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
 <h4 id="会议地点具体地点">会议地点：[具体地点]</h4>
-<h4 id="主讲人主讲人姓名">主讲人：[主讲人姓名]</h4>
+<h4 id="主讲人philip-williams-canonical">主讲人：Philip Williams,
+Canonical</h4>
 <h4 id="会议内容总结">会议内容总结：</h4>
 <ol type="1">
 <li><strong>背景介绍</strong>：
 <ul>
-<li>主讲人分享了关于公共云存储成本与私有云解决方案经济性的比较。他提到，尽管公共云因其灵活性和动态需求而受到欢迎，但对于某些存储密集型工作负载，如数据湖、备份和活跃档案，公共云的成本可能会非常高。</li>
+<li>Philip
+Williams探讨了公共云和私有云在存储成本方面的差异，指出公共云虽然灵活，但对于存储密集型工作负载来说成本可能很高。</li>
 </ul></li>
 <li><strong>公共云存储成本分析</strong>：
 <ul>
-<li>主讲人以2.5
-PB数据在公共云存储5年的成本为例，估算出接近400万美元的费用。他指出，公共云的定价模型复杂，数据输入免费或成本极低，但数据读取、处理和分发的成本较高。</li>
+<li>以2.5
+PB数据在公共云存储5年的成本为例，估算出接近400万美元的费用，强调公共云定价模型的复杂性。</li>
 </ul></li>
 <li><strong>私有云解决方案介绍</strong>：
 <ul>
-<li>主讲人介绍了使用Ceph集群的私有云解决方案，该方案在数据中心或合作位置部署，提供更高的控制和更低的成本。他提到了使用的硬件配置，包括Dell
-R740 xd2服务器、NVMe设备和网络设备等。</li>
+<li>以Ceph集群为基础，介绍了一种私有云解决方案，该方案在数据中心或合作位置部署，提供了更高的控制和更低的成本。</li>
 </ul></li>
 <li><strong>成本比较</strong>：
 <ul>
-<li>通过比较，主讲人展示了私有云解决方案在硬件、网络、数据传输和管理服务等方面的成本，总计约85万美元，远低于公共云的成本。</li>
+<li>通过比较，Philip
+Williams展示了私有云解决方案在硬件、网络、数据传输和管理服务等方面的成本，总计约85万美元，远低于公共云的成本。</li>
 </ul></li>
 <li><strong>优势与控制</strong>：
 <ul>
-<li>主讲人强调了私有云解决方案在成本控制、数据访问速度和业务数据安全方面的优势。他提到，私有云可以作为不同云服务提供商之间的桥梁，提供更好的灵活性和控制。</li>
+<li>强调私有云解决方案在成本控制、数据访问速度和业务数据安全方面的优势，并提到私有云可以作为不同云服务提供商之间的桥梁。</li>
 </ul></li>
 <li><strong>未来展望与问题</strong>：
 <ul>
-<li>主讲人讨论了未来可能的数据迁移成本，并回答了观众关于硬件交付时间的问题。他提到，尽管硬件交付可能需要几个月的时间，但提前规划可以避免经济变化带来的影响。</li>
+<li>讨论了未来可能的数据迁移成本，并回答了观众关于硬件交付时间的问题。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
-<li>会议决定进一步探索和实施私有云解决方案，以降低存储成本并提高数据管理效率。</li>
+<li>决定进一步探索和实施私有云解决方案，以降低存储成本并提高数据管理效率。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
@@ -232,7 +243,8 @@ R740 xd2服务器、NVMe设备和网络设备等。</li>
 </ul>
 <h4 id="会议结束">会议结束：</h4>
 <ul>
-<li>主讲人感谢大家的参与，并鼓励大家就私有云解决方案提出更多问题和建议。</li>
+<li>Philip
+Williams感谢大家的参与，并鼓励大家就私有云解决方案提出更多问题和建议。</li>
 </ul>
 <p>[会议结束]</p>
 
@@ -265,6 +277,8 @@ R740 xd2服务器、NVMe设备和网络设备等。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%85%AC%E5%85%B1%E4%BA%91/" rel="tag">公共云</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%88%90%E6%9C%AC%E6%95%88%E7%9B%8A/" rel="tag">成本效益</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A7%81%E6%9C%89%E4%BA%91/" rel="tag">私有云</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -324,18 +338,18 @@ R740 xd2服务器、NVMe设备和网络设备等。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/05/Ceph_Security_BoF_-_JC_Lopez_IBM/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Ceph_on_Windows_-_Alessandro_Pilotti_Cloudbase_Solutions/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Security BoF - JC Lopez, IBM</h4>
+        <h4 class="title">Ceph on Windows - Alessandro Pilotti, Cloudbase Solutions</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Chasing_Bad_Checksums_-_A_Journey_Through_Ceph_TCMalloc_and_the_Linux_Kernel_-_Dan_Hill_Canonical/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph in Scientific Computing and Large Clusters BoF</h4>
+        <h4 class="title">&#39;Chasing Bad Checksums: A Journey Through Ceph, TCMalloc, and the Linux Kernel - Dan Hill, Canonical&#39;</h4>
       </a>
     </div>
   

@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： NASA卫星数据快速处理及后端存储解决方案 与会人员： Kevin（主持人）、Steve（发言人），来自威斯康星大学麦迪逊分校SSE C团队 会议内容： 1. SSE C团队介绍 - SSE C成立于50多年前，是卫星遥感技术的先驱中心。 - 团队主要工作包括：地球遥感成像、传感器数据验证与校准、数值天气预报建模、气象卫星研究、冰芯钻探等。 - 主要项目：NASA Vera卫">
+    <meta name="keywords" content="Distributed storage,NASA satellite data,Ceph storage,High throughput computing,Data processing">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： 使用Ceph进行NASA卫星数据的快速处理和存储 与会人员： Kevin（主持人）、Steve（发言人），来自威斯康星大学麦迪逊分校SSE C团队 会议内容： 1. SSE C团队介绍 - SSE C团队成立于50多年前，是卫星遥感技术的先驱中心，负责地球遥感成像、传感器数据验证与校准、数值天气预报建模等工作。 - 主要项目包括：NASA Vera卫">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Rapid Processing of NASA Satellite Data Stored with Ceph - Kevin Hrpcek &amp; Steve Dutcher">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Rapid_Processing_of_NASA_Satellite_Data_Stored_with_Ceph_-_Kevin_Hrpcek_Steve_Dutcher/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： NASA卫星数据快速处理及后端存储解决方案 与会人员： Kevin（主持人）、Steve（发言人），来自威斯康星大学麦迪逊分校SSE C团队 会议内容： 1. SSE C团队介绍 - SSE C成立于50多年前，是卫星遥感技术的先驱中心。 - 团队主要工作包括：地球遥感成像、传感器数据验证与校准、数值天气预报建模、气象卫星研究、冰芯钻探等。 - 主要项目：NASA Vera卫">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： 使用Ceph进行NASA卫星数据的快速处理和存储 与会人员： Kevin（主持人）、Steve（发言人），来自威斯康星大学麦迪逊分校SSE C团队 会议内容： 1. SSE C团队介绍 - SSE C团队成立于50多年前，是卫星遥感技术的先驱中心，负责地球遥感成像、传感器数据验证与校准、数值天气预报建模等工作。 - 主要项目包括：NASA Vera卫">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Distributed storage">
+<meta property="article:tag" content="NASA satellite data">
+<meta property="article:tag" content="Ceph storage">
+<meta property="article:tag" content="High throughput computing">
+<meta property="article:tag" content="Data processing">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,17 +190,17 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议主题</strong>：
-NASA卫星数据快速处理及后端存储解决方案</p>
+使用Ceph进行NASA卫星数据的快速处理和存储</p>
 <p><strong>与会人员</strong>：
 Kevin（主持人）、Steve（发言人），来自威斯康星大学麦迪逊分校SSE
 C团队</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>1. SSE C团队介绍</strong> - SSE
-C成立于50多年前，是卫星遥感技术的先驱中心。 -
-团队主要工作包括：地球遥感成像、传感器数据验证与校准、数值天气预报建模、气象卫星研究、冰芯钻探等。
-- 主要项目：NASA
+C团队成立于50多年前，是卫星遥感技术的先驱中心，负责地球遥感成像、传感器数据验证与校准、数值天气预报建模等工作。
+- 主要项目包括：NASA
 Vera卫星大气步骤项目，旨在生成2级和3级NASA产品，并与NASA科学团队合作，高效处理大量数据。</p>
 <p><strong>2. 数据处理挑战</strong> -
 使用Vera卫星等极地轨道卫星收集数据，每天产生大量数据，需要高效处理。 -
@@ -257,6 +262,8 @@ C团队通过使用Ceph等开源技术，成功解决了NASA卫星数据快速�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-storage/" rel="tag">Ceph storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Data-processing/" rel="tag">Data processing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-storage/" rel="tag">Distributed storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High-throughput-computing/" rel="tag">High throughput computing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NASA-satellite-data/" rel="tag">NASA satellite data</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -316,18 +323,18 @@ C团队通过使用Ceph等开源技术，成功解决了NASA卫星数据快速�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/Rebuilding_a_Faster_OSD_with_Future_-_Kefu_Chai_Radoslaw_Zarzynski_Red_Hat/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Rapid_Design_and_Effective_Operating_of_a_General_Purpose_Object_Storage_at_RWTH_-_Jonas_Jansen/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Rebuilding a Faster OSD with Future - Kefu Chai &amp; Radoslaw Zarzynski, Red Hat</h4>
+        <h4 class="title">Rapid Design and Effective Operating of a General Purpose Object Storage at RWTH - Jonas Jansen</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Rook_-_Running_Ceph_Using_Kubernetes_-_Alexander_Trost_Kim-Norman_Sahm_Cloudibility_UG/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Rebuilding_a_Faster_OSD_with_Future_-_Kefu_Chai_Radoslaw_Zarzynski_Red_Hat/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Rook - Running Ceph Using Kubernetes - Alexander Trost &amp; Kim-Norman Sahm, Cloudibility UG</h4>
+        <h4 class="title">Rebuilding a Faster OSD with Future - Kefu Chai &amp; Radoslaw Zarzynski, Red Hat</h4>
       </a>
     </div>
   

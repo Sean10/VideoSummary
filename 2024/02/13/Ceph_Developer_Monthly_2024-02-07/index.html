@@ -20,17 +20,23 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：S Dev 月度会议 日期：[具体日期] 参会人员：[具体人员名单] 会议议程：  PR审查请求 - Pon的链接PR，关于monit monitor manager不输出Network ping stats。 NVMe TCP Gateway - 介绍NVMe-oF（非易失性内存快速）及其高可用性解决方案。 PR审查请求 - Pon的PR，关于monit monitor ma">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,NVMe,DevOps,oF">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：S Dev 月度会议 日期：2024年2月7日 参会人员：Pon、Yal等Ceph开发者 会议议程：  PR审查请求 - Pon的PR，关于monit monitor manager不输出Network ping stats。 NVMe TCP Gateway - 介绍NVMe-oF的基本概念和其在Ceph中的应用，以及高可用性解决方案。 PR审查请求">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Developer Monthly 2024-02-07">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2024/02/13/Ceph_Developer_Monthly_2024-02-07/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：S Dev 月度会议 日期：[具体日期] 参会人员：[具体人员名单] 会议议程：  PR审查请求 - Pon的链接PR，关于monit monitor manager不输出Network ping stats。 NVMe TCP Gateway - 介绍NVMe-oF（非易失性内存快速）及其高可用性解决方案。 PR审查请求 - Pon的PR，关于monit monitor ma">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：S Dev 月度会议 日期：2024年2月7日 参会人员：Pon、Yal等Ceph开发者 会议议程：  PR审查请求 - Pon的PR，关于monit monitor manager不输出Network ping stats。 NVMe TCP Gateway - 介绍NVMe-oF的基本概念和其在Ceph中的应用，以及高可用性解决方案。 PR审查请求">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-02-12T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-02-13T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="NVMe">
+<meta property="article:tag" content="DevOps">
+<meta property="article:tag" content="oF">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +165,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98s-dev-%E6%9C%88%E5%BA%A6%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：S Dev 月度会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%97%A5%E6%9C%9F%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">日期：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%B7%E4%BD%93%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[具体人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%AE%E7%A8%8B"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议议程：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">讨论内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8B%E4%B8%80%E6%AD%A5"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">下一步：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98s-dev-%E6%9C%88%E5%BA%A6%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：S Dev 月度会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%97%A5%E6%9C%9F2024%E5%B9%B42%E6%9C%887%E6%97%A5"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">日期：2024年2月7日</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98ponyal%E7%AD%89ceph%E5%BC%80%E5%8F%91%E8%80%85"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：Pon、Yal等Ceph开发者</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%AE%E7%A8%8B"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议议程：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">讨论内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议总结：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,16 +191,17 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题s-dev-月度会议">会议主题：S Dev 月度会议</h4>
-<h4 id="日期具体日期">日期：[具体日期]</h4>
-<h4 id="参会人员具体人员名单">参会人员：[具体人员名单]</h4>
+<h4 id="日期2024年2月7日">日期：2024年2月7日</h4>
+<h4 id="参会人员ponyal等ceph开发者">参会人员：Pon、Yal等Ceph开发者</h4>
 <h4 id="会议议程">会议议程：</h4>
 <ol type="1">
-<li><strong>PR审查请求</strong> - Pon的链接PR，关于monit monitor
+<li><strong>PR审查请求</strong> - Pon的PR，关于monit monitor
 manager不输出Network ping stats。</li>
 <li><strong>NVMe TCP Gateway</strong> -
-介绍NVMe-oF（非易失性内存快速）及其高可用性解决方案。</li>
+介绍NVMe-oF的基本概念和其在Ceph中的应用，以及高可用性解决方案。</li>
 <li><strong>PR审查请求</strong> - Pon的PR，关于monit monitor
 manager不输出Network ping stats的后续讨论。</li>
 <li><strong>端到端追踪</strong> -
@@ -244,14 +251,7 @@ stats的改动，并更新发布说明。</li>
 <li>继续推进NVMe-oF的高可用性解决方案的开发和测试。</li>
 </ul>
 <h4 id="会议总结">会议总结：</h4>
-<p>本次会议讨论了多个关键的技术议题，包括NVMe-oF的高可用性解决方案和端到端追踪功能的实现。通过详细的讨论和审查，确定了各个议题的后续行动计划，并确保了技术决策的透明性和社区的参与度。感谢所有参会人员的积极参与和贡献。</p>
-<h4 id="下一步">下一步：</h4>
-<ul>
-<li>继续推进各个议题的开发和测试工作。</li>
-<li>确保所有改动和功能符合社区的需求和期望。</li>
-<li>定期更新社区关于项目进展和决策的情况。</li>
-</ul>
-<p><strong>会议结束：感谢大家的参与，祝大家有美好的一天！</strong></p>
+<p>本次会议讨论了多个关键的技术议题，包括NVMe-oF的高可用性解决方案和端到端追踪功能的实现。通过详细的讨论和审查，确定了各个议题的后续行动计划，并确保了技术决策的透明性和社区的参与度。</p>
 
         </div>
 
@@ -282,6 +282,8 @@ stats的改动，并更新发布说明。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/DevOps/" rel="tag">DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NVMe/" rel="tag">NVMe</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/oF/" rel="tag">oF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -343,7 +345,7 @@ stats的改动，并更新发布说明。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2024/02/14/Ceph_RGW_Refactoring_Meeting_2024-02-14/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2024-02-14</h4>
+        <h4 class="title"> Ceph RGW 重构会议纪要 2024-02-14 </h4>
       </a>
     </div>
   
@@ -352,7 +354,7 @@ stats的改动，并更新发布说明。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2024/02/01/Ceph_RGW_Refactoring_Meeting_2024-01-31/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2024-01-31</h4>
+        <h4 class="title">Ceph RGW 重构会议 2024-01-31</h4>
       </a>
     </div>
   

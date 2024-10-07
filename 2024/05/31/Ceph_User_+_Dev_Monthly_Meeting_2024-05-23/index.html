@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议主要讨论了Ceph社区的调查反馈，特别是关于Orchestration和Performance的调查结果。会议旨在通过互动讨论，收集社区成员的实时反馈，以便更好地理解用户需求并改进Ceph的功能和性能。 关键讨论点  Orchestration反馈  部署目标：大多数用户使用裸机（bare metal）进行部署，较少使用容器。 Orchestration系统：SEF A">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,社区发展,用户反馈">
+    <meta name="description" content="改进后的中文总结内容 本次Ceph用户和开发者月度会议主要讨论了社区调查反馈，重点关注了Orchestration和Performance方面的问题。会议旨在通过收集社区成员的实时反馈，更好地理解用户需求并改进Ceph的功能和性能。 关键讨论点  Orchestration反馈  部署目标：大多数用户使用裸机进行部署，较少使用容器。 Orchestration系统：SEF ADM最受欢迎，其次是自">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph User + Dev Monthly Meeting 2024-05-23">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2024/05/31/Ceph_User_+_Dev_Monthly_Meeting_2024-05-23/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议主要讨论了Ceph社区的调查反馈，特别是关于Orchestration和Performance的调查结果。会议旨在通过互动讨论，收集社区成员的实时反馈，以便更好地理解用户需求并改进Ceph的功能和性能。 关键讨论点  Orchestration反馈  部署目标：大多数用户使用裸机（bare metal）进行部署，较少使用容器。 Orchestration系统：SEF A">
+<meta property="og:description" content="改进后的中文总结内容 本次Ceph用户和开发者月度会议主要讨论了社区调查反馈，重点关注了Orchestration和Performance方面的问题。会议旨在通过收集社区成员的实时反馈，更好地理解用户需求并改进Ceph的功能和性能。 关键讨论点  Orchestration反馈  部署目标：大多数用户使用裸机进行部署，较少使用容器。 Orchestration系统：SEF ADM最受欢迎，其次是自">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-30T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-05-30T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="社区发展">
+<meta property="article:tag" content="用户反馈">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E8%AE%A8%E8%AE%BA%E7%82%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">关键讨论点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结内容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E8%AE%A8%E8%AE%BA%E7%82%B9"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关键讨论点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,19 +190,17 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概述">会议概述</h4>
-<p>本次会议主要讨论了Ceph社区的调查反馈，特别是关于Orchestration和Performance的调查结果。会议旨在通过互动讨论，收集社区成员的实时反馈，以便更好地理解用户需求并改进Ceph的功能和性能。</p>
+            <h3 id="改进后的中文总结内容">改进后的中文总结内容</h3>
+<p>本次Ceph用户和开发者月度会议主要讨论了社区调查反馈，重点关注了Orchestration和Performance方面的问题。会议旨在通过收集社区成员的实时反馈，更好地理解用户需求并改进Ceph的功能和性能。</p>
 <h4 id="关键讨论点">关键讨论点</h4>
 <ol type="1">
 <li><p><strong>Orchestration反馈</strong></p>
 <ul>
-<li><strong>部署目标</strong>：大多数用户使用裸机（bare
-metal）进行部署，较少使用容器。</li>
+<li><strong>部署目标</strong>：大多数用户使用裸机进行部署，较少使用容器。</li>
 <li><strong>Orchestration系统</strong>：SEF
-ADM是最受欢迎的Orchestration系统，其次是自制的Orchestration系统。</li>
+ADM最受欢迎，其次是自制的Orchestration系统。</li>
 <li><strong>用户反馈</strong>：SEF
-ADM被认为简单可靠，但存在某些命令过于复杂和日志难以调试的问题。自制Orchestration系统则被赞赏为提供了更多的控制和信任。</li>
+ADM被认为简单可靠，但存在命令复杂、日志难以调试等问题。自制Orchestration系统则提供了更多控制和信任。</li>
 </ul></li>
 <li><p><strong>Performance反馈</strong></p>
 <ul>
@@ -209,7 +212,7 @@ ADM被认为简单可靠，但存在某些命令过于复杂和日志难以调�
 <li><p><strong>用户建议和反馈</strong></p>
 <ul>
 <li><strong>改进建议</strong>：用户提出了对SEF
-ADM的自动化程度、日志调试、OSD创建过程的具体改进建议。</li>
+ADM自动化程度、日志调试、OSD创建过程的改进建议。</li>
 <li><strong>技术讨论</strong>：涉及SEF
 ADM是否应支持非容器化部署的讨论，以及Telemetry模块的数据安全和隐私问题。</li>
 </ul></li>
@@ -259,6 +262,8 @@ clusters）有兴趣的成员。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%94%A8%E6%88%B7%E5%8F%8D%E9%A6%88/" rel="tag">用户反馈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A4%BE%E5%8C%BA%E5%8F%91%E5%B1%95/" rel="tag">社区发展</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

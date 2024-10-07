@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph RGW Refactoring Meeting 2023-03-01 | ceph视频总结 | youtube频道总结</title>
+    <title>  Ceph RGW Refactoring Meeting 2023-03-01   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  Reef 分支决策: 今天的上游领导会议决定分叉 Reef 发布分支，预计今天完成。任何需要进入 Reef 的改动现在必须合并到 Main 并通过 backboards。 同步策略问题: Katie 报告了在禁用 bucket sink 的情况下测试同步策略时遇到的问题。发现即使只有两个区域配置为同步，第三个区域仍在拉取数据，这似乎是一个回归问题。 日志修剪问题: 与同步策略">
+    <meta name="keywords" content="Ceph,分布式存储,RGW,同步策略,SSL兼容性">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  Reef 分支决策: 会议决定分叉 Reef 发布分支，预计当天完成。所有后续改动需合并至 Main 分支并通过 backboards。 同步策略问题: 发现即使只有两个区域配置同步，第三个区域仍在拉取数据，这表明可能存在回归问题。此外，日志修剪和归档区域也存在问题，影响了日志的修剪。 rgwhttp 客户端: 讨论了新的 rgwhttp 客户端类，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph RGW Refactoring Meeting 2023-03-01">
+<meta property="og:title" content="  Ceph RGW Refactoring Meeting 2023-03-01  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  Reef 分支决策: 今天的上游领导会议决定分叉 Reef 发布分支，预计今天完成。任何需要进入 Reef 的改动现在必须合并到 Main 并通过 backboards。 同步策略问题: Katie 报告了在禁用 bucket sink 的情况下测试同步策略时遇到的问题。发现即使只有两个区域配置为同步，第三个区域仍在拉取数据，这似乎是一个回归问题。 日志修剪问题: 与同步策略">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  Reef 分支决策: 会议决定分叉 Reef 发布分支，预计当天完成。所有后续改动需合并至 Main 分支并通过 backboards。 同步策略问题: 发现即使只有两个区域配置同步，第三个区域仍在拉取数据，这表明可能存在回归问题。此外，日志修剪和归档区域也存在问题，影响了日志的修剪。 rgwhttp 客户端: 讨论了新的 rgwhttp 客户端类，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-03-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="同步策略">
+<meta property="article:tag" content="SSL兼容性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph RGW Refactoring Meeting 2023-03-01</div>
+        <div class="flex-col header-title ellipsis">  Ceph RGW Refactoring Meeting 2023-03-01  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph RGW Refactoring Meeting 2023-03-01</h1>
+        <h1 class="title">  Ceph RGW Refactoring Meeting 2023-03-01  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-03-05T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">2.</span> <span class="post-toc-text">结论</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph RGW Refactoring Meeting 2023-03-01</h1>
+        <h1 class="post-card-title">  Ceph RGW Refactoring Meeting 2023-03-01  </h1>
         <div class="post-meta">
             <time class="post-time" title="2023-03-06 00:00:00" datetime="2023-03-05T16:00:00.000Z"  itemprop="datePublished">2023-03-06</time>
 
@@ -185,36 +190,36 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
-<li><strong>Reef 分支决策</strong>: 今天的上游领导会议决定分叉 Reef
-发布分支，预计今天完成。任何需要进入 Reef 的改动现在必须合并到 Main
-并通过 backboards。</li>
-<li><strong>同步策略问题</strong>: Katie 报告了在禁用 bucket sink
-的情况下测试同步策略时遇到的问题。发现即使只有两个区域配置为同步，第三个区域仍在拉取数据，这似乎是一个回归问题。</li>
-<li><strong>日志修剪问题</strong>:
-与同步策略相关的另一个问题是日志修剪和归档区域的问题，即使某些区域不从其他区域同步数据，同步策略仍指示查询这些区域，这阻止了日志被修剪。</li>
+<li><strong>Reef 分支决策</strong>: 会议决定分叉 Reef
+发布分支，预计当天完成。所有后续改动需合并至 Main 分支并通过
+backboards。</li>
+<li><strong>同步策略问题</strong>:
+发现即使只有两个区域配置同步，第三个区域仍在拉取数据，这表明可能存在回归问题。此外，日志修剪和归档区域也存在问题，影响了日志的修剪。</li>
 <li><strong>rgwhttp 客户端</strong>: 讨论了新的 rgwhttp
-客户端类，该类可能在多站点配置中非常有用，尤其是在使用 HTTP/3
-前端时。讨论了如何处理 OpenSSL 和 BoringSSL 的链接问题。</li>
+客户端类，可能对多站点配置和 HTTP/3 前端很有用。主要挑战是处理 OpenSSL
+和 BoringSSL 的链接问题。</li>
+<li><strong>日志修剪问题</strong>:
+同步策略导致即使某些区域不同步数据，也会查询这些区域，从而阻止日志被修剪。</li>
 </ul>
 <h4 id="主要议题">主要议题</h4>
 <ul>
-<li><strong>同步策略的实现和问题</strong>:
-讨论了同步策略在多区域配置中的具体实现问题，包括数据同步的逻辑和日志修剪的策略。</li>
-<li><strong>rgwhttp 客户端的使用和挑战</strong>:
-探讨了在多站点环境中使用新 HTTP 客户端的潜在好处和面临的挑战，特别是与
-SSL 库的兼容性问题。</li>
+<li><strong>同步策略问题</strong>:
+讨论了同步策略在多区域配置中的实现问题，包括数据同步和日志修剪策略。</li>
+<li><strong>rgwhttp 客户端问题</strong>: 探讨了新 HTTP
+客户端在多站点环境中的潜在好处和与 SSL 库的兼容性问题。</li>
 </ul>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li><strong>Reef 分支分叉</strong>: 决定分叉 Reef
-发布分支，所有后续的合并请求需要通过 Main 和 backboards。</li>
+<li><strong>Reef 分支分叉</strong>: 通过分叉 Reef
+发布分支，所有后续改动需合并至 Main 并通过 backboards。</li>
 <li><strong>同步策略问题</strong>:
-需要进一步审查和测试同步策略的实现，特别是关于数据同步和日志修剪的逻辑。</li>
-<li><strong>rgwhttp 客户端</strong>: 虽然新的 rgwhttp
-客户端在多站点环境中可能非常有用，但需要解决与 SSL 库的兼容性问题。</li>
+需要进一步审查和测试同步策略，特别是关于数据同步和日志修剪的逻辑。</li>
+<li><strong>rgwhttp 客户端问题</strong>: 需要解决与 SSL
+库的兼容性问题，以便在多站点环境中使用。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
@@ -222,14 +227,9 @@ SSL 库的兼容性问题。</li>
 将审查同步策略的实现，并测试更多案例以确认和解决存在的问题。</li>
 <li><strong>rgwhttp 客户端开发</strong>: 继续开发和测试 rgwhttp
 客户端，特别是在处理 SSL 库兼容性方面的工作。</li>
-<li><strong>跟踪问题</strong>: 所有相关问题和讨论将被记录在 Tracker 和
+<li><strong>问题跟踪</strong>: 所有相关问题和讨论将被记录在 Tracker 和
 Theta pad 中，以便后续跟踪和解决。</li>
 </ul>
-<h3 id="结论">结论</h3>
-<p>会议讨论了关于 Reef 分支分叉、同步策略的实现问题以及 rgwhttp
-客户端在多站点环境中的应用。决定分叉 Reef 分支并继续审查和改进同步策略和
-rgwhttp
-客户端的实现。所有相关问题和讨论将被记录并跟踪，以便后续的开发和改进。感谢所有参与者的贡献和讨论。</p>
 
         </div>
 
@@ -260,6 +260,8 @@ rgwhttp
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SSL%E5%85%BC%E5%AE%B9%E6%80%A7/" rel="tag">SSL兼容性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%90%8C%E6%AD%A5%E7%AD%96%E7%95%A5/" rel="tag">同步策略</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -271,7 +273,7 @@ rgwhttp
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/&title=《Ceph RGW Refactoring Meeting 2023-03-01》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/&title=《  Ceph RGW Refactoring Meeting 2023-03-01  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -281,7 +283,7 @@ rgwhttp
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/&title=《Ceph RGW Refactoring Meeting 2023-03-01》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/&title=《  Ceph RGW Refactoring Meeting 2023-03-01  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -291,7 +293,7 @@ rgwhttp
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2023-03-01》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph RGW Refactoring Meeting 2023-03-01  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -430,7 +432,7 @@ rgwhttp
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/&title=《Ceph RGW Refactoring Meeting 2023-03-01》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/&title=《  Ceph RGW Refactoring Meeting 2023-03-01  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -440,7 +442,7 @@ rgwhttp
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/&title=《Ceph RGW Refactoring Meeting 2023-03-01》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/&title=《  Ceph RGW Refactoring Meeting 2023-03-01  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -450,7 +452,7 @@ rgwhttp
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2023-03-01》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph RGW Refactoring Meeting 2023-03-01  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/06/Ceph_RGW_Refactoring_Meeting_2023-03-01/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

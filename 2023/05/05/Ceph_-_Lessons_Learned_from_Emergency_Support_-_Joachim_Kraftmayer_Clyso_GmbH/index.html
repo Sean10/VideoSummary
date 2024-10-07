@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：紧急支持中的经验教训 主讲人：[主讲人姓名]  背景介绍：  公司创始人，公司名为Glyzone。 曾担任Red Hat存储的高级顾问。 自2012年开始涉足Ceph，2014年起在生产环境中运行Ceph。   会议内容总结：  Ceph的使用案例和经验分享：  过去两三年中，Ceph在各种环境中的应用案例。 强调了Ceph在虚拟环境（如VMware、OpenStack、超大规">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,性能优化,紧急支持">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：紧急支持中的经验教训 主讲人：Joachim Kraftmayer，Clyso GmbH 会议内容总结：  Ceph使用案例和经验分享：  Joachim Kraftmayer分享了Ceph在过去两三年中的多种应用案例，强调了其在虚拟环境、大型集群和超大规模环境中的多样性。 讨论了Ceph在不同硬件和部署工具中的应用，如VMware、OpenStack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH">
+<meta property="og:title" content="&#39;Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：紧急支持中的经验教训 主讲人：[主讲人姓名]  背景介绍：  公司创始人，公司名为Glyzone。 曾担任Red Hat存储的高级顾问。 自2012年开始涉足Ceph，2014年起在生产环境中运行Ceph。   会议内容总结：  Ceph的使用案例和经验分享：  过去两三年中，Ceph在各种环境中的应用案例。 强调了Ceph在虚拟环境（如VMware、OpenStack、超大规">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：紧急支持中的经验教训 主讲人：Joachim Kraftmayer，Clyso GmbH 会议内容总结：  Ceph使用案例和经验分享：  Joachim Kraftmayer分享了Ceph在过去两三年中的多种应用案例，强调了其在虚拟环境、大型集群和超大规模环境中的多样性。 讨论了Ceph在不同硬件和部署工具中的应用，如VMware、OpenStack">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="紧急支持">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH</h1>
+        <h1 class="title">&#39;Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,8 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E7%B4%A7%E6%80%A5%E6%94%AF%E6%8C%81%E4%B8%AD%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%95%99%E8%AE%AD"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：紧急支持中的经验教训</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BA%E4%B8%BB%E8%AE%B2%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：[主讲人姓名]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%8F%8D%E9%A6%88%E5%92%8C%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议反馈和讨论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">结束语：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E7%B4%A7%E6%80%A5%E6%94%AF%E6%8C%81%E4%B8%AD%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%95%99%E8%AE%AD"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：紧急支持中的经验教训</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAjoachim-kraftmayerclyso-gmbh"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：Joachim
+Kraftmayer，Clyso GmbH</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%8F%8D%E9%A6%88%E5%92%8C%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议反馈和讨论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">结束语：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +174,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH</h1>
+        <h1 class="post-card-title">'Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH'</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
@@ -185,43 +191,37 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
 id="会议主题紧急支持中的经验教训">会议主题：紧急支持中的经验教训</h4>
-<h4 id="主讲人主讲人姓名">主讲人：[主讲人姓名]</h4>
-<ul>
-<li><strong>背景介绍</strong>：
-<ul>
-<li>公司创始人，公司名为Glyzone。</li>
-<li>曾担任Red Hat存储的高级顾问。</li>
-<li>自2012年开始涉足Ceph，2014年起在生产环境中运行Ceph。</li>
-</ul></li>
-</ul>
+<h4 id="主讲人joachim-kraftmayerclyso-gmbh">主讲人：Joachim
+Kraftmayer，Clyso GmbH</h4>
 <h4 id="会议内容总结">会议内容总结：</h4>
 <ol type="1">
-<li><strong>Ceph的使用案例和经验分享</strong>：
+<li><strong>Ceph使用案例和经验分享</strong>：
 <ul>
-<li>过去两三年中，Ceph在各种环境中的应用案例。</li>
-<li>强调了Ceph在虚拟环境（如VMware、OpenStack、超大规模环境）中的多样性。</li>
-<li>讨论了Ceph在不同硬件和部署工具（如DeepSea、SaltStack、Ansible）中的应用。</li>
+<li>Joachim
+Kraftmayer分享了Ceph在过去两三年中的多种应用案例，强调了其在虚拟环境、大型集群和超大规模环境中的多样性。</li>
+<li>讨论了Ceph在不同硬件和部署工具中的应用，如VMware、OpenStack、DeepSea、SaltStack、Ansible等。</li>
 </ul></li>
 <li><strong>具体案例分析</strong>：
 <ul>
-<li><strong>性能问题</strong>：一个只有三个OSD的集群出现性能问题，原因是使用了较旧的Ceph版本（Luminous）。</li>
-<li><strong>配置和管理问题</strong>：讨论了PG（Placement
-Groups）的重要性，以及如何在不中断服务的情况下动态调整集群配置。</li>
-<li><strong>硬件和网络问题</strong>：提到了消费者级SSD和桌面旋转磁盘的不适用性，以及网络接口（如1Gbps）的瓶颈问题。</li>
+<li><strong>性能问题</strong>：一个仅含三个OSD的集群因使用较旧的Ceph版本（Luminous）而出现性能问题。</li>
+<li><strong>配置和管理问题</strong>：强调了PG（Placement
+Groups）的重要性，并讨论了如何在不中断服务的情况下动态调整集群配置。</li>
+<li><strong>硬件和网络问题</strong>：指出消费者级SSD、桌面旋转磁盘、CPU功率不足和网络接口带宽瓶颈等问题。</li>
 </ul></li>
 <li><strong>功能和配置建议</strong>：
 <ul>
-<li><strong>MDS服务</strong>：建议根据负载合理配置MDS的数量，避免过度配置。</li>
+<li><strong>MDS服务</strong>：建议根据负载合理配置MDS数量，避免过度配置。</li>
 <li><strong>PG Auto
 Scaler</strong>：建议禁用自动缩放，手动预定义PG数量以确保性能。</li>
 <li><strong>缓存层</strong>：不建议使用RBD缓存层，因其不稳定且难以管理。</li>
 </ul></li>
 <li><strong>数据恢复和备份策略</strong>：
 <ul>
-<li>强调了备份策略的重要性，特别是在生产环境中。</li>
+<li>强调了备份策略的重要性，尤其是在生产环境中。</li>
 <li>讨论了数据恢复的复杂性和潜在风险，特别是在使用大容量磁盘时。</li>
 </ul></li>
 <li><strong>操作和管理建议</strong>：
@@ -243,10 +243,9 @@ Scaler</strong>：建议禁用自动缩放，手动预定义PG数量以确保性
 </ul>
 <h4 id="结束语">结束语：</h4>
 <ul>
-<li>主讲人感谢与会者的参与，并鼓励大家继续关注Ceph的发展和最佳实践。</li>
+<li>Joachim
+Kraftmayer感谢与会者的参与，并鼓励大家继续关注Ceph的发展和最佳实践。</li>
 </ul>
-<hr />
-<p>以上是对会议内容的详细总结，涵盖了关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -277,6 +276,8 @@ Scaler</strong>：建议禁用自动缩放，手动预定义PG数量以确保性
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%B4%A7%E6%80%A5%E6%94%AF%E6%8C%81/" rel="tag">紧急支持</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -288,7 +289,7 @@ Scaler</strong>：建议禁用自动缩放，手动预定义PG数量以确保性
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/&title=《Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/&title=《'Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -298,7 +299,7 @@ Scaler</strong>：建议禁用自动缩放，手动预定义PG数量以确保性
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/&title=《Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/&title=《'Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -308,7 +309,7 @@ Scaler</strong>：建议禁用自动缩放，手动预定义PG数量以确保性
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -336,9 +337,9 @@ Scaler</strong>：建议禁用自动缩放，手动预定义PG数量以确保性
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/05/Building_and_Scaling_Data_Pipelines_for_Data_Engineering_With_Ceph_Object_Storage_-_Kyle_Bader_IBM/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Building and Scaling Data Pipelines for Data Engineering With Ceph Object Storage - Kyle Bader, IBM</h4>
+        <h4 class="title">  Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM  </h4>
       </a>
     </div>
   
@@ -347,7 +348,7 @@ Scaler</strong>：建议禁用自动缩放，手动预定义PG数量以确保性
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/05/05/Ceph_CSI_Driver_-_Bridging_Containers_and_Ceph_-_Rakshith_R_Yati_Padia_IBM/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph CSI Driver: Bridging Containers and Ceph - Rakshith R &amp; Yati Padia, IBM</h4>
+        <h4 class="title"> Ceph CSI Driver: Bridging Containers and Ceph - Rakshith R &amp; Yati Padia, IBM </h4>
       </a>
     </div>
   
@@ -447,7 +448,7 @@ Scaler</strong>：建议禁用自动缩放，手动预定义PG数量以确保性
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/&title=《Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/&title=《'Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -457,7 +458,7 @@ Scaler</strong>：建议禁用自动缩放，手动预定义PG数量以确保性
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/&title=《Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/&title=《'Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -467,7 +468,7 @@ Scaler</strong>：建议禁用自动缩放，手动预定义PG数量以确保性
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

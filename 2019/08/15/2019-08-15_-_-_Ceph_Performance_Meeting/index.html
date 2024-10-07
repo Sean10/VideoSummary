@@ -14,23 +14,28 @@
     
     
     
-    <title>2019-08-15 :: Ceph Performance Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2019-08-15 :: Ceph Performance Meeting&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月某日 参会人员： Igor、Sam、Jinping、Egor、Adam、Sonia、Josh等 会议主题： Ceph社区本周工作进展、关键议题讨论及后续行动计划 会议内容： 一、本周工作进展  Igor： 提交了关于优化BlueStore中设备空间利用的pull request，通过利用现有的路径模型来简化空间管理，提高效率。 Sam：  提交了关于BlueS">
+    <meta name="keywords" content="存储集群,Ceph性能,BlueStore优化,QoS功能,RBD兼容性">
+    <meta name="description" content="[改进后的中文总结内容] 本次Ceph性能会议纪要概述了Ceph社区在性能优化、QoS功能实现、兼容性等方面的工作进展和讨论。 一、本周工作进展  BlueStore优化：  Igor提交了优化BlueStore中设备空间利用的pull request，通过简化空间管理流程提高效率。 Sam提交了关于BlueStore QoS功能的pull request，并分析了BlueStore的NVMe性能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-08-15 :: Ceph Performance Meeting">
+<meta property="og:title" content="&#39;2019-08-15 :: Ceph Performance Meeting&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月某日 参会人员： Igor、Sam、Jinping、Egor、Adam、Sonia、Josh等 会议主题： Ceph社区本周工作进展、关键议题讨论及后续行动计划 会议内容： 一、本周工作进展  Igor： 提交了关于优化BlueStore中设备空间利用的pull request，通过利用现有的路径模型来简化空间管理，提高效率。 Sam：  提交了关于BlueS">
+<meta property="og:description" content="[改进后的中文总结内容] 本次Ceph性能会议纪要概述了Ceph社区在性能优化、QoS功能实现、兼容性等方面的工作进展和讨论。 一、本周工作进展  BlueStore优化：  Igor提交了优化BlueStore中设备空间利用的pull request，通过简化空间管理流程提高效率。 Sam提交了关于BlueStore QoS功能的pull request，并分析了BlueStore的NVMe性能">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-08-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-08-15T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="存储集群">
+<meta property="article:tag" content="Ceph性能">
+<meta property="article:tag" content="BlueStore优化">
+<meta property="article:tag" content="QoS功能">
+<meta property="article:tag" content="RBD兼容性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-08-15 :: Ceph Performance Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2019-08-15 :: Ceph Performance Meeting&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-08-15 :: Ceph Performance Meeting</h1>
+        <h1 class="title">&#39;2019-08-15 :: Ceph Performance Meeting&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-08-14T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-08-15 :: Ceph Performance Meeting</h1>
+        <h1 class="post-card-title">'2019-08-15 :: Ceph Performance Meeting'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-08-15 00:00:00" datetime="2019-08-14T16:00:00.000Z"  itemprop="datePublished">2019-08-15</time>
 
@@ -178,81 +183,53 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： 2023年11月某日</p>
-<p><strong>参会人员</strong>：
-Igor、Sam、Jinping、Egor、Adam、Sonia、Josh等</p>
-<p><strong>会议主题</strong>：
-Ceph社区本周工作进展、关键议题讨论及后续行动计划</p>
-<p><strong>会议内容</strong>：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次Ceph性能会议纪要概述了Ceph社区在性能优化、QoS功能实现、兼容性等方面的工作进展和讨论。</p>
 <p><strong>一、本周工作进展</strong></p>
 <ul>
-<li><strong>Igor</strong>： 提交了关于优化BlueStore中设备空间利用的pull
-request，通过利用现有的路径模型来简化空间管理，提高效率。</li>
-<li><strong>Sam</strong>：
+<li><strong>BlueStore优化</strong>：
 <ul>
-<li>提交了关于BlueStore QoS功能的pull
-request，通过添加跟踪点来收集数据，以便更准确地设置节流值。</li>
-<li>对BlueStore的NVMe性能进行了分析，发现并发性对性能有显著影响。</li>
-</ul></li>
-<li><strong>Jinping</strong>： 提交了关于BlueStore锁定的pull
+<li>Igor提交了优化BlueStore中设备空间利用的pull
+request，通过简化空间管理流程提高效率。</li>
+<li>Sam提交了关于BlueStore QoS功能的pull
+request，并分析了BlueStore的NVMe性能，发现并发性对性能有显著影响。</li>
+<li>Jinping提交了关于BlueStore锁定的pull
 request，旨在减少锁定，提高性能。</li>
-<li><strong>Egor</strong>： 提交了关于BlueStore性能优化的pull
+<li>Egor提交了关于BlueStore性能优化的pull
 request，包括减少锁获取和更新finisher。</li>
-<li><strong>Adam</strong>：
-<ul>
-<li>继续推进BlueStore的优化工作，包括将IOU
-ring相关的工作移到后台运行。</li>
-<li>对BlueStore的Object存储进行了优化，将对象拆分为更小的提交，以便更容易审查。</li>
-</ul></li>
-<li><strong>Sonia</strong>：
-<ul>
-<li>探索了使用4K块大小的BlueStore性能，发现在某些情况下，性能有所提升。</li>
-<li>对BlueStore的Alligator aging测试进行了改进。</li>
-</ul></li>
-</ul>
-<p><strong>二、讨论的主要议题</strong></p>
-<ul>
-<li><strong>BlueStore性能优化</strong>：
-<ul>
-<li>如何优化BlueStore的性能，包括锁管理、路径模型、节流值设置等。</li>
-<li>如何通过添加跟踪点来收集数据，以便更准确地设置节流值。</li>
-<li>如何根据不同的设备类型调整节流值。</li>
+<li>Adam继续推进BlueStore的优化工作，包括将IOU
+ring相关的工作移到后台运行，并对Object存储进行了优化。</li>
+<li>Sonia探索了使用4K块大小的BlueStore性能，并进行Alligator
+aging测试的改进。</li>
 </ul></li>
 <li><strong>BlueStore QoS功能</strong>：
 <ul>
-<li>如何实现BlueStore的QoS功能，以满足不同用户的需求。</li>
-<li>如何通过节流值控制不同用户的I/O请求。</li>
+<li>讨论了如何实现BlueStore的QoS功能，以满足不同用户的需求。</li>
+<li>讨论了如何通过节流值控制不同用户的I/O请求。</li>
 </ul></li>
 <li><strong>BlueStore与RBD的兼容性</strong>：
 <ul>
-<li>如何确保BlueStore与RBD的兼容性。</li>
-<li>如何处理不同存储引擎之间的性能差异。</li>
+<li>讨论了如何确保BlueStore与RBD的兼容性。</li>
+<li>讨论了如何处理不同存储引擎之间的性能差异。</li>
 </ul></li>
 </ul>
-<p><strong>三、决定的事项</strong></p>
+<p><strong>二、决定的事项</strong></p>
 <ul>
-<li><strong>Igor</strong>： 尽快审查Igor的优化pull request。</li>
-<li><strong>Sam</strong>： 将跟踪点集成到CDT中，并进行QoS实验。</li>
-<li><strong>Adam</strong>：
-继续推进BlueStore的优化工作，并与社区进行讨论。</li>
-<li><strong>Sonia</strong>：
-与社区讨论4K块大小对BlueStore性能的影响。</li>
+<li>审查Igor的优化pull request。</li>
+<li>将跟踪点集成到CDT中，并进行QoS实验。</li>
+<li>继续推进BlueStore的优化工作，并与社区进行讨论。</li>
+<li>与社区讨论4K块大小对BlueStore性能的影响。</li>
 </ul>
-<p><strong>四、后续行动计划</strong></p>
+<p><strong>三、后续行动计划</strong></p>
 <ul>
 <li>继续优化BlueStore的性能。</li>
 <li>实现BlueStore的QoS功能。</li>
 <li>确保BlueStore与RBD的兼容性。</li>
 <li>对不同存储引擎进行性能测试。</li>
+<li>改进BlueStore的Alligator aging测试。</li>
+<li>进行更多关于4K块大小对BlueStore性能影响的测试。</li>
 </ul>
-<p><strong>五、其他事项</strong></p>
-<ul>
-<li>会议中讨论了BlueStore的Alligator
-aging测试，并决定对其进行改进。</li>
-<li>会议中讨论了BlueStore的4K块大小问题，并决定进行更多测试。</li>
-</ul>
-<p><strong>总结</strong>：</p>
+<p><strong>总结</strong></p>
 <p>本周Ceph社区在BlueStore性能优化、QoS功能实现等方面取得了进展，并讨论了后续的工作计划。社区将继续努力，为用户提供更好的存储解决方案。</p>
 
         </div>
@@ -284,6 +261,8 @@ aging测试，并决定对其进行改进。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore%E4%BC%98%E5%8C%96/" rel="tag">BlueStore优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E6%80%A7%E8%83%BD/" rel="tag">Ceph性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/QoS%E5%8A%9F%E8%83%BD/" rel="tag">QoS功能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD%E5%85%BC%E5%AE%B9%E6%80%A7/" rel="tag">RBD兼容性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E9%9B%86%E7%BE%A4/" rel="tag">存储集群</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -295,7 +274,7 @@ aging测试，并决定对其进行改进。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&title=《2019-08-15 :: Ceph Performance Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&title=《'2019-08-15 :: Ceph Performance Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -305,7 +284,7 @@ aging测试，并决定对其进行改进。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&title=《2019-08-15 :: Ceph Performance Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&title=《'2019-08-15 :: Ceph Performance Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -315,7 +294,7 @@ aging测试，并决定对其进行改进。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-08-15 :: Ceph Performance Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-08-15 :: Ceph Performance Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -345,7 +324,7 @@ aging测试，并决定对其进行改进。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2019/08/19/2019-08-19_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-08-19 :: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2019-08-19 :: Ceph Orchestration Meeting&#39;</h4>
       </a>
     </div>
   
@@ -354,7 +333,7 @@ aging测试，并决定对其进行改进。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2019/08/14/2019-08-13_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-08-13 :: Crimson SeaStor OSD Weekly Meeting</h4>
+        <h4 class="title">  2019-08-13 :: Crimson SeaStor OSD Weekly Meeting  </h4>
       </a>
     </div>
   
@@ -454,7 +433,7 @@ aging测试，并决定对其进行改进。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&title=《2019-08-15 :: Ceph Performance Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&title=《'2019-08-15 :: Ceph Performance Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -464,7 +443,7 @@ aging测试，并决定对其进行改进。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&title=《2019-08-15 :: Ceph Performance Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&title=《'2019-08-15 :: Ceph Performance Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -474,7 +453,7 @@ aging测试，并决定对其进行改进。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-08-15 :: Ceph Performance Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-08-15 :: Ceph Performance Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/08/15/2019-08-15_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

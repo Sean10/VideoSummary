@@ -20,17 +20,26 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph存储优化与功能讨论 参会人员：Ceph研发团队成员 会议时间：[具体日期] 主要议题及讨论内容：  MD5优化与E-Tag计算  讨论内容：会议开始讨论了关于MD5优化以提高E-Tag计算效率的问题。之前有尝试通过后台线程卸载MD5计算，但由于线程同步成本过高而未成功。目前考虑使用XMD和向量化方法，已发现速度提升可达5倍。提出了使用AC+库的AVX2实现进行实验的可能">
+    <meta name="keywords" content="Ceph,RGW,测试,MD5优化,E,Tag计算,多重Zipper后端,OLH修复,通知重试机制">
+    <meta name="description" content="[改进后的中文总结内容] 在2023年6月14日的Ceph RGW重构会议中，Ceph研发团队成员讨论了多个技术优化和功能改进议题。以下是会议的主要内容和决定事项：  MD5优化与E-Tag计算：  讨论了MD5计算效率的问题，并尝试了XMD和向量化方法，预计可提升5倍速度。 决定尝试AC+库的AVX2实现进行实验，以减少CPU使用率。 后续行动：联系Mark进行评估，并进行性能测试。  多重Zi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph RGW Refactoring Meeting 2023-06-14">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/07/03/Ceph_RGW_Refactoring_Meeting_2023-06-14/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph存储优化与功能讨论 参会人员：Ceph研发团队成员 会议时间：[具体日期] 主要议题及讨论内容：  MD5优化与E-Tag计算  讨论内容：会议开始讨论了关于MD5优化以提高E-Tag计算效率的问题。之前有尝试通过后台线程卸载MD5计算，但由于线程同步成本过高而未成功。目前考虑使用XMD和向量化方法，已发现速度提升可达5倍。提出了使用AC+库的AVX2实现进行实验的可能">
+<meta property="og:description" content="[改进后的中文总结内容] 在2023年6月14日的Ceph RGW重构会议中，Ceph研发团队成员讨论了多个技术优化和功能改进议题。以下是会议的主要内容和决定事项：  MD5优化与E-Tag计算：  讨论了MD5计算效率的问题，并尝试了XMD和向量化方法，预计可提升5倍速度。 决定尝试AC+库的AVX2实现进行实验，以减少CPU使用率。 后续行动：联系Mark进行评估，并进行性能测试。  多重Zi">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-02T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="MD5优化">
+<meta property="article:tag" content="E">
+<meta property="article:tag" content="Tag计算">
+<meta property="article:tag" content="多重Zipper后端">
+<meta property="article:tag" content="OLH修复">
+<meta property="article:tag" content="通知重试机制">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +165,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph%E5%AD%98%E5%82%A8%E4%BC%98%E5%8C%96%E4%B8%8E%E5%8A%9F%E8%83%BD%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph存储优化与功能讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98ceph%E7%A0%94%E5%8F%91%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：Ceph研发团队成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E5%8F%8A%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题及讨论内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA%E7%82%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他讨论点：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8B%E4%B8%80%E6%AD%A5%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">下一步行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_RGW_Refactoring_Meeting_2023-06-14"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,53 +187,37 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4
-id="会议主题ceph存储优化与功能讨论">会议主题：Ceph存储优化与功能讨论</h4>
-<h4 id="参会人员ceph研发团队成员">参会人员：Ceph研发团队成员</h4>
-<h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
-<h4 id="主要议题及讨论内容">主要议题及讨论内容：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>在2023年6月14日的Ceph
+RGW重构会议中，Ceph研发团队成员讨论了多个技术优化和功能改进议题。以下是会议的主要内容和决定事项：</p>
 <ol type="1">
-<li><strong>MD5优化与E-Tag计算</strong>
+<li><strong>MD5优化与E-Tag计算</strong>：
 <ul>
-<li><strong>讨论内容</strong>：会议开始讨论了关于MD5优化以提高E-Tag计算效率的问题。之前有尝试通过后台线程卸载MD5计算，但由于线程同步成本过高而未成功。目前考虑使用XMD和向量化方法，已发现速度提升可达5倍。提出了使用AC+库的AVX2实现进行实验的可能性。</li>
-<li><strong>决定事项</strong>：希望有兴趣的团队成员尝试这一优化，以减少CPU使用率。</li>
-<li><strong>后续行动</strong>：将联系Mark进行评估，并进行性能测试。</li>
+<li>讨论了MD5计算效率的问题，并尝试了XMD和向量化方法，预计可提升5倍速度。</li>
+<li>决定尝试AC+库的AVX2实现进行实验，以减少CPU使用率。</li>
+<li>后续行动：联系Mark进行评估，并进行性能测试。</li>
 </ul></li>
-<li><strong>多重Zipper后端与过滤器</strong>
+<li><strong>多重Zipper后端与过滤器</strong>：
 <ul>
-<li><strong>讨论内容</strong>：Ali提出了关于多重Zipper后端或过滤器的工作，特别是在D4和d3n缓存工作中需要使用多个过滤器。讨论了如何通过JSON配置实现多重过滤器和后端的嵌套。</li>
-<li><strong>决定事项</strong>：需要定义每种驱动程序的JSON格式，并创建相应的工厂函数。</li>
-<li><strong>后续行动</strong>：Ali将开始研究并实现这一功能。</li>
+<li>讨论了在D4和d3n缓存工作中使用多重过滤器的问题。</li>
+<li>决定定义每种驱动程序的JSON格式，并创建相应的工厂函数。</li>
+<li>后续行动：Ali将开始研究并实现这一功能。</li>
 </ul></li>
-<li><strong>OLH修复</strong>
+<li><strong>OLH修复</strong>：
 <ul>
-<li><strong>讨论内容</strong>：Corey更新了关于OLH修复的PR，解决了并发问题和遗留的索引条目问题。讨论了如何更好地测试这些并发场景。</li>
-<li><strong>决定事项</strong>：需要进一步讨论如何进行更全面的并发测试，包括可能的随机延迟注入和错误注入。</li>
-<li><strong>后续行动</strong>：Corey将继续完善PR，并探索更多的测试方法。</li>
+<li>Corey更新了关于OLH修复的PR，解决了并发问题和遗留的索引条目问题。</li>
+<li>决定进一步讨论如何进行更全面的并发测试。</li>
+<li>后续行动：Corey将继续完善PR，并探索更多的测试方法。</li>
 </ul></li>
-<li><strong>通知重试机制</strong>
+<li><strong>通知重试机制</strong>：
 <ul>
-<li><strong>讨论内容</strong>：Krunal讨论了通知重试机制的改进，特别是从Rados对象转换到FIFO对象的需求。</li>
-<li><strong>决定事项</strong>：需要进一步讨论如何限制FIFO的大小，以及是否需要设置重试次数或时间限制。</li>
-<li><strong>后续行动</strong>：Krunal将开始转换工作，并继续讨论其他设计细节。</li>
+<li>Krunal讨论了通知重试机制的改进。</li>
+<li>决定进一步讨论如何限制FIFO的大小，以及是否需要设置重试次数或时间限制。</li>
+<li>后续行动：Krunal将开始转换工作，并继续讨论设计细节。</li>
 </ul></li>
 </ol>
-<h4 id="其他讨论点">其他讨论点：</h4>
-<ul>
-<li>数据同步公平性的测试问题，目前仍在解决一些崩溃和边缘案例。</li>
-</ul>
-<h4 id="会议总结">会议总结：</h4>
-<p>会议涵盖了多个技术优化和功能改进的讨论，涉及MD5优化、多重Zipper后端、OLH修复和通知重试机制。团队成员将根据讨论结果进行后续的开发和测试工作。</p>
-<h4 id="下一步行动">下一步行动：</h4>
-<ul>
-<li>联系Mark进行MD5优化评估。</li>
-<li>Ali开始多重Zipper后端的研究和实现。</li>
-<li>Corey继续完善OLH修复PR并探索更多测试方法。</li>
-<li>Krunal开始通知重试机制的转换工作，并继续讨论设计细节。</li>
-</ul>
-<h4 id="会议结束">会议结束：</h4>
-<p>感谢所有参与者的贡献，期待下一次会议的进展汇报。</p>
+<p>会议还涉及了数据同步公平性的测试问题，目前仍在解决一些崩溃和边缘案例。</p>
+<p>会议总结：会议涵盖了多个技术优化和功能改进的讨论，团队成员将根据讨论结果进行后续的开发和测试工作。</p>
 
         </div>
 
@@ -262,6 +248,8 @@ id="会议主题ceph存储优化与功能讨论">会议主题：Ceph存储优化
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/E/" rel="tag">E</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MD5%E4%BC%98%E5%8C%96/" rel="tag">MD5优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OLH%E4%BF%AE%E5%A4%8D/" rel="tag">OLH修复</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Tag%E8%AE%A1%E7%AE%97/" rel="tag">Tag计算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E9%87%8DZipper%E5%90%8E%E7%AB%AF/" rel="tag">多重Zipper后端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%80%9A%E7%9F%A5%E9%87%8D%E8%AF%95%E6%9C%BA%E5%88%B6/" rel="tag">通知重试机制</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -332,7 +320,7 @@ id="会议主题ceph存储优化与功能讨论">会议主题：Ceph存储优化
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/07/03/Ceph_RGW_Refactoring_Meeting_2023-06-28/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2023-06-28</h4>
+        <h4 class="title">Ceph RGW 重构会议纪要 2023-06-28</h4>
       </a>
     </div>
   

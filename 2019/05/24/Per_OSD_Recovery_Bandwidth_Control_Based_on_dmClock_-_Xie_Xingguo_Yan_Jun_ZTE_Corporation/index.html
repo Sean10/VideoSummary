@@ -14,23 +14,28 @@
     
     
     
-    <title>Per OSD Recovery Bandwidth Control Based on dmClock - Xie Xingguo &amp; Yan Jun, ZTE Corporation | ceph视频总结 | youtube频道总结</title>
+    <title>基于dmClock的Per OSD恢复带宽控制 - Xie Xingguo &amp; Yan Jun, ZTE Corporation | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年某月某日 会议地点： City Corporation 参会人员： Hinging, She Single 会议主题： 基于TM Clock的云附加存储方法设计、实现和测试 会议内容： 一、背景及问题  背景： 存储去重对客户端性能有较大影响，但去重又是提高数据可靠性的必要手段。 问题： 如何在保证数据可靠性的同时，尽量减少去重对客户端性能的影响。  二、解决方案">
+    <meta name="keywords" content="Ceph,distributed storage,recovery,bandwidth control,dmClock">
+    <meta name="description" content="[改进后的中文总结内容] Per OSD Recovery Bandwidth Control Based on dmClock的会议总结如下： 会议纪要 会议时间： 2023年某月某日 会议地点： City Corporation 参会人员： Hinging, She Single 会议主题： 基于dmClock的存储去重方法设计、实现和测试 会议内容： 一、背景及问题  背景： 存储去重对客户">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Per OSD Recovery Bandwidth Control Based on dmClock - Xie Xingguo &amp; Yan Jun, ZTE Corporation">
+<meta property="og:title" content="基于dmClock的Per OSD恢复带宽控制 - Xie Xingguo &amp; Yan Jun, ZTE Corporation">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Per_OSD_Recovery_Bandwidth_Control_Based_on_dmClock_-_Xie_Xingguo_Yan_Jun_ZTE_Corporation/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年某月某日 会议地点： City Corporation 参会人员： Hinging, She Single 会议主题： 基于TM Clock的云附加存储方法设计、实现和测试 会议内容： 一、背景及问题  背景： 存储去重对客户端性能有较大影响，但去重又是提高数据可靠性的必要手段。 问题： 如何在保证数据可靠性的同时，尽量减少去重对客户端性能的影响。  二、解决方案">
+<meta property="og:description" content="[改进后的中文总结内容] Per OSD Recovery Bandwidth Control Based on dmClock的会议总结如下： 会议纪要 会议时间： 2023年某月某日 会议地点： City Corporation 参会人员： Hinging, She Single 会议主题： 基于dmClock的存储去重方法设计、实现和测试 会议内容： 一、背景及问题  背景： 存储去重对客户">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="distributed storage">
+<meta property="article:tag" content="recovery">
+<meta property="article:tag" content="bandwidth control">
+<meta property="article:tag" content="dmClock">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Per OSD Recovery Bandwidth Control Based on dmClock - Xie Xingguo &amp; Yan Jun, ZTE Corporation</div>
+        <div class="flex-col header-title ellipsis">基于dmClock的Per OSD恢复带宽控制 - Xie Xingguo &amp; Yan Jun, ZTE Corporation</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Per OSD Recovery Bandwidth Control Based on dmClock - Xie Xingguo &amp; Yan Jun, ZTE Corporation</h1>
+        <h1 class="title">基于dmClock的Per OSD恢复带宽控制 - Xie Xingguo &amp; Yan Jun, ZTE Corporation</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-05-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Per OSD Recovery Bandwidth Control Based on dmClock - Xie Xingguo & Yan Jun, ZTE Corporation</h1>
+        <h1 class="post-card-title">基于dmClock的Per OSD恢复带宽控制 - Xie Xingguo & Yan Jun, ZTE Corporation</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-05-24 00:00:00" datetime="2019-05-23T16:00:00.000Z"  itemprop="datePublished">2019-05-24</time>
 
@@ -185,17 +190,20 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<p>Per OSD Recovery Bandwidth Control Based on
+dmClock的会议总结如下：</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议时间</strong>： 2023年某月某日</p>
 <p><strong>会议地点</strong>： City Corporation</p>
 <p><strong>参会人员</strong>： Hinging, She Single</p>
-<p><strong>会议主题</strong>： 基于TM
-Clock的云附加存储方法设计、实现和测试</p>
+<p><strong>会议主题</strong>：
+基于dmClock的存储去重方法设计、实现和测试</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>一、背景及问题</strong></p>
 <ol type="1">
 <li><strong>背景</strong>：
-存储去重对客户端性能有较大影响，但去重又是提高数据可靠性的必要手段。</li>
+存储去重对客户端性能有很大影响，但去重又是提高数据可靠性的必要手段。</li>
 <li><strong>问题</strong>：
 如何在保证数据可靠性的同时，尽量减少去重对客户端性能的影响。</li>
 </ol>
@@ -223,7 +231,7 @@ Clock进行带宽控制，类似于计算带宽预留。</li>
 </ol>
 <p><strong>四、去重操作实现</strong></p>
 <ol type="1">
-<li><strong>原OpIE类和DM Clock客户端</strong>：
+<li><strong>OpIE类和DM Clock客户端</strong>：
 <ul>
 <li>OpIE类被分为文件类型、去重、scrub和快照。</li>
 <li>每个类型都有自己的QS参数，并使用多队列进行服务。</li>
@@ -296,6 +304,8 @@ Clock进行带宽控制，类似于计算带宽预留。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/bandwidth-control/" rel="tag">bandwidth control</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/distributed-storage/" rel="tag">distributed storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/dmClock/" rel="tag">dmClock</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/recovery/" rel="tag">recovery</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -307,7 +317,7 @@ Clock进行带宽控制，类似于计算带宽预留。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Per_OSD_Recovery_Bandwidth_Control_Based_on_dmClock_-_Xie_Xingguo_Yan_Jun_ZTE_Corporation/&title=《Per OSD Recovery Bandwidth Control Based on dmClock - Xie Xingguo & Yan Jun, ZTE Corporation》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Per_OSD_Recovery_Bandwidth_Control_Based_on_dmClock_-_Xie_Xingguo_Yan_Jun_ZTE_Corporation/&title=《基于dmClock的Per OSD恢复带宽控制 - Xie Xingguo & Yan Jun, ZTE Corporation》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -317,7 +327,7 @@ Clock进行带宽控制，类似于计算带宽预留。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Per_OSD_Recovery_Bandwidth_Control_Based_on_dmClock_-_Xie_Xingguo_Yan_Jun_ZTE_Corporation/&title=《Per OSD Recovery Bandwidth Control Based on dmClock - Xie Xingguo & Yan Jun, ZTE Corporation》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Per_OSD_Recovery_Bandwidth_Control_Based_on_dmClock_-_Xie_Xingguo_Yan_Jun_ZTE_Corporation/&title=《基于dmClock的Per OSD恢复带宽控制 - Xie Xingguo & Yan Jun, ZTE Corporation》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -327,7 +337,7 @@ Clock进行带宽控制，类似于计算带宽预留。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Per OSD Recovery Bandwidth Control Based on dmClock - Xie Xingguo & Yan Jun, ZTE Corporation》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Per_OSD_Recovery_Bandwidth_Control_Based_on_dmClock_-_Xie_Xingguo_Yan_Jun_ZTE_Corporation/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《基于dmClock的Per OSD恢复带宽控制 - Xie Xingguo & Yan Jun, ZTE Corporation》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Per_OSD_Recovery_Bandwidth_Control_Based_on_dmClock_-_Xie_Xingguo_Yan_Jun_ZTE_Corporation/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -355,18 +365,18 @@ Clock进行带宽控制，类似于计算带宽预留。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/Optimizing_Ceph_Object_Storage_for_Production_in_Multisite_Clouds_-_Michael_Hackett_Vikhyat_Umrao/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Optimize_librbd_for_Lower_CPU_Cost_and_Higher_Scalability_-_Li_Wang_DiDi/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Optimizing Ceph Object Storage for Production in Multisite Clouds - Michael Hackett &amp; Vikhyat Umrao</h4>
+        <h4 class="title">Optimize librbd for Lower CPU Cost and Higher Scalability - Li Wang, DiDi</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Practices_of_Ceph_Object_Storage_in_Public_Cloud_Services_-_Yu_Liyang_China_Mobile/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Keynote_-_The_System_that_Matters_-_Tim_Massey_Chief_Executive_Officer_Phil_Straw_CTO/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Practices of Ceph Object Storage in Public Cloud Services - Yu Liyang, China Mobile</h4>
+        <h4 class="title">  Keynote: The System that Matters - Tim Massey, Chief Executive Officer &amp; Phil Straw, CTO  </h4>
       </a>
     </div>
   
@@ -466,7 +476,7 @@ Clock进行带宽控制，类似于计算带宽预留。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Per_OSD_Recovery_Bandwidth_Control_Based_on_dmClock_-_Xie_Xingguo_Yan_Jun_ZTE_Corporation/&title=《Per OSD Recovery Bandwidth Control Based on dmClock - Xie Xingguo & Yan Jun, ZTE Corporation》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Per_OSD_Recovery_Bandwidth_Control_Based_on_dmClock_-_Xie_Xingguo_Yan_Jun_ZTE_Corporation/&title=《基于dmClock的Per OSD恢复带宽控制 - Xie Xingguo & Yan Jun, ZTE Corporation》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -476,7 +486,7 @@ Clock进行带宽控制，类似于计算带宽预留。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Per_OSD_Recovery_Bandwidth_Control_Based_on_dmClock_-_Xie_Xingguo_Yan_Jun_ZTE_Corporation/&title=《Per OSD Recovery Bandwidth Control Based on dmClock - Xie Xingguo & Yan Jun, ZTE Corporation》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Per_OSD_Recovery_Bandwidth_Control_Based_on_dmClock_-_Xie_Xingguo_Yan_Jun_ZTE_Corporation/&title=《基于dmClock的Per OSD恢复带宽控制 - Xie Xingguo & Yan Jun, ZTE Corporation》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -486,7 +496,7 @@ Clock进行带宽控制，类似于计算带宽预留。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Per OSD Recovery Bandwidth Control Based on dmClock - Xie Xingguo & Yan Jun, ZTE Corporation》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Per_OSD_Recovery_Bandwidth_Control_Based_on_dmClock_-_Xie_Xingguo_Yan_Jun_ZTE_Corporation/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《基于dmClock的Per OSD恢复带宽控制 - Xie Xingguo & Yan Jun, ZTE Corporation》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Per_OSD_Recovery_Bandwidth_Control_Based_on_dmClock_-_Xie_Xingguo_Yan_Jun_ZTE_Corporation/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

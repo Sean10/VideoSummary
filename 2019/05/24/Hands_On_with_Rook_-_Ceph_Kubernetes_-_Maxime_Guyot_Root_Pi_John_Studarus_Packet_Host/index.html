@@ -14,23 +14,28 @@
     
     
     
-    <title>Hands On with Rook: Ceph &amp; Kubernetes - Maxime Guyot, Root Pi &amp; John Studarus, Packet Host | ceph视频总结 | youtube频道总结</title>
+    <title>Hands On with Rook- Ceph &amp; Kubernetes - Maxime Guyot, Root Pi &amp; John Studarus, Packet Host | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未知） 会议地点： 线上会议 参会人员： John, Max（主持人）、所有参与者 会议主题： 使用 Rook 在裸金属上运行分布式存储 Ceph 的研讨会 会议内容： 一、会议概述 本次会议主要介绍了如何使用 Rook 在裸金属上部署和运行 Ceph 分布式存储系统。会议内容涵盖了 Ceph 集群的搭建、配置、监控和升级等方面。 二、主要议题  环">
+    <meta name="keywords" content="Ceph,Kubernetes,Distributed Storage,Rook,Cloud Computing">
+    <meta name="description" content="[改进后的中文总结内容] 本次研讨会主要介绍如何使用 Rook 在裸金属上部署和运行 Ceph 分布式存储系统。会议内容覆盖了以下几个方面： 一、环境搭建  参会者使用两台物理服务器进行实验，一台为 T1 小型服务器，另一台为 C2 中型服务器。 T1 服务器仅包含文件系统，C2 服务器包含文件系统和多个 NVMe SSD 驱动器。 参会者可通过 SSH 访问实验环境。  二、Rook 部署  使">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hands On with Rook: Ceph &amp; Kubernetes - Maxime Guyot, Root Pi &amp; John Studarus, Packet Host">
+<meta property="og:title" content="Hands On with Rook- Ceph &amp; Kubernetes - Maxime Guyot, Root Pi &amp; John Studarus, Packet Host">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未知） 会议地点： 线上会议 参会人员： John, Max（主持人）、所有参与者 会议主题： 使用 Rook 在裸金属上运行分布式存储 Ceph 的研讨会 会议内容： 一、会议概述 本次会议主要介绍了如何使用 Rook 在裸金属上部署和运行 Ceph 分布式存储系统。会议内容涵盖了 Ceph 集群的搭建、配置、监控和升级等方面。 二、主要议题  环">
+<meta property="og:description" content="[改进后的中文总结内容] 本次研讨会主要介绍如何使用 Rook 在裸金属上部署和运行 Ceph 分布式存储系统。会议内容覆盖了以下几个方面： 一、环境搭建  参会者使用两台物理服务器进行实验，一台为 T1 小型服务器，另一台为 C2 中型服务器。 T1 服务器仅包含文件系统，C2 服务器包含文件系统和多个 NVMe SSD 驱动器。 参会者可通过 SSH 访问实验环境。  二、Rook 部署  使">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="Cloud Computing">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Hands On with Rook: Ceph &amp; Kubernetes - Maxime Guyot, Root Pi &amp; John Studarus, Packet Host</div>
+        <div class="flex-col header-title ellipsis">Hands On with Rook- Ceph &amp; Kubernetes - Maxime Guyot, Root Pi &amp; John Studarus, Packet Host</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Hands On with Rook: Ceph &amp; Kubernetes - Maxime Guyot, Root Pi &amp; John Studarus, Packet Host</h1>
+        <h1 class="title">Hands On with Rook- Ceph &amp; Kubernetes - Maxime Guyot, Root Pi &amp; John Studarus, Packet Host</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-05-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Hands On with Rook: Ceph & Kubernetes - Maxime Guyot, Root Pi & John Studarus, Packet Host</h1>
+        <h1 class="post-card-title">Hands On with Rook- Ceph & Kubernetes - Maxime Guyot, Root Pi & John Studarus, Packet Host</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-05-24 00:00:00" datetime="2019-05-23T16:00:00.000Z"  itemprop="datePublished">2019-05-24</time>
 
@@ -178,65 +183,53 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未知）</p>
-<p><strong>会议地点</strong>： 线上会议</p>
-<p><strong>参会人员</strong>： John, Max（主持人）、所有参与者</p>
-<p><strong>会议主题</strong>： 使用 Rook 在裸金属上运行分布式存储 Ceph
-的研讨会</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>一、会议概述</strong></p>
-<p>本次会议主要介绍了如何使用 Rook 在裸金属上部署和运行 Ceph
-分布式存储系统。会议内容涵盖了 Ceph
-集群的搭建、配置、监控和升级等方面。</p>
-<p><strong>二、主要议题</strong></p>
-<ol type="1">
-<li><strong>环境搭建</strong>：
+            <p>[改进后的中文总结内容]</p>
+<p>本次研讨会主要介绍如何使用 Rook 在裸金属上部署和运行 Ceph
+分布式存储系统。会议内容覆盖了以下几个方面：</p>
+<p><strong>一、环境搭建</strong></p>
 <ul>
-<li>参会者将使用两台物理服务器进行实验，一台为 T1 小型服务器，另一台为
-C2 中型服务器。</li>
+<li>参会者使用两台物理服务器进行实验，一台为 T1 小型服务器，另一台为 C2
+中型服务器。</li>
 <li>T1 服务器仅包含文件系统，C2 服务器包含文件系统和多个 NVMe SSD
 驱动器。</li>
 <li>参会者可通过 SSH 访问实验环境。</li>
-</ul></li>
-<li><strong>Rook 部署</strong>：
+</ul>
+<p><strong>二、Rook 部署</strong></p>
 <ul>
 <li>使用 Rook 部署 Ceph 集群，包括 Ceph Mon、Manager 和 OSD。</li>
 <li>验证 Kubernetes 集群是否正常运行。</li>
-</ul></li>
-<li><strong>Ceph 集群配置</strong>：
+</ul>
+<p><strong>三、Ceph 集群配置</strong></p>
 <ul>
 <li>创建 Ceph 块存储池和文件系统。</li>
 <li>创建 Ceph 对象存储网关（RGW）。</li>
 <li>使用 Ceph 对象存储上传和下载文件。</li>
-</ul></li>
-<li><strong>监控</strong>：
+</ul>
+<p><strong>四、监控</strong></p>
 <ul>
 <li>使用 Prometheus 和 Grafana 监控 Ceph
 集群的健康状况、性能和容量。</li>
 <li>创建自定义仪表板以可视化监控数据。</li>
-</ul></li>
-<li><strong>升级</strong>：
+</ul>
+<p><strong>五、升级</strong></p>
 <ul>
 <li>使用 Rook 升级 Ceph 集群到最新版本。</li>
-</ul></li>
-</ol>
-<p><strong>三、决定事项</strong></p>
-<ol type="1">
-<li>参会者将使用提供的实验环境进行实验。</li>
-<li>主持人将解答参会者提出的问题。</li>
-<li>参会者将根据实验指南完成实验任务。</li>
-</ol>
-<p><strong>四、后续行动计划</strong></p>
-<ol type="1">
+</ul>
+<p><strong>六、实验与模拟</strong></p>
+<ul>
+<li>参会者通过实际操作加深了对 Ceph 和 Rook
+的理解，并掌握了相关操作技能。</li>
+<li>模拟了 Ceph 集群的故障，以展示 Rook 的容错能力。</li>
+<li>创建了 WordPress 应用，展示了 Ceph 与 Kubernetes 的集成。</li>
+</ul>
+<p><strong>七、后续行动计划</strong></p>
+<ul>
 <li>参会者完成实验任务并提交实验报告。</li>
 <li>主持人整理实验结果并撰写实验总结。</li>
 <li>主持人收集参会者反馈，改进实验指南。</li>
-</ol>
-<p><strong>五、会议总结</strong></p>
-<p>本次会议成功介绍了如何使用 Rook 在裸金属上部署和运行 Ceph
-分布式存储系统。参会者通过实验加深了对 Ceph 和 Rook
-的理解，并掌握了相关操作技能。</p>
+</ul>
+<p>本次研讨会为参会者提供了深入了解 Ceph 和 Rook
+的机会，并通过实际操作加深了对分布式存储技术的理解。</p>
 
         </div>
 
@@ -267,6 +260,8 @@ C2 中型服务器。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cloud-Computing/" rel="tag">Cloud Computing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -278,7 +273,7 @@ C2 中型服务器。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/&title=《Hands On with Rook: Ceph & Kubernetes - Maxime Guyot, Root Pi & John Studarus, Packet Host》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/&title=《Hands On with Rook- Ceph & Kubernetes - Maxime Guyot, Root Pi & John Studarus, Packet Host》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -288,7 +283,7 @@ C2 中型服务器。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/&title=《Hands On with Rook: Ceph & Kubernetes - Maxime Guyot, Root Pi & John Studarus, Packet Host》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/&title=《Hands On with Rook- Ceph & Kubernetes - Maxime Guyot, Root Pi & John Studarus, Packet Host》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -298,7 +293,7 @@ C2 中型服务器。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hands On with Rook: Ceph & Kubernetes - Maxime Guyot, Root Pi & John Studarus, Packet Host》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hands On with Rook- Ceph & Kubernetes - Maxime Guyot, Root Pi & John Studarus, Packet Host》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -326,18 +321,18 @@ C2 中型服务器。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/Highly_Available_Git_on_CephFS_with_Rook_Kubernetes_and_OpenStack_-_James_E._Blair_Red_Hat/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Getting_Started_as_a_Rook-Ceph_Developer_-_Blaine_Gardner_SUSE/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Highly Available Git on CephFS with Rook, Kubernetes, and OpenStack - James E. Blair, Red Hat</h4>
+        <h4 class="title">Getting Started as a Rook-Ceph Developer - Blaine Gardner, SUSE</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/I_Need_More_Space_It_s_Not_You_It_s_BlueStore_-_Mohamad_Gebai_SUSE/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Highly_Available_Git_on_CephFS_with_Rook_Kubernetes_and_OpenStack_-_James_E._Blair_Red_Hat/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">I Need More Space, It&#39;s Not You It&#39;s BlueStore - Mohamad Gebai, SUSE</h4>
+        <h4 class="title">Highly Available Git on CephFS with Rook, Kubernetes, and OpenStack - James E. Blair, Red Hat</h4>
       </a>
     </div>
   
@@ -437,7 +432,7 @@ C2 中型服务器。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/&title=《Hands On with Rook: Ceph & Kubernetes - Maxime Guyot, Root Pi & John Studarus, Packet Host》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/&title=《Hands On with Rook- Ceph & Kubernetes - Maxime Guyot, Root Pi & John Studarus, Packet Host》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -447,7 +442,7 @@ C2 中型服务器。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/&title=《Hands On with Rook: Ceph & Kubernetes - Maxime Guyot, Root Pi & John Studarus, Packet Host》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/&title=《Hands On with Rook- Ceph & Kubernetes - Maxime Guyot, Root Pi & John Studarus, Packet Host》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -457,7 +452,7 @@ C2 中型服务器。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hands On with Rook: Ceph & Kubernetes - Maxime Guyot, Root Pi & John Studarus, Packet Host》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hands On with Rook- Ceph & Kubernetes - Maxime Guyot, Root Pi & John Studarus, Packet Host》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

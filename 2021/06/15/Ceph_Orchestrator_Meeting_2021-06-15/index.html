@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph Dashboard 配置与 RGW 连接优化 参会人员：Alfonso、Sage、Casey、Jehuda 等 会议时间：[具体日期] 会议地点：视频会议 主要议题：  Ceph Dashboard 中 Selfie IDM 网络设置的 Pull Request RGW 连接凭证的配置与优化 NFS 导出创建的 CLI 命令优化 Rook 管理模块的当前状态与后续行动">
+    <meta name="keywords" content="Ceph,RGW,Dashboard,Rook,Configuration Optimization">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph Dashboard 配置与 RGW 连接优化 参会人员：Alfonso、Sage、Casey、Jehuda 等 会议时间：2021年6月15日 会议地点：视频会议 主要议题：  Ceph Dashboard 中 Selfie IDM 网络设置的 Pull Request RGW 连接凭证的配置与优化 NFS 导出创建的 CLI 命令优化 Ro">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2021-06-15">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/06/15/Ceph_Orchestrator_Meeting_2021-06-15/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph Dashboard 配置与 RGW 连接优化 参会人员：Alfonso、Sage、Casey、Jehuda 等 会议时间：[具体日期] 会议地点：视频会议 主要议题：  Ceph Dashboard 中 Selfie IDM 网络设置的 Pull Request RGW 连接凭证的配置与优化 NFS 导出创建的 CLI 命令优化 Rook 管理模块的当前状态与后续行动">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph Dashboard 配置与 RGW 连接优化 参会人员：Alfonso、Sage、Casey、Jehuda 等 会议时间：2021年6月15日 会议地点：视频会议 主要议题：  Ceph Dashboard 中 Selfie IDM 网络设置的 Pull Request RGW 连接凭证的配置与优化 NFS 导出创建的 CLI 命令优化 Ro">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-06-15T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Dashboard">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="Configuration Optimization">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,9 +164,9 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph-dashboard-%E9%85%8D%E7%BD%AE%E4%B8%8E-rgw-%E8%BF%9E%E6%8E%A5%E4%BC%98%E5%8C%96"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph
-Dashboard 配置与 RGW 连接优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98alfonsosagecaseyjehuda-%E7%AD%89"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：Alfonso、Sage、Casey、Jehuda
-等</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E8%A7%86%E9%A2%91%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：视频会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">讨论内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph-dashboard-%E9%85%8D%E7%BD%AE%E4%B8%8E-rgw-%E8%BF%9E%E6%8E%A5%E4%BC%98%E5%8C%96"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议主题：Ceph
+Dashboard 配置与 RGW 连接优化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98alfonsosagecaseyjehuda-%E7%AD%89"><span class="post-toc-number">2.</span> <span class="post-toc-text">参会人员：Alfonso、Sage、Casey、Jehuda
+等</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B42021%E5%B9%B46%E6%9C%8815%E6%97%A5"><span class="post-toc-number">3.</span> <span class="post-toc-text">会议时间：2021年6月15日</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E8%A7%86%E9%A2%91%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">4.</span> <span class="post-toc-text">会议地点：视频会议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">5.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">6.</span> <span class="post-toc-text">讨论内容：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">7.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">8.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">9.</span> <span class="post-toc-text">会议结束：</span></a></li></ol>
         </nav>
     </aside>
 
@@ -187,15 +192,16 @@ Dashboard 配置与 RGW 连接优化</span></a></li><li class="post-toc-item pos
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题ceph-dashboard-配置与-rgw-连接优化">会议主题：Ceph
-Dashboard 配置与 RGW 连接优化</h4>
-<h4
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
+<h3 id="会议主题ceph-dashboard-配置与-rgw-连接优化">会议主题：Ceph
+Dashboard 配置与 RGW 连接优化</h3>
+<h3
 id="参会人员alfonsosagecaseyjehuda-等">参会人员：Alfonso、Sage、Casey、Jehuda
-等</h4>
-<h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
-<h4 id="会议地点视频会议">会议地点：视频会议</h4>
-<h4 id="主要议题">主要议题：</h4>
+等</h3>
+<h3 id="会议时间2021年6月15日">会议时间：2021年6月15日</h3>
+<h3 id="会议地点视频会议">会议地点：视频会议</h3>
+<h3 id="主要议题">主要议题：</h3>
 <ol type="1">
 <li><strong>Ceph Dashboard 中 Selfie IDM 网络设置的 Pull
 Request</strong></li>
@@ -203,7 +209,7 @@ Request</strong></li>
 <li><strong>NFS 导出创建的 CLI 命令优化</strong></li>
 <li><strong>Rook 管理模块的当前状态与后续行动</strong></li>
 </ol>
-<h4 id="讨论内容">讨论内容：</h4>
+<h3 id="讨论内容">讨论内容：</h3>
 <ol type="1">
 <li><strong>Selfie IDM 网络设置</strong>：
 <ul>
@@ -212,15 +218,14 @@ Request</strong></li>
 </ul></li>
 <li><strong>RGW 连接凭证配置</strong>：
 <ul>
-<li>讨论了当前凭证设置方式，即按网关（gateway）设置。</li>
-<li>提出了新的提案，建议按领域（realm）设置凭证，以简化配置。</li>
-<li>讨论了凭证设置的具体实现细节，包括是否需要用户升级过程。</li>
-<li>确认了凭证设置应基于区域（zone）而非网关，以避免混淆和错误。</li>
+<li>讨论了当前凭证设置方式，即按网关设置。</li>
+<li>提出按领域设置凭证的提案，以简化配置。</li>
+<li>讨论了凭证设置的具体实现细节，包括用户升级过程。</li>
 </ul></li>
 <li><strong>NFS 导出创建的 CLI 命令优化</strong>：
 <ul>
-<li>讨论了当前 CLI 命令的不足，特别是创建命令的幂等性问题。</li>
-<li>提出了使用“apply”命令替代“create”和“update”，以简化操作并确保幂等性。</li>
+<li>讨论了当前 CLI 命令的不足，特别是幂等性问题。</li>
+<li>提出使用“apply”命令替代“create”和“update”，以简化操作并确保幂等性。</li>
 </ul></li>
 <li><strong>Rook 管理模块</strong>：
 <ul>
@@ -229,11 +234,11 @@ Request</strong></li>
 <li>讨论了 Rook 客户端 Python 库的维护和使用问题。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项：</h4>
+<h3 id="决定事项">决定事项：</h3>
 <ol type="1">
 <li><strong>RGW 连接凭证配置</strong>：
 <ul>
-<li>决定采用按领域（realm）设置凭证的方式，简化配置。</li>
+<li>决定采用按领域设置凭证的方式，简化配置。</li>
 <li>确认需要考虑用户升级过程，确保凭证设置的平滑过渡。</li>
 </ul></li>
 <li><strong>NFS 导出创建的 CLI 命令优化</strong>：
@@ -246,11 +251,11 @@ Request</strong></li>
 库的维护和使用问题，需要进一步测试和验证。</li>
 </ul></li>
 </ol>
-<h4 id="后续行动计划">后续行动计划：</h4>
+<h3 id="后续行动计划">后续行动计划：</h3>
 <ol type="1">
 <li><strong>RGW 连接凭证配置</strong>：
 <ul>
-<li>更新 Pull Request，确保凭证设置按领域（realm）进行。</li>
+<li>更新 Pull Request，确保凭证设置按领域进行。</li>
 <li>准备用户升级指南，确保凭证设置的平滑过渡。</li>
 </ul></li>
 <li><strong>NFS 导出创建的 CLI 命令优化</strong>：
@@ -264,13 +269,11 @@ Request</strong></li>
 <li>准备 Rook 管理模块的后续开发计划。</li>
 </ul></li>
 </ol>
-<h4 id="会议结束">会议结束：</h4>
+<h3 id="会议结束">会议结束：</h3>
 <ul>
 <li>确认无其他议题后，会议结束。</li>
 <li>感谢所有参会人员，会议圆满结束。</li>
 </ul>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -301,6 +304,8 @@ Request</strong></li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Configuration-Optimization/" rel="tag">Configuration Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Dashboard/" rel="tag">Dashboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -362,7 +367,7 @@ Request</strong></li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/06/15/Ceph_Month_2021_-_RBD_latency_with_QD=1_bs=4k/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Month 2021: RBD latency with QD=1 bs=4k</h4>
+        <h4 class="title">&#39;Ceph Month 2021: RBD latency with QD=1 bs=4k&#39;</h4>
       </a>
     </div>
   
@@ -371,7 +376,7 @@ Request</strong></li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/06/14/Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Month 2021: 5 more ways to break your ceph cluster</h4>
+        <h4 class="title">  Ceph Month 2021: 5 more ways to break your ceph cluster  </h4>
       </a>
     </div>
   

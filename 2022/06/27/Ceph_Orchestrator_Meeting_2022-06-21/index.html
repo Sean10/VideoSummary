@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="本次Cepheiu技术会议讨论了NFS和GANESHA集群的故障转移、部署和管理问题，以及CEPH和Rook项目间的集成。重点包括： 1. GANESHA集群在节点故障时可能无法运作的问题，及解决方法如使用ZAPFIMO实现自动故障转移。 2. 关于NFS服务和客户端配置在同一主机上的位置问题的探讨，以及对最佳实践的影响。 3. 对Cepheiu与Rook项目未来集成方向的探讨，包括更新后的提案和">
+    <meta name="keywords" content="Ceph,Distributed Storage,NFS,GANESHA,Failover">
+    <meta name="description" content="[改进后的中文总结内容] 在2022年6月21日的Ceph Orchestrator会议中，与会者讨论了NFS和GANESHA集群的故障转移、部署和管理问题，以及CEPH和Rook项目间的集成。以下是会议的主要内容和决策：  GANESHA集群的故障转移：讨论了GANESHA集群在节点故障时可能无法运作的问题，并提出了使用ZAPFIMO实现自动故障转移的解决方案。 NFS服务和客户端配置：探讨了N">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2022-06-21">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Orchestrator_Meeting_2022-06-21/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="本次Cepheiu技术会议讨论了NFS和GANESHA集群的故障转移、部署和管理问题，以及CEPH和Rook项目间的集成。重点包括： 1. GANESHA集群在节点故障时可能无法运作的问题，及解决方法如使用ZAPFIMO实现自动故障转移。 2. 关于NFS服务和客户端配置在同一主机上的位置问题的探讨，以及对最佳实践的影响。 3. 对Cepheiu与Rook项目未来集成方向的探讨，包括更新后的提案和">
+<meta property="og:description" content="[改进后的中文总结内容] 在2022年6月21日的Ceph Orchestrator会议中，与会者讨论了NFS和GANESHA集群的故障转移、部署和管理问题，以及CEPH和Rook项目间的集成。以下是会议的主要内容和决策：  GANESHA集群的故障转移：讨论了GANESHA集群在节点故障时可能无法运作的问题，并提出了使用ZAPFIMO实现自动故障转移的解决方案。 NFS服务和客户端配置：探讨了N">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-26T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-06-27T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="NFS">
+<meta property="article:tag" content="GANESHA">
+<meta property="article:tag" content="Failover">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,15 +183,33 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>本次Cepheiu技术会议讨论了NFS和GANESHA集群的故障转移、部署和管理问题，以及CEPH和Rook项目间的集成。重点包括：
-1.
-GANESHA集群在节点故障时可能无法运作的问题，及解决方法如使用ZAPFIMO实现自动故障转移。
-2.
-关于NFS服务和客户端配置在同一主机上的位置问题的探讨，以及对最佳实践的影响。
-3. 对Cepheiu与Rook项目未来集成方向的探讨，包括更新后的提案和测试计划。
-4. 对GANESHA和NFS协议的深入理解，以及它们在实际环境中的行为和预期。 5.
-针对特定技术问题的进一步调查，例如在节点故障后如何处理已打开的NFS操作。
-6. 对现有解决方案的评估，并寻找改进方法以增强系统的稳定性和可用性。</p>
+            <p>[改进后的中文总结内容]</p>
+<p>在2022年6月21日的Ceph
+Orchestrator会议中，与会者讨论了NFS和GANESHA集群的故障转移、部署和管理问题，以及CEPH和Rook项目间的集成。以下是会议的主要内容和决策：</p>
+<ol type="1">
+<li><p><strong>GANESHA集群的故障转移</strong>：讨论了GANESHA集群在节点故障时可能无法运作的问题，并提出了使用ZAPFIMO实现自动故障转移的解决方案。</p></li>
+<li><p><strong>NFS服务和客户端配置</strong>：探讨了NFS服务和客户端配置在同一主机上的位置问题，以及该问题对最佳实践的影响。</p></li>
+<li><p><strong>CEPH与Rook项目的集成</strong>：讨论了Cepheiu与Rook项目未来集成方向，包括更新后的提案和测试计划。</p></li>
+<li><p><strong>GANESHA和NFS协议理解</strong>：深入理解GANESHA和NFS协议，探讨它们在实际环境中的行为和预期。</p></li>
+<li><p><strong>节点故障后的NFS操作处理</strong>：针对特定技术问题进行进一步调查，例如节点故障后如何处理已打开的NFS操作。</p></li>
+<li><p><strong>现有解决方案评估</strong>：评估现有解决方案，并寻找改进方法以增强系统的稳定性和可用性。</p></li>
+</ol>
+<p>会议还讨论了以下技术细节：</p>
+<ul>
+<li>GANESHA集群配置和部署</li>
+<li>Ceph Manager状态存储和获取存储功能</li>
+<li>Keppler d配置变更</li>
+<li>Ingress Spec的额外设置</li>
+<li>Ganesha和Ingress Demon之间的连接</li>
+<li>非本地绑定和虚拟IP的部署</li>
+</ul>
+<p>后续行动计划包括：</p>
+<ul>
+<li>对GANESHA和NFS协议的深入测试和验证</li>
+<li>实施Ceph与Rook项目的集成</li>
+<li>优化NFS服务和客户端配置</li>
+<li>评估并实施故障转移解决方案</li>
+</ul>
 
         </div>
 
@@ -217,6 +240,8 @@ GANESHA集群在节点故障时可能无法运作的问题，及解决方法如�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Failover/" rel="tag">Failover</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/GANESHA/" rel="tag">GANESHA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS/" rel="tag">NFS</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

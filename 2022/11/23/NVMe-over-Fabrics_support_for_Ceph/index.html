@@ -14,23 +14,30 @@
     
     
     
-    <title>NVMe-over-Fabrics support for Ceph | ceph视频总结 | youtube频道总结</title>
+    <title> NVMe-over-Fabrics support for Ceph  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： NVMe over Fabrics 支持在 Ceph 中的实现 主讲人： Jonas Pfefferle 和 Scott Bauer 会议时间： [具体时间] 参会人员： [参会人员名单] 会议内容总结：  背景介绍：  Jonas Pfefferle 和 Scott Bauer 介绍了他们在 Ceph 中实现 NVMe over Fabrics 支持的工作。 强调了这是一个">
+    <meta name="keywords" content="Ceph,CephFS,Distributed Storage,NVMe,Storage,over,Fabrics">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： NVMe over Fabrics 支持在 Ceph 中的实现 主讲人： Jonas Pfefferle 和 Scott Bauer 会议时间： [具体时间] 参会人员： [参会人员名单] 会议内容总结：  背景介绍：  Jonas Pfefferle 和 Scott Bauer 介绍了 NVMe over Fabrics 在 Ceph 中的支持工作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NVMe-over-Fabrics support for Ceph">
+<meta property="og:title" content=" NVMe-over-Fabrics support for Ceph ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： NVMe over Fabrics 支持在 Ceph 中的实现 主讲人： Jonas Pfefferle 和 Scott Bauer 会议时间： [具体时间] 参会人员： [参会人员名单] 会议内容总结：  背景介绍：  Jonas Pfefferle 和 Scott Bauer 介绍了他们在 Ceph 中实现 NVMe over Fabrics 支持的工作。 强调了这是一个">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： NVMe over Fabrics 支持在 Ceph 中的实现 主讲人： Jonas Pfefferle 和 Scott Bauer 会议时间： [具体时间] 参会人员： [参会人员名单] 会议内容总结：  背景介绍：  Jonas Pfefferle 和 Scott Bauer 介绍了 NVMe over Fabrics 在 Ceph 中的支持工作">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-11-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="NVMe">
+<meta property="article:tag" content="Storage">
+<meta property="article:tag" content="over">
+<meta property="article:tag" content="Fabrics">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +119,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">NVMe-over-Fabrics support for Ceph</div>
+        <div class="flex-col header-title ellipsis"> NVMe-over-Fabrics support for Ceph </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +141,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">NVMe-over-Fabrics support for Ceph</h1>
+        <h1 class="title"> NVMe-over-Fabrics support for Ceph </h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-11-22T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +175,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">NVMe-over-Fabrics support for Ceph</h1>
+        <h1 class="post-card-title"> NVMe-over-Fabrics support for Ceph </h1>
         <div class="post-meta">
             <time class="post-time" title="2022-11-23 00:00:00" datetime="2022-11-22T16:00:00.000Z"  itemprop="datePublished">2022-11-23</time>
 
@@ -185,7 +192,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议主题：</strong> NVMe over Fabrics 支持在 Ceph
 中的实现</p>
 <p><strong>主讲人：</strong> Jonas Pfefferle 和 Scott Bauer</p>
@@ -195,14 +203,13 @@
 <ol type="1">
 <li><strong>背景介绍：</strong>
 <ul>
-<li>Jonas Pfefferle 和 Scott Bauer 介绍了他们在 Ceph 中实现 NVMe over
-Fabrics 支持的工作。</li>
-<li>强调了这是一个社区合作项目，多家公司参与其中。</li>
+<li>Jonas Pfefferle 和 Scott Bauer 介绍了 NVMe over Fabrics 在 Ceph
+中的支持工作，强调这是一个社区合作项目，多家公司参与其中。</li>
 </ul></li>
 <li><strong>NVMe over Fabrics 的重要性：</strong>
 <ul>
-<li>解释了为什么需要在 Ceph 中支持 NVMe over
-Fabrics，包括行业标准的使用、生态系统的兼容性以及利用 DPUs
+<li>解释了支持 NVMe over Fabrics
+的原因，包括行业标准的使用、生态系统的兼容性以及利用 DPUs
 等硬件优势。</li>
 </ul></li>
 <li><strong>架构概述：</strong>
@@ -213,8 +220,7 @@ NVMe over Fabrics Gateway 组件。</li>
 </ul></li>
 <li><strong>技术细节：</strong>
 <ul>
-<li>详细介绍了 Gateway 的工作原理，包括使用 SPDK（Storage Performance
-Development Kit）处理数据路径。</li>
+<li>详细介绍了 Gateway 的工作原理，包括使用 SPDK 处理数据路径。</li>
 <li>讨论了控制路径的配置，包括使用 gRPC API
 进行配置管理和持久化配置。</li>
 </ul></li>
@@ -287,6 +293,8 @@ Etherpad。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Fabrics/" rel="tag">Fabrics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NVMe/" rel="tag">NVMe</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage/" rel="tag">Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/over/" rel="tag">over</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -298,7 +306,7 @@ Etherpad。</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/&title=《NVMe-over-Fabrics support for Ceph》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/&title=《 NVMe-over-Fabrics support for Ceph 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -308,7 +316,7 @@ Etherpad。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/&title=《NVMe-over-Fabrics support for Ceph》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/&title=《 NVMe-over-Fabrics support for Ceph 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -318,7 +326,7 @@ Etherpad。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NVMe-over-Fabrics support for Ceph》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 NVMe-over-Fabrics support for Ceph 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -348,7 +356,7 @@ Etherpad。</p>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/11/23/Introduction_to_Container_Object_Storage_Interface_aka_COSI_for_ceph_RGW/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Introduction to Container Object Storage Interface aka COSI for ceph RGW</h4>
+        <h4 class="title">  Introduction to Container Object Storage Interface aka COSI for ceph RGW  </h4>
       </a>
     </div>
   
@@ -357,7 +365,7 @@ Etherpad。</p>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/11/23/Troubleshooting_and_Debugging_in_the_rook-ceph_cluster/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Troubleshooting and Debugging in the rook-ceph cluster</h4>
+        <h4 class="title"> Troubleshooting and Debugging in the rook-ceph cluster </h4>
       </a>
     </div>
   
@@ -457,7 +465,7 @@ Etherpad。</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/&title=《NVMe-over-Fabrics support for Ceph》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/&title=《 NVMe-over-Fabrics support for Ceph 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -467,7 +475,7 @@ Etherpad。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/&title=《NVMe-over-Fabrics support for Ceph》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/&title=《 NVMe-over-Fabrics support for Ceph 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -477,7 +485,7 @@ Etherpad。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NVMe-over-Fabrics support for Ceph》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 NVMe-over-Fabrics support for Ceph 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/11/23/NVMe-over-Fabrics_support_for_Ceph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

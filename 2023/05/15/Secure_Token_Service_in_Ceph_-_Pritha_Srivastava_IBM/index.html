@@ -14,23 +14,28 @@
     
     
     
-    <title>Secure Token Service in Ceph - Pritha Srivastava, IBM | ceph视频总结 | youtube频道总结</title>
+    <title> Secure Token Service in Ceph - Pritha Srivastava, IBM  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： STS在Surf RGW中的应用 主讲人： Pritha 职位： IBM的Safe RGW团队开发人员 会议内容概述： Pritha介绍了STS（Security Token Service）在Surf RGW中的应用，涵盖了STS的基本概念、构建块、支持的API、自定义凭证提供者、ABAC授权策略以及在多站点环境中的实现。 关键细节： 1. STS简介： STS是一组API">
+    <meta name="keywords" content="Ceph,RGW,Authentication,Security Token Service (STS),Access Control">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph中Secure Token Service (STS)在RGW中的应用 主讲人： Pritha Srivastava，IBM Safe RGW团队开发人员 会议内容概述： Pritha Srivastava介绍了STS在Ceph RGW中的应用，包括其基本概念、构建块、支持的API、自定义凭证提供者、ABAC授权策略以及在多站点环境中的实现。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Secure Token Service in Ceph - Pritha Srivastava, IBM">
+<meta property="og:title" content=" Secure Token Service in Ceph - Pritha Srivastava, IBM ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/15/Secure_Token_Service_in_Ceph_-_Pritha_Srivastava_IBM/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： STS在Surf RGW中的应用 主讲人： Pritha 职位： IBM的Safe RGW团队开发人员 会议内容概述： Pritha介绍了STS（Security Token Service）在Surf RGW中的应用，涵盖了STS的基本概念、构建块、支持的API、自定义凭证提供者、ABAC授权策略以及在多站点环境中的实现。 关键细节： 1. STS简介： STS是一组API">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph中Secure Token Service (STS)在RGW中的应用 主讲人： Pritha Srivastava，IBM Safe RGW团队开发人员 会议内容概述： Pritha Srivastava介绍了STS在Ceph RGW中的应用，包括其基本概念、构建块、支持的API、自定义凭证提供者、ABAC授权策略以及在多站点环境中的实现。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-15T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Authentication">
+<meta property="article:tag" content="Security Token Service (STS)">
+<meta property="article:tag" content="Access Control">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Secure Token Service in Ceph - Pritha Srivastava, IBM</div>
+        <div class="flex-col header-title ellipsis"> Secure Token Service in Ceph - Pritha Srivastava, IBM </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Secure Token Service in Ceph - Pritha Srivastava, IBM</h1>
+        <h1 class="title"> Secure Token Service in Ceph - Pritha Srivastava, IBM </h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-14T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Secure Token Service in Ceph - Pritha Srivastava, IBM</h1>
+        <h1 class="post-card-title"> Secure Token Service in Ceph - Pritha Srivastava, IBM </h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-15 00:00:00" datetime="2023-05-14T16:00:00.000Z"  itemprop="datePublished">2023-05-15</time>
 
@@ -185,24 +190,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题：</strong> STS在Surf RGW中的应用</p>
-<p><strong>主讲人：</strong> Pritha</p>
-<p><strong>职位：</strong> IBM的Safe RGW团队开发人员</p>
-<p><strong>会议内容概述：</strong> Pritha介绍了STS（Security Token
-Service）在Surf
-RGW中的应用，涵盖了STS的基本概念、构建块、支持的API、自定义凭证提供者、ABAC授权策略以及在多站点环境中的实现。</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议主题：</strong> Ceph中Secure Token Service
+(STS)在RGW中的应用</p>
+<p><strong>主讲人：</strong> Pritha Srivastava，IBM Safe
+RGW团队开发人员</p>
+<p><strong>会议内容概述：</strong> Pritha Srivastava介绍了STS在Ceph
+RGW中的应用，包括其基本概念、构建块、支持的API、自定义凭证提供者、ABAC授权策略以及在多站点环境中的实现。</p>
 <p><strong>关键细节：</strong> 1. <strong>STS简介：</strong>
-STS是一组API，返回具有临时性和有限权限的凭证，基于AWS STS。SDS（Security
-Domain
+STS是一组API，提供临时且有限的凭证，类似于AWS STS。SDS（Security Domain
 Service）用于跨账户访问和集成外部应用，这些应用拥有大量用户且不希望拥有永久S3凭证。
 2. <strong>当前支持：</strong> RGW支持STS
 API的子集，包括AssumeRole、AssumeRoleWithWebIdentity和GetSessionToken。还实现了AWS
-IAM API的子集，用于对角色、策略和OpenID Connect提供者的CRUD操作。 3.
+IAM API的子集，用于角色、策略和OpenID Connect提供者的CRUD操作。 3.
 <strong>临时凭证：</strong>
 临时凭证包括访问密钥ID、秘密访问密钥和会话令牌。会话令牌加密，包含认证和授权信息。
 4. <strong>角色与策略：</strong>
-角色是一个实体，类似于用户但没有永久S3凭证。角色关联两个IAM策略：信任策略（决定谁可以假设角色）和权限策略（决定角色可以做什么）。
+角色是一个实体，类似于用户但没有永久S3凭证。角色关联两个IAM策略：信任策略（描述谁可以假设角色）和权限策略（描述角色可以做什么）。
 5. <strong>支持的API：</strong> - <strong>AssumeRole：</strong>
 提供跨账户或跨租户访问。 - <strong>AssumeRoleWithWebIdentity：</strong>
 提供Web身份联合，用户通过OpenID
@@ -217,7 +222,7 @@ SDK中的Web身份令牌凭证提供者，支持会话持续时间和会话策�
 Connect提供者元数据复制仍在进行中。</p>
 <p><strong>决定事项：</strong> -
 STS在RGW中的实现和功能已基本明确，多站点元数据复制功能已部分实现。</p>
-<p><strong>后续行动计划：</strong> - 继续完善OpenID
+<p><strong>后续行动计划：</strong> - 完善OpenID
 Connect提供者元数据复制功能。 -
 探索和优化从桶策略到使用角色的性能改进。</p>
 <p><strong>参考资料：</strong> -
@@ -255,6 +260,8 @@ Pritha感谢大家的参与，并邀请提问。会议中讨论了多站点配�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Access-Control/" rel="tag">Access Control</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Authentication/" rel="tag">Authentication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Security-Token-Service-STS/" rel="tag">Security Token Service (STS)</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -266,7 +273,7 @@ Pritha感谢大家的参与，并邀请提问。会议中讨论了多站点配�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/15/Secure_Token_Service_in_Ceph_-_Pritha_Srivastava_IBM/&title=《Secure Token Service in Ceph - Pritha Srivastava, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/15/Secure_Token_Service_in_Ceph_-_Pritha_Srivastava_IBM/&title=《 Secure Token Service in Ceph - Pritha Srivastava, IBM 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -276,7 +283,7 @@ Pritha感谢大家的参与，并邀请提问。会议中讨论了多站点配�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/15/Secure_Token_Service_in_Ceph_-_Pritha_Srivastava_IBM/&title=《Secure Token Service in Ceph - Pritha Srivastava, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/15/Secure_Token_Service_in_Ceph_-_Pritha_Srivastava_IBM/&title=《 Secure Token Service in Ceph - Pritha Srivastava, IBM 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -286,7 +293,7 @@ Pritha感谢大家的参与，并邀请提问。会议中讨论了多站点配�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Secure Token Service in Ceph - Pritha Srivastava, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/15/Secure_Token_Service_in_Ceph_-_Pritha_Srivastava_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Secure Token Service in Ceph - Pritha Srivastava, IBM 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/15/Secure_Token_Service_in_Ceph_-_Pritha_Srivastava_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -314,9 +321,9 @@ Pritha感谢大家的参与，并邀请提问。会议中讨论了多站点配�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_Why_We_Built_A_Message-Driven_Telemetry_System_At_Scale_Ceph_Cluster/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_Ceph_Telemetry_-_Observability_in_Action/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Days NYC 2023: Why We Built A “Message-Driven Telemetry System At Scale” Ceph Cluster</h4>
+        <h4 class="title">&#39;Ceph Days NYC 2023: Ceph Telemetry - Observability in Action&#39;</h4>
       </a>
     </div>
   
@@ -425,7 +432,7 @@ Pritha感谢大家的参与，并邀请提问。会议中讨论了多站点配�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/15/Secure_Token_Service_in_Ceph_-_Pritha_Srivastava_IBM/&title=《Secure Token Service in Ceph - Pritha Srivastava, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/15/Secure_Token_Service_in_Ceph_-_Pritha_Srivastava_IBM/&title=《 Secure Token Service in Ceph - Pritha Srivastava, IBM 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -435,7 +442,7 @@ Pritha感谢大家的参与，并邀请提问。会议中讨论了多站点配�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/15/Secure_Token_Service_in_Ceph_-_Pritha_Srivastava_IBM/&title=《Secure Token Service in Ceph - Pritha Srivastava, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/15/Secure_Token_Service_in_Ceph_-_Pritha_Srivastava_IBM/&title=《 Secure Token Service in Ceph - Pritha Srivastava, IBM 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -445,7 +452,7 @@ Pritha感谢大家的参与，并邀请提问。会议中讨论了多站点配�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Secure Token Service in Ceph - Pritha Srivastava, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/15/Secure_Token_Service_in_Ceph_-_Pritha_Srivastava_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Secure Token Service in Ceph - Pritha Srivastava, IBM 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/15/Secure_Token_Service_in_Ceph_-_Pritha_Srivastava_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,29 @@
     
     
     
-    <title>CDS Tentacle - CephFS | ceph视频总结 | youtube频道总结</title>
+    <title>  CDS Tentacle - CephFS   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： 多位Ceph研发人员，包括负责self FS for the tentacle release的团队成员 会议主题：  self FS for the tentacle release相关议题 Ceph相关功能讨论  会议内容： 1. sensor directory功能  Patrick介绍了sensor directory功">
+    <meta name="keywords" content="高可用性,CephFS,CRUSH 算法,可扩展性,Ceph 分布式存储,物理存储">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了 CephFS 相关的功能和特性，包括 sensor directory、layout transformation、manager volume switch、MDS manager identify metadata heavy workloads、Implement of the script and use 以及 reference for fa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Tentacle - CephFS">
+<meta property="og:title" content="  CDS Tentacle - CephFS  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： 多位Ceph研发人员，包括负责self FS for the tentacle release的团队成员 会议主题：  self FS for the tentacle release相关议题 Ceph相关功能讨论  会议内容： 1. sensor directory功能  Patrick介绍了sensor directory功">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了 CephFS 相关的功能和特性，包括 sensor directory、layout transformation、manager volume switch、MDS manager identify metadata heavy workloads、Implement of the script and use 以及 reference for fa">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-21T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-08-22T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="CRUSH 算法">
+<meta property="article:tag" content="可扩展性">
+<meta property="article:tag" content="Ceph 分布式存储">
+<meta property="article:tag" content="物理存储">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Tentacle - CephFS</div>
+        <div class="flex-col header-title ellipsis">  CDS Tentacle - CephFS  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Tentacle - CephFS</h1>
+        <h1 class="title">  CDS Tentacle - CephFS  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2024-08-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +167,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Tentacle - CephFS</h1>
+        <h1 class="post-card-title">  CDS Tentacle - CephFS  </h1>
         <div class="post-meta">
             <time class="post-time" title="2024-08-22 00:00:00" datetime="2024-08-21T16:00:00.000Z"  itemprop="datePublished">2024-08-22</time>
 
@@ -178,68 +184,53 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>参会人员</strong>： 多位Ceph研发人员，包括负责self FS for the
-tentacle release的团队成员</p>
-<p><strong>会议主题</strong>：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了 CephFS 相关的功能和特性，包括 sensor
+directory、layout transformation、manager volume switch、MDS manager
+identify metadata heavy workloads、Implement of the script and use 以及
+reference for fast clone from snapshots 等议题。</p>
+<p><strong>会议关键细节</strong>：</p>
 <ul>
-<li>self FS for the tentacle release相关议题</li>
-<li>Ceph相关功能讨论</li>
+<li><strong>Sensor Directory 功能</strong>：
+该功能通过客户端驱动的大小写敏感度实现，依赖于新增的 alternate name
+元数据，旨在提高 CephFS 的性能和兼容性。</li>
+<li><strong>Layout Transformation 功能</strong>：
+该功能允许用户设置目录中文件的期望布局，MDS
+将逐步迁移数据以适应新的布局。这需要详细的代码审查，以确保正确性和安全性。</li>
+<li><strong>Manager Volume Switch 功能</strong>： 该功能涉及将 subvolume
+元数据从文件存储迁移到 SQLite
+数据库，以提高元数据的可靠性和可扩展性，并支持事务操作。</li>
+<li><strong>MDS Manager Identify Metadata Heavy Workloads
+功能</strong>： 该功能旨在通过分析 MDS
+性能指标来识别潜在的瓶颈和问题，帮助管理员提前发现问题并采取措施。</li>
+<li><strong>Implement of the script and use 功能</strong>： 该功能实现了
+ecript 加密功能，已在 libsefs 和 sefuse
+中实现，提高了数据的安全性。</li>
+<li><strong>Reference for fast clone from snapshots 功能</strong>：
+该功能旨在解决硬链接文件快照的问题，提高 CephFS 的效率和性能。</li>
 </ul>
-<p><strong>会议内容</strong>：</p>
-<p><strong>1. sensor directory功能</strong></p>
+<p><strong>讨论的主要议题</strong>：</p>
 <ul>
-<li>Patrick介绍了sensor
-directory功能，该功能将支持客户端驱动的大小写敏感度实现，依赖于新增的alternate
-name元数据。</li>
-<li>该功能将是tentacle release的优先事项，并可能回滚到squid。</li>
-<li>目前已经开始相关工作，预计不久完成。</li>
-<li>任何对该功能的反馈或问题，请在此处提出。</li>
+<li><strong>Sensor Directory 的实现和优化</strong></li>
+<li><strong>Layout Transformation 的设计和实现</strong></li>
+<li><strong>Manager Volume Switch 的迁移和恢复</strong></li>
+<li><strong>MDS Manager Identify Metadata Heavy Workloads
+的性能指标收集和分析</strong></li>
+<li><strong>Implement of the script and use 的测试和验证</strong></li>
+<li><strong>Reference for fast clone from snapshots
+的升级和数据扫描</strong></li>
 </ul>
-<p><strong>2. layout transformation功能</strong></p>
-<ul>
-<li>Beny介绍了layout
-transformation功能，该功能允许用户设置目录中文件的期望布局，MDS将逐步迁移数据以适应新的布局。</li>
-<li>该功能将使用现有的迁移机制和代码，但需要进行详细的代码审查，以确保正确性和安全性。</li>
-<li>有关该功能的讨论将持续进行，并将在tentacle release中进行评估。</li>
-</ul>
-<p><strong>3. manager volume switch功能</strong></p>
-<ul>
-<li>该功能涉及将subvolume元数据从文件存储迁移到SQLite数据库。</li>
-<li>该迁移将提高元数据的可靠性和可扩展性，并支持事务操作。</li>
-<li>讨论了数据库恢复、数据迁移和审计等问题。</li>
-<li>该功能将在tentacle release中进行评估。</li>
-</ul>
-<p><strong>4. MDS manager identify metadata heavy
-workloads功能</strong></p>
-<ul>
-<li>该功能旨在通过分析MDS性能指标来识别潜在的瓶颈和问题。</li>
-<li>讨论了性能指标收集、存储和分析的方法。</li>
-<li>该功能将在tentacle release中进行评估。</li>
-</ul>
-<p><strong>5. Implement of the script and use功能</strong></p>
-<ul>
-<li>Chris介绍了ecript加密功能的实现情况，该功能已在libsefs和sefuse中实现。</li>
-<li>目前已完成读写路径，并正在进行测试。</li>
-<li>该功能将在tentacle release中进行评估。</li>
-</ul>
-<p><strong>6. reference for fast clone from snapshots功能</strong></p>
-<ul>
-<li>该功能旨在解决硬链接文件快照的问题。</li>
-<li>讨论了升级和数据扫描工具等问题。</li>
-<li>该功能将在tentacle release中进行评估。</li>
-</ul>
-<p><strong>后续行动计划</strong>：</p>
+<p><strong>决定的事项</strong>：</p>
 <ul>
 <li>各功能负责人将根据会议讨论结果，进一步完善相关设计和实现。</li>
 <li>定期召开会议，跟踪项目进展。</li>
 <li>及时更新相关跟踪项和文档。</li>
 </ul>
-<p><strong>其他事项</strong>：</p>
+<p><strong>后续行动计划</strong>：</p>
 <ul>
-<li>会议时间超过预定时间，后续将安排时间继续讨论。</li>
-<li>将会议纪要更新到相关跟踪项和文档中。</li>
+<li>对各个功能的实现进行测试和验证。</li>
+<li>完善相关文档和跟踪项。</li>
+<li>定期召开会议，讨论项目的进展和问题。</li>
 </ul>
 
         </div>
@@ -271,6 +262,8 @@ workloads功能</strong></p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-%E7%AE%97%E6%B3%95/" rel="tag">CRUSH 算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">Ceph 分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">可扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%89%A9%E7%90%86%E5%AD%98%E5%82%A8/" rel="tag">物理存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -282,7 +275,7 @@ workloads功能</strong></p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/&title=《CDS Tentacle - CephFS》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/&title=《  CDS Tentacle - CephFS  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -292,7 +285,7 @@ workloads功能</strong></p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/&title=《CDS Tentacle - CephFS》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/&title=《  CDS Tentacle - CephFS  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -302,7 +295,7 @@ workloads功能</strong></p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Tentacle - CephFS》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS Tentacle - CephFS  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -330,18 +323,18 @@ workloads功能</strong></p>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2024/08/22/CDS_Tentacle_-_Cephadm/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2024/08/22/CDS_Tenctacle_-_BlueStore/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Tentacle - Cephadm</h4>
+        <h4 class="title">CDS Tenctacle - BlueStore</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2024/08/22/CDS_Tentacle_-_Core_RADOS/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2024/08/22/CDS_Tentacle_-_Cephadm/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Tentacle - Core RADOS</h4>
+        <h4 class="title">CDS Tentacle - Cephadm</h4>
       </a>
     </div>
   
@@ -441,7 +434,7 @@ workloads功能</strong></p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/&title=《CDS Tentacle - CephFS》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/&title=《  CDS Tentacle - CephFS  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -451,7 +444,7 @@ workloads功能</strong></p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/&title=《CDS Tentacle - CephFS》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/&title=《  CDS Tentacle - CephFS  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -461,7 +454,7 @@ workloads功能</strong></p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Tentacle - CephFS》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS Tentacle - CephFS  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/08/22/CDS_Tentacle_-_CephFS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

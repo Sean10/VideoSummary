@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题 优化 RADOS Gateway 对象存储在混合媒体上的存储类和 Lua 脚本 主讲人  Kurt Bruns：Solidime 的软件工程师，同时也是 SPDK 项目的贡献者。 Anthony diatri：Index Exchange 的首席工程师，著有《Seth Learning Seth》第二版，并对 stuff 项目和文档部分有所贡献。  会议内容  背景介绍  RA">
+    <meta name="keywords" content="Ceph,Distributed Storage,Lua Scripting,RGW Optimization,Storage Class">
+    <meta name="description" content="[改进后的中文总结内容] 原总结准确反映了会议的关键细节，包括讨论的主要议题、决定的事项和后续行动计划。以下是对总结的改进，以增强其准确性和清晰度： 改进后的会议纪要 会议主题 通过存储类和 Lua 脚本优化 RADOS Gateway 对象存储在混合媒体上的性能 主讲人  Kurt Bruns：Solidime 的软件工程师，SPDK 项目的贡献者。 Anthony Diatri：Index E">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Optimizing RGW Object Storage Mixed Media through Storage Classes and Lua Scripting">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/11/10/Optimizing_RGW_Object_Storage_Mixed_Media_through_Storage_Classes_and_Lua_Scripting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题 优化 RADOS Gateway 对象存储在混合媒体上的存储类和 Lua 脚本 主讲人  Kurt Bruns：Solidime 的软件工程师，同时也是 SPDK 项目的贡献者。 Anthony diatri：Index Exchange 的首席工程师，著有《Seth Learning Seth》第二版，并对 stuff 项目和文档部分有所贡献。  会议内容  背景介绍  RA">
+<meta property="og:description" content="[改进后的中文总结内容] 原总结准确反映了会议的关键细节，包括讨论的主要议题、决定的事项和后续行动计划。以下是对总结的改进，以增强其准确性和清晰度： 改进后的会议纪要 会议主题 通过存储类和 Lua 脚本优化 RADOS Gateway 对象存储在混合媒体上的性能 主讲人  Kurt Bruns：Solidime 的软件工程师，SPDK 项目的贡献者。 Anthony Diatri：Index E">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-09T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-11-10T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Lua Scripting">
+<meta property="article:tag" content="RGW Optimization">
+<meta property="article:tag" content="Storage Class">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BA"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">参考资料</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">联系方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议总结</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BA"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">参考资料</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">联系方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议总结</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,72 +190,65 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<p>原总结准确反映了会议的关键细节，包括讨论的主要议题、决定的事项和后续行动计划。以下是对总结的改进，以增强其准确性和清晰度：</p>
+<h3 id="改进后的会议纪要">改进后的会议纪要</h3>
 <h4 id="会议主题">会议主题</h4>
-<p>优化 RADOS Gateway 对象存储在混合媒体上的存储类和 Lua 脚本</p>
+<p>通过存储类和 Lua 脚本优化 RADOS Gateway
+对象存储在混合媒体上的性能</p>
 <h4 id="主讲人">主讲人</h4>
 <ul>
-<li><strong>Kurt Bruns</strong>：Solidime 的软件工程师，同时也是 SPDK
+<li><strong>Kurt Bruns</strong>：Solidime 的软件工程师，SPDK
 项目的贡献者。</li>
-<li><strong>Anthony diatri</strong>：Index Exchange
-的首席工程师，著有《Seth Learning Seth》第二版，并对 stuff
-项目和文档部分有所贡献。</li>
+<li><strong>Anthony Diatri</strong>：Index Exchange
+的首席工程师，著有《Seth Learning Seth》第二版，并参与 stuff
+项目的文档编写。</li>
 </ul>
 <h4 id="会议内容">会议内容</h4>
 <ol type="1">
 <li><strong>背景介绍</strong>
 <ul>
-<li>RADOS Gateway (RGW)
-部署的特点：对象大小多样，读取密集型工作负载（80% 读取，20%
-写入），特别是在 AI 工作负载中，读取比例更高。</li>
-<li>小对象操作需要高 IOPS
-和低延迟，而大对象操作需要高读取吞吐量和带宽。</li>
+<li>RADOS Gateway (RGW) 的特点：对象大小多样，读取密集型工作负载（80%
+读取，20% 写入），适用于 AI 工作负载。</li>
+<li>小对象需要高 IOPS 和低延迟，大对象需要高读取吞吐量和带宽。</li>
 </ul></li>
 <li><strong>存储挑战</strong>
 <ul>
-<li>传统硬盘（HDD）虽然成本效益高，但 IOPS
-和带宽有限，导致集群瓶颈。</li>
-<li>SSD 成本较高，但性能优越，如何有效使用 SSD 是一个关键问题。</li>
+<li>传统 HDD 性能有限，SSD 成本高，如何有效使用 SSD 是关键问题。</li>
 </ul></li>
 <li><strong>优化策略</strong>
 <ul>
-<li>使用存储类和 Lua 脚本在 RADOS Gateway 中实现对象存储的优化。</li>
-<li>通过 S3
-协议的存储类功能，将不同类型的对象引导到不同的存储池（例如，大对象到 HDD
-或高容量 SSD 池，小对象到 SSD 池）。</li>
+<li>使用存储类和 Lua 脚本优化 RGW 对象存储。</li>
+<li>通过 S3 协议的存储类功能，将对象引导到不同的存储池。</li>
 </ul></li>
 <li><strong>技术细节</strong>
 <ul>
-<li>Blue Store 的 Min Alloc 大小为 4K，即使写入 1 字节也会分配 4K。</li>
-<li>QLC SSD 的 Indirection Unit 为
-64K，可能导致空间放大问题，特别是对于小对象。</li>
-<li>通过 Lua
+<li>Blue Store 的 Min Alloc 大小为 4K，SSD 的 Indirection Unit 为
+64K，可能导致空间放大。</li>
+<li>Lua
 脚本在对象上传时检查存储类，并根据对象大小自动分配到合适的存储池。</li>
 </ul></li>
 <li><strong>实施细节</strong>
 <ul>
-<li>在 Quincy 版本中，引入了自动调整 OSD 的 Min Alloc 大小为 SSD 的最佳
-I/O 大小。</li>
-<li>RADOS Gateway 的 Lua
-脚本修改了存储类头部的可写性，以便在对象上传时动态调整存储类。</li>
+<li>Quincy 版本中引入自动调整 OSD 的 Min Alloc 大小为 SSD 的最佳 I/O
+大小。</li>
+<li>Lua 脚本修改存储类头部，动态调整存储类。</li>
 </ul></li>
 <li><strong>结果展示</strong>
 <ul>
-<li>通过 Lua
-脚本，成功简化了对象存储到正确池的路由，避免了用户手动选择存储类可能带来的问题。</li>
-<li>示例展示了如何通过 Lua 脚本自动将 4K 对象和 64K 对象分别存储到 TLC
-和 QLC 池中，从而优化存储效率。</li>
+<li>Lua 脚本简化了对象存储的路由，提高存储效率。</li>
+<li>示例展示了如何使用 Lua 脚本自动将对象存储到 TLC 和 QLC 池中。</li>
 </ul></li>
 </ol>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>继续优化和扩展 Lua 脚本功能，以支持更多自定义的存储策略。</li>
-<li>监控和评估优化后的存储性能，确保满足不同工作负载的需求。</li>
+<li>继续优化和扩展 Lua 脚本功能，支持更多自定义存储策略。</li>
+<li>监控和评估优化后的存储性能。</li>
 </ul>
 <h4 id="参考资料">参考资料</h4>
 <ul>
 <li>相关论文和演示文稿的链接。</li>
-<li>RADOS Gateway Lua 脚本的相关文档和示例。</li>
+<li>RADOS Gateway Lua 脚本文档和示例。</li>
 <li>空间放大表和 TCO 计算器。</li>
 </ul>
 <h4 id="联系方式">联系方式</h4>
@@ -258,7 +256,7 @@ I/O 大小。</li>
 <li>Kurt Bruns 的电子邮件：kurt@solidime.com</li>
 </ul>
 <h4 id="会议总结">会议总结</h4>
-<p>本次会议详细讨论了如何通过存储类和 Lua 脚本优化 RADOS Gateway
+<p>本次会议讨论了如何通过存储类和 Lua 脚本优化 RADOS Gateway
 对象存储，特别是在混合媒体环境下的存储效率。通过自动化的存储类分配和 Lua
 脚本，成功简化了对象存储的管理，并提高了存储效率。</p>
 
@@ -291,6 +289,8 @@ I/O 大小。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Lua-Scripting/" rel="tag">Lua Scripting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW-Optimization/" rel="tag">RGW Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Class/" rel="tag">Storage Class</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

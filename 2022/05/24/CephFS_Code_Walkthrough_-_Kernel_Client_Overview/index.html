@@ -14,23 +14,28 @@
     
     
     
-    <title>CephFS Code Walkthrough: Kernel Client Overview | ceph视频总结 | youtube频道总结</title>
+    <title>CephFS 代码解析：内核客户端概览 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="The question was about the comment in the function self atomic open which said &quot;if the file or sim link is non-existent, the vfs3 tries&quot;. The questioner wanted to know if VFS keeps retrying and what&#39;s">
+    <meta name="keywords" content="分布式存储,CephFS,Ceph 存储系统,文件系统,内核客户端">
+    <meta name="description" content="[改进后的中文总结内容] 本次视频讨论了 CephFS 内核客户端的代码解析，主要涉及以下几个方面：  VFS 驱动和对象导向设计：CephFS 的测试驱动首先是一个 VFS 驱动，Linux 的核心优势之一是拥有统一的 BFS，可以以相同的方式访问不同类型的文件系统，无需使用特定库。 超级块和 iNode 结构：超级块描述已挂载的文件系统，而 iNode 代表磁盘上的文件或目录。iNode 结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CephFS Code Walkthrough: Kernel Client Overview">
+<meta property="og:title" content="CephFS 代码解析：内核客户端概览">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="The question was about the comment in the function self atomic open which said &quot;if the file or sim link is non-existent, the vfs3 tries&quot;. The questioner wanted to know if VFS keeps retrying and what&#39;s">
+<meta property="og:description" content="[改进后的中文总结内容] 本次视频讨论了 CephFS 内核客户端的代码解析，主要涉及以下几个方面：  VFS 驱动和对象导向设计：CephFS 的测试驱动首先是一个 VFS 驱动，Linux 的核心优势之一是拥有统一的 BFS，可以以相同的方式访问不同类型的文件系统，无需使用特定库。 超级块和 iNode 结构：超级块描述已挂载的文件系统，而 iNode 代表磁盘上的文件或目录。iNode 结构">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-05-24T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="Ceph 存储系统">
+<meta property="article:tag" content="文件系统">
+<meta property="article:tag" content="内核客户端">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CephFS Code Walkthrough: Kernel Client Overview</div>
+        <div class="flex-col header-title ellipsis">CephFS 代码解析：内核客户端概览</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CephFS Code Walkthrough: Kernel Client Overview</h1>
+        <h1 class="title">CephFS 代码解析：内核客户端概览</h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-05-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CephFS Code Walkthrough: Kernel Client Overview</h1>
+        <h1 class="post-card-title">CephFS 代码解析：内核客户端概览</h1>
         <div class="post-meta">
             <time class="post-time" title="2022-05-24 00:00:00" datetime="2022-05-23T16:00:00.000Z"  itemprop="datePublished">2022-05-24</time>
 
@@ -178,21 +183,34 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>The question was about the comment in the function
-<code>self atomic open</code> which said "if the file or sim link is
-non-existent, the vfs3 tries". The questioner wanted to know if VFS
-keeps retrying and what's the idea behind that.</p>
-<p>Answer: The comment appears to be outdated and may not be correct.
-When a file is non-existent, VFS doesn't really retry; it just returns
-at that point. The calling convention for atomic open has changed, and
-this comment is likely no longer accurate. If an atomic open is called
-under very specific circumstances (like not having a cached entry for
-something or having a negative entry), it allows instantiating an entry
-if needed. It also handles situations where there might have been
-changes on the MDS that the client wasn't aware of. In such cases, if it
-turns out the file does exist and no create operation is being
-performed, an open call will be issued to the NBS, and the entry can be
-instantiated accordingly.</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次视频讨论了 CephFS
+内核客户端的代码解析，主要涉及以下几个方面：</p>
+<ol type="1">
+<li><p><strong>VFS 驱动和对象导向设计</strong>：CephFS
+的测试驱动首先是一个 VFS 驱动，Linux 的核心优势之一是拥有统一的
+BFS，可以以相同的方式访问不同类型的文件系统，无需使用特定库。</p></li>
+<li><p><strong>超级块和 iNode
+结构</strong>：超级块描述已挂载的文件系统，而 iNode
+代表磁盘上的文件或目录。iNode
+结构关联着一系列操作，如配额、导出和加密等。</p></li>
+<li><p><strong>路径名解析</strong>：Linux
+内部对路径名解析进行了高度优化，通过 <code>entry</code>
+结构跟踪路径组件，并关联相应的 iNode。</p></li>
+<li><p><strong>文件描述符和文件操作</strong>：<code>struct file</code>
+代表打开的文件描述符，记录文件打开方式、读写位置等信息，并包含一系列文件操作函数。</p></li>
+<li><p><strong>原子打开和文件读取</strong>：视频详细解释了如何通过
+<code>do_open</code>
+函数进行文件的打开和读取操作，包括路径解析、原子打开、读取数据等过程。</p></li>
+<li><p><strong>文件关闭</strong>：关闭文件时，释放相关的资源，包括文件描述符、iNode
+和缓存等。</p></li>
+<li><p><strong>网络文件系统与网络请求处理</strong>：视频还涉及了网络文件系统与网络请求处理，包括网络请求的提交、回复处理等。</p></li>
+<li><p><strong>性能优化</strong>：视频讨论了 Linux
+内部的一些优化措施，例如使用更大的页面来减少内存占用，以及新的网络请求处理层
+<code>netfs</code>。</p></li>
+</ol>
+<p>本次讨论涵盖了 CephFS 内核客户端的多个关键方面，对于理解 CephFS
+的工作原理和性能优化具有重要意义。</p>
 
         </div>
 
@@ -223,6 +241,8 @@ instantiated accordingly.</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/" rel="tag">Ceph 存储系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%85%E6%A0%B8%E5%AE%A2%E6%88%B7%E7%AB%AF/" rel="tag">内核客户端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" rel="tag">文件系统</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -234,7 +254,7 @@ instantiated accordingly.</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/&title=《CephFS Code Walkthrough: Kernel Client Overview》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/&title=《CephFS 代码解析：内核客户端概览》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -244,7 +264,7 @@ instantiated accordingly.</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/&title=《CephFS Code Walkthrough: Kernel Client Overview》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/&title=《CephFS 代码解析：内核客户端概览》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -254,7 +274,7 @@ instantiated accordingly.</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CephFS Code Walkthrough: Kernel Client Overview》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CephFS 代码解析：内核客户端概览》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -293,7 +313,7 @@ instantiated accordingly.</p>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/05/24/Ceph_Crimson_Seastore_Meeting_2022-05-11/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Crimson/Seastore Meeting 2022-05-11</h4>
+        <h4 class="title">  Ceph Crimson/Seastore Meeting 2022-05-11  </h4>
       </a>
     </div>
   
@@ -393,7 +413,7 @@ instantiated accordingly.</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/&title=《CephFS Code Walkthrough: Kernel Client Overview》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/&title=《CephFS 代码解析：内核客户端概览》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -403,7 +423,7 @@ instantiated accordingly.</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/&title=《CephFS Code Walkthrough: Kernel Client Overview》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/&title=《CephFS 代码解析：内核客户端概览》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -413,7 +433,7 @@ instantiated accordingly.</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CephFS Code Walkthrough: Kernel Client Overview》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CephFS 代码解析：内核客户端概览》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/05/24/CephFS_Code_Walkthrough_-_Kernel_Client_Overview/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,28 @@
     
     
     
-    <title>April 2019 :: Ceph Developer Monthly | ceph视频总结 | youtube频道总结</title>
+    <title>  April 2019 :: Ceph Developer Monthly   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： - Adam（负责内存目标选项） - Shirred（负责内存目标选项） - Val（负责监控内存目标） - Mocha（负责蓝店内存管理） - Steve（负责OSD缓存） - Sebastian（负责Orchestrator） - Patrick（负责Orchestrator） - Dan（负责监控内存目标） - Jason">
+    <meta name="keywords" content="Ceph,分布式存储,Orchestrator,监控内存目标,遥测">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2019年4月（具体日期未提及） 参会人员： - Adam（负责内存目标选项） - Shirred（负责内存目标选项） - Val（负责监控内存目标） - Mocha（负责蓝店内存管理） - Steve（负责OSD缓存） - Sebastian（负责Orchestrator） - Patrick（负责Orchestrator） - Dan（负责监控内">
 <meta property="og:type" content="article">
-<meta property="og:title" content="April 2019 :: Ceph Developer Monthly">
+<meta property="og:title" content="  April 2019 :: Ceph Developer Monthly  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： - Adam（负责内存目标选项） - Shirred（负责内存目标选项） - Val（负责监控内存目标） - Mocha（负责蓝店内存管理） - Steve（负责OSD缓存） - Sebastian（负责Orchestrator） - Patrick（负责Orchestrator） - Dan（负责监控内存目标） - Jason">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2019年4月（具体日期未提及） 参会人员： - Adam（负责内存目标选项） - Shirred（负责内存目标选项） - Val（负责监控内存目标） - Mocha（负责蓝店内存管理） - Steve（负责OSD缓存） - Sebastian（负责Orchestrator） - Patrick（负责Orchestrator） - Dan（负责监控内">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-04-08T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-04-08T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="监控内存目标">
+<meta property="article:tag" content="遥测">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">April 2019 :: Ceph Developer Monthly</div>
+        <div class="flex-col header-title ellipsis">  April 2019 :: Ceph Developer Monthly  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">April 2019 :: Ceph Developer Monthly</h1>
+        <h1 class="title">  April 2019 :: Ceph Developer Monthly  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-04-08T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">April 2019 :: Ceph Developer Monthly</h1>
+        <h1 class="post-card-title">  April 2019 :: Ceph Developer Monthly  </h1>
         <div class="post-meta">
             <time class="post-time" title="2019-04-09 00:00:00" datetime="2019-04-08T16:00:00.000Z"  itemprop="datePublished">2019-04-09</time>
 
@@ -178,8 +183,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
+            <p>[改进后的中文总结内容]</p>
+<p><strong>会议纪要</strong></p>
+<p><strong>会议时间</strong>： 2019年4月（具体日期未提及）</p>
 <p><strong>参会人员</strong>： - Adam（负责内存目标选项） -
 Shirred（负责内存目标选项） - Val（负责监控内存目标） -
 Mocha（负责蓝店内存管理） - Steve（负责OSD缓存） -
@@ -191,7 +197,7 @@ Mike（负责RBD MBD） - 其他相关人员</p>
 <li><strong>监控内存目标</strong>：
 <ul>
 <li>讨论了为监控设置内存目标选项的需求，类似于USD中的内存目标选项。</li>
-<li>讨论了在蓝店中实现内存目标选项的现有方法，并考虑将其复制到监控中。</li>
+<li>讨论了在蓝店中实现内存目标选项的方法，并考虑将其复制到监控中。</li>
 <li>讨论了使用优先级缓存接口来管理不同内存缓存的需求。</li>
 <li>决定由Shirred负责实现内存目标选项，并更新配置选项。</li>
 </ul></li>
@@ -270,6 +276,8 @@ Ceph会议上讨论。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%9B%91%E6%8E%A7%E5%86%85%E5%AD%98%E7%9B%AE%E6%A0%87/" rel="tag">监控内存目标</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%81%A5%E6%B5%8B/" rel="tag">遥测</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -281,7 +289,7 @@ Ceph会议上讨论。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&title=《April 2019 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&title=《  April 2019 :: Ceph Developer Monthly  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -291,7 +299,7 @@ Ceph会议上讨论。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&title=《April 2019 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&title=《  April 2019 :: Ceph Developer Monthly  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -301,7 +309,7 @@ Ceph会议上讨论。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《April 2019 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  April 2019 :: Ceph Developer Monthly  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -331,7 +339,7 @@ Ceph会议上讨论。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2019/04/09/2019-04-04_-_-_Ceph_Performance_meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-04-04 :: Ceph Performance meeting</h4>
+        <h4 class="title">&#39;2019-04-04 :: Ceph性能会议&#39;</h4>
       </a>
     </div>
   
@@ -440,7 +448,7 @@ Ceph会议上讨论。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&title=《April 2019 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&title=《  April 2019 :: Ceph Developer Monthly  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -450,7 +458,7 @@ Ceph会议上讨论。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&title=《April 2019 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&title=《  April 2019 :: Ceph Developer Monthly  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -460,7 +468,7 @@ Ceph会议上讨论。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《April 2019 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  April 2019 :: Ceph Developer Monthly  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/09/April_2019_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

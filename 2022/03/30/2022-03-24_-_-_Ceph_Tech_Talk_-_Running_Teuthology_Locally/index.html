@@ -14,23 +14,28 @@
     
     
     
-    <title>2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：使用GPU Labs在本地运行Tautology的演示 会议时间：[具体时间] 会议地点：视频会议 参会人员：Junior（Red Hat Raidos团队成员）、Zach（Red Hat成员）、其他相关开发人员和贡献者 会议内容总结：  介绍与背景  Junior介绍了他在Red Hat的工作经历，特别是在Raidos团队和Tautology项目的工作。 讨论了Tautolo">
+    <meta name="keywords" content="Ceph,Docker,Teuthology,Containerization,DevOps">
+    <meta name="description" content="[改进后的中文总结内容] 会议主题为使用GPU Labs在本地运行Teuthology的演示，主要讨论了Teuthology的本地安装和配置过程，以及如何使用Docker容器自动化安装过程，提供清晰的文档。以下是会议的关键内容：  介绍与背景：Junior介绍了自己在Red Hat的工作经历，特别是在Raidos团队和Teuthology项目的工作。讨论了Teuthology的安装过程复杂，涉及多">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally">
+<meta property="og:title" content="&#39;2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/03/30/2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：使用GPU Labs在本地运行Tautology的演示 会议时间：[具体时间] 会议地点：视频会议 参会人员：Junior（Red Hat Raidos团队成员）、Zach（Red Hat成员）、其他相关开发人员和贡献者 会议内容总结：  介绍与背景  Junior介绍了他在Red Hat的工作经历，特别是在Raidos团队和Tautology项目的工作。 讨论了Tautolo">
+<meta property="og:description" content="[改进后的中文总结内容] 会议主题为使用GPU Labs在本地运行Teuthology的演示，主要讨论了Teuthology的本地安装和配置过程，以及如何使用Docker容器自动化安装过程，提供清晰的文档。以下是会议的关键内容：  介绍与背景：Junior介绍了自己在Red Hat的工作经历，特别是在Raidos团队和Teuthology项目的工作。讨论了Teuthology的安装过程复杂，涉及多">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-03-29T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Teuthology">
+<meta property="article:tag" content="Containerization">
+<meta property="article:tag" content="DevOps">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally</div>
+        <div class="flex-col header-title ellipsis">&#39;2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally</h1>
+        <h1 class="title">&#39;2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-03-29T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,21 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8gpu-labs%E5%9C%A8%E6%9C%AC%E5%9C%B0%E8%BF%90%E8%A1%8Ctautology%E7%9A%84%E6%BC%94%E7%A4%BA"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：使用GPU
-Labs在本地运行Tautology的演示</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E8%A7%86%E9%A2%91%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议地点：视频会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98juniorred-hat-raidos%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98zachred-hat%E6%88%90%E5%91%98%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%92%8C%E8%B4%A1%E7%8C%AE%E8%80%85"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">参会人员：Junior（Red
-Hat Raidos团队成员）、Zach（Red Hat成员）、其他相关开发人员和贡献者</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束语：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%BA%BA%E8%AE%B0%E5%BD%95%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议记录人：[记录人姓名]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">会议结束时间：[具体时间]</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally</h1>
+        <h1 class="post-card-title">'2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally'</h1>
         <div class="post-meta">
             <time class="post-time" title="2022-03-30 00:00:00" datetime="2022-03-29T16:00:00.000Z"  itemprop="datePublished">2022-03-30</time>
 
@@ -187,70 +183,22 @@ Hat Raidos团队成员）、Zach（Red Hat成员）、其他相关开发人员�
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题使用gpu-labs在本地运行tautology的演示">会议主题：使用GPU
-Labs在本地运行Tautology的演示</h4>
-<h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
-<h4 id="会议地点视频会议">会议地点：视频会议</h4>
-<h4
-id="参会人员juniorred-hat-raidos团队成员zachred-hat成员其他相关开发人员和贡献者">参会人员：Junior（Red
-Hat Raidos团队成员）、Zach（Red Hat成员）、其他相关开发人员和贡献者</h4>
-<h4 id="会议内容总结">会议内容总结：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>会议主题为使用GPU
+Labs在本地运行Teuthology的演示，主要讨论了Teuthology的本地安装和配置过程，以及如何使用Docker容器自动化安装过程，提供清晰的文档。以下是会议的关键内容：</p>
 <ol type="1">
-<li><strong>介绍与背景</strong>
-<ul>
-<li>Junior介绍了他在Red
-Hat的工作经历，特别是在Raidos团队和Tautology项目的工作。</li>
-<li>讨论了Tautology的安装过程复杂性，涉及多个服务（如Postgres, Paddles,
-Pepito, Beanstalk），以及不同开发环境带来的挑战。</li>
-</ul></li>
-<li><strong>问题与解决方案</strong>
-<ul>
-<li>面临的问题：Tautology的安装和配置过程复杂，对开发者和贡献者不友好。</li>
-<li>解决方案：使用Docker容器自动化安装过程，并提供清晰的文档，特别是无法自动化的部分，如添加测试节点。</li>
-</ul></li>
-<li><strong>使用场景</strong>
-<ul>
-<li>Tautology开发者希望贡献代码。</li>
-<li>外部贡献者（如Ouchi和GSoC的实习生）。</li>
-<li>开发者希望在本地快速测试，避免等待CI队列。</li>
-</ul></li>
-<li><strong>演示内容</strong>
-<ul>
-<li>展示了如何使用Docker容器设置本地Tautology环境。</li>
-<li>详细介绍了Docker Compose文件的配置和各个服务的依赖关系。</li>
-<li>演示了如何添加测试节点到本地Tautology，并运行一个示例作业。</li>
-</ul></li>
-<li><strong>未来工作与改进</strong>
-<ul>
-<li>自动化更多手动步骤，特别是添加测试节点到库存的过程。</li>
-<li>探索使用容器作为测试节点，减少对物理机器的依赖。</li>
-<li>长期目标：允许开发者在本地构建和测试，减少对CI的依赖。</li>
-</ul></li>
-<li><strong>Q&amp;A</strong>
-<ul>
-<li>讨论了如何在没有VPN访问的情况下获取IP信息。</li>
-<li>强调了未来工作的重要性，特别是容器化测试节点的进展。</li>
-</ul></li>
+<li><p><strong>介绍与背景</strong>：Junior介绍了自己在Red
+Hat的工作经历，特别是在Raidos团队和Teuthology项目的工作。讨论了Teuthology的安装过程复杂，涉及多个服务，以及不同开发环境带来的挑战。</p></li>
+<li><p><strong>问题与解决方案</strong>：面临的问题是Teuthology的安装和配置过程复杂。解决方案是使用Docker容器自动化安装过程，并提供清晰的文档。</p></li>
+<li><p><strong>使用场景</strong>：包括Teuthology开发者希望贡献代码、外部贡献者、以及开发者希望在本地快速测试。</p></li>
+<li><p><strong>演示内容</strong>：展示了如何使用Docker容器设置本地Teuthology环境，包括配置Docker
+Compose文件和各个服务的依赖关系，以及如何添加测试节点并运行示例作业。</p></li>
+<li><p><strong>未来工作与改进</strong>：包括自动化更多手动步骤、探索使用容器作为测试节点，以及长期目标允许开发者在本地构建和测试。</p></li>
+<li><p><strong>Q&amp;A</strong>：讨论了如何在没有VPN访问的情况下获取IP信息，强调了未来工作的重要性。</p></li>
+<li><p><strong>决定事项</strong>：继续推进Teuthology的本地开发环境优化，特别是容器化测试节点的实现。</p></li>
+<li><p><strong>后续行动计划</strong>：完成容器化测试节点的开发，更新文档，确保所有步骤都清晰易懂，并定期更新社区。</p></li>
 </ol>
-<h4 id="决定事项">决定事项：</h4>
-<ul>
-<li>继续推进Tautology的本地开发环境优化，特别是容器化测试节点的实现。</li>
-<li>计划未来再次进行演示，展示容器化测试节点的进展和下一步计划。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划：</h4>
-<ul>
-<li>完成容器化测试节点的开发，并提交PR。</li>
-<li>更新文档，确保所有步骤都清晰易懂。</li>
-<li>定期更新社区，确保所有贡献者都能了解最新进展。</li>
-</ul>
-<h4 id="会议结束语">会议结束语：</h4>
-<ul>
-<li>感谢Junior和Zach的精彩演示和详细解释。</li>
-<li>鼓励所有参会者提供反馈和建议，以便进一步改进Tautology的开发体验。</li>
-</ul>
-<h4 id="会议记录人记录人姓名">会议记录人：[记录人姓名]</h4>
-<h4 id="会议结束时间具体时间">会议结束时间：[具体时间]</h4>
+<p>会议强调了使用容器化和自动化来简化Teuthology的本地部署和测试过程的重要性，这对于提高开发效率和质量至关重要。</p>
 
         </div>
 
@@ -281,6 +229,8 @@ Pepito, Beanstalk），以及不同开发环境带来的挑战。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Containerization/" rel="tag">Containerization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/DevOps/" rel="tag">DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Docker/" rel="tag">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Teuthology/" rel="tag">Teuthology</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -292,7 +242,7 @@ Pepito, Beanstalk），以及不同开发环境带来的挑战。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/03/30/2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally/&title=《2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/03/30/2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally/&title=《'2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -302,7 +252,7 @@ Pepito, Beanstalk），以及不同开发环境带来的挑战。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/03/30/2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally/&title=《2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/03/30/2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally/&title=《'2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -312,7 +262,7 @@ Pepito, Beanstalk），以及不同开发环境带来的挑战。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/03/30/2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/03/30/2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -342,7 +292,7 @@ Pepito, Beanstalk），以及不同开发环境带来的挑战。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/03/31/Ceph_Performance_Meeting_2022-03-31/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2022-03-31</h4>
+        <h4 class="title">Ceph性能会议2022-03-31</h4>
       </a>
     </div>
   
@@ -451,7 +401,7 @@ Pepito, Beanstalk），以及不同开发环境带来的挑战。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/03/30/2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally/&title=《2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/03/30/2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally/&title=《'2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -461,7 +411,7 @@ Pepito, Beanstalk），以及不同开发环境带来的挑战。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/03/30/2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally/&title=《2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/03/30/2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally/&title=《'2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -471,7 +421,7 @@ Pepito, Beanstalk），以及不同开发环境带来的挑战。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/03/30/2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/03/30/2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写具体日期和时间] 会议地点： [请填写会议地点] 参会人员： [请填写参会人员名单] 会议关键细节  参会人员对团队及项目表达了欢迎和期待。 介绍人员回顾了其加入团队前所在公司（Open Attic）的历史和项目背景。 讨论了Open Attic项目与Salt和DeepSea的关系，以及未来发展方向。 探讨了将Open Attic功能迁移到Dashboard的可行性及">
+    <meta name="keywords" content="Ceph,Storage Management,Dashboard,Monitoring,Open Attic">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph存储系统的管理、监控以及Dashboard的使用。以下是会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划： 会议关键细节  参会人员对团队及项目表达了欢迎和期待。 介绍人员回顾了其加入团队前所在公司（Open Attic）的历史和项目背景。 讨论了Open Attic项目与Salt和DeepSea的关系，以及未来发展方向。 探讨了将O">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Management and Monitoring with Dashboard v2 - Lenz Grimmer">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/04/23/Ceph_Management_and_Monitoring_with_Dashboard_v2_-_Lenz_Grimmer/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写具体日期和时间] 会议地点： [请填写会议地点] 参会人员： [请填写参会人员名单] 会议关键细节  参会人员对团队及项目表达了欢迎和期待。 介绍人员回顾了其加入团队前所在公司（Open Attic）的历史和项目背景。 讨论了Open Attic项目与Salt和DeepSea的关系，以及未来发展方向。 探讨了将Open Attic功能迁移到Dashboard的可行性及">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph存储系统的管理、监控以及Dashboard的使用。以下是会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划： 会议关键细节  参会人员对团队及项目表达了欢迎和期待。 介绍人员回顾了其加入团队前所在公司（Open Attic）的历史和项目背景。 讨论了Open Attic项目与Salt和DeepSea的关系，以及未来发展方向。 探讨了将O">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-04-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Storage Management">
+<meta property="article:tag" content="Dashboard">
+<meta property="article:tag" content="Monitoring">
+<meta property="article:tag" content="Open Attic">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他事项</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">4.</span> <span class="post-toc-text">后续行动计划</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,10 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： [请填写具体日期和时间]
-<strong>会议地点</strong>： [请填写会议地点] <strong>参会人员</strong>：
-[请填写参会人员名单]</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph存储系统的管理、监控以及Dashboard的使用。以下是会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划：</p>
 <h4 id="会议关键细节">会议关键细节</h4>
 <ul>
 <li>参会人员对团队及项目表达了欢迎和期待。</li>
@@ -236,10 +239,18 @@ Attic中的NFS共享管理功能（Ganesha）和目标管理功能（Iscsi）迁
 <li>针对迁移过程中的问题，团队将进行技术讨论和方案设计。</li>
 <li>鼓励用户参与Dashboard的开发和功能完善。</li>
 </ul>
-<h4 id="其他事项">其他事项</h4>
-<ul>
-<li>[请在此处填写其他需要记录的事项]</li>
-</ul>
+<p>会议中提到了Ceph的多种关键词，包括Ceph、distributed storage、CRUSH
+algorithm、high availability、scalability、object storage、block
+storage、file system
+storage、consistency、decentralization、performance、bluestore、bluefs、rocksdb、OSD、MON、MDS、PG、RADOS、librados、libcephfs、cephfs、rbd、radosgw、RGW、RESTful
+API、authentication、authorization、encryption、erasure
+coding、replication、snapshots、clones、thin provisioning、iSCSI、Fibre
+Channel、NFS、CIFS、POSIX、monitoring、dashboard、management、orchestration、automation、integration、containerization、Kubernetes、Docker、virtualization、cloud
+computing、AWS、Azure、Google Cloud、hybrid cloud、multi-cloud、storage
+cluster、node、disk、SSD、HDD、JBOD、SAN、NAS、network、topology、failure
+domain、recovery、resilience、load
+balancing、caching、compression、deduplication、tiering、performance
+tuning、benchmarking、testing、validation等。</p>
 
         </div>
 
@@ -270,6 +281,8 @@ Attic中的NFS共享管理功能（Ganesha）和目标管理功能（Iscsi）迁
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Dashboard/" rel="tag">Dashboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Monitoring/" rel="tag">Monitoring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Open-Attic/" rel="tag">Open Attic</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Management/" rel="tag">Storage Management</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -331,7 +344,7 @@ Attic中的NFS共享管理功能（Ganesha）和目标管理功能（Iscsi）迁
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan</h4>
+        <h4 class="title">  Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan  </h4>
       </a>
     </div>
   
@@ -340,7 +353,7 @@ Attic中的NFS共享管理功能（Ganesha）和目标管理功能（Iscsi）迁
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2018/04/23/Ceph_QoS_-_How_to_support_QoS_in_distributed_storage_system_-_Taewoong_Kim/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph QoS: How to support QoS in distributed storage system - Taewoong Kim</h4>
+        <h4 class="title">&#39;Ceph QoS: How to support QoS in distributed storage system - Taewoong Kim&#39;</h4>
       </a>
     </div>
   

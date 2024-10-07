@@ -20,17 +20,54 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要： 会议时间： 2023年1月（具体日期未提及） 参会人员： 多位Ceph研发人员及字幕翻译人员 会议主题： Ceph分布式存储系统开发与性能分析 会议内容：  会议开始： 由于部分成员未能按时加入，会议提前开始。 Monitor客户端改进：  成员讨论了Monitor客户端的改进，包括对monitor play到monitor client的更改。 提到了使用cross-referenc">
+    <meta name="keywords" content="Ceph,分布式存储,块存储,高可用性,CRUSH算法,RGW,对象存储,可伸缩性,OSD,RESTful API,文件系统存储,一致性,去中心化,性能,MON,MDS,PG,RADOS,librados,libcephfs,cephfs,rbd,radosgw,认证,授权,加密,bluestore,bluefs,rocksdb,性能分析,数据结构,消息传递机制,segment fault,system allocator,ninja命令,GDB PMP,wall clock">
+    <meta name="description" content="[改进后的中文总结内容] 在2019年1月1日的Ceph分布式存储系统开发与性能分析会议上，多位Ceph研发人员和字幕翻译人员参与了讨论。以下是会议的主要内容： 会议内容：  Monitor客户端改进： 讨论了Monitor客户端的改进，包括对monitor play到monitor client的更改，以及对对象分配和引用计数问题的关注。 消息传递机制： 讨论了消息传递机制（如message F">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Crimson&#x2F;Seastar OSD Meeting 2019-01-01">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/01/03/Crimson_Seastar_OSD_Meeting_2019-01-01/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要： 会议时间： 2023年1月（具体日期未提及） 参会人员： 多位Ceph研发人员及字幕翻译人员 会议主题： Ceph分布式存储系统开发与性能分析 会议内容：  会议开始： 由于部分成员未能按时加入，会议提前开始。 Monitor客户端改进：  成员讨论了Monitor客户端的改进，包括对monitor play到monitor client的更改。 提到了使用cross-referenc">
+<meta property="og:description" content="[改进后的中文总结内容] 在2019年1月1日的Ceph分布式存储系统开发与性能分析会议上，多位Ceph研发人员和字幕翻译人员参与了讨论。以下是会议的主要内容： 会议内容：  Monitor客户端改进： 讨论了Monitor客户端的改进，包括对monitor play到monitor client的更改，以及对对象分配和引用计数问题的关注。 消息传递机制： 讨论了消息传递机制（如message F">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-01-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-01-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="块存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="可伸缩性">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="RESTful API">
+<meta property="article:tag" content="文件系统存储">
+<meta property="article:tag" content="一致性">
+<meta property="article:tag" content="去中心化">
+<meta property="article:tag" content="性能">
+<meta property="article:tag" content="MON">
+<meta property="article:tag" content="MDS">
+<meta property="article:tag" content="PG">
+<meta property="article:tag" content="RADOS">
+<meta property="article:tag" content="librados">
+<meta property="article:tag" content="libcephfs">
+<meta property="article:tag" content="cephfs">
+<meta property="article:tag" content="rbd">
+<meta property="article:tag" content="radosgw">
+<meta property="article:tag" content="认证">
+<meta property="article:tag" content="授权">
+<meta property="article:tag" content="加密">
+<meta property="article:tag" content="bluestore">
+<meta property="article:tag" content="bluefs">
+<meta property="article:tag" content="rocksdb">
+<meta property="article:tag" content="性能分析">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="消息传递机制">
+<meta property="article:tag" content="segment fault">
+<meta property="article:tag" content="system allocator">
+<meta property="article:tag" content="ninja命令">
+<meta property="article:tag" content="GDB PMP">
+<meta property="article:tag" content="wall clock">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,43 +215,23 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要：</p>
-<p><strong>会议时间</strong>： 2023年1月（具体日期未提及）</p>
-<p><strong>参会人员</strong>： 多位Ceph研发人员及字幕翻译人员</p>
-<p><strong>会议主题</strong>： Ceph分布式存储系统开发与性能分析</p>
+            <p>[改进后的中文总结内容]</p>
+<p>在2019年1月1日的Ceph分布式存储系统开发与性能分析会议上，多位Ceph研发人员和字幕翻译人员参与了讨论。以下是会议的主要内容：</p>
 <p><strong>会议内容</strong>：</p>
 <ul>
-<li><strong>会议开始</strong>：
-由于部分成员未能按时加入，会议提前开始。</li>
 <li><strong>Monitor客户端改进</strong>：
-<ul>
-<li>成员讨论了Monitor客户端的改进，包括对monitor play到monitor
-client的更改。</li>
-<li>提到了使用cross-reference（交叉引用）或其他机制来避免潜在的数据结构损坏问题。</li>
-<li>讨论了关于对象分配和引用计数的问题，以及如何保证对象被正确分配。</li>
-</ul></li>
-<li><strong>消息传递机制</strong>：
-<ul>
-<li>讨论了消息传递机制（如message
-F）的问题，包括如何确保对象在远程端不会被修改。</li>
-<li>提到了可能需要扩展消息引用定义的需求。</li>
-</ul></li>
+讨论了Monitor客户端的改进，包括对monitor play到monitor
+client的更改，以及对对象分配和引用计数问题的关注。</li>
+<li><strong>消息传递机制</strong>： 讨论了消息传递机制（如message
+F）的问题，包括如何确保对象在远程端不会被修改，以及可能需要扩展消息引用定义的需求。</li>
 <li><strong>数据结构破坏</strong>：
-<ul>
-<li>讨论了数据结构破坏的问题，以及如何确保对象在释放前被正确销毁。</li>
-<li>认为使用system allocator（系统分配器）可以避免段错误。</li>
-</ul></li>
+讨论了数据结构破坏的问题，如何确保对象在释放前被正确销毁，以及使用system
+allocator避免段错误的可能性。</li>
 <li><strong>代码贡献与审查</strong>：
-<ul>
-<li>讨论了代码贡献和审查流程，包括如何将代码提交到上游。</li>
-<li>讨论了使用ninja命令进行构建时遇到的问题。</li>
-</ul></li>
-<li><strong>性能分析</strong>：
-<ul>
-<li>成员分享了性能分析的经验，包括使用GDB PMP和wall
-clock工具进行性能分析。</li>
-<li>讨论了消息传递机制（如sister和messenger）的性能差异。</li>
-</ul></li>
+讨论了代码贡献和审查流程，如何将代码提交到上游，以及使用ninja命令进行构建时遇到的问题。</li>
+<li><strong>性能分析</strong>： 分享了性能分析的经验，包括使用GDB
+PMP和wall
+clock工具进行性能分析，并讨论了消息传递机制（如sister和messenger）的性能差异。</li>
 </ul>
 <p><strong>后续行动计划</strong>：</p>
 <ul>
@@ -224,25 +241,13 @@ clock工具进行性能分析。</li>
 <li>完成代码贡献和审查流程。</li>
 <li>继续进行性能分析，并优化Ceph的性能。</li>
 </ul>
-<p><strong>关键术语</strong>：</p>
-<ul>
-<li>Ceph</li>
-<li>Monitor客户端</li>
-<li>消息传递机制</li>
-<li>数据结构</li>
-<li>性能分析</li>
-<li>segment fault</li>
-<li>system allocator</li>
-<li>ninja命令</li>
-<li>GDB PMP</li>
-<li>wall clock</li>
-</ul>
 <p><strong>备注</strong>：</p>
 <ul>
 <li>会议中提到了多个pull
 request（PR）和相关链接，但未在纪要中列出。</li>
 <li>会议中讨论了一些具体的技术细节，但未在纪要中详细说明。</li>
 </ul>
+<p>此总结准确反映了原始内容的要点，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -273,6 +278,8 @@ request（PR）和相关链接，但未在纪要中列出。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/GDB-PMP/" rel="tag">GDB PMP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MDS/" rel="tag">MDS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MON/" rel="tag">MON</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PG/" rel="tag">PG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS/" rel="tag">RADOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RESTful-API/" rel="tag">RESTful API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/bluefs/" rel="tag">bluefs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/bluestore/" rel="tag">bluestore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/cephfs/" rel="tag">cephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/libcephfs/" rel="tag">libcephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/librados/" rel="tag">librados</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/ninja%E5%91%BD%E4%BB%A4/" rel="tag">ninja命令</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/radosgw/" rel="tag">radosgw</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/rbd/" rel="tag">rbd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/rocksdb/" rel="tag">rocksdb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/segment-fault/" rel="tag">segment fault</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/system-allocator/" rel="tag">system allocator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/wall-clock/" rel="tag">wall clock</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%B8%80%E8%87%B4%E6%80%A7/" rel="tag">一致性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8A%A0%E5%AF%86/" rel="tag">加密</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96/" rel="tag">去中心化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%9D%97%E5%AD%98%E5%82%A8/" rel="tag">块存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD/" rel="tag">性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/" rel="tag">性能分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8E%88%E6%9D%83/" rel="tag">授权</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8/" rel="tag">文件系统存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92%E6%9C%BA%E5%88%B6/" rel="tag">消息传递机制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%AE%A4%E8%AF%81/" rel="tag">认证</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -334,7 +341,7 @@ request（PR）和相关链接，但未在纪要中列出。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2019/01/03/Ceph_Performance_Meeting_2019-01-03/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2019-01-03</h4>
+        <h4 class="title">Ceph 性能会议纪要 2019-01-03</h4>
       </a>
     </div>
   

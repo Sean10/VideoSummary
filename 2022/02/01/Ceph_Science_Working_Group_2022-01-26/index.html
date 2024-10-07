@@ -20,17 +20,25 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： 科学计算与大型集群中的Ceph技术讨论会 日期： [具体日期] 主持人： Kevin 会议概述 本次会议是一个开放式讨论会，旨在为科学计算或大型集群领域的工作人员提供一个交流平台，讨论Ceph相关的话题、问题和经验分享。会议每两个月举行一次，形式为“鸟类同群”风格。 主要议题与讨论  新成员介绍  Kasper Shark, GWDG: 介绍了GWDG作为德国中部数据中心，为">
+    <meta name="keywords" content="Ceph,分布式存储,块存储,高可用性,CRUSH算法,对象存储,可扩展性,文件系统存储">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议是Ceph Science Working Group的会议纪要，主题为“科学计算与大型集群中的Ceph技术讨论会”。会议主要内容包括：  新成员介绍：Kasper Shark（GWDG）介绍了GWDG使用Ceph的经验，目前管理着五个集群，总存储容量约为7PB，并计划在四月新增18PB的冷存储和1.4PB的NVMe存储。Andres Pataki（Flatiro">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Science Working Group 2022-01-26">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/02/01/Ceph_Science_Working_Group_2022-01-26/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： 科学计算与大型集群中的Ceph技术讨论会 日期： [具体日期] 主持人： Kevin 会议概述 本次会议是一个开放式讨论会，旨在为科学计算或大型集群领域的工作人员提供一个交流平台，讨论Ceph相关的话题、问题和经验分享。会议每两个月举行一次，形式为“鸟类同群”风格。 主要议题与讨论  新成员介绍  Kasper Shark, GWDG: 介绍了GWDG作为德国中部数据中心，为">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议是Ceph Science Working Group的会议纪要，主题为“科学计算与大型集群中的Ceph技术讨论会”。会议主要内容包括：  新成员介绍：Kasper Shark（GWDG）介绍了GWDG使用Ceph的经验，目前管理着五个集群，总存储容量约为7PB，并计划在四月新增18PB的冷存储和1.4PB的NVMe存储。Andres Pataki（Flatiro">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-31T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-02-01T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="块存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="可扩展性">
+<meta property="article:tag" content="文件系统存储">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +164,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E4%B8%8E%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题与讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动计划</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Science_Working_Group_2022-01-26"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,70 +186,30 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题：</strong> 科学计算与大型集群中的Ceph技术讨论会
-<strong>日期：</strong> [具体日期] <strong>主持人：</strong> Kevin</p>
-<h4 id="会议概述">会议概述</h4>
-<p>本次会议是一个开放式讨论会，旨在为科学计算或大型集群领域的工作人员提供一个交流平台，讨论Ceph相关的话题、问题和经验分享。会议每两个月举行一次，形式为“鸟类同群”风格。</p>
-<h4 id="主要议题与讨论">主要议题与讨论</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议是Ceph Science Working
+Group的会议纪要，主题为“科学计算与大型集群中的Ceph技术讨论会”。会议主要内容包括：</p>
 <ol type="1">
-<li><strong>新成员介绍</strong>
-<ul>
-<li><strong>Kasper Shark, GWDG:</strong>
-介绍了GWDG作为德国中部数据中心，为马克斯·普朗克学会和哥廷根大学提供数据管理服务、存储服务和其他云服务。GWDG已使用Ceph约六七年，目前管理着五个集群，总存储容量约为7PB，并计划在四月新增18PB的冷存储和1.4PB的NVMe存储。</li>
-<li><strong>Andres Pataki, Flatiron Institute:</strong> 介绍了Flatiron
-Institute作为西蒙斯基金会的非营利科学研究组织，拥有约200名科学家，使用Ceph进行大规模存储，每个集群约30PB。</li>
-</ul></li>
-<li><strong>Ceph使用经验分享</strong>
-<ul>
-<li><strong>GWDG:</strong>
-分享了他们在使用Ceph过程中遇到的一些问题，如集群网络故障等，并表示总体上对Ceph非常满意，正在进一步投资扩大集群规模。</li>
-<li><strong>Flatiron Institute:</strong>
-讨论了他们在使用Ceph时遇到的元数据问题，特别是大量小文件和随机访问文件的问题。</li>
-</ul></li>
-<li><strong>技术问题与解决方案</strong>
-<ul>
-<li><strong>BlueStore Corruption Issue:</strong>
-讨论了在重启OSDs时遇到的BlueStore
-corruption问题，可能与硬盘的写缓存设置有关。</li>
-<li><strong>Multi-site Clusters:</strong>
-探讨了使用单一领域连接多个集群的挑战和潜在的bug。</li>
-<li><strong>Support Providers:</strong>
-讨论了是否使用外部专业支持服务，如Canonical,
-SoftIron等，以及这些服务的成本效益。</li>
-</ul></li>
-<li><strong>Ceph升级与维护</strong>
-<ul>
-<li><strong>CERN的Ceph升级:</strong>
-分享了CERN在升级Ceph时采用的新方法，减少了系统停机时间。</li>
-<li><strong>Snapshot Issues:</strong>
-讨论了启用快照功能后遇到的性能问题，特别是在处理大量元数据时。</li>
-</ul></li>
-<li><strong>未来计划与建议</strong>
-<ul>
-<li><strong>Cephalocon 2023:</strong>
-提及了即将举行的Cephalocon会议，鼓励成员参与。</li>
-<li><strong>会议时间调整:</strong>
-讨论了可能将会议时间调整到周一或周二的可能性。</li>
-</ul></li>
+<li><p><strong>新成员介绍</strong>：Kasper
+Shark（GWDG）介绍了GWDG使用Ceph的经验，目前管理着五个集群，总存储容量约为7PB，并计划在四月新增18PB的冷存储和1.4PB的NVMe存储。Andres
+Pataki（Flatiron Institute）介绍了Flatiron
+Institute使用Ceph进行大规模存储的经验，每个集群约30PB。</p></li>
+<li><p><strong>Ceph使用经验分享</strong>：GWDG分享了在使用Ceph过程中遇到的一些问题，如集群网络故障等，并表示总体上对Ceph非常满意。Flatiron
+Institute讨论了在使用Ceph时遇到的元数据问题，特别是大量小文件和随机访问文件的问题。</p></li>
+<li><p><strong>技术问题与解决方案</strong>：讨论了BlueStore
+corruption问题，可能与硬盘的写缓存设置有关。探讨了使用单一领域连接多个集群的挑战和潜在的bug。讨论了使用外部专业支持服务，如Canonical,
+SoftIron等，以及这些服务的成本效益。</p></li>
+<li><p><strong>Ceph升级与维护</strong>：CERN分享了升级Ceph时采用的新方法，减少了系统停机时间。讨论了启用快照功能后遇到的性能问题，特别是在处理大量元数据时。</p></li>
+<li><p><strong>未来计划与建议</strong>：提及了即将举行的Cephalocon会议，鼓励成员参与。讨论了可能将会议时间调整到周一或周二的可能性。</p></li>
 </ol>
-<h4 id="后续行动计划">后续行动计划</h4>
+<p>后续行动计划包括：</p>
 <ul>
-<li><strong>技术问题跟进:</strong> 继续关注和解决BlueStore
+<li>关注和解决BlueStore
 corruption问题，以及快照功能带来的性能问题。</li>
-<li><strong>会议时间调整:</strong>
-根据成员反馈调整会议时间，以避免与其他重要会议冲突。</li>
-<li><strong>Cephalocon参与:</strong>
-鼓励成员参与即将举行的Cephalocon会议，并考虑是否组织相关的Birds of a
+<li>根据成员反馈调整会议时间，以避免与其他重要会议冲突。</li>
+<li>鼓励成员参与即将举行的Cephalocon会议，并考虑是否组织相关的Birds of a
 Feather活动。</li>
 </ul>
-<p><strong>下次会议预告：</strong>
-由于Cephalocon会议临近，下一次会议可能会在三月后举行。具体日期和形式将根据成员反馈和实际情况确定。</p>
-<p><strong>会议结束：</strong>
-感谢所有参与者的积极参与和贡献，期待下次会议再见。</p>
-<hr />
-<p><strong>备注：</strong>
-本次会议记录由专业的Ceph研发人员和视频会议字幕总结人员共同完成，旨在提供准确、全面的会议纪要。</p>
 
         </div>
 
@@ -279,6 +240,8 @@ Feather活动。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">可扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%9D%97%E5%AD%98%E5%82%A8/" rel="tag">块存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8/" rel="tag">文件系统存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

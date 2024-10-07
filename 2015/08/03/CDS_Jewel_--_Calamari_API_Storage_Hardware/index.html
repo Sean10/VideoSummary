@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 一、硬件API规划与实现 会议主题： 讨论并规划Calamari硬件API的规划和实现。 主要议题：  动机： 通过提供硬件API，使Calamari能够了解其背后的存储，以便在硬件出现问题时，能够分析影响并帮助管理员识别合适的硬件进行更换。 API设计：  提出了一些潜在的API端点和字段，包括设备ID、驱动器信息、制造商、版本、序列号等。 讨论了如何使用全球ID作为持久标识符，并确保">
+    <meta name="keywords" content="Ceph,分布式存储,Calamari,API,硬件存储">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 一、硬件API规划与实现 会议主题： 讨论并规划Calamari硬件API的规划和实现。 主要议题：  通过提供硬件API，使Calamari能够了解其背后的存储，以便在硬件出现问题时，能够分析影响并帮助管理员识别合适的硬件进行更换。 API设计，包括设备ID、驱动器信息、制造商、版本、序列号等。 使用全球ID作为持久标识符，并确保其在不同场景下的一致性。 处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CDS Jewel -- Calamari&#x2F;API&#x2F;Storage&#x2F;Hardware">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_Calamari_API_Storage_Hardware/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 一、硬件API规划与实现 会议主题： 讨论并规划Calamari硬件API的规划和实现。 主要议题：  动机： 通过提供硬件API，使Calamari能够了解其背后的存储，以便在硬件出现问题时，能够分析影响并帮助管理员识别合适的硬件进行更换。 API设计：  提出了一些潜在的API端点和字段，包括设备ID、驱动器信息、制造商、版本、序列号等。 讨论了如何使用全球ID作为持久标识符，并确保">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 一、硬件API规划与实现 会议主题： 讨论并规划Calamari硬件API的规划和实现。 主要议题：  通过提供硬件API，使Calamari能够了解其背后的存储，以便在硬件出现问题时，能够分析影响并帮助管理员识别合适的硬件进行更换。 API设计，包括设备ID、驱动器信息、制造商、版本、序列号等。 使用全球ID作为持久标识符，并确保其在不同场景下的一致性。 处理">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-08-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Calamari">
+<meta property="article:tag" content="API">
+<meta property="article:tag" content="硬件存储">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,22 +190,18 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="一硬件api规划与实现">一、硬件API规划与实现</h4>
 <p><strong>会议主题</strong>：
 讨论并规划Calamari硬件API的规划和实现。</p>
 <p><strong>主要议题</strong>：</p>
 <ul>
-<li><strong>动机</strong>：
-通过提供硬件API，使Calamari能够了解其背后的存储，以便在硬件出现问题时，能够分析影响并帮助管理员识别合适的硬件进行更换。</li>
-<li><strong>API设计</strong>：
-<ul>
-<li>提出了一些潜在的API端点和字段，包括设备ID、驱动器信息、制造商、版本、序列号等。</li>
-<li>讨论了如何使用全球ID作为持久标识符，并确保其在不同场景下的一致性。</li>
-<li>讨论了如何处理智能数据（Smart
-Data），包括存储位置、频率和缓存策略。</li>
-<li>讨论了如何与现有工具（如libblockid）集成。</li>
-</ul></li>
+<li>通过提供硬件API，使Calamari能够了解其背后的存储，以便在硬件出现问题时，能够分析影响并帮助管理员识别合适的硬件进行更换。</li>
+<li>API设计，包括设备ID、驱动器信息、制造商、版本、序列号等。</li>
+<li>使用全球ID作为持久标识符，并确保其在不同场景下的一致性。</li>
+<li>处理智能数据（Smart Data），包括存储位置、频率和缓存策略。</li>
+<li>与现有工具（如libblockid）集成。</li>
 </ul>
 <p><strong>决定事项</strong>：</p>
 <ul>
@@ -218,16 +219,11 @@ Data），包括存储位置、频率和缓存策略。</li>
 <p><strong>会议主题</strong>： 讨论Calamari包的发布和计划。</p>
 <p><strong>主要议题</strong>：</p>
 <ul>
-<li><strong>已发布包</strong>：
-Calamari的最新稳定版本已发布，并可在download.com/calamari下载。</li>
-<li><strong>安装指南</strong>： 提供了Calamari的安装指南，并链接到aether
+<li>Calamari的最新稳定版本已发布，并可在download.com/calamari下载。</li>
+<li>提供Calamari的安装指南，并链接到aether
 pad和GitHub的readme文件。</li>
-<li><strong>支持的平台</strong>： 目前支持SUSE、Ubuntu和CentOS。</li>
-<li><strong>未来计划</strong>：
-<ul>
-<li>推出Fedora 21+的包。</li>
+<li>目前支持SUSE、Ubuntu和CentOS。</li>
 <li>探索其他发行版的支持。</li>
-</ul></li>
 </ul>
 <p><strong>决定事项</strong>：</p>
 <ul>
@@ -244,12 +240,9 @@ pad和GitHub的readme文件。</li>
 <p><strong>会议主题</strong>： 讨论如何改进Calamari的故障排除。</p>
 <p><strong>主要议题</strong>：</p>
 <ul>
-<li><strong>salt问题</strong>：
-Calamari使用salt进行自动化，但salt的最新版本可能会与Calamari冲突。</li>
-<li><strong>故障排除文档</strong>：
-需要改进故障排除文档，使其更易于使用。</li>
-<li><strong>简化Calamari</strong>：
-简化Calamari的依赖关系，使其更易于安装和使用。</li>
+<li>Calamari使用salt进行自动化，但salt的最新版本可能会与Calamari冲突。</li>
+<li>需要改进故障排除文档，使其更易于使用。</li>
+<li>简化Calamari的依赖关系，使其更易于安装和使用。</li>
 </ul>
 <p><strong>决定事项</strong>：</p>
 <ul>
@@ -263,10 +256,8 @@ Calamari使用salt进行自动化，但salt的最新版本可能会与Calamari�
 </ul>
 <h4 id="四其他讨论">四、其他讨论</h4>
 <ul>
-<li><strong>测试框架</strong>：
-讨论了Calamari测试框架的设置和运行。</li>
-<li><strong>Calamari的未来方向</strong>：
-讨论了Calamari的未来发展方向，包括集成其他工具和功能。</li>
+<li>讨论了Calamari测试框架的设置和运行。</li>
+<li>讨论了Calamari的未来发展方向，包括集成其他工具和功能。</li>
 </ul>
 <p><strong>总结</strong>：</p>
 <p>本次会议讨论了Calamari硬件API的规划和实现、Calamari包的发布、Calamari的故障排除以及Calamari的未来发展方向。会议确定了后续行动计划，并讨论了相关技术问题。</p>
@@ -300,6 +291,8 @@ Calamari使用salt进行自动化，但salt的最新版本可能会与Calamari�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/API/" rel="tag">API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Calamari/" rel="tag">Calamari</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A1%AC%E4%BB%B6%E5%AD%98%E5%82%A8/" rel="tag">硬件存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -361,7 +354,7 @@ Calamari使用salt进行自动化，但salt的最新版本可能会与Calamari�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2015/08/03/2015-JUL-30_--_Ceph_Tech_Talks_-_CephFS/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2015-JUL-30 -- Ceph Tech Talks: CephFS</h4>
+        <h4 class="title">&#39;2015-JUL-30 -- Ceph Tech Talks: CephFS&#39;</h4>
       </a>
     </div>
   
@@ -370,7 +363,7 @@ Calamari使用salt进行自动化，但salt的最新版本可能会与Calamari�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_CephX_brute-force_protection/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Jewel -- CephX brute-force protection</h4>
+        <h4 class="title">CDS Jewel -- CephX暴力破解保护</h4>
       </a>
     </div>
   

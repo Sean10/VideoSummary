@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Crimson验证在Arc 34上的部署与优化 会议时间：[具体日期] 会议地点：[具体地点] 主持人：Lindsay 参会人员：[参会人员名单] 会议内容：  部署与优化  部署方法：通过yum文件添加代码，支持在ARM版本上构建Crimson镜像，并使用Benchmark工具如rados bench和fio进行性能测试。 优化进展：PRS self-adium部分已由Ada">
+    <meta name="keywords" content="Ceph,Performance Optimization,ARM,Crimson,AArch64">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Crimson验证在Arc 34上的部署与优化 会议时间：[具体日期] 会议地点：[具体地点] 主持人：Lindsay 参会人员：[参会人员名单] 会议内容：  部署与优化  部署方法：通过yum文件添加代码，支持在ARM版本上构建Crimson镜像，并使用Benchmark工具如rados bench和fio进行性能测试。 优化进展：PRS self">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson Verification on AArch64 - Rixin Luo, Huawei">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/18/Ceph_Crimson_Verification_on_AArch64_-_Rixin_Luo_Huawei/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Crimson验证在Arc 34上的部署与优化 会议时间：[具体日期] 会议地点：[具体地点] 主持人：Lindsay 参会人员：[参会人员名单] 会议内容：  部署与优化  部署方法：通过yum文件添加代码，支持在ARM版本上构建Crimson镜像，并使用Benchmark工具如rados bench和fio进行性能测试。 优化进展：PRS self-adium部分已由Ada">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Crimson验证在Arc 34上的部署与优化 会议时间：[具体日期] 会议地点：[具体地点] 主持人：Lindsay 参会人员：[参会人员名单] 会议内容：  部署与优化  部署方法：通过yum文件添加代码，支持在ARM版本上构建Crimson镜像，并使用Benchmark工具如rados bench和fio进行性能测试。 优化进展：PRS self">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-17T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-18T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="ARM">
+<meta property="article:tag" content="Crimson">
+<meta property="article:tag" content="AArch64">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -186,7 +191,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
 id="会议主题crimson验证在arc-34上的部署与优化">会议主题：Crimson验证在Arc
 34上的部署与优化</h4>
@@ -210,8 +216,7 @@ King审核，希望有人能帮助审查并合并。</li>
 </ul></li>
 <li><strong>性能优化</strong>
 <ul>
-<li><strong>瓶颈分析</strong>：发现原子操作在内存端口模块中占用近35%的
-overhead，建议禁用lse指令以减少争用。</li>
+<li><strong>瓶颈分析</strong>：发现原子操作在内存端口模块中占用近35%的overhead，建议禁用lse指令以减少争用。</li>
 <li><strong>测试结果</strong>：禁用lse后，使用2MB页面大小，对于小包和大包分别获得50%和8%的性能提升。</li>
 </ul></li>
 <li><strong>多节点集群测试</strong>
@@ -277,6 +282,8 @@ Johnson或发送邮件至[相关邮箱]。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/AArch64/" rel="tag">AArch64</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/ARM/" rel="tag">ARM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson/" rel="tag">Crimson</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -347,7 +354,7 @@ Johnson或发送邮件至[相关邮箱]。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/05/18/Ceph_Performance_Tuning_-_From_Bluestore_to_RBD_-_Mark_Nelson_Clyso_GmbH/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Tuning: From Bluestore to RBD - Mark Nelson, Clyso GmbH</h4>
+        <h4 class="title">Ceph性能调优：从Bluestore到RBD - Mark Nelson, Clyso GmbH</h4>
       </a>
     </div>
   

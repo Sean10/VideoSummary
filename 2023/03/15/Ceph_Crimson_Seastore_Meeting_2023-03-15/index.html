@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间与参与人员  时间: 由于夏令时调整，会议时间提前一小时。 参与人员: 会议中讨论了关于夏令时调整对与会者的影响，确认调整后的时间对所有参与者无影响。  主要议题与讨论内容  Ceph研发进展:  Crimson存储引擎: 进行了代码审查，包括优化读取设备分层设计、多核系统调整、Future Store接口调整以及数据覆盖对象的后期读取功能。 LBA 400 PRS验证: 正在进">
+    <meta name="keywords" content="Blue Store,Ceph存储引擎,快照与克隆操作,系统设计与优化,代码审查与验证">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间与参与人员  时间: 由于夏令时调整，会议时间提前一小时。 参与人员: 会议中讨论了关于夏令时调整对与会者的影响，确认调整后的时间对所有参与者无影响。  主要议题与讨论内容  Ceph研发进展:  Crimson存储引擎: 包括代码审查，优化读取设备分层设计、多核系统调整、Future Store接口调整以及数据覆盖对象的后期读取功能。 LBA 400">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;Seastore Meeting 2023-03-15">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/03/15/Ceph_Crimson_Seastore_Meeting_2023-03-15/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间与参与人员  时间: 由于夏令时调整，会议时间提前一小时。 参与人员: 会议中讨论了关于夏令时调整对与会者的影响，确认调整后的时间对所有参与者无影响。  主要议题与讨论内容  Ceph研发进展:  Crimson存储引擎: 进行了代码审查，包括优化读取设备分层设计、多核系统调整、Future Store接口调整以及数据覆盖对象的后期读取功能。 LBA 400 PRS验证: 正在进">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间与参与人员  时间: 由于夏令时调整，会议时间提前一小时。 参与人员: 会议中讨论了关于夏令时调整对与会者的影响，确认调整后的时间对所有参与者无影响。  主要议题与讨论内容  Ceph研发进展:  Crimson存储引擎: 包括代码审查，优化读取设备分层设计、多核系统调整、Future Store接口调整以及数据覆盖对象的后期读取功能。 LBA 400">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-03-15T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Blue Store">
+<meta property="article:tag" content="Ceph存储引擎">
+<meta property="article:tag" content="快照与克隆操作">
+<meta property="article:tag" content="系统设计与优化">
+<meta property="article:tag" content="代码审查与验证">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议时间与参与人员">会议时间与参与人员</h4>
 <ul>
 <li><strong>时间</strong>: 由于夏令时调整，会议时间提前一小时。</li>
@@ -197,7 +203,7 @@
 <li><strong>Ceph研发进展</strong>:
 <ul>
 <li><strong>Crimson存储引擎</strong>:
-进行了代码审查，包括优化读取设备分层设计、多核系统调整、Future
+包括代码审查，优化读取设备分层设计、多核系统调整、Future
 Store接口调整以及数据覆盖对象的后期读取功能。</li>
 <li><strong>LBA 400 PRS验证</strong>: 正在进行相关验证工作。</li>
 <li><strong>SysStore中的克隆机制设计</strong>:
@@ -206,19 +212,21 @@ Store接口调整以及数据覆盖对象的后期读取功能。</li>
 <li><strong>快照与克隆操作的详细讨论</strong>:
 <ul>
 <li><strong>快照恢复</strong>:
-讨论了在恢复过程中如何处理读写操作，特别是如何优先恢复头对象而不是克隆对象。</li>
+讨论了在恢复过程中如何处理读写操作，尤其是优先恢复头对象而不是克隆对象。</li>
 <li><strong>快照修剪</strong>:
 强调了支持任意顺序移除快照的重要性，并讨论了避免碎片化的必要性。</li>
 <li><strong>设计建议</strong>:
 提出了通过在对象数据处理程序中建立类似链表的结构来处理克隆引用，而不是在onode中处理，以简化复杂性。</li>
 </ul></li>
+<li><strong>Blue Store的研究</strong>: 建议深入研究Blue
+Store的处理方式，以借鉴其有效的交互设计。</li>
 </ul>
 <h4 id="决定事项">决定事项</h4>
 <ul>
 <li><strong>快照与克隆操作的设计</strong>:
 需要进一步考虑和优化，特别是如何处理快照修剪和恢复操作。</li>
 <li><strong>Blue Store的研究</strong>: 建议深入研究Blue
-Store的处理方式，以借鉴其有效的交互设计。</li>
+Store的处理方式，特别是其交互机制。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
@@ -264,6 +272,8 @@ Store的处理方式，并继续优化相关设计，以确保系统的稳定性
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Blue-Store/" rel="tag">Blue Store</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/" rel="tag">Ceph存储引擎</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5%E4%B8%8E%E9%AA%8C%E8%AF%81/" rel="tag">代码审查与验证</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BF%AB%E7%85%A7%E4%B8%8E%E5%85%8B%E9%9A%86%E6%93%8D%E4%BD%9C/" rel="tag">快照与克隆操作</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E4%BC%98%E5%8C%96/" rel="tag">系统设计与优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -325,7 +335,7 @@ Store的处理方式，并继续优化相关设计，以确保系统的稳定性
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/03/16/Ceph_Performance_Meeting_2023-03-16/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2023-03-16</h4>
+        <h4 class="title">Ceph 性能会议纪要 2023-03-16</h4>
       </a>
     </div>
   
@@ -334,7 +344,7 @@ Store的处理方式，并继续优化相关设计，以确保系统的稳定性
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/03/15/Ceph_RGW_Refactoring_Meeting_2023-03-15/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2023-03-15</h4>
+        <h4 class="title">Ceph RGW重构会议纪要 2023-03-15</h4>
       </a>
     </div>
   

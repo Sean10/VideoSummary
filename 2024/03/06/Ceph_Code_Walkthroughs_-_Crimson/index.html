@@ -14,23 +14,101 @@
     
     
     
-    <title>Ceph Code Walkthroughs: Crimson | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Code Walkthroughs: Crimson&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  主题: 讨论 Crimson 代码与经典代码的差异，特别是使用 seastar 框架的情况。 参与者: 分布式存储 Ceph 研发人员。 时间: 会议具体时间未提供。 地点: 线上视频会议。  讨论的主要议题  经典代码与 Crimson 代码的比较：  经典代码是同步的，处理请求简单直接。 Crimson 代码使用 seastar 框架，主要使用 Futures 和 Con">
+    <meta name="keywords" content="Ceph,RGW,Docker,Kubernetes,OSD,Bluestore,RESTful API,Distributed Storage,MON,MDS,PG,RADOS,librados,libcephfs,cephfs,rbd,radosgw,iSCSI,Fibre Channel,NFS,CIFS,POSIX,AWS,Azure,Google Cloud,SSD,HDD,JBOD,SAN,NAS,Bluefs,Rocksdb,CRUSH Algorithm,High Availability,Scalability,Consistency,Dashboard,Performance,Orchestration,Object Storage,Block Storage,File System Storage,Decentralization,Authentication,Authorization,Encryption,Erasure Coding,Replication,Snapshots,Clones,Thin Provisioning,Monitoring,Management,Automation,Integration,Containerization,Virtualization,Cloud Computing,Hybrid Cloud,Multi,cloud,Storage Cluster,Node,Disk,Network,Topology,Failure Domain,Recovery,Resilience,Load Balancing,Caching,Compression,Deduplication,Tiering,Performance Tuning,Benchmarking,Testing,Validation">
+    <meta name="description" content="[改进后的中文总结内容] 改进的中文总结 Ceph 代码分析会议 &quot;Crimson&quot; 主要讨论了Ceph存储系统中Crimson代码与经典代码的差异，特别是使用seastar框架的情况。以下是会议的关键细节和讨论要点： 关键细节  主题: 分析Crimson代码与经典代码的差异，特别是使用seastar框架。 参与者: Ceph分布式存储研发人员。 时间&#x2F;地点: 未提供具体时间与地点，为线上视频会">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Code Walkthroughs: Crimson">
+<meta property="og:title" content="&#39;Ceph Code Walkthroughs: Crimson&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2024/03/06/Ceph_Code_Walkthroughs_-_Crimson/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  主题: 讨论 Crimson 代码与经典代码的差异，特别是使用 seastar 框架的情况。 参与者: 分布式存储 Ceph 研发人员。 时间: 会议具体时间未提供。 地点: 线上视频会议。  讨论的主要议题  经典代码与 Crimson 代码的比较：  经典代码是同步的，处理请求简单直接。 Crimson 代码使用 seastar 框架，主要使用 Futures 和 Con">
+<meta property="og:description" content="[改进后的中文总结内容] 改进的中文总结 Ceph 代码分析会议 &quot;Crimson&quot; 主要讨论了Ceph存储系统中Crimson代码与经典代码的差异，特别是使用seastar框架的情况。以下是会议的关键细节和讨论要点： 关键细节  主题: 分析Crimson代码与经典代码的差异，特别是使用seastar框架。 参与者: Ceph分布式存储研发人员。 时间&#x2F;地点: 未提供具体时间与地点，为线上视频会">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-03-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="Bluestore">
+<meta property="article:tag" content="RESTful API">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="MON">
+<meta property="article:tag" content="MDS">
+<meta property="article:tag" content="PG">
+<meta property="article:tag" content="RADOS">
+<meta property="article:tag" content="librados">
+<meta property="article:tag" content="libcephfs">
+<meta property="article:tag" content="cephfs">
+<meta property="article:tag" content="rbd">
+<meta property="article:tag" content="radosgw">
+<meta property="article:tag" content="iSCSI">
+<meta property="article:tag" content="Fibre Channel">
+<meta property="article:tag" content="NFS">
+<meta property="article:tag" content="CIFS">
+<meta property="article:tag" content="POSIX">
+<meta property="article:tag" content="AWS">
+<meta property="article:tag" content="Azure">
+<meta property="article:tag" content="Google Cloud">
+<meta property="article:tag" content="SSD">
+<meta property="article:tag" content="HDD">
+<meta property="article:tag" content="JBOD">
+<meta property="article:tag" content="SAN">
+<meta property="article:tag" content="NAS">
+<meta property="article:tag" content="Bluefs">
+<meta property="article:tag" content="Rocksdb">
+<meta property="article:tag" content="CRUSH Algorithm">
+<meta property="article:tag" content="High Availability">
+<meta property="article:tag" content="Scalability">
+<meta property="article:tag" content="Consistency">
+<meta property="article:tag" content="Dashboard">
+<meta property="article:tag" content="Performance">
+<meta property="article:tag" content="Orchestration">
+<meta property="article:tag" content="Object Storage">
+<meta property="article:tag" content="Block Storage">
+<meta property="article:tag" content="File System Storage">
+<meta property="article:tag" content="Decentralization">
+<meta property="article:tag" content="Authentication">
+<meta property="article:tag" content="Authorization">
+<meta property="article:tag" content="Encryption">
+<meta property="article:tag" content="Erasure Coding">
+<meta property="article:tag" content="Replication">
+<meta property="article:tag" content="Snapshots">
+<meta property="article:tag" content="Clones">
+<meta property="article:tag" content="Thin Provisioning">
+<meta property="article:tag" content="Monitoring">
+<meta property="article:tag" content="Management">
+<meta property="article:tag" content="Automation">
+<meta property="article:tag" content="Integration">
+<meta property="article:tag" content="Containerization">
+<meta property="article:tag" content="Virtualization">
+<meta property="article:tag" content="Cloud Computing">
+<meta property="article:tag" content="Hybrid Cloud">
+<meta property="article:tag" content="Multi">
+<meta property="article:tag" content="cloud">
+<meta property="article:tag" content="Storage Cluster">
+<meta property="article:tag" content="Node">
+<meta property="article:tag" content="Disk">
+<meta property="article:tag" content="Network">
+<meta property="article:tag" content="Topology">
+<meta property="article:tag" content="Failure Domain">
+<meta property="article:tag" content="Recovery">
+<meta property="article:tag" content="Resilience">
+<meta property="article:tag" content="Load Balancing">
+<meta property="article:tag" content="Caching">
+<meta property="article:tag" content="Compression">
+<meta property="article:tag" content="Deduplication">
+<meta property="article:tag" content="Tiering">
+<meta property="article:tag" content="Performance Tuning">
+<meta property="article:tag" content="Benchmarking">
+<meta property="article:tag" content="Testing">
+<meta property="article:tag" content="Validation">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +190,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Code Walkthroughs: Crimson</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Code Walkthroughs: Crimson&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +212,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Code Walkthroughs: Crimson</h1>
+        <h1 class="title">&#39;Ceph Code Walkthroughs: Crimson&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2024-03-05T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +237,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E7%9A%84%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续的行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">备注</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进的中文总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">备注</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +246,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Code Walkthroughs: Crimson</h1>
+        <h1 class="post-card-title">'Ceph Code Walkthroughs: Crimson'</h1>
         <div class="post-meta">
             <time class="post-time" title="2024-03-06 00:00:00" datetime="2024-03-05T16:00:00.000Z"  itemprop="datePublished">2024-03-06</time>
 
@@ -185,81 +263,72 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="改进的中文总结">改进的中文总结</h3>
+<p>Ceph 代码分析会议 "Crimson"
+主要讨论了Ceph存储系统中Crimson代码与经典代码的差异，特别是使用seastar框架的情况。以下是会议的关键细节和讨论要点：</p>
 <h4 id="关键细节">关键细节</h4>
 <ul>
-<li><strong>主题</strong>: 讨论 Crimson 代码与经典代码的差异，特别是使用
-seastar 框架的情况。</li>
-<li><strong>参与者</strong>: 分布式存储 Ceph 研发人员。</li>
-<li><strong>时间</strong>: 会议具体时间未提供。</li>
-<li><strong>地点</strong>: 线上视频会议。</li>
+<li><strong>主题</strong>:
+分析Crimson代码与经典代码的差异，特别是使用seastar框架。</li>
+<li><strong>参与者</strong>: Ceph分布式存储研发人员。</li>
+<li><strong>时间/地点</strong>:
+未提供具体时间与地点，为线上视频会议。</li>
 </ul>
 <h4 id="讨论的主要议题">讨论的主要议题</h4>
 <ol type="1">
-<li><strong>经典代码与 Crimson 代码的比较</strong>：
+<li><strong>代码比较</strong>：
 <ul>
-<li>经典代码是同步的，处理请求简单直接。</li>
-<li>Crimson 代码使用 seastar 框架，主要使用 Futures 和
-Continuation。</li>
-<li>Continuation 是 C++ Lambda 表达式，用于在 Future
-就绪或被赋值时调用。</li>
+<li>经典代码为同步代码，处理请求简单直接。</li>
+<li>Crimson代码采用seastar框架，使用Futures和Continuation。</li>
+<li>Continuation为C++ Lambda表达式，用于在Future就绪或赋值时调用。</li>
 </ul></li>
-<li><strong>Lambda 表达式中的指针对象捕获</strong>：
+<li><strong>指针捕获</strong>：
 <ul>
-<li>讨论了在 Lambda 表达式中捕获 <code>this</code>
-指针的安全性，建议避免捕获 <code>con</code> 和 <code>request</code>
-以防止生命周期问题。</li>
+<li>讨论在Lambda表达式中捕获<code>this</code>指针的安全性，建议避免捕获<code>con</code>和<code>request</code>以防生命周期问题。</li>
 </ul></li>
-<li><strong>消息处理机制</strong>：
+<li><strong>消息处理</strong>：
 <ul>
-<li>介绍了 messenger 组件，它是 Ceph 中的通信层，处理不同类型的消息如
-mosd_op。</li>
-<li>mosd_op 代表 OSD 操作，是实际的 RADOS 操作，包含对象 ID
-和一系列操作（如删除、写入等）。</li>
+<li>介绍messenger组件，作为Ceph通信层，处理如mosd_op等不同类型的消息。</li>
+<li>mosd_op代表OSD操作，是实际的RADOS操作，包含对象ID和操作（如删除、写入等）。</li>
 </ul></li>
-<li><strong>对象上下文 (Object Context)</strong>：
+<li><strong>对象上下文</strong>：
 <ul>
-<li>对象上下文是一个缓存数据结构，用于跟踪对象的修改状态。</li>
+<li>对象上下文用于跟踪对象的修改状态，是一个缓存数据结构。</li>
 <li>讨论了获取对象上下文的逻辑，包括从缓存中获取或从后端加载。</li>
 </ul></li>
-<li><strong>Crimson 代码的目录结构</strong>：
+<li><strong>代码目录结构</strong>：
 <ul>
-<li>Crimson 代码主要位于 Crimson 目录中，是经典 OSD 的替代品。</li>
-<li>讨论了在 Crimson 代码中使用的一些特殊宏和适配问题。</li>
+<li>Crimson代码主要位于Crimson目录中，是经典OSD的替代品。</li>
+<li>讨论了Crimson代码中使用的一些特殊宏和适配问题。</li>
 </ul></li>
-<li><strong>客户端请求管道 (Client Request Pipeline)</strong>：
+<li><strong>客户端请求管道</strong>：
 <ul>
-<li>介绍了 Crimson
-中的客户端请求管道，包括等待地图阶段、活动等待阶段等。</li>
-<li>强调了在处理请求时需要满足的依赖条件，如 OSD 地图版本匹配。</li>
+<li>介绍了Crimson中的客户端请求管道，包括等待地图阶段、活动等待阶段等。</li>
+<li>强调了处理请求时需要满足的依赖条件，如OSD地图版本匹配。</li>
 </ul></li>
 <li><strong>错误处理</strong>：
 <ul>
-<li>讨论了使用 erator
-处理非严重错误的情况，确保程序在遇到错误时不会崩溃，而是继续运行并知道如何处理这些错误。</li>
+<li>讨论了使用erator处理非严重错误的情况，确保程序在遇到错误时不会崩溃。</li>
 </ul></li>
 </ol>
 <h4 id="决定的事项">决定的事项</h4>
 <ul>
-<li>确认了在 Crimson 代码中使用 seastar 框架的必要性和优势。</li>
-<li>确定了在处理请求时需要满足的依赖条件，并讨论了如何处理这些条件不满足的情况。</li>
-<li>讨论了错误处理的策略，特别是使用 erator 来处理非严重错误。</li>
+<li>确认了在Crimson代码中使用seastar框架的必要性和优势。</li>
+<li>确定了处理请求时需要满足的依赖条件，并讨论了如何处理不满足的情况。</li>
+<li>讨论了错误处理的策略，特别是使用erator来处理非严重错误。</li>
 </ul>
-<h4 id="后续的行动计划">后续的行动计划</h4>
+<h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>继续优化 Crimson
-代码，特别是在错误处理和依赖条件满足方面的逻辑。</li>
-<li>深入研究 seastar 框架的使用，确保代码的高效和稳定。</li>
-<li>定期审查和更新代码，以保持其与 Ceph 其他部分的兼容性和一致性。</li>
+<li>继续优化Crimson代码，特别是在错误处理和依赖条件满足方面的逻辑。</li>
+<li>深入研究seastar框架的使用，确保代码的高效和稳定。</li>
+<li>定期审查和更新代码，以保持与Ceph其他部分的兼容性和一致性。</li>
 </ul>
 <h4 id="备注">备注</h4>
 <ul>
-<li>会议中提到了一些技术细节和代码示例，这些内容对于深入理解 Crimson
-代码的实现非常重要。</li>
-<li>会议强调了代码的可维护性和错误处理的策略，这些都是确保系统稳定运行的关键因素。</li>
+<li>会议中提到了一些技术细节和代码示例，对于深入理解Crimson代码的实现非常重要。</li>
+<li>会议强调了代码的可维护性和错误处理策略，这些都是确保系统稳定运行的关键因素。</li>
 </ul>
-<hr />
-<p>以上是根据会议内容总结的会议纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -290,6 +359,8 @@ mosd_op。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/AWS/" rel="tag">AWS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Authentication/" rel="tag">Authentication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Authorization/" rel="tag">Authorization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Automation/" rel="tag">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Azure/" rel="tag">Azure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Benchmarking/" rel="tag">Benchmarking</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Block-Storage/" rel="tag">Block Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bluefs/" rel="tag">Bluefs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bluestore/" rel="tag">Bluestore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CIFS/" rel="tag">CIFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-Algorithm/" rel="tag">CRUSH Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Caching/" rel="tag">Caching</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Clones/" rel="tag">Clones</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cloud-Computing/" rel="tag">Cloud Computing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Compression/" rel="tag">Compression</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Consistency/" rel="tag">Consistency</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Containerization/" rel="tag">Containerization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Dashboard/" rel="tag">Dashboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Decentralization/" rel="tag">Decentralization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Deduplication/" rel="tag">Deduplication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Disk/" rel="tag">Disk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Docker/" rel="tag">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Encryption/" rel="tag">Encryption</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Erasure-Coding/" rel="tag">Erasure Coding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Failure-Domain/" rel="tag">Failure Domain</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Fibre-Channel/" rel="tag">Fibre Channel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/File-System-Storage/" rel="tag">File System Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Google-Cloud/" rel="tag">Google Cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/HDD/" rel="tag">HDD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High-Availability/" rel="tag">High Availability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Hybrid-Cloud/" rel="tag">Hybrid Cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Integration/" rel="tag">Integration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/JBOD/" rel="tag">JBOD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Load-Balancing/" rel="tag">Load Balancing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MDS/" rel="tag">MDS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MON/" rel="tag">MON</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Management/" rel="tag">Management</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Monitoring/" rel="tag">Monitoring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Multi/" rel="tag">Multi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NAS/" rel="tag">NAS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS/" rel="tag">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Network/" rel="tag">Network</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Node/" rel="tag">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Object-Storage/" rel="tag">Object Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestration/" rel="tag">Orchestration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PG/" rel="tag">PG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/POSIX/" rel="tag">POSIX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance/" rel="tag">Performance</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Tuning/" rel="tag">Performance Tuning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS/" rel="tag">RADOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RESTful-API/" rel="tag">RESTful API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Recovery/" rel="tag">Recovery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Replication/" rel="tag">Replication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Resilience/" rel="tag">Resilience</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rocksdb/" rel="tag">Rocksdb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SAN/" rel="tag">SAN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SSD/" rel="tag">SSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scalability/" rel="tag">Scalability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Snapshots/" rel="tag">Snapshots</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Cluster/" rel="tag">Storage Cluster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Testing/" rel="tag">Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Thin-Provisioning/" rel="tag">Thin Provisioning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Tiering/" rel="tag">Tiering</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Topology/" rel="tag">Topology</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Validation/" rel="tag">Validation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Virtualization/" rel="tag">Virtualization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/cephfs/" rel="tag">cephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/cloud/" rel="tag">cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/iSCSI/" rel="tag">iSCSI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/libcephfs/" rel="tag">libcephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/librados/" rel="tag">librados</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/radosgw/" rel="tag">radosgw</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/rbd/" rel="tag">rbd</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -301,7 +372,7 @@ mosd_op。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_Code_Walkthroughs_-_Crimson/&title=《Ceph Code Walkthroughs: Crimson》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_Code_Walkthroughs_-_Crimson/&title=《'Ceph Code Walkthroughs: Crimson'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -311,7 +382,7 @@ mosd_op。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_Code_Walkthroughs_-_Crimson/&title=《Ceph Code Walkthroughs: Crimson》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_Code_Walkthroughs_-_Crimson/&title=《'Ceph Code Walkthroughs: Crimson'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -321,7 +392,7 @@ mosd_op。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Code Walkthroughs: Crimson》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_Code_Walkthroughs_-_Crimson/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Code Walkthroughs: Crimson'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_Code_Walkthroughs_-_Crimson/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -360,7 +431,7 @@ mosd_op。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2024/03/06/Ceph_RGW_Refactoring_Meeting_2024-03-06/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2024-03-06</h4>
+        <h4 class="title">Ceph RGW重构会议 2024-03-06</h4>
       </a>
     </div>
   
@@ -460,7 +531,7 @@ mosd_op。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_Code_Walkthroughs_-_Crimson/&title=《Ceph Code Walkthroughs: Crimson》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_Code_Walkthroughs_-_Crimson/&title=《'Ceph Code Walkthroughs: Crimson'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -470,7 +541,7 @@ mosd_op。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_Code_Walkthroughs_-_Crimson/&title=《Ceph Code Walkthroughs: Crimson》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_Code_Walkthroughs_-_Crimson/&title=《'Ceph Code Walkthroughs: Crimson'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -480,7 +551,7 @@ mosd_op。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Code Walkthroughs: Crimson》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_Code_Walkthroughs_-_Crimson/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Code Walkthroughs: Crimson'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_Code_Walkthroughs_-_Crimson/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

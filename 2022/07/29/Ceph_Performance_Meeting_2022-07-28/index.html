@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  会议开始时间: 会议在部分成员未到齐的情况下开始，预计他们稍后会加入。 主要议题: 讨论了关于优化 RocksDB 设置以减少写放大和改善 Tombstone 行为的工作进展。 决定事项: 决定继续探索在 RocksDB 中自动触发压缩和刷新的方法，特别是在删除操作后。 后续行动计划: 需要进一步研究和测试，以确定最佳的 RocksDB 设置和删除跟踪机制。  讨论的主要议题">
+    <meta name="keywords" content="Ceph,RocksDB,Distributed Storage,Performance Optimization,Tombstone Management">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  会议开始时间: 会议在部分成员未到齐的情况下开始。 主要议题: 讨论了优化Ceph中RocksDB设置以减少写放大和改善Tombstone行为的工作进展。 决定事项: 决定继续探索在RocksDB中自动触发压缩和刷新的方法，特别是针对删除操作。 后续行动计划: 需要进一步研究和测试，以确定最佳的RocksDB设置和删除跟踪机制。  讨论的主要议题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Performance Meeting 2022-07-28">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/07/29/Ceph_Performance_Meeting_2022-07-28/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  会议开始时间: 会议在部分成员未到齐的情况下开始，预计他们稍后会加入。 主要议题: 讨论了关于优化 RocksDB 设置以减少写放大和改善 Tombstone 行为的工作进展。 决定事项: 决定继续探索在 RocksDB 中自动触发压缩和刷新的方法，特别是在删除操作后。 后续行动计划: 需要进一步研究和测试，以确定最佳的 RocksDB 设置和删除跟踪机制。  讨论的主要议题">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  会议开始时间: 会议在部分成员未到齐的情况下开始。 主要议题: 讨论了优化Ceph中RocksDB设置以减少写放大和改善Tombstone行为的工作进展。 决定事项: 决定继续探索在RocksDB中自动触发压缩和刷新的方法，特别是针对删除操作。 后续行动计划: 需要进一步研究和测试，以确定最佳的RocksDB设置和删除跟踪机制。  讨论的主要议题">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-07-28T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="Tombstone Management">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,59 +190,53 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
 <li><strong>会议开始时间</strong>:
-会议在部分成员未到齐的情况下开始，预计他们稍后会加入。</li>
-<li><strong>主要议题</strong>: 讨论了关于优化 RocksDB
-设置以减少写放大和改善 Tombstone 行为的工作进展。</li>
-<li><strong>决定事项</strong>: 决定继续探索在 RocksDB
-中自动触发压缩和刷新的方法，特别是在删除操作后。</li>
-<li><strong>后续行动计划</strong>: 需要进一步研究和测试，以确定最佳的
-RocksDB 设置和删除跟踪机制。</li>
+会议在部分成员未到齐的情况下开始。</li>
+<li><strong>主要议题</strong>:
+讨论了优化Ceph中RocksDB设置以减少写放大和改善Tombstone行为的工作进展。</li>
+<li><strong>决定事项</strong>:
+决定继续探索在RocksDB中自动触发压缩和刷新的方法，特别是针对删除操作。</li>
+<li><strong>后续行动计划</strong>:
+需要进一步研究和测试，以确定最佳的RocksDB设置和删除跟踪机制。</li>
 </ul>
 <h4 id="讨论的主要议题">讨论的主要议题</h4>
 <ul>
-<li><strong>RocksDB 设置优化</strong>: 讨论了如何调整 RocksDB
-设置以减少写放大，特别是在处理大量删除操作时。提出了通过跟踪每个列族的删除操作来手动触发压缩和刷新的想法。</li>
-<li><strong>Tombstone 行为</strong>: 讨论了 Tombstone 在 RocksDB
-中的影响，特别是在迭代删除周期中的性能问题。提出了通过改进 RocksDB
-的内部机制来减少 Tombstone 的影响。</li>
+<li><strong>RocksDB设置优化</strong>:
+讨论了如何调整RocksDB设置以减少写放大，特别是在大量删除操作时。提出了通过跟踪每个列族的删除操作来手动触发压缩和刷新的想法。</li>
+<li><strong>Tombstone行为</strong>:
+讨论了Tombstone在RocksDB中的影响，特别是在迭代删除周期中的性能问题。提出了通过改进RocksDB的内部机制来减少Tombstone的影响。</li>
 <li><strong>性能和资源管理</strong>:
-讨论了如何在不影响系统整体性能的情况下，有效地管理 RocksDB
-的压缩和刷新操作。提出了在 RocksDB
-中注册监听器以跟踪压缩和刷新事件的想法。</li>
+讨论了如何在不影响系统整体性能的情况下，有效地管理RocksDB的压缩和刷新操作。</li>
 </ul>
 <h4 id="决定的事项">决定的事项</h4>
 <ul>
-<li><strong>RocksDB 优化方案</strong>: 决定继续探索和实施在 RocksDB
-中自动触发压缩和刷新的方法，特别是在删除操作后。</li>
+<li><strong>RocksDB优化方案</strong>:
+决定继续探索和实施在RocksDB中自动触发压缩和刷新的方法，特别是在删除操作后。</li>
 <li><strong>删除跟踪机制</strong>:
 决定开发一种机制来跟踪每个列族的删除操作，并在达到一定阈值后手动触发压缩和刷新。</li>
 </ul>
 <h4 id="后续的行动计划">后续的行动计划</h4>
 <ul>
 <li><strong>进一步研究和测试</strong>:
-需要进一步研究和测试，以确定最佳的 RocksDB 设置和删除跟踪机制。</li>
+需要进一步研究和测试，以确定最佳的RocksDB设置和删除跟踪机制。</li>
 <li><strong>代码实现和审查</strong>:
 开发团队将开始实现删除跟踪机制，并邀请其他团队成员进行代码审查和测试。</li>
-<li><strong>性能监控和调整</strong>: 在实施新的 RocksDB
-设置后，需要持续监控系统性能，并根据实际情况进行调整。</li>
+<li><strong>性能监控和调整</strong>:
+在实施新的RocksDB设置后，需要持续监控系统性能，并根据实际情况进行调整。</li>
 </ul>
 <h4 id="其他讨论点">其他讨论点</h4>
 <ul>
-<li><strong>RocksDB 的内部机制</strong>: 讨论了 RocksDB
-的内部机制，包括压缩和刷新的触发条件，以及如何通过外部代码来控制这些操作。</li>
+<li><strong>RocksDB内部机制</strong>:
+讨论了RocksDB的内部机制，包括压缩和刷新的触发条件，以及如何通过外部代码来控制这些操作。</li>
 <li><strong>性能和资源管理</strong>:
-讨论了如何在不影响系统整体性能的情况下，有效地管理 RocksDB
-的压缩和刷新操作。</li>
+讨论了如何在不影响系统整体性能的情况下，有效地管理RocksDB的压缩和刷新操作。</li>
 </ul>
 <h4 id="结论">结论</h4>
-<p>会议讨论了关于优化 RocksDB 设置以减少写放大和改善 Tombstone
-行为的工作进展，并决定继续探索和实施在 RocksDB
-中自动触发压缩和刷新的方法。后续需要进一步研究和测试，以确定最佳的
-RocksDB 设置和删除跟踪机制。</p>
+<p>会议讨论了优化RocksDB设置以减少写放大和改善Tombstone行为的工作进展，并决定继续探索和实施在RocksDB中自动触发压缩和刷新的方法。后续需要进一步研究和测试，以确定最佳的RocksDB设置和删除跟踪机制。</p>
 
         </div>
 
@@ -268,6 +267,8 @@ RocksDB 设置和删除跟踪机制。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Tombstone-Management/" rel="tag">Tombstone Management</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -338,7 +339,7 @@ RocksDB 设置和删除跟踪机制。</p>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/07/19/Ceph_Crimson_SeaStore_Meeting_2022-07-06/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Crimson/SeaStore Meeting 2022-07-06</h4>
+        <h4 class="title">Ceph Crimson/SeaStore 会议纪要 2022-07-06</h4>
       </a>
     </div>
   

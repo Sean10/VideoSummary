@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2021-10-28 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph性能会议纪要 2021-10-28 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  新拉取请求（Pull Requests, PRs）:  设置最小分配大小为某些设备的最佳I&#x2F;O大小。讨论了新设备类型可能需要大于4K的分配单元，但不一定必须，涉及性能与空间浪费的权衡。 Igor提出的改进共享Blob fsck过程，使其更节省RAM。从12GB减少到0.5GB，显著改善了内存使用。 Mark Cogan关于db store的工作，增加了配置选项以设置单线程性能">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,Pull Requests,内存分配">
+    <meta name="description" content="[改进后的中文总结内容] 在2021年10月28日的Ceph性能会议上，研发人员讨论了一系列性能优化议题，包括内存分配、性能瓶颈和Pull Requests的更新。 关键细节：  Pull Requests (PRs):  设置最小分配大小以适应不同设备的最佳I&#x2F;O大小，并讨论了性能与空间浪费之间的权衡。 Igor提出改进共享Blob fsck过程，将内存使用从12GB减少到0.5GB，显著改善了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2021-10-28">
+<meta property="og:title" content="Ceph性能会议纪要 2021-10-28">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/11/03/Ceph_Performance_Meeting_2021-10-28/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  新拉取请求（Pull Requests, PRs）:  设置最小分配大小为某些设备的最佳I&#x2F;O大小。讨论了新设备类型可能需要大于4K的分配单元，但不一定必须，涉及性能与空间浪费的权衡。 Igor提出的改进共享Blob fsck过程，使其更节省RAM。从12GB减少到0.5GB，显著改善了内存使用。 Mark Cogan关于db store的工作，增加了配置选项以设置单线程性能">
+<meta property="og:description" content="[改进后的中文总结内容] 在2021年10月28日的Ceph性能会议上，研发人员讨论了一系列性能优化议题，包括内存分配、性能瓶颈和Pull Requests的更新。 关键细节：  Pull Requests (PRs):  设置最小分配大小以适应不同设备的最佳I&#x2F;O大小，并讨论了性能与空间浪费之间的权衡。 Igor提出改进共享Blob fsck过程，将内存使用从12GB减少到0.5GB，显著改善了">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-11-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="Pull Requests">
+<meta property="article:tag" content="内存分配">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2021-10-28</div>
+        <div class="flex-col header-title ellipsis">Ceph性能会议纪要 2021-10-28</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2021-10-28</h1>
+        <h1 class="title">Ceph性能会议纪要 2021-10-28</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-11-02T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Performance_Meeting_2021-10-28"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2021-10-28</h1>
+        <h1 class="post-card-title">Ceph性能会议纪要 2021-10-28</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-11-03 00:00:00" datetime="2021-11-02T16:00:00.000Z"  itemprop="datePublished">2021-11-03</time>
 
@@ -185,16 +183,18 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="关键细节">关键细节</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>在2021年10月28日的Ceph性能会议上，研发人员讨论了一系列性能优化议题，包括内存分配、性能瓶颈和Pull
+Requests的更新。</p>
+<p><strong>关键细节</strong>：</p>
 <ul>
-<li><strong>新拉取请求（Pull Requests, PRs）</strong>:
+<li><strong>Pull Requests (PRs)</strong>:
 <ul>
-<li>设置最小分配大小为某些设备的最佳I/O大小。讨论了新设备类型可能需要大于4K的分配单元，但不一定必须，涉及性能与空间浪费的权衡。</li>
-<li>Igor提出的改进共享Blob
-fsck过程，使其更节省RAM。从12GB减少到0.5GB，显著改善了内存使用。</li>
-<li>Mark Cogan关于db
-store的工作，增加了配置选项以设置单线程性能调优参数。</li>
+<li>设置最小分配大小以适应不同设备的最佳I/O大小，并讨论了性能与空间浪费之间的权衡。</li>
+<li>Igor提出改进共享Blob
+fsck过程，将内存使用从12GB减少到0.5GB，显著改善了内存使用。</li>
+<li>Mark Cogan的工作增加了db
+store的配置选项，以设置单线程性能调优参数。</li>
 </ul></li>
 <li><strong>更新PRs</strong>:
 <ul>
@@ -203,12 +203,12 @@ store的工作，增加了配置选项以设置单线程性能调优参数。</l
 <li>优化对象内存分配使用池的旧PR，Gabriel增加了讨论，涉及内存分配的优化。</li>
 </ul></li>
 </ul>
-<h4 id="讨论的主要议题">讨论的主要议题</h4>
+<p><strong>讨论的主要议题</strong>：</p>
 <ul>
 <li><strong>内存分配优化</strong>:
 <ul>
-<li>讨论了如何通过预分配区域或重用对象来优化内存分配，减少动态分配的需求。</li>
-<li>提到了使用栈分配、固定大小缓冲区（如4K或8K）以及slab分配器的可能性。</li>
+<li>讨论了通过预分配区域或重用对象来优化内存分配，减少动态分配的需求。</li>
+<li>提到了使用栈分配、固定大小缓冲区以及slab分配器的可能性。</li>
 <li>讨论了是否应该重新设计协议，以支持更高效的内存使用和减少碎片化。</li>
 </ul></li>
 <li><strong>性能瓶颈</strong>:
@@ -217,12 +217,12 @@ store的工作，增加了配置选项以设置单线程性能调优参数。</l
 <li>讨论了如何通过减少动态分配和优化数据结构来改善性能。</li>
 </ul></li>
 </ul>
-<h4 id="决定的事项">决定的事项</h4>
+<p><strong>决定的事项</strong>：</p>
 <ul>
 <li>需要进一步调查和优化内存分配策略，特别是对于高频使用的对象和请求。</li>
 <li>选择一个简单的组件（如messenger）开始优化，以验证假设和方法的有效性。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<p><strong>后续行动计划</strong>：</p>
 <ul>
 <li>继续讨论和优化内存分配策略，特别是对于编码/解码过程。</li>
 <li>开始对messenger组件进行优化，以减少其性能开销。</li>
@@ -259,6 +259,8 @@ store的工作，增加了配置选项以设置单线程性能调优参数。</l
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Pull-Requests/" rel="tag">Pull Requests</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/" rel="tag">内存分配</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -270,7 +272,7 @@ store的工作，增加了配置选项以设置单线程性能调优参数。</l
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/11/03/Ceph_Performance_Meeting_2021-10-28/&title=《Ceph Performance Meeting 2021-10-28》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/11/03/Ceph_Performance_Meeting_2021-10-28/&title=《Ceph性能会议纪要 2021-10-28》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -280,7 +282,7 @@ store的工作，增加了配置选项以设置单线程性能调优参数。</l
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/11/03/Ceph_Performance_Meeting_2021-10-28/&title=《Ceph Performance Meeting 2021-10-28》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/11/03/Ceph_Performance_Meeting_2021-10-28/&title=《Ceph性能会议纪要 2021-10-28》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -290,7 +292,7 @@ store的工作，增加了配置选项以设置单线程性能调优参数。</l
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-10-28》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/11/03/Ceph_Performance_Meeting_2021-10-28/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议纪要 2021-10-28》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/11/03/Ceph_Performance_Meeting_2021-10-28/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -329,7 +331,7 @@ store的工作，增加了配置选项以设置单线程性能调优参数。</l
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/10/21/Ceph_Crimson_SeaStore_2021-10-20/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Crimson/SeaStore 2021-10-20</h4>
+        <h4 class="title">  Ceph Crimson/SeaStore 2021-10-20  </h4>
       </a>
     </div>
   
@@ -429,7 +431,7 @@ store的工作，增加了配置选项以设置单线程性能调优参数。</l
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/11/03/Ceph_Performance_Meeting_2021-10-28/&title=《Ceph Performance Meeting 2021-10-28》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/11/03/Ceph_Performance_Meeting_2021-10-28/&title=《Ceph性能会议纪要 2021-10-28》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -439,7 +441,7 @@ store的工作，增加了配置选项以设置单线程性能调优参数。</l
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/11/03/Ceph_Performance_Meeting_2021-10-28/&title=《Ceph Performance Meeting 2021-10-28》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/11/03/Ceph_Performance_Meeting_2021-10-28/&title=《Ceph性能会议纪要 2021-10-28》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -449,7 +451,7 @@ store的工作，增加了配置选项以设置单线程性能调优参数。</l
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-10-28》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/11/03/Ceph_Performance_Meeting_2021-10-28/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议纪要 2021-10-28》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/11/03/Ceph_Performance_Meeting_2021-10-28/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

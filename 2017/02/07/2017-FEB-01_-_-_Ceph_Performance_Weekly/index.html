@@ -14,23 +14,29 @@
     
     
     
-    <title>2017-FEB-01 :: Ceph Performance Weekly | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2017-FEB-01 :: Ceph Performance Weekly&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议主题： Ceph分布式存储性能优化及测试讨论 会议内容： 一、Ceph性能优化  部分重启优化： 团队正在测试Blue Store的部分重启功能，但测试结果尚不明确，需要进一步观察其效果。 AIO读取优化： 已合并AIO读取的优化，Bassam进行了回退以解决相关问题。 Blue Store性能提升： Blue St">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,RocksDB,Blue Store,测试结果">
+    <meta name="description" content="[改进后的中文总结内容] 在2017年2月1日的Ceph性能周会中，讨论了Ceph分布式存储的性能优化和测试结果。以下是会议的主要内容和后续行动计划： 一、Ceph性能优化  部分重启优化： 团队正在测试Blue Store的部分重启功能，但测试结果尚不明确。 AIO读取优化： 已合并AIO读取的优化，Bassam进行了回退以解决相关问题。 Blue Store性能提升： Blue Store的性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017-FEB-01 :: Ceph Performance Weekly">
+<meta property="og:title" content="&#39;2017-FEB-01 :: Ceph Performance Weekly&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议主题： Ceph分布式存储性能优化及测试讨论 会议内容： 一、Ceph性能优化  部分重启优化： 团队正在测试Blue Store的部分重启功能，但测试结果尚不明确，需要进一步观察其效果。 AIO读取优化： 已合并AIO读取的优化，Bassam进行了回退以解决相关问题。 Blue Store性能提升： Blue St">
+<meta property="og:description" content="[改进后的中文总结内容] 在2017年2月1日的Ceph性能周会中，讨论了Ceph分布式存储的性能优化和测试结果。以下是会议的主要内容和后续行动计划： 一、Ceph性能优化  部分重启优化： 团队正在测试Blue Store的部分重启功能，但测试结果尚不明确。 AIO读取优化： 已合并AIO读取的优化，Bassam进行了回退以解决相关问题。 Blue Store性能提升： Blue Store的性">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-02-06T16:00:00.000Z">
 <meta property="article:modified_time" content="2017-02-07T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="Blue Store">
+<meta property="article:tag" content="测试结果">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2017-FEB-01 :: Ceph Performance Weekly</div>
+        <div class="flex-col header-title ellipsis">&#39;2017-FEB-01 :: Ceph Performance Weekly&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2017-FEB-01 :: Ceph Performance Weekly</h1>
+        <h1 class="title">&#39;2017-FEB-01 :: Ceph Performance Weekly&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2017-02-06T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +167,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2017-FEB-01 :: Ceph Performance Weekly</h1>
+        <h1 class="post-card-title">'2017-FEB-01 :: Ceph Performance Weekly'</h1>
         <div class="post-meta">
             <time class="post-time" title="2017-02-07 00:00:00" datetime="2017-02-06T16:00:00.000Z"  itemprop="datePublished">2017-02-07</time>
 
@@ -178,15 +184,12 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： [请填写会议时间]</p>
-<p><strong>参会人员</strong>： [请填写参会人员名单]</p>
-<p><strong>会议主题</strong>： Ceph分布式存储性能优化及测试讨论</p>
-<p><strong>会议内容</strong>：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>在2017年2月1日的Ceph性能周会中，讨论了Ceph分布式存储的性能优化和测试结果。以下是会议的主要内容和后续行动计划：</p>
 <p><strong>一、Ceph性能优化</strong></p>
 <ol type="1">
 <li><strong>部分重启优化</strong>： 团队正在测试Blue
-Store的部分重启功能，但测试结果尚不明确，需要进一步观察其效果。</li>
+Store的部分重启功能，但测试结果尚不明确。</li>
 <li><strong>AIO读取优化</strong>：
 已合并AIO读取的优化，Bassam进行了回退以解决相关问题。</li>
 <li><strong>Blue Store性能提升</strong>： Blue
@@ -199,9 +202,9 @@ Igor进行了RestMap的优化，简化了计数和分配单元，有望大幅提
 <p><strong>二、测试结果分析</strong></p>
 <ol type="1">
 <li><strong>顺序读取性能提升</strong>：
-测试结果显示，顺序读取性能显著提升，这对于对象存储应用来说是一个好消息。</li>
+测试结果显示，顺序读取性能显著提升。</li>
 <li><strong>随机写入性能</strong>：
-随机写入性能有所提升，但仍有改进空间。特别是在使用16KB块大小的SSD进行4KB随机写入时，性能可能更好。</li>
+随机写入性能有所提升，但仍有改进空间。</li>
 <li><strong>Flock和Bitmap Alligator问题</strong>：
 测试过程中出现了Flock和Bitmap Alligator问题，需要进一步调查其影响。</li>
 <li><strong>同步写入性能</strong>：
@@ -225,8 +228,7 @@ Store缓冲I/O的问题，并确定了相关设置。</li>
 <li><strong>RocksDB性能优化</strong>：
 讨论了RocksDB性能优化，并提出了建议。</li>
 </ol>
-<p><strong>五、会议总结</strong></p>
-<p>本次会议讨论了Ceph分布式存储的性能优化和测试结果。团队将继续进行测试，并针对发现的问题进行优化。与Nokia的合作将有助于解决性能问题。</p>
+<p>会议强调了Ceph性能优化和测试的重要性，并提出了针对具体问题的解决方案和后续行动计划。</p>
 
         </div>
 
@@ -257,6 +259,8 @@ Store缓冲I/O的问题，并确定了相关设置。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Blue-Store/" rel="tag">Blue Store</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C/" rel="tag">测试结果</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -268,7 +272,7 @@ Store缓冲I/O的问题，并确定了相关设置。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/&title=《2017-FEB-01 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/&title=《'2017-FEB-01 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -278,7 +282,7 @@ Store缓冲I/O的问题，并确定了相关设置。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/&title=《2017-FEB-01 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/&title=《'2017-FEB-01 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -288,7 +292,7 @@ Store缓冲I/O的问题，并确定了相关设置。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2017-FEB-01 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2017-FEB-01 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -318,7 +322,7 @@ Store缓冲I/O的问题，并确定了相关设置。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2017/02/08/2017-FEB-08_-_-_Ceph_Performance_Weekly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2017-FEB-08 :: Ceph Performance Weekly</h4>
+        <h4 class="title">&#39;2017-FEB-08 :: Ceph Performance Weekly&#39;</h4>
       </a>
     </div>
   
@@ -327,7 +331,7 @@ Store缓冲I/O的问题，并确定了相关设置。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2017/01/27/2017-JAN-26_--_Ceph_Tech_Talk_-_Getting_Started_with_Ceph_Development/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2017-JAN-26 -- Ceph Tech Talk: Getting Started with Ceph Development</h4>
+        <h4 class="title">&#39;2017-JAN-26 -- Ceph Tech Talk: Getting Started with Ceph Development&#39;</h4>
       </a>
     </div>
   
@@ -427,7 +431,7 @@ Store缓冲I/O的问题，并确定了相关设置。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/&title=《2017-FEB-01 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/&title=《'2017-FEB-01 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -437,7 +441,7 @@ Store缓冲I/O的问题，并确定了相关设置。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/&title=《2017-FEB-01 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/&title=《'2017-FEB-01 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -447,7 +451,7 @@ Store缓冲I/O的问题，并确定了相关设置。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2017-FEB-01 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2017-FEB-01 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/02/07/2017-FEB-01_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

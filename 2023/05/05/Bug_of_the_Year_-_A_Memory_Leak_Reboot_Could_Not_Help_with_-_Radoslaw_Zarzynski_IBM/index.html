@@ -14,23 +14,28 @@
     
     
     
-    <title>Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM | ceph视频总结 | youtube频道总结</title>
+    <title>  Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议参与者  Radek  会议时间  2023年某月某日  会议主题  讨论并解决Ceph存储系统中的一个长期存在的内存泄漏（memory leak）问题  会议内容总结  问题背景与引入  Radek自2015年起从嵌入式设备领域转入Ceph存储系统的开发。 讨论了一个特殊的内存泄漏问题，该问题对重启等常规处理手段具有免疫力。  问题描述  该内存泄漏问题存在于OSD（Object">
+    <meta name="keywords" content="Ceph,Memory Leak,Bug Fixes,Storage Systems,Open Source">
+    <meta name="description" content="[改进后的中文总结内容] 在Radoslaw Zarzynski的IBM会议中，详细讨论了Ceph存储系统中一个长期存在的内存泄漏问题。以下是会议的关键要点：  问题背景：Radek自2015年起从事Ceph存储系统开发，讨论了一个特殊的内存泄漏问题，该问题对重启等常规处理手段具有免疫力。 问题描述：内存泄漏存在于OSD（Object Storage Daemon）启动时从磁盘加载的内存结构中，自">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM">
+<meta property="og:title" content="  Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议参与者  Radek  会议时间  2023年某月某日  会议主题  讨论并解决Ceph存储系统中的一个长期存在的内存泄漏（memory leak）问题  会议内容总结  问题背景与引入  Radek自2015年起从嵌入式设备领域转入Ceph存储系统的开发。 讨论了一个特殊的内存泄漏问题，该问题对重启等常规处理手段具有免疫力。  问题描述  该内存泄漏问题存在于OSD（Object">
+<meta property="og:description" content="[改进后的中文总结内容] 在Radoslaw Zarzynski的IBM会议中，详细讨论了Ceph存储系统中一个长期存在的内存泄漏问题。以下是会议的关键要点：  问题背景：Radek自2015年起从事Ceph存储系统开发，讨论了一个特殊的内存泄漏问题，该问题对重启等常规处理手段具有免疫力。 问题描述：内存泄漏存在于OSD（Object Storage Daemon）启动时从磁盘加载的内存结构中，自">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Memory Leak">
+<meta property="article:tag" content="Bug Fixes">
+<meta property="article:tag" content="Storage Systems">
+<meta property="article:tag" content="Open Source">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM</div>
+        <div class="flex-col header-title ellipsis">  Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM</h1>
+        <h1 class="title">  Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%8F%82%E4%B8%8E%E8%80%85"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议参与者</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议主题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议内容总结</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">结论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%A1%8C%E5%8A%A8%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">行动项</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM</h1>
+        <h1 class="post-card-title">  Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM  </h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
@@ -185,75 +183,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议参与者">会议参与者</h4>
-<ul>
-<li>Radek</li>
-</ul>
-<h4 id="会议时间">会议时间</h4>
-<ul>
-<li>2023年某月某日</li>
-</ul>
-<h4 id="会议主题">会议主题</h4>
-<ul>
-<li>讨论并解决Ceph存储系统中的一个长期存在的内存泄漏（memory
-leak）问题</li>
-</ul>
-<h4 id="会议内容总结">会议内容总结</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>在Radoslaw
+Zarzynski的IBM会议中，详细讨论了Ceph存储系统中一个长期存在的内存泄漏问题。以下是会议的关键要点：</p>
 <ol type="1">
-<li><strong>问题背景与引入</strong>
-<ul>
-<li>Radek自2015年起从嵌入式设备领域转入Ceph存储系统的开发。</li>
-<li>讨论了一个特殊的内存泄漏问题，该问题对重启等常规处理手段具有免疫力。</li>
-</ul></li>
-<li><strong>问题描述</strong>
-<ul>
-<li>该内存泄漏问题存在于OSD（Object Storage
-Daemon）启动时从磁盘加载的内存结构中。</li>
-<li>问题自2017年起存在于代码中，并在Octopus版本中因自动缩放器（auto
-scalar）的默认设置更改而加剧。</li>
-</ul></li>
-<li><strong>技术细节</strong>
-<ul>
-<li>问题根源在于C++标准库（STDC++）中的<code>std::list</code>容器的<code>size</code>方法在某些版本中不是常数时间复杂度。</li>
-<li>该问题导致PG锁（PG
-lock）中的dupes结构在处理重复操作时出现问题。</li>
-</ul></li>
-<li><strong>问题影响与症状</strong>
-<ul>
-<li>内存泄漏导致OSD在处理恢复和 peering
-过程时消耗更多内存和CPU资源。</li>
-<li>症状包括增加的延迟、内存使用量上升、TC
-malloc警告、以及OSD间歇性闪烁。</li>
-</ul></li>
-<li><strong>诊断方法</strong>
-<ul>
-<li>传统方法包括停止OSD并使用<code>objectstore_tool</code>工具导出PG锁，但这具有侵入性。</li>
-<li>非侵入性方法包括使用admin socket命令观察mempools统计信息。</li>
-</ul></li>
-<li><strong>解决方案与修复</strong>
-<ul>
-<li>修复工作分为多个阶段，首先解决离线工具（CLT）对dupes结构的无知问题。</li>
-<li>在线修复涉及在OSD启动时逐步清理膨胀的dupes条目，避免一次性大量删除导致的问题。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>
-<ul>
-<li>继续监控和优化修复措施，确保集群稳定运行。</li>
-<li>开发和部署更多的诊断工具，以便未来能更有效地发现和处理类似问题。</li>
-</ul></li>
+<li><p><strong>问题背景</strong>：Radek自2015年起从事Ceph存储系统开发，讨论了一个特殊的内存泄漏问题，该问题对重启等常规处理手段具有免疫力。</p></li>
+<li><p><strong>问题描述</strong>：内存泄漏存在于OSD（Object Storage
+Daemon）启动时从磁盘加载的内存结构中，自2017年起存在于代码中，并在Octopus版本中因自动缩放器（auto
+scalar）的默认设置更改而加剧。</p></li>
+<li><p><strong>技术细节</strong>：问题根源在于C++标准库（STDC++）中的<code>std::list</code>容器的<code>size</code>方法在某些版本中不是常数时间复杂度，导致PG锁（PG
+lock）中的dupes结构在处理重复操作时出现问题。</p></li>
+<li><p><strong>问题影响与症状</strong>：内存泄漏导致OSD在处理恢复和peering过程时消耗更多内存和CPU资源，症状包括增加的延迟、内存使用量上升、TC
+malloc警告、以及OSD间歇性闪烁。</p></li>
+<li><p><strong>诊断方法</strong>：传统方法包括使用<code>objectstore_tool</code>工具导出PG锁，但具有侵入性。非侵入性方法包括使用admin
+socket命令观察mempools统计信息。</p></li>
+<li><p><strong>解决方案与修复</strong>：修复工作分为多个阶段，解决离线工具（CLT）对dupes结构的无知问题，并在OSD启动时逐步清理膨胀的dupes条目。</p></li>
+<li><p><strong>后续行动计划</strong>：继续监控和优化修复措施，开发更多的诊断工具，加强代码审查和测试流程。</p></li>
 </ol>
-<h4 id="结论">结论</h4>
-<ul>
-<li>该内存泄漏问题虽然复杂且难以诊断，但通过团队的共同努力，已经找到了有效的修复方法。未来将加强代码审查和测试，以防止类似问题再次发生。</li>
-</ul>
-<h4 id="行动项">行动项</h4>
-<ul>
-<li>继续监控修复后的集群性能。</li>
-<li>开发和部署新的诊断工具。</li>
-<li>加强代码审查和测试流程。</li>
-</ul>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
+<p>会议强调了内存泄漏问题的复杂性和难以诊断的特点，但通过团队的努力，已经找到了有效的修复方法。未来将加强代码审查和测试，以防止类似问题再次发生。</p>
 
         </div>
 
@@ -284,6 +231,8 @@ malloc警告、以及OSD间歇性闪烁。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bug-Fixes/" rel="tag">Bug Fixes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Memory-Leak/" rel="tag">Memory Leak</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Open-Source/" rel="tag">Open Source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Systems/" rel="tag">Storage Systems</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -295,7 +244,7 @@ malloc警告、以及OSD间歇性闪烁。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/&title=《Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/&title=《  Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -305,7 +254,7 @@ malloc警告、以及OSD间歇性闪烁。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/&title=《Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/&title=《  Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -315,7 +264,7 @@ malloc警告、以及OSD间歇性闪烁。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -343,18 +292,18 @@ malloc警告、以及OSD间歇性闪烁。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/05/BlueStore_V2_-_an_Evolutionary_Step_Forward_-_Adam_Kupczyk_IBM_Mark_Nelson_Clyso_GmbH/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Building_and_Scaling_Data_Pipelines_for_Data_Engineering_With_Ceph_Object_Storage_-_Kyle_Bader_IBM/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">BlueStore V2 - an Evolutionary Step Forward - Adam Kupczyk, IBM &amp; Mark Nelson, Clyso GmbH</h4>
+        <h4 class="title">Building and Scaling Data Pipelines for Data Engineering With Ceph Object Storage - Kyle Bader, IBM</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/05/Building_and_Scaling_Data_Pipelines_for_Data_Engineering_With_Ceph_Object_Storage_-_Kyle_Bader_IBM/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Building and Scaling Data Pipelines for Data Engineering With Ceph Object Storage - Kyle Bader, IBM</h4>
+        <h4 class="title">&#39;Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH&#39;</h4>
       </a>
     </div>
   
@@ -454,7 +403,7 @@ malloc警告、以及OSD间歇性闪烁。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/&title=《Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/&title=《  Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -464,7 +413,7 @@ malloc警告、以及OSD间歇性闪烁。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/&title=《Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/&title=《  Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -474,7 +423,7 @@ malloc警告、以及OSD间歇性闪烁。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

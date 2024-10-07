@@ -14,23 +14,29 @@
     
     
     
-    <title>CDS Infernalis (Day 1) -- RGW: Active/Active Arch | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;CDS Infernalis (Day 1) -- RGW: Active/Active Arch&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： RGW（Rados Gateway）的Active-Active架构讨论 参会人员： Yehuda（会议主持人）、其他研发人员 会议内容： 1. 当前架构概述  介绍当前RGW的多区域、多区域架构，包括区域（Region）、区域组（Zone Group）、区域（Zone）等概念。 解释了区域组的灾难恢复机制，即每个区域组内有一个主区域和一个或多个辅助区域，用于数据备份和恢复。">
+    <meta name="keywords" content="Ceph,分布式存储,RGW,Active,Active 架构,同步机制">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： RGW（Rados Gateway）的Active-Active架构设计与实现讨论 参会人员： Yehuda（会议主持人）、其他研发人员 会议内容： 1. 当前架构概述  介绍了RGW的多区域、多区域组、区域等概念，以及区域组的灾难恢复机制。 解释了在多区域环境中，数据分布在主区域和辅助区域，以提高可用性和数据冗余。  2. Active-Activ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Infernalis (Day 1) -- RGW: Active&#x2F;Active Arch">
+<meta property="og:title" content="&#39;CDS Infernalis (Day 1) -- RGW: Active&#x2F;Active Arch&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： RGW（Rados Gateway）的Active-Active架构讨论 参会人员： Yehuda（会议主持人）、其他研发人员 会议内容： 1. 当前架构概述  介绍当前RGW的多区域、多区域架构，包括区域（Region）、区域组（Zone Group）、区域（Zone）等概念。 解释了区域组的灾难恢复机制，即每个区域组内有一个主区域和一个或多个辅助区域，用于数据备份和恢复。">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： RGW（Rados Gateway）的Active-Active架构设计与实现讨论 参会人员： Yehuda（会议主持人）、其他研发人员 会议内容： 1. 当前架构概述  介绍了RGW的多区域、多区域组、区域等概念，以及区域组的灾难恢复机制。 解释了在多区域环境中，数据分布在主区域和辅助区域，以提高可用性和数据冗余。  2. Active-Activ">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-03-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-03-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Active">
+<meta property="article:tag" content="Active 架构">
+<meta property="article:tag" content="同步机制">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Infernalis (Day 1) -- RGW: Active/Active Arch</div>
+        <div class="flex-col header-title ellipsis">&#39;CDS Infernalis (Day 1) -- RGW: Active/Active Arch&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Infernalis (Day 1) -- RGW: Active/Active Arch</h1>
+        <h1 class="title">&#39;CDS Infernalis (Day 1) -- RGW: Active/Active Arch&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2015-03-05T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +174,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Infernalis (Day 1) -- RGW: Active/Active Arch</h1>
+        <h1 class="post-card-title">'CDS Infernalis (Day 1) -- RGW: Active/Active Arch'</h1>
         <div class="post-meta">
             <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
 
@@ -185,25 +191,25 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议主题</strong>： RGW（Rados
-Gateway）的Active-Active架构讨论</p>
+Gateway）的Active-Active架构设计与实现讨论</p>
 <p><strong>参会人员</strong>： Yehuda（会议主持人）、其他研发人员</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>1. 当前架构概述</strong></p>
 <ul>
-<li>介绍当前RGW的多区域、多区域架构，包括区域（Region）、区域组（Zone
-Group）、区域（Zone）等概念。</li>
-<li>解释了区域组的灾难恢复机制，即每个区域组内有一个主区域和一个或多个辅助区域，用于数据备份和恢复。</li>
+<li>介绍了RGW的多区域、多区域组、区域等概念，以及区域组的灾难恢复机制。</li>
+<li>解释了在多区域环境中，数据分布在主区域和辅助区域，以提高可用性和数据冗余。</li>
 </ul>
 <p><strong>2. Active-Active架构的挑战</strong></p>
 <ul>
 <li><strong>区域概念混淆</strong>：
-“区域”一词容易与数据中心混淆，建议将“区域”更名为“区域组”，以避免混淆。</li>
+由于“区域”一词与数据中心相似，建议将“区域”更名为“区域组”，以避免混淆。</li>
 <li><strong>单区域写入问题</strong>：
-当前架构下，每个区域组内仅有一个可写入的区域，限制了读写操作的灵活性。</li>
+当前架构下，每个区域组内仅有一个可写入的区域，限制了读写操作的灵活性和性能。</li>
 <li><strong>同步机制</strong>：
-需要改进同步机制，使数据在不同区域组之间保持一致性。</li>
+需要改进同步机制，确保数据在不同区域组之间的一致性。</li>
 <li><strong>对象版本控制</strong>：
 需要改进对象版本控制机制，以支持多区域环境。</li>
 </ul>
@@ -212,17 +218,17 @@ Group）、区域（Zone）等概念。</li>
 <li><strong>区域组名称变更</strong>：
 将“区域”更名为“区域组”，以避免混淆。</li>
 <li><strong>多区域写入</strong>：
-支持每个区域组内的多个区域进行读写操作，提高读写性能和可用性。</li>
+支持每个区域组内的多个区域进行读写操作，提高性能和可用性。</li>
 <li><strong>改进同步机制</strong>：
 <ul>
 <li>每个区域维护自己的日志，以便跟踪其他区域的变化。</li>
 <li>同步代理（Sync Agent）负责同步区域之间的日志，并执行相关命令。</li>
-<li>需要处理不同区域上的同一对象上的更改冲突。</li>
+<li>处理不同区域上的同一对象上的更改冲突。</li>
 </ul></li>
 <li><strong>对象版本控制</strong>：
 <ul>
 <li>使用计数器和时间戳的组合来替换当前的Epoch方案，以保持对象版本顺序。</li>
-<li>需要处理同一时间戳上的更改冲突。</li>
+<li>处理同一时间戳上的更改冲突。</li>
 </ul></li>
 </ul>
 <p><strong>4. 其他讨论</strong></p>
@@ -269,6 +275,8 @@ Active-Active架构、区域组、区域、同步、对象版本控制、同步�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Active/" rel="tag">Active</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Active-%E6%9E%B6%E6%9E%84/" rel="tag">Active 架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/" rel="tag">同步机制</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -280,7 +288,7 @@ Active-Active架构、区域组、区域、同步、对象版本控制、同步�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/&title=《CDS Infernalis (Day 1) -- RGW: Active/Active Arch》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/&title=《'CDS Infernalis (Day 1) -- RGW: Active/Active Arch'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -290,7 +298,7 @@ Active-Active架构、区域组、区域、同步、对象版本控制、同步�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/&title=《CDS Infernalis (Day 1) -- RGW: Active/Active Arch》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/&title=《'CDS Infernalis (Day 1) -- RGW: Active/Active Arch'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -300,7 +308,7 @@ Active-Active架构、区域组、区域、同步、对象版本控制、同步�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Infernalis (Day 1) -- RGW: Active/Active Arch》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CDS Infernalis (Day 1) -- RGW: Active/Active Arch'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -328,18 +336,18 @@ Active-Active架构、区域组、区域、同步、对象版本控制、同步�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_Ceph_Plugins/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Scrub_and_Repair/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Infernalis (Day 1) -- Ceph Plugins</h4>
+        <h4 class="title">  CDS Infernalis (Day 1) -- OSD: Scrub and Repair  </h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_NFS/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_Simple_ceph-mon_dm-crypt_key_management/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Infernalis (Day 1) -- RGW: NFS</h4>
+        <h4 class="title">CDS Infernalis (Day 1) -- 简单的ceph-mon dm-crypt密钥管理</h4>
       </a>
     </div>
   
@@ -439,7 +447,7 @@ Active-Active架构、区域组、区域、同步、对象版本控制、同步�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/&title=《CDS Infernalis (Day 1) -- RGW: Active/Active Arch》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/&title=《'CDS Infernalis (Day 1) -- RGW: Active/Active Arch'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -449,7 +457,7 @@ Active-Active架构、区域组、区域、同步、对象版本控制、同步�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/&title=《CDS Infernalis (Day 1) -- RGW: Active/Active Arch》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/&title=《'CDS Infernalis (Day 1) -- RGW: Active/Active Arch'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -459,7 +467,7 @@ Active-Active架构、区域组、区域、同步、对象版本控制、同步�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Infernalis (Day 1) -- RGW: Active/Active Arch》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CDS Infernalis (Day 1) -- RGW: Active/Active Arch'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Active_Active_Arch/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

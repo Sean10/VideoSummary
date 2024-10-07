@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2014年（具体日期未提及） 会议主题： Calamari API 路线图概述 参会人员： Gregory（Dr. Mino）、Dan、Armando、Tim、James 等 会议内容： 一、Calamari API 概述  Calamari 重新定义： 将 Calamari 定位为后端服务层和 API 层，去除图形用户界面（GUI），以便更聚焦于 API 本身及其功能。 C">
+    <meta name="keywords" content="Ceph,OpenStack,RESTful API,Calamari API,Community Involvement">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议详细讨论了 Calamari API 的现状、目标和未来发展方向。以下是对会议内容的总结： Calamari API 概述  Calamari 重新定义： 将 Calamari 定位为后端服务层和 API 层，去除图形用户界面（GUI），聚焦于 API 本身及其功能。 Calamari 目标： 实现与 Rados、RBD 和 RGW 命令行工具的功能对等，提供一致">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CDS Hammer (Day 1) - Calamari API Roadmap">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Calamari_API_Roadmap/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2014年（具体日期未提及） 会议主题： Calamari API 路线图概述 参会人员： Gregory（Dr. Mino）、Dan、Armando、Tim、James 等 会议内容： 一、Calamari API 概述  Calamari 重新定义： 将 Calamari 定位为后端服务层和 API 层，去除图形用户界面（GUI），以便更聚焦于 API 本身及其功能。 C">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议详细讨论了 Calamari API 的现状、目标和未来发展方向。以下是对会议内容的总结： Calamari API 概述  Calamari 重新定义： 将 Calamari 定位为后端服务层和 API 层，去除图形用户界面（GUI），聚焦于 API 本身及其功能。 Calamari 目标： 实现与 Rados、RBD 和 RGW 命令行工具的功能对等，提供一致">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2014-10-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2014-10-29T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="OpenStack">
+<meta property="article:tag" content="RESTful API">
+<meta property="article:tag" content="Calamari API">
+<meta property="article:tag" content="Community Involvement">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,45 +183,39 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： 2014年（具体日期未提及）</p>
-<p><strong>会议主题</strong>： Calamari API 路线图概述</p>
-<p><strong>参会人员</strong>： Gregory（Dr.
-Mino）、Dan、Armando、Tim、James 等</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>一、Calamari API 概述</strong></p>
-<ol type="1">
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议详细讨论了 Calamari API
+的现状、目标和未来发展方向。以下是对会议内容的总结：</p>
+<p><strong>Calamari API 概述</strong></p>
+<ul>
 <li><strong>Calamari 重新定义</strong>： 将 Calamari 定位为后端服务层和
-API 层，去除图形用户界面（GUI），以便更聚焦于 API 本身及其功能。</li>
+API 层，去除图形用户界面（GUI），聚焦于 API 本身及其功能。</li>
 <li><strong>Calamari 目标</strong>： 实现与 Rados、RBD 和 RGW
 命令行工具的功能对等，提供一致的 RESTful 接口，并支持异步操作。</li>
-<li><strong>Calamari 优势</strong>：
-<ul>
-<li>提供一致的 RESTful 接口，方便开发者使用。</li>
-<li>支持异步操作，提高用户体验。</li>
-<li>与其他 Ceph 管理、监控工具兼容。</li>
-</ul></li>
-</ol>
-<p><strong>二、Calamari 目标用户</strong></p>
+<li><strong>Calamari 优势</strong>： 提供一致的 RESTful
+接口，方便开发者使用；支持异步操作，提高用户体验；与其他 Ceph
+管理、监控工具兼容。</li>
+</ul>
+<p><strong>Calamari 目标用户</strong></p>
 <ul>
 <li>Ceph 社区成员</li>
 <li>Red Hat 社区成员</li>
 <li>开源社区项目</li>
 <li>OpenStack 等云平台</li>
 </ul>
-<p><strong>三、Calamari 当前状态</strong></p>
+<p><strong>Calamari 当前状态</strong></p>
 <ul>
 <li>已实现约 30 个 Rados 命令的功能。</li>
 <li>已覆盖 OSD 和 Pool 相关功能。</li>
 <li>对 Mon 和 Metadata Server 的支持较少。</li>
 </ul>
-<p><strong>四、Calamari 1.3 版本计划</strong></p>
+<p><strong>Calamari 1.3 版本计划</strong></p>
 <ul>
 <li>改进 Crush 支持功能，包括管理节点和规则。</li>
 <li>在 GUI 中展示多集群功能。</li>
 <li>引入基于角色的授权机制。</li>
 </ul>
-<p><strong>五、社区参与机会</strong></p>
+<p><strong>社区参与机会</strong></p>
 <ul>
 <li>贡献文档</li>
 <li>报告新功能需求</li>
@@ -224,19 +223,18 @@ API 层，去除图形用户界面（GUI），以便更聚焦于 API 本身及�
 <li>开发和打包 Calamari</li>
 <li>贡献代码</li>
 </ul>
-<p><strong>六、行动计划</strong></p>
+<p><strong>行动计划</strong></p>
 <ul>
 <li>完成Calamari 1.3 版本开发。</li>
 <li>推动Calamari 在更多发行版中打包。</li>
 <li>加强社区参与和沟通。</li>
 </ul>
-<p><strong>七、其他</strong></p>
+<p><strong>其他</strong></p>
 <ul>
 <li>讨论了与其他 Ceph 管理、监控工具的兼容性。</li>
 <li>讨论了 Calamari GUI 的命名问题。</li>
 <li>讨论了 Calamari 依赖包的打包问题。</li>
 </ul>
-<p><strong>总结</strong>：</p>
 <p>本次会议对 Calamari API
 的现状、目标和未来计划进行了详细的讨论，并明确了社区参与的机会。Calamari
 作为 Ceph 的一个重要管理工具，将在 Ceph 社区中发挥越来越重要的作用。</p>
@@ -270,6 +268,8 @@ API 层，去除图形用户界面（GUI），以便更聚焦于 API 本身及�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Calamari-API/" rel="tag">Calamari API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Community-Involvement/" rel="tag">Community Involvement</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack/" rel="tag">OpenStack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RESTful-API/" rel="tag">RESTful API</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -329,18 +329,18 @@ API 层，去除图形用户界面（GUI），以便更聚焦于 API 本身及�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Accelio_RDMA_Messenger/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Buffer_Encoding/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Hammer (Day 1) - Accelio RDMA Messenger</h4>
+        <h4 class="title">CDS Hammer (Day 1) - Buffer Encoding</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_OSD_-_Opportunistic_Whole-Object_Checksums/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Hammer (Day 1) - OSD: Opportunistic Whole-Object Checksums</h4>
+        <h4 class="title">  CDS Hammer (Day 1) - Import/Export // Local Import  </h4>
       </a>
     </div>
   

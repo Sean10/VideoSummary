@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议主要讨论了Ceph存储系统中关于管理器（manager）的高可用性（HA）实现，特别是通过使用keepalived来管理虚拟IP的问题。会议中涉及了多个技术细节和潜在的解决方案，以及后续的行动计划。 主要议题  Keepalived与管理器集成：  讨论了如何使用keepalived为管理器提供一个稳定的虚拟IP，以便外部Prometheus实例可以稳定地抓取数据。 探">
+    <meta name="keywords" content="Ceph,High Availability,Keepalived,Manager,Virtual IP">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议主要讨论了Ceph存储系统中管理器（manager）的高可用性（HA）实现，特别是通过使用keepalived来管理虚拟IP（Virtual IP）的问题。会议中涉及了多个技术细节和潜在的解决方案，以及后续的行动计划。 主要议题  Keepalived与管理器集成：  讨论了如何使用keepalived为管理器提供一个稳定的虚拟IP，以便外部P">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2023-02-07">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/02/08/Ceph_Orchestrator_Meeting_2023-02-07/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议主要讨论了Ceph存储系统中关于管理器（manager）的高可用性（HA）实现，特别是通过使用keepalived来管理虚拟IP的问题。会议中涉及了多个技术细节和潜在的解决方案，以及后续的行动计划。 主要议题  Keepalived与管理器集成：  讨论了如何使用keepalived为管理器提供一个稳定的虚拟IP，以便外部Prometheus实例可以稳定地抓取数据。 探">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议主要讨论了Ceph存储系统中管理器（manager）的高可用性（HA）实现，特别是通过使用keepalived来管理虚拟IP（Virtual IP）的问题。会议中涉及了多个技术细节和潜在的解决方案，以及后续的行动计划。 主要议题  Keepalived与管理器集成：  讨论了如何使用keepalived为管理器提供一个稳定的虚拟IP，以便外部P">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-07T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-02-07T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="High Availability">
+<meta property="article:tag" content="Keepalived">
+<meta property="article:tag" content="Manager">
+<meta property="article:tag" content="Virtual IP">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,9 +190,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概述">会议概述</h4>
-<p>本次会议主要讨论了Ceph存储系统中关于管理器（manager）的高可用性（HA）实现，特别是通过使用keepalived来管理虚拟IP的问题。会议中涉及了多个技术细节和潜在的解决方案，以及后续的行动计划。</p>
+<p>本次会议主要讨论了Ceph存储系统中管理器（manager）的高可用性（HA）实现，特别是通过使用keepalived来管理虚拟IP（Virtual
+IP）的问题。会议中涉及了多个技术细节和潜在的解决方案，以及后续的行动计划。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>Keepalived与管理器集成</strong>：
@@ -274,6 +281,8 @@ Slack上有相关的讨论和拉取请求（pull request），但问题仍未完
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High-Availability/" rel="tag">High Availability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Keepalived/" rel="tag">Keepalived</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Manager/" rel="tag">Manager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Virtual-IP/" rel="tag">Virtual IP</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -344,7 +353,7 @@ Slack上有相关的讨论和拉取请求（pull request），但问题仍未完
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2023-02-02</h4>
+        <h4 class="title">Ceph 性能会议纪要 2023-02-02</h4>
       </a>
     </div>
   

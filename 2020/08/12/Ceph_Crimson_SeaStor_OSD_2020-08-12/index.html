@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  参会人员: 会议涉及多名研发人员，包括但不限于Sam、Tremaine等。 会议时间: 最近一周。  讨论的主要议题  结构测试与技术门槛测试:  Tremaine上周在进行基于技术的门槛测试和修复工作。 发现存储检测器在Cremation启动时发出警告，原因是使用了阻塞API读取配置文件。 已改为使用异步IO（Async IO）来消除警告。  代码审查与PR更新:  Tre">
+    <meta name="keywords" content="Ceph,分布式存储,性能测试,代码审查,缓存管理">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  参会人员: 多名研发人员，包括Sam、Tremaine等。 会议时间: 最近一周。  讨论的主要议题  结构测试与技术门槛测试:  Tremaine进行了技术门槛测试和修复工作，发现并解决了Cremation启动时存储检测器发出警告的问题。 问题原因为使用阻塞API读取配置文件，已改为使用异步IO（Async IO）解决。  代码审查与PR更新:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;SeaStor OSD 2020-08-12">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/08/12/Ceph_Crimson_SeaStor_OSD_2020-08-12/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  参会人员: 会议涉及多名研发人员，包括但不限于Sam、Tremaine等。 会议时间: 最近一周。  讨论的主要议题  结构测试与技术门槛测试:  Tremaine上周在进行基于技术的门槛测试和修复工作。 发现存储检测器在Cremation启动时发出警告，原因是使用了阻塞API读取配置文件。 已改为使用异步IO（Async IO）来消除警告。  代码审查与PR更新:  Tre">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  参会人员: 多名研发人员，包括Sam、Tremaine等。 会议时间: 最近一周。  讨论的主要议题  结构测试与技术门槛测试:  Tremaine进行了技术门槛测试和修复工作，发现并解决了Cremation启动时存储检测器发出警告的问题。 问题原因为使用阻塞API读取配置文件，已改为使用异步IO（Async IO）解决。  代码审查与PR更新:">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-11T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-08-12T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能测试">
+<meta property="article:tag" content="代码审查">
+<meta property="article:tag" content="缓存管理">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA%E7%82%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他讨论点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">[改进后的中文总结内容]</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA%E7%82%B9"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">其他讨论点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,31 +190,30 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <h2 id="改进后的中文总结内容">[改进后的中文总结内容]</h2>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
-<li><strong>参会人员</strong>:
-会议涉及多名研发人员，包括但不限于Sam、Tremaine等。</li>
+<li><strong>参会人员</strong>: 多名研发人员，包括Sam、Tremaine等。</li>
 <li><strong>会议时间</strong>: 最近一周。</li>
 </ul>
 <h4 id="讨论的主要议题">讨论的主要议题</h4>
 <ol type="1">
 <li><strong>结构测试与技术门槛测试</strong>:
 <ul>
-<li>Tremaine上周在进行基于技术的门槛测试和修复工作。</li>
-<li>发现存储检测器在Cremation启动时发出警告，原因是使用了阻塞API读取配置文件。</li>
-<li>已改为使用异步IO（Async IO）来消除警告。</li>
+<li>Tremaine进行了技术门槛测试和修复工作，发现并解决了Cremation启动时存储检测器发出警告的问题。</li>
+<li>问题原因为使用阻塞API读取配置文件，已改为使用异步IO（Async
+IO）解决。</li>
 </ul></li>
 <li><strong>代码审查与PR更新</strong>:
 <ul>
-<li>Tremaine本周将完成对Sam创建的PR的审查。</li>
-<li>根据Sam的评论修改了外部map3pr，并更新了PR。</li>
-<li>仍在处理omap3布局操作。</li>
+<li>Tremaine将完成对Sam创建的PR的审查，并进行了相应的修改。</li>
+<li>目前仍在处理omap3布局操作。</li>
 </ul></li>
 <li><strong>中断可处理的未来</strong>:
 <ul>
-<li>替换了所有sister future为aerator future，沿IO执行路径。</li>
-<li>正在将中断逻辑嵌入到aero radio creator中，预计几天内提交PR。</li>
+<li>替换了所有sister future为aerator future，并正在将中断逻辑嵌入到aero
+radio creator中。</li>
 </ul></li>
 <li><strong>性能回归测试</strong>:
 <ul>
@@ -218,16 +222,15 @@
 <li><strong>子树管理与内存解决方案</strong>:
 <ul>
 <li>实施并测试了带有子树管理的corporate tracking facility。</li>
-<li>正在寻找将当前基于内存的解决方案转移到systole的方法。</li>
+<li>正在寻找将基于内存的解决方案转移到systole的方法。</li>
 </ul></li>
 <li><strong>异步own entry</strong>:
 <ul>
-<li>开始处理异步own entry，有一些问题通过邮件讨论。</li>
+<li>开始处理异步own entry，并解决相关问题。</li>
 </ul></li>
 <li><strong>缓存驱逐</strong>:
 <ul>
-<li>正在编写缓存层的缓存驱逐实现。</li>
-<li>首先需要编写脏块写出，以便可以修剪日志。</li>
+<li>正在编写缓存层的缓存驱逐实现，首先需要编写脏块写出。</li>
 </ul></li>
 </ol>
 <h4 id="决定的事项">决定的事项</h4>
@@ -251,7 +254,7 @@ entry，并解决相关问题。</li>
 <h4 id="其他讨论点">其他讨论点</h4>
 <ul>
 <li><strong>逻辑地址空间的使用</strong>:
-讨论了逻辑地址空间的使用，指出当前的用法较为简单，未来可能需要更复杂的策略。</li>
+讨论了逻辑地址空间的使用，指出当前用法简单，未来可能需要更复杂的策略。</li>
 <li><strong>多核支持</strong>:
 讨论了多核支持的问题，包括多进程和多线程的策略。</li>
 </ul>
@@ -287,6 +290,8 @@ entry，并解决相关问题。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5/" rel="tag">代码审查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">性能测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BC%93%E5%AD%98%E7%AE%A1%E7%90%86/" rel="tag">缓存管理</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -357,7 +362,7 @@ entry，并解决相关问题。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2020/08/12/Ceph_DocuBetter_Meeting_2020-08-12/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph DocuBetter Meeting 2020-08-12</h4>
+        <h4 class="title">  Ceph DocuBetter Meeting 2020-08-12  </h4>
       </a>
     </div>
   

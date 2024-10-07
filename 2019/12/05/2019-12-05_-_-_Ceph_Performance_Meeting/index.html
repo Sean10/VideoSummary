@@ -14,23 +14,28 @@
     
     
     
-    <title>2019-12-05 :: Ceph Performance Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2019-12-05 :: Ceph 性能会议&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  时间: 本周 参与人员: 团队成员（Patrick, David, Akutan, Igor, Adam, Eric, Mark, Josh, Brett, Matt, Alex Calhoun等） 主要议题: 讨论和回顾本周的Pull Requests（PRs），以及关于持久内存（Persistent Memory）和平衡器（Balancer）的讨论。  讨论的主要议题">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,持久内存,自动标量">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  时间: 本周 参与人员: Patrick, David, Akutan, Igor, Adam, Eric, Mark, Josh, Brett, Matt, Alex Calhoun 等团队成员 主要议题: 讨论和回顾本周的 Pull Requests（PRs），以及关于持久内存（Persistent Memory）和平衡器（Balancer）的讨">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-12-05 :: Ceph Performance Meeting">
+<meta property="og:title" content="&#39;2019-12-05 :: Ceph 性能会议&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/12/05/2019-12-05_-_-_Ceph_Performance_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  时间: 本周 参与人员: 团队成员（Patrick, David, Akutan, Igor, Adam, Eric, Mark, Josh, Brett, Matt, Alex Calhoun等） 主要议题: 讨论和回顾本周的Pull Requests（PRs），以及关于持久内存（Persistent Memory）和平衡器（Balancer）的讨论。  讨论的主要议题">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  时间: 本周 参与人员: Patrick, David, Akutan, Igor, Adam, Eric, Mark, Josh, Brett, Matt, Alex Calhoun 等团队成员 主要议题: 讨论和回顾本周的 Pull Requests（PRs），以及关于持久内存（Persistent Memory）和平衡器（Balancer）的讨">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-12-05T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="持久内存">
+<meta property="article:tag" content="自动标量">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-12-05 :: Ceph Performance Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2019-12-05 :: Ceph 性能会议&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-12-05 :: Ceph Performance Meeting</h1>
+        <h1 class="title">&#39;2019-12-05 :: Ceph 性能会议&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-12-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-12-05 :: Ceph Performance Meeting</h1>
+        <h1 class="post-card-title">'2019-12-05 :: Ceph 性能会议'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-12-05 00:00:00" datetime="2019-12-04T16:00:00.000Z"  itemprop="datePublished">2019-12-05</time>
 
@@ -185,13 +190,14 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
 <li><strong>时间</strong>: 本周</li>
-<li><strong>参与人员</strong>: 团队成员（Patrick, David, Akutan, Igor,
-Adam, Eric, Mark, Josh, Brett, Matt, Alex Calhoun等）</li>
-<li><strong>主要议题</strong>: 讨论和回顾本周的Pull
+<li><strong>参与人员</strong>: Patrick, David, Akutan, Igor, Adam, Eric,
+Mark, Josh, Brett, Matt, Alex Calhoun 等团队成员</li>
+<li><strong>主要议题</strong>: 讨论和回顾本周的 Pull
 Requests（PRs），以及关于持久内存（Persistent
 Memory）和平衡器（Balancer）的讨论。</li>
 </ul>
@@ -199,20 +205,22 @@ Memory）和平衡器（Balancer）的讨论。</li>
 <ol type="1">
 <li><strong>PRs回顾</strong>:
 <ul>
-<li>Patrick的PR：在MDS中释放reheat页面，类似于OSD和Mons中的处理方式。</li>
-<li>David的PR：平衡器修复，已合并。</li>
-<li>MDS CPU亲和性PR：已合并。</li>
-<li>自动标量默认PG计数增加：从8增加到16。</li>
-<li>增强OSD Numa亲和性兼容性PR：已合并。</li>
+<li>Patrick 的 PR：在 MDS 中释放 reheat 页面，类似于 OSD 和 Mons
+的处理方式。</li>
+<li>David 的 PR：平衡器修复，已合并。</li>
+<li>MDS CPU 亲和性 PR：已合并。</li>
+<li>自动标量默认 PG 计数增加：从 8 增加到 16。</li>
+<li>增强 OSD Numa 亲和性兼容性 PR：已合并。</li>
 <li>删除范围（Delete Range）PR：已合并。</li>
-<li>O节点固定代码PR：已合并，但存在段错误问题，需进一步观察。</li>
-<li>其他PRs：由于长时间未更新，被stale bot关闭。</li>
+<li>O 节点固定代码 PR：已合并，但存在段错误问题，需进一步观察。</li>
+<li>其他 PRs：由于长时间未更新，被 stale bot 关闭。</li>
 </ul></li>
 <li><strong>持久内存（Persistent Memory）讨论</strong>:
 <ul>
 <li>讨论了持久内存的使用和潜在的性能提升。</li>
-<li>讨论了如何利用持久内存API和库，以及如何处理内存分配和事务问题。</li>
-<li>提出了使用持久内存来优化PG日志的存储和恢复过程。</li>
+<li>讨论了如何利用持久内存 API
+和库，以及如何处理内存分配和事务问题。</li>
+<li>提出了使用持久内存来优化 PG 日志的存储和恢复过程。</li>
 </ul></li>
 <li><strong>平衡器（Balancer）和自动标量（Autoscaler）的协同工作</strong>:
 <ul>
@@ -222,10 +230,11 @@ Memory）和平衡器（Balancer）的讨论。</li>
 </ol>
 <h4 id="决定的事项">决定的事项</h4>
 <ul>
-<li><strong>文档更新</strong>:
-Mark将提交一个PR，更新关于OSD内存目标的文档，建议不推荐将OSD内存目标设置低于默认值。</li>
+<li><strong>文档更新</strong>: Mark 将提交一个 PR，更新关于 OSD
+内存目标的文档，建议不推荐将 OSD 内存目标设置低于默认值。</li>
 <li><strong>持久内存的进一步研究</strong>:
-团队将组建一个工作组，进一步研究如何利用持久内存来优化Ceph的性能。</li>
+团队将组建一个工作组，进一步研究如何利用持久内存来优化 Ceph
+的性能。</li>
 </ul>
 <h4 id="后续的行动计划">后续的行动计划</h4>
 <ul>
@@ -233,8 +242,8 @@ Mark将提交一个PR，更新关于OSD内存目标的文档，建议不推荐�
 获取带有持久内存的开发机器，进行实验和测试。</li>
 <li><strong>平衡器和自动标量的进一步测试</strong>:
 进行更多测试，确保平衡器和自动标量在实际工作负载下的协同工作效果。</li>
-<li><strong>文档更新PR的审查</strong>:
-团队成员将对Mark提交的文档更新PR进行审查。</li>
+<li><strong>文档更新 PR 的审查</strong>: 团队成员将对 Mark
+提交的文档更新 PR 进行审查。</li>
 </ul>
 <h4 id="其他讨论">其他讨论</h4>
 <ul>
@@ -244,7 +253,8 @@ Mark将提交一个PR，更新关于OSD内存目标的文档，建议不推荐�
 讨论了在实际集群中如何配置和使用平衡器和自动标量，以优化性能和资源利用。</li>
 </ul>
 <h3 id="结论">结论</h3>
-<p>会议涵盖了多个技术议题，特别是关于持久内存和平衡器的讨论，团队成员积极参与并提出了建设性的意见和建议。后续将通过实验和测试来验证这些想法，并进一步优化Ceph的性能和稳定性。</p>
+<p>会议涵盖了多个技术议题，特别是关于持久内存和平衡器的讨论，团队成员积极参与并提出了建设性的意见和建议。后续将通过实验和测试来验证这些想法，并进一步优化
+Ceph 的性能和稳定性。</p>
 
         </div>
 
@@ -275,6 +285,8 @@ Mark将提交一个PR，更新关于OSD内存目标的文档，建议不推荐�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8C%81%E4%B9%85%E5%86%85%E5%AD%98/" rel="tag">持久内存</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E6%A0%87%E9%87%8F/" rel="tag">自动标量</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -286,7 +298,7 @@ Mark将提交一个PR，更新关于OSD内存目标的文档，建议不推荐�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/12/05/2019-12-05_-_-_Ceph_Performance_Meeting/&title=《2019-12-05 :: Ceph Performance Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/12/05/2019-12-05_-_-_Ceph_Performance_Meeting/&title=《'2019-12-05 :: Ceph 性能会议'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -296,7 +308,7 @@ Mark将提交一个PR，更新关于OSD内存目标的文档，建议不推荐�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/12/05/2019-12-05_-_-_Ceph_Performance_Meeting/&title=《2019-12-05 :: Ceph Performance Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/12/05/2019-12-05_-_-_Ceph_Performance_Meeting/&title=《'2019-12-05 :: Ceph 性能会议'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -306,7 +318,7 @@ Mark将提交一个PR，更新关于OSD内存目标的文档，建议不推荐�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-12-05 :: Ceph Performance Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/12/05/2019-12-05_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-12-05 :: Ceph 性能会议'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/12/05/2019-12-05_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -336,16 +348,16 @@ Mark将提交一个PR，更新关于OSD内存目标的文档，建议不推荐�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2019/12/05/2019-12-04_-_-_Ceph_Developer_Monthly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-12-04 :: Ceph Developer Monthly</h4>
+        <h4 class="title"> 2019-12-04 :: Ceph Developer Monthly </h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/12/05/2019-12-03_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/12/04/2019-12-03_-_-_Ceph_Testing_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-12-03 :: Crimson SeaStor OSD Weekly Meeting</h4>
+        <h4 class="title">&#39;2019-12-03 :: Ceph 测试会议&#39;</h4>
       </a>
     </div>
   
@@ -445,7 +457,7 @@ Mark将提交一个PR，更新关于OSD内存目标的文档，建议不推荐�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/12/05/2019-12-05_-_-_Ceph_Performance_Meeting/&title=《2019-12-05 :: Ceph Performance Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/12/05/2019-12-05_-_-_Ceph_Performance_Meeting/&title=《'2019-12-05 :: Ceph 性能会议'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -455,7 +467,7 @@ Mark将提交一个PR，更新关于OSD内存目标的文档，建议不推荐�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/12/05/2019-12-05_-_-_Ceph_Performance_Meeting/&title=《2019-12-05 :: Ceph Performance Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/12/05/2019-12-05_-_-_Ceph_Performance_Meeting/&title=《'2019-12-05 :: Ceph 性能会议'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -465,7 +477,7 @@ Mark将提交一个PR，更新关于OSD内存目标的文档，建议不推荐�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-12-05 :: Ceph Performance Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/12/05/2019-12-05_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-12-05 :: Ceph 性能会议'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/12/05/2019-12-05_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间：[具体日期] 参会人员：[参会人员名单]  主要议题及讨论内容 1. Open Source Day 活动准备  日期确认：Open Source Day 将于16日（周五）举行。 活动内容：活动中将邀请参与者解决一些低难度的技术问题（low hanging fruit issues）。 问题管理：会议中提到需要确保这些问题列表中的任务确实属于低难度，以便参与者能够在一日内完成">
+    <meta name="keywords" content="Ceph,RGW,Ceph Orchestrator,Open Source Day,Compilation">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间：2022年9月13日 参会人员：[参会人员名单]  主要议题及讨论内容 1. Open Source Day 活动准备  日期确认：Open Source Day 将于9月16日（周五）举行。 活动内容：活动中将邀请参与者解决一些低难度的技术问题（low hanging fruit issues）。 问题管理：会议中提到需要确保这些问题列表中的任务确实">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2022-09-13">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/10/12/Ceph_Orchestrator_Meeting_2022-09-13/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间：[具体日期] 参会人员：[参会人员名单]  主要议题及讨论内容 1. Open Source Day 活动准备  日期确认：Open Source Day 将于16日（周五）举行。 活动内容：活动中将邀请参与者解决一些低难度的技术问题（low hanging fruit issues）。 问题管理：会议中提到需要确保这些问题列表中的任务确实属于低难度，以便参与者能够在一日内完成">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间：2022年9月13日 参会人员：[参会人员名单]  主要议题及讨论内容 1. Open Source Day 活动准备  日期确认：Open Source Day 将于9月16日（周五）举行。 活动内容：活动中将邀请参与者解决一些低难度的技术问题（low hanging fruit issues）。 问题管理：会议中提到需要确保这些问题列表中的任务确实">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-10-11T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-10-12T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Ceph Orchestrator">
+<meta property="article:tag" content="Open Source Day">
+<meta property="article:tag" content="Compilation">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,8 +164,8 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：[参会人员名单]</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E5%8F%8A%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">2.</span> <span class="post-toc-text">主要议题及讨论内容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#open-source-day-%E6%B4%BB%E5%8A%A8%E5%87%86%E5%A4%87"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. Open Source Day 活动准备</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BC%96%E8%AF%91%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9Ccompile-stuff-idiom"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 编译相关工作（Compile Stuff
-Idiom）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#rgwrados-gateway%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3. RGW（RADOS Gateway）相关工作</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">5.</span> <span class="post-toc-text">会议结束</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%BA%BA%E8%AE%B0%E5%BD%95%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">会议记录人：[记录人姓名]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AE%A1%E6%A0%B8%E4%BA%BA%E5%AE%A1%E6%A0%B8%E4%BA%BA%E5%A7%93%E5%90%8D%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">审核人：[审核人姓名]会议纪要：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B42022%E5%B9%B49%E6%9C%8813%E6%97%A5"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议时间：2022年9月13日</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：[参会人员名单]</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E5%8F%8A%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">2.</span> <span class="post-toc-text">主要议题及讨论内容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#open-source-day-%E6%B4%BB%E5%8A%A8%E5%87%86%E5%A4%87"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. Open Source Day 活动准备</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BC%96%E8%AF%91%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9Ccompile-stuff-idiom"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 编译相关工作（Compile Stuff
+Idiom）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#rgwrados-gateway%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3. RGW（RADOS Gateway）相关工作</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">5.</span> <span class="post-toc-text">会议结束</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%BA%BA%E8%AE%B0%E5%BD%95%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">会议记录人：[记录人姓名]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AE%A1%E6%A0%B8%E4%BA%BA%E5%AE%A1%E6%A0%B8%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">审核人：[审核人姓名]</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -186,15 +191,16 @@ Idiom）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="pos
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议时间2022年9月13日">会议时间：2022年9月13日</h4>
 <h4 id="参会人员参会人员名单">参会人员：[参会人员名单]</h4>
 <hr />
 <h3 id="主要议题及讨论内容">主要议题及讨论内容</h3>
 <h4 id="open-source-day-活动准备">1. Open Source Day 活动准备</h4>
 <ul>
 <li><strong>日期确认</strong>：Open Source Day
-将于16日（周五）举行。</li>
+将于9月16日（周五）举行。</li>
 <li><strong>活动内容</strong>：活动中将邀请参与者解决一些低难度的技术问题（low
 hanging fruit issues）。</li>
 <li><strong>问题管理</strong>：会议中提到需要确保这些问题列表中的任务确实属于低难度，以便参与者能够在一日内完成。建议移除不适合的任务，并考虑添加新的、易于解决的问题。</li>
@@ -235,45 +241,7 @@ Day的活动，并准备相应的任务。</li>
 </ul>
 <hr />
 <h4 id="会议记录人记录人姓名">会议记录人：[记录人姓名]</h4>
-<h4 id="审核人审核人姓名会议纪要">审核人：[审核人姓名]会议纪要：</h4>
-<ol type="1">
-<li>Open Source Day 计划：
-<ul>
-<li>日期确认为X月X日（周五）。</li>
-<li>将有随机贡献者出现，处理低挂果问题。提供了一个链接，列出了所有相关的问题。</li>
-<li>会议中提出对列表中的七到八个问题进行审查，确保它们是实际可管理的问题。</li>
-<li>决定可能移除一些不应包含在列表中的问题，并添加新的追踪器，标记相关的加载组，以便处理。</li>
-</ul></li>
-<li>Ceph Compile Stuff Idiom：
-<ul>
-<li>自从上次向用户列表发送邮件已过去两周，反馈有限，仅一个新评论和对PR的一般性反馈。</li>
-<li>CLT调用未遇到任何阻碍，除了希望最终签名包。</li>
-<li>John不在场，他最近负责处理这个问题。询问了他的进展。</li>
-<li>讨论了当前在我的测试标签下打开的拉请求，想合并它们。认为至少有几个影响二进制文件，任何触及二进制文件的操作都会引起合并冲突，但应该容易解决。</li>
-<li>一旦这些问题得到解决并且合并完成，就准备测试然后移动实施。没有外部阻碍我们进行这项操作。</li>
-</ul></li>
-<li>Ceph RGW功能更新：
-<ul>
-<li>工作正在进行中，由于支持和命令实现的不确定性，计划一直在变动。</li>
-<li>正在与Guillaume以及RSW团队沟通确定要做什么。</li>
-<li>目前正试图搞清楚如何同时支持创建轮次和添加Zone组及区域。</li>
-<li>正在尝试提供基本的命令和灵活的设置，使RGW环境配置尽可能少的用户干预。</li>
-<li>目标是从最基本的自动化开始，慢慢增加更复杂的特性。</li>
-</ul></li>
-<li>行动计划：
-<ul>
-<li>对于Open Source
-Day的问题列表进行清理，确保只有正确和可管理的问题被标记。</li>
-<li>继续监测Ceph Compile Stuff
-Idiom的合并和测试过程，并在有问题时协调解决。</li>
-<li>对于RGW功能，计划在接下来的一周内至少开始一些基础的工作，并继续与RSW团队合作明确需求和解决方案。</li>
-</ul></li>
-<li>其他事项：
-<ul>
-<li>没有其他议题需要讨论。</li>
-<li>会议结束，下一步行动将在周四的站立会议上继续讨论。</li>
-</ul></li>
-</ol>
+<h4 id="审核人审核人姓名">审核人：[审核人姓名]</h4>
 
         </div>
 
@@ -304,6 +272,8 @@ Idiom的合并和测试过程，并在有问题时协调解决。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Orchestrator/" rel="tag">Ceph Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Compilation/" rel="tag">Compilation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Open-Source-Day/" rel="tag">Open Source Day</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

@@ -20,17 +20,24 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Orchestrator 会议 日期：[具体日期] 参会人员：[具体人员名单] 主要议题：  升级问题讨论  问题描述：Dania 和 Melissa 提出的关于创建健康警告的 Pull Request 揭示了从 Octopus 升级到 Pacific 的问题。具体表现为升级过程中监控堆栈（包括 Alertmanager、Grafana、Prometheus 和 Node Ex">
+    <meta name="keywords" content="Ceph,分布式存储,Orchestrator,Agent,升级问题,监控堆栈,Backport">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Orchestrator 会议 日期：2021年11月2日 参会人员：[具体人员名单] 主要议题：  升级问题讨论  问题描述：从 Octopus 升级到 Pacific 的过程中，监控堆栈（包括 Alertmanager、Grafana、Prometheus 和 Node Exporter）出现名称冲突错误，提示“alertmanager.vm0 已">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2021-11-02">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/11/03/Ceph_Orchestrator_Meeting_2021-11-02/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Orchestrator 会议 日期：[具体日期] 参会人员：[具体人员名单] 主要议题：  升级问题讨论  问题描述：Dania 和 Melissa 提出的关于创建健康警告的 Pull Request 揭示了从 Octopus 升级到 Pacific 的问题。具体表现为升级过程中监控堆栈（包括 Alertmanager、Grafana、Prometheus 和 Node Ex">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Orchestrator 会议 日期：2021年11月2日 参会人员：[具体人员名单] 主要议题：  升级问题讨论  问题描述：从 Octopus 升级到 Pacific 的过程中，监控堆栈（包括 Alertmanager、Grafana、Prometheus 和 Node Exporter）出现名称冲突错误，提示“alertmanager.vm0 已">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-11-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="Agent">
+<meta property="article:tag" content="升级问题">
+<meta property="article:tag" content="监控堆栈">
+<meta property="article:tag" content="Backport">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +166,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98orchestrator-%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Orchestrator 会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%97%A5%E6%9C%9F%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">日期：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%B7%E4%BD%93%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[具体人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">备注：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8B%E6%AC%A1%E4%BC%9A%E8%AE%AE%E9%A2%84%E5%91%8A"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">下次会议预告：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98orchestrator-%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Orchestrator 会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%97%A5%E6%9C%9F2021%E5%B9%B411%E6%9C%882%E6%97%A5"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">日期：2021年11月2日</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%B7%E4%BD%93%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[具体人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">备注：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8B%E6%AC%A1%E4%BC%9A%E8%AE%AE%E9%A2%84%E5%91%8A"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">下次会议预告：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,41 +192,40 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题orchestrator-会议">会议主题：Orchestrator 会议</h4>
-<h4 id="日期具体日期">日期：[具体日期]</h4>
+<h4 id="日期2021年11月2日">日期：2021年11月2日</h4>
 <h4 id="参会人员具体人员名单">参会人员：[具体人员名单]</h4>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
 <li><strong>升级问题讨论</strong>
 <ul>
-<li><strong>问题描述</strong>：Dania 和 Melissa 提出的关于创建健康警告的
-Pull Request 揭示了从 Octopus 升级到 Pacific
-的问题。具体表现为升级过程中监控堆栈（包括
-Alertmanager、Grafana、Prometheus 和 Node
+<li><strong>问题描述</strong>：从 Octopus 升级到 Pacific
+的过程中，监控堆栈（包括 Alertmanager、Grafana、Prometheus 和 Node
 Exporter）出现名称冲突错误，提示“alertmanager.vm0 已存在”。</li>
-<li><strong>影响范围</strong>：此问题不仅影响 Octopus 到 Pacific
-的升级，还可能影响 Pacific 到 Master 的升级。</li>
-<li><strong>当前状态</strong>：目前正在调查具体的操作顺序和原因，尚未找到确切解决方案。</li>
+<li><strong>影响范围</strong>：此问题影响 Octopus 到 Pacific
+的升级，以及可能的 Pacific 到 Master 的升级。</li>
+<li><strong>当前状态</strong>：正在调查操作顺序和原因，尚未找到确切解决方案。</li>
 </ul></li>
 <li><strong>Agent 状态更新</strong>
 <ul>
-<li><strong>主要进展</strong>：讨论了 Agent 的几个关键 Pull
-Request，包括端点支持和响应性改进。这些 PR 已经通过了 QA
-测试，目前需要进一步的审查。</li>
+<li><strong>主要进展</strong>：讨论了 Agent 的关键 Pull
+Request，包括端点支持和响应性改进。这些 PR 已通过 QA
+测试，需要进一步审查。</li>
 <li><strong>NFS 相关问题</strong>：Adam 报告了 NFS
-守护进程的故障检测和恢复机制，目前正在测试主机离线时的处理情况。</li>
+守护进程的故障检测和恢复机制，正测试主机离线情况。</li>
 </ul></li>
 <li><strong>其他议题</strong>
 <ul>
-<li><strong>Topo LVM 更新</strong>：Blaine 表示没有关于 Topo LVM
+<li><strong>Topo LVM 更新</strong>：Blaine 没有关于 Topo LVM
 的新更新。</li>
 <li><strong>Backport 计划</strong>：讨论了将某些功能回溯到 Pacific
-版本的计划，特别是 Agent 功能，建议在稳定后再进行回溯。</li>
-<li><strong>Key Rotation PR</strong>：提及了 Key Rotation 的 Pull
-Request，已准备好进行审查。</li>
+版本的计划，特别是 Agent 功能。</li>
+<li><strong>Key Rotation PR</strong>：Key Rotation 的 Pull Request
+已准备好审查。</li>
 <li><strong>Bug
-修复</strong>：解决了导出功能中的一个路径问题，并计划在测试完成后合并。</li>
+修复</strong>：解决了导出功能中的路径问题，并计划在测试完成后合并。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项：</h4>
@@ -227,7 +233,7 @@ Request，已准备好进行审查。</li>
 <li>继续调查和解决从 Octopus 升级到 Pacific
 的监控堆栈名称冲突问题。</li>
 <li>完成 Agent 相关 PR 的审查和合并工作。</li>
-<li>计划在 Agent 功能稳定后进行回溯到 Pacific 版本的准备工作。</li>
+<li>在 Agent 功能稳定后，准备回溯到 Pacific 版本的计划。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
@@ -238,7 +244,7 @@ Request，已准备好进行审查。</li>
 </ul>
 <h4 id="备注">备注：</h4>
 <ul>
-<li>会议中提到的具体技术细节和错误信息需要进一步的技术分析和验证。</li>
+<li>需要进一步的技术分析和验证会议中提到的具体技术细节和错误信息。</li>
 <li>所有决定和行动计划需要相关团队成员的协作和跟进。</li>
 </ul>
 <h4 id="下次会议预告">下次会议预告：</h4>
@@ -249,8 +255,6 @@ Request，已准备好进行审查。</li>
 <ul>
 <li>会议于[具体结束时间]结束，感谢所有参会人员的参与和贡献。</li>
 </ul>
-<hr />
-<p><strong>注意</strong>：以上纪要基于会议内容总结，具体实施细节和时间表可能需要根据实际情况调整。</p>
 
         </div>
 
@@ -281,6 +285,8 @@ Request，已准备好进行审查。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Agent/" rel="tag">Agent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Backport/" rel="tag">Backport</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8D%87%E7%BA%A7%E9%97%AE%E9%A2%98/" rel="tag">升级问题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%9B%91%E6%8E%A7%E5%A0%86%E6%A0%88/" rel="tag">监控堆栈</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -351,7 +357,7 @@ Request，已准备好进行审查。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/11/03/Ceph_Performance_Meeting_2021-10-28/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2021-10-28</h4>
+        <h4 class="title">Ceph性能会议纪要 2021-10-28</h4>
       </a>
     </div>
   

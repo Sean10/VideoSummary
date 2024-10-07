@@ -14,23 +14,28 @@
     
     
     
-    <title>CephFS Code Walkthrough: MDSMonitoring | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;CephFS Code Walkthrough: MDSMonitoring&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：MDS Monitor 的深入探讨 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  MDS Monitor 概述  定义：MDS Monitor 是 Ceph 分布式存储系统中的一个关键组件，属于 Paxos 服务的一部分。 功能：负责管理和监控 MDS（Metadata Server）集群的状态，通过修改 FS Map 或 MDS Map 来驱动集群状态">
+    <meta name="keywords" content="CephFS,Distributed Storage,Paxos,MDS Monitoring,Ceph Architecture">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：MDS Monitor 的深入探讨 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  MDS Monitor 概述  MDS Monitor 是 Ceph 分布式存储系统中 Paxos 服务的一部分，负责管理和监控 MDS（Metadata Server）集群的状态。 功能包括：通过修改 FS Map 或 MDS Map 驱动集群状">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CephFS Code Walkthrough: MDSMonitoring">
+<meta property="og:title" content="&#39;CephFS Code Walkthrough: MDSMonitoring&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/05/03/CephFS_Code_Walkthrough_-_MDSMonitoring/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：MDS Monitor 的深入探讨 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  MDS Monitor 概述  定义：MDS Monitor 是 Ceph 分布式存储系统中的一个关键组件，属于 Paxos 服务的一部分。 功能：负责管理和监控 MDS（Metadata Server）集群的状态，通过修改 FS Map 或 MDS Map 来驱动集群状态">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：MDS Monitor 的深入探讨 会议时间：[具体时间] 参会人员：[参会人员名单] 会议内容总结：  MDS Monitor 概述  MDS Monitor 是 Ceph 分布式存储系统中 Paxos 服务的一部分，负责管理和监控 MDS（Metadata Server）集群的状态。 功能包括：通过修改 FS Map 或 MDS Map 驱动集群状">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-05-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Paxos">
+<meta property="article:tag" content="MDS Monitoring">
+<meta property="article:tag" content="Ceph Architecture">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CephFS Code Walkthrough: MDSMonitoring</div>
+        <div class="flex-col header-title ellipsis">&#39;CephFS Code Walkthrough: MDSMonitoring&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CephFS Code Walkthrough: MDSMonitoring</h1>
+        <h1 class="title">&#39;CephFS Code Walkthrough: MDSMonitoring&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-05-02T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -169,7 +174,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CephFS Code Walkthrough: MDSMonitoring</h1>
+        <h1 class="post-card-title">'CephFS Code Walkthrough: MDSMonitoring'</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-05-03 00:00:00" datetime="2021-05-02T16:00:00.000Z"  itemprop="datePublished">2021-05-03</time>
 
@@ -186,7 +191,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题mds-monitor-的深入探讨">会议主题：MDS Monitor
 的深入探讨</h4>
 <h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
@@ -195,40 +201,34 @@
 <ol type="1">
 <li><strong>MDS Monitor 概述</strong>
 <ul>
-<li><strong>定义</strong>：MDS Monitor 是 Ceph
-分布式存储系统中的一个关键组件，属于 Paxos 服务的一部分。</li>
-<li><strong>功能</strong>：负责管理和监控 MDS（Metadata
-Server）集群的状态，通过修改 FS Map 或 MDS Map
-来驱动集群状态的变化，并将这些变化分发给所有客户端和 MDS。</li>
-<li><strong>健康监控</strong>：MDS Monitor 还负责监控 MDS
-的健康状态，标记延迟的 MDS，并在必要时进行替换。</li>
+<li>MDS Monitor 是 Ceph 分布式存储系统中 Paxos
+服务的一部分，负责管理和监控 MDS（Metadata Server）集群的状态。</li>
+<li>功能包括：通过修改 FS Map 或 MDS Map
+驱动集群状态变化，分发变化给客户端和 MDS；监控 MDS 健康状态，标记延迟的
+MDS 并进行替换；提供命令接口，如创建新文件系统或失败 MDS。</li>
 </ul></li>
 <li><strong>MDS Monitor 的组件和操作</strong>
 <ul>
-<li><strong>FS Map 和 MDS Map</strong>：MDS Monitor 管理多个 FS
-Map，每个 FS Map 包含一个或多个 MDS Map。</li>
-<li><strong>命令接口</strong>：提供命令行接口，如从 Ceph
-命令行创建新文件系统或失败 MDS。</li>
-<li><strong>消息交互</strong>：MDS 定期向 Monitor 发送 MDS Beacon
-消息，Monitor 根据这些消息驱动 MDS 状态的变化。</li>
+<li>MDS Monitor 管理多个 FS Map，每个 FS Map 包含一个或多个 MDS
+Map。</li>
+<li>提供命令行接口，如创建新文件系统或失败 MDS。</li>
+<li>MDS 定期向 Monitor 发送 MDS Beacon 消息，Monitor 根据这些消息驱动
+MDS 状态的变化。</li>
 </ul></li>
 <li><strong>代码实现细节</strong>
 <ul>
-<li><strong>Paxos FS Map</strong>：引入了一个新的类来保护当前和待处理的
-FS Map，防止意外修改。</li>
-<li><strong>Beacon 处理</strong>：MDS 发送的 Beacon
-消息驱动状态变化，Monitor 通过预处理 Beacon 消息来确保 MDS 不会因
-Monitor 负载过高而被错误标记为延迟。</li>
-<li><strong>命令处理</strong>：处理如 <code>mds fail</code> 或
-<code>fs new</code> 等命令，这些命令会修改 FS Map。</li>
+<li>引入 Paxos FS Map 类来保护当前和待处理的 FS Map，防止意外修改。</li>
+<li>处理 MDS 发送的 Beacon 消息，确保 MDS 不会因 Monitor
+负载过高而被错误标记为延迟。</li>
+<li>处理如 <code>mds fail</code> 或 <code>fs new</code> 等命令，修改 FS
+Map。</li>
 </ul></li>
 <li><strong>历史和改进</strong>
 <ul>
-<li><strong>2018年</strong>：引入了 Paxos FS Map
+<li>自 2018 年引入 Paxos FS Map
 和增量控制激活，提高了系统的稳定性和可管理性。</li>
-<li><strong>2019年</strong>：增加了 standby replay
-功能，简化了配置。</li>
-<li><strong>2020年</strong>：增加了 MDS 亲和性设置，使得 MDS
+<li>2019 年增加 standby replay 功能，简化了配置。</li>
+<li>2020 年增加 MDS 亲和性设置，使 MDS
 可以更灵活地服务于特定文件系统。</li>
 </ul></li>
 </ol>
@@ -240,8 +240,7 @@ Monitor 负载过高而被错误标记为延迟。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
-<li>继续优化 MDS Monitor 的代码，特别是处理 Beacon
-消息的逻辑，以减少潜在的错误标记问题。</li>
+<li>继续优化 MDS Monitor 的代码，特别是处理 Beacon 消息的逻辑。</li>
 <li>探索进一步的功能增强，如改进订阅机制，减少 Monitor 的通信负载。</li>
 </ul>
 <h4 id="会议结束语">会议结束语：</h4>
@@ -281,6 +280,8 @@ Monitor 负载过高而被错误标记为延迟。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Architecture/" rel="tag">Ceph Architecture</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MDS-Monitoring/" rel="tag">MDS Monitoring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Paxos/" rel="tag">Paxos</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -292,7 +293,7 @@ Monitor 负载过高而被错误标记为延迟。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/05/03/CephFS_Code_Walkthrough_-_MDSMonitoring/&title=《CephFS Code Walkthrough: MDSMonitoring》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/05/03/CephFS_Code_Walkthrough_-_MDSMonitoring/&title=《'CephFS Code Walkthrough: MDSMonitoring'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -302,7 +303,7 @@ Monitor 负载过高而被错误标记为延迟。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/05/03/CephFS_Code_Walkthrough_-_MDSMonitoring/&title=《CephFS Code Walkthrough: MDSMonitoring》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/05/03/CephFS_Code_Walkthrough_-_MDSMonitoring/&title=《'CephFS Code Walkthrough: MDSMonitoring'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -312,7 +313,7 @@ Monitor 负载过高而被错误标记为延迟。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CephFS Code Walkthrough: MDSMonitoring》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/05/03/CephFS_Code_Walkthrough_-_MDSMonitoring/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CephFS Code Walkthrough: MDSMonitoring'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/05/03/CephFS_Code_Walkthrough_-_MDSMonitoring/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -451,7 +452,7 @@ Monitor 负载过高而被错误标记为延迟。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/05/03/CephFS_Code_Walkthrough_-_MDSMonitoring/&title=《CephFS Code Walkthrough: MDSMonitoring》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/05/03/CephFS_Code_Walkthrough_-_MDSMonitoring/&title=《'CephFS Code Walkthrough: MDSMonitoring'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -461,7 +462,7 @@ Monitor 负载过高而被错误标记为延迟。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/05/03/CephFS_Code_Walkthrough_-_MDSMonitoring/&title=《CephFS Code Walkthrough: MDSMonitoring》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/05/03/CephFS_Code_Walkthrough_-_MDSMonitoring/&title=《'CephFS Code Walkthrough: MDSMonitoring'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -471,7 +472,7 @@ Monitor 负载过高而被错误标记为延迟。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CephFS Code Walkthrough: MDSMonitoring》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/05/03/CephFS_Code_Walkthrough_-_MDSMonitoring/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CephFS Code Walkthrough: MDSMonitoring'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/05/03/CephFS_Code_Walkthrough_-_MDSMonitoring/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

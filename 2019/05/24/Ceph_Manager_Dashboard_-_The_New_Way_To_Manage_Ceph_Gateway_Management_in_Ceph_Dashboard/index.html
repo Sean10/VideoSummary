@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题 本次会议主要讨论了Ceph存储系统的仪表盘（原名为“Safe Dashboard”）的最新功能和改进，并进行了现场演示。 关键细节  仪表盘发展历程：从Luminous版本引入的初始版本，到后续的改进，包括用户管理、角色配置、SSL支持、审计日志等功能。 新功能：  用户注册和角色配置，支持不同权限的用户。 SSL支持，增强安全性。 审计日志，记录操作记录。 多语言支持，目前支">
+    <meta name="keywords" content="Storage Management,Ceph Manager,Ceph Dashboard,Gateway Management,Ceph Cluster">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题 本次会议主要介绍了Ceph存储系统的仪表盘（原名为“Safe Dashboard”）的最新功能和改进，并进行了现场演示。 关键细节  仪表盘发展历程：从Luminous版本引入的初始版本，经历了多个版本的发展，包括用户管理、角色配置、SSL支持、审计日志等功能。 新功能：  支持用户注册和角色配置，实现不同权限的用户管理。 SSL支持，增强仪表盘的安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Manager Dashboard - The New Way To Manage Ceph &amp; Gateway Management in Ceph Dashboard">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Ceph_Manager_Dashboard_-_The_New_Way_To_Manage_Ceph_Gateway_Management_in_Ceph_Dashboard/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题 本次会议主要讨论了Ceph存储系统的仪表盘（原名为“Safe Dashboard”）的最新功能和改进，并进行了现场演示。 关键细节  仪表盘发展历程：从Luminous版本引入的初始版本，到后续的改进，包括用户管理、角色配置、SSL支持、审计日志等功能。 新功能：  用户注册和角色配置，支持不同权限的用户。 SSL支持，增强安全性。 审计日志，记录操作记录。 多语言支持，目前支">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题 本次会议主要介绍了Ceph存储系统的仪表盘（原名为“Safe Dashboard”）的最新功能和改进，并进行了现场演示。 关键细节  仪表盘发展历程：从Luminous版本引入的初始版本，经历了多个版本的发展，包括用户管理、角色配置、SSL支持、审计日志等功能。 新功能：  支持用户注册和角色配置，实现不同权限的用户管理。 SSL支持，增强仪表盘的安全">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Storage Management">
+<meta property="article:tag" content="Ceph Manager">
+<meta property="article:tag" content="Ceph Dashboard">
+<meta property="article:tag" content="Gateway Management">
+<meta property="article:tag" content="Ceph Cluster">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,24 +190,25 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题">会议主题</h4>
-<p>本次会议主要讨论了Ceph存储系统的仪表盘（原名为“Safe
+<p>本次会议主要介绍了Ceph存储系统的仪表盘（原名为“Safe
 Dashboard”）的最新功能和改进，并进行了现场演示。</p>
 <h4 id="关键细节">关键细节</h4>
 <ul>
-<li><strong>仪表盘发展历程</strong>：从Luminous版本引入的初始版本，到后续的改进，包括用户管理、角色配置、SSL支持、审计日志等功能。</li>
+<li><strong>仪表盘发展历程</strong>：从Luminous版本引入的初始版本，经历了多个版本的发展，包括用户管理、角色配置、SSL支持、审计日志等功能。</li>
 <li><strong>新功能</strong>：
 <ul>
-<li>用户注册和角色配置，支持不同权限的用户。</li>
-<li>SSL支持，增强安全性。</li>
+<li>支持用户注册和角色配置，实现不同权限的用户管理。</li>
+<li>SSL支持，增强仪表盘的安全性。</li>
 <li>审计日志，记录操作记录。</li>
 <li>多语言支持，目前支持6-7种语言。</li>
-<li>API文档完善，方便开发者使用。</li>
+<li>完善的API文档，方便开发者使用。</li>
 <li>配置管理器，在UI中修改配置。</li>
 <li>存储池管理，包括创建、删除、修改等功能。</li>
 <li>RBD镜像管理，包括快照、克隆、移动到回收站等功能。</li>
-<li>RGW镜像镜像功能，配置远程节点和复制策略。</li>
+<li>RGW镜像管理，配置远程节点和复制策略。</li>
 </ul></li>
 <li><strong>外部服务管理</strong>：
 <ul>
@@ -233,15 +239,8 @@ id="计算机科学ceph相关领域英文原文关键词">计算机科学/CEPH�
 <ul>
 <li>Ceph Dashboard</li>
 <li>Safe Dashboard</li>
-<li>Self-manage Dashboard</li>
-<li>Luminous</li>
-<li>Nautilus</li>
-<li>Octopus</li>
 <li>REST API</li>
 <li>Angular</li>
-<li>Cherry Pie</li>
-<li>River Chairs</li>
-<li>AngularJS</li>
 <li>RBG Mirroring</li>
 <li>OSD Management</li>
 <li>Crush Map</li>
@@ -283,6 +282,8 @@ id="计算机科学ceph相关领域英文原文关键词">计算机科学/CEPH�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Cluster/" rel="tag">Ceph Cluster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Dashboard/" rel="tag">Ceph Dashboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Manager/" rel="tag">Ceph Manager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Gateway-Management/" rel="tag">Gateway Management</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Management/" rel="tag">Storage Management</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -342,18 +343,18 @@ id="计算机科学ceph相关领域英文原文关键词">计算机科学/CEPH�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/Ceph_BenchOps_-_Following_DevOps_Practices_for_Benchmarking_Ceph_-_Ivo_Jimenez_UC_Santa_Cruz/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/CephFS_as_a_Scalable_Filer_-_Rafael_Lopez_Brett_Milford_Monash_University/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph BenchOps: Following DevOps Practices for Benchmarking Ceph - Ivo Jimenez, UC Santa Cruz</h4>
+        <h4 class="title">CephFS as a Scalable Filer - Rafael Lopez &amp; Brett Milford, Monash University</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Ceph_Orchestrator_-_Bridging_the_Gap_Between_Ceph_and_Deployment_-_Sebastian_Wagner_SUSE/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Ceph_Operations_at_CERN_-_Where_Do_We_Go_From_Here_-_Dan_van_der_Ster_Teo_Mouratidis_CERN/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Orchestrator: Bridging the Gap Between Ceph and Deployment - Sebastian Wagner, SUSE</h4>
+        <h4 class="title">&#39;Ceph Operations at CERN: Where Do We Go From Here? - Dan van der Ster &amp; Teo Mouratidis, CERN&#39;</h4>
       </a>
     </div>
   

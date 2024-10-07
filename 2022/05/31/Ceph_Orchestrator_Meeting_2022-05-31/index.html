@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要：  磁盘扫描改进：Paul正在致力于改进磁盘扫描（rescan pr）功能，特别是针对外部存储设备。目标是通过gather facts工具提高扫描效率。目前尚未决定是否采用此方法，但初步反馈是积极的，计划进行概念验证。 磁盘库存同步问题：讨论了如何保持主机信息与Ceph集群信息的同步问题。提出使用gather facts工具收集磁盘信息，并确保其与当前库存数据同步。强调了代码同步的重要性">
+    <meta name="keywords" content="Ceph,分布式存储,自动化,监控,磁盘管理">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要：  磁盘扫描改进：Paul致力于改进磁盘扫描功能，特别是针对外部存储设备。他正在尝试通过使用gather facts工具来提高扫描效率。目前尚未决定是否采用此方法，但初步反馈是积极的，计划进行概念验证。 磁盘库存同步问题：讨论了如何保持主机与Ceph集群信息同步的问题。提出使用gather facts工具收集磁盘信息，并确保与当前库存数据同步。强调了代码同步的重">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2022-05-31">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/05/31/Ceph_Orchestrator_Meeting_2022-05-31/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要：  磁盘扫描改进：Paul正在致力于改进磁盘扫描（rescan pr）功能，特别是针对外部存储设备。目标是通过gather facts工具提高扫描效率。目前尚未决定是否采用此方法，但初步反馈是积极的，计划进行概念验证。 磁盘库存同步问题：讨论了如何保持主机信息与Ceph集群信息的同步问题。提出使用gather facts工具收集磁盘信息，并确保其与当前库存数据同步。强调了代码同步的重要性">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要：  磁盘扫描改进：Paul致力于改进磁盘扫描功能，特别是针对外部存储设备。他正在尝试通过使用gather facts工具来提高扫描效率。目前尚未决定是否采用此方法，但初步反馈是积极的，计划进行概念验证。 磁盘库存同步问题：讨论了如何保持主机与Ceph集群信息同步的问题。提出使用gather facts工具收集磁盘信息，并确保与当前库存数据同步。强调了代码同步的重">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-30T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-05-31T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="自动化">
+<meta property="article:tag" content="监控">
+<meta property="article:tag" content="磁盘管理">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,20 +183,18 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要：</p>
 <ol type="1">
-<li><strong>磁盘扫描改进</strong>：Paul正在致力于改进磁盘扫描（rescan
-pr）功能，特别是针对外部存储设备。目标是通过gather
-facts工具提高扫描效率。目前尚未决定是否采用此方法，但初步反馈是积极的，计划进行概念验证。</li>
-<li><strong>磁盘库存同步问题</strong>：讨论了如何保持主机信息与Ceph集群信息的同步问题。提出使用gather
-facts工具收集磁盘信息，并确保其与当前库存数据同步。强调了代码同步的重要性，以避免信息不一致。</li>
-<li><strong>Prometheus服务发现</strong>：提出了一个PR，准备用于代码审查。该变更涉及代码移动和重构，以简化审查过程。讨论了服务发现端点的使用，以及如何确保Prometheus实例能够像外部工具一样利用这一新功能。</li>
-<li><strong>证书管理</strong>：讨论了如何处理外部监控工具部署时所需的证书问题。建议提供一种命令生成证书，以便用户手动设置在其Prometheus实例上。还考虑了在Ceph中设置一个使用安全证书的Cherry
-Pie服务器的可能性。</li>
-<li><strong>NFS和Ganesha配置</strong>：讨论了关于OpenStack环境中NFS服务的部署，特别是关于Ganesha配置和虚拟IP管理的PoC。目标是不使用HA代理，而是依赖Keeper
-FD来管理活动Ganesha服务器的浮动IP。</li>
-<li><strong>功能跟踪和API设计</strong>：确认了创建一个功能跟踪票据，记录Francesco的想法和PoC细节，以便Sephirium核心团队可以开始工作。讨论了如何设计API以减少用户混淆，特别是在部署时是否使用HA代理的情况下。</li>
-<li><strong>后续行动</strong>：约定在下次会议前更新PoC的进展，并在特征跟踪器票据中添加更多细节。确认了继续推进这些项目的计划，并在下次会议中回顾进度。</li>
+<li><p><strong>磁盘扫描改进</strong>：Paul致力于改进磁盘扫描功能，特别是针对外部存储设备。他正在尝试通过使用<code>gather facts</code>工具来提高扫描效率。目前尚未决定是否采用此方法，但初步反馈是积极的，计划进行概念验证。</p></li>
+<li><p><strong>磁盘库存同步问题</strong>：讨论了如何保持主机与Ceph集群信息同步的问题。提出使用<code>gather facts</code>工具收集磁盘信息，并确保与当前库存数据同步。强调了代码同步的重要性，以避免信息不一致。</p></li>
+<li><p><strong>Prometheus服务发现</strong>：提出了一个PR，准备用于代码审查。该变更涉及代码移动和重构，以简化审查过程。讨论了服务发现端点的使用，以及如何确保Prometheus实例能够像外部工具一样利用这一新功能。</p></li>
+<li><p><strong>证书管理</strong>：讨论了处理外部监控工具部署时所需的证书问题。建议提供一种命令生成证书，以便用户手动设置在其Prometheus实例上。还考虑了在Ceph中设置一个使用安全证书的Cherry
+Pie服务器的可能性。</p></li>
+<li><p><strong>NFS和Ganesha配置</strong>：讨论了OpenStack环境中NFS服务的部署，特别是关于Ganesha配置和虚拟IP管理的PoC。目标是不使用HA代理，而是依赖Keeper
+FD来管理活动Ganesha服务器的浮动IP。</p></li>
+<li><p><strong>功能跟踪和API设计</strong>：确认了创建一个功能跟踪票据，记录Francesco的想法和PoC细节，以便Sephirium核心团队可以开始工作。讨论了如何设计API以减少用户混淆，特别是在部署时是否使用HA代理的情况下。</p></li>
+<li><p><strong>后续行动</strong>：约定在下次会议前更新PoC的进展，并在特征跟踪器票据中添加更多细节。确认了继续推进这些项目的计划，并在下次会议中回顾进度。</p></li>
 </ol>
 
         </div>
@@ -223,6 +226,8 @@ FD来管理活动Ganesha服务器的浮动IP。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%9B%91%E6%8E%A7/" rel="tag">监控</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" rel="tag">磁盘管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" rel="tag">自动化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -293,7 +298,7 @@ FD来管理活动Ganesha服务器的浮动IP。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/05/26/Ceph_Science_Working_Group_2022-05-24/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Science Working Group 2022-05-24</h4>
+        <h4 class="title">  Ceph Science Working Group 2022-05-24  </h4>
       </a>
     </div>
   

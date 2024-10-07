@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Month 2021: Ceph Project Update | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Month 2021: Ceph Project Update&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要  会议主题: SethMonth 2021 更新 主讲人: Josh 和 Seth 日期: 2021年6月21日  讨论内容  Seth 简介  Seth 被描述为软件定义存储、统一存储系统、可扩展分布式存储，甚至是存储的未来或存储的Linux。 Seth 是开源软件，不依赖特定硬件，可在各种商品组件上运行，如服务器、网络、硬盘、SSD、VM等。 单一集群可提供对象、块和文件工">
+    <meta name="keywords" content="Ceph,分布式存储,软件开发,开源社区,技术更新">
+    <meta name="description" content="[改进后的中文总结内容] 本次Ceph Month 2021会议中，Josh和Seth就Ceph项目的最新进展进行了介绍。以下是会议的主要内容和关键要点：  Ceph简介：Ceph是一个软件定义的存储系统，不依赖特定硬件，可以运行在各种商业组件上，如服务器、网络、硬盘、SSD、VM等。它提供对象、块和文件接口，支持在线扩展和收缩，提供数据耐久性和高可用性。 Ceph特性：Ceph由不可靠的组件构建">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Month 2021: Ceph Project Update">
+<meta property="og:title" content="&#39;Ceph Month 2021: Ceph Project Update&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要  会议主题: SethMonth 2021 更新 主讲人: Josh 和 Seth 日期: 2021年6月21日  讨论内容  Seth 简介  Seth 被描述为软件定义存储、统一存储系统、可扩展分布式存储，甚至是存储的未来或存储的Linux。 Seth 是开源软件，不依赖特定硬件，可在各种商品组件上运行，如服务器、网络、硬盘、SSD、VM等。 单一集群可提供对象、块和文件工">
+<meta property="og:description" content="[改进后的中文总结内容] 本次Ceph Month 2021会议中，Josh和Seth就Ceph项目的最新进展进行了介绍。以下是会议的主要内容和关键要点：  Ceph简介：Ceph是一个软件定义的存储系统，不依赖特定硬件，可以运行在各种商业组件上，如服务器、网络、硬盘、SSD、VM等。它提供对象、块和文件接口，支持在线扩展和收缩，提供数据耐久性和高可用性。 Ceph特性：Ceph由不可靠的组件构建">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-31T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-06-01T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="软件开发">
+<meta property="article:tag" content="开源社区">
+<meta property="article:tag" content="技术更新">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Month 2021: Ceph Project Update</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Month 2021: Ceph Project Update&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Month 2021: Ceph Project Update</h1>
+        <h1 class="title">&#39;Ceph Month 2021: Ceph Project Update&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-05-31T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Month_2021_-_Ceph_Project_Update"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Month 2021: Ceph Project Update</h1>
+        <h1 class="post-card-title">'Ceph Month 2021: Ceph Project Update'</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-06-01 00:00:00" datetime="2021-05-31T16:00:00.000Z"  itemprop="datePublished">2021-06-01</time>
 
@@ -185,86 +183,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概要">会议概要</h4>
-<ul>
-<li><strong>会议主题</strong>: SethMonth 2021 更新</li>
-<li><strong>主讲人</strong>: Josh 和 Seth</li>
-<li><strong>日期</strong>: 2021年6月21日</li>
-</ul>
-<h4 id="讨论内容">讨论内容</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次Ceph Month
+2021会议中，Josh和Seth就Ceph项目的最新进展进行了介绍。以下是会议的主要内容和关键要点：</p>
 <ol type="1">
-<li><strong>Seth 简介</strong>
-<ul>
-<li>Seth
-被描述为软件定义存储、统一存储系统、可扩展分布式存储，甚至是存储的未来或存储的Linux。</li>
-<li>Seth
-是开源软件，不依赖特定硬件，可在各种商品组件上运行，如服务器、网络、硬盘、SSD、VM等。</li>
-<li>单一集群可提供对象、块和文件工作负载。</li>
-<li>Seth
-是免费的，用户有权使用、修改和分享源代码，避免供应商锁定，促进创新。</li>
-</ul></li>
-<li><strong>Seth 的特性</strong>
-<ul>
-<li><strong>可靠性</strong>:
-由不可靠组件构建的可靠存储系统，无单点故障，提供数据耐久性（通过复制或纠删码），支持滚动升级和在线扩展或收缩。</li>
-<li><strong>可扩展性</strong>:
-弹性存储基础设施，集群可随需求变化或硬件更新而增长或收缩，支持在线添加或移除硬件。</li>
-<li><strong>统一系统</strong>: 提供对象、块和文件接口，基于 RADOS
-组件处理复制和数据分布。</li>
-</ul></li>
-<li><strong>版本和发布</strong>
-<ul>
-<li>Seth
-每年3月发布稳定版本，提供两个版本的backports（bug修复和安全更新），版本生命周期约为两年。</li>
-<li>提供 Debian 和 RPM 包，以及容器镜像。</li>
-</ul></li>
-<li><strong>SethMonth 2021</strong>
-<ul>
-<li>目标：更互动和碎片化，避免长时间Zoom会议，分散在几周内，每次几小时，包含计划演讲和非结构化讨论时间。</li>
-<li>提供 Etherpad 链接，用于提问和讨论。</li>
-</ul></li>
-<li><strong>未来计划</strong>
-<ul>
-<li>计划在2022年3月举办 Cephalocon，地点未定，可能是首尔或北美。</li>
-<li>希望收集社区反馈，考虑混合型活动或传统会议。</li>
-</ul></li>
-<li><strong>Seth 基金会更新</strong>
-<ul>
-<li>基金会成立以支持 Seth 项目，现有12个职业成员，新加入的有
-Bloomberg、Cloudbase 和 Vexos。</li>
-<li>基金会项目包括改进文档、网站更新、培训材料开发等。</li>
-</ul></li>
-<li><strong>实验室更新</strong>
-<ul>
-<li>扩展实验室硬件，改进测试基础设施（如 Teuthology），增加 ARM
-架构支持。</li>
-</ul></li>
-<li><strong>遥测数据</strong>
-<ul>
-<li>Seth 有遥测模块，用户可选择分享数据，帮助开发者理解实际问题。</li>
-<li>遥测数据包括基本元数据、崩溃元数据、设备信息等，未来计划增加性能数据。</li>
-</ul></li>
-<li><strong>未来发展方向</strong>
-<ul>
-<li>重点包括可靠性、用户体验和适应数据中心及硬件的演进。</li>
-<li>特别关注 Crimson OSD 的重新设计和 NVMe over Fabrics 的支持。</li>
-</ul></li>
+<li><p><strong>Ceph简介</strong>：Ceph是一个软件定义的存储系统，不依赖特定硬件，可以运行在各种商业组件上，如服务器、网络、硬盘、SSD、VM等。它提供对象、块和文件接口，支持在线扩展和收缩，提供数据耐久性和高可用性。</p></li>
+<li><p><strong>Ceph特性</strong>：Ceph由不可靠的组件构建，具有无单点故障的特点，支持数据复制或纠删码，保证数据安全性。它还提供弹性存储基础设施，集群可以根据需求变化或硬件更新进行扩展。</p></li>
+<li><p><strong>版本和发布</strong>：Ceph每年3月发布稳定版本，提供两个版本的backports（bug修复和安全更新），版本生命周期约为两年。</p></li>
+<li><p><strong>Ceph Month
+2021</strong>：会议的目标是更互动和碎片化，避免长时间Zoom会议，分散在几周内，每次几小时，包含计划演讲和非结构化讨论时间。</p></li>
+<li><p><strong>未来计划</strong>：Ceph基金会将举办Cephalocon
+2022，地点待定。基金会现有12个职业成员，新加入的有Bloomberg、Cloudbase和Vexos。</p></li>
+<li><p><strong>实验室更新</strong>：Ceph实验室扩展了硬件，改进了测试基础设施，增加了ARM架构支持。</p></li>
+<li><p><strong>遥测数据</strong>：Ceph有遥测模块，用户可以选择分享数据，帮助开发者理解实际问题。</p></li>
+<li><p><strong>未来发展方向</strong>：Ceph将重点关注可靠性、用户体验和适应数据中心及硬件的演进，特别关注Crimson
+OSD的重新设计和NVMe over Fabrics的支持。</p></li>
+<li><p><strong>后续行动计划</strong>：继续改进Ceph的稳定性和用户体验，扩展测试覆盖和硬件支持，收集社区反馈，为未来的Cephalocon和Ceph发展方向做准备。</p></li>
 </ol>
-<h4 id="后续行动计划">后续行动计划</h4>
-<ul>
-<li>继续改进 Seth 的稳定性和用户体验。</li>
-<li>扩展测试覆盖和硬件支持，如 ARM 和 NVMe over Fabrics。</li>
-<li>收集社区反馈，为未来的 Cephalocon 和 Seth 发展方向做准备。</li>
-</ul>
-<h4 id="其他">其他</h4>
-<ul>
-<li>会议中提到的 Crimson 更新将在后续的 SethMonth 活动中详细讨论。</li>
-<li>社区成员可参与命名下一个 Seth 版本的讨论。</li>
-</ul>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了 Seth
-的特性、版本管理、社区活动、基金会更新、实验室改进、遥测数据以及未来发展方向等关键内容。</p>
+<p>本次会议详细介绍了Ceph项目的最新进展，涵盖了特性、版本管理、社区活动、基金会更新、实验室改进、遥测数据以及未来发展方向等关键内容。</p>
 
         </div>
 
@@ -295,6 +231,8 @@ Bloomberg、Cloudbase 和 Vexos。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%80%E6%BA%90%E7%A4%BE%E5%8C%BA/" rel="tag">开源社区</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E6%9B%B4%E6%96%B0/" rel="tag">技术更新</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" rel="tag">软件开发</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -306,7 +244,7 @@ Bloomberg、Cloudbase 和 Vexos。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/&title=《Ceph Month 2021: Ceph Project Update》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/&title=《'Ceph Month 2021: Ceph Project Update'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -316,7 +254,7 @@ Bloomberg、Cloudbase 和 Vexos。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/&title=《Ceph Month 2021: Ceph Project Update》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/&title=《'Ceph Month 2021: Ceph Project Update'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -326,7 +264,7 @@ Bloomberg、Cloudbase 和 Vexos。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Month 2021: Ceph Project Update》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Month 2021: Ceph Project Update'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -354,18 +292,18 @@ Bloomberg、Cloudbase 和 Vexos。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Call_for_Participation_-_Ceph_Stable_Releases_Team/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Month 2021: Call for Participation: Ceph Stable Releases Team</h4>
+        <h4 class="title">  Ceph Month 2021: Ceph On Windows  </h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Call_for_Participation_-_Ceph_Stable_Releases_Team/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Month 2021: Ceph On Windows</h4>
+        <h4 class="title">&#39;Ceph Month 2021: 参与呼吁：Ceph 稳定版本发布团队&#39;</h4>
       </a>
     </div>
   
@@ -465,7 +403,7 @@ Bloomberg、Cloudbase 和 Vexos。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/&title=《Ceph Month 2021: Ceph Project Update》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/&title=《'Ceph Month 2021: Ceph Project Update'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -475,7 +413,7 @@ Bloomberg、Cloudbase 和 Vexos。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/&title=《Ceph Month 2021: Ceph Project Update》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/&title=《'Ceph Month 2021: Ceph Project Update'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -485,7 +423,7 @@ Bloomberg、Cloudbase 和 Vexos。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Month 2021: Ceph Project Update》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Month 2021: Ceph Project Update'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

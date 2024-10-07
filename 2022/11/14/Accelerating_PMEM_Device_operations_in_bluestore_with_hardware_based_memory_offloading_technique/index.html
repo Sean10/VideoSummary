@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：利用硬件卸载技术缓解持久内存设备操作中的CPU瓶颈 会议时间：[具体时间] 会议地点：Self-Outcome虚拟会议 主讲人：[姓名] 会议内容总结：  背景与问题介绍  随着非易失性内存设备的普及，如Intel Optane内存，数据中心中CPU资源在操作这些持久内存设备时成为瓶颈。 特别是当使用应用程序直接模式时，CPU需要处理更多的读写操作，导致资源紧张。  提出的解决">
+    <meta name="keywords" content="Ceph,bluestore,PMEM,hardware offloading,performance optimization">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：通过硬件卸载技术加速Ceph中持久内存设备操作 会议时间：[具体时间] 会议地点：Self-Outcome虚拟会议 主讲人：[姓名] 会议内容总结：  背景与问题介绍  随着非易失性内存设备（PMEM）的普及，如Intel Optane内存，数据中心中CPU资源在操作这些设备时成为瓶颈。 使用应用程序直接模式时，CPU需要处理更多的读写操作，导致资源紧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Accelerating PMEM Device operations in bluestore with hardware based memory offloading technique">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/11/14/Accelerating_PMEM_Device_operations_in_bluestore_with_hardware_based_memory_offloading_technique/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：利用硬件卸载技术缓解持久内存设备操作中的CPU瓶颈 会议时间：[具体时间] 会议地点：Self-Outcome虚拟会议 主讲人：[姓名] 会议内容总结：  背景与问题介绍  随着非易失性内存设备的普及，如Intel Optane内存，数据中心中CPU资源在操作这些持久内存设备时成为瓶颈。 特别是当使用应用程序直接模式时，CPU需要处理更多的读写操作，导致资源紧张。  提出的解决">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：通过硬件卸载技术加速Ceph中持久内存设备操作 会议时间：[具体时间] 会议地点：Self-Outcome虚拟会议 主讲人：[姓名] 会议内容总结：  背景与问题介绍  随着非易失性内存设备（PMEM）的普及，如Intel Optane内存，数据中心中CPU资源在操作这些设备时成为瓶颈。 使用应用程序直接模式时，CPU需要处理更多的读写操作，导致资源紧">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-13T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-11-14T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="bluestore">
+<meta property="article:tag" content="PMEM">
+<meta property="article:tag" content="hardware offloading">
+<meta property="article:tag" content="performance optimization">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E5%88%A9%E7%94%A8%E7%A1%AC%E4%BB%B6%E5%8D%B8%E8%BD%BD%E6%8A%80%E6%9C%AF%E7%BC%93%E8%A7%A3%E6%8C%81%E4%B9%85%E5%86%85%E5%AD%98%E8%AE%BE%E5%A4%87%E6%93%8D%E4%BD%9C%E4%B8%AD%E7%9A%84cpu%E7%93%B6%E9%A2%88"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：利用硬件卸载技术缓解持久内存设备操作中的CPU瓶颈</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9self-outcome%E8%99%9A%E6%8B%9F%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议地点：Self-Outcome虚拟会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主讲人：[姓名]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">备注：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%BA%BA"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">会议记录人：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E9%80%9A%E8%BF%87%E7%A1%AC%E4%BB%B6%E5%8D%B8%E8%BD%BD%E6%8A%80%E6%9C%AF%E5%8A%A0%E9%80%9Fceph%E4%B8%AD%E6%8C%81%E4%B9%85%E5%86%85%E5%AD%98%E8%AE%BE%E5%A4%87%E6%93%8D%E4%BD%9C"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：通过硬件卸载技术加速Ceph中持久内存设备操作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9self-outcome%E8%99%9A%E6%8B%9F%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议地点：Self-Outcome虚拟会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主讲人：[姓名]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">备注：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%BA%BA"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">会议记录人：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,9 +190,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
-id="会议主题利用硬件卸载技术缓解持久内存设备操作中的cpu瓶颈">会议主题：利用硬件卸载技术缓解持久内存设备操作中的CPU瓶颈</h4>
+id="会议主题通过硬件卸载技术加速ceph中持久内存设备操作">会议主题：通过硬件卸载技术加速Ceph中持久内存设备操作</h4>
 <h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
 <h4
 id="会议地点self-outcome虚拟会议">会议地点：Self-Outcome虚拟会议</h4>
@@ -196,15 +202,15 @@ id="会议地点self-outcome虚拟会议">会议地点：Self-Outcome虚拟会�
 <ol type="1">
 <li><strong>背景与问题介绍</strong>
 <ul>
-<li>随着非易失性内存设备的普及，如Intel
-Optane内存，数据中心中CPU资源在操作这些持久内存设备时成为瓶颈。</li>
-<li>特别是当使用应用程序直接模式时，CPU需要处理更多的读写操作，导致资源紧张。</li>
+<li>随着非易失性内存设备（PMEM）的普及，如Intel
+Optane内存，数据中心中CPU资源在操作这些设备时成为瓶颈。</li>
+<li>使用应用程序直接模式时，CPU需要处理更多的读写操作，导致资源紧张。</li>
+<li>持久内存设备缺乏DMA直接内存访问能力，导致CPU负载增加。</li>
 </ul></li>
 <li><strong>提出的解决方案</strong>
 <ul>
-<li>利用硬件卸载技术，如Intel的io80、iox和DSA（Data Streaming
-Accelerator），来减轻CPU的负担。</li>
-<li>DSA是一种高性能的数据复制和转换加速器，将在Intel的下一代处理器中可用，可用于优化数据移动和其他操作。</li>
+<li>利用硬件卸载技术，如Intel的io80、iox和DSA（数据流加速器），来减轻CPU的负担。</li>
+<li>DSA是一种高性能的数据复制和转换加速器，将用于优化数据移动和其他操作。</li>
 </ul></li>
 <li><strong>DSA的深度启用</strong>
 <ul>
@@ -213,8 +219,8 @@ Accelerator），来减轻CPU的负担。</li>
 </ul></li>
 <li><strong>结论与未来工作</strong>
 <ul>
-<li>总结了通过硬件卸载技术，特别是利用DSA和DML库，可以有效减轻CPU在持久内存操作中的压力。</li>
-<li>未来的工作包括继续优化Ceph存储系统中的持久内存操作，并探索其他卸载设备如FPGA的应用。</li>
+<li>通过硬件卸载技术，特别是利用DSA和DML库，可以有效减轻CPU在持久内存操作中的压力。</li>
+<li>未来工作包括优化Ceph存储系统中的持久内存操作，并探索其他卸载设备如FPGA的应用。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项：</h4>
@@ -224,7 +230,7 @@ Accelerator），来减轻CPU的负担。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
-<li>继续在Brewster中完善DSA的异步模式支持。</li>
+<li>完善DSA的异步模式支持。</li>
 <li>在Ceph存储系统中实施DSA技术，并评估其性能改进。</li>
 <li>探索其他硬件卸载设备如FPGA在持久内存操作中的应用潜力。</li>
 </ul>
@@ -270,6 +276,8 @@ Accelerator），来减轻CPU的负担。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PMEM/" rel="tag">PMEM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/bluestore/" rel="tag">bluestore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/hardware-offloading/" rel="tag">hardware offloading</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/performance-optimization/" rel="tag">performance optimization</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -340,7 +348,7 @@ Accelerator），来减轻CPU的负担。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">S3select: Computational Storage in S3</h4>
+        <h4 class="title">  S3select: Computational Storage in S3  </h4>
       </a>
     </div>
   

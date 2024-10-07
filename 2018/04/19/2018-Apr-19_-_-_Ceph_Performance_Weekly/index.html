@@ -14,23 +14,28 @@
     
     
     
-    <title>2018-Apr-19 :: Ceph Performance Weekly | ceph视频总结 | youtube频道总结</title>
+    <title> 2018-Apr-19 :: Ceph Performance Weekly  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间：2023年4月19日 会议主题：性能会议 会议关键细节：  目前Mimic版本处于冻结状态，ARS活动较少。 讨论了Blue Store Alligator策略的优化，Mike Market建议增加更多统计信息以更好地了解其工作情况。 讨论了收集分配器所需统计信息的方法，以了解其在生产环境中的工作方式和用途模式。 讨论了避免连续空间的需求，以及将BlueFS重构为与Sparks">
+    <meta name="keywords" content="Ceph性能,Blue Store Alligator,异步信使,统计信息收集,蓝鲸文件系统重构">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间：2018年4月19日 会议主题：性能会议 会议关键细节：  Mimic版本处于冻结状态，ARS活动较少。 讨论了Blue Store Alligator策略的优化，Mike Market建议增加更多统计信息以更好地了解其工作情况。 讨论了收集分配器所需统计信息的方法，以了解其在生产环境中的工作方式和用途模式。 讨论了避免连续空间的需求，以及将BlueF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018-Apr-19 :: Ceph Performance Weekly">
+<meta property="og:title" content=" 2018-Apr-19 :: Ceph Performance Weekly ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/04/19/2018-Apr-19_-_-_Ceph_Performance_Weekly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间：2023年4月19日 会议主题：性能会议 会议关键细节：  目前Mimic版本处于冻结状态，ARS活动较少。 讨论了Blue Store Alligator策略的优化，Mike Market建议增加更多统计信息以更好地了解其工作情况。 讨论了收集分配器所需统计信息的方法，以了解其在生产环境中的工作方式和用途模式。 讨论了避免连续空间的需求，以及将BlueFS重构为与Sparks">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间：2018年4月19日 会议主题：性能会议 会议关键细节：  Mimic版本处于冻结状态，ARS活动较少。 讨论了Blue Store Alligator策略的优化，Mike Market建议增加更多统计信息以更好地了解其工作情况。 讨论了收集分配器所需统计信息的方法，以了解其在生产环境中的工作方式和用途模式。 讨论了避免连续空间的需求，以及将BlueF">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-18T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-04-19T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph性能">
+<meta property="article:tag" content="Blue Store Alligator">
+<meta property="article:tag" content="异步信使">
+<meta property="article:tag" content="统计信息收集">
+<meta property="article:tag" content="蓝鲸文件系统重构">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2018-Apr-19 :: Ceph Performance Weekly</div>
+        <div class="flex-col header-title ellipsis"> 2018-Apr-19 :: Ceph Performance Weekly </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2018-Apr-19 :: Ceph Performance Weekly</h1>
+        <h1 class="title"> 2018-Apr-19 :: Ceph Performance Weekly </h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-04-18T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2018-Apr-19 :: Ceph Performance Weekly</h1>
+        <h1 class="post-card-title"> 2018-Apr-19 :: Ceph Performance Weekly </h1>
         <div class="post-meta">
             <time class="post-time" title="2018-04-19 00:00:00" datetime="2018-04-18T16:00:00.000Z"  itemprop="datePublished">2018-04-19</time>
 
@@ -178,50 +183,48 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要</p>
-<p>会议时间：2023年4月19日</p>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
+<p>会议时间：2018年4月19日</p>
 <p>会议主题：性能会议</p>
 <p>会议关键细节：</p>
 <ol type="1">
-<li><p>目前Mimic版本处于冻结状态，ARS活动较少。</p></li>
-<li><p>讨论了Blue Store Alligator策略的优化，Mike
-Market建议增加更多统计信息以更好地了解其工作情况。</p></li>
-<li><p>讨论了收集分配器所需统计信息的方法，以了解其在生产环境中的工作方式和用途模式。</p></li>
-<li><p>讨论了避免连续空间的需求，以及将BlueFS重构为与Sparks扩展兼容的方法。</p></li>
-<li><p>讨论了异步信使的性能问题，特别是与CBT相关的 contention
-和锁争用。</p></li>
+<li>Mimic版本处于冻结状态，ARS活动较少。</li>
+<li>讨论了Blue Store Alligator策略的优化，Mike
+Market建议增加更多统计信息以更好地了解其工作情况。</li>
+<li>讨论了收集分配器所需统计信息的方法，以了解其在生产环境中的工作方式和用途模式。</li>
+<li>讨论了避免连续空间的需求，以及将BlueFS重构为与Sparks扩展兼容的方法。</li>
+<li>讨论了异步信使的性能问题，特别是与CBT相关的 contention
+和锁争用。</li>
 </ol>
 <p>讨论的主要议题：</p>
 <ol type="1">
-<li><p>Blue Store Alligator策略的优化：</p>
+<li>Blue Store Alligator策略的优化：
 <ul>
-<li><p>收集更多统计信息，包括分配和释放的快照，以了解其在生产环境中的使用情况。</p></li>
-<li><p>考虑重构BlueFS以避免连续空间的需求。</p></li>
+<li>收集更多统计信息，包括分配和释放的快照，以了解其在生产环境中的使用情况。</li>
+<li>考虑重构BlueFS以避免连续空间的需求。</li>
 </ul></li>
-<li><p>异步信使的性能问题：</p>
+<li>异步信使的性能问题：
 <ul>
-<li><p>优化异步信使的性能，特别是与CBT相关的 contention
-和锁争用。</p></li>
-<li><p>考虑禁用CBT以进行性能测试。</p></li>
+<li>优化异步信使的性能，特别是与CBT相关的 contention 和锁争用。</li>
+<li>考虑禁用CBT以进行性能测试。</li>
 </ul></li>
 </ol>
 <p>决定的事项：</p>
 <ol type="1">
-<li><p>收集Blue Store
-Alligator的统计信息，包括分配和释放的快照。</p></li>
-<li><p>考虑重构BlueFS以避免连续空间的需求。</p></li>
-<li><p>优化异步信使的性能，特别是与CBT相关的 contention
-和锁争用。</p></li>
+<li>收集Blue Store Alligator的统计信息，包括分配和释放的快照。</li>
+<li>考虑重构BlueFS以避免连续空间的需求。</li>
+<li>优化异步信使的性能，特别是与CBT相关的 contention 和锁争用。</li>
 </ol>
 <p>后续行动计划：</p>
 <ol type="1">
-<li><p>Mike Market将提交一个包含更多统计信息的TR。</p></li>
-<li><p>评估重构BlueFS以避免连续空间的需求。</p></li>
-<li><p>优化异步信使的性能，特别是与CBT相关的 contention
-和锁争用。</p></li>
+<li>Mike Market将提交一个包含更多统计信息的TR。</li>
+<li>评估重构BlueFS以避免连续空间的需求。</li>
+<li>优化异步信使的性能，特别是与CBT相关的 contention 和锁争用。</li>
 </ol>
 <p>关键词：</p>
 <ul>
+<li>Ceph</li>
 <li>Blue Store Alligator</li>
 <li>统计信息</li>
 <li>连续空间</li>
@@ -229,6 +232,67 @@ Alligator的统计信息，包括分配和释放的快照。</p></li>
 <li>contention</li>
 <li>锁争用</li>
 <li>CBT</li>
+<li>BlueFS</li>
+<li>分布式存储</li>
+<li>CRUSH算法</li>
+<li>高可用性</li>
+<li>扩展性</li>
+<li>对象存储</li>
+<li>块存储</li>
+<li>文件系统存储</li>
+<li>一致性</li>
+<li>去中心化</li>
+<li>性能</li>
+<li>bluestore</li>
+<li>bluefs</li>
+<li>rocksdb</li>
+<li>OSD</li>
+<li>MON</li>
+<li>MDS</li>
+<li>PG</li>
+<li>RADOS</li>
+<li>librados</li>
+<li>libcephfs</li>
+<li>cephfs</li>
+<li>rbd</li>
+<li>radosgw</li>
+<li>RGW</li>
+<li>RESTful API</li>
+<li>认证</li>
+<li>授权</li>
+<li>加密</li>
+<li>损灭编码</li>
+<li>复制</li>
+<li>快照</li>
+<li>克隆</li>
+<li>虚拟化</li>
+<li>云计算</li>
+<li>AWS</li>
+<li>Azure</li>
+<li>Google Cloud</li>
+<li>混合云</li>
+<li>多云</li>
+<li>存储集群</li>
+<li>节点</li>
+<li>磁盘</li>
+<li>SSD</li>
+<li>HDD</li>
+<li>JBOD</li>
+<li>SAN</li>
+<li>NAS</li>
+<li>网络</li>
+<li>拓扑</li>
+<li>失败域</li>
+<li>恢复</li>
+<li>弹性</li>
+<li>负载均衡</li>
+<li>缓存</li>
+<li>压缩</li>
+<li>去重</li>
+<li>分层</li>
+<li>性能调优</li>
+<li>基准测试</li>
+<li>验证</li>
 </ul>
 
         </div>
@@ -260,6 +324,8 @@ Alligator的统计信息，包括分配和释放的快照。</p></li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Blue-Store-Alligator/" rel="tag">Blue Store Alligator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E6%80%A7%E8%83%BD/" rel="tag">Ceph性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%82%E6%AD%A5%E4%BF%A1%E4%BD%BF/" rel="tag">异步信使</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BB%9F%E8%AE%A1%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" rel="tag">统计信息收集</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%93%9D%E9%B2%B8%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E9%87%8D%E6%9E%84/" rel="tag">蓝鲸文件系统重构</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -271,7 +337,7 @@ Alligator的统计信息，包括分配和释放的快照。</p></li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/04/19/2018-Apr-19_-_-_Ceph_Performance_Weekly/&title=《2018-Apr-19 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/04/19/2018-Apr-19_-_-_Ceph_Performance_Weekly/&title=《 2018-Apr-19 :: Ceph Performance Weekly 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -281,7 +347,7 @@ Alligator的统计信息，包括分配和释放的快照。</p></li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/04/19/2018-Apr-19_-_-_Ceph_Performance_Weekly/&title=《2018-Apr-19 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/04/19/2018-Apr-19_-_-_Ceph_Performance_Weekly/&title=《 2018-Apr-19 :: Ceph Performance Weekly 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -291,7 +357,7 @@ Alligator的统计信息，包括分配和释放的快照。</p></li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-Apr-19 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/04/19/2018-Apr-19_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 2018-Apr-19 :: Ceph Performance Weekly 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/04/19/2018-Apr-19_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -319,9 +385,9 @@ Alligator的统计信息，包括分配和释放的快照。</p></li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2018/04/23/Status_and_Future_of_the_Ceph_File_System_-_Patrick_Donnelly/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2018/04/23/Running_Ceph_on_Flashcache_-_Pawe_Sadowski/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Status and Future of the Ceph File System - Patrick Donnelly</h4>
+        <h4 class="title">Running Ceph on Flashcache - Paweł Sadowski</h4>
       </a>
     </div>
   
@@ -330,7 +396,7 @@ Alligator的统计信息，包括分配和释放的快照。</p></li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2018/04/12/2018-Apr-12_-_-_Ceph_Performance_Weekly/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2018-Apr-12:: Ceph Performance Weekly</h4>
+        <h4 class="title">&#39;2018-Apr-12:: Ceph Performance Weekly&#39;</h4>
       </a>
     </div>
   
@@ -430,7 +496,7 @@ Alligator的统计信息，包括分配和释放的快照。</p></li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/04/19/2018-Apr-19_-_-_Ceph_Performance_Weekly/&title=《2018-Apr-19 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/04/19/2018-Apr-19_-_-_Ceph_Performance_Weekly/&title=《 2018-Apr-19 :: Ceph Performance Weekly 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -440,7 +506,7 @@ Alligator的统计信息，包括分配和释放的快照。</p></li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/04/19/2018-Apr-19_-_-_Ceph_Performance_Weekly/&title=《2018-Apr-19 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/04/19/2018-Apr-19_-_-_Ceph_Performance_Weekly/&title=《 2018-Apr-19 :: Ceph Performance Weekly 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -450,7 +516,7 @@ Alligator的统计信息，包括分配和释放的快照。</p></li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-Apr-19 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/04/19/2018-Apr-19_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 2018-Apr-19 :: Ceph Performance Weekly 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/04/19/2018-Apr-19_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

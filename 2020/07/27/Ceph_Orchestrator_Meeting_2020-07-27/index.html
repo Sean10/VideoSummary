@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要  会议主题: 今日的Orchestrator会议 参会人员: 团队成员 会议日期: [具体日期]  主要议题与讨论内容  Bug修复与性能提升  上周进行了多项小bug的修复。 实现了OSD创建速度的大幅提升，现在可以并行在至少10个主机上同时执行，速度提升约10倍。  文档更新与代码审查  Karen Kevin提交了几个针对fadm文档的上游PR，请求团队成员进行审查。 确">
+    <meta name="keywords" content="Ceph,Distributed Storage,Orchestrator,Rook,Bug Fixes">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议纪要主要围绕Ceph Orchestrator的更新和维护展开，以下为会议的关键点： 会议概要 - 会议主题：Ceph Orchestrator会议 - 参会人员：团队成员 - 会议日期：2020年7月27日 主要议题与讨论内容 1. Bug修复与性能提升： - 上周修复了多项小bug，并实现了OSD创建速度的大幅提升，现在可以并行在至少10个主机上同时执行，速度">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2020-07-27">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/07/27/Ceph_Orchestrator_Meeting_2020-07-27/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要  会议主题: 今日的Orchestrator会议 参会人员: 团队成员 会议日期: [具体日期]  主要议题与讨论内容  Bug修复与性能提升  上周进行了多项小bug的修复。 实现了OSD创建速度的大幅提升，现在可以并行在至少10个主机上同时执行，速度提升约10倍。  文档更新与代码审查  Karen Kevin提交了几个针对fadm文档的上游PR，请求团队成员进行审查。 确">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议纪要主要围绕Ceph Orchestrator的更新和维护展开，以下为会议的关键点： 会议概要 - 会议主题：Ceph Orchestrator会议 - 参会人员：团队成员 - 会议日期：2020年7月27日 主要议题与讨论内容 1. Bug修复与性能提升： - 上周修复了多项小bug，并实现了OSD创建速度的大幅提升，现在可以并行在至少10个主机上同时执行，速度">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-26T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-07-27T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="Bug Fixes">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +161,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E4%B8%8E%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题与讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Orchestrator_Meeting_2020-07-27"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,67 +183,50 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概要">会议概要</h4>
-<ul>
-<li><strong>会议主题</strong>: 今日的Orchestrator会议</li>
-<li><strong>参会人员</strong>: 团队成员</li>
-<li><strong>会议日期</strong>: [具体日期]</li>
-</ul>
-<h4 id="主要议题与讨论内容">主要议题与讨论内容</h4>
-<ol type="1">
-<li><strong>Bug修复与性能提升</strong>
-<ul>
-<li>上周进行了多项小bug的修复。</li>
-<li>实现了OSD创建速度的大幅提升，现在可以并行在至少10个主机上同时执行，速度提升约10倍。</li>
-</ul></li>
-<li><strong>文档更新与代码审查</strong>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议纪要主要围绕Ceph
+Orchestrator的更新和维护展开，以下为会议的关键点：</p>
+<p><strong>会议概要</strong> - 会议主题：Ceph Orchestrator会议 -
+参会人员：团队成员 - 会议日期：2020年7月27日</p>
+<p><strong>主要议题与讨论内容</strong> 1.
+<strong>Bug修复与性能提升</strong>： -
+上周修复了多项小bug，并实现了OSD创建速度的大幅提升，现在可以并行在至少10个主机上同时执行，速度提升约10倍。</p>
+<ol start="2" type="1">
+<li><strong>文档更新与代码审查</strong>：
 <ul>
 <li>Karen
 Kevin提交了几个针对fadm文档的上游PR，请求团队成员进行审查。</li>
-<li>确认了GitHub用户名的正确性以便后续的代码审查工作。</li>
+<li>确认了GitHub用户名的正确性，以便后续的代码审查工作。</li>
 </ul></li>
-<li><strong>Rook 1.4版本准备</strong>
+<li><strong>Rook 1.4版本准备</strong>：
 <ul>
 <li>正在为Rook 1.4版本做准备，等待CSI
 3.0版本的发布，该版本今日已发布。</li>
 <li>计划下周创建分支并发布Rook 1.4版本。</li>
 </ul></li>
-<li><strong>Orchestrator设计哲学讨论</strong>
+<li><strong>Orchestrator设计哲学讨论</strong>：
 <ul>
 <li>讨论了Orchestrator在处理demon失败时的行为和设计理念。</li>
 <li>目前Orchestrator在demon失败后不会自动重新调度，依赖于systemd进行重启。</li>
 <li>讨论了是否应该增加自动重新调度的功能，以及这可能带来的复杂性。</li>
 </ul></li>
-<li><strong>文档与安装指南更新</strong>
+<li><strong>文档与安装指南更新</strong>：
 <ul>
 <li>讨论了即将推出的Crisp安装指南的更新，该指南将被拆分为多个小PR以便审查。</li>
 <li>寻求图形设计方面的帮助，特别是按钮设计。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
-<ul>
-<li>确认了GitHub用户名的正确性，以便进行代码审查。</li>
-<li>确定了Rook 1.4版本的发布计划。</li>
-<li>讨论了Orchestrator在处理demon失败时的行为，但未做出具体决定。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划</h4>
-<ul>
-<li>继续进行Rook 1.4版本的准备工作。</li>
-<li>提交并审查Crisp安装指南的多个PR。</li>
-<li>寻求图形设计方面的帮助，以改进文档的视觉效果。</li>
-</ul>
-<h4 id="其他事项">其他事项</h4>
-<ul>
-<li>无其他重要事项。</li>
-</ul>
-<h4 id="会议结束">会议结束</h4>
-<ul>
-<li>会议在高效和快速的节奏中结束，期待下周再次会面。</li>
-</ul>
-<hr />
-<p><strong>备注</strong>:
-本次会议纪要基于会议录音整理，确保了关键信息的准确性和完整性。</p>
+<p><strong>决定事项</strong> -
+确认了GitHub用户名的正确性，以便进行代码审查。 - 确定了Rook
+1.4版本的发布计划。 -
+讨论了Orchestrator在处理demon失败时的行为，但未做出具体决定。</p>
+<p><strong>后续行动计划</strong> - 继续进行Rook 1.4版本的准备工作。 -
+提交并审查Crisp安装指南的多个PR。 -
+寻求图形设计方面的帮助，以改进文档的视觉效果。</p>
+<p><strong>其他事项</strong> - 无其他重要事项。</p>
+<p><strong>会议总结</strong>
+本次会议在高效和快速的节奏中结束，团队成员对Ceph
+Orchestrator的更新和维护进行了深入讨论，并制定了后续的行动计划。</p>
 
         </div>
 
@@ -276,6 +257,8 @@ Kevin提交了几个针对fadm文档的上游PR，请求团队成员进行审查
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bug-Fixes/" rel="tag">Bug Fixes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -337,7 +320,7 @@ Kevin提交了几个针对fadm文档的上游PR，请求团队成员进行审查
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2020/07/28/Ceph_Tech_Talk_-_A_Different_Scale_Running_Small_Ceph_Clusters_in_Multiple_Data_Centers_20200723/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Tech Talk: A Different Scale, Running Small Ceph Clusters in Multiple Data Centers 20200723</h4>
+        <h4 class="title">&#39;Ceph Tech Talk: A Different Scale, Running Small Ceph Clusters in Multiple Data Centers 20200723&#39;</h4>
       </a>
     </div>
   

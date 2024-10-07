@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Ceph Orchestrator 会议 日期： [具体日期] 参会人员： [参会人员名单] 会议内容总结：  ISCSI 问题讨论：  容器名称问题： 讨论了容器名称中包含点（dot）的问题。建议避免使用不含点的容器名称，因为这会导致 DNS 解析问题。具体来说，Python 的 socket 模块中的 getfqdn 函数在找不到主机名时会扫描 &#x2F;etc&#x2F;hosts 文件">
+    <meta name="keywords" content="存储管理,Rook,Ceph Orchestrator,Kubernetes 集成,本地存储">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph Orchestrator 会议 日期： 2021年7月13日 参会人员： [参会人员名单] 会议内容总结：  ISCSI 问题讨论：  容器名称问题： 讨论了容器名称中包含点（dot）的问题，建议避免使用不含点的容器名称，因为这会导致 DNS 解析问题。 Cgroups 共享问题： 讨论了容器和系统之间的 cgroups 不共享的问题，已有">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator 2021-07-13">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Orchestrator_2021-07-13/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Ceph Orchestrator 会议 日期： [具体日期] 参会人员： [参会人员名单] 会议内容总结：  ISCSI 问题讨论：  容器名称问题： 讨论了容器名称中包含点（dot）的问题。建议避免使用不含点的容器名称，因为这会导致 DNS 解析问题。具体来说，Python 的 socket 模块中的 getfqdn 函数在找不到主机名时会扫描 &#x2F;etc&#x2F;hosts 文件">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph Orchestrator 会议 日期： 2021年7月13日 参会人员： [参会人员名单] 会议内容总结：  ISCSI 问题讨论：  容器名称问题： 讨论了容器名称中包含点（dot）的问题，建议避免使用不含点的容器名称，因为这会导致 DNS 解析问题。 Cgroups 共享问题： 讨论了容器和系统之间的 cgroups 不共享的问题，已有">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-08-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="存储管理">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="Ceph Orchestrator">
+<meta property="article:tag" content="Kubernetes 集成">
+<meta property="article:tag" content="本地存储">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,34 +190,32 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议主题：</strong> Ceph Orchestrator 会议</p>
-<p><strong>日期：</strong> [具体日期]</p>
+<p><strong>日期：</strong> 2021年7月13日</p>
 <p><strong>参会人员：</strong> [参会人员名单]</p>
 <p><strong>会议内容总结：</strong></p>
 <ol type="1">
 <li><strong>ISCSI 问题讨论：</strong>
 <ul>
 <li><strong>容器名称问题：</strong>
-讨论了容器名称中包含点（dot）的问题。建议避免使用不含点的容器名称，因为这会导致
-DNS 解析问题。具体来说，Python 的 <code>socket</code> 模块中的
-<code>getfqdn</code> 函数在找不到主机名时会扫描 <code>/etc/hosts</code>
-文件中的别名，如果容器名称包含点，会导致解析失败。</li>
+讨论了容器名称中包含点（dot）的问题，建议避免使用不含点的容器名称，因为这会导致
+DNS 解析问题。</li>
 <li><strong>Cgroups 共享问题：</strong> 讨论了容器和系统之间的 cgroups
-不共享的问题。这个问题已经有人贡献了解决方案，并且已经合并到 pacific
-版本中。</li>
+不共享的问题，已有人贡献了解决方案并合并到 pacific 版本中。</li>
 </ul></li>
 <li><strong>LSO（Local Storage Operator）讨论：</strong>
 <ul>
 <li><strong>安装和支持问题：</strong> 讨论了 LSO 在 vanilla Kubernetes
-环境中的安装和支持问题。目前 LSO 的 README
+环境中的安装和支持问题，目前 LSO 的 README
 文件不够友好，需要澄清其在上游的支持情况。</li>
 <li><strong>LSO 集成到 Rook 组织：</strong> 讨论了是否有可能将 LSO
-集成到 Rook 的 GitHub 仓库中。目前 LSO
+集成到 Rook 的 GitHub 仓库中，LSO
 团队对保持所有权感兴趣，因此可能不会接受这个提议。</li>
 <li><strong>LSO 功能需求：</strong> 讨论了 LSO
 的功能需求，包括硬件库存检查、动态 PV
-分配、原始设备支持等。目前没有完全满足这些需求的存储运营商。</li>
+分配、原始设备支持等，目前没有完全满足这些需求的存储运营商。</li>
 <li><strong>Rook 本地存储运营商：</strong> 提出了创建一个新的 Rook
 本地存储运营商的想法，以满足上述需求，并可能从 LSO 和 TopoLVM
 中学习。</li>
@@ -270,6 +273,8 @@ Manager Rook 的基本支持实现。 - 探索开发新的 Rook
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Orchestrator/" rel="tag">Ceph Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes-%E9%9B%86%E6%88%90/" rel="tag">Kubernetes 集成</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/" rel="tag">存储管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" rel="tag">本地存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -338,9 +343,9 @@ Manager Rook 的基本支持实现。 - 探索开发新的 Rook
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-20/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-27/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Orchestrator Meeting 2021-07-20</h4>
+        <h4 class="title">Ceph Orchestrator Meeting 2021-07-27</h4>
       </a>
     </div>
   

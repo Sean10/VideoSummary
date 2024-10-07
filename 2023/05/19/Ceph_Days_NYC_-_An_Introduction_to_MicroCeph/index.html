@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Days NYC: An Introduction to MicroCeph | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph Days NYC- An Introduction to MicroCeph | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Microsoft Snap 在 Ceph 集群管理中的应用 主讲人：Chris 会议内容总结：  Snap 介绍：  Chris 介绍了 Microsoft Snap，这是一个由 Canonical 开发的集群管理工具。 Snap 使用 Dqlite，一个兼容 SQLite 的数据库，采用 Raft 共识算法。 管理 Daemon 允许构建任意节点的集群，用于管理各种 Cep">
+    <meta name="keywords" content="Ceph,MicroCeph,Cluster Management,Snap,Ubuntu">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：MicroCeph 在 Ceph 集群管理中的应用 主讲人：Chris 会议内容总结：  Snap 介绍：  Chris 介绍了由 Canonical 开发的微软 Snap，这是一个用于集群管理的工具。 Snap 使用 Dqlite，一个兼容 SQLite 的数据库，采用 Raft 共识算法。 管理 Daemon 允许构建任意节点的集群，用于管理各种">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Days NYC: An Introduction to MicroCeph">
+<meta property="og:title" content="Ceph Days NYC- An Introduction to MicroCeph">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/19/Ceph_Days_NYC_-_An_Introduction_to_MicroCeph/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Microsoft Snap 在 Ceph 集群管理中的应用 主讲人：Chris 会议内容总结：  Snap 介绍：  Chris 介绍了 Microsoft Snap，这是一个由 Canonical 开发的集群管理工具。 Snap 使用 Dqlite，一个兼容 SQLite 的数据库，采用 Raft 共识算法。 管理 Daemon 允许构建任意节点的集群，用于管理各种 Cep">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：MicroCeph 在 Ceph 集群管理中的应用 主讲人：Chris 会议内容总结：  Snap 介绍：  Chris 介绍了由 Canonical 开发的微软 Snap，这是一个用于集群管理的工具。 Snap 使用 Dqlite，一个兼容 SQLite 的数据库，采用 Raft 共识算法。 管理 Daemon 允许构建任意节点的集群，用于管理各种">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-18T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-19T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="MicroCeph">
+<meta property="article:tag" content="Cluster Management">
+<meta property="article:tag" content="Snap">
+<meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Days NYC: An Introduction to MicroCeph</div>
+        <div class="flex-col header-title ellipsis">Ceph Days NYC- An Introduction to MicroCeph</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Days NYC: An Introduction to MicroCeph</h1>
+        <h1 class="title">Ceph Days NYC- An Introduction to MicroCeph</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-18T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,8 +164,8 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98microsoft-snap-%E5%9C%A8-ceph-%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Microsoft
-Snap 在 Ceph 集群管理中的应用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAchris"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：Chris</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98microceph-%E5%9C%A8-ceph-%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：MicroCeph
+在 Ceph 集群管理中的应用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAchris"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：Chris</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -169,7 +174,7 @@ Snap 在 Ceph 集群管理中的应用</span></a></li><li class="post-toc-item p
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Days NYC: An Introduction to MicroCeph</h1>
+        <h1 class="post-card-title">Ceph Days NYC- An Introduction to MicroCeph</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-19 00:00:00" datetime="2023-05-18T16:00:00.000Z"  itemprop="datePublished">2023-05-19</time>
 
@@ -186,17 +191,17 @@ Snap 在 Ceph 集群管理中的应用</span></a></li><li class="post-toc-item p
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4
-id="会议主题microsoft-snap-在-ceph-集群管理中的应用">会议主题：Microsoft
-Snap 在 Ceph 集群管理中的应用</h4>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议主题microceph-在-ceph-集群管理中的应用">会议主题：MicroCeph
+在 Ceph 集群管理中的应用</h4>
 <h4 id="主讲人chris">主讲人：Chris</h4>
 <h4 id="会议内容总结">会议内容总结：</h4>
 <ol type="1">
 <li><strong>Snap 介绍</strong>：
 <ul>
-<li>Chris 介绍了 Microsoft Snap，这是一个由 Canonical
-开发的集群管理工具。</li>
+<li>Chris 介绍了由 Canonical 开发的微软
+Snap，这是一个用于集群管理的工具。</li>
 <li>Snap 使用 Dqlite，一个兼容 SQLite 的数据库，采用 Raft
 共识算法。</li>
 <li>管理 Daemon 允许构建任意节点的集群，用于管理各种 Ceph 守护进程（如
@@ -205,7 +210,7 @@ Monitors、Managers、OSDs、Metadata Servers 等）。</li>
 <li><strong>使用场景</strong>：
 <ul>
 <li>支持单节点 Ceph
-部署，适合在笔记本电脑上运行，严格限制权限，类似于手机应用。</li>
+部署，适合在笔记本电脑上运行，权限受到严格限制。</li>
 <li>支持小型边缘集群部署，快速、可预测，适合非 Ceph
 专家的普通部署者。</li>
 </ul></li>
@@ -215,8 +220,8 @@ Monitors、Managers、OSDs、Metadata Servers 等）。</li>
 集群，包括启动集群、添加节点、配置管理 Daemon 等。</li>
 <li>演示了如何添加 OSDs 和设置 Ceph
 集群，尽管集群初始化时没有存储。</li>
-<li>展示了如何启用和配置 Ceph 的 RGW（Red House
-Gateway），并进行了简单的 S3 操作演示。</li>
+<li>展示了如何启用和配置 Ceph 的 RGW（Red Hat Gateway），并进行了简单的
+S3 操作演示。</li>
 </ul></li>
 <li><strong>后续计划</strong>：
 <ul>
@@ -279,6 +284,8 @@ Gateway），并进行了简单的 S3 操作演示。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cluster-Management/" rel="tag">Cluster Management</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MicroCeph/" rel="tag">MicroCeph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Snap/" rel="tag">Snap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ubuntu/" rel="tag">Ubuntu</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -290,7 +297,7 @@ Gateway），并进行了简单的 S3 操作演示。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/19/Ceph_Days_NYC_-_An_Introduction_to_MicroCeph/&title=《Ceph Days NYC: An Introduction to MicroCeph》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/19/Ceph_Days_NYC_-_An_Introduction_to_MicroCeph/&title=《Ceph Days NYC- An Introduction to MicroCeph》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -300,7 +307,7 @@ Gateway），并进行了简单的 S3 操作演示。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/19/Ceph_Days_NYC_-_An_Introduction_to_MicroCeph/&title=《Ceph Days NYC: An Introduction to MicroCeph》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/19/Ceph_Days_NYC_-_An_Introduction_to_MicroCeph/&title=《Ceph Days NYC- An Introduction to MicroCeph》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -310,7 +317,7 @@ Gateway），并进行了简单的 S3 操作演示。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Days NYC: An Introduction to MicroCeph》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/19/Ceph_Days_NYC_-_An_Introduction_to_MicroCeph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Days NYC- An Introduction to MicroCeph》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/19/Ceph_Days_NYC_-_An_Introduction_to_MicroCeph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -338,9 +345,9 @@ Gateway），并进行了简单的 S3 操作演示。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/24/Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/24/Testing_Ceph_for_the_Cloud_in_the_Cloud_-_Adam_Wolfe_Gordon_DigitalOcean/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Tech Talk: RGW Lua Scripting Code Walkthrough</h4>
+        <h4 class="title">Testing Ceph for the Cloud, in the Cloud - Adam Wolfe Gordon, DigitalOcean</h4>
       </a>
     </div>
   
@@ -349,7 +356,7 @@ Gateway），并进行了简单的 S3 操作演示。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/05/19/Ceph_Days_NYC_-_State_of_the_Cephalopod/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Days NYC: State of the Cephalopod</h4>
+        <h4 class="title">&#39;Ceph Days NYC: State of the Cephalopod&#39;</h4>
       </a>
     </div>
   
@@ -449,7 +456,7 @@ Gateway），并进行了简单的 S3 操作演示。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/19/Ceph_Days_NYC_-_An_Introduction_to_MicroCeph/&title=《Ceph Days NYC: An Introduction to MicroCeph》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/19/Ceph_Days_NYC_-_An_Introduction_to_MicroCeph/&title=《Ceph Days NYC- An Introduction to MicroCeph》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -459,7 +466,7 @@ Gateway），并进行了简单的 S3 操作演示。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/19/Ceph_Days_NYC_-_An_Introduction_to_MicroCeph/&title=《Ceph Days NYC: An Introduction to MicroCeph》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/19/Ceph_Days_NYC_-_An_Introduction_to_MicroCeph/&title=《Ceph Days NYC- An Introduction to MicroCeph》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -469,7 +476,7 @@ Gateway），并进行了简单的 S3 操作演示。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Days NYC: An Introduction to MicroCeph》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/19/Ceph_Days_NYC_-_An_Introduction_to_MicroCeph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Days NYC- An Introduction to MicroCeph》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/19/Ceph_Days_NYC_-_An_Introduction_to_MicroCeph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

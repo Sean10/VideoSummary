@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要  日期: [具体日期] 参与者: [参与者名单] 主持人: [主持人姓名]  主要议题  Rook 和存储类（Storage Classes）  讨论内容:  需要创建支持存储类的OSD（Object Storage Daemon）。 当前设备清单不足以满足需求，需要新的Orchestrator API来暴露存储类的名称。 讨论了如何在Rook中实现存储类，包括在CRD（Cus">
+    <meta name="keywords" content="Ceph,Orchestrator,Rook,Storage Classes,IPVS">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概要  日期: 2021-09-28 参与者: [参与者名单] 主持人: [主持人姓名]  主要议题  Rook和存储类（Storage Classes）  讨论内容:  需要创建支持存储类的OSD（Object Storage Daemon）。 讨论了如何在Rook中实现存储类，包括在CRD（Custom Resource Definition）中的存储部">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2021-09-28">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Orchestrator_Meeting_2021-09-28/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要  日期: [具体日期] 参与者: [参与者名单] 主持人: [主持人姓名]  主要议题  Rook 和存储类（Storage Classes）  讨论内容:  需要创建支持存储类的OSD（Object Storage Daemon）。 当前设备清单不足以满足需求，需要新的Orchestrator API来暴露存储类的名称。 讨论了如何在Rook中实现存储类，包括在CRD（Cus">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概要  日期: 2021-09-28 参与者: [参与者名单] 主持人: [主持人姓名]  主要议题  Rook和存储类（Storage Classes）  讨论内容:  需要创建支持存储类的OSD（Object Storage Daemon）。 讨论了如何在Rook中实现存储类，包括在CRD（Custom Resource Definition）中的存储部">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-06T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-10-07T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="Storage Classes">
+<meta property="article:tag" content="IPVS">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,22 +190,21 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概要">会议概要</h4>
 <ul>
-<li><strong>日期</strong>: [具体日期]</li>
+<li><strong>日期</strong>: 2021-09-28</li>
 <li><strong>参与者</strong>: [参与者名单]</li>
 <li><strong>主持人</strong>: [主持人姓名]</li>
 </ul>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
-<li><strong>Rook 和存储类（Storage Classes）</strong>
+<li><strong>Rook和存储类（Storage Classes）</strong>
 <ul>
 <li><strong>讨论内容</strong>:
 <ul>
 <li>需要创建支持存储类的OSD（Object Storage Daemon）。</li>
-<li>当前设备清单不足以满足需求，需要新的Orchestrator
-API来暴露存储类的名称。</li>
 <li>讨论了如何在Rook中实现存储类，包括在CRD（Custom Resource
 Definition）中的存储部分设置存储类。</li>
 </ul></li>
@@ -286,8 +290,6 @@ Definition）中的存储部分设置存储类。</li>
 <li><strong>时间</strong>: [具体结束时间]</li>
 <li><strong>下次会议</strong>: [下次会议的具体日期和时间]</li>
 </ul>
-<hr />
-<p>以上是本次会议的纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -318,6 +320,8 @@ Definition）中的存储部分设置存储类。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/IPVS/" rel="tag">IPVS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Classes/" rel="tag">Storage Classes</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -377,18 +381,18 @@ Definition）中的存储部分设置存储类。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2021/10/07/Ceph_Orchestrator_Meeting_2021-10-05/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2021/10/07/Ceph_Crimson_SeaStore_2021-10-07/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Orchestrator Meeting 2021-10-05</h4>
+        <h4 class="title">Ceph Crimson/SeaStore 2021-10-07</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2021/10/07/Ceph_Orchestrator_Meeting_2021-10-05/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2021-09-23</h4>
+        <h4 class="title">Ceph Orchestrator Meeting 2021-10-05</h4>
       </a>
     </div>
   

@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph RGW Refactoring Meeting 2023-05-31 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph RGW 重构会议 2023-05-31 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：字符串优化及通知重试清理讨论 参会人员：Gabby, Yuval, Eugene, 及其他相关开发人员 主要议题：  字符串优化（Gabby 和 Yuval）  讨论内容：  针对S3属性名称（如x-amz-meta-等长字符串）的优化。 属性名称存在多个地方，包括消息、中间结构（如Redis网关）和对象内部。 提议通过哈希将这些长字符串转换为短整数，以减少动态字符串分配和内存">
+    <meta name="keywords" content="Ceph,分布式存储,RGW,字符串优化,通知重试清理">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph RGW的几个重要议题，包括字符串优化、通知重试和清理机制，以及Bucket Level Redirect Zone的原型。  字符串优化：  会议讨论了针对S3属性名称的优化方案，包括通过哈希将长字符串转换为短整数，以减少动态字符串分配和内存使用。 讨论了两种优化级别：在RGW内部进行转换和向客户端发送转换表。 决定首先在OSD层进行优化，隐藏">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph RGW Refactoring Meeting 2023-05-31">
+<meta property="og:title" content="Ceph RGW 重构会议 2023-05-31">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/31/Ceph_RGW_Refactoring_Meeting_2023-05-31/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：字符串优化及通知重试清理讨论 参会人员：Gabby, Yuval, Eugene, 及其他相关开发人员 主要议题：  字符串优化（Gabby 和 Yuval）  讨论内容：  针对S3属性名称（如x-amz-meta-等长字符串）的优化。 属性名称存在多个地方，包括消息、中间结构（如Redis网关）和对象内部。 提议通过哈希将这些长字符串转换为短整数，以减少动态字符串分配和内存">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph RGW的几个重要议题，包括字符串优化、通知重试和清理机制，以及Bucket Level Redirect Zone的原型。  字符串优化：  会议讨论了针对S3属性名称的优化方案，包括通过哈希将长字符串转换为短整数，以减少动态字符串分配和内存使用。 讨论了两种优化级别：在RGW内部进行转换和向客户端发送转换表。 决定首先在OSD层进行优化，隐藏">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-30T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-31T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="字符串优化">
+<meta property="article:tag" content="通知重试清理">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph RGW Refactoring Meeting 2023-05-31</div>
+        <div class="flex-col header-title ellipsis">Ceph RGW 重构会议 2023-05-31</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph RGW Refactoring Meeting 2023-05-31</h1>
+        <h1 class="title">Ceph RGW 重构会议 2023-05-31</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-30T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,20 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BC%98%E5%8C%96%E5%8F%8A%E9%80%9A%E7%9F%A5%E9%87%8D%E8%AF%95%E6%B8%85%E7%90%86%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：字符串优化及通知重试清理讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98gabby-yuval-eugene-%E5%8F%8A%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：Gabby,
-Yuval, Eugene, 及其他相关开发人员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8B%E4%B8%80%E6%AD%A5%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">下一步行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_RGW_Refactoring_Meeting_2023-05-31"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph RGW Refactoring Meeting 2023-05-31</h1>
+        <h1 class="post-card-title">Ceph RGW 重构会议 2023-05-31</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-31 00:00:00" datetime="2023-05-30T16:00:00.000Z"  itemprop="datePublished">2023-05-31</time>
 
@@ -186,75 +183,44 @@ Yuval, Eugene, 及其他相关开发人员</span></a></li><li class="post-toc-it
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4
-id="会议主题字符串优化及通知重试清理讨论">会议主题：字符串优化及通知重试清理讨论</h4>
-<h4 id="参会人员gabby-yuval-eugene-及其他相关开发人员">参会人员：Gabby,
-Yuval, Eugene, 及其他相关开发人员</h4>
-<h4 id="主要议题">主要议题：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph
+RGW的几个重要议题，包括字符串优化、通知重试和清理机制，以及Bucket Level
+Redirect Zone的原型。</p>
 <ol type="1">
-<li><strong>字符串优化（Gabby 和 Yuval）</strong>
+<li><strong>字符串优化</strong>：
 <ul>
-<li><strong>讨论内容</strong>：
-<ul>
-<li>针对S3属性名称（如x-amz-meta-等长字符串）的优化。</li>
-<li>属性名称存在多个地方，包括消息、中间结构（如Redis网关）和对象内部。</li>
-<li>提议通过哈希将这些长字符串转换为短整数，以减少动态字符串分配和内存使用。</li>
-<li>讨论了两种优化级别：在rgw内部进行转换和向客户端发送转换表。</li>
+<li>会议讨论了针对S3属性名称的优化方案，包括通过哈希将长字符串转换为短整数，以减少动态字符串分配和内存使用。</li>
+<li>讨论了两种优化级别：在RGW内部进行转换和向客户端发送转换表。</li>
+<li>决定首先在OSD层进行优化，隐藏在内部，不改变现有librados
+API。RGW可以管理一个本地缓存，从OSD获取转换表，避免全局同步问题。</li>
+<li>需要开发测试工具来验证实际使用的属性名称数量。</li>
 </ul></li>
-<li><strong>决定事项</strong>：
-<ul>
-<li>建议首先在OSD层进行优化，隐藏在内部，不改变现有librados API。</li>
-<li>rgw可以管理一个本地缓存，从OSD获取转换表，避免全局同步问题。</li>
-</ul></li>
-<li><strong>后续行动</strong>：
-<ul>
-<li>继续讨论并确定最佳实施方案。</li>
-<li>开发一个测试工具来验证实际使用的属性名称数量。</li>
-</ul></li>
-</ul></li>
-<li><strong>通知重试和清理（Grinnell）</strong>
-<ul>
-<li><strong>讨论内容</strong>：
+<li><strong>通知重试和清理</strong>：
 <ul>
 <li>讨论了通知重试机制，特别是在Kafka broker不可用时的行为。</li>
 <li>当前设计是无限重试，直到队列满后向S3客户端发送慢速响应。</li>
-<li>提出了几种改进方案，包括设置重试次数上限和清理过期通知。</li>
+<li>提出了设置重试次数上限和清理过期通知等改进方案。</li>
+<li>决定通过邮件讨论，收集社区意见，确定最佳方案。</li>
 </ul></li>
-<li><strong>决定事项</strong>：
-<ul>
-<li>发起邮件讨论，收集社区意见，确定最佳方案。</li>
-</ul></li>
-<li><strong>后续行动</strong>：
-<ul>
-<li>发送邮件到用户列表，讨论并收集反馈。</li>
-</ul></li>
-</ul></li>
-<li><strong>其他事项</strong>
-<ul>
-<li><strong>Bucket Level Redirect Zone 原型（Eugene）</strong>
+<li><strong>Bucket Level Redirect Zone 原型</strong>：
 <ul>
 <li>讨论了相关PR，但未深入细节。</li>
 </ul></li>
-<li><strong>Reef多站点测试更新（Shilpa）</strong>
+<li><strong>Reef多站点测试更新</strong>：
 <ul>
 <li>Mark成功完成了4亿对象的同步负载测试，未发现回归问题。</li>
 </ul></li>
-</ul></li>
 </ol>
-<h4 id="下一步行动">下一步行动：</h4>
+<p>会议决定了以下后续行动计划：</p>
 <ul>
 <li>继续讨论字符串优化方案，并开发测试工具。</li>
 <li>发送邮件讨论通知重试和清理的最佳方案。</li>
 <li>跟进Bucket Level Redirect Zone原型的进一步讨论。</li>
 <li>继续Reef的多站点测试，确保无回归问题。</li>
 </ul>
-<h4 id="会议结束">会议结束：</h4>
-<ul>
-<li>会议超时结束，感谢所有参与者的贡献，期待下次会议。</li>
-</ul>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了关键讨论点、决定事项及后续行动计划。</p>
+<p>这次会议对Ceph
+RGW的优化和功能改进具有重要意义，涉及到的关键技术包括Ceph、RGW、librados、libcephfs、S3、Kafka、RocksDB等。</p>
 
         </div>
 
@@ -285,6 +251,8 @@ Yuval, Eugene, 及其他相关开发人员</h4>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BC%98%E5%8C%96/" rel="tag">字符串优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%80%9A%E7%9F%A5%E9%87%8D%E8%AF%95%E6%B8%85%E7%90%86/" rel="tag">通知重试清理</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -296,7 +264,7 @@ Yuval, Eugene, 及其他相关开发人员</h4>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/31/Ceph_RGW_Refactoring_Meeting_2023-05-31/&title=《Ceph RGW Refactoring Meeting 2023-05-31》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/31/Ceph_RGW_Refactoring_Meeting_2023-05-31/&title=《Ceph RGW 重构会议 2023-05-31》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -306,7 +274,7 @@ Yuval, Eugene, 及其他相关开发人员</h4>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/31/Ceph_RGW_Refactoring_Meeting_2023-05-31/&title=《Ceph RGW Refactoring Meeting 2023-05-31》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/31/Ceph_RGW_Refactoring_Meeting_2023-05-31/&title=《Ceph RGW 重构会议 2023-05-31》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -316,7 +284,7 @@ Yuval, Eugene, 及其他相关开发人员</h4>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2023-05-31》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/31/Ceph_RGW_Refactoring_Meeting_2023-05-31/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW 重构会议 2023-05-31》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/31/Ceph_RGW_Refactoring_Meeting_2023-05-31/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -353,9 +321,9 @@ Yuval, Eugene, 及其他相关开发人员</h4>
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/24/Ceph_RGW_Refactoring_Meeting_2023-05-24/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/24/A_Glimpse_of_the_New_Ceph_Messenger_Built_on_Seastar_-_Yingxin_Cheng_Vivian_Zhu_Intel/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2023-05-24</h4>
+        <h4 class="title">  A Glimpse of the New Ceph Messenger Built on Seastar - Yingxin Cheng &amp; Vivian Zhu, Intel  </h4>
       </a>
     </div>
   
@@ -455,7 +423,7 @@ Yuval, Eugene, 及其他相关开发人员</h4>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/31/Ceph_RGW_Refactoring_Meeting_2023-05-31/&title=《Ceph RGW Refactoring Meeting 2023-05-31》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/31/Ceph_RGW_Refactoring_Meeting_2023-05-31/&title=《Ceph RGW 重构会议 2023-05-31》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -465,7 +433,7 @@ Yuval, Eugene, 及其他相关开发人员</h4>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/31/Ceph_RGW_Refactoring_Meeting_2023-05-31/&title=《Ceph RGW Refactoring Meeting 2023-05-31》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/31/Ceph_RGW_Refactoring_Meeting_2023-05-31/&title=《Ceph RGW 重构会议 2023-05-31》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -475,7 +443,7 @@ Yuval, Eugene, 及其他相关开发人员</h4>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2023-05-31》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/31/Ceph_RGW_Refactoring_Meeting_2023-05-31/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW 重构会议 2023-05-31》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/31/Ceph_RGW_Refactoring_Meeting_2023-05-31/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

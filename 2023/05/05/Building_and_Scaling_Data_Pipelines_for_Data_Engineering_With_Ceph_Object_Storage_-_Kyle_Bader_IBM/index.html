@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：数据管道与Ceph对象存储的介绍 主讲人：Kyle Bader  职位：IBM首席产品架构师 主题：数据管道与Ceph对象存储的介绍  会议内容概述  数据处理的新常态：  数据分析和处理已经转向使用对象存储作为标准，不再罕见。 对象存储如Ceph的S3 API提供了丰富的数据管理功能，包括桶策略、生命周期管理、IAM等。  对象存储的多功能性：  Ceph的RADOS Gat">
+    <meta name="keywords" content="Ceph对象存储,数据管道,数据工程,事件驱动架构,无服务器框架">
+    <meta name="description" content="[改进后的中文总结内容] 在本次会议中，IBM首席产品架构师Kyle Bader详细介绍了Ceph对象存储在数据管道中的应用，探讨了如何通过Ceph实现高效的数据处理和分析。 主要内容：  数据处理新常态：随着数据分析和处理转向对象存储，Ceph等对象存储系统成为数据管理的标准。 对象存储的多功能性：Ceph的RADOS Gateway支持S3和Swift API，以及NFS服务，支持复杂的数据工">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Building and Scaling Data Pipelines for Data Engineering With Ceph Object Storage - Kyle Bader, IBM">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Building_and_Scaling_Data_Pipelines_for_Data_Engineering_With_Ceph_Object_Storage_-_Kyle_Bader_IBM/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：数据管道与Ceph对象存储的介绍 主讲人：Kyle Bader  职位：IBM首席产品架构师 主题：数据管道与Ceph对象存储的介绍  会议内容概述  数据处理的新常态：  数据分析和处理已经转向使用对象存储作为标准，不再罕见。 对象存储如Ceph的S3 API提供了丰富的数据管理功能，包括桶策略、生命周期管理、IAM等。  对象存储的多功能性：  Ceph的RADOS Gat">
+<meta property="og:description" content="[改进后的中文总结内容] 在本次会议中，IBM首席产品架构师Kyle Bader详细介绍了Ceph对象存储在数据管道中的应用，探讨了如何通过Ceph实现高效的数据处理和分析。 主要内容：  数据处理新常态：随着数据分析和处理转向对象存储，Ceph等对象存储系统成为数据管理的标准。 对象存储的多功能性：Ceph的RADOS Gateway支持S3和Swift API，以及NFS服务，支持复杂的数据工">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph对象存储">
+<meta property="article:tag" content="数据管道">
+<meta property="article:tag" content="数据工程">
+<meta property="article:tag" content="事件驱动架构">
+<meta property="article:tag" content="无服务器框架">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +161,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E6%95%B0%E6%8D%AE%E7%AE%A1%E9%81%93%E4%B8%8Eceph%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：数据管道与Ceph对象存储的介绍</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAkyle-bader"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：Kyle Bader</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议内容概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E4%B8%8E%E9%97%AE%E7%AD%94"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">讨论与问答</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">结束语</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Building_and_Scaling_Data_Pipelines_for_Data_Engineering_With_Ceph_Object_Storage_-_Kyle_Bader_IBM"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,86 +183,36 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4
-id="会议主题数据管道与ceph对象存储的介绍">会议主题：数据管道与Ceph对象存储的介绍</h4>
-<h4 id="主讲人kyle-bader">主讲人：Kyle Bader</h4>
-<ul>
-<li><strong>职位</strong>：IBM首席产品架构师</li>
-<li><strong>主题</strong>：数据管道与Ceph对象存储的介绍</li>
-</ul>
-<h4 id="会议内容概述">会议内容概述</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>在本次会议中，IBM首席产品架构师Kyle
+Bader详细介绍了Ceph对象存储在数据管道中的应用，探讨了如何通过Ceph实现高效的数据处理和分析。</p>
+<p><strong>主要内容</strong>：</p>
 <ol type="1">
-<li><strong>数据处理的新常态</strong>：
-<ul>
-<li>数据分析和处理已经转向使用对象存储作为标准，不再罕见。</li>
-<li>对象存储如Ceph的S3
-API提供了丰富的数据管理功能，包括桶策略、生命周期管理、IAM等。</li>
-</ul></li>
-<li><strong>对象存储的多功能性</strong>：
-<ul>
-<li>Ceph的RADOS Gateway（RGW）支持S3和Swift
-API，以及通过Ganesha实现的NFS服务。</li>
-<li>对象存储不仅限于简单的文件系统，还支持复杂的数据工程任务。</li>
-</ul></li>
-<li><strong>数据湖的应用多样性</strong>：
-<ul>
-<li>数据湖中的应用多种多样，包括直接通过S3
-API交互的应用、流技术如Kafka，以及各种数据分析和处理工具。</li>
-</ul></li>
-<li><strong>事件驱动架构</strong>：
-<ul>
-<li>Ceph支持桶通知功能，可以将事件发送到Kafka、AMQ或REST
+<li><strong>数据处理新常态</strong>：随着数据分析和处理转向对象存储，Ceph等对象存储系统成为数据管理的标准。</li>
+<li><strong>对象存储的多功能性</strong>：Ceph的RADOS
+Gateway支持S3和Swift API，以及NFS服务，支持复杂的数据工程任务。</li>
+<li><strong>数据湖应用多样性</strong>：Ceph支持直接通过S3
+API交互的应用、流技术如Kafka，以及其他数据分析和处理工具。</li>
+<li><strong>事件驱动架构</strong>：Ceph支持桶通知功能，可以将事件发送到Kafka、AMQ或REST
 API，实现事件驱动的数据处理。</li>
-<li>结合无服务器框架如Knative，可以实现自动扩展和资源优化。</li>
-</ul></li>
-<li><strong>实际应用案例</strong>：
-<ul>
-<li>展示了基于医疗影像分析的实际应用，如肺炎风险分析，利用Ceph的事件通知功能和无服务器计算。</li>
-<li>提供了GitHub代码示例，展示了如何设置和运行这些演示。</li>
-</ul></li>
-<li><strong>安全与访问控制</strong>：
-<ul>
-<li>Ceph的STS和IAM实现支持基于属性的访问控制（ABAC），通过OpenID
+<li><strong>实际应用案例</strong>：展示了基于医疗影像分析的案例，利用Ceph的事件通知功能和无服务器计算进行肺炎风险分析。</li>
+<li><strong>安全与访问控制</strong>：Ceph的STS和IAM实现支持基于属性的访问控制（ABAC），通过OpenID
 Connect提供者实现更精细的权限管理。</li>
-<li>桶库存功能可以作为工作流DAG的清单，用于后处理数据。</li>
-</ul></li>
-<li><strong>未来展望</strong>：
-<ul>
-<li>强调了持续关注和利用Ceph的S3
+<li><strong>未来展望</strong>：持续关注和利用Ceph的S3
 API扩展功能，以实现更高级的数据管理任务。</li>
-</ul></li>
 </ol>
-<h4 id="讨论与问答">讨论与问答</h4>
+<p><strong>讨论与问答</strong>：</p>
 <ul>
-<li><strong>S3用户与主体令牌的映射</strong>：
-<ul>
-<li>解释了如何通过IAM
+<li><strong>S3用户与主体令牌的映射</strong>：通过IAM
 API定义角色，并在桶策略中使用角色而不是具体的用户名。</li>
-<li>支持通过身份提供者（如OpenID Connect）映射到IAM角色。</li>
-</ul></li>
-<li><strong>数据管道的适用性</strong>：
-<ul>
-<li>数据管道主要针对对象存储，但理论上可以通过某些功能（如I
-notify）扩展到其他存储类型。</li>
-</ul></li>
-<li><strong>批处理的挑战</strong>：
-<ul>
-<li>批处理需要考虑数据处理的分布式和并发问题，Ceph的事件驱动架构可以部分解决这些问题。</li>
-</ul></li>
+<li><strong>数据管道的适用性</strong>：数据管道主要针对对象存储，但可以通过某些功能扩展到其他存储类型。</li>
+<li><strong>批处理的挑战</strong>：Ceph的事件驱动架构可以部分解决批处理中的分布式和并发问题。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<p><strong>后续行动计划</strong>：</p>
 <ul>
 <li>提供详细的文档和示例代码，帮助用户理解和实施Ceph对象存储的高级功能。</li>
 <li>探索将事件驱动架构扩展到其他存储类型的可能性。</li>
 </ul>
-<h4 id="结束语">结束语</h4>
-<ul>
-<li>Kyle
-Bader感谢大家的参与，并鼓励大家继续探索Ceph对象存储的潜力。</li>
-</ul>
-<hr />
-<p>本次会议详细介绍了Ceph对象存储在数据管道中的应用，展示了其强大的数据管理和处理能力，以及如何在实际场景中实现高效的数据处理和分析。</p>
 
         </div>
 
@@ -295,6 +243,8 @@ Bader感谢大家的参与，并鼓励大家继续探索Ceph对象存储的潜�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">Ceph对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E6%9E%B6%E6%9E%84/" rel="tag">事件驱动架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%B0%E6%8D%AE%E5%B7%A5%E7%A8%8B/" rel="tag">数据工程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%B0%E6%8D%AE%E7%AE%A1%E9%81%93/" rel="tag">数据管道</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A1%86%E6%9E%B6/" rel="tag">无服务器框架</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -354,18 +304,18 @@ Bader感谢大家的参与，并鼓励大家继续探索Ceph对象存储的潜�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/BlueStore_V2_-_an_Evolutionary_Step_Forward_-_Adam_Kupczyk_IBM_Mark_Nelson_Clyso_GmbH/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM</h4>
+        <h4 class="title">BlueStore V2 - an Evolutionary Step Forward - Adam Kupczyk, IBM &amp; Mark Nelson, Clyso GmbH</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/05/Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could_Not_Help_with_-_Radoslaw_Zarzynski_IBM/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH</h4>
+        <h4 class="title">  Bug of the Year: A Memory Leak Reboot Could Not Help with - Radoslaw Zarzynski, IBM  </h4>
       </a>
     </div>
   

@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Kafka库实现及代码走查讨论 与会人员：Yuval, Daniel, Thomas 等 会议时间：具体日期未提供 主要议题：  Kafka库实现问题讨论  问题背景：用户报告在使用Kafka库时遇到回归问题，特别是在设置ACK级别时。用户发现，尽管设置了ACK级别为“none”，但在某些条件下仍会进行重试。 问题分析：Yuval深入分析后发现，问题源于Kafka库内部的重试机">
+    <meta name="keywords" content="Ceph,RGW,Distributed Storage,Code Review,Kafka">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Kafka库在RGW中的应用与代码走查讨论 与会人员：Yuval, Daniel, Thomas 等 会议时间：2023年5月10日 主要议题：  Kafka库实现问题讨论  问题背景：用户在使用Kafka库时报告了回归问题，特别是在设置ACK级别时出现重试。 问题分析：Yuval发现，问题源于Kafka库内部的重试机制与我们代码库中的机制冲突。我们的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph RGW Refactoring Meeting 2023-05-10">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/10/Ceph_RGW_Refactoring_Meeting_2023-05-10/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Kafka库实现及代码走查讨论 与会人员：Yuval, Daniel, Thomas 等 会议时间：具体日期未提供 主要议题：  Kafka库实现问题讨论  问题背景：用户报告在使用Kafka库时遇到回归问题，特别是在设置ACK级别时。用户发现，尽管设置了ACK级别为“none”，但在某些条件下仍会进行重试。 问题分析：Yuval深入分析后发现，问题源于Kafka库内部的重试机">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Kafka库在RGW中的应用与代码走查讨论 与会人员：Yuval, Daniel, Thomas 等 会议时间：2023年5月10日 主要议题：  Kafka库实现问题讨论  问题背景：用户在使用Kafka库时报告了回归问题，特别是在设置ACK级别时出现重试。 问题分析：Yuval发现，问题源于Kafka库内部的重试机制与我们代码库中的机制冲突。我们的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-09T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-10T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Code Review">
+<meta property="article:tag" content="Kafka">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,8 +164,8 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98kafka%E5%BA%93%E5%AE%9E%E7%8E%B0%E5%8F%8A%E4%BB%A3%E7%A0%81%E8%B5%B0%E6%9F%A5%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Kafka库实现及代码走查讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8E%E4%BC%9A%E4%BA%BA%E5%91%98yuval-daniel-thomas-%E7%AD%89"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">与会人员：Yuval, Daniel, Thomas
-等</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F%E6%9C%AA%E6%8F%90%E4%BE%9B"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：具体日期未提供</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E6%84%9F%E8%B0%A2%E6%89%80%E6%9C%89%E5%8F%82%E4%B8%8E%E8%80%85%E7%9A%84%E8%B4%A1%E7%8C%AE%E4%BC%9A%E8%AE%AE%E5%9C%86%E6%BB%A1%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束：感谢所有参与者的贡献，会议圆满结束。</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98kafka%E5%BA%93%E5%9C%A8rgw%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%8E%E4%BB%A3%E7%A0%81%E8%B5%B0%E6%9F%A5%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Kafka库在RGW中的应用与代码走查讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8E%E4%BC%9A%E4%BA%BA%E5%91%98yuval-daniel-thomas-%E7%AD%89"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">与会人员：Yuval, Daniel, Thomas
+等</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B42023%E5%B9%B45%E6%9C%8810%E6%97%A5"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：2023年5月10日</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E6%84%9F%E8%B0%A2%E6%89%80%E6%9C%89%E5%8F%82%E4%B8%8E%E8%80%85%E7%9A%84%E8%B4%A1%E7%8C%AE%E4%BC%9A%E8%AE%AE%E5%9C%86%E6%BB%A1%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束：感谢所有参与者的贡献，会议圆满结束。</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -186,42 +191,43 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
-id="会议主题kafka库实现及代码走查讨论">会议主题：Kafka库实现及代码走查讨论</h4>
+id="会议主题kafka库在rgw中的应用与代码走查讨论">会议主题：Kafka库在RGW中的应用与代码走查讨论</h4>
 <h4 id="与会人员yuval-daniel-thomas-等">与会人员：Yuval, Daniel, Thomas
 等</h4>
-<h4 id="会议时间具体日期未提供">会议时间：具体日期未提供</h4>
+<h4 id="会议时间2023年5月10日">会议时间：2023年5月10日</h4>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
 <li><strong>Kafka库实现问题讨论</strong>
 <ul>
-<li><strong>问题背景</strong>：用户报告在使用Kafka库时遇到回归问题，特别是在设置ACK级别时。用户发现，尽管设置了ACK级别为“none”，但在某些条件下仍会进行重试。</li>
-<li><strong>问题分析</strong>：Yuval深入分析后发现，问题源于Kafka库内部的重试机制与我们的代码库中实现的重试机制冲突。我们的重试机制需要能够应对崩溃和重启等情况，而Kafka库的重试机制则是内存中的，无法持久化。</li>
+<li><strong>问题背景</strong>：用户在使用Kafka库时报告了回归问题，特别是在设置ACK级别时出现重试。</li>
+<li><strong>问题分析</strong>：Yuval发现，问题源于Kafka库内部的重试机制与我们代码库中的机制冲突。我们的机制需要能够应对崩溃和重启等情况，而Kafka库的机制则无法持久化。</li>
 <li><strong>解决方案讨论</strong>：
 <ul>
-<li>Yuval建议尝试禁用Kafka库内部的重试机制，以避免设计上的混乱。</li>
-<li>讨论了是否应该禁用Kafka库的重试机制，特别是在ACK级别为“none”时。</li>
-<li>提出了是否应该允许用户通过配置文件来控制Kafka库的某些行为，以增加灵活性。</li>
-<li>最终决定，对于ACK级别为“broker”的情况，可以允许Kafka库进行内部重试，因为这更节省时间；而对于ACK级别为“none”的情况，则应禁用Kafka库的重试机制，以保持一致性和简化文档。</li>
+<li>讨论了禁用Kafka库内部重试机制的可行性。</li>
+<li>提出允许用户通过配置文件控制Kafka库某些行为，以增加灵活性。</li>
+<li>最终决定，在ACK级别为“broker”时允许内部重试，而在ACK级别为“none”时禁用。</li>
 </ul></li>
 </ul></li>
 <li><strong>代码走查提议</strong>
 <ul>
 <li><strong>提议人</strong>：Daniel</li>
-<li><strong>提议内容</strong>：提议进行代码走查，以传播关于rgw代码库的知识。特别提到了对tracing和Lua代码的走查。</li>
-<li><strong>反馈</strong>：Yuval表示对tracing的代码走查感兴趣，但希望在OSD编码问题解决后再进行。Thomas表示愿意进行Lua代码的走查。</li>
+<li><strong>提议内容</strong>：提议进行代码走查，以传播关于RGW代码库的知识，特别是tracing和Lua代码的走查。</li>
+<li><strong>反馈</strong>：Yuval表示对tracing的走查感兴趣，但希望在OSD编码问题解决后再进行。Thomas表示愿意进行Lua代码的走查。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
-<li>对于Kafka库的重试机制，决定在ACK级别为“broker”时允许内部重试，而在ACK级别为“none”时禁用内部重试。</li>
-<li>允许用户通过配置文件来控制Kafka库的某些行为，以增加灵活性。</li>
+<li>对于Kafka库的重试机制，决定在ACK级别为“broker”时允许内部重试，而在ACK级别为“none”时禁用。</li>
+<li>允许用户通过配置文件控制Kafka库的某些行为，以增加灵活性。</li>
 <li>计划进行代码走查，特别是关于tracing和Lua代码的走查。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
-<li>Yuval将根据讨论结果，对Kafka库的重试机制进行调整，并提交相关PR。</li>
+<li>Yuval将对Kafka库的重试机制进行调整，并提交相关Pull
+Request（PR）。</li>
 <li>Daniel和Thomas将准备进行代码走查，具体时间待定。</li>
 <li>需要关注OSD编码问题的解决进展，以便进行tracing的代码走查。</li>
 </ul>
@@ -257,6 +263,8 @@ id="会议结束感谢所有参与者的贡献会议圆满结束">会议结束�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Code-Review/" rel="tag">Code Review</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kafka/" rel="tag">Kafka</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -318,7 +326,7 @@ id="会议结束感谢所有参与者的贡献会议圆满结束">会议结束�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/05/15/Secure_Token_Service_in_Ceph_-_Pritha_Srivastava_IBM/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Secure Token Service in Ceph - Pritha Srivastava, IBM</h4>
+        <h4 class="title"> Secure Token Service in Ceph - Pritha Srivastava, IBM </h4>
       </a>
     </div>
   

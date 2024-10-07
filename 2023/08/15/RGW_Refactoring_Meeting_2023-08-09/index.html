@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要  Reef版本发布：Reef版本已于今日发布，感谢所有人的辛勤工作。 博客文章计划：将开始发布博客文章来宣布新功能。如果有团队成员在Reef版本中开发了新功能并希望与社区分享，请与负责人联系。  主要议题  Yuval关于通知的讨论：  持久化通知改进：目标是提高持久化通知的观察性和可调试性。  当前进展：Ali之前的工作已经使得在RedEscape Admin中可以运行命令查">
+    <meta name="keywords" content="Ceph,RGW,性能优化,通知系统,队列管理">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概要  Reef版本发布：Reef版本已发布，感谢团队的努力。 博客文章计划：将发布博客文章介绍新功能，欢迎团队成员分享。  主要议题  持久化通知改进：  当前进展：Ali的工作允许在RedEscape Admin中查询持久化队列的状态和统计信息。 下一步计划：  使用带标签的性能计数器，便于在Grafana等工具中收集和展示统计信息。 改进重试机制，包括">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RGW Refactoring Meeting 2023-08-09">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-08-09/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要  Reef版本发布：Reef版本已于今日发布，感谢所有人的辛勤工作。 博客文章计划：将开始发布博客文章来宣布新功能。如果有团队成员在Reef版本中开发了新功能并希望与社区分享，请与负责人联系。  主要议题  Yuval关于通知的讨论：  持久化通知改进：目标是提高持久化通知的观察性和可调试性。  当前进展：Ali之前的工作已经使得在RedEscape Admin中可以运行命令查">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概要  Reef版本发布：Reef版本已发布，感谢团队的努力。 博客文章计划：将发布博客文章介绍新功能，欢迎团队成员分享。  主要议题  持久化通知改进：  当前进展：Ali的工作允许在RedEscape Admin中查询持久化队列的状态和统计信息。 下一步计划：  使用带标签的性能计数器，便于在Grafana等工具中收集和展示统计信息。 改进重试机制，包括">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-08-15T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="通知系统">
+<meta property="article:tag" content="队列管理">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,68 +190,55 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概要">会议概要</h4>
 <ul>
-<li><strong>Reef版本发布</strong>：Reef版本已于今日发布，感谢所有人的辛勤工作。</li>
-<li><strong>博客文章计划</strong>：将开始发布博客文章来宣布新功能。如果有团队成员在Reef版本中开发了新功能并希望与社区分享，请与负责人联系。</li>
+<li><strong>Reef版本发布</strong>：Reef版本已发布，感谢团队的努力。</li>
+<li><strong>博客文章计划</strong>：将发布博客文章介绍新功能，欢迎团队成员分享。</li>
 </ul>
 <h4 id="主要议题">主要议题</h4>
 <ul>
-<li><strong>Yuval关于通知的讨论</strong>：
+<li><strong>持久化通知改进</strong>：
 <ul>
-<li><strong>持久化通知改进</strong>：目标是提高持久化通知的观察性和可调试性。
-<ul>
-<li><strong>当前进展</strong>：Ali之前的工作已经使得在RedEscape
-Admin中可以运行命令查询特定持久化队列的状态或统计信息。</li>
+<li><strong>当前进展</strong>：Ali的工作允许在RedEscape
+Admin中查询持久化队列的状态和统计信息。</li>
 <li><strong>下一步计划</strong>：
 <ul>
-<li>使用带标签的性能计数器（labeled perf counters）在Redis Gateway
-Admin上，以便在部署中更方便地收集统计信息并展示在Grafana等工具中。</li>
-<li>改进重试机制，包括为每个通知设置TTL和重试次数，以避免无限重试和队列过大问题。</li>
-<li>使配置RESTful化，以便不同主题可以指向不同的系统并具有不同的特性。</li>
-<li>在迁移过程中，确保重试次数和TTL的持久性，特别是在升级到支持TTL的版本时。</li>
+<li>使用带标签的性能计数器，便于在Grafana等工具中收集和展示统计信息。</li>
+<li>改进重试机制，包括为通知设置TTL和重试次数。</li>
+<li>使配置RESTful化，支持不同系统不同特性。</li>
+<li>确保迁移过程中重试次数和TTL的持久性。</li>
 </ul></li>
 </ul></li>
 <li><strong>迁移到CLS FIFO</strong>：
 <ul>
-<li><strong>动机</strong>：当前队列的最大大小为128MB，对于长时间的服务器宕机或高更新率的系统可能不够。</li>
-<li><strong>挑战</strong>：
-<ul>
-<li>迁移问题：可能需要同时维护两个队列，直到旧队列中的数据处理完毕。</li>
-<li>观察性问题：CLS
-FIFO可能难以提供准确的队列条目数和大小，可能需要遍历所有节点来获取这些信息。</li>
-<li>上限问题：可能需要为FIFO设置一个上限，以防止无限制增长。</li>
-</ul></li>
-</ul></li>
-<li><strong>讨论要点</strong>：
-<ul>
-<li>是否需要一个死信队列（dead letter queue）来处理无法发送的通知。</li>
-<li>如何处理TTL和重试在CLS FIFO中的实现问题。</li>
-<li>迁移策略：建议通过创建新主题并逐步迁移来避免复杂的迁移过程。</li>
-</ul></li>
+<li><strong>动机</strong>：为了支持更大的队列大小。</li>
+<li><strong>挑战</strong>：可能需要同时维护两个队列，CLS
+FIFO可能难以提供准确的队列信息。</li>
+<li><strong>讨论要点</strong>：处理无法发送的通知、TTL和重试的实现问题、迁移策略。</li>
 </ul></li>
 </ul>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>将继续改进持久化通知的观察性和重试机制。</li>
+<li>继续改进持久化通知的观察性和重试机制。</li>
 <li>考虑迁移到CLS FIFO以支持更大的队列大小。</li>
 <li>讨论并决定如何处理迁移和死信队列的问题。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>继续开发和测试持久化通知的改进功能。</li>
+<li>开发和测试持久化通知的改进功能。</li>
 <li>研究并实施迁移到CLS FIFO的策略。</li>
 <li>提供脚本帮助用户迁移到新主题。</li>
 <li>讨论并决定是否需要实现死信队列。</li>
 </ul>
 <h4 id="其他讨论">其他讨论</h4>
 <ul>
-<li>关于将S3用户与主题关联的提议，以便更容易管理用户和主题的关系。</li>
+<li>将S3用户与主题关联，以便更容易管理用户和主题的关系。</li>
 </ul>
 <h4 id="会议结束">会议结束</h4>
 <ul>
-<li>会议结束，感谢所有参与者的贡献和讨论。</li>
+<li>感谢所有参与者的贡献和讨论。</li>
 </ul>
 
         </div>
@@ -278,6 +270,8 @@ FIFO可能难以提供准确的队列条目数和大小，可能需要遍历所�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%80%9A%E7%9F%A5%E7%B3%BB%E7%BB%9F/" rel="tag">通知系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%98%9F%E5%88%97%E7%AE%A1%E7%90%86/" rel="tag">队列管理</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -337,18 +331,18 @@ FIFO可能难以提供准确的队列条目数和大小，可能需要遍历所�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">RGW Refactoring Meeting 2023-07-26</h4>
+        <h4 class="title">RGW重构会议纪要 2023-08-16</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/07/25/CDS_Squid_-_Cephadm/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Squid: Cephadm</h4>
+        <h4 class="title">RGW重构会议 2023-07-26</h4>
       </a>
     </div>
   

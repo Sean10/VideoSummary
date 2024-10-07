@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph RGW Refactoring Meeting 2023-02-15 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph RGW 重构会议 2023-02-15 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 主要议题  S3代理过滤器和Zipper的讨论：会议开始时，讨论了如何实现S3代理过滤器和Zipper的问题，这是为了在d4n之下进行集成。昨天的d4n会议中对此有大量讨论，但未解决，因此希望在今天的会议中继续讨论。 Reef项目的进展：询问了Reef项目的现状，包括需要完成的功能和未合并的重要修复。 Ragweed问题的修复：提到了Ragweed问题的修复进展，已经解决了Ragweed">
+    <meta name="keywords" content="Ceph,分布式存储,RGW,S3代理,Zipper API">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 主要议题  S3代理过滤器和Zipper的讨论：会议主要讨论了如何在Ceph RGW中实现S3代理过滤器和Zipper的功能，以实现与d4n的集成。 Reef项目的进展：会议询问了Reef项目的当前状态，包括待完成的功能和未合并的重要修复。 Ragweed问题的修复：会议提到了Ragweed问题的修复进展，并已解决相关失败问题。  讨论细节  S3代理过滤器的问">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph RGW Refactoring Meeting 2023-02-15">
+<meta property="og:title" content="Ceph RGW 重构会议 2023-02-15">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 主要议题  S3代理过滤器和Zipper的讨论：会议开始时，讨论了如何实现S3代理过滤器和Zipper的问题，这是为了在d4n之下进行集成。昨天的d4n会议中对此有大量讨论，但未解决，因此希望在今天的会议中继续讨论。 Reef项目的进展：询问了Reef项目的现状，包括需要完成的功能和未合并的重要修复。 Ragweed问题的修复：提到了Ragweed问题的修复进展，已经解决了Ragweed">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 主要议题  S3代理过滤器和Zipper的讨论：会议主要讨论了如何在Ceph RGW中实现S3代理过滤器和Zipper的功能，以实现与d4n的集成。 Reef项目的进展：会议询问了Reef项目的当前状态，包括待完成的功能和未合并的重要修复。 Ragweed问题的修复：会议提到了Ragweed问题的修复进展，并已解决相关失败问题。  讨论细节  S3代理过滤器的问">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-15T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-02-16T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="S3代理">
+<meta property="article:tag" content="Zipper API">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph RGW Refactoring Meeting 2023-02-15</div>
+        <div class="flex-col header-title ellipsis">Ceph RGW 重构会议 2023-02-15</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph RGW Refactoring Meeting 2023-02-15</h1>
+        <h1 class="title">Ceph RGW 重构会议 2023-02-15</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-02-15T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph RGW Refactoring Meeting 2023-02-15</h1>
+        <h1 class="post-card-title">Ceph RGW 重构会议 2023-02-15</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-02-16 00:00:00" datetime="2023-02-15T16:00:00.000Z"  itemprop="datePublished">2023-02-16</time>
 
@@ -185,20 +190,22 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
-<li><strong>S3代理过滤器和Zipper的讨论</strong>：会议开始时，讨论了如何实现S3代理过滤器和Zipper的问题，这是为了在d4n之下进行集成。昨天的d4n会议中对此有大量讨论，但未解决，因此希望在今天的会议中继续讨论。</li>
-<li><strong>Reef项目的进展</strong>：询问了Reef项目的现状，包括需要完成的功能和未合并的重要修复。</li>
-<li><strong>Ragweed问题的修复</strong>：提到了Ragweed问题的修复进展，已经解决了Ragweed的失败问题。</li>
+<li><strong>S3代理过滤器和Zipper的讨论</strong>：会议主要讨论了如何在Ceph
+RGW中实现S3代理过滤器和Zipper的功能，以实现与d4n的集成。</li>
+<li><strong>Reef项目的进展</strong>：会议询问了Reef项目的当前状态，包括待完成的功能和未合并的重要修复。</li>
+<li><strong>Ragweed问题的修复</strong>：会议提到了Ragweed问题的修复进展，并已解决相关失败问题。</li>
 </ol>
 <h4 id="讨论细节">讨论细节</h4>
 <ul>
-<li><strong>S3代理过滤器的问题</strong>：讨论了S3代理过滤器在Zipper
+<li><strong>S3代理过滤器的问题</strong>：会议讨论了S3代理过滤器在Zipper
 API中的不适用性，因为Zipper
-API将S3操作分解为许多小API调用。理想的S3处理方式是在操作层进行代理，但这与Zipper的设计冲突。</li>
-<li><strong>权限验证问题</strong>：讨论了如何在无法访问桶元数据和策略的情况下进行权限验证。</li>
-<li><strong>新的抽象层提议</strong>：提出了为d4n和其他可能的应用构建一个新的抽象层，这个层更面向应用，更容易进行代理。</li>
+API将S3操作分解为许多小API调用，这不符合S3处理的需求。</li>
+<li><strong>权限验证问题</strong>：会议讨论了如何在无法访问桶元数据和策略的情况下进行权限验证。</li>
+<li><strong>新的抽象层提议</strong>：会议提出了为d4n和其他可能的应用构建一个新的抽象层，这个层更面向应用，更容易进行代理。</li>
 </ul>
 <h4 id="决定事项">决定事项</h4>
 <ul>
@@ -248,6 +255,8 @@ API将S3操作分解为许多小API调用。理想的S3处理方式是在操作�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/S3%E4%BB%A3%E7%90%86/" rel="tag">S3代理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Zipper-API/" rel="tag">Zipper API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -259,7 +268,7 @@ API将S3操作分解为许多小API调用。理想的S3处理方式是在操作�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/&title=《Ceph RGW Refactoring Meeting 2023-02-15》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/&title=《Ceph RGW 重构会议 2023-02-15》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -269,7 +278,7 @@ API将S3操作分解为许多小API调用。理想的S3处理方式是在操作�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/&title=《Ceph RGW Refactoring Meeting 2023-02-15》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/&title=《Ceph RGW 重构会议 2023-02-15》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -279,7 +288,7 @@ API将S3操作分解为许多小API调用。理想的S3处理方式是在操作�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2023-02-15》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW 重构会议 2023-02-15》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -318,7 +327,7 @@ API将S3操作分解为许多小API调用。理想的S3处理方式是在操作�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/02/14/Ceph_Crimson_SeaStore_Meeting_2023-02-08/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Crimson/SeaStore Meeting 2023-02-08</h4>
+        <h4 class="title">Ceph Crimson/SeaStore 会议纪要 2023-02-08</h4>
       </a>
     </div>
   
@@ -418,7 +427,7 @@ API将S3操作分解为许多小API调用。理想的S3处理方式是在操作�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/&title=《Ceph RGW Refactoring Meeting 2023-02-15》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/&title=《Ceph RGW 重构会议 2023-02-15》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -428,7 +437,7 @@ API将S3操作分解为许多小API调用。理想的S3处理方式是在操作�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/&title=《Ceph RGW Refactoring Meeting 2023-02-15》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/&title=《Ceph RGW 重构会议 2023-02-15》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -438,7 +447,7 @@ API将S3操作分解为许多小API调用。理想的S3处理方式是在操作�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2023-02-15》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW 重构会议 2023-02-15》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

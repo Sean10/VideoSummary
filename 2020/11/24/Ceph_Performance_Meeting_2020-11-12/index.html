@@ -14,23 +14,29 @@
     
     
     
-    <title>Ceph Performance Meeting 2020-11-12 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph性能会议纪要 2020-11-12 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 与会人员  Mark Gary Gabby 其他核心团队成员  缺席人员  Adam（因波兰独立日休假）  主要议题  性能分析进展  Gabby报告了关于正式分析的进展，提到需要更好的系统来记录和命名测试案例。 讨论了从CBT（Ceph Benchmark Tool）创建数据库模式以存储和查询测试结果的想法，但目前无人有时间实现。  Ceph性能优化  讨论了Python压缩对性能的影">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,CRUSH算法,性能优化,可扩展性">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 与会人员  Mark Gary Gabby 其他核心团队成员  缺席人员  Adam（因波兰独立日休假）  主要议题  性能分析进展  Gabby汇报了性能分析的进展，强调需要改进系统以记录和命名测试案例。 讨论了使用CBT创建数据库模式来存储和查询测试结果的想法，但尚未实施。  Ceph性能优化  讨论了Python压缩对性能的影响，特别是PG信息和PG日志分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2020-11-12">
+<meta property="og:title" content="Ceph性能会议纪要 2020-11-12">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/11/24/Ceph_Performance_Meeting_2020-11-12/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 与会人员  Mark Gary Gabby 其他核心团队成员  缺席人员  Adam（因波兰独立日休假）  主要议题  性能分析进展  Gabby报告了关于正式分析的进展，提到需要更好的系统来记录和命名测试案例。 讨论了从CBT（Ceph Benchmark Tool）创建数据库模式以存储和查询测试结果的想法，但目前无人有时间实现。  Ceph性能优化  讨论了Python压缩对性能的影">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 与会人员  Mark Gary Gabby 其他核心团队成员  缺席人员  Adam（因波兰独立日休假）  主要议题  性能分析进展  Gabby汇报了性能分析的进展，强调需要改进系统以记录和命名测试案例。 讨论了使用CBT创建数据库模式来存储和查询测试结果的想法，但尚未实施。  Ceph性能优化  讨论了Python压缩对性能的影响，特别是PG信息和PG日志分">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-11-24T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="可扩展性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2020-11-12</div>
+        <div class="flex-col header-title ellipsis">Ceph性能会议纪要 2020-11-12</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2020-11-12</h1>
+        <h1 class="title">Ceph性能会议纪要 2020-11-12</h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-11-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +174,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2020-11-12</h1>
+        <h1 class="post-card-title">Ceph性能会议纪要 2020-11-12</h1>
         <div class="post-meta">
             <time class="post-time" title="2020-11-24 00:00:00" datetime="2020-11-23T16:00:00.000Z"  itemprop="datePublished">2020-11-24</time>
 
@@ -185,7 +191,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="与会人员">与会人员</h4>
 <ul>
 <li>Mark</li>
@@ -201,33 +208,32 @@
 <ol type="1">
 <li><strong>性能分析进展</strong>
 <ul>
-<li>Gabby报告了关于正式分析的进展，提到需要更好的系统来记录和命名测试案例。</li>
-<li>讨论了从CBT（Ceph Benchmark
-Tool）创建数据库模式以存储和查询测试结果的想法，但目前无人有时间实现。</li>
+<li>Gabby汇报了性能分析的进展，强调需要改进系统以记录和命名测试案例。</li>
+<li>讨论了使用CBT创建数据库模式来存储和查询测试结果的想法，但尚未实施。</li>
 </ul></li>
 <li><strong>Ceph性能优化</strong>
 <ul>
-<li>讨论了Python压缩对性能的影响，特别是关于PG信息和PG日志分离到不同列族的性能影响。</li>
-<li>提到了使用Wall Clock Profiler或Adam的Welcome
+<li>讨论了Python压缩对性能的影响，特别是PG信息和PG日志分离到不同列族的影响。</li>
+<li>提到使用Wall Clock Profiler或Welcome
 Profiler来更清晰地展示性能差异。</li>
 <li>讨论了添加统计信息（如压缩和闪存事件）的显示方式，建议通过admin
 socket命令获取。</li>
 </ul></li>
 <li><strong>监控插件的开发</strong>
 <ul>
-<li>讨论了开发一个监控插件来执行任意admin
-socket命令的必要性，以便更好地收集和分析数据。</li>
-<li>提到了在CBT中实现一个自定义监控类的可能性。</li>
+<li>讨论了开发一个监控插件以执行任意admin
+socket命令的必要性，以更好地收集和分析数据。</li>
+<li>提到在CBT中实现一个自定义监控类的可能性。</li>
 </ul></li>
-<li><strong>PR（Pull Request）更新</strong>
+<li><strong>PR更新</strong>
 <ul>
-<li>讨论了Intel的librbd客户端侧缓存实现的PR，Jason将继续审查。</li>
+<li>讨论了Intel的librbd客户端缓存实现的PR，Jason将继续审查。</li>
 <li>更新了关于RocksDB动态级别的PR，Adam将在假期后继续跟进。</li>
-<li>讨论了Igor的PG移除优化PR，Adam和Neha对其进行了审查，但还有一些细节需要处理。</li>
+<li>讨论了Igor的PG移除优化PR，已由Adam和Neha审查，但需要处理一些细节。</li>
 </ul></li>
 <li><strong>内存管理</strong>
 <ul>
-<li>Adam和Mark正在继续研究减少碎片化的内存管理策略。</li>
+<li>Adam和Mark正在研究减少碎片化的内存管理策略。</li>
 </ul></li>
 <li><strong>MClock调度器测试</strong>
 <ul>
@@ -240,31 +246,28 @@ socket命令的必要性，以便更好地收集和分析数据。</li>
 </ul></li>
 <li><strong>RGW文件访问接口</strong>
 <ul>
-<li>讨论了RGW（RADOS
-Gateway）的文件访问接口，以及与IO500基准测试的合作可能性。</li>
+<li>讨论了RGW的文件访问接口，以及与IO500基准测试的合作可能性。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>需要开发一个监控插件来执行任意admin
-socket命令，以便更好地收集和分析数据。</li>
-<li>需要进一步调查单个shard和16个线程配置下的性能问题。</li>
-<li>需要为开发人员提供高性能机器，以便进行更深入的性能测试。</li>
+<li>开发一个监控插件以执行任意admin socket命令。</li>
+<li>进一步调查单个shard和16个线程配置下的性能问题。</li>
+<li>为开发人员提供高性能机器，以便进行更深入的性能测试。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>Gabby将继续进行性能分析，并尝试使用Wall Clock
-Profiler或Adam的Welcome Profiler。</li>
-<li>需要进一步调查和优化MClock调度器的性能。</li>
-<li>需要为开发人员提供高性能机器，并鼓励他们使用这些资源进行性能测试。</li>
+<li>Gabby将继续进行性能分析。</li>
+<li>调查和优化MClock调度器的性能。</li>
+<li>为开发人员提供高性能机器，并鼓励他们使用这些资源进行性能测试。</li>
 </ul>
 <h4 id="其他">其他</h4>
 <ul>
 <li>讨论了KV-Sync线程的性能瓶颈问题，需要进一步调查。</li>
-<li>需要进一步调查和优化RocksDB的性能，特别是关于PG信息和PG日志分离到不同列族的性能影响。</li>
+<li>需要进一步调查和优化RocksDB的性能，特别是PG信息和PG日志分离到不同列族的性能影响。</li>
 </ul>
 <h4 id="结论">结论</h4>
-<p>会议讨论了多个关于Ceph性能优化的议题，包括性能分析、监控插件开发、PR更新、内存管理、MClock调度器测试等。团队将继续进行深入调查和优化，以提高Ceph的整体性能。</p>
+<p>会议讨论了Ceph性能优化的多个议题，包括性能分析、监控插件开发、PR更新、内存管理、MClock调度器测试等。团队将继续进行调查和优化，以提高Ceph的整体性能。</p>
 
         </div>
 
@@ -295,6 +298,8 @@ Profiler或Adam的Welcome Profiler。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">可扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -306,7 +311,7 @@ Profiler或Adam的Welcome Profiler。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/11/24/Ceph_Performance_Meeting_2020-11-12/&title=《Ceph Performance Meeting 2020-11-12》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/11/24/Ceph_Performance_Meeting_2020-11-12/&title=《Ceph性能会议纪要 2020-11-12》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -316,7 +321,7 @@ Profiler或Adam的Welcome Profiler。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/11/24/Ceph_Performance_Meeting_2020-11-12/&title=《Ceph Performance Meeting 2020-11-12》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/11/24/Ceph_Performance_Meeting_2020-11-12/&title=《Ceph性能会议纪要 2020-11-12》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -326,7 +331,7 @@ Profiler或Adam的Welcome Profiler。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2020-11-12》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/11/24/Ceph_Performance_Meeting_2020-11-12/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议纪要 2020-11-12》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/11/24/Ceph_Performance_Meeting_2020-11-12/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -363,9 +368,9 @@ Profiler或Adam的Welcome Profiler。</li>
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2020/11/24/Ceph_User_Survey_Working_Group_2020-11-12/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2020/11/24/Ceph_User_Survey_Working_Group_2020-11-05/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph User Survey Working Group 2020-11-12</h4>
+        <h4 class="title">Ceph 用户调查工作组会议纪要 2020-11-05</h4>
       </a>
     </div>
   
@@ -465,7 +470,7 @@ Profiler或Adam的Welcome Profiler。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/11/24/Ceph_Performance_Meeting_2020-11-12/&title=《Ceph Performance Meeting 2020-11-12》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/11/24/Ceph_Performance_Meeting_2020-11-12/&title=《Ceph性能会议纪要 2020-11-12》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -475,7 +480,7 @@ Profiler或Adam的Welcome Profiler。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/11/24/Ceph_Performance_Meeting_2020-11-12/&title=《Ceph Performance Meeting 2020-11-12》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/11/24/Ceph_Performance_Meeting_2020-11-12/&title=《Ceph性能会议纪要 2020-11-12》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -485,7 +490,7 @@ Profiler或Adam的Welcome Profiler。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2020-11-12》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/11/24/Ceph_Performance_Meeting_2020-11-12/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议纪要 2020-11-12》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/11/24/Ceph_Performance_Meeting_2020-11-12/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

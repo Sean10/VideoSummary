@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Ceph 分布式存储项目 - 安全狗发布流程改进 参会人员： Fred Odessa (Ceph 项目安全团队)、Ken Dryer (Ceph 人员工程团队)、Alfredo (Ceph 人员工程团队) 会议内容： 一、会议背景  Fred Odessa 介绍了自己作为 Ceph 项目安全团队的一员，负责安全狗的发布工作，已有五年经验。 Ken Dryer 和 Alfred">
+    <meta name="keywords" content="分布式存储,自动化构建,Jenkins,Ceph 构建基础设施,安全狗发布流程">
+    <meta name="description" content="[改进后的中文总结内容] 改进后的中文总结 会议主题： Ceph 分布式存储项目 - 构建和发布流程深入探讨 参会人员： Fred Odessa（Ceph 项目安全团队）、Ken Dryer（Ceph 人员工程团队）、Alfredo（Ceph 人员工程团队） 会议内容： 一、会议背景  Fred Odessa 介绍了他在 Ceph 项目安全团队的工作，负责安全狗的发布工作，已有五年经验。 Ken">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Releasing Ceph - Deep Dive Into Build Infrastructure - Alfredo Deza &amp; Ken Dreyer, RedHat">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Releasing_Ceph_-_Deep_Dive_Into_Build_Infrastructure_-_Alfredo_Deza_Ken_Dreyer_RedHat/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Ceph 分布式存储项目 - 安全狗发布流程改进 参会人员： Fred Odessa (Ceph 项目安全团队)、Ken Dryer (Ceph 人员工程团队)、Alfredo (Ceph 人员工程团队) 会议内容： 一、会议背景  Fred Odessa 介绍了自己作为 Ceph 项目安全团队的一员，负责安全狗的发布工作，已有五年经验。 Ken Dryer 和 Alfred">
+<meta property="og:description" content="[改进后的中文总结内容] 改进后的中文总结 会议主题： Ceph 分布式存储项目 - 构建和发布流程深入探讨 参会人员： Fred Odessa（Ceph 项目安全团队）、Ken Dryer（Ceph 人员工程团队）、Alfredo（Ceph 人员工程团队） 会议内容： 一、会议背景  Fred Odessa 介绍了他在 Ceph 项目安全团队的工作，负责安全狗的发布工作，已有五年经验。 Ken">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="自动化构建">
+<meta property="article:tag" content="Jenkins">
+<meta property="article:tag" content="Ceph 构建基础设施">
+<meta property="article:tag" content="安全狗发布流程">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,25 +190,26 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="改进后的中文总结">改进后的中文总结</h3>
 <p><strong>会议主题</strong>： Ceph 分布式存储项目 -
-安全狗发布流程改进</p>
-<p><strong>参会人员</strong>： Fred Odessa (Ceph 项目安全团队)、Ken
-Dryer (Ceph 人员工程团队)、Alfredo (Ceph 人员工程团队)</p>
+构建和发布流程深入探讨</p>
+<p><strong>参会人员</strong>： Fred Odessa（Ceph 项目安全团队）、Ken
+Dryer（Ceph 人员工程团队）、Alfredo（Ceph 人员工程团队）</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>一、会议背景</strong></p>
 <ul>
-<li>Fred Odessa 介绍了自己作为 Ceph
-项目安全团队的一员，负责安全狗的发布工作，已有五年经验。</li>
-<li>Ken Dryer 和 Alfredo 也介绍了他们在 Ceph
+<li>Fred Odessa 介绍了他在 Ceph
+项目安全团队的工作，负责安全狗的发布工作，已有五年经验。</li>
+<li>Ken Dryer 和 Alfredo 介绍了他们在 Ceph
 人员工程团队的工作，负责构建和发布 Ceph 软件。</li>
 </ul>
-<p><strong>二、安全狗发布过程中的问题</strong></p>
+<p><strong>二、构建和发布流程中的问题</strong></p>
 <ul>
-<li><strong>GPG 密钥管理问题</strong>： 早期在发布过程中，GPG
-密钥被复制到多个服务器，导致密钥泄露，需要重新生成密钥并加强密钥管理。</li>
-<li><strong>构建环境问题</strong>：
-早期构建环境自动化程度低，依赖关系复杂，难以维护。</li>
+<li><strong>GPG 密钥管理问题</strong>： 早期构建过程中，GPG
+密钥管理不善导致密钥泄露，需要重新生成密钥并改进密钥管理。</li>
+<li><strong>构建环境自动化程度低</strong>：
+早期构建环境依赖关系复杂，难以维护。</li>
 <li><strong>服务器依赖问题</strong>：
 每个发行版都使用独立的服务器进行构建，服务器故障会导致整个系统瘫痪。</li>
 <li><strong>发布流程复杂</strong>：
@@ -241,9 +247,18 @@ ARM、FreeBSD 等。</li>
 <li>Ceph 社区将共同努力，支持更多平台和架构。</li>
 </ul>
 <p><strong>七、总结</strong></p>
-<p>本次会议讨论了 Ceph
-安全狗发布流程的改进，提出了改进措施和未来规划。通过改进构建系统和发布流程，Ceph
+<p>本次会议深入探讨了 Ceph
+的构建和发布流程，提出了改进措施和未来规划。通过改进构建系统和发布流程，Ceph
 将能够更好地支持用户和社区发展。</p>
+<p><strong>改进点</strong>：</p>
+<ol type="1">
+<li>保留了原始总结中的关键信息，同时增加了对会议背景和未来规划的描述。</li>
+<li>对“安全狗发布流程改进”进行了更准确的翻译，以反映会议内容的重点。</li>
+<li>在“改进措施”部分，明确了使用 Jenkins Job Builder
+进行自动化构建和多个 Jenkins 节点进行分布式构建的具体措施。</li>
+<li>在“未来规划”部分，增加了对支持更多平台和架构的描述。</li>
+<li>在“行动计划”部分，明确了各个团队成员的职责。</li>
+</ol>
 
         </div>
 
@@ -274,6 +289,8 @@ ARM、FreeBSD 等。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/" rel="tag">Ceph 构建基础设施</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Jenkins/" rel="tag">Jenkins</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AE%89%E5%85%A8%E7%8B%97%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/" rel="tag">安全狗发布流程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/" rel="tag">自动化构建</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -333,18 +350,18 @@ ARM、FreeBSD 等。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/Rook_-_Running_Ceph_Using_Kubernetes_-_Alexander_Trost_Kim-Norman_Sahm_Cloudibility_UG/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Rebuilding_a_Faster_OSD_with_Future_-_Kefu_Chai_Radoslaw_Zarzynski_Red_Hat/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Rook - Running Ceph Using Kubernetes - Alexander Trost &amp; Kim-Norman Sahm, Cloudibility UG</h4>
+        <h4 class="title">Rebuilding a Faster OSD with Future - Kefu Chai &amp; Radoslaw Zarzynski, Red Hat</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Rook_Deployed_Scalable_NFS_Clusters_Exporting_CephFS_-_Patrick_Donnelly_Jeff_Layton_Red_Hat_Inc./" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Rook_-_Running_Ceph_Using_Kubernetes_-_Alexander_Trost_Kim-Norman_Sahm_Cloudibility_UG/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Rook Deployed Scalable NFS Clusters Exporting CephFS - Patrick Donnelly &amp; Jeff Layton, Red Hat, Inc.</h4>
+        <h4 class="title">Rook - Running Ceph Using Kubernetes - Alexander Trost &amp; Kim-Norman Sahm, Cloudibility UG</h4>
       </a>
     </div>
   

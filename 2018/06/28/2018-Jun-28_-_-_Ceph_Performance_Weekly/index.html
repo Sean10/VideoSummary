@@ -14,23 +14,28 @@
     
     
     
-    <title>2018-Jun-28 :: Ceph Performance Weekly | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2018-Jun-28 :: Ceph Performance Weekly&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年某月某日 参会人员： 大部分研发人员（Sage缺席） 会议主题： 分布式存储Ceph项目进展和讨论 关键细节及讨论议题：  内存分配器：  讨论了不同内存分配器的性能和碎片化问题，包括stupid allocator、bitmap allocator和libc malloc。 通过测试发现，libc malloc在内存使用上表现不佳，而TC malloc和J mal">
+    <meta name="keywords" content="Ceph,Distributed Storage,Performance,Memory Allocator,Optimization">
+    <meta name="description" content="[改进后的中文总结内容] 在本次Ceph性能周会中，研发团队讨论了多个关键议题，包括内存分配器性能、线程行为优化、pull request评估等。  内存分配器：  讨论了不同内存分配器的性能和碎片化问题，包括stupid allocator、bitmap allocator和libc malloc。 测试结果表明，libc malloc在内存使用上表现不佳，而TC malloc和J malloc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018-Jun-28 :: Ceph Performance Weekly">
+<meta property="og:title" content="&#39;2018-Jun-28 :: Ceph Performance Weekly&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年某月某日 参会人员： 大部分研发人员（Sage缺席） 会议主题： 分布式存储Ceph项目进展和讨论 关键细节及讨论议题：  内存分配器：  讨论了不同内存分配器的性能和碎片化问题，包括stupid allocator、bitmap allocator和libc malloc。 通过测试发现，libc malloc在内存使用上表现不佳，而TC malloc和J mal">
+<meta property="og:description" content="[改进后的中文总结内容] 在本次Ceph性能周会中，研发团队讨论了多个关键议题，包括内存分配器性能、线程行为优化、pull request评估等。  内存分配器：  讨论了不同内存分配器的性能和碎片化问题，包括stupid allocator、bitmap allocator和libc malloc。 测试结果表明，libc malloc在内存使用上表现不佳，而TC malloc和J malloc">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-06-27T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-06-28T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance">
+<meta property="article:tag" content="Memory Allocator">
+<meta property="article:tag" content="Optimization">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2018-Jun-28 :: Ceph Performance Weekly</div>
+        <div class="flex-col header-title ellipsis">&#39;2018-Jun-28 :: Ceph Performance Weekly&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2018-Jun-28 :: Ceph Performance Weekly</h1>
+        <h1 class="title">&#39;2018-Jun-28 :: Ceph Performance Weekly&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-06-27T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2018-Jun-28 :: Ceph Performance Weekly</h1>
+        <h1 class="post-card-title">'2018-Jun-28 :: Ceph Performance Weekly'</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-06-28 00:00:00" datetime="2018-06-27T16:00:00.000Z"  itemprop="datePublished">2018-06-28</time>
 
@@ -178,55 +183,51 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： 2023年某月某日</p>
-<p><strong>参会人员</strong>： 大部分研发人员（Sage缺席）</p>
-<p><strong>会议主题</strong>： 分布式存储Ceph项目进展和讨论</p>
-<p><strong>关键细节及讨论议题</strong>：</p>
-<ul>
+            <p>[改进后的中文总结内容]</p>
+<p>在本次Ceph性能周会中，研发团队讨论了多个关键议题，包括内存分配器性能、线程行为优化、pull
+request评估等。</p>
+<ol type="1">
 <li><strong>内存分配器</strong>：
 <ul>
 <li>讨论了不同内存分配器的性能和碎片化问题，包括stupid allocator、bitmap
 allocator和libc malloc。</li>
-<li>通过测试发现，libc malloc在内存使用上表现不佳，而TC malloc和J
+<li>测试结果表明，libc malloc在内存使用上表现不佳，而TC malloc和J
 malloc在性能和内存使用上更优。</li>
-<li>讨论了优化libc malloc的方法，如禁用fast bins和增加TLB缓存计数。</li>
-<li>决定继续使用TC malloc或J malloc作为Ceph的默认内存分配器。</li>
+<li>团队决定继续使用TC malloc或J
+malloc作为Ceph的默认内存分配器，并探讨了优化libc malloc的方法。</li>
 </ul></li>
 <li><strong>KVS线程和finisher线程</strong>：
 <ul>
 <li>讨论了KVS线程和finisher线程的行为，以及Majin
 pang提出的改进方案。</li>
-<li>Majin
-pang表示，他的改进方案在提高高并发情况下的性能方面表现良好。</li>
-<li>决定进一步研究Majin
+<li>Majin pang的改进方案在高并发情况下表现出良好的性能提升。</li>
+<li>团队决定进一步研究Majin
 pang的改进方案，并评估其在生产环境中的效果。</li>
 </ul></li>
 <li><strong>其他议题</strong>：
 <ul>
-<li>讨论了其他几个pull request，包括静态链接、
-bitmap分配器碎片化、异步恢复、大页内存等。</li>
-<li>讨论了make check性能优化，以及缓存利用率的提高。</li>
+<li>讨论了静态链接、bitmap分配器碎片化、异步恢复、大页内存等pull
+request。</li>
+<li>讨论了make check性能优化和缓存利用率的提高。</li>
 <li>讨论了app tracker优化和分区优化。</li>
 <li>讨论了libc malloc的性能测试结果。</li>
 </ul></li>
-</ul>
-<p><strong>决定事项</strong>：</p>
+<li><strong>决定事项</strong>：
 <ul>
 <li>继续使用TC malloc或J malloc作为Ceph的默认内存分配器。</li>
 <li>进一步研究Majin pang的KVS线程和finisher线程改进方案。</li>
 <li>优化make check性能，提高缓存利用率。</li>
 <li>集成p2t wrapper，优化app tracker。</li>
-<li>考虑使用libc malloc的优化方法，如禁用fast
-bins和增加TLB缓存计数。</li>
-</ul>
-<p><strong>后续行动计划</strong>：</p>
+<li>考虑使用libc malloc的优化方法。</li>
+</ul></li>
+<li><strong>后续行动计划</strong>：
 <ul>
 <li>Majin pang将提供更多关于KVS线程和finisher线程改进方案的信息。</li>
 <li>进行libc malloc的优化测试，并评估其效果。</li>
 <li>对其他讨论的pull request进行评估和合并。</li>
 <li>继续优化Ceph的性能和稳定性。</li>
-</ul>
+</ul></li>
+</ol>
 
         </div>
 
@@ -257,6 +258,8 @@ bins和增加TLB缓存计数。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Memory-Allocator/" rel="tag">Memory Allocator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Optimization/" rel="tag">Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance/" rel="tag">Performance</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -268,7 +271,7 @@ bins和增加TLB缓存计数。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/&title=《2018-Jun-28 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/&title=《'2018-Jun-28 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -278,7 +281,7 @@ bins和增加TLB缓存计数。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/&title=《2018-Jun-28 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/&title=《'2018-Jun-28 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -288,7 +291,7 @@ bins和增加TLB缓存计数。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-Jun-28 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-Jun-28 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -318,7 +321,7 @@ bins和增加TLB缓存计数。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2018/07/19/2018-07-19_Ceph_Performance_Weekly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2018-07-19 Ceph Performance Weekly</h4>
+        <h4 class="title">2018-07-19 Ceph性能周报</h4>
       </a>
     </div>
   
@@ -327,7 +330,7 @@ bins和增加TLB缓存计数。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2018/06/27/2018-Jun-27_-_-_Ceph_Testing_Weekly/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2018-Jun-27 :: Ceph Testing Weekly</h4>
+        <h4 class="title">&#39;2018-Jun-27 :: Ceph 测试周报&#39;</h4>
       </a>
     </div>
   
@@ -427,7 +430,7 @@ bins和增加TLB缓存计数。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/&title=《2018-Jun-28 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/&title=《'2018-Jun-28 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -437,7 +440,7 @@ bins和增加TLB缓存计数。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/&title=《2018-Jun-28 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/&title=《'2018-Jun-28 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -447,7 +450,7 @@ bins和增加TLB缓存计数。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-Jun-28 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-Jun-28 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/06/28/2018-Jun-28_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

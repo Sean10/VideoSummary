@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间：[请填写会议时间] 会议地点：[请填写会议地点] 参会人员：[请填写参会人员名单] 主持人：[请填写主持人姓名] 一、会议内容  Liberty优化工作分享 主持人来自PD云存储团队，首先介绍了Liberty优化工作，主要包括以下内容：  Liberty架构概述：Liberty是一种基于Ceph的分布式存储解决方案，适用于虚拟化场景，其数据流如图所示。 IBD LPS优化：针对">
+    <meta name="keywords" content="Ceph,性能优化,可扩展性,librbd,CPU开销">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间：[请填写会议时间] 会议地点：[请填写会议地点] 参会人员：[请填写参会人员名单] 主持人：[请填写主持人姓名] 一、会议内容  Liberty优化工作分享 主持人来自PD云存储团队，介绍了Liberty优化工作的进展，主要包括以下内容：  Liberty架构概述：Liberty是Ceph的一个分布式存储解决方案，适用于虚拟化场景，其数据流涉及磁盘访问">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Optimize librbd for Lower CPU Cost and Higher Scalability - Li Wang, DiDi">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Optimize_librbd_for_Lower_CPU_Cost_and_Higher_Scalability_-_Li_Wang_DiDi/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间：[请填写会议时间] 会议地点：[请填写会议地点] 参会人员：[请填写参会人员名单] 主持人：[请填写主持人姓名] 一、会议内容  Liberty优化工作分享 主持人来自PD云存储团队，首先介绍了Liberty优化工作，主要包括以下内容：  Liberty架构概述：Liberty是一种基于Ceph的分布式存储解决方案，适用于虚拟化场景，其数据流如图所示。 IBD LPS优化：针对">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间：[请填写会议时间] 会议地点：[请填写会议地点] 参会人员：[请填写参会人员名单] 主持人：[请填写主持人姓名] 一、会议内容  Liberty优化工作分享 主持人来自PD云存储团队，介绍了Liberty优化工作的进展，主要包括以下内容：  Liberty架构概述：Liberty是Ceph的一个分布式存储解决方案，适用于虚拟化场景，其数据流涉及磁盘访问">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="可扩展性">
+<meta property="article:tag" content="librbd">
+<meta property="article:tag" content="CPU开销">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,19 +183,20 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要</p>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
 <p>会议时间：[请填写会议时间] 会议地点：[请填写会议地点]
 参会人员：[请填写参会人员名单] 主持人：[请填写主持人姓名]</p>
 <p>一、会议内容</p>
 <ol type="1">
 <li><p><strong>Liberty优化工作分享</strong></p>
-<p>主持人来自PD云存储团队，首先介绍了Liberty优化工作，主要包括以下内容：</p>
+<p>主持人来自PD云存储团队，介绍了Liberty优化工作的进展，主要包括以下内容：</p>
 <ul>
-<li><strong>Liberty架构概述</strong>：Liberty是一种基于Ceph的分布式存储解决方案，适用于虚拟化场景，其数据流如图所示。</li>
+<li><strong>Liberty架构概述</strong>：Liberty是Ceph的一个分布式存储解决方案，适用于虚拟化场景，其数据流涉及磁盘访问请求、OSD、CRUSH算法等。</li>
 <li><strong>IBD LPS优化</strong>：针对IBD
-LPS在随机写测试中不随集群规模扩展的问题，提出了解决方案，包括并行化闪存工作、优化单线程设计为多线程设计等。</li>
-<li><strong>客户端镜像缓存</strong>：利用Ceph的快照功能，将虚拟机系统盘的只读数据存储在Ceph中，以节省存储空间。通过优化镜像缓存机制，提高虚拟机启动速度。</li>
-<li><strong>写操作CPU开销优化</strong>：针对Liberty导致的CPU使用率过高问题，提出优化方案，包括升级Ceph版本、使用新的API调用方式等。</li>
+LPS在随机写测试中不随集群规模扩展的问题，提出了并行化闪存工作、优化单线程设计为多线程设计等解决方案。</li>
+<li><strong>客户端镜像缓存</strong>：利用Ceph的快照功能，通过优化镜像缓存机制，提高虚拟机启动速度。</li>
+<li><strong>写操作CPU开销优化</strong>：提出升级Ceph版本、使用新的API调用方式等优化方案，以降低Liberty导致的CPU使用率过高问题。</li>
 <li><strong>数据恢复优化</strong>：介绍数据恢复过程中的优化策略，包括使用Rebalance优化请求逻辑、回调机制等。</li>
 </ul></li>
 <li><p><strong>社区合作与经验分享</strong></p>
@@ -213,6 +219,8 @@ LPS在随机写测试中不随集群规模扩展的问题，提出了解决方�
 <li>与社区合作，共同解决Liberty在虚拟化场景下的性能瓶颈。</li>
 <li>收集用户反馈，持续改进Liberty产品。</li>
 </ol>
+<p>改进后的总结更准确地反映了原始内容的要点，包括会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。同时，保留了相关的Ceph领域英文关键词，如librbd、Ceph、CRUSH
+algorithm、OSD等。</p>
 
         </div>
 
@@ -243,6 +251,8 @@ LPS在随机写测试中不随集群规模扩展的问题，提出了解决方�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CPU%E5%BC%80%E9%94%80/" rel="tag">CPU开销</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/librbd/" rel="tag">librbd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">可扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -311,9 +321,9 @@ LPS在随机写测试中不随集群规模扩展的问题，提出了解决方�
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Optimizing_Ceph_Object_Storage_for_Production_in_Multisite_Clouds_-_Michael_Hackett_Vikhyat_Umrao/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Per_OSD_Recovery_Bandwidth_Control_Based_on_dmClock_-_Xie_Xingguo_Yan_Jun_ZTE_Corporation/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Optimizing Ceph Object Storage for Production in Multisite Clouds - Michael Hackett &amp; Vikhyat Umrao</h4>
+        <h4 class="title">基于dmClock的Per OSD恢复带宽控制 - Xie Xingguo &amp; Yan Jun, ZTE Corporation</h4>
       </a>
     </div>
   

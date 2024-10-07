@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Tech Talk: Going NATS | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Tech Talk: Going NATS&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：使用Lua脚本与NATS Blue客户端集成以添加Ceph存储桶通知 会议时间：[具体时间] 参会人员：Martin Brisman、[其他参会人员] 会议内容：  背景介绍：  Martin Brisman介绍了如何在Ceph中使用Lua脚本与NATS Blue客户端集成，以添加存储桶通知。 存储桶通知是一种机制，用于在发生特定事件（如向存储桶中添加或删除对象）时向外部系统发">
+    <meta name="keywords" content="Ceph,Lua scripting,NATS,Storage notifications,Open source">
+    <meta name="description" content="[改进后的中文总结内容] Ceph Tech Talk: Going NATS会议纪要： 本次技术会谈的主题是使用Lua脚本与NATS Blue客户端集成，以实现Ceph存储桶的通知功能。 会议内容概述：  背景介绍：Martin Brisman介绍了如何通过Lua脚本在Ceph中集成NATS Blue客户端，实现存储桶通知功能。存储桶通知可以在特定事件（如添加或删除对象）发生时，向外部系统发送通">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Tech Talk: Going NATS">
+<meta property="og:title" content="&#39;Ceph Tech Talk: Going NATS&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/08/26/Ceph_Tech_Talk_-_Going_NATS/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：使用Lua脚本与NATS Blue客户端集成以添加Ceph存储桶通知 会议时间：[具体时间] 参会人员：Martin Brisman、[其他参会人员] 会议内容：  背景介绍：  Martin Brisman介绍了如何在Ceph中使用Lua脚本与NATS Blue客户端集成，以添加存储桶通知。 存储桶通知是一种机制，用于在发生特定事件（如向存储桶中添加或删除对象）时向外部系统发">
+<meta property="og:description" content="[改进后的中文总结内容] Ceph Tech Talk: Going NATS会议纪要： 本次技术会谈的主题是使用Lua脚本与NATS Blue客户端集成，以实现Ceph存储桶的通知功能。 会议内容概述：  背景介绍：Martin Brisman介绍了如何通过Lua脚本在Ceph中集成NATS Blue客户端，实现存储桶通知功能。存储桶通知可以在特定事件（如添加或删除对象）发生时，向外部系统发送通">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-25T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-08-26T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Lua scripting">
+<meta property="article:tag" content="NATS">
+<meta property="article:tag" content="Storage notifications">
+<meta property="article:tag" content="Open source">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Tech Talk: Going NATS</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Tech Talk: Going NATS&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Tech Talk: Going NATS</h1>
+        <h1 class="title">&#39;Ceph Tech Talk: Going NATS&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-08-25T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,21 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8lua%E8%84%9A%E6%9C%AC%E4%B8%8Enats-blue%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%9B%86%E6%88%90%E4%BB%A5%E6%B7%BB%E5%8A%A0ceph%E5%AD%98%E5%82%A8%E6%A1%B6%E9%80%9A%E7%9F%A5"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：使用Lua脚本与NATS
-Blue客户端集成以添加Ceph存储桶通知</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98martin-brisman%E5%85%B6%E4%BB%96%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：Martin
-Brisman、[其他参会人员]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Tech_Talk_-_Going_NATS"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Tech Talk: Going NATS</h1>
+        <h1 class="post-card-title">'Ceph Tech Talk: Going NATS'</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-08-26 00:00:00" datetime="2021-08-25T16:00:00.000Z"  itemprop="datePublished">2021-08-26</time>
 
@@ -187,63 +183,39 @@ Brisman、[其他参会人员]</span></a></li><li class="post-toc-item post-toc-
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4
-id="会议主题使用lua脚本与nats-blue客户端集成以添加ceph存储桶通知">会议主题：使用Lua脚本与NATS
-Blue客户端集成以添加Ceph存储桶通知</h4>
-<h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
-<h4 id="参会人员martin-brisman其他参会人员">参会人员：Martin
-Brisman、[其他参会人员]</h4>
-<h4 id="会议内容">会议内容：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>Ceph Tech Talk: Going NATS会议纪要：</p>
+<p>本次技术会谈的主题是使用Lua脚本与NATS
+Blue客户端集成，以实现Ceph存储桶的通知功能。</p>
+<p><strong>会议内容概述</strong>：</p>
 <ol type="1">
-<li><strong>背景介绍</strong>：
-<ul>
-<li>Martin Brisman介绍了如何在Ceph中使用Lua脚本与NATS
-Blue客户端集成，以添加存储桶通知。</li>
-<li>存储桶通知是一种机制，用于在发生特定事件（如向存储桶中添加或删除对象）时向外部系统发送通知。</li>
-</ul></li>
-<li><strong>应用场景</strong>：
-<ul>
-<li>演示了一个数据管道示例，其中上传的X光照片在Ceph存储桶中触发通知，通过Knative事件组件处理，评估疾病风险，并将结果返回给诊所或发送给研究人员。</li>
-</ul></li>
-<li><strong>技术细节</strong>：
-<ul>
-<li>目前Ceph支持向Kafka、AMQP和HTTP端点发送通知，但希望通过Lua脚本集成NATS，而无需修改源代码。</li>
-<li>Lua脚本允许在Ceph中上传脚本，并在每次收到存储桶请求时执行。</li>
-</ul></li>
-<li><strong>演示环节</strong>：
-<ul>
-<li>Martin展示了如何上传Lua脚本到Ceph，并使用rgw
-admin命令安装所需的Lua包。</li>
-<li>通过s3cmd命令向存储桶发送请求，演示了Lua脚本如何捕获请求并将其发送到NATS服务器。</li>
-</ul></li>
-<li><strong>未来展望</strong>：
-<ul>
-<li>讨论了Lua脚本的潜在集成机会，如与Elasticsearch和Prometheus的集成。</li>
-<li>提到了正在开发中的背景脚本，这将有助于监控和在请求之间保存缓存。</li>
-</ul></li>
-<li><strong>问题与讨论</strong>：
-<ul>
-<li>讨论了Lua脚本的优势，如无需修改源代码即可集成新系统，以及其简单易用的特点。</li>
-<li>也提到了一些限制，如无法在运行之间缓存数据，以及需要改进的地方，如背景数据结构的持久化。</li>
-</ul></li>
+<li><p><strong>背景介绍</strong>：Martin
+Brisman介绍了如何通过Lua脚本在Ceph中集成NATS
+Blue客户端，实现存储桶通知功能。存储桶通知可以在特定事件（如添加或删除对象）发生时，向外部系统发送通知。</p></li>
+<li><p><strong>应用场景</strong>：展示了数据管道的示例，其中上传的X光照片在Ceph存储桶中触发通知，通过Knative事件组件处理，评估疾病风险，并将结果返回给诊所或研究人员。</p></li>
+<li><p><strong>技术细节</strong>：目前Ceph支持向Kafka、AMQP和HTTP端点发送通知，但希望通过Lua脚本集成NATS，而无需修改源代码。Lua脚本可以在Ceph中上传，并在每次收到存储桶请求时执行。</p></li>
+<li><p><strong>演示环节</strong>：Martin展示了如何上传Lua脚本到Ceph，并使用rgw
+admin命令安装所需的Lua包。通过s3cmd命令向存储桶发送请求，演示了Lua脚本如何捕获请求并将其发送到NATS服务器。</p></li>
+<li><p><strong>未来展望</strong>：讨论了Lua脚本的潜在集成机会，如与Elasticsearch和Prometheus的集成。提到了正在开发中的背景脚本，这将有助于监控和在请求之间保存缓存。</p></li>
+<li><p><strong>问题与讨论</strong>：讨论了Lua脚本的优势，如无需修改源代码即可集成新系统，以及其简单易用的特点。也提到了一些限制，如无法在运行之间缓存数据，以及需要改进的地方，如背景数据结构的持久化。</p></li>
 </ol>
-<h4 id="决定事项">决定事项：</h4>
+<p><strong>会议决定</strong>：</p>
 <ul>
 <li>鼓励社区成员尝试使用Lua脚本进行集成和调试，并提供反馈以指导未来功能的开发。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划：</h4>
+<p><strong>后续行动计划</strong>：</p>
 <ul>
 <li>继续开发背景脚本和数据结构，以支持更复杂的监控和集成需求。</li>
 <li>收集社区反馈，优化Lua脚本功能。</li>
 </ul>
-<h4 id="会议结束">会议结束：</h4>
+<p><strong>标签</strong>：</p>
 <ul>
-<li>感谢Martin的精彩演示和Google Summer of
-Code的工作，期待他在Ceph社区的进一步贡献。</li>
+<li>Ceph</li>
+<li>Lua scripting</li>
+<li>NATS</li>
+<li>Storage notifications</li>
+<li>Open source</li>
 </ul>
-<hr />
-<p><strong>备注</strong>：会议中提到的技术术语和工具包括Ceph、Lua脚本、NATS、Knative、存储桶通知、数据管道、Elasticsearch、Prometheus等。</p>
 
         </div>
 
@@ -274,6 +246,8 @@ Code的工作，期待他在Ceph社区的进一步贡献。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Lua-scripting/" rel="tag">Lua scripting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NATS/" rel="tag">NATS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Open-source/" rel="tag">Open source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-notifications/" rel="tag">Storage notifications</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -285,7 +259,7 @@ Code的工作，期待他在Ceph社区的进一步贡献。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/26/Ceph_Tech_Talk_-_Going_NATS/&title=《Ceph Tech Talk: Going NATS》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/26/Ceph_Tech_Talk_-_Going_NATS/&title=《'Ceph Tech Talk: Going NATS'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -295,7 +269,7 @@ Code的工作，期待他在Ceph社区的进一步贡献。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/26/Ceph_Tech_Talk_-_Going_NATS/&title=《Ceph Tech Talk: Going NATS》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/26/Ceph_Tech_Talk_-_Going_NATS/&title=《'Ceph Tech Talk: Going NATS'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -305,7 +279,7 @@ Code的工作，期待他在Ceph社区的进一步贡献。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Tech Talk: Going NATS》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/26/Ceph_Tech_Talk_-_Going_NATS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Tech Talk: Going NATS'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/26/Ceph_Tech_Talk_-_Going_NATS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -335,16 +309,16 @@ Code的工作，期待他在Ceph社区的进一步贡献。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/08/26/Ceph_Performance_Meeting_2021-08-26/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2021-08-26</h4>
+        <h4 class="title">Ceph 性能会议 2021-08-26</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2021/08/24/Ceph_Crimson_SeaStore_2021-07-07/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2021/08/24/Ceph_Crimson_SeaStore_2021-06-30/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Crimson/SeaStore 2021-07-07</h4>
+        <h4 class="title">Ceph Crimson/SeaStore 2021-06-30</h4>
       </a>
     </div>
   
@@ -444,7 +418,7 @@ Code的工作，期待他在Ceph社区的进一步贡献。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/26/Ceph_Tech_Talk_-_Going_NATS/&title=《Ceph Tech Talk: Going NATS》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/26/Ceph_Tech_Talk_-_Going_NATS/&title=《'Ceph Tech Talk: Going NATS'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -454,7 +428,7 @@ Code的工作，期待他在Ceph社区的进一步贡献。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/26/Ceph_Tech_Talk_-_Going_NATS/&title=《Ceph Tech Talk: Going NATS》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/26/Ceph_Tech_Talk_-_Going_NATS/&title=《'Ceph Tech Talk: Going NATS'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -464,7 +438,7 @@ Code的工作，期待他在Ceph社区的进一步贡献。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Tech Talk: Going NATS》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/26/Ceph_Tech_Talk_-_Going_NATS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Tech Talk: Going NATS'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/26/Ceph_Tech_Talk_-_Going_NATS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,29 @@
     
     
     
-    <title>CephFS Code Walkthrough: rstats | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;CephFS Code Walkthrough: rstats&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要：CephFS R-Stats 实现讨论 会议主题 本次会议主要讨论了Ceph文件系统（CephFS）中递归树统计（R-Stats）的实现细节及其在文件系统检查（File System Check）中的应用。 主要议题  R-Stats 的定义与用途：  R-Stats 用于在递归前向 scrubbing 过程中检查统计数据的一致性。 提出了使用快照 R-Stats 来检测两个文件系统树（">
+    <meta name="keywords" content="CephFS,distributed storage,R,Stats,scrubbing,file system check">
+    <meta name="description" content="[改进后的中文总结内容] CephFS R-Stats 实现讨论会议纪要 会议主题 本次会议深入探讨了 Ceph 文件系统（CephFS）中递归树统计（R-Stats）的实现细节，以及其在文件系统检查中的应用。 主要议题  R-Stats 的定义与用途：  R-Stats 用于递归前向 scrubbing 过程中检查统计数据的一致性。 提出使用快照 R-Stats 来检测两个文件系统树之间的变更。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CephFS Code Walkthrough: rstats">
+<meta property="og:title" content="&#39;CephFS Code Walkthrough: rstats&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/08/20/CephFS_Code_Walkthrough_-_rstats/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要：CephFS R-Stats 实现讨论 会议主题 本次会议主要讨论了Ceph文件系统（CephFS）中递归树统计（R-Stats）的实现细节及其在文件系统检查（File System Check）中的应用。 主要议题  R-Stats 的定义与用途：  R-Stats 用于在递归前向 scrubbing 过程中检查统计数据的一致性。 提出了使用快照 R-Stats 来检测两个文件系统树（">
+<meta property="og:description" content="[改进后的中文总结内容] CephFS R-Stats 实现讨论会议纪要 会议主题 本次会议深入探讨了 Ceph 文件系统（CephFS）中递归树统计（R-Stats）的实现细节，以及其在文件系统检查中的应用。 主要议题  R-Stats 的定义与用途：  R-Stats 用于递归前向 scrubbing 过程中检查统计数据的一致性。 提出使用快照 R-Stats 来检测两个文件系统树之间的变更。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-08-20T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="distributed storage">
+<meta property="article:tag" content="R">
+<meta property="article:tag" content="Stats">
+<meta property="article:tag" content="scrubbing">
+<meta property="article:tag" content="file system check">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CephFS Code Walkthrough: rstats</div>
+        <div class="flex-col header-title ellipsis">&#39;CephFS Code Walkthrough: rstats&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CephFS Code Walkthrough: rstats</h1>
+        <h1 class="title">&#39;CephFS Code Walkthrough: rstats&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-08-19T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,8 +165,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81cephfs-r-stats-%E5%AE%9E%E7%8E%B0%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要：CephFS R-Stats
-实现讨论</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议主题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">5.</span> <span class="post-toc-text">会议总结</span></a></li></ol>
         </nav>
     </aside>
 
@@ -169,7 +174,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CephFS Code Walkthrough: rstats</h1>
+        <h1 class="post-card-title">'CephFS Code Walkthrough: rstats'</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-08-20 00:00:00" datetime="2021-08-19T16:00:00.000Z"  itemprop="datePublished">2021-08-20</time>
 
@@ -186,56 +191,56 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要cephfs-r-stats-实现讨论">会议纪要：CephFS R-Stats
-实现讨论</h3>
-<h4 id="会议主题">会议主题</h4>
-<p>本次会议主要讨论了Ceph文件系统（CephFS）中递归树统计（R-Stats）的实现细节及其在文件系统检查（File
-System Check）中的应用。</p>
-<h4 id="主要议题">主要议题</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>CephFS R-Stats 实现讨论会议纪要</p>
+<h3 id="会议主题">会议主题</h3>
+<p>本次会议深入探讨了 Ceph
+文件系统（CephFS）中递归树统计（R-Stats）的实现细节，以及其在文件系统检查中的应用。</p>
+<h3 id="主要议题">主要议题</h3>
 <ol type="1">
 <li><strong>R-Stats 的定义与用途</strong>：
 <ul>
-<li>R-Stats 用于在递归前向 scrubbing 过程中检查统计数据的一致性。</li>
-<li>提出了使用快照 R-Stats
-来检测两个文件系统树（即两个快照之间）的变更。</li>
+<li>R-Stats 用于递归前向 scrubbing 过程中检查统计数据的一致性。</li>
+<li>提出使用快照 R-Stats 来检测两个文件系统树之间的变更。</li>
 </ul></li>
 <li><strong>Scrubbing 的启动方式</strong>：
 <ul>
-<li>Scrubbing 可以针对常规目录或内部 MDS
-目录启动，但不使用递归标志时，仅验证目录的一层。</li>
+<li>Scrubbing 可针对常规目录或内部 MDS
+目录启动，若无递归标志，仅验证目录的一层。</li>
 </ul></li>
 <li><strong>R-Stats 的维护与结构</strong>：
 <ul>
-<li>R-Stats 的维护依赖于 <code>frag_info</code> 和
-<code>nest_info</code> 结构，这些结构嵌入在 <code>fnode_t</code>
-容器结构中。</li>
-<li><code>frag_info</code> 维护单个目录片段的信息，而
-<code>nest_info</code> 累积深度超过一层的条目统计。</li>
+<li>维护依赖于 <code>frag_info</code> 和 <code>nest_info</code>
+结构，这些结构嵌入在 <code>fnode_t</code> 容器结构中。</li>
+<li><code>frag_info</code>
+维护单个目录片段的信息，<code>nest_info</code>
+累积深度超过一层的条目统计。</li>
 </ul></li>
 <li><strong>R-Stats 的传播</strong>：
 <ul>
-<li>R-Stats 从叶节点（目录或文件）向文件系统根节点传播。</li>
-<li>传播是懒惰的，不即时发生，涉及路径上所有 <code>fnode</code>
+<li>从叶节点向文件系统根节点传播，涉及路径上所有 <code>fnode</code>
 对象的更新。</li>
+<li>传播是懒惰的，不即时发生。</li>
 </ul></li>
 <li><strong>挑战与问题</strong>：
 <ul>
-<li>R-Stats 的传播涉及大量锁定，是一个复杂的并发问题。</li>
-<li>快照目录的 RC 时间更新存在 bug，正在调查中。</li>
+<li>R-Stats 传播涉及大量锁定，是并发问题。</li>
+<li>快照目录的 RC 时间更新存在 bug。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
+<h3 id="决定事项">决定事项</h3>
 <ul>
-<li>确认了 R-Stats 在文件系统检查和快照变更检测中的重要性。</li>
-<li>需要进一步解决 R-Stats 传播中的锁定和并发问题。</li>
+<li>承认 R-Stats 在文件系统检查和快照变更检测中的重要性。</li>
+<li>需要解决 R-Stats 传播中的锁定和并发问题。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<h3 id="后续行动计划">后续行动计划</h3>
 <ul>
-<li>继续调查和修复快照目录的 RC 时间更新 bug。</li>
-<li>研究优化 R-Stats 传播过程中的锁定机制，以提高效率和可靠性。</li>
+<li>调查和修复快照目录的 RC 时间更新 bug。</li>
+<li>研究优化 R-Stats 传播过程中的锁定机制，提高效率和可靠性。</li>
 </ul>
-<h4 id="会议结束">会议结束</h4>
-<p>会议结束时，主持人询问是否有其他问题，并表示如果没有更多问题将结束分享。</p>
+<h3 id="会议总结">会议总结</h3>
+<p>会议强调了 R-Stats 在 CephFS
+中的关键作用，并明确了后续改进的方向。</p>
 
         </div>
 
@@ -266,6 +271,8 @@ System Check）中的应用。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Stats/" rel="tag">Stats</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/distributed-storage/" rel="tag">distributed storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/file-system-check/" rel="tag">file system check</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/scrubbing/" rel="tag">scrubbing</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -277,7 +284,7 @@ System Check）中的应用。</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/20/CephFS_Code_Walkthrough_-_rstats/&title=《CephFS Code Walkthrough: rstats》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/20/CephFS_Code_Walkthrough_-_rstats/&title=《'CephFS Code Walkthrough: rstats'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -287,7 +294,7 @@ System Check）中的应用。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/20/CephFS_Code_Walkthrough_-_rstats/&title=《CephFS Code Walkthrough: rstats》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/20/CephFS_Code_Walkthrough_-_rstats/&title=《'CephFS Code Walkthrough: rstats'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -297,7 +304,7 @@ System Check）中的应用。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CephFS Code Walkthrough: rstats》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/20/CephFS_Code_Walkthrough_-_rstats/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CephFS Code Walkthrough: rstats'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/20/CephFS_Code_Walkthrough_-_rstats/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -327,7 +334,7 @@ System Check）中的应用。</p>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/08/21/Ceph_Performance_Meeting_2021-08-05/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2021-08-05</h4>
+        <h4 class="title">Ceph 性能会议 2021-08-05</h4>
       </a>
     </div>
   
@@ -436,7 +443,7 @@ System Check）中的应用。</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/20/CephFS_Code_Walkthrough_-_rstats/&title=《CephFS Code Walkthrough: rstats》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/20/CephFS_Code_Walkthrough_-_rstats/&title=《'CephFS Code Walkthrough: rstats'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -446,7 +453,7 @@ System Check）中的应用。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/20/CephFS_Code_Walkthrough_-_rstats/&title=《CephFS Code Walkthrough: rstats》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/20/CephFS_Code_Walkthrough_-_rstats/&title=《'CephFS Code Walkthrough: rstats'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -456,7 +463,7 @@ System Check）中的应用。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CephFS Code Walkthrough: rstats》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/20/CephFS_Code_Walkthrough_-_rstats/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CephFS Code Walkthrough: rstats'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/20/CephFS_Code_Walkthrough_-_rstats/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

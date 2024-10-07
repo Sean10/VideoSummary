@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Developer Summit Quincy: CephFS | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Developer Summit Quincy: CephFS&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概览 本次会议主要讨论了Ceph分布式存储系统中的多个关键议题，包括Dashboard和NFS的当前状态与后续步骤、MDS内存目标、文件系统加密（fs-crypt）、异步操作、递归删除、MDS滚动升级、文件系统镜像指标以及客户端隔离（fencing）等。 讨论的主要议题  Dashboard和NFS的当前状态与后续步骤  展示了Dashboard中文件系统特定组件的界面，包括默认系统">
+    <meta name="keywords" content="分布式存储,CephFS,Ceph性能,CephFS开发,CephDeveloperSummit">
+    <meta name="description" content="改进后的中文总结内容 本次会议主要围绕CephFS的多个关键议题展开讨论，包括Dashboard和NFS的当前状态与后续步骤、MDS内存目标、文件系统加密（fs-crypt）、异步操作、递归删除、MDS滚动升级、文件系统镜像指标以及客户端隔离（fencing）等。 讨论的主要议题  Dashboard和NFS的当前状态与后续步骤  讨论了Dashboard中文件系统特定组件的界面，包括默认系统、M">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Developer Summit Quincy: CephFS">
+<meta property="og:title" content="&#39;Ceph Developer Summit Quincy: CephFS&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CephFS/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概览 本次会议主要讨论了Ceph分布式存储系统中的多个关键议题，包括Dashboard和NFS的当前状态与后续步骤、MDS内存目标、文件系统加密（fs-crypt）、异步操作、递归删除、MDS滚动升级、文件系统镜像指标以及客户端隔离（fencing）等。 讨论的主要议题  Dashboard和NFS的当前状态与后续步骤  展示了Dashboard中文件系统特定组件的界面，包括默认系统">
+<meta property="og:description" content="改进后的中文总结内容 本次会议主要围绕CephFS的多个关键议题展开讨论，包括Dashboard和NFS的当前状态与后续步骤、MDS内存目标、文件系统加密（fs-crypt）、异步操作、递归删除、MDS滚动升级、文件系统镜像指标以及客户端隔离（fencing）等。 讨论的主要议题  Dashboard和NFS的当前状态与后续步骤  讨论了Dashboard中文件系统特定组件的界面，包括默认系统、M">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-11T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-04-12T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="Ceph性能">
+<meta property="article:tag" content="CephFS开发">
+<meta property="article:tag" content="CephDeveloperSummit">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Developer Summit Quincy: CephFS</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Developer Summit Quincy: CephFS&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Developer Summit Quincy: CephFS</h1>
+        <h1 class="title">&#39;Ceph Developer Summit Quincy: CephFS&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-04-11T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A7%88"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概览</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他备注</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结内容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动计划</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Developer Summit Quincy: CephFS</h1>
+        <h1 class="post-card-title">'Ceph Developer Summit Quincy: CephFS'</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-04-12 00:00:00" datetime="2021-04-11T16:00:00.000Z"  itemprop="datePublished">2021-04-12</time>
 
@@ -185,14 +190,13 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概览">会议概览</h4>
-<p>本次会议主要讨论了Ceph分布式存储系统中的多个关键议题，包括Dashboard和NFS的当前状态与后续步骤、MDS内存目标、文件系统加密（fs-crypt）、异步操作、递归删除、MDS滚动升级、文件系统镜像指标以及客户端隔离（fencing）等。</p>
-<h4 id="讨论的主要议题">讨论的主要议题</h4>
+            <h2 id="改进后的中文总结内容">改进后的中文总结内容</h2>
+<p>本次会议主要围绕CephFS的多个关键议题展开讨论，包括Dashboard和NFS的当前状态与后续步骤、MDS内存目标、文件系统加密（fs-crypt）、异步操作、递归删除、MDS滚动升级、文件系统镜像指标以及客户端隔离（fencing）等。</p>
+<h3 id="讨论的主要议题">讨论的主要议题</h3>
 <ol type="1">
 <li><strong>Dashboard和NFS的当前状态与后续步骤</strong>
 <ul>
-<li>展示了Dashboard中文件系统特定组件的界面，包括默认系统、MDS信息、客户端连接、目录列表和快照创建等功能。</li>
+<li>讨论了Dashboard中文件系统特定组件的界面，包括默认系统、MDS信息、客户端连接、目录列表和快照创建等功能。</li>
 <li>讨论了NFS v3的支持问题，决定未来不再支持NFS
 v3，并可能在未来版本中移除相关支持。</li>
 <li>提到了NFS插件的集成工作，以及与Ganesha的兼容性问题。</li>
@@ -230,13 +234,13 @@ v3，并可能在未来版本中移除相关支持。</li>
 <li>提出了基于标签和生成ID的解决方案，但尚未确定最终方案。</li>
 </ul></li>
 </ol>
-<h4 id="决定的事项">决定的事项</h4>
+<h3 id="决定的事项">决定的事项</h3>
 <ul>
 <li>未来版本中将不再支持NFS v3。</li>
 <li>将探索简化MDS升级过程的方法，并考虑支持混合版本MDS。</li>
 <li>将研究递归删除RPC的实现细节和挑战。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<h3 id="后续行动计划">后续行动计划</h3>
 <ul>
 <li>继续推进文件系统加密的开发，解决截断问题。</li>
 <li>研究并实现递归删除RPC，考虑硬链接的处理。</li>
@@ -244,12 +248,7 @@ v3，并可能在未来版本中移除相关支持。</li>
 <li>跟进文件系统镜像指标的开发，确保与RBD镜像指标的一致性。</li>
 <li>进一步讨论和确定客户端隔离的最终方案。</li>
 </ul>
-<h4 id="其他备注">其他备注</h4>
-<ul>
-<li>会议中提到的多个议题仍处于讨论和开发阶段，需要进一步的工作和测试。</li>
-<li>对于每个议题，都需要详细的开发计划和时间表，以确保功能的稳定实现和集成。</li>
-</ul>
-<p>本次会议为Ceph的持续改进和发展提供了重要的讨论和决策基础，后续的工作将围绕这些关键议题展开。</p>
+<p>本次会议为CephFS的持续改进和发展提供了重要的讨论和决策基础，后续的工作将围绕这些关键议题展开。</p>
 
         </div>
 
@@ -280,6 +279,8 @@ v3，并可能在未来版本中移除相关支持。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephDeveloperSummit/" rel="tag">CephDeveloperSummit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS%E5%BC%80%E5%8F%91/" rel="tag">CephFS开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E6%80%A7%E8%83%BD/" rel="tag">Ceph性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -291,7 +292,7 @@ v3，并可能在未来版本中移除相关支持。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CephFS/&title=《Ceph Developer Summit Quincy: CephFS》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CephFS/&title=《'Ceph Developer Summit Quincy: CephFS'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -301,7 +302,7 @@ v3，并可能在未来版本中移除相关支持。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CephFS/&title=《Ceph Developer Summit Quincy: CephFS》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CephFS/&title=《'Ceph Developer Summit Quincy: CephFS'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -311,7 +312,7 @@ v3，并可能在未来版本中移除相关支持。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Developer Summit Quincy: CephFS》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CephFS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Developer Summit Quincy: CephFS'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CephFS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -341,7 +342,7 @@ v3，并可能在未来版本中移除相关支持。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CI/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Developer Summit Quincy: CI</h4>
+        <h4 class="title">Ceph 开发者峰会 Quincy：CI</h4>
       </a>
     </div>
   
@@ -350,7 +351,7 @@ v3，并可能在未来版本中移除相关支持。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_Dashboard/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Developer Summit Quincy: Dashboard</h4>
+        <h4 class="title"> Ceph Developer Summit Quincy: Dashboard </h4>
       </a>
     </div>
   
@@ -450,7 +451,7 @@ v3，并可能在未来版本中移除相关支持。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CephFS/&title=《Ceph Developer Summit Quincy: CephFS》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CephFS/&title=《'Ceph Developer Summit Quincy: CephFS'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -460,7 +461,7 @@ v3，并可能在未来版本中移除相关支持。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CephFS/&title=《Ceph Developer Summit Quincy: CephFS》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CephFS/&title=《'Ceph Developer Summit Quincy: CephFS'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -470,7 +471,7 @@ v3，并可能在未来版本中移除相关支持。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Developer Summit Quincy: CephFS》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CephFS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Developer Summit Quincy: CephFS'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/12/Ceph_Developer_Summit_Quincy_-_CephFS/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

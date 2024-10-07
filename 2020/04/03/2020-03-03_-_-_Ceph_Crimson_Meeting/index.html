@@ -14,23 +14,28 @@
     
     
     
-    <title>2020-03-03 :: Ceph Crimson Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2020-03-03 :: Ceph Crimson Meeting&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  错误修复与性能问题：  讨论了由William编码的错误，该错误已修复。 当前版本的代码在测试环境中部署时遇到问题，仅能使用旧版本进行测试。 性能比较显示，某些情况下旧版本的性能优于当前版本。  代码与架构讨论：  讨论了使用Cilium和FreeBSD编译的代码。 涉及PG log based recovery的实现和优化。 讨论了持久内存（persistent memor">
+    <meta name="keywords" content="Ceph,分布式存储,CRUSH算法,性能优化,代码架构">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  错误修复与性能问题：  讨论了William编码的错误及其修复。 指出当前版本代码在测试环境中遇到问题，需要使用旧版本进行测试。 对比新旧版本性能，发现某些情况下旧版本表现更优。  代码与架构讨论：  讨论使用Cilium和FreeBSD编译的代码。 讨论PG log based recovery的实现和优化。 探讨持久内存的使用和优化。  后续行动">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2020-03-03 :: Ceph Crimson Meeting">
+<meta property="og:title" content="&#39;2020-03-03 :: Ceph Crimson Meeting&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/04/03/2020-03-03_-_-_Ceph_Crimson_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  错误修复与性能问题：  讨论了由William编码的错误，该错误已修复。 当前版本的代码在测试环境中部署时遇到问题，仅能使用旧版本进行测试。 性能比较显示，某些情况下旧版本的性能优于当前版本。  代码与架构讨论：  讨论了使用Cilium和FreeBSD编译的代码。 涉及PG log based recovery的实现和优化。 讨论了持久内存（persistent memor">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  错误修复与性能问题：  讨论了William编码的错误及其修复。 指出当前版本代码在测试环境中遇到问题，需要使用旧版本进行测试。 对比新旧版本性能，发现某些情况下旧版本表现更优。  代码与架构讨论：  讨论使用Cilium和FreeBSD编译的代码。 讨论PG log based recovery的实现和优化。 探讨持久内存的使用和优化。  后续行动">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-04-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="代码架构">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2020-03-03 :: Ceph Crimson Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2020-03-03 :: Ceph Crimson Meeting&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2020-03-03 :: Ceph Crimson Meeting</h1>
+        <h1 class="title">&#39;2020-03-03 :: Ceph Crimson Meeting&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-04-02T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2020-03-03 :: Ceph Crimson Meeting</h1>
+        <h1 class="post-card-title">'2020-03-03 :: Ceph Crimson Meeting'</h1>
         <div class="post-meta">
             <time class="post-time" title="2020-04-03 00:00:00" datetime="2020-04-02T16:00:00.000Z"  itemprop="datePublished">2020-04-03</time>
 
@@ -185,25 +190,26 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
 <li><strong>错误修复与性能问题</strong>：
 <ul>
-<li>讨论了由William编码的错误，该错误已修复。</li>
-<li>当前版本的代码在测试环境中部署时遇到问题，仅能使用旧版本进行测试。</li>
-<li>性能比较显示，某些情况下旧版本的性能优于当前版本。</li>
+<li>讨论了William编码的错误及其修复。</li>
+<li>指出当前版本代码在测试环境中遇到问题，需要使用旧版本进行测试。</li>
+<li>对比新旧版本性能，发现某些情况下旧版本表现更优。</li>
 </ul></li>
 <li><strong>代码与架构讨论</strong>：
 <ul>
-<li>讨论了使用Cilium和FreeBSD编译的代码。</li>
-<li>涉及PG log based recovery的实现和优化。</li>
-<li>讨论了持久内存（persistent memory）的使用和优化。</li>
+<li>讨论使用Cilium和FreeBSD编译的代码。</li>
+<li>讨论PG log based recovery的实现和优化。</li>
+<li>探讨持久内存的使用和优化。</li>
 </ul></li>
 <li><strong>后续行动计划</strong>：
 <ul>
-<li>继续优化和测试PG log based recovery的实现。</li>
-<li>探索持久内存的使用，以提高性能和可靠性。</li>
+<li>优化和测试PG log based recovery。</li>
+<li>探索持久内存的使用。</li>
 <li>继续进行代码清理和文档更新。</li>
 </ul></li>
 </ul>
@@ -211,37 +217,37 @@
 <ul>
 <li><strong>错误修复与性能优化</strong>：
 <ul>
-<li>确认了由William修复的错误，并讨论了性能回归问题。</li>
-<li>讨论了如何改进部署和测试流程，以避免类似问题。</li>
+<li>确认William修复的错误，并讨论了性能回归问题。</li>
+<li>讨论如何改进部署和测试流程。</li>
 </ul></li>
 <li><strong>代码与架构优化</strong>：
 <ul>
-<li>讨论了Cilium和FreeBSD的使用，以及如何优化编译和部署流程。</li>
-<li>深入讨论了PG log based recovery的实现细节和潜在优化点。</li>
-<li>探讨了持久内存的使用，以及如何通过不同的接口实现更好的性能。</li>
+<li>讨论Cilium和FreeBSD的使用，以及编译和部署流程的优化。</li>
+<li>深入讨论PG log based recovery的实现细节和优化点。</li>
+<li>探讨持久内存的使用。</li>
 </ul></li>
 <li><strong>未来工作方向</strong>：
 <ul>
-<li>确认了继续优化PG log based recovery的必要性。</li>
-<li>讨论了持久内存的潜在优势和实现方式。</li>
-<li>确认了代码清理和文档更新的重要性。</li>
+<li>确认继续优化PG log based recovery。</li>
+<li>讨论持久内存的潜在优势和实现方式。</li>
+<li>确认代码清理和文档更新的重要性。</li>
 </ul></li>
 </ul>
 <h4 id="决定的事项">决定的事项</h4>
 <ul>
 <li><strong>错误修复</strong>：
 <ul>
-<li>确认了由William修复的错误，并讨论了性能回归问题。</li>
+<li>确认William修复的错误，并讨论性能回归问题。</li>
 </ul></li>
 <li><strong>代码与架构优化</strong>：
 <ul>
-<li>确认了继续优化PG log based recovery的必要性。</li>
-<li>确认了持久内存的潜在优势和实现方式。</li>
+<li>确认继续优化PG log based recovery。</li>
+<li>确认持久内存的潜在优势和实现方式。</li>
 </ul></li>
 <li><strong>后续行动计划</strong>：
 <ul>
-<li>继续优化和测试PG log based recovery的实现。</li>
-<li>探索持久内存的使用，以提高性能和可靠性。</li>
+<li>继续优化和测试PG log based recovery。</li>
+<li>探索持久内存的使用。</li>
 <li>继续进行代码清理和文档更新。</li>
 </ul></li>
 </ul>
@@ -295,6 +301,8 @@ recovery的必要性，并探讨了持久内存的潜在优势和实现方式。
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E6%9E%B6%E6%9E%84/" rel="tag">代码架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -306,7 +314,7 @@ recovery的必要性，并探讨了持久内存的潜在优势和实现方式。
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-03-03_-_-_Ceph_Crimson_Meeting/&title=《2020-03-03 :: Ceph Crimson Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-03-03_-_-_Ceph_Crimson_Meeting/&title=《'2020-03-03 :: Ceph Crimson Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -316,7 +324,7 @@ recovery的必要性，并探讨了持久内存的潜在优势和实现方式。
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-03-03_-_-_Ceph_Crimson_Meeting/&title=《2020-03-03 :: Ceph Crimson Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-03-03_-_-_Ceph_Crimson_Meeting/&title=《'2020-03-03 :: Ceph Crimson Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -326,7 +334,7 @@ recovery的必要性，并探讨了持久内存的潜在优势和实现方式。
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2020-03-03 :: Ceph Crimson Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/2020-03-03_-_-_Ceph_Crimson_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2020-03-03 :: Ceph Crimson Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/2020-03-03_-_-_Ceph_Crimson_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -354,18 +362,18 @@ recovery的必要性，并探讨了持久内存的潜在优势和实现方式。
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2020/04/03/2020-02-27_-_-_Ceph_Performance_Meeting/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2020/04/03/2020-03-02_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2020-02-27 :: Ceph Performance Meeting</h4>
+        <h4 class="title">&#39;2020-03-02 :: Ceph Orchestration Meeting&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2020/04/03/2020-03-09_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2020/04/03/2020-03-05_-_-_Ceph_Performance_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2020-03-09 :: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2020-03-05 :: Ceph 性能会议&#39;</h4>
       </a>
     </div>
   
@@ -465,7 +473,7 @@ recovery的必要性，并探讨了持久内存的潜在优势和实现方式。
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-03-03_-_-_Ceph_Crimson_Meeting/&title=《2020-03-03 :: Ceph Crimson Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-03-03_-_-_Ceph_Crimson_Meeting/&title=《'2020-03-03 :: Ceph Crimson Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -475,7 +483,7 @@ recovery的必要性，并探讨了持久内存的潜在优势和实现方式。
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-03-03_-_-_Ceph_Crimson_Meeting/&title=《2020-03-03 :: Ceph Crimson Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-03-03_-_-_Ceph_Crimson_Meeting/&title=《'2020-03-03 :: Ceph Crimson Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -485,7 +493,7 @@ recovery的必要性，并探讨了持久内存的潜在优势和实现方式。
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2020-03-03 :: Ceph Crimson Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/2020-03-03_-_-_Ceph_Crimson_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2020-03-03 :: Ceph Crimson Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/2020-03-03_-_-_Ceph_Crimson_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

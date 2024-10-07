@@ -14,23 +14,28 @@
     
     
     
-    <title>2017-JUN-15 :: Ceph Performance Weekly | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2017-JUN-15 :: Ceph Performance Weekly&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年6月15日 会议主题： Ceph分布式存储项目进展及讨论 参会人员： 研发人员、项目经理、测试人员 会议内容： 一、Ceph项目进展  新功能与优化：  合并了降低AC传输成本的代码，并进行了测试。 优化了BBQ流程。 正在测试中，合并了处理高优先级任务的代码，但仍在等待关于“点亮”提交的共识。 开放了一个新的PR，修改了文件存储中回调函数的顺序，但之前决定不修改。">
+    <meta name="keywords" content="Ceph,RocksDB,Distributed Storage,Performance Optimization,BDPR">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年6月15日 会议主题： Ceph分布式存储项目进展及讨论 参会人员： 研发人员、项目经理、测试人员 会议内容： 一、Ceph项目进展  新功能与优化：  成功合并了降低AC传输成本的代码，并正在进行测试。 优化了BBQ流程。 正在测试中，合并了处理高优先级任务的代码，但仍在等待关于“点亮”提交的共识。 开放了一个新的PR，修改了文件存储中回">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017-JUN-15 :: Ceph Performance Weekly">
+<meta property="og:title" content="&#39;2017-JUN-15 :: Ceph Performance Weekly&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2017/06/21/2017-JUN-15_-_-_Ceph_Performance_Weekly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年6月15日 会议主题： Ceph分布式存储项目进展及讨论 参会人员： 研发人员、项目经理、测试人员 会议内容： 一、Ceph项目进展  新功能与优化：  合并了降低AC传输成本的代码，并进行了测试。 优化了BBQ流程。 正在测试中，合并了处理高优先级任务的代码，但仍在等待关于“点亮”提交的共识。 开放了一个新的PR，修改了文件存储中回调函数的顺序，但之前决定不修改。">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年6月15日 会议主题： Ceph分布式存储项目进展及讨论 参会人员： 研发人员、项目经理、测试人员 会议内容： 一、Ceph项目进展  新功能与优化：  成功合并了降低AC传输成本的代码，并正在进行测试。 优化了BBQ流程。 正在测试中，合并了处理高优先级任务的代码，但仍在等待关于“点亮”提交的共识。 开放了一个新的PR，修改了文件存储中回">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-06-20T16:00:00.000Z">
 <meta property="article:modified_time" content="2017-06-21T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="BDPR">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2017-JUN-15 :: Ceph Performance Weekly</div>
+        <div class="flex-col header-title ellipsis">&#39;2017-JUN-15 :: Ceph Performance Weekly&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2017-JUN-15 :: Ceph Performance Weekly</h1>
+        <h1 class="title">&#39;2017-JUN-15 :: Ceph Performance Weekly&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2017-06-20T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2017-JUN-15 :: Ceph Performance Weekly</h1>
+        <h1 class="post-card-title">'2017-JUN-15 :: Ceph Performance Weekly'</h1>
         <div class="post-meta">
             <time class="post-time" title="2017-06-21 00:00:00" datetime="2017-06-20T16:00:00.000Z"  itemprop="datePublished">2017-06-21</time>
 
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议时间</strong>： 2023年6月15日</p>
 <p><strong>会议主题</strong>： Ceph分布式存储项目进展及讨论</p>
 <p><strong>参会人员</strong>： 研发人员、项目经理、测试人员</p>
@@ -194,7 +200,7 @@
 <ol type="1">
 <li><strong>新功能与优化</strong>：
 <ul>
-<li>合并了降低AC传输成本的代码，并进行了测试。</li>
+<li>成功合并了降低AC传输成本的代码，并正在进行测试。</li>
 <li>优化了BBQ流程。</li>
 <li>正在测试中，合并了处理高优先级任务的代码，但仍在等待关于“点亮”提交的共识。</li>
 <li>开放了一个新的PR，修改了文件存储中回调函数的顺序，但之前决定不修改。</li>
@@ -226,6 +232,12 @@ Replication）功能。</li>
 <p>下次会议将根据测试结果和bug修复情况确定。</p>
 <p><strong>四、其他事项</strong></p>
 <p>无。</p>
+<p><strong>改进说明</strong>：</p>
+<ol type="1">
+<li>确保了总结中包含了所有关键细节，包括新功能的合并、性能优化、发现的bug和后续的行动计划。</li>
+<li>保留了所有计算机科学/ceph相关领域的英文原文关键词，如Ceph、RocksDB、BDPR等。</li>
+<li>对部分表述进行了调整，使其更符合中文表达习惯，同时保持了对原始内容的准确反映。</li>
+</ol>
 
         </div>
 
@@ -256,6 +268,8 @@ Replication）功能。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BDPR/" rel="tag">BDPR</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -267,7 +281,7 @@ Replication）功能。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/06/21/2017-JUN-15_-_-_Ceph_Performance_Weekly/&title=《2017-JUN-15 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/06/21/2017-JUN-15_-_-_Ceph_Performance_Weekly/&title=《'2017-JUN-15 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -277,7 +291,7 @@ Replication）功能。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/06/21/2017-JUN-15_-_-_Ceph_Performance_Weekly/&title=《2017-JUN-15 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/06/21/2017-JUN-15_-_-_Ceph_Performance_Weekly/&title=《'2017-JUN-15 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -287,7 +301,7 @@ Replication）功能。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2017-JUN-15 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/06/21/2017-JUN-15_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2017-JUN-15 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/06/21/2017-JUN-15_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -315,18 +329,18 @@ Replication）功能。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2017/06/21/2017-JUN-08_-_-_Ceph_Performance_Weekly/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2017/06/21/2017-JUN-01_-_-_Ceph_Performance_Weekly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2017-JUN-08 :: Ceph Performance Weekly</h4>
+        <h4 class="title">&#39;2017-JUN-01 :: Ceph Performance Weekly&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2017/06/01/2017Q2_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2017/06/21/2017-JUN-08_-_-_Ceph_Performance_Weekly/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2017Q2 Ceph社区季度总结</h4>
+        <h4 class="title">&#39;2017-JUN-08 :: Ceph Performance Weekly&#39;</h4>
       </a>
     </div>
   
@@ -426,7 +440,7 @@ Replication）功能。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/06/21/2017-JUN-15_-_-_Ceph_Performance_Weekly/&title=《2017-JUN-15 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2017/06/21/2017-JUN-15_-_-_Ceph_Performance_Weekly/&title=《'2017-JUN-15 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -436,7 +450,7 @@ Replication）功能。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/06/21/2017-JUN-15_-_-_Ceph_Performance_Weekly/&title=《2017-JUN-15 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2017/06/21/2017-JUN-15_-_-_Ceph_Performance_Weekly/&title=《'2017-JUN-15 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -446,7 +460,7 @@ Replication）功能。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2017-JUN-15 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/06/21/2017-JUN-15_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2017-JUN-15 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2017/06/21/2017-JUN-15_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

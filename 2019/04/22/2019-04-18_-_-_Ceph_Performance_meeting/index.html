@@ -14,23 +14,28 @@
     
     
     
-    <title>2019-04-18 :: Ceph Performance meeting | ceph视频总结 | youtube频道总结</title>
+    <title>  2019-04-18 :: Ceph Performance meeting   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： Adam（Ceph研发人员），其他Ceph团队成员 会议内容： 1. Pull Requests审核  新提交的Pull Requests：  一项优化了异步消息传递性能的Pull Requests，通过从用户空间而不是内核空间拉取事件，实现了性能提升。 一项优化检查UTF-8的Pull Requests，旨在提高系统性能。">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,RocksDB,稳定性和可靠性">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2019年4月18日 参会人员： Adam（Ceph研发人员），其他Ceph团队成员 会议内容： 1. Pull Requests审核  新提交的Pull Requests：  一项通过在用户空间而非内核空间拉取事件的Pull Requests，实现了异步消息传递性能的提升。 一项优化UTF-8检查的Pull Requests，旨在提高系统性能。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-04-18 :: Ceph Performance meeting">
+<meta property="og:title" content="  2019-04-18 :: Ceph Performance meeting  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/04/22/2019-04-18_-_-_Ceph_Performance_meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： Adam（Ceph研发人员），其他Ceph团队成员 会议内容： 1. Pull Requests审核  新提交的Pull Requests：  一项优化了异步消息传递性能的Pull Requests，通过从用户空间而不是内核空间拉取事件，实现了性能提升。 一项优化检查UTF-8的Pull Requests，旨在提高系统性能。">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2019年4月18日 参会人员： Adam（Ceph研发人员），其他Ceph团队成员 会议内容： 1. Pull Requests审核  新提交的Pull Requests：  一项通过在用户空间而非内核空间拉取事件的Pull Requests，实现了异步消息传递性能的提升。 一项优化UTF-8检查的Pull Requests，旨在提高系统性能。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-04-21T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-04-22T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="稳定性和可靠性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-04-18 :: Ceph Performance meeting</div>
+        <div class="flex-col header-title ellipsis">  2019-04-18 :: Ceph Performance meeting  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-04-18 :: Ceph Performance meeting</h1>
+        <h1 class="title">  2019-04-18 :: Ceph Performance meeting  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-04-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-04-18 :: Ceph Performance meeting</h1>
+        <h1 class="post-card-title">  2019-04-18 :: Ceph Performance meeting  </h1>
         <div class="post-meta">
             <time class="post-time" title="2019-04-22 00:00:00" datetime="2019-04-21T16:00:00.000Z"  itemprop="datePublished">2019-04-22</time>
 
@@ -185,8 +190,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议时间</strong>： 2019年4月18日</p>
 <p><strong>参会人员</strong>：
 Adam（Ceph研发人员），其他Ceph团队成员</p>
 <p><strong>会议内容</strong>：</p>
@@ -194,35 +200,35 @@ Adam（Ceph研发人员），其他Ceph团队成员</p>
 <ul>
 <li><strong>新提交的Pull Requests</strong>：
 <ul>
-<li>一项优化了异步消息传递性能的Pull
-Requests，通过从用户空间而不是内核空间拉取事件，实现了性能提升。</li>
-<li>一项优化检查UTF-8的Pull Requests，旨在提高系统性能。</li>
+<li>一项通过在用户空间而非内核空间拉取事件的Pull
+Requests，实现了异步消息传递性能的提升。</li>
+<li>一项优化UTF-8检查的Pull Requests，旨在提高系统性能。</li>
 </ul></li>
-<li><strong>已审核的PullRequests</strong>：
+<li><strong>已审核的Pull Requests</strong>：
 <ul>
-<li>推迟延迟请求的PullRequests，由Jason审核。</li>
-<li>优化默认的垃圾回收策略的PullRequests，之前存在的问题已得到解决。</li>
+<li>推迟延迟请求的Pull Requests，由Jason审核。</li>
+<li>优化默认垃圾回收策略的Pull Requests，已解决先前存在的问题。</li>
 </ul></li>
 </ul>
 <p><strong>2. Adam的RocksDB工作</strong></p>
 <ul>
 <li>Adam测试了将RocksDB数据库分割成多个列族对性能的影响。</li>
-<li>测试结果表明，分割列族可以带来一定的性能提升，最高可达29%。</li>
-<li>Adam还探讨了列族大小和写前锁对性能的影响，并发现更大的写前锁和更少的列族可以带来显著的性能提升。</li>
+<li>测试结果表明，分割列族可以带来性能提升，最高可达29%。</li>
+<li>Adam探讨了列族大小和写前锁对性能的影响，发现更大的写前锁和更少的列族可以显著提升性能。</li>
 </ul>
 <p><strong>3. RocksDB的压缩和扩展</strong></p>
 <ul>
-<li>团队讨论了RocksDB的压缩和扩展问题，并探讨了如何通过调整配置来优化性能。</li>
-<li>Adam提出，通过调整写前锁大小和列族配置，可以减少数据移动，从而提高压缩效率。</li>
+<li>团队讨论了RocksDB的压缩和扩展问题，并探讨如何通过调整配置来优化性能。</li>
+<li>Adam提出，通过调整写前锁大小和列族配置，可以减少数据移动，提高压缩效率。</li>
 </ul>
 <p><strong>4. Ceph性能和稳定性</strong></p>
 <ul>
-<li>团队讨论了Ceph的性能和稳定性问题，并探讨了如何改进系统性能和可靠性。</li>
+<li>团队讨论了Ceph的性能和稳定性问题，并探讨如何改进系统性能和可靠性。</li>
 <li>Adam提出，通过增加超时时间和优化超时策略，可以避免因长时间等待而导致的服务中断。</li>
 </ul>
 <p><strong>5. 其他议题</strong></p>
 <ul>
-<li>团队讨论了其他一些议题，包括：
+<li>团队讨论了其他议题，包括：
 <ul>
 <li>MDS缓存内存限制</li>
 <li>内存自动调优</li>
@@ -246,6 +252,8 @@ Requests，通过从用户空间而不是内核空间拉取事件，实现了性
 <li>Ceph</li>
 <li>性能</li>
 <li>稳定性</li>
+<li>MDS</li>
+<li>内存自动调优</li>
 </ul>
 
         </div>
@@ -277,6 +285,8 @@ Requests，通过从用户空间而不是内核空间拉取事件，实现了性
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%92%8C%E5%8F%AF%E9%9D%A0%E6%80%A7/" rel="tag">稳定性和可靠性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -288,7 +298,7 @@ Requests，通过从用户空间而不是内核空间拉取事件，实现了性
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/22/2019-04-18_-_-_Ceph_Performance_meeting/&title=《2019-04-18 :: Ceph Performance meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/22/2019-04-18_-_-_Ceph_Performance_meeting/&title=《  2019-04-18 :: Ceph Performance meeting  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -298,7 +308,7 @@ Requests，通过从用户空间而不是内核空间拉取事件，实现了性
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/22/2019-04-18_-_-_Ceph_Performance_meeting/&title=《2019-04-18 :: Ceph Performance meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/22/2019-04-18_-_-_Ceph_Performance_meeting/&title=《  2019-04-18 :: Ceph Performance meeting  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -308,7 +318,7 @@ Requests，通过从用户空间而不是内核空间拉取事件，实现了性
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-04-18 :: Ceph Performance meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/22/2019-04-18_-_-_Ceph_Performance_meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  2019-04-18 :: Ceph Performance meeting  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/22/2019-04-18_-_-_Ceph_Performance_meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -338,7 +348,7 @@ Requests，通过从用户空间而不是内核空间拉取事件，实现了性
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2019/04/25/2019-04-25_-_-_Ceph_Performance_meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-04-25 :: Ceph Performance meeting</h4>
+        <h4 class="title">&#39;2019-04-25 :: Ceph Performance meeting&#39;</h4>
       </a>
     </div>
   
@@ -347,7 +357,7 @@ Requests，通过从用户空间而不是内核空间拉取事件，实现了性
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2019/04/22/2019-04-22_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-04-22:: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2019-04-22:: Ceph Orchestration Meeting&#39;</h4>
       </a>
     </div>
   
@@ -447,7 +457,7 @@ Requests，通过从用户空间而不是内核空间拉取事件，实现了性
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/22/2019-04-18_-_-_Ceph_Performance_meeting/&title=《2019-04-18 :: Ceph Performance meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/04/22/2019-04-18_-_-_Ceph_Performance_meeting/&title=《  2019-04-18 :: Ceph Performance meeting  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -457,7 +467,7 @@ Requests，通过从用户空间而不是内核空间拉取事件，实现了性
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/22/2019-04-18_-_-_Ceph_Performance_meeting/&title=《2019-04-18 :: Ceph Performance meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/04/22/2019-04-18_-_-_Ceph_Performance_meeting/&title=《  2019-04-18 :: Ceph Performance meeting  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -467,7 +477,7 @@ Requests，通过从用户空间而不是内核空间拉取事件，实现了性
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-04-18 :: Ceph Performance meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/22/2019-04-18_-_-_Ceph_Performance_meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  2019-04-18 :: Ceph Performance meeting  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/04/22/2019-04-18_-_-_Ceph_Performance_meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

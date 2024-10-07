@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2021-07-22 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph性能会议纪要2021-07-22 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要 会议讨论了本周Ceph项目中的多个Pull Requests (PRs)，包括新提交的和更新的PRs，以及一些关闭的PRs。会议还涉及了Ceph的性能改进、内存分配优化、以及对Ceph存储系统的未来发展方向的讨论。 主要议题  新PR和更新PRs  一个新的PR改变了vlog的工作方式，Kifu已批准并要求Sam进行审查。 Radic提交了一个有趣的PR，允许在Crimson中">
+    <meta name="keywords" content="Ceph,分布式存储,RBD,性能优化,PR审查">
+    <meta name="description" content="[改进后的中文总结内容] 会议概要 本次会议主要讨论了Ceph项目的多个Pull Requests (PRs)，包括新提交、更新和关闭的PRs，以及Ceph的性能改进、内存分配优化和对未来存储系统发展方向的讨论。 主要议题  新PR和更新PRs  一个新的PR改变了vlog的工作方式，Kifu已批准并要求Sam进行审查。 Radic提交了一个PR，允许Crimson使用外来的存储（alien st">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2021-07-22">
+<meta property="og:title" content="Ceph性能会议纪要2021-07-22">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-22/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要 会议讨论了本周Ceph项目中的多个Pull Requests (PRs)，包括新提交的和更新的PRs，以及一些关闭的PRs。会议还涉及了Ceph的性能改进、内存分配优化、以及对Ceph存储系统的未来发展方向的讨论。 主要议题  新PR和更新PRs  一个新的PR改变了vlog的工作方式，Kifu已批准并要求Sam进行审查。 Radic提交了一个有趣的PR，允许在Crimson中">
+<meta property="og:description" content="[改进后的中文总结内容] 会议概要 本次会议主要讨论了Ceph项目的多个Pull Requests (PRs)，包括新提交、更新和关闭的PRs，以及Ceph的性能改进、内存分配优化和对未来存储系统发展方向的讨论。 主要议题  新PR和更新PRs  一个新的PR改变了vlog的工作方式，Kifu已批准并要求Sam进行审查。 Radic提交了一个PR，允许Crimson使用外来的存储（alien st">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-08-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RBD">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="PR审查">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2021-07-22</div>
+        <div class="flex-col header-title ellipsis">Ceph性能会议纪要2021-07-22</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2021-07-22</h1>
+        <h1 class="title">Ceph性能会议纪要2021-07-22</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-08-22T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">5.</span> <span class="post-toc-text">其他事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">6.</span> <span class="post-toc-text">会议结束</span></a></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2021-07-22</h1>
+        <h1 class="post-card-title">Ceph性能会议纪要2021-07-22</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-08-23 00:00:00" datetime="2021-08-22T16:00:00.000Z"  itemprop="datePublished">2021-08-23</time>
 
@@ -185,20 +190,20 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概要">会议概要</h4>
-<p>会议讨论了本周Ceph项目中的多个Pull Requests
-(PRs)，包括新提交的和更新的PRs，以及一些关闭的PRs。会议还涉及了Ceph的性能改进、内存分配优化、以及对Ceph存储系统的未来发展方向的讨论。</p>
-<h4 id="主要议题">主要议题</h4>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议概要">会议概要</h3>
+<p>本次会议主要讨论了Ceph项目的多个Pull Requests
+(PRs)，包括新提交、更新和关闭的PRs，以及Ceph的性能改进、内存分配优化和对未来存储系统发展方向的讨论。</p>
+<h3 id="主要议题">主要议题</h3>
 <ol type="1">
 <li><strong>新PR和更新PRs</strong>
 <ul>
 <li>一个新的PR改变了vlog的工作方式，Kifu已批准并要求Sam进行审查。</li>
-<li>Radic提交了一个有趣的PR，允许在Crimson中使用外来的存储（alien
-store），这可以用来测试mem store和file store。</li>
-<li>一个新的PR用于RGW跟踪，Matt已进行审查。</li>
+<li>Radic提交了一个PR，允许Crimson使用外来的存储（alien
+store），以测试mem store和file store。</li>
+<li>新的PR用于RGW跟踪，Matt已进行审查。</li>
 <li>针对c字符串转换的buffer list优化。</li>
-<li>一个PR改进了finisher线程的CPU占用，虽然有些争议，但Kifu和Kcr正在审查。</li>
+<li>一个PR改进了finisher线程的CPU占用，正在审查中。</li>
 </ul></li>
 <li><strong>关闭的PRs</strong>
 <ul>
@@ -218,24 +223,24 @@ land客户端的性能问题，特别是与pnfs相关的讨论。</li>
 <li>探讨了改进用户空间客户端性能的可能性，包括改进FUSE代码或探索其他技术如Zuf。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
+<h3 id="决定事项">决定事项</h3>
 <ul>
 <li>继续推进multi-reactor的实现，以提高Ceph的性能。</li>
 <li>继续审查和优化现有的PRs，特别是那些涉及性能和存储优化的PRs。</li>
 <li>继续讨论和探索RBD客户端性能的改进方案。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<h3 id="后续行动计划">后续行动计划</h3>
 <ul>
 <li>Greg Farnham将开始着手multi-reactor的实现工作。</li>
 <li>继续审查和优化现有的PRs，确保它们符合项目的需求和标准。</li>
 <li>继续讨论RBD客户端性能的改进方案，并寻求社区的反馈和建议。</li>
 </ul>
-<h4 id="其他事项">其他事项</h4>
+<h3 id="其他事项">其他事项</h3>
 <ul>
 <li>会议还讨论了一些正在进行中的测试和未来的工作计划，包括对bidding
 code和blue fs的改进。</li>
 </ul>
-<h4 id="会议结束">会议结束</h4>
+<h3 id="会议结束">会议结束</h3>
 <p>会议在讨论了所有议题后结束，与会者被鼓励继续工作并享受即将到来的周末。</p>
 
         </div>
@@ -267,6 +272,8 @@ code和blue fs的改进。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PR%E5%AE%A1%E6%9F%A5/" rel="tag">PR审查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD/" rel="tag">RBD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -278,7 +285,7 @@ code和blue fs的改进。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-22/&title=《Ceph Performance Meeting 2021-07-22》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-22/&title=《Ceph性能会议纪要2021-07-22》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -288,7 +295,7 @@ code和blue fs的改进。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-22/&title=《Ceph Performance Meeting 2021-07-22》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-22/&title=《Ceph性能会议纪要2021-07-22》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -298,7 +305,7 @@ code和blue fs的改进。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-07-22》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-22/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议纪要2021-07-22》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-22/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -326,9 +333,9 @@ code和blue fs的改进。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-27/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2021/08/23/Ceph_Orchestrator_Meeting_2021-07-20/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Orchestrator Meeting 2021-07-27</h4>
+        <h4 class="title">Ceph Orchestrator Meeting 2021-07-20</h4>
       </a>
     </div>
   
@@ -337,7 +344,7 @@ code和blue fs的改进。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-15/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2021-07-15</h4>
+        <h4 class="title">Ceph性能会议纪要 2021-07-15</h4>
       </a>
     </div>
   
@@ -437,7 +444,7 @@ code和blue fs的改进。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-22/&title=《Ceph Performance Meeting 2021-07-22》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-22/&title=《Ceph性能会议纪要2021-07-22》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -447,7 +454,7 @@ code和blue fs的改进。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-22/&title=《Ceph Performance Meeting 2021-07-22》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-22/&title=《Ceph性能会议纪要2021-07-22》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -457,7 +464,7 @@ code和blue fs的改进。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-07-22》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-22/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议纪要2021-07-22》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/08/23/Ceph_Performance_Meeting_2021-07-22/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

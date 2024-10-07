@@ -14,23 +14,29 @@
     
     
     
-    <title>Ceph Month 2021: Crimson Update | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Month 2021: Crimson Update&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议主要讨论了Ceph项目的两个关键进展：Crimson和C-Store。Crimson是一个新的OSD（对象存储守护进程）实现，旨在替换现有的Ceph OSD，以更好地适应下一代存储硬件的需求，减少CPU开销。C-Store则是一个新的对象存储实现，专为Crimson的线程回调模型设计，旨在利用新兴存储技术如ZNS和持久内存。 主要议题  Crimson OSD的进展">
+    <meta name="keywords" content="Ceph,Distributed Storage,Object Storage,Crimson OSD,C,Store">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次Ceph项目的会议重点讨论了两个关键进展：Crimson和C-Store。Crimson是一个新的OSD实现，旨在提高性能并减少CPU开销；C-Store是一个新的对象存储实现，旨在利用新兴存储技术如ZNS和持久内存。 主要议题  Crimson OSD的进展  使用C-Star框架来减少上下文切换，提高多核环境下的性能。 专注于实现RBD工作负载">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Month 2021: Crimson Update">
+<meta property="og:title" content="&#39;Ceph Month 2021: Crimson Update&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Month_2021_-_Crimson_Update/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议主要讨论了Ceph项目的两个关键进展：Crimson和C-Store。Crimson是一个新的OSD（对象存储守护进程）实现，旨在替换现有的Ceph OSD，以更好地适应下一代存储硬件的需求，减少CPU开销。C-Store则是一个新的对象存储实现，专为Crimson的线程回调模型设计，旨在利用新兴存储技术如ZNS和持久内存。 主要议题  Crimson OSD的进展">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次Ceph项目的会议重点讨论了两个关键进展：Crimson和C-Store。Crimson是一个新的OSD实现，旨在提高性能并减少CPU开销；C-Store是一个新的对象存储实现，旨在利用新兴存储技术如ZNS和持久内存。 主要议题  Crimson OSD的进展  使用C-Star框架来减少上下文切换，提高多核环境下的性能。 专注于实现RBD工作负载">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-06-24T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Object Storage">
+<meta property="article:tag" content="Crimson OSD">
+<meta property="article:tag" content="C">
+<meta property="article:tag" content="Store">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Month 2021: Crimson Update</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Month 2021: Crimson Update&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Month 2021: Crimson Update</h1>
+        <h1 class="title">&#39;Ceph Month 2021: Crimson Update&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-06-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +174,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Month 2021: Crimson Update</h1>
+        <h1 class="post-card-title">'Ceph Month 2021: Crimson Update'</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-06-24 00:00:00" datetime="2021-06-23T16:00:00.000Z"  itemprop="datePublished">2021-06-24</time>
 
@@ -185,53 +191,47 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概述">会议概述</h4>
-<p>本次会议主要讨论了Ceph项目的两个关键进展：Crimson和C-Store。Crimson是一个新的OSD（对象存储守护进程）实现，旨在替换现有的Ceph
-OSD，以更好地适应下一代存储硬件的需求，减少CPU开销。C-Store则是一个新的对象存储实现，专为Crimson的线程回调模型设计，旨在利用新兴存储技术如ZNS和持久内存。</p>
+<p>本次Ceph项目的会议重点讨论了两个关键进展：Crimson和C-Store。Crimson是一个新的OSD实现，旨在提高性能并减少CPU开销；C-Store是一个新的对象存储实现，旨在利用新兴存储技术如ZNS和持久内存。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>Crimson OSD的进展</strong>
 <ul>
-<li>Crimson
-OSD的目标是通过减少每个I/O的CPU开销来提高性能，特别是在多核环境下的性能。</li>
-<li>使用C-Star框架来减少上下文切换，通过为每个核心分配单一线程并分区数据结构和任务来实现。</li>
-<li>近期工作集中在实现RBD（RADOS块设备）工作负载、数据持久性和可靠性、可见性和调试以及稳定性。</li>
+<li>使用C-Star框架来减少上下文切换，提高多核环境下的性能。</li>
+<li>专注于实现RBD工作负载、数据持久性和可靠性、可见性和调试以及稳定性。</li>
 </ul></li>
 <li><strong>C-Store的详细介绍</strong>
 <ul>
-<li>C-Store设计避免使用CPU密集型的元数据设计，如RocksDB，并利用快速NVMe设备和持久内存。</li>
-<li>ZNS（Zone
-Namespace）是一种新的NVMe规范，通过将驱动器分为只能顺序写入的区域来减少写放大和垃圾回收。</li>
-<li>持久内存因其低延迟和高写入耐久性，适合作为数据和元数据的持久缓存。</li>
+<li>避免使用CPU密集型的元数据设计，如RocksDB，并利用ZNS和持久内存。</li>
+<li>使用ZNS减少写放大和垃圾回收，利用持久内存作为数据和元数据的持久缓存。</li>
 </ul></li>
 <li><strong>C-Store的高级设计</strong>
 <ul>
-<li>C-Store的逻辑结构包括根块、O节点索引、Omap树和逻辑地址到物理地址的映射。</li>
-<li>使用逻辑地址映射来简化垃圾回收和数据重定位，减少写放大。</li>
-<li>日志记录使用原子写入和重放机制，支持逻辑和物理块的变更。</li>
+<li>包括根块、O节点索引、Omap树和逻辑地址到物理地址的映射。</li>
+<li>使用逻辑地址映射简化垃圾回收和数据重定位。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>Crimson OSD和C-Store的开发将继续集中在稳定性和性能优化上。</li>
+<li>继续集中在稳定性和性能优化上。</li>
 <li>未来工作将包括多核支持、克隆支持、直接突变支持和持久内存支持。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>继续推进Crimson OSD的稳定性测试和功能移植。</li>
+<li>推进Crimson OSD的稳定性测试和功能移植。</li>
 <li>优化C-Store的垃圾回收机制和性能。</li>
 <li>探索与NVMe over Fabric网关的潜在集成。</li>
 </ul>
 <h4 id="其他讨论">其他讨论</h4>
 <ul>
-<li>SPDK（Storage Performance Development
-Kit）将在C-Store之下作为底层I/O细节的插件。</li>
+<li>SPDK将在C-Store之下作为底层I/O细节的插件。</li>
 <li>Crimson OSD目前支持BlueStore，未来可能会有更多与NVMe over
 Fabric网关的协同工作。</li>
 </ul>
 <h4 id="结论">结论</h4>
-<p>会议强调了Crimson和C-Store在Ceph项目中的重要性，并明确了未来的开发方向和目标。感谢Sam的详细介绍和所有参与者的积极参与。</p>
+<p>会议强调了Crimson和C-Store在Ceph项目中的重要性，并明确了未来的开发方向和目标。</p>
 
         </div>
 
@@ -262,6 +262,8 @@ Fabric网关的协同工作。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/C/" rel="tag">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson-OSD/" rel="tag">Crimson OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Object-Storage/" rel="tag">Object Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Store/" rel="tag">Store</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -273,7 +275,7 @@ Fabric网关的协同工作。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Month_2021_-_Crimson_Update/&title=《Ceph Month 2021: Crimson Update》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Month_2021_-_Crimson_Update/&title=《'Ceph Month 2021: Crimson Update'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -283,7 +285,7 @@ Fabric网关的协同工作。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Month_2021_-_Crimson_Update/&title=《Ceph Month 2021: Crimson Update》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Month_2021_-_Crimson_Update/&title=《'Ceph Month 2021: Crimson Update'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -293,7 +295,7 @@ Fabric网关的协同工作。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Month 2021: Crimson Update》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Month_2021_-_Crimson_Update/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Month 2021: Crimson Update'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Month_2021_-_Crimson_Update/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -323,7 +325,7 @@ Fabric网关的协同工作。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/06/24/Ceph_Month_2021_-_CephFS_+_fscrypt_-_filename_and_content_encryption/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Month 2021: CephFS + fscrypt: filename and content encryption</h4>
+        <h4 class="title">&#39;Ceph Month 2021: CephFS + fscrypt: filename and content encryption&#39;</h4>
       </a>
     </div>
   
@@ -432,7 +434,7 @@ Fabric网关的协同工作。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Month_2021_-_Crimson_Update/&title=《Ceph Month 2021: Crimson Update》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Month_2021_-_Crimson_Update/&title=《'Ceph Month 2021: Crimson Update'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -442,7 +444,7 @@ Fabric网关的协同工作。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Month_2021_-_Crimson_Update/&title=《Ceph Month 2021: Crimson Update》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Month_2021_-_Crimson_Update/&title=《'Ceph Month 2021: Crimson Update'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -452,7 +454,7 @@ Fabric网关的协同工作。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Month 2021: Crimson Update》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Month_2021_-_Crimson_Update/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Month 2021: Crimson Update'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Month_2021_-_Crimson_Update/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

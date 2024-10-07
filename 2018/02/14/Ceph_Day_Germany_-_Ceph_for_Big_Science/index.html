@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 与会人员： CERN存储团队，Ceph社区开发者 会议主题： CERN在Ceph存储上的使用经验及反馈 会议内容： 一、CERN存储架构概述  CERN位于瑞士日内瓦，拥有两个数据中心，分别位于瑞士和布达佩斯。 使用Ceph存储系统进行数据存储，包括文件存储、块存储和对象存储。 当前运行着两个生产集群，其中最大的集群容量为5.5PB，另一个">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,可扩展性,大科学">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年11月（具体日期未提及） 与会人员： CERN存储团队，Ceph社区开发者 会议主题： CERN在Ceph存储上的使用经验及反馈 会议内容： 一、CERN存储架构概述  CERN拥有两个数据中心，分别位于瑞士和布达佩斯，使用Ceph存储系统进行数据存储，包括文件存储、块存储和对象存储。 当前运行着两个生产集群，其中最大的集群容量为5.5PB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Day Germany - Ceph for Big Science">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/02/14/Ceph_Day_Germany_-_Ceph_for_Big_Science/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 与会人员： CERN存储团队，Ceph社区开发者 会议主题： CERN在Ceph存储上的使用经验及反馈 会议内容： 一、CERN存储架构概述  CERN位于瑞士日内瓦，拥有两个数据中心，分别位于瑞士和布达佩斯。 使用Ceph存储系统进行数据存储，包括文件存储、块存储和对象存储。 当前运行着两个生产集群，其中最大的集群容量为5.5PB，另一个">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年11月（具体日期未提及） 与会人员： CERN存储团队，Ceph社区开发者 会议主题： CERN在Ceph存储上的使用经验及反馈 会议内容： 一、CERN存储架构概述  CERN拥有两个数据中心，分别位于瑞士和布达佩斯，使用Ceph存储系统进行数据存储，包括文件存储、块存储和对象存储。 当前运行着两个生产集群，其中最大的集群容量为5.5PB">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-02-13T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-02-14T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="可扩展性">
+<meta property="article:tag" content="大科学">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,17 +190,17 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
 <p><strong>与会人员</strong>： CERN存储团队，Ceph社区开发者</p>
 <p><strong>会议主题</strong>： CERN在Ceph存储上的使用经验及反馈</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>一、CERN存储架构概述</strong></p>
 <ul>
-<li>CERN位于瑞士日内瓦，拥有两个数据中心，分别位于瑞士和布达佩斯。</li>
-<li>使用Ceph存储系统进行数据存储，包括文件存储、块存储和对象存储。</li>
+<li>CERN拥有两个数据中心，分别位于瑞士和布达佩斯，使用Ceph存储系统进行数据存储，包括文件存储、块存储和对象存储。</li>
 <li>当前运行着两个生产集群，其中最大的集群容量为5.5PB，另一个数据中心容量为0.5PB。</li>
-<li>还有一个测试集群和一个超融合集群。</li>
+<li>CERN使用Ceph进行物理实验数据存储、物理分析、S3存储和HPC模拟数据存储。</li>
 </ul>
 <p><strong>二、Ceph存储应用案例</strong></p>
 <ul>
@@ -259,6 +264,8 @@ Ceph提供的工具需要改进，例如osdmap工具和scrub工具。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">可扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%A7%E7%A7%91%E5%AD%A6/" rel="tag">大科学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -318,9 +325,9 @@ Ceph提供的工具需要改进，例如osdmap工具和scrub工具。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2018/02/14/Ceph_Day_Germany_-_Ceph_at_SAP_-_How_to_build_a_cattle_cloud/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2018/02/14/Ceph_Day_Germany_-_Ceph_Performance_on_New_Intel_Platforms_and_SSDs/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Day Germany - Ceph at SAP: How to build a cattle cloud</h4>
+        <h4 class="title">Ceph Day Germany - Ceph Performance on New Intel Platforms and SSDs</h4>
       </a>
     </div>
   

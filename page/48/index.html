@@ -150,11 +150,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Crimson_SeaStore_2021-06-02"
+            <article id="post-Ceph_Performance_Meeting_2021-09-23"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-06-02 00:00:00" datetime="2021-06-01T16:00:00.000Z"  itemprop="datePublished">2021-06-02</time>
+        <time class="post-time" title="2021-10-07 00:00:00" datetime="2021-10-06T16:00:00.000Z"  itemprop="datePublished">2021-10-07</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -168,7 +168,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/06/02/Ceph_Crimson_SeaStore_2021-06-02/">Ceph Crimson/SeaStore 2021-06-02</a>
+      <a class="post-title-link" href="/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/">Ceph 性能会议纪要 2021-09-23</a>
     </h3>
   
 
@@ -178,402 +178,24 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-会议时间
+        [改进后的中文总结内容]
+本次Ceph性能会议主要讨论了以下议题：
 
-日期：[具体日期未提供]
-时间：[具体时间未提供]
-
-参会人员
-
-[具体人员未提供]
-
-会议议题
-
-Crimson OSD 启动失败问题
-异常处理与错误报告
-ZFS 学习与研究
-事务管理器读取交换断言问题
-OSD 停止异常
-新实习生介绍
-Scrubbing PR 讨论
-Clang 编译问题修复
-可中断分配器开发
-扩展放置管理器调试
-键值大小限制实现
-
-讨论内容
-
-Cri...
+RocksDB
+LRU缓存更新：由于与RocksDB新版本不兼容，Kifu修复了接口问题，并已合并到主分支。会议讨论了维护者使用最新版本RocksDB编译的问题，建议避免使用未经测试的版本。
+RGW
+OSD压缩绕过：Casey上周审查通过，已重新基于最新版本，接近合并状态。
+BlueStore Fighting Green...
     
 
-        <a href="/VideoSummary/2021/06/02/Ceph_Crimson_SeaStore_2021-06-02/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Developer_Monthly_2021-06-02"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-06-02 00:00:00" datetime="2021-06-01T16:00:00.000Z"  itemprop="datePublished">2021-06-02</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/06/02/Ceph_Developer_Monthly_2021-06-02/">Ceph Developer Monthly 2021-06-02</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-主题一：Ceph中的故障条件处理
-
-问题描述：在Ceph中，当发现未找到对象时，会进入backfill
-unfound状态（PG）。在重启primary OSD时，可能会发生异常情况。
-已知问题：
-
-在某些情况下，可能会导致崩溃，已有修复措施（移除断言）。
-重启primary
-OSD时，如果另一个OSD成为临时的primary，并且该OSD没有该对象，可能会重新开始backfill...
-    
-
-        <a href="/VideoSummary/2021/06/02/Ceph_Developer_Monthly_2021-06-02/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Month_2021_-_Call_for_Participation_-_Ceph_Stable_Releases_Team"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-06-01 00:00:00" datetime="2021-05-31T16:00:00.000Z"  itemprop="datePublished">2021-06-01</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Call_for_Participation_-_Ceph_Stable_Releases_Team/">Ceph Month 2021: Call for Participation: Ceph Stable Releases Team</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： Ceph 稳定版本发布流程及社区参与
-主讲人： Louis Desjardins
-会议概要： Louis Desjardins 介绍了 Ceph
-稳定版本发布团队的工作流程，强调了社区参与的重要性，并讨论了如何优先处理回溯补丁（backport）。
-主要议题： 1. Ceph 版本管理： -
-目前最新的稳定版本是 Pacific，用户升级到 Pacific
-点发布版本时...
-    
-
-        <a href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Call_for_Participation_-_Ceph_Stable_Releases_Team/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Month_2021_-_Ceph_Project_Update"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-06-01 00:00:00" datetime="2021-05-31T16:00:00.000Z"  itemprop="datePublished">2021-06-01</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/">Ceph Month 2021: Ceph Project Update</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议概要
-
-会议主题: SethMonth 2021 更新
-主讲人: Josh 和 Seth
-日期: 2021年6月21日
-
-讨论内容
-
-Seth 简介
-
-Seth
-被描述为软件定义存储、统一存储系统、可扩展分布式存储，甚至是存储的未来或存储的Linux。
-Seth
-是开源软件，不依赖特定硬件，可在各种商品组件上运行，如服务器、网络、硬盘、SSD、VM等。
-单一集群可提供对象、块和...
-    
-
-        <a href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_Project_Update/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Month_2021_-_Ceph_On_Windows"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-06-01 00:00:00" datetime="2021-05-31T16:00:00.000Z"  itemprop="datePublished">2021-06-01</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/">Ceph Month 2021: Ceph On Windows</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题：Ceph与Windows服务器的集成
-会议时间：约7分钟
-会议参与者：Ceph研发团队、SUSE团队（Lars和Mike）、社区成员
-会议背景：
-Ceph作为最受欢迎的开源分布式存储解决方案之一，与Windows服务器的市场需求相结合，特别是在企业环境中，Windows服务器占有较大市场份额。因此，实现Ceph与Windows服务器的无缝集成，对于满足企业级存储需求至关重...
-    
-
-        <a href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Ceph_On_Windows/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Month_2021_-_Open_Discussion"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-06-01 00:00:00" datetime="2021-05-31T16:00:00.000Z"  itemprop="datePublished">2021-06-01</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Open_Discussion/">Ceph Month 2021: Open Discussion</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议目的
-本次会议旨在让与会者听取相关演讲，并进行自由形式的讨论，以便就任何相关议题进行交流。
-主要议题
-
-File Store 状态讨论
-
-讨论了何时停止对 File Store 的支持。
-通过 Grafana 仪表板上的遥测数据，显示目前仍有约 1500 个 File Store
-OSDs 在使用，占总数的 4%。
-决定是否继续支持 File Store
-的讨论，以及可能对代码...
-    
-
-        <a href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_Open_Discussion/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ceph_Month_2021_-_RADOS_Update"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-06-01 00:00:00" datetime="2021-05-31T16:00:00.000Z"  itemprop="datePublished">2021-06-01</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_RADOS_Update/">Ceph Month 2021: RADOS Update</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题：Ceph Pacific
-更新及 Quincy 展望
-会议时间：[具体时间]
-会议地点：[具体地点]
-参会人员：
-
-Neha Ocha（技术负责人，Raiders 团队）
-
-会议内容总结：
-
-Ceph Pacific 更新
-
-可用性增强：
-
-Upmap 平衡器默认开启。
-新增健康警告，检测不同版本的守护进程并提醒用户。
-支持取消正在进行的数据一致性检查（scrubs）。
-...
-    
-
-        <a href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_RADOS_Update/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-2021Q2_Ceph社区季度总结"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2021-06-01 00:00:00" datetime="2021-05-31T16:00:00.000Z"  itemprop="datePublished">2021-06-01</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/06/01/2021Q2_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">2021Q2 Ceph社区季度总结</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Ceph 社区 2021Q2
-季度总结报告
-1. 主要活动和重点议题
-在 2021Q2 季度，Ceph 社区围绕以下主要活动和重点议题展开：
-
-Ceph Crimson/SeaStore 会议：本季度共举办了 3 次Ceph
-Crimson/SeaStore会议，主要讨论了Ceph存储系统的技术发展、性能优化和问题修复等议题。
-Ceph Orchestrator 会议：本季度共举办了 4 次...
-    
-
-        <a href="/VideoSummary/2021/06/01/2021Q2_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/" rel="tag">技术发展</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A4%BE%E5%8C%BA%E5%8A%A8%E6%80%81/" rel="tag">社区动态</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Linux%E5%AD%98%E5%82%A8%E6%A0%88/" rel="tag">Linux存储栈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PR%E5%AE%A1%E6%9F%A5/" rel="tag">PR审查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
 
     </div>
     
@@ -582,11 +204,67 @@ Ceph Orchestrator 会议：本季度共举办了 4 次...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Performance_Meeting_2021-05-27"
+            <article id="post-Ceph_Performance_Meeting_2021-09-30"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-05-27 00:00:00" datetime="2021-05-26T16:00:00.000Z"  itemprop="datePublished">2021-05-27</time>
+        <time class="post-time" title="2021-10-07 00:00:00" datetime="2021-10-06T16:00:00.000Z"  itemprop="datePublished">2021-10-07</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93/">会议总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/"> Ceph 性能会议 2021-09-30 </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议概述
+本次会议主要讨论了一篇关于分布式存储系统性能优化的论文，与会者包括Ceph核心研发人员和相关领域的专家，共同探讨了论文内容、其在Ceph存储系统中的潜在应用以及后续行动计划。
+讨论的主要议题
+
+论文内容回顾：
+
+论文介绍了两种应用程序类别：L-apps（延迟敏感型应用）和T-apps（吞吐量敏感型应用）。
+提出了一种新的内核块队列实现，通过每个核...
+    
+
+        <a href="/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/I-O%E8%B0%83%E5%BA%A6/" rel="tag">I&#x2F;O调度</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SPDK/" rel="tag">SPDK</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Science_Working_Group_2021-09-22"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-10-07 00:00:00" datetime="2021-10-06T16:00:00.000Z"  itemprop="datePublished">2021-10-07</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -600,7 +278,7 @@ Ceph Orchestrator 会议：本季度共举办了 4 次...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/">Ceph Performance Meeting 2021-05-27</a>
+      <a class="post-title-link" href="/VideoSummary/2021/10/07/Ceph_Science_Working_Group_2021-09-22/">  Ceph Science Working Group 2021-09-22  </a>
     </h3>
   
 
@@ -610,22 +288,36 @@ Ceph Orchestrator 会议：本季度共举办了 4 次...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-关键细节
+        [改进后的中文总结内容]
+会议纪要
+会议基本信息
 
-性能相关PR:
-本周仅发现一个与性能相关的PR，涉及管理器实现的TTL缓存，包含性能结果和图表。
-D3N缓存更改:
-对上游和RGW的D3N缓存更改经过多次测试和更新后，已通过测试。
-RocksDB优化:
-Gabby正在移除RocksDB中的分配，遇到笔记本电脑上的bug，但测试集群中未出现。
-压缩Blob大小设置:
-Adam的PR设置新的压缩Blob大小为64KB，已获...
+时间: 2021年9月22日
+主持人: 未提及
+参与者:
+来自科学或研究计算环境中管理Ceph集群的人员
+
+会议内容概述
+
+会议目的:
+开放讨论，分享Ceph集群管理经验，讨论近期影响Ceph集群的问题和挑战。
+会议记录: 会议被录制并上传到YouTube频道。
+
+主要讨论议题
+
+新成员介绍:
+新成员Joel介绍了自己的Ceph集群情况，该...
     
 
-        <a href="/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2021/10/07/Ceph_Science_Working_Group_2021-09-22/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A1%AC%E4%BB%B6%E9%97%AE%E9%A2%98/" rel="tag">硬件问题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A7%91%E5%AD%A6%E5%B7%A5%E4%BD%9C%E7%BB%84/" rel="tag">科学工作组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%BD%AF%E4%BB%B6%E5%8D%87%E7%BA%A7/" rel="tag">软件升级</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86/" rel="tag">集群管理</a></li></ul>
+
     </div>
     
 </article>
@@ -633,11 +325,11 @@ Adam的PR设置新的压缩Blob大小为64KB，已获...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Crimson_SeaStore_2021-05-26"
+            <article id="post-Ceph_Tech_Talk_-_Ceph_at_DigitalOcean"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2021-05-26 00:00:00" datetime="2021-05-25T16:00:00.000Z"  itemprop="datePublished">2021-05-26</time>
+        <time class="post-time" title="2021-10-07 00:00:00" datetime="2021-10-06T16:00:00.000Z"  itemprop="datePublished">2021-10-07</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -651,7 +343,7 @@ Adam的PR设置新的压缩Blob大小为64KB，已获...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2021/05/26/Ceph_Crimson_SeaStore_2021-05-26/">Ceph Crimson/SeaStore 2021-05-26</a>
+      <a class="post-title-link" href="/VideoSummary/2021/10/07/Ceph_Tech_Talk_-_Ceph_at_DigitalOcean/">&#39;Ceph Tech Talk: Ceph at DigitalOcean&#39;</a>
     </h3>
   
 
@@ -661,23 +353,384 @@ Adam的PR设置新的压缩Blob大小为64KB，已获...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-关键细节
+        [改进后的中文总结内容]
+会议纪要
+会议主题：DigitalOcean 的
+Ceph 使用案例介绍
+会议时间：[具体日期]
+会议地点：[线上/线下]
+主讲人：Alex Merrigan
 
-代码链接问题：
+职位：Senior Engineer at DigitalOcean
+团队：Storage Systems Team
 
-Kifu发现有三段代码如果注释掉，可以解决链接问题，但目前尚不清楚原因。Kifu正在调查这个问题，并承认是他引入了这个回归问题。
-这三段代码来自x out of
-change，Kifu已经通过电子邮件发送了回滚这些更改的提交。
-
-mclock移植：
-
-讨论了将mclock移植到Ceph存储系统的不同组件中，特别是PG和OSD（crimson和systo...
+会议内容概述：
+Alex Merrigan 介绍了 DigitalOcean 在存储系...
     
 
-        <a href="/VideoSummary/2021/05/26/Ceph_Crimson_SeaStore_2021-05-26/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2021/10/07/Ceph_Tech_Talk_-_Ceph_at_DigitalOcean/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cloud-Computing/" rel="tag">Cloud Computing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/DigitalOcean/" rel="tag">DigitalOcean</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Systems/" rel="tag">Storage Systems</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Crimson_SeaStore_2021-09-22"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-10-06 00:00:00" datetime="2021-10-05T16:00:00.000Z"  itemprop="datePublished">2021-10-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/10/06/Ceph_Crimson_SeaStore_2021-09-22/">Ceph Crimson/SeaStore 2021-09-22</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议概要
+本次会议主要讨论了Ceph存储系统中的C-Store模块的性能优化、Bug修复以及未来工作计划。与会人员分享了各自的工作进展，并就遇到的问题进行了深入讨论。
+主要议题
+
+性能优化与环境搭建
+
+成员正在尝试搭建测量环境以理解C-Store的性能数据。
+成员关注C-Store的放大效应和垃圾回收机制，并成功搭建了ZNS环境。
+
+Bug修复与代码重构
+
+讨论了事...
+    
+
+        <a href="/VideoSummary/2021/10/06/Ceph_Crimson_SeaStore_2021-09-22/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bug%E4%BF%AE%E5%A4%8D/" rel="tag">Bug修复</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/C/" rel="tag">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/" rel="tag">Ceph存储系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Store/" rel="tag">Store</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Orchestrator_Meeting_2021-09-21"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-10-06 00:00:00" datetime="2021-10-05T16:00:00.000Z"  itemprop="datePublished">2021-10-06</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/10/06/Ceph_Orchestrator_Meeting_2021-09-21/">Ceph Orchestrator Meeting 2021-09-21</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议概述
+本次Ceph Orchestrator会议主要讨论了两个议题：Rook
+Orchestrator的功能实现和监控堆栈的自动部署问题。会议由一位正在恢复中的主持人主持，他强调自己将减少发言，以确保会议顺利进行。
+主要议题及讨论内容
+
+Rook Orchestrator的功能实现
+
+当前状态：讨论了Rook
+Orchestrator的基本功能，包括网...
+    
+
+        <a href="/VideoSummary/2021/10/06/Ceph_Orchestrator_Meeting_2021-09-21/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Monitoring-Stack/" rel="tag">Monitoring Stack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Performance_Meeting_2021-09-16"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-09-16 00:00:00" datetime="2021-09-15T16:00:00.000Z"  itemprop="datePublished">2021-09-16</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/09/16/Ceph_Performance_Meeting_2021-09-16/"> Ceph 性能会议 2021-09-16 </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议概述
+本次 Ceph 性能会议主要讨论了 Ceph
+项目的最新进展，包括代码审查、优化提案以及未来的行动计划。会议强调了代码质量和性能优化的重要性，并对多个关键
+Pull Requests（PRs）进行了深入讨论。
+主要议题
+
+代码审查与合并
+
+优化 carriage handling 和 bufferless c string 的
+PR：由 Radi...
+    
+
+        <a href="/VideoSummary/2021/09/16/Ceph_Performance_Meeting_2021-09-16/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5/" rel="tag">代码审查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Crimson_SeaStore_2021-09-15"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-09-15 00:00:00" datetime="2021-09-14T16:00:00.000Z"  itemprop="datePublished">2021-09-15</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/09/15/Ceph_Crimson_SeaStore_2021-09-15/">  Ceph Crimson/SeaStore 2021-09-15  </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议开始
+
+会议开始，回顾了上周的工作进展。
+
+工作进展
+
+EPM简化与修复：
+
+上周提交了一个PR，包含了一些EPM（Erasure Code Profile
+Manager）的简化与修复。
+正在努力使Ceph存储工作，预计会有进一步的修复。
+
+二分搜索优化：
+
+完成了针对LB3和OMAP3的二分搜索优化PR。
+正在进行关于alpha extent的ma...
+    
+
+        <a href="/VideoSummary/2021/09/15/Ceph_Crimson_SeaStore_2021-09-15/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" rel="tag">故障排除</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Orchestrator_Meeting_2021-09-14"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-09-14 00:00:00" datetime="2021-09-13T16:00:00.000Z"  itemprop="datePublished">2021-09-14</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/09/14/Ceph_Orchestrator_Meeting_2021-09-14/"> Ceph Orchestrator Meeting 2021-09-14 </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+Ceph Orchestrator
+会议于2021年9月14日举行，会议主要讨论了以下议题：
+
+Topo LVM
+更新与动态配置：讨论了将外部团队作为Rook存储提供商的可能性，但对方不感兴趣。团队计划继续研究Topo
+LVM的动态配置，特别是针对raw设备的配置。Ron
+Joseph等人正在进行原型设计，以更好地理解集成方式。
+自动缩放与平衡模块：讨论了自动缩放和...
+    
+
+        <a href="/VideoSummary/2021/09/14/Ceph_Orchestrator_Meeting_2021-09-14/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%B3%E7%AD%96/" rel="tag">决策</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%9B%91%E6%8E%A7/" rel="tag">监控</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" rel="tag">自动化</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Crimson_SeaStore_2021-09-08"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2021-09-11 00:00:00" datetime="2021-09-10T16:00:00.000Z"  itemprop="datePublished">2021-09-11</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2021/09/11/Ceph_Crimson_SeaStore_2021-09-08/">  Ceph Crimson/SeaStore 2021-09-08  </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议时间：[具体日期]
+参会人员：[具体人员名单]
+主要议题：
+
+Segment Cleaner 问题审查
+
+探讨了Segment Cleaner可能存在的问题，并决定进行深入审查。
+修复handle split可能导致assert问题的解决，但还需进一步验证。
+
+性能分析与优化
+
+使用Curve进行性能分析，发现rb allocate
+exchange占...
+    
+
+        <a href="/VideoSummary/2021/09/11/Ceph_Crimson_SeaStore_2021-09-08/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bug-Fixes/" rel="tag">Bug Fixes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-Algorithm/" rel="tag">CRUSH Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li></ul>
+
     </div>
     
 </article>
@@ -689,7 +742,7 @@ mclock移植：
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/page/47/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/46/">46</a><a class="page-number" href="/VideoSummary/page/47/">47</a><span class="page-number current">48</span><a class="page-number" href="/VideoSummary/page/49/">49</a><a class="page-number" href="/VideoSummary/page/50/">50</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="extend next" rel="next" href="/VideoSummary/page/49/">下一页</a>
+    <a class="extend prev" rel="prev" href="/VideoSummary/page/47/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/46/">46</a><a class="page-number" href="/VideoSummary/page/47/">47</a><span class="page-number current">48</span><a class="page-number" href="/VideoSummary/page/49/">49</a><a class="page-number" href="/VideoSummary/page/50/">50</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/132/">132</a><a class="extend next" rel="next" href="/VideoSummary/page/49/">下一页</a>
     </div>
 </nav>
 

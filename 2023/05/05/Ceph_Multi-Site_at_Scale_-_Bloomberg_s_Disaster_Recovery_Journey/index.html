@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Bloomberg的分布式存储Ceph灾难恢复之旅 会议时间：[具体时间] 会议地点：[具体地点] 参会人员：  Jane Zhu，Bloomberg高级软件工程师 Teda，Bloomberg分布式存储团队成员  会议议程：  介绍：简要介绍Bloomberg及其分布式存储团队的工作。 Ceph集群概览：展示Bloomberg云存储（BCS）中的Ceph集群。 多站点旅程：深">
+    <meta name="keywords" content="Ceph,分布式存储,灾难恢复,Bloomberg,多站点部署">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Bloomberg的Ceph多站点部署与灾难恢复之旅 会议时间：[具体时间] 会议地点：[具体地点] 参会人员：  Jane Zhu，Bloomberg高级软件工程师 Teda，Bloomberg分布式存储团队成员  会议议程：  介绍：Bloomberg及其分布式存储团队的工作介绍。 Ceph集群概览：展示Bloomberg云存储（BCS）中的Cep">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey">
+<meta property="og:title" content="&#39;Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Bloomberg的分布式存储Ceph灾难恢复之旅 会议时间：[具体时间] 会议地点：[具体地点] 参会人员：  Jane Zhu，Bloomberg高级软件工程师 Teda，Bloomberg分布式存储团队成员  会议议程：  介绍：简要介绍Bloomberg及其分布式存储团队的工作。 Ceph集群概览：展示Bloomberg云存储（BCS）中的Ceph集群。 多站点旅程：深">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Bloomberg的Ceph多站点部署与灾难恢复之旅 会议时间：[具体时间] 会议地点：[具体地点] 参会人员：  Jane Zhu，Bloomberg高级软件工程师 Teda，Bloomberg分布式存储团队成员  会议议程：  介绍：Bloomberg及其分布式存储团队的工作介绍。 Ceph集群概览：展示Bloomberg云存储（BCS）中的Cep">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="灾难恢复">
+<meta property="article:tag" content="Bloomberg">
+<meta property="article:tag" content="多站点部署">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey</h1>
+        <h1 class="title">&#39;Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -142,7 +147,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a></li></ul>
 
             
         </h5>
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98bloomberg%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8ceph%E7%81%BE%E9%9A%BE%E6%81%A2%E5%A4%8D%E4%B9%8B%E6%97%85"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Bloomberg的分布式存储Ceph灾难恢复之旅</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%AE%E7%A8%8B"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议议程：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议内容总结：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">1. 介绍</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ceph%E9%9B%86%E7%BE%A4%E6%A6%82%E8%A7%88"><span class="post-toc-number">1.6.2.</span> <span class="post-toc-text">2. Ceph集群概览</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%A4%9A%E7%AB%99%E7%82%B9%E6%97%85%E7%A8%8B"><span class="post-toc-number">1.6.3.</span> <span class="post-toc-text">3. 多站点旅程</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%9C%AA%E6%9D%A5%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.4.</span> <span class="post-toc-text">4. 未来计划</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E9%97%AE%E7%AD%94%E7%8E%AF%E8%8A%82"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">问答环节：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">会议结束语：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98bloomberg%E7%9A%84ceph%E5%A4%9A%E7%AB%99%E7%82%B9%E9%83%A8%E7%BD%B2%E4%B8%8E%E7%81%BE%E9%9A%BE%E6%81%A2%E5%A4%8D%E4%B9%8B%E6%97%85"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Bloomberg的Ceph多站点部署与灾难恢复之旅</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%AE%E7%A8%8B"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议议程：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议内容总结：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">1. 介绍</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ceph%E9%9B%86%E7%BE%A4%E6%A6%82%E8%A7%88"><span class="post-toc-number">1.6.2.</span> <span class="post-toc-text">2. Ceph集群概览</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%A4%9A%E7%AB%99%E7%82%B9%E6%97%85%E7%A8%8B"><span class="post-toc-number">1.6.3.</span> <span class="post-toc-text">3. 多站点旅程</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%9C%AA%E6%9D%A5%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.4.</span> <span class="post-toc-text">4. 未来计划</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E9%97%AE%E7%AD%94%E7%8E%AF%E8%8A%82"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">问答环节：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">会议结束语：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,12 +173,12 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey</h1>
+        <h1 class="post-card-title">'Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey'</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a></li></ul>
 
 
 
@@ -185,9 +190,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
-id="会议主题bloomberg的分布式存储ceph灾难恢复之旅">会议主题：Bloomberg的分布式存储Ceph灾难恢复之旅</h4>
+id="会议主题bloomberg的ceph多站点部署与灾难恢复之旅">会议主题：Bloomberg的Ceph多站点部署与灾难恢复之旅</h4>
 <h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
 <h4 id="会议地点具体地点">会议地点：[具体地点]</h4>
 <h4 id="参会人员">参会人员：</h4>
@@ -197,63 +203,57 @@ id="会议主题bloomberg的分布式存储ceph灾难恢复之旅">会议主题�
 </ul>
 <h4 id="会议议程">会议议程：</h4>
 <ol type="1">
-<li><strong>介绍</strong>：简要介绍Bloomberg及其分布式存储团队的工作。</li>
+<li><strong>介绍</strong>：Bloomberg及其分布式存储团队的工作介绍。</li>
 <li><strong>Ceph集群概览</strong>：展示Bloomberg云存储（BCS）中的Ceph集群。</li>
-<li><strong>多站点旅程</strong>：深入探讨Bloomberg存储团队如何采用Ceph的多站点功能。</li>
-<li><strong>未来计划</strong>：讨论未来的发展方向。</li>
+<li><strong>多站点旅程</strong>：深入探讨如何采用Ceph的多站点功能。</li>
+<li><strong>未来计划</strong>：讨论集群升级和监控改进。</li>
 <li><strong>问答环节</strong>：回答与会者的提问。</li>
 </ol>
 <h4 id="会议内容总结">会议内容总结：</h4>
 <h5 id="介绍">1. 介绍</h5>
 <ul>
-<li>Bloomberg是一家成立于1981年的金融科技公司，提供新闻、分析和软件服务给全球超过35万订阅者。</li>
-<li>每天处理超过3000亿条金融市场数据，峰值达到每秒1000万条消息。</li>
-<li>分布式存储团队负责设计和维护Bloomberg的存储产品，支持文件系统、块设备和对象存储。</li>
-<li>BCS（Bloomberg云存储）是对象存储产品，目前由Ceph支持。</li>
+<li>Bloomberg是一家全球性的金融科技公司，提供新闻、分析和软件服务。</li>
+<li>分布式存储团队负责设计和维护BCS，支持文件系统、块设备和对象存储。</li>
+<li>BCS使用Ceph作为后端存储，每天处理超过10亿次请求。</li>
 </ul>
 <h5 id="ceph集群概览">2. Ceph集群概览</h5>
 <ul>
-<li>BCS是一个以RGW为中心的对象存储，每天处理超过10亿次请求。</li>
-<li>拥有四个集群，分布在四个数据中心，总存储容量约为65PB。</li>
+<li>BCS集群包含四个数据中心，总存储容量约为65PB。</li>
 <li>集群分为Legacy PCS产品和新的支持多站点功能的集群。</li>
 </ul>
 <h5 id="多站点旅程">3. 多站点旅程</h5>
 <ul>
-<li>Legacy集群存在单点故障问题，缺乏跨数据中心的通信，依赖客户端进行数据复制。</li>
-<li>为了解决灾难恢复问题，团队采用了Ceph的多站点功能，实现了跨数据中心的数据复制。</li>
-<li>通过大量的测试，包括功能测试和性能压力测试，发现并解决了在重负载下的多站点复制问题。</li>
-<li>与社区合作，通过调试和代码审查，最终修复了问题。</li>
+<li>为解决灾难恢复问题，团队采用了Ceph的多站点功能，实现跨数据中心的数据复制。</li>
+<li>通过测试和调试，解决了多站点复制问题，并与社区合作修复了相关代码。</li>
+<li>讨论了多站点配置、硬件配置、数据差异处理等细节。</li>
 </ul>
 <h5 id="未来计划">4. 未来计划</h5>
 <ul>
-<li>计划将集群升级到最新的Ceph版本，以利用新功能和修复。</li>
-<li>关注监控和复制延迟问题，希望社区能提供更好的解决方案。</li>
+<li>计划将集群升级到最新Ceph版本，利用新功能和修复。</li>
+<li>关注监控和复制延迟问题，寻求社区支持。</li>
 </ul>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
-<li>继续与Ceph社区合作，优化多站点功能。</li>
-<li>考虑开源部分内部工具和CI/CD管道，以帮助其他组织加速测试和部署。</li>
+<li>与Ceph社区合作，优化多站点功能。</li>
+<li>考虑开源内部工具和CI/CD管道。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
 <li>升级现有集群到最新Ceph版本。</li>
-<li>开发或集成更好的监控工具，以实时跟踪复制状态。</li>
+<li>开发或集成更好的监控工具。</li>
 <li>继续参与社区活动，推动Ceph的发展和改进。</li>
 </ul>
 <h4 id="问答环节">问答环节：</h4>
 <ul>
-<li>讨论了多站点配置的具体细节，包括使用一个领域和两个区域的模式。</li>
-<li>确认了在测试环境中使用的硬件配置接近生产环境。</li>
-<li>解释了在主动-主动模式下处理数据差异的策略，当前通过代理路由所有请求到一个数据中心。</li>
+<li>讨论了多站点配置、测试环境、数据差异处理等细节。</li>
+<li>确认了测试环境硬件配置接近生产环境。</li>
+<li>解释了在主动-主动模式下处理数据差异的策略。</li>
 </ul>
 <h4 id="会议结束语">会议结束语：</h4>
 <ul>
-<li>Jane Zhu和Teda感谢社区的支持，并邀请有兴趣的人才加入Bloomberg。</li>
+<li>Jane Zhu和Teda感谢社区支持，并邀请有兴趣的人才加入Bloomberg。</li>
 <li>会议在掌声中结束，参会者期待未来与Bloomberg和Ceph社区的进一步合作。</li>
 </ul>
-<hr />
-<p><strong>注：</strong>
-本会议纪要保留了部分计算机科学/Ceph相关领域英文原文的关键词，以确保专业性和准确性。</p>
 
         </div>
 
@@ -284,6 +284,8 @@ id="会议主题bloomberg的分布式存储ceph灾难恢复之旅">会议主题�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bloomberg/" rel="tag">Bloomberg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E7%AB%99%E7%82%B9%E9%83%A8%E7%BD%B2/" rel="tag">多站点部署</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%81%BE%E9%9A%BE%E6%81%A2%E5%A4%8D/" rel="tag">灾难恢复</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -295,7 +297,7 @@ id="会议主题bloomberg的分布式存储ceph灾难恢复之旅">会议主题�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/&title=《Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/&title=《'Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -305,7 +307,7 @@ id="会议主题bloomberg的分布式存储ceph灾难恢复之旅">会议主题�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/&title=《Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/&title=《'Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -315,7 +317,7 @@ id="会议主题bloomberg的分布式存储ceph灾难恢复之旅">会议主题�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -343,18 +345,18 @@ id="会议主题bloomberg的分布式存储ceph灾难恢复之旅">会议主题�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/05/Ceph_Messenger_Situation_and_Optimization_-_Chunsong_Feng_Huawei/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Messenger Situation and Optimization - Chunsong Feng, Huawei</h4>
+        <h4 class="title">Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Ceph_QoS_Refinements_for_Background_Operations_Using_MClock/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM</h4>
+        <h4 class="title">Ceph QoS Refinements for Background Operations Using MClock</h4>
       </a>
     </div>
   
@@ -454,7 +456,7 @@ id="会议主题bloomberg的分布式存储ceph灾难恢复之旅">会议主题�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/&title=《Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/&title=《'Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -464,7 +466,7 @@ id="会议主题bloomberg的分布式存储ceph灾难恢复之旅">会议主题�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/&title=《Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/&title=《'Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -474,7 +476,7 @@ id="会议主题bloomberg的分布式存储ceph灾难恢复之旅">会议主题�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -20,17 +20,23 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间：[具体时间] 会议地点：[具体地点] 参会人员：[参会人员名单] 会议主题：Ceph存储系统性能优化与一致性模型讨论 一、会议关键细节  近期对降低读取延迟的需求增加，讨论了现有架构对延迟保证的挑战。 讨论了在特定场景下，允许客户端从非活动OSD读取数据以减少延迟的可能性。 分析了在特定使用场景下，如创建唯一名称且不修改的对象，允许读取可能有益。 讨论了引入新的存储池类型或参数">
+    <meta name="keywords" content="Ceph,分布式存储,快照,读取延迟,一致性模型,数据保护">
+    <meta name="description" content="[改进后的中文总结内容] Ceph存储系统性能优化与一致性模型讨论会议纪要： 一、会议关键细节  近期对降低读取延迟的需求增加，尤其是在特定场景下，如创建唯一名称且不修改的对象，允许读取可能有益。 讨论了在特定场景下，允许客户端从非活动OSD读取数据以减少延迟的可能性。 分析了现有架构对延迟保证的挑战，例如无法保证已看到所有对客户端提交的权利，需要阻塞读取直到OSD恢复。 讨论了引入新的存储池类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CDS Jewel -- Sloppy Reads">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_Sloppy_Reads/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间：[具体时间] 会议地点：[具体地点] 参会人员：[参会人员名单] 会议主题：Ceph存储系统性能优化与一致性模型讨论 一、会议关键细节  近期对降低读取延迟的需求增加，讨论了现有架构对延迟保证的挑战。 讨论了在特定场景下，允许客户端从非活动OSD读取数据以减少延迟的可能性。 分析了在特定使用场景下，如创建唯一名称且不修改的对象，允许读取可能有益。 讨论了引入新的存储池类型或参数">
+<meta property="og:description" content="[改进后的中文总结内容] Ceph存储系统性能优化与一致性模型讨论会议纪要： 一、会议关键细节  近期对降低读取延迟的需求增加，尤其是在特定场景下，如创建唯一名称且不修改的对象，允许读取可能有益。 讨论了在特定场景下，允许客户端从非活动OSD读取数据以减少延迟的可能性。 分析了现有架构对延迟保证的挑战，例如无法保证已看到所有对客户端提交的权利，需要阻塞读取直到OSD恢复。 讨论了引入新的存储池类型">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-08-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="快照">
+<meta property="article:tag" content="读取延迟">
+<meta property="article:tag" content="一致性模型">
+<meta property="article:tag" content="数据保护">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,15 +184,14 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要</p>
-<p>会议时间：[具体时间] 会议地点：[具体地点] 参会人员：[参会人员名单]
-会议主题：Ceph存储系统性能优化与一致性模型讨论</p>
+            <p>[改进后的中文总结内容]</p>
+<p>Ceph存储系统性能优化与一致性模型讨论会议纪要：</p>
 <p>一、会议关键细节</p>
 <ol type="1">
-<li>近期对降低读取延迟的需求增加，讨论了现有架构对延迟保证的挑战。</li>
+<li>近期对降低读取延迟的需求增加，尤其是在特定场景下，如创建唯一名称且不修改的对象，允许读取可能有益。</li>
 <li>讨论了在特定场景下，允许客户端从非活动OSD读取数据以减少延迟的可能性。</li>
-<li>分析了在特定使用场景下，如创建唯一名称且不修改的对象，允许读取可能有益。</li>
-<li>讨论了引入新的存储池类型或参数以支持这种读取优化。</li>
+<li>分析了现有架构对延迟保证的挑战，例如无法保证已看到所有对客户端提交的权利，需要阻塞读取直到OSD恢复。</li>
+<li>讨论了引入新的存储池类型或参数以支持从非活动OSD读取数据。</li>
 <li>讨论了对于需要使用快照的场景，如何保证读取的一致性。</li>
 </ol>
 <p>二、讨论的主要议题</p>
@@ -208,13 +213,6 @@
 <li><strong>一致性模型</strong>：Ron将研究如何支持多种一致性级别，并与其他成员讨论实现方案。</li>
 <li><strong>快照一致性</strong>：Mia将研究在快照场景下保证读取一致性的方法，并与其他成员讨论实现细节。</li>
 <li><strong>数据保护</strong>：所有成员将共同讨论在优化读取性能时，如何保护数据一致性不被破坏。</li>
-</ol>
-<p>备注：</p>
-<ol type="1">
-<li>会议中提到的关键计算机科学/ceph相关领域英文原文关键词包括：latency,
-consistency model, OSD, replica, snapshot, read-after-write guarantee,
-quorum group。</li>
-<li>会议中未提及具体的时间、地点和参会人员名单，请根据实际情况补充。</li>
 </ol>
 
         </div>
@@ -246,6 +244,8 @@ quorum group。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%B8%80%E8%87%B4%E6%80%A7%E6%A8%A1%E5%9E%8B/" rel="tag">一致性模型</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BF%AB%E7%85%A7/" rel="tag">快照</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%B0%E6%8D%AE%E4%BF%9D%E6%8A%A4/" rel="tag">数据保护</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%AF%BB%E5%8F%96%E5%BB%B6%E8%BF%9F/" rel="tag">读取延迟</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -305,9 +305,9 @@ quorum group。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_RGW_Multitenancy/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_RGW_Multisite_Sync/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Jewel -- RGW Multitenancy</h4>
+        <h4 class="title">CDS Jewel -- RGW Multisite Sync</h4>
       </a>
     </div>
   

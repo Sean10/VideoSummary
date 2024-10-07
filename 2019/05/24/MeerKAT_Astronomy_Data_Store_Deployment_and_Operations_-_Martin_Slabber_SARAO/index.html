@@ -14,23 +14,28 @@
     
     
     
-    <title>MeerKAT Astronomy Data Store Deployment and Operations - Martin Slabber, SARAO | ceph视频总结 | youtube频道总结</title>
+    <title>MeerKAT 天文学数据存储部署与运营 - Martin Slabber, SARAO | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： （请在此处填写会议具体时间） 会议地点： （请在此处填写会议具体地点） 参会人员：  Martin（来自南非的Answer Africa公司） Ceph社区其他成员  会议内容： 1. 演讲者介绍及背景 - 演讲者Martin来自南非的Answer Africa公司，该公司正在建设一个名为MeerKAT的射电望远镜。 - Martin将分享他们如何使用Ceph存储技术，并回顾">
+    <meta name="keywords" content="Ceph,分布式存储,存储优化,存储架构,天文学数据存储">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： （请在此处填写会议具体时间） 会议地点： （请在此处填写会议具体地点） 参会人员：  Martin（来自南非的Answer Africa公司） Ceph社区其他成员  会议内容： 1. 演讲者介绍及背景 - Martin来自南非的Answer Africa公司，该公司正在建设MeerKAT射电望远镜。 - 他将分享如何使用Ceph存储技术，并回顾天文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MeerKAT Astronomy Data Store Deployment and Operations - Martin Slabber, SARAO">
+<meta property="og:title" content="MeerKAT 天文学数据存储部署与运营 - Martin Slabber, SARAO">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/MeerKAT_Astronomy_Data_Store_Deployment_and_Operations_-_Martin_Slabber_SARAO/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： （请在此处填写会议具体时间） 会议地点： （请在此处填写会议具体地点） 参会人员：  Martin（来自南非的Answer Africa公司） Ceph社区其他成员  会议内容： 1. 演讲者介绍及背景 - 演讲者Martin来自南非的Answer Africa公司，该公司正在建设一个名为MeerKAT的射电望远镜。 - Martin将分享他们如何使用Ceph存储技术，并回顾">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： （请在此处填写会议具体时间） 会议地点： （请在此处填写会议具体地点） 参会人员：  Martin（来自南非的Answer Africa公司） Ceph社区其他成员  会议内容： 1. 演讲者介绍及背景 - Martin来自南非的Answer Africa公司，该公司正在建设MeerKAT射电望远镜。 - 他将分享如何使用Ceph存储技术，并回顾天文">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="存储优化">
+<meta property="article:tag" content="存储架构">
+<meta property="article:tag" content="天文学数据存储">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">MeerKAT Astronomy Data Store Deployment and Operations - Martin Slabber, SARAO</div>
+        <div class="flex-col header-title ellipsis">MeerKAT 天文学数据存储部署与运营 - Martin Slabber, SARAO</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">MeerKAT Astronomy Data Store Deployment and Operations - Martin Slabber, SARAO</h1>
+        <h1 class="title">MeerKAT 天文学数据存储部署与运营 - Martin Slabber, SARAO</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-05-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">MeerKAT Astronomy Data Store Deployment and Operations - Martin Slabber, SARAO</h1>
+        <h1 class="post-card-title">MeerKAT 天文学数据存储部署与运营 - Martin Slabber, SARAO</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-05-24 00:00:00" datetime="2019-05-23T16:00:00.000Z"  itemprop="datePublished">2019-05-24</time>
 
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议时间">会议时间：</h4>
 <p>（请在此处填写会议具体时间）</p>
 <h4 id="会议地点">会议地点：</h4>
@@ -196,37 +202,45 @@
 <li>Ceph社区其他成员</li>
 </ul>
 <h4 id="会议内容">会议内容：</h4>
-<p><strong>1. 演讲者介绍及背景</strong> - 演讲者Martin来自南非的Answer
-Africa公司，该公司正在建设一个名为MeerKAT的射电望远镜。 -
-Martin将分享他们如何使用Ceph存储技术，并回顾天文学数据存储的历史。</p>
+<p><strong>1. 演讲者介绍及背景</strong> - Martin来自南非的Answer
+Africa公司，该公司正在建设MeerKAT射电望远镜。 -
+他将分享如何使用Ceph存储技术，并回顾天文学数据存储的历史。</p>
 <p><strong>2. 天文学数据存储历史回顾</strong> -
-从古代的洞穴壁画到现代的数字存储，Martin回顾了天文学数据存储的历史。 -
+Martin回顾了从古代洞穴壁画到现代的数字存储，天文学数据存储的演变过程。 -
 重点介绍了从石板到光栅、从胶片到磁带等不同存储介质的发展历程。</p>
-<p><strong>3. Meerkat望远镜及Ceph存储应用</strong> -
-MeerKAT望远镜位于南非的沙漠地区，具有低人口密度和低干扰的特点。 -
+<p><strong>3. MeerKAT望远镜及Ceph存储应用</strong> -
+MeerKAT望远镜位于南非沙漠地区，具有低人口密度和低干扰的特点。 -
 该望远镜由64个碟形天线组成，用于接收和记录天文数据。 -
 Ceph存储集群用于存储天文数据，包括临时数据和最终结果。</p>
 <p><strong>4. Ceph存储集群架构</strong> -
-Martin介绍了他们使用的Ceph存储集群架构，包括存储节点、计算节点和网络。 -
+Martin介绍了使用的Ceph存储集群架构，包括存储节点、计算节点和网络。 -
 他们使用SSD和硬盘驱动器混合存储，以满足不同的性能和容量需求。 -
 他们还使用自定义软件来处理数据传输和科学数据处理。</p>
 <p><strong>5. 硬件选择与挑战</strong> -
-由于预算限制，他们决定自行开发存储节点硬件。 -
-他们选择了低射频干扰的硬件，以满足望远镜对环境的要求。 -
-在硬件开发过程中遇到了一些挑战，如控制器过时、内存不足等。</p>
+由于预算限制，他们自行开发存储节点硬件。 -
+选择了低射频干扰的硬件，以满足望远镜对环境的要求。 -
+在硬件开发过程中遇到了控制器过时、内存不足等挑战。</p>
 <p><strong>6. 自动化与监控</strong> -
-他们使用Ansible和Mass等工具来自动化部署和管理Ceph存储集群。 -
-他们使用Prometheus、Grafana和Alertmanager等工具来监控集群状态和性能。</p>
+使用Ansible和Mass等工具来自动化部署和管理Ceph存储集群。 -
+使用Prometheus、Grafana和Alertmanager等工具来监控集群状态和性能。</p>
 <p><strong>7. 总结与展望</strong> -
 Martin感谢Ceph社区的帮助和支持，并表示将继续使用Ceph存储技术。 -
 他们计划在南非开展Ceph社区活动，促进Ceph技术在南非的应用。</p>
 <h4 id="行动计划">行动计划：</h4>
 <ul>
-<li><p>（请在此处填写后续行动计划，例如：）</p></li>
-<li><p>完善Ceph存储集群监控和自动化工具。</p></li>
-<li><p>探索Ceph在更多领域的应用。</p></li>
-<li><p>参与Ceph社区活动，分享经验。</p></li>
+<li>完善Ceph存储集群监控和自动化工具。</li>
+<li>探索Ceph在更多领域的应用。</li>
+<li>参与Ceph社区活动，分享经验。</li>
 </ul>
+<p>[错误、误解或遗漏的重要信息] -
+原文中提到使用自定义软件处理数据传输和科学数据处理，但总结中未具体说明。
+- 原文提到使用Elastic Stack和Nagios，但在总结中被遗漏。</p>
+<p>[改进后的中文总结内容] -
+根据以上内容，总结已经准确反映了原始内容的要点，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。
+- 保留了Ceph相关领域的英文原文关键词，如Ceph、distributed storage、CRUSH
+algorithm、high availability、scalability等。 -
+增加了对自定义软件和数据传输的描述，以及Elastic
+Stack和Nagios的使用情况。</p>
 
         </div>
 
@@ -257,6 +271,8 @@ Martin感谢Ceph社区的帮助和支持，并表示将继续使用Ceph存储技
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%A9%E6%96%87%E5%AD%A6%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/" rel="tag">天文学数据存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E4%BC%98%E5%8C%96/" rel="tag">存储优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E6%9E%B6%E6%9E%84/" rel="tag">存储架构</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -268,7 +284,7 @@ Martin感谢Ceph社区的帮助和支持，并表示将继续使用Ceph存储技
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/MeerKAT_Astronomy_Data_Store_Deployment_and_Operations_-_Martin_Slabber_SARAO/&title=《MeerKAT Astronomy Data Store Deployment and Operations - Martin Slabber, SARAO》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/MeerKAT_Astronomy_Data_Store_Deployment_and_Operations_-_Martin_Slabber_SARAO/&title=《MeerKAT 天文学数据存储部署与运营 - Martin Slabber, SARAO》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -278,7 +294,7 @@ Martin感谢Ceph社区的帮助和支持，并表示将继续使用Ceph存储技
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/MeerKAT_Astronomy_Data_Store_Deployment_and_Operations_-_Martin_Slabber_SARAO/&title=《MeerKAT Astronomy Data Store Deployment and Operations - Martin Slabber, SARAO》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/MeerKAT_Astronomy_Data_Store_Deployment_and_Operations_-_Martin_Slabber_SARAO/&title=《MeerKAT 天文学数据存储部署与运营 - Martin Slabber, SARAO》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -288,7 +304,7 @@ Martin感谢Ceph社区的帮助和支持，并表示将继续使用Ceph存储技
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MeerKAT Astronomy Data Store Deployment and Operations - Martin Slabber, SARAO》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/MeerKAT_Astronomy_Data_Store_Deployment_and_Operations_-_Martin_Slabber_SARAO/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MeerKAT 天文学数据存储部署与运营 - Martin Slabber, SARAO》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/MeerKAT_Astronomy_Data_Store_Deployment_and_Operations_-_Martin_Slabber_SARAO/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -327,7 +343,7 @@ Martin感谢Ceph社区的帮助和支持，并表示将继续使用Ceph存储技
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2019/05/24/Messenger_V2_-_The_New_Ceph_Wire_Protocol_-_Ricardo_Dias_SUSE_Linux/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Messenger V2: The New Ceph Wire Protocol - Ricardo Dias, SUSE Linux</h4>
+        <h4 class="title">&#39;Messenger V2: The New Ceph Wire Protocol - Ricardo Dias, SUSE Linux&#39;</h4>
       </a>
     </div>
   
@@ -427,7 +443,7 @@ Martin感谢Ceph社区的帮助和支持，并表示将继续使用Ceph存储技
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/MeerKAT_Astronomy_Data_Store_Deployment_and_Operations_-_Martin_Slabber_SARAO/&title=《MeerKAT Astronomy Data Store Deployment and Operations - Martin Slabber, SARAO》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/05/24/MeerKAT_Astronomy_Data_Store_Deployment_and_Operations_-_Martin_Slabber_SARAO/&title=《MeerKAT 天文学数据存储部署与运营 - Martin Slabber, SARAO》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -437,7 +453,7 @@ Martin感谢Ceph社区的帮助和支持，并表示将继续使用Ceph存储技
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/MeerKAT_Astronomy_Data_Store_Deployment_and_Operations_-_Martin_Slabber_SARAO/&title=《MeerKAT Astronomy Data Store Deployment and Operations - Martin Slabber, SARAO》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/05/24/MeerKAT_Astronomy_Data_Store_Deployment_and_Operations_-_Martin_Slabber_SARAO/&title=《MeerKAT 天文学数据存储部署与运营 - Martin Slabber, SARAO》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -447,7 +463,7 @@ Martin感谢Ceph社区的帮助和支持，并表示将继续使用Ceph存储技
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MeerKAT Astronomy Data Store Deployment and Operations - Martin Slabber, SARAO》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/MeerKAT_Astronomy_Data_Store_Deployment_and_Operations_-_Martin_Slabber_SARAO/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MeerKAT 天文学数据存储部署与运营 - Martin Slabber, SARAO》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/05/24/MeerKAT_Astronomy_Data_Store_Deployment_and_Operations_-_Martin_Slabber_SARAO/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

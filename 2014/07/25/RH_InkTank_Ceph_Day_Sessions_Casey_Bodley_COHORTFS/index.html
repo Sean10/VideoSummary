@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写具体日期和时间] 参会人员： Casey, Hassan 等 会议主题： 可扩展的NFS上的元数据 会议内容： 一、会议背景  Casey介绍了NFS（网络文件系统）的优势，包括其作为IETF标准、广泛的应用、成熟的技术和可扩展性。 讨论了如何利用NFS的扩展性来提高数据存储的效率，例如通过RAD、对象条带化和Crush算法来优化数据放置。  二、主要议题  Para">
+    <meta name="keywords" content="Ceph,NFS,Scalability,Metadata,Parallel NFS">
+    <meta name="description" content="[改进后的中文总结内容] 在本次RH InkTank Ceph Day Sessions中，Casey Bodley就NFS上可扩展的元数据进行了深入探讨。以下是会议内容的详细总结： 会议背景 Casey首先介绍了NFS的优势，包括其作为IETF标准、广泛的应用、成熟的技术和可扩展性。他提到了如何利用RAD、对象条带化和CRUSH算法来优化数据放置，并探讨了NFS如何通过Parallel NFS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RH InkTank Ceph Day Sessions Casey Bodley COHORTFS">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Casey_Bodley_COHORTFS/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写具体日期和时间] 参会人员： Casey, Hassan 等 会议主题： 可扩展的NFS上的元数据 会议内容： 一、会议背景  Casey介绍了NFS（网络文件系统）的优势，包括其作为IETF标准、广泛的应用、成熟的技术和可扩展性。 讨论了如何利用NFS的扩展性来提高数据存储的效率，例如通过RAD、对象条带化和Crush算法来优化数据放置。  二、主要议题  Para">
+<meta property="og:description" content="[改进后的中文总结内容] 在本次RH InkTank Ceph Day Sessions中，Casey Bodley就NFS上可扩展的元数据进行了深入探讨。以下是会议内容的详细总结： 会议背景 Casey首先介绍了NFS的优势，包括其作为IETF标准、广泛的应用、成熟的技术和可扩展性。他提到了如何利用RAD、对象条带化和CRUSH算法来优化数据放置，并探讨了NFS如何通过Parallel NFS">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2014-07-24T16:00:00.000Z">
 <meta property="article:modified_time" content="2014-07-25T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="NFS">
+<meta property="article:tag" content="Scalability">
+<meta property="article:tag" content="Metadata">
+<meta property="article:tag" content="Parallel NFS">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%83%8C%E6%99%AF"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议背景</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E8%A6%81%E7%82%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">讨论要点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">4.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">5.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">6.</span> <span class="post-toc-text">其他事项</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,52 +190,50 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： [请填写具体日期和时间]</p>
-<p><strong>参会人员</strong>： Casey, Hassan 等</p>
-<p><strong>会议主题</strong>： 可扩展的NFS上的元数据</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>一、会议背景</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>在本次RH InkTank Ceph Day Sessions中，Casey
+Bodley就NFS上可扩展的元数据进行了深入探讨。以下是会议内容的详细总结：</p>
+<h3 id="会议背景">会议背景</h3>
+<p>Casey首先介绍了NFS的优势，包括其作为IETF标准、广泛的应用、成熟的技术和可扩展性。他提到了如何利用RAD、对象条带化和CRUSH算法来优化数据放置，并探讨了NFS如何通过Parallel
+NFS (pnfs)来提高数据存储效率。</p>
+<h3 id="主要议题">主要议题</h3>
 <ul>
-<li>Casey介绍了NFS（网络文件系统）的优势，包括其作为IETF标准、广泛的应用、成熟的技术和可扩展性。</li>
-<li>讨论了如何利用NFS的扩展性来提高数据存储的效率，例如通过RAD、对象条带化和Crush算法来优化数据放置。</li>
+<li><strong>Parallel NFS (pnfs)</strong>:
+pnfs允许客户端直接与存储设备通信，支持不同的布局类型，包括黑色卷设备（osds）和文件布局。</li>
+<li><strong>元数据扩展性</strong>:
+讨论了现有元数据扩展技术的局限性，如Seth的分布和负载均衡技术，以及NFS在当前版本中缺乏利用这些技术的手段。</li>
+<li><strong>pnfs metastripe</strong>:
+介绍了这种将pnfs思想应用于元数据的新技术，允许客户端通过初始元数据服务器获取布局信息，并直接访问其他元数据服务器。</li>
 </ul>
-<p><strong>二、主要议题</strong></p>
+<h3 id="讨论要点">讨论要点</h3>
 <ul>
-<li><strong>Parallel NFS
-(pnfs)</strong>：介绍pnfs的概念，它允许pnfs客户端直接与存储设备通信，并支持不同的布局类型，包括黑色卷设备（osds）和文件布局。</li>
-<li><strong>元数据扩展性</strong>：讨论了现有元数据扩展技术的局限性，如Seth的分布和负载均衡技术，以及NFS在当前版本中缺乏利用这些技术的手段。</li>
-<li><strong>pnfs
-metastripe</strong>：介绍了一种将pnfs思想应用于元数据的新技术，允许客户端通过初始元数据服务器获取布局信息，并直接访问其他元数据服务器。</li>
-</ul>
-<p><strong>三、讨论要点</strong></p>
-<ul>
-<li><strong>布局类型</strong>：pnfs
+<li><strong>布局类型</strong>: pnfs
 metastripe定义了两种布局类型：文件条带布局和目录条带布局，用于确定文件和目录条带的位置。</li>
-<li><strong>操作优化</strong>：通过并行读取、并行目录修改和布局提交，pnfs
+<li><strong>操作优化</strong>:
+通过并行读取、并行目录修改和布局提交，pnfs
 metastripe提高了元数据操作的效率。</li>
-<li><strong>原型实现</strong>：Casey介绍了基于开源NFS连接服务器和piNFS测试套件的pnfs
+<li><strong>原型实现</strong>:
+Casey介绍了基于开源NFS连接服务器和piNFS测试套件的pnfs
 metastripe原型。</li>
 </ul>
-<p><strong>四、决定事项</strong></p>
+<h3 id="决定事项">决定事项</h3>
 <ul>
 <li>继续推进pnfs metastripe的IETF草案。</li>
 <li>优化布局提交和M时间一致性。</li>
 <li>支持Seth frag trees。</li>
 </ul>
-<p><strong>五、后续行动计划</strong></p>
+<h3 id="后续行动计划">后续行动计划</h3>
 <ul>
 <li>完成pnfs metastripe的IETF草案。</li>
 <li>实现布局提交和M时间一致性。</li>
 <li>支持Seth frag trees。</li>
 <li>评估和改进原型性能。</li>
 </ul>
-<p><strong>六、其他事项</strong></p>
+<h3 id="其他事项">其他事项</h3>
 <ul>
 <li>会议中未提及具体的时间表和责任人。</li>
 </ul>
-<p><strong>总结</strong>：</p>
-<p>本次会议讨论了NFS在元数据扩展性方面的挑战和解决方案，介绍了pnfs
+<p>本次会议重点讨论了NFS元数据扩展性的挑战和解决方案，介绍了pnfs
 metastripe技术，并确定了后续行动计划。</p>
 
         </div>
@@ -262,6 +265,8 @@ metastripe技术，并确定了后续行动计划。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Metadata/" rel="tag">Metadata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS/" rel="tag">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Parallel-NFS/" rel="tag">Parallel NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scalability/" rel="tag">Scalability</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -321,9 +326,9 @@ metastripe技术，并确定了后续行动计划。</p>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Mario_Blandini_HGST/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Asaf_Wachtel_MELLANOX/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">RH InkTank Ceph Day Sessions Mario Blandini HGST</h4>
+        <h4 class="title"> RH InkTank Ceph Day Sessions Asaf Wachtel MELLANOX </h4>
       </a>
     </div>
   

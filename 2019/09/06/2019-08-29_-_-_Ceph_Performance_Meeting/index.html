@@ -14,23 +14,28 @@
     
     
     
-    <title>2019-08-29 :: Ceph Performance Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2019-08-29 :: Ceph 性能会议&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 未知 参会人员： 多位 Ceph 项目成员 会议主题： Ceph 项目进展讨论，重点讨论 RGW 性能优化、OSD 性能优化、代码重构等议题。 关键细节：  RGW 性能优化：  讨论了通过优化目录条目过滤、减少解码操作、优化 JSON 格式输出等方式提升 RGW 性能。 探讨了使用 OMAP 缓存来减少重复数据访问，并提高数据检索效率。 讨论了优化 OSD 操作，减少内存占">
+    <meta name="keywords" content="Ceph,RGW,性能优化,OSD,代码重构">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2019年8月29日 参会人员： 多位 Ceph 项目成员 会议主题： Ceph 项目进展讨论，重点讨论 RGW 和 OSD 性能优化、代码重构等议题。 关键细节：  RGW 性能优化：  讨论了优化目录条目过滤、减少解码操作、优化 JSON 格式输出等方式提升 RGW 性能。 探讨了使用 OMAP 缓存来减少重复数据访问，并提高数据检索效率。 讨论">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-08-29 :: Ceph Performance Meeting">
+<meta property="og:title" content="&#39;2019-08-29 :: Ceph 性能会议&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/09/06/2019-08-29_-_-_Ceph_Performance_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 未知 参会人员： 多位 Ceph 项目成员 会议主题： Ceph 项目进展讨论，重点讨论 RGW 性能优化、OSD 性能优化、代码重构等议题。 关键细节：  RGW 性能优化：  讨论了通过优化目录条目过滤、减少解码操作、优化 JSON 格式输出等方式提升 RGW 性能。 探讨了使用 OMAP 缓存来减少重复数据访问，并提高数据检索效率。 讨论了优化 OSD 操作，减少内存占">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2019年8月29日 参会人员： 多位 Ceph 项目成员 会议主题： Ceph 项目进展讨论，重点讨论 RGW 和 OSD 性能优化、代码重构等议题。 关键细节：  RGW 性能优化：  讨论了优化目录条目过滤、减少解码操作、优化 JSON 格式输出等方式提升 RGW 性能。 探讨了使用 OMAP 缓存来减少重复数据访问，并提高数据检索效率。 讨论">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-09-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-09-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="代码重构">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-08-29 :: Ceph Performance Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2019-08-29 :: Ceph 性能会议&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-08-29 :: Ceph Performance Meeting</h1>
+        <h1 class="title">&#39;2019-08-29 :: Ceph 性能会议&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-09-05T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-2019-08-29_-_-_Ceph_Performance_Meeting"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-08-29 :: Ceph Performance Meeting</h1>
+        <h1 class="post-card-title">'2019-08-29 :: Ceph 性能会议'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-09-06 00:00:00" datetime="2019-09-05T16:00:00.000Z"  itemprop="datePublished">2019-09-06</time>
 
@@ -185,16 +183,17 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： 未知 <strong>参会人员</strong>： 多位
-Ceph 项目成员 <strong>会议主题</strong>： Ceph 项目进展讨论，重点讨论
-RGW 性能优化、OSD 性能优化、代码重构等议题。</p>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
+<p><strong>会议时间</strong>： 2019年8月29日 <strong>参会人员</strong>：
+多位 Ceph 项目成员 <strong>会议主题</strong>： Ceph
+项目进展讨论，重点讨论 RGW 和 OSD 性能优化、代码重构等议题。</p>
 <p><strong>关键细节</strong>：</p>
 <ul>
 <li><strong>RGW 性能优化</strong>：
 <ul>
-<li>讨论了通过优化目录条目过滤、减少解码操作、优化 JSON
-格式输出等方式提升 RGW 性能。</li>
+<li>讨论了优化目录条目过滤、减少解码操作、优化 JSON 格式输出等方式提升
+RGW 性能。</li>
 <li>探讨了使用 OMAP 缓存来减少重复数据访问，并提高数据检索效率。</li>
 <li>讨论了优化 OSD 操作，减少内存占用，提高数据处理速度。</li>
 </ul></li>
@@ -238,9 +237,13 @@ RGW 性能优化、OSD 性能优化、代码重构等议题。</p>
 <li>讨论了将小数据存储到 X-ADDERS 的提议，并决定不采纳该提议。</li>
 <li>讨论了将小对象存储到 RocksDB
 的提议，并决定将其作为备选方案进行研究。</li>
+<li>讨论了将 OSD 操作中的 case
+语句拆分成独立函数，提高代码可读性和可维护性。</li>
+<li>讨论了使用新的 JSON 解析库，优化数据解析效率。</li>
 </ul>
 <p><strong>关键词</strong>：</p>
 <ul>
+<li>Ceph</li>
 <li>RGW</li>
 <li>OSD</li>
 <li>性能优化</li>
@@ -279,6 +282,8 @@ RGW 性能优化、OSD 性能优化、代码重构等议题。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/" rel="tag">代码重构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -290,7 +295,7 @@ RGW 性能优化、OSD 性能优化、代码重构等议题。</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-29_-_-_Ceph_Performance_Meeting/&title=《2019-08-29 :: Ceph Performance Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-29_-_-_Ceph_Performance_Meeting/&title=《'2019-08-29 :: Ceph 性能会议'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -300,7 +305,7 @@ RGW 性能优化、OSD 性能优化、代码重构等议题。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-29_-_-_Ceph_Performance_Meeting/&title=《2019-08-29 :: Ceph Performance Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-29_-_-_Ceph_Performance_Meeting/&title=《'2019-08-29 :: Ceph 性能会议'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -310,7 +315,7 @@ RGW 性能优化、OSD 性能优化、代码重构等议题。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-08-29 :: Ceph Performance Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-29_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-08-29 :: Ceph 性能会议'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-29_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -338,18 +343,18 @@ RGW 性能优化、OSD 性能优化、代码重构等议题。</p>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/09/06/2019-09-03_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/09/06/2019-09-02_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-09-03 :: Crimson SeaStor OSD Weekly Meeting</h4>
+        <h4 class="title">&#39;2019-09-02 :: Ceph Orchestration Meeting&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/09/06/2019-08-28_-_-_Ceph_Science_User_Group_Meeting/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/09/06/2019-09-03_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-08-28 :: Ceph Science User Group Meeting</h4>
+        <h4 class="title">&#39;2019-09-03 :: Crimson SeaStor OSD Weekly Meeting&#39;</h4>
       </a>
     </div>
   
@@ -449,7 +454,7 @@ RGW 性能优化、OSD 性能优化、代码重构等议题。</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-29_-_-_Ceph_Performance_Meeting/&title=《2019-08-29 :: Ceph Performance Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-29_-_-_Ceph_Performance_Meeting/&title=《'2019-08-29 :: Ceph 性能会议'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -459,7 +464,7 @@ RGW 性能优化、OSD 性能优化、代码重构等议题。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-29_-_-_Ceph_Performance_Meeting/&title=《2019-08-29 :: Ceph Performance Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-29_-_-_Ceph_Performance_Meeting/&title=《'2019-08-29 :: Ceph 性能会议'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -469,7 +474,7 @@ RGW 性能优化、OSD 性能优化、代码重构等议题。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-08-29 :: Ceph Performance Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-29_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-08-29 :: Ceph 性能会议'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/09/06/2019-08-29_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

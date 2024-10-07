@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：OSD创建在自我编排器中的实现 参会人员：  会议主持人：[主持人姓名] 主要发言人：Chris（OCS操作界面负责人） 其他参会人员：[其他参会人员姓名]  讨论议题：  PV（持久卷）的获取与管理  如何将PV引入自我编排器（Self Orchestrator）。 如何使用自我编排器在PV上创建OSD（对象存储守护进程）。  现有问题与挑战  处理本地持久卷（Local P">
+    <meta name="keywords" content="Ceph,分布式存储,Rook,OpenShift,Self Orchestrator">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：OSD自我编排器中的实现 参会人员：  会议主持人：[主持人姓名] 主要发言人：Chris（OCS操作界面负责人） 其他参会人员：[其他参会人员姓名]  讨论议题：  PV（持久卷）的获取与管理  如何将PV引入自我编排器（Self Orchestrator）。 如何使用自我编排器在PV上创建OSD。  现有问题与挑战  处理本地持久卷（Local P">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2021-06-29">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/08/24/Ceph_Orchestrator_Meeting_2021-06-29/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：OSD创建在自我编排器中的实现 参会人员：  会议主持人：[主持人姓名] 主要发言人：Chris（OCS操作界面负责人） 其他参会人员：[其他参会人员姓名]  讨论议题：  PV（持久卷）的获取与管理  如何将PV引入自我编排器（Self Orchestrator）。 如何使用自我编排器在PV上创建OSD（对象存储守护进程）。  现有问题与挑战  处理本地持久卷（Local P">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：OSD自我编排器中的实现 参会人员：  会议主持人：[主持人姓名] 主要发言人：Chris（OCS操作界面负责人） 其他参会人员：[其他参会人员姓名]  讨论议题：  PV（持久卷）的获取与管理  如何将PV引入自我编排器（Self Orchestrator）。 如何使用自我编排器在PV上创建OSD。  现有问题与挑战  处理本地持久卷（Local P">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-08-24T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="OpenShift">
+<meta property="article:tag" content="Self Orchestrator">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98osd%E5%88%9B%E5%BB%BA%E5%9C%A8%E8%87%AA%E6%88%91%E7%BC%96%E6%8E%92%E5%99%A8%E4%B8%AD%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：OSD创建在自我编排器中的实现</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">讨论议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">备注：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98osd%E8%87%AA%E6%88%91%E7%BC%96%E6%8E%92%E5%99%A8%E4%B8%AD%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：OSD自我编排器中的实现</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">讨论议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">备注：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议总结：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,9 +190,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
-id="会议主题osd创建在自我编排器中的实现">会议主题：OSD创建在自我编排器中的实现</h4>
+id="会议主题osd自我编排器中的实现">会议主题：OSD自我编排器中的实现</h4>
 <h4 id="参会人员">参会人员：</h4>
 <ul>
 <li>会议主持人：[主持人姓名]</li>
@@ -199,50 +205,46 @@ id="会议主题osd创建在自我编排器中的实现">会议主题：OSD创�
 <li><strong>PV（持久卷）的获取与管理</strong>
 <ul>
 <li>如何将PV引入自我编排器（Self Orchestrator）。</li>
-<li>如何使用自我编排器在PV上创建OSD（对象存储守护进程）。</li>
+<li>如何使用自我编排器在PV上创建OSD。</li>
 </ul></li>
 <li><strong>现有问题与挑战</strong>
 <ul>
 <li>处理本地持久卷（Local Persistent
 Volumes）与PV及声明（Claims）的关系。</li>
-<li>如何在OCS（OpenShift Container Storage）中实现这一流程。</li>
+<li>在OCS（OpenShift Container Storage）中实现上述流程的挑战。</li>
 </ul></li>
 <li><strong>技术细节与演示</strong>
 <ul>
 <li>Chris演示了如何在OpenShift UI中通过OCS操作符创建PV和OSD。</li>
 <li>讨论了LSO（Local Storage
-Operator）的使用，包括如何发现节点上的磁盘并创建存储类。</li>
+Operator）的使用，包括节点磁盘的发现和存储类的创建。</li>
 </ul></li>
 <li><strong>后续行动计划</strong>
 <ul>
-<li>继续探讨LSO作为库的嵌入方式，而不是作为一个独立的操作符部署。</li>
-<li>讨论如何使Rook能够支持多种存储类的PV，不仅仅是LSO。</li>
-<li>考虑如何通过CSI（Container Storage
-Interface）标准来管理本地硬件。</li>
+<li>探索LSO作为库的嵌入方式，而非独立操作符。</li>
+<li>讨论Rook支持多种存储类的PV，而不仅是LSO。</li>
+<li>考虑通过CSI（Container Storage Interface）标准管理本地硬件。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
-<li>需要进一步明确Rook与LSO的集成方式，以及如何处理不同存储类的PV。</li>
-<li>计划编写更具体的技术提案，以便更深入地讨论和实施。</li>
+<li>明确Rook与LSO的集成方式，以及如何处理不同存储类的PV。</li>
+<li>计划编写更具体的技术提案，以便深入讨论和实施。</li>
 </ul>
 <h4 id="后续行动">后续行动：</h4>
 <ul>
 <li>继续实验和研究LSO的嵌入方式。</li>
-<li>编写具体的技术提案，以便下次会议讨论。</li>
+<li>编写具体的技术提案，以待下次会议讨论。</li>
 <li>考虑CSI标准在本地存储管理中的应用。</li>
 </ul>
 <h4 id="备注">备注：</h4>
 <ul>
-<li>会议中提到了OpenEBS作为另一个本地存储管理的选项，但目前主要关注LSO。</li>
-<li>讨论了如何在Rook中实现对本地硬件的发现和管理，以及如何与现有的存储操作符（如LSO）协同工作。</li>
+<li>会议中提到了OpenEBS作为另一个本地存储管理选项，但目前主要关注LSO。</li>
+<li>讨论了在Rook中实现对本地硬件的发现和管理，以及如何与现有的存储操作符（如LSO）协同工作。</li>
 </ul>
-<h4 id="会议结束">会议结束：</h4>
-<ul>
-<li>会议在规定时间内结束，参会人员对后续行动计划达成一致。</li>
-</ul>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
+<h4 id="会议总结">会议总结：</h4>
+<p>本次会议重点讨论了在Ceph
+Orchestrator中使用自我编排器创建OSD的过程，并探讨了与OpenShift和Rook集成的技术细节。会议还确定了后续行动计划，包括深入研究LSO的集成方式，编写技术提案，并考虑CSI标准在本地存储管理中的应用。</p>
 
         </div>
 
@@ -273,6 +275,8 @@ Interface）标准来管理本地硬件。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenShift/" rel="tag">OpenShift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Self-Orchestrator/" rel="tag">Self Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -332,18 +336,18 @@ Interface）标准来管理本地硬件。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2021/08/24/Ceph_Crimson_SeaStore_2021-06-30/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2021/08/24/Ceph_Orchestrator_Meeting_2021-07-06/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Crimson/SeaStore 2021-06-30</h4>
+        <h4 class="title">Ceph Orchestrator Meeting 2021-07-06</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2021/08/24/Ceph_Orchestrator_Meeting_2021-07-06/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2021/08/24/Ceph_Orchestrator_Meeting_2021-08-24/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Orchestrator Meeting 2021-07-06</h4>
+        <h4 class="title">Ceph Orchestrator Meeting 2021-08-24</h4>
       </a>
     </div>
   

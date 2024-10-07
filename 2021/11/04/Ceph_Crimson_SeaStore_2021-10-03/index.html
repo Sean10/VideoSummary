@@ -20,17 +20,95 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 与会人员  主持人：未明确提及 参与者：未明确提及  会议日期  2023年某月某日  主要议题  Ceph相关工作进展  Journal Badging PR for Young Gem：已完成评审。 C-Star Metadata PR for May：正在进行中。 Cache LRU：工作被其他事务打断。 Build问题：测试受阻，需要进一步调查。 性能测试结果差异：不同构建选项对">
+    <meta name="keywords" content="Ceph,RGW,Docker,Kubernetes,OSD,RocksDB,Bluestore,RESTful API,Distributed Storage,BlueFS,MON,MDS,PG,RADOS,librados,libcephfs,cephfs,rbd,radosgw,iSCSI,Fibre Channel,NFS,CIFS,POSIX,AWS,Azure,Google Cloud,SSD,HDD,JBOD,SAN,NAS,CRUSH Algorithm,High Availability,Scalability,Consistency,Dashboard,Performance,Orchestration,Object Storage,Block Storage,File System Storage,Decentralization,Authentication,Authorization,Encryption,Erasure Coding,Replication,Snapshots,Clones,Thin Provisioning,Monitoring,Management,Automation,Integration,Containerization,Virtualization,Cloud Computing,Hybrid Cloud,Multi,cloud,Storage Cluster,Node,Disk,Network,Topology,Failure Domain,Recovery,Resilience,Load Balancing,Caching,Compression,Deduplication,Tiering,Performance Tuning,Benchmarking,Testing,Validation">
+    <meta name="description" content="[改进后的中文总结内容] 在2021年10月3日的Ceph Crimson&#x2F;SeaStore会议中，与会人员讨论了Ceph项目的多个关键议题和进展情况。以下是会议的主要内容和决定事项： 主要议题：  Ceph相关工作进展：  完成对“Journal Badging PR for Young Gem”的评审。 “C-Star Metadata PR for May”正在进行中。 “Cache LRU">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;SeaStore 2021-10-03">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/11/04/Ceph_Crimson_SeaStore_2021-10-03/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 与会人员  主持人：未明确提及 参与者：未明确提及  会议日期  2023年某月某日  主要议题  Ceph相关工作进展  Journal Badging PR for Young Gem：已完成评审。 C-Star Metadata PR for May：正在进行中。 Cache LRU：工作被其他事务打断。 Build问题：测试受阻，需要进一步调查。 性能测试结果差异：不同构建选项对">
+<meta property="og:description" content="[改进后的中文总结内容] 在2021年10月3日的Ceph Crimson&#x2F;SeaStore会议中，与会人员讨论了Ceph项目的多个关键议题和进展情况。以下是会议的主要内容和决定事项： 主要议题：  Ceph相关工作进展：  完成对“Journal Badging PR for Young Gem”的评审。 “C-Star Metadata PR for May”正在进行中。 “Cache LRU">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-03T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-11-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="Bluestore">
+<meta property="article:tag" content="RESTful API">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="BlueFS">
+<meta property="article:tag" content="MON">
+<meta property="article:tag" content="MDS">
+<meta property="article:tag" content="PG">
+<meta property="article:tag" content="RADOS">
+<meta property="article:tag" content="librados">
+<meta property="article:tag" content="libcephfs">
+<meta property="article:tag" content="cephfs">
+<meta property="article:tag" content="rbd">
+<meta property="article:tag" content="radosgw">
+<meta property="article:tag" content="iSCSI">
+<meta property="article:tag" content="Fibre Channel">
+<meta property="article:tag" content="NFS">
+<meta property="article:tag" content="CIFS">
+<meta property="article:tag" content="POSIX">
+<meta property="article:tag" content="AWS">
+<meta property="article:tag" content="Azure">
+<meta property="article:tag" content="Google Cloud">
+<meta property="article:tag" content="SSD">
+<meta property="article:tag" content="HDD">
+<meta property="article:tag" content="JBOD">
+<meta property="article:tag" content="SAN">
+<meta property="article:tag" content="NAS">
+<meta property="article:tag" content="CRUSH Algorithm">
+<meta property="article:tag" content="High Availability">
+<meta property="article:tag" content="Scalability">
+<meta property="article:tag" content="Consistency">
+<meta property="article:tag" content="Dashboard">
+<meta property="article:tag" content="Performance">
+<meta property="article:tag" content="Orchestration">
+<meta property="article:tag" content="Object Storage">
+<meta property="article:tag" content="Block Storage">
+<meta property="article:tag" content="File System Storage">
+<meta property="article:tag" content="Decentralization">
+<meta property="article:tag" content="Authentication">
+<meta property="article:tag" content="Authorization">
+<meta property="article:tag" content="Encryption">
+<meta property="article:tag" content="Erasure Coding">
+<meta property="article:tag" content="Replication">
+<meta property="article:tag" content="Snapshots">
+<meta property="article:tag" content="Clones">
+<meta property="article:tag" content="Thin Provisioning">
+<meta property="article:tag" content="Monitoring">
+<meta property="article:tag" content="Management">
+<meta property="article:tag" content="Automation">
+<meta property="article:tag" content="Integration">
+<meta property="article:tag" content="Containerization">
+<meta property="article:tag" content="Virtualization">
+<meta property="article:tag" content="Cloud Computing">
+<meta property="article:tag" content="Hybrid Cloud">
+<meta property="article:tag" content="Multi">
+<meta property="article:tag" content="cloud">
+<meta property="article:tag" content="Storage Cluster">
+<meta property="article:tag" content="Node">
+<meta property="article:tag" content="Disk">
+<meta property="article:tag" content="Network">
+<meta property="article:tag" content="Topology">
+<meta property="article:tag" content="Failure Domain">
+<meta property="article:tag" content="Recovery">
+<meta property="article:tag" content="Resilience">
+<meta property="article:tag" content="Load Balancing">
+<meta property="article:tag" content="Caching">
+<meta property="article:tag" content="Compression">
+<meta property="article:tag" content="Deduplication">
+<meta property="article:tag" content="Tiering">
+<meta property="article:tag" content="Performance Tuning">
+<meta property="article:tag" content="Benchmarking">
+<meta property="article:tag" content="Testing">
+<meta property="article:tag" content="Validation">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +234,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8E%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">与会人员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议日期</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">其他</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Crimson_SeaStore_2021-10-03"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,63 +256,50 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="与会人员">与会人员</h4>
-<ul>
-<li>主持人：未明确提及</li>
-<li>参与者：未明确提及</li>
-</ul>
-<h4 id="会议日期">会议日期</h4>
-<ul>
-<li>2023年某月某日</li>
-</ul>
-<h4 id="主要议题">主要议题</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>在2021年10月3日的Ceph
+Crimson/SeaStore会议中，与会人员讨论了Ceph项目的多个关键议题和进展情况。以下是会议的主要内容和决定事项：</p>
+<p><strong>主要议题</strong>：</p>
 <ol type="1">
-<li><strong>Ceph相关工作进展</strong>
+<li><strong>Ceph相关工作进展</strong>：
 <ul>
-<li><strong>Journal Badging PR for Young Gem</strong>：已完成评审。</li>
-<li><strong>C-Star Metadata PR for May</strong>：正在进行中。</li>
-<li><strong>Cache LRU</strong>：工作被其他事务打断。</li>
-<li><strong>Build问题</strong>：测试受阻，需要进一步调查。</li>
-<li><strong>性能测试结果差异</strong>：不同构建选项对性能测试结果有影响，需要进一步验证。</li>
-<li><strong>Make
-FS问题</strong>：Ceph启动和停止正常，但使用特定命令启动OSD时出现问题。</li>
-<li><strong>FSID问题</strong>：讨论了FSID的设置和随机化问题。</li>
-<li><strong>Spread LFS Strategy
-Work</strong>：计划将工作合并到主分支，但上周因其他工作未能推进。</li>
-<li><strong>Journal Committer
-Management</strong>：修复了相关问题，并进行了性能测试。</li>
+<li>完成对“Journal Badging PR for Young Gem”的评审。</li>
+<li>“C-Star Metadata PR for May”正在进行中。</li>
+<li>“Cache LRU”项目因其他事务被打断。</li>
+<li>建立过程中遇到问题，需要进一步调查。</li>
+<li>发现不同构建选项对性能测试结果有影响，需进一步验证。</li>
+<li>“Make
+FS”问题，Ceph启动和停止正常，但使用特定命令启动OSD时出现问题。</li>
+<li>讨论了FSID的设置和随机化问题。</li>
+<li>计划将“Spread LFS Strategy
+Work”合并到主分支，但上周因其他工作未能推进。</li>
+<li>修复了“Journal Committer
+Management”相关问题，并进行了性能测试。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
+<p><strong>决定事项</strong>：</p>
 <ul>
-<li><strong>Build问题</strong>：需要进一步调查和解决。</li>
-<li><strong>性能测试结果差异</strong>：需要验证不同构建选项对性能的影响。</li>
-<li><strong>Make
-FS问题</strong>：需要进一步调查特定命令启动OSD的问题。</li>
-<li><strong>FSID问题</strong>：决定在Ceph存储初始化时随机化FSID，避免写入零值。</li>
-<li><strong>Journal Committer
-Management</strong>：决定合并相关PR，尽管在特定环境中存在性能问题。</li>
+<li>需要进一步调查和解决“Build”问题。</li>
+<li>需要验证不同构建选项对性能测试结果的影响。</li>
+<li>需要调查“Make FS”问题。</li>
+<li>决定在Ceph存储初始化时随机化FSID，避免写入零值。</li>
+<li>决定合并“Journal Committer
+Management”相关PR，尽管在特定环境中存在性能问题。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<p><strong>后续行动计划</strong>：</p>
 <ul>
-<li><strong>Build问题</strong>：继续调查并解决。</li>
-<li><strong>性能测试结果差异</strong>：验证并分析不同构建选项的影响。</li>
-<li><strong>Make FS问题</strong>：调查特定命令启动OSD的问题。</li>
-<li><strong>FSID问题</strong>：在Ceph存储初始化时随机化FSID。</li>
-<li><strong>Spread LFS Strategy
-Work</strong>：继续推进并将工作合并到主分支。</li>
-<li><strong>Journal Committer
-Management</strong>：合并相关PR，并后续解决性能问题。</li>
+<li>继续调查并解决“Build”问题。</li>
+<li>验证并分析不同构建选项的影响。</li>
+<li>调查“Make FS”问题。</li>
+<li>在Ceph存储初始化时随机化FSID。</li>
+<li>继续推进“Spread LFS Strategy Work”并将工作合并到主分支。</li>
+<li>合并“Journal Committer Management”相关PR，并后续解决性能问题。</li>
 </ul>
-<h4 id="其他">其他</h4>
+<p><strong>其他</strong>：</p>
 <ul>
 <li>会议中提到了一些技术细节和具体代码问题，需要相关人员进一步跟进和处理。</li>
 </ul>
-<h4 id="会议结束">会议结束</h4>
-<ul>
-<li>会议在讨论完所有议题后结束，祝大家一周愉快。</li>
-</ul>
+<p>会议在讨论完所有议题后结束，祝大家一周愉快。</p>
 
         </div>
 
@@ -272,6 +330,8 @@ Management</strong>：合并相关PR，并后续解决性能问题。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/AWS/" rel="tag">AWS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Authentication/" rel="tag">Authentication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Authorization/" rel="tag">Authorization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Automation/" rel="tag">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Azure/" rel="tag">Azure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Benchmarking/" rel="tag">Benchmarking</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Block-Storage/" rel="tag">Block Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueFS/" rel="tag">BlueFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bluestore/" rel="tag">Bluestore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CIFS/" rel="tag">CIFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-Algorithm/" rel="tag">CRUSH Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Caching/" rel="tag">Caching</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Clones/" rel="tag">Clones</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cloud-Computing/" rel="tag">Cloud Computing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Compression/" rel="tag">Compression</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Consistency/" rel="tag">Consistency</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Containerization/" rel="tag">Containerization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Dashboard/" rel="tag">Dashboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Decentralization/" rel="tag">Decentralization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Deduplication/" rel="tag">Deduplication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Disk/" rel="tag">Disk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Docker/" rel="tag">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Encryption/" rel="tag">Encryption</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Erasure-Coding/" rel="tag">Erasure Coding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Failure-Domain/" rel="tag">Failure Domain</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Fibre-Channel/" rel="tag">Fibre Channel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/File-System-Storage/" rel="tag">File System Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Google-Cloud/" rel="tag">Google Cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/HDD/" rel="tag">HDD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High-Availability/" rel="tag">High Availability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Hybrid-Cloud/" rel="tag">Hybrid Cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Integration/" rel="tag">Integration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/JBOD/" rel="tag">JBOD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Load-Balancing/" rel="tag">Load Balancing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MDS/" rel="tag">MDS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MON/" rel="tag">MON</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Management/" rel="tag">Management</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Monitoring/" rel="tag">Monitoring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Multi/" rel="tag">Multi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NAS/" rel="tag">NAS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS/" rel="tag">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Network/" rel="tag">Network</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Node/" rel="tag">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Object-Storage/" rel="tag">Object Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestration/" rel="tag">Orchestration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PG/" rel="tag">PG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/POSIX/" rel="tag">POSIX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance/" rel="tag">Performance</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Tuning/" rel="tag">Performance Tuning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS/" rel="tag">RADOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RESTful-API/" rel="tag">RESTful API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Recovery/" rel="tag">Recovery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Replication/" rel="tag">Replication</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Resilience/" rel="tag">Resilience</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SAN/" rel="tag">SAN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SSD/" rel="tag">SSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scalability/" rel="tag">Scalability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Snapshots/" rel="tag">Snapshots</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Cluster/" rel="tag">Storage Cluster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Testing/" rel="tag">Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Thin-Provisioning/" rel="tag">Thin Provisioning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Tiering/" rel="tag">Tiering</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Topology/" rel="tag">Topology</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Validation/" rel="tag">Validation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Virtualization/" rel="tag">Virtualization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/cephfs/" rel="tag">cephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/cloud/" rel="tag">cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/iSCSI/" rel="tag">iSCSI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/libcephfs/" rel="tag">libcephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/librados/" rel="tag">librados</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/radosgw/" rel="tag">radosgw</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/rbd/" rel="tag">rbd</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

@@ -14,23 +14,29 @@
     
     
     
-    <title>2018-NOV-07 :: Ceph Developer Monthly | ceph视频总结 | youtube频道总结</title>
+    <title> 2018-NOV-07 :: Ceph Developer Monthly  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： Tim、Sage、Yen（Intel）、Mina、Jason、Dan、Ian、Daniel、Bill Simpson 会议主题： Ceph 项目进展讨论 会议内容： 1. 深海 orchestrator 模块和 Anible  Tim 和 Sage 讨论了深海 orchestrator 模块和 Anible 的进展，两者都采用了">
+    <meta name="keywords" content="Ceph,分布式存储,RBD,Orchestrator,共享缓存,持久性缓存">
+    <meta name="description" content="[改进后的中文总结内容] 在本次 Ceph 开发者月度会议上，讨论了多个关键议题，包括 orchestrator、Anible、RBD 缓存、持久性缓存和 Orchestrator&#x2F;Messenger 的进展。 主要讨论内容：  深海 orchestrator 模块和 Anible：讨论了两者相似的方法和轨迹，以及如何使用 libstorage management 控制闪烁灯，以及设备状态跟踪和">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018-NOV-07 :: Ceph Developer Monthly">
+<meta property="og:title" content=" 2018-NOV-07 :: Ceph Developer Monthly ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/11/14/2018-NOV-07_-_-_Ceph_Developer_Monthly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： Tim、Sage、Yen（Intel）、Mina、Jason、Dan、Ian、Daniel、Bill Simpson 会议主题： Ceph 项目进展讨论 会议内容： 1. 深海 orchestrator 模块和 Anible  Tim 和 Sage 讨论了深海 orchestrator 模块和 Anible 的进展，两者都采用了">
+<meta property="og:description" content="[改进后的中文总结内容] 在本次 Ceph 开发者月度会议上，讨论了多个关键议题，包括 orchestrator、Anible、RBD 缓存、持久性缓存和 Orchestrator&#x2F;Messenger 的进展。 主要讨论内容：  深海 orchestrator 模块和 Anible：讨论了两者相似的方法和轨迹，以及如何使用 libstorage management 控制闪烁灯，以及设备状态跟踪和">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-11-13T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-11-14T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RBD">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="共享缓存">
+<meta property="article:tag" content="持久性缓存">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2018-NOV-07 :: Ceph Developer Monthly</div>
+        <div class="flex-col header-title ellipsis"> 2018-NOV-07 :: Ceph Developer Monthly </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2018-NOV-07 :: Ceph Developer Monthly</h1>
+        <h1 class="title"> 2018-NOV-07 :: Ceph Developer Monthly </h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-11-13T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +162,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-2018-NOV-07_-_-_Ceph_Developer_Monthly"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2018-NOV-07 :: Ceph Developer Monthly</h1>
+        <h1 class="post-card-title"> 2018-NOV-07 :: Ceph Developer Monthly </h1>
         <div class="post-meta">
             <time class="post-time" title="2018-11-14 00:00:00" datetime="2018-11-13T16:00:00.000Z"  itemprop="datePublished">2018-11-14</time>
 
@@ -185,46 +184,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>参会人员</strong>：
-Tim、Sage、Yen（Intel）、Mina、Jason、Dan、Ian、Daniel、Bill Simpson</p>
-<p><strong>会议主题</strong>： Ceph 项目进展讨论</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>1. 深海 orchestrator 模块和 Anible</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>在本次 Ceph 开发者月度会议上，讨论了多个关键议题，包括
+orchestrator、Anible、RBD 缓存、持久性缓存和 Orchestrator/Messenger
+的进展。</p>
+<p><strong>主要讨论内容</strong>：</p>
 <ul>
-<li>Tim 和 Sage 讨论了深海 orchestrator 模块和 Anible
-的进展，两者都采用了相似的方法和轨迹。</li>
-<li>讨论了如何使用 libstorage management 调用闪烁灯，以便在 Seth
-本身损坏或未安装的情况下能够控制闪烁灯。</li>
-<li>讨论了设备状态跟踪和健康警报，以及如何记录闪烁灯的状态。</li>
-</ul>
-<p><strong>2. Ceph OSD 删除器代码</strong></p>
-<ul>
-<li>Mina 更新了 Ceph OSD 删除器代码的进展，包括单元测试和文档。</li>
-<li>讨论了如何标记该功能为实验性，并建议进行性能测试。</li>
-</ul>
-<p><strong>3. RBD 共享缓存</strong></p>
-<ul>
-<li>Yen 更新了 RBD
-共享缓存的进展，包括缓存架构、工作流程和性能测试结果。</li>
-<li>讨论了缓存容量配置、缓存空间管理策略和与集群配置的集成。</li>
-<li>讨论了如何将缓存演示程序与 RBD
-客户端集成，以及如何处理连接问题。</li>
-</ul>
-<p><strong>4. RBD 持久性缓存</strong></p>
-<ul>
-<li>Jason 更新了 RBD
-持久性缓存的进展，包括代码架构、性能目标和挑战。</li>
-<li>讨论了持久性缓存的一致性、性能和可扩展性。</li>
-<li>讨论了如何将持久性缓存与 SSD
-集成，以及如何处理不同硬件平台的差异。</li>
-</ul>
-<p><strong>5. Orchestrator 和 Messenger</strong></p>
-<ul>
-<li>讨论了 Orchestrator 和 Messenger 的进展，包括协议 V2
-的实现、地址端点管理和加密。</li>
-<li>讨论了如何将协议 V2 与现有的 Ceph 版本兼容。</li>
+<li><strong>深海 orchestrator 模块和
+Anible</strong>：讨论了两者相似的方法和轨迹，以及如何使用 libstorage
+management 控制闪烁灯，以及设备状态跟踪和健康警报。</li>
+<li><strong>Ceph OSD 删除器代码</strong>：Mina
+更新了代码进展，包括单元测试和文档，并建议进行性能测试。</li>
+<li><strong>RBD 共享缓存</strong>：Yen
+更新了缓存架构、工作流程和性能测试结果，讨论了缓存容量配置、缓存空间管理策略和与集群配置的集成。</li>
+<li><strong>RBD 持久性缓存</strong>：Jason
+更新了代码架构、性能目标和挑战，讨论了一致性、性能和可扩展性，以及如何与
+SSD 集成。</li>
+<li><strong>Orchestrator 和 Messenger</strong>：讨论了协议 V2
+的实现、地址端点管理和加密，以及如何与现有 Ceph 版本兼容。</li>
 </ul>
 <p><strong>行动计划</strong>：</p>
 <ul>
@@ -239,10 +216,8 @@ Tim、Sage、Yen（Intel）、Mina、Jason、Dan、Ian、Daniel、Bill Simpson</
 <li>讨论了集群连接性监控和 RDMA 连接问题。</li>
 <li>讨论了 Ceph 代码的可维护性和可扩展性。</li>
 </ul>
-<p><strong>会议总结</strong>：</p>
-<p>本次会议讨论了 Ceph 项目的多个方面，包括 orchestrator、Anible、RBD
-缓存、持久性缓存和
-Orchestrator/Messenger。会议确定了下一步行动计划，并讨论了项目中的挑战和解决方案。</p>
+<p>本次会议反映了 Ceph
+社区在分布式存储技术方面的不断进步和创新能力。</p>
 
         </div>
 
@@ -273,6 +248,8 @@ Orchestrator/Messenger。会议确定了下一步行动计划，并讨论了项�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD/" rel="tag">RBD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%85%B1%E4%BA%AB%E7%BC%93%E5%AD%98/" rel="tag">共享缓存</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8C%81%E4%B9%85%E6%80%A7%E7%BC%93%E5%AD%98/" rel="tag">持久性缓存</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -284,7 +261,7 @@ Orchestrator/Messenger。会议确定了下一步行动计划，并讨论了项�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/11/14/2018-NOV-07_-_-_Ceph_Developer_Monthly/&title=《2018-NOV-07 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/11/14/2018-NOV-07_-_-_Ceph_Developer_Monthly/&title=《 2018-NOV-07 :: Ceph Developer Monthly 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -294,7 +271,7 @@ Orchestrator/Messenger。会议确定了下一步行动计划，并讨论了项�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/11/14/2018-NOV-07_-_-_Ceph_Developer_Monthly/&title=《2018-NOV-07 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/11/14/2018-NOV-07_-_-_Ceph_Developer_Monthly/&title=《 2018-NOV-07 :: Ceph Developer Monthly 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -304,7 +281,7 @@ Orchestrator/Messenger。会议确定了下一步行动计划，并讨论了项�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-NOV-07 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/11/14/2018-NOV-07_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 2018-NOV-07 :: Ceph Developer Monthly 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/11/14/2018-NOV-07_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -443,7 +420,7 @@ Orchestrator/Messenger。会议确定了下一步行动计划，并讨论了项�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/11/14/2018-NOV-07_-_-_Ceph_Developer_Monthly/&title=《2018-NOV-07 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/11/14/2018-NOV-07_-_-_Ceph_Developer_Monthly/&title=《 2018-NOV-07 :: Ceph Developer Monthly 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -453,7 +430,7 @@ Orchestrator/Messenger。会议确定了下一步行动计划，并讨论了项�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/11/14/2018-NOV-07_-_-_Ceph_Developer_Monthly/&title=《2018-NOV-07 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/11/14/2018-NOV-07_-_-_Ceph_Developer_Monthly/&title=《 2018-NOV-07 :: Ceph Developer Monthly 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -463,7 +440,7 @@ Orchestrator/Messenger。会议确定了下一步行动计划，并讨论了项�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-NOV-07 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/11/14/2018-NOV-07_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 2018-NOV-07 :: Ceph Developer Monthly 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/11/14/2018-NOV-07_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

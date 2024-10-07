@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Extending Ceph&#39;s Reach - Tushar Gohad, Zhong Xin | ceph视频总结 | youtube频道总结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,CRUSH算法,可扩展性">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： 扩展Ceph分布式存储的覆盖范围与应用 会议时间： 2023年11月（具体日期未提及） 参会人员： 李浩，Tushar Goel（英特尔首席工程师），以及来自英特尔、红帽、思杰等公司的代表 会议内容： 1. 会议开场 李浩对与会嘉宾表示感谢并介绍了本次会议的演讲者Tushar Goel，他是英特尔的首席工程师，专注于软件定义存储领域已有五年以上。 2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Extending Ceph&#39;s Reach - Tushar Gohad, Zhong Xin">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/index.html">
+<meta property="og:site_name" content="ceph视频总结">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： 扩展Ceph分布式存储的覆盖范围与应用 会议时间： 2023年11月（具体日期未提及） 参会人员： 李浩，Tushar Goel（英特尔首席工程师），以及来自英特尔、红帽、思杰等公司的代表 会议内容： 1. 会议开场 李浩对与会嘉宾表示感谢并介绍了本次会议的演讲者Tushar Goel，他是英特尔的首席工程师，专注于软件定义存储领域已有五年以上。 2">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-23T16:00:00.000Z">
+<meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="可扩展性">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
+    
+    <link rel="shortcut icon" href="/VideoSummary/favicon.png">
+    <link rel="stylesheet" href="/VideoSummary/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/VideoSummary/img/brand.jpg)">
+      <div class="brand">
+        <a href="/VideoSummary/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/VideoSummary/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sean10</h5>
+          <a href="mailto:sean10reborn@gmail.com" title="sean10reborn@gmail.com" class="mail">sean10reborn@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/VideoSummary/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Sean10/VideoSummary" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Extending Ceph&#39;s Reach - Tushar Gohad, Zhong Xin</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Extending Ceph&#39;s Reach - Tushar Gohad, Zhong Xin</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-04-22T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2023-04-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Extending Ceph's Reach - Tushar Gohad, Zhong Xin</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-04-23 00:00:00" datetime="2023-04-22T16:00:00.000Z"  itemprop="datePublished">2023-04-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议主题</strong>： 扩展Ceph分布式存储的覆盖范围与应用</p>
+<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
+<p><strong>参会人员</strong>： 李浩，Tushar
+Goel（英特尔首席工程师），以及来自英特尔、红帽、思杰等公司的代表</p>
+<p><strong>会议内容</strong>：</p>
+<p><strong>1. 会议开场</strong></p>
+<p>李浩对与会嘉宾表示感谢并介绍了本次会议的演讲者Tushar
+Goel，他是英特尔的首席工程师，专注于软件定义存储领域已有五年以上。</p>
+<p><strong>2. Ceph存储的未来</strong></p>
+<p>Tushar
+Goel指出，随着数据量的激增，存储需求也在不断增长。英特尔致力于扩展Ceph存储的覆盖范围，引入新的工作负载。他强调了开源社区的重要性，并介绍了英特尔在Ceph社区中的贡献。</p>
+<p><strong>3. 数据增长趋势</strong></p>
+<p>Tushar
+Goel分析了数据增长的来源，包括互联网用户、智能工厂、智能汽车等，强调中国在这一增长故事中的重要性。</p>
+<p><strong>4. Ceph用户案例</strong></p>
+<p>Tushar Goel展示了Ceph的一些用户案例，如Wall Street
+Journal、Facebook、Salesforce等，这些公司都在使用Ceph存储数据。</p>
+<p><strong>5. Ceph技术发展</strong></p>
+<p>Tushar
+Goel介绍了英特尔在Ceph技术方面的贡献，包括性能优化、管理性提升等。他重点介绍了以下几个方面：</p>
+<ul>
+<li><strong>非易失性内存（NVM）</strong>：
+英特尔正在与社区合作，将NVM编程模型应用于异步OSD，以降低延迟，提高性能。</li>
+<li><strong>数据缓存</strong>：
+英特尔正在优化数据缓存策略，将数据更接近应用程序，减少网络延迟。</li>
+<li><strong>压缩和加密</strong>：
+英特尔正在支持压缩和加密功能，以保护数据安全。</li>
+</ul>
+<p><strong>6. 存储趋势</strong></p>
+<p>Tushar Goel探讨了存储领域的三个趋势：</p>
+<ul>
+<li><strong>非易失性内存</strong>：
+随着NVM的普及，存储系统软件的延迟将越来越低，需要重新思考软件堆栈的设计。</li>
+<li><strong>解耦</strong>：
+通过解耦计算、存储和网络资源，可以提高数据中心的效率和可扩展性。</li>
+<li><strong>管理性</strong>：
+随着工作负载的增长，需要提高Ceph的管理性，包括监控、调优和故障排除。</li>
+</ul>
+<p><strong>7. Ceph在公益领域的应用</strong></p>
+<p>Tushar Goel分享了Ceph在公益领域的应用案例，如National Center for
+Missing and Exploited
+Children。该组织使用Ceph存储大量数据，并取得了显著成效。</p>
+<p><strong>8. 总结与展望</strong></p>
+<p>Tushar
+Goel总结了本次会议的主要内容，并展望了Ceph存储的未来。他强调，英特尔将继续与社区合作，推动Ceph存储的发展，并为更多用户带来价值。</p>
+<p><strong>后续行动计划</strong>：</p>
+<ul>
+<li>继续优化Ceph性能和管理性。</li>
+<li>推动Ceph在更多领域的应用。</li>
+<li>加强与社区的合作，共同推动Ceph存储的发展。</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2023-04-23T16:00:00.000Z" itemprop="dateUpdated">2023-04-24 00:00:00</time>
+</span><br>
+
+
+        
+        欢迎评论~
+        
+    </div>
+    
+    <footer>
+        <a href="https://sean10.github.io/VideoSummary">
+            <img src="/VideoSummary/img/avatar.png" alt="sean10">
+            sean10
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">可扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
+
+            
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_sharing_toolbox"></div>
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/&title=《Extending Ceph's Reach - Tushar Gohad, Zhong Xin》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/&title=《Extending Ceph's Reach - Tushar Gohad, Zhong Xin》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Extending Ceph's Reach - Tushar Gohad, Zhong Xin》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2023/04/23/Ceph_s_journey_at_SUSE_-_Lars_Marowsky_Bree_Marc_Koderer/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ceph&#39;s journey at SUSE - Lars Marowsky Brée, Marc Koderer</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/VideoSummary/2023/04/23/Performance_tuning_in_BlueStore_RocksDB_-_Li_Xiaoyan/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title"> Performance tuning in BlueStore &amp; RocksDB - Li Xiaoyan </h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <!-- <script src="//code.bdstatic.com/npm/leancloud-storage@latest/dist/av-min.js"></script> -->
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "yNexbxJmshSneppnaoo3Bd6Y-gzGzoHsz",
+            appKey: "FyxT8MxDPHbu8mQSapgjEMPC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+
+
+        <p>
+            
+                <span><a href="/VideoSummary/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>sean10 &copy; 2015 - 2024</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/&title=《Extending Ceph's Reach - Tushar Gohad, Zhong Xin》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/&title=《Extending Ceph's Reach - Tushar Gohad, Zhong Xin》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2023/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Extending Ceph's Reach - Tushar Gohad, Zhong Xin》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2023/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2023/04/23/Extending_Ceph_s_Reach_-_Tushar_Gohad_Zhong_Xin/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/VideoSummary/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57108c0b91bea817"></script>
+
+<script src="/VideoSummary/js/main.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/VideoSummary/js/search.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

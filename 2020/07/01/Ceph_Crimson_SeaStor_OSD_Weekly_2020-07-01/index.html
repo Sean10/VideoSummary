@@ -20,17 +20,23 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  新成员介绍: Gabby 加入团队，拥有20年存储行业经验。 技术讨论: 主要围绕分布式存储系统 Ceph 的开发和优化进行。 后续行动计划: 确定了一些关键任务和优先级，包括实现和测试新的功能。  讨论的主要议题  Ceph 开发进展:  讨论了 Crimson 和 Classical OSD 的开发状态。 涉及到了 backfill 功能的实现和测试。 讨论了加密功能的实">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,对象存储,CRUSH 算法,可扩展性">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  新成员介绍: Gabby 加入团队，拥有20年存储行业经验，他将加入团队并将在下周开始培训。 技术讨论: 会议主要围绕 Ceph 分布式存储系统的开发进行，讨论了多个关键议题。  讨论的主要议题  Ceph 开发进展:  讨论了 Crimson 和 Classical OSD 的开发状态，包括 backfill 功能的实现和测试。 涉及到加密功能的实">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;SeaStor OSD Weekly 2020-07-01">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/07/01/Ceph_Crimson_SeaStor_OSD_Weekly_2020-07-01/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  新成员介绍: Gabby 加入团队，拥有20年存储行业经验。 技术讨论: 主要围绕分布式存储系统 Ceph 的开发和优化进行。 后续行动计划: 确定了一些关键任务和优先级，包括实现和测试新的功能。  讨论的主要议题  Ceph 开发进展:  讨论了 Crimson 和 Classical OSD 的开发状态。 涉及到了 backfill 功能的实现和测试。 讨论了加密功能的实">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  新成员介绍: Gabby 加入团队，拥有20年存储行业经验，他将加入团队并将在下周开始培训。 技术讨论: 会议主要围绕 Ceph 分布式存储系统的开发进行，讨论了多个关键议题。  讨论的主要议题  Ceph 开发进展:  讨论了 Crimson 和 Classical OSD 的开发状态，包括 backfill 功能的实现和测试。 涉及到加密功能的实">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-30T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-07-01T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="CRUSH 算法">
+<meta property="article:tag" content="可扩展性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +165,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E7%9A%84%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续的行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他事项</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">2.</span> <span class="post-toc-text">结论</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关键细节</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E7%9A%84%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续的行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他事项</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,27 +191,27 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
 <li><strong>新成员介绍</strong>: Gabby
-加入团队，拥有20年存储行业经验。</li>
-<li><strong>技术讨论</strong>: 主要围绕分布式存储系统 Ceph
-的开发和优化进行。</li>
-<li><strong>后续行动计划</strong>:
-确定了一些关键任务和优先级，包括实现和测试新的功能。</li>
+加入团队，拥有20年存储行业经验，他将加入团队并将在下周开始培训。</li>
+<li><strong>技术讨论</strong>: 会议主要围绕 Ceph
+分布式存储系统的开发进行，讨论了多个关键议题。</li>
 </ul>
 <h4 id="讨论的主要议题">讨论的主要议题</h4>
 <ol type="1">
 <li><strong>Ceph 开发进展</strong>:
 <ul>
-<li>讨论了 Crimson 和 Classical OSD 的开发状态。</li>
-<li>涉及到了 backfill 功能的实现和测试。</li>
-<li>讨论了加密功能的实现，特别是 OpenSSL 和 SSE 的兼容性问题。</li>
+<li>讨论了 Crimson 和 Classical OSD 的开发状态，包括 backfill
+功能的实现和测试。</li>
+<li>涉及到加密功能的实现，特别是 OpenSSL 和 SSE 的兼容性问题。</li>
+<li>讨论了基于 PG log 的恢复和 scrubbing 功能的新开发。</li>
 </ul></li>
 <li><strong>测试和验证</strong>:
 <ul>
-<li>强调了测试的重要性，特别是对于 OSD 的杀掉和重启测试。</li>
+<li>强调了测试的重要性，特别是对 OSD 的杀掉和重启测试。</li>
 <li>讨论了如何通过测试来验证和优化系统的恢复和备份功能。</li>
 </ul></li>
 <li><strong>代码优化和重构</strong>:
@@ -238,18 +244,20 @@ Crimson 相关的功能。</li>
 进行代码重构和优化，以提高系统的性能和稳定性。</li>
 <li><strong>新功能开发</strong>: 开发和测试新的功能，如基于 PG log
 的恢复和 scrubbing 功能。</li>
-</ul>
-<h4 id="其他事项">其他事项</h4>
-<ul>
 <li><strong>新成员适应</strong>: 帮助新成员 Gabby
 快速适应团队和工作环境。</li>
 <li><strong>会议安排</strong>: 计划在下一个会议中讨论更多关于 Ceph
 的技术细节和开发进展。</li>
 </ul>
-<h3 id="结论">结论</h3>
-<p>本次会议主要讨论了 Ceph
-存储系统的开发进展，包括新功能的实现、代码的重构和优化、以及测试策略的制定。团队将继续推进这些关键任务，以确保系统的稳定性和性能。同时，新成员
-Gabby 的加入将为团队带来新的活力和经验。</p>
+<h4 id="其他事项">其他事项</h4>
+<ul>
+<li><strong>代码重构和优化</strong>: 对 OSD
+的消息传递层进行重构和优化。</li>
+<li><strong>测试策略</strong>:
+讨论了如何通过测试来验证和优化系统的恢复和备份功能。</li>
+<li><strong>加密功能</strong>: 讨论了 OpenSSL 和 SSE
+的兼容性问题，并决定使用 OpenSSL 作为加密库。</li>
+</ul>
 
         </div>
 
@@ -280,6 +288,8 @@ Gabby 的加入将为团队带来新的活力和经验。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-%E7%AE%97%E6%B3%95/" rel="tag">CRUSH 算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7/" rel="tag">可扩展性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

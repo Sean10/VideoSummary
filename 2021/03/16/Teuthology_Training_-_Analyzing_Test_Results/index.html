@@ -14,23 +14,28 @@
     
     
     
-    <title>Teuthology Training: Analyzing Test Results | ceph视频总结 | youtube频道总结</title>
+    <title>Teuthology 训练：测试结果分析 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议是关于病理学培训的第二部分，重点讨论病理学失败分析，特别是测试运行后的处理方法。会议强调了开发者在使用病理学（Pathology）进行测试时需要理解测试结果的意义，包括测试通过或失败的情况。 主要议题  基本指导原则：  每个失败都需要被审查。 区分失败和死亡任务（dead jobs），死亡任务是指未能在规定时间内正确终止的任务。  工具和资源：  Sentry：用于收">
+    <meta name="keywords" content="Ceph,分布式存储,存储集群,Teuthology,测试分析">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议是关于 Teuthology 测试工具培训的第二部分，重点讨论了如何分析测试失败。以下是对会议内容的总结： 会议概述 会议强调了在测试运行后理解测试结果的重要性，包括处理测试通过或失败的情况。 主要议题  基本指导原则：  每个失败的测试都需要被审查。 区分失败和死亡任务，死亡任务是指未能在规定时间内正确终止的任务。  工具和资源：  Palpito：用于查看测试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Teuthology Training: Analyzing Test Results">
+<meta property="og:title" content="Teuthology 训练：测试结果分析">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议是关于病理学培训的第二部分，重点讨论病理学失败分析，特别是测试运行后的处理方法。会议强调了开发者在使用病理学（Pathology）进行测试时需要理解测试结果的意义，包括测试通过或失败的情况。 主要议题  基本指导原则：  每个失败都需要被审查。 区分失败和死亡任务（dead jobs），死亡任务是指未能在规定时间内正确终止的任务。  工具和资源：  Sentry：用于收">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议是关于 Teuthology 测试工具培训的第二部分，重点讨论了如何分析测试失败。以下是对会议内容的总结： 会议概述 会议强调了在测试运行后理解测试结果的重要性，包括处理测试通过或失败的情况。 主要议题  基本指导原则：  每个失败的测试都需要被审查。 区分失败和死亡任务，死亡任务是指未能在规定时间内正确终止的任务。  工具和资源：  Palpito：用于查看测试">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-15T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-03-15T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="存储集群">
+<meta property="article:tag" content="Teuthology">
+<meta property="article:tag" content="测试分析">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Teuthology Training: Analyzing Test Results</div>
+        <div class="flex-col header-title ellipsis">Teuthology 训练：测试结果分析</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Teuthology Training: Analyzing Test Results</h1>
+        <h1 class="title">Teuthology 训练：测试结果分析</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-03-15T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Teuthology_Training_-_Analyzing_Test_Results"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Teuthology Training: Analyzing Test Results</h1>
+        <h1 class="post-card-title">Teuthology 训练：测试结果分析</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-03-16 00:00:00" datetime="2021-03-15T16:00:00.000Z"  itemprop="datePublished">2021-03-16</time>
 
@@ -185,52 +183,54 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概述">会议概述</h4>
-<p>本次会议是关于病理学培训的第二部分，重点讨论病理学失败分析，特别是测试运行后的处理方法。会议强调了开发者在使用病理学（Pathology）进行测试时需要理解测试结果的意义，包括测试通过或失败的情况。</p>
-<h4 id="主要议题">主要议题</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议是关于 Teuthology
+测试工具培训的第二部分，重点讨论了如何分析测试失败。以下是对会议内容的总结：</p>
+<p><strong>会议概述</strong></p>
+<p>会议强调了在测试运行后理解测试结果的重要性，包括处理测试通过或失败的情况。</p>
+<p><strong>主要议题</strong></p>
 <ol type="1">
 <li><strong>基本指导原则</strong>：
 <ul>
-<li>每个失败都需要被审查。</li>
-<li>区分失败和死亡任务（dead
-jobs），死亡任务是指未能在规定时间内正确终止的任务。</li>
+<li>每个失败的测试都需要被审查。</li>
+<li>区分失败和死亡任务，死亡任务是指未能在规定时间内正确终止的任务。</li>
 </ul></li>
 <li><strong>工具和资源</strong>：
 <ul>
-<li><strong>Sentry</strong>：用于收集和展示类似失败的工具，帮助分析历史失败事件。</li>
-<li><strong>Scrape.log</strong>：在每次运行结束时运行的脚本，用于汇总和分类失败，便于分析。</li>
+<li><strong>Palpito</strong>：用于查看测试运行概览和失败详情。</li>
+<li><strong>Scrape.log</strong>：用于汇总和分类失败，便于分析。</li>
 <li><strong>Redmine
-Tracker</strong>：用于记录和跟踪失败的工具，帮助后续分析和避免重复工作。</li>
+Tracker</strong>：用于记录和跟踪失败，帮助后续分析和避免重复工作。</li>
 </ul></li>
 <li><strong>分析步骤</strong>：
 <ul>
-<li>使用Palpito和Sentry进行初步分析。</li>
+<li>使用 Palpito 和 Sentry 进行初步分析。</li>
 <li>详细分析每个失败或死亡任务，需要访问病理学日志（Pathology
 log）。</li>
-<li>利用Scrape.log进行进一步的失败分类和分析。</li>
-<li>检查是否有相关的Redmine Tracker问题，必要时创建新的跟踪问题。</li>
+<li>利用 Scrape.log 进行进一步的失败分类和分析。</li>
+<li>检查是否有相关的 Redmine Tracker 问题，必要时创建新的跟踪问题。</li>
 </ul></li>
 <li><strong>特定情况分析</strong>：
 <ul>
-<li>针对不同类型的运行（如whip branch、baseline run、developer centric
+<li>针对不同类型的运行（如 whip branch、baseline run、developer centric
 run），分析方法和重点有所不同。</li>
 <li>强调在发现新问题时，需要进一步验证并与现有问题进行对比。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
+<p><strong>决定事项</strong></p>
 <ul>
-<li>确认了使用Sentry、Scrape.log和Redmine
-Tracker等工具的重要性，以及它们在病理学失败分析中的应用。</li>
+<li>确认了使用 Palpito、Scrape.log 和 Redmine Tracker
+等工具的重要性，以及它们在病理学失败分析中的应用。</li>
 <li>确定了针对不同类型病理学运行的分析策略和步骤。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<p><strong>后续行动计划</strong></p>
 <ul>
 <li>开发者需要继续使用和熟悉上述工具和资源，以便更有效地进行病理学失败分析。</li>
-<li>对于Sentry等工具的改进需求，应记录并考虑在未来的会议中讨论。</li>
-<li>鼓励开发者在分析过程中遇到问题时，及时通过IRC、邮件等方式寻求帮助和讨论。</li>
+<li>对于 Sentry 等工具的改进需求，应记录并考虑在未来的会议中讨论。</li>
+<li>鼓励开发者在分析过程中遇到问题时，及时通过
+IRC、邮件等方式寻求帮助和讨论。</li>
 </ul>
-<h4 id="其他">其他</h4>
+<p><strong>其他</strong></p>
 <ul>
 <li>会议中提到的具体技术细节和示例，如特定错误消息和日志分析方法，将在后续的培训和文档中进一步详细说明。</li>
 </ul>
@@ -265,6 +265,8 @@ Tracker等工具的重要性，以及它们在病理学失败分析中的应用�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Teuthology/" rel="tag">Teuthology</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E9%9B%86%E7%BE%A4/" rel="tag">存储集群</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B5%8B%E8%AF%95%E5%88%86%E6%9E%90/" rel="tag">测试分析</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -276,7 +278,7 @@ Tracker等工具的重要性，以及它们在病理学失败分析中的应用�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/&title=《Teuthology Training: Analyzing Test Results》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/&title=《Teuthology 训练：测试结果分析》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -286,7 +288,7 @@ Tracker等工具的重要性，以及它们在病理学失败分析中的应用�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/&title=《Teuthology Training: Analyzing Test Results》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/&title=《Teuthology 训练：测试结果分析》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -296,7 +298,7 @@ Tracker等工具的重要性，以及它们在病理学失败分析中的应用�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Teuthology Training: Analyzing Test Results》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Teuthology 训练：测试结果分析》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -324,9 +326,9 @@ Tracker等工具的重要性，以及它们在病理学失败分析中的应用�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2021/03/16/Teuthology_Internals_-_Overview_and_Scheduling/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2021/03/18/Ceph_Performance_Meeting_2021-03-11/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Teuthology Internals: Overview and Scheduling</h4>
+        <h4 class="title">  Ceph Performance Meeting 2021-03-11  </h4>
       </a>
     </div>
   
@@ -335,7 +337,7 @@ Tracker等工具的重要性，以及它们在病理学失败分析中的应用�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/03/16/Teuthology_Training_-_Developing_Tests/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Teuthology Training: Developing Tests</h4>
+        <h4 class="title">&#39;Teuthology Training: Developing Tests&#39;</h4>
       </a>
     </div>
   
@@ -435,7 +437,7 @@ Tracker等工具的重要性，以及它们在病理学失败分析中的应用�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/&title=《Teuthology Training: Analyzing Test Results》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/&title=《Teuthology 训练：测试结果分析》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -445,7 +447,7 @@ Tracker等工具的重要性，以及它们在病理学失败分析中的应用�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/&title=《Teuthology Training: Analyzing Test Results》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/&title=《Teuthology 训练：测试结果分析》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -455,7 +457,7 @@ Tracker等工具的重要性，以及它们在病理学失败分析中的应用�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Teuthology Training: Analyzing Test Results》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Teuthology 训练：测试结果分析》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/03/16/Teuthology_Training_-_Analyzing_Test_Results/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

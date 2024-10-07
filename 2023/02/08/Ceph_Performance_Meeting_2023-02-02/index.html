@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2023-02-02 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 性能会议纪要 2023-02-02 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要 本次会议主要讨论了Ceph存储系统的多个技术问题和改进措施，包括新提交的PR（Pull Request）、已关闭的PR、更新中的PR以及一些实验性的改进。会议还涉及了Ceph在实际生产环境中的性能问题和解决方案。 主要议题  新提交的PR  Igor提出的PR关于在带前缀的访问中不使用真实的整个空间迭代器。Igor解释了该PR的背景和实验结果，强调了在特定情况下使用默认列族可以">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,RocksDB,BlueFS">
+    <meta name="description" content="[改进后的中文总结内容] 本次 Ceph 性能会议主要讨论了 Ceph 存储系统的技术问题和改进措施，涵盖了新提交的 PR、已关闭的 PR、更新中的 PR 以及实验性的改进。会议重点包括：  新提交的 PR:  Igor 提出的 PR 旨在改进带前缀的访问性能，通过不使用真实的整个空间迭代器来提高性能。 Adam K 提出的 PR 改进了发酵方块度量，特别是碎片化分数的计算。  已关闭的 PR:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2023-02-02">
+<meta property="og:title" content="Ceph 性能会议纪要 2023-02-02">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要 本次会议主要讨论了Ceph存储系统的多个技术问题和改进措施，包括新提交的PR（Pull Request）、已关闭的PR、更新中的PR以及一些实验性的改进。会议还涉及了Ceph在实际生产环境中的性能问题和解决方案。 主要议题  新提交的PR  Igor提出的PR关于在带前缀的访问中不使用真实的整个空间迭代器。Igor解释了该PR的背景和实验结果，强调了在特定情况下使用默认列族可以">
+<meta property="og:description" content="[改进后的中文总结内容] 本次 Ceph 性能会议主要讨论了 Ceph 存储系统的技术问题和改进措施，涵盖了新提交的 PR、已关闭的 PR、更新中的 PR 以及实验性的改进。会议重点包括：  新提交的 PR:  Igor 提出的 PR 旨在改进带前缀的访问性能，通过不使用真实的整个空间迭代器来提高性能。 Adam K 提出的 PR 改进了发酵方块度量，特别是碎片化分数的计算。  已关闭的 PR:">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-07T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-02-07T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="BlueFS">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2023-02-02</div>
+        <div class="flex-col header-title ellipsis">Ceph 性能会议纪要 2023-02-02</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2023-02-02</h1>
+        <h1 class="title">Ceph 性能会议纪要 2023-02-02</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-02-07T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Performance_Meeting_2023-02-02"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2023-02-02</h1>
+        <h1 class="post-card-title">Ceph 性能会议纪要 2023-02-02</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-02-08 00:00:00" datetime="2023-02-07T16:00:00.000Z"  itemprop="datePublished">2023-02-08</time>
 
@@ -185,55 +183,53 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概要">会议概要</h4>
-<p>本次会议主要讨论了Ceph存储系统的多个技术问题和改进措施，包括新提交的PR（Pull
-Request）、已关闭的PR、更新中的PR以及一些实验性的改进。会议还涉及了Ceph在实际生产环境中的性能问题和解决方案。</p>
-<h4 id="主要议题">主要议题</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次 Ceph 性能会议主要讨论了 Ceph
+存储系统的技术问题和改进措施，涵盖了新提交的 PR、已关闭的 PR、更新中的
+PR 以及实验性的改进。会议重点包括：</p>
 <ol type="1">
-<li><strong>新提交的PR</strong>
+<li><strong>新提交的 PR</strong>:
 <ul>
-<li>Igor提出的PR关于在带前缀的访问中不使用真实的整个空间迭代器。Igor解释了该PR的背景和实验结果，强调了在特定情况下使用默认列族可以显著提高性能。</li>
-<li>Adam
-K提交的PR关于改进发酵方块度量，主要涉及碎片化分数计算的修正。</li>
+<li>Igor 提出的 PR
+旨在改进带前缀的访问性能，通过不使用真实的整个空间迭代器来提高性能。</li>
+<li>Adam K 提出的 PR 改进了发酵方块度量，特别是碎片化分数的计算。</li>
 </ul></li>
-<li><strong>已关闭的PR</strong>
+<li><strong>已关闭的 PR</strong>:
 <ul>
-<li>由机器人关闭的三个PR，包括从日志中移除子树映射、跳过空目录的inode
-cap迭代以及不进行缓冲写入。这些PR因各种原因被关闭，但会议中讨论了可能的重新开启和审查。</li>
+<li>机器人关闭了三个 PR，包括从日志中移除子树映射、跳过空目录的 inode
+cap 迭代以及不进行缓冲写入。这些 PR
+因各种原因被关闭，但会议中讨论了可能的重新开启和审查。</li>
 </ul></li>
-<li><strong>更新中的PR</strong>
+<li><strong>更新中的 PR</strong>:
 <ul>
-<li>RocksDB升级PR，作者需要额外帮助以解决与Seth
-RocksDB仓库相关的问题。</li>
-<li>添加主平衡分数的PR，主要等待实验室环境的修复以进行测试。</li>
+<li>RocksDB 升级 PR，作者需要额外帮助以解决与 Seth RocksDB
+仓库相关的问题。</li>
+<li>添加主平衡分数的 PR，主要等待实验室环境的修复以进行测试。</li>
 </ul></li>
-<li><strong>实验性改进</strong>
+<li><strong>实验性改进</strong>:
 <ul>
-<li>David和Corey团队分享了他们在实际生产环境中对Ceph集群的改进和优化，包括使用压缩、调整RocksDB设置以及处理NVMe和旋转磁盘的混合使用问题。</li>
-<li>讨论了Ceph在处理大量删除操作时的性能问题，并提出了一些有效的解决方案。</li>
+<li>David 和 Corey 团队分享了他们在实际生产环境中对 Ceph
+集群的改进和优化，包括使用压缩、调整 RocksDB 设置以及处理 NVMe
+和旋转磁盘的混合使用问题。</li>
+<li>讨论了 Ceph
+在处理大量删除操作时的性能问题，并提出了一些有效的解决方案。</li>
 </ul></li>
-<li><strong>其他讨论</strong>
+<li><strong>其他讨论</strong>:
 <ul>
-<li>讨论了Ceph在不同版本（如Pacific和Quincy）中的性能表现和可能的改进。</li>
-<li>涉及了Ceph在处理大文件时的性能问题，特别是BlueFS的日志更新问题。</li>
+<li>讨论了 Ceph 在不同版本（如 Pacific 和
+Quincy）中的性能表现和可能的改进。</li>
+<li>涉及了 Ceph 在处理大文件时的性能问题，特别是 BlueFS
+的日志更新问题。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
-<ul>
-<li>需要进一步审查和可能重新开启某些已关闭的PR。</li>
-<li>RocksDB升级和相关设置的调整需要尽快完成以改善性能。</li>
-<li>对于Ceph在实际生产环境中的性能问题，需要继续进行实验和优化。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划</h4>
-<ul>
-<li>继续审查和测试新的PR，确保它们符合性能和稳定性的要求。</li>
-<li>对已关闭的PR进行重新评估，考虑是否需要重新开启和进一步开发。</li>
-<li>继续与David和Corey团队合作，收集更多关于Ceph在实际生产环境中的性能数据和反馈。</li>
-<li>考虑将某些实验性的改进（如压缩和RocksDB设置调整）作为默认配置，以提高Ceph的整体性能。</li>
-</ul>
-<h4 id="结论">结论</h4>
-<p>会议强调了Ceph在实际应用中的性能优化和问题解决的重要性，并提出了具体的改进措施和后续行动计划。通过持续的测试和优化，Ceph的性能和稳定性有望得到显著提升。</p>
+<p>会议决定事项包括： - 进一步审查和可能重新开启某些已关闭的 PR。 -
+尽快完成 RocksDB 升级和相关设置的调整，以改善性能。 - 继续与 David 和
+Corey 团队合作，收集更多关于 Ceph 在实际生产环境中的性能数据和反馈。 -
+考虑将某些实验性的改进（如压缩和 RocksDB 设置调整）作为默认配置，以提高
+Ceph 的整体性能。</p>
+<p>通过这次会议，强调了 Ceph
+在实际应用中的性能优化和问题解决的重要性，并提出了具体的改进措施和后续行动计划。通过持续的测试和优化，Ceph
+的性能和稳定性有望得到显著提升。</p>
 
         </div>
 
@@ -264,6 +260,8 @@ RocksDB仓库相关的问题。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueFS/" rel="tag">BlueFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -275,7 +273,7 @@ RocksDB仓库相关的问题。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/&title=《Ceph Performance Meeting 2023-02-02》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/&title=《Ceph 性能会议纪要 2023-02-02》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -285,7 +283,7 @@ RocksDB仓库相关的问题。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/&title=《Ceph Performance Meeting 2023-02-02》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/&title=《Ceph 性能会议纪要 2023-02-02》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -295,7 +293,7 @@ RocksDB仓库相关的问题。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2023-02-02》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议纪要 2023-02-02》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -434,7 +432,7 @@ RocksDB仓库相关的问题。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/&title=《Ceph Performance Meeting 2023-02-02》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/&title=《Ceph 性能会议纪要 2023-02-02》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -444,7 +442,7 @@ RocksDB仓库相关的问题。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/&title=《Ceph Performance Meeting 2023-02-02》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/&title=《Ceph 性能会议纪要 2023-02-02》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -454,7 +452,7 @@ RocksDB仓库相关的问题。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2023-02-02》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议纪要 2023-02-02》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/02/08/Ceph_Performance_Meeting_2023-02-02/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

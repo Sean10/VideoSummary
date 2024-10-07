@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：OpenStack与Ceph集成中的NFS模块问题讨论 与会人员：OpenStack与Ceph开发团队成员 会议时间：[具体时间] 会议地点：在线会议 主要议题：  NFS模块现状与挑战 OpenStack与Ceph集成中的NFS模块问题 短期与长期解决方案讨论 后续行动计划  讨论内容：  NFS模块现状与挑战  目前存在多个模块和限制，需要找到解决方案以推动OpenStac">
+    <meta name="keywords" content="Ceph,分布式存储,存储解决方案,OpenStack集成,NFS模块">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了OpenStack与Ceph集成中的NFS模块问题，与会人员包括OpenStack与Ceph开发团队成员。会议主要议题包括：  NFS模块现状与挑战：目前NFS模块存在多个模块和限制，需要找到解决方案以推动OpenStack的发展。仪表盘模块功能良好，但需要与新的NFS模块集成，该模块目前尚未完全功能完善。 OpenStack与Ceph集成中的NFS模块">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2021-05-11">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/05/11/Ceph_Orchestrator_Meeting_2021-05-11/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：OpenStack与Ceph集成中的NFS模块问题讨论 与会人员：OpenStack与Ceph开发团队成员 会议时间：[具体时间] 会议地点：在线会议 主要议题：  NFS模块现状与挑战 OpenStack与Ceph集成中的NFS模块问题 短期与长期解决方案讨论 后续行动计划  讨论内容：  NFS模块现状与挑战  目前存在多个模块和限制，需要找到解决方案以推动OpenStac">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了OpenStack与Ceph集成中的NFS模块问题，与会人员包括OpenStack与Ceph开发团队成员。会议主要议题包括：  NFS模块现状与挑战：目前NFS模块存在多个模块和限制，需要找到解决方案以推动OpenStack的发展。仪表盘模块功能良好，但需要与新的NFS模块集成，该模块目前尚未完全功能完善。 OpenStack与Ceph集成中的NFS模块">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-10T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-05-11T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="存储解决方案">
+<meta property="article:tag" content="OpenStack集成">
+<meta property="article:tag" content="NFS模块">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +161,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98openstack%E4%B8%8Eceph%E9%9B%86%E6%88%90%E4%B8%AD%E7%9A%84nfs%E6%A8%A1%E5%9D%97%E9%97%AE%E9%A2%98%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：OpenStack与Ceph集成中的NFS模块问题讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8E%E4%BC%9A%E4%BA%BA%E5%91%98openstack%E4%B8%8Eceph%E5%BC%80%E5%8F%91%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">与会人员：OpenStack与Ceph开发团队成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%9C%A8%E7%BA%BF%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：在线会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">讨论内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">后续行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议总结：</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Orchestrator_Meeting_2021-05-11"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,75 +183,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4
-id="会议主题openstack与ceph集成中的nfs模块问题讨论">会议主题：OpenStack与Ceph集成中的NFS模块问题讨论</h4>
-<h4
-id="与会人员openstack与ceph开发团队成员">与会人员：OpenStack与Ceph开发团队成员</h4>
-<h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
-<h4 id="会议地点在线会议">会议地点：在线会议</h4>
-<h4 id="主要议题">主要议题：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了OpenStack与Ceph集成中的NFS模块问题，与会人员包括OpenStack与Ceph开发团队成员。会议主要议题包括：</p>
 <ol type="1">
-<li><strong>NFS模块现状与挑战</strong></li>
-<li><strong>OpenStack与Ceph集成中的NFS模块问题</strong></li>
-<li><strong>短期与长期解决方案讨论</strong></li>
-<li><strong>后续行动计划</strong></li>
-</ol>
-<h4 id="讨论内容">讨论内容：</h4>
-<ol type="1">
-<li><strong>NFS模块现状与挑战</strong>
+<li><p><strong>NFS模块现状与挑战</strong>：目前NFS模块存在多个模块和限制，需要找到解决方案以推动OpenStack的发展。仪表盘模块功能良好，但需要与新的NFS模块集成，该模块目前尚未完全功能完善。</p></li>
+<li><p><strong>OpenStack与Ceph集成中的NFS模块问题</strong>：需要部署Ganesha和Pacemaker，但存在配置和部署的复杂性。现有的NFS模块不支持NFSv3，仅支持NFSv4.1及以上版本。</p></li>
+<li><p><strong>短期与长期解决方案讨论</strong>：</p>
 <ul>
-<li>目前存在多个模块和限制，需要找到解决方案以推动OpenStack的发展。</li>
-<li>仪表盘模块功能良好，但需要与新的NFS模块集成，该模块目前尚未完全功能完善。</li>
+<li><strong>短期解决方案</strong>：使用TripleO
+Ansible部署Ganesha和Pacemaker，类似于Stephansible的方式；确保部署的Ganesha能够与Ceph集群通信，并正确配置。</li>
+<li><strong>长期解决方案</strong>：使用Cephadm管理NFS守护进程和入口服务；Manila直接与Cephadm交互，动态部署和管理Ganesha集群。</li>
 </ul></li>
-<li><strong>OpenStack与Ceph集成中的NFS模块问题</strong>
+<li><p><strong>后续行动计划</strong>：</p>
 <ul>
-<li>需要部署Ganesha和Pacemaker，但存在配置和部署的复杂性。</li>
-<li>现有的NFS模块不支持NFSv3，仅支持NFSv4.1及以上版本。</li>
-</ul></li>
-<li><strong>短期与长期解决方案讨论</strong>
-<ul>
-<li><strong>短期解决方案</strong>：
-<ul>
-<li>使用TripleO
-Ansible部署Ganesha和Pacemaker，类似于Stephansible的方式。</li>
-<li>确保部署的Ganesha能够与Ceph集群通信，并正确配置。</li>
-</ul></li>
-<li><strong>长期解决方案</strong>：
-<ul>
-<li>使用Cephadm管理NFS守护进程和入口服务。</li>
-<li>Manila直接与Cephadm交互，动态部署和管理Ganesha集群。</li>
-</ul></li>
-</ul></li>
-<li><strong>后续行动计划</strong>
-<ul>
-<li><strong>短期行动</strong>：
-<ul>
-<li>完成TripleO Ansible部署Ganesha和Pacemaker的脚本。</li>
-<li>确保迁移过程中现有客户的平稳过渡。</li>
-</ul></li>
-<li><strong>长期行动</strong>：
-<ul>
-<li>完善Cephadm的NFS模块，确保其支持所有必要的功能。</li>
-<li>简化Manila代码，使其能够利用新的NFS模块接口。</li>
-<li>开发迁移工具，帮助客户从旧系统迁移到新系统。</li>
-</ul></li>
+<li><strong>短期行动</strong>：完成TripleO
+Ansible部署Ganesha和Pacemaker的脚本；确保迁移过程中现有客户的平稳过渡。</li>
+<li><strong>长期行动</strong>：完善Cephadm的NFS模块，确保其支持所有必要的功能；简化Manila代码，使其能够利用新的NFS模块接口；开发迁移工具，帮助客户从旧系统迁移到新系统。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项：</h4>
-<ul>
-<li>确认了短期和长期的解决方案方向。</li>
-<li>确定了短期内的具体行动步骤，包括TripleO Ansible的部署脚本编写。</li>
-<li>明确了长期目标，包括Cephadm的NFS模块完善和Manila代码的简化。</li>
-</ul>
-<h4 id="后续行动">后续行动：</h4>
-<ul>
-<li>开发团队将开始编写TripleO Ansible的部署脚本。</li>
-<li>Cephadm团队将继续完善NFS模块，确保其满足所有需求。</li>
-<li>Manila团队将开始简化代码，以便能够利用新的NFS模块接口。</li>
-<li>开发迁移工具，确保客户能够平稳过渡到新系统。</li>
-</ul>
-<h4 id="会议总结">会议总结：</h4>
 <p>会议明确了OpenStack与Ceph集成中NFS模块的问题，并制定了短期和长期的解决方案。开发团队将按照会议确定的行动计划，逐步推进项目的进展。</p>
 
         </div>
@@ -285,6 +232,8 @@ Ansible部署Ganesha和Pacemaker，类似于Stephansible的方式。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS%E6%A8%A1%E5%9D%97/" rel="tag">NFS模块</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack%E9%9B%86%E6%88%90/" rel="tag">OpenStack集成</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">存储解决方案</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

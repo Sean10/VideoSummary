@@ -20,17 +20,23 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 未知 参会人员： Venkat Kali（Sandisk 产品经理）、Simon（负责产品相关问题）、Andrews（主持人）、其他与会人员 会议主题： Sandisk 无限闪存系统与 Ceph 的结合及优化 会议内容： 一、会议背景  Sandisk 于两年半前开始研发无限闪存系统，主要针对 Seth 和 OpenStack。 无限闪存系统旨在提供高性能、大容量的全闪存存储">
+    <meta name="keywords" content="Ceph,Distributed Storage,Performance Optimization,All,Flash Storage,Sandisk">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 未知 参会人员： Venkat Kolli（Sandisk 产品经理）、Simon、Andrews（主持人）、其他与会人员 会议主题： Sandisk 无限闪存系统与 Ceph 的结合及优化 会议内容： 一、会议背景  Sandisk 于两年半前开始研发无限闪存系统，主要针对 Seth 和 OpenStack，旨在提供高性能、大容量的全闪存存储解决方">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Venkat Kolli -- Ceph on All-Flash Storage">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/11/13/Venkat_Kolli_--_Ceph_on_All-Flash_Storage/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 未知 参会人员： Venkat Kali（Sandisk 产品经理）、Simon（负责产品相关问题）、Andrews（主持人）、其他与会人员 会议主题： Sandisk 无限闪存系统与 Ceph 的结合及优化 会议内容： 一、会议背景  Sandisk 于两年半前开始研发无限闪存系统，主要针对 Seth 和 OpenStack。 无限闪存系统旨在提供高性能、大容量的全闪存存储">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 未知 参会人员： Venkat Kolli（Sandisk 产品经理）、Simon、Andrews（主持人）、其他与会人员 会议主题： Sandisk 无限闪存系统与 Ceph 的结合及优化 会议内容： 一、会议背景  Sandisk 于两年半前开始研发无限闪存系统，主要针对 Seth 和 OpenStack，旨在提供高性能、大容量的全闪存存储解决方">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-11-12T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-11-13T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="All">
+<meta property="article:tag" content="Flash Storage">
+<meta property="article:tag" content="Sandisk">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,40 +184,39 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p><strong>会议纪要</strong></p>
 <p><strong>会议时间</strong>： 未知 <strong>参会人员</strong>： Venkat
-Kali（Sandisk
-产品经理）、Simon（负责产品相关问题）、Andrews（主持人）、其他与会人员
+Kolli（Sandisk 产品经理）、Simon、Andrews（主持人）、其他与会人员
 <strong>会议主题</strong>： Sandisk 无限闪存系统与 Ceph 的结合及优化</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>一、会议背景</strong></p>
 <ul>
 <li>Sandisk 于两年半前开始研发无限闪存系统，主要针对 Seth 和
-OpenStack。</li>
-<li>无限闪存系统旨在提供高性能、大容量的全闪存存储解决方案，特别适用于大数据、大媒体存储等场景。</li>
+OpenStack，旨在提供高性能、大容量的全闪存存储解决方案。</li>
+<li>无限闪存系统采用 3U 机箱，可容纳 512TB
+闪存，支持热插拔，具备高可靠性。</li>
+<li>Sandisk 对 Ceph 进行了优化，使其在无限闪存系统上运行更加高效。</li>
 </ul>
 <p><strong>二、无限闪存系统介绍</strong></p>
 <ul>
-<li>无限闪存系统采用 3U 机箱，可容纳 512TB 闪存。</li>
 <li>系统基于 SAS 接口，提供高密度、高容量存储。</li>
-<li>系统支持热插拔，具备高可靠性。</li>
 <li>系统不包含服务器和计算资源，可与其他服务器连接。</li>
 </ul>
 <p><strong>三、Ceph 与无限闪存系统的结合</strong></p>
 <ul>
-<li>Sandisk 对 Ceph 进行了优化，使其在无限闪存系统上运行更加高效。</li>
+<li>Sandisk 优化了 Ceph 的数据路径、锁优化、队列优化等方面，使 Ceph
+在无限闪存系统上的性能提升了 10 倍以上。</li>
 <li>优化主要集中在数据路径、锁优化、队列优化等方面。</li>
-<li>通过优化，Ceph 在无限闪存系统上的性能提升了 10 倍以上。</li>
 </ul>
 <p><strong>四、性能测试</strong></p>
 <ul>
-<li>Sandisk 对 Ceph 在无限闪存系统上的性能进行了测试，结果显示：
+<li>测试结果显示，Ceph 在无限闪存系统上具有极高的性能：
 <ul>
 <li>读取性能：约 250 万 IOPS</li>
 <li>写入性能：约 100 万 IOPS</li>
 <li>延迟：约 2 毫秒</li>
 </ul></li>
-<li>测试结果表明，Ceph 在无限闪存系统上具有极高的性能。</li>
 </ul>
 <p><strong>五、未来计划</strong></p>
 <ul>
@@ -267,6 +272,8 @@ Ceph，推动其在全闪存存储领域的应用。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/All/" rel="tag">All</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Flash-Storage/" rel="tag">Flash Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Sandisk/" rel="tag">Sandisk</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -335,9 +342,9 @@ Ceph，推动其在全闪存存储领域的应用。</p>
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2015/11/13/Tomohiko_Kimura_--_Walk_Through_a_Software-Defined_Everything_PoC/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2015/09/24/2015-SEP-24_--_Ceph_Tech_Talks_-_Reference_Architectures/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Tomohiko Kimura -- Walk Through a Software-Defined Everything PoC</h4>
+        <h4 class="title">&#39;2015-SEP-24 -- Ceph Tech Talks: Reference Architectures&#39;</h4>
       </a>
     </div>
   

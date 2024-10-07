@@ -14,23 +14,31 @@
     
     
     
-    <title>2020-01-23 :: Ceph Performance Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2020-01-23 :: Ceph 性能会议&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  PG自动缩放: 上周会议后，关于PG自动缩放的几个提案已经提交，包括Nihad的提案，将PG数量默认设置为32。 PR更新: Radek的PR改变了标准列表T的编码方式，不再使用无缓冲复制。Keefe的PR涉及透明比较器，以避免额外工作。Igor的PR通过改变数据结构减少了缓存PG的内存占用。 性能优化: 一个关于OSD PG日志条目的点改变PR，以及关于分裂读IO的PR，如">
+    <meta name="keywords" content="Ceph,分布式存储,Rados,CephFS,性能优化,OSD,分区自动缩放,空间放大">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  PG自动缩放: 会议讨论了PG自动缩放的提案，其中包括将PG数量默认设置为32的提案。 PR更新: Radek的PR改变了标准列表T的编码方式，不再使用无缓冲复制。Keefe的PR涉及透明比较器，以避免额外工作。Igor的PR通过改变数据结构减少了缓存PG的内存占用。 性能优化: 讨论了OSD PG日志条目的点改变PR，以及关于分裂读IO的PR，这些">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2020-01-23 :: Ceph Performance Meeting">
+<meta property="og:title" content="&#39;2020-01-23 :: Ceph 性能会议&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/01/30/2020-01-23_-_-_Ceph_Performance_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  PG自动缩放: 上周会议后，关于PG自动缩放的几个提案已经提交，包括Nihad的提案，将PG数量默认设置为32。 PR更新: Radek的PR改变了标准列表T的编码方式，不再使用无缓冲复制。Keefe的PR涉及透明比较器，以避免额外工作。Igor的PR通过改变数据结构减少了缓存PG的内存占用。 性能优化: 一个关于OSD PG日志条目的点改变PR，以及关于分裂读IO的PR，如">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  PG自动缩放: 会议讨论了PG自动缩放的提案，其中包括将PG数量默认设置为32的提案。 PR更新: Radek的PR改变了标准列表T的编码方式，不再使用无缓冲复制。Keefe的PR涉及透明比较器，以避免额外工作。Igor的PR通过改变数据结构减少了缓存PG的内存占用。 性能优化: 讨论了OSD PG日志条目的点改变PR，以及关于分裂读IO的PR，这些">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-01-29T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Rados">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="分区自动缩放">
+<meta property="article:tag" content="空间放大">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2020-01-23 :: Ceph Performance Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2020-01-23 :: Ceph 性能会议&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +142,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2020-01-23 :: Ceph Performance Meeting</h1>
+        <h1 class="title">&#39;2020-01-23 :: Ceph 性能会议&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-01-29T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +176,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2020-01-23 :: Ceph Performance Meeting</h1>
+        <h1 class="post-card-title">'2020-01-23 :: Ceph 性能会议'</h1>
         <div class="post-meta">
             <time class="post-time" title="2020-01-30 00:00:00" datetime="2020-01-29T16:00:00.000Z"  itemprop="datePublished">2020-01-30</time>
 
@@ -185,28 +193,29 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
 <li><strong>PG自动缩放</strong>:
-上周会议后，关于PG自动缩放的几个提案已经提交，包括Nihad的提案，将PG数量默认设置为32。</li>
+会议讨论了PG自动缩放的提案，其中包括将PG数量默认设置为32的提案。</li>
 <li><strong>PR更新</strong>:
 Radek的PR改变了标准列表T的编码方式，不再使用无缓冲复制。Keefe的PR涉及透明比较器，以避免额外工作。Igor的PR通过改变数据结构减少了缓存PG的内存占用。</li>
-<li><strong>性能优化</strong>: 一个关于OSD
-PG日志条目的点改变PR，以及关于分裂读IO的PR，如果IO大小较大或NDB设备，理论上有助于性能提升。</li>
+<li><strong>性能优化</strong>: 讨论了OSD
+PG日志条目的点改变PR，以及关于分裂读IO的PR，这些可能有助于性能提升。</li>
 <li><strong>RGW过滤逻辑</strong>:
-Erica添加的RGW过滤逻辑已通过QA测试，但需要重新调整。</li>
+Erica添加的RGW过滤逻辑已通过QA测试，但需要调整。</li>
 <li><strong>空间放大问题</strong>:
-Igor讨论了blob空间放大问题，特别是在Octopus版本中，使用记录池时可能出现的问题。建议将最小分配大小设置为4k，但仍在考虑是否回退到16k或更大，以从性能角度考虑。</li>
+Igor讨论了blob空间放大问题，特别是使用记录池时可能出现的问题。建议将最小分配大小设置为4k，但仍在考虑调整。</li>
 </ul>
 <h4 id="讨论的主要议题">讨论的主要议题</h4>
 <ul>
 <li><strong>分配器行为</strong>:
 讨论了分配器在处理大IO请求时的行为，特别是是否应该返回连续的块或小的碎片。</li>
 <li><strong>最小分配大小</strong>:
-讨论了在不同设备和使用场景下，最小分配大小的最佳设置，特别是在SSD和HDD上的不同需求。</li>
+讨论了在不同设备和使用场景下，最小分配大小的最佳设置。</li>
 <li><strong>性能与空间利用的权衡</strong>:
-讨论了在性能和空间利用之间的权衡，特别是在处理小文件和大文件混合的场景下。</li>
+讨论了在性能和空间利用之间的权衡。</li>
 </ul>
 <h4 id="决定的事项">决定的事项</h4>
 <ul>
@@ -226,7 +235,7 @@ Igor将尝试调整分配器，看是否能改善大IO请求的处理。</li>
 <li><strong>空间放大问题研究</strong>:
 继续研究blob空间放大问题，并考虑是否需要调整最小分配大小设置。</li>
 </ul>
-<p>会议在讨论了多个技术细节和未来行动计划后结束，所有参与者将在下周继续跟进相关工作。</p>
+<p>会议重点讨论了Ceph的PG自动缩放、性能优化和空间放大问题，并制定了相应的后续行动计划。</p>
 
         </div>
 
@@ -257,6 +266,8 @@ Igor将尝试调整分配器，看是否能改善大IO请求的处理。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rados/" rel="tag">Rados</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%8C%BA%E8%87%AA%E5%8A%A8%E7%BC%A9%E6%94%BE/" rel="tag">分区自动缩放</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%A9%BA%E9%97%B4%E6%94%BE%E5%A4%A7/" rel="tag">空间放大</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -268,7 +279,7 @@ Igor将尝试调整分配器，看是否能改善大IO请求的处理。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/01/30/2020-01-23_-_-_Ceph_Performance_Meeting/&title=《2020-01-23 :: Ceph Performance Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/01/30/2020-01-23_-_-_Ceph_Performance_Meeting/&title=《'2020-01-23 :: Ceph 性能会议'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -278,7 +289,7 @@ Igor将尝试调整分配器，看是否能改善大IO请求的处理。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/01/30/2020-01-23_-_-_Ceph_Performance_Meeting/&title=《2020-01-23 :: Ceph Performance Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/01/30/2020-01-23_-_-_Ceph_Performance_Meeting/&title=《'2020-01-23 :: Ceph 性能会议'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -288,7 +299,7 @@ Igor将尝试调整分配器，看是否能改善大IO请求的处理。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2020-01-23 :: Ceph Performance Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/01/30/2020-01-23_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2020-01-23 :: Ceph 性能会议'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/01/30/2020-01-23_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -318,7 +329,7 @@ Igor将尝试调整分配器，看是否能改善大IO请求的处理。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2020/02/12/2020-Jan-23_-_-_Ceph_Tech_Talk_-_Ceph_for_Storing_MeerKAT_Radio_Telescope_Data/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2020-Jan-23 :: Ceph Tech Talk - Ceph for Storing MeerKAT Radio Telescope Data</h4>
+        <h4 class="title">  2020-Jan-23 :: Ceph Tech Talk - Ceph for Storing MeerKAT Radio Telescope Data  </h4>
       </a>
     </div>
   
@@ -327,7 +338,7 @@ Igor将尝试调整分配器，看是否能改善大IO请求的处理。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2020/01/30/2020-01-27_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2020-01-27 :: Ceph Orchestration Meeting</h4>
+        <h4 class="title"> 2020-01-27 :: Ceph Orchestration Meeting </h4>
       </a>
     </div>
   
@@ -427,7 +438,7 @@ Igor将尝试调整分配器，看是否能改善大IO请求的处理。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/01/30/2020-01-23_-_-_Ceph_Performance_Meeting/&title=《2020-01-23 :: Ceph Performance Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/01/30/2020-01-23_-_-_Ceph_Performance_Meeting/&title=《'2020-01-23 :: Ceph 性能会议'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -437,7 +448,7 @@ Igor将尝试调整分配器，看是否能改善大IO请求的处理。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/01/30/2020-01-23_-_-_Ceph_Performance_Meeting/&title=《2020-01-23 :: Ceph Performance Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/01/30/2020-01-23_-_-_Ceph_Performance_Meeting/&title=《'2020-01-23 :: Ceph 性能会议'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -447,7 +458,7 @@ Igor将尝试调整分配器，看是否能改善大IO请求的处理。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2020-01-23 :: Ceph Performance Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/01/30/2020-01-23_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2020-01-23 :: Ceph 性能会议'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/01/30/2020-01-23_-_-_Ceph_Performance_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

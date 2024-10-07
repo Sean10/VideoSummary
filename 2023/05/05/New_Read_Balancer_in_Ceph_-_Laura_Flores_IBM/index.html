@@ -14,23 +14,28 @@
     
     
     
-    <title>New Read Balancer in Ceph - Laura Flores, IBM | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 新读平衡器介绍 - Laura Flores, IBM | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Ceph 新重平衡器介绍 主讲人： Laura Flores, IBM 的 RADOS 工程师 时间： [具体时间] 地点： [具体地点] 参会人员： [参会人员名单] 会议内容总结：  重平衡的重要性：  在分布式存储系统如 Ceph 中，平衡写入和读取请求对于优化性能至关重要。 平衡写入确保数据快速存储和复制，而读取则确保数据快速访问和检索。  现有平衡器的局限：  现有">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,读平衡器,算法改进">
+    <meta name="description" content="[改进后的中文总结内容] Ceph 新读平衡器介绍会议由 IBM 的 RADOS 工程师 Laura Flores 主讲，主要讨论了 Ceph 分布式存储系统中新引入的读平衡器，旨在优化存储性能和读取效率。 会议要点：  读平衡的重要性：在分布式存储系统中，平衡读写请求对于优化性能至关重要。读平衡器专注于解决读取请求的不平衡问题，从而提高整体性能。 现有平衡器的局限：现有的容量平衡器主要处理写入请">
 <meta property="og:type" content="article">
-<meta property="og:title" content="New Read Balancer in Ceph - Laura Flores, IBM">
+<meta property="og:title" content="Ceph 新读平衡器介绍 - Laura Flores, IBM">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Ceph 新重平衡器介绍 主讲人： Laura Flores, IBM 的 RADOS 工程师 时间： [具体时间] 地点： [具体地点] 参会人员： [参会人员名单] 会议内容总结：  重平衡的重要性：  在分布式存储系统如 Ceph 中，平衡写入和读取请求对于优化性能至关重要。 平衡写入确保数据快速存储和复制，而读取则确保数据快速访问和检索。  现有平衡器的局限：  现有">
+<meta property="og:description" content="[改进后的中文总结内容] Ceph 新读平衡器介绍会议由 IBM 的 RADOS 工程师 Laura Flores 主讲，主要讨论了 Ceph 分布式存储系统中新引入的读平衡器，旨在优化存储性能和读取效率。 会议要点：  读平衡的重要性：在分布式存储系统中，平衡读写请求对于优化性能至关重要。读平衡器专注于解决读取请求的不平衡问题，从而提高整体性能。 现有平衡器的局限：现有的容量平衡器主要处理写入请">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="读平衡器">
+<meta property="article:tag" content="算法改进">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">New Read Balancer in Ceph - Laura Flores, IBM</div>
+        <div class="flex-col header-title ellipsis">Ceph 新读平衡器介绍 - Laura Flores, IBM</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">New Read Balancer in Ceph - Laura Flores, IBM</h1>
+        <h1 class="title">Ceph 新读平衡器介绍 - Laura Flores, IBM</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">New Read Balancer in Ceph - Laura Flores, IBM</h1>
+        <h1 class="post-card-title">Ceph 新读平衡器介绍 - Laura Flores, IBM</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
@@ -185,78 +183,35 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题：</strong> Ceph 新重平衡器介绍</p>
-<p><strong>主讲人：</strong> Laura Flores, IBM 的 RADOS 工程师</p>
-<p><strong>时间：</strong> [具体时间]</p>
-<p><strong>地点：</strong> [具体地点]</p>
-<p><strong>参会人员：</strong> [参会人员名单]</p>
-<p><strong>会议内容总结：</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>Ceph 新读平衡器介绍会议由 IBM 的 RADOS 工程师 Laura Flores
+主讲，主要讨论了 Ceph
+分布式存储系统中新引入的读平衡器，旨在优化存储性能和读取效率。</p>
+<p><strong>会议要点</strong>：</p>
 <ol type="1">
-<li><strong>重平衡的重要性：</strong>
-<ul>
-<li>在分布式存储系统如 Ceph
-中，平衡写入和读取请求对于优化性能至关重要。</li>
-<li>平衡写入确保数据快速存储和复制，而读取则确保数据快速访问和检索。</li>
-</ul></li>
-<li><strong>现有平衡器的局限：</strong>
-<ul>
-<li>现有的容量平衡器（fmap
-平衡器）主要处理写入请求，不处理读取请求。</li>
-<li>新引入的读取平衡器（read
-balancer）专注于解决读取请求的不平衡问题。</li>
-</ul></li>
-<li><strong>容量平衡与读取平衡的区别：</strong>
-<ul>
-<li>容量平衡是功能性需求，确保 Ceph 正常运行。</li>
-<li>读取平衡是性能需求，虽然不严格要求，但有助于系统整体性能提升。</li>
-<li>读取平衡操作成本低，仅涉及元数据操作，不涉及数据移动。</li>
-</ul></li>
-<li><strong>新重平衡器的特点：</strong>
-<ul>
-<li>仅适用于复制池（replicated pools）。</li>
-<li>假设所有设备同质（homogeneous），但未来版本将考虑异质系统（heterogeneous
-systems）。</li>
-</ul></li>
-<li><strong>新命令和工具：</strong>
-<ul>
-<li>引入新的 <code>ceph osd pool ls detail</code>
-命令，显示读取平衡分数（read balance score）。</li>
-<li>新增 <code>ceph osd pg upmap primary</code> 命令，用于重新分配 PG
-的主 OSD。</li>
-</ul></li>
-<li><strong>演示和测试：</strong>
-<ul>
-<li>演示了在 v-start 集群上使用新工具进行读取平衡的过程。</li>
-<li>提供了 GitHub 仓库链接，包含演示脚本和相关信息。</li>
-</ul></li>
-<li><strong>未来计划和改进：</strong>
-<ul>
-<li>计划将读取平衡器集成到 Ceph 的测试套件中。</li>
-<li>考虑将读取平衡器作为默认平衡器模块的一部分。</li>
-<li>未来版本将考虑设备大小和性能的异质性。</li>
-</ul></li>
-<li><strong>问答环节：</strong>
-<ul>
-<li>讨论了读取平衡器在不同版本 Ceph 中的适用性。</li>
-<li>探讨了读取平衡器与自动缩放器（auto scaler）的潜在冲突。</li>
-<li>讨论了网络延迟对读取平衡的影响。</li>
-</ul></li>
+<li><p><strong>读平衡的重要性</strong>：在分布式存储系统中，平衡读写请求对于优化性能至关重要。读平衡器专注于解决读取请求的不平衡问题，从而提高整体性能。</p></li>
+<li><p><strong>现有平衡器的局限</strong>：现有的容量平衡器主要处理写入请求，不处理读取请求，导致读取性能受限。</p></li>
+<li><p><strong>读平衡器的特点</strong>：适用于复制池，假设所有设备同质，操作成本低，仅涉及元数据操作，不涉及数据移动。</p></li>
+<li><p><strong>新命令和工具</strong>：引入了新的
+<code>ceph osd pool ls detail</code> 命令，显示读取平衡分数。新增
+<code>ceph osd pg upmap primary</code> 命令，用于重新分配 PG 的主
+OSD。</p></li>
+<li><p><strong>未来计划和改进</strong>：计划将读平衡器集成到 Ceph
+的测试套件中，作为默认平衡器模块的一部分。考虑将读平衡器扩展到异质系统。</p></li>
+<li><p><strong>问答环节</strong>：讨论了读平衡器在不同版本 Ceph
+中的适用性、与自动缩放器的潜在冲突，以及网络延迟对读取平衡的影响。</p></li>
 </ol>
-<p><strong>决定事项：</strong> -
-鼓励社区成员尝试新读取平衡器，并提供反馈。 - 计划将读取平衡器集成到 Ceph
-的默认平衡器模块中。</p>
-<p><strong>后续行动计划：</strong> -
-完善文档，详细说明新工具的使用方法和效果。 -
-进行性能测试，验证读取平衡器对集群性能的实际影响。 -
-持续改进读取平衡器，考虑设备异质性的处理。</p>
-<p><strong>联系方式：</strong> - Laura Flores 的邮箱：El Flores <a
-href="mailto:f-l-o-r-e-s@ibm.com"
-class="email">f-l-o-r-e-s@ibm.com</a></p>
-<p><strong>会议结束：</strong> -
-感谢所有参与者的提问和讨论，会议圆满结束。</p>
-<p>[会议纪要编写人：[你的名字]] [会议纪要审核人：[审核人名字]]
-[会议纪要日期：[编写日期]]</p>
+<p><strong>决定事项</strong>：</p>
+<ul>
+<li>鼓励社区成员尝试新读平衡器，并提供反馈。</li>
+<li>计划将读平衡器集成到 Ceph 的默认平衡器模块中。</li>
+</ul>
+<p><strong>后续行动计划</strong>：</p>
+<ul>
+<li>完善文档，详细说明新工具的使用方法和效果。</li>
+<li>进行性能测试，验证读平衡器对集群性能的实际影响。</li>
+<li>持续改进读平衡器，考虑设备异质性的处理。</li>
+</ul>
 
         </div>
 
@@ -287,6 +242,8 @@ class="email">f-l-o-r-e-s@ibm.com</a></p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%AE%97%E6%B3%95%E6%94%B9%E8%BF%9B/" rel="tag">算法改进</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%AF%BB%E5%B9%B3%E8%A1%A1%E5%99%A8/" rel="tag">读平衡器</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -298,7 +255,7 @@ class="email">f-l-o-r-e-s@ibm.com</a></p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/&title=《New Read Balancer in Ceph - Laura Flores, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/&title=《Ceph 新读平衡器介绍 - Laura Flores, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -308,7 +265,7 @@ class="email">f-l-o-r-e-s@ibm.com</a></p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/&title=《New Read Balancer in Ceph - Laura Flores, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/&title=《Ceph 新读平衡器介绍 - Laura Flores, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -318,7 +275,7 @@ class="email">f-l-o-r-e-s@ibm.com</a></p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《New Read Balancer in Ceph - Laura Flores, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 新读平衡器介绍 - Laura Flores, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -355,9 +312,9 @@ class="email">f-l-o-r-e-s@ibm.com</a></p>
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/05/Multi_Cluster_Ceph_at_Scale_-_Vasyl_Purchel_Workday/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Multi Cluster Ceph at Scale - Vasyl Purchel, Workday</h4>
+        <h4 class="title">  Optimizing Ceph IO for High Throughput Particle Physics Workflows  </h4>
       </a>
     </div>
   
@@ -457,7 +414,7 @@ class="email">f-l-o-r-e-s@ibm.com</a></p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/&title=《New Read Balancer in Ceph - Laura Flores, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/&title=《Ceph 新读平衡器介绍 - Laura Flores, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -467,7 +424,7 @@ class="email">f-l-o-r-e-s@ibm.com</a></p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/&title=《New Read Balancer in Ceph - Laura Flores, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/&title=《Ceph 新读平衡器介绍 - Laura Flores, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -477,7 +434,7 @@ class="email">f-l-o-r-e-s@ibm.com</a></p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《New Read Balancer in Ceph - Laura Flores, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 新读平衡器介绍 - Laura Flores, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

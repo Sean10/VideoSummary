@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Ceph分布式存储服务质量（QoS）策略讨论 会议时间： 2023年11月（具体日期未提及） 参会人员： Ray、Clark、Sam、Josh 等 会议内容： 一、QoS策略概述  会议首先讨论了Ceph分布式存储中的服务质量（QoS）策略，旨在为不同类型的存储请求提供差异化的服务质量。 当前Ceph的I&#x2F;O调度器采用公平共享调度器，但需要进一步优化以支持QoS策略。  二、">
+    <meta name="keywords" content="Ceph,Distributed Storage,RADOS,QoS,I/O Scheduler">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph分布式存储服务质量（QoS）策略讨论 会议时间： 2023年11月 参会人员： Ray、Clark、Sam、Josh等 会议内容： 一、QoS策略概述  会议讨论了Ceph分布式存储中的服务质量（QoS）策略，旨在为不同类型的存储请求提供差异化的服务质量。 当前Ceph的I&#x2F;O调度器采用公平共享调度器，但需要进一步优化以支持QoS策略。  二">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CDS Jewel -- RADOS QoS">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_RADOS_QoS/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Ceph分布式存储服务质量（QoS）策略讨论 会议时间： 2023年11月（具体日期未提及） 参会人员： Ray、Clark、Sam、Josh 等 会议内容： 一、QoS策略概述  会议首先讨论了Ceph分布式存储中的服务质量（QoS）策略，旨在为不同类型的存储请求提供差异化的服务质量。 当前Ceph的I&#x2F;O调度器采用公平共享调度器，但需要进一步优化以支持QoS策略。  二、">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph分布式存储服务质量（QoS）策略讨论 会议时间： 2023年11月 参会人员： Ray、Clark、Sam、Josh等 会议内容： 一、QoS策略概述  会议讨论了Ceph分布式存储中的服务质量（QoS）策略，旨在为不同类型的存储请求提供差异化的服务质量。 当前Ceph的I&#x2F;O调度器采用公平共享调度器，但需要进一步优化以支持QoS策略。  二">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-08-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="RADOS">
+<meta property="article:tag" content="QoS">
+<meta property="article:tag" content="I&#x2F;O Scheduler">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,33 +190,34 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议主题</strong>： Ceph分布式存储服务质量（QoS）策略讨论</p>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>参会人员</strong>： Ray、Clark、Sam、Josh 等</p>
+<p><strong>会议时间</strong>： 2023年11月</p>
+<p><strong>参会人员</strong>： Ray、Clark、Sam、Josh等</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>一、QoS策略概述</strong></p>
 <ul>
-<li>会议首先讨论了Ceph分布式存储中的服务质量（QoS）策略，旨在为不同类型的存储请求提供差异化的服务质量。</li>
+<li>会议讨论了Ceph分布式存储中的服务质量（QoS）策略，旨在为不同类型的存储请求提供差异化的服务质量。</li>
 <li>当前Ceph的I/O调度器采用公平共享调度器，但需要进一步优化以支持QoS策略。</li>
 </ul>
 <p><strong>二、QoS策略实现方案</strong></p>
 <ul>
 <li><strong>基于EM算法的I/O调度器优化</strong>：
 <ul>
-<li>通过引入EM算法，为客户端提供最小IOPS和最大IOPS的配置选项。</li>
+<li>引入EM算法，为客户端提供最小IOPS和最大IOPS的配置选项。</li>
 <li>当客户端的IOPS请求超过最大限制时，系统将进行限制。</li>
 <li>当最小IOPS得到保证时，超出部分将按照公平共享原则进行分配。</li>
 </ul></li>
 <li><strong>资源预留与容量控制</strong>：
 <ul>
-<li>需要引入资源预留机制，以确保高优先级客户端的IOPS需求得到满足。</li>
-<li>可以通过配置选项或管理工具来设置资源预留策略。</li>
+<li>引入资源预留机制，以确保高优先级客户端的IOPS需求得到满足。</li>
+<li>通过配置选项或管理工具设置资源预留策略。</li>
 </ul></li>
 <li><strong>性能自动检测</strong>：
 <ul>
-<li>需要引入性能自动检测机制，以实时评估存储集群的性能。</li>
-<li>可以通过辅助工具或自研代码进行性能测试。</li>
+<li>引入性能自动检测机制，实时评估存储集群的性能。</li>
+<li>通过辅助工具或自研代码进行性能测试。</li>
 </ul></li>
 </ul>
 <p><strong>三、相关讨论</strong></p>
@@ -245,8 +251,6 @@
 <li><strong>PG</strong>： Placement Group</li>
 <li><strong>RBD</strong>： RADOS Block Device</li>
 </ul>
-<p><strong>六、总结</strong></p>
-<p>本次会议讨论了Ceph分布式存储中的QoS策略，并提出了多种实现方案。后续将进行进一步的研究和开发，以提升Ceph存储系统的性能和可靠性。</p>
 
         </div>
 
@@ -277,6 +281,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/I-O-Scheduler/" rel="tag">I&#x2F;O Scheduler</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/QoS/" rel="tag">QoS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS/" rel="tag">RADOS</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -345,9 +351,9 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_RADOS_Tail_Latency_Improvements/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_RBD_Journal/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Jewel -- RADOS Tail Latency Improvements</h4>
+        <h4 class="title">CDS Jewel -- RBD Journal</h4>
       </a>
     </div>
   

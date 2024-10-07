@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph RGW Refactoring Meeting 2023-10-18 | ceph视频总结 | youtube频道总结</title>
+    <title>  Ceph RGW Refactoring Meeting 2023-10-18   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph数据日志设计讨论 与会人员：Adam、Casey、Matt等 会议时间：具体时间未提及 会议地点：未提及 会议内容总结：  设计讨论：  Adam介绍了关于数据日志的替代设计方案，主要思路是通过时间戳直接跟踪工作集，确保没有竞态条件，避免数据日志无限增长。 Casey指出该设计可能存在多目标区域的问题。建议将区域信息存储在数据同步映射中，由trim提供，而不是让目标区域">
+    <meta name="keywords" content="Ceph,RGW,Distributed Storage,Refactoring,Data Logging">
+    <meta name="description" content="[改进后的中文总结内容] 在2023年10月18日的Ceph RGW重构会议中，与会人员对数据日志的设计进行了深入讨论。以下是会议的关键要点： 会议主题：Ceph数据日志设计讨论 与会人员：Adam、Casey、Matt等 会议内容总结：  设计讨论：  Adam提出了一种新的数据日志设计方案，通过时间戳直接跟踪工作集，以避免竞态条件和数据日志无限增长。 Casey指出该设计可能存在多目标区域的问">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph RGW Refactoring Meeting 2023-10-18">
+<meta property="og:title" content="  Ceph RGW Refactoring Meeting 2023-10-18  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/10/18/Ceph_RGW_Refactoring_Meeting_2023-10-18/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph数据日志设计讨论 与会人员：Adam、Casey、Matt等 会议时间：具体时间未提及 会议地点：未提及 会议内容总结：  设计讨论：  Adam介绍了关于数据日志的替代设计方案，主要思路是通过时间戳直接跟踪工作集，确保没有竞态条件，避免数据日志无限增长。 Casey指出该设计可能存在多目标区域的问题。建议将区域信息存储在数据同步映射中，由trim提供，而不是让目标区域">
+<meta property="og:description" content="[改进后的中文总结内容] 在2023年10月18日的Ceph RGW重构会议中，与会人员对数据日志的设计进行了深入讨论。以下是会议的关键要点： 会议主题：Ceph数据日志设计讨论 与会人员：Adam、Casey、Matt等 会议内容总结：  设计讨论：  Adam提出了一种新的数据日志设计方案，通过时间戳直接跟踪工作集，以避免竞态条件和数据日志无限增长。 Casey指出该设计可能存在多目标区域的问">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-17T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-10-18T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Refactoring">
+<meta property="article:tag" content="Data Logging">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph RGW Refactoring Meeting 2023-10-18</div>
+        <div class="flex-col header-title ellipsis">  Ceph RGW Refactoring Meeting 2023-10-18  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph RGW Refactoring Meeting 2023-10-18</h1>
+        <h1 class="title">  Ceph RGW Refactoring Meeting 2023-10-18  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-10-17T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph%E6%95%B0%E6%8D%AE%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph数据日志设计讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8E%E4%BC%9A%E4%BA%BA%E5%91%98adamcaseymatt%E7%AD%89"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">与会人员：Adam、Casey、Matt等</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4%E6%9C%AA%E6%8F%90%E5%8F%8A"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：具体时间未提及</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E6%9C%AA%E6%8F%90%E5%8F%8A"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：未提及</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8B%E6%AC%A1%E4%BC%9A%E8%AE%AE%E9%A2%84%E5%91%8A"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">下次会议预告：</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_RGW_Refactoring_Meeting_2023-10-18"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph RGW Refactoring Meeting 2023-10-18</h1>
+        <h1 class="post-card-title">  Ceph RGW Refactoring Meeting 2023-10-18  </h1>
         <div class="post-meta">
             <time class="post-time" title="2023-10-18 00:00:00" datetime="2023-10-17T16:00:00.000Z"  itemprop="datePublished">2023-10-18</time>
 
@@ -185,24 +183,23 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4
-id="会议主题ceph数据日志设计讨论">会议主题：Ceph数据日志设计讨论</h4>
-<h4 id="与会人员adamcaseymatt等">与会人员：Adam、Casey、Matt等</h4>
-<h4 id="会议时间具体时间未提及">会议时间：具体时间未提及</h4>
-<h4 id="会议地点未提及">会议地点：未提及</h4>
-<h4 id="会议内容总结">会议内容总结：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>在2023年10月18日的Ceph
+RGW重构会议中，与会人员对数据日志的设计进行了深入讨论。以下是会议的关键要点：</p>
+<p><strong>会议主题</strong>：Ceph数据日志设计讨论</p>
+<p><strong>与会人员</strong>：Adam、Casey、Matt等</p>
+<p><strong>会议内容总结</strong>：</p>
 <ol type="1">
 <li><strong>设计讨论</strong>：
 <ul>
-<li>Adam介绍了关于数据日志的替代设计方案，主要思路是通过时间戳直接跟踪工作集，确保没有竞态条件，避免数据日志无限增长。</li>
-<li>Casey指出该设计可能存在多目标区域的问题。建议将区域信息存储在数据同步映射中，由trim提供，而不是让目标区域相互查询。</li>
+<li>Adam提出了一种新的数据日志设计方案，通过时间戳直接跟踪工作集，以避免竞态条件和数据日志无限增长。</li>
+<li>Casey指出该设计可能存在多目标区域的问题，建议将区域信息存储在数据同步映射中，由trim提供。</li>
 </ul></li>
 <li><strong>主要议题</strong>：
 <ul>
 <li><strong>数据日志的替代方案</strong>：讨论了使用omap来跟踪未同步的桶分片，而不是使用数据日志。</li>
-<li><strong>多目标区域的处理</strong>：讨论了如何处理多个目标区域，提出了两种方案：为每个目标区域跟踪一个独立的工作集，或者使用一个工作集来跟踪每个桶分片的未修剪区域。</li>
-<li><strong>优先级和排序问题</strong>：讨论了如何在目标区域中优先处理旧的变更，提出了在源区域进行排序的方案。</li>
+<li><strong>多目标区域的处理</strong>：讨论了如何处理多个目标区域，提出了两种方案。</li>
+<li><strong>优先级和排序问题</strong>：讨论了如何在目标区域中优先处理旧的变更。</li>
 </ul></li>
 <li><strong>决定事项</strong>：
 <ul>
@@ -220,17 +217,11 @@ id="会议主题ceph数据日志设计讨论">会议主题：Ceph数据日志设
 <li>讨论了rgw账户的设计，提出了一个设计方案，并邀请大家进行评审。</li>
 </ul></li>
 </ol>
-<h4 id="会议结论">会议结论：</h4>
-<ul>
-<li>会议对数据日志的替代设计方案进行了深入讨论，并提出了具体的实施步骤和后续行动计划。</li>
-<li>对于rgw账户的设计，提出了一个初步的设计方案，并邀请大家进行评审。</li>
-</ul>
-<h4 id="下次会议预告">下次会议预告：</h4>
-<ul>
-<li>未提及具体的下次会议时间，但预计将继续讨论相关设计细节和实施方案。</li>
-</ul>
-<hr />
-<p>以上是本次会议的纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
+<p><strong>会议结论</strong>： -
+会议对数据日志的替代设计方案进行了深入讨论，并提出了具体的实施步骤和后续行动计划。
+- 对于rgw账户的设计，提出了一个初步的设计方案，并邀请大家进行评审。</p>
+<p><strong>下次会议预告</strong>： -
+预计将继续讨论相关设计细节和实施方案。</p>
 
         </div>
 
@@ -261,6 +252,8 @@ id="会议主题ceph数据日志设计讨论">会议主题：Ceph数据日志设
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Data-Logging/" rel="tag">Data Logging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Refactoring/" rel="tag">Refactoring</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -272,7 +265,7 @@ id="会议主题ceph数据日志设计讨论">会议主题：Ceph数据日志设
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/10/18/Ceph_RGW_Refactoring_Meeting_2023-10-18/&title=《Ceph RGW Refactoring Meeting 2023-10-18》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/10/18/Ceph_RGW_Refactoring_Meeting_2023-10-18/&title=《  Ceph RGW Refactoring Meeting 2023-10-18  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -282,7 +275,7 @@ id="会议主题ceph数据日志设计讨论">会议主题：Ceph数据日志设
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/10/18/Ceph_RGW_Refactoring_Meeting_2023-10-18/&title=《Ceph RGW Refactoring Meeting 2023-10-18》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/10/18/Ceph_RGW_Refactoring_Meeting_2023-10-18/&title=《  Ceph RGW Refactoring Meeting 2023-10-18  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -292,7 +285,7 @@ id="会议主题ceph数据日志设计讨论">会议主题：Ceph数据日志设
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2023-10-18》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/10/18/Ceph_RGW_Refactoring_Meeting_2023-10-18/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph RGW Refactoring Meeting 2023-10-18  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/10/18/Ceph_RGW_Refactoring_Meeting_2023-10-18/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -331,7 +324,7 @@ id="会议主题ceph数据日志设计讨论">会议主题：Ceph数据日志设
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/10/11/Ceph_RGW_Refactoring_Meeting_2023-10-11/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2023-10-11</h4>
+        <h4 class="title">Ceph RGW重构会议 2023-10-11</h4>
       </a>
     </div>
   
@@ -431,7 +424,7 @@ id="会议主题ceph数据日志设计讨论">会议主题：Ceph数据日志设
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/10/18/Ceph_RGW_Refactoring_Meeting_2023-10-18/&title=《Ceph RGW Refactoring Meeting 2023-10-18》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/10/18/Ceph_RGW_Refactoring_Meeting_2023-10-18/&title=《  Ceph RGW Refactoring Meeting 2023-10-18  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -441,7 +434,7 @@ id="会议主题ceph数据日志设计讨论">会议主题：Ceph数据日志设
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/10/18/Ceph_RGW_Refactoring_Meeting_2023-10-18/&title=《Ceph RGW Refactoring Meeting 2023-10-18》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/10/18/Ceph_RGW_Refactoring_Meeting_2023-10-18/&title=《  Ceph RGW Refactoring Meeting 2023-10-18  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -451,7 +444,7 @@ id="会议主题ceph数据日志设计讨论">会议主题：Ceph数据日志设
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2023-10-18》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/10/18/Ceph_RGW_Refactoring_Meeting_2023-10-18/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph RGW Refactoring Meeting 2023-10-18  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/10/18/Ceph_RGW_Refactoring_Meeting_2023-10-18/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

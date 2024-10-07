@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2018-10-25 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 性能会议 2018-10-25 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议时间： 2023年11月某日 会议地点： 远程会议 参会人员： Brett、Radek、Neha、Adam、Jason、Sage、Nick、Josh、Matt、Eric 等 会议主题：  Ceph 项目进展及问题讨论 PR 审批及后续行动 Numa 架构优化 OMAP 性能测试 RocksDB 数据库优化  会议内容： 一、PR 审批及后续行动  Radek 的 PR： 讨论了 Radek 提">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,RocksDB,OMAP">
+    <meta name="description" content="[改进后的中文总结内容] 在 2018-10-25 举行的 Ceph 性能会议上，与会人员讨论了多个关键议题，包括 PR 审批、Numa 架构优化、OMAP 性能测试和 RocksDB 数据库优化。以下是对会议内容的详细总结： 一、PR 审批及后续行动  Radek 的 PR： 讨论了 Radek 提交的多个 PR，包括缓冲区历史工作、性能测试、数据依赖性分析等。会议决定将大型 PR 分解成更小的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2018-10-25">
+<meta property="og:title" content="Ceph 性能会议 2018-10-25">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/10/25/Ceph_Performance_Meeting_2018-10-25/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议时间： 2023年11月某日 会议地点： 远程会议 参会人员： Brett、Radek、Neha、Adam、Jason、Sage、Nick、Josh、Matt、Eric 等 会议主题：  Ceph 项目进展及问题讨论 PR 审批及后续行动 Numa 架构优化 OMAP 性能测试 RocksDB 数据库优化  会议内容： 一、PR 审批及后续行动  Radek 的 PR： 讨论了 Radek 提">
+<meta property="og:description" content="[改进后的中文总结内容] 在 2018-10-25 举行的 Ceph 性能会议上，与会人员讨论了多个关键议题，包括 PR 审批、Numa 架构优化、OMAP 性能测试和 RocksDB 数据库优化。以下是对会议内容的详细总结： 一、PR 审批及后续行动  Radek 的 PR： 讨论了 Radek 提交的多个 PR，包括缓冲区历史工作、性能测试、数据依赖性分析等。会议决定将大型 PR 分解成更小的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-10-24T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-10-25T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="OMAP">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2018-10-25</div>
+        <div class="flex-col header-title ellipsis">Ceph 性能会议 2018-10-25</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2018-10-25</h1>
+        <h1 class="title">Ceph 性能会议 2018-10-25</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-10-24T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2018-10-25</h1>
+        <h1 class="post-card-title">Ceph 性能会议 2018-10-25</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-10-25 00:00:00" datetime="2018-10-24T16:00:00.000Z"  itemprop="datePublished">2018-10-25</time>
 
@@ -178,24 +183,16 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议时间</strong>： 2023年11月某日</p>
-<p><strong>会议地点</strong>： 远程会议</p>
-<p><strong>参会人员</strong>：
-Brett、Radek、Neha、Adam、Jason、Sage、Nick、Josh、Matt、Eric 等</p>
-<p><strong>会议主题</strong>：</p>
-<ul>
-<li>Ceph 项目进展及问题讨论</li>
-<li>PR 审批及后续行动</li>
-<li>Numa 架构优化</li>
-<li>OMAP 性能测试</li>
-<li>RocksDB 数据库优化</li>
-</ul>
-<p><strong>会议内容</strong>：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>在 2018-10-25 举行的 Ceph
+性能会议上，与会人员讨论了多个关键议题，包括 PR 审批、Numa
+架构优化、OMAP 性能测试和 RocksDB
+数据库优化。以下是对会议内容的详细总结：</p>
 <p><strong>一、PR 审批及后续行动</strong></p>
 <ul>
 <li><strong>Radek 的 PR</strong>： 讨论了 Radek 提交的多个
 PR，包括缓冲区历史工作、性能测试、数据依赖性分析等。会议决定将大型 PR
-分解成更小的部分进行审查，并讨论了简化热点路径的复杂性的方案。</li>
+分解成更小的部分进行审查，并讨论了简化热点路径的复杂性方案。</li>
 <li><strong>其他 PR</strong>： 讨论了其他 PR 的进展，包括 gzip
 压缩、stack string stream、延迟延迟、OMAP 测试等。</li>
 <li><strong>遗留问题</strong>： 讨论了遗留问题的处理，包括
@@ -222,20 +219,21 @@ Numa 节点分布等。</li>
 </ul>
 <p><strong>五、其他</strong></p>
 <ul>
-<li>讨论了 Ratos Bench 的优化，以及是否将重点放在 OMAP 性能测试上。</li>
+<li>讨论了 Rados Bench 的优化，以及是否将重点放在 OMAP 性能测试上。</li>
 <li>讨论了 RocksDB 的 tombstones 问题。</li>
 </ul>
-<p><strong>行动计划</strong>：</p>
+<p><strong>行动计划</strong></p>
 <ul>
-<li>Radek：将大型 PR
-分解成更小的部分进行审查，并讨论简化热点路径的复杂性的方案。</li>
-<li>Neha 和 Adam：调查 stack string stream 中的崩溃问题。</li>
-<li>Sage：调查 clean PG set 仍然刷新的问题。</li>
-<li>Nick：调查 RocksDB 的 DB 大小设置问题，并尝试优化级别大小。</li>
-<li>Josh 和 Matt：讨论 OMAP 操作批处理的可能性。</li>
-<li>Eric：调查 RocksDB 的 tombstones 问题。</li>
+<li><strong>Radek</strong>：将大型 PR
+分解成更小的部分进行审查，并讨论简化热点路径的复杂性方案。</li>
+<li><strong>Neha 和 Adam</strong>：调查 stack string stream
+中的崩溃问题。</li>
+<li><strong>Sage</strong>：调查 clean PG set 仍然刷新的问题。</li>
+<li><strong>Nick</strong>：调查 RocksDB 的 DB
+大小设置问题，并尝试优化级别大小。</li>
+<li><strong>Josh 和 Matt</strong>：讨论 OMAP 操作批处理的可能性。</li>
+<li><strong>Eric</strong>：调查 RocksDB 的 tombstones 问题。</li>
 </ul>
-<p><strong>总结</strong>：</p>
 <p>本次会议讨论了 Ceph
 项目的多个重要议题，并制定了相应的行动计划。会议强调了 PR 审批、Numa
 架构优化、OMAP 性能测试和 RocksDB 数据库优化的重要性。</p>
@@ -269,6 +267,8 @@ Numa 节点分布等。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OMAP/" rel="tag">OMAP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -280,7 +280,7 @@ Numa 节点分布等。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/25/Ceph_Performance_Meeting_2018-10-25/&title=《Ceph Performance Meeting 2018-10-25》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/25/Ceph_Performance_Meeting_2018-10-25/&title=《Ceph 性能会议 2018-10-25》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -290,7 +290,7 @@ Numa 节点分布等。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/25/Ceph_Performance_Meeting_2018-10-25/&title=《Ceph Performance Meeting 2018-10-25》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/25/Ceph_Performance_Meeting_2018-10-25/&title=《Ceph 性能会议 2018-10-25》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -300,7 +300,7 @@ Numa 节点分布等。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2018-10-25》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/25/Ceph_Performance_Meeting_2018-10-25/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2018-10-25》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/25/Ceph_Performance_Meeting_2018-10-25/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -330,7 +330,7 @@ Numa 节点分布等。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2018/10/25/2018-09-25_-_-_Ceph_code_walk-through_-_-_ceph-objectstore-tool/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool</h4>
+        <h4 class="title">&#39;2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool&#39;</h4>
       </a>
     </div>
   
@@ -439,7 +439,7 @@ Numa 节点分布等。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/25/Ceph_Performance_Meeting_2018-10-25/&title=《Ceph Performance Meeting 2018-10-25》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/25/Ceph_Performance_Meeting_2018-10-25/&title=《Ceph 性能会议 2018-10-25》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -449,7 +449,7 @@ Numa 节点分布等。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/25/Ceph_Performance_Meeting_2018-10-25/&title=《Ceph Performance Meeting 2018-10-25》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/25/Ceph_Performance_Meeting_2018-10-25/&title=《Ceph 性能会议 2018-10-25》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -459,7 +459,7 @@ Numa 节点分布等。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2018-10-25》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/25/Ceph_Performance_Meeting_2018-10-25/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2018-10-25》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/25/Ceph_Performance_Meeting_2018-10-25/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

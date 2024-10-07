@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要  会议主题：介绍和讨论IBM的NVM设备在SETH中的部署，以及相关插件系统的开发。 参会人员：Martin Omar（IBM），会议主持人，及其他参与者。 主要讨论内容：  Martin介绍了他在IBM的工作，特别是关于NVMe存储设备（NVM）的项目。这些设备由IBM生产，具有在线压缩功能，逻辑块地址为22TB，但物理存储空间只有9.6TB。 详细解释了存储设备的使用模型，与VDO设">
+    <meta name="keywords" content="Ceph,Security,Storage Optimization,Plugin System,NVM">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了IBM的NVM设备在Ceph中的部署和插件系统的开发。以下是会议的关键点：  会议主题：介绍和讨论IBM的NVM设备在Ceph中的部署，以及相关插件系统的开发。 参会人员：Martin Omar（IBM），会议主持人，及其他参与者。 主要讨论内容：  Martin介绍了IBM在NVM存储设备项目上的工作，这些设备具有在线压缩功能，逻辑块地址为22TB，但">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph User + Dev Meeting 2022-05-04">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/05/05/Ceph_User_+_Dev_Meeting_2022-05-04/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要  会议主题：介绍和讨论IBM的NVM设备在SETH中的部署，以及相关插件系统的开发。 参会人员：Martin Omar（IBM），会议主持人，及其他参与者。 主要讨论内容：  Martin介绍了他在IBM的工作，特别是关于NVMe存储设备（NVM）的项目。这些设备由IBM生产，具有在线压缩功能，逻辑块地址为22TB，但物理存储空间只有9.6TB。 详细解释了存储设备的使用模型，与VDO设">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了IBM的NVM设备在Ceph中的部署和插件系统的开发。以下是会议的关键点：  会议主题：介绍和讨论IBM的NVM设备在Ceph中的部署，以及相关插件系统的开发。 参会人员：Martin Omar（IBM），会议主持人，及其他参与者。 主要讨论内容：  Martin介绍了IBM在NVM存储设备项目上的工作，这些设备具有在线压缩功能，逻辑块地址为22TB，但">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-05-05T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Security">
+<meta property="article:tag" content="Storage Optimization">
+<meta property="article:tag" content="Plugin System">
+<meta property="article:tag" content="NVM">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -142,7 +147,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93/">会议总结</a></li></ul>
 
             
         </h5>
@@ -166,7 +171,7 @@
             <time class="post-time" title="2022-05-05 00:00:00" datetime="2022-05-04T16:00:00.000Z"  itemprop="datePublished">2022-05-05</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93/">会议总结</a></li></ul>
 
 
 
@@ -178,38 +183,36 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了IBM的NVM设备在Ceph中的部署和插件系统的开发。以下是会议的关键点：</p>
 <ol type="1">
-<li><strong>会议主题</strong>：介绍和讨论IBM的NVM设备在SETH中的部署，以及相关插件系统的开发。</li>
-<li><strong>参会人员</strong>：Martin
-Omar（IBM），会议主持人，及其他参与者。</li>
-<li><strong>主要讨论内容</strong>：
+<li><p><strong>会议主题</strong>：介绍和讨论IBM的NVM设备在Ceph中的部署，以及相关插件系统的开发。</p></li>
+<li><p><strong>参会人员</strong>：Martin
+Omar（IBM），会议主持人，及其他参与者。</p></li>
+<li><p><strong>主要讨论内容</strong>：</p>
 <ul>
-<li>Martin介绍了他在IBM的工作，特别是关于NVMe存储设备（NVM）的项目。这些设备由IBM生产，具有在线压缩功能，逻辑块地址为22TB，但物理存储空间只有9.6TB。</li>
-<li>详细解释了存储设备的使用模型，与VDO设备类似，已得到SETH的支持。</li>
+<li>Martin介绍了IBM在NVM存储设备项目上的工作，这些设备具有在线压缩功能，逻辑块地址为22TB，但物理存储空间只有9.6TB。</li>
 <li>讨论了如何通过插件系统支持IBM
-NVM设备。Martin实验性地添加了一个基于Erasure
-Code插件系统的插件，并创建了一个新的插件系统“xblock_device”。</li>
-<li>介绍了新插件系统的架构，包括内核设备结构、插件注册、全局初始化等。</li>
-<li>对于安全问题，讨论了Linux的capability system和"keep caps"
-flag的使用，以确保插件在权限切换时的安全性。</li>
+NVM设备，并创建了一个名为“xblock_device”的新插件系统。</li>
+<li>新插件系统架构包括内核设备结构、插件注册和全局初始化。</li>
+<li>讨论了使用Linux的capability system和"keep caps"
+flag来确保插件在权限切换时的安全性。</li>
 </ul></li>
-<li><strong>技术细节</strong>：
+<li><p><strong>技术细节</strong>：</p>
 <ul>
-<li>创建了两个commit，一个包含插件系统和VDO设备的插件，另一个是特定于FCM设备的插件和必要的Linux配置调整。</li>
+<li>创建了两个commit，一个包含插件系统和VDO设备的插件，另一个是针对FCM设备的插件和必要的Linux配置调整。</li>
 <li>提出了对插件系统进行用户可配置的权限设置，以限制不必要的权限提升。</li>
 </ul></li>
-<li><strong>后续行动</strong>：
+<li><p><strong>后续行动</strong>：</p>
 <ul>
 <li>Martin将继续测试FCM设备的插件，并希望未来能开放接口以便部署在其他客户环境中。</li>
 <li>下一步是进行代码审查和添加更多的测试细节。</li>
 </ul></li>
-<li><strong>问题和反馈</strong>：
+<li><p><strong>问题和反馈</strong>：</p>
 <ul>
 <li>讨论中提出对安全模型和插件系统的改进建议，如更精细化的权限控制和自动化测试。</li>
-<li>确认了参会者对插件系统结构的理解和接受。</li>
 </ul></li>
-<li><strong>会议结论</strong>：
+<li><p><strong>会议结论</strong>：</p>
 <ul>
 <li>本次会议主要集中在IBM
 NVM设备的插件系统开发上，Martin提供了详细的技术介绍和演示，得到了积极的反馈。</li>
@@ -246,6 +249,8 @@ NVM设备的插件系统开发上，Martin提供了详细的技术介绍和演�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NVM/" rel="tag">NVM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Plugin-System/" rel="tag">Plugin System</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Security/" rel="tag">Security</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Optimization/" rel="tag">Storage Optimization</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -307,7 +312,7 @@ NVM设备的插件系统开发上，Martin提供了详细的技术介绍和演�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/05/06/Ceph_Tech_Talk_-_Telemetry_Dashboard/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Tech Talk: Telemetry Dashboard</h4>
+        <h4 class="title"> Ceph Tech Talk: Telemetry Dashboard </h4>
       </a>
     </div>
   

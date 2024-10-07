@@ -14,23 +14,28 @@
     
     
     
-    <title>Introducing Sibench: A New Open Source Benchmarking Tool Optimized for Ceph | ceph视频总结 | youtube频道总结</title>
+    <title>介绍 Sibench：为 Ceph 优化的新开源基准测试工具 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph 性能基准测试工具 Sidebench 的介绍与讨论 参会人员：Ceph 社区成员及研发人员 会议时间：[具体日期] 会议地点：[具体地点] 主要议题：  基准测试的挑战与痛点  基准测试过程中的复杂性和变量控制问题。 Ceph 的多接口和多工作负载特性增加了基准测试的难度。 工作负载对操作员的不透明性，以及 Ceph 后台任务对性能的影响。  Cosbench 的问题">
+    <meta name="keywords" content="分布式存储,Ceph基准测试,开源软件,性能分析,Sibench工具">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：介绍 Sibench：为 Ceph 优化的新开源基准测试工具 参会人员：Ceph 社区成员及研发人员 会议时间：[具体日期] 会议地点：[具体地点] 主要议题：  基准测试的挑战与痛点  指出基准测试过程中的复杂性和变量控制问题。 强调 Ceph 的多接口和多工作负载特性增加了基准测试的难度。 讨论工作负载对操作员的不透明性，以及 Ceph 后台任务对">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Introducing Sibench: A New Open Source Benchmarking Tool Optimized for Ceph">
+<meta property="og:title" content="介绍 Sibench：为 Ceph 优化的新开源基准测试工具">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/19/Introducing_Sibench_-_A_New_Open_Source_Benchmarking_Tool_Optimized_for_Ceph/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph 性能基准测试工具 Sidebench 的介绍与讨论 参会人员：Ceph 社区成员及研发人员 会议时间：[具体日期] 会议地点：[具体地点] 主要议题：  基准测试的挑战与痛点  基准测试过程中的复杂性和变量控制问题。 Ceph 的多接口和多工作负载特性增加了基准测试的难度。 工作负载对操作员的不透明性，以及 Ceph 后台任务对性能的影响。  Cosbench 的问题">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：介绍 Sibench：为 Ceph 优化的新开源基准测试工具 参会人员：Ceph 社区成员及研发人员 会议时间：[具体日期] 会议地点：[具体地点] 主要议题：  基准测试的挑战与痛点  指出基准测试过程中的复杂性和变量控制问题。 强调 Ceph 的多接口和多工作负载特性增加了基准测试的难度。 讨论工作负载对操作员的不透明性，以及 Ceph 后台任务对">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-18T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-19T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Ceph基准测试">
+<meta property="article:tag" content="开源软件">
+<meta property="article:tag" content="性能分析">
+<meta property="article:tag" content="Sibench工具">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Introducing Sibench: A New Open Source Benchmarking Tool Optimized for Ceph</div>
+        <div class="flex-col header-title ellipsis">介绍 Sibench：为 Ceph 优化的新开源基准测试工具</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Introducing Sibench: A New Open Source Benchmarking Tool Optimized for Ceph</h1>
+        <h1 class="title">介绍 Sibench：为 Ceph 优化的新开源基准测试工具</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-18T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,8 +164,8 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph-%E6%80%A7%E8%83%BD%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7-sidebench-%E7%9A%84%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph
-性能基准测试工具 Sidebench 的介绍与讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98ceph-%E7%A4%BE%E5%8C%BA%E6%88%90%E5%91%98%E5%8F%8A%E7%A0%94%E5%8F%91%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：Ceph
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E4%BB%8B%E7%BB%8D-sibench%E4%B8%BA-ceph-%E4%BC%98%E5%8C%96%E7%9A%84%E6%96%B0%E5%BC%80%E6%BA%90%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：介绍
+Sibench：为 Ceph 优化的新开源基准测试工具</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98ceph-%E7%A4%BE%E5%8C%BA%E6%88%90%E5%91%98%E5%8F%8A%E7%A0%94%E5%8F%91%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：Ceph
 社区成员及研发人员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">备注：</span></a></li></ol></li></ol>
         </nav>
     </aside>
@@ -170,7 +175,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Introducing Sibench: A New Open Source Benchmarking Tool Optimized for Ceph</h1>
+        <h1 class="post-card-title">介绍 Sibench：为 Ceph 优化的新开源基准测试工具</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-19 00:00:00" datetime="2023-05-18T16:00:00.000Z"  itemprop="datePublished">2023-05-19</time>
 
@@ -187,10 +192,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
-id="会议主题ceph-性能基准测试工具-sidebench-的介绍与讨论">会议主题：Ceph
-性能基准测试工具 Sidebench 的介绍与讨论</h4>
+id="会议主题介绍-sibench为-ceph-优化的新开源基准测试工具">会议主题：介绍
+Sibench：为 Ceph 优化的新开源基准测试工具</h4>
 <h4 id="参会人员ceph-社区成员及研发人员">参会人员：Ceph
 社区成员及研发人员</h4>
 <h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
@@ -199,13 +205,14 @@ id="会议主题ceph-性能基准测试工具-sidebench-的介绍与讨论">会�
 <ol type="1">
 <li><strong>基准测试的挑战与痛点</strong>
 <ul>
-<li>基准测试过程中的复杂性和变量控制问题。</li>
-<li>Ceph 的多接口和多工作负载特性增加了基准测试的难度。</li>
-<li>工作负载对操作员的不透明性，以及 Ceph 后台任务对性能的影响。</li>
+<li>指出基准测试过程中的复杂性和变量控制问题。</li>
+<li>强调 Ceph 的多接口和多工作负载特性增加了基准测试的难度。</li>
+<li>讨论工作负载对操作员的不透明性，以及 Ceph
+后台任务对性能的影响。</li>
 </ul></li>
 <li><strong>Cosbench 的问题与替代方案</strong>
 <ul>
-<li>Cosbench 的使用历史和存在的问题，如 Java Native Interface (JNI)
+<li>分析 Cosbench 的使用历史和存在的问题，如 Java Native Interface (JNI)
 的高开销、维护不足、架构脆弱等。</li>
 <li>介绍 Sidebench 作为 Cosbench
 的替代方案，强调其简单、轻量、易于调试和线性可扩展性。</li>
@@ -219,7 +226,8 @@ S3）、带宽限制、数据切片生成、读写混合测试等。</li>
 </ul></li>
 <li><strong>Sidebench 的架构与使用示例</strong>
 <ul>
-<li>Sidebench 包含一个守护进程和命令行工具，支持多节点分布式测试。</li>
+<li>介绍 Sidebench
+包含一个守护进程和命令行工具，支持多节点分布式测试。</li>
 <li>演示了如何使用 Sidebench 进行 RADOS 和 RBD 的基准测试，以及如何通过
 Benchmaster 进行多变量测试。</li>
 </ul></li>
@@ -249,9 +257,10 @@ target="_blank" rel="noopener" href="http://sidebench.io">sidebench.io</a> 和 G
 <li>会议中提到的 Benchmaster 是一个用于管理多基准测试的 Python
 工具，支持输出结果到 Google Sheets。</li>
 </ul>
-<hr />
-<p>本次会议详细讨论了 Ceph 基准测试工具的发展和优化，特别是 Sidebench
-的引入和未来规划，旨在提高 Ceph 性能测试的效率和准确性。</p>
+<p>本次会议详细讨论了为 Ceph 设计的基准测试工具 Sibench
+的引入和未来规划，旨在提高 Ceph 性能测试的效率和准确性。会议重点介绍了
+Sibench
+的设计目标、功能、架构以及使用方法，并讨论了其未来发展方向和社区参与的重要性。</p>
 
         </div>
 
@@ -282,6 +291,8 @@ target="_blank" rel="noopener" href="http://sidebench.io">sidebench.io</a> 和 G
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/" rel="tag">Ceph基准测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Sibench%E5%B7%A5%E5%85%B7/" rel="tag">Sibench工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/" rel="tag">开源软件</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/" rel="tag">性能分析</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -293,7 +304,7 @@ target="_blank" rel="noopener" href="http://sidebench.io">sidebench.io</a> 和 G
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/19/Introducing_Sibench_-_A_New_Open_Source_Benchmarking_Tool_Optimized_for_Ceph/&title=《Introducing Sibench: A New Open Source Benchmarking Tool Optimized for Ceph》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/19/Introducing_Sibench_-_A_New_Open_Source_Benchmarking_Tool_Optimized_for_Ceph/&title=《介绍 Sibench：为 Ceph 优化的新开源基准测试工具》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -303,7 +314,7 @@ target="_blank" rel="noopener" href="http://sidebench.io">sidebench.io</a> 和 G
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/19/Introducing_Sibench_-_A_New_Open_Source_Benchmarking_Tool_Optimized_for_Ceph/&title=《Introducing Sibench: A New Open Source Benchmarking Tool Optimized for Ceph》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/19/Introducing_Sibench_-_A_New_Open_Source_Benchmarking_Tool_Optimized_for_Ceph/&title=《介绍 Sibench：为 Ceph 优化的新开源基准测试工具》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -313,7 +324,7 @@ target="_blank" rel="noopener" href="http://sidebench.io">sidebench.io</a> 和 G
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Introducing Sibench: A New Open Source Benchmarking Tool Optimized for Ceph》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/19/Introducing_Sibench_-_A_New_Open_Source_Benchmarking_Tool_Optimized_for_Ceph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《介绍 Sibench：为 Ceph 优化的新开源基准测试工具》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/19/Introducing_Sibench_-_A_New_Open_Source_Benchmarking_Tool_Optimized_for_Ceph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -452,7 +463,7 @@ target="_blank" rel="noopener" href="http://sidebench.io">sidebench.io</a> 和 G
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/19/Introducing_Sibench_-_A_New_Open_Source_Benchmarking_Tool_Optimized_for_Ceph/&title=《Introducing Sibench: A New Open Source Benchmarking Tool Optimized for Ceph》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/19/Introducing_Sibench_-_A_New_Open_Source_Benchmarking_Tool_Optimized_for_Ceph/&title=《介绍 Sibench：为 Ceph 优化的新开源基准测试工具》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -462,7 +473,7 @@ target="_blank" rel="noopener" href="http://sidebench.io">sidebench.io</a> 和 G
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/19/Introducing_Sibench_-_A_New_Open_Source_Benchmarking_Tool_Optimized_for_Ceph/&title=《Introducing Sibench: A New Open Source Benchmarking Tool Optimized for Ceph》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/19/Introducing_Sibench_-_A_New_Open_Source_Benchmarking_Tool_Optimized_for_Ceph/&title=《介绍 Sibench：为 Ceph 优化的新开源基准测试工具》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -472,7 +483,7 @@ target="_blank" rel="noopener" href="http://sidebench.io">sidebench.io</a> 和 G
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Introducing Sibench: A New Open Source Benchmarking Tool Optimized for Ceph》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/19/Introducing_Sibench_-_A_New_Open_Source_Benchmarking_Tool_Optimized_for_Ceph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《介绍 Sibench：为 Ceph 优化的新开源基准测试工具》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/19/Introducing_Sibench_-_A_New_Open_Source_Benchmarking_Tool_Optimized_for_Ceph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

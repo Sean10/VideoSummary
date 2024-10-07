@@ -14,23 +14,29 @@
     
     
     
-    <title>Ceph Orchestrator Meeting 2022-04-05 | ceph视频总结 | youtube频道总结</title>
+    <title> Ceph Orchestrator Meeting 2022-04-05  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 主要议题  文档维护与更新  讨论了关于RGW和NFS的文档链接，建议将这些文档整合到一个统一的入口，以便更好地维护和更新。 提议创建一个通用的入口文档，避免重复内容，并考虑是否可以创建一个通用的图表来替代特定服务的图表。  多集群支持  讨论了在同一主机上运行多个Ceph集群的配置和管理问题，特别是关于配置文件和FSID的管理。 提出了一个解决方案，即将配置文件同时保存在默认位置和特定">
+    <meta name="keywords" content="Ceph,分布式存储,文档维护,多集群支持,集群命名,未来计划">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 主要议题  文档维护与更新  讨论了RGW和NFS的文档整合，建议创建一个通用入口文档，避免重复内容，并考虑创建通用图表。  多集群支持  讨论了在同一主机上运行多个Ceph集群的配置和管理问题，特别是配置文件和FSID的管理。 提出解决方案，即将配置文件保存在默认位置和特定FSID的目录下。  集群命名和系统单元文件  讨论了集群命名问题，特别是在系统单元文件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Orchestrator Meeting 2022-04-05">
+<meta property="og:title" content=" Ceph Orchestrator Meeting 2022-04-05 ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/04/05/Ceph_Orchestrator_Meeting_2022-04-05/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 主要议题  文档维护与更新  讨论了关于RGW和NFS的文档链接，建议将这些文档整合到一个统一的入口，以便更好地维护和更新。 提议创建一个通用的入口文档，避免重复内容，并考虑是否可以创建一个通用的图表来替代特定服务的图表。  多集群支持  讨论了在同一主机上运行多个Ceph集群的配置和管理问题，特别是关于配置文件和FSID的管理。 提出了一个解决方案，即将配置文件同时保存在默认位置和特定">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 主要议题  文档维护与更新  讨论了RGW和NFS的文档整合，建议创建一个通用入口文档，避免重复内容，并考虑创建通用图表。  多集群支持  讨论了在同一主机上运行多个Ceph集群的配置和管理问题，特别是配置文件和FSID的管理。 提出解决方案，即将配置文件保存在默认位置和特定FSID的目录下。  集群命名和系统单元文件  讨论了集群命名问题，特别是在系统单元文件">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-04-05T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="文档维护">
+<meta property="article:tag" content="多集群支持">
+<meta property="article:tag" content="集群命名">
+<meta property="article:tag" content="未来计划">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Orchestrator Meeting 2022-04-05</div>
+        <div class="flex-col header-title ellipsis"> Ceph Orchestrator Meeting 2022-04-05 </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Orchestrator Meeting 2022-04-05</h1>
+        <h1 class="title"> Ceph Orchestrator Meeting 2022-04-05 </h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-04-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -142,7 +148,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/Ceph%E6%8A%80%E6%9C%AF/">Ceph技术</a></li></ul></li></ul>
 
             
         </h5>
@@ -168,12 +174,12 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Orchestrator Meeting 2022-04-05</h1>
+        <h1 class="post-card-title"> Ceph Orchestrator Meeting 2022-04-05 </h1>
         <div class="post-meta">
             <time class="post-time" title="2022-04-05 00:00:00" datetime="2022-04-04T16:00:00.000Z"  itemprop="datePublished">2022-04-05</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/Ceph%E6%8A%80%E6%9C%AF/">Ceph技术</a></li></ul></li></ul>
 
 
 
@@ -185,52 +191,52 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>文档维护与更新</strong>
 <ul>
-<li>讨论了关于RGW和NFS的文档链接，建议将这些文档整合到一个统一的入口，以便更好地维护和更新。</li>
-<li>提议创建一个通用的入口文档，避免重复内容，并考虑是否可以创建一个通用的图表来替代特定服务的图表。</li>
+<li>讨论了RGW和NFS的文档整合，建议创建一个通用入口文档，避免重复内容，并考虑创建通用图表。</li>
 </ul></li>
 <li><strong>多集群支持</strong>
 <ul>
-<li>讨论了在同一主机上运行多个Ceph集群的配置和管理问题，特别是关于配置文件和FSID的管理。</li>
-<li>提出了一个解决方案，即将配置文件同时保存在默认位置和特定FSID的目录下，以简化多集群环境的管理。</li>
+<li>讨论了在同一主机上运行多个Ceph集群的配置和管理问题，特别是配置文件和FSID的管理。</li>
+<li>提出解决方案，即将配置文件保存在默认位置和特定FSID的目录下。</li>
 </ul></li>
 <li><strong>集群命名和系统单元文件</strong>
 <ul>
-<li>讨论了集群命名的问题，特别是关于集群名称在系统单元文件和路径中的使用。</li>
-<li>提出了需要进一步调查和测试，以确保不同名称的集群在采用过程中能够正确工作。</li>
+<li>讨论了集群命名问题，特别是在系统单元文件和路径中的使用。</li>
+<li>需要进一步调查和测试，以确保不同名称的集群能正确工作。</li>
 </ul></li>
 <li><strong>未来计划和行动项</strong>
 <ul>
-<li>讨论了即将到来的规划会议，提出了一些可能的改进点，如增强服务器循环的透明度、改进错误报告机制、优化升级历史记录等。</li>
-<li>讨论了代码重构和二进制文件管理的问题，以及如何更好地支持离线环境。</li>
+<li>讨论即将到来的规划会议，提出增强服务器循环透明度、改进错误报告机制、优化升级历史记录等改进点。</li>
+<li>讨论代码重构和二进制文件管理，以及支持离线环境。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>将RGW和NFS的文档整合到一个通用的入口文档中，避免重复内容。</li>
-<li>创建一个通用的图表来替代特定服务的图表，以简化文档维护。</li>
-<li>对于多集群支持，决定将配置文件同时保存在默认位置和特定FSID的目录下。</li>
-<li>对于集群命名问题，需要进一步调查和测试，以确保不同名称的集群在采用过程中能够正确工作。</li>
+<li>整合RGW和NFS文档到一个通用入口文档中。</li>
+<li>创建通用图表替代特定服务图表。</li>
+<li>多集群支持：配置文件保存在默认位置和特定FSID目录下。</li>
+<li>集群命名问题需进一步调查和测试。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>由团队成员或技术写手负责整合和更新文档。</li>
-<li>创建一个新的跟踪器来记录和跟踪多集群支持的改进工作。</li>
-<li>调查和测试集群命名和系统单元文件的问题，并在未来的规划会议中讨论。</li>
-<li>准备并参与即将到来的规划会议，提出改进建议和行动计划。</li>
+<li>整合和更新文档。</li>
+<li>创建跟踪器记录多集群支持改进。</li>
+<li>调查和测试集群命名问题。</li>
+<li>准备并参与规划会议。</li>
 </ul>
 <h4 id="其他讨论点">其他讨论点</h4>
 <ul>
-<li>讨论了容器注册表的管理和离线环境的支持，提出了一些初步的想法和建议。</li>
-<li>讨论了代码重构和二进制文件管理的问题，以及如何更好地支持离线环境。</li>
+<li>讨论容器注册表管理和离线环境支持。</li>
+<li>讨论代码重构和二进制文件管理。</li>
 </ul>
 <h4 id="会议结束">会议结束</h4>
 <ul>
-<li>会议在讨论了所有议题后结束，团队成员将在下一次规划会议中继续讨论和推进相关工作。</li>
+<li>所有议题讨论完毕，团队成员将在下次规划会议中继续讨论。</li>
 </ul>
 <hr />
 <p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
@@ -264,6 +270,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E9%9B%86%E7%BE%A4%E6%94%AF%E6%8C%81/" rel="tag">多集群支持</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E6%A1%A3%E7%BB%B4%E6%8A%A4/" rel="tag">文档维护</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%9C%AA%E6%9D%A5%E8%AE%A1%E5%88%92/" rel="tag">未来计划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%9B%86%E7%BE%A4%E5%91%BD%E5%90%8D/" rel="tag">集群命名</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -275,7 +283,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/05/Ceph_Orchestrator_Meeting_2022-04-05/&title=《Ceph Orchestrator Meeting 2022-04-05》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/05/Ceph_Orchestrator_Meeting_2022-04-05/&title=《 Ceph Orchestrator Meeting 2022-04-05 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -285,7 +293,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/05/Ceph_Orchestrator_Meeting_2022-04-05/&title=《Ceph Orchestrator Meeting 2022-04-05》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/05/Ceph_Orchestrator_Meeting_2022-04-05/&title=《 Ceph Orchestrator Meeting 2022-04-05 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -295,7 +303,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Orchestrator Meeting 2022-04-05》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/05/Ceph_Orchestrator_Meeting_2022-04-05/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph Orchestrator Meeting 2022-04-05 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/05/Ceph_Orchestrator_Meeting_2022-04-05/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -325,7 +333,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/04/07/Ceph_Performance_Meeting_2022-04-07/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2022-04-07</h4>
+        <h4 class="title">Ceph 性能会议 2022-04-07</h4>
       </a>
     </div>
   
@@ -334,7 +342,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/03/31/Ceph_Performance_Meeting_2022-03-31/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2022-03-31</h4>
+        <h4 class="title">Ceph性能会议2022-03-31</h4>
       </a>
     </div>
   
@@ -434,7 +442,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/05/Ceph_Orchestrator_Meeting_2022-04-05/&title=《Ceph Orchestrator Meeting 2022-04-05》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/05/Ceph_Orchestrator_Meeting_2022-04-05/&title=《 Ceph Orchestrator Meeting 2022-04-05 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -444,7 +452,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/05/Ceph_Orchestrator_Meeting_2022-04-05/&title=《Ceph Orchestrator Meeting 2022-04-05》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/05/Ceph_Orchestrator_Meeting_2022-04-05/&title=《 Ceph Orchestrator Meeting 2022-04-05 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -454,7 +462,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Orchestrator Meeting 2022-04-05》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/05/Ceph_Orchestrator_Meeting_2022-04-05/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph Orchestrator Meeting 2022-04-05 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/05/Ceph_Orchestrator_Meeting_2022-04-05/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

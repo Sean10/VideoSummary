@@ -14,23 +14,28 @@
     
     
     
-    <title>2019-06-19 :: Container Huddle - DeviceSet discussion | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2019-06-19 :: Container Huddle - DeviceSet discussion&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： 讨论PR3：06中存储类设备集的当前状态和设计 会议时间： 2023年11月（具体日期未知） 参会人员： 不详 会议内容： 一、会议背景  当前Ceph集群在动态环境中运行时，需要基于全局唯一标识符（GUB）来管理状态，这需要在Kubernetes中本地提供设备，并使用主机路径绑定存储，这种方式存在一些局限性。 为了解决这些问题，提出了存储类设备集的概念，它允许在Kubern">
+    <meta name="keywords" content="Ceph,Kubernetes,OSD,Storage Class Device Set,StatefulSet">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议的主题是讨论Ceph存储类设备集（Storage Class Device Set）的当前状态和设计。会议主要围绕以下几个方面展开： 一、会议背景  Ceph集群在动态环境中运行时，需要基于全局唯一标识符（GUB）来管理状态，这需要在Kubernetes中本地提供设备，并使用主机路径绑定存储，这种方式存在一些局限性。 为了解决这些问题，提出了存储类设备集的概念，它">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-06-19 :: Container Huddle - DeviceSet discussion">
+<meta property="og:title" content="&#39;2019-06-19 :: Container Huddle - DeviceSet discussion&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/06/19/2019-06-19_-_-_Container_Huddle_-_DeviceSet_discussion/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： 讨论PR3：06中存储类设备集的当前状态和设计 会议时间： 2023年11月（具体日期未知） 参会人员： 不详 会议内容： 一、会议背景  当前Ceph集群在动态环境中运行时，需要基于全局唯一标识符（GUB）来管理状态，这需要在Kubernetes中本地提供设备，并使用主机路径绑定存储，这种方式存在一些局限性。 为了解决这些问题，提出了存储类设备集的概念，它允许在Kubern">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议的主题是讨论Ceph存储类设备集（Storage Class Device Set）的当前状态和设计。会议主要围绕以下几个方面展开： 一、会议背景  Ceph集群在动态环境中运行时，需要基于全局唯一标识符（GUB）来管理状态，这需要在Kubernetes中本地提供设备，并使用主机路径绑定存储，这种方式存在一些局限性。 为了解决这些问题，提出了存储类设备集的概念，它">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-06-18T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-06-19T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="Storage Class Device Set">
+<meta property="article:tag" content="StatefulSet">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-06-19 :: Container Huddle - DeviceSet discussion</div>
+        <div class="flex-col header-title ellipsis">&#39;2019-06-19 :: Container Huddle - DeviceSet discussion&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-06-19 :: Container Huddle - DeviceSet discussion</h1>
+        <h1 class="title">&#39;2019-06-19 :: Container Huddle - DeviceSet discussion&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-06-18T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-2019-06-19_-_-_Container_Huddle_-_DeviceSet_discussion"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-06-19 :: Container Huddle - DeviceSet discussion</h1>
+        <h1 class="post-card-title">'2019-06-19 :: Container Huddle - DeviceSet discussion'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-06-19 00:00:00" datetime="2019-06-18T16:00:00.000Z"  itemprop="datePublished">2019-06-19</time>
 
@@ -185,15 +183,12 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题</strong>：
-讨论PR3：06中存储类设备集的当前状态和设计</p>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未知）</p>
-<p><strong>参会人员</strong>： 不详</p>
-<p><strong>会议内容</strong>：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议的主题是讨论Ceph存储类设备集（Storage Class Device
+Set）的当前状态和设计。会议主要围绕以下几个方面展开：</p>
 <p><strong>一、会议背景</strong></p>
 <ul>
-<li>当前Ceph集群在动态环境中运行时，需要基于全局唯一标识符（GUB）来管理状态，这需要在Kubernetes中本地提供设备，并使用主机路径绑定存储，这种方式存在一些局限性。</li>
+<li>Ceph集群在动态环境中运行时，需要基于全局唯一标识符（GUB）来管理状态，这需要在Kubernetes中本地提供设备，并使用主机路径绑定存储，这种方式存在一些局限性。</li>
 <li>为了解决这些问题，提出了存储类设备集的概念，它允许在Kubernetes中动态地创建存储设备，并使用PVC来管理这些设备。</li>
 </ul>
 <p><strong>二、主要议题</strong></p>
@@ -244,7 +239,6 @@ ID。</li>
 Beck的概念，并探讨了如何将其用于存储类设备集的实现。</li>
 <li>讨论了使用PVC进行设备放置时的限制，例如无法使用亲和性策略。</li>
 </ul>
-<p><strong>总结</strong>：</p>
 <p>本次会议讨论了存储类设备集的设计和实现，并确定了后续行动计划。该设计旨在解决Ceph集群在动态环境中运行时存在的问题，并提高存储管理的灵活性和可扩展性。</p>
 
         </div>
@@ -276,6 +270,8 @@ Beck的概念，并探讨了如何将其用于存储类设备集的实现。</li
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/StatefulSet/" rel="tag">StatefulSet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Class-Device-Set/" rel="tag">Storage Class Device Set</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -287,7 +283,7 @@ Beck的概念，并探讨了如何将其用于存储类设备集的实现。</li
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/06/19/2019-06-19_-_-_Container_Huddle_-_DeviceSet_discussion/&title=《2019-06-19 :: Container Huddle - DeviceSet discussion》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/06/19/2019-06-19_-_-_Container_Huddle_-_DeviceSet_discussion/&title=《'2019-06-19 :: Container Huddle - DeviceSet discussion'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -297,7 +293,7 @@ Beck的概念，并探讨了如何将其用于存储类设备集的实现。</li
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/06/19/2019-06-19_-_-_Container_Huddle_-_DeviceSet_discussion/&title=《2019-06-19 :: Container Huddle - DeviceSet discussion》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/06/19/2019-06-19_-_-_Container_Huddle_-_DeviceSet_discussion/&title=《'2019-06-19 :: Container Huddle - DeviceSet discussion'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -307,7 +303,7 @@ Beck的概念，并探讨了如何将其用于存储类设备集的实现。</li
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-06-19 :: Container Huddle - DeviceSet discussion》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/06/19/2019-06-19_-_-_Container_Huddle_-_DeviceSet_discussion/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-06-19 :: Container Huddle - DeviceSet discussion'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/06/19/2019-06-19_-_-_Container_Huddle_-_DeviceSet_discussion/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -337,7 +333,7 @@ Beck的概念，并探讨了如何将其用于存储类设备集的实现。</li
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2019/06/19/2019-06-19_-_-_Ceph_Orchestration_meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-06-19 :: Ceph Orchestration meeting</h4>
+        <h4 class="title">&#39;2019-06-19 :: Ceph Orchestration meeting&#39;</h4>
       </a>
     </div>
   
@@ -346,7 +342,7 @@ Beck的概念，并探讨了如何将其用于存储类设备集的实现。</li
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2019/06/19/2019-06-19_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-06-19 :: Crimson SeaStor OSD Weekly Meeting</h4>
+        <h4 class="title">&#39;2019-06-19 :: Crimson SeaStor OSD Weekly Meeting&#39;</h4>
       </a>
     </div>
   
@@ -446,7 +442,7 @@ Beck的概念，并探讨了如何将其用于存储类设备集的实现。</li
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/06/19/2019-06-19_-_-_Container_Huddle_-_DeviceSet_discussion/&title=《2019-06-19 :: Container Huddle - DeviceSet discussion》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/06/19/2019-06-19_-_-_Container_Huddle_-_DeviceSet_discussion/&title=《'2019-06-19 :: Container Huddle - DeviceSet discussion'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -456,7 +452,7 @@ Beck的概念，并探讨了如何将其用于存储类设备集的实现。</li
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/06/19/2019-06-19_-_-_Container_Huddle_-_DeviceSet_discussion/&title=《2019-06-19 :: Container Huddle - DeviceSet discussion》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/06/19/2019-06-19_-_-_Container_Huddle_-_DeviceSet_discussion/&title=《'2019-06-19 :: Container Huddle - DeviceSet discussion'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -466,7 +462,7 @@ Beck的概念，并探讨了如何将其用于存储类设备集的实现。</li
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-06-19 :: Container Huddle - DeviceSet discussion》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/06/19/2019-06-19_-_-_Container_Huddle_-_DeviceSet_discussion/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-06-19 :: Container Huddle - DeviceSet discussion'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/06/19/2019-06-19_-_-_Container_Huddle_-_DeviceSet_discussion/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

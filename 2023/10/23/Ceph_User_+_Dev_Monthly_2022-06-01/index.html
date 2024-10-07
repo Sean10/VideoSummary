@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph分布式存储系统的优化与管理 主讲人：Joshua Bergen &amp; Pedro 会议时间：[具体日期] 会议地点：在线会议  主要内容：  Joshua Bergen的演讲：PG Remapper工具介绍  背景介绍：Joshua Bergen是DigitalOcean的Fleet Storage团队的技术负责人，介绍了他们开发的PG Remapper工具，该工">
+    <meta name="keywords" content="Ceph,分布式存储,Ceph Dashboard,算法,PG Remapper">
+    <meta name="description" content="[改进后的中文总结内容] 本次Ceph用户及开发者月度会议主要围绕Ceph分布式存储系统的优化与管理展开，由Joshua Bergen和Pedro两位专家分享了他们的研究成果和实践经验。 主要内容包括：  Joshua Bergen的演讲：PG Remapper工具介绍  Joshua Bergen介绍了他们开发的PG Remapper工具，该工具旨在解决Ceph集群中回填（backfill）相关">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph User + Dev Monthly 2022-06-01">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/10/23/Ceph_User_+_Dev_Monthly_2022-06-01/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph分布式存储系统的优化与管理 主讲人：Joshua Bergen &amp; Pedro 会议时间：[具体日期] 会议地点：在线会议  主要内容：  Joshua Bergen的演讲：PG Remapper工具介绍  背景介绍：Joshua Bergen是DigitalOcean的Fleet Storage团队的技术负责人，介绍了他们开发的PG Remapper工具，该工">
+<meta property="og:description" content="[改进后的中文总结内容] 本次Ceph用户及开发者月度会议主要围绕Ceph分布式存储系统的优化与管理展开，由Joshua Bergen和Pedro两位专家分享了他们的研究成果和实践经验。 主要内容包括：  Joshua Bergen的演讲：PG Remapper工具介绍  Joshua Bergen介绍了他们开发的PG Remapper工具，该工具旨在解决Ceph集群中回填（backfill）相关">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-10-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Ceph Dashboard">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="PG Remapper">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,14 +161,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BC%98%E5%8C%96%E4%B8%8E%E7%AE%A1%E7%90%86"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph分布式存储系统的优化与管理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAjoshua-bergen-pedro"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：Joshua Bergen &amp;
-Pedro</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%9C%A8%E7%BA%BF%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：在线会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">主要内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E4%B8%8E%E5%8F%8D%E9%A6%88"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">讨论与反馈：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议总结：</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_User_+_Dev_Monthly_2022-06-01"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -186,51 +183,40 @@ Pedro</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-t
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4
-id="会议主题ceph分布式存储系统的优化与管理">会议主题：Ceph分布式存储系统的优化与管理</h4>
-<h4 id="主讲人joshua-bergen-pedro">主讲人：Joshua Bergen &amp;
-Pedro</h4>
-<h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
-<h4 id="会议地点在线会议">会议地点：在线会议</h4>
-<hr />
-<h4 id="主要内容">主要内容：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次Ceph用户及开发者月度会议主要围绕Ceph分布式存储系统的优化与管理展开，由Joshua
+Bergen和Pedro两位专家分享了他们的研究成果和实践经验。</p>
+<p><strong>主要内容包括</strong>：</p>
 <ol type="1">
 <li><strong>Joshua Bergen的演讲：PG Remapper工具介绍</strong>
 <ul>
-<li><strong>背景介绍</strong>：Joshua Bergen是DigitalOcean的Fleet
-Storage团队的技术负责人，介绍了他们开发的PG
-Remapper工具，该工具旨在解决Ceph内部与回填（backfill）相关的问题。</li>
-<li><strong>问题描述</strong>：详细讨论了在Ceph集群中添加新主机时遇到的回填并发问题，包括回填源过载、等待恢复、降级回填等问题。</li>
-<li><strong>解决方案</strong>：PG
-Remapper通过控制upmap异常表来管理回填，提供了诸如drain、cancel
+<li>Joshua Bergen介绍了他们开发的PG
+Remapper工具，该工具旨在解决Ceph集群中回填（backfill）相关的问题，如回填并发、源过载、等待恢复和降级回填等。</li>
+<li>PG Remapper通过控制upmap异常表来管理回填，提供了诸如drain、cancel
 backfill、undo upmaps等命令，以优化回填过程，避免降级状态。</li>
-<li><strong>未来展望</strong>：提出了一些改进Ceph代码库的建议，如改进回填并发管理、增加回填源的预订机制等。</li>
+<li>提出了改进Ceph代码库的建议，如改进回填并发管理、增加回填源的预订机制等。</li>
 </ul></li>
 <li><strong>Pedro的演讲：Ceph Dashboard的新功能</strong>
 <ul>
-<li><strong>功能介绍</strong>：Pedro展示了Ceph
+<li>Pedro展示了Ceph
 Dashboard中新增的文件系统、卷组和子卷管理功能，包括创建、编辑和删除操作。</li>
-<li><strong>操作演示</strong>：详细演示了如何在Dashboard中进行文件系统、子卷和子卷组的管理，以及如何处理快照。</li>
-<li><strong>未来计划</strong>：计划增加快照的创建、编辑和删除功能，以及改进快照的列表显示，同时考虑实现镜像管理功能。</li>
+<li>详细演示了如何在Dashboard中进行文件系统、子卷和子卷组的管理，以及如何处理快照。</li>
+<li>计划增加快照的创建、编辑和删除功能，以及改进快照的列表显示，同时考虑实现镜像管理功能。</li>
 </ul></li>
 </ol>
-<h4 id="讨论与反馈">讨论与反馈：</h4>
+<p><strong>讨论与反馈</strong>：</p>
 <ul>
-<li><strong>PG Remapper的使用与集成</strong>：讨论了PG
-Remapper与Ceph内部平衡器（balancer）的集成问题，以及如何避免在回填过程中出现OSD过载的情况。</li>
-<li><strong>Ceph版本更新与支持</strong>：提到了Ceph的版本更新计划，包括即将发布的17.2.7版本和后续的18.2.1及16.2.15版本，并呼吁社区成员对Pacific版本的PR进行关注和测试。</li>
+<li>讨论了PG
+Remapper与Ceph内部平衡器的集成问题，以及如何避免在回填过程中出现OSD过载的情况。</li>
+<li>提到了Ceph的版本更新计划，包括即将发布的17.2.7版本和后续的18.2.1及16.2.15版本，并呼吁社区成员对Pacific版本的PR进行关注和测试。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划：</h4>
+<p><strong>后续行动计划</strong>：</p>
 <ul>
-<li><strong>社区参与</strong>：鼓励社区成员在Ceph的Upstream
+<li>鼓励社区成员在Ceph的Upstream
 Slack频道和用户邮件列表中提供反馈和讨论。</li>
-<li><strong>版本更新跟踪</strong>：建议社区成员关注并参与即将发布的Ceph版本的测试和PR审核。</li>
+<li>建议社区成员关注并参与即将发布的Ceph版本的测试和PR审核。</li>
 </ul>
-<h4 id="会议总结">会议总结：</h4>
-<p>本次会议通过两位专家的详细介绍和演示，展示了Ceph在存储管理和优化方面的新工具和新功能，同时也强调了社区参与和版本更新的重要性。感谢所有参与者的积极讨论和反馈，期待未来更多的技术分享和社区合作。</p>
-<hr />
-<p><strong>备注</strong>：以上内容为会议纪要，详细的技术细节和操作步骤请参考会议录像和相关文档。</p>
+<p>本次会议通过两位专家的详细介绍和演示，展示了Ceph在存储管理和优化方面的新工具和新功能，同时也强调了社区参与和版本更新的重要性。</p>
 
         </div>
 
@@ -261,6 +247,8 @@ Slack频道和用户邮件列表中提供反馈和讨论。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Dashboard/" rel="tag">Ceph Dashboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PG-Remapper/" rel="tag">PG Remapper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -320,9 +308,9 @@ Slack频道和用户邮件列表中提供反馈和讨论。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/11/20/Ceph_RGW_Refactoring_Meeting_2023-11-15/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/10/27/CDS_G_H_Day_1_-_RBD_review/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2023-11-15</h4>
+        <h4 class="title">CDS G/H (Day 1) - RBD review</h4>
       </a>
     </div>
   
@@ -331,7 +319,7 @@ Slack频道和用户邮件列表中提供反馈和讨论。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/10/18/Ceph_RGW_Refactoring_Meeting_2023-10-18/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2023-10-18</h4>
+        <h4 class="title">  Ceph RGW Refactoring Meeting 2023-10-18  </h4>
       </a>
     </div>
   

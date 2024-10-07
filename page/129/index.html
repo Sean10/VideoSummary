@@ -150,11 +150,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_2_-_RGW_-_bucket_index_scalability"
+            <article id="post-CDS_Hammer_Day_2_-_OSD_-_Add_Flexible_Cache_Control_of_Object_Data"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-06-26 00:00:00" datetime="2014-06-25T16:00:00.000Z"  itemprop="datePublished">2014-06-26</time>
+        <time class="post-time" title="2014-10-30 00:00:00" datetime="2014-10-29T16:00:00.000Z"  itemprop="datePublished">2014-10-30</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -168,7 +168,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_RGW_-_bucket_index_scalability/">CDS G/H (Day 2) - RGW: bucket index scalability</a>
+      <a class="post-title-link" href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_OSD_-_Add_Flexible_Cache_Control_of_Object_Data/">  CDS Hammer (Day 2) - OSD: Add Flexible Cache Control of Object Data  </a>
     </h3>
   
 
@@ -178,25 +178,25 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要：
-会议主题：
-Ceph分布式存储系统中的桶索引可扩展性问题讨论
-会议时间： 未知
-参会人员：
-Duong（负责桶索引可扩展性的研发人员）、Federer（主持人）、Teddy（负责Ceph集群运维）、Josh、Yahoo（其他研发人员）
+        [改进后的中文总结内容]
+会议主题为在 Ceph 的 OSD（Object
+StorageDaemon）中添加灵活的缓存控制对象数据的提案讨论。以下是会议内容的详细总结：
 会议内容：
-一、桶索引可扩展性问题
 
-问题概述：
-
-现有的桶索引实现存在可扩展性问题，主要体现在以下两方面：
-
-单个桶索引对象的处理能力有限，只能...
+提案概述： 项目成员 J 提出了一个基于 SES
+之前提案的框架，旨在通过将客户端的指示转换为 OSD，来更好地控制 OSD
+的操作，特别是针对具有特殊对齐能力和特定对象大小要求的操作。该框架可以实现以下四个...
     
 
-        <a href="/VideoSummary/2014/06/26/CDS_G_H_Day_2_-_RGW_-_bucket_index_scalability/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_OSD_-_Add_Flexible_Cache_Control_of_Object_Data/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cache-Control/" rel="tag">Cache Control</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/IO-Hints/" rel="tag">IO Hints</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Object-Data/" rel="tag">Object Data</a></li></ul>
+
     </div>
     
 </article>
@@ -204,11 +204,11 @@ Duong（负责桶索引可扩展性的研发人员）、Federer（主持人）�
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_CI_Teuthology_Roadmap"
+            <article id="post-CDS_Hammer_Day_2_-_OSD_-_Scrub_SnapTrim_IO_Prioritization"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
+        <time class="post-time" title="2014-10-30 00:00:00" datetime="2014-10-29T16:00:00.000Z"  itemprop="datePublished">2014-10-30</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -222,7 +222,7 @@ Duong（负责桶索引可扩展性的研发人员）、Federer（主持人）�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_CI_Teuthology_Roadmap/">CDS G/H (Day 1) - CI &amp; Teuthology Roadmap</a>
+      <a class="post-title-link" href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_OSD_-_Scrub_SnapTrim_IO_Prioritization/">&#39;CDS Hammer (Day 2) - OSD: Scrub / SnapTrim IO Prioritization&#39;</a>
     </h3>
   
 
@@ -232,21 +232,28 @@ Duong（负责桶索引可扩展性的研发人员）、Federer（主持人）�
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-会议主题： Ceph CI和Tutorials路线图讨论
-参会人员： Sage, Zach, Alfredo, L, Greg, Luis等
+        [改进后的中文总结内容]
+会议纪要
+会议时间：[请填写会议时间]
+参会人员：Samuel（主讲人），其他研发人员
+会议主题：分布式存储Ceph的 scrub 和 snap trim IO优先级优化
 会议内容：
-1. Toothology路线图
 
-Zach介绍了Toothology的最新进展，包括：
+背景介绍：
 
-将Toothology任务从框架工作中分离出来，以便更好地扩展和维护。
-将队列和锁定机制迁移到一个新的服务Paddles，并使用Bito作...
+Ceph中的所有操作都在线程池中执行，但不同线程池之间的相对优先级由操作系统决定，这可能导致不理想的优先级分配。
+为了优化IO优先级，提议将所有可能的IO操作整合到一个...
     
 
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_CI_Teuthology_Roadmap/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_OSD_-_Scrub_SnapTrim_IO_Prioritization/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/IO-Prioritization/" rel="tag">IO Prioritization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scrub/" rel="tag">Scrub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SnapTrim/" rel="tag">SnapTrim</a></li></ul>
+
     </div>
     
 </article>
@@ -254,11 +261,11 @@ Zach介绍了Toothology的最新进展，包括：
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_Calamari_Development"
+            <article id="post-CDS_Hammer_Day_2_-_OSD_-_Update_Transaction_Encoding"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
+        <time class="post-time" title="2014-10-30 00:00:00" datetime="2014-10-29T16:00:00.000Z"  itemprop="datePublished">2014-10-30</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -272,7 +279,7 @@ Zach介绍了Toothology的最新进展，包括：
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Calamari_Development/">CDS G/H (Day 1) - Calamari Development</a>
+      <a class="post-title-link" href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_OSD_-_Update_Transaction_Encoding/">  CDS Hammer (Day 2) - OSD: Update Transaction Encoding  </a>
     </h3>
   
 
@@ -282,187 +289,32 @@ Zach介绍了Toothology的最新进展，包括：
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-会议主题： Calamari 开发讨论
-会议时间： 2023年11月（具体日期未提及）
-参会人员： John Gregor, Sage, Patrick等
-会议内容：
-一、Calamari 开发计划
-
-Crush 管理功能：
-
-高优先级功能，即将加入 Calamari REST API。
-目的：支持 Erasure Code 池和 Cache Tiering 等特性。
-主要工作：
-...
-    
-
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Calamari_Development/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_CMake_Update"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_CMake_Update/">CDS G/H (Day 1) - CMake Update</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： Ceph 项目中 CMake 更新及 CI 技术讨论
-会议时间： 2023年11月（具体日期未提及）
-参会人员： Matt Benjamin, Ilya Dryomov, Adam
-Emerson, Luis, Luke, Dan（可能还有其他未提及的人员）
-会议内容：
-一、CMake 更新
-
-项目背景：
-为了提高构建速度，特别是多核机器上的构建速度，项目组开始将构建系...
-    
-
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_CMake_Update/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_Erasure_Coding_Update"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Erasure_Coding_Update/">CDS G/H (Day 1) - Erasure Coding Update</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间：
-（未提及具体时间）
-会议地点：
-（未提及具体地点）
-参会人员：
-
-（未提及具体姓名）
-Veronica（负责Google Summer of Code项目及相关工作）
-L（负责Erasure Coding插件优化）
-Andreas（负责Isa插件原型）
-
-会议主题：
-
-Erasure Coding插件优化
-
-初始问题：Erasure
-Coding的初始代码支持方式较为奇...
-    
-
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Erasure_Coding_Update/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_Cold_Storage_Pools"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/">CDS G/H (Day 1) - Cold Storage Pools</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： 冷存储池讨论
-参会人员： Roger Weeks（HGST），Samuel
-Saguy，以及其他未具名参与者
+        [改进后的中文总结内容]
+会议纪要
+会议主题： OSD事务编码更新
+会议时间： [请填写会议时间]
+参会人员： [请填写参会人员名单]
 会议内容：
 
-背景：
+背景介绍：
 
-讨论如何实现一个存储池，其中的数据可以被写入且几乎不会进行重平衡或重写，或者重写非常不频繁。
-旨在为冷存储提供解决方案，即介于磁带和活跃访问数据之间的存储层。
-目标是提高数据访问速度，同时减少数据移动和存储成本。
+会议重点讨论了OSD事务编码的更新，旨在提高编码和解码效率，并简化现有后端存储。此更新的动机来自于改进文件存储系统，但现有的事务结构难以实现。
 
 主要议题：
 
-如何实现...
+优化编码和解码：
+通过避免重复指定相同的集合和对象，并使用单一调用获取...
     
 
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_OSD_-_Update_Transaction_Encoding/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BA%8B%E5%8A%A1%E7%BC%96%E7%A0%81/" rel="tag">事务编码</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/" rel="tag">数据库优化</a></li></ul>
+
     </div>
     
 </article>
@@ -470,11 +322,11 @@ Saguy，以及其他未具名参与者
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_OSD_-_Locally_Repairable_Codes"
+            <article id="post-CDS_Hammer_Day_2_-_OSD_Tiering_-_Reduce_R_W_Latencies_on_Cache_Tier_Miss"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
+        <time class="post-time" title="2014-10-30 00:00:00" datetime="2014-10-29T16:00:00.000Z"  itemprop="datePublished">2014-10-30</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -488,7 +340,7 @@ Saguy，以及其他未具名参与者
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_OSD_-_Locally_Repairable_Codes/">CDS G/H (Day 1) - OSD: Locally Repairable Codes</a>
+      <a class="post-title-link" href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_OSD_Tiering_-_Reduce_R_W_Latencies_on_Cache_Tier_Miss/">&#39;CDS Hammer (Day 2) - OSD (Tiering): Reduce R/W Latencies on Cache Tier Miss&#39;</a>
     </h3>
   
 
@@ -498,126 +350,30 @@ Saguy，以及其他未具名参与者
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-会议时间： 2023年11月某日
-参会人员：
-L（本地可修复代码提案人），Sam，Andrea，其他Ceph研发人员
-会议主题： 本地可修复代码（Locally Repairable Codes,
-LRC）的讨论与方案
-会议内容：
-1. 本地可修复代码介绍
-
-L介绍了本地可修复代码的概念，即通过编码技术将数据块编码成多个数据块和校验块，使得在数据块丢失时，可以在同一机架内进行修复，...
-    
-
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_OSD_-_Locally_Repairable_Codes/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/">CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： [请填写会议时间]
-参会人员： [请填写参会人员名单]
-会议主题： Ceph Monitor消息派发及I/O操作优化
-会议内容：
-1. 问题背景
-
-Ceph
-Monitor在重负载下，执行I/O操作时，处理消息的能力受限，导致等待时间长，影响整体性能。
-主要问题在于单线程处理所有消息，当执行I/O操作时，其他消息处理被阻塞。
-
-2. 解决方案
-
-提出为Monitor添加...
-    
-
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_Calamari_Intro"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Calamari_Intro/">CDS G/H (Day 1) -  Calamari Intro</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： Calamari 分布式存储介绍及开发讨论
+        [改进后的中文总结内容]
+会议纪要
+会议主题： Ceph 分布式存储优化讨论
 会议时间： 2023年11月（具体日期未提及）
-参会人员： John Spray, Gregory Meighan,
-以及其他相关人员
+参会人员： 多位 Ceph 开发人员
 会议内容：
-1. Calamari 介绍
+一、讨论要点
 
-Calamari 是一个基于 JavaScript 的用户界面，通过 HTTP 与 Calamari
-服务器通信。
-Calamari 服务器作为前端...
+读取优化：
+
+当前代码在进行读取操作时，若缓存缺失，会先将对象提升至所有 OSD
+实例，然后再进行复制。会议提出首先服务读取请求，然后在提升操作完成后进行复制，以减少读取延迟。
+针对异步读取，建议在读取...
     
 
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Calamari_Intro/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_OSD_Tiering_-_Reduce_R_W_Latencies_on_Cache_Tier_Miss/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cache-Tier/" rel="tag">Cache Tier</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/R-W-Latency/" rel="tag">R&#x2F;W Latency</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BC%98%E5%8C%96/" rel="tag">优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li></ul>
+
     </div>
     
 </article>
@@ -625,11 +381,11 @@ Calamari 服务器作为前端...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_RBD_review"
+            <article id="post-CDS_Hammer_Day_2_-_Shingled_Erasure_Code_SHEC"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
+        <time class="post-time" title="2014-10-30 00:00:00" datetime="2014-10-29T16:00:00.000Z"  itemprop="datePublished">2014-10-30</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -643,7 +399,7 @@ Calamari 服务器作为前端...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_RBD_review/">CDS G/H (Day 1) - RBD review</a>
+      <a class="post-title-link" href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_Shingled_Erasure_Code_SHEC/">CDS Hammer (Day 2) - Shingled Erasure Code (SHEC)</a>
     </h3>
   
 
@@ -653,25 +409,324 @@ Calamari 服务器作为前端...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-会议主题： RBD（Rados Block
-Device）功能回顾与讨论
-会议时间： 2023年10月27日
-参会人员： Sage, Josh, Sarah, Adam, Greg 等
+        [改进后的中文总结内容]
+会议纪要
+会议主题： Shingled Erasure Code (Shake)
+介绍及讨论
+与会人员： 来自富士通的 Takeshi Miyamai
+博士，以及其他 Ceph 开发者和测试人员
 会议内容：
-1. RBD 日志记录与镜像功能讨论
 
-日志记录：
+Shake 介绍：
 
-RBD
-日志记录功能旨在实现异步复制，支持跨数据中心或集群的数据复制。
-日志记录会将所有数据操作写入日志文件，并通过 Raft
-对象...
+Takeshi Miyamai 博士介绍了他们开发的名为 "Shangri-La" 的 Shingled
+Erasure Code
+(S...
     
 
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_RBD_review/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_Shingled_Erasure_Code_SHEC/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Data-Recovery/" rel="tag">Data Recovery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Erasure-Coding/" rel="tag">Erasure Coding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Shingled-Erasure-Code-Shake/" rel="tag">Shingled Erasure Code (Shake)</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_2_-_librbd_-_Shared_Flag_Object_Map"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-30 00:00:00" datetime="2014-10-29T16:00:00.000Z"  itemprop="datePublished">2014-10-30</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_librbd_-_Shared_Flag_Object_Map/">&#39;CDS Hammer (Day 2) - librbd: Shared Flag, Object Map&#39;</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议时间： 2023年XX月XX日
+参会人员： Maya, Josh, Jason, Foreign
+会议主题： 讨论Ceph RBD（Rados Block
+Device）的独占锁特性和对象映射功能
+关键细节：
+
+独占锁特性：
+
+RBD新增独占锁特性，默认情况下，所有图像除非标记为共享，否则都将应用此新功能位，表示它支持独占锁定。
+当独占锁定功能位启用时...
+    
+
+        <a href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_librbd_-_Shared_Flag_Object_Map/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/librbd/" rel="tag">librbd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%85%B1%E4%BA%AB%E6%A0%87%E5%BF%97/" rel="tag">共享标志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E6%98%A0%E5%B0%84/" rel="tag">对象映射</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%8B%AC%E5%8D%A0%E9%94%81/" rel="tag">独占锁</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_1_-_Accelio_RDMA_Messenger"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Accelio_RDMA_Messenger/">  CDS Hammer (Day 1) - Accelio RDMA Messenger  </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+在本次 CDS Hammer (Day 1) 会议中，Accelio RDMA Messenger
+的工作讨论是重点。以下是会议内容的总结：
+会议主题：Accelio RDMA Messenger 工作讨论
+会议内容：
+
+Accelio RDMA Messenger 最新进展：
+
+Melanox 团队在 Accelio 中增加了多传输支持，并使 TCP
+传输更加功能...
+    
+
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Accelio_RDMA_Messenger/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Accelio/" rel="tag">Accelio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Messenger/" rel="tag">Messenger</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RDMA/" rel="tag">RDMA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_1_-_Buffer_Encoding"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Buffer_Encoding/">CDS Hammer (Day 1) - Buffer Encoding</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议主题： Ceph 分布式存储缓冲编码优化讨论
+会议时间： 2023年某月某日
+参会人员： Sam、Matt、Alan 等
+会议内容：
+一、会议背景
+Ceph
+分布式存储集群负载分析中显示，缓冲编码和编解码过程是性能瓶颈之一。
+二、讨论议题
+
+缓冲编码性能问题：
+
+缓冲列表追加路径深度导致性能损耗。
+编码和编解码过程中存在函数调用开销。
+编码和编解码路径...
+    
+
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Buffer_Encoding/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Buffer-Encoding/" rel="tag">Buffer Encoding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_1_-_Calamari_API_Roadmap"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Calamari_API_Roadmap/">CDS Hammer (Day 1) - Calamari API Roadmap</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+本次会议详细讨论了 Calamari API
+的现状、目标和未来发展方向。以下是对会议内容的总结：
+Calamari API 概述
+
+Calamari 重新定义： 将 Calamari 定位为后端服务层和
+API 层，去除图形用户界面（GUI），聚焦于 API 本身及其功能。
+Calamari 目标： 实现与 Rados、RBD 和 RGW
+命令行工具的功能对等，提...
+    
+
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Calamari_API_Roadmap/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Calamari-API/" rel="tag">Calamari API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Community-Involvement/" rel="tag">Community Involvement</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack/" rel="tag">OpenStack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RESTful-API/" rel="tag">RESTful API</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_1_-_Import_Export_Local_Import"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/">  CDS Hammer (Day 1) - Import/Export // Local Import  </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议主题： Rados 导出/导入功能改进
+会议时间： 未知
+参会人员： Danny, Mike, John, Tara 等
+会议内容：
+一、Rados 导出/导入功能现状
+
+Rados
+导出功能存在性能瓶颈，数据量大时导出速度慢，且在不同文件系统上导出失败率较高。
+导入功能也存在问题，将数据重新导入新集群的速度较慢。
+
+二、改进方案
+
+导出功能：
+
+采用...
+    
+
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rados/" rel="tag">Rados</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E7%89%87/" rel="tag">分片</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%BC%E5%87%BA-%E5%AF%BC%E5%85%A5/" rel="tag">导出&#x2F;导入</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8C%87%E7%BA%B9%E9%AA%8C%E8%AF%81/" rel="tag">指纹验证</a></li></ul>
+
     </div>
     
 </article>
@@ -683,7 +738,7 @@ RBD
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/page/128/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/127/">127</a><a class="page-number" href="/VideoSummary/page/128/">128</a><span class="page-number current">129</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="extend next" rel="next" href="/VideoSummary/page/130/">下一页</a>
+    <a class="extend prev" rel="prev" href="/VideoSummary/page/128/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/127/">127</a><a class="page-number" href="/VideoSummary/page/128/">128</a><span class="page-number current">129</span><a class="page-number" href="/VideoSummary/page/130/">130</a><a class="page-number" href="/VideoSummary/page/131/">131</a><a class="page-number" href="/VideoSummary/page/132/">132</a><a class="extend next" rel="next" href="/VideoSummary/page/130/">下一页</a>
     </div>
 </nav>
 

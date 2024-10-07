@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写具体日期和时间] 参会人员： Owen Basserman（Life Bits Lab 架构师），Ceph 开发团队 会议主题： Life Bits Lab 的 Envy Me TCP 技术介绍及与 Ceph 集成的可能性探讨 会议内容： 1. Owen Basserman 自我介绍及 Envy Me TCP 介绍  Owen Basserman 介绍了自己的背景，从">
+    <meta name="keywords" content="Ceph,集成,NVMe/TCP,Envy Me TCP,高性能存储">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间：[请填写具体日期和时间] 参会人员：Owen Basserman（Life Bits Lab 架构师），Ceph 开发团队 会议主题：Life Bits Lab 的 Envy Me TCP 技术介绍及与 Ceph 集成的可能性探讨 会议内容：  Owen Basserman 自我介绍及 Envy Me TCP 介绍  Owen Basserman 介绍">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph and NVMe&#x2F;TCP - Orit Wasserman, Lightbits Labs">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/28/Ceph_and_NVMe_TCP_-_Orit_Wasserman_Lightbits_Labs/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写具体日期和时间] 参会人员： Owen Basserman（Life Bits Lab 架构师），Ceph 开发团队 会议主题： Life Bits Lab 的 Envy Me TCP 技术介绍及与 Ceph 集成的可能性探讨 会议内容： 1. Owen Basserman 自我介绍及 Envy Me TCP 介绍  Owen Basserman 介绍了自己的背景，从">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间：[请填写具体日期和时间] 参会人员：Owen Basserman（Life Bits Lab 架构师），Ceph 开发团队 会议主题：Life Bits Lab 的 Envy Me TCP 技术介绍及与 Ceph 集成的可能性探讨 会议内容：  Owen Basserman 自我介绍及 Envy Me TCP 介绍  Owen Basserman 介绍">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-27T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-28T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="集成">
+<meta property="article:tag" content="NVMe&#x2F;TCP">
+<meta property="article:tag" content="Envy Me TCP">
+<meta property="article:tag" content="高性能存储">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,54 +183,54 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： [请填写具体日期和时间]</p>
-<p><strong>参会人员</strong>： Owen Basserman（Life Bits Lab
-架构师），Ceph 开发团队</p>
-<p><strong>会议主题</strong>： Life Bits Lab 的 Envy Me TCP 技术介绍及与
-Ceph 集成的可能性探讨</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>1. Owen Basserman 自我介绍及 Envy Me TCP 介绍</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
+<p>会议时间：[请填写具体日期和时间]</p>
+<p>参会人员：Owen Basserman（Life Bits Lab 架构师），Ceph 开发团队</p>
+<p>会议主题：Life Bits Lab 的 Envy Me TCP 技术介绍及与 Ceph
+集成的可能性探讨</p>
+<p>会议内容：</p>
+<ol type="1">
+<li>Owen Basserman 自我介绍及 Envy Me TCP 介绍
 <ul>
 <li>Owen Basserman 介绍了自己的背景，从 Ceph 核心开发者转为 Life Bits
 Lab 架构师。</li>
 <li>Envy Me TCP 是一种优化高性能的 NVMe-over-TCP
 协议，旨在提高存储性能和降低延迟。</li>
-<li>Envy Me TCP 之所以选择
-TCP，是因为其广泛的应用和成熟的技术，无需改变现有网络基础设施。</li>
+<li>选择 TCP
+的原因是其广泛的应用和成熟的技术，无需改变现有网络基础设施。</li>
 <li>Life Bits Lab 是 Envy Me TCP 的主要发明者之一，与 Facebook、Intel
 等公司共同推动其标准化。</li>
-</ul>
-<p><strong>2. Envy Me TCP 的优势及应用</strong></p>
+</ul></li>
+<li>Envy Me TCP 的优势及应用
 <ul>
-<li>Envy Me TCP 可以在不降低服务器容量的情况下，安全地使用 NVMe TCP
+<li>Envy Me TCP 可在不降低服务器容量的情况下，安全地使用 NVMe TCP
 进行元数据存储。</li>
-<li>具有复杂的保护机制，即使单个 SSD 失效也不会影响整体性能。</li>
+<li>具有复杂的保护机制，单个 SSD 失效不会影响整体性能。</li>
 <li>可用于大规模部署和长距离传输，适用于需要高性能存储的场景。</li>
-</ul>
-<p><strong>3. Envy Me TCP 与 Ceph 的集成</strong></p>
+</ul></li>
+<li>Envy Me TCP 与 Ceph 的集成
 <ul>
 <li>Owen 提出将 Envy Me TCP 与 Ceph 集成，以进一步提高 Ceph
 的性能和稳定性。</li>
-<li>目前，Envy Me TCP 与 Ceph
-的集成尚处于初步阶段，需要解决延迟和成本问题。</li>
-<li>未来，Life Bits Lab 正在开发键值接口，以实现 Envy Me TCP 与 Ceph
+<li>目前集成尚处于初步阶段，需要解决延迟和成本问题。</li>
+<li>Life Bits Lab 正在开发键值接口，以实现 Envy Me TCP 与 Ceph
 的深度融合，并完全替代 RBD。</li>
-</ul>
-<p><strong>4. 后续行动计划</strong></p>
+</ul></li>
+<li>后续行动计划
 <ul>
 <li>Life Bits Lab 将继续优化 Envy Me TCP，并探索与 Ceph
 的集成方案。</li>
 <li>Ceph 开发团队将与 Life Bits Lab 保持沟通，共同推进 Envy Me TCP
 的集成工作。</li>
-</ul>
-<p><strong>5. 其他事项</strong></p>
+</ul></li>
+<li>其他事项
 <ul>
-<li>会议最后，Owen Basserman 鼓励大家对 Envy Me TCP
+<li>Owen Basserman 鼓励大家对 Envy Me TCP
 进行更多了解，并欢迎感兴趣的人士与其交流。</li>
-</ul>
-<p><strong>关键词</strong>： Envy Me TCP, NVMe-over-TCP, Ceph, RBD,
-高性能存储, 集成</p>
+</ul></li>
+</ol>
+<p>关键词：Envy Me TCP, NVMe-over-TCP, Ceph, RBD, 高性能存储, 集成</p>
 
         </div>
 
@@ -256,6 +261,8 @@ TCP，是因为其广泛的应用和成熟的技术，无需改变现有网络�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Envy-Me-TCP/" rel="tag">Envy Me TCP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NVMe-TCP/" rel="tag">NVMe&#x2F;TCP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%9B%86%E6%88%90/" rel="tag">集成</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E6%80%A7%E8%83%BD%E5%AD%98%E5%82%A8/" rel="tag">高性能存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -317,7 +324,7 @@ TCP，是因为其广泛的应用和成熟的技术，无需改变现有网络�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2019/05/28/2019-05-27_-_-_Ceph_Orchestration_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-05-27:: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2019-05-27:: Ceph Orchestration Meeting&#39;</h4>
       </a>
     </div>
   

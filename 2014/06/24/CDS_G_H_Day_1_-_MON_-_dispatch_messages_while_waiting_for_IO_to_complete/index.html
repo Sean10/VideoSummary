@@ -14,23 +14,29 @@
     
     
     
-    <title>CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议主题： Ceph Monitor消息派发及I&#x2F;O操作优化 会议内容： 1. 问题背景  Ceph Monitor在重负载下，执行I&#x2F;O操作时，处理消息的能力受限，导致等待时间长，影响整体性能。 主要问题在于单线程处理所有消息，当执行I&#x2F;O操作时，其他消息处理被阻塞。  2. 解决方案  提出为Monitor添加新的P">
+    <meta name="keywords" content="Ceph,异步化,Monitor,I/O操作,Paxos,Work Queue">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2014-06-24 参会人员： [请填写参会人员名单] 会议主题： Ceph Monitor消息派发及I&#x2F;O操作优化 会议内容： 1. 问题背景  Ceph Monitor在执行I&#x2F;O操作时，处理消息的能力受限，导致等待时间长，影响整体性能。 主要问题在于单线程处理所有消息，当执行I&#x2F;O操作时，其他消息处理被阻塞。  2. 解决方案  提出为Mon">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS G&#x2F;H (Day 1) - MON: dispatch messages while waiting for IO to complete">
+<meta property="og:title" content="&#39;CDS G&#x2F;H (Day 1) - MON: dispatch messages while waiting for IO to complete&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写会议时间] 参会人员： [请填写参会人员名单] 会议主题： Ceph Monitor消息派发及I&#x2F;O操作优化 会议内容： 1. 问题背景  Ceph Monitor在重负载下，执行I&#x2F;O操作时，处理消息的能力受限，导致等待时间长，影响整体性能。 主要问题在于单线程处理所有消息，当执行I&#x2F;O操作时，其他消息处理被阻塞。  2. 解决方案  提出为Monitor添加新的P">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2014-06-24 参会人员： [请填写参会人员名单] 会议主题： Ceph Monitor消息派发及I&#x2F;O操作优化 会议内容： 1. 问题背景  Ceph Monitor在执行I&#x2F;O操作时，处理消息的能力受限，导致等待时间长，影响整体性能。 主要问题在于单线程处理所有消息，当执行I&#x2F;O操作时，其他消息处理被阻塞。  2. 解决方案  提出为Mon">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2014-06-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2014-06-24T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="异步化">
+<meta property="article:tag" content="Monitor">
+<meta property="article:tag" content="I&#x2F;O操作">
+<meta property="article:tag" content="Paxos">
+<meta property="article:tag" content="Work Queue">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete</div>
+        <div class="flex-col header-title ellipsis">&#39;CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete</h1>
+        <h1 class="title">&#39;CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2014-06-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +174,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete</h1>
+        <h1 class="post-card-title">'CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete'</h1>
         <div class="post-meta">
             <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
 
@@ -185,15 +191,16 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议时间</strong>： [请填写会议时间]</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议时间</strong>： 2014-06-24</p>
 <p><strong>参会人员</strong>： [请填写参会人员名单]</p>
 <p><strong>会议主题</strong>： Ceph Monitor消息派发及I/O操作优化</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>1. 问题背景</strong></p>
 <ul>
 <li>Ceph
-Monitor在重负载下，执行I/O操作时，处理消息的能力受限，导致等待时间长，影响整体性能。</li>
+Monitor在执行I/O操作时，处理消息的能力受限，导致等待时间长，影响整体性能。</li>
 <li>主要问题在于单线程处理所有消息，当执行I/O操作时，其他消息处理被阻塞。</li>
 </ul>
 <p><strong>2. 解决方案</strong></p>
@@ -204,8 +211,8 @@ Monitor在重负载下，执行I/O操作时，处理消息的能力受限，导�
 </ul>
 <p><strong>3. 实施步骤</strong></p>
 <ul>
-<li>首先，将I/O操作异步化，将任务提交给Key-Value存储，并等待回调。</li>
-<li>使用现有的Work Queue类创建工作线程，将事务指针传递给工作线程。</li>
+<li>异步化I/O操作，将任务提交给Key-Value存储，并等待回调。</li>
+<li>使用Work Queue类创建工作线程，将事务指针传递给工作线程。</li>
 <li>在安全的地方异步执行工作，并在完成后进行清理。</li>
 <li>使用Work Queue的flush方法，等待异步操作完成。</li>
 </ul>
@@ -221,7 +228,7 @@ Monitor在重负载下，执行I/O操作时，处理消息的能力受限，导�
 <li>测试新方案，评估性能提升效果。</li>
 <li>根据测试结果，进一步优化方案。</li>
 </ul>
-<p><strong>6. 关键词</strong></p>
+<p><strong>关键词</strong></p>
 <ul>
 <li>Monitor</li>
 <li>消息派发</li>
@@ -232,9 +239,6 @@ Monitor在重负载下，执行I/O操作时，处理消息的能力受限，导�
 <li>Work Queue</li>
 <li>Key-Value存储</li>
 </ul>
-<p><strong>7. 总结</strong></p>
-<p>本次会议讨论了Ceph
-Monitor消息派发及I/O操作优化方案，并制定了后续行动计划。通过异步化I/O操作和读写锁机制，可以有效提高Monitor的处理性能。</p>
 
         </div>
 
@@ -265,6 +269,8 @@ Monitor消息派发及I/O操作优化方案，并制定了后续行动计划。�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/I-O%E6%93%8D%E4%BD%9C/" rel="tag">I&#x2F;O操作</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Monitor/" rel="tag">Monitor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Paxos/" rel="tag">Paxos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Work-Queue/" rel="tag">Work Queue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%82%E6%AD%A5%E5%8C%96/" rel="tag">异步化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -276,7 +282,7 @@ Monitor消息派发及I/O操作优化方案，并制定了后续行动计划。�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/&title=《CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/&title=《'CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -286,7 +292,7 @@ Monitor消息派发及I/O操作优化方案，并制定了后续行动计划。�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/&title=《CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/&title=《'CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -296,7 +302,7 @@ Monitor消息派发及I/O操作优化方案，并制定了后续行动计划。�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -324,18 +330,18 @@ Monitor消息派发及I/O操作优化方案，并制定了后续行动计划。�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_OSD_-_Locally_Repairable_Codes/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS G/H (Day 1) - OSD: Locally Repairable Codes</h4>
+        <h4 class="title">  CDS G/H (Day 1) - Cold Storage Pools  </h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Calamari_Intro/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_OSD_-_Locally_Repairable_Codes/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS G/H (Day 1) -  Calamari Intro</h4>
+        <h4 class="title">&#39;CDS G/H (Day 1) - OSD: Locally Repairable Codes&#39;</h4>
       </a>
     </div>
   
@@ -435,7 +441,7 @@ Monitor消息派发及I/O操作优化方案，并制定了后续行动计划。�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/&title=《CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/&title=《'CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -445,7 +451,7 @@ Monitor消息派发及I/O操作优化方案，并制定了后续行动计划。�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/&title=《CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/&title=《'CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -455,7 +461,7 @@ Monitor消息派发及I/O操作优化方案，并制定了后续行动计划。�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

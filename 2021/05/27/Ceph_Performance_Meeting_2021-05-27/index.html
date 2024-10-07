@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2021-05-27 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 性能会议纪要 2021-05-27 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  性能相关PR: 本周仅发现一个与性能相关的PR，涉及管理器实现的TTL缓存，包含性能结果和图表。 D3N缓存更改: 对上游和RGW的D3N缓存更改经过多次测试和更新后，已通过测试。 RocksDB优化: Gabby正在移除RocksDB中的分配，遇到笔记本电脑上的bug，但测试集群中未出现。 压缩Blob大小设置: Adam的PR设置新的压缩Blob大小为64KB，已获批准，">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,BlueFS,FFS改进">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  性能相关PR: 本次会议讨论了多个性能相关的问题，包括管理器实现的TTL缓存、D3N缓存更改、RocksDB优化、压缩Blob大小设置、ISC 21提交等。 RocksDB优化: Gabby正在移除RocksDB中的分配，但在笔记本电脑上遇到bug，测试集群中未出现。 压缩Blob大小设置: Adam的PR将压缩Blob大小设置为64KB，已获批准，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2021-05-27">
+<meta property="og:title" content="Ceph 性能会议纪要 2021-05-27">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  性能相关PR: 本周仅发现一个与性能相关的PR，涉及管理器实现的TTL缓存，包含性能结果和图表。 D3N缓存更改: 对上游和RGW的D3N缓存更改经过多次测试和更新后，已通过测试。 RocksDB优化: Gabby正在移除RocksDB中的分配，遇到笔记本电脑上的bug，但测试集群中未出现。 压缩Blob大小设置: Adam的PR设置新的压缩Blob大小为64KB，已获批准，">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  性能相关PR: 本次会议讨论了多个性能相关的问题，包括管理器实现的TTL缓存、D3N缓存更改、RocksDB优化、压缩Blob大小设置、ISC 21提交等。 RocksDB优化: Gabby正在移除RocksDB中的分配，但在笔记本电脑上遇到bug，测试集群中未出现。 压缩Blob大小设置: Adam的PR将压缩Blob大小设置为64KB，已获批准，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-26T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-05-27T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="BlueFS">
+<meta property="article:tag" content="FFS改进">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2021-05-27</div>
+        <div class="flex-col header-title ellipsis">Ceph 性能会议纪要 2021-05-27</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2021-05-27</h1>
+        <h1 class="title">Ceph 性能会议纪要 2021-05-27</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-05-26T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2021-05-27</h1>
+        <h1 class="post-card-title">Ceph 性能会议纪要 2021-05-27</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-05-27 00:00:00" datetime="2021-05-26T16:00:00.000Z"  itemprop="datePublished">2021-05-27</time>
 
@@ -185,19 +190,19 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
 <li><strong>性能相关PR</strong>:
-本周仅发现一个与性能相关的PR，涉及管理器实现的TTL缓存，包含性能结果和图表。</li>
-<li><strong>D3N缓存更改</strong>:
-对上游和RGW的D3N缓存更改经过多次测试和更新后，已通过测试。</li>
+本次会议讨论了多个性能相关的问题，包括管理器实现的TTL缓存、D3N缓存更改、RocksDB优化、压缩Blob大小设置、ISC
+21提交等。</li>
 <li><strong>RocksDB优化</strong>:
-Gabby正在移除RocksDB中的分配，遇到笔记本电脑上的bug，但测试集群中未出现。</li>
+Gabby正在移除RocksDB中的分配，但在笔记本电脑上遇到bug，测试集群中未出现。</li>
 <li><strong>压缩Blob大小设置</strong>:
-Adam的PR设置新的压缩Blob大小为64KB，已获批准，但需要进一步测试和改进。</li>
+Adam的PR将压缩Blob大小设置为64KB，已获批准，但需要进一步测试和改进。</li>
 <li><strong>ISC 21提交</strong>:
-讨论是否为国际超级计算机会议提交新的FFS（Fast File
+讨论是否为国际超级计算机会议提交FFS（Fast File
 System）改进，尽管之前的测试结果不理想，但仍有改进空间。</li>
 <li><strong>BlueFS锁优化</strong>:
 Adam正在尝试将BlueFS的大锁分解为更小的锁，以提高性能。</li>
@@ -207,18 +212,17 @@ Adam正在尝试将BlueFS的大锁分解为更小的锁，以提高性能。</li
 <li><strong>性能改进</strong>:
 讨论了多个性能相关的PR，包括TTL缓存、D3N缓存更改、RocksDB优化等。</li>
 <li><strong>ISC 21提交</strong>:
-讨论了是否继续提交FFS改进到国际超级计算机会议，尽管之前的测试结果不理想，但认为仍有改进空间。</li>
+讨论了是否继续提交FFS改进到国际超级计算机会议。</li>
 <li><strong>BlueFS锁优化</strong>:
-讨论了将BlueFS的大锁分解为更小的锁的可能性，以提高性能。</li>
+讨论了将BlueFS的大锁分解为更小的锁的可能性。</li>
 </ul>
 <h4 id="决定的事项">决定的事项</h4>
 <ul>
 <li><strong>性能相关PR</strong>:
-确认了多个性能相关的PR的进展，包括TTL缓存、D3N缓存更改等。</li>
+确认了多个性能相关的PR的进展，包括RocksDB优化、压缩Blob大小设置等。</li>
 <li><strong>ISC 21提交</strong>:
 决定继续探索FFS的改进，并可能在未来的会议上提交。</li>
-<li><strong>BlueFS锁优化</strong>:
-决定继续进行BlueFS锁优化的工作，尽管存在风险，但认为值得尝试。</li>
+<li><strong>BlueFS锁优化</strong>: 决定继续进行BlueFS锁优化的工作。</li>
 </ul>
 <h4 id="后续的行动计划">后续的行动计划</h4>
 <ul>
@@ -235,7 +239,7 @@ Adam正在尝试将BlueFS的大锁分解为更小的锁，以提高性能。</li
 提醒美国团队成员即将到来的纪念日周末，并祝愿大家有一个愉快的假期。</li>
 </ul>
 <h3 id="结论">结论</h3>
-<p>本周会议主要集中在性能改进和未来的工作计划上，特别是关于FFS的改进和BlueFS的锁优化。团队将继续跟踪和测试相关的PR，并确保所有更改都能够安全地合并到主分支。</p>
+<p>本周会议主要集中在Ceph的性能优化和未来的工作计划上，特别是关于FFS的改进和BlueFS的锁优化。团队将继续跟踪和测试相关的PR，并确保所有更改都能够安全地合并到主分支。</p>
 
         </div>
 
@@ -266,6 +270,8 @@ Adam正在尝试将BlueFS的大锁分解为更小的锁，以提高性能。</li
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueFS/" rel="tag">BlueFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/FFS%E6%94%B9%E8%BF%9B/" rel="tag">FFS改进</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -277,7 +283,7 @@ Adam正在尝试将BlueFS的大锁分解为更小的锁，以提高性能。</li
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/&title=《Ceph Performance Meeting 2021-05-27》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/&title=《Ceph 性能会议纪要 2021-05-27》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -287,7 +293,7 @@ Adam正在尝试将BlueFS的大锁分解为更小的锁，以提高性能。</li
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/&title=《Ceph Performance Meeting 2021-05-27》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/&title=《Ceph 性能会议纪要 2021-05-27》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -297,7 +303,7 @@ Adam正在尝试将BlueFS的大锁分解为更小的锁，以提高性能。</li
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-05-27》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议纪要 2021-05-27》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -325,9 +331,9 @@ Adam正在尝试将BlueFS的大锁分解为更小的锁，以提高性能。</li
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2021/06/01/2021Q2_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2021/06/01/Ceph_Month_2021_-_RADOS_Update/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2021Q2 Ceph社区季度总结</h4>
+        <h4 class="title">&#39;Ceph Month 2021: RADOS Update&#39;</h4>
       </a>
     </div>
   
@@ -436,7 +442,7 @@ Adam正在尝试将BlueFS的大锁分解为更小的锁，以提高性能。</li
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/&title=《Ceph Performance Meeting 2021-05-27》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/&title=《Ceph 性能会议纪要 2021-05-27》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -446,7 +452,7 @@ Adam正在尝试将BlueFS的大锁分解为更小的锁，以提高性能。</li
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/&title=《Ceph Performance Meeting 2021-05-27》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/&title=《Ceph 性能会议纪要 2021-05-27》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -456,7 +462,7 @@ Adam正在尝试将BlueFS的大锁分解为更小的锁，以提高性能。</li
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-05-27》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议纪要 2021-05-27》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/05/27/Ceph_Performance_Meeting_2021-05-27/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

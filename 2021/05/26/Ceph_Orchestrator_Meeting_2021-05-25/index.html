@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Orchestrator Meeting 2021-05-25 | ceph视频总结 | youtube频道总结</title>
+    <title> Ceph Orchestrator Meeting 2021-05-25  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Orchestrator 会议 日期：[具体日期] 参会人员：[具体人员名单] 主要议题：  Etsy Hosts 问题  讨论了 Etsy Hosts 文件的回归问题，涉及 DeepSea、Ansible 和 Cephadm Octopus Tana。 确认了两个相关的 Pull Request。 讨论了 Podman 和 Docker 的行为差异，特别是关于 get fqd">
+    <meta name="keywords" content="Ceph,Orchestrator,Ganesha,Etsy Hosts,NFS EdgeRW">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Orchestrator 会议 日期：2021-05-25 参会人员：[具体人员名单] 主要议题：  Etsy Hosts 问题  讨论了 Etsy Hosts 文件的回归问题，涉及 DeepSea、Ansible 和 Cephadm Octopus Tana。 确认了两个相关的 Pull Request。 讨论了 Podman 和 Docker 的行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Orchestrator Meeting 2021-05-25">
+<meta property="og:title" content=" Ceph Orchestrator Meeting 2021-05-25 ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Orchestrator 会议 日期：[具体日期] 参会人员：[具体人员名单] 主要议题：  Etsy Hosts 问题  讨论了 Etsy Hosts 文件的回归问题，涉及 DeepSea、Ansible 和 Cephadm Octopus Tana。 确认了两个相关的 Pull Request。 讨论了 Podman 和 Docker 的行为差异，特别是关于 get fqd">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Orchestrator 会议 日期：2021-05-25 参会人员：[具体人员名单] 主要议题：  Etsy Hosts 问题  讨论了 Etsy Hosts 文件的回归问题，涉及 DeepSea、Ansible 和 Cephadm Octopus Tana。 确认了两个相关的 Pull Request。 讨论了 Podman 和 Docker 的行">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-25T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-05-25T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="Ganesha">
+<meta property="article:tag" content="Etsy Hosts">
+<meta property="article:tag" content="NFS EdgeRW">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Orchestrator Meeting 2021-05-25</div>
+        <div class="flex-col header-title ellipsis"> Ceph Orchestrator Meeting 2021-05-25 </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Orchestrator Meeting 2021-05-25</h1>
+        <h1 class="title"> Ceph Orchestrator Meeting 2021-05-25 </h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-05-25T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98orchestrator-%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Orchestrator 会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%97%A5%E6%9C%9F%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">日期：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%B7%E4%BD%93%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[具体人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">其他讨论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议总结：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98orchestrator-%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Orchestrator 会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%97%A5%E6%9C%9F2021-05-25"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">日期：2021-05-25</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%B7%E4%BD%93%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[具体人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">其他讨论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议总结：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Orchestrator Meeting 2021-05-25</h1>
+        <h1 class="post-card-title"> Ceph Orchestrator Meeting 2021-05-25 </h1>
         <div class="post-meta">
             <time class="post-time" title="2021-05-26 00:00:00" datetime="2021-05-25T16:00:00.000Z"  itemprop="datePublished">2021-05-26</time>
 
@@ -185,9 +190,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题orchestrator-会议">会议主题：Orchestrator 会议</h4>
-<h4 id="日期具体日期">日期：[具体日期]</h4>
+<h4 id="日期2021-05-25">日期：2021-05-25</h4>
 <h4 id="参会人员具体人员名单">参会人员：[具体人员名单]</h4>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
@@ -201,7 +207,7 @@ Octopus Tana。</li>
 <li>发现 Podman 在特定配置下返回回环地址，导致配置文件生成问题。</li>
 <li>讨论了如何处理 DNS 和 Etsy Hosts
 的依赖问题，建议在添加主机时强制指定 IP 地址。</li>
-<li>提出了在文档中明确说明使用 IP
+<li>提出在文档中明确说明使用 IP
 地址的必要性，并更新相关代码以支持这一变化。</li>
 </ul></li>
 <li><strong>Ganesha 模板冲突问题</strong>
@@ -259,6 +265,7 @@ RGW）需要不同的配置选项，建议恢复为使用不同的 Ganesha 集�
 <p>本次会议主要解决了 Etsy Hosts 文件的回归问题和 Ganesha
 模板冲突问题，明确了后续的行动计划和改进方向。通过与 Ganesha
 开发者的进一步沟通，将有助于确定最佳的技术方案。</p>
+<hr />
 
         </div>
 
@@ -289,6 +296,8 @@ RGW）需要不同的配置选项，建议恢复为使用不同的 Ganesha 集�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Etsy-Hosts/" rel="tag">Etsy Hosts</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ganesha/" rel="tag">Ganesha</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS-EdgeRW/" rel="tag">NFS EdgeRW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -300,7 +309,7 @@ RGW）需要不同的配置选项，建议恢复为使用不同的 Ganesha 集�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/&title=《Ceph Orchestrator Meeting 2021-05-25》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/&title=《 Ceph Orchestrator Meeting 2021-05-25 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -310,7 +319,7 @@ RGW）需要不同的配置选项，建议恢复为使用不同的 Ganesha 集�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/&title=《Ceph Orchestrator Meeting 2021-05-25》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/&title=《 Ceph Orchestrator Meeting 2021-05-25 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -320,7 +329,7 @@ RGW）需要不同的配置选项，建议恢复为使用不同的 Ganesha 集�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Orchestrator Meeting 2021-05-25》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph Orchestrator Meeting 2021-05-25 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -359,7 +368,7 @@ RGW）需要不同的配置选项，建议恢复为使用不同的 Ganesha 集�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/05/20/Ceph_Performance_Meeting_2021-05-20/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2021-05-20</h4>
+        <h4 class="title">Ceph 性能会议纪要 2021-05-20</h4>
       </a>
     </div>
   
@@ -459,7 +468,7 @@ RGW）需要不同的配置选项，建议恢复为使用不同的 Ganesha 集�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/&title=《Ceph Orchestrator Meeting 2021-05-25》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/&title=《 Ceph Orchestrator Meeting 2021-05-25 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -469,7 +478,7 @@ RGW）需要不同的配置选项，建议恢复为使用不同的 Ganesha 集�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/&title=《Ceph Orchestrator Meeting 2021-05-25》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/&title=《 Ceph Orchestrator Meeting 2021-05-25 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -479,7 +488,7 @@ RGW）需要不同的配置选项，建议恢复为使用不同的 Ganesha 集�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Orchestrator Meeting 2021-05-25》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph Orchestrator Meeting 2021-05-25 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/05/26/Ceph_Orchestrator_Meeting_2021-05-25/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

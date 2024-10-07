@@ -14,23 +14,28 @@
     
     
     
-    <title>2018-May-31 :: Ceph Performance Weekly | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2018-May-31 :: Ceph Performance Weekly&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月某日 会议地点： 线上会议 参会人员： Matt、Adam Emerson、Josh、Igor、Keef、Bratislava、Peter、Paige、Greg、Mark、Nick、Stasia 等 会议主题： Ceph 项目进展讨论 会议内容： 一、Beast 项目进展  Beast 项目进展顺利，Adam Emerson 正在将兼容 I&#x2F;O 接口集成到 B">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,内存管理,锁优化">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph项目的多个进展，包括Beast项目、Rocky CB1 Mark、内存使用优化、锁优化等方面。 Beast项目： Adam Emerson正在将兼容I&#x2F;O接口集成到Beast中，会议强调需要关注接口兼容性问题，确保与解放应用程序的兼容性。 Rocky CB1 Mark： 会议讨论了该PR的视频功能，认为其对性能提升有限，但不会造成负面影响。 内存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018-May-31 :: Ceph Performance Weekly">
+<meta property="og:title" content="&#39;2018-May-31 :: Ceph Performance Weekly&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/06/01/2018-May-31_-_-_Ceph_Performance_Weekly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月某日 会议地点： 线上会议 参会人员： Matt、Adam Emerson、Josh、Igor、Keef、Bratislava、Peter、Paige、Greg、Mark、Nick、Stasia 等 会议主题： Ceph 项目进展讨论 会议内容： 一、Beast 项目进展  Beast 项目进展顺利，Adam Emerson 正在将兼容 I&#x2F;O 接口集成到 B">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph项目的多个进展，包括Beast项目、Rocky CB1 Mark、内存使用优化、锁优化等方面。 Beast项目： Adam Emerson正在将兼容I&#x2F;O接口集成到Beast中，会议强调需要关注接口兼容性问题，确保与解放应用程序的兼容性。 Rocky CB1 Mark： 会议讨论了该PR的视频功能，认为其对性能提升有限，但不会造成负面影响。 内存">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-05-31T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-06-01T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="内存管理">
+<meta property="article:tag" content="锁优化">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2018-May-31 :: Ceph Performance Weekly</div>
+        <div class="flex-col header-title ellipsis">&#39;2018-May-31 :: Ceph Performance Weekly&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2018-May-31 :: Ceph Performance Weekly</h1>
+        <h1 class="title">&#39;2018-May-31 :: Ceph Performance Weekly&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-05-31T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2018-May-31 :: Ceph Performance Weekly</h1>
+        <h1 class="post-card-title">'2018-May-31 :: Ceph Performance Weekly'</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-06-01 00:00:00" datetime="2018-05-31T16:00:00.000Z"  itemprop="datePublished">2018-06-01</time>
 
@@ -178,64 +183,34 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要</p>
-<p><strong>会议时间</strong>： 2023年11月某日</p>
-<p><strong>会议地点</strong>： 线上会议</p>
-<p><strong>参会人员</strong>： Matt、Adam
-Emerson、Josh、Igor、Keef、Bratislava、Peter、Paige、Greg、Mark、Nick、Stasia
-等</p>
-<p><strong>会议主题</strong>： Ceph 项目进展讨论</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>一、Beast 项目进展</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph项目的多个进展，包括Beast项目、Rocky CB1
+Mark、内存使用优化、锁优化等方面。</p>
+<p><strong>Beast项目</strong>： Adam
+Emerson正在将兼容I/O接口集成到Beast中，会议强调需要关注接口兼容性问题，确保与解放应用程序的兼容性。</p>
+<p><strong>Rocky CB1 Mark</strong>：
+会议讨论了该PR的视频功能，认为其对性能提升有限，但不会造成负面影响。</p>
+<p><strong>内存使用优化</strong>： 会议讨论了OS memory
+usage的问题，希望实现内存使用量的动态调整，并根据优先级分配内存。同时探讨了如何获取内存分配的统计数据，并考虑使用malloc_usable_size等接口。</p>
+<p><strong>锁优化</strong>：
+会议讨论了scrubbing期间锁的竞争问题，并分析了可能的锁冲突原因。建议使用GDB
+wall clock profiler或Adams wall clock
+profiler进行分析，并尝试调整scrubbing步长大小以改善性能。</p>
+<p><strong>后续行动计划</strong>：</p>
 <ul>
-<li>Beast 项目进展顺利，Adam Emerson 正在将兼容 I/O 接口集成到 Beast
-中。</li>
-<li>会议强调需要关注接口兼容性问题，确保与解放应用程序的兼容性。</li>
-<li>会议鼓励大家积极审查 Adam 提交的 PR。</li>
-</ul>
-<p><strong>二、Ceph 项目其他进展</strong></p>
-<ul>
-<li><strong>Rocky CB1 Mark</strong>： 会议讨论了该 PR
-的视频功能，认为其对性能提升有限，但不会造成负面影响。</li>
-<li><strong>Adam 提交的多个 PR</strong>： 会议审查了 Adam 提交的多个
-PR，包括 hash pull requests、liberty supporting throttling、iOS Rattler
-等。</li>
-<li><strong>内存使用优化</strong>：
-<ul>
-<li>会议讨论了 OS memory usage
-的问题，希望实现内存使用量的动态调整，并根据优先级分配内存。</li>
-<li>会议探讨了如何获取内存分配的统计数据，并考虑使用 malloc_usable_size
-等接口。</li>
-<li>会议讨论了内存碎片化问题，并希望获取相关统计数据。</li>
-<li>会议讨论了使用 heap profiler 获取内存分配信息的方法。</li>
-</ul></li>
-<li><strong>锁优化</strong>：
-<ul>
-<li>会议讨论了 scrubbing
-期间锁的竞争问题，并分析了可能的锁冲突原因。</li>
-<li>会议建议使用 GDB wall clock profiler 或 Adams wall clock profiler
-进行分析。</li>
-<li>会议讨论了调整 scrubbing 步长大小以改善性能的可能性。</li>
-</ul></li>
-</ul>
-<p><strong>三、后续行动计划</strong></p>
-<ul>
-<li>Adam Emerson 继续推进 Beast 项目，并提交相关 PR。</li>
-<li>会议参与者积极审查 Adam 提交的 PR。</li>
+<li>Adam Emerson继续推进Beast项目，并提交相关PR。</li>
+<li>会议参与者积极审查Adam提交的PR。</li>
 <li>会议参与者继续关注内存使用优化工作，并尝试获取相关统计数据。</li>
-<li>会议参与者尝试使用 GDB wall clock profiler 或 Adams wall clock
-profiler 分析 scrubbing 期间锁的竞争问题。</li>
-<li>会议参与者尝试调整 scrubbing 步长大小以改善性能。</li>
+<li>会议参与者尝试使用GDB wall clock profiler或Adams wall clock
+profiler分析scrubbing期间锁的竞争问题。</li>
+<li>会议参与者尝试调整scrubbing步长大小以改善性能。</li>
 </ul>
-<p><strong>四、其他事项</strong></p>
+<p><strong>其他事项</strong>：</p>
 <ul>
-<li>会议讨论了 rocksdb buffer size 动态调整的可能性。</li>
+<li>会议讨论了rocksdb buffer size动态调整的可能性。</li>
 <li>会议鼓励大家积极分享经验和反馈。</li>
 </ul>
-<p><strong>总结</strong>：</p>
-<p>本次会议讨论了 Ceph
-项目的多个进展，并制定了后续行动计划。会议氛围积极，参与者积极参与讨论，为
-Ceph 项目的持续发展贡献力量。</p>
+<p>本次会议讨论了Ceph项目的多个进展，并制定了后续行动计划。会议氛围积极，参与者积极参与讨论，为Ceph项目的持续发展贡献力量。</p>
 
         </div>
 
@@ -266,6 +241,8 @@ Ceph 项目的持续发展贡献力量。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" rel="tag">内存管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%94%81%E4%BC%98%E5%8C%96/" rel="tag">锁优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -277,7 +254,7 @@ Ceph 项目的持续发展贡献力量。</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/06/01/2018-May-31_-_-_Ceph_Performance_Weekly/&title=《2018-May-31 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/06/01/2018-May-31_-_-_Ceph_Performance_Weekly/&title=《'2018-May-31 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -287,7 +264,7 @@ Ceph 项目的持续发展贡献力量。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/06/01/2018-May-31_-_-_Ceph_Performance_Weekly/&title=《2018-May-31 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/06/01/2018-May-31_-_-_Ceph_Performance_Weekly/&title=《'2018-May-31 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -297,7 +274,7 @@ Ceph 项目的持续发展贡献力量。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-May-31 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/06/01/2018-May-31_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-May-31 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/06/01/2018-May-31_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -327,7 +304,7 @@ Ceph 项目的持续发展贡献力量。</p>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2018/06/06/2018-JUN-06_-_-_Ceph_Developer_Monthly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2018-JUN-06 :: Ceph Developer Monthly</h4>
+        <h4 class="title">&#39;2018-JUN-06 :: Ceph Developer Monthly&#39;</h4>
       </a>
     </div>
   
@@ -436,7 +413,7 @@ Ceph 项目的持续发展贡献力量。</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/06/01/2018-May-31_-_-_Ceph_Performance_Weekly/&title=《2018-May-31 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/06/01/2018-May-31_-_-_Ceph_Performance_Weekly/&title=《'2018-May-31 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -446,7 +423,7 @@ Ceph 项目的持续发展贡献力量。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/06/01/2018-May-31_-_-_Ceph_Performance_Weekly/&title=《2018-May-31 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/06/01/2018-May-31_-_-_Ceph_Performance_Weekly/&title=《'2018-May-31 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -456,7 +433,7 @@ Ceph 项目的持续发展贡献力量。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-May-31 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/06/01/2018-May-31_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-May-31 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/06/01/2018-May-31_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

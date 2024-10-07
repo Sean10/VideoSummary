@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议是关于Ceph分布式存储系统的月度会议，主要讨论了Crimson更新、Ceph存储技术（Ceph Store）的进展、遥测数据收集以及关键问题的通知机制。会议在假期期间举行，因此参与人数不多。 主要议题  Crimson更新  稳定性提升：Radic团队一直在努力解决Crimson中的bug，特别是在Crimson的Toothology套件中。已经进行了大量的稳定性工作">
+    <meta name="keywords" content="Ceph,Distributed Storage,Telemetry,Crimson Update,Ceph Store">
+    <meta name="description" content="[改进后的中文总结内容] 本次Ceph开发者月度会议主要讨论了Crimson更新、Ceph存储技术（Ceph Store）的进展、遥测数据收集以及关键问题通知机制。 Crimson更新： - Radic团队致力于解决Crimson中的bug，特别是Toothology套件中的问题，包括watch notify API的更改和操作顺序逻辑的改进。 - Crimson与Rook的集成存在问题，但Cha">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Developer Monthly 2021-11-03">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/11/04/Ceph_Developer_Monthly_2021-11-03/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议是关于Ceph分布式存储系统的月度会议，主要讨论了Crimson更新、Ceph存储技术（Ceph Store）的进展、遥测数据收集以及关键问题的通知机制。会议在假期期间举行，因此参与人数不多。 主要议题  Crimson更新  稳定性提升：Radic团队一直在努力解决Crimson中的bug，特别是在Crimson的Toothology套件中。已经进行了大量的稳定性工作">
+<meta property="og:description" content="[改进后的中文总结内容] 本次Ceph开发者月度会议主要讨论了Crimson更新、Ceph存储技术（Ceph Store）的进展、遥测数据收集以及关键问题通知机制。 Crimson更新： - Radic团队致力于解决Crimson中的bug，特别是Toothology套件中的问题，包括watch notify API的更改和操作顺序逻辑的改进。 - Crimson与Rook的集成存在问题，但Cha">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-03T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-11-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Telemetry">
+<meta property="article:tag" content="Crimson Update">
+<meta property="article:tag" content="Ceph Store">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +161,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Developer_Monthly_2021-11-03"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,59 +183,30 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概述">会议概述</h4>
-<p>本次会议是关于Ceph分布式存储系统的月度会议，主要讨论了Crimson更新、Ceph存储技术（Ceph
-Store）的进展、遥测数据收集以及关键问题的通知机制。会议在假期期间举行，因此参与人数不多。</p>
-<h4 id="主要议题">主要议题</h4>
-<ol type="1">
-<li><strong>Crimson更新</strong>
-<ul>
-<li><strong>稳定性提升</strong>：Radic团队一直在努力解决Crimson中的bug，特别是在Crimson的Toothology套件中。已经进行了大量的稳定性工作，包括对watch
-notify API的更改和操作顺序逻辑的改进。</li>
-<li><strong>部署进展</strong>：Crimson与Rook的集成存在问题，但Chad
-May对Crimson的Blue Store集成进行了改进，提高了性能。</li>
-<li><strong>下一步计划</strong>：将scrub工作转移到Krypson中，正在进行OSD状态机的重构，以便在Crimson中重用大量代码。</li>
-</ul></li>
-<li><strong>Ceph存储技术（Ceph Store）</strong>
-<ul>
-<li><strong>性能优化</strong>：Intel团队增加了大量计数器和直方图，用于跟踪事务冲突率和分配信息，有助于解决性能问题。</li>
-<li><strong>稳定性改进</strong>：对LBI分配路径进行了重写，解决了逻辑问题，提高了代码的可读性。</li>
-<li><strong>新功能开发</strong>：Schwehn的extent placement
-manager已合并，支持在C-Store内进行分层。Joyhead正在实现基于年龄的竞价方案，这将有助于将extent写入非日志设备。</li>
-</ul></li>
-<li><strong>遥测数据收集</strong>
-<ul>
-<li><strong>重新选择流程</strong>：讨论了如何解决用户重新选择的问题，提出了一个新的设计，允许用户重新选择时同步新的数据收集版本。</li>
-<li><strong>数据收集策略</strong>：强调了数据收集的透明度和用户隐私，建议对收集的每个字段进行详细说明，并提供一个结构化的JSON描述。</li>
-</ul></li>
-<li><strong>关键问题通知</strong>
-<ul>
-<li><strong>健康警告机制</strong>：提出了一个健康警告机制，用于在用户运行存在已知问题的版本时发出警告。讨论了如何通过Redmine标记严重问题，并在集群中生成健康警告。</li>
-<li><strong>版本信息管理</strong>：建议使用releases.yaml文件来标记有问题的版本，并在集群中提供这些信息，以便用户在升级时做出明智的决策。</li>
-</ul></li>
-</ol>
-<h4 id="决定事项">决定事项</h4>
-<ul>
-<li><strong>Crimson稳定性提升</strong>：继续进行Crimson的稳定性改进，特别是与Rook的集成和多核支持。</li>
-<li><strong>Ceph Store性能优化</strong>：继续优化Ceph
-Store的性能和稳定性，特别是对LBI分配路径和extent placement
-manager的改进。</li>
-<li><strong>遥测数据收集改进</strong>：实施新的重新选择流程，并对收集的数据字段进行详细说明，以提高透明度和用户信任。</li>
-<li><strong>关键问题通知机制</strong>：开发一个健康警告机制，用于通知用户关于已知的关键问题，并使用releases.yaml文件来管理版本信息。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划</h4>
-<ul>
-<li><strong>Crimson开发</strong>：继续进行Crimson的开发和测试，确保与Rook的集成和多核支持的稳定性。</li>
-<li><strong>Ceph Store改进</strong>：继续优化Ceph
-Store的性能和稳定性，特别是对LBI分配路径和extent placement
-manager的改进。</li>
-<li><strong>遥测数据收集</strong>：实施新的重新选择流程，并对收集的数据字段进行详细说明，以提高透明度和用户信任。</li>
-<li><strong>关键问题通知机制</strong>：开发一个健康警告机制，用于通知用户关于已知的关键问题，并使用releases.yaml文件来管理版本信息。</li>
-</ul>
-<h4 id="结论">结论</h4>
-<p>本次会议讨论了Ceph分布式存储系统的多个关键领域，包括Crimson的稳定性提升、Ceph
-Store的性能优化、遥测数据收集的改进以及关键问题的通知机制。会议强调了透明度、用户隐私和性能优化的重要性，并制定了相应的后续行动计划。</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次Ceph开发者月度会议主要讨论了Crimson更新、Ceph存储技术（Ceph
+Store）的进展、遥测数据收集以及关键问题通知机制。</p>
+<p><strong>Crimson更新</strong>： -
+Radic团队致力于解决Crimson中的bug，特别是Toothology套件中的问题，包括watch
+notify API的更改和操作顺序逻辑的改进。 -
+Crimson与Rook的集成存在问题，但Chad May对Blue
+Store集成进行了改进，提高了性能。 -
+下一步计划包括将scrub工作转移到Krypson中，重构OSD状态机以提高Crimson的重用代码量。</p>
+<p><strong>Ceph Store</strong>： -
+Intel团队增加了大量计数器和直方图，用于跟踪事务冲突率和分配信息，有助于解决性能问题。
+- 对LBI分配路径进行了重写，解决了逻辑问题，提高了代码的可读性。 -
+Schwehn的extent placement manager已合并，支持在C-Store内进行分层。 -
+Joyhead正在实现基于年龄的竞价方案，这将有助于将extent写入非日志设备。</p>
+<p><strong>遥测数据收集</strong>： -
+讨论了如何解决用户重新选择的问题，提出了一个新的设计，允许用户重新选择时同步新的数据收集版本。
+-
+强调了数据收集的透明度和用户隐私，建议对收集的每个字段进行详细说明，并提供一个结构化的JSON描述。</p>
+<p><strong>关键问题通知</strong>： -
+提出了一个健康警告机制，用于在用户运行存在已知问题的版本时发出警告。 -
+建议使用releases.yaml文件来标记有问题的版本，并在集群中提供这些信息，以便用户在升级时做出明智的决策。</p>
+<p>会议决定继续进行Crimson的稳定性改进、Ceph
+Store的性能优化、遥测数据收集的改进以及关键问题通知机制的开发。后续行动计划包括继续开发Crimson、优化Ceph
+Store、实施遥测数据收集改进以及开发健康警告机制。</p>
 
         </div>
 
@@ -268,6 +237,8 @@ Store的性能优化、遥测数据收集的改进以及关键问题的通知机
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Store/" rel="tag">Ceph Store</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson-Update/" rel="tag">Crimson Update</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Telemetry/" rel="tag">Telemetry</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -338,7 +309,7 @@ Store的性能优化、遥测数据收集的改进以及关键问题的通知机
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/11/04/Ceph_Performance_Meeting_2021-11-04/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2021-11-04</h4>
+        <h4 class="title">Ceph性能会议2021-11-04</h4>
       </a>
     </div>
   

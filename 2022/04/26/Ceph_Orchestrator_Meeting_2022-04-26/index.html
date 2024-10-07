@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要：  议题一：关于代码审查和功能开发进度的更新，具体如下：  提及了需要重新审视和可能推迟的议题。 讨论了站立会议的频率，提出可能减少会议次数以提高效率。 对HNFS (Highly Non-homogeneous Storage System) 的更新进行了简要讨论，确认了其基本功能正常，但存在一个与OpenStack团队相关的bug。 讨论了升级顺序的问题，强调了核心组件如OSD和MD">
+    <meta name="keywords" content="Ceph,Kubernetes,Orchestrator,Rook,Code Review">
+    <meta name="description" content="[改进后的中文总结内容] 本次Ceph Orchestrator会议主要讨论了以下议题：  代码审查和功能开发进度：会议中提到需要重新审视和可能推迟的议题，讨论了站立会议的频率，并考虑减少会议次数以提高效率。同时，对HNFS（Highly Non-homogeneous Storage System）的更新进行了简要讨论，确认了其基本功能正常，但存在一个与OpenStack团队相关的bug。 Ro">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2022-04-26">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/04/26/Ceph_Orchestrator_Meeting_2022-04-26/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要：  议题一：关于代码审查和功能开发进度的更新，具体如下：  提及了需要重新审视和可能推迟的议题。 讨论了站立会议的频率，提出可能减少会议次数以提高效率。 对HNFS (Highly Non-homogeneous Storage System) 的更新进行了简要讨论，确认了其基本功能正常，但存在一个与OpenStack团队相关的bug。 讨论了升级顺序的问题，强调了核心组件如OSD和MD">
+<meta property="og:description" content="[改进后的中文总结内容] 本次Ceph Orchestrator会议主要讨论了以下议题：  代码审查和功能开发进度：会议中提到需要重新审视和可能推迟的议题，讨论了站立会议的频率，并考虑减少会议次数以提高效率。同时，对HNFS（Highly Non-homogeneous Storage System）的更新进行了简要讨论，确认了其基本功能正常，但存在一个与OpenStack团队相关的bug。 Ro">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-25T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-04-26T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="Code Review">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,24 +183,15 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次Ceph Orchestrator会议主要讨论了以下议题：</p>
 <ol type="1">
-<li><strong>议题一</strong>：关于代码审查和功能开发进度的更新，具体如下：
-<ul>
-<li>提及了需要重新审视和可能推迟的议题。</li>
-<li>讨论了站立会议的频率，提出可能减少会议次数以提高效率。</li>
-<li>对HNFS (Highly Non-homogeneous Storage System)
-的更新进行了简要讨论，确认了其基本功能正常，但存在一个与OpenStack团队相关的bug。</li>
-<li>讨论了升级顺序的问题，强调了核心组件如OSD和MDS的重要性，并提出了放宽对非核心组件的升级顺序限制。</li>
-</ul></li>
-<li><strong>议题二</strong>：关于Rook项目的更新，具体如下：
-<ul>
-<li>讨论了通过Orchestrator模块进行工作的策略，并提出在Rook中添加新功能。</li>
-<li>强调了为Kubernetes用户提供更有用的功能的目标，以及如何实现这一点。</li>
-<li>提到了现有Rook
-Python客户端库的问题，包括其维护和使用方式，以及可能的改进方向。</li>
-</ul></li>
-<li><strong>决定和行动计划</strong>：
+<li><p><strong>代码审查和功能开发进度</strong>：会议中提到需要重新审视和可能推迟的议题，讨论了站立会议的频率，并考虑减少会议次数以提高效率。同时，对HNFS（Highly
+Non-homogeneous Storage
+System）的更新进行了简要讨论，确认了其基本功能正常，但存在一个与OpenStack团队相关的bug。</p></li>
+<li><p><strong>Rook项目更新</strong>：讨论了通过Orchestrator模块进行工作的策略，提出在Rook中添加新功能。强调了为Kubernetes用户提供更有用的功能的目标，以及如何实现这一点。同时，提到了现有Rook
+Python客户端库的问题，包括其维护和使用方式，以及可能的改进方向。</p></li>
+<li><p><strong>决定和行动计划</strong>：</p>
 <ul>
 <li>同意减少站立会议频率，建议每周一和周四举行。</li>
 <li>对HNFS的功能和存在的问题有了初步了解，计划进一步调查。</li>
@@ -203,7 +199,7 @@ Python客户端库的问题，包括其维护和使用方式，以及可能的�
 <li>Rook项目将探索添加新功能，并重新考虑现有的Python客户端库的使用和维护策略。</li>
 <li>强调了资源分配和整合测试的重要性，以确保项目的顺利进行。</li>
 </ul></li>
-<li><strong>下一步行动</strong>：
+<li><p><strong>下一步行动</strong>：</p>
 <ul>
 <li>将相关提议和决定通过邮件通知所有相关人员，并调整会议频率。</li>
 <li>对HNFS的问题进行详细调查，并跟进OpenStack团队的反馈。</li>
@@ -242,6 +238,8 @@ Python客户端库，确保其与主项目的同步和兼容性。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Code-Review/" rel="tag">Code Review</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -312,7 +310,7 @@ Python客户端库，确保其与主项目的同步和兼容性。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/04/22/CDS_Reef_-_Crimson/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Reef: Crimson</h4>
+        <h4 class="title">&#39;CDS Reef: Crimson&#39;</h4>
       </a>
     </div>
   

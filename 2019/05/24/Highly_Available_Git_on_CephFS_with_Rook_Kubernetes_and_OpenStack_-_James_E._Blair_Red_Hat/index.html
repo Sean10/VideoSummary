@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年（具体日期未提及） 参会人员： James Blair（Red Hat CTO办公室），OpenStack社区代表 会议主题： Open Dev项目介绍及在OpenStack中的应用 会议内容：  James Blair自我介绍： 来自Red Hat，代表OpenStack社区，介绍Open Dev项目。 Open Dev项目介绍：  Open Dev是一个为Ope">
+    <meta name="keywords" content="OpenStack,CephFS,Kubernetes,High Availability,Rook">
+    <meta name="description" content="[改进后的中文总结内容] 在本次会议中，James E. Blair（Red Hat CTO办公室）和OpenStack社区代表共同探讨了如何使用CephFS、Rook、Kubernetes和OpenStack实现高度可用的Git服务。 会议内容：  Open Dev项目介绍： Open Dev是一个为OpenStack开发的软件开发环境，使用免费软件进行开发和系统运营。Git T服务是Open">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Highly Available Git on CephFS with Rook, Kubernetes, and OpenStack - James E. Blair, Red Hat">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/05/24/Highly_Available_Git_on_CephFS_with_Rook_Kubernetes_and_OpenStack_-_James_E._Blair_Red_Hat/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年（具体日期未提及） 参会人员： James Blair（Red Hat CTO办公室），OpenStack社区代表 会议主题： Open Dev项目介绍及在OpenStack中的应用 会议内容：  James Blair自我介绍： 来自Red Hat，代表OpenStack社区，介绍Open Dev项目。 Open Dev项目介绍：  Open Dev是一个为Ope">
+<meta property="og:description" content="[改进后的中文总结内容] 在本次会议中，James E. Blair（Red Hat CTO办公室）和OpenStack社区代表共同探讨了如何使用CephFS、Rook、Kubernetes和OpenStack实现高度可用的Git服务。 会议内容：  Open Dev项目介绍： Open Dev是一个为OpenStack开发的软件开发环境，使用免费软件进行开发和系统运营。Git T服务是Open">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-05-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="OpenStack">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="High Availability">
+<meta property="article:tag" content="Rook">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,63 +183,46 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： 2023年（具体日期未提及）</p>
-<p><strong>参会人员</strong>： James Blair（Red Hat
-CTO办公室），OpenStack社区代表</p>
-<p><strong>会议主题</strong>： Open Dev项目介绍及在OpenStack中的应用</p>
+            <p>[改进后的中文总结内容]</p>
+<p>在本次会议中，James E. Blair（Red Hat
+CTO办公室）和OpenStack社区代表共同探讨了如何使用CephFS、Rook、Kubernetes和OpenStack实现高度可用的Git服务。</p>
 <p><strong>会议内容</strong>：</p>
 <ul>
-<li><strong>James Blair自我介绍</strong>： 来自Red
-Hat，代表OpenStack社区，介绍Open Dev项目。</li>
-<li><strong>Open Dev项目介绍</strong>：
-<ul>
-<li>Open
-Dev是一个为OpenStack开发的软件开发环境，是目前世界上第三活跃的免费软件项目。</li>
-<li>项目使用免费软件进行开发和系统运营。</li>
-<li>主要工具包括Gerrit（代码审查）、Zul（持续集成和持续部署）和Git
-T（代码托管）。</li>
-<li>Git T服务目前运行在8个虚拟机上，需要扩展和优化。</li>
-</ul></li>
-<li><strong>Git T服务优化</strong>：
-<ul>
-<li>当前Git T服务运行在独立的虚拟机上，难以扩展和规模扩展。</li>
-<li>计划将Git T服务迁移到共享一切模型，使用Ceph
-Filesystem（Ceph文件系统）作为共享文件系统，Percona XtraDB
-Cluster作为数据库，Elasticsearch集群用于全文索引。</li>
-<li>使用Kubernetes进行管理，利用OpenStack提供的服务，如负载均衡器、块存储和虚拟机。</li>
-</ul></li>
-<li><strong>自动化部署</strong>：
-<ul>
-<li>使用Kubernetes on
-OpenStack项目进行自动化部署，该项目提供一系列Ansible
-Playbook，用于在OpenStack上部署Kubernetes，并配置与OpenStack的集成。</li>
-<li>使用Rook进行Ceph集群的部署和管理。</li>
-</ul></li>
-<li><strong>Rook部署</strong>：
-<ul>
-<li>使用Rook的Flex存储驱动程序在Kubernetes上部署Ceph集群。</li>
-<li>使用Rook的Operator简化Ceph集群的部署和管理。</li>
-<li>使用BlueStore存储驱动程序提高性能。</li>
-</ul></li>
-<li><strong>其他部署</strong>：
-<ul>
-<li>使用Percona XtraDB Cluster作为数据库。</li>
-<li>使用Ansible Playbook创建Percona集群。</li>
-<li>使用Kubernetes部署Git T应用程序。</li>
-</ul></li>
+<li><strong>Open Dev项目介绍</strong>： Open
+Dev是一个为OpenStack开发的软件开发环境，使用免费软件进行开发和系统运营。Git
+T服务是Open Dev项目的重要组成部分。</li>
+<li><strong>Git T服务优化</strong>： 目前Git
+T服务运行在独立的虚拟机上，难以扩展和规模扩展。计划将Git
+T服务迁移到CephFS，使用Percona XtraDB
+Cluster作为数据库，Elasticsearch集群用于全文索引，并利用Kubernetes进行管理。</li>
+<li><strong>自动化部署</strong>： 使用Kubernetes on
+OpenStack项目进行自动化部署，利用Rook进行Ceph集群的部署和管理。</li>
+<li><strong>Ceph集群部署</strong>：
+使用Rook的Flex存储驱动程序在Kubernetes上部署Ceph集群，使用Rook的Operator简化Ceph集群的部署和管理，并使用BlueStore存储驱动程序提高性能。</li>
+<li><strong>其他部署</strong>： 使用Percona XtraDB
+Cluster作为数据库，并使用Kubernetes部署Git T应用程序。</li>
+<li><strong>行动计划</strong>： 完成Git
+T服务的迁移和优化，继续使用Rook和Ceph进行部署和管理，探索使用Ceph作为Percona
+XtraDB Cluster的后端存储。</li>
 </ul>
-<p><strong>行动计划</strong>：</p>
+<p><strong>改进后的总结</strong>：</p>
+<p>在本次会议中，James E.
+Blair介绍了如何利用CephFS、Rook、Kubernetes和OpenStack实现高度可用的Git服务。他详细讨论了如何使用这些技术优化Git
+T服务，实现自动化部署和Ceph集群的部署管理。此外，他还介绍了如何使用BlueStore存储驱动程序提高性能，并探索使用Ceph作为Percona
+XtraDB Cluster的后端存储。</p>
+<p><strong>相关关键词</strong>：</p>
 <ul>
-<li>完成Git T服务的迁移和优化。</li>
-<li>继续使用Rook和Ceph进行部署和管理。</li>
-<li>探索使用Ceph作为Percona XtraDB Cluster的后端存储。</li>
+<li>CephFS</li>
+<li>Rook</li>
+<li>Kubernetes</li>
+<li>OpenStack</li>
+<li>高可用性</li>
+<li>Git服务</li>
+<li>自动化部署</li>
+<li>Ceph集群</li>
+<li>BlueStore</li>
+<li>Percona XtraDB Cluster</li>
 </ul>
-<p><strong>会议总结</strong>：</p>
-<p>Open
-Dev项目是一个基于OpenStack的软件开发环境，该项目使用免费软件进行开发和系统运营。Git
-T服务是Open Dev项目的重要组成部分，目前正在进行优化和扩展。会议介绍了Git
-T服务的优化方案、自动化部署和Rook部署等内容。</p>
 
         </div>
 
@@ -265,6 +253,8 @@ T服务的优化方案、自动化部署和Rook部署等内容。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High-Availability/" rel="tag">High Availability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack/" rel="tag">OpenStack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -324,18 +314,18 @@ T服务的优化方案、自动化部署和Rook部署等内容。</p>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2019/05/24/Geographical_Redundancy_with_rbd-mirror_-_Best..._-_Florian_Haas/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Geographical Redundancy with rbd-mirror: Best... - Florian Haas</h4>
+        <h4 class="title">Hands On with Rook- Ceph &amp; Kubernetes - Maxime Guyot, Root Pi &amp; John Studarus, Packet Host</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/05/24/Hands_On_with_Rook_-_Ceph_Kubernetes_-_Maxime_Guyot_Root_Pi_John_Studarus_Packet_Host/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/05/24/Healthier_Ceph_Clusters_with_Ceph-medic_-_Alfredo_Deza_Red_Hat/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Hands On with Rook: Ceph &amp; Kubernetes - Maxime Guyot, Root Pi &amp; John Studarus, Packet Host</h4>
+        <h4 class="title">Healthier Ceph Clusters with Ceph-medic - Alfredo Deza, Red Hat</h4>
       </a>
     </div>
   

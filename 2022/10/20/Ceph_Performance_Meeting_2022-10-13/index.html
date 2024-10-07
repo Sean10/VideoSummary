@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：  性能测试工具CBT（Ceph Benchmarking Tool）在不同存储后端（如Motor和Deos）的比较。  讨论内容：  CBT的使用：  计划使用CBT来比较不同的存储后端，特别是Motor和Deos。 讨论了这些后端的当前状态和是否能够通过CBT的测试。  Motor和Deos的状态：  Motor和Deos都是开源项目，但可能需要特定的硬件支持。 Deos由">
+    <meta name="keywords" content="Ceph性能测试,CBT工具,存储后端比较,Seagate Motor,Deos">
+    <meta name="description" content="[改进后的中文总结内容] Ceph性能会议2022年10月13日的纪要如下： 会议主题 本次会议主要讨论了使用CBT（Ceph Benchmarking Tool）进行不同存储后端（如Motor和Deos）的性能测试。 讨论内容  CBT的使用： 讨论了使用CBT进行性能测试的必要性，并计划将其应用于Motor和Deos等不同存储后端。 Motor和Deos的状态： 分析了Motor和Deos的开">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Performance Meeting 2022-10-13">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Performance_Meeting_2022-10-13/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：  性能测试工具CBT（Ceph Benchmarking Tool）在不同存储后端（如Motor和Deos）的比较。  讨论内容：  CBT的使用：  计划使用CBT来比较不同的存储后端，特别是Motor和Deos。 讨论了这些后端的当前状态和是否能够通过CBT的测试。  Motor和Deos的状态：  Motor和Deos都是开源项目，但可能需要特定的硬件支持。 Deos由">
+<meta property="og:description" content="[改进后的中文总结内容] Ceph性能会议2022年10月13日的纪要如下： 会议主题 本次会议主要讨论了使用CBT（Ceph Benchmarking Tool）进行不同存储后端（如Motor和Deos）的性能测试。 讨论内容  CBT的使用： 讨论了使用CBT进行性能测试的必要性，并计划将其应用于Motor和Deos等不同存储后端。 Motor和Deos的状态： 分析了Motor和Deos的开">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-10-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-10-20T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph性能测试">
+<meta property="article:tag" content="CBT工具">
+<meta property="article:tag" content="存储后端比较">
+<meta property="article:tag" content="Seagate Motor">
+<meta property="article:tag" content="Deos">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他讨论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议主题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">2.</span> <span class="post-toc-text">讨论内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">4.</span> <span class="post-toc-text">后续行动</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">5.</span> <span class="post-toc-text">其他讨论</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">6.</span> <span class="post-toc-text">会议结束</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,66 +190,45 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题">会议主题：</h4>
-<ul>
-<li>性能测试工具CBT（Ceph Benchmarking
-Tool）在不同存储后端（如Motor和Deos）的比较。</li>
-</ul>
-<h4 id="讨论内容">讨论内容：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>Ceph性能会议2022年10月13日的纪要如下：</p>
+<h3 id="会议主题">会议主题</h3>
+<p>本次会议主要讨论了使用CBT（Ceph Benchmarking
+Tool）进行不同存储后端（如Motor和Deos）的性能测试。</p>
+<h3 id="讨论内容">讨论内容</h3>
 <ol type="1">
 <li><strong>CBT的使用</strong>：
-<ul>
-<li>计划使用CBT来比较不同的存储后端，特别是Motor和Deos。</li>
-<li>讨论了这些后端的当前状态和是否能够通过CBT的测试。</li>
-</ul></li>
+讨论了使用CBT进行性能测试的必要性，并计划将其应用于Motor和Deos等不同存储后端。</li>
 <li><strong>Motor和Deos的状态</strong>：
-<ul>
-<li>Motor和Deos都是开源项目，但可能需要特定的硬件支持。</li>
-<li>Deos由Intel开发，而Motor由Seagate开发。</li>
-</ul></li>
-<li><strong>CBT的抽象和扩展</strong>：
-<ul>
-<li>讨论了如何改进CBT，使其不仅限于Ceph，还能支持其他存储系统如Deos。</li>
-<li>提出了在CBT中增加对Deos集群的支持，并扩展客户端端点的功能。</li>
-</ul></li>
+分析了Motor和Deos的开源项目和硬件需求，Motor由Seagate开发，Deos由Intel开发。</li>
+<li><strong>CBT的扩展</strong>：
+讨论了如何扩展CBT，使其能够支持更多存储后端，如Deos，并增加客户端端点的功能。</li>
 <li><strong>性能和功能实现</strong>：
-<ul>
-<li>讨论了Deos的性能，特别是在未启用复制模式下的高速表现。</li>
-<li>提到了Deos的一些功能还未完全实现，如多部分上传。</li>
-</ul></li>
+讨论了Deos的性能，特别是在未启用复制模式下的高速表现，以及其他功能如多部分上传的实现情况。</li>
 <li><strong>合作与联系</strong>：
-<ul>
-<li>建议与Seagate合作，共同推进CBT的发展。</li>
-<li>确定了与Seagate团队的联系人Gregory Taretsky。</li>
-</ul></li>
+建议与Seagate合作，共同推进CBT的发展，并确定了与Seagate团队的联系人Gregory
+Taretsky。</li>
 <li><strong>后续行动计划</strong>：
-<ul>
-<li>Mark计划首先尝试安装和运行这些存储系统，并记录部署过程。</li>
-<li>计划逐步自动化这些过程，并探索如何将这些系统集成到CBT中。</li>
-</ul></li>
+Mark计划首先尝试安装和运行这些存储系统，并记录部署过程，然后逐步自动化这些过程，并探索如何将这些系统集成到CBT中。</li>
 </ol>
-<h4 id="决定事项">决定事项：</h4>
+<h3 id="决定事项">决定事项</h3>
 <ul>
 <li>确定与Seagate的合作，特别是关于Motor和Deos的集成。</li>
 <li>Mark将负责初步的安装和测试工作，并与Seagate团队联系。</li>
 </ul>
-<h4 id="后续行动">后续行动：</h4>
+<h3 id="后续行动">后续行动</h3>
 <ul>
 <li>Mark将联系Gregory Taretsky，获取更多关于Motor和Deos的信息。</li>
 <li>继续改进CBT，使其支持更多的存储后端和性能测试。</li>
+<li>讨论RBD的性能改进，特别是与Seagate的合作和CBT的扩展。</li>
 </ul>
-<h4 id="其他讨论">其他讨论：</h4>
+<h3 id="其他讨论">其他讨论</h3>
 <ul>
-<li>讨论了RBD的性能改进，特别是与Seagate的合作和CBT的扩展。</li>
-<li>提到了Deos的高性能表现和潜在的应用场景。</li>
+<li>讨论了Deos的高性能表现和潜在的应用场景。</li>
 </ul>
-<h4 id="会议结束">会议结束：</h4>
-<ul>
-<li>会议在讨论了所有议题后结束，感谢所有参与者的贡献。</li>
-</ul>
-<hr />
-<p>本次会议主要聚焦于Ceph生态系统中不同存储后端的性能测试和集成，特别是通过CBT工具来实现这一目标。通过与Seagate的合作，预计将能够更好地理解和优化这些存储系统的性能。</p>
+<h3 id="会议结束">会议结束</h3>
+<p>会议在讨论了所有议题后结束，感谢所有参与者的贡献。</p>
+<p>本次会议旨在通过CBT工具比较和测试Ceph生态系统中不同存储后端的性能，并与Seagate合作以优化这些存储系统的性能。</p>
 
         </div>
 
@@ -275,6 +259,8 @@ Tool）在不同存储后端（如Motor和Deos）的比较。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CBT%E5%B7%A5%E5%85%B7/" rel="tag">CBT工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">Ceph性能测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Deos/" rel="tag">Deos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Seagate-Motor/" rel="tag">Seagate Motor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E5%90%8E%E7%AB%AF%E6%AF%94%E8%BE%83/" rel="tag">存储后端比较</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -345,7 +331,7 @@ Tool）在不同存储后端（如Motor和Deos）的比较。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/10/20/Ceph_Performance_Meeting_2022-10-20/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2022-10-20</h4>
+        <h4 class="title">Ceph性能会议2022-10-20</h4>
       </a>
     </div>
   

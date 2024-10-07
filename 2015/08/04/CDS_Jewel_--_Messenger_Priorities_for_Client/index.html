@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： 客户端消息优先级讨论 参会人员： 多位研发人员，包括负责Ceph分布式存储、视频会议字幕翻译和总结的成员。 会议内容： 一、议题概述 本次会议主要讨论了客户端消息优先级的问题，旨在解决当前Ceph系统中存在的负载不均衡和性能问题。 二、讨论的主要议题  当前问题：  客户端之间负载不均衡，导致部分客户端响应时间过长。 系统中存在性能瓶颈，需要优化。  解决方案：  引入简单的">
+    <meta name="keywords" content="Ceph,分布式存储,消息优先级,Token Bucket,PD Cream">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph客户端消息优先级的问题，旨在解决当前Ceph系统中存在的负载不均衡和性能问题。会议内容主要包括以下要点：  议题概述： 讨论如何通过消息优先级解决客户端负载不均衡和性能瓶颈。 讨论的主要议题：  当前问题： 客户端之间负载不均衡，部分客户端响应时间过长；系统存在性能瓶颈。 解决方案： 引入简单&#x2F;优先模型，通过优先级队列来分配负载；优化PD Cre">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CDS Jewel -- Messenger, Priorities for Client">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_Messenger_Priorities_for_Client/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： 客户端消息优先级讨论 参会人员： 多位研发人员，包括负责Ceph分布式存储、视频会议字幕翻译和总结的成员。 会议内容： 一、议题概述 本次会议主要讨论了客户端消息优先级的问题，旨在解决当前Ceph系统中存在的负载不均衡和性能问题。 二、讨论的主要议题  当前问题：  客户端之间负载不均衡，导致部分客户端响应时间过长。 系统中存在性能瓶颈，需要优化。  解决方案：  引入简单的">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph客户端消息优先级的问题，旨在解决当前Ceph系统中存在的负载不均衡和性能问题。会议内容主要包括以下要点：  议题概述： 讨论如何通过消息优先级解决客户端负载不均衡和性能瓶颈。 讨论的主要议题：  当前问题： 客户端之间负载不均衡，部分客户端响应时间过长；系统存在性能瓶颈。 解决方案： 引入简单&#x2F;优先模型，通过优先级队列来分配负载；优化PD Cre">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="消息优先级">
+<meta property="article:tag" content="Token Bucket">
+<meta property="article:tag" content="PD Cream">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +161,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-CDS_Jewel_--_Messenger_Priorities_for_Client"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,56 +183,42 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题</strong>： 客户端消息优先级讨论</p>
-<p><strong>参会人员</strong>：
-多位研发人员，包括负责Ceph分布式存储、视频会议字幕翻译和总结的成员。</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>一、议题概述</strong></p>
-<p>本次会议主要讨论了客户端消息优先级的问题，旨在解决当前Ceph系统中存在的负载不均衡和性能问题。</p>
-<p><strong>二、讨论的主要议题</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph客户端消息优先级的问题，旨在解决当前Ceph系统中存在的负载不均衡和性能问题。会议内容主要包括以下要点：</p>
 <ol type="1">
+<li><p><strong>议题概述</strong>：
+讨论如何通过消息优先级解决客户端负载不均衡和性能瓶颈。</p></li>
+<li><p><strong>讨论的主要议题</strong>：</p>
+<ul>
 <li><strong>当前问题</strong>：
-<ul>
-<li>客户端之间负载不均衡，导致部分客户端响应时间过长。</li>
-<li>系统中存在性能瓶颈，需要优化。</li>
-</ul></li>
+客户端之间负载不均衡，部分客户端响应时间过长；系统存在性能瓶颈。</li>
 <li><strong>解决方案</strong>：
-<ul>
-<li>引入简单的/优先模型，通过优先级队列来分配负载。</li>
-<li>优化现有PD Cream模型，考虑性能问题。</li>
-<li>调整FL Journal Queen的优先级，提高性能。</li>
+引入简单/优先模型，通过优先级队列来分配负载；优化PD
+Cream模型，考虑性能问题；调整FL Journal Queen的优先级，提高性能。</li>
+<li><strong>技术方案</strong>： 使用Token
+Bucket算法控制客户端优先级；修改现有代码实现优先级队列；在文件存储层进行优先级控制。</li>
 </ul></li>
-<li><strong>技术方案</strong>：
+<li><p><strong>决定的事项</strong>：</p>
 <ul>
-<li>使用Token Bucket算法来控制客户端的优先级。</li>
-<li>通过修改现有代码，实现优先级队列。</li>
-<li>考虑在文件存储层进行优先级控制。</li>
-</ul></li>
-</ol>
-<p><strong>三、决定的事项</strong></p>
-<ol type="1">
-<li>评估Token
-Bucket算法的适用性，并考虑在现有代码中实现优先级队列。</li>
+<li>评估Token Bucket算法的适用性，并在现有代码中实现优先级队列。</li>
 <li>优化PD Cream模型，提高性能。</li>
 <li>调整FL Journal Queen的优先级，提高性能。</li>
 <li>探讨在文件存储层进行优先级控制的方案。</li>
-</ol>
-<p><strong>四、后续行动计划</strong></p>
-<ol type="1">
+</ul></li>
+<li><p><strong>后续行动计划</strong>：</p>
+<ul>
 <li>研发团队进一步研究Token
 Bucket算法，并评估其在Ceph系统中的应用。</li>
 <li>优化PD Cream模型，并进行测试。</li>
 <li>调整FL Journal Queen的优先级，并观察性能变化。</li>
 <li>探索在文件存储层进行优先级控制的方案，并进行可行性分析。</li>
-</ol>
-<p><strong>五、其他</strong></p>
-<ol type="1">
+</ul></li>
+<li><p><strong>其他</strong>：</p>
+<ul>
 <li>讨论了Ceph系统中客户端连接数限制的问题，并提出了可能的解决方案。</li>
 <li>讨论了Ceph系统中资源分配的问题，并提出了可能的优化方案。</li>
+</ul></li>
 </ol>
-<p><strong>关键词</strong>： Ceph、分布式存储、消息优先级、Token
-Bucket、PD Cream、FL Journal Queen</p>
 
         </div>
 
@@ -265,6 +249,8 @@ Bucket、PD Cream、FL Journal Queen</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PD-Cream/" rel="tag">PD Cream</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Token-Bucket/" rel="tag">Token Bucket</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B6%88%E6%81%AF%E4%BC%98%E5%85%88%E7%BA%A7/" rel="tag">消息优先级</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -324,18 +310,18 @@ Bucket、PD Cream、FL Journal Queen</p>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_Ceph_Mesos/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_CephFS_starter_tasks/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Jewel -- Ceph Mesos</h4>
+        <h4 class="title"> CDS Jewel -- CephFS starter tasks </h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_Ceph_0_day_for_performance_regression/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_Hadoop_over_Ceph_RGW/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Jewel -- Ceph 0 day for performance regression</h4>
+        <h4 class="title">CDS Jewel -- Hadoop over Ceph RGW</h4>
       </a>
     </div>
   

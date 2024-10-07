@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 主要议题：  Ceph vstart 依赖性问题  问题描述：当前vstart在启用self adm时失败，原因是无法加载self adm的依赖项。这些依赖项是运行时依赖，因此在从源代码构建Ceph并尝试启动vstart时会失败。 讨论内容：讨论了是否应将这些依赖项作为构建请求的一部分添加，但Kifu Chai指出这些依赖项并非严格意义上的构建依赖，因此不能直接添加。 解决方案：提出了一">
+    <meta name="keywords" content="Ceph,分布式存储,NFS,vstart,开发工具">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 主要议题：  Ceph vstart 依赖性问题  问题描述：在启用 self adm 时，vstart 无法加载 self adm 的依赖项，导致启动失败。 讨论内容：会议讨论了是否将依赖项作为构建请求的一部分添加，但认为这些依赖项并非严格意义上的构建依赖。 解决方案：短期解决方案为异常处理和模拟，长期解决方案需进一步研究 vstart 如何处理运行时依赖。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2022-03-29">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/03/30/Ceph_Orchestrator_Meeting_2022-03-29/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 主要议题：  Ceph vstart 依赖性问题  问题描述：当前vstart在启用self adm时失败，原因是无法加载self adm的依赖项。这些依赖项是运行时依赖，因此在从源代码构建Ceph并尝试启动vstart时会失败。 讨论内容：讨论了是否应将这些依赖项作为构建请求的一部分添加，但Kifu Chai指出这些依赖项并非严格意义上的构建依赖，因此不能直接添加。 解决方案：提出了一">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 主要议题：  Ceph vstart 依赖性问题  问题描述：在启用 self adm 时，vstart 无法加载 self adm 的依赖项，导致启动失败。 讨论内容：会议讨论了是否将依赖项作为构建请求的一部分添加，但认为这些依赖项并非严格意义上的构建依赖。 解决方案：短期解决方案为异常处理和模拟，长期解决方案需进一步研究 vstart 如何处理运行时依赖。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-03-30T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="NFS">
+<meta property="article:tag" content="vstart">
+<meta property="article:tag" content="开发工具">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,44 +190,44 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
 <li><strong>Ceph vstart 依赖性问题</strong>
 <ul>
-<li><strong>问题描述</strong>：当前vstart在启用self
-adm时失败，原因是无法加载self
-adm的依赖项。这些依赖项是运行时依赖，因此在从源代码构建Ceph并尝试启动vstart时会失败。</li>
-<li><strong>讨论内容</strong>：讨论了是否应将这些依赖项作为构建请求的一部分添加，但Kifu
-Chai指出这些依赖项并非严格意义上的构建依赖，因此不能直接添加。</li>
-<li><strong>解决方案</strong>：提出了一个短期解决方案，即在导入时处理异常，如果导入失败则使用模拟（mock）代替。长期解决方案需要进一步研究vstart如何处理运行时依赖。</li>
+<li><strong>问题描述</strong>：在启用 self adm 时，vstart 无法加载 self
+adm 的依赖项，导致启动失败。</li>
+<li><strong>讨论内容</strong>：会议讨论了是否将依赖项作为构建请求的一部分添加，但认为这些依赖项并非严格意义上的构建依赖。</li>
+<li><strong>解决方案</strong>：短期解决方案为异常处理和模拟，长期解决方案需进一步研究
+vstart 如何处理运行时依赖。</li>
 </ul></li>
-<li><strong>Ceph开发工具的使用</strong>
+<li><strong>Ceph 开发工具的使用</strong>
 <ul>
-<li><strong>讨论内容</strong>：讨论了开发人员通常使用的工具，如kcli和容器化方法，以及vstart的使用频率较低，导致一些问题未被及时发现。</li>
+<li><strong>讨论内容</strong>：讨论了开发人员使用的工具，如 kcli
+和容器化方法，以及 vstart 使用频率较低导致问题未及时发现。</li>
 </ul></li>
 <li><strong>Ceph NFS相关问题</strong>
 <ul>
 <li><strong>问题描述</strong>：讨论了NFS服务的部署问题，特别是多个NFS守护进程在同一主机上的部署问题，以及NFS服务的高可用性配置。</li>
-<li><strong>解决方案</strong>：提出了一些改进措施，如改进端口冲突解决机制，以及考虑在Ceph的构建过程中使用Python虚拟环境。</li>
+<li><strong>解决方案</strong>：提出了一些改进措施，如改进端口冲突解决机制。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
-<li><strong>vstart依赖性问题</strong>：短期内将采用异常处理和模拟方法解决，长期需要找到合适的运行时依赖管理机制。</li>
+<li><strong>vstart依赖性问题</strong>：短期内采用异常处理和模拟方法解决，长期需找到合适的运行时依赖管理机制。</li>
 <li><strong>NFS部署问题</strong>：需要进一步研究和测试NFS服务的部署和运行机制，特别是高可用性和端口冲突问题。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
 <li><strong>vstart依赖性问题</strong>：继续研究vstart的依赖管理，寻找更合适的解决方案。</li>
-<li><strong>NFS部署问题</strong>：创建跟踪票，进一步研究NFS服务的部署和运行机制，特别是高可用性和端口冲突问题。</li>
+<li><strong>NFS部署问题</strong>：创建跟踪票，进一步研究NFS服务的部署和运行机制。</li>
 <li><strong>开发工具使用</strong>：鼓励团队成员更多地使用vstart等开发工具，以便及时发现和解决问题。</li>
 </ul>
 <h4 id="其他讨论">其他讨论：</h4>
 <ul>
-<li><strong>Ceph开发工具的使用</strong>：讨论了开发人员通常使用的工具，如kcli和容器化方法，以及vstart的使用频率较低，导致一些问题未被及时发现。</li>
-<li><strong>Ceph
-NFS相关问题</strong>：讨论了NFS服务的部署问题，特别是多个NFS守护进程在同一主机上的部署问题，以及NFS服务的高可用性配置。</li>
+<li>讨论了开发人员通常使用的工具，如kcli和容器化方法，以及vstart的使用频率较低。</li>
+<li>讨论了NFS服务的部署问题，特别是多个NFS守护进程在同一主机上的部署问题，以及NFS服务的高可用性配置。</li>
 </ul>
 <h4 id="结论">结论：</h4>
 <p>会议主要解决了Ceph
@@ -257,6 +262,8 @@ vstart的依赖性问题和NFS服务的部署问题，并提出了相应的短�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS/" rel="tag">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/vstart/" rel="tag">vstart</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" rel="tag">开发工具</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -318,7 +325,7 @@ vstart的依赖性问题和NFS服务的部署问题，并提出了相应的短�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/03/30/2022-03-24_-_-_Ceph_Tech_Talk_-_Running_Teuthology_Locally/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally</h4>
+        <h4 class="title">&#39;2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally&#39;</h4>
       </a>
     </div>
   

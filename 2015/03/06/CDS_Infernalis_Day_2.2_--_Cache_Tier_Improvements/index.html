@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Cash Tier改进与Proxy机制讨论 会议时间： [请填写会议具体时间] 参会人员： [请填写参会人员名单] 会议内容： 一、Cash Tier改进  现状与问题：  Intel团队在Hammer周期内对Cash Tier进行了大量改进，主要集中在读操作上，避免了不必要的提升（Promotion）。 然而，对于写操作的Proxy机制仍需测试和完善。 当最终决定提升时，仍">
+    <meta name="keywords" content="Ceph,Cache Tier,Hit Set,Proxy Mechanism,Data Storage Optimization">
+    <meta name="description" content="改进后的中文总结内容 以下是对会议内容的改进总结，确保涵盖了关键细节、主要议题、决定的事项以及后续行动计划。 会议纪要 会议主题： Cache Tier改进与Proxy机制讨论 会议时间： [请填写会议具体时间] 参会人员： [请填写参会人员名单] 会议内容： 一、Cash Tier改进  现状与问题：  Intel团队在Hammer周期内对Cash Tier进行了大量改进，主要集中在读操作上，避">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CDS Infernalis (Day 2.2) -- Cache Tier Improvements">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_Cache_Tier_Improvements/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Cash Tier改进与Proxy机制讨论 会议时间： [请填写会议具体时间] 参会人员： [请填写参会人员名单] 会议内容： 一、Cash Tier改进  现状与问题：  Intel团队在Hammer周期内对Cash Tier进行了大量改进，主要集中在读操作上，避免了不必要的提升（Promotion）。 然而，对于写操作的Proxy机制仍需测试和完善。 当最终决定提升时，仍">
+<meta property="og:description" content="改进后的中文总结内容 以下是对会议内容的改进总结，确保涵盖了关键细节、主要议题、决定的事项以及后续行动计划。 会议纪要 会议主题： Cache Tier改进与Proxy机制讨论 会议时间： [请填写会议具体时间] 参会人员： [请填写参会人员名单] 会议内容： 一、Cash Tier改进  现状与问题：  Intel团队在Hammer周期内对Cash Tier进行了大量改进，主要集中在读操作上，避">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-03-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-03-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Cache Tier">
+<meta property="article:tag" content="Hit Set">
+<meta property="article:tag" content="Proxy Mechanism">
+<meta property="article:tag" content="Data Storage Optimization">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结内容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议纪要</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">总结</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,8 +190,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题</strong>： Cash Tier改进与Proxy机制讨论</p>
+            <h2 id="改进后的中文总结内容">改进后的中文总结内容</h2>
+<p>以下是对会议内容的改进总结，确保涵盖了关键细节、主要议题、决定的事项以及后续行动计划。</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议主题</strong>： Cache Tier改进与Proxy机制讨论</p>
 <p><strong>会议时间</strong>： [请填写会议具体时间]</p>
 <p><strong>参会人员</strong>： [请填写参会人员名单]</p>
 <p><strong>会议内容</strong>：</p>
@@ -196,23 +203,20 @@
 <ul>
 <li>Intel团队在Hammer周期内对Cash
 Tier进行了大量改进，主要集中在读操作上，避免了不必要的提升（Promotion）。</li>
-<li>然而，对于写操作的Proxy机制仍需测试和完善。</li>
+<li>对于写操作的Proxy机制仍需测试和完善。</li>
 <li>当最终决定提升时，仍需阻塞写操作，因为对象尚未提升到Cache层面。</li>
 </ul></li>
 <li><strong>改进方向</strong>：
 <ul>
-<li>基于现有基础设施，根据读操作和写操作进行更合理的提升决策，以减少在Base
-Tier和Cash Tier之间推送数据的次数。</li>
+<li>根据读操作和写操作进行更合理的提升决策，以减少在Base Tier和Cash
+Tier之间推送数据的次数。</li>
 <li>引入“最近性”概念，类似读操作的策略，对写操作进行优化。</li>
 </ul></li>
 <li><strong>具体方案</strong>：
 <ul>
-<li><strong>跟踪不同类型的I/O操作</strong>：
-区分读和写操作，以及顺序读和顺序写操作。</li>
-<li><strong>基于I/O类型进行提升决策</strong>：
-例如，对于大量读操作但从未写入的对象，可能不需要提升；对于只写入但无读操作的对象，根据性能指标可能需要提升。</li>
-<li><strong>使用近似计数Bloom过滤器</strong>：
-用于跟踪冷数据，而将热数据存储在哈希表中，以便进行精确计数。</li>
+<li>跟踪不同类型的I/O操作，区分读和写操作，以及顺序读和顺序写操作。</li>
+<li>基于I/O类型进行提升决策，例如，对于大量读操作但从未写入的对象，可能不需要提升；对于只写入但无读操作的对象，根据性能指标可能需要提升。</li>
+<li>使用近似计数Bloom过滤器，用于跟踪冷数据，而将热数据存储在哈希表中，以便进行精确计数。</li>
 </ul></li>
 </ol>
 <p><strong>二、Hit Set改进</strong></p>
@@ -230,10 +234,8 @@ Set目前只能覆盖固定时间间隔（例如1小时），且只能告知是�
 </ul></li>
 <li><strong>具体方案</strong>：
 <ul>
-<li><strong>哈希表和布隆过滤器结合</strong>：
-哈希表用于存储热点数据，布隆过滤器用于存储非热点数据。</li>
-<li><strong>近似计数Bloom过滤器</strong>：
-用于跟踪对象的热度，并决定何时将对象从哈希表移动到布隆过滤器。</li>
+<li>哈希表用于存储热点数据，布隆过滤器用于存储非热点数据。</li>
+<li>使用近似计数Bloom过滤器，用于跟踪对象的热度，并决定何时将对象从哈希表移动到布隆过滤器。</li>
 </ul></li>
 </ol>
 <p><strong>三、行动计划</strong></p>
@@ -260,6 +262,10 @@ Counting Bloom Filters</a></li>
 Rate Curves</a></li>
 </ul></li>
 </ol>
+<h3 id="总结">总结</h3>
+<p>本次会议重点讨论了Ceph中Cache
+Tier的改进，包括Proxy机制的测试和完善、基于I/O类型的提升决策、Hit
+Set的改进以及近似计数Bloom过滤器的实现。会议还确定了后续的行动计划，包括测试、研究和实施相关改进。</p>
 
         </div>
 
@@ -290,6 +296,8 @@ Rate Curves</a></li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cache-Tier/" rel="tag">Cache Tier</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Data-Storage-Optimization/" rel="tag">Data Storage Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Hit-Set/" rel="tag">Hit Set</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Proxy-Mechanism/" rel="tag">Proxy Mechanism</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -349,18 +357,18 @@ Rate Curves</a></li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_RGW_-_Multitenancy/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_LMDB_backend_for_Ceph/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Infernalis (Day 1) -- RGW: Multitenancy</h4>
+        <h4 class="title">CDS Infernalis (Day 2.2) -- LMDB后端方案讨论</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_Simple_ceph-mon_dm-crypt_key_management/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_2.2_--_OSD_-_Newstore/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Infernalis (Day 1) -- Simple ceph-mon dm-crypt key management</h4>
+        <h4 class="title">  CDS Infernalis (Day 2.2) -- OSD: Newstore  </h4>
       </a>
     </div>
   

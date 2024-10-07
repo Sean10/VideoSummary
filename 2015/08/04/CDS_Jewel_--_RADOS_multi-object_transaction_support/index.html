@@ -14,23 +14,28 @@
     
     
     
-    <title>CDS Jewel -- RADOS multi-object transaction support | ceph视频总结 | youtube频道总结</title>
+    <title>CDS Jewel -- RADOS多对象事务支持 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： RatOS多对象事务支持审批 参会人员： Lee（RatOS研发人员）、Ratos团队 会议内容： 主要议题：  RatOS多对象事务支持：  Lee介绍了RatOS的多对象事务支持机制，该机制基于两阶段提交协议，旨在简化客户端内部客户端的设计。 该机制支持客户端定义事务主体，引用对象列表以及对象上的RatOS操作。 事务处理流程包括预提交、准备、提交和回滚阶段。  错误处理">
+    <meta name="keywords" content="Ceph,分布式存储,RADOS,事务支持,多对象事务">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议的主题是关于RatOS多对象事务支持机制的审批。主要讨论了以下议题：  RatOS多对象事务支持：Lee介绍了基于两阶段提交协议的多对象事务支持机制，该机制旨在简化客户端内部设计，支持客户端定义事务主体、引用对象列表以及对象上的操作。 错误处理和死锁检测：讨论了在事务处理过程中可能出现的错误和死锁问题，并提出了引入超时机制的建议。 客户端事务控制：讨论了客户端如何">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Jewel -- RADOS multi-object transaction support">
+<meta property="og:title" content="CDS Jewel -- RADOS多对象事务支持">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： RatOS多对象事务支持审批 参会人员： Lee（RatOS研发人员）、Ratos团队 会议内容： 主要议题：  RatOS多对象事务支持：  Lee介绍了RatOS的多对象事务支持机制，该机制基于两阶段提交协议，旨在简化客户端内部客户端的设计。 该机制支持客户端定义事务主体，引用对象列表以及对象上的RatOS操作。 事务处理流程包括预提交、准备、提交和回滚阶段。  错误处理">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议的主题是关于RatOS多对象事务支持机制的审批。主要讨论了以下议题：  RatOS多对象事务支持：Lee介绍了基于两阶段提交协议的多对象事务支持机制，该机制旨在简化客户端内部设计，支持客户端定义事务主体、引用对象列表以及对象上的操作。 错误处理和死锁检测：讨论了在事务处理过程中可能出现的错误和死锁问题，并提出了引入超时机制的建议。 客户端事务控制：讨论了客户端如何">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RADOS">
+<meta property="article:tag" content="事务支持">
+<meta property="article:tag" content="多对象事务">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Jewel -- RADOS multi-object transaction support</div>
+        <div class="flex-col header-title ellipsis">CDS Jewel -- RADOS多对象事务支持</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Jewel -- RADOS multi-object transaction support</h1>
+        <h1 class="title">CDS Jewel -- RADOS多对象事务支持</h1>
         <h5 class="subtitle">
             
                 <time datetime="2015-08-03T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Jewel -- RADOS multi-object transaction support</h1>
+        <h1 class="post-card-title">CDS Jewel -- RADOS多对象事务支持</h1>
         <div class="post-meta">
             <time class="post-time" title="2015-08-04 00:00:00" datetime="2015-08-03T16:00:00.000Z"  itemprop="datePublished">2015-08-04</time>
 
@@ -178,56 +183,30 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议主题</strong>： RatOS多对象事务支持审批</p>
-<p><strong>参会人员</strong>： Lee（RatOS研发人员）、Ratos团队</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>主要议题</strong>：</p>
-<ul>
-<li><strong>RatOS多对象事务支持</strong>：
-<ul>
-<li>Lee介绍了RatOS的多对象事务支持机制，该机制基于两阶段提交协议，旨在简化客户端内部客户端的设计。</li>
-<li>该机制支持客户端定义事务主体，引用对象列表以及对象上的RatOS操作。</li>
-<li>事务处理流程包括预提交、准备、提交和回滚阶段。</li>
-</ul></li>
-<li><strong>错误处理和死锁检测</strong>：
-<ul>
-<li>讨论了错误处理和死锁检测的挑战，包括OSD映射变化和事务信息丢失。</li>
-<li>提出了在事务处理过程中引入超时机制的建议，以处理潜在的死锁和错误情况。</li>
-</ul></li>
-<li><strong>客户端事务控制</strong>：
-<ul>
-<li>讨论了客户端如何指定事务的锁依赖关系，以及如何处理潜在的死锁问题。</li>
-<li>提出了将对象操作划分为不同死锁类别的建议，以简化锁依赖关系的管理。</li>
-</ul></li>
-<li><strong>性能优化</strong>：
-<ul>
-<li>讨论了使用元数据日志和RatOS集群通信协议优化事务处理性能的可能性。</li>
-</ul></li>
-</ul>
-<p><strong>决定事项</strong>：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议的主题是关于RatOS多对象事务支持机制的审批。主要讨论了以下议题：</p>
+<ol type="1">
+<li><p><strong>RatOS多对象事务支持</strong>：Lee介绍了基于两阶段提交协议的多对象事务支持机制，该机制旨在简化客户端内部设计，支持客户端定义事务主体、引用对象列表以及对象上的操作。</p></li>
+<li><p><strong>错误处理和死锁检测</strong>：讨论了在事务处理过程中可能出现的错误和死锁问题，并提出了引入超时机制的建议。</p></li>
+<li><p><strong>客户端事务控制</strong>：讨论了客户端如何指定事务的锁依赖关系，以及如何处理潜在的死锁问题。</p></li>
+<li><p><strong>性能优化</strong>：探讨了使用元数据日志和RatOS集群通信协议优化事务处理性能的可能性。</p></li>
+</ol>
+<p>会议决定：</p>
 <ul>
 <li>审批RatOS多对象事务支持机制。</li>
 <li>设计和实现事务处理流程中的错误处理和死锁检测机制。</li>
 <li>确定客户端事务控制策略。</li>
-<li>评估性能优化方案。</li>
+<li>评估性能优化方案的可行性。</li>
 </ul>
-<p><strong>后续行动计划</strong>：</p>
+<p>后续行动计划：</p>
 <ul>
-<li>Lee将根据讨论结果完善RatOS多对象事务支持机制的文档。</li>
-<li>团队将开始设计和实现事务处理流程中的错误处理和死锁检测机制。</li>
+<li>Lee将完善RatOS多对象事务支持机制的文档。</li>
+<li>团队将设计和实现事务处理流程中的错误处理和死锁检测机制。</li>
 <li>客户端研发人员将确定客户端事务控制策略。</li>
 <li>团队将评估性能优化方案的可行性。</li>
 </ul>
-<p><strong>关键术语</strong>：</p>
-<ul>
-<li>RatOS</li>
-<li>两阶段提交协议</li>
-<li>锁依赖关系</li>
-<li>死锁检测</li>
-<li>元数据日志</li>
-<li>RatOS集群通信协议</li>
-</ul>
+<p>关键词：RatOS, 两阶段提交协议, 锁依赖关系, 死锁检测, 元数据日志,
+RatOS集群通信协议</p>
 
         </div>
 
@@ -258,6 +237,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS/" rel="tag">RADOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BA%8B%E5%8A%A1%E6%94%AF%E6%8C%81/" rel="tag">事务支持</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E5%AF%B9%E8%B1%A1%E4%BA%8B%E5%8A%A1/" rel="tag">多对象事务</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -269,7 +250,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/&title=《CDS Jewel -- RADOS multi-object transaction support》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/&title=《CDS Jewel -- RADOS多对象事务支持》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -279,7 +260,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/&title=《CDS Jewel -- RADOS multi-object transaction support》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/&title=《CDS Jewel -- RADOS多对象事务支持》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -289,7 +270,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Jewel -- RADOS multi-object transaction support》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Jewel -- RADOS多对象事务支持》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -328,7 +309,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2015/08/04/CDS_Jewel_--_Scrub_Repair/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Jewel -- Scrub Repair</h4>
+        <h4 class="title"> CDS Jewel -- Scrub Repair </h4>
       </a>
     </div>
   
@@ -428,7 +409,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/&title=《CDS Jewel -- RADOS multi-object transaction support》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/&title=《CDS Jewel -- RADOS多对象事务支持》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -438,7 +419,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/&title=《CDS Jewel -- RADOS multi-object transaction support》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/&title=《CDS Jewel -- RADOS多对象事务支持》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -448,7 +429,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Jewel -- RADOS multi-object transaction support》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Jewel -- RADOS多对象事务支持》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/08/04/CDS_Jewel_--_RADOS_multi-object_transaction_support/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

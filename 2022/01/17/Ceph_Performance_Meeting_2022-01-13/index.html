@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2022-01-13 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph性能会议2022-01-13 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 主要议题与讨论内容  PR更新与合并情况  RGW Zipper PR: 这是一个Bug修复PR，解决了在某些Age Bidding测试中RGW和Master运行非常慢的问题。原因是由于一个较旧的PR，虽然主要是外观上的改变，但影响了RGW中每个桶加载时的统计数据加载，导致性能下降。修复后，性能恢复到之前的水平。 TTL Cache Implementation PR: 该PR已合并，未">
+    <meta name="keywords" content="分布式存储,性能测试,代码审查,Ceph性能,Quincy版本">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph分布式存储系统的性能优化和更新，以下为会议的主要内容： 主要议题与讨论内容  PR更新与合并情况  RGW Zipper PR: 修复了RGW在Age Bidding测试中的性能问题。 TTL Cache Implementation PR: 已合并，需进一步测试。 Primary Balance PR: 代码重构，简化了计算PG Up Maps">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2022-01-13">
+<meta property="og:title" content="Ceph性能会议2022-01-13">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/01/17/Ceph_Performance_Meeting_2022-01-13/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 主要议题与讨论内容  PR更新与合并情况  RGW Zipper PR: 这是一个Bug修复PR，解决了在某些Age Bidding测试中RGW和Master运行非常慢的问题。原因是由于一个较旧的PR，虽然主要是外观上的改变，但影响了RGW中每个桶加载时的统计数据加载，导致性能下降。修复后，性能恢复到之前的水平。 TTL Cache Implementation PR: 该PR已合并，未">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph分布式存储系统的性能优化和更新，以下为会议的主要内容： 主要议题与讨论内容  PR更新与合并情况  RGW Zipper PR: 修复了RGW在Age Bidding测试中的性能问题。 TTL Cache Implementation PR: 已合并，需进一步测试。 Primary Balance PR: 代码重构，简化了计算PG Up Maps">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-16T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-01-17T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能测试">
+<meta property="article:tag" content="代码审查">
+<meta property="article:tag" content="Ceph性能">
+<meta property="article:tag" content="Quincy版本">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2022-01-13</div>
+        <div class="flex-col header-title ellipsis">Ceph性能会议2022-01-13</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2022-01-13</h1>
+        <h1 class="title">Ceph性能会议2022-01-13</h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-01-16T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E4%B8%8E%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">主要议题与讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">参会人员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">备注</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E4%B8%8E%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">主要议题与讨论内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">2.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">3.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">4.</span> <span class="post-toc-text">参会人员</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">5.</span> <span class="post-toc-text">备注</span></a></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2022-01-13</h1>
+        <h1 class="post-card-title">Ceph性能会议2022-01-13</h1>
         <div class="post-meta">
             <time class="post-time" title="2022-01-17 00:00:00" datetime="2022-01-16T16:00:00.000Z"  itemprop="datePublished">2022-01-17</time>
 
@@ -185,29 +190,29 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="主要议题与讨论内容">主要议题与讨论内容</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph分布式存储系统的性能优化和更新，以下为会议的主要内容：</p>
+<h3 id="主要议题与讨论内容">主要议题与讨论内容</h3>
 <ol type="1">
 <li><strong>PR更新与合并情况</strong>
 <ul>
-<li><strong>RGW Zipper PR</strong>: 这是一个Bug修复PR，解决了在某些Age
-Bidding测试中RGW和Master运行非常慢的问题。原因是由于一个较旧的PR，虽然主要是外观上的改变，但影响了RGW中每个桶加载时的统计数据加载，导致性能下降。修复后，性能恢复到之前的水平。</li>
+<li><strong>RGW Zipper PR</strong>: 修复了RGW在Age
+Bidding测试中的性能问题。</li>
 <li><strong>TTL Cache Implementation PR</strong>:
-该PR已合并，未见进一步讨论，主要需要通过一些测试。</li>
-<li><strong>Primary Balance PR</strong>: 由Josh
-Solomon提交，主要包含代码重构，简化了计算PG Up
-Maps的代码。原PR中的文档部分被移至另一个PR，将在Quincy分支后合并。</li>
+已合并，需进一步测试。</li>
+<li><strong>Primary Balance PR</strong>: 代码重构，简化了计算PG Up
+Maps的代码。</li>
 <li><strong>Fine Grain Locking PR</strong>:
-由Adam提交，经过长时间讨论和测试后终于合并。初步测试显示有性能优势，但需要更多详细的Quincy测试来验证。</li>
+合并后显示性能优势，但需更多测试验证。</li>
 <li><strong>Age Binning PR</strong>:
-这是一个多年未解决的PR，最终合并。虽然初步测试未显示显著性能提升，但在某些测试中显示了小幅改进，主要好处是提供了更细粒度的缓存控制和更好的缓存项年龄信息。</li>
+多年未解决的PR，合并后虽未显示显著性能提升，但提供了更细粒度的缓存控制和更好的缓存项年龄信息。</li>
 </ul></li>
 <li><strong>其他PR更新</strong>
 <ul>
 <li><strong>Onode Binning Shardstrimming PR</strong>:
-由Igor提交，涉及Onode的Binning和Shardstrimming处理，以及Adam关于Onode引用计数器和固定的PR，这两个PR因过时被关闭。</li>
+涉及Onode的Binning和Shardstrimming处理，以及Adam关于Onode引用计数器和固定的PR，均因过时被关闭。</li>
 <li><strong>Auto Tuning of MDS Cache Memory PR</strong>:
-基于RSS使用的自动调整MDS缓存内存的PR，因长时间未更新被关闭。讨论中提到可能使用优先级缓存来解决RSS内存使用的问题。</li>
+因长时间未更新被关闭，讨论中提到可能使用优先级缓存来解决RSS内存使用的问题。</li>
 </ul></li>
 <li><strong>性能测试计划</strong>
 <ul>
@@ -215,26 +220,24 @@ Maps的代码。原PR中的文档部分被移至另一个PR，将在Quincy分支
 <li>特别提到了恢复测试的改进，由Sridhar提交的新恢复测试方法，创建了两个独立的池和图像，以更好地模拟实际恢复过程。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
+<h3 id="决定事项">决定事项</h3>
 <ul>
-<li>确认了Quincy版本的性能测试计划，包括使用Mako进行大规模集群测试，涉及多种工作负载和设备。</li>
-<li>关闭了多个过时的PR，确保项目向前推进。</li>
+<li>确认了Quincy版本的性能测试计划。</li>
+<li>关闭了多个过时的PR。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<h3 id="后续行动计划">后续行动计划</h3>
 <ul>
 <li>继续进行Quincy版本的性能测试，特别是关注恢复测试的新方法。</li>
 <li>确保所有关键PR得到适当的审查和测试，以准备Quincy版本的发布。</li>
 </ul>
-<h4 id="参会人员">参会人员</h4>
+<h3 id="参会人员">参会人员</h3>
 <ul>
 <li>会议由主持人主持，参会人员包括开发团队成员和其他相关人员。</li>
 </ul>
-<h4 id="备注">备注</h4>
+<h3 id="备注">备注</h3>
 <ul>
 <li>会议中提到的具体PR编号和详细技术讨论未在此纪要中列出，具体内容可参考会议录音或相关代码仓库。</li>
 </ul>
-<hr />
-<p>以上是本次会议的纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -265,6 +268,8 @@ Maps的代码。原PR中的文档部分被移至另一个PR，将在Quincy分支
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E6%80%A7%E8%83%BD/" rel="tag">Ceph性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Quincy%E7%89%88%E6%9C%AC/" rel="tag">Quincy版本</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5/" rel="tag">代码审查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">性能测试</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -276,7 +281,7 @@ Maps的代码。原PR中的文档部分被移至另一个PR，将在Quincy分支
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/01/17/Ceph_Performance_Meeting_2022-01-13/&title=《Ceph Performance Meeting 2022-01-13》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/01/17/Ceph_Performance_Meeting_2022-01-13/&title=《Ceph性能会议2022-01-13》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -286,7 +291,7 @@ Maps的代码。原PR中的文档部分被移至另一个PR，将在Quincy分支
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/01/17/Ceph_Performance_Meeting_2022-01-13/&title=《Ceph Performance Meeting 2022-01-13》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/01/17/Ceph_Performance_Meeting_2022-01-13/&title=《Ceph性能会议2022-01-13》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -296,7 +301,7 @@ Maps的代码。原PR中的文档部分被移至另一个PR，将在Quincy分支
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2022-01-13》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/01/17/Ceph_Performance_Meeting_2022-01-13/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议2022-01-13》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/01/17/Ceph_Performance_Meeting_2022-01-13/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -435,7 +440,7 @@ Maps的代码。原PR中的文档部分被移至另一个PR，将在Quincy分支
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/01/17/Ceph_Performance_Meeting_2022-01-13/&title=《Ceph Performance Meeting 2022-01-13》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/01/17/Ceph_Performance_Meeting_2022-01-13/&title=《Ceph性能会议2022-01-13》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -445,7 +450,7 @@ Maps的代码。原PR中的文档部分被移至另一个PR，将在Quincy分支
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/01/17/Ceph_Performance_Meeting_2022-01-13/&title=《Ceph Performance Meeting 2022-01-13》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/01/17/Ceph_Performance_Meeting_2022-01-13/&title=《Ceph性能会议2022-01-13》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -455,7 +460,7 @@ Maps的代码。原PR中的文档部分被移至另一个PR，将在Quincy分支
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2022-01-13》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/01/17/Ceph_Performance_Meeting_2022-01-13/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议2022-01-13》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/01/17/Ceph_Performance_Meeting_2022-01-13/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

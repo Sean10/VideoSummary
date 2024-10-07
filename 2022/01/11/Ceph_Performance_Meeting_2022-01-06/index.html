@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2022-01-06 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 性能会议 2022-01-06 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要 本次会议主要讨论了Ceph项目的多个Pull Request (PR)，包括新提交的PR、已关闭的PR以及正在进行中的PR。会议还涉及了一些技术讨论和后续行动计划。 主要议题  新提交的PR  PR 4479：使用线程局部指针变量保存shard。目前尚未有详细审查，但Ronan已开始进行初步评论。 PR 4466：重写硬件文档。Dan已批准，但会议中提出了关于文档中关于核心需求">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,内存管理,Pull Request">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概要 本次Ceph性能会议主要讨论了多个Pull Request (PR)，包括新提交、已关闭和正在进行中的PR。会议涵盖了技术讨论和后续行动计划，重点关注性能优化和内存管理。 主要议题  新提交的PR  PR 4479：使用线程局部指针变量保存shard，目前处于初步评论阶段。 PR 4466：重写硬件文档，着重讨论了NVMe驱动器上的性能优化。  已关闭">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2022-01-06">
+<meta property="og:title" content="Ceph 性能会议 2022-01-06">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要 本次会议主要讨论了Ceph项目的多个Pull Request (PR)，包括新提交的PR、已关闭的PR以及正在进行中的PR。会议还涉及了一些技术讨论和后续行动计划。 主要议题  新提交的PR  PR 4479：使用线程局部指针变量保存shard。目前尚未有详细审查，但Ronan已开始进行初步评论。 PR 4466：重写硬件文档。Dan已批准，但会议中提出了关于文档中关于核心需求">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概要 本次Ceph性能会议主要讨论了多个Pull Request (PR)，包括新提交、已关闭和正在进行中的PR。会议涵盖了技术讨论和后续行动计划，重点关注性能优化和内存管理。 主要议题  新提交的PR  PR 4479：使用线程局部指针变量保存shard，目前处于初步评论阶段。 PR 4466：重写硬件文档，着重讨论了NVMe驱动器上的性能优化。  已关闭">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-10T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-01-11T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="内存管理">
+<meta property="article:tag" content="Pull Request">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2022-01-06</div>
+        <div class="flex-col header-title ellipsis">Ceph 性能会议 2022-01-06</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2022-01-06</h1>
+        <h1 class="title">Ceph 性能会议 2022-01-06</h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-01-10T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2022-01-06</h1>
+        <h1 class="post-card-title">Ceph 性能会议 2022-01-06</h1>
         <div class="post-meta">
             <time class="post-time" title="2022-01-11 00:00:00" datetime="2022-01-10T16:00:00.000Z"  itemprop="datePublished">2022-01-11</time>
 
@@ -185,44 +190,41 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概要">会议概要</h4>
-<p>本次会议主要讨论了Ceph项目的多个Pull Request
-(PR)，包括新提交的PR、已关闭的PR以及正在进行中的PR。会议还涉及了一些技术讨论和后续行动计划。</p>
+<p>本次Ceph性能会议主要讨论了多个Pull Request
+(PR)，包括新提交、已关闭和正在进行中的PR。会议涵盖了技术讨论和后续行动计划，重点关注性能优化和内存管理。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>新提交的PR</strong>
 <ul>
-<li><strong>PR
-4479</strong>：使用线程局部指针变量保存shard。目前尚未有详细审查，但Ronan已开始进行初步评论。</li>
-<li><strong>PR
-4466</strong>：重写硬件文档。Dan已批准，但会议中提出了关于文档中关于核心需求的建议，建议更细致地说明在NVMe驱动器上可能需要更多核心以提高性能。</li>
+<li>PR 4479：使用线程局部指针变量保存shard，目前处于初步评论阶段。</li>
+<li>PR 4466：重写硬件文档，着重讨论了NVMe驱动器上的性能优化。</li>
 </ul></li>
 <li><strong>已关闭的PR</strong>
 <ul>
-<li>Igor的PR，主要清理onode代码中的pinning。该PR已由Yuri合并，被认为是良好的清理工作。</li>
-<li>一个关于优化对象内存分配的PR，基于收到的反馈，作者决定关闭该PR。</li>
+<li>Igor的PR：清理onode代码中的pinning，已被合并。</li>
+<li>优化对象内存分配的PR：因反馈关闭。</li>
 </ul></li>
 <li><strong>正在进行中的PR</strong>
 <ul>
-<li>管理器TTL缓存的实现更新。</li>
-<li>Josh的主要平衡器工作，正在进行中，计划通过tautology进行测试。</li>
-<li>Igor的PR，旨在减少shared blob
-FSDK的RAM使用。Adam进行了大量审查，会议中讨论了如何更好地控制内存使用。</li>
+<li>管理器TTL缓存实现更新。</li>
+<li>Josh的平衡器工作，正在进行中，计划通过tautology进行测试。</li>
+<li>Igor的PR：减少shared blob FSDK的RAM使用，进行中。</li>
 </ul></li>
 <li><strong>其他讨论</strong>
 <ul>
-<li>关于omap
-benchmark的讨论，提出了是否需要重写以更好地适应现有OSD环境。</li>
-<li>Casey汇报了rgw性能相关的PR进展，特别是关于beast前端的变化。</li>
-<li>Gabby汇报了关于分配器更改的修复工作进展。</li>
+<li>omap benchmark的讨论，考虑重写以适应现有OSD环境。</li>
+<li>Casey汇报了rgw性能相关的PR进展，特别是beast前端的变化。</li>
+<li>Gabby汇报了分配器更改的修复工作进展。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>对于新提交的PR，鼓励团队成员进行审查。</li>
-<li>对于硬件文档的更新，建议更细致地说明核心需求。</li>
-<li>对于omap benchmark，建议在下次会议中进一步讨论。</li>
+<li>鼓励团队成员审查新提交的PR。</li>
+<li>硬件文档更新建议更细致地说明核心需求。</li>
+<li>进一步讨论omap benchmark。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
@@ -232,8 +234,8 @@ benchmark的讨论，提出了是否需要重写以更好地适应现有OSD环�
 </ul>
 <h4 id="其他备注">其他备注</h4>
 <ul>
-<li>会议中提到的一些技术讨论需要Adam和Igor的参与，因此相关议题将推迟到他们参与的下次会议。</li>
-<li>会议还提到了一些性能优化和内存管理的潜在改进，这些将在后续的开发和测试中进一步探索。</li>
+<li>部分技术讨论需要Adam和Igor的参与，相关议题将推迟到他们参与的下次会议。</li>
+<li>讨论了性能优化和内存管理的潜在改进，将在后续的开发和测试中进一步探索。</li>
 </ul>
 <h4 id="会议结束">会议结束</h4>
 <p>会议在讨论了所有议题后结束，感谢所有参与者的贡献，并期待下周的会议。</p>
@@ -267,6 +269,8 @@ benchmark的讨论，提出了是否需要重写以更好地适应现有OSD环�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Pull-Request/" rel="tag">Pull Request</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" rel="tag">内存管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -278,7 +282,7 @@ benchmark的讨论，提出了是否需要重写以更好地适应现有OSD环�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/&title=《Ceph Performance Meeting 2022-01-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/&title=《Ceph 性能会议 2022-01-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -288,7 +292,7 @@ benchmark的讨论，提出了是否需要重写以更好地适应现有OSD环�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/&title=《Ceph Performance Meeting 2022-01-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/&title=《Ceph 性能会议 2022-01-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -298,7 +302,7 @@ benchmark的讨论，提出了是否需要重写以更好地适应现有OSD环�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2022-01-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2022-01-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -337,7 +341,7 @@ benchmark的讨论，提出了是否需要重写以更好地适应现有OSD环�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2021-12-23</h4>
+        <h4 class="title">  Ceph 性能会议 2021-12-23  </h4>
       </a>
     </div>
   
@@ -437,7 +441,7 @@ benchmark的讨论，提出了是否需要重写以更好地适应现有OSD环�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/&title=《Ceph Performance Meeting 2022-01-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/&title=《Ceph 性能会议 2022-01-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -447,7 +451,7 @@ benchmark的讨论，提出了是否需要重写以更好地适应现有OSD环�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/&title=《Ceph Performance Meeting 2022-01-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/&title=《Ceph 性能会议 2022-01-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -457,7 +461,7 @@ benchmark的讨论，提出了是否需要重写以更好地适应现有OSD环�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2022-01-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2022-01-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2022-06-23 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 性能会议 2022-06-23 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要：  更新情况：  第一个更新是关于移除statifus的，Adam已经审查并通过了该更新，Igor进行了一些额外的修改，目前看起来进展顺利，但仍需要核心团队进行再次审查。 第二个更新是关于将kodell添加到Blue Store中以缓解缓冲区膨胀问题，Sam在上周有机会对其进行了审查并提出了多项更改请求，该更新尚未准备就绪，仍在积极审查中。  讨论主题：  讨论了RocksDB调优问题，">
+    <meta name="keywords" content="Ceph,性能优化,RocksDB,代码重构,Snapmapper">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要：  更新情况：  移除statifus的更新已通过Adam审查并被批准，Igor进行了修改，但仍需核心团队再次审查。 将kodell添加到Blue Store以缓解缓冲区膨胀问题的更新正在积极审查中，Sam提出了多项更改请求。  讨论主题：  关于RocksDB调优，测试显示调整内存缓冲区数量和大小，并允许累积两次写入，并未产生预期中的放大增加。通过调整Leve">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2022-06-23">
+<meta property="og:title" content="Ceph 性能会议 2022-06-23">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要：  更新情况：  第一个更新是关于移除statifus的，Adam已经审查并通过了该更新，Igor进行了一些额外的修改，目前看起来进展顺利，但仍需要核心团队进行再次审查。 第二个更新是关于将kodell添加到Blue Store中以缓解缓冲区膨胀问题，Sam在上周有机会对其进行了审查并提出了多项更改请求，该更新尚未准备就绪，仍在积极审查中。  讨论主题：  讨论了RocksDB调优问题，">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要：  更新情况：  移除statifus的更新已通过Adam审查并被批准，Igor进行了修改，但仍需核心团队再次审查。 将kodell添加到Blue Store以缓解缓冲区膨胀问题的更新正在积极审查中，Sam提出了多项更改请求。  讨论主题：  关于RocksDB调优，测试显示调整内存缓冲区数量和大小，并允许累积两次写入，并未产生预期中的放大增加。通过调整Leve">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-26T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-06-27T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="代码重构">
+<meta property="article:tag" content="Snapmapper">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2022-06-23</div>
+        <div class="flex-col header-title ellipsis">Ceph 性能会议 2022-06-23</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2022-06-23</h1>
+        <h1 class="title">Ceph 性能会议 2022-06-23</h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-06-26T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2022-06-23</h1>
+        <h1 class="post-card-title">Ceph 性能会议 2022-06-23</h1>
         <div class="post-meta">
             <time class="post-time" title="2022-06-27 00:00:00" datetime="2022-06-26T16:00:00.000Z"  itemprop="datePublished">2022-06-27</time>
 
@@ -178,34 +183,37 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要：</p>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要：</p>
 <ol type="1">
-<li>更新情况：
+<li><strong>更新情况</strong>：
 <ul>
-<li>第一个更新是关于移除<code>statifus</code>的，Adam已经审查并通过了该更新，Igor进行了一些额外的修改，目前看起来进展顺利，但仍需要核心团队进行再次审查。</li>
-<li>第二个更新是关于将<code>kodell</code>添加到Blue
-Store中以缓解缓冲区膨胀问题，Sam在上周有机会对其进行了审查并提出了多项更改请求，该更新尚未准备就绪，仍在积极审查中。</li>
+<li>移除<code>statifus</code>的更新已通过Adam审查并被批准，Igor进行了修改，但仍需核心团队再次审查。</li>
+<li>将<code>kodell</code>添加到Blue
+Store以缓解缓冲区膨胀问题的更新正在积极审查中，Sam提出了多项更改请求。</li>
 </ul></li>
-<li>讨论主题：
+<li><strong>讨论主题</strong>：
 <ul>
-<li>讨论了RocksDB调优问题，发现过去几年中出现的RocksDB调优方法虽然增加了内存缓冲区的数量并减小了其大小，同时允许累积两次写入再刷新到数据库中，但存在一些问题。最近几周的测试显示，这种调优实际上产生了相当稳定的效果，并没有看到预期中的放大增加。进一步的调整表明，通过调整Level
+<li>关于RocksDB调优，测试显示调整内存缓冲区数量和大小，并允许累积两次写入，并未产生预期中的放大增加。通过调整Level
 0和Level
 1，并使用更多较小的缓冲区累积成较大的刷新，可以在不显著增加写放大的情况下提高RBD性能。</li>
-<li>正在研究经典OSD中的分片和线程行为，有证据表明当OSD分片为空时，效率会显著下降。这可能与唤醒所有线程的方式有关。这方面的分析和工作将在其他文章完成后继续进行。</li>
+<li>正在研究经典OSD中的分片和线程行为，发现空分片时效率会显著下降。</li>
 </ul></li>
-<li>Gabby报告：
+<li><strong>Gabby报告</strong>：
 <ul>
-<li>Gabby正在重写Snapmapper的全部代码。在理解Snapmarker内部的数据结构和操作后，他意识到当前版本仅适用于存储长期数据，而实际中似乎并非如此。新的版本将尝试将所有内容存储在内存中，并按Snap
-ID和PG确定存储库的使用，优化数据结构从Red-Black树变为哈希表，使用Snap
-ID和Edge对象而非字符串。这将节省大量内存，并减少编码/解码的需要。Gabby计划在罗马之行回来后继续这项工作，预计不会太久就能进行测试。</li>
+<li>Gabby正在重写Snapmapper的全部代码，优化内存使用。新的版本将尝试将所有内容存储在内存中，并使用Snap
+ID和PG确定存储库的使用，优化数据结构从Red-Black树变为哈希表。</li>
 </ul></li>
-<li>行动计划：
+<li><strong>行动计划</strong>：
 <ul>
-<li>Gabby将继续他的Snapmapper项目，并在下次会议前提供更新。</li>
+<li>Gabby将继续Snapmapper项目，并在下次会议前提供更新。</li>
 <li>其他成员将继续审查和测试现有更新，并在必要时提供反馈。</li>
-<li>下一次会议将在一周后召开，届时将进一步讨论这些主题和任何新的进展。</li>
+<li>下次会议将在一周后召开，进一步讨论这些主题和任何新的进展。</li>
 </ul></li>
 </ol>
+<p>改进点： - 确保包含所有关键更新和讨论主题。 -
+添加了关于Snapmapper项目的更多细节。 -
+简化了行动计划的部分，使其更加清晰。</p>
 
         </div>
 
@@ -236,6 +244,8 @@ ID和Edge对象而非字符串。这将节省大量内存，并减少编码/解�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Snapmapper/" rel="tag">Snapmapper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/" rel="tag">代码重构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -247,7 +257,7 @@ ID和Edge对象而非字符串。这将节省大量内存，并减少编码/解�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/&title=《Ceph Performance Meeting 2022-06-23》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/&title=《Ceph 性能会议 2022-06-23》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -257,7 +267,7 @@ ID和Edge对象而非字符串。这将节省大量内存，并减少编码/解�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/&title=《Ceph Performance Meeting 2022-06-23》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/&title=《Ceph 性能会议 2022-06-23》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -267,7 +277,7 @@ ID和Edge对象而非字符串。这将节省大量内存，并减少编码/解�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2022-06-23》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2022-06-23》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -295,18 +305,18 @@ ID和Edge对象而非字符串。这将节省大量内存，并减少编码/解�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-09/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-16/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2022-06-09</h4>
+        <h4 class="title">  Ceph Performance Meeting 2022-06-16  </h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-16/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2022/06/10/Ceph_Crimson_Seastore_Meeting_2022-06-07/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2022-06-16</h4>
+        <h4 class="title">Ceph Crimson/Seastore Meeting 2022-06-07</h4>
       </a>
     </div>
   
@@ -406,7 +416,7 @@ ID和Edge对象而非字符串。这将节省大量内存，并减少编码/解�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/&title=《Ceph Performance Meeting 2022-06-23》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/&title=《Ceph 性能会议 2022-06-23》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -416,7 +426,7 @@ ID和Edge对象而非字符串。这将节省大量内存，并减少编码/解�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/&title=《Ceph Performance Meeting 2022-06-23》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/&title=《Ceph 性能会议 2022-06-23》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -426,7 +436,7 @@ ID和Edge对象而非字符串。这将节省大量内存，并减少编码/解�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2022-06-23》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2022-06-23》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

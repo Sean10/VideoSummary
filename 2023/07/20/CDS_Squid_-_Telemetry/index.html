@@ -14,23 +14,31 @@
     
     
     
-    <title>CDS Squid: Telemetry | ceph视频总结 | youtube频道总结</title>
+    <title>  CDS Squid: Telemetry   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要  日期与时间: [具体日期] 参会人员: CBS团队成员 会议目的: 讨论下一版本的开发计划，进行头脑风暴，收集新功能和改进的建议。  主要议题  集群内容分析与遥测工具  讨论内容: 讨论了如何通过遥测工具收集集群内容的摘要信息，如对象大小分布、BlueStore碎片化信息等，以支持去重和分块等功能的决策。 决定事项: 需要开发一个工具，使用liberators库来爬取目标池">
+    <meta name="keywords" content="Ceph,分布式存储,仪表板,崩溃报告,遥测,用户反馈,蓝店,配置分析">
+    <meta name="description" content="改进后的中文总结内容 在本次CDS Squid Telemetry会议中，CBS团队针对Ceph分布式存储系统的遥测功能进行了深入讨论。会议主要围绕以下几个方面展开：  集群内容分析与遥测工具：讨论了如何通过遥测工具收集集群内容的摘要信息，如对象大小分布、BlueStore碎片化信息等，以支持去重和分块等功能的决策。决定开发一个工具，使用liberators库来爬取目标池或集群，生成内容摘要，并通">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Squid: Telemetry">
+<meta property="og:title" content="  CDS Squid: Telemetry  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/07/20/CDS_Squid_-_Telemetry/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要  日期与时间: [具体日期] 参会人员: CBS团队成员 会议目的: 讨论下一版本的开发计划，进行头脑风暴，收集新功能和改进的建议。  主要议题  集群内容分析与遥测工具  讨论内容: 讨论了如何通过遥测工具收集集群内容的摘要信息，如对象大小分布、BlueStore碎片化信息等，以支持去重和分块等功能的决策。 决定事项: 需要开发一个工具，使用liberators库来爬取目标池">
+<meta property="og:description" content="改进后的中文总结内容 在本次CDS Squid Telemetry会议中，CBS团队针对Ceph分布式存储系统的遥测功能进行了深入讨论。会议主要围绕以下几个方面展开：  集群内容分析与遥测工具：讨论了如何通过遥测工具收集集群内容的摘要信息，如对象大小分布、BlueStore碎片化信息等，以支持去重和分块等功能的决策。决定开发一个工具，使用liberators库来爬取目标池或集群，生成内容摘要，并通">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-20T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="仪表板">
+<meta property="article:tag" content="崩溃报告">
+<meta property="article:tag" content="遥测">
+<meta property="article:tag" content="用户反馈">
+<meta property="article:tag" content="蓝店">
+<meta property="article:tag" content="配置分析">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Squid: Telemetry</div>
+        <div class="flex-col header-title ellipsis">  CDS Squid: Telemetry  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +142,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Squid: Telemetry</h1>
+        <h1 class="title">  CDS Squid: Telemetry  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-07-19T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +167,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%9B%B8%E5%85%B3%E6%A0%87%E7%AD%BE"><span class="post-toc-number">2.</span> <span class="post-toc-text">相关标签</span></a></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +176,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Squid: Telemetry</h1>
+        <h1 class="post-card-title">  CDS Squid: Telemetry  </h1>
         <div class="post-meta">
             <time class="post-time" title="2023-07-20 00:00:00" datetime="2023-07-19T16:00:00.000Z"  itemprop="datePublished">2023-07-20</time>
 
@@ -185,70 +193,34 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概要">会议概要</h4>
-<ul>
-<li><strong>日期与时间</strong>: [具体日期]</li>
-<li><strong>参会人员</strong>: CBS团队成员</li>
-<li><strong>会议目的</strong>:
-讨论下一版本的开发计划，进行头脑风暴，收集新功能和改进的建议。</li>
-</ul>
-<h4 id="主要议题">主要议题</h4>
+            <h2 id="改进后的中文总结内容">改进后的中文总结内容</h2>
+<p>在本次CDS Squid
+Telemetry会议中，CBS团队针对Ceph分布式存储系统的遥测功能进行了深入讨论。会议主要围绕以下几个方面展开：</p>
 <ol type="1">
-<li><strong>集群内容分析与遥测工具</strong>
-<ul>
-<li><strong>讨论内容</strong>:
-讨论了如何通过遥测工具收集集群内容的摘要信息，如对象大小分布、BlueStore碎片化信息等，以支持去重和分块等功能的决策。</li>
-<li><strong>决定事项</strong>:
-需要开发一个工具，使用liberators库来爬取目标池或集群，生成内容摘要，并通过遥测系统上报。</li>
-<li><strong>后续行动</strong>:
-开发一个可插拔的框架来生成这些派生参数，并解决爬取过程中可能影响客户端IO的问题。</li>
-</ul></li>
-<li><strong>仪表板功能使用分析</strong>
-<ul>
-<li><strong>讨论内容</strong>:
-探讨了在仪表板中收集用户访问数据的可能性，以便优化仪表板的用户体验。</li>
-<li><strong>决定事项</strong>:
-需要设计一个方案来收集和分析用户在仪表板上的行为，同时确保数据的安全性和隐私性。</li>
-<li><strong>后续行动</strong>:
-设计并实现一个系统，用于跟踪用户在仪表板上的活动，并将数据存储在Manager中，以便Telemetry系统使用。</li>
-</ul></li>
-<li><strong>配置分析与用户反馈</strong>
-<ul>
-<li><strong>讨论内容</strong>:
-讨论了如何通过Telemetry数据来分析集群配置，提供配置建议，减少配置错误。</li>
-<li><strong>决定事项</strong>:
-需要确定哪些配置数据可以安全地收集和分析，以及如何将分析结果反馈给用户。</li>
-<li><strong>后续行动</strong>:
-设计一个方案来收集必要的配置数据，并开发一个系统来分析这些数据，提供配置建议。</li>
-</ul></li>
-<li><strong>崩溃报告优化</strong>
-<ul>
-<li><strong>讨论内容</strong>:
-讨论了如何优化崩溃报告的分组算法，减少重复和噪声。</li>
-<li><strong>决定事项</strong>:
-需要进一步研究和优化崩溃签名的生成算法，特别是对于包含RocksDB帧的崩溃报告。</li>
-<li><strong>后续行动</strong>:
-研究和实现新的崩溃分组算法，减少重复报告，并提高崩溃报告的准确性。</li>
-</ul></li>
+<li><p><strong>集群内容分析与遥测工具</strong>：讨论了如何通过遥测工具收集集群内容的摘要信息，如对象大小分布、BlueStore碎片化信息等，以支持去重和分块等功能的决策。决定开发一个工具，使用liberators库来爬取目标池或集群，生成内容摘要，并通过遥测系统上报。</p></li>
+<li><p><strong>仪表板功能使用分析</strong>：探讨了在仪表板中收集用户访问数据的可能性，以便优化仪表板的用户体验。决定设计一个方案来收集和分析用户在仪表板上的行为，同时确保数据的安全性和隐私性。</p></li>
+<li><p><strong>配置分析与用户反馈</strong>：讨论了如何通过Telemetry数据来分析集群配置，提供配置建议，减少配置错误。决定确定哪些配置数据可以安全地收集和分析，以及如何将分析结果反馈给用户。</p></li>
+<li><p><strong>崩溃报告优化</strong>：讨论了如何优化崩溃报告的分组算法，减少重复和噪声。决定进一步研究和优化崩溃签名的生成算法，特别是对于包含RocksDB帧的崩溃报告。</p></li>
 </ol>
-<h4 id="后续行动计划">后续行动计划</h4>
+<p>会议还讨论了定期发布Telemetry项目新闻通讯的可能性，包括集群报告的数量和大小等信息。</p>
+<p>此外，会议还涉及以下内容：</p>
 <ul>
 <li>开发集群内容分析工具，并集成到Telemetry系统中。</li>
 <li>设计并实现仪表板使用数据的收集和分析系统。</li>
 <li>确定并收集必要的配置数据，开发配置分析和反馈系统。</li>
 <li>优化崩溃报告的分组算法，减少重复和噪声。</li>
 </ul>
-<h4 id="其他讨论">其他讨论</h4>
+<h2 id="相关标签">相关标签</h2>
 <ul>
-<li>讨论了定期发布Telemetry项目新闻通讯的可能性，包括集群报告的数量和大小等信息。</li>
+<li>Ceph</li>
+<li>分布式存储</li>
+<li>遥测</li>
+<li>蓝店</li>
+<li>崩溃报告</li>
+<li>仪表板</li>
+<li>配置分析</li>
+<li>用户反馈</li>
 </ul>
-<h4 id="会议结束">会议结束</h4>
-<ul>
-<li>会议在讨论了所有议题后结束，感谢所有参与者的积极参与和宝贵意见。</li>
-</ul>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -279,6 +251,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%AA%E8%A1%A8%E6%9D%BF/" rel="tag">仪表板</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%B4%A9%E6%BA%83%E6%8A%A5%E5%91%8A/" rel="tag">崩溃报告</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%94%A8%E6%88%B7%E5%8F%8D%E9%A6%88/" rel="tag">用户反馈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%93%9D%E5%BA%97/" rel="tag">蓝店</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%81%A5%E6%B5%8B/" rel="tag">遥测</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%85%8D%E7%BD%AE%E5%88%86%E6%9E%90/" rel="tag">配置分析</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -290,7 +264,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/20/CDS_Squid_-_Telemetry/&title=《CDS Squid: Telemetry》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/20/CDS_Squid_-_Telemetry/&title=《  CDS Squid: Telemetry  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -300,7 +274,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/20/CDS_Squid_-_Telemetry/&title=《CDS Squid: Telemetry》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/20/CDS_Squid_-_Telemetry/&title=《  CDS Squid: Telemetry  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -310,7 +284,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Squid: Telemetry》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/20/CDS_Squid_-_Telemetry/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS Squid: Telemetry  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/20/CDS_Squid_-_Telemetry/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -340,7 +314,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/07/20/CDS_Squid_-_Documentation/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Squid: Documentation</h4>
+        <h4 class="title">  CDS Squid: Documentation  </h4>
       </a>
     </div>
   
@@ -349,7 +323,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/07/05/Ceph_RGW_Refactoring_Meeting_2023-07-05/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2023-07-05</h4>
+        <h4 class="title">Ceph RGW 重构会议 2023-07-05</h4>
       </a>
     </div>
   
@@ -449,7 +423,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/20/CDS_Squid_-_Telemetry/&title=《CDS Squid: Telemetry》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/07/20/CDS_Squid_-_Telemetry/&title=《  CDS Squid: Telemetry  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -459,7 +433,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/20/CDS_Squid_-_Telemetry/&title=《CDS Squid: Telemetry》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/07/20/CDS_Squid_-_Telemetry/&title=《  CDS Squid: Telemetry  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -469,7 +443,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Squid: Telemetry》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/20/CDS_Squid_-_Telemetry/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS Squid: Telemetry  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/07/20/CDS_Squid_-_Telemetry/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2020-07-30 | ceph视频总结 | youtube频道总结</title>
+    <title>  Ceph Performance Meeting 2020-07-30   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议是自上次会议以来的几周后的定期会议，由于夏季，活动相对较慢。会议主要回顾了近期Ceph项目的开发进展，特别是关于RGW（RADOS Gateway）和MDS（Metadata Server）的改进。 主要议题  RGW改进：  Eric提交了一个PR，旨在提高RGW有序列表映射的效率，避免第二次遍历列表。 另一个PR涉及d3n缓存的上游更改，目前正在审查和测试中。  M">
+    <meta name="keywords" content="Ceph,BlueStore,Distributed Storage,Performance Optimization,MDS">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次Ceph性能会议于2020年7月30日举行，由于正值夏季，会议进度相对较慢。会议主要回顾了近期Ceph项目的开发进展，重点讨论了RGW（RADOS Gateway）和MDS（Metadata Server）的改进。 主要议题  RGW改进：  Eric提交了一个PR，旨在提高RGW有序列表映射的效率，避免第二次遍历列表。 另一个PR涉及d3n缓存的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2020-07-30">
+<meta property="og:title" content="  Ceph Performance Meeting 2020-07-30  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/07/30/Ceph_Performance_Meeting_2020-07-30/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议是自上次会议以来的几周后的定期会议，由于夏季，活动相对较慢。会议主要回顾了近期Ceph项目的开发进展，特别是关于RGW（RADOS Gateway）和MDS（Metadata Server）的改进。 主要议题  RGW改进：  Eric提交了一个PR，旨在提高RGW有序列表映射的效率，避免第二次遍历列表。 另一个PR涉及d3n缓存的上游更改，目前正在审查和测试中。  M">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次Ceph性能会议于2020年7月30日举行，由于正值夏季，会议进度相对较慢。会议主要回顾了近期Ceph项目的开发进展，重点讨论了RGW（RADOS Gateway）和MDS（Metadata Server）的改进。 主要议题  RGW改进：  Eric提交了一个PR，旨在提高RGW有序列表映射的效率，避免第二次遍历列表。 另一个PR涉及d3n缓存的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-07-30T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="BlueStore">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="MDS">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2020-07-30</div>
+        <div class="flex-col header-title ellipsis">  Ceph Performance Meeting 2020-07-30  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2020-07-30</h1>
+        <h1 class="title">  Ceph Performance Meeting 2020-07-30  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-07-29T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2020-07-30</h1>
+        <h1 class="post-card-title">  Ceph Performance Meeting 2020-07-30  </h1>
         <div class="post-meta">
             <time class="post-time" title="2020-07-30 00:00:00" datetime="2020-07-29T16:00:00.000Z"  itemprop="datePublished">2020-07-30</time>
 
@@ -185,9 +190,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概述">会议概述</h4>
-<p>本次会议是自上次会议以来的几周后的定期会议，由于夏季，活动相对较慢。会议主要回顾了近期Ceph项目的开发进展，特别是关于RGW（RADOS
+<p>本次Ceph性能会议于2020年7月30日举行，由于正值夏季，会议进度相对较慢。会议主要回顾了近期Ceph项目的开发进展，重点讨论了RGW（RADOS
 Gateway）和MDS（Metadata Server）的改进。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
@@ -199,14 +205,14 @@ Gateway）和MDS（Metadata Server）的改进。</p>
 <li><strong>MDS改进</strong>：
 <ul>
 <li>Majiang Ping提交了两个与BlueStore相关的PR，涉及小规模的改进。</li>
-<li>一个关于MDS的PR已经合并，主要修复了在大量子树情况下的缓存修剪问题。</li>
-<li>另一个PR涉及ceph-adm工具，改进了OSD的并行创建，显著提升了性能。</li>
+<li>一个修复了在大量子树情况下的缓存修剪问题的MDS PR已合并。</li>
+<li>另一个PR改进了ceph-adm工具，提升了OSD的并行创建性能。</li>
 </ul></li>
 <li><strong>性能优化</strong>：
 <ul>
-<li>Majiang Peng的另一个PR涉及启用RocksDB管道，可能带来性能提升。</li>
-<li>Radek和Mark正在研究MDS中的缓冲列表（buffer list）和环形缓冲区（ring
-buffers），以减少CPU使用和内存分配成本。</li>
+<li>Majiang
+Peng提交了一个PR，涉及启用RocksDB管道，可能带来性能提升。</li>
+<li>Radek和Mark正在研究MDS中的缓冲列表和环形缓冲区，以减少CPU使用和内存分配成本。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
@@ -259,6 +265,8 @@ buffers），以减少CPU使用和内存分配成本。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MDS/" rel="tag">MDS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -270,7 +278,7 @@ buffers），以减少CPU使用和内存分配成本。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/07/30/Ceph_Performance_Meeting_2020-07-30/&title=《Ceph Performance Meeting 2020-07-30》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/07/30/Ceph_Performance_Meeting_2020-07-30/&title=《  Ceph Performance Meeting 2020-07-30  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -280,7 +288,7 @@ buffers），以减少CPU使用和内存分配成本。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/07/30/Ceph_Performance_Meeting_2020-07-30/&title=《Ceph Performance Meeting 2020-07-30》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/07/30/Ceph_Performance_Meeting_2020-07-30/&title=《  Ceph Performance Meeting 2020-07-30  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -290,7 +298,7 @@ buffers），以减少CPU使用和内存分配成本。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2020-07-30》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/07/30/Ceph_Performance_Meeting_2020-07-30/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph Performance Meeting 2020-07-30  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/07/30/Ceph_Performance_Meeting_2020-07-30/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -320,7 +328,7 @@ buffers），以减少CPU使用和内存分配成本。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2020/08/03/Ceph_Orchestrator_Meeting_2020-08-03/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Orchestrator Meeting 2020-08-03</h4>
+        <h4 class="title">  Ceph Orchestrator Meeting 2020-08-03  </h4>
       </a>
     </div>
   
@@ -429,7 +437,7 @@ buffers），以减少CPU使用和内存分配成本。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/07/30/Ceph_Performance_Meeting_2020-07-30/&title=《Ceph Performance Meeting 2020-07-30》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/07/30/Ceph_Performance_Meeting_2020-07-30/&title=《  Ceph Performance Meeting 2020-07-30  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -439,7 +447,7 @@ buffers），以减少CPU使用和内存分配成本。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/07/30/Ceph_Performance_Meeting_2020-07-30/&title=《Ceph Performance Meeting 2020-07-30》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/07/30/Ceph_Performance_Meeting_2020-07-30/&title=《  Ceph Performance Meeting 2020-07-30  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -449,7 +457,7 @@ buffers），以减少CPU使用和内存分配成本。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2020-07-30》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/07/30/Ceph_Performance_Meeting_2020-07-30/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph Performance Meeting 2020-07-30  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/07/30/Ceph_Performance_Meeting_2020-07-30/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

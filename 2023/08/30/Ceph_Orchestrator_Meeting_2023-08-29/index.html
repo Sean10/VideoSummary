@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： 重构工作讨论 参会人员： [未列出具体人员] 会议时间： [未提供具体时间] 主要议题： 1. 重构工作的格式化问题：讨论了重构工作中的一些格式化问题，特别是关于命名和目录结构的讨论。 2. 命名问题：讨论了包名和目录名的命名问题，特别是关于 fadm 和 cephadm 的命名争议。 3. 目录结构：讨论了如何组织文件和目录，以及如何处理源代码树中的主要文件。 4. Pyt">
+    <meta name="keywords" content="Ceph,重构,命名规范,代码格式化,Python Black">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： 重构工作讨论 参会人员： [未列出具体人员] 会议时间： [未提供具体时间] 主要议题： 1. 重构工作格式化问题：包括命名和目录结构的讨论。 2. 命名问题：特别是关于 fadm 和 cephadm 的命名争议。 3. 目录结构：如何组织文件和目录，以及如何处理源代码树中的主要文件。 4. Python Black 格式化工具：讨论采用 Pytho">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2023-08-29">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/08/30/Ceph_Orchestrator_Meeting_2023-08-29/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： 重构工作讨论 参会人员： [未列出具体人员] 会议时间： [未提供具体时间] 主要议题： 1. 重构工作的格式化问题：讨论了重构工作中的一些格式化问题，特别是关于命名和目录结构的讨论。 2. 命名问题：讨论了包名和目录名的命名问题，特别是关于 fadm 和 cephadm 的命名争议。 3. 目录结构：讨论了如何组织文件和目录，以及如何处理源代码树中的主要文件。 4. Pyt">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： 重构工作讨论 参会人员： [未列出具体人员] 会议时间： [未提供具体时间] 主要议题： 1. 重构工作格式化问题：包括命名和目录结构的讨论。 2. 命名问题：特别是关于 fadm 和 cephadm 的命名争议。 3. 目录结构：如何组织文件和目录，以及如何处理源代码树中的主要文件。 4. Python Black 格式化工具：讨论采用 Pytho">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-08-30T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="重构">
+<meta property="article:tag" content="命名规范">
+<meta property="article:tag" content="代码格式化">
+<meta property="article:tag" content="Python Black">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,16 +190,17 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议主题：</strong> 重构工作讨论</p>
 <p><strong>参会人员：</strong> [未列出具体人员]</p>
 <p><strong>会议时间：</strong> [未提供具体时间]</p>
 <p><strong>主要议题：</strong> 1.
-<strong>重构工作的格式化问题</strong>：讨论了重构工作中的一些格式化问题，特别是关于命名和目录结构的讨论。
-2. <strong>命名问题</strong>：讨论了包名和目录名的命名问题，特别是关于
-<code>fadm</code> 和 <code>cephadm</code> 的命名争议。 3.
-<strong>目录结构</strong>：讨论了如何组织文件和目录，以及如何处理源代码树中的主要文件。
-4. <strong>Python Black 格式化工具</strong>：讨论了使用 Python Black
+<strong>重构工作格式化问题</strong>：包括命名和目录结构的讨论。 2.
+<strong>命名问题</strong>：特别是关于 <code>fadm</code> 和
+<code>cephadm</code> 的命名争议。 3.
+<strong>目录结构</strong>：如何组织文件和目录，以及如何处理源代码树中的主要文件。
+4. <strong>Python Black 格式化工具</strong>：讨论采用 Python Black
 作为代码格式化工具的决策和实施细节。</p>
 <p><strong>决定事项：</strong> 1.
 <strong>命名问题</strong>：决定暂时保留现有的命名
@@ -203,16 +209,19 @@
 3. <strong>Python Black 格式化工具</strong>：决定采用 Python Black
 作为代码格式化工具，并计划将其纳入 CI 流程。</p>
 <p><strong>后续行动计划：</strong> 1.
-<strong>实施命名和目录结构变更</strong>：根据会议决定，进行必要的代码和目录结构调整。
+<strong>实施命名和目录结构变更</strong>：进行必要的代码和目录结构调整。
 2. <strong>集成 Python Black 到 CI</strong>：在后续 PR 中将 Python Black
 集成到 CI 流程中，确保代码格式的一致性。 3.
 <strong>文档更新</strong>：更新开发者文档，解释新的代码结构和如何在未来进行开发。</p>
 <p><strong>其他讨论点：</strong> -
-<strong>代码内容的检查</strong>：讨论了如何处理代码中对 Docker IO
+<strong>代码内容检查</strong>：讨论了如何处理代码中对 Docker IO
 的引用，决定将其作为一个单独的规则处理。 -
 <strong>未来工作</strong>：提到了未来可能对服务类型类进行进一步的重构和标准化。</p>
-<p><strong>会议总结：</strong>
-会议主要集中在重构工作的细节上，特别是命名和目录结构的调整。虽然存在一些争议，但最终达成了一致的决定。未来将继续关注代码的组织和格式化问题，并计划进行进一步的文档更新和代码重构工作。</p>
+<p><strong>会议总结：</strong> 本次会议主要讨论了 Ceph Orchestrator
+的重构工作，重点在代码格式化、命名规范和目录结构调整上。会议决定暂时保留
+<code>cephadm</code> 命名，采用 Python Black
+进行代码格式化，并对目录结构进行优化。后续将更新文档，并计划将 Python
+Black 集成到 CI 流程中。会议还提到了代码内容检查和未来重构计划。</p>
 
         </div>
 
@@ -243,6 +252,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Python-Black/" rel="tag">Python Black</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96/" rel="tag">代码格式化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/" rel="tag">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%87%8D%E6%9E%84/" rel="tag">重构</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -313,7 +324,7 @@
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/08/17/Ceph_Performance_Meeting_2023-08-17/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2023-08-17</h4>
+        <h4 class="title">Ceph性能会议纪要 2023-08-17</h4>
       </a>
     </div>
   

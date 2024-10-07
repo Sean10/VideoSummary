@@ -14,23 +14,28 @@
     
     
     
-    <title>CDS Reef: Rados Gateway | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;CDS Reef: Rados Gateway&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议主要讨论了Ceph分布式存储系统中RGW（RADOS Gateway）的多个高层次项目和进展，包括新功能的开发、现有功能的优化以及测试和性能提升等方面。 主要议题  Zipper项目  动态加载存储库：计划允许从共享库中加载存储库，而不是内置在Ftree中，以更好地支持外部项目的集成。 独立模式：探索基于DB存储的独立模式，以便在小规模配置中运行，无需连接到集群。 过滤">
+    <meta name="keywords" content="Ceph,RGW,Distributed Storage,Scalability,RADOS Gateway">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议主要讨论了Ceph分布式存储系统中RGW（RADOS Gateway）的多个高层次项目和进展，涉及新功能的开发、现有功能的优化、测试和性能提升等方面。 主要议题  Zipper项目  动态加载存储库，支持外部项目集成。 独立模式，无需集群连接即可运行。 开发过滤层，实现数据缓存和其他中间层策略。  S3 Select  支持JSON格式对象的查">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Reef: Rados Gateway">
+<meta property="og:title" content="&#39;CDS Reef: Rados Gateway&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议主要讨论了Ceph分布式存储系统中RGW（RADOS Gateway）的多个高层次项目和进展，包括新功能的开发、现有功能的优化以及测试和性能提升等方面。 主要议题  Zipper项目  动态加载存储库：计划允许从共享库中加载存储库，而不是内置在Ftree中，以更好地支持外部项目的集成。 独立模式：探索基于DB存储的独立模式，以便在小规模配置中运行，无需连接到集群。 过滤">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议主要讨论了Ceph分布式存储系统中RGW（RADOS Gateway）的多个高层次项目和进展，涉及新功能的开发、现有功能的优化、测试和性能提升等方面。 主要议题  Zipper项目  动态加载存储库，支持外部项目集成。 独立模式，无需集群连接即可运行。 开发过滤层，实现数据缓存和其他中间层策略。  S3 Select  支持JSON格式对象的查">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-13T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-04-13T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Scalability">
+<meta property="article:tag" content="RADOS Gateway">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Reef: Rados Gateway</div>
+        <div class="flex-col header-title ellipsis">&#39;CDS Reef: Rados Gateway&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Reef: Rados Gateway</h1>
+        <h1 class="title">&#39;CDS Reef: Rados Gateway&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-04-13T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Reef: Rados Gateway</h1>
+        <h1 class="post-card-title">'CDS Reef: Rados Gateway'</h1>
         <div class="post-meta">
             <time class="post-time" title="2022-04-14 00:00:00" datetime="2022-04-13T16:00:00.000Z"  itemprop="datePublished">2022-04-14</time>
 
@@ -185,57 +190,54 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概述">会议概述</h4>
 <p>本次会议主要讨论了Ceph分布式存储系统中RGW（RADOS
-Gateway）的多个高层次项目和进展，包括新功能的开发、现有功能的优化以及测试和性能提升等方面。</p>
+Gateway）的多个高层次项目和进展，涉及新功能的开发、现有功能的优化、测试和性能提升等方面。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>Zipper项目</strong>
 <ul>
-<li><strong>动态加载存储库</strong>：计划允许从共享库中加载存储库，而不是内置在Ftree中，以更好地支持外部项目的集成。</li>
-<li><strong>独立模式</strong>：探索基于DB存储的独立模式，以便在小规模配置中运行，无需连接到集群。</li>
-<li><strong>过滤层</strong>：开发一个过滤层，通过包装另一个存储接口并传递所有调用，实现数据缓存和其他中间层策略。</li>
+<li>动态加载存储库，支持外部项目集成。</li>
+<li>独立模式，无需集群连接即可运行。</li>
+<li>开发过滤层，实现数据缓存和其他中间层策略。</li>
 </ul></li>
 <li><strong>S3 Select</strong>
 <ul>
-<li><strong>JSON支持</strong>：正在进行对JSON格式对象的查询支持，计划在Reef版本中完成。</li>
-<li><strong>AeroFlight集成</strong>：虽然与S3
-Select不是直接相关，但AeroFlight作为一个前端，理解列式数据集，并有一个内部接口Flight
-SQL，可以进行各种限制操作。</li>
+<li>支持JSON格式对象的查询。</li>
+<li>与AeroFlight进行集成，理解列式数据集和Flight SQL。</li>
 </ul></li>
 <li><strong>异步重构项目</strong>
 <ul>
-<li><strong>减少线程数</strong>：目标是能够以远少于默认的512个线程运行，Adam在Neo-Rados客户端的工作与此紧密相关。</li>
+<li>减少线程数，提高性能。</li>
 </ul></li>
 <li><strong>可观测性和追踪</strong>
 <ul>
-<li><strong>Jaeger集成</strong>：已经进行了大量工作将Jaeger集成到Ceph中，构建追踪原语并测试其性能。</li>
-<li><strong>条件追踪</strong>：正在探索基于Lua的条件追踪，以便在特定条件下动态启用追踪。</li>
+<li>集成Jaeger，构建追踪原语。</li>
+<li>探索基于Lua的条件追踪。</li>
 </ul></li>
 <li><strong>多站点（Multi-Site）项目</strong>
 <ul>
-<li><strong>动态重分片</strong>：正在进行动态重分片的工作，以提高多站点配置的可扩展性。</li>
-<li><strong>同步公平性</strong>：目标是改进多个网关实例之间的协作，优化同步过程。</li>
+<li>动态重分片，提高可扩展性。</li>
+<li>改进同步公平性，优化同步过程。</li>
 </ul></li>
 <li><strong>工作负载测试</strong>
 <ul>
-<li><strong>测试重写</strong>：考虑重写多站点测试，可能使用Golang或其他支持并发性的语言。</li>
-<li><strong>性能和规模测试</strong>：讨论了使用MinIO
-Warp工具进行工作负载生成，以及在ToothAlley环境中进行大规模测试的可能性。</li>
+<li>重写多站点测试，使用Golang或其他支持并发的语言。</li>
+<li>使用MinIO Warp进行工作负载测试。</li>
 </ul></li>
 <li><strong>HTTP/3支持</strong>
 <ul>
-<li><strong>长期目标</strong>：计划在RGW中添加HTTP/3支持，以实现更低的延迟和更好的性能。</li>
+<li>在RGW中添加HTTP/3支持，实现更低的延迟和更好的性能。</li>
 </ul></li>
 <li><strong>同步信息提供者</strong>
 <ul>
-<li><strong>抽象同步API</strong>：工作包括抽象同步API，以便支持非RGW数据源，如AWS
-S3。</li>
+<li>抽象同步API，支持非RGW数据源。</li>
 </ul></li>
 <li><strong>功能弃用</strong>
 <ul>
-<li><strong>OMAP日志</strong>：讨论了弃用OMAP日志的可能性，特别是在数据日志方面。</li>
+<li>讨论弃用OMAP日志的可能性。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
@@ -248,7 +250,7 @@ S3。</li>
 <li>探索使用Golang重写多站点测试，并使用MinIO
 Warp进行工作负载测试。</li>
 <li>开始HTTP/3支持的初步研究。</li>
-<li>继续推进同步信息提供者的工作，并在动态重分片完成后重新审视。</li>
+<li>继续推进同步信息提供者的工作。</li>
 <li>考虑在Reef版本中弃用OMAP日志。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
@@ -256,12 +258,12 @@ Warp进行工作负载测试。</li>
 <li>继续开发和测试Zipper项目中的功能。</li>
 <li>完成S3 Select的JSON支持和AeroFlight集成。</li>
 <li>完成异步重构项目，减少线程数。</li>
-<li>完善可观测性和追踪功能，特别是条件追踪的实现。</li>
+<li>完善可观测性和追踪功能。</li>
 <li>完成多站点项目的动态重分片和同步公平性改进。</li>
 <li>探索使用Golang重写多站点测试，并使用MinIO
 Warp进行工作负载测试。</li>
 <li>开始HTTP/3支持的初步研究。</li>
-<li>继续推进同步信息提供者的工作，并在动态重分片完成后重新审视。</li>
+<li>继续推进同步信息提供者的工作。</li>
 <li>考虑在Reef版本中弃用OMAP日志。</li>
 </ul>
 <h4 id="其他讨论">其他讨论</h4>
@@ -302,6 +304,8 @@ Warp进行工作负载测试。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS-Gateway/" rel="tag">RADOS Gateway</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scalability/" rel="tag">Scalability</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -313,7 +317,7 @@ Warp进行工作负载测试。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/&title=《CDS Reef: Rados Gateway》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/&title=《'CDS Reef: Rados Gateway'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -323,7 +327,7 @@ Warp进行工作负载测试。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/&title=《CDS Reef: Rados Gateway》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/&title=《'CDS Reef: Rados Gateway'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -333,7 +337,7 @@ Warp进行工作负载测试。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Reef: Rados Gateway》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CDS Reef: Rados Gateway'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -363,7 +367,7 @@ Warp进行工作负载测试。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/04/14/CDS_Reef_-_Performance/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Reef: Performance</h4>
+        <h4 class="title">&#39;CDS Reef: Performance&#39;</h4>
       </a>
     </div>
   
@@ -372,7 +376,7 @@ Warp进行工作负载测试。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/04/13/CDS_Reef_-_Orchestrator/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Reef: Orchestrator</h4>
+        <h4 class="title">&#39;CDS Reef: Orchestrator&#39;</h4>
       </a>
     </div>
   
@@ -472,7 +476,7 @@ Warp进行工作负载测试。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/&title=《CDS Reef: Rados Gateway》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/&title=《'CDS Reef: Rados Gateway'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -482,7 +486,7 @@ Warp进行工作负载测试。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/&title=《CDS Reef: Rados Gateway》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/&title=《'CDS Reef: Rados Gateway'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -492,7 +496,7 @@ Warp进行工作负载测试。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Reef: Rados Gateway》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CDS Reef: Rados Gateway'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/04/14/CDS_Reef_-_Rados_Gateway/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

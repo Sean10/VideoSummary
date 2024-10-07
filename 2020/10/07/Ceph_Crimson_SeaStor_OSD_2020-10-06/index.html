@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Crimson / SeaStor OSD  2020-10-06 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph Crimson / SeaStor OSD 2020-10-06 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 与会人员  主持人：未明确提及 参与者：Sam, Johan, 以及其他未明确提及的成员  会议时间  日期：未明确提及 时间：未明确提及  会议议题  个人工作汇报  Sam：上周在PTO期间，创建了一些清理PR，并开始审查Stem Care以添加捕获集合。同时，关注Amnon的PI和Runes，并计划分配时间审查一些hands interrupt。 未明确提及的成员：计划回顾VR，并">
+    <meta name="keywords" content="Ceph,Distributed Storage,CRUSH Algorithm,High Availability,Scalability">
+    <meta name="description" content="改进后的中文总结内容 会议纪要 与会人员  主持人：未明确提及 参与者：Sam, Johan, Stem 以及其他未明确提及的成员  会议时间  日期：未明确提及 时间：未明确提及  会议议题  个人工作汇报  Sam 在PTO期间完成了PR清理，并开始审查Stem Care以添加捕获集合，同时关注Amnon的PI和Runes，计划审查hands interrupt。 Stem 阅读了Greyho">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Crimson &#x2F; SeaStor OSD  2020-10-06">
+<meta property="og:title" content="Ceph Crimson &#x2F; SeaStor OSD 2020-10-06">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/10/07/Ceph_Crimson_SeaStor_OSD_2020-10-06/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 与会人员  主持人：未明确提及 参与者：Sam, Johan, 以及其他未明确提及的成员  会议时间  日期：未明确提及 时间：未明确提及  会议议题  个人工作汇报  Sam：上周在PTO期间，创建了一些清理PR，并开始审查Stem Care以添加捕获集合。同时，关注Amnon的PI和Runes，并计划分配时间审查一些hands interrupt。 未明确提及的成员：计划回顾VR，并">
+<meta property="og:description" content="改进后的中文总结内容 会议纪要 与会人员  主持人：未明确提及 参与者：Sam, Johan, Stem 以及其他未明确提及的成员  会议时间  日期：未明确提及 时间：未明确提及  会议议题  个人工作汇报  Sam 在PTO期间完成了PR清理，并开始审查Stem Care以添加捕获集合，同时关注Amnon的PI和Runes，计划审查hands interrupt。 Stem 阅读了Greyho">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-06T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-10-07T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="CRUSH Algorithm">
+<meta property="article:tag" content="High Availability">
+<meta property="article:tag" content="Scalability">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Crimson / SeaStor OSD  2020-10-06</div>
+        <div class="flex-col header-title ellipsis">Ceph Crimson / SeaStor OSD 2020-10-06</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Crimson / SeaStor OSD  2020-10-06</h1>
+        <h1 class="title">Ceph Crimson / SeaStor OSD 2020-10-06</h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-10-06T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8E%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">与会人员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">其他备注</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结内容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8E%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">与会人员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">会议时间</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">会议议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">其他备注</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.1.7.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Crimson / SeaStor OSD  2020-10-06</h1>
+        <h1 class="post-card-title">Ceph Crimson / SeaStor OSD 2020-10-06</h1>
         <div class="post-meta">
             <time class="post-time" title="2020-10-07 00:00:00" datetime="2020-10-06T16:00:00.000Z"  itemprop="datePublished">2020-10-07</time>
 
@@ -185,11 +190,12 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <h2 id="改进后的中文总结内容">改进后的中文总结内容</h2>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="与会人员">与会人员</h4>
 <ul>
-<li><strong>主持人</strong>：未明确提及</li>
-<li><strong>参与者</strong>：Sam, Johan, 以及其他未明确提及的成员</li>
+<li>主持人：未明确提及</li>
+<li>参与者：Sam, Johan, Stem 以及其他未明确提及的成员</li>
 </ul>
 <h4 id="会议时间">会议时间</h4>
 <ul>
@@ -200,39 +206,37 @@
 <ol type="1">
 <li><strong>个人工作汇报</strong>
 <ul>
-<li><strong>Sam</strong>：上周在PTO期间，创建了一些清理PR，并开始审查Stem
-Care以添加捕获集合。同时，关注Amnon的PI和Runes，并计划分配时间审查一些hands
+<li>Sam 在PTO期间完成了PR清理，并开始审查Stem
+Care以添加捕获集合，同时关注Amnon的PI和Runes，计划审查hands
 interrupt。</li>
-<li><strong>未明确提及的成员</strong>：计划回顾VR，并开始改进测试，特别是独立测试，如scrubbing测试。</li>
-<li><strong>Stem</strong>：阅读了Greyhounds相关内容，提交了一个PR，并正在为e-store编写磁盘后端，以便进行基本性能测试。</li>
-<li><strong>未明确提及的成员</strong>：提交了interruptible future
+<li>Stem
+阅读了Greyhounds相关内容，提交了PR，并正在为e-store编写磁盘后端以进行基本性能测试。</li>
+<li>其他成员计划回顾VR，并开始改进测试，特别是scrubbing测试。</li>
+<li>一位成员提交了interruptible future
 PR，并正在修改代码和添加单元测试。</li>
 </ul></li>
 <li><strong>技术讨论</strong>
 <ul>
-<li><strong>Stem</strong>：讨论了使用iou
-ring支持的问题，目前后端并未使用该功能。</li>
-<li><strong>Sam</strong>：对interruptible
-future的设计进行了深入讨论，提出了一些改进建议，包括确保在调用safe
-then时中断条件已经设置，以及可能的命名问题。</li>
+<li>Stem 讨论了使用iou ring支持的问题，指出后端并未使用该功能。</li>
+<li>Sam 对interruptible
+future的设计进行了深入讨论，提出了一些改进建议，包括确保中断条件在调用safe
+then时已设置，并考虑命名问题以提高代码可读性。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li><strong>Stem</strong>：将继续关注iou
-ring的支持情况，并考虑使用最基本的内置于c-star的方法进行磁盘写入。</li>
-<li><strong>Sam</strong>：建议在interruptible
-future的设计中，确保中断条件在调用safe
-then时已经设置，并考虑命名问题以提高代码的可读性。</li>
+<li>Stem 将继续关注iou
+ring的支持情况，并考虑使用最基本的内置c-star方法进行磁盘写入。</li>
+<li>Sam 建议在interruptible future的设计中，确保中断条件在调用safe
+then时已设置，并考虑命名问题以提高代码可读性。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li><strong>Stem</strong>：继续关注iou
+<li>Stem 继续关注iou
 ring的支持进展，并考虑使用最基本的内置方法进行磁盘写入。</li>
-<li><strong>Sam</strong>：与Johan讨论interruptible
-future的设计，确保中断条件在调用safe
-then时已经设置，并考虑命名问题。</li>
-<li><strong>所有成员</strong>：继续各自的工作，并关注相关技术进展。</li>
+<li>Sam 与Johan讨论interruptible future的设计，确保中断条件在调用safe
+then时已设置，并考虑命名问题。</li>
+<li>所有成员继续各自的工作，并关注相关技术进展。</li>
 </ul>
 <h4 id="其他备注">其他备注</h4>
 <ul>
@@ -272,6 +276,8 @@ then时已经设置，并考虑命名问题。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-Algorithm/" rel="tag">CRUSH Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High-Availability/" rel="tag">High Availability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scalability/" rel="tag">Scalability</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -283,7 +289,7 @@ then时已经设置，并考虑命名问题。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/10/07/Ceph_Crimson_SeaStor_OSD_2020-10-06/&title=《Ceph Crimson / SeaStor OSD  2020-10-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/10/07/Ceph_Crimson_SeaStor_OSD_2020-10-06/&title=《Ceph Crimson / SeaStor OSD 2020-10-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -293,7 +299,7 @@ then时已经设置，并考虑命名问题。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/10/07/Ceph_Crimson_SeaStor_OSD_2020-10-06/&title=《Ceph Crimson / SeaStor OSD  2020-10-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/10/07/Ceph_Crimson_SeaStor_OSD_2020-10-06/&title=《Ceph Crimson / SeaStor OSD 2020-10-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -303,7 +309,7 @@ then时已经设置，并考虑命名问题。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson / SeaStor OSD  2020-10-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/10/07/Ceph_Crimson_SeaStor_OSD_2020-10-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson / SeaStor OSD 2020-10-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/10/07/Ceph_Crimson_SeaStor_OSD_2020-10-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -342,7 +348,7 @@ then时已经设置，并考虑命名问题。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2020/10/06/Ceph_Orchestrator_Meeting_2020-10-05/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Orchestrator Meeting 2020-10-05</h4>
+        <h4 class="title"> Ceph Orchestrator Meeting 2020-10-05 </h4>
       </a>
     </div>
   
@@ -442,7 +448,7 @@ then时已经设置，并考虑命名问题。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/10/07/Ceph_Crimson_SeaStor_OSD_2020-10-06/&title=《Ceph Crimson / SeaStor OSD  2020-10-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/10/07/Ceph_Crimson_SeaStor_OSD_2020-10-06/&title=《Ceph Crimson / SeaStor OSD 2020-10-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -452,7 +458,7 @@ then时已经设置，并考虑命名问题。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/10/07/Ceph_Crimson_SeaStor_OSD_2020-10-06/&title=《Ceph Crimson / SeaStor OSD  2020-10-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/10/07/Ceph_Crimson_SeaStor_OSD_2020-10-06/&title=《Ceph Crimson / SeaStor OSD 2020-10-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -462,7 +468,7 @@ then时已经设置，并考虑命名问题。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson / SeaStor OSD  2020-10-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/10/07/Ceph_Crimson_SeaStor_OSD_2020-10-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson / SeaStor OSD 2020-10-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/10/07/Ceph_Crimson_SeaStor_OSD_2020-10-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

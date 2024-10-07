@@ -14,23 +14,34 @@
     
     
     
-    <title>2020-02-11 :: Ceph Crimson Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>  2020-02-11 :: Ceph Crimson Meeting   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要 本次会议主要讨论了Ceph存储系统中的一些技术问题，包括缓存机制、消息处理、性能优化以及代码实现细节。会议中，多位研发人员分享了他们在各自领域的进展和遇到的问题，并讨论了解决方案和后续行动计划。 主要议题  缓存机制：  讨论了OSD（Object Storage Daemon）地图处理路径中的缓存策略，特别是两级缓存的存在原因。 确认了使用增量缓存列表的必要性，以便在不同OS">
+    <meta name="keywords" content="Ceph,distributed storage,CRUSH algorithm,high availability,scalability,object storage,block storage,file system storage,consistency,decentralization,performance">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概要 本次Ceph Crimson会议重点关注了Ceph存储系统的技术问题，包括缓存机制、消息处理、性能优化以及代码实现细节。多位研发人员分享了他们在各自的研发方向上的进展和遇到的问题，并讨论了解决方案和后续行动计划。 主要议题  缓存机制：  讨论了OSD地图处理路径中的缓存策略，特别是两级缓存的存在原因。 确认了使用增量缓存列表的必要性，以便在不同OSD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2020-02-11 :: Ceph Crimson Meeting">
+<meta property="og:title" content="  2020-02-11 :: Ceph Crimson Meeting  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/04/03/2020-02-11_-_-_Ceph_Crimson_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要 本次会议主要讨论了Ceph存储系统中的一些技术问题，包括缓存机制、消息处理、性能优化以及代码实现细节。会议中，多位研发人员分享了他们在各自领域的进展和遇到的问题，并讨论了解决方案和后续行动计划。 主要议题  缓存机制：  讨论了OSD（Object Storage Daemon）地图处理路径中的缓存策略，特别是两级缓存的存在原因。 确认了使用增量缓存列表的必要性，以便在不同OS">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概要 本次Ceph Crimson会议重点关注了Ceph存储系统的技术问题，包括缓存机制、消息处理、性能优化以及代码实现细节。多位研发人员分享了他们在各自的研发方向上的进展和遇到的问题，并讨论了解决方案和后续行动计划。 主要议题  缓存机制：  讨论了OSD地图处理路径中的缓存策略，特别是两级缓存的存在原因。 确认了使用增量缓存列表的必要性，以便在不同OSD">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-04-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="distributed storage">
+<meta property="article:tag" content="CRUSH algorithm">
+<meta property="article:tag" content="high availability">
+<meta property="article:tag" content="scalability">
+<meta property="article:tag" content="object storage">
+<meta property="article:tag" content="block storage">
+<meta property="article:tag" content="file system storage">
+<meta property="article:tag" content="consistency">
+<meta property="article:tag" content="decentralization">
+<meta property="article:tag" content="performance">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +123,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2020-02-11 :: Ceph Crimson Meeting</div>
+        <div class="flex-col header-title ellipsis">  2020-02-11 :: Ceph Crimson Meeting  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +145,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2020-02-11 :: Ceph Crimson Meeting</h1>
+        <h1 class="title">  2020-02-11 :: Ceph Crimson Meeting  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-04-02T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +170,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他事项</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">2.</span> <span class="post-toc-text">结束语</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他事项</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +179,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2020-02-11 :: Ceph Crimson Meeting</h1>
+        <h1 class="post-card-title">  2020-02-11 :: Ceph Crimson Meeting  </h1>
         <div class="post-meta">
             <time class="post-time" title="2020-04-03 00:00:00" datetime="2020-04-02T16:00:00.000Z"  itemprop="datePublished">2020-04-03</time>
 
@@ -185,22 +196,22 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概要">会议概要</h4>
-<p>本次会议主要讨论了Ceph存储系统中的一些技术问题，包括缓存机制、消息处理、性能优化以及代码实现细节。会议中，多位研发人员分享了他们在各自领域的进展和遇到的问题，并讨论了解决方案和后续行动计划。</p>
+<p>本次Ceph
+Crimson会议重点关注了Ceph存储系统的技术问题，包括缓存机制、消息处理、性能优化以及代码实现细节。多位研发人员分享了他们在各自的研发方向上的进展和遇到的问题，并讨论了解决方案和后续行动计划。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>缓存机制</strong>：
 <ul>
-<li>讨论了OSD（Object Storage
-Daemon）地图处理路径中的缓存策略，特别是两级缓存的存在原因。</li>
+<li>讨论了OSD地图处理路径中的缓存策略，特别是两级缓存的存在原因。</li>
 <li>确认了使用增量缓存列表的必要性，以便在不同OSD地图版本间高效传输数据。</li>
 </ul></li>
 <li><strong>消息处理与路由</strong>：
 <ul>
 <li>探讨了在Crimson存储系统中实现消息路由的策略，特别是从一对一模型转向多对多模型的可能性。</li>
-<li>讨论了在消息处理中添加PG（Placement
-Group）日志条目对性能的影响，并提出了优化编码效率的建议。</li>
+<li>讨论了在消息处理中添加PG日志条目对性能的影响，并提出了优化编码效率的建议。</li>
 </ul></li>
 <li><strong>性能优化</strong>：
 <ul>
@@ -215,7 +226,7 @@ Group）日志条目对性能的影响，并提出了优化编码效率的建议
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>将继续优化缓存机制，特别是在处理OSD地图和增量数据时的效率。</li>
+<li>将继续优化缓存机制，尤其是在处理OSD地图和增量数据时的效率。</li>
 <li>将探索从一对一消息模型转向多对多模型的可行性，并评估其对系统性能的影响。</li>
 <li>将进行更多的性能测试，特别是关于内存拷贝和消息编码的优化。</li>
 <li>将通过代码审查和测试来确保新功能的稳定性和性能。</li>
@@ -233,8 +244,6 @@ Group）日志条目对性能的影响，并提出了优化编码效率的建议
 <li>会议中提到了一些技术细节和代码实现问题，这些问题将在后续的研发过程中进一步探讨和解决。</li>
 <li>鼓励团队成员在研发过程中保持沟通和协作，共同推动Ceph存储系统的优化和发展。</li>
 </ul>
-<h3 id="结束语">结束语</h3>
-<p>感谢所有参与会议的研发人员，期待大家在接下来的工作中取得更多的进展和成果。下次会议再见。</p>
 
         </div>
 
@@ -265,6 +274,8 @@ Group）日志条目对性能的影响，并提出了优化编码效率的建议
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-algorithm/" rel="tag">CRUSH algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/block-storage/" rel="tag">block storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/consistency/" rel="tag">consistency</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/decentralization/" rel="tag">decentralization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/distributed-storage/" rel="tag">distributed storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/file-system-storage/" rel="tag">file system storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/high-availability/" rel="tag">high availability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/object-storage/" rel="tag">object storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/performance/" rel="tag">performance</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/scalability/" rel="tag">scalability</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -276,7 +287,7 @@ Group）日志条目对性能的影响，并提出了优化编码效率的建议
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-11_-_-_Ceph_Crimson_Meeting/&title=《2020-02-11 :: Ceph Crimson Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-11_-_-_Ceph_Crimson_Meeting/&title=《  2020-02-11 :: Ceph Crimson Meeting  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -286,7 +297,7 @@ Group）日志条目对性能的影响，并提出了优化编码效率的建议
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-11_-_-_Ceph_Crimson_Meeting/&title=《2020-02-11 :: Ceph Crimson Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-11_-_-_Ceph_Crimson_Meeting/&title=《  2020-02-11 :: Ceph Crimson Meeting  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -296,7 +307,7 @@ Group）日志条目对性能的影响，并提出了优化编码效率的建议
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2020-02-11 :: Ceph Crimson Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-11_-_-_Ceph_Crimson_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  2020-02-11 :: Ceph Crimson Meeting  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-11_-_-_Ceph_Crimson_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -324,18 +335,18 @@ Group）日志条目对性能的影响，并提出了优化编码效率的建议
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2020/04/03/2020-02-05_-_-_Ceph_Developer_Monthly/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2020/04/03/2020-02-25_-_-_Ceph_Crimson_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2020-02-05 :: Ceph Developer Monthly</h4>
+        <h4 class="title">&#39;2020-02-25 :: Ceph Crimson Meeting&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2020/04/03/2020-02-10_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2020/04/03/2020-02-27_-_-_Ceph_Performance_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2020-02-10 :: Ceph Orchestration Meeting</h4>
+        <h4 class="title">&#39;2020-02-27 :: Ceph 性能会议&#39;</h4>
       </a>
     </div>
   
@@ -435,7 +446,7 @@ Group）日志条目对性能的影响，并提出了优化编码效率的建议
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-11_-_-_Ceph_Crimson_Meeting/&title=《2020-02-11 :: Ceph Crimson Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-11_-_-_Ceph_Crimson_Meeting/&title=《  2020-02-11 :: Ceph Crimson Meeting  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -445,7 +456,7 @@ Group）日志条目对性能的影响，并提出了优化编码效率的建议
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-11_-_-_Ceph_Crimson_Meeting/&title=《2020-02-11 :: Ceph Crimson Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-11_-_-_Ceph_Crimson_Meeting/&title=《  2020-02-11 :: Ceph Crimson Meeting  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -455,7 +466,7 @@ Group）日志条目对性能的影响，并提出了优化编码效率的建议
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2020-02-11 :: Ceph Crimson Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-11_-_-_Ceph_Crimson_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  2020-02-11 :: Ceph Crimson Meeting  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-11_-_-_Ceph_Crimson_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

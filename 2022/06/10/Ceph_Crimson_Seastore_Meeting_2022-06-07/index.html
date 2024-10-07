@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 日期： [未指定，但可推断为当前或近期的一周内] 参与者： Carmen, Aravind, [其他参与者名字未提及] 主要讨论议题： 1. ZNS问题识别与解决 2. 日志消息清理 3. 容量报告修正 4. GC测试方法优化 5. 现实工作负载模拟 6. 错误日志修改 7. Crimson在Jenkins上的构建问题 决定事项： - Carmen将对ZNS部分进行问题修复并清理日志消息">
+    <meta name="keywords" content="Ceph,Distributed Storage,Storage Performance,Code Review,Build Automation">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 日期： 2022-06-07 参与者： Carmen, Aravind, Chad Knight, [其他参与者名字未提及] 主要讨论议题： 1. ZNS问题识别与解决 2. 日志消息清理 3. 容量报告修正 4. GC测试方法优化 5. 现实工作负载模拟 6. 错误日志修改 7. Crimson在Jenkins上的构建问题 决定事项： - Carmen负责修复">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;Seastore Meeting 2022-06-07">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/06/10/Ceph_Crimson_Seastore_Meeting_2022-06-07/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 日期： [未指定，但可推断为当前或近期的一周内] 参与者： Carmen, Aravind, [其他参与者名字未提及] 主要讨论议题： 1. ZNS问题识别与解决 2. 日志消息清理 3. 容量报告修正 4. GC测试方法优化 5. 现实工作负载模拟 6. 错误日志修改 7. Crimson在Jenkins上的构建问题 决定事项： - Carmen将对ZNS部分进行问题修复并清理日志消息">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 日期： 2022-06-07 参与者： Carmen, Aravind, Chad Knight, [其他参与者名字未提及] 主要讨论议题： 1. ZNS问题识别与解决 2. 日志消息清理 3. 容量报告修正 4. GC测试方法优化 5. 现实工作负载模拟 6. 错误日志修改 7. Crimson在Jenkins上的构建问题 决定事项： - Carmen负责修复">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-09T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-06-10T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Storage Performance">
+<meta property="article:tag" content="Code Review">
+<meta property="article:tag" content="Build Automation">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,28 +190,29 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>日期：</strong> [未指定，但可推断为当前或近期的一周内]
-<strong>参与者：</strong> Carmen, Aravind, [其他参与者名字未提及]
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>日期：</strong> 2022-06-07 <strong>参与者：</strong> Carmen,
+Aravind, Chad Knight, [其他参与者名字未提及]
 <strong>主要讨论议题：</strong> 1. ZNS问题识别与解决 2. 日志消息清理 3.
 容量报告修正 4. GC测试方法优化 5. 现实工作负载模拟 6. 错误日志修改 7.
 Crimson在Jenkins上的构建问题</p>
-<p><strong>决定事项：</strong> -
-Carmen将对ZNS部分进行问题修复并清理日志消息。 -
-发送修正后的容量报告PR请求评审。 - 使用fio的zip
-f模式来测试GC，更贴近实际的工作负载。 - 对Ceph的matrix进行改进。 -
-需要收集真实工作负载数据以优化合成测试。 - 修改错误日志以改善用户体验。
--
-解决Crimson在Jenkins上构建的问题，特别是关于系统库和工具集升级后的问题。</p>
+<p><strong>决定事项：</strong> - Carmen负责修复ZNS问题，并清理日志消息。
+- Carmen将发送修正后的容量报告，并请求评审。 - 使用fio的zip
+f模式来测试GC，以更贴近实际工作负载。 - 对Ceph的matrix进行改进。 -
+收集真实工作负载数据以优化合成测试。 - 修改错误日志以提升用户体验。 -
+解决Crimson在Jenkins上的构建问题，特别是系统库和工具集的升级问题。</p>
 <p><strong>后续行动计划：</strong> -
-Carmen将继续处理ZNS相关的问题，并请求其他人评审她的代码。 -
+Carmen将继续处理ZNS相关的问题，并请求代码评审。 -
 Aravind将探索更现实的测试方法，可能包括客户部署测试。 -
-继续调查Crimson在Jenkins上的构建问题，特别是与系统库相关的问题。 -
-所有参与者应保持关注他们各自任务的进展，并在下次会议前准备好更新。</p>
+解决Crimson在Jenkins上的构建问题，特别是与系统库相关的问题。 -
+所有参与者应关注各自任务的进展，并在下次会议前准备好更新。</p>
 <p><strong>备注：</strong> -
-一些技术术语未翻译，如ZNS、GC等，因为这些是专业领域（存储和计算机科学）中的专有名词。
+会议中提到的技术术语如ZNS、GC等未翻译，因为这些是存储和计算机科学领域的专有名词。
+- 一位参与者下周将离开，但会尽量处理邮件；另一位参与者将在之后一周返回。
 -
-会议结束时提到一位参与者下周不在，但会尽量处理邮件；另一位参与者将在之后一周返回。</p>
+会议中提到在提交补丁前没有特别的许可证要求，只需确保代码风格与现有代码一致，并尽量让Pull
+Request（PR）保持简洁。</p>
 
         </div>
 
@@ -237,6 +243,8 @@ Aravind将探索更现实的测试方法，可能包括客户部署测试。 -
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Build-Automation/" rel="tag">Build Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Code-Review/" rel="tag">Code Review</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Performance/" rel="tag">Storage Performance</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -296,9 +304,9 @@ Aravind将探索更现实的测试方法，可能包括客户部署测试。 -
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-16/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2022-06-16</h4>
+        <h4 class="title">Ceph 性能会议 2022-06-23</h4>
       </a>
     </div>
   

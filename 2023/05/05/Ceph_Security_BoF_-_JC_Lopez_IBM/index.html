@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 参会人员  JC Lopez：与Seth有长期合作历史，曾被IBM收购后离开，现回归IBM，继续从事Fusion和Seth相关工作。  会议主题  数据安全 存储强化 Rook项目 Ceph存储系统  主要讨论内容  Ceph的未来与现状：  Seth（Ceph）被认为是存储的未来，支持块存储和对象存储。 Ceph在Kubernetes和OpenShift环境中显示出极高的灵活性、高可用">
+    <meta name="keywords" content="Ceph,分布式存储,安全性,开源,Rook">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 参会人员  JC Lopez：IBM研发人员，长期从事Ceph和Seth相关工作。  会议主题  Ceph安全 存储强化 Rook项目 Ceph存储系统  主要讨论内容  Ceph的未来与现状：  Ceph作为存储的未来，支持块存储和对象存储。 Ceph在Kubernetes和OpenShift环境中表现出高灵活性、高可用性和可扩展性。  Rook项目：  Ro">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Security BoF - JC Lopez, IBM">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Security_BoF_-_JC_Lopez_IBM/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 参会人员  JC Lopez：与Seth有长期合作历史，曾被IBM收购后离开，现回归IBM，继续从事Fusion和Seth相关工作。  会议主题  数据安全 存储强化 Rook项目 Ceph存储系统  主要讨论内容  Ceph的未来与现状：  Seth（Ceph）被认为是存储的未来，支持块存储和对象存储。 Ceph在Kubernetes和OpenShift环境中显示出极高的灵活性、高可用">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 参会人员  JC Lopez：IBM研发人员，长期从事Ceph和Seth相关工作。  会议主题  Ceph安全 存储强化 Rook项目 Ceph存储系统  主要讨论内容  Ceph的未来与现状：  Ceph作为存储的未来，支持块存储和对象存储。 Ceph在Kubernetes和OpenShift环境中表现出高灵活性、高可用性和可扩展性。  Rook项目：  Ro">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="安全性">
+<meta property="article:tag" content="开源">
+<meta property="article:tag" content="Rook">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">参会人员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议主题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主要讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BF%A1%E6%81%AF"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">[改进后的中文总结内容]</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">参会人员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">会议主题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">主要讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BF%A1%E6%81%AF"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">其他信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,15 +190,16 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <h2 id="改进后的中文总结内容">[改进后的中文总结内容]</h2>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="参会人员">参会人员</h4>
 <ul>
 <li><strong>JC
-Lopez</strong>：与Seth有长期合作历史，曾被IBM收购后离开，现回归IBM，继续从事Fusion和Seth相关工作。</li>
+Lopez</strong>：IBM研发人员，长期从事Ceph和Seth相关工作。</li>
 </ul>
 <h4 id="会议主题">会议主题</h4>
 <ul>
-<li>数据安全</li>
+<li>Ceph安全</li>
 <li>存储强化</li>
 <li>Rook项目</li>
 <li>Ceph存储系统</li>
@@ -202,20 +208,19 @@ Lopez</strong>：与Seth有长期合作历史，曾被IBM收购后离开，现�
 <ol type="1">
 <li><strong>Ceph的未来与现状</strong>：
 <ul>
-<li>Seth（Ceph）被认为是存储的未来，支持块存储和对象存储。</li>
-<li>Ceph在Kubernetes和OpenShift环境中显示出极高的灵活性、高可用性和可扩展性。</li>
+<li>Ceph作为存储的未来，支持块存储和对象存储。</li>
+<li>Ceph在Kubernetes和OpenShift环境中表现出高灵活性、高可用性和可扩展性。</li>
 </ul></li>
 <li><strong>Rook项目</strong>：
 <ul>
-<li>Rook是由CNCF孵化的项目，旨在通过操作符模型在Kubernetes环境中部署Ceph集群。</li>
-<li>Rook已被用于OpenShift Data Foundation和IBM的Fusion Data
+<li>Rook项目旨在通过操作符模型在Kubernetes环境中部署Ceph集群。</li>
+<li>Rook已用于OpenShift Data Foundation和IBM的Fusion Data
 Foundation。</li>
 </ul></li>
 <li><strong>Ceph与Rook的安全性</strong>：
 <ul>
-<li>IBM在产品生命周期中进行安全活动，旨在减少风险并提高Ceph和Rook的安全性。</li>
-<li>使用安全开发生命周期（SDL）进行代码审计和渗透测试。</li>
-<li>IBM的PSIRT（产品安全事件响应团队）将文档化所有开源材料，确保使用的库和组件的安全性。</li>
+<li>IBM通过安全开发生命周期（SDL）进行代码审计和渗透测试。</li>
+<li>IBM的PSIRT（产品安全事件响应团队）负责文档化所有开源材料，确保使用的库和组件的安全性。</li>
 </ul></li>
 <li><strong>加密与密钥管理</strong>：
 <ul>
@@ -284,6 +289,8 @@ Lopez感谢大家的参与，并表示会将所有相关材料和幻灯片分享
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AE%89%E5%85%A8%E6%80%A7/" rel="tag">安全性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%80%E6%BA%90/" rel="tag">开源</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -352,9 +359,9 @@ Lopez感谢大家的参与，并表示会将所有相关材料和幻灯片分享
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph for Public Cloud Workloads - Philip Williams, Canonical</h4>
+        <h4 class="title">  Ceph in Scientific Computing and Large Clusters BoF  </h4>
       </a>
     </div>
   

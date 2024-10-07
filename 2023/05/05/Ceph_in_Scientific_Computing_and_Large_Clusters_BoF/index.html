@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph in Scientific Computing and Large Clusters BoF | ceph视频总结 | youtube频道总结</title>
+    <title>  Ceph in Scientific Computing and Large Clusters BoF   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议基本信息  主持人: Kevin Herb Chuck 会议类型: 科学研究计算大型集群的非正式讨论会（Birds of a Feather） 目的: 促进对科学研究和计算环境中有相似兴趣的人员之间的交流与讨论。  会议内容概述  参与者介绍: Kevin来自美国威斯康星大学的空间科学与工程中心，负责处理NASA多个任务的卫星数据。 会议形式: 非正式讨论，主要围绕Ceph在大型集群">
+    <meta name="keywords" content="Ceph,Distributed Storage,CRUSH Algorithm,Scientific Computing,Large Clusters">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议基本信息  主持人: Kevin Herb Chuck 会议类型: 科学研究计算大型集群的非正式讨论会（Birds of a Feather） 目的: 促进对科学研究和计算环境中有相似兴趣的人员之间的交流与讨论。  会议内容概述  参与者介绍: Kevin来自美国威斯康星大学的空间科学与工程中心，负责处理NASA多个任务的卫星数据。 会议形式: 非正式讨论，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph in Scientific Computing and Large Clusters BoF">
+<meta property="og:title" content="  Ceph in Scientific Computing and Large Clusters BoF  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议基本信息  主持人: Kevin Herb Chuck 会议类型: 科学研究计算大型集群的非正式讨论会（Birds of a Feather） 目的: 促进对科学研究和计算环境中有相似兴趣的人员之间的交流与讨论。  会议内容概述  参与者介绍: Kevin来自美国威斯康星大学的空间科学与工程中心，负责处理NASA多个任务的卫星数据。 会议形式: 非正式讨论，主要围绕Ceph在大型集群">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议基本信息  主持人: Kevin Herb Chuck 会议类型: 科学研究计算大型集群的非正式讨论会（Birds of a Feather） 目的: 促进对科学研究和计算环境中有相似兴趣的人员之间的交流与讨论。  会议内容概述  参与者介绍: Kevin来自美国威斯康星大学的空间科学与工程中心，负责处理NASA多个任务的卫星数据。 会议形式: 非正式讨论，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="CRUSH Algorithm">
+<meta property="article:tag" content="Scientific Computing">
+<meta property="article:tag" content="Large Clusters">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph in Scientific Computing and Large Clusters BoF</div>
+        <div class="flex-col header-title ellipsis">  Ceph in Scientific Computing and Large Clusters BoF  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph in Scientific Computing and Large Clusters BoF</h1>
+        <h1 class="title">  Ceph in Scientific Computing and Large Clusters BoF  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议基本信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议内容概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他备注</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议基本信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%A6%82%E8%BF%B0"><span class="post-toc-number">2.</span> <span class="post-toc-text">会议内容概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E5%A4%87%E6%B3%A8"><span class="post-toc-number">5.</span> <span class="post-toc-text">其他备注</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">6.</span> <span class="post-toc-text">结论</span></a></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph in Scientific Computing and Large Clusters BoF</h1>
+        <h1 class="post-card-title">  Ceph in Scientific Computing and Large Clusters BoF  </h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
@@ -185,8 +190,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议基本信息">会议基本信息</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
+<h3 id="会议基本信息">会议基本信息</h3>
 <ul>
 <li><strong>主持人</strong>: Kevin Herb Chuck</li>
 <li><strong>会议类型</strong>: 科学研究计算大型集群的非正式讨论会（Birds
@@ -194,7 +200,7 @@ of a Feather）</li>
 <li><strong>目的</strong>:
 促进对科学研究和计算环境中有相似兴趣的人员之间的交流与讨论。</li>
 </ul>
-<h4 id="会议内容概述">会议内容概述</h4>
+<h3 id="会议内容概述">会议内容概述</h3>
 <ul>
 <li><strong>参与者介绍</strong>:
 Kevin来自美国威斯康星大学的空间科学与工程中心，负责处理NASA多个任务的卫星数据。</li>
@@ -212,29 +218,37 @@ API访问，包括自定义前端和后端解决方案。</li>
 分享了在大型集群中处理数据突增和异常增长的策略。</li>
 </ul></li>
 </ul>
-<h4 id="决定事项">决定事项</h4>
+<h3 id="决定事项">决定事项</h3>
 <ul>
 <li><strong>S3 API安全管理</strong>:
 采用自定义前端和后端工具来管理S3凭证，确保科学用户的安全访问。</li>
 <li><strong>集群升级策略</strong>:
 探讨了通过虚拟机架和逐步升级策略来减少数据迁移的影响。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<h3 id="后续行动计划">后续行动计划</h3>
 <ul>
 <li><strong>持续交流</strong>:
 定期举行线上Meetup，时间为每两个月的第四个星期三，下午4点（中欧时间）。</li>
-<li><strong>信息共享</strong>: 通过QR码链接的Seth
+<li><strong>信息共享</strong>: 通过Seth
 pad记录和分享每次会议的讨论内容和发现。</li>
 </ul>
-<h4 id="其他备注">其他备注</h4>
+<h3 id="其他备注">其他备注</h3>
 <ul>
 <li><strong>技术挑战</strong>:
 讨论中提到了在大型集群中实施滚动重启和升级的技术挑战，以及如何通过改进Crush
 map和故障域管理来优化这些过程。</li>
 <li><strong>社区合作</strong>:
 鼓励参与者通过共享经验和合作开发开源API来解决共同面临的问题。</li>
+<li><strong>集群规模</strong>:
+参与者分享了他们的集群规模和使用的Ceph版本，包括从Firefly到Quincy的版本。</li>
+<li><strong>操作系统升级</strong>:
+讨论了在大型集群中进行操作系统升级的策略，包括先升级操作系统然后再升级Ceph集群。</li>
+<li><strong>自动化和容器化</strong>:
+讨论了使用Kubernetes和容器化技术来简化集群管理和升级。</li>
+<li><strong>虚拟化</strong>:
+讨论了使用虚拟化技术来提供更高的故障域和灵活性。</li>
 </ul>
-<h4 id="结论">结论</h4>
+<h3 id="结论">结论</h3>
 <p>会议成功促进了科学研究计算领域中Ceph用户的交流与合作，为解决共同的技术挑战提供了平台和机会。</p>
 
         </div>
@@ -266,6 +280,8 @@ map和故障域管理来优化这些过程。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-Algorithm/" rel="tag">CRUSH Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Large-Clusters/" rel="tag">Large Clusters</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scientific-Computing/" rel="tag">Scientific Computing</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -277,7 +293,7 @@ map和故障域管理来优化这些过程。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/&title=《Ceph in Scientific Computing and Large Clusters BoF》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/&title=《  Ceph in Scientific Computing and Large Clusters BoF  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -287,7 +303,7 @@ map和故障域管理来优化这些过程。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/&title=《Ceph in Scientific Computing and Large Clusters BoF》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/&title=《  Ceph in Scientific Computing and Large Clusters BoF  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -297,7 +313,7 @@ map和故障域管理来优化这些过程。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph in Scientific Computing and Large Clusters BoF》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph in Scientific Computing and Large Clusters BoF  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -325,9 +341,9 @@ map和故障域管理来优化这些过程。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/05/Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Ceph_Security_BoF_-_JC_Lopez_IBM/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph for Public Cloud Workloads - Philip Williams, Canonical</h4>
+        <h4 class="title">Ceph Security BoF - JC Lopez, IBM</h4>
       </a>
     </div>
   
@@ -436,7 +452,7 @@ map和故障域管理来优化这些过程。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/&title=《Ceph in Scientific Computing and Large Clusters BoF》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/&title=《  Ceph in Scientific Computing and Large Clusters BoF  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -446,7 +462,7 @@ map和故障域管理来优化这些过程。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/&title=《Ceph in Scientific Computing and Large Clusters BoF》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/&title=《  Ceph in Scientific Computing and Large Clusters BoF  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -456,7 +472,7 @@ map和故障域管理来优化这些过程。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph in Scientific Computing and Large Clusters BoF》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph in Scientific Computing and Large Clusters BoF  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Ceph_in_Scientific_Computing_and_Large_Clusters_BoF/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -20,17 +20,23 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： 未知（会议记录中未提及具体姓名） 会议主题： Ceph分布式存储系统开发进展及讨论 关键细节：  Ceph存储功能开发：  成员讨论了高通过滤支持的开发进展，并表示将工作分支推送到GitHub供他人查看。 讨论了内存存储和对象存储的复制功能，以及对内存存储的优化。 讨论了OSD初始化函数的改进，以及如何将初始化代码从reacto">
+    <meta name="keywords" content="Ceph,分布式存储,RBD,性能优化,OSD,Crimson Seastar">
+    <meta name="description" content="[改进后的中文总结内容] 在本次Crimson Seastar&#x2F;OSD会议中，讨论了Ceph分布式存储系统的开发进展及未来方向。以下为会议关键内容： Ceph存储功能开发：  成员讨论了高通过滤支持的开发进展，并推送了工作分支到GitHub。 讨论了内存存储和对象存储的复制功能优化，以及对内存存储的优化。 讨论了OSD初始化函数的改进，以及如何将初始化代码从reactor中移除。 讨论了多进程部署">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Crimson Seastar&#x2F;OSD Meeting 2019-01-22">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/02/03/Crimson_Seastar_OSD_Meeting_2019-01-22/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月（具体日期未提及） 参会人员： 未知（会议记录中未提及具体姓名） 会议主题： Ceph分布式存储系统开发进展及讨论 关键细节：  Ceph存储功能开发：  成员讨论了高通过滤支持的开发进展，并表示将工作分支推送到GitHub供他人查看。 讨论了内存存储和对象存储的复制功能，以及对内存存储的优化。 讨论了OSD初始化函数的改进，以及如何将初始化代码从reacto">
+<meta property="og:description" content="[改进后的中文总结内容] 在本次Crimson Seastar&#x2F;OSD会议中，讨论了Ceph分布式存储系统的开发进展及未来方向。以下为会议关键内容： Ceph存储功能开发：  成员讨论了高通过滤支持的开发进展，并推送了工作分支到GitHub。 讨论了内存存储和对象存储的复制功能优化，以及对内存存储的优化。 讨论了OSD初始化函数的改进，以及如何将初始化代码从reactor中移除。 讨论了多进程部署">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-02-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-02-02T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RBD">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="Crimson Seastar">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,6 +162,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">[改进后的中文总结内容]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E8%8B%B1%E6%96%87-summary"><span class="post-toc-number">2.</span> <span class="post-toc-text">[改进后的英文 Summary]</span></a></li></ol>
+        </nav>
+    </aside>
+
 
 <article id="post-Crimson_Seastar_OSD_Meeting_2019-01-22"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -178,56 +191,38 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
-<p><strong>参会人员</strong>： 未知（会议记录中未提及具体姓名）</p>
-<p><strong>会议主题</strong>： Ceph分布式存储系统开发进展及讨论</p>
-<p><strong>关键细节</strong>：</p>
+            <h2 id="改进后的中文总结内容">[改进后的中文总结内容]</h2>
+<p>在本次Crimson
+Seastar/OSD会议中，讨论了Ceph分布式存储系统的开发进展及未来方向。以下为会议关键内容：</p>
+<p><strong>Ceph存储功能开发</strong>：</p>
 <ul>
-<li><strong>Ceph存储功能开发</strong>：
-<ul>
-<li>成员讨论了高通过滤支持的开发进展，并表示将工作分支推送到GitHub供他人查看。</li>
-<li>讨论了内存存储和对象存储的复制功能，以及对内存存储的优化。</li>
+<li>成员讨论了高通过滤支持的开发进展，并推送了工作分支到GitHub。</li>
+<li>讨论了内存存储和对象存储的复制功能优化，以及对内存存储的优化。</li>
 <li>讨论了OSD初始化函数的改进，以及如何将初始化代码从reactor中移除。</li>
 <li>讨论了多进程部署模型对OSD映射缓存的影响。</li>
 <li>讨论了RBD（Rados Block Device）的性能测试和优化。</li>
 <li>讨论了Crimson存储功能开发，包括内存存储的重新实现和对象存储的优化。</li>
 <li>讨论了AES加密算法在Ceph中的应用。</li>
-</ul></li>
-<li><strong>Ceph性能优化</strong>：
+</ul>
+<p><strong>Ceph性能优化</strong>：</p>
 <ul>
 <li>讨论了Crimson存储功能的性能测试和优化。</li>
 <li>讨论了多进程部署模型对性能的影响。</li>
 <li>讨论了RBD的性能测试和优化。</li>
-</ul></li>
-<li><strong>Ceph代码开发</strong>：
+</ul>
+<p><strong>Ceph代码开发</strong>：</p>
 <ul>
 <li>讨论了Crimson存储功能的代码开发，包括内存存储的重新实现和对象存储的优化。</li>
 <li>讨论了RBD的代码开发，包括性能测试和优化。</li>
 <li>讨论了OSD初始化函数的代码开发。</li>
-</ul></li>
 </ul>
 <p><strong>讨论的主要议题</strong>：</p>
 <ul>
-<li><strong>Ceph存储功能开发</strong>：
-<ul>
-<li>如何优化内存存储和对象存储的性能。</li>
-<li>如何改进OSD初始化函数。</li>
-<li>如何实现多进程部署模型。</li>
-<li>如何优化RBD的性能。</li>
-<li>如何实现Crimson存储功能。</li>
-</ul></li>
-<li><strong>Ceph性能优化</strong>：
-<ul>
-<li>如何提高Ceph的整体性能。</li>
-<li>如何优化Crimson存储功能的性能。</li>
-<li>如何优化RBD的性能。</li>
-</ul></li>
-<li><strong>Ceph代码开发</strong>：
-<ul>
-<li>如何改进Ceph的代码质量。</li>
-<li>如何实现新的功能。</li>
-</ul></li>
+<li>优化内存存储和对象存储的性能。</li>
+<li>改进OSD初始化函数。</li>
+<li>实现多进程部署模型。</li>
+<li>优化RBD的性能。</li>
+<li>实现Crimson存储功能。</li>
 </ul>
 <p><strong>决定的事项</strong>：</p>
 <ul>
@@ -245,11 +240,73 @@
 <li>成员将继续实现AES加密算法在Ceph中的应用。</li>
 <li>成员将继续改进Ceph的代码质量。</li>
 </ul>
-<p><strong>备注</strong>：</p>
+<h2 id="改进后的英文-summary">[改进后的英文 Summary]</h2>
+<p>The Crimson Seastar/OSD meeting focused on the development progress
+and future direction of the Ceph distributed storage system. Here are
+the key points of the meeting:</p>
+<p><strong>Ceph Storage Function Development</strong>:</p>
 <ul>
-<li>会议记录中未提及具体姓名，仅提及了部分成员的昵称。</li>
-<li>会议记录中保留了部分计算机科学/ceph相关领域英文原文的关键词，例如：Ceph,
-OSD, RBD, Crimson, AES, GCM, POSIX, etc.</li>
+<li>Members discussed the progress of high pass support development and
+pushed the working branch to GitHub.</li>
+<li>They discussed the optimization of the replication features in
+memory and object storage, as well as the optimization of memory
+storage.</li>
+<li>They discussed improvements to the OSD initialization function,
+including removing initialization code from the reactor.</li>
+<li>They discussed the impact of the multi-process deployment model on
+the OSD map cache.</li>
+<li>They discussed the performance testing and optimization of RBD
+(Rados Block Device).</li>
+<li>They discussed the development of Crimson storage features,
+including the reimplementation of memory storage and optimization of
+object storage.</li>
+<li>They discussed the application of the AES encryption algorithm in
+Ceph.</li>
+</ul>
+<p><strong>Ceph Performance Optimization</strong>:</p>
+<ul>
+<li>They discussed the performance testing and optimization of Crimson
+storage features.</li>
+<li>They discussed the impact of the multi-process deployment model on
+performance.</li>
+<li>They discussed the performance testing and optimization of RBD.</li>
+</ul>
+<p><strong>Ceph Code Development</strong>:</p>
+<ul>
+<li>They discussed the code development of Crimson storage features,
+including the reimplementation of memory storage and optimization of
+object storage.</li>
+<li>They discussed the code development of RBD, including performance
+testing and optimization.</li>
+<li>They discussed the code development of the OSD initialization
+function.</li>
+</ul>
+<p><strong>Main Discussion Points</strong>:</p>
+<ul>
+<li>Optimizing the performance of memory and object storage.</li>
+<li>Improving the OSD initialization function.</li>
+<li>Implementing the multi-process deployment model.</li>
+<li>Optimizing the performance of RBD.</li>
+<li>Implementing the Crimson storage feature.</li>
+</ul>
+<p><strong>Decisions Made</strong>:</p>
+<ul>
+<li>Pushing the working branch to GitHub for others to view.</li>
+<li>Continuing to optimize the performance of Crimson storage
+features.</li>
+<li>Optimizing the performance of RBD.</li>
+<li>Implementing the Crimson storage feature.</li>
+<li>Implementing the AES encryption algorithm in Ceph.</li>
+</ul>
+<p><strong>Future Action Plan</strong>:</p>
+<ul>
+<li>Members will continue to optimize the performance of Crimson storage
+features.</li>
+<li>Members will continue to optimize the performance of RBD.</li>
+<li>Members will continue to implement the Crimson storage feature.</li>
+<li>Members will continue to implement the AES encryption algorithm in
+Ceph.</li>
+<li>Members will continue to improve the code quality of Ceph.</li>
 </ul>
 
         </div>
@@ -281,6 +338,8 @@ OSD, RBD, Crimson, AES, GCM, POSIX, etc.</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson-Seastar/" rel="tag">Crimson Seastar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD/" rel="tag">RBD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -342,7 +401,7 @@ OSD, RBD, Crimson, AES, GCM, POSIX, etc.</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2019/02/03/2019-01-20_-_-_Ceph_Testing_Weekly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-01-20 :: Ceph Testing Weekly</h4>
+        <h4 class="title">&#39;2019-01-20 :: Ceph Testing Weekly&#39;</h4>
       </a>
     </div>
   
@@ -351,7 +410,7 @@ OSD, RBD, Crimson, AES, GCM, POSIX, etc.</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2019/02/02/Ceph_DocuBetter_Meeting_2019-01-18/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph DocuBetter Meeting 2019-01-18</h4>
+        <h4 class="title">Ceph DocuBetter 会议纪要 2019-01-18</h4>
       </a>
     </div>
   

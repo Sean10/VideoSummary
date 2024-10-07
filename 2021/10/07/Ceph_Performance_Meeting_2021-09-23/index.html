@@ -14,23 +14,31 @@
     
     
     
-    <title>Ceph Performance Meeting 2021-09-23 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 性能会议纪要 2021-09-23 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 主要议题与更新  RocksDB LRU缓存更新  问题：自定义的RocksDB LRU缓存实现与新版本的RocksDB不兼容。 解决：Kifu修复了接口问题，并已合并到主分支。 讨论：对于维护者使用最新版本的RocksDB进行编译表示担忧，建议避免用户使用未经测试的版本。  RGW OSD压缩绕过  状态：Casey上周审查通过，已重新基于最新版本，接近合并状态。  BlueStore">
+    <meta name="keywords" content="Ceph,分布式存储,RGW,性能优化,BlueStore,RocksDB,PR审查,Linux存储栈">
+    <meta name="description" content="[改进后的中文总结内容] 本次Ceph性能会议主要讨论了以下议题：  RocksDB LRU缓存更新：由于与RocksDB新版本不兼容，Kifu修复了接口问题，并已合并到主分支。会议讨论了维护者使用最新版本RocksDB编译的问题，建议避免使用未经测试的版本。 RGW OSD压缩绕过：Casey上周审查通过，已重新基于最新版本，接近合并状态。 BlueStore Fighting Green Lo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2021-09-23">
+<meta property="og:title" content="Ceph 性能会议纪要 2021-09-23">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 主要议题与更新  RocksDB LRU缓存更新  问题：自定义的RocksDB LRU缓存实现与新版本的RocksDB不兼容。 解决：Kifu修复了接口问题，并已合并到主分支。 讨论：对于维护者使用最新版本的RocksDB进行编译表示担忧，建议避免用户使用未经测试的版本。  RGW OSD压缩绕过  状态：Casey上周审查通过，已重新基于最新版本，接近合并状态。  BlueStore">
+<meta property="og:description" content="[改进后的中文总结内容] 本次Ceph性能会议主要讨论了以下议题：  RocksDB LRU缓存更新：由于与RocksDB新版本不兼容，Kifu修复了接口问题，并已合并到主分支。会议讨论了维护者使用最新版本RocksDB编译的问题，建议避免使用未经测试的版本。 RGW OSD压缩绕过：Casey上周审查通过，已重新基于最新版本，接近合并状态。 BlueStore Fighting Green Lo">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-06T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-10-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="BlueStore">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="PR审查">
+<meta property="article:tag" content="Linux存储栈">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2021-09-23</div>
+        <div class="flex-col header-title ellipsis">Ceph 性能会议纪要 2021-09-23</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +142,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2021-09-23</h1>
+        <h1 class="title">Ceph 性能会议纪要 2021-09-23</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-10-06T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +164,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E4%B8%8E%E6%9B%B4%E6%96%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">主要议题与更新</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他事项</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">2.</span> <span class="post-toc-text">会议结束</span></a></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Performance_Meeting_2021-09-23"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2021-09-23</h1>
+        <h1 class="post-card-title">Ceph 性能会议纪要 2021-09-23</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-10-07 00:00:00" datetime="2021-10-06T16:00:00.000Z"  itemprop="datePublished">2021-10-07</time>
 
@@ -185,75 +186,31 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="主要议题与更新">主要议题与更新</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次Ceph性能会议主要讨论了以下议题：</p>
 <ol type="1">
-<li><strong>RocksDB LRU缓存更新</strong>
-<ul>
-<li>问题：自定义的RocksDB LRU缓存实现与新版本的RocksDB不兼容。</li>
-<li>解决：Kifu修复了接口问题，并已合并到主分支。</li>
-<li>讨论：对于维护者使用最新版本的RocksDB进行编译表示担忧，建议避免用户使用未经测试的版本。</li>
-</ul></li>
-<li><strong>RGW OSD压缩绕过</strong>
-<ul>
-<li>状态：Casey上周审查通过，已重新基于最新版本，接近合并状态。</li>
-</ul></li>
-<li><strong>BlueStore Fighting Green Locking</strong>
-<ul>
-<li>更新：Adam更新并由Sage审查，主要是小改动。</li>
-<li>讨论：需要进一步审查，特别是与Gabby相关的问题。</li>
-</ul></li>
-<li><strong>BlueStore增量更新模式</strong>
-<ul>
-<li>状态：正在进行测试，已更新以修复错误。</li>
-</ul></li>
-<li><strong>TTL缓存实现</strong>
-<ul>
-<li>请求：请求对管理模块的TTL缓存实现进行审查。</li>
-<li>状态：已修复make check问题，可能需要再次审查。</li>
-</ul></li>
-<li><strong>PG移除优化</strong>
-<ul>
-<li>更新：Igor的PR有额外审查和测试，讨论了是否需要为硬盘优化。</li>
-<li>状态：测试失败，需要进一步审查。</li>
-</ul></li>
-<li><strong>其他更新</strong>
-<ul>
-<li>MDS相关的新PR需要重新基于最新版本。</li>
-<li>RGW团队的共享对象缓存PR正在等待进一步处理。</li>
-<li>MemStore清理PR目前不紧急。</li>
-</ul></li>
+<li><p><strong>RocksDB
+LRU缓存更新</strong>：由于与RocksDB新版本不兼容，Kifu修复了接口问题，并已合并到主分支。会议讨论了维护者使用最新版本RocksDB编译的问题，建议避免使用未经测试的版本。</p></li>
+<li><p><strong>RGW
+OSD压缩绕过</strong>：Casey上周审查通过，已重新基于最新版本，接近合并状态。</p></li>
+<li><p><strong>BlueStore Fighting Green
+Locking</strong>：Adam更新并由Sage审查，主要是小改动。会议讨论了需要进一步审查，特别是与Gabby相关的问题。</p></li>
+<li><p><strong>BlueStore增量更新模式</strong>：正在进行测试，已更新以修复错误。</p></li>
+<li><p><strong>TTL缓存实现</strong>：请求对管理模块的TTL缓存实现进行审查。已修复make
+check问题，可能需要再次审查。</p></li>
+<li><p><strong>PG移除优化</strong>：Igor的PR有额外审查和测试，讨论了是否需要为硬盘优化。测试失败，需要进一步审查。</p></li>
+<li><p><strong>其他更新</strong>：MDS相关的新PR需要重新基于最新版本，RGW团队的共享对象缓存PR正在等待进一步处理，MemStore清理PR目前不紧急。</p></li>
 </ol>
-<h4 id="行动计划">行动计划</h4>
+<p>会议确定了以下行动计划：</p>
 <ol type="1">
-<li><strong>RocksDB版本使用</strong>
-<ul>
-<li>确认Fedora和其他前沿发行版是否使用最新版本的RocksDB，并建议避免使用未经测试的版本。</li>
-</ul></li>
-<li><strong>PR审查与合并</strong>
-<ul>
-<li>继续审查和测试RGW OSD压缩绕过、BlueStore Fighting Green
-Locking、BlueStore增量更新模式等PR。</li>
-<li>确保Igor的PG移除优化PR通过测试并进行必要的审查。</li>
-</ul></li>
-<li><strong>论文讨论准备</strong>
-<ul>
-<li>下周将讨论Josh推荐的关于重构Linux存储栈的论文。</li>
-<li>建议与会者提前阅读论文，并准备三个关键的讨论点。</li>
-</ul></li>
+<li><p>确认Fedora和其他前沿发行版是否使用最新版本的RocksDB，并建议避免使用未经测试的版本。</p></li>
+<li><p>继续审查和测试RGW OSD压缩绕过、BlueStore Fighting Green
+Locking、BlueStore增量更新模式等PR。</p></li>
+<li><p>确保Igor的PG移除优化PR通过测试并进行必要的审查。</p></li>
+<li><p>下周将讨论Josh推荐的关于重构Linux存储栈的论文，建议与会者提前阅读并准备三个关键的讨论点。</p></li>
 </ol>
-<h4 id="后续会议">后续会议</h4>
-<ul>
-<li>下周会议将重点讨论关于Linux存储栈重构的论文，建议与会者提前准备并分享三个关键的讨论点。</li>
-</ul>
-<h4 id="其他事项">其他事项</h4>
-<ul>
-<li>会议中提到的其他PR和项目将继续跟踪和处理，确保及时更新和审查。</li>
-</ul>
-<h3 id="会议结束">会议结束</h3>
-<p>感谢所有参与者的贡献，期待下周的会议讨论。祝大家一周愉快！</p>
-<hr />
-<p>以上是本次会议的纪要，涵盖了关键的讨论点、决定的事项以及后续的行动计划。</p>
+<p>会议还提醒大家，下周会议将重点讨论Linux存储栈重构的论文，并建议与会者提前准备并分享三个关键的讨论点。</p>
+<p>本次会议纪要涵盖了关键的讨论点、决定的事项以及后续的行动计划，对于Ceph社区的成员来说具有重要的参考价值。</p>
 
         </div>
 
@@ -284,6 +241,8 @@ Locking、BlueStore增量更新模式等PR。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Linux%E5%AD%98%E5%82%A8%E6%A0%88/" rel="tag">Linux存储栈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PR%E5%AE%A1%E6%9F%A5/" rel="tag">PR审查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -295,7 +254,7 @@ Locking、BlueStore增量更新模式等PR。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/&title=《Ceph Performance Meeting 2021-09-23》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/&title=《Ceph 性能会议纪要 2021-09-23》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -305,7 +264,7 @@ Locking、BlueStore增量更新模式等PR。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/&title=《Ceph Performance Meeting 2021-09-23》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/&title=《Ceph 性能会议纪要 2021-09-23》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -315,7 +274,7 @@ Locking、BlueStore增量更新模式等PR。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-09-23》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议纪要 2021-09-23》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -343,9 +302,9 @@ Locking、BlueStore增量更新模式等PR。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2021/10/07/Ceph_Orchestrator_Meeting_2021-09-28/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2021/10/07/Ceph_Orchestrator_Meeting_2021-10-05/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Orchestrator Meeting 2021-09-28</h4>
+        <h4 class="title">Ceph Orchestrator Meeting 2021-10-05</h4>
       </a>
     </div>
   
@@ -354,7 +313,7 @@ Locking、BlueStore增量更新模式等PR。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-30/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2021-09-30</h4>
+        <h4 class="title"> Ceph 性能会议 2021-09-30 </h4>
       </a>
     </div>
   
@@ -454,7 +413,7 @@ Locking、BlueStore增量更新模式等PR。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/&title=《Ceph Performance Meeting 2021-09-23》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/&title=《Ceph 性能会议纪要 2021-09-23》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -464,7 +423,7 @@ Locking、BlueStore增量更新模式等PR。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/&title=《Ceph Performance Meeting 2021-09-23》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/&title=《Ceph 性能会议纪要 2021-09-23》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -474,7 +433,7 @@ Locking、BlueStore增量更新模式等PR。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-09-23》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议纪要 2021-09-23》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Performance_Meeting_2021-09-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

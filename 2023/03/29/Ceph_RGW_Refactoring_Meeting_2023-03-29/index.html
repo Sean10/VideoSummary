@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 议题一：用户配额的标记性能计数器  讨论内容：  Ali提出关于用户配额的标记性能计数器的需求，特别是希望在Prometheus中查看每个RGW用户的配额分配和当前使用情况（对象数量和字节数）。 讨论了如何通过创建新的用户标签，更新用户统计信息，并将这些信息发送到与现有计数器相同的收集系统中。 提到了需要一个缓存机制来处理用户配额的频繁更新问题。 讨论了是否应该基于事件（如配额更改或强制">
+    <meta name="keywords" content="Ceph,RGW,性能计数器,配额管理,GitHub 2FA">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了以下几个议题：  用户配额的标记性能计数器：  讨论了在Prometheus中监控每个RGW用户的配额分配和使用情况的需求。 决定实现一个缓存机制来处理用户配额的频繁更新，并添加用户标签到前端计数器。 由Ellie负责实现缓存机制，并添加用户标签，同时进行测试以验证系统的可扩展性。  GitHub组织的两因素认证要求：  讨论了GitHub组织即将实施的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph RGW Refactoring Meeting 2023-03-29">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/03/29/Ceph_RGW_Refactoring_Meeting_2023-03-29/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 议题一：用户配额的标记性能计数器  讨论内容：  Ali提出关于用户配额的标记性能计数器的需求，特别是希望在Prometheus中查看每个RGW用户的配额分配和当前使用情况（对象数量和字节数）。 讨论了如何通过创建新的用户标签，更新用户统计信息，并将这些信息发送到与现有计数器相同的收集系统中。 提到了需要一个缓存机制来处理用户配额的频繁更新问题。 讨论了是否应该基于事件（如配额更改或强制">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了以下几个议题：  用户配额的标记性能计数器：  讨论了在Prometheus中监控每个RGW用户的配额分配和使用情况的需求。 决定实现一个缓存机制来处理用户配额的频繁更新，并添加用户标签到前端计数器。 由Ellie负责实现缓存机制，并添加用户标签，同时进行测试以验证系统的可扩展性。  GitHub组织的两因素认证要求：  讨论了GitHub组织即将实施的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-03-29T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="性能计数器">
+<meta property="article:tag" content="配额管理">
+<meta property="article:tag" content="GitHub 2FA">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +161,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%AE%E9%A2%98%E4%B8%80%E7%94%A8%E6%88%B7%E9%85%8D%E9%A2%9D%E7%9A%84%E6%A0%87%E8%AE%B0%E6%80%A7%E8%83%BD%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">议题一：用户配额的标记性能计数器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%AE%E9%A2%98%E4%BA%8Cgithub%E7%BB%84%E7%BB%87%E7%9A%84%E4%B8%A4%E5%9B%A0%E7%B4%A0%E8%AE%A4%E8%AF%81%E8%A6%81%E6%B1%82"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">议题二：GitHub组织的两因素认证要求</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%AE%E9%A2%98%E4%B8%89%E6%97%A5%E5%BF%97%E6%95%B0%E6%8D%AE%E4%B8%8E%E6%A1%B6%E7%AD%96%E7%95%A5%E7%9A%84%E4%BA%A4%E4%BA%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">议题三：日志数据与桶策略的交互</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_RGW_Refactoring_Meeting_2023-03-29"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,74 +183,32 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4
-id="议题一用户配额的标记性能计数器">议题一：用户配额的标记性能计数器</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了以下几个议题：</p>
+<ol type="1">
+<li><strong>用户配额的标记性能计数器</strong>：
 <ul>
-<li><strong>讨论内容</strong>：
-<ul>
-<li>Ali提出关于用户配额的标记性能计数器的需求，特别是希望在Prometheus中查看每个RGW用户的配额分配和当前使用情况（对象数量和字节数）。</li>
-<li>讨论了如何通过创建新的用户标签，更新用户统计信息，并将这些信息发送到与现有计数器相同的收集系统中。</li>
-<li>提到了需要一个缓存机制来处理用户配额的频繁更新问题。</li>
-<li>讨论了是否应该基于事件（如配额更改或强制执行）来发送数据，而不是连续不断地发送。</li>
-<li>讨论了如何处理多网关实例中的数据一致性问题。</li>
+<li>讨论了在Prometheus中监控每个RGW用户的配额分配和使用情况的需求。</li>
+<li>决定实现一个缓存机制来处理用户配额的频繁更新，并添加用户标签到前端计数器。</li>
+<li>由Ellie负责实现缓存机制，并添加用户标签，同时进行测试以验证系统的可扩展性。</li>
 </ul></li>
-<li><strong>决定事项</strong>：
+<li><strong>GitHub组织的两因素认证要求</strong>：
 <ul>
-<li>首先实现一个缓存机制，然后添加用户标签到前端计数器。</li>
-<li>需要进行测试以验证系统的可扩展性。</li>
+<li>讨论了GitHub组织即将实施的两因素认证要求，以及未启用2FA的成员将被移除的问题。</li>
+<li>决定提醒所有成员尽快启用2FA，以避免失去对GitHub组织的访问权限。</li>
 </ul></li>
-<li><strong>后续行动计划</strong>：
+<li><strong>日志数据与桶策略的交互</strong>：
 <ul>
-<li>Ellie将首先实现缓存机制，然后添加用户标签到前端计数器。</li>
-<li>进行测试以验证系统的可扩展性。</li>
+<li>讨论了如何禁用区域的日志记录，特别是与桶策略相关的日志记录。</li>
+<li>决定使用<code>supports_data_export</code>和<code>supports_data_import</code>来替代区域范围的标志。</li>
+<li>由Emil负责研究如何调整初始化顺序以解决依赖问题，并更新相关的PR。</li>
 </ul></li>
-</ul>
-<h4
-id="议题二github组织的两因素认证要求">议题二：GitHub组织的两因素认证要求</h4>
-<ul>
-<li><strong>讨论内容</strong>：
-<ul>
-<li>讨论了GitHub组织即将要求的两因素认证（2FA），以及未启用2FA的成员将被移除的问题。</li>
-<li>讨论了如何分步骤实施2FA，以避免一次性移除所有未启用的成员。</li>
-</ul></li>
-<li><strong>决定事项</strong>：
-<ul>
-<li>提醒所有成员尽快启用2FA，以避免失去对GitHub组织的访问权限。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>所有成员应尽快启用2FA。</li>
-</ul></li>
-</ul>
-<h4
-id="议题三日志数据与桶策略的交互">议题三：日志数据与桶策略的交互</h4>
-<ul>
-<li><strong>讨论内容</strong>：
-<ul>
-<li>Emil讨论了如何禁用区域的日志记录，特别是与桶策略相关的日志记录。</li>
-<li>讨论了是否可以使用<code>supports_data_export</code>
-API实例来替代当前的日志数据标志。</li>
-</ul></li>
-<li><strong>决定事项</strong>：
-<ul>
-<li>应该使用<code>supports_data_export</code>和<code>supports_data_import</code>来替代区域范围的标志。</li>
-</ul></li>
-<li><strong>后续行动计划</strong>：
-<ul>
-<li>Emil将研究如何调整初始化顺序以解决依赖问题，并更新相关的PR。</li>
-</ul></li>
-</ul>
-<h4 id="其他讨论">其他讨论</h4>
+<li><strong>其他讨论</strong>：
 <ul>
 <li>会议还讨论了同步模块和多站点配置的一般问题。</li>
-</ul>
-<h4 id="会议结束">会议结束</h4>
-<ul>
-<li>会议在讨论完所有议题后结束，感谢所有参与者的贡献。</li>
-</ul>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
+</ul></li>
+</ol>
+<p>会议在讨论完所有议题后结束，感谢所有参与者的贡献。</p>
 
         </div>
 
@@ -283,6 +239,8 @@ API实例来替代当前的日志数据标志。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/GitHub-2FA/" rel="tag">GitHub 2FA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E8%AE%A1%E6%95%B0%E5%99%A8/" rel="tag">性能计数器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%85%8D%E9%A2%9D%E7%AE%A1%E7%90%86/" rel="tag">配额管理</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -344,7 +302,7 @@ API实例来替代当前的日志数据标志。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/03/29/Ceph_Crimson_SeaStore_Meeting_2023-03-29/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Crimson/SeaStore Meeting 2023-03-29</h4>
+        <h4 class="title">Ceph Crimson/SeaStore 会议纪要 2023-03-29</h4>
       </a>
     </div>
   

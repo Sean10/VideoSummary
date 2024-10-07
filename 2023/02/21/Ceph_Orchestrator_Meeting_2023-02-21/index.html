@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph 主机维护模式增强功能讨论 与会人员：Ceph 研发团队成员 会议时间：[具体日期] 会议地点：视频会议 主要议题：  主机维护模式（Host Maintenance Mode）的强制执行问题  当前主机维护模式的强制标志（force flag）仅能强制停止其下的功能，但在某些情况下，即使使用强制标志，主机仍无法进入维护模式。 提出了增加一个新的标志，以便在必要时能够强">
+    <meta name="keywords" content="Ceph,Host Maintenance Mode,Emergency Flag,Maintenance Mode Enhancement,Ceph Community">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph 主机维护模式增强功能讨论 与会人员：Ceph 研发团队成员 会议时间：2023-02-21 会议地点：视频会议 主要议题：  主机维护模式（Host Maintenance Mode）的强制执行问题  当前主机维护模式的强制标志（force flag）限制性较低，仅能强制停止其下的功能，但无法确保主机完全进入维护模式。 会议讨论了引入新标志的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2023-02-21">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/02/21/Ceph_Orchestrator_Meeting_2023-02-21/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph 主机维护模式增强功能讨论 与会人员：Ceph 研发团队成员 会议时间：[具体日期] 会议地点：视频会议 主要议题：  主机维护模式（Host Maintenance Mode）的强制执行问题  当前主机维护模式的强制标志（force flag）仅能强制停止其下的功能，但在某些情况下，即使使用强制标志，主机仍无法进入维护模式。 提出了增加一个新的标志，以便在必要时能够强">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph 主机维护模式增强功能讨论 与会人员：Ceph 研发团队成员 会议时间：2023-02-21 会议地点：视频会议 主要议题：  主机维护模式（Host Maintenance Mode）的强制执行问题  当前主机维护模式的强制标志（force flag）限制性较低，仅能强制停止其下的功能，但无法确保主机完全进入维护模式。 会议讨论了引入新标志的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-20T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-02-21T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Host Maintenance Mode">
+<meta property="article:tag" content="Emergency Flag">
+<meta property="article:tag" content="Maintenance Mode Enhancement">
+<meta property="article:tag" content="Ceph Community">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -160,7 +165,7 @@
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph-%E4%B8%BB%E6%9C%BA%E7%BB%B4%E6%8A%A4%E6%A8%A1%E5%BC%8F%E5%A2%9E%E5%BC%BA%E5%8A%9F%E8%83%BD%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph
-主机维护模式增强功能讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8E%E4%BC%9A%E4%BA%BA%E5%91%98ceph-%E7%A0%94%E5%8F%91%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">与会人员：Ceph 研发团队成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E8%A7%86%E9%A2%91%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：视频会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">讨论细节：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">其他讨论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">会议结束：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8B%E6%AC%A1%E4%BC%9A%E8%AE%AE%E9%A2%84%E5%91%8A"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">下次会议预告：</span></a></li></ol></li></ol>
+主机维护模式增强功能讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8E%E4%BC%9A%E4%BA%BA%E5%91%98ceph-%E7%A0%94%E5%8F%91%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">与会人员：Ceph 研发团队成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B42023-02-21"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：2023-02-21</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E8%A7%86%E9%A2%91%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：视频会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%BB%86%E8%8A%82"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">讨论细节：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">其他讨论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">会议结束：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%8B%E6%AC%A1%E4%BC%9A%E8%AE%AE%E9%A2%84%E5%91%8A"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">下次会议预告：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -186,54 +191,35 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题ceph-主机维护模式增强功能讨论">会议主题：Ceph
 主机维护模式增强功能讨论</h4>
 <h4 id="与会人员ceph-研发团队成员">与会人员：Ceph 研发团队成员</h4>
-<h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
+<h4 id="会议时间2023-02-21">会议时间：2023-02-21</h4>
 <h4 id="会议地点视频会议">会议地点：视频会议</h4>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
 <li><strong>主机维护模式（Host Maintenance Mode）的强制执行问题</strong>
 <ul>
 <li>当前主机维护模式的强制标志（force
-flag）仅能强制停止其下的功能，但在某些情况下，即使使用强制标志，主机仍无法进入维护模式。</li>
-<li>提出了增加一个新的标志，以便在必要时能够强制进入维护模式，即使存在可能导致PG（Placement
-Groups）降级的条件。</li>
+flag）限制性较低，仅能强制停止其下的功能，但无法确保主机完全进入维护模式。</li>
+<li>会议讨论了引入新标志的需求，以便在特定情况下（如PG降级）能够强制进入维护模式。</li>
 </ul></li>
 </ol>
 <h4 id="讨论细节">讨论细节：</h4>
 <ul>
-<li><strong>当前问题描述</strong>：
-<ul>
-<li>强制标志（force
-flag）在主机维护模式中仅能强制停止其下的功能，但在某些情况下，即使使用强制标志，主机仍无法进入维护模式。</li>
-<li>存在一些情况，例如PG降级，导致无法将主机置于维护模式。</li>
-</ul></li>
-<li><strong>提出的解决方案</strong>：
-<ul>
-<li>建议增加一个新的标志，例如“紧急”（emergency）或“我确实真的需要这个”（yes
-I really really mean it），以允许在必要时强制进入维护模式。</li>
-<li>该标志将允许用户在即使存在可能导致PG降级的条件下，也能强制停止所有守护进程（demons），以便进行必要的维护工作。</li>
-</ul></li>
-<li><strong>标志命名讨论</strong>：
-<ul>
-<li>讨论了多个标志名称，包括“紧急”（emergency）和“我确实真的需要这个”（yes
-I really really mean it）。</li>
-<li>最终倾向于使用“我确实真的需要这个”（yes I really really mean
-it），因为它在Ceph社区中更为常见，且能更好地传达操作的危险性。</li>
-</ul></li>
-<li><strong>操作细节</strong>：
-<ul>
-<li>该标志将允许用户在不考虑安全检查的情况下，强制停止所有守护进程，以便进行维护。</li>
-<li>该操作不会移除任何东西，只是停止守护进程，使其暂时不参与集群活动。</li>
-</ul></li>
+<li><strong>问题描述</strong>：现有强制标志在多种情况下无法确保主机完全进入维护模式，如PG降级等。</li>
+<li><strong>解决方案</strong>：提出增加一个新的标志，允许在必要时强制进入维护模式，即便存在可能导致PG降级的条件。</li>
+<li><strong>标志命名</strong>：讨论了多个名称，最终选定“我确实真的需要这个”（yes
+I really really mean
+it）作为标志名称，以体现操作的严重性和潜在风险。</li>
+<li><strong>操作细节</strong>：该标志将允许用户在不考虑安全检查的情况下，强制停止所有守护进程，以便进行必要的维护工作。</li>
 </ul>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
 <li>增加一个新的标志，用于在必要时强制进入主机维护模式，即使存在可能导致PG降级的条件。</li>
-<li>标志名称倾向于使用“我确实真的需要这个”（yes I really really mean
-it）。</li>
+<li>标志名称为“我确实真的需要这个”（yes I really really mean it）。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
@@ -256,7 +242,7 @@ I really really mean it）。</li>
 <hr />
 <p><strong>会议记录人：[记录人姓名]</strong></p>
 <p><strong>审核人：[审核人姓名]</strong></p>
-<p><strong>日期：[具体日期]</strong></p>
+<p><strong>日期：2023-02-21</strong></p>
 
         </div>
 
@@ -287,6 +273,8 @@ I really really mean it）。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Community/" rel="tag">Ceph Community</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Emergency-Flag/" rel="tag">Emergency Flag</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Host-Maintenance-Mode/" rel="tag">Host Maintenance Mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Maintenance-Mode-Enhancement/" rel="tag">Maintenance Mode Enhancement</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -357,7 +345,7 @@ I really really mean it）。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/02/16/Ceph_RGW_Refactoring_Meeting_2023-02-15/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2023-02-15</h4>
+        <h4 class="title">Ceph RGW 重构会议 2023-02-15</h4>
       </a>
     </div>
   

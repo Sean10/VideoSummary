@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Tech Talk: RGW Lua Scripting Code Walkthrough | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Tech Talk: RGW Lua Scripting Code Walkthrough&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Seth Tech Talk - Lua脚本在RGW中的应用 会议时间： [具体时间] 会议地点： 线上会议 主讲人： Paul 参会人员： 开发团队成员、技术爱好者 会议内容总结：  介绍与欢迎  会议由Mike主持，欢迎大家参加Seth Tech Talk，并鼓励有兴趣的成员提供技术内容。 Mike提供了联系方式，以便有兴趣分享技术内容的成员与他联系。  主题介绍  Pa">
+    <meta name="keywords" content="Ceph,RGW,Open Source,Lua Scripting,Ceph Storage Gateway">
+    <meta name="description" content="[改进后的中文总结内容] 该次会议是关于Ceph RGW中Lua脚本应用的Seth Tech Talk，由Paul主讲，主要内容包括：  Lua脚本在RGW中的应用：Paul介绍了Lua脚本在扩展和增强RGW功能方面的应用，包括增加新的钩子位置和扩展现有钩子的功能。 代码结构与管理：会议讨论了Lua脚本和包的管理，包括如何上传、下载和删除脚本，以及如何添加和移除Lua包。 Lua脚本执行细节：详细">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Tech Talk: RGW Lua Scripting Code Walkthrough">
+<meta property="og:title" content="&#39;Ceph Tech Talk: RGW Lua Scripting Code Walkthrough&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/24/Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Seth Tech Talk - Lua脚本在RGW中的应用 会议时间： [具体时间] 会议地点： 线上会议 主讲人： Paul 参会人员： 开发团队成员、技术爱好者 会议内容总结：  介绍与欢迎  会议由Mike主持，欢迎大家参加Seth Tech Talk，并鼓励有兴趣的成员提供技术内容。 Mike提供了联系方式，以便有兴趣分享技术内容的成员与他联系。  主题介绍  Pa">
+<meta property="og:description" content="[改进后的中文总结内容] 该次会议是关于Ceph RGW中Lua脚本应用的Seth Tech Talk，由Paul主讲，主要内容包括：  Lua脚本在RGW中的应用：Paul介绍了Lua脚本在扩展和增强RGW功能方面的应用，包括增加新的钩子位置和扩展现有钩子的功能。 代码结构与管理：会议讨论了Lua脚本和包的管理，包括如何上传、下载和删除脚本，以及如何添加和移除Lua包。 Lua脚本执行细节：详细">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-24T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Open Source">
+<meta property="article:tag" content="Lua Scripting">
+<meta property="article:tag" content="Ceph Storage Gateway">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Tech Talk: RGW Lua Scripting Code Walkthrough</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Tech Talk: RGW Lua Scripting Code Walkthrough&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Tech Talk: RGW Lua Scripting Code Walkthrough</h1>
+        <h1 class="title">&#39;Ceph Tech Talk: RGW Lua Scripting Code Walkthrough&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Tech Talk: RGW Lua Scripting Code Walkthrough</h1>
+        <h1 class="post-card-title">'Ceph Tech Talk: RGW Lua Scripting Code Walkthrough'</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-24 00:00:00" datetime="2023-05-23T16:00:00.000Z"  itemprop="datePublished">2023-05-24</time>
 
@@ -185,62 +190,46 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题：</strong> Seth Tech Talk - Lua脚本在RGW中的应用</p>
+            <p>[改进后的中文总结内容]</p>
+<p>该次会议是关于Ceph RGW中Lua脚本应用的Seth Tech
+Talk，由Paul主讲，主要内容包括：</p>
+<ol type="1">
+<li><p><strong>Lua脚本在RGW中的应用</strong>：Paul介绍了Lua脚本在扩展和增强RGW功能方面的应用，包括增加新的钩子位置和扩展现有钩子的功能。</p></li>
+<li><p><strong>代码结构与管理</strong>：会议讨论了Lua脚本和包的管理，包括如何上传、下载和删除脚本，以及如何添加和移除Lua包。</p></li>
+<li><p><strong>Lua脚本执行细节</strong>：详细解释了Lua脚本的执行过程，包括创建Lua虚拟机、加载标准库、设置包路径等。</p></li>
+<li><p><strong>数据和背景上下文</strong>：介绍了数据上下文和背景上下文，用于对象的PUT和GET操作，以及定期运行的线程执行Lua脚本。</p></li>
+<li><p><strong>问题与讨论</strong>：与会者提出了关于文档、特定用例实现和Lua包存储位置的问题，并讨论了在容器化部署中使用Lua脚本和包管理的一些挑战和可能的解决方案。</p></li>
+<li><p><strong>后续行动计划</strong>：包括完善Lua脚本功能的文档和示例代码，考虑增加外部包管理选项，解决容器化部署中Lua包管理的具体问题。</p></li>
+</ol>
+<p>总结中未涵盖的部分包括：</p>
+<ul>
+<li>会议的具体时间、地点和主持人Mike的介绍；</li>
+<li>对于Lua脚本功能的未来规划，如支持多个脚本在同一上下文中运行；</li>
+<li>会议结束语和对参与者的感谢。</li>
+</ul>
+<p>改进后的总结：</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议主题：</strong> Ceph Tech Talk - RGW
+Lua脚本应用代码走读</p>
 <p><strong>会议时间：</strong> [具体时间]</p>
 <p><strong>会议地点：</strong> 线上会议</p>
 <p><strong>主讲人：</strong> Paul</p>
 <p><strong>参会人员：</strong> 开发团队成员、技术爱好者</p>
 <p><strong>会议内容总结：</strong></p>
 <ol type="1">
-<li><strong>介绍与欢迎</strong>
-<ul>
-<li>会议由Mike主持，欢迎大家参加Seth Tech
-Talk，并鼓励有兴趣的成员提供技术内容。</li>
-<li>Mike提供了联系方式，以便有兴趣分享技术内容的成员与他联系。</li>
-</ul></li>
-<li><strong>主题介绍</strong>
-<ul>
-<li>Paul将介绍Lua脚本在RGW（Red Hat Ceph Storage
-Gateway）中的应用，重点是代码走读。</li>
-<li>他提到之前在开放源代码峰会上有过详细的解释和演示，本次会议将聚焦于代码层面的细节。</li>
-</ul></li>
-<li><strong>Lua脚本功能概述</strong>
-<ul>
-<li>Lua脚本功能旨在扩展和增强RGW的功能，主要通过两种方式：增加新的钩子位置和扩展现有钩子的功能。</li>
-<li>目前Lua脚本主要在预请求和后请求上下文中使用，未来计划增加更多功能，如支持多个脚本在同一上下文中运行。</li>
-</ul></li>
-<li><strong>代码结构与管理</strong>
-<ul>
-<li>讨论了Lua脚本和包的管理，包括如何上传、下载和删除脚本，以及如何添加和移除Lua包。</li>
-<li>强调了Lua包的管理需要谨慎，因为涉及编译和安装过程，目前这些操作仅在RGW启动时进行。</li>
-</ul></li>
-<li><strong>Lua脚本执行细节</strong>
-<ul>
-<li>详细解释了Lua脚本的执行过程，包括创建Lua虚拟机、加载标准库、设置包路径等。</li>
-<li>讨论了如何在Lua中访问和操作C++结构中的数据，以及如何实现可写和可迭代的数据结构。</li>
-</ul></li>
-<li><strong>数据和背景上下文</strong>
-<ul>
-<li>介绍了数据上下文，主要用于对象的PUT和GET操作，允许对数据进行过滤和处理。</li>
-<li>背景上下文是一个定期运行的线程，可以执行Lua脚本，并有一个全局表用于不同脚本间的通信。</li>
-</ul></li>
-<li><strong>问题与讨论</strong>
-<ul>
-<li>与会者提出了关于文档、特定用例实现和Lua包存储位置的问题。</li>
-<li>讨论了在容器化部署中使用Lua脚本和包管理的一些挑战和可能的解决方案。</li>
-</ul></li>
+<li><p><strong>介绍与欢迎</strong>：Mike主持会议，介绍了主讲人Paul，并欢迎所有参与者。Mike还提供了联系方式，以便有兴趣分享技术内容的成员与他联系。</p></li>
+<li><p><strong>主题介绍</strong>：Paul介绍了Lua脚本在RGW（Red Hat Ceph
+Storage Gateway）中的应用，重点是代码走读。</p></li>
+<li><p><strong>Lua脚本功能概述</strong>：Lua脚本功能旨在扩展和增强RGW的功能，主要通过增加新的钩子位置和扩展现有钩子的功能。</p></li>
+<li><p><strong>代码结构与管理</strong>：讨论了Lua脚本和包的管理，包括如何上传、下载和删除脚本，以及如何添加和移除Lua包。</p></li>
+<li><p><strong>Lua脚本执行细节</strong>：详细解释了Lua脚本的执行过程，包括创建Lua虚拟机、加载标准库、设置包路径等。</p></li>
+<li><p><strong>数据和背景上下文</strong>：介绍了数据上下文和背景上下文，用于对象的PUT和GET操作，以及定期运行的线程执行Lua脚本。</p></li>
+<li><p><strong>问题与讨论</strong>：与会者提出了关于文档、特定用例实现和Lua包存储位置的问题，并讨论了在容器化部署中使用Lua脚本和包管理的一些挑战和可能的解决方案。</p></li>
+<li><p><strong>后续行动计划</strong>：包括完善Lua脚本功能的文档和示例代码，考虑增加外部包管理选项，解决容器化部署中Lua包管理的具体问题。</p></li>
 </ol>
-<p><strong>后续行动计划：</strong> -
-继续完善Lua脚本功能的文档和示例代码。 -
-考虑增加外部包管理选项，以减少对RGW内部包管理的依赖。 -
-解决容器化部署中Lua包管理的具体问题，确保环境的兼容性和稳定性。</p>
-<p><strong>会议结束语：</strong> -
-Mike感谢Paul的精彩分享和所有参与者的积极参与。 -
-会议记录和视频将被整理并尽快发布。</p>
-<p><strong>备注：</strong> - 本次会议的技术内容较为深入，涉及Ceph
-RGW的Lua脚本集成和扩展，适合有一定技术背景的开发人员。 -
-对于希望了解更多细节的参会者，建议回顾会议录像和相关文档。</p>
+<p><strong>会议结束语</strong>：Mike感谢Paul的精彩分享和所有参与者的积极参与。会议记录和视频将被整理并尽快发布。</p>
+<p><strong>备注</strong>：本次会议的技术内容较为深入，涉及Ceph
+RGW的Lua脚本集成和扩展，适合有一定技术背景的开发人员。对于希望了解更多细节的参会者，建议回顾会议录像和相关文档。</p>
 
         </div>
 
@@ -271,6 +260,8 @@ RGW的Lua脚本集成和扩展，适合有一定技术背景的开发人员。 -
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Storage-Gateway/" rel="tag">Ceph Storage Gateway</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Lua-Scripting/" rel="tag">Lua Scripting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Open-Source/" rel="tag">Open Source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -282,7 +273,7 @@ RGW的Lua脚本集成和扩展，适合有一定技术背景的开发人员。 -
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/24/Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough/&title=《Ceph Tech Talk: RGW Lua Scripting Code Walkthrough》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/24/Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough/&title=《'Ceph Tech Talk: RGW Lua Scripting Code Walkthrough'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -292,7 +283,7 @@ RGW的Lua脚本集成和扩展，适合有一定技术背景的开发人员。 -
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/24/Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough/&title=《Ceph Tech Talk: RGW Lua Scripting Code Walkthrough》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/24/Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough/&title=《'Ceph Tech Talk: RGW Lua Scripting Code Walkthrough'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -302,7 +293,7 @@ RGW的Lua脚本集成和扩展，适合有一定技术背景的开发人员。 -
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Tech Talk: RGW Lua Scripting Code Walkthrough》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/24/Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Tech Talk: RGW Lua Scripting Code Walkthrough'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/24/Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -332,16 +323,16 @@ RGW的Lua脚本集成和扩展，适合有一定技术背景的开发人员。 -
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/05/24/Ceph_RGW_Refactoring_Meeting_2023-05-24/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph RGW Refactoring Meeting 2023-05-24</h4>
+        <h4 class="title">Ceph RGW 重构会议 2023-05-24</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/19/Ceph_Days_NYC_-_An_Introduction_to_MicroCeph/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/24/Exploring_the_Performance_Limits_of_CephFS_in_Nautilus_-_Manoj_Pillai_Red_Hat/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Days NYC: An Introduction to MicroCeph</h4>
+        <h4 class="title">  Exploring the Performance Limits of CephFS in Nautilus - Manoj Pillai, Red Hat  </h4>
       </a>
     </div>
   
@@ -441,7 +432,7 @@ RGW的Lua脚本集成和扩展，适合有一定技术背景的开发人员。 -
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/24/Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough/&title=《Ceph Tech Talk: RGW Lua Scripting Code Walkthrough》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/24/Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough/&title=《'Ceph Tech Talk: RGW Lua Scripting Code Walkthrough'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -451,7 +442,7 @@ RGW的Lua脚本集成和扩展，适合有一定技术背景的开发人员。 -
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/24/Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough/&title=《Ceph Tech Talk: RGW Lua Scripting Code Walkthrough》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/24/Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough/&title=《'Ceph Tech Talk: RGW Lua Scripting Code Walkthrough'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -461,7 +452,7 @@ RGW的Lua脚本集成和扩展，适合有一定技术背景的开发人员。 -
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Tech Talk: RGW Lua Scripting Code Walkthrough》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/24/Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Tech Talk: RGW Lua Scripting Code Walkthrough'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/24/Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

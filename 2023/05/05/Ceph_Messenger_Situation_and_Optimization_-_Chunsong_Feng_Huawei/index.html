@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：软件自消息传递情况与优化 会议议程：  当前RDMA消息模块的不足 在自消息模块中启用UCX（Unified Communication X）的措施 性能测试结果  讨论内容：  当前RDMA消息模块的问题  流量控制缺失：导致性能波动，特别是在大包读写测试中。 数据复制问题：在发送和接收路径中存在数据复制。 使用限制：客户端和服务器需要使用RDMA连接，但客户端通常没有RDM">
+    <meta name="keywords" content="Ceph,Distributed Storage,Performance Optimization,RDMA,UCX">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph 消息传递情况与优化 会议议程：  当前RDMA消息模块的不足 在自消息模块中启用UCX（Unified Communication X）的措施 性能测试结果  讨论内容：  当前RDMA消息模块的问题  流量控制缺失导致性能波动。 数据复制问题在发送和接收路径中存在。 使用限制，客户端和服务器需要使用RDMA连接，但客户端通常没有RDMA设备">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Messenger Situation and Optimization - Chunsong Feng, Huawei">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Ceph_Messenger_Situation_and_Optimization_-_Chunsong_Feng_Huawei/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：软件自消息传递情况与优化 会议议程：  当前RDMA消息模块的不足 在自消息模块中启用UCX（Unified Communication X）的措施 性能测试结果  讨论内容：  当前RDMA消息模块的问题  流量控制缺失：导致性能波动，特别是在大包读写测试中。 数据复制问题：在发送和接收路径中存在数据复制。 使用限制：客户端和服务器需要使用RDMA连接，但客户端通常没有RDM">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph 消息传递情况与优化 会议议程：  当前RDMA消息模块的不足 在自消息模块中启用UCX（Unified Communication X）的措施 性能测试结果  讨论内容：  当前RDMA消息模块的问题  流量控制缺失导致性能波动。 数据复制问题在发送和接收路径中存在。 使用限制，客户端和服务器需要使用RDMA连接，但客户端通常没有RDMA设备">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="RDMA">
+<meta property="article:tag" content="UCX">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -142,7 +147,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/">技术文章</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/">存储技术</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/Ceph%E6%9E%B6%E6%9E%84/">Ceph架构</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/Ceph%E6%9E%B6%E6%9E%84/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/">网络优化</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/Ceph%E6%9E%B6%E6%9E%84/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</a></li></ul></li></ul></li></ul></li></ul></li></ul>
 
             
         </h5>
@@ -159,7 +164,8 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E8%BD%AF%E4%BB%B6%E8%87%AA%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92%E6%83%85%E5%86%B5%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：软件自消息传递情况与优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%AE%E7%A8%8B"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议议程：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">讨论内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9C%AA%E6%9D%A5%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">未来计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%8F%90%E9%97%AE%E4%B8%8E%E5%9B%9E%E7%AD%94"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">提问与回答：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph-%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92%E6%83%85%E5%86%B5%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph
+消息传递情况与优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%AE%E7%A8%8B"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议议程：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">讨论内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9C%AA%E6%9D%A5%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">未来计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%8F%90%E9%97%AE%E4%B8%8E%E5%9B%9E%E7%AD%94"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">提问与回答：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -173,7 +179,7 @@
             <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/">技术文章</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/">存储技术</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/Ceph%E6%9E%B6%E6%9E%84/">Ceph架构</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/Ceph%E6%9E%B6%E6%9E%84/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/">网络优化</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/Ceph%E6%9E%B6%E6%9E%84/%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</a></li></ul></li></ul></li></ul></li></ul></li></ul>
 
 
 
@@ -185,9 +191,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4
-id="会议主题软件自消息传递情况与优化">会议主题：软件自消息传递情况与优化</h4>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议主题ceph-消息传递情况与优化">会议主题：Ceph
+消息传递情况与优化</h4>
 <h4 id="会议议程">会议议程：</h4>
 <ol type="1">
 <li><strong>当前RDMA消息模块的不足</strong></li>
@@ -199,58 +206,56 @@ X）的措施</strong></li>
 <ol type="1">
 <li><strong>当前RDMA消息模块的问题</strong>
 <ul>
-<li><strong>流量控制缺失</strong>：导致性能波动，特别是在大包读写测试中。</li>
-<li><strong>数据复制问题</strong>：在发送和接收路径中存在数据复制。</li>
-<li><strong>使用限制</strong>：客户端和服务器需要使用RDMA连接，但客户端通常没有RDMA设备，只能使用DSP。</li>
-<li><strong>日志设计</strong>：后续解释。</li>
-<li><strong>固定长度消息</strong>：使用固定长度发送和接收消息，影响效率。</li>
+<li>流量控制缺失导致性能波动。</li>
+<li>数据复制问题在发送和接收路径中存在。</li>
+<li>使用限制，客户端和服务器需要使用RDMA连接，但客户端通常没有RDMA设备。</li>
+<li>固定长度消息使用影响效率。</li>
 </ul></li>
 <li><strong>UCX架构与关键设计</strong>
 <ul>
-<li><strong>UCX堆栈</strong>：在自消息模块中引入UCX堆栈，使用UCX连接客户端和服务器。</li>
-<li><strong>中断与轮询模型</strong>：处理设备事件。</li>
-<li><strong>不同大小的消息处理</strong>：使用不同的协议处理小包和大包。</li>
-<li><strong>UCX API</strong>：选择实际消息API实现零拷贝接收。</li>
+<li>引入UCX堆栈，使用UCX连接客户端和服务器。</li>
+<li>中断与轮询模型处理设备事件。</li>
+<li>使用不同协议处理不同大小的消息。</li>
+<li>选择实际消息API实现零拷贝接收。</li>
 </ul></li>
 <li><strong>自RDMA与UCX堆栈的运行模块</strong>
 <ul>
-<li><strong>RDMA堆栈</strong>：使用RDMA轮询线程和匹配工作者，共享QPL连接。</li>
-<li><strong>UCX堆栈优化</strong>：优化锁和会话调用，使用连接映射，消除日志需求。</li>
+<li>使用RDMA轮询线程和匹配工作者，共享QPL连接。</li>
+<li>优化锁和会话调用，使用连接映射，消除日志需求。</li>
 </ul></li>
 <li><strong>零拷贝接收</strong>
 <ul>
-<li><strong>实现两个映射</strong>：分别处理小包和大包。</li>
-<li><strong>预分配内存</strong>：提高接收效率。</li>
+<li>实现两个映射分别处理小包和大包。</li>
+<li>预分配内存提高接收效率。</li>
 </ul></li>
 <li><strong>性能测试</strong>
 <ul>
-<li><strong>基准测试</strong>：使用100
-Gigabit技术，4KB包，Q深度为32，UCX堆栈表现出更好的性能和效率。</li>
-<li><strong>类性能测试</strong>：使用RBDs进行测试，实现了约20%的性能提升。</li>
+<li>基准测试显示UCX堆栈表现出更好的性能和效率。</li>
+<li>类性能测试使用RBDs测试，实现约20%的性能提升。</li>
 </ul></li>
 </ol>
 <h4 id="未来计划">未来计划：</h4>
 <ul>
-<li><strong>性能调优</strong>：尝试更多协议和发送接收协议。</li>
+<li>性能调优，尝试更多协议和发送接收协议。</li>
 </ul>
 <h4 id="提问与回答">提问与回答：</h4>
 <ul>
-<li><strong>性能提升</strong>：与TCP相比，性能提升约10%。</li>
-<li><strong>延迟问题</strong>：尚未进行延迟测试，但UCX可能提供更低的延迟。</li>
-<li><strong>RDMA代码问题</strong>：RDMA代码集成问题，需要移除中间层以充分利用RDMA。</li>
+<li>与TCP相比，性能提升约10%。</li>
+<li>尚未进行延迟测试，但UCX可能提供更低的延迟。</li>
+<li>RDMA代码集成问题，需要移除中间层以充分利用RDMA。</li>
 </ul>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
-<li><strong>提出拉取请求</strong>：计划在三周内创建拉取请求，将UCX消息传递整合到主分支。</li>
+<li>计划在三周内创建拉取请求，将UCX消息传递整合到主分支。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
-<li><strong>创建拉取请求</strong>：整合UCX消息传递。</li>
-<li><strong>延迟测试</strong>：进行延迟测试，特别是尾延迟，以展示UCX的优势。</li>
+<li>整合UCX消息传递。</li>
+<li>进行延迟测试，特别是尾延迟，以展示UCX的优势。</li>
 </ul>
 <h4 id="会议结束">会议结束：</h4>
 <ul>
-<li><strong>感谢与结束语</strong>：感谢所有参与者的贡献和讨论，会议圆满结束。</li>
+<li>感谢所有参与者的贡献和讨论，会议圆满结束。</li>
 </ul>
 <p>[会议纪要结束]</p>
 
@@ -283,6 +288,8 @@ Gigabit技术，4KB包，Q深度为32，UCX堆栈表现出更好的性能和效�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RDMA/" rel="tag">RDMA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/UCX/" rel="tag">UCX</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -351,9 +358,9 @@ Gigabit技术，4KB包，Q深度为32，UCX堆栈表现出更好的性能和效�
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey</h4>
+        <h4 class="title">Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM</h4>
       </a>
     </div>
   

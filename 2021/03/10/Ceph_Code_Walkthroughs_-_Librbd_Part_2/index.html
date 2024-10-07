@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Code Walkthroughs: Librbd Part 2 | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Code Walkthroughs: Librbd Part 2&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 会议日期：2月23日 会议主题：Ceph RBD（Live RBD）代码走读第二部分 主讲人：Jason 参会人员：Ceph社区成员 主要议题  RBD I&#x2F;O路径概述  I&#x2F;O请求处理流程：从API层开始，经过多个可插拔层（如QoS、独占锁、刷新状态机等），最终到达核心层处理对象请求。 librbd.cc文件：作为C和C++ API的入口点，负责将I&#x2F;O请求重定向到librb">
+    <meta name="keywords" content="Ceph,分布式存储,状态机,Librbd,代码走读">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议是关于Ceph RBD（Live RBD）代码走读的第二部分，由Jason主讲，Ceph社区成员参会。会议主要讨论了以下要点：  RBD I&#x2F;O路径概述：从API层开始，经过多个可插拔层（如QoS、独占锁、刷新状态机等），最终到达核心层处理对象请求。 I&#x2F;O请求详细流程：包括API层、分发层和核心层，每个层对I&#x2F;O请求进行不同的处理。 对象请求状态机：讨论了读请求">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Code Walkthroughs: Librbd Part 2">
+<meta property="og:title" content="&#39;Ceph Code Walkthroughs: Librbd Part 2&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 会议日期：2月23日 会议主题：Ceph RBD（Live RBD）代码走读第二部分 主讲人：Jason 参会人员：Ceph社区成员 主要议题  RBD I&#x2F;O路径概述  I&#x2F;O请求处理流程：从API层开始，经过多个可插拔层（如QoS、独占锁、刷新状态机等），最终到达核心层处理对象请求。 librbd.cc文件：作为C和C++ API的入口点，负责将I&#x2F;O请求重定向到librb">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议是关于Ceph RBD（Live RBD）代码走读的第二部分，由Jason主讲，Ceph社区成员参会。会议主要讨论了以下要点：  RBD I&#x2F;O路径概述：从API层开始，经过多个可插拔层（如QoS、独占锁、刷新状态机等），最终到达核心层处理对象请求。 I&#x2F;O请求详细流程：包括API层、分发层和核心层，每个层对I&#x2F;O请求进行不同的处理。 对象请求状态机：讨论了读请求">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-09T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-03-09T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="状态机">
+<meta property="article:tag" content="Librbd">
+<meta property="article:tag" content="代码走读">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Code Walkthroughs: Librbd Part 2</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Code Walkthroughs: Librbd Part 2&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Code Walkthroughs: Librbd Part 2</h1>
+        <h1 class="title">&#39;Ceph Code Walkthroughs: Librbd Part 2&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-03-09T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Code_Walkthroughs_-_Librbd_Part_2"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Code Walkthroughs: Librbd Part 2</h1>
+        <h1 class="post-card-title">'Ceph Code Walkthroughs: Librbd Part 2'</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-03-10 00:00:00" datetime="2021-03-09T16:00:00.000Z"  itemprop="datePublished">2021-03-10</time>
 
@@ -185,65 +183,34 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概述">会议概述</h4>
-<p>会议日期：2月23日<br />
-会议主题：Ceph RBD（Live RBD）代码走读第二部分<br />
-主讲人：Jason<br />
-参会人员：Ceph社区成员</p>
-<h4 id="主要议题">主要议题</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议是关于Ceph RBD（Live
+RBD）代码走读的第二部分，由Jason主讲，Ceph社区成员参会。会议主要讨论了以下要点：</p>
 <ol type="1">
-<li><strong>RBD I/O路径概述</strong>
-<ul>
-<li><strong>I/O请求处理流程</strong>：从API层开始，经过多个可插拔层（如QoS、独占锁、刷新状态机等），最终到达核心层处理对象请求。</li>
-<li><strong>librbd.cc文件</strong>：作为C和C++
-API的入口点，负责将I/O请求重定向到librbd内部更深层次的处理。</li>
-</ul></li>
-<li><strong>I/O请求详细流程</strong>
-<ul>
-<li><strong>API层</strong>：在<code>api/io.cc</code>文件中，读写方法通过图像分发规范（Image
-Dispatch Spec）描述I/O请求。</li>
-<li><strong>分发层</strong>：I/O请求通过多个分发层，每个层可以对I/O进行不同的处理（如排队、QoS控制、独占锁检查等）。</li>
-<li><strong>核心层</strong>：将图像范围（Image
-Extent）转换为对象范围（Object
-Extent），因为RBD设备由多个对象组成。</li>
-</ul></li>
-<li><strong>对象请求状态机</strong>
-<ul>
-<li><strong>读请求</strong>：从OSD读取数据，如果对象不存在，则从父图像读取数据。</li>
-<li><strong>写请求</strong>：包括写、丢弃、写相同、比较写等操作，涉及对象映射（Object
-Map）的预更新和后更新。</li>
-<li><strong>复制上状态机</strong>：从父图像复制数据到子图像，支持实时迁移（Live
-Migration）。</li>
-</ul></li>
-<li><strong>可插拔层（Pluggable Layers）</strong>
-<ul>
-<li><strong>分发层的作用</strong>：每个层可以对I/O请求进行不同的处理，如QoS控制、独占锁检查等。</li>
-<li><strong>分发层的实现</strong>：通过模板化的分发器（Dispatcher）和访问者模式（Visitor
-Pattern）实现。</li>
-</ul></li>
-<li><strong>总结与展望</strong>
-<ul>
-<li><strong>I/O路径的复杂性</strong>：通过状态机和分发层处理I/O请求，确保数据的一致性和性能。</li>
-<li><strong>未来工作</strong>：继续优化和扩展librbd的功能，如加密层（Crypto
-Layer）和实时迁移（Live Migration）。</li>
-</ul></li>
+<li><strong>RBD
+I/O路径概述</strong>：从API层开始，经过多个可插拔层（如QoS、独占锁、刷新状态机等），最终到达核心层处理对象请求。</li>
+<li><strong>I/O请求详细流程</strong>：包括API层、分发层和核心层，每个层对I/O请求进行不同的处理。</li>
+<li><strong>对象请求状态机</strong>：讨论了读请求、写请求和复制上状态机，以及它们如何处理数据。</li>
+<li><strong>可插拔层（Pluggable
+Layers）</strong>：介绍了分发层的作用和实现方式，以及如何通过插件化来扩展功能。</li>
+<li><strong>总结与展望</strong>：强调了I/O路径的复杂性，并提出了未来工作方向，如优化librbd功能和扩展新的特性。</li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
+<p>会议决定事项包括继续优化librbd的I/O路径，确保高性能和数据一致性，并探索更多可插拔层的功能。后续行动计划包括继续进行代码走读和优化工作，特别是在实时迁移和加密层方面，并通过邮件列表和IRC进行交流和反馈。</p>
+<p>会议内容将被记录并上传至Ceph YouTube频道，供社区成员参考和学习。</p>
+<p>[分析]</p>
+<ol type="1">
+<li><strong>准确性</strong>：总结准确反映了原始内容的要点，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</li>
+<li><strong>错误/误解/遗漏</strong>：没有发现明显的错误、误解或遗漏的重要信息。</li>
+<li><strong>改进</strong>：总结内容已经相当完整和准确，没有需要改进的地方。</li>
+</ol>
+<p>[标签]</p>
 <ul>
-<li>继续优化librbd的I/O路径，确保高性能和数据一致性。</li>
-<li>探索更多可插拔层的功能，以支持新的特性和优化。</li>
+<li>Ceph</li>
+<li>Librbd</li>
+<li>分布式存储</li>
+<li>代码走读</li>
+<li>状态机</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
-<ul>
-<li>继续进行代码走读和优化工作，特别是在实时迁移和加密层方面。</li>
-<li>社区成员可以通过邮件列表和IRC进行交流和反馈。</li>
-</ul>
-<h4 id="会议结束">会议结束</h4>
-<p>感谢Jason的详细讲解，会议内容将被记录并上传至Ceph
-YouTube频道。期待下次的代码走读会议。</p>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -274,6 +241,8 @@ YouTube频道。期待下次的代码走读会议。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Librbd/" rel="tag">Librbd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E8%B5%B0%E8%AF%BB/" rel="tag">代码走读</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/" rel="tag">状态机</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -285,7 +254,7 @@ YouTube频道。期待下次的代码走读会议。</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/&title=《Ceph Code Walkthroughs: Librbd Part 2》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/&title=《'Ceph Code Walkthroughs: Librbd Part 2'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -295,7 +264,7 @@ YouTube频道。期待下次的代码走读会议。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/&title=《Ceph Code Walkthroughs: Librbd Part 2》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/&title=《'Ceph Code Walkthroughs: Librbd Part 2'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -305,7 +274,7 @@ YouTube频道。期待下次的代码走读会议。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Code Walkthroughs: Librbd Part 2》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Code Walkthroughs: Librbd Part 2'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -333,9 +302,9 @@ YouTube频道。期待下次的代码走读会议。</p>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2021/03/16/Teuthology_Training_-_Introduction/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2021/03/16/Teuthology_Internals_-_Overview_and_Scheduling/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Teuthology Training: Introduction</h4>
+        <h4 class="title">&#39;Teuthology Internals: Overview and Scheduling&#39;</h4>
       </a>
     </div>
   
@@ -344,7 +313,7 @@ YouTube频道。期待下次的代码走读会议。</p>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/03/10/Ceph_Crimson_SeaStore_2021-03-10/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Crimson/SeaStore  2021-03-10</h4>
+        <h4 class="title">Ceph Crimson/SeaStore 2021-03-10</h4>
       </a>
     </div>
   
@@ -444,7 +413,7 @@ YouTube频道。期待下次的代码走读会议。</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/&title=《Ceph Code Walkthroughs: Librbd Part 2》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/&title=《'Ceph Code Walkthroughs: Librbd Part 2'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -454,7 +423,7 @@ YouTube频道。期待下次的代码走读会议。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/&title=《Ceph Code Walkthroughs: Librbd Part 2》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/&title=《'Ceph Code Walkthroughs: Librbd Part 2'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -464,7 +433,7 @@ YouTube频道。期待下次的代码走读会议。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Code Walkthroughs: Librbd Part 2》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Code Walkthroughs: Librbd Part 2'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/03/10/Ceph_Code_Walkthroughs_-_Librbd_Part_2/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

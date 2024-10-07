@@ -20,17 +20,25 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  修复pin crash问题：上周推送了一个补丁，修复了至少一个pin crash问题，该问题已得到父级处理。 处理weight hard limits crash和segment cleaner问题：即将推送一个PR，解决weight hard limits crash和segment cleaner问题。关键在于在执行out-of-line segment writes之前">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,CRUSH算法,性能优化,可伸缩性,缓存管理,日志处理">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  pin crash问题修复：上周已推送补丁修复了pin crash问题，并由父级处理。 weight hard limits crash和segment cleaner问题处理：将推送PR解决这些问题，关键在于执行out-of-line segment writes前检查segment cleaner的full status，并允许多个out-of-">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;SeaStore 2021-09-29">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/10/07/Ceph_Crimson_SeaStore_2021-09-29/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  修复pin crash问题：上周推送了一个补丁，修复了至少一个pin crash问题，该问题已得到父级处理。 处理weight hard limits crash和segment cleaner问题：即将推送一个PR，解决weight hard limits crash和segment cleaner问题。关键在于在执行out-of-line segment writes之前">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  pin crash问题修复：上周已推送补丁修复了pin crash问题，并由父级处理。 weight hard limits crash和segment cleaner问题处理：将推送PR解决这些问题，关键在于执行out-of-line segment writes前检查segment cleaner的full status，并允许多个out-of-">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-06T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-10-07T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="可伸缩性">
+<meta property="article:tag" content="缓存管理">
+<meta property="article:tag" content="日志处理">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,35 +193,34 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
-<li><strong>修复pin
-crash问题</strong>：上周推送了一个补丁，修复了至少一个pin
-crash问题，该问题已得到父级处理。</li>
-<li><strong>处理weight hard limits crash和segment
-cleaner问题</strong>：即将推送一个PR，解决weight hard limits
-crash和segment cleaner问题。关键在于在执行out-of-line segment
-writes之前检查segment cleaner的full status，并允许多个out-of-line
+<li><strong>pin crash问题修复</strong>：上周已推送补丁修复了pin
+crash问题，并由父级处理。</li>
+<li><strong>weight hard limits crash和segment
+cleaner问题处理</strong>：将推送PR解决这些问题，关键在于执行out-of-line
+segment writes前检查segment cleaner的full status，并允许多个out-of-line
 segment writes。</li>
-<li><strong>缓存LRU优化</strong>：计划优化缓存LRU，以实现更有意义的recaching。</li>
+<li><strong>缓存LRU优化</strong>：计划优化缓存LRU，实现更有意义的recaching。</li>
 <li><strong>日志批处理优化</strong>：正在研究日志批处理，已验证可以将写回列表放入队列并合并到更大的缓冲区列表中，然后调用正确的缓冲区。</li>
 </ul>
 <h4 id="讨论的主要议题">讨论的主要议题</h4>
 <ul>
-<li><strong>日志批处理策略</strong>：讨论了是否使用定时器或阈值来触发大缓冲区写入磁盘的问题。建议不使用定时器或阈值，而是在没有写入操作时立即写入缓冲区中的数据。</li>
-<li><strong>日志批处理实现细节</strong>：讨论了如何处理日志批处理中的缓冲区交换和写入操作，以及如何避免在段滚动时写过段末尾的问题。</li>
+<li><strong>日志批处理策略</strong>：讨论了使用定时器或阈值触发大缓冲区写入磁盘的策略，建议不使用定时器或阈值，在没有写入操作时立即写入缓冲区中的数据。</li>
+<li><strong>日志批处理实现细节</strong>：讨论了缓冲区交换和写入操作的处理，以及如何避免在段滚动时写过段末尾的问题。</li>
 </ul>
 <h4 id="决定的事项">决定的事项</h4>
 <ul>
-<li><strong>日志批处理策略</strong>：决定不使用定时器或阈值，而是在没有写入操作时立即写入缓冲区中的数据。</li>
+<li><strong>日志批处理策略</strong>：决定不使用定时器或阈值，在没有写入操作时立即写入缓冲区中的数据。</li>
 <li><strong>日志批处理实现</strong>：决定在写入操作完成时，立即将缓冲区中的数据写入磁盘，并在段滚动时确保不写过段末尾。</li>
 </ul>
 <h4 id="后续的行动计划">后续的行动计划</h4>
 <ul>
-<li><strong>推送PR</strong>：即将推送一个PR，解决weight hard limits
-crash和segment cleaner问题。</li>
-<li><strong>优化缓存LRU</strong>：继续优化缓存LRU，以实现更有意义的recaching。</li>
+<li><strong>推送PR</strong>：推送解决weight hard limits crash和segment
+cleaner问题的PR。</li>
+<li><strong>优化缓存LRU</strong>：继续优化缓存LRU，实现更有意义的recaching。</li>
 <li><strong>日志批处理优化</strong>：继续研究日志批处理，确保实现细节符合讨论的策略。</li>
 <li><strong>实现集群日志</strong>：正在实现集群日志功能，并准备提交一个draft
 PR。</li>
@@ -241,7 +248,6 @@ PR。</li>
 <li>PC and distance placement strategy</li>
 <li>cluster log</li>
 </ul>
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -272,6 +278,8 @@ PR。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86/" rel="tag">日志处理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BC%93%E5%AD%98%E7%AE%A1%E7%90%86/" rel="tag">缓存管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -333,7 +341,7 @@ PR。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/10/07/Ceph_Code_Walkthroughs_-_Paddles/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Code Walkthroughs: Paddles</h4>
+        <h4 class="title">  Ceph Code Walkthroughs: Paddles  </h4>
       </a>
     </div>
   

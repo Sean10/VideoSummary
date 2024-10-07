@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Orchestrator Meeting 2020-10-05 | ceph视频总结 | youtube频道总结</title>
+    <title> Ceph Orchestrator Meeting 2020-10-05  | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Rook Manager Module 的状态和未来 参会人员：未明确列出，但提到了Patrick、Travis、Joshua等人。 会议时间：未明确列出，但提到了几天前发送的邮件。 会议地点：未明确列出，通过视频会议进行。 主要议题：  Rook Manager Module 的现状和需求  该模块两年前创建，但未得到充分维护和使用。 讨论了该模块的优先级和是否仍需保留。 确">
+    <meta name="keywords" content="Ceph,Storage Management,Kubernetes,Orchestrator,Rook">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Rook Manager Module 的现状和未来 参会人员：未明确列出，但提到了Patrick、Travis、Joshua等人。 会议时间：未明确列出，但提到了几天前发送的邮件。 会议地点：未明确列出，通过视频会议进行。 主要议题：  Rook Manager Module 的现状和需求：讨论了该模块的维护状态、优先级和是否仍需保留，并确认了Das">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Orchestrator Meeting 2020-10-05">
+<meta property="og:title" content=" Ceph Orchestrator Meeting 2020-10-05 ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/10/06/Ceph_Orchestrator_Meeting_2020-10-05/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Rook Manager Module 的状态和未来 参会人员：未明确列出，但提到了Patrick、Travis、Joshua等人。 会议时间：未明确列出，但提到了几天前发送的邮件。 会议地点：未明确列出，通过视频会议进行。 主要议题：  Rook Manager Module 的现状和需求  该模块两年前创建，但未得到充分维护和使用。 讨论了该模块的优先级和是否仍需保留。 确">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Rook Manager Module 的现状和未来 参会人员：未明确列出，但提到了Patrick、Travis、Joshua等人。 会议时间：未明确列出，但提到了几天前发送的邮件。 会议地点：未明确列出，通过视频会议进行。 主要议题：  Rook Manager Module 的现状和需求：讨论了该模块的维护状态、优先级和是否仍需保留，并确认了Das">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-10-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Storage Management">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="Rook">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Orchestrator Meeting 2020-10-05</div>
+        <div class="flex-col header-title ellipsis"> Ceph Orchestrator Meeting 2020-10-05 </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Orchestrator Meeting 2020-10-05</h1>
+        <h1 class="title"> Ceph Orchestrator Meeting 2020-10-05 </h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-10-05T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,8 +164,8 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98rook-manager-module-%E7%9A%84%E7%8A%B6%E6%80%81%E5%92%8C%E6%9C%AA%E6%9D%A5"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Rook Manager
-Module 的状态和未来</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E6%9C%AA%E6%98%8E%E7%A1%AE%E5%88%97%E5%87%BA%E4%BD%86%E6%8F%90%E5%88%B0%E4%BA%86patricktravisjoshua%E7%AD%89%E4%BA%BA"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：未明确列出，但提到了Patrick、Travis、Joshua等人。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E6%9C%AA%E6%98%8E%E7%A1%AE%E5%88%97%E5%87%BA%E4%BD%86%E6%8F%90%E5%88%B0%E4%BA%86%E5%87%A0%E5%A4%A9%E5%89%8D%E5%8F%91%E9%80%81%E7%9A%84%E9%82%AE%E4%BB%B6"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：未明确列出，但提到了几天前发送的邮件。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E6%9C%AA%E6%98%8E%E7%A1%AE%E5%88%97%E5%87%BA%E9%80%9A%E8%BF%87%E8%A7%86%E9%A2%91%E4%BC%9A%E8%AE%AE%E8%BF%9B%E8%A1%8C"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：未明确列出，通过视频会议进行。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">其他讨论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议总结：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98rook-manager-module-%E7%9A%84%E7%8E%B0%E7%8A%B6%E5%92%8C%E6%9C%AA%E6%9D%A5"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Rook Manager
+Module 的现状和未来</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E6%9C%AA%E6%98%8E%E7%A1%AE%E5%88%97%E5%87%BA%E4%BD%86%E6%8F%90%E5%88%B0%E4%BA%86patricktravisjoshua%E7%AD%89%E4%BA%BA"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：未明确列出，但提到了Patrick、Travis、Joshua等人。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E6%9C%AA%E6%98%8E%E7%A1%AE%E5%88%97%E5%87%BA%E4%BD%86%E6%8F%90%E5%88%B0%E4%BA%86%E5%87%A0%E5%A4%A9%E5%89%8D%E5%8F%91%E9%80%81%E7%9A%84%E9%82%AE%E4%BB%B6"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：未明确列出，但提到了几天前发送的邮件。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E6%9C%AA%E6%98%8E%E7%A1%AE%E5%88%97%E5%87%BA%E9%80%9A%E8%BF%87%E8%A7%86%E9%A2%91%E4%BC%9A%E8%AE%AE%E8%BF%9B%E8%A1%8C"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：未明确列出，通过视频会议进行。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">其他讨论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议总结：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -169,7 +174,7 @@ Module 的状态和未来</span></a></li><li class="post-toc-item post-toc-level
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Orchestrator Meeting 2020-10-05</h1>
+        <h1 class="post-card-title"> Ceph Orchestrator Meeting 2020-10-05 </h1>
         <div class="post-meta">
             <time class="post-time" title="2020-10-06 00:00:00" datetime="2020-10-05T16:00:00.000Z"  itemprop="datePublished">2020-10-06</time>
 
@@ -186,9 +191,10 @@ Module 的状态和未来</span></a></li><li class="post-toc-item post-toc-level
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题rook-manager-module-的状态和未来">会议主题：Rook Manager
-Module 的状态和未来</h4>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议主题rook-manager-module-的现状和未来">会议主题：Rook Manager
+Module 的现状和未来</h4>
 <h4
 id="参会人员未明确列出但提到了patricktravisjoshua等人">参会人员：未明确列出，但提到了Patrick、Travis、Joshua等人。</h4>
 <h4
@@ -197,51 +203,30 @@ id="会议时间未明确列出但提到了几天前发送的邮件">会议时�
 id="会议地点未明确列出通过视频会议进行">会议地点：未明确列出，通过视频会议进行。</h4>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
-<li><strong>Rook Manager Module 的现状和需求</strong>
-<ul>
-<li>该模块两年前创建，但未得到充分维护和使用。</li>
-<li>讨论了该模块的优先级和是否仍需保留。</li>
-<li>确认了Dashboard对Rook Manager Module的兴趣。</li>
-</ul></li>
-<li><strong>Rook Manager Module 的启用状态和社区反馈</strong>
-<ul>
-<li>该模块未默认启用，上游社区未注意到或询问为何不默认启用。</li>
-<li>发现了该模块的多个bug，但缺乏测试。</li>
-</ul></li>
-<li><strong>资源和优先级问题</strong>
-<ul>
-<li>讨论了资源有限，当前主要优先级是FDM（Federated Deployment
-Manager）。</li>
-<li>Red Hat和SUSE的资源分配问题，特别是Red Hat目前主要集中在FDM上。</li>
-</ul></li>
-<li><strong>Rook Manager Module 的功能和测试需求</strong>
-<ul>
-<li>需要确定Rook Manager Module的具体使用场景和功能需求。</li>
-<li>强调了测试的重要性，特别是与Rook和Cephadm的集成测试。</li>
-</ul></li>
-<li><strong>Rook Manager Module 的未来方向</strong>
-<ul>
-<li>讨论了是否应该继续支持Rook Manager Module，以及如何分配资源。</li>
-<li>提出了可能的解决方案，如使用外部资源或调整资源分配。</li>
-</ul></li>
+<li><strong>Rook Manager Module
+的现状和需求</strong>：讨论了该模块的维护状态、优先级和是否仍需保留，并确认了Dashboard对该模块的兴趣。</li>
+<li><strong>模块的启用状态和社区反馈</strong>：指出模块未默认启用，社区未注意到或询问原因，并发现了多个bug，但缺乏测试。</li>
+<li><strong>资源和优先级问题</strong>：讨论了资源有限，当前主要优先级是FDM（Federated
+Deployment Manager），Red Hat和SUSE的资源分配问题。</li>
+<li><strong>功能和测试需求</strong>：需要确定模块的具体使用场景和功能需求，强调测试的重要性，特别是与Rook和Cephadm的集成测试。</li>
+<li><strong>未来方向</strong>：讨论了是否应继续支持模块，以及如何分配资源，提出了可能的解决方案。</li>
 </ol>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
-<li>需要进一步明确Rook Manager Module的使用场景和功能需求。</li>
+<li>需要进一步明确模块的使用场景和功能需求。</li>
 <li>需要加强测试，特别是与Rook和Cephadm的集成测试。</li>
-<li>需要讨论资源分配问题，特别是如何平衡FDM和Rook Manager
-Module的开发资源。</li>
+<li>需要讨论资源分配问题，特别是如何平衡FDM和模块的开发资源。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
-<li>继续讨论Rook Manager Module的未来方向和资源分配。</li>
+<li>继续讨论模块的未来方向和资源分配。</li>
 <li>加强测试，特别是与Rook和Cephadm的集成测试。</li>
-<li>需要明确Dashboard对Rook Manager Module的需求和使用场景。</li>
+<li>需要明确Dashboard对模块的需求和使用场景。</li>
 </ul>
 <h4 id="其他讨论">其他讨论：</h4>
 <ul>
 <li>讨论了SSH和HTTPS在获取主机信息方面的性能和安全性问题。</li>
-<li>需要进一步在真实硬件上测试SSH的性能，以决定是否继续使用或切换到HTTPS。</li>
+<li>认为需要在真实硬件上测试SSH的性能，以决定是否继续使用或切换到HTTPS。</li>
 </ul>
 <h4 id="会议总结">会议总结：</h4>
 <p>会议主要讨论了Rook Manager
@@ -278,6 +263,8 @@ Module的现状、需求、资源分配和未来方向。强调了测试的重�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Management/" rel="tag">Storage Management</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -289,7 +276,7 @@ Module的现状、需求、资源分配和未来方向。强调了测试的重�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/10/06/Ceph_Orchestrator_Meeting_2020-10-05/&title=《Ceph Orchestrator Meeting 2020-10-05》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/10/06/Ceph_Orchestrator_Meeting_2020-10-05/&title=《 Ceph Orchestrator Meeting 2020-10-05 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -299,7 +286,7 @@ Module的现状、需求、资源分配和未来方向。强调了测试的重�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/10/06/Ceph_Orchestrator_Meeting_2020-10-05/&title=《Ceph Orchestrator Meeting 2020-10-05》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/10/06/Ceph_Orchestrator_Meeting_2020-10-05/&title=《 Ceph Orchestrator Meeting 2020-10-05 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -309,7 +296,7 @@ Module的现状、需求、资源分配和未来方向。强调了测试的重�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Orchestrator Meeting 2020-10-05》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/10/06/Ceph_Orchestrator_Meeting_2020-10-05/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph Orchestrator Meeting 2020-10-05 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/10/06/Ceph_Orchestrator_Meeting_2020-10-05/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -339,7 +326,7 @@ Module的现状、需求、资源分配和未来方向。强调了测试的重�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2020/10/07/Ceph_Crimson_SeaStor_OSD_2020-10-06/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Crimson / SeaStor OSD  2020-10-06</h4>
+        <h4 class="title">Ceph Crimson / SeaStor OSD 2020-10-06</h4>
       </a>
     </div>
   
@@ -348,7 +335,7 @@ Module的现状、需求、资源分配和未来方向。强调了测试的重�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2020/10/02/Ceph_Tech_Talk_-_Karan_Singh_-_Scale_Testing_Ceph_with_10Billion+_Objects_2020-10-01/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01</h4>
+        <h4 class="title">&#39;Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01&#39;</h4>
       </a>
     </div>
   
@@ -448,7 +435,7 @@ Module的现状、需求、资源分配和未来方向。强调了测试的重�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/10/06/Ceph_Orchestrator_Meeting_2020-10-05/&title=《Ceph Orchestrator Meeting 2020-10-05》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/10/06/Ceph_Orchestrator_Meeting_2020-10-05/&title=《 Ceph Orchestrator Meeting 2020-10-05 》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -458,7 +445,7 @@ Module的现状、需求、资源分配和未来方向。强调了测试的重�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/10/06/Ceph_Orchestrator_Meeting_2020-10-05/&title=《Ceph Orchestrator Meeting 2020-10-05》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/10/06/Ceph_Orchestrator_Meeting_2020-10-05/&title=《 Ceph Orchestrator Meeting 2020-10-05 》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -468,7 +455,7 @@ Module的现状、需求、资源分配和未来方向。强调了测试的重�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Orchestrator Meeting 2020-10-05》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/10/06/Ceph_Orchestrator_Meeting_2020-10-05/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《 Ceph Orchestrator Meeting 2020-10-05 》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/10/06/Ceph_Orchestrator_Meeting_2020-10-05/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

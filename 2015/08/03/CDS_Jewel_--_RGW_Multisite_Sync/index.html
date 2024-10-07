@@ -20,17 +20,23 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Ceph 分布式存储多站点配置改进 会议时间： 未提及 参会人员： 未提及 会议内容： 一、多站点配置蓝图概述  新区域（Realm）： 新增区域概念，但并非关键部分，当前系统可视为单个区域，未来可创建多个区域。 新周期（Period）： 新增周期概念，确保在达到 Must Run 区域时，不会丢失数据和信息。 元数据同步：  在主节点上执行元数据操作，并锁定在元数据文档中。">
+    <meta name="keywords" content="Ceph,CephFS,RGW,Distributed Storage,Multi,site Sync">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph RGW 多站点同步配置改进 会议时间： 未提及 参会人员： 未提及 会议内容： 一、多站点配置蓝图概述  新区域（Realm）： 引入区域概念，当前系统视为单个区域，未来可支持多区域。 新周期（Period）： 引入周期概念，确保在达到 Must Run 区域时，不会丢失数据和信息。 元数据同步：  主节点上执行元数据操作并锁定。 从节点应">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CDS Jewel -- RGW Multisite Sync">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/08/03/CDS_Jewel_--_RGW_Multisite_Sync/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Ceph 分布式存储多站点配置改进 会议时间： 未提及 参会人员： 未提及 会议内容： 一、多站点配置蓝图概述  新区域（Realm）： 新增区域概念，但并非关键部分，当前系统可视为单个区域，未来可创建多个区域。 新周期（Period）： 新增周期概念，确保在达到 Must Run 区域时，不会丢失数据和信息。 元数据同步：  在主节点上执行元数据操作，并锁定在元数据文档中。">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph RGW 多站点同步配置改进 会议时间： 未提及 参会人员： 未提及 会议内容： 一、多站点配置蓝图概述  新区域（Realm）： 引入区域概念，当前系统视为单个区域，未来可支持多区域。 新周期（Period）： 引入周期概念，确保在达到 Must Run 区域时，不会丢失数据和信息。 元数据同步：  主节点上执行元数据操作并锁定。 从节点应">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-08-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-08-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Multi">
+<meta property="article:tag" content="site Sync">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,47 +191,41 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题</strong>： Ceph 分布式存储多站点配置改进</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议主题</strong>： Ceph RGW 多站点同步配置改进</p>
 <p><strong>会议时间</strong>： 未提及</p>
 <p><strong>参会人员</strong>： 未提及</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>一、多站点配置蓝图概述</strong></p>
 <ol type="1">
 <li><strong>新区域（Realm）</strong>：
-新增区域概念，但并非关键部分，当前系统可视为单个区域，未来可创建多个区域。</li>
-<li><strong>新周期（Period）</strong>： 新增周期概念，确保在达到 Must
+引入区域概念，当前系统视为单个区域，未来可支持多区域。</li>
+<li><strong>新周期（Period）</strong>： 引入周期概念，确保在达到 Must
 Run 区域时，不会丢失数据和信息。</li>
 <li><strong>元数据同步</strong>：
 <ul>
-<li>在主节点上执行元数据操作，并锁定在元数据文档中。</li>
-<li>从节点将不再直接应用更改，而是从主节点捕获日志信息，并在特定区域上应用。</li>
-<li>在每个区域中创建主节点元数据日志的副本，并在应用更改前进行同步。</li>
-<li>为每个元数据条目保留两个对象：不可变对象（包括元数据条目及其版本）和当前主要数据键对象。</li>
-<li>在每个周期中保留元数据版本向量，记录周期开始时的元数据日志版本信息，并在切换周期时记录版本信息。</li>
+<li>主节点上执行元数据操作并锁定。</li>
+<li>从节点应用更改前同步元数据日志。</li>
+<li>保留元数据版本向量，记录周期变化。</li>
 </ul></li>
 <li><strong>数据同步</strong>：
 <ul>
 <li>使用与元数据同步相同的方法进行数据同步。</li>
-<li>可选方案：只在一个区域进行全量同步，或通过共享信息进行快速同步。</li>
-<li>目前的方案需要目标节点列出所有条目，然后逐个同步，效率较低。</li>
+<li>改进同步效率，可选全量同步或快速同步。</li>
 </ul></li>
 <li><strong>主动-主动复制（Active-Active Replication）</strong>：
 <ul>
-<li>在网关内部实现主动-主动复制。</li>
-<li>支持跨多个区域进行复制。</li>
-<li>使用相同的网关处理来自不同区域的更改包和索引日志。</li>
-<li>对于相同对象的更改，使用时间戳作为优先级，如果时间戳相同，则使用名称作为决断条件。</li>
+<li>实现网关内部的主动-主动复制。</li>
+<li>支持跨多个区域进行复制，使用时间戳和名称作为决断条件。</li>
 </ul></li>
 <li><strong>网关代理</strong>：
 <ul>
 <li>移除网关代理，将代理功能集成到网关中，提高效率并简化配置。</li>
-<li>网关代理将直接处理数据同步和元数据同步。</li>
 </ul></li>
 <li><strong>推送通知</strong>：
 <ul>
 <li>添加推送通知功能，将最近发生的更改立即通知相关区域。</li>
-<li>使用 RESTful API 实现通知功能。</li>
 </ul></li>
 </ol>
 <p><strong>二、讨论的主要议题</strong></p>
@@ -250,13 +250,9 @@ Run 区域时，不会丢失数据和信息。</li>
 </ol>
 <p><strong>五、其他</strong></p>
 <ol type="1">
-<li>需要进一步讨论和解决以下问题：
-<ul>
-<li>如何处理不同区域之间的冲突。</li>
-<li>如何保证数据的一致性。</li>
-<li>如何优化数据同步的效率。</li>
-</ul></li>
-<li>需要制定详细的开发计划和时间表。</li>
+<li>讨论并解决不同区域之间的冲突和数据一致性保证。</li>
+<li>优化数据同步效率。</li>
+<li>制定详细的开发计划和时间表。</li>
 </ol>
 
         </div>
@@ -288,6 +284,8 @@ Run 区域时，不会丢失数据和信息。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Multi/" rel="tag">Multi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/site-Sync/" rel="tag">site Sync</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -347,18 +345,18 @@ Run 区域时，不会丢失数据和信息。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_RGW_Multisite_Configuration/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_RBD_Journal/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Jewel -- RGW Multisite Configuration</h4>
+        <h4 class="title">CDS Jewel -- RBD Journal</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_RGW_Multitenancy/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2015/08/03/CDS_Jewel_--_Sloppy_Reads/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Jewel -- RGW Multitenancy</h4>
+        <h4 class="title">CDS Jewel -- Sloppy Reads</h4>
       </a>
     </div>
   

@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议是一个关于研究计算和Ceph存储系统的成员会议，与会者讨论了近期遇到的问题、技术挑战以及解决方案。会议持续了大约半小时到一个小时，讨论内容较为自由，涉及多个主题。 主要议题  Ceph集群中的问题  讨论了在替换S3集群硬件时遇到的问题，特别是PG（Placement Group）迁移和删除的效率问题。 提到了在Nautilus版本中，需要重新启用BlueFS Buff">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,CRUSH算法,可伸缩性">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次Ceph Science Working Group会议讨论了Ceph存储系统在近期遇到的问题、技术挑战及解决方案。会议持续了一个小时，内容自由，涉及多个主题。 主要议题  Ceph集群问题  讨论了替换S3集群硬件时PG迁移和删除效率问题，以及BlueFS Buffered IO对稳定集群的帮助。 Igor正在准备一个补丁来解决PG删除效率低的问">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Science Working Group 2020-11-25">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/11/25/Ceph_Science_Working_Group_2020-11-25/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议是一个关于研究计算和Ceph存储系统的成员会议，与会者讨论了近期遇到的问题、技术挑战以及解决方案。会议持续了大约半小时到一个小时，讨论内容较为自由，涉及多个主题。 主要议题  Ceph集群中的问题  讨论了在替换S3集群硬件时遇到的问题，特别是PG（Placement Group）迁移和删除的效率问题。 提到了在Nautilus版本中，需要重新启用BlueFS Buff">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次Ceph Science Working Group会议讨论了Ceph存储系统在近期遇到的问题、技术挑战及解决方案。会议持续了一个小时，内容自由，涉及多个主题。 主要议题  Ceph集群问题  讨论了替换S3集群硬件时PG迁移和删除效率问题，以及BlueFS Buffered IO对稳定集群的帮助。 Igor正在准备一个补丁来解决PG删除效率低的问">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-24T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-11-25T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="可伸缩性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">总结</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,62 +190,58 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概述">会议概述</h4>
-<p>本次会议是一个关于研究计算和Ceph存储系统的成员会议，与会者讨论了近期遇到的问题、技术挑战以及解决方案。会议持续了大约半小时到一个小时，讨论内容较为自由，涉及多个主题。</p>
+<p>本次Ceph Science Working
+Group会议讨论了Ceph存储系统在近期遇到的问题、技术挑战及解决方案。会议持续了一个小时，内容自由，涉及多个主题。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
-<li><strong>Ceph集群中的问题</strong>
+<li><strong>Ceph集群问题</strong>
 <ul>
-<li>讨论了在替换S3集群硬件时遇到的问题，特别是PG（Placement
-Group）迁移和删除的效率问题。</li>
-<li>提到了在Nautilus版本中，需要重新启用BlueFS Buffered
-IO来稳定集群。</li>
-<li>讨论了PG删除过程中的低效率问题，以及Igor正在准备的补丁可能解决这一问题。</li>
+<li>讨论了替换S3集群硬件时PG迁移和删除效率问题，以及BlueFS Buffered
+IO对稳定集群的帮助。</li>
+<li>Igor正在准备一个补丁来解决PG删除效率低的问题。</li>
+<li>提到了Nautilus版本中内存泄漏和稳定性问题，以及Beast协议相关的问题。</li>
 </ul></li>
 <li><strong>Ceph版本更新和升级</strong>
 <ul>
-<li>讨论了从旧版本升级到Octopus版本的体验，特别是内存泄漏和稳定性问题。</li>
-<li>提到了在升级过程中遇到的Beast协议相关的问题，以及对Rados
-Gateway内存使用的讨论。</li>
+<li>讨论了从旧版本升级到Octopus版本的体验，包括内存泄漏和稳定性问题。</li>
+<li>提到了Beast协议的问题和对Rados Gateway内存使用的讨论。</li>
 </ul></li>
 <li><strong>Ceph性能和配置</strong>
 <ul>
-<li>讨论了多MDS（Multi-Master Metadata
-Server）的使用情况和性能问题。</li>
-<li>提到了BlueStore的配置和性能优化，特别是关于BlueFS和BlueStore
-allocator的改进。</li>
+<li>讨论了多MDS的使用情况和性能问题，以及BlueStore的配置和性能优化。</li>
+<li>提到了BlueFS和BlueStore allocator的改进。</li>
 </ul></li>
 <li><strong>Ceph集群管理和运维</strong>
 <ul>
-<li>讨论了如何限制Rados Gateway的内存使用，以及在网络架构中使用Rados
+<li>讨论了限制Rados Gateway内存使用和网络架构中使用Rados
 Gateway的策略。</li>
-<li>提到了从直接使用Librados转向使用Rados
-Gateway的可能性，以及相关的网络升级。</li>
+<li>提到了从直接使用Librados转向使用Rados Gateway的可能性。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>需要关注Igor关于PG删除的补丁，以及BlueFS Buffered
-IO的启用情况。</li>
-<li>需要进一步测试和验证Beast协议的问题，并考虑是否需要回退到CivetWeb。</li>
-<li>需要继续监控和优化Rados
-Gateway的内存使用，特别是在高并发IO情况下的表现。</li>
+<li>关注Igor的PG删除补丁和BlueFS Buffered IO的启用情况。</li>
+<li>测试和验证Beast协议问题，并考虑回退到CivetWeb。</li>
+<li>监控和优化Rados Gateway的内存使用。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>继续关注Ceph的版本更新和补丁发布，特别是与内存管理和性能优化相关的更新。</li>
-<li>计划在下一个版本中测试和部署新的BlueStore配置和优化。</li>
-<li>继续监控和调整Rados
-Gateway的配置，以确保在高负载下的稳定性和性能。</li>
+<li>关注Ceph版本更新和补丁发布，特别是与内存管理和性能优化相关的更新。</li>
+<li>测试和部署新的BlueStore配置和优化。</li>
+<li>监控和调整Rados Gateway的配置。</li>
 </ul>
 <h4 id="其他讨论">其他讨论</h4>
 <ul>
-<li>讨论了使用InfiniBand网络的可能性，但目前认为以太网已经足够满足需求。</li>
+<li>讨论了使用InfiniBand网络的可能性，但认为以太网已经足够满足需求。</li>
 <li>提到了备份大型Ceph集群的挑战，特别是对于运行Oracle数据库的集群。</li>
 </ul>
 <h4 id="会议结束">会议结束</h4>
-<p>会议在讨论了未来可能的技术升级和优化方向后结束，下一次会议计划在明年一月的第四个星期三举行。会议组织者感谢大家的参与，并提醒大家注意假期安全。</p>
+<p>会议在讨论未来可能的技术升级和优化方向后结束。下一次会议计划在明年一月的第四个星期三举行。</p>
+<h4 id="总结">总结</h4>
+<p>本次会议重点关注了Ceph集群的稳定性、性能优化和版本升级。会议讨论了多个与Ceph集群管理和运维相关的问题，并制定了后续行动计划。</p>
 
         </div>
 
@@ -271,6 +272,8 @@ Gateway的配置，以确保在高负载下的稳定性和性能。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -332,7 +335,7 @@ Gateway的配置，以确保在高负载下的稳定性和性能。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2020/11/26/Ceph_User_Survey_Working_Group_2020-11-25/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph User Survey Working Group 2020-11-25</h4>
+        <h4 class="title">Ceph 用户调查工作组 2020-11-25</h4>
       </a>
     </div>
   

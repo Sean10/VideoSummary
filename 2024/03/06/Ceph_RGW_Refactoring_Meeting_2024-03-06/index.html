@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph RGW Refactoring Meeting 2024-03-06 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph RGW重构会议 2024-03-06 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 关键细节  会议日期与时间: [具体日期] 参会人员: [列出参会人员] 会议主持: [主持人姓名]  讨论的主要议题  TC 崩溃问题  讨论了关于TC（Transport Client）版本2.8.1的崩溃问题，该问题在三年前被记录，但最近重新出现。 讨论了是否在SEF spec文件中直接处理此问题，而不是依赖于外部repo。 决定在SEF spec文件中拒绝版本2.8及其所有次要版">
+    <meta name="keywords" content="Ceph,分布式存储,RGW,会议纪要,存储重构">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 关键细节  会议日期与时间: 2024年3月6日 参会人员: [列出参会人员] 会议主持: [主持人姓名]  讨论的主要议题  TC 崩溃问题  讨论了TC（Transport Client）版本2.8.1的崩溃问题，该问题在三年前被记录，但最近重新出现。 讨论了在SEF spec文件中直接处理此问题，而不是依赖于外部repo。 决定在SEF spec文件中拒绝">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph RGW Refactoring Meeting 2024-03-06">
+<meta property="og:title" content="Ceph RGW重构会议 2024-03-06">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2024/03/06/Ceph_RGW_Refactoring_Meeting_2024-03-06/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 关键细节  会议日期与时间: [具体日期] 参会人员: [列出参会人员] 会议主持: [主持人姓名]  讨论的主要议题  TC 崩溃问题  讨论了关于TC（Transport Client）版本2.8.1的崩溃问题，该问题在三年前被记录，但最近重新出现。 讨论了是否在SEF spec文件中直接处理此问题，而不是依赖于外部repo。 决定在SEF spec文件中拒绝版本2.8及其所有次要版">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 关键细节  会议日期与时间: 2024年3月6日 参会人员: [列出参会人员] 会议主持: [主持人姓名]  讨论的主要议题  TC 崩溃问题  讨论了TC（Transport Client）版本2.8.1的崩溃问题，该问题在三年前被记录，但最近重新出现。 讨论了在SEF spec文件中直接处理此问题，而不是依赖于外部repo。 决定在SEF spec文件中拒绝">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-03-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="会议纪要">
+<meta property="article:tag" content="存储重构">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph RGW Refactoring Meeting 2024-03-06</div>
+        <div class="flex-col header-title ellipsis">Ceph RGW重构会议 2024-03-06</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph RGW Refactoring Meeting 2024-03-06</h1>
+        <h1 class="title">Ceph RGW重构会议 2024-03-06</h1>
         <h5 class="subtitle">
             
                 <time datetime="2024-03-05T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -142,7 +147,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93/">会议总结</a></li></ul>
 
             
         </h5>
@@ -168,12 +173,12 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph RGW Refactoring Meeting 2024-03-06</h1>
+        <h1 class="post-card-title">Ceph RGW重构会议 2024-03-06</h1>
         <div class="post-meta">
             <time class="post-time" title="2024-03-06 00:00:00" datetime="2024-03-05T16:00:00.000Z"  itemprop="datePublished">2024-03-06</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93/">会议总结</a></li></ul>
 
 
 
@@ -185,10 +190,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="关键细节">关键细节</h4>
 <ul>
-<li><strong>会议日期与时间</strong>: [具体日期]</li>
+<li><strong>会议日期与时间</strong>: 2024年3月6日</li>
 <li><strong>参会人员</strong>: [列出参会人员]</li>
 <li><strong>会议主持</strong>: [主持人姓名]</li>
 </ul>
@@ -196,10 +202,9 @@
 <ol type="1">
 <li><strong>TC 崩溃问题</strong>
 <ul>
-<li>讨论了关于TC（Transport
+<li>讨论了TC（Transport
 Client）版本2.8.1的崩溃问题，该问题在三年前被记录，但最近重新出现。</li>
-<li>讨论了是否在SEF
-spec文件中直接处理此问题，而不是依赖于外部repo。</li>
+<li>讨论了在SEF spec文件中直接处理此问题，而不是依赖于外部repo。</li>
 <li>决定在SEF
 spec文件中拒绝版本2.8及其所有次要版本，以避免潜在的崩溃问题。</li>
 </ul></li>
@@ -246,8 +251,11 @@ spec文件中拒绝版本2.8及其所有次要版本，以避免潜在的崩溃�
 <li>会议在讨论完所有议题后结束，主持人感谢所有参与者的贡献，并期待下次会议。</li>
 </ul>
 <hr />
-<p><strong>备注</strong>:
-本次会议记录涵盖了关键的技术讨论和决策，为后续的行动提供了明确的指导。</p>
+<p>在原始字幕中，以下信息可能存在误解或遗漏： -
+关于TC崩溃问题的讨论可能存在一些细节上的不一致，需要进一步澄清。 -
+关于Redis作为消息队列的讨论可能需要进一步的技术细节。 -
+关于DDoP问题的讨论可能需要更详细的工具使用说明。</p>
+<p>改进后的总结更准确地反映了会议的关键细节，讨论的主要议题，决定的事项以及后续的行动计划，并保留了相关的Ceph相关领域的英文原文关键词。</p>
 
         </div>
 
@@ -278,6 +286,8 @@ spec文件中拒绝版本2.8及其所有次要版本，以避免潜在的崩溃�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/" rel="tag">会议纪要</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E9%87%8D%E6%9E%84/" rel="tag">存储重构</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -289,7 +299,7 @@ spec文件中拒绝版本2.8及其所有次要版本，以避免潜在的崩溃�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_RGW_Refactoring_Meeting_2024-03-06/&title=《Ceph RGW Refactoring Meeting 2024-03-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_RGW_Refactoring_Meeting_2024-03-06/&title=《Ceph RGW重构会议 2024-03-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -299,7 +309,7 @@ spec文件中拒绝版本2.8及其所有次要版本，以避免潜在的崩溃�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_RGW_Refactoring_Meeting_2024-03-06/&title=《Ceph RGW Refactoring Meeting 2024-03-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_RGW_Refactoring_Meeting_2024-03-06/&title=《Ceph RGW重构会议 2024-03-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -309,7 +319,7 @@ spec文件中拒绝版本2.8及其所有次要版本，以避免潜在的崩溃�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2024-03-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_RGW_Refactoring_Meeting_2024-03-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW重构会议 2024-03-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_RGW_Refactoring_Meeting_2024-03-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -339,7 +349,7 @@ spec文件中拒绝版本2.8及其所有次要版本，以避免潜在的崩溃�
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2024/03/06/Ceph_Code_Walkthroughs_-_Crimson/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Code Walkthroughs: Crimson</h4>
+        <h4 class="title">&#39;Ceph Code Walkthroughs: Crimson&#39;</h4>
       </a>
     </div>
   
@@ -448,7 +458,7 @@ spec文件中拒绝版本2.8及其所有次要版本，以避免潜在的崩溃�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_RGW_Refactoring_Meeting_2024-03-06/&title=《Ceph RGW Refactoring Meeting 2024-03-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_RGW_Refactoring_Meeting_2024-03-06/&title=《Ceph RGW重构会议 2024-03-06》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -458,7 +468,7 @@ spec文件中拒绝版本2.8及其所有次要版本，以避免潜在的崩溃�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_RGW_Refactoring_Meeting_2024-03-06/&title=《Ceph RGW Refactoring Meeting 2024-03-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_RGW_Refactoring_Meeting_2024-03-06/&title=《Ceph RGW重构会议 2024-03-06》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -468,7 +478,7 @@ spec文件中拒绝版本2.8及其所有次要版本，以避免潜在的崩溃�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW Refactoring Meeting 2024-03-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_RGW_Refactoring_Meeting_2024-03-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph RGW重构会议 2024-03-06》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/03/06/Ceph_RGW_Refactoring_Meeting_2024-03-06/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

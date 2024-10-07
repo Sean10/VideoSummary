@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Ceph 分布式存储缓冲编码优化讨论 会议时间： 2023年某月某日 参会人员： Sam、Matt、Alan 等 会议内容： 一、会议背景 在 Ceph 分布式存储集群的负载分析中，缓冲编码和编解码过程被指出是性能瓶颈之一。 二、讨论议题  缓冲编码性能问题：  缓冲列表追加路径深度，导致性能损耗。 编码和编解码过程中存在函数调用开销。 编码和编解码路径存在重复计算和冗余操作">
+    <meta name="keywords" content="Ceph,CephFS,Distributed Storage,Performance Optimization,Buffer Encoding">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph 分布式存储缓冲编码优化讨论 会议时间： 2023年某月某日 参会人员： Sam、Matt、Alan 等 会议内容： 一、会议背景 Ceph 分布式存储集群负载分析中显示，缓冲编码和编解码过程是性能瓶颈之一。 二、讨论议题  缓冲编码性能问题：  缓冲列表追加路径深度导致性能损耗。 编码和编解码过程中存在函数调用开销。 编码和编解码路径存在重">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CDS Hammer (Day 1) - Buffer Encoding">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Buffer_Encoding/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Ceph 分布式存储缓冲编码优化讨论 会议时间： 2023年某月某日 参会人员： Sam、Matt、Alan 等 会议内容： 一、会议背景 在 Ceph 分布式存储集群的负载分析中，缓冲编码和编解码过程被指出是性能瓶颈之一。 二、讨论议题  缓冲编码性能问题：  缓冲列表追加路径深度，导致性能损耗。 编码和编解码过程中存在函数调用开销。 编码和编解码路径存在重复计算和冗余操作">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph 分布式存储缓冲编码优化讨论 会议时间： 2023年某月某日 参会人员： Sam、Matt、Alan 等 会议内容： 一、会议背景 Ceph 分布式存储集群负载分析中显示，缓冲编码和编解码过程是性能瓶颈之一。 二、讨论议题  缓冲编码性能问题：  缓冲列表追加路径深度导致性能损耗。 编码和编解码过程中存在函数调用开销。 编码和编解码路径存在重">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2014-10-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2014-10-29T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="Buffer Encoding">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,19 +190,20 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议主题</strong>： Ceph 分布式存储缓冲编码优化讨论</p>
 <p><strong>会议时间</strong>： 2023年某月某日</p>
 <p><strong>参会人员</strong>： Sam、Matt、Alan 等</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>一、会议背景</strong></p>
-<p>在 Ceph
-分布式存储集群的负载分析中，缓冲编码和编解码过程被指出是性能瓶颈之一。</p>
+<p>Ceph
+分布式存储集群负载分析中显示，缓冲编码和编解码过程是性能瓶颈之一。</p>
 <p><strong>二、讨论议题</strong></p>
 <ol type="1">
 <li><strong>缓冲编码性能问题</strong>：
 <ul>
-<li>缓冲列表追加路径深度，导致性能损耗。</li>
+<li>缓冲列表追加路径深度导致性能损耗。</li>
 <li>编码和编解码过程中存在函数调用开销。</li>
 <li>编码和编解码路径存在重复计算和冗余操作。</li>
 </ul></li>
@@ -205,9 +211,9 @@
 <ul>
 <li><strong>微优化</strong>：
 <ul>
-<li>尝试内联代码，减少函数调用开销。</li>
+<li>内联代码，减少函数调用开销。</li>
 <li>优化代码路径，减少重复计算和冗余操作。</li>
-<li>尝试减少缓冲追加和编码操作的次数。</li>
+<li>减少缓冲追加和编码操作的次数。</li>
 </ul></li>
 <li><strong>重构消息结构</strong>：
 <ul>
@@ -246,7 +252,7 @@
 </ol>
 <p><strong>五、其他事项</strong></p>
 <ol type="1">
-<li>会议期间讨论了 Ceph 分布式存储的内存对齐问题。</li>
+<li>讨论了 Ceph 分布式存储的内存对齐问题。</li>
 <li>Matt 提到了正在进行的优化方案，包括优化缓冲指针和共享策略。</li>
 </ol>
 <p><strong>六、会议总结</strong></p>
@@ -282,6 +288,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Buffer-Encoding/" rel="tag">Buffer Encoding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -341,18 +349,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_librbd_-_Shared_Flag_Object_Map/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Accelio_RDMA_Messenger/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Hammer (Day 2) - librbd: Shared Flag, Object Map</h4>
+        <h4 class="title">  CDS Hammer (Day 1) - Accelio RDMA Messenger  </h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Import_Export_Local_Import/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Calamari_API_Roadmap/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Hammer (Day 1) - Import/Export // Local Import</h4>
+        <h4 class="title">CDS Hammer (Day 1) - Calamari API Roadmap</h4>
       </a>
     </div>
   

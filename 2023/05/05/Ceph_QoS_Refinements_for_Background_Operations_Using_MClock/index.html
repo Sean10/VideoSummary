@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph中M clock算法的QoS优化 参会人员：Ceph研发团队成员 会议时间：[具体时间] 会议地点：[具体地点] 会议内容概述： 本次会议主要讨论了Ceph中使用M clock算法进行后台操作的QoS（服务质量）优化。M clock是一种用于IO资源分配的算法，目前在Ceph中作为SEF的一部分使用。会议详细介绍了M clock的工作原理、与之前使用的WPQ（加权优先队">
+    <meta name="keywords" content="Ceph,Distributed Storage,Ceph Storage,QoS Optimization,MClock Algorithm">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph中M clock算法的QoS优化 参会人员：Ceph研发团队成员 会议时间：[具体时间] 会议地点：[具体地点] 会议内容概述： 本次会议深入讨论了Ceph中使用M clock算法对后台操作进行QoS（服务质量）优化的方法。M clock算法是一种用于IO资源分配的算法，在Ceph的SEF模块中被使用。会议详细介绍了M clock的工作原理、与">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph QoS Refinements for Background Operations Using MClock">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Ceph_QoS_Refinements_for_Background_Operations_Using_MClock/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph中M clock算法的QoS优化 参会人员：Ceph研发团队成员 会议时间：[具体时间] 会议地点：[具体地点] 会议内容概述： 本次会议主要讨论了Ceph中使用M clock算法进行后台操作的QoS（服务质量）优化。M clock是一种用于IO资源分配的算法，目前在Ceph中作为SEF的一部分使用。会议详细介绍了M clock的工作原理、与之前使用的WPQ（加权优先队">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Ceph中M clock算法的QoS优化 参会人员：Ceph研发团队成员 会议时间：[具体时间] 会议地点：[具体地点] 会议内容概述： 本次会议深入讨论了Ceph中使用M clock算法对后台操作进行QoS（服务质量）优化的方法。M clock算法是一种用于IO资源分配的算法，在Ceph的SEF模块中被使用。会议详细介绍了M clock的工作原理、与">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Ceph Storage">
+<meta property="article:tag" content="QoS Optimization">
+<meta property="article:tag" content="MClock Algorithm">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -160,7 +165,7 @@
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph%E4%B8%ADm-clock%E7%AE%97%E6%B3%95%E7%9A%84qos%E4%BC%98%E5%8C%96"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph中M
-clock算法的QoS优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98ceph%E7%A0%94%E5%8F%91%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：Ceph研发团队成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容概述：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%BA%BA%E8%AE%B0%E5%BD%95%E4%BA%BA%E5%A7%93%E5%90%8D"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">会议记录人：[记录人姓名]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">会议结束时间：[具体时间]</span></a></li></ol></li></ol>
+clock算法的QoS优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98ceph%E7%A0%94%E5%8F%91%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：Ceph研发团队成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%B6%E9%97%B4"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议时间：[具体时间]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容概述：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议总结：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -186,16 +191,17 @@ clock算法的QoS优化</span></a></li><li class="post-toc-item post-toc-level-4
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题ceph中m-clock算法的qos优化">会议主题：Ceph中M
 clock算法的QoS优化</h4>
 <h4 id="参会人员ceph研发团队成员">参会人员：Ceph研发团队成员</h4>
 <h4 id="会议时间具体时间">会议时间：[具体时间]</h4>
 <h4 id="会议地点具体地点">会议地点：[具体地点]</h4>
 <h4 id="会议内容概述">会议内容概述：</h4>
-<p>本次会议主要讨论了Ceph中使用M
-clock算法进行后台操作的QoS（服务质量）优化。M
-clock是一种用于IO资源分配的算法，目前在Ceph中作为SEF的一部分使用。会议详细介绍了M
+<p>本次会议深入讨论了Ceph中使用M
+clock算法对后台操作进行QoS（服务质量）优化的方法。M
+clock算法是一种用于IO资源分配的算法，在Ceph的SEF模块中被使用。会议详细介绍了M
 clock的工作原理、与之前使用的WPQ（加权优先队列）的对比、以及M
 clock的优化和测试结果。</p>
 <h4 id="主要议题">主要议题：</h4>
@@ -203,13 +209,12 @@ clock的优化和测试结果。</p>
 <li><strong>M clock算法介绍</strong>：
 <ul>
 <li>M clock是一种用于IO资源分配的算法，主要用于Ceph中的SEF模块。</li>
-<li>M
-clock通过三个参数（reservation、limit、weight）来控制IO资源的分配。</li>
+<li>通过三个参数（reservation、limit、weight）控制IO资源的分配。</li>
 </ul></li>
 <li><strong>与WPQ的对比</strong>：
 <ul>
 <li>WPQ是之前Ceph OSDs使用的调度器，每个操作都有一个优先级和成本。</li>
-<li>WPQ的缺点包括缺乏资源分配能力、无法区分不同类型的操作，以及需要大量配置选项来控制后台操作。</li>
+<li>WPQ缺乏资源分配能力、无法区分不同类型的操作，且需要大量配置选项来控制后台操作。</li>
 </ul></li>
 <li><strong>M clock的优化</strong>：
 <ul>
@@ -219,10 +224,9 @@ clock的成本模型，使其更加动态，能够反映操作的实际IO大小�
 </ul></li>
 <li><strong>测试结果</strong>：
 <ul>
-<li>在内部实验室环境中进行了测试，结果显示M
+<li>在内部实验室环境中进行的测试显示，M
 clock在恢复操作和客户端操作方面表现优于WPQ。</li>
-<li>特别是在恢复操作方面，M
-clock的性能提升显著，且客户端操作的延迟更低。</li>
+<li>在恢复操作方面，M clock的性能提升显著，且客户端操作的延迟更低。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项：</h4>
@@ -241,8 +245,6 @@ clock的性能提升显著，且客户端操作的延迟更低。</li>
 clock算法的QoS优化，通过与WPQ的对比，展示了M
 clock在性能和用户友好性方面的优势。团队将继续进行测试和优化，以确保M
 clock能够在实际生产环境中稳定高效地运行。</p>
-<h4 id="会议记录人记录人姓名">会议记录人：[记录人姓名]</h4>
-<h4 id="会议结束时间具体时间">会议结束时间：[具体时间]</h4>
 
         </div>
 
@@ -273,6 +275,8 @@ clock能够在实际生产环境中稳定高效地运行。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Storage/" rel="tag">Ceph Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MClock-Algorithm/" rel="tag">MClock Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/QoS-Optimization/" rel="tag">QoS Optimization</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -332,9 +336,9 @@ clock能够在实际生产环境中稳定高效地运行。</p>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/05/Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM</h4>
+        <h4 class="title">&#39;Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey&#39;</h4>
       </a>
     </div>
   

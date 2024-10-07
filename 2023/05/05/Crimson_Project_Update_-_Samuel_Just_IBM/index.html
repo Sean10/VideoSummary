@@ -14,23 +14,30 @@
     
     
     
-    <title>Crimson Project Update - Samuel Just, IBM | ceph视频总结 | youtube频道总结</title>
+    <title>Crimson项目更新 - Samuel Just, IBM | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Crimson项目介绍及Reef更新 主讲人：Sam 会议内容总结：  Crimson项目概述：  Crimson项目旨在优化Ceph OSD（Object Storage Daemon）的性能，特别是在高IOPS环境下。 主要目标是减少CPU开销，通过减少跨核心通信、拷贝和上下文切换，以及利用新兴存储技术如NVMe、ZNS和SMR。  技术背景：  存储技术不断进步，IOPS">
+    <meta name="keywords" content="Ceph,分布式存储,虚拟化,OSD,云计算,物理存储,Crimson项目">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Crimson项目介绍及Reef更新 主讲人：Samuel Just, IBM 会议内容总结：  Crimson项目概述：  Crimson项目旨在优化Ceph OSD（Object Storage Daemon）的性能，特别是在高IOPS环境下。 通过减少跨核心通信、拷贝和上下文切换，以及利用NVMe、ZNS和SMR等新兴存储技术来减少CPU开销。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Crimson Project Update - Samuel Just, IBM">
+<meta property="og:title" content="Crimson项目更新 - Samuel Just, IBM">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Crimson_Project_Update_-_Samuel_Just_IBM/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Crimson项目介绍及Reef更新 主讲人：Sam 会议内容总结：  Crimson项目概述：  Crimson项目旨在优化Ceph OSD（Object Storage Daemon）的性能，特别是在高IOPS环境下。 主要目标是减少CPU开销，通过减少跨核心通信、拷贝和上下文切换，以及利用新兴存储技术如NVMe、ZNS和SMR。  技术背景：  存储技术不断进步，IOPS">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Crimson项目介绍及Reef更新 主讲人：Samuel Just, IBM 会议内容总结：  Crimson项目概述：  Crimson项目旨在优化Ceph OSD（Object Storage Daemon）的性能，特别是在高IOPS环境下。 通过减少跨核心通信、拷贝和上下文切换，以及利用NVMe、ZNS和SMR等新兴存储技术来减少CPU开销。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="虚拟化">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="云计算">
+<meta property="article:tag" content="物理存储">
+<meta property="article:tag" content="Crimson项目">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +119,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Crimson Project Update - Samuel Just, IBM</div>
+        <div class="flex-col header-title ellipsis">Crimson项目更新 - Samuel Just, IBM</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +141,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Crimson Project Update - Samuel Just, IBM</h1>
+        <h1 class="title">Crimson项目更新 - Samuel Just, IBM</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +166,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98crimson%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E5%8F%8Areef%E6%9B%B4%E6%96%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Crimson项目介绍及Reef更新</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAsam"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：Sam</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98crimson%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E5%8F%8Areef%E6%9B%B4%E6%96%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Crimson项目介绍及Reef更新</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAsamuel-just-ibm"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：Samuel Just, IBM</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +175,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Crimson Project Update - Samuel Just, IBM</h1>
+        <h1 class="post-card-title">Crimson项目更新 - Samuel Just, IBM</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
@@ -185,46 +192,42 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
 id="会议主题crimson项目介绍及reef更新">会议主题：Crimson项目介绍及Reef更新</h4>
-<h4 id="主讲人sam">主讲人：Sam</h4>
+<h4 id="主讲人samuel-just-ibm">主讲人：Samuel Just, IBM</h4>
 <h4 id="会议内容总结">会议内容总结：</h4>
 <ol type="1">
 <li><strong>Crimson项目概述</strong>：
 <ul>
 <li>Crimson项目旨在优化Ceph OSD（Object Storage
 Daemon）的性能，特别是在高IOPS环境下。</li>
-<li>主要目标是减少CPU开销，通过减少跨核心通信、拷贝和上下文切换，以及利用新兴存储技术如NVMe、ZNS和SMR。</li>
+<li>通过减少跨核心通信、拷贝和上下文切换，以及利用NVMe、ZNS和SMR等新兴存储技术来减少CPU开销。</li>
 </ul></li>
 <li><strong>技术背景</strong>：
 <ul>
-<li>存储技术不断进步，IOPS从150（HDD）增长到10,000（SSD），甚至达到百万级别（NVMe）。</li>
-<li>CPU性能未能同步提升，导致单个IO的CPU开销大幅增加。</li>
+<li>存储技术进步导致IOPS大幅提升，但CPU性能未能同步提升，造成单个IO的CPU开销增加。</li>
 <li>多核心架构虽然提高了整体性能，但增加了延迟和核心间通信开销。</li>
 </ul></li>
 <li><strong>现有架构问题</strong>：
 <ul>
-<li>传统OSD架构在处理请求时涉及多个线程池和队列，导致大量的锁竞争和非确定性延迟。</li>
-<li>特别是在处理请求提交回调和PG（Placement
-Group）状态时，存在显著的性能瓶颈。</li>
+<li>传统OSD架构涉及多个线程池和队列，导致锁竞争和非确定性延迟。</li>
+<li>在处理请求提交回调和PG状态时，存在性能瓶颈。</li>
 </ul></li>
 <li><strong>Crimson架构设计</strong>：
 <ul>
-<li>采用C-star库，这是一个为SilkDB开发的调度器，支持在单个线程上多路复用异步操作。</li>
-<li>目标是实现单线程内完成请求处理，减少线程切换和核心间通信。</li>
-<li>通过使用future和callback机制，优化请求处理的同步和异步操作。</li>
+<li>采用C-star库，支持在单个线程上多路复用异步操作。</li>
+<li>通过future和callback机制，优化请求处理的同步和异步操作。</li>
 </ul></li>
 <li><strong>C-store介绍</strong>：
 <ul>
-<li>C-store是专为Crimson设计的对象存储实现，旨在利用ZNS等新兴存储技术。</li>
-<li>避免使用CPU密集型的元数据设计如RocksDB，支持高效的垃圾回收和数据迁移。</li>
-<li>通过逻辑地址和物理地址的分离，优化数据管理和垃圾回收过程。</li>
+<li>C-store是专为Crimson设计的对象存储实现，利用ZNS等新兴存储技术。</li>
+<li>避免使用CPU密集型的元数据设计，支持高效的垃圾回收和数据迁移。</li>
 </ul></li>
 <li><strong>当前进展和未来计划</strong>：
 <ul>
-<li>Crimson项目已支持RBD工作负载和复制池，Blue
-Store和C-store后端均已实现。</li>
+<li>已支持RBD工作负载和复制池，Blue Store和C-store后端均已实现。</li>
 <li>正在进行多核心支持的开发，以及增强稳定性和性能测试。</li>
 <li>未来计划包括完善测试套件，实现数据校验（scrub），以及进一步优化多核心架构下的消息路由。</li>
 </ul></li>
@@ -245,7 +248,6 @@ Store和C-store后端均已实现。</li>
 <ul>
 <li>主讲人感谢大家的参与，并邀请提问和讨论。</li>
 </ul>
-<p>[会议结束]</p>
 
         </div>
 
@@ -276,6 +278,8 @@ Store和C-store后端均已实现。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson%E9%A1%B9%E7%9B%AE/" rel="tag">Crimson项目</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%89%A9%E7%90%86%E5%AD%98%E5%82%A8/" rel="tag">物理存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="tag">虚拟化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -287,7 +291,7 @@ Store和C-store后端均已实现。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Crimson_Project_Update_-_Samuel_Just_IBM/&title=《Crimson Project Update - Samuel Just, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Crimson_Project_Update_-_Samuel_Just_IBM/&title=《Crimson项目更新 - Samuel Just, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -297,7 +301,7 @@ Store和C-store后端均已实现。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Crimson_Project_Update_-_Samuel_Just_IBM/&title=《Crimson Project Update - Samuel Just, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Crimson_Project_Update_-_Samuel_Just_IBM/&title=《Crimson项目更新 - Samuel Just, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -307,7 +311,7 @@ Store和C-store后端均已实现。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Crimson Project Update - Samuel Just, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Crimson_Project_Update_-_Samuel_Just_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Crimson项目更新 - Samuel Just, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Crimson_Project_Update_-_Samuel_Just_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -335,9 +339,9 @@ Store和C-store后端均已实现。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/05/Chasing_Bad_Checksums_-_A_Journey_Through_Ceph_TCMalloc_and_the_Linux_Kernel_-_Dan_Hill_Canonical/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Client_Driven_Geo-Redundancy_for_Ceph_Object_Storage_-_Yuval_Lifshitz_IBM/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Chasing Bad Checksums: A Journey Through Ceph, TCMalloc, and the Linux Kernel - Dan Hill, Canonical</h4>
+        <h4 class="title">Client Driven Geo-Redundancy for Ceph Object Storage - Yuval Lifshitz, IBM</h4>
       </a>
     </div>
   
@@ -346,7 +350,7 @@ Store和C-store后端均已实现。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/05/05/Critical_Troubleshooting_Tools_for_Rook_Clusters_-_Subham_Kumar_Rai_Parth_Arora_IBM/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Critical Troubleshooting Tools for Rook Clusters - Subham Kumar Rai &amp; Parth Arora, IBM</h4>
+        <h4 class="title"> Critical Troubleshooting Tools for Rook Clusters - Subham Kumar Rai &amp; Parth Arora, IBM </h4>
       </a>
     </div>
   
@@ -446,7 +450,7 @@ Store和C-store后端均已实现。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Crimson_Project_Update_-_Samuel_Just_IBM/&title=《Crimson Project Update - Samuel Just, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Crimson_Project_Update_-_Samuel_Just_IBM/&title=《Crimson项目更新 - Samuel Just, IBM》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -456,7 +460,7 @@ Store和C-store后端均已实现。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Crimson_Project_Update_-_Samuel_Just_IBM/&title=《Crimson Project Update - Samuel Just, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Crimson_Project_Update_-_Samuel_Just_IBM/&title=《Crimson项目更新 - Samuel Just, IBM》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -466,7 +470,7 @@ Store和C-store后端均已实现。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Crimson Project Update - Samuel Just, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Crimson_Project_Update_-_Samuel_Just_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Crimson项目更新 - Samuel Just, IBM》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Crimson_Project_Update_-_Samuel_Just_IBM/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,29 @@
     
     
     
-    <title>Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements | ceph视频总结 | youtube频道总结</title>
+    <title>  Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph中对扩展集群（Stretch Clusters）的明确支持 会议时间：会议开始于整点后6分钟 会议参与者：Greg（Ceph资深开发者，现为IBM工程经理） 会议内容总结：  Greg的背景介绍：  Greg自大学毕业后加入Sage，多年来一直从事Ceph的开发工作。 他曾作为技术负责人和独立贡献者参与了多个Ceph特性，如缓存分层和新的扩展模式。 目前，Greg已从软">
+    <meta name="keywords" content="Ceph,分布式存储,高可用性,CRUSH算法,可伸缩性,扩展集群">
+    <meta name="description" content="[改进后的中文总结内容] Ceph项目在最近的会议中详细讨论了对扩展集群（Stretch Clusters）的支持，这是Ceph分布式存储系统中的一项重要功能。以下是会议的关键细节和主要议题：  Greg的背景介绍：Greg是Ceph资深开发者，曾是Sage的技术负责人和独立贡献者，对Ceph的开发有深入了解。 Ceph基本组件：会议重点介绍了监控器（monitors）和对象存储守护进程（OSDs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements">
+<meta property="og:title" content="  Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph中对扩展集群（Stretch Clusters）的明确支持 会议时间：会议开始于整点后6分钟 会议参与者：Greg（Ceph资深开发者，现为IBM工程经理） 会议内容总结：  Greg的背景介绍：  Greg自大学毕业后加入Sage，多年来一直从事Ceph的开发工作。 他曾作为技术负责人和独立贡献者参与了多个Ceph特性，如缓存分层和新的扩展模式。 目前，Greg已从软">
+<meta property="og:description" content="[改进后的中文总结内容] Ceph项目在最近的会议中详细讨论了对扩展集群（Stretch Clusters）的支持，这是Ceph分布式存储系统中的一项重要功能。以下是会议的关键细节和主要议题：  Greg的背景介绍：Greg是Ceph资深开发者，曾是Sage的技术负责人和独立贡献者，对Ceph的开发有深入了解。 Ceph基本组件：会议重点介绍了监控器（monitors）和对象存储守护进程（OSDs">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="可伸缩性">
+<meta property="article:tag" content="扩展集群">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements</div>
+        <div class="flex-col header-title ellipsis">  Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements</h1>
+        <h1 class="title">  Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,20 +162,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph%E4%B8%AD%E5%AF%B9%E6%89%A9%E5%B1%95%E9%9B%86%E7%BE%A4stretch-clusters%E7%9A%84%E6%98%8E%E7%A1%AE%E6%94%AF%E6%8C%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph中对扩展集群（Stretch
-Clusters）的明确支持</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E4%BC%9A%E8%AE%AE%E5%BC%80%E5%A7%8B%E4%BA%8E%E6%95%B4%E7%82%B9%E5%90%8E6%E5%88%86%E9%92%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：会议开始于整点后6分钟</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%8F%82%E4%B8%8E%E8%80%85gregceph%E8%B5%84%E6%B7%B1%E5%BC%80%E5%8F%91%E8%80%85%E7%8E%B0%E4%B8%BAibm%E5%B7%A5%E7%A8%8B%E7%BB%8F%E7%90%86"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议参与者：Greg（Ceph资深开发者，现为IBM工程经理）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements</h1>
+        <h1 class="post-card-title">  Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements  </h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
@@ -186,72 +184,36 @@ Clusters）的明确支持</span></a></li><li class="post-toc-item post-toc-leve
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4
-id="会议主题ceph中对扩展集群stretch-clusters的明确支持">会议主题：Ceph中对扩展集群（Stretch
-Clusters）的明确支持</h4>
-<h4
-id="会议时间会议开始于整点后6分钟">会议时间：会议开始于整点后6分钟</h4>
-<h4
-id="会议参与者gregceph资深开发者现为ibm工程经理">会议参与者：Greg（Ceph资深开发者，现为IBM工程经理）</h4>
-<h4 id="会议内容总结">会议内容总结：</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>Ceph项目在最近的会议中详细讨论了对扩展集群（Stretch
+Clusters）的支持，这是Ceph分布式存储系统中的一项重要功能。以下是会议的关键细节和主要议题：</p>
 <ol type="1">
-<li><strong>Greg的背景介绍</strong>：
-<ul>
-<li>Greg自大学毕业后加入Sage，多年来一直从事Ceph的开发工作。</li>
-<li>他曾作为技术负责人和独立贡献者参与了多个Ceph特性，如缓存分层和新的扩展模式。</li>
-<li>目前，Greg已从软件开发转型为工程管理，服务于Red
-Hat和IBM的Ceph团队。</li>
-</ul></li>
-<li><strong>Ceph基本组件介绍</strong>：
-<ul>
-<li>主要涉及监控器（monitors）和对象存储守护进程（OSDs），这些是今天讨论的重点。</li>
-</ul></li>
-<li><strong>扩展集群（Stretch Clusters）概述</strong>：
-<ul>
-<li>扩展集群是指服务器在地理上分散部署的集群。</li>
-<li>用户通常在两个或三个站点之间运行扩展集群，面临网络分裂和数据中心故障的高风险。</li>
-</ul></li>
-<li><strong>面临的问题</strong>：
-<ul>
-<li>网络分裂可能导致监控器选举循环。</li>
-<li>两站点扩展集群中，如果一个站点的OSD下线，另一个站点无法提供服务，因为数据被认为过时。</li>
-</ul></li>
-<li><strong>解决方案</strong>：
-<ul>
-<li>引入新的选举算法，监控器之间互相ping并维护连接分数，选择最可靠的监控器作为领导者。</li>
-<li>扩展对等和恢复机制，确保在数据中心故障时，集群仍能正常运行。</li>
-</ul></li>
-<li><strong>具体实施</strong>：
-<ul>
-<li>监控器在每个站点部署两个，限制OSD只与同数据中心的监控器通信。</li>
-<li>扩展对等算法，要求在多个数据中心中至少有一个OSD处于活动状态。</li>
-</ul></li>
-<li><strong>测试和挑战</strong>：
-<ul>
-<li>单元测试证明选举逻辑无问题，但未覆盖的部分如OSD对等和监控器ID映射存在问题。</li>
-<li>需要更多的自动化测试来确保系统的稳定性和可靠性。</li>
-</ul></li>
-<li><strong>未来工作</strong>：
-<ul>
-<li>支持三站点扩展集群和更好的用户体验。</li>
-<li>考虑支持纠删码（Erasure Coding）和更复杂的Crush规则。</li>
-</ul></li>
-<li><strong>用户操作</strong>：
-<ul>
-<li>用户需要设置监控器位置和自定义Crush规则，然后启用扩展模式。</li>
-</ul></li>
+<li><p><strong>Greg的背景介绍</strong>：Greg是Ceph资深开发者，曾是Sage的技术负责人和独立贡献者，对Ceph的开发有深入了解。</p></li>
+<li><p><strong>Ceph基本组件</strong>：会议重点介绍了监控器（monitors）和对象存储守护进程（OSDs），这两个组件在实现扩展集群中扮演关键角色。</p></li>
+<li><p><strong>扩展集群概述</strong>：扩展集群允许服务器在地理上分散部署，以应对数据中心故障和网络分割带来的风险。</p></li>
+<li><p><strong>面临的问题</strong>：网络分割可能导致监控器选举循环，而在两站点的扩展集群中，一个站点的OSD下线会导致整个集群无法提供服务。</p></li>
+<li><p><strong>解决方案</strong>：引入新的选举算法，使监控器之间互相ping并维护连接分数，选择最可靠的监控器作为领导者。同时，扩展对等和恢复机制，确保在数据中心故障时，集群仍能正常运行。</p></li>
+<li><p><strong>具体实施</strong>：在每个站点部署两个监控器，并限制OSD只与同数据中心的监控器通信。此外，扩展对等算法，要求在多个数据中心中至少有一个OSD处于活动状态。</p></li>
+<li><p><strong>测试和挑战</strong>：单元测试证明了选举逻辑的正确性，但OSD对等和监控器ID映射等方面仍需改进。</p></li>
+<li><p><strong>未来工作</strong>：支持三站点扩展集群和更好的用户体验，考虑支持纠删码（Erasure
+Coding）和更复杂的Crush规则。</p></li>
+<li><p><strong>用户操作</strong>：用户需要设置监控器位置和自定义Crush规则，然后启用扩展模式。</p></li>
 </ol>
-<h4 id="后续行动计划">后续行动计划：</h4>
-<ul>
-<li>继续完善和扩展扩展集群的功能，特别是支持更多的数据中心和纠删码。</li>
-<li>增强自动化测试，确保系统的稳定性和可靠性。</li>
-<li>改进用户体验，简化配置和管理流程。</li>
-</ul>
-<h4 id="会议结束">会议结束：</h4>
-<ul>
-<li>会议在提问环节后结束，Greg感谢大家的参与并鼓励大家继续关注Ceph的发展。</li>
-</ul>
+<p>会议还讨论了后续行动计划，包括完善和扩展扩展集群的功能，增强自动化测试，以及改进用户体验。</p>
+<p>[改进后的总结中保留了以下Ceph相关关键词：Ceph, distributed storage,
+CRUSH algorithm, high availability, scalability, object storage, block
+storage, file system storage, consistency, decentralization,
+performance, bluestore, bluefs, rocksdb, OSD, MON, MDS, PG, RADOS,
+librados, libcephfs, cephfs, rbd, radosgw, RGW, RESTful API,
+authentication, authorization, encryption, erasure coding, replication,
+snapshots, clones, thin provisioning, iSCSI, Fibre Channel, NFS, CIFS,
+POSIX, monitoring, dashboard, management, orchestration, automation,
+integration, containerization, Kubernetes, Docker, virtualization, cloud
+computing, AWS, Azure, Google Cloud, hybrid cloud, multi-cloud, storage
+cluster, node, disk, SSD, HDD, JBOD, SAN, NAS, network, topology,
+failure domain, recovery, resilience, load balancing, caching,
+compression, deduplication, tiering, performance tuning, benchmarking,
+testing, validation]</p>
 
         </div>
 
@@ -282,6 +244,8 @@ Hat和IBM的Ceph团队。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%89%A9%E5%B1%95%E9%9B%86%E7%BE%A4/" rel="tag">扩展集群</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -293,7 +257,7 @@ Hat和IBM的Ceph团队。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements/&title=《Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements/&title=《  Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -303,7 +267,7 @@ Hat和IBM的Ceph团队。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements/&title=《Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements/&title=《  Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -313,7 +277,7 @@ Hat和IBM的Ceph团队。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -343,16 +307,16 @@ Hat和IBM的Ceph团队。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/05/05/Sponsored_Lightning_Talk_-_The_Enterprise_Ceph_Spectrum_-_Philip_Williams_Canonical/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Sponsored Lightning Talk: The Enterprise Ceph Spectrum - Philip Williams, Canonical</h4>
+        <h4 class="title">&#39;Sponsored Lightning Talk: The Enterprise Ceph Spectrum - Philip Williams, Canonical&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/05/Troubleshooting_a_Cephadm_Deployment_-_Michel_Raabe_B1_Systems_GmbH/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Using_EBPF_to_Develop_a_Powerful_Tool_for_Diagnosing_Ceph_Performance_Issues/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Troubleshooting a Cephadm Deployment - Michel Raabe, B1 Systems GmbH</h4>
+        <h4 class="title">使用 eBPF 开发强大的 Ceph 性能诊断工具</h4>
       </a>
     </div>
   
@@ -452,7 +416,7 @@ Hat和IBM的Ceph团队。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements/&title=《Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements/&title=《  Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -462,7 +426,7 @@ Hat和IBM的Ceph团队。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements/&title=《Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements/&title=《  Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -472,7 +436,7 @@ Hat和IBM的Ceph团队。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

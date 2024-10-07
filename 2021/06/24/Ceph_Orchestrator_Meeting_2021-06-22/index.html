@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Orchestrator 周例会 会议时间：[具体日期] 参会人员：[参会人员名单] 会议议程：  KCLI 项目进展 Paramecio 适用性问题  会议内容： 1. KCLI 项目进展  项目介绍：介绍了使用 KCLI 项目来设置 Kubernetes 集群并通过 Rook 操作符启动 Ceph 集群的新计划。 技术细节：讨论了在个人笔记本上进行测试所需的资源（如足够的内">
+    <meta name="keywords" content="Ceph,Kubernetes,Orchestrator,Rook,SSH">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Orchestrator 周例会 会议时间：2021年6月22日 参会人员：[参会人员名单] 会议议程：  KCLI 项目进展 Paramecio 适用性问题  会议内容： 1. KCLI 项目进展  项目介绍：介绍了使用 KCLI 项目通过 Rook 操作符在 Kubernetes 集群中设置和启动 Ceph 集群的新计划。 技术细节：讨论了进行测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2021-06-22">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/06/24/Ceph_Orchestrator_Meeting_2021-06-22/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Orchestrator 周例会 会议时间：[具体日期] 参会人员：[参会人员名单] 会议议程：  KCLI 项目进展 Paramecio 适用性问题  会议内容： 1. KCLI 项目进展  项目介绍：介绍了使用 KCLI 项目来设置 Kubernetes 集群并通过 Rook 操作符启动 Ceph 集群的新计划。 技术细节：讨论了在个人笔记本上进行测试所需的资源（如足够的内">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Orchestrator 周例会 会议时间：2021年6月22日 参会人员：[参会人员名单] 会议议程：  KCLI 项目进展 Paramecio 适用性问题  会议内容： 1. KCLI 项目进展  项目介绍：介绍了使用 KCLI 项目通过 Rook 操作符在 Kubernetes 集群中设置和启动 Ceph 集群的新计划。 技术细节：讨论了进行测试">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-06-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="SSH">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98orchestrator-%E5%91%A8%E4%BE%8B%E4%BC%9A"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Orchestrator 周例会</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[参会人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%AE%E7%A8%8B"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议议程：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#kcli-%E9%A1%B9%E7%9B%AE%E8%BF%9B%E5%B1%95"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">1. KCLI 项目进展</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#paramecio-%E9%80%82%E7%94%A8%E6%80%A7%E9%97%AE%E9%A2%98"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">2. Paramecio 适用性问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">其他事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98orchestrator-%E5%91%A8%E4%BE%8B%E4%BC%9A"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Orchestrator 周例会</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B42021%E5%B9%B46%E6%9C%8822%E6%97%A5"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：2021年6月22日</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[参会人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%AE%E7%A8%8B"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">会议议程：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议内容：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#kcli-%E9%A1%B9%E7%9B%AE%E8%BF%9B%E5%B1%95"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">1. KCLI 项目进展</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#paramecio-%E9%80%82%E7%94%A8%E6%80%A7%E9%97%AE%E9%A2%98"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">2. Paramecio 适用性问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">其他事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,9 +190,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题orchestrator-周例会">会议主题：Orchestrator 周例会</h4>
-<h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
+<h4 id="会议时间2021年6月22日">会议时间：2021年6月22日</h4>
 <h4 id="参会人员参会人员名单">参会人员：[参会人员名单]</h4>
 <h4 id="会议议程">会议议程：</h4>
 <ol type="1">
@@ -197,23 +203,23 @@
 <h4 id="会议内容">会议内容：</h4>
 <h5 id="kcli-项目进展">1. KCLI 项目进展</h5>
 <ul>
-<li><strong>项目介绍</strong>：介绍了使用 KCLI 项目来设置 Kubernetes
-集群并通过 Rook 操作符启动 Ceph 集群的新计划。</li>
-<li><strong>技术细节</strong>：讨论了在个人笔记本上进行测试所需的资源（如足够的内存和硬盘空间），并探讨了如何简化开发和集成测试过程。</li>
-<li><strong>工具对比</strong>：比较了 KCLI 和 Vagrant
-的相似性，讨论了各自的优缺点，以及是否需要安装额外的工具。</li>
+<li><strong>项目介绍</strong>：介绍了使用 KCLI 项目通过 Rook 操作符在
+Kubernetes 集群中设置和启动 Ceph 集群的新计划。</li>
+<li><strong>技术细节</strong>：讨论了进行测试所需的资源，如内存和硬盘空间，并探讨如何简化开发和集成测试过程。</li>
+<li><strong>工具对比</strong>：比较了 KCLI 和
+Vagrant，讨论了各自的优缺点，以及是否需要安装额外的工具。</li>
 <li><strong>团队反馈</strong>：欢迎团队成员提出意见和建议。</li>
 </ul>
 <h5 id="paramecio-适用性问题">2. Paramecio 适用性问题</h5>
 <ul>
 <li><strong>问题描述</strong>：讨论了 Paramecio 作为 SSH
-的封装层，存在功能限制和错误信息隐藏的问题。</li>
+封装层存在功能限制和错误信息隐藏的问题。</li>
 <li><strong>替代方案</strong>：探讨了使用 ZincSSH
-或其他库的可能性，以及是否需要一个同步库。</li>
+或其他库的可能性，并考虑是否需要一个同步库。</li>
 <li><strong>技术挑战</strong>：讨论了如何处理远程主机上的多命令执行问题，包括使用持久性
 SSH 连接或远程 Python 解释器。</li>
 <li><strong>团队决策</strong>：初步决定尝试使用 AsyncSSH，并考虑移除对
-Remoto 的依赖，以简化实现。</li>
+Remoto 的依赖。</li>
 </ul>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
@@ -238,8 +244,6 @@ Dashboard 模块的改进。</li>
 </ul>
 <h4 id="会议结束">会议结束：</h4>
 <p>会议于[具体时间]结束，下次会议定于下周进行。</p>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的主要议题、讨论内容、决定事项及后续行动计划。</p>
 
         </div>
 
@@ -270,6 +274,8 @@ Dashboard 模块的改进。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SSH/" rel="tag">SSH</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -331,7 +337,7 @@ Dashboard 模块的改进。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/06/24/Ceph_Month_2021_-_Crimson_Update/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Month 2021: Crimson Update</h4>
+        <h4 class="title">&#39;Ceph Month 2021: Crimson Update&#39;</h4>
       </a>
     </div>
   
@@ -340,7 +346,7 @@ Dashboard 模块的改进。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/06/23/Ceph_Month_2021_-_CephFS_update/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Month 2021: CephFS update</h4>
+        <h4 class="title">&#39;Ceph Month 2021: CephFS update&#39;</h4>
       </a>
     </div>
   

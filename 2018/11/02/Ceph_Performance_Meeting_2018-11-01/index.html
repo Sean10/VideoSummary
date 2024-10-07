@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间：万圣节之后的一天 参会人员：Mark、Nick、Josh、Sage、Igor、Radek、Adam（远程） 会议主题：Ceph分布式存储项目进展与讨论 一、会议关键细节  本次会议由于假期原因，参会人员较少，但讨论内容丰富。 会议主要围绕Ceph项目的PR（Pull Requests）进展、代码优化、性能提升等方面展开。  二、讨论的主要议题  PR进展：  Radek本周提交">
+    <meta name="keywords" content="Ceph,BlueStore,Distributed Storage,Performance Optimization,PR Review">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间：2018年11月1日（万圣节之后的一天） 参会人员：Mark、Nick、Josh、Sage、Igor、Radek、Adam（远程） 会议主题：Ceph分布式存储项目进展与讨论 一、会议关键细节  由于假期原因，参会人员较少，但讨论内容丰富。 会议主要围绕Ceph项目的Pull Requests（PRs）进展、代码优化、性能提升等方面展开。  二、讨论的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Performance Meeting 2018-11-01">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/11/02/Ceph_Performance_Meeting_2018-11-01/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间：万圣节之后的一天 参会人员：Mark、Nick、Josh、Sage、Igor、Radek、Adam（远程） 会议主题：Ceph分布式存储项目进展与讨论 一、会议关键细节  本次会议由于假期原因，参会人员较少，但讨论内容丰富。 会议主要围绕Ceph项目的PR（Pull Requests）进展、代码优化、性能提升等方面展开。  二、讨论的主要议题  PR进展：  Radek本周提交">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间：2018年11月1日（万圣节之后的一天） 参会人员：Mark、Nick、Josh、Sage、Igor、Radek、Adam（远程） 会议主题：Ceph分布式存储项目进展与讨论 一、会议关键细节  由于假期原因，参会人员较少，但讨论内容丰富。 会议主要围绕Ceph项目的Pull Requests（PRs）进展、代码优化、性能提升等方面展开。  二、讨论的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-11-01T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-11-02T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="BlueStore">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="PR Review">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,32 +183,33 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议纪要</p>
-<p>会议时间：万圣节之后的一天
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
+<p>会议时间：2018年11月1日（万圣节之后的一天）
 参会人员：Mark、Nick、Josh、Sage、Igor、Radek、Adam（远程）
 会议主题：Ceph分布式存储项目进展与讨论</p>
 <p>一、会议关键细节</p>
 <ol type="1">
-<li>本次会议由于假期原因，参会人员较少，但讨论内容丰富。</li>
-<li>会议主要围绕Ceph项目的PR（Pull
-Requests）进展、代码优化、性能提升等方面展开。</li>
+<li>由于假期原因，参会人员较少，但讨论内容丰富。</li>
+<li>会议主要围绕Ceph项目的Pull
+Requests（PRs）进展、代码优化、性能提升等方面展开。</li>
 </ol>
 <p>二、讨论的主要议题</p>
 <ol type="1">
 <li><strong>PR进展</strong>：
 <ul>
-<li>Radek本周提交了3个新的PRS，其中包括一个关于超合并缓冲列表的PR，受到了大家的关注。</li>
-<li>Sage正在审查一个关于BlueFest的PRS，目前处于初步审查阶段。</li>
-<li>Erik正在研究IO节流器，对此大家表示支持。</li>
-<li>Josh提到CS Career项目中存在一些问题，需要进一步解决。</li>
+<li>Radek本周提交了3个新的PRs，包括一个关于超合并缓冲列表的PR，引起了广泛关注。</li>
+<li>Sage正在审查一个关于BlueFest的PR，目前处于初步审查阶段。</li>
+<li>Erik正在研究IO节流器，得到大家的支持。</li>
+<li>Josh提到了CS Career项目中存在的问题，需要进一步解决。</li>
 </ul></li>
 <li><strong>代码优化与性能提升</strong>：
 <ul>
-<li>Mark提到Radek的合并缓冲列表PR可能会对代码性能产生积极影响。</li>
-<li>Sage提出了关于原子对象PR的命名问题，目前尚无定论。</li>
-<li>大家讨论了关于C++接口的稳定性问题，考虑放弃对C++
+<li>Mark提到Radek的合并缓冲列表PR可能对代码性能产生积极影响。</li>
+<li>Sage提出关于原子对象PR的命名问题，尚未确定。</li>
+<li>大家讨论了C++接口的稳定性问题，考虑放弃对C++
 API的稳定性保证，以便更好地进行代码维护和优化。</li>
-<li>Matt提到Adam的一个旧PRS最近得到了更新，值得关注。</li>
+<li>Matt提到Adam的一个旧PR最近得到了更新，值得关注。</li>
 </ul></li>
 <li><strong>BlueStore性能优化</strong>：
 <ul>
@@ -222,7 +228,7 @@ API的稳定性保证，以便更好地进行代码维护和优化。</li>
 <p>四、后续行动计划</p>
 <ol type="1">
 <li>Mark将继续跟进Radek的合并缓冲列表PR。</li>
-<li>Sage将继续审查BlueFest的PRS。</li>
+<li>Sage将继续审查BlueFest的PR。</li>
 <li>大家将共同讨论C++接口的稳定性问题。</li>
 <li>Nick和Josh将研究BlueStore的性能优化方案。</li>
 <li>会议结束后，参会人员将就讨论内容进行进一步沟通和协作。</li>
@@ -257,6 +263,8 @@ API的稳定性保证，以便更好地进行代码维护和优化。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PR-Review/" rel="tag">PR Review</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -318,7 +326,7 @@ API的稳定性保证，以便更好地进行代码维护和优化。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2018/11/02/2018-10-23_-_-_Ceph_Code_walk-through_-_Consistency_with_OSD_Peering/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2018-10-23 :: Ceph Code walk-through: Consistency with OSD Peering</h4>
+        <h4 class="title">&#39;2018-10-23 :: Ceph Code walk-through: Consistency with OSD Peering&#39;</h4>
       </a>
     </div>
   

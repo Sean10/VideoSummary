@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议由Bahid主持，他是Digicolor的云工程师，分享了公司在设计和实施对象存储服务方面的经验。由于主讲人Yavash无法现场出席，他的演讲以预录视频形式播放。 主要议题  Digicolor简介：Digicolor是中东地区最大的电子商务平台，每日页面浏览量超过1800万，促销期间可达2亿。 问题定义：公司面临高流量和高数据存储需求，原有硬件资源共享导致成本上升。">
+    <meta name="keywords" content="Ceph,High Availability,Object Storage,Erasure Coding,Cloud Storage">
+    <meta name="description" content="[改进后的中文总结内容] 在本次会议中，Digicolor的云工程师Bahid分享了公司设计和实施对象存储服务的经验。由于主要发言人Yavash无法到场，其演讲以预录视频形式进行。 主要议题包括：  公司概况：Digicolor是中东地区最大的电子商务平台，日均页面浏览量超过1800万，促销期间可达2亿。 问题定义：面临高流量和高数据存储需求，原有硬件资源共享导致成本上升。 解决方案：设计并实施自">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Implementing a Resilient Ceph RGW Object Storage with Erasure Coded Data Pool as the Foundation...">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Implementing_a_Resilient_Ceph_RGW_Object_Storage_with_Erasure_Coded_Data_Pool_as_the_Foundation.../index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议由Bahid主持，他是Digicolor的云工程师，分享了公司在设计和实施对象存储服务方面的经验。由于主讲人Yavash无法现场出席，他的演讲以预录视频形式播放。 主要议题  Digicolor简介：Digicolor是中东地区最大的电子商务平台，每日页面浏览量超过1800万，促销期间可达2亿。 问题定义：公司面临高流量和高数据存储需求，原有硬件资源共享导致成本上升。">
+<meta property="og:description" content="[改进后的中文总结内容] 在本次会议中，Digicolor的云工程师Bahid分享了公司设计和实施对象存储服务的经验。由于主要发言人Yavash无法到场，其演讲以预录视频形式进行。 主要议题包括：  公司概况：Digicolor是中东地区最大的电子商务平台，日均页面浏览量超过1800万，促销期间可达2亿。 问题定义：面临高流量和高数据存储需求，原有硬件资源共享导致成本上升。 解决方案：设计并实施自">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="High Availability">
+<meta property="article:tag" content="Object Storage">
+<meta property="article:tag" content="Erasure Coding">
+<meta property="article:tag" content="Cloud Storage">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +161,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Implementing_a_Resilient_Ceph_RGW_Object_Storage_with_Erasure_Coded_Data_Pool_as_the_Foundation..."
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,23 +183,22 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概述">会议概述</h4>
-<p>本次会议由Bahid主持，他是Digicolor的云工程师，分享了公司在设计和实施对象存储服务方面的经验。由于主讲人Yavash无法现场出席，他的演讲以预录视频形式播放。</p>
-<h4 id="主要议题">主要议题</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>在本次会议中，Digicolor的云工程师Bahid分享了公司设计和实施对象存储服务的经验。由于主要发言人Yavash无法到场，其演讲以预录视频形式进行。</p>
+<p><strong>主要议题包括</strong>：</p>
 <ol type="1">
-<li><strong>Digicolor简介</strong>：Digicolor是中东地区最大的电子商务平台，每日页面浏览量超过1800万，促销期间可达2亿。</li>
-<li><strong>问题定义</strong>：公司面临高流量和高数据存储需求，原有硬件资源共享导致成本上升。</li>
+<li><strong>公司概况</strong>：Digicolor是中东地区最大的电子商务平台，日均页面浏览量超过1800万，促销期间可达2亿。</li>
+<li><strong>问题定义</strong>：面临高流量和高数据存储需求，原有硬件资源共享导致成本上升。</li>
 <li><strong>解决方案</strong>：设计并实施自有的对象存储服务，以降低成本并提高性能。</li>
 <li><strong>技术细节</strong>：
 <ul>
 <li><strong>架构设计</strong>：采用三层架构，包括Nginx作为缓存服务器和负载均衡器，Ceph
 RGW处理对象存储。</li>
-<li><strong>硬件环境</strong>：利用公司闲置硬件资源，部署8个节点，使用HP
+<li><strong>硬件环境</strong>：利用闲置硬件资源，部署8个节点，使用HP
 10G网络设备。</li>
 <li><strong>软件环境</strong>：测试了Octopus和Pacific版本的Ceph，使用Ubuntu
 LTS和OpenResty构建模块。</li>
-<li><strong>性能优化</strong>：通过自定义CRUSH映射、SSD作为后端存储、分离公共和集群网络等措施优化性能。</li>
+<li><strong>性能优化</strong>：通过自定义CRUSH映射、使用SSD作为后端存储、分离公共和集群网络等措施优化性能。</li>
 <li><strong>数据缓存</strong>：设计了多层缓存机制，包括CDN、图像大小调整和Nginx缓存。</li>
 </ul></li>
 <li><strong>测试与结果</strong>：
@@ -212,19 +209,18 @@ RBD以提高存储容量和性能。</li>
 <li><strong>最终配置</strong>：确定了9个RGW实例，每个实例的线程池大小为2008和2048，以优化CPU核心分配。</li>
 </ul></li>
 </ol>
-<h4 id="决定事项">决定事项</h4>
+<p><strong>决定事项</strong>：</p>
 <ol type="1">
 <li><strong>采用Ceph RGW作为对象存储服务</strong>。</li>
 <li><strong>优化Nginx配置和RGW实例数量</strong>。</li>
 <li><strong>实施多层缓存策略以提高性能</strong>。</li>
 </ol>
-<h4 id="后续行动计划">后续行动计划</h4>
+<p><strong>后续行动计划</strong>：</p>
 <ol type="1">
 <li><strong>继续监控和优化系统性能</strong>。</li>
 <li><strong>探索更多性能优化技术，如进一步调整CRUSH映射和网络配置</strong>。</li>
 <li><strong>分享经验和技术细节，与社区进行交流</strong>。</li>
 </ol>
-<h4 id="结论">结论</h4>
 <p>Digicolor通过设计和实施自有的对象存储服务，成功降低了成本并提高了系统性能，满足了公司的高流量和高存储需求。会议最后，Bahid邀请与会者提问，并表示愿意分享更多细节和经验。</p>
 
         </div>
@@ -256,6 +252,8 @@ RBD以提高存储容量和性能。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cloud-Storage/" rel="tag">Cloud Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Erasure-Coding/" rel="tag">Erasure Coding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High-Availability/" rel="tag">High Availability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Object-Storage/" rel="tag">Object Storage</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -317,7 +315,7 @@ RBD以提高存储容量和性能。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/05/05/How_to_Make_a_Positive_Impact_from_Both_an_Environmental_and_Financial_Perspective/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">How to Make a Positive Impact from Both an Environmental and Financial Perspective</h4>
+        <h4 class="title">  How to Make a Positive Impact from Both an Environmental and Financial Perspective  </h4>
       </a>
     </div>
   

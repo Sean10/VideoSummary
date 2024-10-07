@@ -14,23 +14,28 @@
     
     
     
-    <title>Enhancing Observability in Rook Ceph - Deepika Upadhyay &amp; Gaurav Sitlani, Koor Technologies Inc. | ceph视频总结 | youtube频道总结</title>
+    <title>  Enhancing Observability in Rook Ceph - Deepika Upadhyay &amp; Gaurav Sitlani, Koor Technologies Inc.   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题 本次会议主要围绕分布式存储系统Ceph的跟踪（tracing）技术展开，特别是使用OpenTelemetry和Jaeger进行跟踪的实践和未来展望。 会议参与者  主讲人：云存储工程师，曾就职于Redos和RBD，现为Code Technologies员工，同时也是Rook项目的贡献者。 同事：Gaurav Sitlani  讨论内容  跟踪技术简介  跟踪技术在Ceph中的应">
+    <meta name="keywords" content="Ceph,Distributed Storage,Rook,Observability,Tracing">
+    <meta name="description" content="[改进后的中文总结内容] 改进后的中文总结 本次会议主要探讨了在Rook Ceph中增强可观测性的策略，特别是通过跟踪技术来提高问题定位效率和系统性能。以下是会议的关键内容： 会议主题 会议重点讨论了Ceph分布式存储系统中跟踪技术的应用，特别是如何使用OpenTelemetry和Jaeger进行跟踪实践和未来展望。 会议参与者  主讲人：来自Code Technologies的云存储工程师，同时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Enhancing Observability in Rook Ceph - Deepika Upadhyay &amp; Gaurav Sitlani, Koor Technologies Inc.">
+<meta property="og:title" content="  Enhancing Observability in Rook Ceph - Deepika Upadhyay &amp; Gaurav Sitlani, Koor Technologies Inc.  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题 本次会议主要围绕分布式存储系统Ceph的跟踪（tracing）技术展开，特别是使用OpenTelemetry和Jaeger进行跟踪的实践和未来展望。 会议参与者  主讲人：云存储工程师，曾就职于Redos和RBD，现为Code Technologies员工，同时也是Rook项目的贡献者。 同事：Gaurav Sitlani  讨论内容  跟踪技术简介  跟踪技术在Ceph中的应">
+<meta property="og:description" content="[改进后的中文总结内容] 改进后的中文总结 本次会议主要探讨了在Rook Ceph中增强可观测性的策略，特别是通过跟踪技术来提高问题定位效率和系统性能。以下是会议的关键内容： 会议主题 会议重点讨论了Ceph分布式存储系统中跟踪技术的应用，特别是如何使用OpenTelemetry和Jaeger进行跟踪实践和未来展望。 会议参与者  主讲人：来自Code Technologies的云存储工程师，同时">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="Observability">
+<meta property="article:tag" content="Tracing">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Enhancing Observability in Rook Ceph - Deepika Upadhyay &amp; Gaurav Sitlani, Koor Technologies Inc.</div>
+        <div class="flex-col header-title ellipsis">  Enhancing Observability in Rook Ceph - Deepika Upadhyay &amp; Gaurav Sitlani, Koor Technologies Inc.  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Enhancing Observability in Rook Ceph - Deepika Upadhyay &amp; Gaurav Sitlani, Koor Technologies Inc.</h1>
+        <h1 class="title">  Enhancing Observability in Rook Ceph - Deepika Upadhyay &amp; Gaurav Sitlani, Koor Technologies Inc.  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%8F%82%E4%B8%8E%E8%80%85"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议参与者</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议总结</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%8F%82%E4%B8%8E%E8%80%85"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议参与者</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitlani, Koor Technologies Inc.</h1>
+        <h1 class="post-card-title">  Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitlani, Koor Technologies Inc.  </h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
@@ -185,26 +190,29 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="改进后的中文总结">改进后的中文总结</h3>
+<p>本次会议主要探讨了在Rook
+Ceph中增强可观测性的策略，特别是通过跟踪技术来提高问题定位效率和系统性能。以下是会议的关键内容：</p>
 <h4 id="会议主题">会议主题</h4>
-<p>本次会议主要围绕分布式存储系统Ceph的跟踪（tracing）技术展开，特别是使用OpenTelemetry和Jaeger进行跟踪的实践和未来展望。</p>
+<p>会议重点讨论了Ceph分布式存储系统中跟踪技术的应用，特别是如何使用OpenTelemetry和Jaeger进行跟踪实践和未来展望。</p>
 <h4 id="会议参与者">会议参与者</h4>
 <ul>
-<li>主讲人：云存储工程师，曾就职于Redos和RBD，现为Code
-Technologies员工，同时也是Rook项目的贡献者。</li>
-<li>同事：Gaurav Sitlani</li>
+<li>主讲人：来自Code
+Technologies的云存储工程师，同时也是Rook项目贡献者，曾任职于Redos和RBD。</li>
+<li>同事：Gaurav Sitlani。</li>
 </ul>
 <h4 id="讨论内容">讨论内容</h4>
 <ol type="1">
 <li><strong>跟踪技术简介</strong>
 <ul>
-<li>跟踪技术在Ceph中的应用，特别是在调试复杂场景中的作用。</li>
-<li>当前Ceph中跟踪技术的现状及其对Rook的影响。</li>
+<li>讨论了跟踪技术在Ceph中的应用，尤其是在调试复杂场景中的作用。</li>
+<li>分析了当前Ceph中跟踪技术的现状及其对Rook项目的影响。</li>
 </ul></li>
 <li><strong>调试挑战</strong>
 <ul>
-<li>在Ceph中，如OSD变慢或出现慢操作等问题，可能由多种原因引起，如硬件故障、软件故障、恢复操作等。</li>
-<li>传统上，通过日志进行问题定位非常困难，尤其是对于新手或非专家用户。</li>
+<li>阐述了在Ceph中，如OSD变慢或出现慢操作等问题，可能由多种原因引起，如硬件故障、软件故障、恢复操作等。</li>
+<li>强调了传统上通过日志进行问题定位的困难性，尤其是对于新手或非专家用户。</li>
 </ul></li>
 <li><strong>跟踪技术的优势</strong>
 <ul>
@@ -213,8 +221,7 @@ Technologies员工，同时也是Rook项目的贡献者。</li>
 </ul></li>
 <li><strong>OpenTelemetry与Jaeger的应用</strong>
 <ul>
-<li>OpenTelemetry提供了一个厂商中立的API，用于在代码中编写跟踪
-instrumentation。</li>
+<li>OpenTelemetry提供了一个厂商中立的API，用于在代码中编写跟踪instrumentation。</li>
 <li>Jaeger是一个使用gRPC和Thrift协议收集和展示跟踪数据的CNCF项目。</li>
 </ul></li>
 <li><strong>跟踪技术的实现细节</strong>
@@ -230,8 +237,7 @@ collector实现跟踪数据的收集和处理。</li>
 </ul></li>
 <li><strong>未来展望</strong>
 <ul>
-<li>探索更多的代码
-instrumentation，特别是在生产集群中实时监控的关键需求。</li>
+<li>探索更多的代码instrumentation，特别是在生产集群中实时监控的关键需求。</li>
 <li>考虑在Rook中集成更多的自定义采样策略和CRD（Custom Resource
 Definitions）。</li>
 </ul></li>
@@ -244,12 +250,9 @@ Definitions）。</li>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
 <li>完善Rook中的跟踪技术部署文档和教程。</li>
-<li>探索更多的代码 instrumentation
-和采样策略，以优化生产环境中的跟踪性能。</li>
+<li>探索更多的代码instrumentation和采样策略，以优化生产环境中的跟踪性能。</li>
 <li>与社区合作，推广跟踪技术在Ceph和Rook中的应用。</li>
 </ul>
-<h4 id="会议总结">会议总结</h4>
-<p>本次会议详细讨论了跟踪技术在Ceph和Rook中的应用，特别是在调试复杂场景和优化生产环境中的作用。通过集成OpenTelemetry和Jaeger，可以显著提升问题定位的效率和系统的可观测性。未来的工作将集中在进一步优化跟踪技术的部署和应用，以及增强对开发者的支持。</p>
 
         </div>
 
@@ -280,6 +283,8 @@ Definitions）。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Observability/" rel="tag">Observability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Tracing/" rel="tag">Tracing</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -291,7 +296,7 @@ Definitions）。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./&title=《Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitlani, Koor Technologies Inc.》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./&title=《  Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitlani, Koor Technologies Inc.  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -301,7 +306,7 @@ Definitions）。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./&title=《Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitlani, Koor Technologies Inc.》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./&title=《  Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitlani, Koor Technologies Inc.  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -311,7 +316,7 @@ Definitions）。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitlani, Koor Technologies Inc.》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitlani, Koor Technologies Inc.  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -339,9 +344,9 @@ Definitions）。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Critical_Troubleshooting_Tools_for_Rook_Clusters_-_Subham_Kumar_Rai_Parth_Arora_IBM/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions</h4>
+        <h4 class="title"> Critical Troubleshooting Tools for Rook Clusters - Subham Kumar Rai &amp; Parth Arora, IBM </h4>
       </a>
     </div>
   
@@ -450,7 +455,7 @@ Definitions）。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./&title=《Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitlani, Koor Technologies Inc.》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./&title=《  Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitlani, Koor Technologies Inc.  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -460,7 +465,7 @@ Definitions）。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./&title=《Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitlani, Koor Technologies Inc.》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./&title=《  Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitlani, Koor Technologies Inc.  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -470,7 +475,7 @@ Definitions）。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitlani, Koor Technologies Inc.》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitlani, Koor Technologies Inc.  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,28 @@
     
     
     
-    <title>2018-JAN-18 :: Ceph Performance Weekly | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2018-JAN-18 :: Ceph Performance Weekly&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月某日 参会人员： Ron, Adam, Jason, Igor, Josh, Greg, Mark, Chimay, Stephanie, Avi, Georgia, 以及其他相关人员 会议主题：  Ceph 存储系统最新进展 VPP 集成方案探讨 性能优化策略讨论 Specter 漏洞影响评估  会议内容： 1. Ceph 存储系统最新进展  代码合并与优化">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,VPP集成,Specter漏洞">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年11月某日 参会人员： Ron, Adam, Jason, Igor, Josh, Greg, Mark, Chimay, Stephanie, Avi, Georgia, 以及其他相关人员 会议主题：  Ceph 存储系统最新进展 VPP 集成方案探讨 性能优化策略讨论 Specter 漏洞影响评估  会议内容： 1. Ceph 存储系统">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018-JAN-18 :: Ceph Performance Weekly">
+<meta property="og:title" content="&#39;2018-JAN-18 :: Ceph Performance Weekly&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/01/20/2018-JAN-18_-_-_Ceph_Performance_Weekly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月某日 参会人员： Ron, Adam, Jason, Igor, Josh, Greg, Mark, Chimay, Stephanie, Avi, Georgia, 以及其他相关人员 会议主题：  Ceph 存储系统最新进展 VPP 集成方案探讨 性能优化策略讨论 Specter 漏洞影响评估  会议内容： 1. Ceph 存储系统最新进展  代码合并与优化">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： 2023年11月某日 参会人员： Ron, Adam, Jason, Igor, Josh, Greg, Mark, Chimay, Stephanie, Avi, Georgia, 以及其他相关人员 会议主题：  Ceph 存储系统最新进展 VPP 集成方案探讨 性能优化策略讨论 Specter 漏洞影响评估  会议内容： 1. Ceph 存储系统">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-01-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-01-19T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="VPP集成">
+<meta property="article:tag" content="Specter漏洞">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2018-JAN-18 :: Ceph Performance Weekly</div>
+        <div class="flex-col header-title ellipsis">&#39;2018-JAN-18 :: Ceph Performance Weekly&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2018-JAN-18 :: Ceph Performance Weekly</h1>
+        <h1 class="title">&#39;2018-JAN-18 :: Ceph Performance Weekly&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-01-19T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2018-JAN-18 :: Ceph Performance Weekly</h1>
+        <h1 class="post-card-title">'2018-JAN-18 :: Ceph Performance Weekly'</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-01-20 00:00:00" datetime="2018-01-19T16:00:00.000Z"  itemprop="datePublished">2018-01-20</time>
 
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议时间</strong>： 2023年11月某日</p>
 <p><strong>参会人员</strong>： Ron, Adam, Jason, Igor, Josh, Greg, Mark,
 Chimay, Stephanie, Avi, Georgia, 以及其他相关人员</p>
@@ -203,16 +209,16 @@ Chimay, Stephanie, Avi, Georgia, 以及其他相关人员</p>
 <ul>
 <li>Jason 审核并合并了 Igor 的几个小优化，包括近似眼睛（aprox
 eyes）功能。</li>
-<li>Jason 还将一个 pull request 合并，该 pull request
+<li>Jason 还合并了一个 pull request，该 pull request
 通过优化读取操作来提高性能。</li>
-<li>Ron 正在考虑完全消除对象存储接口中的 applied
+<li>Ron 考虑完全消除对象存储接口中的 applied
 回调，并使用跟踪和快速操作。</li>
 <li>Ron
-还关闭了旧的同步请求，因为他已经完成了读操作的一半工作，但不确定是否要继续进行写操作。</li>
+关闭了旧的同步请求，因为他已经完成了读操作的一半工作，但不确定是否要继续进行写操作。</li>
 </ul></li>
 <li><strong>性能优化</strong>：
 <ul>
-<li>Ron 正在考虑使用构建购买概念来测试性能影响。</li>
+<li>Ron 考虑使用构建购买概念来测试性能影响。</li>
 <li>Josh 提交了一个 pull request，用于将随机拆分阈值随机化，以提高 Jewel
 版本的性能。</li>
 <li>Ron 提到了一个 QAT 等级类，但不确定其最新更新。</li>
@@ -228,10 +234,14 @@ VPP（虚拟包处理）软件栈，该软件栈提供了一种高效的网络�
 <li>Stephanie 使用了预加载模式，即 VPP 库钩子到 POSIX
 套接字层，从而在用户空间中处理网络操作。</li>
 </ul></li>
-<li><strong>集成方案讨论</strong>： <em>Ron 认为直接使用 VPP API
-可能更合适，因为它可以提供更好的性能和异步操作。 </em>讨论了 VPP 与
-CStar 网络编程框架的兼容性，以及如何使用 CStar API 与 VPP 通信。
-*讨论了将 VPP 作为 RGW 插件的可能性。</li>
+<li><strong>集成方案讨论</strong>：
+<ul>
+<li>Ron 认为直接使用 VPP API
+可能更合适，因为它可以提供更好的性能和异步操作。</li>
+<li>讨论了 VPP 与 CStar 网络编程框架的兼容性，以及如何使用 CStar API 与
+VPP 通信。</li>
+<li>讨论了将 VPP 作为 RGW 插件的可能性。</li>
+</ul></li>
 </ul>
 <p><strong>3. 性能优化策略讨论</strong></p>
 <ul>
@@ -322,6 +332,8 @@ Specter 漏洞影响评估。会议确定了行动计划，并推动了 Ceph
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Specter%E6%BC%8F%E6%B4%9E/" rel="tag">Specter漏洞</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/VPP%E9%9B%86%E6%88%90/" rel="tag">VPP集成</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -333,7 +345,7 @@ Specter 漏洞影响评估。会议确定了行动计划，并推动了 Ceph
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/01/20/2018-JAN-18_-_-_Ceph_Performance_Weekly/&title=《2018-JAN-18 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/01/20/2018-JAN-18_-_-_Ceph_Performance_Weekly/&title=《'2018-JAN-18 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -343,7 +355,7 @@ Specter 漏洞影响评估。会议确定了行动计划，并推动了 Ceph
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/01/20/2018-JAN-18_-_-_Ceph_Performance_Weekly/&title=《2018-JAN-18 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/01/20/2018-JAN-18_-_-_Ceph_Performance_Weekly/&title=《'2018-JAN-18 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -353,7 +365,7 @@ Specter 漏洞影响评估。会议确定了行动计划，并推动了 Ceph
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-JAN-18 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/01/20/2018-JAN-18_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-JAN-18 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/01/20/2018-JAN-18_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -381,9 +393,9 @@ Specter 漏洞影响评估。会议确定了行动计划，并推动了 Ceph
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2018/02/13/2018-FEB-08_-_-_Ceph_Performance_Weekly/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2018/02/13/2018-FEB-01_-_-_Ceph_Performance_Weekly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2018-FEB-08 :: Ceph Performance Weekly</h4>
+        <h4 class="title">&#39;2018-FEB-01 :: Ceph Performance Weekly&#39;</h4>
       </a>
     </div>
   
@@ -392,7 +404,7 @@ Specter 漏洞影响评估。会议确定了行动计划，并推动了 Ceph
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2018/01/12/2018-JAN-11_-_-_Ceph_Performance_Weekly/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2018-JAN-11 :: Ceph Performance Weekly</h4>
+        <h4 class="title">&#39;2018-JAN-11 :: Ceph Performance Weekly&#39;</h4>
       </a>
     </div>
   
@@ -492,7 +504,7 @@ Specter 漏洞影响评估。会议确定了行动计划，并推动了 Ceph
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/01/20/2018-JAN-18_-_-_Ceph_Performance_Weekly/&title=《2018-JAN-18 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/01/20/2018-JAN-18_-_-_Ceph_Performance_Weekly/&title=《'2018-JAN-18 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -502,7 +514,7 @@ Specter 漏洞影响评估。会议确定了行动计划，并推动了 Ceph
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/01/20/2018-JAN-18_-_-_Ceph_Performance_Weekly/&title=《2018-JAN-18 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/01/20/2018-JAN-18_-_-_Ceph_Performance_Weekly/&title=《'2018-JAN-18 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -512,7 +524,7 @@ Specter 漏洞影响评估。会议确定了行动计划，并推动了 Ceph
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-JAN-18 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/01/20/2018-JAN-18_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-JAN-18 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/01/20/2018-JAN-18_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

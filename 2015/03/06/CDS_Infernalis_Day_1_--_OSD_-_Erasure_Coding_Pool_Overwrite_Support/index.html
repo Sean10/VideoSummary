@@ -14,23 +14,28 @@
     
     
     
-    <title>CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Erasure Coding 池覆盖支持讨论 会议时间： 系列会议第二天 参会人员： 多位 Ceph 开发者，具体姓名未提及 会议内容： 主要议题：  讨论了在 Erasure Coding (EC) 池中实现覆盖支持的可能性，尤其是针对 Rados Block Device (RBD) 的应用。 分析了不同实现方案的优缺点，包括：  回滚日志： 在写入数据时，同时将旧数据写">
+    <meta name="keywords" content="Ceph,RBD,Erasure Coding,两阶段提交,数据一致性">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： Erasure Coding (EC) 池覆盖支持讨论 会议时间： CDS Infernalis 会议第二天 参会人员： 多位 Ceph 开发者 会议内容： 主要议题：  讨论了在 Erasure Coding (EC) 池中实现覆盖支持的可能性，尤其是针对 Rados Block Device (RBD) 的应用。 分析了不同实现方案的优缺点，包括">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support">
+<meta property="og:title" content="&#39;CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Erasure_Coding_Pool_Overwrite_Support/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Erasure Coding 池覆盖支持讨论 会议时间： 系列会议第二天 参会人员： 多位 Ceph 开发者，具体姓名未提及 会议内容： 主要议题：  讨论了在 Erasure Coding (EC) 池中实现覆盖支持的可能性，尤其是针对 Rados Block Device (RBD) 的应用。 分析了不同实现方案的优缺点，包括：  回滚日志： 在写入数据时，同时将旧数据写">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： Erasure Coding (EC) 池覆盖支持讨论 会议时间： CDS Infernalis 会议第二天 参会人员： 多位 Ceph 开发者 会议内容： 主要议题：  讨论了在 Erasure Coding (EC) 池中实现覆盖支持的可能性，尤其是针对 Rados Block Device (RBD) 的应用。 分析了不同实现方案的优缺点，包括">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-03-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-03-06T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RBD">
+<meta property="article:tag" content="Erasure Coding">
+<meta property="article:tag" content="两阶段提交">
+<meta property="article:tag" content="数据一致性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support</div>
+        <div class="flex-col header-title ellipsis">&#39;CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support</h1>
+        <h1 class="title">&#39;CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2015-03-05T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support</h1>
+        <h1 class="post-card-title">'CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support'</h1>
         <div class="post-meta">
             <time class="post-time" title="2015-03-06 00:00:00" datetime="2015-03-05T16:00:00.000Z"  itemprop="datePublished">2015-03-06</time>
 
@@ -185,10 +190,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题</strong>： Erasure Coding 池覆盖支持讨论</p>
-<p><strong>会议时间</strong>： 系列会议第二天</p>
-<p><strong>参会人员</strong>： 多位 Ceph 开发者，具体姓名未提及</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议主题</strong>： Erasure Coding (EC) 池覆盖支持讨论</p>
+<p><strong>会议时间</strong>： CDS Infernalis 会议第二天</p>
+<p><strong>参会人员</strong>： 多位 Ceph 开发者</p>
 <p><strong>会议内容</strong>：</p>
 <p><strong>主要议题</strong>：</p>
 <ul>
@@ -196,31 +202,21 @@
 Rados Block Device (RBD) 的应用。</li>
 <li>分析了不同实现方案的优缺点，包括：
 <ul>
-<li><strong>回滚日志</strong>：
-在写入数据时，同时将旧数据写入回滚日志，以便在发生错误时恢复。</li>
-<li><strong>两阶段提交</strong>：
-在所有副本确认后，再应用更新，并确保读取操作在写入提交之前被阻塞。</li>
-<li><strong>不支持覆盖</strong>：
-保留现有的只追加写入方式，不提供覆盖支持。</li>
-<li><strong>改进 RBD 数据布局</strong>：
-将数据以固定块的形式存储，并使用日志记录未提交的更新。</li>
-<li><strong>缓存层实现</strong>： 在缓存层中实现部分对象覆盖，以避免在
-EC 池中直接实现。</li>
+<li>回滚日志</li>
+<li>两阶段提交</li>
+<li>不支持覆盖</li>
+<li>改进 RBD 数据布局</li>
+<li>缓存层实现</li>
 </ul></li>
 </ul>
 <p><strong>讨论结果</strong>：</p>
 <ul>
-<li><strong>两阶段提交</strong>：
-被认为是一个值得尝试的方案，因为它具有确定性、可预测性和与 RAID
-类似的行为。</li>
-<li><strong>回滚日志</strong>：
-由于需要额外的写入操作，可能引入较大的延迟，因此被认为不如两阶段提交方案。</li>
-<li><strong>不支持覆盖</strong>：
-被认为是最简单的方法，但可能无法满足某些应用的需求。</li>
-<li><strong>改进 RBD 数据布局</strong>：
-被认为是一个可行的方案，但需要进一步研究和评估。</li>
-<li><strong>缓存层实现</strong>：
-被认为是一个复杂的方案，但可能能够避免其他方案的缺点。</li>
+<li>两阶段提交方案被认为具有确定性、可预测性和与 RAID
+类似的行为，是一个值得尝试的方案。</li>
+<li>回滚日志方案由于需要额外的写入操作，可能引入较大的延迟，因此被认为不如两阶段提交方案。</li>
+<li>不支持覆盖被认为是最简单的方法，但可能无法满足某些应用的需求。</li>
+<li>改进 RBD
+数据布局和缓存层实现被认为是可行的方案，但需要进一步研究和评估。</li>
 </ul>
 <p><strong>行动计划</strong>：</p>
 <ul>
@@ -275,6 +271,8 @@ EC 池中直接实现。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Erasure-Coding/" rel="tag">Erasure Coding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD/" rel="tag">RBD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%B8%A4%E9%98%B6%E6%AE%B5%E6%8F%90%E4%BA%A4/" rel="tag">两阶段提交</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7/" rel="tag">数据一致性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -286,7 +284,7 @@ EC 池中直接实现。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Erasure_Coding_Pool_Overwrite_Support/&title=《CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Erasure_Coding_Pool_Overwrite_Support/&title=《'CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -296,7 +294,7 @@ EC 池中直接实现。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Erasure_Coding_Pool_Overwrite_Support/&title=《CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Erasure_Coding_Pool_Overwrite_Support/&title=《'CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -306,7 +304,7 @@ EC 池中直接实现。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Erasure_Coding_Pool_Overwrite_Support/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Erasure_Coding_Pool_Overwrite_Support/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -334,9 +332,9 @@ EC 池中直接实现。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Less_Intrusive_Scrub/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_Clustered_SCSI_Target_using_RBD/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CDS Infernalis (Day 1) -- OSD: Less Intrusive Scrub</h4>
+        <h4 class="title">CDS Infernalis (Day 1) -- Clustered SCSI Target using RBD</h4>
       </a>
     </div>
   
@@ -345,7 +343,7 @@ EC 池中直接实现。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Scrub_and_Repair/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS Infernalis (Day 1) -- OSD: Scrub and Repair</h4>
+        <h4 class="title">  CDS Infernalis (Day 1) -- OSD: Scrub and Repair  </h4>
       </a>
     </div>
   
@@ -445,7 +443,7 @@ EC 池中直接实现。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Erasure_Coding_Pool_Overwrite_Support/&title=《CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Erasure_Coding_Pool_Overwrite_Support/&title=《'CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -455,7 +453,7 @@ EC 池中直接实现。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Erasure_Coding_Pool_Overwrite_Support/&title=《CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Erasure_Coding_Pool_Overwrite_Support/&title=《'CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -465,7 +463,7 @@ EC 池中直接实现。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Erasure_Coding_Pool_Overwrite_Support/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'CDS Infernalis (Day 1) -- OSD: Erasure Coding Pool Overwrite Support'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2015/03/06/CDS_Infernalis_Day_1_--_OSD_-_Erasure_Coding_Pool_Overwrite_Support/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

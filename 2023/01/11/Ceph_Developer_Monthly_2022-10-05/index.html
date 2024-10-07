@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Developer Monthly 2022-10-05 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 开发者月度会议 2022-10-05 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 - Ceph 开发者月度会议 (October CDM) 会议概览  日期: October 主持人: Laura 参会人员: Ceph 开发团队成员及相关领域专家  主要议题  用户体验增强  议题: 改进 Ceph 容器的挂载机制  讨论内容: 当前 Ceph 容器（包括实际容器和 safadm shell 容器）对整个根文件系统进行绑定挂载，导致某些行为难以调试。特别是用户遇到内核">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,用户体验,可访问性">
+    <meta name="description" content="[改进后的中文总结内容] 会议概览  日期: 2022年10月 主持人: Laura 参会人员: Ceph 开发团队成员及相关领域专家  主要议题  用户体验增强  议题: 改进 Ceph 容器的挂载机制  讨论内容: 当前 Ceph 容器对整个根文件系统进行绑定挂载，导致调试困难。 决定事项: 改进挂载机制，采用更小范围的目标挂载或仅传递所需的个别文件。 后续行动: Adam 和 Elmer 将">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Developer Monthly 2022-10-05">
+<meta property="og:title" content="Ceph 开发者月度会议 2022-10-05">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/01/11/Ceph_Developer_Monthly_2022-10-05/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 - Ceph 开发者月度会议 (October CDM) 会议概览  日期: October 主持人: Laura 参会人员: Ceph 开发团队成员及相关领域专家  主要议题  用户体验增强  议题: 改进 Ceph 容器的挂载机制  讨论内容: 当前 Ceph 容器（包括实际容器和 safadm shell 容器）对整个根文件系统进行绑定挂载，导致某些行为难以调试。特别是用户遇到内核">
+<meta property="og:description" content="[改进后的中文总结内容] 会议概览  日期: 2022年10月 主持人: Laura 参会人员: Ceph 开发团队成员及相关领域专家  主要议题  用户体验增强  议题: 改进 Ceph 容器的挂载机制  讨论内容: 当前 Ceph 容器对整个根文件系统进行绑定挂载，导致调试困难。 决定事项: 改进挂载机制，采用更小范围的目标挂载或仅传递所需的个别文件。 后续行动: Adam 和 Elmer 将">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-10T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-01-11T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="用户体验">
+<meta property="article:tag" content="可访问性">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Developer Monthly 2022-10-05</div>
+        <div class="flex-col header-title ellipsis">Ceph 开发者月度会议 2022-10-05</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Developer Monthly 2022-10-05</h1>
+        <h1 class="title">Ceph 开发者月度会议 2022-10-05</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-01-10T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,8 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81---ceph-%E5%BC%80%E5%8F%91%E8%80%85%E6%9C%88%E5%BA%A6%E4%BC%9A%E8%AE%AE-october-cdm"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要 - Ceph
-开发者月度会议 (October CDM)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A7%88"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概览</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A7%88"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议概览</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">3.</span> <span class="post-toc-text">结论</span></a></li></ol>
         </nav>
     </aside>
 
@@ -169,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Developer Monthly 2022-10-05</h1>
+        <h1 class="post-card-title">Ceph 开发者月度会议 2022-10-05</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-01-11 00:00:00" datetime="2023-01-10T16:00:00.000Z"  itemprop="datePublished">2023-01-11</time>
 
@@ -186,91 +190,71 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要---ceph-开发者月度会议-october-cdm">会议纪要 - Ceph
-开发者月度会议 (October CDM)</h3>
-<h4 id="会议概览">会议概览</h4>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议概览">会议概览</h3>
 <ul>
-<li><strong>日期</strong>: October</li>
+<li><strong>日期</strong>: 2022年10月</li>
 <li><strong>主持人</strong>: Laura</li>
 <li><strong>参会人员</strong>: Ceph 开发团队成员及相关领域专家</li>
 </ul>
-<h4 id="主要议题">主要议题</h4>
+<h3 id="主要议题">主要议题</h3>
 <ol type="1">
 <li><strong>用户体验增强</strong>
 <ul>
 <li><strong>议题</strong>: 改进 Ceph 容器的挂载机制
 <ul>
-<li><strong>讨论内容</strong>: 当前 Ceph 容器（包括实际容器和 safadm
-shell
-容器）对整个根文件系统进行绑定挂载，导致某些行为难以调试。特别是用户遇到内核
-RBD 设备取消映射的问题，由于设备被运行中的容器固定。</li>
+<li><strong>讨论内容</strong>: 当前 Ceph
+容器对整个根文件系统进行绑定挂载，导致调试困难。</li>
 <li><strong>决定事项</strong>:
-需要改进挂载机制，建议采用更小范围的目标挂载或仅传递所需的个别文件。</li>
+改进挂载机制，采用更小范围的目标挂载或仅传递所需的个别文件。</li>
 <li><strong>后续行动</strong>: Adam 和 Elmer
 将进一步讨论和实施这一改进。</li>
 </ul></li>
-</ul></li>
 <li><strong>仪表板可访问性改进</strong>
 <ul>
-<li><strong>发言人</strong>: Cedric</li>
-<li><strong>讨论内容</strong>: 介绍了 Ceph
-仪表板在可访问性方面的改进，特别是针对视障用户的优化。通过遵循 W3C
-的可访问性标准，确保 Blind 和 Visually Impaired 用户也能舒适使用。</li>
-<li><strong>展示</strong>:
-展示了登录页面、仪表板主页和数据表的改进，包括颜色对比度调整和屏幕阅读器兼容性增强。</li>
+<li><strong>讨论内容</strong>: 介绍 Ceph
+仪表板在可访问性方面的改进，包括颜色对比度调整和屏幕阅读器兼容性增强。</li>
 <li><strong>后续行动</strong>:
 继续优化可访问性，包括实现暗模式主题和完善开发指南中的可访问性部分。</li>
 </ul></li>
 <li><strong>仪表板主页更新</strong>
 <ul>
-<li><strong>发言人</strong>: Pedro Gonzalez</li>
 <li><strong>讨论内容</strong>:
-介绍了仪表板主页的更新计划，旨在展示更有意义的数据，并提高用户访问的便捷性。</li>
-<li><strong>展示</strong>:
-展示了新设计的仪表板主页草图，包括详细信息卡、集群状态、容量卡、库存卡和集群利用率图表。</li>
-<li><strong>后续行动</strong>:
-继续开发和优化新主页的样式和功能，计划在未来的版本中发布。</li>
+介绍仪表板主页的更新计划，旨在展示更有意义的数据，并提高用户访问的便捷性。</li>
+<li><strong>后续行动</strong>: 继续开发和优化新主页的样式和功能。</li>
+</ul></li>
 </ul></li>
 <li><strong>性能提升</strong>
 <ul>
-<li><strong>议题</strong>: 管理器架构提案
+<li><strong>管理器架构提案</strong>
 <ul>
-<li><strong>发言人</strong>: Perry</li>
-<li><strong>讨论内容</strong>: 提出了一个新的管理器架构，旨在消除 Python
+<li><strong>讨论内容</strong>: 提出一个新的管理器架构，旨在消除 Python
 解释器的全局解释器锁（GIL），通过 gRPC
 服务器将模块移至不同的进程中，以提高性能和并发处理能力。</li>
 <li><strong>后续行动</strong>:
 开发团队将根据反馈继续完善这一架构，并进行性能测试。</li>
 </ul></li>
-</ul></li>
-<li><strong>性能提升</strong>
+<li><strong>新的 Ceph 导出器</strong>
 <ul>
-<li><strong>议题</strong>: 新的 Ceph 导出器
-<ul>
-<li><strong>发言人</strong>: Evan</li>
 <li><strong>讨论内容</strong>: 介绍了新的 Ceph
 导出器，这是一个每节点设计的导出器，用于从每个守护进程获取性能计数器，并通过
 HTTP 暴露给 Prometheus。</li>
-<li><strong>展示</strong>:
-展示了导出器的实现和如何在实际集群中运行。</li>
 <li><strong>后续行动</strong>:
 继续测试和优化导出器，特别是在大规模集群中的性能。</li>
 </ul></li>
-</ul></li>
 <li><strong>RBD-like 虚拟磁盘</strong>
 <ul>
-<li><strong>发言人</strong>: Peter</li>
 <li><strong>讨论内容</strong>:
 介绍了基于对象翻译层的虚拟磁盘设计，通过批量写入和垃圾回收机制减少对后端设备的
 I/O 负载。</li>
 <li><strong>后续行动</strong>:
 继续开发和测试这一设计，目标是将其从学术代码转化为实际可用的库。</li>
 </ul></li>
+</ul></li>
 </ol>
-<h4 id="结论">结论</h4>
-<p>本次会议涵盖了多个关键议题，从用户体验的改进到性能的提升，以及新技术的探索。各议题的讨论和展示为
-Ceph
-的未来发展提供了宝贵的见解和方向。感谢所有参与者的贡献，期待在未来的会议中继续推进这些重要的开发工作。</p>
+<h3 id="结论">结论</h3>
+<p>本次会议涵盖了多个关键议题，包括用户体验改进、性能提升和新技术的探索。各议题的讨论和展示为
+Ceph 的未来发展提供了宝贵的见解和方向。</p>
 
         </div>
 
@@ -301,6 +285,8 @@ Ceph
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E8%AE%BF%E9%97%AE%E6%80%A7/" rel="tag">可访问性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/" rel="tag">用户体验</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -312,7 +298,7 @@ Ceph
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/11/Ceph_Developer_Monthly_2022-10-05/&title=《Ceph Developer Monthly 2022-10-05》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/11/Ceph_Developer_Monthly_2022-10-05/&title=《Ceph 开发者月度会议 2022-10-05》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -322,7 +308,7 @@ Ceph
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/11/Ceph_Developer_Monthly_2022-10-05/&title=《Ceph Developer Monthly 2022-10-05》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/11/Ceph_Developer_Monthly_2022-10-05/&title=《Ceph 开发者月度会议 2022-10-05》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -332,7 +318,7 @@ Ceph
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Developer Monthly 2022-10-05》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/11/Ceph_Developer_Monthly_2022-10-05/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 开发者月度会议 2022-10-05》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/11/Ceph_Developer_Monthly_2022-10-05/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -362,7 +348,7 @@ Ceph
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/01/12/Ceph_Performance_Meeting_2023-01-12/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2023-01-12</h4>
+        <h4 class="title">Ceph性能会议 2023-01-12</h4>
       </a>
     </div>
   
@@ -471,7 +457,7 @@ Ceph
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/11/Ceph_Developer_Monthly_2022-10-05/&title=《Ceph Developer Monthly 2022-10-05》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/01/11/Ceph_Developer_Monthly_2022-10-05/&title=《Ceph 开发者月度会议 2022-10-05》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -481,7 +467,7 @@ Ceph
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/11/Ceph_Developer_Monthly_2022-10-05/&title=《Ceph Developer Monthly 2022-10-05》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/01/11/Ceph_Developer_Monthly_2022-10-05/&title=《Ceph 开发者月度会议 2022-10-05》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -491,7 +477,7 @@ Ceph
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Developer Monthly 2022-10-05》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/11/Ceph_Developer_Monthly_2022-10-05/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 开发者月度会议 2022-10-05》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/01/11/Ceph_Developer_Monthly_2022-10-05/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -20,17 +20,23 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写会议具体时间] 参会人员： [请填写参会人员名单] 会议主题： 讨论Ceph分布式存储系统近期工作进展及字幕翻译项目进展。 关键细节：  会议开始以一段音乐作为引子，随后进入正式讨论。 与会人员就Ceph系统的性能优化和稳定性进行了深入探讨。 字幕翻译项目方面，讨论了英译中的具体实施方法和翻译质量保证。  讨论的主要议题：  Ceph系统性能优化：  讨论了在867端">
+    <meta name="keywords" content="Ceph,Distributed Storage,High Availability,Scalability,CRUSH algorithm,Open Source Storage">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： [请填写会议具体时间] 参会人员： [请填写参会人员名单] 会议主题： 讨论Ceph分布式存储系统近期工作进展及字幕翻译项目进展。 关键细节：  会议开始以一段音乐作为引子，随后进入正式讨论。 与会人员深入探讨了Ceph系统的性能优化和稳定性。 字幕翻译项目方面，讨论了英译中的实施方法和翻译质量保证。  讨论的主要议题：  Ceph系统性能优化：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph and the future of Open Source Storage - Land Lu">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/04/23/Ceph_and_the_future_of_Open_Source_Storage_-_Land_Lu/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写会议具体时间] 参会人员： [请填写参会人员名单] 会议主题： 讨论Ceph分布式存储系统近期工作进展及字幕翻译项目进展。 关键细节：  会议开始以一段音乐作为引子，随后进入正式讨论。 与会人员就Ceph系统的性能优化和稳定性进行了深入探讨。 字幕翻译项目方面，讨论了英译中的具体实施方法和翻译质量保证。  讨论的主要议题：  Ceph系统性能优化：  讨论了在867端">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： [请填写会议具体时间] 参会人员： [请填写参会人员名单] 会议主题： 讨论Ceph分布式存储系统近期工作进展及字幕翻译项目进展。 关键细节：  会议开始以一段音乐作为引子，随后进入正式讨论。 与会人员深入探讨了Ceph系统的性能优化和稳定性。 字幕翻译项目方面，讨论了英译中的实施方法和翻译质量保证。  讨论的主要议题：  Ceph系统性能优化：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-04-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="High Availability">
+<meta property="article:tag" content="Scalability">
+<meta property="article:tag" content="CRUSH algorithm">
+<meta property="article:tag" content="Open Source Storage">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,7 +191,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议时间">会议时间：</h4>
 <p>[请填写会议具体时间]</p>
 <h4 id="参会人员">参会人员：</h4>
@@ -195,46 +202,46 @@
 <h4 id="关键细节">关键细节：</h4>
 <ul>
 <li>会议开始以一段音乐作为引子，随后进入正式讨论。</li>
-<li>与会人员就Ceph系统的性能优化和稳定性进行了深入探讨。</li>
-<li>字幕翻译项目方面，讨论了英译中的具体实施方法和翻译质量保证。</li>
+<li>与会人员深入探讨了Ceph系统的性能优化和稳定性。</li>
+<li>字幕翻译项目方面，讨论了英译中的实施方法和翻译质量保证。</li>
 </ul>
 <h4 id="讨论的主要议题">讨论的主要议题：</h4>
 <ol type="1">
 <li><strong>Ceph系统性能优化</strong>：
 <ul>
-<li>讨论了在867端口上Ceph系统的性能表现，并确认了其稳定性和可用性。</li>
-<li>对Ceph系统的IPC（内部进程通信）进行了评估，以确保其高效性。</li>
+<li>分析了Ceph在867端口上的性能表现，确认了其稳定性和可用性。</li>
+<li>对Ceph系统的IPC（内部进程通信）进行了评估，以提升其效率。</li>
 </ul></li>
 <li><strong>字幕翻译项目</strong>：
 <ul>
 <li>确定了英译中翻译的具体方法和流程。</li>
-<li>讨论了如何保证翻译质量，包括对翻译人员的培训和翻译内容的审核。</li>
+<li>讨论了如何确保翻译质量，包括对翻译人员的培训和内容审核。</li>
 </ul></li>
 </ol>
 <h4 id="决定的事项">决定的事项：</h4>
 <ol type="1">
 <li><strong>Ceph系统</strong>：
 <ul>
-<li>继续关注867端口上Ceph系统的性能表现，并根据实际情况进行优化。</li>
-<li>加强IPC通信的监控和优化，确保系统的高效运行。</li>
+<li>持续关注867端口上Ceph系统的性能表现，并根据反馈进行优化。</li>
+<li>加强IPC通信的监控，确保系统的高效运行。</li>
 </ul></li>
 <li><strong>字幕翻译项目</strong>：
 <ul>
 <li>制定详细的翻译流程和标准，确保翻译质量。</li>
-<li>对翻译人员进行定期培训和考核，提高翻译水平。</li>
+<li>定期对翻译人员进行培训和考核，提高翻译水平。</li>
 </ul></li>
 </ol>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ol type="1">
 <li><strong>Ceph系统</strong>：
 <ul>
-<li>制定具体性能优化计划，并跟踪实施进度。</li>
+<li>制定性能优化计划，并跟踪执行进度。</li>
 <li>定期收集系统性能数据，进行分析和调整。</li>
 </ul></li>
 <li><strong>字幕翻译项目</strong>：
 <ul>
-<li>开展翻译人员培训，提高翻译质量。</li>
-<li>定期对翻译内容进行审核，确保翻译准确无误。</li>
+<li>开展翻译人员培训，提升翻译质量。</li>
+<li>定期审核翻译内容，确保准确性。</li>
 </ul></li>
 </ol>
 <p>[请注意，以上纪要内容仅为示例，具体内容需根据实际会议情况进行调整。]</p>
@@ -268,6 +275,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH-algorithm/" rel="tag">CRUSH algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High-Availability/" rel="tag">High Availability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Open-Source-Storage/" rel="tag">Open Source Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scalability/" rel="tag">Scalability</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -329,16 +338,16 @@
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2018/04/23/Ceph_QoS_-_How_to_support_QoS_in_distributed_storage_system_-_Taewoong_Kim/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph QoS: How to support QoS in distributed storage system - Taewoong Kim</h4>
+        <h4 class="title">&#39;Ceph QoS: How to support QoS in distributed storage system - Taewoong Kim&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2018/04/23/Ceph_for_Big_Science_-_Dan_van_der_Ster/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2018/04/23/Ceph_the_future_of_Storage_-_Sage_Weil/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph for Big Science - Dan van der Ster</h4>
+        <h4 class="title">Ceph, the future of Storage - Sage Weil</h4>
       </a>
     </div>
   

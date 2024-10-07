@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Ceph分布式存储系统问题分析与解决方案讨论 会议关键细节：  问题概述：  遇到性能问题，客户无法访问数据或数据访问非常缓慢。 存储系统出现故障，导致数据恢复时间过长，影响用户体验。 用户误操作或恶意行为导致资源消耗过大，影响系统性能。  解决方案：  将存储节点规模缩小，将单节点容量从PB级降至TB级，降低故障影响范围。 增加日志记录，收集情报，定位问题根源。 使用自定义">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,故障处理,用户行为管理">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph分布式存储系统问题分析与解决方案讨论 会议关键细节：  问题概述：  性能问题，客户无法访问数据或数据访问缓慢。 存储系统故障，数据恢复时间长，影响用户体验。 用户误操作或恶意行为导致资源消耗过大，影响系统性能。  解决方案：  缩小存储节点规模，降低故障影响范围。 增加日志记录，定位问题根源。 修复数据结构错误。 提高监控能力，及时发现异常">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Averting crisis at multi-petabyte scale - Piotr Dałek">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/04/23/Averting_crisis_at_multi-petabyte_scale_-_Piotr_Da_ek/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Ceph分布式存储系统问题分析与解决方案讨论 会议关键细节：  问题概述：  遇到性能问题，客户无法访问数据或数据访问非常缓慢。 存储系统出现故障，导致数据恢复时间过长，影响用户体验。 用户误操作或恶意行为导致资源消耗过大，影响系统性能。  解决方案：  将存储节点规模缩小，将单节点容量从PB级降至TB级，降低故障影响范围。 增加日志记录，收集情报，定位问题根源。 使用自定义">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph分布式存储系统问题分析与解决方案讨论 会议关键细节：  问题概述：  性能问题，客户无法访问数据或数据访问缓慢。 存储系统故障，数据恢复时间长，影响用户体验。 用户误操作或恶意行为导致资源消耗过大，影响系统性能。  解决方案：  缩小存储节点规模，降低故障影响范围。 增加日志记录，定位问题根源。 修复数据结构错误。 提高监控能力，及时发现异常">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-04-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="故障处理">
+<meta property="article:tag" content="用户行为管理">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +161,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Averting_crisis_at_multi-petabyte_scale_-_Piotr_Da_ek"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,45 +183,47 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
 <p><strong>会议主题</strong>：
 Ceph分布式存储系统问题分析与解决方案讨论</p>
 <p><strong>会议关键细节</strong>：</p>
 <ul>
 <li><strong>问题概述</strong>：
 <ul>
-<li>遇到性能问题，客户无法访问数据或数据访问非常缓慢。</li>
-<li>存储系统出现故障，导致数据恢复时间过长，影响用户体验。</li>
+<li>性能问题，客户无法访问数据或数据访问缓慢。</li>
+<li>存储系统故障，数据恢复时间长，影响用户体验。</li>
 <li>用户误操作或恶意行为导致资源消耗过大，影响系统性能。</li>
 </ul></li>
 <li><strong>解决方案</strong>：
 <ul>
-<li>将存储节点规模缩小，将单节点容量从PB级降至TB级，降低故障影响范围。</li>
-<li>增加日志记录，收集情报，定位问题根源。</li>
-<li>使用自定义工具修改内部数据库，修复数据结构错误。</li>
+<li>缩小存储节点规模，降低故障影响范围。</li>
+<li>增加日志记录，定位问题根源。</li>
+<li>修复数据结构错误。</li>
 <li>提高监控能力，及时发现异常行为。</li>
 <li>优化资源管理，避免资源浪费。</li>
 </ul></li>
-</ul>
-<p><strong>讨论的主要议题</strong>：</p>
+<li><strong>技术细节</strong>：
 <ul>
-<li><strong>性能优化</strong>：
-<ul>
-<li>通过缩小节点规模，降低故障影响范围。</li>
-<li>优化资源分配，避免资源浪费。</li>
-<li>提高监控能力，及时发现异常行为。</li>
+<li>通过缩小单节点容量，降低故障影响范围。</li>
+<li>使用CRUSH算法优化副本分布。</li>
+<li>使用自定义工具修改内部数据库，修复数据结构错误。</li>
+<li>提高监控能力，使用bluestore和bluefs改进性能。</li>
+<li>对RocksDB进行性能优化。</li>
+<li>使用librados和libcephfs进行数据访问优化。</li>
+<li>实施snapshots和clones管理策略。</li>
+<li>使用thin provisioning和iSCSI、Fibre Channel、NFS、CIFS等协议。</li>
+<li>实施POSIX兼容性，提供网络拓扑优化和故障域管理。</li>
+<li>使用monitoring和dashboard进行系统管理。</li>
+<li>通过Kubernetes和Docker实现容器化和自动化。</li>
+<li>利用云服务如AWS、Azure和Google Cloud进行集成和扩展。</li>
+<li>针对多云和混合云环境进行优化。</li>
 </ul></li>
-<li><strong>故障处理</strong>：
+<li><strong>讨论的主要议题</strong>：
 <ul>
-<li>及时发现故障并进行修复。</li>
-<li>确保数据安全性，避免数据丢失。</li>
-<li>提高故障恢复速度，减少对用户体验的影响。</li>
-</ul></li>
-<li><strong>用户行为管理</strong>：
-<ul>
-<li>防止用户误操作或恶意行为。</li>
-<li>对用户行为进行监控，及时发现异常行为。</li>
-<li>提供用户培训，提高用户操作水平。</li>
+<li>性能优化：通过缩小节点规模，降低故障影响范围；优化资源分配，避免资源浪费；提高监控能力，及时发现异常行为。</li>
+<li>故障处理：及时发现问题并进行修复；确保数据安全性，避免数据丢失；提高故障恢复速度，减少对用户体验的影响。</li>
+<li>用户行为管理：防止用户误操作或恶意行为；对用户行为进行监控，及时发现异常行为；提供用户培训，提高用户操作水平。</li>
 </ul></li>
 </ul>
 <p><strong>决定的事项</strong>：</p>
@@ -244,15 +244,80 @@ Ceph分布式存储系统问题分析与解决方案讨论</p>
 <ul>
 <li>Ceph</li>
 <li>分布式存储</li>
+<li>CRUSH算法</li>
+<li>高可用性</li>
+<li>可扩展性</li>
+<li>对象存储</li>
+<li>块存储</li>
+<li>文件系统存储</li>
+<li>一致性</li>
+<li>去中心化</li>
 <li>性能优化</li>
-<li>故障处理</li>
-<li>用户行为管理</li>
-<li>资源管理</li>
-<li>日志记录</li>
-<li>情报收集</li>
-<li>数据结构</li>
+<li>Bluestore</li>
+<li>Bluefs</li>
+<li>RocksDB</li>
+<li>OSD</li>
+<li>MON</li>
+<li>MDS</li>
+<li>PG</li>
+<li>RADOS</li>
+<li>librados</li>
+<li>libcephfs</li>
+<li>cephfs</li>
+<li>rbd</li>
+<li>radosgw</li>
+<li>RGW</li>
+<li>RESTful API</li>
+<li>身份验证</li>
+<li>授权</li>
+<li>加密</li>
+<li>损坏纠正码</li>
+<li>复制</li>
+<li>快照</li>
+<li>克隆</li>
+<li>瘦分配</li>
+<li>iSCSI</li>
+<li>Fibre Channel</li>
+<li>NFS</li>
+<li>CIFS</li>
+<li>POSIX</li>
 <li>监控</li>
-<li>资源浪费</li>
+<li>仪表板</li>
+<li>管理</li>
+<li>编排</li>
+<li>自动化</li>
+<li>集成</li>
+<li>容器化</li>
+<li>Kubernetes</li>
+<li>Docker</li>
+<li>虚拟化</li>
+<li>云计算</li>
+<li>AWS</li>
+<li>Azure</li>
+<li>Google Cloud</li>
+<li>混合云</li>
+<li>多云</li>
+<li>存储集群</li>
+<li>节点</li>
+<li>磁盘</li>
+<li>SSD</li>
+<li>HDD</li>
+<li>JBOD</li>
+<li>SAN</li>
+<li>NAS</li>
+<li>网络</li>
+<li>拓扑</li>
+<li>故障域</li>
+<li>恢复</li>
+<li>弹性</li>
+<li>负载均衡</li>
+<li>缓存</li>
+<li>压缩</li>
+<li>去重</li>
+<li>分层</li>
+<li>性能调优</li>
+<li>基准测试</li>
+<li>验证</li>
 </ul>
 
         </div>
@@ -284,6 +349,8 @@ Ceph分布式存储系统问题分析与解决方案讨论</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/" rel="tag">故障处理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA%E7%AE%A1%E7%90%86/" rel="tag">用户行为管理</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -345,7 +412,7 @@ Ceph分布式存储系统问题分析与解决方案讨论</p>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2018/04/26/2018-Apr-26_-_-_Ceph_Performance_Weekly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2018-Apr-26 :: Ceph Performance Weekly</h4>
+        <h4 class="title">&#39;2018-Apr-26 :: Ceph Performance Weekly&#39;</h4>
       </a>
     </div>
   
@@ -354,7 +421,7 @@ Ceph分布式存储系统问题分析与解决方案讨论</p>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan</h4>
+        <h4 class="title">  Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan  </h4>
       </a>
     </div>
   

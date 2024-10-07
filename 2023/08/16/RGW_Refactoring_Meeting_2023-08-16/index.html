@@ -14,23 +14,28 @@
     
     
     
-    <title>RGW Refactoring Meeting 2023-08-16 | ceph视频总结 | youtube频道总结</title>
+    <title>RGW重构会议纪要 2023-08-16 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： 讨论Ali的工作关于标记性能计数器（labeled perf counters）和RGW（RADOS Gateway）的集成。 主要讨论内容：  Ali的工作进展：  Ali已经提交了一个PR，包含了性能计数器的初始草案，并对RGW的前端操作计数器进行了标记。 计划在本周进行更大规模的测试，并欢迎任何反馈。 PR中创建了多个不同的性能计数器实例，用于不同的操作（如put, g">
+    <meta name="keywords" content="Ceph,RGW,性能计数器,Prometheus,S3测试">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： 本次会议主要讨论了Ali关于标记性能计数器(labeled perf counters)和RGW（RADOS Gateway）集成的进展，以及Tobias在处理S3测试中粗选项请求的工作。 主要讨论内容：  Ali的工作进展：  Ali提交了一个PR，包含性能计数器的初始草案，并对RGW的前端操作计数器进行了标记。 计划进行更大规模的测试，并欢迎反馈">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RGW Refactoring Meeting 2023-08-16">
+<meta property="og:title" content="RGW重构会议纪要 2023-08-16">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： 讨论Ali的工作关于标记性能计数器（labeled perf counters）和RGW（RADOS Gateway）的集成。 主要讨论内容：  Ali的工作进展：  Ali已经提交了一个PR，包含了性能计数器的初始草案，并对RGW的前端操作计数器进行了标记。 计划在本周进行更大规模的测试，并欢迎任何反馈。 PR中创建了多个不同的性能计数器实例，用于不同的操作（如put, g">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： 本次会议主要讨论了Ali关于标记性能计数器(labeled perf counters)和RGW（RADOS Gateway）集成的进展，以及Tobias在处理S3测试中粗选项请求的工作。 主要讨论内容：  Ali的工作进展：  Ali提交了一个PR，包含性能计数器的初始草案，并对RGW的前端操作计数器进行了标记。 计划进行更大规模的测试，并欢迎反馈">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-15T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-08-16T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="性能计数器">
+<meta property="article:tag" content="Prometheus">
+<meta property="article:tag" content="S3测试">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">RGW Refactoring Meeting 2023-08-16</div>
+        <div class="flex-col header-title ellipsis">RGW重构会议纪要 2023-08-16</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">RGW Refactoring Meeting 2023-08-16</h1>
+        <h1 class="title">RGW重构会议纪要 2023-08-16</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-08-15T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要讨论内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">其他议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要讨论内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">RGW Refactoring Meeting 2023-08-16</h1>
+        <h1 class="post-card-title">RGW重构会议纪要 2023-08-16</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-08-16 00:00:00" datetime="2023-08-15T16:00:00.000Z"  itemprop="datePublished">2023-08-16</time>
 
@@ -185,22 +190,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题">会议主题：</h4>
-<p>讨论Ali的工作关于标记性能计数器（labeled perf counters）和RGW（RADOS
-Gateway）的集成。</p>
+<p>本次会议主要讨论了Ali关于标记性能计数器(labeled perf
+counters)和RGW（RADOS
+Gateway）集成的进展，以及Tobias在处理S3测试中粗选项请求的工作。</p>
 <h4 id="主要讨论内容">主要讨论内容：</h4>
 <ol type="1">
 <li><strong>Ali的工作进展</strong>：
 <ul>
-<li>Ali已经提交了一个PR，包含了性能计数器的初始草案，并对RGW的前端操作计数器进行了标记。</li>
-<li>计划在本周进行更大规模的测试，并欢迎任何反馈。</li>
-<li>PR中创建了多个不同的性能计数器实例，用于不同的操作（如put, get,
+<li>Ali提交了一个PR，包含性能计数器的初始草案，并对RGW的前端操作计数器进行了标记。</li>
+<li>计划进行更大规模的测试，并欢迎反馈。</li>
+<li>PR中创建了多个性能计数器实例，针对不同的操作（如put, get,
 delete等）。</li>
 </ul></li>
 <li><strong>性能计数器实例的合并</strong>：
 <ul>
-<li>Casey提出建议，将所有前端操作计数器合并到一个实例中，以便按桶名或用户名进行缓存。</li>
+<li>Casey建议将所有前端操作计数器合并到一个实例中，以便按桶名或用户名进行缓存。</li>
 <li>Ali解释了当前设计的原因，主要是为了未来的灵活性和多站点计数器的集成。</li>
 </ul></li>
 <li><strong>缓存和Prometheus集成</strong>：
@@ -211,15 +218,15 @@ delete等）。</li>
 <li><strong>下一步行动计划</strong>：
 <ul>
 <li>Ali将继续测试并优化性能计数器的实现。</li>
-<li>Mark和Ali计划在Folio实验室的机器上进行大规模测试，以验证exporter和Prometheus的集成性能。</li>
+<li>Mark和Ali将在Folio实验室的机器上进行大规模测试，以验证exporter和Prometheus的集成性能。</li>
 </ul></li>
-</ol>
-<h4 id="其他议题">其他议题：</h4>
+<li><strong>其他议题</strong>：
 <ul>
 <li>Tobias分享了关于处理粗选项请求的工作进展，并寻求反馈。</li>
 <li>讨论了S3测试的默认认证路径（V2 vs
 V4），并计划进一步验证和优化。</li>
-</ul>
+</ul></li>
+</ol>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
 <li>Ali将继续优化性能计数器的实现，并进行大规模测试。</li>
@@ -230,12 +237,6 @@ V4），并计划进一步验证和优化。</li>
 <li>Ali和Mark将进行大规模测试，以验证性能计数器和Prometheus的集成。</li>
 <li>Tobias将继续优化S3测试和认证逻辑的实现。</li>
 </ul>
-<h4 id="会议结束">会议结束：</h4>
-<ul>
-<li>会议在无其他议题的情况下结束，感谢所有参与者的贡献。</li>
-</ul>
-<hr />
-<p>以上是本次会议的纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -266,6 +267,8 @@ V4），并计划进一步验证和优化。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Prometheus/" rel="tag">Prometheus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/S3%E6%B5%8B%E8%AF%95/" rel="tag">S3测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E8%AE%A1%E6%95%B0%E5%99%A8/" rel="tag">性能计数器</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -277,7 +280,7 @@ V4），并计划进一步验证和优化。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/&title=《RGW Refactoring Meeting 2023-08-16》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/&title=《RGW重构会议纪要 2023-08-16》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -287,7 +290,7 @@ V4），并计划进一步验证和优化。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/&title=《RGW Refactoring Meeting 2023-08-16》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/&title=《RGW重构会议纪要 2023-08-16》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -297,7 +300,7 @@ V4），并计划进一步验证和优化。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RGW Refactoring Meeting 2023-08-16》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RGW重构会议纪要 2023-08-16》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -327,16 +330,16 @@ V4），并计划进一步验证和优化。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/08/16/Ceph_Tech_Talk_-_Making_Teuthology_Friendly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Tech Talk: Making Teuthology Friendly</h4>
+        <h4 class="title">&#39;Ceph Tech Talk: Making Teuthology Friendly&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-07-26/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/08/15/RGW_Refactoring_Meeting_2023-08-09/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">RGW Refactoring Meeting 2023-07-26</h4>
+        <h4 class="title">RGW Refactoring Meeting 2023-08-09</h4>
       </a>
     </div>
   
@@ -436,7 +439,7 @@ V4），并计划进一步验证和优化。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/&title=《RGW Refactoring Meeting 2023-08-16》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/&title=《RGW重构会议纪要 2023-08-16》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -446,7 +449,7 @@ V4），并计划进一步验证和优化。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/&title=《RGW Refactoring Meeting 2023-08-16》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/&title=《RGW重构会议纪要 2023-08-16》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -456,7 +459,7 @@ V4），并计划进一步验证和优化。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RGW Refactoring Meeting 2023-08-16》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RGW重构会议纪要 2023-08-16》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/08/16/RGW_Refactoring_Meeting_2023-08-16/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

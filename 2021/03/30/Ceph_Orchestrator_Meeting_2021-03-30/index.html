@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要 本次会议主要讨论了Ceph存储系统的几个关键议题，包括网络配置、虚拟IP服务、NFS服务的配置和管理，以及Ceph Dashboard的发展路线图。会议还涉及了Ceph与Rook集成的具体问题，以及如何优化NFS和RGW服务的部署和管理。 主要议题  网络配置与管理  讨论了如何通过修改网络列表来确保子网配置的正确性，并探讨了list networks命令与gather fac">
+    <meta name="keywords" content="Ceph,CephFS,Distributed Storage,Orchestrator,Storage">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概要 本次Ceph Orchestrator会议主要讨论了Ceph存储系统的关键议题，包括网络配置、虚拟IP服务、NFS服务的配置和管理，以及Ceph Dashboard的发展路线图。会议还涉及了Ceph与Rook集成的具体问题，以及如何优化NFS和RGW服务的部署和管理。 主要议题  网络配置与管理  讨论了如何通过修改网络列表来确保子网配置的正确性，并探">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2021-03-30">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/03/30/Ceph_Orchestrator_Meeting_2021-03-30/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要 本次会议主要讨论了Ceph存储系统的几个关键议题，包括网络配置、虚拟IP服务、NFS服务的配置和管理，以及Ceph Dashboard的发展路线图。会议还涉及了Ceph与Rook集成的具体问题，以及如何优化NFS和RGW服务的部署和管理。 主要议题  网络配置与管理  讨论了如何通过修改网络列表来确保子网配置的正确性，并探讨了list networks命令与gather fac">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概要 本次Ceph Orchestrator会议主要讨论了Ceph存储系统的关键议题，包括网络配置、虚拟IP服务、NFS服务的配置和管理，以及Ceph Dashboard的发展路线图。会议还涉及了Ceph与Rook集成的具体问题，以及如何优化NFS和RGW服务的部署和管理。 主要议题  网络配置与管理  讨论了如何通过修改网络列表来确保子网配置的正确性，并探">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-03-30T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="Storage">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,9 +190,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概要">会议概要</h4>
-<p>本次会议主要讨论了Ceph存储系统的几个关键议题，包括网络配置、虚拟IP服务、NFS服务的配置和管理，以及Ceph
+<p>本次Ceph
+Orchestrator会议主要讨论了Ceph存储系统的关键议题，包括网络配置、虚拟IP服务、NFS服务的配置和管理，以及Ceph
 Dashboard的发展路线图。会议还涉及了Ceph与Rook集成的具体问题，以及如何优化NFS和RGW服务的部署和管理。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
@@ -205,8 +212,7 @@ spec）来简化VIP服务的配置和管理。</li>
 <li><strong>NFS服务配置</strong>
 <ul>
 <li>讨论了NFS服务的配置问题，特别是RGW块在NFS配置中的必要性和如何与Rook集成。</li>
-<li>决定将RGW配置提升到 orchestrator
-层，以便于统一管理和避免在Rook和Cephadm中的重复配置。</li>
+<li>决定将RGW配置提升到orchestrator层，以便于统一管理和避免在Rook和Cephadm中的重复配置。</li>
 </ul></li>
 <li><strong>Ceph Dashboard发展</strong>
 <ul>
@@ -219,14 +225,14 @@ Dashboard的发展路线图，特别是在即将到来的CDS会议中的讨论�
 <ul>
 <li>合并<code>list networks</code>和<code>gather facts</code>命令的功能。</li>
 <li>扩展VIP服务的放置规范，以简化其配置和管理。</li>
-<li>将RGW配置提升到 orchestrator 层，以统一管理和避免重复。</li>
+<li>将RGW配置提升到orchestrator层，以统一管理和避免重复。</li>
 <li>在即将到来的CDS会议中安排关于Ceph Dashboard的讨论。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
 <li>实施<code>list networks</code>和<code>gather facts</code>命令的合并。</li>
 <li>开发和测试VIP服务的扩展放置规范。</li>
-<li>在 orchestrator 层实现RGW配置的管理。</li>
+<li>在orchestrator层实现RGW配置的管理。</li>
 <li>准备在CDS会议中关于Ceph Dashboard的讨论材料。</li>
 </ul>
 <h4 id="其他讨论点">其他讨论点</h4>
@@ -266,6 +272,8 @@ Fabrics）的管理层和子系统与命名空间模型的选择。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage/" rel="tag">Storage</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -336,7 +344,7 @@ Fabrics）的管理层和子系统与命名空间模型的选择。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/03/26/Ceph_Crimson_Seastore_2021-03-23/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Crimson/Seastore 2021-03-23</h4>
+        <h4 class="title">  Ceph Crimson/Seastore 2021-03-23  </h4>
       </a>
     </div>
   

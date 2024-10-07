@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2021-12-23 | ceph视频总结 | youtube频道总结</title>
+    <title>  Ceph 性能会议 2021-12-23   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议主要讨论了Ceph存储系统中的一些关键问题和改进措施，涉及性能优化、代码重构、内存管理等多个方面。会议由Mark主持，参与人员包括Adam、Igor、Laura等。 主要议题  Pinning逻辑的改进：  Adam和Igor提出了新的改进方案，涉及BlueStore中的pinning逻辑，特别是针对O_NOCACHE的操作。 这些改进可能会影响性能，但有助于减少对tr">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,BlueStore,内存管理">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次Ceph性能会议主要讨论了系统中关键问题的改进措施，包括性能优化、代码重构、内存管理等多个方面。会议由Mark主持，参与人员包括Adam、Igor、Laura等。 主要议题  Pinning逻辑的改进：  Adam和Igor提出了针对BlueStore中pinning逻辑的改进方案，特别是针对O_NOCACHE的操作。 这些改进可能会影响性能，但有">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2021-12-23">
+<meta property="og:title" content="  Ceph 性能会议 2021-12-23  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议主要讨论了Ceph存储系统中的一些关键问题和改进措施，涉及性能优化、代码重构、内存管理等多个方面。会议由Mark主持，参与人员包括Adam、Igor、Laura等。 主要议题  Pinning逻辑的改进：  Adam和Igor提出了新的改进方案，涉及BlueStore中的pinning逻辑，特别是针对O_NOCACHE的操作。 这些改进可能会影响性能，但有助于减少对tr">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次Ceph性能会议主要讨论了系统中关键问题的改进措施，包括性能优化、代码重构、内存管理等多个方面。会议由Mark主持，参与人员包括Adam、Igor、Laura等。 主要议题  Pinning逻辑的改进：  Adam和Igor提出了针对BlueStore中pinning逻辑的改进方案，特别是针对O_NOCACHE的操作。 这些改进可能会影响性能，但有">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-12-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="BlueStore">
+<meta property="article:tag" content="内存管理">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2021-12-23</div>
+        <div class="flex-col header-title ellipsis">  Ceph 性能会议 2021-12-23  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2021-12-23</h1>
+        <h1 class="title">  Ceph 性能会议 2021-12-23  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-12-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -142,7 +147,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a></li></ul>
 
             
         </h5>
@@ -168,12 +173,12 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2021-12-23</h1>
+        <h1 class="post-card-title">  Ceph 性能会议 2021-12-23  </h1>
         <div class="post-meta">
             <time class="post-time" title="2021-12-24 00:00:00" datetime="2021-12-23T16:00:00.000Z"  itemprop="datePublished">2021-12-24</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a></li></ul>
 
 
 
@@ -185,49 +190,49 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概述">会议概述</h4>
-<p>本次会议主要讨论了Ceph存储系统中的一些关键问题和改进措施，涉及性能优化、代码重构、内存管理等多个方面。会议由Mark主持，参与人员包括Adam、Igor、Laura等。</p>
+<p>本次Ceph性能会议主要讨论了系统中关键问题的改进措施，包括性能优化、代码重构、内存管理等多个方面。会议由Mark主持，参与人员包括Adam、Igor、Laura等。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>Pinning逻辑的改进</strong>：
 <ul>
-<li>Adam和Igor提出了新的改进方案，涉及BlueStore中的pinning逻辑，特别是针对O_NOCACHE的操作。</li>
+<li>Adam和Igor提出了针对BlueStore中pinning逻辑的改进方案，特别是针对O_NOCACHE的操作。</li>
 <li>这些改进可能会影响性能，但有助于减少对tracker
-box的依赖，提高系统的稳定性。</li>
+box的依赖，提高系统稳定性。</li>
 </ul></li>
 <li><strong>BlueStore日志的增量更新模式</strong>：
 <ul>
-<li>Adam介绍了BlueStore日志的增量更新模式，该模式已经通过严格的测试，目前正在进一步的审查中。</li>
+<li>Adam介绍了BlueStore日志的增量更新模式，该模式已通过测试，目前正在进一步的审查中。</li>
 </ul></li>
 <li><strong>TTL缓存实现和Primary Balancer PR</strong>：
 <ul>
 <li>Laura和Joshua正在合作进行Primary Balancer
 PR的代码重构，目的是使代码更加模块化和易于维护。</li>
-<li>该PR的主要目标是保持Balancer的功能不变，同时提高代码的可读性和可维护性。</li>
+<li>该PR的目标是保持Balancer的功能不变，同时提高代码的可读性和可维护性。</li>
 </ul></li>
 <li><strong>内存使用和性能优化</strong>：
 <ul>
-<li>讨论了BlueStore中的一些内存使用问题，特别是关于blob
-fsck的内存消耗。</li>
-<li>Igor提出了一个内存减少的PR，旨在优化BlueStore的内存使用，减少对系统资源的消耗。</li>
+<li>讨论了BlueStore中内存使用问题，特别是关于blob fsck的内存消耗。</li>
+<li>Igor提出了一个内存减少的PR，旨在优化BlueStore的内存使用，减少系统资源消耗。</li>
 </ul></li>
 <li><strong>EC2设备性能问题</strong>：
 <ul>
 <li>讨论了在Amazon
-EC2上运行Ceph时遇到的一些性能问题，特别是关于IOPS的保证和实际性能之间的差异。</li>
-<li>提出了一些可能的解决方案，包括增加IO合并和调整BlueStore的并发IO设置。</li>
+EC2上运行Ceph时遇到的一些性能问题，特别是关于IOPS保证和实际性能差异。</li>
+<li>提出了可能的解决方案，包括增加IO合并和调整BlueStore的并发IO设置。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ol type="1">
 <li><strong>Pinning逻辑的改进</strong>：
 <ul>
-<li>同意继续推进Adam和Igor的改进方案，并对其进行进一步的测试和审查。</li>
+<li>同意继续推进Adam和Igor的改进方案，并进行进一步的测试和审查。</li>
 </ul></li>
 <li><strong>BlueStore日志的增量更新模式</strong>：
 <ul>
-<li>确认该模式已经通过测试，将继续进行代码审查和优化。</li>
+<li>确认该模式已通过测试，将继续进行代码审查和优化。</li>
 </ul></li>
 <li><strong>Primary Balancer PR</strong>：
 <ul>
@@ -267,7 +272,7 @@ EC2上运行Ceph时遇到的一些性能问题，特别是关于IOPS的保证和
 </ol>
 <h4 id="其他讨论">其他讨论</h4>
 <ul>
-<li>讨论了Ceph在不同硬件配置下的性能表现，特别是关于内存限制和硬件成本的权衡。</li>
+<li>讨论了Ceph在不同硬件配置下的性能表现，以及内存限制和硬件成本的权衡。</li>
 <li>讨论了Ceph在不同环境下的部署策略，包括使用SSD和HDD的混合部署。</li>
 </ul>
 <h4 id="会议结束">会议结束</h4>
@@ -304,6 +309,8 @@ EC2上运行Ceph时遇到的一些性能问题，特别是关于IOPS的保证和
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/BlueStore/" rel="tag">BlueStore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" rel="tag">内存管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -315,7 +322,7 @@ EC2上运行Ceph时遇到的一些性能问题，特别是关于IOPS的保证和
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/&title=《Ceph Performance Meeting 2021-12-23》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/&title=《  Ceph 性能会议 2021-12-23  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -325,7 +332,7 @@ EC2上运行Ceph时遇到的一些性能问题，特别是关于IOPS的保证和
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/&title=《Ceph Performance Meeting 2021-12-23》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/&title=《  Ceph 性能会议 2021-12-23  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -335,7 +342,7 @@ EC2上运行Ceph时遇到的一些性能问题，特别是关于IOPS的保证和
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-12-23》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph 性能会议 2021-12-23  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -365,7 +372,7 @@ EC2上运行Ceph时遇到的一些性能问题，特别是关于IOPS的保证和
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2022-01-06</h4>
+        <h4 class="title">Ceph 性能会议 2022-01-06</h4>
       </a>
     </div>
   
@@ -374,7 +381,7 @@ EC2上运行Ceph时遇到的一些性能问题，特别是关于IOPS的保证和
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/12/14/Ceph_Code_Walkthroughs_-_Ceph_Manager/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Code Walkthroughs: Ceph Manager</h4>
+        <h4 class="title">&#39;Ceph Code Walkthroughs: Ceph Manager&#39;</h4>
       </a>
     </div>
   
@@ -474,7 +481,7 @@ EC2上运行Ceph时遇到的一些性能问题，特别是关于IOPS的保证和
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/&title=《Ceph Performance Meeting 2021-12-23》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/&title=《  Ceph 性能会议 2021-12-23  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -484,7 +491,7 @@ EC2上运行Ceph时遇到的一些性能问题，特别是关于IOPS的保证和
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/&title=《Ceph Performance Meeting 2021-12-23》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/&title=《  Ceph 性能会议 2021-12-23  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -494,7 +501,7 @@ EC2上运行Ceph时遇到的一些性能问题，特别是关于IOPS的保证和
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-12-23》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph 性能会议 2021-12-23  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/24/Ceph_Performance_Meeting_2021-12-23/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

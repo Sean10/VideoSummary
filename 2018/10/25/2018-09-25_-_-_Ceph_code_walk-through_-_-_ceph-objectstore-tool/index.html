@@ -14,23 +14,28 @@
     
     
     
-    <title>2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： Ceph对象存储工具代码审查 会议时间： 2023年11月（具体日期未提及） 参会人员： David（Ceph研发人员）、Mike（Ceph用户） 会议内容： 一、会议开场 David介绍了Ceph对象存储工具（OP）的功能和用途，OP允许用户修改对象和OSD的状态，但需要在OSD停止运行时进行。 二、OP选项和用法  选项解析： OP使用Boost选项库进行解析，支持位置参">
+    <meta name="keywords" content="Ceph,distributed storage,object storage,code review,Ceph object store tool">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph对象存储工具代码审查 会议时间： 2023年11月（具体日期未提及） 参会人员： David（Ceph研发人员）、Mike（Ceph用户） 会议内容： 一、会议开场 David介绍了Ceph对象存储工具（OP）的功能和用途，OP允许用户修改对象和OSD的状态，但需要在OSD停止运行时进行。 二、OP选项和用法  选项解析： OP使用Boost">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool">
+<meta property="og:title" content="&#39;2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/10/25/2018-09-25_-_-_Ceph_code_walk-through_-_-_ceph-objectstore-tool/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： Ceph对象存储工具代码审查 会议时间： 2023年11月（具体日期未提及） 参会人员： David（Ceph研发人员）、Mike（Ceph用户） 会议内容： 一、会议开场 David介绍了Ceph对象存储工具（OP）的功能和用途，OP允许用户修改对象和OSD的状态，但需要在OSD停止运行时进行。 二、OP选项和用法  选项解析： OP使用Boost选项库进行解析，支持位置参">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph对象存储工具代码审查 会议时间： 2023年11月（具体日期未提及） 参会人员： David（Ceph研发人员）、Mike（Ceph用户） 会议内容： 一、会议开场 David介绍了Ceph对象存储工具（OP）的功能和用途，OP允许用户修改对象和OSD的状态，但需要在OSD停止运行时进行。 二、OP选项和用法  选项解析： OP使用Boost">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-10-24T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-10-25T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="distributed storage">
+<meta property="article:tag" content="object storage">
+<meta property="article:tag" content="code review">
+<meta property="article:tag" content="Ceph object store tool">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool</div>
+        <div class="flex-col header-title ellipsis">&#39;2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool</h1>
+        <h1 class="title">&#39;2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-10-24T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool</h1>
+        <h1 class="post-card-title">'2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool'</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-10-25 00:00:00" datetime="2018-10-24T16:00:00.000Z"  itemprop="datePublished">2018-10-25</time>
 
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议主题</strong>： Ceph对象存储工具代码审查</p>
 <p><strong>会议时间</strong>： 2023年11月（具体日期未提及）</p>
 <p><strong>参会人员</strong>：
@@ -265,6 +271,8 @@ OP使用Boost选项库进行解析，支持位置参数和常规参数。原始�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-object-store-tool/" rel="tag">Ceph object store tool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/code-review/" rel="tag">code review</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/distributed-storage/" rel="tag">distributed storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/object-storage/" rel="tag">object storage</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -276,7 +284,7 @@ OP使用Boost选项库进行解析，支持位置参数和常规参数。原始�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/25/2018-09-25_-_-_Ceph_code_walk-through_-_-_ceph-objectstore-tool/&title=《2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/25/2018-09-25_-_-_Ceph_code_walk-through_-_-_ceph-objectstore-tool/&title=《'2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -286,7 +294,7 @@ OP使用Boost选项库进行解析，支持位置参数和常规参数。原始�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/25/2018-09-25_-_-_Ceph_code_walk-through_-_-_ceph-objectstore-tool/&title=《2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/25/2018-09-25_-_-_Ceph_code_walk-through_-_-_ceph-objectstore-tool/&title=《'2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -296,7 +304,7 @@ OP使用Boost选项库进行解析，支持位置参数和常规参数。原始�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/25/2018-09-25_-_-_Ceph_code_walk-through_-_-_ceph-objectstore-tool/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/25/2018-09-25_-_-_Ceph_code_walk-through_-_-_ceph-objectstore-tool/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -335,7 +343,7 @@ OP使用Boost选项库进行解析，支持位置参数和常规参数。原始�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2018/10/25/Ceph_Performance_Meeting_2018-10-25/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2018-10-25</h4>
+        <h4 class="title">Ceph 性能会议 2018-10-25</h4>
       </a>
     </div>
   
@@ -435,7 +443,7 @@ OP使用Boost选项库进行解析，支持位置参数和常规参数。原始�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/25/2018-09-25_-_-_Ceph_code_walk-through_-_-_ceph-objectstore-tool/&title=《2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/10/25/2018-09-25_-_-_Ceph_code_walk-through_-_-_ceph-objectstore-tool/&title=《'2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -445,7 +453,7 @@ OP使用Boost选项库进行解析，支持位置参数和常规参数。原始�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/25/2018-09-25_-_-_Ceph_code_walk-through_-_-_ceph-objectstore-tool/&title=《2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/10/25/2018-09-25_-_-_Ceph_code_walk-through_-_-_ceph-objectstore-tool/&title=《'2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -455,7 +463,7 @@ OP使用Boost选项库进行解析，支持位置参数和常规参数。原始�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/25/2018-09-25_-_-_Ceph_code_walk-through_-_-_ceph-objectstore-tool/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/10/25/2018-09-25_-_-_Ceph_code_walk-through_-_-_ceph-objectstore-tool/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

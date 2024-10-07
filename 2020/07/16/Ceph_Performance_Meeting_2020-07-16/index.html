@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2020-07-16 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph性能会议2020-07-16 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要  日期与时间: 具体日期未提供，会议在早晨开始。 参会人员: 会议参与者包括但不限于Josh、Matt、Igor、Radik等。  讨论的主要议题  PR合并情况:  讨论了多个PR的合并情况，包括性能测试、Jenkins失败原因、以及一些具体的技术实现细节。 提到了PR在Octopus版本的回溯问题。  性能优化:  讨论了MD的日志记录性能问题，特别是活跃的MDS配置下的日">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,RocksDB,自动压缩">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概要  日期与时间: 2020年7月16日，早晨开始。 参会人员: Josh、Matt、Igor、Radik等Ceph研发人员和内容审核专家。  讨论的主要议题  PR合并情况:  讨论了多个PR的合并，包括性能测试、Jenkins失败原因、以及一些具体技术实现细节。 提到了PR在Octopus版本的回溯问题。  性能优化:  讨论了MDS日志记录性能问题，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2020-07-16">
+<meta property="og:title" content="Ceph性能会议2020-07-16">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/07/16/Ceph_Performance_Meeting_2020-07-16/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要  日期与时间: 具体日期未提供，会议在早晨开始。 参会人员: 会议参与者包括但不限于Josh、Matt、Igor、Radik等。  讨论的主要议题  PR合并情况:  讨论了多个PR的合并情况，包括性能测试、Jenkins失败原因、以及一些具体的技术实现细节。 提到了PR在Octopus版本的回溯问题。  性能优化:  讨论了MD的日志记录性能问题，特别是活跃的MDS配置下的日">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概要  日期与时间: 2020年7月16日，早晨开始。 参会人员: Josh、Matt、Igor、Radik等Ceph研发人员和内容审核专家。  讨论的主要议题  PR合并情况:  讨论了多个PR的合并，包括性能测试、Jenkins失败原因、以及一些具体技术实现细节。 提到了PR在Octopus版本的回溯问题。  性能优化:  讨论了MDS日志记录性能问题，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-15T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-07-16T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="自动压缩">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2020-07-16</div>
+        <div class="flex-col header-title ellipsis">Ceph性能会议2020-07-16</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2020-07-16</h1>
+        <h1 class="title">Ceph性能会议2020-07-16</h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-07-15T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">其他备注</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议概要</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">2.</span> <span class="post-toc-text">讨论的主要议题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">决定的事项</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E5%A4%87%E6%B3%A8"><span class="post-toc-number">5.</span> <span class="post-toc-text">其他备注</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">6.</span> <span class="post-toc-text">结论</span></a></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2020-07-16</h1>
+        <h1 class="post-card-title">Ceph性能会议2020-07-16</h1>
         <div class="post-meta">
             <time class="post-time" title="2020-07-16 00:00:00" datetime="2020-07-15T16:00:00.000Z"  itemprop="datePublished">2020-07-16</time>
 
@@ -185,23 +190,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概要">会议概要</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>会议纪要</p>
+<h2 id="会议概要">会议概要</h2>
 <ul>
-<li><strong>日期与时间</strong>: 具体日期未提供，会议在早晨开始。</li>
+<li><strong>日期与时间</strong>: 2020年7月16日，早晨开始。</li>
 <li><strong>参会人员</strong>:
-会议参与者包括但不限于Josh、Matt、Igor、Radik等。</li>
+Josh、Matt、Igor、Radik等Ceph研发人员和内容审核专家。</li>
 </ul>
-<h4 id="讨论的主要议题">讨论的主要议题</h4>
+<h2 id="讨论的主要议题">讨论的主要议题</h2>
 <ol type="1">
 <li><strong>PR合并情况</strong>:
 <ul>
-<li>讨论了多个PR的合并情况，包括性能测试、Jenkins失败原因、以及一些具体的技术实现细节。</li>
+<li>讨论了多个PR的合并，包括性能测试、Jenkins失败原因、以及一些具体技术实现细节。</li>
 <li>提到了PR在Octopus版本的回溯问题。</li>
 </ul></li>
 <li><strong>性能优化</strong>:
 <ul>
-<li>讨论了MD的日志记录性能问题，特别是活跃的MDS配置下的日志记录代码开销。</li>
+<li>讨论了MDS日志记录性能问题，特别是活跃的MDS配置下的日志记录代码开销。</li>
 <li>探讨了使用Denk编码框架的可能性及其潜在问题。</li>
 </ul></li>
 <li><strong>RocksDB性能问题</strong>:
@@ -210,24 +216,24 @@
 <li>讨论了手动压缩作为临时解决方案的有效性，以及自动压缩的潜在需求。</li>
 </ul></li>
 </ol>
-<h4 id="决定的事项">决定的事项</h4>
+<h2 id="决定的事项">决定的事项</h2>
 <ul>
 <li>需要进一步研究和实验以确定Denk编码框架的可行性和性能提升。</li>
 <li>对于RocksDB的性能问题，需要一个可靠的复现案例来进行深入分析和解决方案的开发。</li>
 </ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+<h2 id="后续行动计划">后续行动计划</h2>
 <ul>
-<li>继续研究和实验Denk编码框架，特别是Radik将探索使用循环缓冲区来优化内存分配。</li>
+<li>继续研究和实验Denk编码框架，Radik将探索使用循环缓冲区来优化内存分配。</li>
 <li>寻找和建立RocksDB性能问题的可靠复现案例，以便进行针对性的优化。</li>
-<li>考虑实施自动压缩机制，以减轻手动压缩的负担。</li>
+<li>考虑实施自动压缩机制，减轻手动压缩的负担。</li>
 </ul>
-<h4 id="其他备注">其他备注</h4>
+<h2 id="其他备注">其他备注</h2>
 <ul>
 <li>会议中提到了多个具体的PR和代码变更，这些细节对于后续的技术实现和问题解决具有重要参考价值。</li>
 <li>强调了团队合作和持续改进的重要性，特别是在面对复杂的技术挑战时。</li>
 </ul>
-<h4 id="结论">结论</h4>
-<p>会议对当前的技术挑战进行了深入的讨论，并制定了具体的后续行动计划。团队将继续致力于性能优化和问题解决，以提升Ceph存储系统的稳定性和效率。</p>
+<h2 id="结论">结论</h2>
+<p>会议对当前的技术挑战进行了深入讨论，并制定了具体的后续行动计划。团队将继续致力于性能优化和问题解决，以提升Ceph存储系统的稳定性和效率。</p>
 
         </div>
 
@@ -258,6 +264,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E5%8E%8B%E7%BC%A9/" rel="tag">自动压缩</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -269,7 +277,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/07/16/Ceph_Performance_Meeting_2020-07-16/&title=《Ceph Performance Meeting 2020-07-16》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/07/16/Ceph_Performance_Meeting_2020-07-16/&title=《Ceph性能会议2020-07-16》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -279,7 +287,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/07/16/Ceph_Performance_Meeting_2020-07-16/&title=《Ceph Performance Meeting 2020-07-16》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/07/16/Ceph_Performance_Meeting_2020-07-16/&title=《Ceph性能会议2020-07-16》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -289,7 +297,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2020-07-16》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/07/16/Ceph_Performance_Meeting_2020-07-16/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议2020-07-16》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/07/16/Ceph_Performance_Meeting_2020-07-16/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -428,7 +436,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/07/16/Ceph_Performance_Meeting_2020-07-16/&title=《Ceph Performance Meeting 2020-07-16》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/07/16/Ceph_Performance_Meeting_2020-07-16/&title=《Ceph性能会议2020-07-16》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -438,7 +446,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/07/16/Ceph_Performance_Meeting_2020-07-16/&title=《Ceph Performance Meeting 2020-07-16》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/07/16/Ceph_Performance_Meeting_2020-07-16/&title=《Ceph性能会议2020-07-16》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -448,7 +456,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2020-07-16》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/07/16/Ceph_Performance_Meeting_2020-07-16/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph性能会议2020-07-16》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/07/16/Ceph_Performance_Meeting_2020-07-16/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 主要议题与讨论内容  Crimson Suite 重组  本周已合并一个 PR，将 c-store 相关内容移至 Crimson rados experimental Suite。 目前 RBD 测试尚未通过，主要涉及额外快照支持问题，Erratic 正在处理。  安全特性增强  提交了一个 PR，增加了 Crimson 和非 Corpson 用户的安全特性。 添加了 OSD map 标">
+    <meta name="keywords" content="Ceph,distributed storage,performance,scrub,Crimson Suite">
+    <meta name="description" content="改进后的中文总结内容 本次会议主要讨论了Ceph Crimson Suite的开发进度和相关议题。以下是会议的主要内容： 主要议题与讨论内容  Crimson Suite 重组  已合并一个PR，将c-store相关内容移至Crimson rados experimental Suite。 RBD测试尚未通过，主要涉及额外快照支持问题，Erratic正在处理。  安全特性增强  提交了一个PR，增">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;Seastore Meeting 2022-10-19">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/10/20/Ceph_Crimson_Seastore_Meeting_2022-10-19/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 主要议题与讨论内容  Crimson Suite 重组  本周已合并一个 PR，将 c-store 相关内容移至 Crimson rados experimental Suite。 目前 RBD 测试尚未通过，主要涉及额外快照支持问题，Erratic 正在处理。  安全特性增强  提交了一个 PR，增加了 Crimson 和非 Corpson 用户的安全特性。 添加了 OSD map 标">
+<meta property="og:description" content="改进后的中文总结内容 本次会议主要讨论了Ceph Crimson Suite的开发进度和相关议题。以下是会议的主要内容： 主要议题与讨论内容  Crimson Suite 重组  已合并一个PR，将c-store相关内容移至Crimson rados experimental Suite。 RBD测试尚未通过，主要涉及额外快照支持问题，Erratic正在处理。  安全特性增强  提交了一个PR，增">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-10-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-10-20T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="distributed storage">
+<meta property="article:tag" content="performance">
+<meta property="article:tag" content="scrub">
+<meta property="article:tag" content="Crimson Suite">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E4%B8%8E%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">主要议题与讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">2.</span> <span class="post-toc-text">会议结束</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%94%B9%E8%BF%9B%E5%90%8E%E7%9A%84%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.</span> <span class="post-toc-text">改进后的中文总结内容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98%E4%B8%8E%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">主要议题与讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">2.</span> <span class="post-toc-text">会议结束</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,52 +190,51 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <h3 id="改进后的中文总结内容">改进后的中文总结内容</h3>
+<p>本次会议主要讨论了Ceph Crimson
+Suite的开发进度和相关议题。以下是会议的主要内容：</p>
 <h4 id="主要议题与讨论内容">主要议题与讨论内容</h4>
 <ol type="1">
 <li><strong>Crimson Suite 重组</strong>
 <ul>
-<li>本周已合并一个 PR，将 c-store 相关内容移至 Crimson rados
-experimental Suite。</li>
-<li>目前 RBD 测试尚未通过，主要涉及额外快照支持问题，Erratic
-正在处理。</li>
+<li>已合并一个PR，将c-store相关内容移至Crimson rados experimental
+Suite。</li>
+<li>RBD测试尚未通过，主要涉及额外快照支持问题，Erratic正在处理。</li>
 </ul></li>
 <li><strong>安全特性增强</strong>
 <ul>
-<li>提交了一个 PR，增加了 Crimson 和非 Corpson 用户的安全特性。</li>
-<li>添加了 OSD map 标志和 pool 标志，以防止 Crimson osds
-在未设置标志的情况下创建 pgs。</li>
-<li>正在研究添加配置选项，以便在不传递命令行参数的情况下更改
-<code>--s p</code> 选项。</li>
+<li>提交了一个PR，增加了Crimson和非Corpson用户的安全特性。</li>
+<li>添加了OSD map标志和pool标志，以防止Crimson
+osds在未设置标志的情况下创建pgs。</li>
+<li>研究添加配置选项，以便在不传递命令行参数的情况下更改<code>--s p</code>选项。</li>
 </ul></li>
-<li><strong>Scrub 工作进展</strong>
+<li><strong>Scrub工作进展</strong>
 <ul>
-<li>计划继续推进 scrub 工作。</li>
+<li>计划继续推进scrub工作。</li>
 </ul></li>
-<li><strong>Messenger V2 协议实现</strong>
+<li><strong>Messenger V2协议实现</strong>
 <ul>
-<li>King John 正在审查随机块管理器和 Messenger V2 协议实现。</li>
-<li>需要将协议握手阶段和协议就绪阶段分离，以支持 mod core。</li>
+<li>King John正在审查随机块管理器和Messenger V2协议实现。</li>
+<li>需要将协议握手阶段和协议就绪阶段分离，以支持mod core。</li>
 </ul></li>
-<li><strong>Crimson Loop 优化</strong>
+<li><strong>Crimson Loop优化</strong>
 <ul>
-<li>Junior 发现 Crimson Loop 可能导致栈溢出，正在研究 Sister Loop
-的实现并尝试应用到 Crimson。</li>
+<li>Junior发现Crimson Loop可能导致栈溢出，正在研究Sister
+Loop的实现并尝试应用到Crimson。</li>
 </ul></li>
-<li><strong>Open SSO 和 Segmentation 问题</strong>
+<li><strong>Open SSO和Segmentation问题</strong>
 <ul>
-<li>Jensen 发现重复的 Humanity 问题，怀疑是配置差异导致，询问是否有关于
-Open SSO 或 Segmentation 的更新。</li>
+<li>Jensen发现重复的
+Humanity问题，怀疑是配置差异导致，询问是否有关于Open
+SSO或Segmentation的更新。</li>
 </ul></li>
 <li><strong>内存管理问题</strong>
 <ul>
-<li>讨论了关于内存存储的 PR，涉及使用分区或多设备的问题，存在一些 bug
-需要调试。</li>
+<li>讨论了关于内存存储的PR，涉及使用分区或多设备的问题，存在一些bug需要调试。</li>
 </ul></li>
-<li><strong>LBA 树指针问题</strong>
+<li><strong>LBA树指针问题</strong>
 <ul>
-<li>完成了 LBA 树指针的调试，正在尝试添加 LBA
-叶子节点和逻辑扩展之间的指针。</li>
+<li>完成了LBA树指针的调试，正在尝试添加LBA叶子节点和逻辑扩展之间的指针。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
@@ -288,6 +292,8 @@ Reef 代码冻结前达到稳定状态。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson-Suite/" rel="tag">Crimson Suite</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/distributed-storage/" rel="tag">distributed storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/performance/" rel="tag">performance</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/scrub/" rel="tag">scrub</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -349,7 +355,7 @@ Reef 代码冻结前达到稳定状态。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/10/20/Ceph_Crimson_SeaStore_Meeting_2022-08-16/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Crimson/SeaStore Meeting 2022-08-16</h4>
+        <h4 class="title">Ceph Crimson/SeaStore 会议纪要 2022-08-16</h4>
       </a>
     </div>
   

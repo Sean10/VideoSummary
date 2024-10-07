@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写具体日期和时间] 会议地点： [请填写具体地点] 参会人员： Sudha（Mellanox区域负责人）、市场营销团队、研发团队、IT团队 会议主题： Mellanox产品介绍及在存储领域的应用 会议内容： 一、Mellanox公司介绍  Mellanox是一家拥有约32,000名员工的以色列公司，总部位于美国，年收入约50亿美元，年增长率约40%。 Mellanox提">
+    <meta name="keywords" content="Ceph,RDMA,Mellanox,High Performance Computing,Storage Networking">
+    <meta name="description" content="[改进后的中文总结内容] Sudarshan Ramachandran的演讲主要讨论了在高性能计算和存储领域，10GbE网络带宽已不足以满足需求，并介绍了Mellanox公司在网络解决方案中的应用以及与Ceph存储系统的整合。 主要内容包括：  Mellanox公司介绍： Mellanox是一家以色列公司，总部位于美国，提供从网络适配器到交换机、线缆和硅芯片的端到端解决方案，支持多种网络速度，广泛">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sudarshan Ramachandran -- When 10GbE is Not Enough">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2015/11/13/Sudarshan_Ramachandran_--_When_10GbE_is_Not_Enough/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写具体日期和时间] 会议地点： [请填写具体地点] 参会人员： Sudha（Mellanox区域负责人）、市场营销团队、研发团队、IT团队 会议主题： Mellanox产品介绍及在存储领域的应用 会议内容： 一、Mellanox公司介绍  Mellanox是一家拥有约32,000名员工的以色列公司，总部位于美国，年收入约50亿美元，年增长率约40%。 Mellanox提">
+<meta property="og:description" content="[改进后的中文总结内容] Sudarshan Ramachandran的演讲主要讨论了在高性能计算和存储领域，10GbE网络带宽已不足以满足需求，并介绍了Mellanox公司在网络解决方案中的应用以及与Ceph存储系统的整合。 主要内容包括：  Mellanox公司介绍： Mellanox是一家以色列公司，总部位于美国，提供从网络适配器到交换机、线缆和硅芯片的端到端解决方案，支持多种网络速度，广泛">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-11-12T16:00:00.000Z">
 <meta property="article:modified_time" content="2015-11-13T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RDMA">
+<meta property="article:tag" content="Mellanox">
+<meta property="article:tag" content="High Performance Computing">
+<meta property="article:tag" content="Storage Networking">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,56 +183,35 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： [请填写具体日期和时间]</p>
-<p><strong>会议地点</strong>： [请填写具体地点]</p>
-<p><strong>参会人员</strong>：
-Sudha（Mellanox区域负责人）、市场营销团队、研发团队、IT团队</p>
-<p><strong>会议主题</strong>： Mellanox产品介绍及在存储领域的应用</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>一、Mellanox公司介绍</strong></p>
+            <p>[改进后的中文总结内容]</p>
+<p>Sudarshan
+Ramachandran的演讲主要讨论了在高性能计算和存储领域，10GbE网络带宽已不足以满足需求，并介绍了Mellanox公司在网络解决方案中的应用以及与Ceph存储系统的整合。</p>
+<p><strong>主要内容包括</strong>：</p>
 <ul>
-<li>Mellanox是一家拥有约32,000名员工的以色列公司，总部位于美国，年收入约50亿美元，年增长率约40%。</li>
-<li>Mellanox提供从网络适配器到交换机、线缆和硅芯片的端到端解决方案，支持10G、40G、25G、50G和Hunter
-G等速度。</li>
-<li>Mellanox的产品广泛应用于高性能计算、云计算、Web
-2.0、高频交易等领域。</li>
-</ul>
-<p><strong>二、Mellanox在存储领域的应用</strong></p>
-<ul>
-<li>Mellanox的产品在存储领域主要应用于高性能计算、云计算和Web
-2.0等场景，旨在提高吞吐量、降低延迟和简化基础设施。</li>
-<li>Mellanox的解决方案包括：
-<ul>
-<li>提供高带宽和低延迟的网络连接，提高IOPS和吞吐量。</li>
-<li>简化基础设施，提高系统可靠性。</li>
-<li>通过网络卸载技术，释放CPU资源，提高系统性能。</li>
-</ul></li>
-</ul>
-<p><strong>三、Mellanox产品介绍</strong></p>
-<ul>
-<li>Mellanox提供多种网络适配器、交换机和线缆，支持10G、40G、25G和50G等速度。</li>
-<li>Mellanox的交换机具有低功耗、高线速、高可靠性等特点。</li>
-<li>Mellanox的RDMA和RoCE技术可以将网络延迟降低到微秒级别，提高系统性能。</li>
-</ul>
-<p><strong>四、案例展示</strong></p>
-<ul>
-<li>会议中展示了Mellanox在OpenStack
+<li><strong>Mellanox公司介绍</strong>：
+Mellanox是一家以色列公司，总部位于美国，提供从网络适配器到交换机、线缆和硅芯片的端到端解决方案，支持多种网络速度，广泛应用于高性能计算、云计算、Web
+2.0等领域。</li>
+<li><strong>Mellanox在存储领域的应用</strong>：
+Mellanox的产品主要应用于高性能计算、云计算和Web
+2.0等场景，旨在提高吞吐量、降低延迟和简化基础设施。其解决方案包括提供高带宽和低延迟的网络连接，提高IOPS和吞吐量，简化基础设施，提高系统可靠性，并通过网络卸载技术释放CPU资源。</li>
+<li><strong>Mellanox产品介绍</strong>：
+Mellanox提供多种网络适配器、交换机和线缆，支持10G、40G、25G和50G等速度。其交换机具有低功耗、高线速、高可靠性等特点。RDMA和RoCE技术可以将网络延迟降低到微秒级别，提高系统性能。</li>
+<li><strong>案例展示</strong>： 会议中展示了Mellanox在OpenStack
 summit上的视频演示，展示了40G网络和RDMA技术在实际应用中的性能提升。</li>
+<li><strong>行动计划</strong>：
+Mellanox将继续加强与Ceph社区的沟通，推动RDMA和RoCE技术在Ceph中的应用，并提供更多的参考架构和解决方案，帮助用户构建高性能的Ceph存储系统。</li>
 </ul>
-<p><strong>五、行动计划</strong></p>
-<ul>
-<li>Mellanox将继续加强与Ceph社区的沟通，推动RDMA和RoCE技术在Ceph中的应用。</li>
-<li>Mellanox将提供更多的参考架构和解决方案，帮助用户构建高性能的Ceph存储系统。</li>
-</ul>
-<p><strong>六、讨论事项</strong></p>
+<p><strong>讨论事项</strong>：</p>
 <ul>
 <li>参会人员就Mellanox产品在存储领域的应用进行了深入讨论，并提出了相关建议。</li>
 </ul>
-<p><strong>七、后续行动</strong></p>
+<p><strong>后续行动</strong>：</p>
 <ul>
 <li>Mellanox将根据会议讨论结果，进一步完善产品方案，并加强与Ceph社区的沟通合作。</li>
 </ul>
+<p><strong>总结</strong>：</p>
+<p>Sudarshan
+Ramachandran的演讲强调了网络带宽在高性能计算和存储领域的重要性，并介绍了Mellanox的解决方案如何提高性能和效率。这对于Ceph社区和存储领域的研究人员都具有重要的参考价值。</p>
 
         </div>
 
@@ -258,6 +242,8 @@ summit上的视频演示，展示了40G网络和RDMA技术在实际应用中的�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High-Performance-Computing/" rel="tag">High Performance Computing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Mellanox/" rel="tag">Mellanox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RDMA/" rel="tag">RDMA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Storage-Networking/" rel="tag">Storage Networking</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

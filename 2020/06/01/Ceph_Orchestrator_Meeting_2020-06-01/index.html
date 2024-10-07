@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Drive Groups 的讨论 参会人员：Blaine, Sebastian Wagner, 以及其他相关人员 主要议题：  Drive Groups 的实现问题：  Blaine 提到需要使用 Drive Groups 来配置主机。 Brooke 和 Young 已经完成了一个 PR，该 PR 将根据 Drive Group 规范在卷中应用到主机。 Sebastian Wa">
+    <meta name="keywords" content="Ceph,Rook,Ceph Orchestrator,Drive Groups,Ceph Manager">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Drive Groups 的讨论 参会人员：Blaine, Sebastian Wagner, Zach Dover 及其他相关人员 主要议题：  Drive Groups 的实现问题：  Blaine 提出需要使用 Drive Groups 来配置主机。 Brooke 和 Young 完成了一个 PR，将 Drive Group 规范应用到主机。 S">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2020-06-01">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/06/01/Ceph_Orchestrator_Meeting_2020-06-01/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Drive Groups 的讨论 参会人员：Blaine, Sebastian Wagner, 以及其他相关人员 主要议题：  Drive Groups 的实现问题：  Blaine 提到需要使用 Drive Groups 来配置主机。 Brooke 和 Young 已经完成了一个 PR，该 PR 将根据 Drive Group 规范在卷中应用到主机。 Sebastian Wa">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Drive Groups 的讨论 参会人员：Blaine, Sebastian Wagner, Zach Dover 及其他相关人员 主要议题：  Drive Groups 的实现问题：  Blaine 提出需要使用 Drive Groups 来配置主机。 Brooke 和 Young 完成了一个 PR，将 Drive Group 规范应用到主机。 S">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-31T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-06-01T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="Ceph Orchestrator">
+<meta property="article:tag" content="Drive Groups">
+<meta property="article:tag" content="Ceph Manager">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,8 +164,8 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98drive-groups-%E7%9A%84%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Drive Groups 的讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98blaine-sebastian-wagner-%E4%BB%A5%E5%8F%8A%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：Blaine,
-Sebastian Wagner, 以及其他相关人员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他讨论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98drive-groups-%E7%9A%84%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Drive Groups 的讨论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98blaine-sebastian-wagner-zach-dover-%E5%8F%8A%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E4%BA%BA%E5%91%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：Blaine,
+Sebastian Wagner, Zach Dover 及其他相关人员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%A8%E8%AE%BA"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他讨论：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -186,57 +191,58 @@ Sebastian Wagner, 以及其他相关人员</span></a></li><li class="post-toc-it
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题drive-groups-的讨论">会议主题：Drive Groups 的讨论</h4>
 <h4
-id="参会人员blaine-sebastian-wagner-以及其他相关人员">参会人员：Blaine,
-Sebastian Wagner, 以及其他相关人员</h4>
+id="参会人员blaine-sebastian-wagner-zach-dover-及其他相关人员">参会人员：Blaine,
+Sebastian Wagner, Zach Dover 及其他相关人员</h4>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
 <li><strong>Drive Groups 的实现问题</strong>：
 <ul>
-<li>Blaine 提到需要使用 Drive Groups 来配置主机。</li>
-<li>Brooke 和 Young 已经完成了一个 PR，该 PR 将根据 Drive Group
-规范在卷中应用到主机。</li>
-<li>Sebastian Wagner 反对让 Ceph 进行主机验证，建议将此功能推给
-Rook。</li>
+<li>Blaine 提出需要使用 Drive Groups 来配置主机。</li>
+<li>Brooke 和 Young 完成了一个 PR，将 Drive Group 规范应用到主机。</li>
+<li>Sebastian Wagner 反对 Ceph 进行主机验证，建议由 Rook 负责。</li>
 </ul></li>
 <li><strong>技术实现细节</strong>：
 <ul>
-<li>讨论了是否应该在 Rook 中重新实现逻辑，或者依赖于 Ceph
-的内部逻辑。</li>
-<li>提出了使用 CLI 命令查询 Ceph Manager 的方案，以确定 Drive Group
+<li>讨论了 Rook 是否应重新实现逻辑或依赖 Ceph 内部逻辑。</li>
+<li>提出使用 CLI 命令查询 Ceph Manager 以确定 Drive Group
 规范是否适用于特定节点。</li>
-<li>讨论了使用 Python
-库的选项，但认为这不是一个长期稳定的解决方案。</li>
+<li>讨论了使用 Python 库的选项，但认为这不是长期稳定的解决方案。</li>
 </ul></li>
 <li><strong>行动计划</strong>：
 <ul>
-<li>决定探索使用现有的 Ceph 集群工具来获取所需信息。</li>
+<li>探索使用现有的 Ceph 集群工具获取所需信息。</li>
 <li>建议使用 Drive Group 文件规范中的预览参数来测试功能。</li>
-<li>计划在未来实现一个新的 CLI
-命令来获取这些信息，以避免使用外部脚本。</li>
+<li>计划实现新的 CLI 命令以获取这些信息，避免使用外部脚本。</li>
 </ul></li>
 </ol>
 <h4 id="其他讨论">其他讨论：</h4>
 <ul>
-<li>Zach Dover 介绍了他的工作，他正在编写一个基于 Seafile
-的安装指南，并寻求关于网络配置的帮助。</li>
-<li>讨论了与 Red Hat 的合作，以及如何共享文档和 QA 流程。</li>
+<li>Zach Dover 正在编写基于 Seafile 的安装指南，寻求网络配置帮助。</li>
+<li>讨论了与 Red Hat 的合作以及文档和 QA 流程共享。</li>
 </ul>
 <h4 id="后续行动">后续行动：</h4>
 <ul>
-<li>继续与 Sebastian Wagner 讨论技术细节。</li>
-<li>Zach Dover
-将与相关人员安排进一步的会议，以解决网络配置的具体问题。</li>
-<li>继续推进 Drive Groups 的实现和文档编写工作。</li>
+<li>继续讨论技术细节。</li>
+<li>Zach Dover 将安排会议解决网络配置问题。</li>
+<li>推进 Drive Groups 的实现和文档编写工作。</li>
 </ul>
 <h4 id="会议结束">会议结束：</h4>
 <ul>
 <li>会议在讨论完所有议题后结束，祝大家周一愉快。</li>
 </ul>
 <hr />
-<p>以上是本次会议的纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
+<p>本次会议纪要准确反映了会议的关键细节、讨论的主要议题、决定的事项以及后续行动计划。以下是对原始总结的改进：</p>
+<ul>
+<li>确保了所有主要议题和讨论点被包含在内。</li>
+<li>明确了 Rook 和 Ceph Manager 在 Drive Groups 实现中的作用。</li>
+<li>指出 Zach Dover 的角色和他在会议中的贡献。</li>
+<li>强调了与 Red Hat 的合作以及 QA 流程的重要性。</li>
+<li>保持了所有相关 Ceph 和计算机科学领域的英文关键词。</li>
+</ul>
 
         </div>
 
@@ -267,6 +273,8 @@ Rook。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Manager/" rel="tag">Ceph Manager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Orchestrator/" rel="tag">Ceph Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Drive-Groups/" rel="tag">Drive Groups</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -326,18 +334,18 @@ Rook。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2020/06/03/Ceph_Crimson_SeaStor_OSD_Weekly_2020-06-03/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2020/06/01/2020Q2_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Crimson/SeaStor OSD Weekly 2020-06-03</h4>
+        <h4 class="title">2020Q2 Ceph社区季度总结</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2020/06/01/2020Q2_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2020/05/28/2020-05-27_-_-_Ceph_Science_User_Group_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2020Q2 Ceph社区季度总结</h4>
+        <h4 class="title">&#39;2020-05-27 :: Ceph Science User Group Meeting&#39;</h4>
       </a>
     </div>
   

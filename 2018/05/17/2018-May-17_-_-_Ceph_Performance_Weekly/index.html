@@ -14,23 +14,28 @@
     
     
     
-    <title>2018-May-17 :: Ceph Performance Weekly | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2018-May-17 :: Ceph Performance Weekly&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： （此处应填写会议具体时间） 参会人员： （此处应填写参会人员名单） 会议主题： 本周 pull requests 汇报及优先级缓存设计讨论 会议内容： 1. 本周 pull requests 汇报  新提交的 pull requests：  与 Sage 商量后，本周未收到 Sage 的回复，可能存在冲突，会议继续进行。 提交了一个关于 Blue Store 优先级缓存的 p">
+    <meta name="keywords" content="Ceph,RocksDB,Blue Store,Pull Requests,Performance">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： （此处应填写会议具体时间） 参会人员： （此处应填写参会人员名单） 会议主题： 本周 Pull Requests 汇报及优先级缓存设计讨论 会议内容： 1. 本周 Pull Requests 汇报  新提交的 Pull Requests：  提交了关于 Blue Store 优先级缓存的 Pull Requests，旨在简化用户设置内存使用比例的过程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018-May-17 :: Ceph Performance Weekly">
+<meta property="og:title" content="&#39;2018-May-17 :: Ceph Performance Weekly&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/05/17/2018-May-17_-_-_Ceph_Performance_Weekly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： （此处应填写会议具体时间） 参会人员： （此处应填写参会人员名单） 会议主题： 本周 pull requests 汇报及优先级缓存设计讨论 会议内容： 1. 本周 pull requests 汇报  新提交的 pull requests：  与 Sage 商量后，本周未收到 Sage 的回复，可能存在冲突，会议继续进行。 提交了一个关于 Blue Store 优先级缓存的 p">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： （此处应填写会议具体时间） 参会人员： （此处应填写参会人员名单） 会议主题： 本周 Pull Requests 汇报及优先级缓存设计讨论 会议内容： 1. 本周 Pull Requests 汇报  新提交的 Pull Requests：  提交了关于 Blue Store 优先级缓存的 Pull Requests，旨在简化用户设置内存使用比例的过程">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-05-16T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-05-17T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="Blue Store">
+<meta property="article:tag" content="Pull Requests">
+<meta property="article:tag" content="Performance">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2018-May-17 :: Ceph Performance Weekly</div>
+        <div class="flex-col header-title ellipsis">&#39;2018-May-17 :: Ceph Performance Weekly&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2018-May-17 :: Ceph Performance Weekly</h1>
+        <h1 class="title">&#39;2018-May-17 :: Ceph Performance Weekly&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-05-16T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2018-May-17 :: Ceph Performance Weekly</h1>
+        <h1 class="post-card-title">'2018-May-17 :: Ceph Performance Weekly'</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-05-17 00:00:00" datetime="2018-05-16T16:00:00.000Z"  itemprop="datePublished">2018-05-17</time>
 
@@ -185,60 +190,57 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议时间">会议时间：</h4>
 <p>（此处应填写会议具体时间）</p>
 <h4 id="参会人员">参会人员：</h4>
 <p>（此处应填写参会人员名单）</p>
 <h4 id="会议主题">会议主题：</h4>
-<p>本周 pull requests 汇报及优先级缓存设计讨论</p>
+<p>本周 Pull Requests 汇报及优先级缓存设计讨论</p>
 <h4 id="会议内容">会议内容：</h4>
-<p><strong>1. 本周 pull requests 汇报</strong></p>
+<p><strong>1. 本周 Pull Requests 汇报</strong></p>
 <ul>
-<li><strong>新提交的 pull requests</strong>：
+<li><strong>新提交的 Pull Requests</strong>：
 <ul>
-<li>与 Sage 商量后，本周未收到 Sage
-的回复，可能存在冲突，会议继续进行。</li>
-<li>提交了一个关于 Blue Store 优先级缓存的 pull
-requests，旨在简化用户设置内存使用比例的过程，并允许自动调优。</li>
+<li>提交了关于 Blue Store 优先级缓存的 Pull
+Requests，旨在简化用户设置内存使用比例的过程，并允许自动调优。</li>
 </ul></li>
-<li><strong>已合并的 pull requests</strong>：
+<li><strong>已合并的 Pull Requests</strong>：
 <ul>
-<li>Igor 的 alligator pruning 修复 pull requests。</li>
-<li>Async messenger pull
-requests，改进了锁定行为，可能对延迟相关场景有益。</li>
-<li>Overwrite apps 恢复优化 pull requests，未合并，作者已关闭。</li>
-<li>Igor 的新位图分配器 pull requests，Sage
+<li>Igor 的 alligator pruning 修复 Pull Requests。</li>
+<li>Async messenger Pull Requests，改进了锁定行为。</li>
+<li>Overwrite apps 恢复优化 Pull Requests，未合并，作者已关闭。</li>
+<li>Igor 的新位图分配器 Pull Requests，Sage
 已审查，希望替换旧代码。</li>
-<li>lib RBD throttle pull requests，更新情况不明。</li>
-<li>Radice Slavs 的 crypto SSL pull requests，正在测试和修复中。</li>
+<li>lib RBD throttle Pull Requests，更新情况不明。</li>
+<li>Radice Slavs 的 crypto SSL Pull Requests，正在测试和修复中。</li>
 </ul></li>
-<li><strong>未合并的 pull requests</strong>：
+<li><strong>未合并的 Pull Requests</strong>：
 <ul>
-<li>Peter 的 disc right coalescing pull requests。</li>
-<li>Adam 的哈希相关 pull requests，Sage 的版本正在工作，可能不需要 Adam
-原始提案中那么多工作。</li>
-<li>Peter 的减少 buffer list 重构的 pull requests。</li>
-<li>Redick 的 huge pages pull requests。</li>
-<li>Adam 的更多 pull requests。</li>
+<li>Peter 的 disc right coalescing Pull Requests。</li>
+<li>Adam 的哈希相关 Pull Requests，Sage 的版本正在工作。</li>
+<li>Peter 的减少 buffer list 重构的 Pull Requests。</li>
+<li>Redick 的 huge pages Pull Requests。</li>
+<li>Adam 的更多 Pull Requests。</li>
 </ul></li>
 <li><strong>其他</strong>：
 <ul>
-<li>讨论了 AES 和加密相关的 pull requests。</li>
+<li>讨论了 AES 和加密相关的 Pull Requests。</li>
 </ul></li>
 </ul>
 <p><strong>2. 优先级缓存设计讨论</strong></p>
 <ul>
 <li><strong>问题</strong>：
 <ul>
-<li>目前，用户难以调整缓存设置，且设置比例难以确定。</li>
+<li>用户难以调整缓存设置，且设置比例难以确定。</li>
 <li>当 Blue Store 和 RocksDB 的缓存冲突时，性能会下降。</li>
 <li>RocksDB
 默认会扩展块缓存，可能会超过用户指定的比例，导致索引和过滤器被清除。</li>
 </ul></li>
 <li><strong>解决方案</strong>：
 <ul>
-<li>提交的 pull requests
+<li>提交的 Pull Requests
 旨在简化用户设置内存使用比例的过程，并允许自动调优。</li>
 <li>通过优先级方案，可以根据工作负载调整缓存分配。</li>
 <li>未来工作包括：
@@ -263,7 +265,7 @@ requests，改进了锁定行为，可能对延迟相关场景有益。</li>
 <li>进行更多测试和评估。</li>
 </ul>
 <h4 id="会议总结">会议总结：</h4>
-<p>本次会议讨论了本周 pull requests
+<p>本次会议讨论了本周 Pull Requests
 和优先级缓存设计，并确定了后续行动计划。会议内容丰富，讨论深入，对 Ceph
 的性能优化具有重要意义。</p>
 
@@ -296,6 +298,8 @@ requests，改进了锁定行为，可能对延迟相关场景有益。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Blue-Store/" rel="tag">Blue Store</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance/" rel="tag">Performance</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Pull-Requests/" rel="tag">Pull Requests</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -307,7 +311,7 @@ requests，改进了锁定行为，可能对延迟相关场景有益。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/05/17/2018-May-17_-_-_Ceph_Performance_Weekly/&title=《2018-May-17 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/05/17/2018-May-17_-_-_Ceph_Performance_Weekly/&title=《'2018-May-17 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -317,7 +321,7 @@ requests，改进了锁定行为，可能对延迟相关场景有益。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/05/17/2018-May-17_-_-_Ceph_Performance_Weekly/&title=《2018-May-17 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/05/17/2018-May-17_-_-_Ceph_Performance_Weekly/&title=《'2018-May-17 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -327,7 +331,7 @@ requests，改进了锁定行为，可能对延迟相关场景有益。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-May-17 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/05/17/2018-May-17_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-May-17 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/05/17/2018-May-17_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -355,9 +359,9 @@ requests，改进了锁定行为，可能对延迟相关场景有益。</li>
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2018/05/28/2018-May-24_-_-_Ceph_Tech_Talks/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2018/05/28/2018-May-24_-_-_Ceph_Performance_Weekly/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2018-May-24 :: Ceph Tech Talks</h4>
+        <h4 class="title">  2018-May-24 :: Ceph Performance Weekly  </h4>
       </a>
     </div>
   
@@ -366,7 +370,7 @@ requests，改进了锁定行为，可能对延迟相关场景有益。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2018/05/10/2018-May-10_-_-_Ceph_Performance_Weekly/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2018-May-10 :: Ceph Performance Weekly</h4>
+        <h4 class="title">&#39;2018-May-10 :: Ceph Performance Weekly&#39;</h4>
       </a>
     </div>
   
@@ -466,7 +470,7 @@ requests，改进了锁定行为，可能对延迟相关场景有益。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/05/17/2018-May-17_-_-_Ceph_Performance_Weekly/&title=《2018-May-17 :: Ceph Performance Weekly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/05/17/2018-May-17_-_-_Ceph_Performance_Weekly/&title=《'2018-May-17 :: Ceph Performance Weekly'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -476,7 +480,7 @@ requests，改进了锁定行为，可能对延迟相关场景有益。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/05/17/2018-May-17_-_-_Ceph_Performance_Weekly/&title=《2018-May-17 :: Ceph Performance Weekly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/05/17/2018-May-17_-_-_Ceph_Performance_Weekly/&title=《'2018-May-17 :: Ceph Performance Weekly'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -486,7 +490,7 @@ requests，改进了锁定行为，可能对延迟相关场景有益。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018-May-17 :: Ceph Performance Weekly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/05/17/2018-May-17_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2018-May-17 :: Ceph Performance Weekly'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/05/17/2018-May-17_-_-_Ceph_Performance_Weekly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

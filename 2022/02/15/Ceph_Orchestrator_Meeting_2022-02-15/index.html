@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题 本次会议主要讨论了关于Rook管理模块（manager rook）的相关问题，特别是在Kubernetes环境下的应用和与Ceph管理模块（cephadm）的差异。 主要议题  Rook管理模块的历史和设计初衷：  Rook管理模块是在三到四年前创建的，旨在提供一个通用的接口来与不同的编排器（orchestrators）协同工作。 目前主要支持fadm和Rook，但在Kuber">
+    <meta name="keywords" content="Ceph,Kubernetes,Rook,Orchestration,Cephadm">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph在Kubernetes环境下的Rook管理模块（manager rook）与Ceph管理模块（cephadm）的差异，以及未来的发展方向。会议内容如下：  Rook管理模块的历史和设计初衷：Rook管理模块旨在提供一个通用的接口来与不同的编排器协同工作，但目前主要支持fadm和Rook，在Kubernetes环境下的操作方式与其他平台（如ceph">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2022-02-15">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/02/15/Ceph_Orchestrator_Meeting_2022-02-15/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题 本次会议主要讨论了关于Rook管理模块（manager rook）的相关问题，特别是在Kubernetes环境下的应用和与Ceph管理模块（cephadm）的差异。 主要议题  Rook管理模块的历史和设计初衷：  Rook管理模块是在三到四年前创建的，旨在提供一个通用的接口来与不同的编排器（orchestrators）协同工作。 目前主要支持fadm和Rook，但在Kuber">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph在Kubernetes环境下的Rook管理模块（manager rook）与Ceph管理模块（cephadm）的差异，以及未来的发展方向。会议内容如下：  Rook管理模块的历史和设计初衷：Rook管理模块旨在提供一个通用的接口来与不同的编排器协同工作，但目前主要支持fadm和Rook，在Kubernetes环境下的操作方式与其他平台（如ceph">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-02-15T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="Orchestration">
+<meta property="article:tag" content="Cephadm">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -156,13 +161,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主要议题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">决定事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%A4%87%E6%B3%A8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">备注</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Orchestrator_Meeting_2022-02-15"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -185,52 +183,39 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题">会议主题</h4>
-<p>本次会议主要讨论了关于Rook管理模块（manager
-rook）的相关问题，特别是在Kubernetes环境下的应用和与Ceph管理模块（cephadm）的差异。</p>
-<h4 id="主要议题">主要议题</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph在Kubernetes环境下的Rook管理模块（manager
+rook）与Ceph管理模块（cephadm）的差异，以及未来的发展方向。会议内容如下：</p>
 <ol type="1">
-<li><strong>Rook管理模块的历史和设计初衷</strong>：
-<ul>
-<li>Rook管理模块是在三到四年前创建的，旨在提供一个通用的接口来与不同的编排器（orchestrators）协同工作。</li>
-<li>目前主要支持fadm和Rook，但在Kubernetes环境下，Rook的操作方式与其他平台（如cephadm）存在显著差异。</li>
-</ul></li>
-<li><strong>面临的挑战</strong>：
+<li><p><strong>Rook管理模块的历史和设计初衷</strong>：Rook管理模块旨在提供一个通用的接口来与不同的编排器协同工作，但目前主要支持fadm和Rook，在Kubernetes环境下的操作方式与其他平台（如cephadm）存在显著差异。</p></li>
+<li><p><strong>面临的挑战</strong>：</p>
 <ul>
 <li>Rook在Kubernetes中的操作与其他平台不同，导致一些编排器API对Rook不适用。</li>
 <li>仪表盘（dashboard）可能需要为Kubernetes集群提供不同的用户体验。</li>
 </ul></li>
-<li><strong>Rook管理模块的未来</strong>：
+<li><p><strong>Rook管理模块的未来</strong>：</p>
 <ul>
 <li>讨论了是否应该继续投入资源到Rook管理模块，以及是否有其他更合适的方法。</li>
-<li>特别是关于仪表盘集成的问题，以及是否应该正式支持Rook管理模块。</li>
+<li>特别关注仪表盘集成的问题，以及是否应该正式支持Rook管理模块。</li>
 </ul></li>
-<li><strong>文档和API的调整</strong>：
+<li><p><strong>文档和API的调整</strong>：</p>
 <ul>
 <li>建议修改Ceph文档，不再将Rook与cephadm进行直接比较，或者明确指出哪些功能对Rook不适用。</li>
 <li>讨论了是否应该在Ceph文档中记录Rook的方法，或者直接引导用户到Rook文档。</li>
 </ul></li>
-</ol>
-<h4 id="决定事项">决定事项</h4>
+<li><p><strong>决定事项</strong>：</p>
 <ul>
 <li>需要进一步讨论和明确Rook用户的需求，特别是在Kubernetes环境下的需求。</li>
 <li>需要与仪表盘团队进行深入讨论，以确定仪表盘在Kubernetes环境下的功能和体验。</li>
 <li>可能需要为Rook设计一个不同于编排器API的新API，以更好地适应Kubernetes环境。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划</h4>
+</ul></li>
+<li><p><strong>后续行动计划</strong>：</p>
 <ul>
 <li>安排一个专门的会议，邀请仪表盘团队和Rook团队成员，以及相关的产品经理，深入讨论Rook管理模块的未来方向。</li>
 <li>继续评估和调整文档，确保信息的准确性和实用性。</li>
 <li>考虑长期的产品规划和用户需求，以决定Rook管理模块的最终定位和功能。</li>
-</ul>
-<h4 id="备注">备注</h4>
-<ul>
-<li>会议中提到了一些具体的操作流程和技术细节，但由于涉及敏感信息，未在会议记录中详细展开。</li>
-<li>会议强调了用户需求和体验的重要性，以及在不同部署环境（如Kubernetes和裸机）下可能需要不同的解决方案。</li>
-</ul>
-<h4 id="结论">结论</h4>
-<p>本次会议为Rook管理模块的未来发展方向提供了初步的讨论和建议，但具体决策和实施细节需要进一步的讨论和规划。</p>
+</ul></li>
+</ol>
 
         </div>
 
@@ -261,6 +246,8 @@ rook）的相关问题，特别是在Kubernetes环境下的应用和与Ceph管�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cephadm/" rel="tag">Cephadm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kubernetes/" rel="tag">Kubernetes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestration/" rel="tag">Orchestration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -331,7 +318,7 @@ rook）的相关问题，特别是在Kubernetes环境下的应用和与Ceph管�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/02/12/Ceph_Orchestrator_Meeting_2022-02-07/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Orchestrator Meeting 2022-02-07</h4>
+        <h4 class="title">  Ceph Orchestrator Meeting 2022-02-07  </h4>
       </a>
     </div>
   

@@ -14,23 +14,28 @@
     
     
     
-    <title>2019-02-11 :: Ceph Orchestration Meeting | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;2019-02-11 :: Ceph Orchestration Meeting&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： 2023年11月X日 参会人员： [请在此处列出参会人员姓名] 会议主题： 分布式存储Ceph项目会议 会议内容： 一、会议纪要  会议纪要损坏问题：  上次会议的会议纪要损坏，怀疑是因为多人同时编辑导致的。已恢复，但格式略有损失。  面对面会议安排：  下次面对面会议将于3月至6月期间举行，地点在布尔诺或纽伦堡，具体时间将通过Doodle投票确定。  设备清单刷新：  讨论">
+    <meta name="keywords" content="Ceph,分布式存储,自动化,云计算,系统管理">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph项目的多个重要议题，包括会议纪要损坏、设备清单刷新、Cats实现、库存过滤器标签、添加&#x2F;删除主机、Rook问题和OpenShift安装器。 会议纪要损坏问题： 上次会议的会议纪要由于多人同时编辑而损坏，现已恢复。 设备清单刷新： 讨论了在Rook和DeepSea等 orchestrator 中触发设备清单刷新的问题，决定提供一个刷新标志，但不会在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-02-11 :: Ceph Orchestration Meeting">
+<meta property="og:title" content="&#39;2019-02-11 :: Ceph Orchestration Meeting&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2019/02/22/2019-02-11_-_-_Ceph_Orchestration_Meeting/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： 2023年11月X日 参会人员： [请在此处列出参会人员姓名] 会议主题： 分布式存储Ceph项目会议 会议内容： 一、会议纪要  会议纪要损坏问题：  上次会议的会议纪要损坏，怀疑是因为多人同时编辑导致的。已恢复，但格式略有损失。  面对面会议安排：  下次面对面会议将于3月至6月期间举行，地点在布尔诺或纽伦堡，具体时间将通过Doodle投票确定。  设备清单刷新：  讨论">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph项目的多个重要议题，包括会议纪要损坏、设备清单刷新、Cats实现、库存过滤器标签、添加&#x2F;删除主机、Rook问题和OpenShift安装器。 会议纪要损坏问题： 上次会议的会议纪要由于多人同时编辑而损坏，现已恢复。 设备清单刷新： 讨论了在Rook和DeepSea等 orchestrator 中触发设备清单刷新的问题，决定提供一个刷新标志，但不会在">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-02-21T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-02-22T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="自动化">
+<meta property="article:tag" content="云计算">
+<meta property="article:tag" content="系统管理">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2019-02-11 :: Ceph Orchestration Meeting</div>
+        <div class="flex-col header-title ellipsis">&#39;2019-02-11 :: Ceph Orchestration Meeting&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2019-02-11 :: Ceph Orchestration Meeting</h1>
+        <h1 class="title">&#39;2019-02-11 :: Ceph Orchestration Meeting&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-02-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -161,7 +166,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2019-02-11 :: Ceph Orchestration Meeting</h1>
+        <h1 class="post-card-title">'2019-02-11 :: Ceph Orchestration Meeting'</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-02-22 00:00:00" datetime="2019-02-21T16:00:00.000Z"  itemprop="datePublished">2019-02-22</time>
 
@@ -178,64 +183,25 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>会议纪要</strong></p>
-<p><strong>会议时间</strong>： 2023年11月X日</p>
-<p><strong>参会人员</strong>： [请在此处列出参会人员姓名]</p>
-<p><strong>会议主题</strong>： 分布式存储Ceph项目会议</p>
-<p><strong>会议内容</strong>：</p>
-<p><strong>一、会议纪要</strong></p>
-<ol type="1">
-<li><strong>会议纪要损坏问题</strong>：
-<ul>
-<li>上次会议的会议纪要损坏，怀疑是因为多人同时编辑导致的。已恢复，但格式略有损失。</li>
-</ul></li>
-<li><strong>面对面会议安排</strong>：
-<ul>
-<li>下次面对面会议将于3月至6月期间举行，地点在布尔诺或纽伦堡，具体时间将通过Doodle投票确定。</li>
-</ul></li>
-<li><strong>设备清单刷新</strong>：
-<ul>
-<li>讨论了在Rook和DeepSea等 orchestrator
-中触发设备清单刷新的问题。决定提供一个刷新标志，但不会在Rook或DeepSea中实现缓存，以便在需要时获取最新清单。</li>
-</ul></li>
-<li><strong>Cats实现</strong>：
-<ul>
-<li>讨论了为所有 orchestrator
-实现Cats（缓存）的可行性。决定将Cats作为一个服务实现，并在需要的时候使用，而不是强制要求每个操作都使用Cats。</li>
-</ul></li>
-<li><strong>库存过滤器标签</strong>：
-<ul>
-<li>讨论了是否应该在库存过滤器中使用标签。决定将标签保留在orchestrator中，但不会在通用接口中使用，以避免与Rook和Ceph的标签使用冲突。</li>
-</ul></li>
-<li><strong>添加/删除主机</strong>：
-<ul>
-<li>讨论了是否应该在orchestrator接口中保留添加/删除主机的功能。决定保留该功能，因为某些
-orchestrator（如DeepSea）可能需要它。</li>
-</ul></li>
-<li><strong>Rook问题</strong>：
-<ul>
-<li>讨论了Rook在创建OSD时出现的问题。Sebastian
-Han正在调查这个问题。</li>
-</ul></li>
-<li><strong>OpenShift安装器</strong>：
-<ul>
-<li>讨论了使用OpenShift安装器部署Ceph的问题。决定调查使用Ansible Runner
-Service的Ansible实现。</li>
-</ul></li>
-</ol>
-<p><strong>二、行动计划</strong></p>
-<ol type="1">
-<li>Sebastian Han调查Rook创建OSD时出现的问题。</li>
-<li>探索使用Ansible Runner Service的Ansible实现。</li>
-<li>确定下次面对面会议的时间和地点。</li>
-</ol>
-<p><strong>三、其他事项</strong></p>
-<ol type="1">
-<li>会议纪要已上传到会议笔记垫。</li>
-<li>请参会人员检查会议笔记垫，并提供任何补充信息或意见。</li>
-</ol>
-<p><strong>四、会议总结</strong></p>
-<p>本次会议讨论了Ceph项目的多个重要议题，并制定了相应的行动计划。会议取得了积极成果，为项目的进一步发展奠定了基础。</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph项目的多个重要议题，包括会议纪要损坏、设备清单刷新、Cats实现、库存过滤器标签、添加/删除主机、Rook问题和OpenShift安装器。</p>
+<p><strong>会议纪要损坏问题</strong>：
+上次会议的会议纪要由于多人同时编辑而损坏，现已恢复。</p>
+<p><strong>设备清单刷新</strong>： 讨论了在Rook和DeepSea等 orchestrator
+中触发设备清单刷新的问题，决定提供一个刷新标志，但不会在Rook或DeepSea中实现缓存。</p>
+<p><strong>Cats实现</strong>： 讨论了为所有 orchestrator
+实现Cats（缓存）的可行性，决定将Cats作为一个服务实现。</p>
+<p><strong>库存过滤器标签</strong>：
+讨论了是否应该在库存过滤器中使用标签，决定将标签保留在orchestrator中，但不会在通用接口中使用。</p>
+<p><strong>添加/删除主机</strong>：
+讨论了是否应该在orchestrator接口中保留添加/删除主机的功能，决定保留该功能。</p>
+<p><strong>Rook问题</strong>：
+讨论了Rook在创建OSD时出现的问题，Sebastian Han正在调查这个问题。</p>
+<p><strong>OpenShift安装器</strong>：
+讨论了使用OpenShift安装器部署Ceph的问题，决定调查使用Ansible Runner
+Service的Ansible实现。</p>
+<p>会议还制定了相应的行动计划，包括调查Rook创建OSD时的问题、探索使用Ansible
+Runner Service的Ansible实现，以及确定下次面对面会议的时间和地点。</p>
 
         </div>
 
@@ -266,6 +232,8 @@ Service的Ansible实现。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/" rel="tag">系统管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" rel="tag">自动化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -277,7 +245,7 @@ Service的Ansible实现。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/02/22/2019-02-11_-_-_Ceph_Orchestration_Meeting/&title=《2019-02-11 :: Ceph Orchestration Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/02/22/2019-02-11_-_-_Ceph_Orchestration_Meeting/&title=《'2019-02-11 :: Ceph Orchestration Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -287,7 +255,7 @@ Service的Ansible实现。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/02/22/2019-02-11_-_-_Ceph_Orchestration_Meeting/&title=《2019-02-11 :: Ceph Orchestration Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/02/22/2019-02-11_-_-_Ceph_Orchestration_Meeting/&title=《'2019-02-11 :: Ceph Orchestration Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -297,7 +265,7 @@ Service的Ansible实现。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-02-11 :: Ceph Orchestration Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/02/22/2019-02-11_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-02-11 :: Ceph Orchestration Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/02/22/2019-02-11_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -327,16 +295,16 @@ Service的Ansible实现。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2019/02/24/2019-02-19_-_-_Crimson_SeaStor_OSD_Weekly_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2019-02-19:: Crimson SeaStor/OSD Weekly Meeting</h4>
+        <h4 class="title">&#39;2019-02-19:: Crimson SeaStor/OSD Weekly Meeting&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2019/02/22/2019-02-12_-_-_Crimson_SeaStor_OSD_Meeting/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2019/02/22/2019-02-18_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2019-02-12:: Crimson SeaStor/OSD Meeting</h4>
+        <h4 class="title">&#39;2019-02-18:: Ceph Orchestration Meeting&#39;</h4>
       </a>
     </div>
   
@@ -436,7 +404,7 @@ Service的Ansible实现。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/02/22/2019-02-11_-_-_Ceph_Orchestration_Meeting/&title=《2019-02-11 :: Ceph Orchestration Meeting》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2019/02/22/2019-02-11_-_-_Ceph_Orchestration_Meeting/&title=《'2019-02-11 :: Ceph Orchestration Meeting'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -446,7 +414,7 @@ Service的Ansible实现。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/02/22/2019-02-11_-_-_Ceph_Orchestration_Meeting/&title=《2019-02-11 :: Ceph Orchestration Meeting》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2019/02/22/2019-02-11_-_-_Ceph_Orchestration_Meeting/&title=《'2019-02-11 :: Ceph Orchestration Meeting'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -456,7 +424,7 @@ Service的Ansible实现。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2019-02-11 :: Ceph Orchestration Meeting》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/02/22/2019-02-11_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'2019-02-11 :: Ceph Orchestration Meeting'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2019/02/22/2019-02-11_-_-_Ceph_Orchestration_Meeting/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

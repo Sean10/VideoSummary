@@ -14,23 +14,28 @@
     
     
     
-    <title>Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan | ceph视频总结 | youtube频道总结</title>
+    <title>  Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题 Cinder块存储服务在Model公司的应用与实践 参会人员  Jan Man（Model公司存储团队负责人） 其他存储领域相关人员  会议内容 1. Model公司背景介绍 - Model公司是一家韩国游戏公司，专注于移动游戏开发和云服务。 - 2017年，Model公司从2016年的传统生产环境转型至基于Cinder的分布式存储环境，这对游戏服务产生了重大影响。 2. Ci">
+    <meta name="keywords" content="Ceph,OpenStack,Distributed Storage,Block Storage,Cinder">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题 Cinder块存储服务在Model公司的应用与实践 参会人员  Jan Man（Model公司存储团队负责人） 其他存储领域相关人员  会议内容 1. Model公司背景介绍 - Model公司是一家韩国游戏公司，专注于移动游戏开发和云服务。 - 自2016年起，Model公司采用基于Cinder的分布式存储环境，对游戏服务产生重大影响。 2. Cin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan">
+<meta property="og:title" content="  Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题 Cinder块存储服务在Model公司的应用与实践 参会人员  Jan Man（Model公司存储团队负责人） 其他存储领域相关人员  会议内容 1. Model公司背景介绍 - Model公司是一家韩国游戏公司，专注于移动游戏开发和云服务。 - 2017年，Model公司从2016年的传统生产环境转型至基于Cinder的分布式存储环境，这对游戏服务产生了重大影响。 2. Ci">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题 Cinder块存储服务在Model公司的应用与实践 参会人员  Jan Man（Model公司存储团队负责人） 其他存储领域相关人员  会议内容 1. Model公司背景介绍 - Model公司是一家韩国游戏公司，专注于移动游戏开发和云服务。 - 自2016年起，Model公司采用基于Cinder的分布式存储环境，对游戏服务产生重大影响。 2. Cin">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-04-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="OpenStack">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Block Storage">
+<meta property="article:tag" content="Cinder">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan</div>
+        <div class="flex-col header-title ellipsis">  Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan</h1>
+        <h1 class="title">  Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-04-22T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan</h1>
+        <h1 class="post-card-title">  Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan  </h1>
         <div class="post-meta">
             <time class="post-time" title="2018-04-23 00:00:00" datetime="2018-04-22T16:00:00.000Z"  itemprop="datePublished">2018-04-23</time>
 
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题">会议主题</h4>
 <p>Cinder块存储服务在Model公司的应用与实践</p>
 <h4 id="参会人员">参会人员</h4>
@@ -196,22 +202,22 @@
 <h4 id="会议内容">会议内容</h4>
 <p><strong>1. Model公司背景介绍</strong> -
 Model公司是一家韩国游戏公司，专注于移动游戏开发和云服务。 -
-2017年，Model公司从2016年的传统生产环境转型至基于Cinder的分布式存储环境，这对游戏服务产生了重大影响。</p>
+自2016年起，Model公司采用基于Cinder的分布式存储环境，对游戏服务产生重大影响。</p>
 <p><strong>2. Cinder块存储服务架构</strong> -
-Model公司目前拥有8个Cinder集群，存储约PB级数据。 -
+Model公司拥有8个Cinder集群，存储约PB级数据。 -
 其中，3个集群用于玩家B/D及两个区域，4个集群用于Ingress和Block存储。 -
-Cinder集群中，有一个对象存储池作为服务的主存储，容量利用率达到22%。</p>
+Cinder集群中，一个对象存储池作为主存储，容量利用率达到22%。</p>
 <p><strong>3. Cinder块存储服务特点</strong> -
 Cinder提供多种资源管理选项，如RBD（块设备）、Cinder卷等。 -
 Cinder支持数据生命周期管理，包括快照、克隆等功能。 -
 Cinder支持快照复制，用于数据备份和灾难恢复。</p>
 <p><strong>4. Cinder快照与克隆</strong> -
-Cinder支持快照和克隆功能，可以方便地创建和管理数据副本。 -
-快照是基于原始数据的静态快照，克隆是基于快照或原始数据的动态副本。 -
-Cinder支持增量快照，可以减少数据传输量。</p>
+Cinder支持快照和克隆功能，便于创建和管理数据副本。 -
+快照基于原始数据的静态快照，克隆基于快照或原始数据的动态副本。 -
+Cinder支持增量快照，减少数据传输量。</p>
 <p><strong>5. Cinder块存储服务的优化</strong> -
-Model公司使用不可变镜像功能，提高了从镜像创建卷的性能。 -
-使用图像缓存卷，减少了数据传输量，提高了性能。</p>
+Model公司使用不可变镜像功能，提高从镜像创建卷的性能。 -
+使用图像缓存卷，减少数据传输量，提高性能。</p>
 <p><strong>6. Cinder块存储服务的应用</strong> - Model公司在Stack
 Overflow应用程序中使用了Cinder块存储服务。 -
 Cinder块存储服务在Model公司的游戏服务和云服务中发挥着重要作用。</p>
@@ -266,6 +272,8 @@ Cinder块存储服务在Model公司的游戏服务和云服务中发挥着重要
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Block-Storage/" rel="tag">Block Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cinder/" rel="tag">Cinder</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack/" rel="tag">OpenStack</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -277,7 +285,7 @@ Cinder块存储服务在Model公司的游戏服务和云服务中发挥着重要
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/&title=《Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/&title=《  Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -287,7 +295,7 @@ Cinder块存储服务在Model公司的游戏服务和云服务中发挥着重要
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/&title=《Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/&title=《  Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -297,7 +305,7 @@ Cinder块存储服务在Model公司的游戏服务和云服务中发挥着重要
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -436,7 +444,7 @@ Cinder块存储服务在Model公司的游戏服务和云服务中发挥着重要
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/&title=《Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/&title=《  Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -446,7 +454,7 @@ Cinder块存储服务在Model公司的游戏服务和云服务中发挥着重要
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/&title=《Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/&title=《  Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -456,7 +464,7 @@ Cinder块存储服务在Model公司的游戏服务和云服务中发挥着重要
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Basic and Advanced Analysis of Ceph Volume Backend Driver in Cinder - John Haan  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2018/04/23/Basic_and_Advanced_Analysis_of_Ceph_Volume_Backend_Driver_in_Cinder_-_John_Haan/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2021-12-09 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 性能会议 2021-12-09 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 主要议题  Pull Requests (PRs) 更新  新PR: 启动新的MD日志段，以处理高负载情况下的预期段大小问题。Patrick正在审查，需要进行单元测试。 关闭的PRs:  Sage实现了管理器中Gill处理的优化，主要是线程争用问题。 设置最小Alex大小为最佳I&#x2F;O大小，针对具有较大分配大小的设备。  更新PRs:  TTL缓存实现，是旧PR的新版本。 Whip主平衡器">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,内存管理,PR 审查">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 主要议题  Pull Requests (PRs) 更新  讨论了多个PR的进展情况，包括MD日志段优化、Gill处理优化、Alex大小设置、TTL缓存实现、Whip主平衡器、基于Huge Page的读缓冲区、BlueFS细粒度锁定、Bob fsck内存消耗优化、OSD PG移除优化等。 重点讨论了Bob fsck的内存使用问题，担心在特定情况下可能会有共享bl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2021-12-09">
+<meta property="og:title" content="Ceph 性能会议 2021-12-09">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/12/13/Ceph_Performance_Meeting_2021-12-09/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 主要议题  Pull Requests (PRs) 更新  新PR: 启动新的MD日志段，以处理高负载情况下的预期段大小问题。Patrick正在审查，需要进行单元测试。 关闭的PRs:  Sage实现了管理器中Gill处理的优化，主要是线程争用问题。 设置最小Alex大小为最佳I&#x2F;O大小，针对具有较大分配大小的设备。  更新PRs:  TTL缓存实现，是旧PR的新版本。 Whip主平衡器">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 主要议题  Pull Requests (PRs) 更新  讨论了多个PR的进展情况，包括MD日志段优化、Gill处理优化、Alex大小设置、TTL缓存实现、Whip主平衡器、基于Huge Page的读缓冲区、BlueFS细粒度锁定、Bob fsck内存消耗优化、OSD PG移除优化等。 重点讨论了Bob fsck的内存使用问题，担心在特定情况下可能会有共享bl">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-12T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-12-13T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="内存管理">
+<meta property="article:tag" content="PR 审查">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2021-12-09</div>
+        <div class="flex-col header-title ellipsis">Ceph 性能会议 2021-12-09</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2021-12-09</h1>
+        <h1 class="title">Ceph 性能会议 2021-12-09</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-12-12T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2021-12-09</h1>
+        <h1 class="post-card-title">Ceph 性能会议 2021-12-09</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-12-13 00:00:00" datetime="2021-12-12T16:00:00.000Z"  itemprop="datePublished">2021-12-13</time>
 
@@ -185,33 +190,22 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>Pull Requests (PRs) 更新</strong>
 <ul>
-<li><strong>新PR</strong>:
-启动新的MD日志段，以处理高负载情况下的预期段大小问题。Patrick正在审查，需要进行单元测试。</li>
-<li><strong>关闭的PRs</strong>:
-<ul>
-<li>Sage实现了管理器中Gill处理的优化，主要是线程争用问题。</li>
-<li>设置最小Alex大小为最佳I/O大小，针对具有较大分配大小的设备。</li>
-</ul></li>
-<li><strong>更新PRs</strong>:
-<ul>
-<li>TTL缓存实现，是旧PR的新版本。</li>
-<li>Whip主平衡器PR，Josh
-Solomon提交，Laura审查，需要对文档进行一些调整。</li>
-<li>引入基于Huge Page的读缓冲区，Igor审查，需要更多信息。</li>
-<li>BlueFS的细粒度锁定，Adam提交，正在进行新测试。</li>
-<li>使Bob fsck更少内存消耗，Igor提交，正在进行更多讨论和更新。</li>
-<li>OSD优化PG移除，Igor提交，正在进行更多讨论和更新。</li>
-</ul></li>
+<li>讨论了多个PR的进展情况，包括MD日志段优化、Gill处理优化、Alex大小设置、TTL缓存实现、Whip主平衡器、基于Huge
+Page的读缓冲区、BlueFS细粒度锁定、Bob fsck内存消耗优化、OSD
+PG移除优化等。</li>
+<li>重点讨论了Bob
+fsck的内存使用问题，担心在特定情况下可能会有共享blob错误通过fsck过程。</li>
 </ul></li>
 <li><strong>Bob fsck内存使用问题</strong>
 <ul>
-<li>Adam提出了对改进后的Bob
-fsck过程的担忧，担心在某些特定情况下可能会有共享blob错误通过fsck过程。</li>
+<li>Adam提出对改进后的Bob
+fsck过程的担忧，担心某些情况下可能会有共享blob错误通过fsck过程。</li>
 <li>Igor解释了改进后的Bob
 fsck不会提供错误检测，但在某些情况下可能会标记一些仍然良好的blob为潜在损坏。</li>
 <li>讨论了在容器环境中运行OSD的内存限制问题，以及如何避免内存不足导致的崩溃。</li>
@@ -253,6 +247,19 @@ Malloc的可能性，特别是在BlueStore和AlienStore中。</li>
 </ul>
 <p><strong>会议结束时间</strong>:
 会议持续了一个小时，所有议题均已讨论完毕。下次会议将继续讨论未尽事宜。</p>
+<p>[原文中关键词保留，如Ceph, distributed storage, CRUSH algorithm, high
+availability, scalability, object storage, block storage, file system
+storage, consistency, decentralization, performance, bluestore, bluefs,
+rocksdb, OSD, MON, MDS, PG, RADOS, librados, libcephfs, cephfs, rbd,
+radosgw, RGW, RESTful API, authentication, authorization, encryption,
+erasure coding, replication, snapshots, clones, thin provisioning,
+iSCSI, Fibre Channel, NFS, CIFS, POSIX, monitoring, dashboard,
+management, orchestration, automation, integration, containerization,
+Kubernetes, Docker, virtualization, cloud computing, AWS, Azure, Google
+Cloud, hybrid cloud, multi-cloud, storage cluster, node, disk, SSD, HDD,
+JBOD, SAN, NAS, network, topology, failure domain, recovery, resilience,
+load balancing, caching, compression, deduplication, tiering,
+performance tuning, benchmarking, testing, validation]</p>
 
         </div>
 
@@ -283,6 +290,8 @@ Malloc的可能性，特别是在BlueStore和AlienStore中。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PR-%E5%AE%A1%E6%9F%A5/" rel="tag">PR 审查</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" rel="tag">内存管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -294,7 +303,7 @@ Malloc的可能性，特别是在BlueStore和AlienStore中。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/13/Ceph_Performance_Meeting_2021-12-09/&title=《Ceph Performance Meeting 2021-12-09》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/13/Ceph_Performance_Meeting_2021-12-09/&title=《Ceph 性能会议 2021-12-09》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -304,7 +313,7 @@ Malloc的可能性，特别是在BlueStore和AlienStore中。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/13/Ceph_Performance_Meeting_2021-12-09/&title=《Ceph Performance Meeting 2021-12-09》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/13/Ceph_Performance_Meeting_2021-12-09/&title=《Ceph 性能会议 2021-12-09》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -314,7 +323,7 @@ Malloc的可能性，特别是在BlueStore和AlienStore中。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-12-09》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/13/Ceph_Performance_Meeting_2021-12-09/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2021-12-09》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/13/Ceph_Performance_Meeting_2021-12-09/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -353,7 +362,7 @@ Malloc的可能性，特别是在BlueStore和AlienStore中。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/12/11/Ceph_Orchestrator_Meeting_-_2021-12-07/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Orchestrator Meeting: 2021-12-07</h4>
+        <h4 class="title">&#39;Ceph Orchestrator Meeting: 2021-12-07&#39;</h4>
       </a>
     </div>
   
@@ -453,7 +462,7 @@ Malloc的可能性，特别是在BlueStore和AlienStore中。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/13/Ceph_Performance_Meeting_2021-12-09/&title=《Ceph Performance Meeting 2021-12-09》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/12/13/Ceph_Performance_Meeting_2021-12-09/&title=《Ceph 性能会议 2021-12-09》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -463,7 +472,7 @@ Malloc的可能性，特别是在BlueStore和AlienStore中。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/13/Ceph_Performance_Meeting_2021-12-09/&title=《Ceph Performance Meeting 2021-12-09》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/12/13/Ceph_Performance_Meeting_2021-12-09/&title=《Ceph 性能会议 2021-12-09》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -473,7 +482,7 @@ Malloc的可能性，特别是在BlueStore和AlienStore中。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2021-12-09》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/13/Ceph_Performance_Meeting_2021-12-09/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2021-12-09》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/12/13/Ceph_Performance_Meeting_2021-12-09/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

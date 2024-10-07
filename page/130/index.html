@@ -150,11 +150,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_OSD_-_Scrub_SnapTrim_IO_Prioritization"
+            <article id="post-CDS_Hammer_Day_1_-_RGW_-_Bucket_Index_Scalability"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
@@ -168,7 +168,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_OSD_-_Scrub_SnapTrim_IO_Prioritization/">CDS G/H (Day 1) - OSD: Scrub/SnapTrim IO Prioritization</a>
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_RGW_-_Bucket_Index_Scalability/">&#39;CDS Hammer (Day 1) - RGW: Bucket Index Scalability&#39;</a>
     </h3>
   
 
@@ -178,232 +178,29 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        会议纪要
-会议时间： 下午
-会议主题： OSD操作优化讨论，重点为scrub、snap
-trim和IO优先级调整。
-参会人员： Sam（主持人）、其他研发人员
-会议内容：
-1. scrub snap trim IO优先级讨论
-
-问题：
-目前存在一些后台IO密集型任务，需要优先级调整以避免影响客户端IO。
-解决方案：
-
-将后台任务分配到独立的线程池，并减少其线程数量。
-使用内核的IO优先级机制...
-    
-
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_OSD_-_Scrub_SnapTrim_IO_Prioritization/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_OSD_-_Scrub_Repair"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_OSD_-_Scrub_Repair/">CDS G/H (Day 1) - OSD: Scrub &amp; Repair</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： 2023年11月 (具体日期未提及)
-会议地点： 线上会议
-参会人员： (未提及具体姓名，以下用“与会者”代替)
-会议主题： Ceph 分布式存储系统中的 OSD Scrub 和
-Repair 功能讨论
-会议内容：
-一、主要议题
-
-Scrub 和 Repair 问题：
-
-当前 Scrub
-功能存在不一致性时，需要手动分析中央日志，难以识别具体问题。
-建议增加接口，让 O...
-    
-
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_OSD_-_Scrub_Repair/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_librados_review"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_librados_review/">CDS G/H (Day 1) - librados review</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： Ceph 分布式存储项目会议，重点讨论
-Liberatos 代码库的审查、开发流程、技术领导角色引入、发布周期以及 OSD
-审查。
-会议关键细节：
-
-开发流程与参与方式：
-
-通过邮件列表（如
-self-dev@ceph.com、calamari-dev@ceph.com、packaging-maintainers@ceph.com）和
-IRC（irc.otc.net）参...
-    
-
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_librados_review/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_Wiki_IA"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Wiki_IA/">CDS G/H (Day 1) - Wiki IA</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议时间： 2023年11月某日（具体日期未提及）
-会议地点： 线上会议
-参会人员：
-主持人（疑似Ceph研发人员）、Eric（新用户委员会主席，来自法国西部）、其他与会者
-会议主题：
-讨论Ceph社区资源整合和Wiki页面建设方案
-关键细节：
-
-主持人介绍了Ceph社区资源整合的需求，包括演讲者信息、事件日历、社区贡献者工具、程序指南、硬件兼容性指南、社区周边产品、贡献原因、学术...
-    
-
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Wiki_IA/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CDS_G_H_Day_1_-_RDMA_Update"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_RDMA_Update/">CDS G/H (Day 1) - RDMA Update</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        会议纪要
-会议主题： RDMA更新及未来计划讨论
+        [改进后的中文总结内容]
+会议纪要
+会议主题： Ceph 分布式存储项目讨论
 会议时间： 2023年11月（具体日期未提及）
-参会人员： Matt, Benjamin, Seth,
-以及其他相关研发人员
+参会人员： Guang、Patrick 等人
 会议内容：
-一、RDMA更新
+一、bucket 可扩展性
 
-Firefly升级：
-Firefly升级正在进行中，目前进展顺利。
-Excelio消息接口更改：
-Excelio更新了内部消息接口，从固定数组16个元素减少到4个，并允许动态分配更大的数...
+背景： 探讨了 bucket 可扩展性，特别是 bucket
+索引的扩展性。
+进展：
+该功能进展顺利，已完成大部分工作，但与多区域、多区域功能的集成尚未完成。主要问题在于后台索引中...
     
 
-        <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_RDMA_Update/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_RGW_-_Bucket_Index_Scalability/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bucket-Index-Scalability/" rel="tag">Bucket Index Scalability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E5%8C%BA%E5%9F%9F/" rel="tag">多区域</a></li></ul>
+
     </div>
     
 </article>
@@ -411,11 +208,250 @@ Excelio更新了内部消息接口，从固定数组16个元素减少到4个，�
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-2014Q2_Ceph社区季度总结"
+            <article id="post-CDS_Hammer_Day_1_-_RGW_-_Object_Versioning_Object_Snapshots"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2014-06-01 00:00:00" datetime="2014-05-31T16:00:00.000Z"  itemprop="datePublished">2014-06-01</time>
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_RGW_-_Object_Versioning_Object_Snapshots/">  CDS Hammer (Day 1) - RGW: Object Versioning // Object Snapshots  </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议主要讨论了Ceph Rados Gateway (RGW)的对象版本化和快照功能。
+一、Rados Gateway 对象版本化
+
+项目背景：
+对象版本化是为了实现数据保护和版本控制。
+实现方法： 采用S3对象版本化方案，通过RESTful
+API实现。
+关键技术：
+
+列表对象及其版本。
+读取和删除特定版本的对象。
+避免访问每个对象的bucket index，提高...
+    
+
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_RGW_-_Object_Versioning_Object_Snapshots/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Object-Snapshots/" rel="tag">Object Snapshots</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Object-Versioning/" rel="tag">Object Versioning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/">  CDS Hammer (Day 1) - Towards Ceph Cold Storage  </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议主题： 探讨将 Ceph
+应用于冷存储的可行性和实施方案
+参会人员： Matthias
+Gravenka（美因茨大学）、Marcelo（前帕拉多大学）、Ceph 社区成员
+会议内容：
+一、背景
+Matthias 和 Marcelo 提出了将 Ceph
+应用于冷存储的蓝图，并希望通过本次会议讨论其可行性及实施方案。
+二、主要议题
+
+冷存储需求：
+
+能量感...
+    
+
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Towards_Ceph_Cold_Storage/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%B7%E5%AD%98%E5%82%A8/" rel="tag">冷存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E6%80%A7/" rel="tag">数据持久性</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_1_-_Tuethology"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Tuethology/"> CDS Hammer (Day 1) - Tuethology </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议时间：[请填写会议时间] 会议地点：[请填写会议地点]
+参会人员：[请填写参会人员名单] 记录人：[请填写记录人姓名]
+会议议程
+
+介绍与讨论
+文档更新与改进
+功能更新与开发计划
+打包与发布流程
+管理与维护
+
+会议内容
+
+文档更新与改进
+
+讨论了Ceph分布式存储项目的文档更新困难，并计划将安装说明单独成文。
+记录了设置toothy栈的过程，包括锁服务...
+    
+
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_Tuethology/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8A%9F%E8%83%BD%E5%BC%80%E5%8F%91/" rel="tag">功能开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/" rel="tag">发布流程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E6%A1%A3%E6%9B%B4%E6%96%B0/" rel="tag">文档更新</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CDS_Hammer_Day_1_-_librados_-_Expose_Checksums"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-10-29 00:00:00" datetime="2014-10-28T16:00:00.000Z"  itemprop="datePublished">2014-10-29</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_librados_-_Expose_Checksums/">&#39;CDS Hammer (Day 1) - librados: Expose Checksums&#39;</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议主题
+讨论在Librados中实现并暴露校验和，以增强Ceph存储系统的数据完整性检查。
+关键细节
+
+议题背景：目前Ceph系统中，数据完整性校验的接口不足，导致客户端在数据生成时无法进行校验，可能在传输过程中发生损坏。
+解决方案：通过在Librados中实现校验和暴露，客户端可以在数据生成时进行校验，并确保校验信息传递至OSD，从而确保数据完整性。
+...
+    
+
+        <a href="/VideoSummary/2014/10/29/CDS_Hammer_Day_1_-_librados_-_Expose_Checksums/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Storage/" rel="tag">Ceph Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Checksums/" rel="tag">Checksums</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Data-Integrity/" rel="tag">Data Integrity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Librados/" rel="tag">Librados</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-2014Q3_Ceph社区季度总结"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-09-01 00:00:00" datetime="2014-08-31T16:00:00.000Z"  itemprop="datePublished">2014-09-01</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">季度总结</a></li></ul>
@@ -429,7 +465,7 @@ Excelio更新了内部消息接口，从固定数组16个元素减少到4个，�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2014/06/01/2014Q2_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">2014Q2 Ceph社区季度总结</a>
+      <a class="post-title-link" href="/VideoSummary/2014/09/01/2014Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/">2014Q3 Ceph社区季度总结</a>
     </h3>
   
 
@@ -439,17 +475,10 @@ Excelio更新了内部消息接口，从固定数组16个元素减少到4个，�
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Ceph社区2014Q2季度总结报告
-1. 主要活动和重点议题
-在2014Q2季度，Ceph社区的活动和重点议题主要集中在以下几个方面：
-
-冷存储池讨论：
-讨论如何实现一个存储池，其中的数据可以被写入且几乎不会进行重平衡或重写，或者重写非常不频繁。旨在为冷存储提供解决方案，提高数据访问速度，同时减少数据移动和存储成本。
-RBD数据库性能优化及测试方案：
-探讨如何在Ceph上运行数据库，尤其是...
+        1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253# 2014年第三季度Ceph社区季度总结报告## 1. 本季度Ceph社区的主要活动和重点议题本季度Ceph社区着重于以下几项重要议题：- **Accelio集成**：通过Accelio消息库与Ce...
     
 
-        <a href="/VideoSummary/2014/06/01/2014Q2_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" class="post-more waves-effect waves-button">
+        <a href="/VideoSummary/2014/09/01/2014Q3_Ceph%E7%A4%BE%E5%8C%BA%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -464,12 +493,242 @@ RBD数据库性能优化及测试方案：
 
         </li>
     
+        <li class="post-list-item fade">
+            <article id="post-RH_InkTank_Ceph_Day_Sessions_Asaf_Wachtel_MELLANOX"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-07-25 00:00:00" datetime="2014-07-24T16:00:00.000Z"  itemprop="datePublished">2014-07-25</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Asaf_Wachtel_MELLANOX/"> RH InkTank Ceph Day Sessions Asaf Wachtel MELLANOX </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议时间：
+[请填写会议时间]
+会议地点：
+[请填写会议地点]
+参会人员：
+
+Asaf（Melanox企业及云业务发展负责人）
+[其他参会人员姓名]
+
+会议议程：
+介绍与背景
+
+Asaf介绍了Melanox公司，作为高性能服务器、存储和连接解决方案的领先提供商，Melanox提供从网络适配器到交换机、从10Gbps到56Gbps的全套产品。
+公司业务始于1...
+    
+
+        <a href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Asaf_Wachtel_MELLANOX/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Hadoop/" rel="tag">Hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Melanox/" rel="tag">Melanox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E6%80%A7%E8%83%BD%E7%BD%91%E7%BB%9C/" rel="tag">高性能网络</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-RH_InkTank_Ceph_Day_Sessions_Casey_Bodley_COHORTFS"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-07-25 00:00:00" datetime="2014-07-24T16:00:00.000Z"  itemprop="datePublished">2014-07-25</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Casey_Bodley_COHORTFS/">RH InkTank Ceph Day Sessions Casey Bodley COHORTFS</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+在本次RH InkTank Ceph Day Sessions中，Casey
+Bodley就NFS上可扩展的元数据进行了深入探讨。以下是会议内容的详细总结：
+会议背景
+Casey首先介绍了NFS的优势，包括其作为IETF标准、广泛的应用、成熟的技术和可扩展性。他提到了如何利用RAD、对象条带化和CRUSH算法来优化数据放置，并探讨了NFS如何通过Parallel
+N...
+    
+
+        <a href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Casey_Bodley_COHORTFS/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Metadata/" rel="tag">Metadata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/NFS/" rel="tag">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Parallel-NFS/" rel="tag">Parallel NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scalability/" rel="tag">Scalability</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-RH_InkTank_Ceph_Day_Sessions_Jeff_Darcy_REDHAT"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-07-25 00:00:00" datetime="2014-07-24T16:00:00.000Z"  itemprop="datePublished">2014-07-25</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Jeff_Darcy_REDHAT/">RH InkTank Ceph Day Sessions Jeff Darcy REDHAT</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议时间： [请填写会议具体时间]
+会议地点： [请填写会议具体地点]
+参会人员： [请填写参会人员名单]
+会议主题： Gluster与Ceph技术结合的实验性探索
+会议内容：
+
+背景介绍：
+
+介绍者Jeff
+Darcy分享了自Inktank收购后，关于将Gluster和Ceph技术结合的实验性想法，这一想法已有两年之久。
+强调这是一个科学探索，而非工程应...
+    
+
+        <a href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Jeff_Darcy_REDHAT/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Gluster/" rel="tag">Gluster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AE%9E%E9%AA%8C%E6%80%A7%E7%A0%94%E7%A9%B6/" rel="tag">实验性研究</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">性能测试</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-RH_InkTank_Ceph_Day_Sessions_Kamesh_Pemmaraju_DELL"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2014-07-25 00:00:00" datetime="2014-07-24T16:00:00.000Z"  itemprop="datePublished">2014-07-25</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Kamesh_Pemmaraju_DELL/">  RH InkTank Ceph Day Sessions Kamesh Pemmaraju DELL  </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要
+会议时间： [请填写会议时间]
+会议地点： [请填写会议地点] 参会人员：
+- Kamesh Pemmaraju，戴尔公司高级产品经理，专注于OpenStack -
+[其他参会人员] 会议主题：
+Ceph与OpenStack的集成，Ceph在不同场景下的应用，案例研究
+会议内容：
+一、Ceph与OpenStack的结合
+
+Ceph通过Swift和Cinde...
+    
+
+        <a href="/VideoSummary/2014/07/25/RH_InkTank_Ceph_Day_Sessions_Kamesh_Pemmaraju_DELL/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack/" rel="tag">OpenStack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">存储解决方案</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
     </ul>
 
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/VideoSummary/page/129/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/128/">128</a><a class="page-number" href="/VideoSummary/page/129/">129</a><span class="page-number current">130</span>
+    <a class="extend prev" rel="prev" href="/VideoSummary/page/129/">上一页</a><a class="page-number" href="/VideoSummary/">1</a><span class="space">&hellip;</span><a class="page-number" href="/VideoSummary/page/128/">128</a><a class="page-number" href="/VideoSummary/page/129/">129</a><span class="page-number current">130</span><a class="page-number" href="/VideoSummary/page/131/">131</a><a class="page-number" href="/VideoSummary/page/132/">132</a><a class="extend next" rel="next" href="/VideoSummary/page/131/">下一页</a>
     </div>
 </nav>
 

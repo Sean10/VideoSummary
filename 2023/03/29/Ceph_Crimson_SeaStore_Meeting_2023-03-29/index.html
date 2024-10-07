@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Crimson/SeaStore Meeting 2023-03-29 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph Crimson/SeaStore 会议纪要 2023-03-29 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间：[具体日期] 参会人员：[具体人员名单] 主要议题：  Crimson项目进展  目前有一个分支使aerator与标准库协同系统兼容。 正在扩展以支持互操作的未来，预计在未来几天内完成。  多核messenger的审查  讨论了连接引用类型可能需要更改为共享外部共享类型。 正在对Crimson OSD中的连接用户进行扫描，以理解潜在影响。 已发送电子邮件描述在Alaska中可能">
+    <meta name="keywords" content="Ceph,Crimson 项目,多核messenger,医疗助手PR,Albion指针PR">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间：2023-03-29 参会人员：[具体人员名单] 主要议题：  Crimson项目进展  已有一个分支使aerator与标准库协同系统兼容。 正在扩展以支持互操作性，预计未来几天内完成。  多核messenger的审查  讨论了连接引用类型可能需要更改为共享外部共享类型。 正在对Crimson OSD中的连接用户进行扫描，以分析潜在影响。 已发送邮件描">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Crimson&#x2F;SeaStore Meeting 2023-03-29">
+<meta property="og:title" content="Ceph Crimson&#x2F;SeaStore 会议纪要 2023-03-29">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/03/29/Ceph_Crimson_SeaStore_Meeting_2023-03-29/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间：[具体日期] 参会人员：[具体人员名单] 主要议题：  Crimson项目进展  目前有一个分支使aerator与标准库协同系统兼容。 正在扩展以支持互操作的未来，预计在未来几天内完成。  多核messenger的审查  讨论了连接引用类型可能需要更改为共享外部共享类型。 正在对Crimson OSD中的连接用户进行扫描，以理解潜在影响。 已发送电子邮件描述在Alaska中可能">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间：2023-03-29 参会人员：[具体人员名单] 主要议题：  Crimson项目进展  已有一个分支使aerator与标准库协同系统兼容。 正在扩展以支持互操作性，预计未来几天内完成。  多核messenger的审查  讨论了连接引用类型可能需要更改为共享外部共享类型。 正在对Crimson OSD中的连接用户进行扫描，以分析潜在影响。 已发送邮件描">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-03-29T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Crimson 项目">
+<meta property="article:tag" content="多核messenger">
+<meta property="article:tag" content="医疗助手PR">
+<meta property="article:tag" content="Albion指针PR">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Crimson/SeaStore Meeting 2023-03-29</div>
+        <div class="flex-col header-title ellipsis">Ceph Crimson/SeaStore 会议纪要 2023-03-29</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Crimson/SeaStore Meeting 2023-03-29</h1>
+        <h1 class="title">Ceph Crimson/SeaStore 会议纪要 2023-03-29</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-03-28T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%B7%E4%BD%93%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：[具体人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">其他事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束语：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B42023-03-29"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议时间：2023-03-29</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%B7%E4%BD%93%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参会人员：[具体人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">其他事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束语：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Crimson/SeaStore Meeting 2023-03-29</h1>
+        <h1 class="post-card-title">Ceph Crimson/SeaStore 会议纪要 2023-03-29</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-03-29 00:00:00" datetime="2023-03-28T16:00:00.000Z"  itemprop="datePublished">2023-03-29</time>
 
@@ -185,26 +190,27 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议时间2023-03-29">会议时间：2023-03-29</h4>
 <h4 id="参会人员具体人员名单">参会人员：[具体人员名单]</h4>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
 <li><strong>Crimson项目进展</strong>
 <ul>
-<li>目前有一个分支使aerator与标准库协同系统兼容。</li>
-<li>正在扩展以支持互操作的未来，预计在未来几天内完成。</li>
+<li>已有一个分支使aerator与标准库协同系统兼容。</li>
+<li>正在扩展以支持互操作性，预计未来几天内完成。</li>
 </ul></li>
 <li><strong>多核messenger的审查</strong>
 <ul>
 <li>讨论了连接引用类型可能需要更改为共享外部共享类型。</li>
-<li>正在对Crimson OSD中的连接用户进行扫描，以理解潜在影响。</li>
-<li>已发送电子邮件描述在Alaska中可能的更改，请求相关人员审查。</li>
+<li>正在对Crimson OSD中的连接用户进行扫描，以分析潜在影响。</li>
+<li>已发送邮件描述在Alaska中可能的更改，请求相关人员审查。</li>
 </ul></li>
 <li><strong>医疗助手PR修改</strong>
 <ul>
 <li>根据反馈修改了医疗助手PR，设备已启动。</li>
-<li>未分离接口，因为这会影响系统中的所有产品，如清洁器和外部放置设备。</li>
+<li>未分离接口，因为这会影响系统中所有产品，如清洁器和外部放置设备。</li>
 <li>建议将接口分离作为下一步计划。</li>
 </ul></li>
 <li><strong>Albion指针PR修改</strong>
@@ -229,7 +235,7 @@
 <h4 id="其他事项">其他事项：</h4>
 <ul>
 <li>部分成员因假期将缺席下次会议。</li>
-<li>会议结束前，提醒相关人员查看电子邮件并处理相关事宜。</li>
+<li>会议结束前，提醒相关人员查看邮件并处理相关事宜。</li>
 </ul>
 <h4 id="会议结束语">会议结束语：</h4>
 <ul>
@@ -268,6 +274,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Albion%E6%8C%87%E9%92%88PR/" rel="tag">Albion指针PR</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson-%E9%A1%B9%E7%9B%AE/" rel="tag">Crimson 项目</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8C%BB%E7%96%97%E5%8A%A9%E6%89%8BPR/" rel="tag">医疗助手PR</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E6%A0%B8messenger/" rel="tag">多核messenger</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -279,7 +287,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/29/Ceph_Crimson_SeaStore_Meeting_2023-03-29/&title=《Ceph Crimson/SeaStore Meeting 2023-03-29》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/29/Ceph_Crimson_SeaStore_Meeting_2023-03-29/&title=《Ceph Crimson/SeaStore 会议纪要 2023-03-29》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -289,7 +297,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/29/Ceph_Crimson_SeaStore_Meeting_2023-03-29/&title=《Ceph Crimson/SeaStore Meeting 2023-03-29》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/29/Ceph_Crimson_SeaStore_Meeting_2023-03-29/&title=《Ceph Crimson/SeaStore 会议纪要 2023-03-29》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -299,7 +307,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore Meeting 2023-03-29》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/29/Ceph_Crimson_SeaStore_Meeting_2023-03-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore 会议纪要 2023-03-29》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/29/Ceph_Crimson_SeaStore_Meeting_2023-03-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -327,9 +335,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/04/05/Ceph_Performance_Meeting_2023-03-30/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/04/01/CDS_Jewel_--_Ceph_Mesos/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2023-03-30</h4>
+        <h4 class="title"> CDS Jewel -- Ceph Mesos </h4>
       </a>
     </div>
   
@@ -438,7 +446,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/29/Ceph_Crimson_SeaStore_Meeting_2023-03-29/&title=《Ceph Crimson/SeaStore Meeting 2023-03-29》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/03/29/Ceph_Crimson_SeaStore_Meeting_2023-03-29/&title=《Ceph Crimson/SeaStore 会议纪要 2023-03-29》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -448,7 +456,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/29/Ceph_Crimson_SeaStore_Meeting_2023-03-29/&title=《Ceph Crimson/SeaStore Meeting 2023-03-29》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/03/29/Ceph_Crimson_SeaStore_Meeting_2023-03-29/&title=《Ceph Crimson/SeaStore 会议纪要 2023-03-29》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -458,7 +466,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore Meeting 2023-03-29》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/29/Ceph_Crimson_SeaStore_Meeting_2023-03-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Crimson/SeaStore 会议纪要 2023-03-29》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/03/29/Ceph_Crimson_SeaStore_Meeting_2023-03-29/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,30 @@
     
     
     
-    <title>2020-02-05 :: Ceph Developer Monthly | ceph视频总结 | youtube频道总结</title>
+    <title>  2020-02-05 :: Ceph Developer Monthly   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概要  日期与时间: [具体日期] 参与者: Liam, Josh, 及其他相关人员 主要议题: Ceph项目的状态更新、功能开发进展、监控系统改进、自动化部署及未来计划  讨论内容  状态更新  目前主要进行的是一些小的修复和改进，包括监控系统的进展，如添加节点导出器和Prometheus的工作正在进行中。 部署FSS（File System Storage）的工作也在进行中，但还">
+    <meta name="keywords" content="Ceph,分布式存储,CRUSH算法,自动化部署,功能开发,监控系统,用户启用">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概要  日期与时间: 2020年2月5日 参与者: Liam, Josh, 及其他相关人员 主要议题: Ceph项目状态更新、功能开发进展、监控系统改进、自动化部署及未来计划  讨论内容  状态更新  目前主要进行的是一些小的修复和改进，包括监控系统的进展，如添加节点导出器和Prometheus的工作正在进行中。 部署FSS（文件系统存储）的工作也在进行中，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2020-02-05 :: Ceph Developer Monthly">
+<meta property="og:title" content="  2020-02-05 :: Ceph Developer Monthly  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2020/04/03/2020-02-05_-_-_Ceph_Developer_Monthly/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概要  日期与时间: [具体日期] 参与者: Liam, Josh, 及其他相关人员 主要议题: Ceph项目的状态更新、功能开发进展、监控系统改进、自动化部署及未来计划  讨论内容  状态更新  目前主要进行的是一些小的修复和改进，包括监控系统的进展，如添加节点导出器和Prometheus的工作正在进行中。 部署FSS（File System Storage）的工作也在进行中，但还">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概要  日期与时间: 2020年2月5日 参与者: Liam, Josh, 及其他相关人员 主要议题: Ceph项目状态更新、功能开发进展、监控系统改进、自动化部署及未来计划  讨论内容  状态更新  目前主要进行的是一些小的修复和改进，包括监控系统的进展，如添加节点导出器和Prometheus的工作正在进行中。 部署FSS（文件系统存储）的工作也在进行中，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-04-03T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="自动化部署">
+<meta property="article:tag" content="功能开发">
+<meta property="article:tag" content="监控系统">
+<meta property="article:tag" content="用户启用">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +119,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">2020-02-05 :: Ceph Developer Monthly</div>
+        <div class="flex-col header-title ellipsis">  2020-02-05 :: Ceph Developer Monthly  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +141,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">2020-02-05 :: Ceph Developer Monthly</h1>
+        <h1 class="title">  2020-02-05 :: Ceph Developer Monthly  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-04-02T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +175,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">2020-02-05 :: Ceph Developer Monthly</h1>
+        <h1 class="post-card-title">  2020-02-05 :: Ceph Developer Monthly  </h1>
         <div class="post-meta">
             <time class="post-time" title="2020-04-03 00:00:00" datetime="2020-04-02T16:00:00.000Z"  itemprop="datePublished">2020-04-03</time>
 
@@ -185,32 +192,31 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概要">会议概要</h4>
 <ul>
-<li><strong>日期与时间</strong>: [具体日期]</li>
+<li><strong>日期与时间</strong>: 2020年2月5日</li>
 <li><strong>参与者</strong>: Liam, Josh, 及其他相关人员</li>
 <li><strong>主要议题</strong>:
-Ceph项目的状态更新、功能开发进展、监控系统改进、自动化部署及未来计划</li>
+Ceph项目状态更新、功能开发进展、监控系统改进、自动化部署及未来计划</li>
 </ul>
 <h4 id="讨论内容">讨论内容</h4>
 <ol type="1">
 <li><strong>状态更新</strong>
 <ul>
 <li>目前主要进行的是一些小的修复和改进，包括监控系统的进展，如添加节点导出器和Prometheus的工作正在进行中。</li>
-<li>部署FSS（File System
-Storage）的工作也在进行中，但还有一些紧急问题需要解决，特别是在
-orchestrator 模块中。</li>
+<li>部署FSS（文件系统存储）的工作也在进行中，但还有一些紧急问题需要解决，特别是在orchestrator模块中。</li>
 </ul></li>
 <li><strong>监控系统改进</strong>
 <ul>
-<li>讨论了关于如何处理主机和主机名的模糊性问题，提出了一个方案来确保主机名的一致性，以便更好地集成到CRUSH
+<li>讨论了如何处理主机和主机名的模糊性问题，提出了确保主机名一致性的方案，以便更好地集成到CRUSH
 map中。</li>
 <li>需要增加基于每个主机的IP或完全限定域名的能力，以便在不依赖DNS的情况下进行通信。</li>
 </ul></li>
 <li><strong>自动化部署</strong>
 <ul>
-<li>讨论了关于Ansible
+<li>讨论了Ansible
 playbook的使用，用于自动化Ceph集群的部署和转换过程。</li>
 <li>强调了在监控方面和故障处理方面仍存在的主要差距。</li>
 </ul></li>
@@ -223,7 +229,7 @@ NFS网关。</li>
 <li><strong>未来计划</strong>
 <ul>
 <li>计划在接下来的一个月内推动用户启用telemetry模块，目标是达到500或1000个活跃的集群。</li>
-<li>讨论了关于cephalic的在线会议计划，建议分块进行，以便更有效地讨论各个议题。</li>
+<li>讨论了关于cephal的在线会议计划，建议分块进行，以便更有效地讨论各个议题。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
@@ -274,6 +280,8 @@ NFS网关。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8A%9F%E8%83%BD%E5%BC%80%E5%8F%91/" rel="tag">功能开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%94%A8%E6%88%B7%E5%90%AF%E7%94%A8/" rel="tag">用户启用</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" rel="tag">监控系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/" rel="tag">自动化部署</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -285,7 +293,7 @@ NFS网关。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-05_-_-_Ceph_Developer_Monthly/&title=《2020-02-05 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-05_-_-_Ceph_Developer_Monthly/&title=《  2020-02-05 :: Ceph Developer Monthly  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -295,7 +303,7 @@ NFS网关。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-05_-_-_Ceph_Developer_Monthly/&title=《2020-02-05 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-05_-_-_Ceph_Developer_Monthly/&title=《  2020-02-05 :: Ceph Developer Monthly  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -305,7 +313,7 @@ NFS网关。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2020-02-05 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-05_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  2020-02-05 :: Ceph Developer Monthly  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-05_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -335,16 +343,16 @@ NFS网关。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2020/04/03/2020-02-04_-_-_Ceph_Crimson_Meeting/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">2020-02-04 :: Ceph Crimson Meeting</h4>
+        <h4 class="title">&#39;2020-02-04 :: Ceph Crimson Meeting&#39;</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2020/04/03/2020-02-11_-_-_Ceph_Crimson_Meeting/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2020/04/03/2020-02-10_-_-_Ceph_Orchestration_Meeting/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2020-02-11 :: Ceph Crimson Meeting</h4>
+        <h4 class="title">&#39;2020-02-10 :: Ceph Orchestration Meeting&#39;</h4>
       </a>
     </div>
   
@@ -444,7 +452,7 @@ NFS网关。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-05_-_-_Ceph_Developer_Monthly/&title=《2020-02-05 :: Ceph Developer Monthly》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-05_-_-_Ceph_Developer_Monthly/&title=《  2020-02-05 :: Ceph Developer Monthly  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -454,7 +462,7 @@ NFS网关。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-05_-_-_Ceph_Developer_Monthly/&title=《2020-02-05 :: Ceph Developer Monthly》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-05_-_-_Ceph_Developer_Monthly/&title=《  2020-02-05 :: Ceph Developer Monthly  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -464,7 +472,7 @@ NFS网关。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2020-02-05 :: Ceph Developer Monthly》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-05_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  2020-02-05 :: Ceph Developer Monthly  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2020/04/03/2020-02-05_-_-_Ceph_Developer_Monthly/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

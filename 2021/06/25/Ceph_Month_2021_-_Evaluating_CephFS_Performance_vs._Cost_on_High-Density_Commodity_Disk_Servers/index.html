@@ -14,23 +14,29 @@
     
     
     
-    <title>Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 背景信息  CERN的计算环境：CERN使用名为“Worldwide LHC Computing Grid”的全球性计算网格进行数据处理。CERN作为Tier Zero中心，拥有约135PB的磁盘存储（双副本）和近400PB的磁带存储。每年新增数据量约50PB。 全球分布：CERN周边有14个Tier 1中心和160个Tier 2中心（大学和实验室），总计约100万个CPU核心，每天处理">
+    <meta name="keywords" content="Ceph,CephFS,Distributed Storage,High,Density Commodity Disk Servers,Performance Evaluation">
+    <meta name="description" content="[改进后的中文总结内容] CERN作为全球大型强子对撞机（LHC）的Tier Zero中心，负责处理大量的科学数据。本文主要讨论了CERN在处理高亮度LHC数据时，对CephFS性能的评估及其成本效益。 会议关键细节：  CERN使用名为“Worldwide LHC Computing Grid”的全球性计算网格进行数据处理，拥有约135PB的磁盘存储和近400PB的磁带存储。 CERN周边有14">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers">
+<meta property="og:title" content="&#39;Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/06/25/Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 背景信息  CERN的计算环境：CERN使用名为“Worldwide LHC Computing Grid”的全球性计算网格进行数据处理。CERN作为Tier Zero中心，拥有约135PB的磁盘存储（双副本）和近400PB的磁带存储。每年新增数据量约50PB。 全球分布：CERN周边有14个Tier 1中心和160个Tier 2中心（大学和实验室），总计约100万个CPU核心，每天处理">
+<meta property="og:description" content="[改进后的中文总结内容] CERN作为全球大型强子对撞机（LHC）的Tier Zero中心，负责处理大量的科学数据。本文主要讨论了CERN在处理高亮度LHC数据时，对CephFS性能的评估及其成本效益。 会议关键细节：  CERN使用名为“Worldwide LHC Computing Grid”的全球性计算网格进行数据处理，拥有约135PB的磁盘存储和近400PB的磁带存储。 CERN周边有14">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-24T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-06-24T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="CephFS">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="High">
+<meta property="article:tag" content="Density Commodity Disk Servers">
+<meta property="article:tag" content="Performance Evaluation">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +140,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers</h1>
+        <h1 class="title">&#39;Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-06-24T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +162,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%83%8C%E6%99%AF%E4%BF%A1%E6%81%AF"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">背景信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AD%98%E5%82%A8%E8%BD%AF%E4%BB%B6%E5%92%8C%E6%8A%80%E6%9C%AF"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">存储软件和技术</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9C%AA%E6%9D%A5%E6%8C%91%E6%88%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">未来挑战和解决方案</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%92%8C%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">实验和性能测试</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">结论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%92%8C%E9%97%AE%E9%A2%98"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">讨论和问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8"><span class="post-toc-number">2.</span> <span class="post-toc-text">后续行动</span></a></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers</h1>
+        <h1 class="post-card-title">'Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers'</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-06-25 00:00:00" datetime="2021-06-24T16:00:00.000Z"  itemprop="datePublished">2021-06-25</time>
 
@@ -185,64 +184,43 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="背景信息">背景信息</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>CERN作为全球大型强子对撞机（LHC）的Tier
+Zero中心，负责处理大量的科学数据。本文主要讨论了CERN在处理高亮度LHC数据时，对CephFS性能的评估及其成本效益。</p>
+<p><strong>会议关键细节</strong>：</p>
 <ul>
-<li><strong>CERN的计算环境</strong>：CERN使用名为“Worldwide LHC
-Computing Grid”的全球性计算网格进行数据处理。CERN作为Tier
-Zero中心，拥有约135PB的磁盘存储（双副本）和近400PB的磁带存储。每年新增数据量约50PB。</li>
-<li><strong>全球分布</strong>：CERN周边有14个Tier 1中心和160个Tier
-2中心（大学和实验室），总计约100万个CPU核心，每天处理约200万个作业。</li>
-<li><strong>存储和网络</strong>：全球存储总量约1EB，内部总连接速度约1Tbps。去年在全球LHC计算网格上转移了300PB的数据。</li>
+<li>CERN使用名为“Worldwide LHC Computing
+Grid”的全球性计算网格进行数据处理，拥有约135PB的磁盘存储和近400PB的磁带存储。</li>
+<li>CERN周边有14个Tier 1中心和160个Tier
+2中心，总计约100万个CPU核心，每天处理约200万个作业。</li>
+<li>CERN使用多种开源存储软件，如DCache, DPM, EOS, Storm,
+XRootD等，并使用HTTP, XRootD, GSI-FTP等协议进行站点间传输。</li>
+<li>CERN面临高亮度LHC数据需求增加的挑战，预计到2028年，每年数据需求将增至500PB。</li>
 </ul>
-<h4 id="存储软件和技术">存储软件和技术</h4>
+<p><strong>讨论的主要议题</strong>：</p>
 <ul>
-<li><strong>开源存储软件</strong>：CERN使用多种开源存储软件，如DCache,
-DPM, EOS, Storm, XRootD等，这些软件由高能物理（HEP）社区开发。</li>
-<li><strong>协议和服务</strong>：使用HTTP, XRootD,
-GSI-FTP等协议进行站点间传输，通过File Transfer Service
-(FTS)进行第三方传输，并根据网络约束调度传输。</li>
-<li><strong>数据协调器</strong>：Rucio作为数据协调器，根据不同策略与FTS交互并放置数据。</li>
+<li>Ceph作为成熟且功能强大的开源存储软件，可能在未来物理存储系统中扮演重要角色。</li>
+<li>现有的开源软件缺乏某些高级功能，因此需要在此基础上叠加HEP特定的网关，如CephFS
++ EOS的组合。</li>
+<li>通过实验和性能测试，评估了CephFS在高密度商品磁盘服务器和100G网络上的性能。</li>
 </ul>
-<h4 id="未来挑战和解决方案">未来挑战和解决方案</h4>
+<p><strong>决定的事项</strong>：</p>
 <ul>
-<li><strong>高亮度LHC数据需求</strong>：预计到2028年，每年数据需求将增至500PB。</li>
-<li><strong>Ceph的角色</strong>：Ceph作为成熟且功能强大的开源存储软件，可能在未来物理存储系统中扮演重要角色。然而，现有的开源软件缺乏某些高级功能。</li>
-<li><strong>解决方案</strong>：通过在开源存储软件上叠加HEP特定的网关，如CephFS
-+ EOS的组合，来解决这些缺失的功能。</li>
-</ul>
-<h4 id="实验和性能测试">实验和性能测试</h4>
-<ul>
-<li><strong>硬件配置</strong>：使用8台大型新机器进行测试，每台机器配备双Xeon处理器、192GB
-RAM、100Gbps以太网、60TB硬盘和1TB SSD。</li>
-<li><strong>CephFS配置</strong>：测试了三种不同的擦除编码布局（4+2, 8+2,
-16+2），并使用upmap平衡器确保平衡。</li>
-<li><strong>性能结果</strong>：在读取性能方面，最多达到20GB/s；在写入性能方面，最多达到34GB/s。发现随着OSD存储空间的增加，写入性能下降。</li>
-</ul>
-<h4 id="后续行动计划">后续行动计划</h4>
-<ul>
-<li><strong>生产环境测试</strong>：计划在生产环境中进一步测试CephFS +
+<li>计划在生产环境中进一步测试CephFS +
 EOS组合，以验证其在实际使用中的性能和操作优势。</li>
-<li><strong>优化和改进</strong>：考虑统一命名空间和本地化I/O，以便客户端可以直接使用原生Ceph客户端，而不需要通过EOS客户端。</li>
+<li>考虑统一命名空间和本地化I/O，以便客户端可以直接使用原生Ceph客户端，而不需要通过EOS客户端。</li>
 </ul>
-<h4 id="结论">结论</h4>
-<ul>
-<li><strong>CephFS和EOS的组合</strong>：展示了在高密度商品磁盘服务器和100G网络上的出色性能，具有高度可靠性和灵活性，并可通过QoS进行调整。</li>
-<li><strong>社区支持</strong>：Ceph拥有一个庞大且活跃的用户社区，超越了物理社区。</li>
-<li><strong>未来工作</strong>：将继续测试和优化这一组合，以满足未来高能物理存储系统的需求。</li>
-</ul>
-<h4 id="讨论和问题">讨论和问题</h4>
-<ul>
-<li><strong>读取性能问题</strong>：讨论了读取性能在达到一定水平后饱和的原因，可能是由于磁盘寻道延迟。建议调整内核客户端的预读设置以改善性能。</li>
-<li><strong>CephFS快照的使用</strong>：在特定场景如同步和共享服务中，CephFS快照将得到更有效的使用。</li>
-</ul>
-<h3 id="后续行动">后续行动</h3>
+<p><strong>后续行动计划</strong>：</p>
 <ul>
 <li>继续在生产环境中测试CephFS + EOS组合。</li>
 <li>优化命名空间和I/O本地化策略。</li>
 <li>调整内核客户端设置以改善读取性能。</li>
 <li>探索CephFS快照在同步和共享服务中的应用。</li>
 </ul>
+<p><strong>改进后的总结内容</strong>：</p>
+<p>本文主要介绍了CERN在处理高亮度LHC数据时，对CephFS性能的评估及其成本效益。通过实验和性能测试，评估了CephFS在高密度商品磁盘服务器和100G网络上的性能。结果表明，CephFS
++
+EOS组合在高密度商品磁盘服务器和100G网络上展现出出色的性能，具有高度可靠性和灵活性，并可通过QoS进行调整。然而，也指出了某些性能瓶颈和优化空间，如命名空间和I/O本地化策略的优化，以及内核客户端设置的调整。</p>
 
         </div>
 
@@ -273,6 +251,8 @@ EOS组合，以验证其在实际使用中的性能和操作优势。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CephFS/" rel="tag">CephFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Density-Commodity-Disk-Servers/" rel="tag">Density Commodity Disk Servers</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/High/" rel="tag">High</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Evaluation/" rel="tag">Performance Evaluation</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -284,7 +264,7 @@ EOS组合，以验证其在实际使用中的性能和操作优势。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/25/Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers/&title=《Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/25/Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers/&title=《'Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -294,7 +274,7 @@ EOS组合，以验证其在实际使用中的性能和操作优势。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/25/Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers/&title=《Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/25/Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers/&title=《'Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -304,7 +284,7 @@ EOS组合，以验证其在实际使用中的性能和操作优势。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/25/Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/25/Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -334,7 +314,7 @@ EOS组合，以验证其在实际使用中的性能和操作优势。</li>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2021/06/25/Ceph_Month_2021_-_Ceph_Market_Development_Working_Group_BoF/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Month 2021: Ceph Market Development Working Group BoF</h4>
+        <h4 class="title">  Ceph Month 2021: Ceph Market Development Working Group BoF  </h4>
       </a>
     </div>
   
@@ -443,7 +423,7 @@ EOS组合，以验证其在实际使用中的性能和操作优势。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/25/Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers/&title=《Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/06/25/Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers/&title=《'Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -453,7 +433,7 @@ EOS组合，以验证其在实际使用中的性能和操作优势。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/25/Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers/&title=《Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/06/25/Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers/&title=《'Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -463,7 +443,7 @@ EOS组合，以验证其在实际使用中的性能和操作优势。</li>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/25/Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/06/25/Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Density_Commodity_Disk_Servers/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

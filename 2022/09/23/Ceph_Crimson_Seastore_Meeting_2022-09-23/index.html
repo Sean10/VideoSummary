@@ -20,17 +20,57 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议主要讨论了Ceph分布式存储系统中的多项技术议题，包括多核分支的进展情况、omap范围移除功能的优化、以及系统内部的一些关键性错误修复和性能提升措施。具体地，讨论集中在如何优化存储节点的负载、内存拷贝效率、树状结构的调整和平衡，以及与系统稳定性和性能相关的问题。此外，还探讨了在高填充率情况下设备的行为，和对Ceph核心代码进行重构的可能性和计划。会议涉及了对当前实现的效率问题和未来可能的改进方">
+    <meta name="keywords" content="Ceph,分布式存储,块存储,快照,克隆,虚拟化,高可用性,CRUSH算法,RGW,对象存储,可伸缩性,OSD,RESTful API,文件系统存储,一致性,去中心化,性能,MON,MDS,PG,RADOS,librados,libcephfs,cephfs,rbd,radosgw,认证,授权,加密,复制,云计算,AWS,Azure,Google Cloud,混合云,多云,bluestore,bluefs,rocksdb,纠错码">
+    <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph分布式存储系统中的技术议题。与会者探讨了多核分支的进展，特别是iOS的完成情况，并讨论了相关bug的修复。针对omap范围移除功能的优化，讨论了优化存储节点负载、内存拷贝效率、树状结构的调整和平衡，以及与系统稳定性和性能相关的问题。此外，会议还涉及了系统内部关键性错误修复和性能提升措施。在高填充率情况下设备的行为和对Ceph核心代码进行重构的可能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Crimson&#x2F;Seastore Meeting 2022-09-23">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/09/23/Ceph_Crimson_Seastore_Meeting_2022-09-23/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议主要讨论了Ceph分布式存储系统中的多项技术议题，包括多核分支的进展情况、omap范围移除功能的优化、以及系统内部的一些关键性错误修复和性能提升措施。具体地，讨论集中在如何优化存储节点的负载、内存拷贝效率、树状结构的调整和平衡，以及与系统稳定性和性能相关的问题。此外，还探讨了在高填充率情况下设备的行为，和对Ceph核心代码进行重构的可能性和计划。会议涉及了对当前实现的效率问题和未来可能的改进方">
+<meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了Ceph分布式存储系统中的技术议题。与会者探讨了多核分支的进展，特别是iOS的完成情况，并讨论了相关bug的修复。针对omap范围移除功能的优化，讨论了优化存储节点负载、内存拷贝效率、树状结构的调整和平衡，以及与系统稳定性和性能相关的问题。此外，会议还涉及了系统内部关键性错误修复和性能提升措施。在高填充率情况下设备的行为和对Ceph核心代码进行重构的可能">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-09-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="块存储">
+<meta property="article:tag" content="快照">
+<meta property="article:tag" content="克隆">
+<meta property="article:tag" content="虚拟化">
+<meta property="article:tag" content="高可用性">
+<meta property="article:tag" content="CRUSH算法">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="可伸缩性">
+<meta property="article:tag" content="OSD">
+<meta property="article:tag" content="RESTful API">
+<meta property="article:tag" content="文件系统存储">
+<meta property="article:tag" content="一致性">
+<meta property="article:tag" content="去中心化">
+<meta property="article:tag" content="性能">
+<meta property="article:tag" content="MON">
+<meta property="article:tag" content="MDS">
+<meta property="article:tag" content="PG">
+<meta property="article:tag" content="RADOS">
+<meta property="article:tag" content="librados">
+<meta property="article:tag" content="libcephfs">
+<meta property="article:tag" content="cephfs">
+<meta property="article:tag" content="rbd">
+<meta property="article:tag" content="radosgw">
+<meta property="article:tag" content="认证">
+<meta property="article:tag" content="授权">
+<meta property="article:tag" content="加密">
+<meta property="article:tag" content="复制">
+<meta property="article:tag" content="云计算">
+<meta property="article:tag" content="AWS">
+<meta property="article:tag" content="Azure">
+<meta property="article:tag" content="Google Cloud">
+<meta property="article:tag" content="混合云">
+<meta property="article:tag" content="多云">
+<meta property="article:tag" content="bluestore">
+<meta property="article:tag" content="bluefs">
+<meta property="article:tag" content="rocksdb">
+<meta property="article:tag" content="纠错码">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -178,7 +218,14 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>会议主要讨论了Ceph分布式存储系统中的多项技术议题，包括多核分支的进展情况、omap范围移除功能的优化、以及系统内部的一些关键性错误修复和性能提升措施。具体地，讨论集中在如何优化存储节点的负载、内存拷贝效率、树状结构的调整和平衡，以及与系统稳定性和性能相关的问题。此外，还探讨了在高填充率情况下设备的行为，和对Ceph核心代码进行重构的可能性和计划。会议涉及了对当前实现的效率问题和未来可能的改进方向的深入分析。</p>
+            <p>[改进后的中文总结内容]</p>
+<p>本次会议主要讨论了Ceph分布式存储系统中的技术议题。与会者探讨了多核分支的进展，特别是iOS的完成情况，并讨论了相关bug的修复。针对omap范围移除功能的优化，讨论了优化存储节点负载、内存拷贝效率、树状结构的调整和平衡，以及与系统稳定性和性能相关的问题。此外，会议还涉及了系统内部关键性错误修复和性能提升措施。在高填充率情况下设备的行为和对Ceph核心代码进行重构的可能性也得到了探讨。</p>
+<p>关于Ceph存储节点在高填充率下的行为，讨论了存储使用率和垃圾回收对性能的影响。在bluestore和rocksdb方面，讨论了改进缓存的实现和range操作的性能问题。此外，还提到了对基于pin
+set的映射优化进行代码美化和性能测试的工作。</p>
+<p>会议中提到的行动计划包括： - 完成多核分支的iOS开发。 -
+修复bug并优化omap范围移除功能。 - 改进bluestore和rocksdb的性能。 -
+对基于pin set的映射优化进行代码美化和性能测试。</p>
+<p>总体而言，本次会议聚焦于Ceph存储系统的性能优化和功能改进，涉及多个关键技术领域。</p>
 
         </div>
 
@@ -209,6 +256,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/AWS/" rel="tag">AWS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Azure/" rel="tag">Azure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/CRUSH%E7%AE%97%E6%B3%95/" rel="tag">CRUSH算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Google-Cloud/" rel="tag">Google Cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MDS/" rel="tag">MDS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/MON/" rel="tag">MON</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OSD/" rel="tag">OSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PG/" rel="tag">PG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RADOS/" rel="tag">RADOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RESTful-API/" rel="tag">RESTful API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/bluefs/" rel="tag">bluefs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/bluestore/" rel="tag">bluestore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/cephfs/" rel="tag">cephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/libcephfs/" rel="tag">libcephfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/librados/" rel="tag">librados</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/radosgw/" rel="tag">radosgw</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/rbd/" rel="tag">rbd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/rocksdb/" rel="tag">rocksdb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%B8%80%E8%87%B4%E6%80%A7/" rel="tag">一致性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%85%8B%E9%9A%86/" rel="tag">克隆</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8A%A0%E5%AF%86/" rel="tag">加密</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96/" rel="tag">去中心化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8F%AF%E4%BC%B8%E7%BC%A9%E6%80%A7/" rel="tag">可伸缩性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%9D%97%E5%AD%98%E5%82%A8/" rel="tag">块存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%8D%E5%88%B6/" rel="tag">复制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%A4%9A%E4%BA%91/" rel="tag">多云</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag">对象存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BF%AB%E7%85%A7/" rel="tag">快照</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD/" rel="tag">性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%8E%88%E6%9D%83/" rel="tag">授权</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8/" rel="tag">文件系统存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%B7%B7%E5%90%88%E4%BA%91/" rel="tag">混合云</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BA%A0%E9%94%99%E7%A0%81/" rel="tag">纠错码</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="tag">虚拟化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%AE%A4%E8%AF%81/" rel="tag">认证</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7/" rel="tag">高可用性</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -270,7 +319,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/09/26/Ceph_Performance_Meeting_2022-09-22/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Performance Meeting 2022-09-22</h4>
+        <h4 class="title">Ceph 性能会议纪要 2022-09-22</h4>
       </a>
     </div>
   

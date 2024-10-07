@@ -14,23 +14,28 @@
     
     
     
-    <title>Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions | ceph视频总结 | youtube频道总结</title>
+    <title>拥抱Ceph：公司采用Ceph存储解决方案的关键因素 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议是在Cephlacon上举办的“拥抱Ceph”专题讨论会。会议由Laura Flores和Dan主持，Laura Flores是RADOS工程师，也是用户开发月度会议的主席，Dan是Ceph执行委员会的成员。会议邀请了五位来自不同组织的Ceph用户作为嘉宾，分享他们选择使用Ceph的关键因素、面临的挑战以及对新组织的建议。 嘉宾介绍  Wasil：Workday的高级软">
+    <meta name="keywords" content="分布式存储,OpenStack,存储集群,Ceph存储,开源社区">
+    <meta name="description" content="[改进后的中文总结内容] Cephlacon会议上的“拥抱Ceph”专题讨论会聚焦于Ceph存储解决方案的关键因素及其在各个组织中的采用情况。会议由RADOS工程师和用户开发月度会议主席Laura Flores以及Ceph执行委员会成员Dan主持，邀请了来自不同组织的五位Ceph用户分享他们的使用经验。 讨论要点：  选择Ceph的关键因素：  成本效益和灵活性。 开源社区、可靠性优先设计、灵活性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions">
+<meta property="og:title" content="拥抱Ceph：公司采用Ceph存储解决方案的关键因素">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议是在Cephlacon上举办的“拥抱Ceph”专题讨论会。会议由Laura Flores和Dan主持，Laura Flores是RADOS工程师，也是用户开发月度会议的主席，Dan是Ceph执行委员会的成员。会议邀请了五位来自不同组织的Ceph用户作为嘉宾，分享他们选择使用Ceph的关键因素、面临的挑战以及对新组织的建议。 嘉宾介绍  Wasil：Workday的高级软">
+<meta property="og:description" content="[改进后的中文总结内容] Cephlacon会议上的“拥抱Ceph”专题讨论会聚焦于Ceph存储解决方案的关键因素及其在各个组织中的采用情况。会议由RADOS工程师和用户开发月度会议主席Laura Flores以及Ceph执行委员会成员Dan主持，邀请了来自不同组织的五位Ceph用户分享他们的使用经验。 讨论要点：  选择Ceph的关键因素：  成本效益和灵活性。 开源社区、可靠性优先设计、灵活性">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="OpenStack">
+<meta property="article:tag" content="存储集群">
+<meta property="article:tag" content="Ceph存储">
+<meta property="article:tag" content="开源社区">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions</div>
+        <div class="flex-col header-title ellipsis">拥抱Ceph：公司采用Ceph存储解决方案的关键因素</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions</h1>
+        <h1 class="title">拥抱Ceph：公司采用Ceph存储解决方案的关键因素</h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-04T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -156,19 +161,12 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%98%89%E5%AE%BE%E4%BB%8B%E7%BB%8D"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">嘉宾介绍</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%86%85%E5%AE%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">讨论内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">后续行动计划</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">会议总结</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions</h1>
+        <h1 class="post-card-title">拥抱Ceph：公司采用Ceph存储解决方案的关键因素</h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-05 00:00:00" datetime="2023-05-04T16:00:00.000Z"  itemprop="datePublished">2023-05-05</time>
 
@@ -185,85 +183,58 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议概述">会议概述</h4>
-<p>本次会议是在Cephlacon上举办的“拥抱Ceph”专题讨论会。会议由Laura
-Flores和Dan主持，Laura
-Flores是RADOS工程师，也是用户开发月度会议的主席，Dan是Ceph执行委员会的成员。会议邀请了五位来自不同组织的Ceph用户作为嘉宾，分享他们选择使用Ceph的关键因素、面临的挑战以及对新组织的建议。</p>
-<h4 id="嘉宾介绍">嘉宾介绍</h4>
-<ul>
-<li><strong>Wasil</strong>：Workday的高级软件工程师，负责存储团队，Workday是一个用于人力资源应用的云平台。</li>
-<li><strong>Andres</strong>：Flatiron
-Institute的高级数据科学家，该机构是Simons基金会的研究机构，专注于计算科学。</li>
-<li><strong>Luca</strong>：Posey超级计算中心的架构师，该中心支持澳大利亚所有大学，并将成为SKA望远镜的主要操作基地。</li>
-<li><strong>Matthew
-Leonard</strong>：Bloomberg工程的存储工程负责人，负责为全球7000名工程师提供存储资产。</li>
-<li><strong>Frank Yang</strong>：Patina
-Systems的首席技术官，该公司提供私有云解决方案和软件。</li>
-</ul>
-<h4 id="讨论内容">讨论内容</h4>
+            <p>[改进后的中文总结内容]</p>
+<p>Cephlacon会议上的“拥抱Ceph”专题讨论会聚焦于Ceph存储解决方案的关键因素及其在各个组织中的采用情况。会议由RADOS工程师和用户开发月度会议主席Laura
+Flores以及Ceph执行委员会成员Dan主持，邀请了来自不同组织的五位Ceph用户分享他们的使用经验。</p>
+<p><strong>讨论要点</strong>：</p>
 <ol type="1">
-<li><strong>选择Ceph的关键因素</strong>
+<li><strong>选择Ceph的关键因素</strong>：
 <ul>
-<li><strong>Wasil</strong>：从AWS迁移到数据中心时需要块和对象存储，Ceph是OpenStack存储的默认选择，具有成本效益和灵活性。</li>
-<li><strong>Andres</strong>：Ceph的开源社区、可靠性优先设计、灵活性和活跃的社区支持是关键因素。</li>
-<li><strong>Luca</strong>：Ceph的可靠性、可扩展性无 downtime
-以及社区支持使其成为首选。</li>
-<li><strong>Matthew
-Leonard</strong>：Bloomberg早期采用OpenStack和Ceph，社区和开源特性使其持续使用Ceph。</li>
-<li><strong>Frank
-Yang</strong>：Ceph的S3支持、TCO优势、开源社区支持以及灵活性使其成为明显选择。</li>
+<li>成本效益和灵活性。</li>
+<li>开源社区、可靠性优先设计、灵活性和社区支持。</li>
+<li>可靠性、可扩展性、无停机时间以及社区支持。</li>
+<li>社区、开源特性和灵活性。</li>
 </ul></li>
-<li><strong>Ceph的开源特性带来的价值</strong>
+<li><strong>Ceph的开源特性带来的价值</strong>：
 <ul>
-<li><strong>Wasil</strong>：能够自主实现安全特性并贡献给社区，Red
-Hat的支持加速了开源贡献过程。</li>
-<li><strong>Andres</strong>：技术人员喜欢能够深入代码，调试和实验的自由，无供应商锁定。</li>
-<li><strong>Luca</strong>：开源避免了与HPC供应商的沟通问题，社区支持快速解决问题。</li>
-<li><strong>Matthew
-Leonard</strong>：社区的知识库和活跃的开发者社区提供了强大的支持网络。</li>
-<li><strong>Frank
-Yang</strong>：社区支持、文档丰富，软件开发者可以直接访问源代码。</li>
+<li>自主实现安全特性并贡献给社区。</li>
+<li>技术人员喜欢深入代码、调试和实验的自由，无供应商锁定。</li>
+<li>开源避免了与HPC供应商的沟通问题，社区支持快速解决问题。</li>
+<li>社区知识库和活跃的开发者社区提供了强大的支持网络。</li>
+<li>社区支持、文档丰富，软件开发者可以直接访问源代码。</li>
 </ul></li>
-<li><strong>集成Ceph时的挑战</strong>
+<li><strong>集成Ceph时的挑战</strong>：
 <ul>
-<li><strong>Wasil</strong>：自动化工具的集成挑战，安全增强的需求。</li>
-<li><strong>Andres</strong>：硬件选择的不确定性，大规模系统的问题。</li>
-<li><strong>Luca</strong>：硬件选择和配置的复杂性，大规模系统的挑战。</li>
-<li><strong>Matthew
-Leonard</strong>：硬件和文档的复杂性，应用程序对S3协议的挑战。</li>
-<li><strong>Frank
-Yang</strong>：Ceph内部许多可调参数，硬件和环境差异带来的挑战。</li>
+<li>自动化工具的集成挑战，安全增强的需求。</li>
+<li>硬件选择的不确定性，大规模系统的问题。</li>
+<li>硬件选择和配置的复杂性，大规模系统的挑战。</li>
+<li>硬件和文档的复杂性，应用程序对S3协议的挑战。</li>
+<li>Ceph内部许多可调参数，硬件和环境差异带来的挑战。</li>
 </ul></li>
-<li><strong>吸引新组织的建议</strong>
+<li><strong>吸引新组织的建议</strong>：
 <ul>
-<li><strong>Wasil</strong>：Ceph需要更多成熟的基本功能，如RBD设备的复制支持。</li>
-<li><strong>Andres</strong>：改进文档，特别是入门指南，确保发布版本的数据可靠性。</li>
-<li><strong>Luca</strong>：改进文档，提供针对不同用户群体的指南，明确硬件建议。</li>
-<li><strong>Matthew
-Leonard</strong>：简化Ceph的使用流程，关注用户的工作流程和业务需求。</li>
-<li><strong>Frank
-Yang</strong>：使Ceph更易消费，提供基于工作流的文档和指南，增强安全性检查。</li>
+<li>Ceph需要更多成熟的基本功能。</li>
+<li>改进文档，特别是入门指南，确保发布版本的数据可靠性。</li>
+<li>改进文档，提供针对不同用户群体的指南，明确硬件建议。</li>
+<li>简化Ceph的使用流程，关注用户的工作流程和业务需求。</li>
+<li>使Ceph更易消费，提供基于工作流的文档和指南，增强安全性检查。</li>
 </ul></li>
-<li><strong>对决策者的建议</strong>
+<li><strong>对决策者的建议</strong>：
 <ul>
-<li><strong>Wasil</strong>：尝试运行POC，了解Ceph的维护和集成需求。</li>
-<li><strong>Andres</strong>：从小规模开始，理解Ceph的基本原理，考虑支持选项。</li>
-<li><strong>Luca</strong>：与社区沟通，避免硬件选择的错误，根据经验调整集群规模。</li>
-<li><strong>Matthew
-Leonard</strong>：Ceph是生活方式的选择，需要深入理解文档和硬件，社区支持至关重要。</li>
-<li><strong>Frank
-Yang</strong>：尝试Ceph，但需意识到生产环境中的长期承诺和投资。</li>
+<li>尝试运行POC，了解Ceph的维护和集成需求。</li>
+<li>从小规模开始，理解Ceph的基本原理，考虑支持选项。</li>
+<li>与社区沟通，避免硬件选择的错误，根据经验调整集群规模。</li>
+<li>Ceph是生活方式的选择，需要深入理解文档和硬件，社区支持至关重要。</li>
+<li>尝试Ceph，但需意识到生产环境中的长期承诺和投资。</li>
 </ul></li>
 </ol>
-<h4 id="后续行动计划">后续行动计划</h4>
+<p><strong>后续行动计划</strong>：</p>
 <ul>
 <li>改进Ceph的文档，特别是入门指南和硬件建议。</li>
 <li>简化Ceph的使用流程，关注用户的工作流程和业务需求。</li>
 <li>增强Ceph的安全性检查和错误预防机制。</li>
 </ul>
-<h4 id="会议总结">会议总结</h4>
-<p>会议涵盖了Ceph用户选择、价值、挑战和建议等多个方面，强调了Ceph的开源社区、灵活性和可靠性。同时，也指出了Ceph在文档、硬件选择和使用流程上的改进空间。会议最后，主持人感谢所有嘉宾的参与和贡献。</p>
+<p>此次会议强调了Ceph的开源社区、灵活性和可靠性，同时指出了Ceph在文档、硬件选择和使用流程上的改进空间。</p>
 
         </div>
 
@@ -294,6 +265,8 @@ Yang</strong>：尝试Ceph，但需意识到生产环境中的长期承诺和投
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph%E5%AD%98%E5%82%A8/" rel="tag">Ceph存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/OpenStack/" rel="tag">OpenStack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E9%9B%86%E7%BE%A4/" rel="tag">存储集群</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%BC%80%E6%BA%90%E7%A4%BE%E5%8C%BA/" rel="tag">开源社区</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -305,7 +278,7 @@ Yang</strong>：尝试Ceph，但需意识到生产环境中的长期承诺和投
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&title=《Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&title=《拥抱Ceph：公司采用Ceph存储解决方案的关键因素》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -315,7 +288,7 @@ Yang</strong>：尝试Ceph，但需意识到生产环境中的长期承诺和投
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&title=《Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&title=《拥抱Ceph：公司采用Ceph存储解决方案的关键因素》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -325,7 +298,7 @@ Yang</strong>：尝试Ceph，但需意识到生产环境中的长期承诺和投
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《拥抱Ceph：公司采用Ceph存储解决方案的关键因素》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -353,18 +326,18 @@ Yang</strong>：尝试Ceph，但需意识到生产环境中的长期承诺和投
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/05/Critical_Troubleshooting_Tools_for_Rook_Clusters_-_Subham_Kumar_Rai_Parth_Arora_IBM/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/It_s_Alive_Image_Live_Migration_Live_Import_and_Instant_Restore_with_Ceph_RBD_-_Danny_Harnik_IBM/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Critical Troubleshooting Tools for Rook Clusters - Subham Kumar Rai &amp; Parth Arora, IBM</h4>
+        <h4 class="title">It’s Alive! Image Live Migration, Live Import and Instant Restore with Ceph RBD - Danny Harnik, IBM</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/05/Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc./" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Keynote_-_Ceph_-_The_Future_of_the_Storage_TODAY/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Enhancing Observability in Rook Ceph - Deepika Upadhyay &amp; Gaurav Sitlani, Koor Technologies Inc.</h4>
+        <h4 class="title">&#39;Keynote: Ceph: The Future of the Storage TODAY&#39;</h4>
       </a>
     </div>
   
@@ -464,7 +437,7 @@ Yang</strong>：尝试Ceph，但需意识到生产环境中的长期承诺和投
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&title=《Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&title=《拥抱Ceph：公司采用Ceph存储解决方案的关键因素》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -474,7 +447,7 @@ Yang</strong>：尝试Ceph，但需意识到生产环境中的长期承诺和投
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&title=《Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&title=《拥抱Ceph：公司采用Ceph存储解决方案的关键因素》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -484,7 +457,7 @@ Yang</strong>：尝试Ceph，但需意识到生产环境中的长期承诺和投
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Embracing Ceph: Key Factors Driving Companies to Adopt Ceph Storage Solutions》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《拥抱Ceph：公司采用Ceph存储解决方案的关键因素》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/05/Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Performance Meeting 2022-06-30 | ceph视频总结 | youtube频道总结</title>
+    <title>Ceph 性能会议 2022-06-30 | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 主要议题  新的Pull Request讨论  会议开始时，讨论了最近的新Pull Request（PR）情况。目前只有一个新的PR，涉及RGW（RADOS Gateway）原子写入器的基准测试组件。这个组件是Zipper工作的一部分，旨在通过针对存储接口的基准测试，比较不同后端之间的性能。  博客文章更新  会议中讨论了关于RocksDB调优的现有博客文章。文章由Kieran Sing">
+    <meta name="keywords" content="Ceph,分布式存储,性能优化,RocksDB,博客文章">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 主要议题  新的Pull Request讨论  会议开始讨论了新的Pull Request情况，目前只有一个关于RGW（RADOS Gateway）原子写入器的基准测试组件的PR。该组件是Zipper工作的一部分，旨在通过基准测试比较不同后端之间的性能。  博客文章更新  讨论了一篇关于RocksDB调优的博客文章，该文章由Kieran Singh和Daniel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Performance Meeting 2022-06-30">
+<meta property="og:title" content="Ceph 性能会议 2022-06-30">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/06/30/Ceph_Performance_Meeting_2022-06-30/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 主要议题  新的Pull Request讨论  会议开始时，讨论了最近的新Pull Request（PR）情况。目前只有一个新的PR，涉及RGW（RADOS Gateway）原子写入器的基准测试组件。这个组件是Zipper工作的一部分，旨在通过针对存储接口的基准测试，比较不同后端之间的性能。  博客文章更新  会议中讨论了关于RocksDB调优的现有博客文章。文章由Kieran Sing">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 主要议题  新的Pull Request讨论  会议开始讨论了新的Pull Request情况，目前只有一个关于RGW（RADOS Gateway）原子写入器的基准测试组件的PR。该组件是Zipper工作的一部分，旨在通过基准测试比较不同后端之间的性能。  博客文章更新  讨论了一篇关于RocksDB调优的博客文章，该文章由Kieran Singh和Daniel">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-06-30T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="RocksDB">
+<meta property="article:tag" content="博客文章">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Performance Meeting 2022-06-30</div>
+        <div class="flex-col header-title ellipsis">Ceph 性能会议 2022-06-30</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Performance Meeting 2022-06-30</h1>
+        <h1 class="title">Ceph 性能会议 2022-06-30</h1>
         <h5 class="subtitle">
             
                 <time datetime="2022-06-29T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Performance Meeting 2022-06-30</h1>
+        <h1 class="post-card-title">Ceph 性能会议 2022-06-30</h1>
         <div class="post-meta">
             <time class="post-time" title="2022-06-30 00:00:00" datetime="2022-06-29T16:00:00.000Z"  itemprop="datePublished">2022-06-30</time>
 
@@ -185,25 +190,23 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>新的Pull Request讨论</strong>
 <ul>
-<li>会议开始时，讨论了最近的新Pull
-Request（PR）情况。目前只有一个新的PR，涉及RGW（RADOS
-Gateway）原子写入器的基准测试组件。这个组件是Zipper工作的一部分，旨在通过针对存储接口的基准测试，比较不同后端之间的性能。</li>
+<li>会议开始讨论了新的Pull Request情况，目前只有一个关于RGW（RADOS
+Gateway）原子写入器的基准测试组件的PR。该组件是Zipper工作的一部分，旨在通过基准测试比较不同后端之间的性能。</li>
 </ul></li>
 <li><strong>博客文章更新</strong>
 <ul>
-<li>会议中讨论了关于RocksDB调优的现有博客文章。文章由Kieran
-Singh和Daniel Parks撰写，发布于2019年，其中包含了一些调优建议，如将OSD
-PG日志条目和重复跟踪设置为10，声称这减少了写入放大。然而，这些设置并未经过QA测试，且存在一些潜在的问题和副作用。</li>
-<li>会议参与者对这些设置的有效性和安全性表示担忧，建议可能需要更新或明确警告这些设置的风险。</li>
+<li>讨论了一篇关于RocksDB调优的博客文章，该文章由Kieran Singh和Daniel
+Parks撰写，提出了一些调优建议，但未经过QA测试，存在潜在问题和副作用。会议参与者对该设置的有效性和安全性表示担忧，建议可能需要更新或明确警告这些设置的风险。</li>
 </ul></li>
 <li><strong>后续行动计划</strong>
 <ul>
-<li>计划编写一篇新的RocksDB调优博客文章，详细解释各种设置及其可能的影响，并明确指出这些设置未经QA测试，使用风险自负。</li>
+<li>计划编写一篇新的RocksDB调优博客文章，详细解释设置及其可能的影响，并明确风险。</li>
 <li>讨论了是否需要针对现有博客文章发布更正或警告，最终决定可能需要撰写一篇新的博客文章来解释这些设置的后果。</li>
 </ul></li>
 </ol>
@@ -253,6 +256,8 @@ PG日志条目和重复跟踪设置为10，声称这减少了写入放大。然�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" rel="tag">博客文章</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -264,7 +269,7 @@ PG日志条目和重复跟踪设置为10，声称这减少了写入放大。然�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/06/30/Ceph_Performance_Meeting_2022-06-30/&title=《Ceph Performance Meeting 2022-06-30》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/06/30/Ceph_Performance_Meeting_2022-06-30/&title=《Ceph 性能会议 2022-06-30》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -274,7 +279,7 @@ PG日志条目和重复跟踪设置为10，声称这减少了写入放大。然�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/06/30/Ceph_Performance_Meeting_2022-06-30/&title=《Ceph Performance Meeting 2022-06-30》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/06/30/Ceph_Performance_Meeting_2022-06-30/&title=《Ceph 性能会议 2022-06-30》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -284,7 +289,7 @@ PG日志条目和重复跟踪设置为10，声称这减少了写入放大。然�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2022-06-30》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/06/30/Ceph_Performance_Meeting_2022-06-30/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2022-06-30》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/06/30/Ceph_Performance_Meeting_2022-06-30/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -323,7 +328,7 @@ PG日志条目和重复跟踪设置为10，声称这减少了写入放大。然�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/06/28/Ceph_Orchestrator_Meeting_2022-06-14/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Orchestrator Meeting 2022-06-14</h4>
+        <h4 class="title">Ceph Orchestrator 会议纪要 2022-06-14</h4>
       </a>
     </div>
   
@@ -423,7 +428,7 @@ PG日志条目和重复跟踪设置为10，声称这减少了写入放大。然�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/06/30/Ceph_Performance_Meeting_2022-06-30/&title=《Ceph Performance Meeting 2022-06-30》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2022/06/30/Ceph_Performance_Meeting_2022-06-30/&title=《Ceph 性能会议 2022-06-30》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -433,7 +438,7 @@ PG日志条目和重复跟踪设置为10，声称这减少了写入放大。然�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/06/30/Ceph_Performance_Meeting_2022-06-30/&title=《Ceph Performance Meeting 2022-06-30》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2022/06/30/Ceph_Performance_Meeting_2022-06-30/&title=《Ceph 性能会议 2022-06-30》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -443,7 +448,7 @@ PG日志条目和重复跟踪设置为10，声称这减少了写入放大。然�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Performance Meeting 2022-06-30》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/06/30/Ceph_Performance_Meeting_2022-06-30/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph 性能会议 2022-06-30》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2022/06/30/Ceph_Performance_Meeting_2022-06-30/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

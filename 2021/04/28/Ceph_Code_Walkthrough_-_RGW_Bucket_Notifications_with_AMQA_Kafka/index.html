@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka | ceph视频总结 | youtube频道总结</title>
+    <title>&#39;Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka&#39; | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议由Mike Perez主持，Yuval主讲，主题为Reno的Gateway Bucket Notifications，特别是与AMQP和Kafka相关的实现细节。会议主要通过代码走查的方式，详细介绍了如何配置和发送通知。 主要议题  Bucket Notifications概述  功能简介：当对象创建或删除时，发送通知到预配置的端点。 两种模式：  Push模式：事件发">
+    <meta name="keywords" content="Ceph,RGW,Bucket Notifications,AMQP,Kafka">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议由Mike Perez主持，Yuval主讲，主题为Ceph的Reno版本中Gateway的Bucket Notifications功能，特别关注了与AMQP和Kafka的集成实现。会议通过代码走查的方式，深入探讨了配置和发送通知的细节。 主要议题  Bucket Notifications概述  功能简介：当对象在存储中创建或删除时，系统会向预">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Code Walkthrough: RGW Bucket Notifications with AMQA&#x2F;Kafka">
+<meta property="og:title" content="&#39;Ceph Code Walkthrough: RGW Bucket Notifications with AMQA&#x2F;Kafka&#39;">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2021/04/28/Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议由Mike Perez主持，Yuval主讲，主题为Reno的Gateway Bucket Notifications，特别是与AMQP和Kafka相关的实现细节。会议主要通过代码走查的方式，详细介绍了如何配置和发送通知。 主要议题  Bucket Notifications概述  功能简介：当对象创建或删除时，发送通知到预配置的端点。 两种模式：  Push模式：事件发">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次会议由Mike Perez主持，Yuval主讲，主题为Ceph的Reno版本中Gateway的Bucket Notifications功能，特别关注了与AMQP和Kafka的集成实现。会议通过代码走查的方式，深入探讨了配置和发送通知的细节。 主要议题  Bucket Notifications概述  功能简介：当对象在存储中创建或删除时，系统会向预">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-27T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-04-27T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="RGW">
+<meta property="article:tag" content="Bucket Notifications">
+<meta property="article:tag" content="AMQP">
+<meta property="article:tag" content="Kafka">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka</div>
+        <div class="flex-col header-title ellipsis">&#39;Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka&#39;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka</h1>
+        <h1 class="title">&#39;Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka&#39;</h1>
         <h5 class="subtitle">
             
                 <time datetime="2021-04-27T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka</h1>
+        <h1 class="post-card-title">'Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka'</h1>
         <div class="post-meta">
             <time class="post-time" title="2021-04-28 00:00:00" datetime="2021-04-27T16:00:00.000Z"  itemprop="datePublished">2021-04-28</time>
 
@@ -185,27 +190,28 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概述">会议概述</h4>
-<p>本次会议由Mike Perez主持，Yuval主讲，主题为Reno的Gateway Bucket
-Notifications，特别是与AMQP和Kafka相关的实现细节。会议主要通过代码走查的方式，详细介绍了如何配置和发送通知。</p>
+<p>本次会议由Mike
+Perez主持，Yuval主讲，主题为Ceph的Reno版本中Gateway的Bucket
+Notifications功能，特别关注了与AMQP和Kafka的集成实现。会议通过代码走查的方式，深入探讨了配置和发送通知的细节。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>Bucket Notifications概述</strong>
 <ul>
-<li>功能简介：当对象创建或删除时，发送通知到预配置的端点。</li>
+<li>功能简介：当对象在存储中创建或删除时，系统会向预配置的端点发送通知。</li>
 <li>两种模式：
 <ul>
 <li><strong>Push模式</strong>：事件发生时立即发送通知。</li>
-<li><strong>Pull模式</strong>：所有通知存储在特殊的pub sub
-zone中，计划未来弃用。</li>
+<li><strong>Pull模式</strong>：所有通知存储在特殊的pub/sub区域中，计划未来弃用。</li>
 </ul></li>
 </ul></li>
 <li><strong>配置流程</strong>
 <ul>
 <li>主要涉及的文件：<code>rgw_rest_pubsub</code>和<code>rgw_rest_pubsub_common</code>。</li>
-<li>配置API：创建、删除、列出主题和通知。</li>
-<li>系统对象存储：所有配置信息作为系统对象存储。</li>
+<li>配置API：包括创建、删除、列出主题和通知等。</li>
+<li>系统对象存储：所有配置信息以系统对象的形式存储。</li>
 </ul></li>
 <li><strong>数据结构</strong>
 <ul>
@@ -279,6 +285,8 @@ CLI或o3border3工具进行配置，手动编写REST消息较为复杂且不推�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/AMQP/" rel="tag">AMQP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Bucket-Notifications/" rel="tag">Bucket Notifications</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Kafka/" rel="tag">Kafka</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RGW/" rel="tag">RGW</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -290,7 +298,7 @@ CLI或o3border3工具进行配置，手动编写REST消息较为复杂且不推�
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/28/Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka/&title=《Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/28/Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka/&title=《'Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -300,7 +308,7 @@ CLI或o3border3工具进行配置，手动编写REST消息较为复杂且不推�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/28/Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka/&title=《Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/28/Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka/&title=《'Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -310,7 +318,7 @@ CLI或o3border3工具进行配置，手动编写REST消息较为复杂且不推�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/28/Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/28/Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -349,7 +357,7 @@ CLI或o3border3工具进行配置，手动编写REST消息较为复杂且不推�
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2021/04/28/Ceph_Developer_Summit_Quincy_-_CephFS_Follow-up/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Developer Summit Quincy: CephFS Follow-up</h4>
+        <h4 class="title">&#39;Ceph Developer Summit Quincy: CephFS Follow-up&#39;</h4>
       </a>
     </div>
   
@@ -449,7 +457,7 @@ CLI或o3border3工具进行配置，手动编写REST消息较为复杂且不推�
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/28/Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka/&title=《Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2021/04/28/Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka/&title=《'Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka'》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -459,7 +467,7 @@ CLI或o3border3工具进行配置，手动编写REST消息较为复杂且不推�
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/28/Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka/&title=《Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2021/04/28/Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka/&title=《'Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka'》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -469,7 +477,7 @@ CLI或o3border3工具进行配置，手动编写REST消息较为复杂且不推�
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/28/Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《'Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka'》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2021/04/28/Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

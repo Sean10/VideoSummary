@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议时间： [请填写会议具体时间] 会议地点： [请填写会议具体地点] 参会人员： [请填写参会人员名单] 会议主题： 分布式存储Ceph技术讨论及字幕翻译工作总结 会议内容： 一、Ceph技术讨论  关键议题： 讨论了Ceph存储系统中因数据溢出导致的性能问题。 讨论要点：  由于数据在各个存储节点之间的溢出，导致系统性能下降。 需要进一步分析数据溢出的原因，并寻找解决方案。 探讨了通">
+    <meta name="keywords" content="Ceph,Distributed Storage,Performance Optimization,Parallel Processing,Scatter/Gather Algorithm">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议时间： [请填写会议具体时间] 会议地点： [请填写会议具体地点] 参会人员： [请填写参会人员名单] 会议主题： 分布式存储Ceph技术讨论及字幕翻译工作总结 会议内容： 一、Ceph技术讨论  关键议题： 讨论了Ceph存储系统中因数据溢出导致的性能问题。 讨论要点：  分析了Ceph存储系统中数据溢出的原因及影响。 探索了优化数据分布和存储策略以减少数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Optimized Scatter&#x2F;Gather Support for Parallel Storage - Carlos Maltzahn">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2018/04/23/Optimized_Scatter_Gather_Support_for_Parallel_Storage_-_Carlos_Maltzahn/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议时间： [请填写会议具体时间] 会议地点： [请填写会议具体地点] 参会人员： [请填写参会人员名单] 会议主题： 分布式存储Ceph技术讨论及字幕翻译工作总结 会议内容： 一、Ceph技术讨论  关键议题： 讨论了Ceph存储系统中因数据溢出导致的性能问题。 讨论要点：  由于数据在各个存储节点之间的溢出，导致系统性能下降。 需要进一步分析数据溢出的原因，并寻找解决方案。 探讨了通">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议时间： [请填写会议具体时间] 会议地点： [请填写会议具体地点] 参会人员： [请填写参会人员名单] 会议主题： 分布式存储Ceph技术讨论及字幕翻译工作总结 会议内容： 一、Ceph技术讨论  关键议题： 讨论了Ceph存储系统中因数据溢出导致的性能问题。 讨论要点：  分析了Ceph存储系统中数据溢出的原因及影响。 探索了优化数据分布和存储策略以减少数">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2018-04-23T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Distributed Storage">
+<meta property="article:tag" content="Performance Optimization">
+<meta property="article:tag" content="Parallel Processing">
+<meta property="article:tag" content="Scatter&#x2F;Gather Algorithm">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,7 +190,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议时间</strong>： [请填写会议具体时间]</p>
 <p><strong>会议地点</strong>： [请填写会议具体地点]</p>
 <p><strong>参会人员</strong>： [请填写参会人员名单]</p>
@@ -198,9 +204,9 @@
 讨论了Ceph存储系统中因数据溢出导致的性能问题。</li>
 <li><strong>讨论要点</strong>：
 <ul>
-<li>由于数据在各个存储节点之间的溢出，导致系统性能下降。</li>
-<li>需要进一步分析数据溢出的原因，并寻找解决方案。</li>
-<li>探讨了通过优化数据分布和存储策略来减少数据溢出的可能性。</li>
+<li>分析了Ceph存储系统中数据溢出的原因及影响。</li>
+<li>探索了优化数据分布和存储策略以减少数据溢出。</li>
+<li>讨论了如何通过改进Ceph的Scatter/Gather算法来提升并行存储效率。</li>
 </ul></li>
 </ol>
 <p><strong>二、字幕翻译工作</strong></p>
@@ -208,22 +214,22 @@
 <li><strong>关键议题</strong>： 总结了视频会议字幕翻译及总结工作。</li>
 <li><strong>讨论要点</strong>：
 <ul>
-<li>翻译过程中遇到的主要问题，如专业术语理解、文化差异等。</li>
-<li>总结了翻译过程中的经验教训，以及如何提高翻译质量。</li>
-<li>讨论了后续翻译工作的改进方向。</li>
+<li>分析了翻译过程中遇到的问题，如专业术语理解和文化差异。</li>
+<li>总结了翻译经验教训，提出提高翻译质量的方法。</li>
+<li>讨论了后续字幕翻译工作的改进方向。</li>
 </ul></li>
 </ol>
 <p><strong>三、行动计划</strong></p>
 <ol type="1">
 <li><strong>Ceph技术方面</strong>：
 <ul>
-<li>对Ceph存储系统进行性能测试，分析数据溢出的原因。</li>
-<li>优化数据分布和存储策略，减少数据溢出。</li>
+<li>对Ceph存储系统进行性能测试，深入分析数据溢出的原因。</li>
+<li>优化数据分布和存储策略，改善Ceph的Scatter/Gather算法，以提升并行存储性能。</li>
 <li>持续关注Ceph社区的更新，学习新技术，提高系统性能。</li>
 </ul></li>
 <li><strong>字幕翻译方面</strong>：
 <ul>
-<li>加强对专业术语的学习，提高翻译准确性。</li>
+<li>加强专业术语学习，提高翻译准确性。</li>
 <li>结合文化背景，提高翻译的流畅性和可读性。</li>
 <li>优化翻译流程，提高工作效率。</li>
 </ul></li>
@@ -270,6 +276,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Parallel-Processing/" rel="tag">Parallel Processing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Scatter-Gather-Algorithm/" rel="tag">Scatter&#x2F;Gather Algorithm</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -338,9 +346,9 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2018/04/23/Performance_tuning_in_BlueStore_RocksDB_-_Li_Xiaoyan/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2018/04/23/Pinpoint_Ceph_Bottleneck_Out_of_Cluster_Behavior_Mists_-_Yingxin_Cheng/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Performance tuning in BlueStore &amp; RocksDB - Li Xiaoyan</h4>
+        <h4 class="title">  Pinpoint Ceph Bottleneck Out of Cluster Behavior Mists - Yingxin Cheng  </h4>
       </a>
     </div>
   

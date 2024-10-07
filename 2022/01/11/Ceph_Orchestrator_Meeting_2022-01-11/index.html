@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Orchestrator 会议 日期：[具体日期] 参会人员：[具体人员名单] 主要议题：  Quincy 版本特性冻结  讨论了 Quincy 版本的特性冻结时间，原计划是本周结束，但具体时间取决于其他组件如 RBG 和 FFS 是否能按时完成。 需要完成的任务包括对 self-adm 二进制文件的重构，这需要在 Quincy 发布前完成。  Quincy 版本的其他待办事项">
+    <meta name="keywords" content="Ceph,Orchestrator,Rook,Quincy 版本,回归问题">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Orchestrator 会议 日期：2022年1月11日 参会人员：[具体人员名单] 主要议题：  Quincy 版本特性冻结  讨论了 Quincy 版本的特性冻结时间，原计划是在本周结束，但具体时间取决于 RBG 和 FFS 等组件的完成情况。 强调了 self-adm 二进制文件的重构需要在 Quincy 发布前完成。  Quincy 版本的待">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Orchestrator Meeting 2022-01-11">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/01/11/Ceph_Orchestrator_Meeting_2022-01-11/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Orchestrator 会议 日期：[具体日期] 参会人员：[具体人员名单] 主要议题：  Quincy 版本特性冻结  讨论了 Quincy 版本的特性冻结时间，原计划是本周结束，但具体时间取决于其他组件如 RBG 和 FFS 是否能按时完成。 需要完成的任务包括对 self-adm 二进制文件的重构，这需要在 Quincy 发布前完成。  Quincy 版本的其他待办事项">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Orchestrator 会议 日期：2022年1月11日 参会人员：[具体人员名单] 主要议题：  Quincy 版本特性冻结  讨论了 Quincy 版本的特性冻结时间，原计划是在本周结束，但具体时间取决于 RBG 和 FFS 等组件的完成情况。 强调了 self-adm 二进制文件的重构需要在 Quincy 发布前完成。  Quincy 版本的待">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-10T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-01-11T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="Orchestrator">
+<meta property="article:tag" content="Rook">
+<meta property="article:tag" content="Quincy 版本">
+<meta property="article:tag" content="回归问题">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98orchestrator-%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Orchestrator 会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%97%A5%E6%9C%9F%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">日期：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%B7%E4%BD%93%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[具体人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98orchestrator-%E4%BC%9A%E8%AE%AE"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Orchestrator 会议</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%97%A5%E6%9C%9F2022%E5%B9%B41%E6%9C%8811%E6%97%A5"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">日期：2022年1月11日</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E4%BC%9A%E4%BA%BA%E5%91%98%E5%85%B7%E4%BD%93%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">参会人员：[具体人员名单]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">会议结束：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,24 +190,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议主题orchestrator-会议">会议主题：Orchestrator 会议</h4>
-<h4 id="日期具体日期">日期：[具体日期]</h4>
+<h4 id="日期2022年1月11日">日期：2022年1月11日</h4>
 <h4 id="参会人员具体人员名单">参会人员：[具体人员名单]</h4>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
 <li><strong>Quincy 版本特性冻结</strong>
 <ul>
 <li>讨论了 Quincy
-版本的特性冻结时间，原计划是本周结束，但具体时间取决于其他组件如 RBG 和
-FFS 是否能按时完成。</li>
-<li>需要完成的任务包括对 self-adm 二进制文件的重构，这需要在 Quincy
-发布前完成。</li>
+版本的特性冻结时间，原计划是在本周结束，但具体时间取决于 RBG 和 FFS
+等组件的完成情况。</li>
+<li>强调了 self-adm 二进制文件的重构需要在 Quincy 发布前完成。</li>
 </ul></li>
-<li><strong>Quincy 版本的其他待办事项</strong>
+<li><strong>Quincy 版本的待办事项</strong>
 <ul>
 <li>讨论了 agent 和特定的 pull request 是否需要合并以满足特性冻结。</li>
-<li>强调了文件权限问题和主机缓存大小问题的重要性。</li>
+<li>强调了文件权限和主机缓存大小问题的重要性。</li>
 </ul></li>
 <li><strong>Rook Manager Module 的测试和使用</strong>
 <ul>
@@ -213,7 +218,7 @@ FFS 是否能按时完成。</li>
 </ul></li>
 <li><strong>Quincy 版本的后续行动计划</strong>
 <ul>
-<li>确认了从兼容性和稳定性角度出发，所有新特性都可以在未来的版本中轻松回溯。</li>
+<li>确认了所有新特性都可以在未来的版本中轻松回溯。</li>
 <li>讨论了不同 Rook 版本的兼容性问题，确认 Rook
 的接口是向后兼容的。</li>
 </ul></li>
@@ -224,7 +229,7 @@ FFS 是否能按时完成。</li>
 <li><strong>Backporting 问题</strong>
 <ul>
 <li>讨论了 backporting 的复杂性，特别是由于 Pacific 和 Quincy
-版本之间的差异，导致需要单独处理每个 pull request 的 backporting。</li>
+版本之间的差异。</li>
 <li>确认了一些具体的 pull request 需要进行
 backporting，并讨论了分配任务的可能性。</li>
 </ul></li>
@@ -250,8 +255,6 @@ backporting，并讨论了分配任务的可能性。</li>
 <ul>
 <li>会议在确认无其他议题后结束，感谢所有参会人员，并约定下周再次开会。</li>
 </ul>
-<hr />
-<p>以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。</p>
 
         </div>
 
@@ -282,6 +285,8 @@ backporting，并讨论了分配任务的可能性。</li>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Orchestrator/" rel="tag">Orchestrator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Quincy-%E7%89%88%E6%9C%AC/" rel="tag">Quincy 版本</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rook/" rel="tag">Rook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98/" rel="tag">回归问题</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -352,7 +357,7 @@ backporting，并讨论了分配任务的可能性。</li>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2022/01/11/Ceph_Performance_Meeting_2022-01-06/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Performance Meeting 2022-01-06</h4>
+        <h4 class="title">Ceph 性能会议 2022-01-06</h4>
       </a>
     </div>
   

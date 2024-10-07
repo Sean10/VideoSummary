@@ -14,23 +14,30 @@
     
     
     
-    <title>CDS G/H (Day 1) - Cold Storage Pools | ceph视频总结 | youtube频道总结</title>
+    <title>  CDS G/H (Day 1) - Cold Storage Pools   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： 冷存储池讨论 参会人员： Roger Weeks（HGST），Samuel Saguy，以及其他未具名参与者 会议内容：  背景：  讨论如何实现一个存储池，其中的数据可以被写入且几乎不会进行重平衡或重写，或者重写非常不频繁。 旨在为冷存储提供解决方案，即介于磁带和活跃访问数据之间的存储层。 目标是提高数据访问速度，同时减少数据移动和存储成本。  主要议题：  如何实现数据在">
+    <meta name="keywords" content="Ceph,冷存储池,数据移动,冗余性,PG温映射,PG强制映射,Silo架构">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： 冷存储池讨论 参会人员： Roger Weeks（HGST），Samuel Saguy，以及其他未具名参与者 会议内容：  背景：  讨论如何实现一个存储池，其中的数据可以被写入且几乎不会进行重平衡或重写，或者重写非常不频繁。 目的是为冷存储提供解决方案，即介于磁带和活跃访问数据之间的存储层。 目标是提高数据访问速度，同时减少数据移动和存储成本。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CDS G&#x2F;H (Day 1) - Cold Storage Pools">
+<meta property="og:title" content="  CDS G&#x2F;H (Day 1) - Cold Storage Pools  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： 冷存储池讨论 参会人员： Roger Weeks（HGST），Samuel Saguy，以及其他未具名参与者 会议内容：  背景：  讨论如何实现一个存储池，其中的数据可以被写入且几乎不会进行重平衡或重写，或者重写非常不频繁。 旨在为冷存储提供解决方案，即介于磁带和活跃访问数据之间的存储层。 目标是提高数据访问速度，同时减少数据移动和存储成本。  主要议题：  如何实现数据在">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： 冷存储池讨论 参会人员： Roger Weeks（HGST），Samuel Saguy，以及其他未具名参与者 会议内容：  背景：  讨论如何实现一个存储池，其中的数据可以被写入且几乎不会进行重平衡或重写，或者重写非常不频繁。 目的是为冷存储提供解决方案，即介于磁带和活跃访问数据之间的存储层。 目标是提高数据访问速度，同时减少数据移动和存储成本。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2014-06-23T16:00:00.000Z">
 <meta property="article:modified_time" content="2014-06-24T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="冷存储池">
+<meta property="article:tag" content="数据移动">
+<meta property="article:tag" content="冗余性">
+<meta property="article:tag" content="PG温映射">
+<meta property="article:tag" content="PG强制映射">
+<meta property="article:tag" content="Silo架构">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +119,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">CDS G/H (Day 1) - Cold Storage Pools</div>
+        <div class="flex-col header-title ellipsis">  CDS G/H (Day 1) - Cold Storage Pools  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +141,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">CDS G/H (Day 1) - Cold Storage Pools</h1>
+        <h1 class="title">  CDS G/H (Day 1) - Cold Storage Pools  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2014-06-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +175,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">CDS G/H (Day 1) - Cold Storage Pools</h1>
+        <h1 class="post-card-title">  CDS G/H (Day 1) - Cold Storage Pools  </h1>
         <div class="post-meta">
             <time class="post-time" title="2014-06-24 00:00:00" datetime="2014-06-23T16:00:00.000Z"  itemprop="datePublished">2014-06-24</time>
 
@@ -185,7 +192,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <p><strong>会议主题</strong>： 冷存储池讨论</p>
 <p><strong>参会人员</strong>： Roger Weeks（HGST），Samuel
 Saguy，以及其他未具名参与者</p>
@@ -194,7 +202,7 @@ Saguy，以及其他未具名参与者</p>
 <li><strong>背景</strong>：
 <ul>
 <li>讨论如何实现一个存储池，其中的数据可以被写入且几乎不会进行重平衡或重写，或者重写非常不频繁。</li>
-<li>旨在为冷存储提供解决方案，即介于磁带和活跃访问数据之间的存储层。</li>
+<li>目的是为冷存储提供解决方案，即介于磁带和活跃访问数据之间的存储层。</li>
 <li>目标是提高数据访问速度，同时减少数据移动和存储成本。</li>
 </ul></li>
 <li><strong>主要议题</strong>：
@@ -273,6 +281,8 @@ Saguy，以及其他未具名参与者</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PG%E5%BC%BA%E5%88%B6%E6%98%A0%E5%B0%84/" rel="tag">PG强制映射</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/PG%E6%B8%A9%E6%98%A0%E5%B0%84/" rel="tag">PG温映射</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Silo%E6%9E%B6%E6%9E%84/" rel="tag">Silo架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%97%E4%BD%99%E6%80%A7/" rel="tag">冗余性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%86%B7%E5%AD%98%E5%82%A8%E6%B1%A0/" rel="tag">冷存储池</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%B0%E6%8D%AE%E7%A7%BB%E5%8A%A8/" rel="tag">数据移动</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -284,7 +294,7 @@ Saguy，以及其他未具名参与者</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/&title=《CDS G/H (Day 1) - Cold Storage Pools》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/&title=《  CDS G/H (Day 1) - Cold Storage Pools  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -294,7 +304,7 @@ Saguy，以及其他未具名参与者</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/&title=《CDS G/H (Day 1) - Cold Storage Pools》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/&title=《  CDS G/H (Day 1) - Cold Storage Pools  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -304,7 +314,7 @@ Saguy，以及其他未具名参与者</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS G/H (Day 1) - Cold Storage Pools》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS G/H (Day 1) - Cold Storage Pools  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -341,9 +351,9 @@ Saguy，以及其他未具名参与者</p>
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_OSD_-_Locally_Repairable_Codes/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CDS G/H (Day 1) - OSD: Locally Repairable Codes</h4>
+        <h4 class="title">&#39;CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete&#39;</h4>
       </a>
     </div>
   
@@ -443,7 +453,7 @@ Saguy，以及其他未具名参与者</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/&title=《CDS G/H (Day 1) - Cold Storage Pools》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/&title=《  CDS G/H (Day 1) - Cold Storage Pools  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -453,7 +463,7 @@ Saguy，以及其他未具名参与者</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/&title=《CDS G/H (Day 1) - Cold Storage Pools》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/&title=《  CDS G/H (Day 1) - Cold Storage Pools  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -463,7 +473,7 @@ Saguy，以及其他未具名参与者</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CDS G/H (Day 1) - Cold Storage Pools》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS G/H (Day 1) - Cold Storage Pools  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/06/24/CDS_G_H_Day_1_-_Cold_Storage_Pools/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

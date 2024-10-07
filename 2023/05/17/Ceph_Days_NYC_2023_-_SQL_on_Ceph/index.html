@@ -14,23 +14,28 @@
     
     
     
-    <title>Ceph Days NYC 2023: SQL on Ceph | ceph视频总结 | youtube频道总结</title>
+    <title>  Ceph Days NYC 2023: SQL on Ceph   | ceph视频总结 | youtube频道总结</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题： SQL Lite on Ceph 的介绍与应用 主讲人： Patrick Donnelly，IBM 的 Ceph 研发人员 会议内容概述： Patrick Donnelly 介绍了如何在 Ceph 上使用 SQL Lite，特别是通过 libsef sqlite 库将 SQLite 数据库分布式存储在 Ceph 的 RADOS 上。他讨论了 Ceph 管理器（Ceph Man">
+    <meta name="keywords" content="Ceph,分布式存储,Rados,Ceph Manager,SQLite">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph Days NYC 2023：Ceph 上的 SQL 应用 主讲人： Patrick Donnelly，IBM 的 Ceph 研发人员 会议内容概述： Patrick Donnelly 介绍了如何在 Ceph 上使用 SQLite，特别是通过 libsef sqlite 库将 SQLite 数据库分布式存储在 Ceph 的 RADOS 上。他">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph Days NYC 2023: SQL on Ceph">
+<meta property="og:title" content="  Ceph Days NYC 2023: SQL on Ceph  ">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_SQL_on_Ceph/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题： SQL Lite on Ceph 的介绍与应用 主讲人： Patrick Donnelly，IBM 的 Ceph 研发人员 会议内容概述： Patrick Donnelly 介绍了如何在 Ceph 上使用 SQL Lite，特别是通过 libsef sqlite 库将 SQLite 数据库分布式存储在 Ceph 的 RADOS 上。他讨论了 Ceph 管理器（Ceph Man">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题： Ceph Days NYC 2023：Ceph 上的 SQL 应用 主讲人： Patrick Donnelly，IBM 的 Ceph 研发人员 会议内容概述： Patrick Donnelly 介绍了如何在 Ceph 上使用 SQLite，特别是通过 libsef sqlite 库将 SQLite 数据库分布式存储在 Ceph 的 RADOS 上。他">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-16T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-17T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="Rados">
+<meta property="article:tag" content="Ceph Manager">
+<meta property="article:tag" content="SQLite">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -112,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ceph Days NYC 2023: SQL on Ceph</div>
+        <div class="flex-col header-title ellipsis">  Ceph Days NYC 2023: SQL on Ceph  </div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -134,7 +139,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ceph Days NYC 2023: SQL on Ceph</h1>
+        <h1 class="title">  Ceph Days NYC 2023: SQL on Ceph  </h1>
         <h5 class="subtitle">
             
                 <time datetime="2023-05-16T16:00:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,7 +173,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ceph Days NYC 2023: SQL on Ceph</h1>
+        <h1 class="post-card-title">  Ceph Days NYC 2023: SQL on Ceph  </h1>
         <div class="post-meta">
             <time class="post-time" title="2023-05-17 00:00:00" datetime="2023-05-16T16:00:00.000Z"  itemprop="datePublished">2023-05-17</time>
 
@@ -185,24 +190,26 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<p><strong>会议主题：</strong> SQL Lite on Ceph 的介绍与应用</p>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<p><strong>会议主题：</strong> Ceph Days NYC 2023：Ceph 上的 SQL
+应用</p>
 <p><strong>主讲人：</strong> Patrick Donnelly，IBM 的 Ceph 研发人员</p>
 <p><strong>会议内容概述：</strong> Patrick Donnelly 介绍了如何在 Ceph
-上使用 SQL Lite，特别是通过 libsef sqlite 库将 SQLite 数据库分布式存储在
-Ceph 的 RADOS 上。他讨论了 Ceph 管理器（Ceph Manager）如何利用 SQLite
-进行持久化存储，并详细说明了实现这一功能的架构和技术细节。</p>
+上使用 SQLite，特别是通过 libsef sqlite 库将 SQLite 数据库分布式存储在
+Ceph 的 RADOS 上。他详细讨论了 Ceph 管理器（Ceph Manager）如何利用
+SQLite 进行持久化存储，并深入解析了实现这一功能的架构和技术细节。</p>
 <p><strong>关键讨论点：</strong> 1. <strong>Ceph 管理器架构：</strong>
 Ceph Manager 通过模块化设计，允许运行 Python
-脚本管理集群操作。这些模块包括
-orchestration、升级、设备健康监控等，且不依赖于 CFS、RBD 等服务。 2.
-<strong>SQLite 与 Ceph 的结合：</strong> 通过 libsef sqlite，SQLite
-数据库可以分布式存储在 Ceph 的 RADOS 上，无需修改应用程序代码。这通过
-SQLite 的 VFS（Virtual File System）接口实现，允许数据库文件分布在多个
-OSD 上。 3. <strong>性能优化：</strong>
-提供了多个性能优化建议，如增加页面大小、使用更大的缓存、避免删除数据库文件等，以减少对
+脚本管理集群操作，包括编排、升级、设备健康监控等。这些模块独立于
+CFS、RBD 等服务。 2. <strong>SQLite 与 Ceph 的结合：</strong> 通过
+libsef sqlite，SQLite 数据库可以分布式存储在 Ceph 的 RADOS
+上，无需修改应用程序代码。这通过 SQLite 的 VFS
+接口实现，允许数据库文件分布在多个 OSD 上。 3.
+<strong>性能优化：</strong>
+讨论了性能优化建议，如增加页面大小、使用更大的缓存、避免删除数据库文件等，以减少对
 RADOS 的 IO 操作。</p>
-<p><strong>决定事项：</strong> - Ceph Manager 已经开始使用 libsef sqlite
+<p><strong>决定事项：</strong> - Ceph Manager 已开始使用 libsef sqlite
 进行数据持久化，特别是在设备健康模块中。 - 计划进一步优化 libsef sqlite
 库，支持多读者和读取预取性能。</p>
 <p><strong>后续行动计划：</strong> - 继续优化 libsef sqlite
@@ -247,6 +254,8 @@ libsef sqlite。</p>
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph-Manager/" rel="tag">Ceph Manager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Rados/" rel="tag">Rados</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/SQLite/" rel="tag">SQLite</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -258,7 +267,7 @@ libsef sqlite。</p>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_SQL_on_Ceph/&title=《Ceph Days NYC 2023: SQL on Ceph》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_SQL_on_Ceph/&title=《  Ceph Days NYC 2023: SQL on Ceph  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -268,7 +277,7 @@ libsef sqlite。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_SQL_on_Ceph/&title=《Ceph Days NYC 2023: SQL on Ceph》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_SQL_on_Ceph/&title=《  Ceph Days NYC 2023: SQL on Ceph  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -278,7 +287,7 @@ libsef sqlite。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Days NYC 2023: SQL on Ceph》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_SQL_on_Ceph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph Days NYC 2023: SQL on Ceph  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_SQL_on_Ceph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -308,7 +317,7 @@ libsef sqlite。</p>
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_NVMe-over-Fabrics_support_for_Ceph/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ceph Days NYC 2023: NVMe-over-Fabrics support for Ceph</h4>
+        <h4 class="title">&#39;Ceph Days NYC 2023: NVMe-over-Fabrics support for Ceph&#39;</h4>
       </a>
     </div>
   
@@ -317,7 +326,7 @@ libsef sqlite。</p>
     <div class="waves-block waves-effect next">
       <a href="/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_Welcome_and_Community_Update/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Days NYC 2023: Welcome and Community Update</h4>
+        <h4 class="title">&#39;Ceph Days NYC 2023: Welcome and Community Update&#39;</h4>
       </a>
     </div>
   
@@ -417,7 +426,7 @@ libsef sqlite。</p>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_SQL_on_Ceph/&title=《Ceph Days NYC 2023: SQL on Ceph》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_SQL_on_Ceph/&title=《  Ceph Days NYC 2023: SQL on Ceph  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -427,7 +436,7 @@ libsef sqlite。</p>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_SQL_on_Ceph/&title=《Ceph Days NYC 2023: SQL on Ceph》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_SQL_on_Ceph/&title=《  Ceph Days NYC 2023: SQL on Ceph  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -437,7 +446,7 @@ libsef sqlite。</p>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ceph Days NYC 2023: SQL on Ceph》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_SQL_on_Ceph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  Ceph Days NYC 2023: SQL on Ceph  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2023/05/17/Ceph_Days_NYC_2023_-_SQL_on_Ceph/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

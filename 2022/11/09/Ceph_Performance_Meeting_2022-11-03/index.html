@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议概述 本次会议主要讨论了Ceph分布式存储系统的性能问题，特别是关于librbd与qemu-kvm的性能差距、RBD镜像的性能问题以及Blue Store的优化方向。会议中涉及了多个技术议题，包括性能调优、加密对性能的影响、快照和快照修剪的性能问题，以及Blue Store的未来发展方向。 主要议题  librbd与qemu-kvm性能差距  讨论了一篇关于librbd与qemu-k">
+    <meta name="keywords" content="Ceph,分布式存储,RBD,性能优化,蓝鲸存储">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次Ceph性能会议主要讨论了Ceph分布式存储系统的性能问题，包括librbd与qemu-kvm的性能差距、RBD镜像的性能问题以及Blue Store的优化方向。会议涉及了多个技术议题，如性能调优、加密影响、快照性能、Blue Store的未来发展等。 主要议题  librbd与qemu-kvm性能差距  讨论了librbd与qemu-kvm性能差">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ceph Performance Meeting 2022-11-03">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/11/09/Ceph_Performance_Meeting_2022-11-03/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议概述 本次会议主要讨论了Ceph分布式存储系统的性能问题，特别是关于librbd与qemu-kvm的性能差距、RBD镜像的性能问题以及Blue Store的优化方向。会议中涉及了多个技术议题，包括性能调优、加密对性能的影响、快照和快照修剪的性能问题，以及Blue Store的未来发展方向。 主要议题  librbd与qemu-kvm性能差距  讨论了一篇关于librbd与qemu-k">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议概述 本次Ceph性能会议主要讨论了Ceph分布式存储系统的性能问题，包括librbd与qemu-kvm的性能差距、RBD镜像的性能问题以及Blue Store的优化方向。会议涉及了多个技术议题，如性能调优、加密影响、快照性能、Blue Store的未来发展等。 主要议题  librbd与qemu-kvm性能差距  讨论了librbd与qemu-kvm性能差">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-08T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-11-09T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="RBD">
+<meta property="article:tag" content="性能优化">
+<meta property="article:tag" content="蓝鲸存储">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -185,54 +190,48 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4 id="会议概述">会议概述</h4>
-<p>本次会议主要讨论了Ceph分布式存储系统的性能问题，特别是关于librbd与qemu-kvm的性能差距、RBD镜像的性能问题以及Blue
-Store的优化方向。会议中涉及了多个技术议题，包括性能调优、加密对性能的影响、快照和快照修剪的性能问题，以及Blue
-Store的未来发展方向。</p>
+<p>本次Ceph性能会议主要讨论了Ceph分布式存储系统的性能问题，包括librbd与qemu-kvm的性能差距、RBD镜像的性能问题以及Blue
+Store的优化方向。会议涉及了多个技术议题，如性能调优、加密影响、快照性能、Blue
+Store的未来发展等。</p>
 <h4 id="主要议题">主要议题</h4>
 <ol type="1">
 <li><strong>librbd与qemu-kvm性能差距</strong>
 <ul>
-<li>讨论了一篇关于librbd与qemu-kvm性能差距的博客文章。</li>
-<li>实验结果显示，在启用加密的情况下，16K随机读取的IOPS可以达到123,000，而随机写入的IOPS约为65,000。</li>
-<li>加密导致性能下降约30%，主要原因是加密处理占用了messenger线程的大量时间。</li>
+<li>讨论了librbd与qemu-kvm性能差距，实验结果显示，启用加密时，性能下降约30%，主要原因是加密处理占用了大量messenger线程时间。</li>
 </ul></li>
 <li><strong>RBD镜像性能问题</strong>
 <ul>
-<li>讨论了RBD镜像性能下降的问题，主要原因是快照和快照修剪导致的OSD使用率上升。</li>
-<li>分析了对象碎片化和共享blob的问题，提出了两种解决方案：一种是减少共享blob，另一种是对象去碎片化。</li>
-<li>目前这两种方案都有各自的优缺点，正在进行进一步的测试和优化。</li>
+<li>分析了RBD镜像性能下降的原因，如快照和快照修剪导致的OSD使用率上升。</li>
+<li>讨论了对象碎片化和共享blob问题，并提出了解决方案。</li>
 </ul></li>
 <li><strong>Blue Store的优化方向</strong>
 <ul>
 <li>讨论了Blue Store的未来发展方向，包括可能的Blue Store 2版本。</li>
-<li>提出了一些大的改变，如改进写路径、处理分层存储等。</li>
-<li>讨论了是否值得进行这些大的架构改变，以及如何平衡性能和稳定性。</li>
+<li>讨论了改进写路径、处理分层存储等方向。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项</h4>
 <ul>
-<li>将继续测试和优化RBD镜像的性能问题，特别是快照和快照修剪的影响。</li>
-<li>对于Blue
-Store的优化，将考虑是否需要进行大的架构改变，以及如何实现这些改变。</li>
-<li>将进行更多的实验和测试，以确定最佳的性能调优方案。</li>
+<li>继续测试和优化RBD镜像的性能问题。</li>
+<li>对于Blue Store的优化，考虑是否进行大的架构改变。</li>
+<li>进行更多实验和测试，确定最佳性能调优方案。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划</h4>
 <ul>
-<li>继续跟踪和优化RBD镜像的性能问题，特别是快照和快照修剪的影响。</li>
-<li>对于Blue
-Store的优化，将进行更多的讨论和实验，以确定最佳的发展方向。</li>
-<li>将进行更多的性能测试，以确定最佳的性能调优方案。</li>
+<li>继续跟踪和优化RBD镜像的性能问题。</li>
+<li>对Blue Store的优化进行更多讨论和实验。</li>
+<li>进行更多性能测试，确定最佳性能调优方案。</li>
 </ul>
 <h4 id="其他事项">其他事项</h4>
 <ul>
-<li>讨论了关于Blue
-Store的写路径优化，特别是如何处理小写入和大写入的问题。</li>
-<li>讨论了如何更好地利用不同的存储设备，如NVMe和HDD。</li>
+<li>讨论了Blue Store的写路径优化。</li>
+<li>讨论了如何更好地利用不同的存储设备。</li>
 </ul>
 <h4 id="会议总结">会议总结</h4>
-<p>本次会议深入讨论了Ceph存储系统的多个性能问题，并提出了相应的解决方案和优化方向。后续将继续进行更多的测试和优化工作，以提高系统的性能和稳定性。</p>
+<p>本次会议深入讨论了Ceph存储系统的性能问题，并提出了相应的解决方案和优化方向。后续将继续进行更多的测试和优化工作，以提高系统的性能和稳定性。</p>
 
         </div>
 
@@ -263,6 +262,8 @@ Store的写路径优化，特别是如何处理小写入和大写入的问题。
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RBD/" rel="tag">RBD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E8%93%9D%E9%B2%B8%E5%AD%98%E5%82%A8/" rel="tag">蓝鲸存储</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 

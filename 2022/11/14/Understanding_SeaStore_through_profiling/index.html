@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：理解系统性能分析（System Profiling） 主讲人：Inching 背景介绍： Inching 在 Crimson 项目工作多年，主要熟悉 Crimson Messenger 及其姊妹项目。Crimson 项目旨在有效利用多核 CPU 驱动现代硬件的快速 I&#x2F;O，采用共享内存设计以减少跨核心的互斥和共享资源，设计为租约完成以最小化跨核心跳转和接触开销，目标是使性能随核">
+    <meta name="keywords" content="Ceph,存储系统,Crimson 项目,性能分析,系统优化">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：通过系统性能分析理解 SeaStore 主讲人：Inching 背景介绍： Inching 在 Crimson 项目工作多年，熟悉 Crimson Messenger 及其姊妹项目。Crimson 项目旨在利用多核 CPU 驱动快速 I&#x2F;O，采用共享内存设计减少跨核心资源共享，设计为租约完成以最小化跨核心跳转和接触开销。项目基于 C-star 框架实现">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Understanding SeaStore through profiling">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2022/11/14/Understanding_SeaStore_through_profiling/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：理解系统性能分析（System Profiling） 主讲人：Inching 背景介绍： Inching 在 Crimson 项目工作多年，主要熟悉 Crimson Messenger 及其姊妹项目。Crimson 项目旨在有效利用多核 CPU 驱动现代硬件的快速 I&#x2F;O，采用共享内存设计以减少跨核心的互斥和共享资源，设计为租约完成以最小化跨核心跳转和接触开销，目标是使性能随核">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：通过系统性能分析理解 SeaStore 主讲人：Inching 背景介绍： Inching 在 Crimson 项目工作多年，熟悉 Crimson Messenger 及其姊妹项目。Crimson 项目旨在利用多核 CPU 驱动快速 I&#x2F;O，采用共享内存设计减少跨核心资源共享，设计为租约完成以最小化跨核心跳转和接触开销。项目基于 C-star 框架实现">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-13T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-11-14T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="存储系统">
+<meta property="article:tag" content="Crimson 项目">
+<meta property="article:tag" content="性能分析">
+<meta property="article:tag" content="系统优化">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,8 +164,8 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E7%90%86%E8%A7%A3%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90system-profiling"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：理解系统性能分析（System
-Profiling）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAinching"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：Inching</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">背景介绍：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E8%A6%81%E7%82%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">关键要点：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">参考资料：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E9%97%AE%E7%AD%94%E7%8E%AF%E8%8A%82"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">问答环节：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">结论：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98%E9%80%9A%E8%BF%87%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E7%90%86%E8%A7%A3-seastore"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：通过系统性能分析理解
+SeaStore</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAinching"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主讲人：Inching</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">背景介绍：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主要议题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E8%A6%81%E7%82%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">关键要点：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">参考资料：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E9%97%AE%E7%AD%94%E7%8E%AF%E8%8A%82"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">问答环节：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">结论：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -186,17 +191,18 @@ Profiling）</span></a></li><li class="post-toc-item post-toc-level-4"><a class=
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
 <h4
-id="会议主题理解系统性能分析system-profiling">会议主题：理解系统性能分析（System
-Profiling）</h4>
+id="会议主题通过系统性能分析理解-seastore">会议主题：通过系统性能分析理解
+SeaStore</h4>
 <h4 id="主讲人inching">主讲人：Inching</h4>
 <h4 id="背景介绍">背景介绍：</h4>
-<p>Inching 在 Crimson 项目工作多年，主要熟悉 Crimson Messenger
-及其姊妹项目。Crimson 项目旨在有效利用多核 CPU 驱动现代硬件的快速
-I/O，采用共享内存设计以减少跨核心的互斥和共享资源，设计为租约完成以最小化跨核心跳转和接触开销，目标是使性能随核心数量可扩展。实现基于
-C-star 框架，该框架桥接操作系统和硬件与 Crimson
-软件，以实现设计目标。所有 Crimson 代码都在系统框架上实现。</p>
+<p>Inching 在 Crimson 项目工作多年，熟悉 Crimson Messenger
+及其姊妹项目。Crimson 项目旨在利用多核 CPU 驱动快速
+I/O，采用共享内存设计减少跨核心资源共享，设计为租约完成以最小化跨核心跳转和接触开销。项目基于
+C-star 框架实现，该框架桥接操作系统和硬件与 Crimson
+软件，以实现设计目标。</p>
 <h4 id="主要议题">主要议题：</h4>
 <ol type="1">
 <li><strong>Crimson 和 Sister 项目的目标</strong>：有效利用多核 CPU
@@ -212,11 +218,21 @@ SSD、NVMe），具有不同的性能特征。</li>
 <li>收集指标：从 C-star 框架收集，需要在软件层实现。</li>
 <li>数据可视化：理解收集数据的关系和性能趋势。</li>
 </ul></li>
+<li><strong>SeaStore 性能分析</strong>：
+<ul>
+<li>SeaStore 实现对象存储接口，是 OSD 的本地存储后端。</li>
+<li>支持多层索引、键值存储和偏移量索引。</li>
+<li>数据结构包括逻辑和物理部分，实现逻辑块地址到物理块地址的转换。</li>
+<li>物理层基于日志结构文件系统设计，包括日志记录和清理。</li>
+<li>事务分为读/写事务和空间回收事务，可以并行执行。</li>
+<li>监控指标包括 IOPS、吞吐量、平均请求大小、磁盘利用率、磁盘
+I/O、内存使用和缓存命中率。</li>
+</ul></li>
 </ol>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
-<li>性能分析的重要性：诊断多重问题、预测性能趋势、识别不同实现的潜力、识别性能回归、验证不同特性和修复。</li>
-<li>性能分析分为四个部分：存储背景、五个不同的性能分析部分、实际优化示例、关键要点。</li>
+<li>性能分析对于诊断问题和预测性能趋势至关重要。</li>
+<li>性能分析分为四个部分：存储背景、性能分析部分、优化示例和关键要点。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
@@ -226,10 +242,10 @@ SSD、NVMe），具有不同的性能特征。</li>
 </ul>
 <h4 id="关键要点">关键要点：</h4>
 <ul>
-<li>性能分析是优化的大部分工作，已引入超过1000个指标和28个PR用于性能分析和工具开发，15个PR用于实际优化。</li>
-<li>优化需要以性能分析为导向，确保方向正确，避免不必要的复杂性。</li>
-<li>性能分析迭代需要在所有步骤中进行，包括识别问题、测试场景、重现问题、根本原因分析、提出解决方案和验证解决方案的有效性。</li>
-<li>性能分析需要在引入的开销和代码复杂性之间取得平衡，以获得必要的分析步骤。</li>
+<li>性能分析是优化的大部分工作，引入了超过1000个指标和28个PR用于性能分析和工具开发，15个PR用于实际优化。</li>
+<li>优化需要以性能分析为导向，避免不必要的复杂性。</li>
+<li>性能分析迭代需要在所有步骤中进行，包括识别问题、测试场景、重现问题、根本原因分析和验证解决方案。</li>
+<li>性能分析需要在引入的开销和代码复杂性之间取得平衡。</li>
 </ul>
 <h4 id="参考资料">参考资料：</h4>
 <ul>
@@ -240,14 +256,13 @@ SSD、NVMe），具有不同的性能特征。</li>
 <h4 id="问答环节">问答环节：</h4>
 <ul>
 <li><strong>问题</strong>：Crimson OST 和 C-store
-能否根据实际工作负载性能特征自动优化，例如自动内存分配？
+能否根据实际工作负载性能特征自动优化？
 <ul>
-<li><strong>回答</strong>：目前尚未考虑，当前优化主要针对严重问题。如果原始实现稳定后，这可能是一个好的方向。</li>
+<li><strong>回答</strong>：目前尚未考虑，但可能是一个好的方向。</li>
 </ul></li>
-<li><strong>问题</strong>：是否可以基于设置的标签追踪客户端
-I/O，例如可开发设备引起的问题？
+<li><strong>问题</strong>：是否可以基于设置的标签追踪客户端 I/O？
 <ul>
-<li><strong>回答</strong>：可能，但需要找到连接操作和问题的方法，因为它们通常在不同层次。</li>
+<li><strong>回答</strong>：可能，但需要找到连接操作和问题的方法。</li>
 </ul></li>
 </ul>
 <h4 id="结论">结论：</h4>
@@ -283,6 +298,8 @@ I/O，例如可开发设备引起的问题？
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Crimson-%E9%A1%B9%E7%9B%AE/" rel="tag">Crimson 项目</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/" rel="tag">存储系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/" rel="tag">性能分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/" rel="tag">系统优化</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -344,7 +361,7 @@ I/O，例如可开发设备引起的问题？
     <div class="waves-block waves-effect prev">
       <a href="/VideoSummary/2022/11/14/S3select_-_Computational_Storage_in_S3/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">S3select: Computational Storage in S3</h4>
+        <h4 class="title">  S3select: Computational Storage in S3  </h4>
       </a>
     </div>
   

@@ -20,17 +20,22 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="会议纪要 会议主题：Ceph部署与故障排除 会议时间：[具体日期] 会议地点：[具体地点] 主讲人：Michael Michelle 主讲人简介：  职位：云解决方案架构师 公司：B1 Systems（德国公司，位于Ingelstadt，拥有140名员工） 业务范围：提供咨询、培训和支持服务，涉及多个开源产品，如Ceph和OpenStack  会议内容总结：  Ceph部署概述  Ceph Idi">
+    <meta name="keywords" content="Ceph,分布式存储,故障排除,Cephadm,云解决方案">
+    <meta name="description" content="[改进后的中文总结内容] 会议纪要 会议主题：Cephadm部署故障排除 会议时间：[具体日期] 会议地点：[具体地点] 主讲人：Michael Raabe 主讲人简介：  职位：云解决方案架构师 公司：B1 Systems（德国公司，位于Ingelstadt，拥有140名员工） 业务范围：提供咨询、培训和支持服务，专注于开源产品，如Ceph和OpenStack  会议内容总结：  Cephadm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Troubleshooting a Cephadm Deployment - Michel Raabe, B1 Systems GmbH">
 <meta property="og:url" content="https://sean10.github.io/VideoSummary/2023/05/05/Troubleshooting_a_Cephadm_Deployment_-_Michel_Raabe_B1_Systems_GmbH/index.html">
 <meta property="og:site_name" content="ceph视频总结">
-<meta property="og:description" content="会议纪要 会议主题：Ceph部署与故障排除 会议时间：[具体日期] 会议地点：[具体地点] 主讲人：Michael Michelle 主讲人简介：  职位：云解决方案架构师 公司：B1 Systems（德国公司，位于Ingelstadt，拥有140名员工） 业务范围：提供咨询、培训和支持服务，涉及多个开源产品，如Ceph和OpenStack  会议内容总结：  Ceph部署概述  Ceph Idi">
+<meta property="og:description" content="[改进后的中文总结内容] 会议纪要 会议主题：Cephadm部署故障排除 会议时间：[具体日期] 会议地点：[具体地点] 主讲人：Michael Raabe 主讲人简介：  职位：云解决方案架构师 公司：B1 Systems（德国公司，位于Ingelstadt，拥有140名员工） 业务范围：提供咨询、培训和支持服务，专注于开源产品，如Ceph和OpenStack  会议内容总结：  Cephadm">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-05-04T16:00:00.000Z">
 <meta property="article:author" content="sean10">
+<meta property="article:tag" content="Ceph">
+<meta property="article:tag" content="分布式存储">
+<meta property="article:tag" content="故障排除">
+<meta property="article:tag" content="Cephadm">
+<meta property="article:tag" content="云解决方案">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="ceph视频总结" href="/VideoSummary/atom.xml">
@@ -159,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98ceph%E9%83%A8%E7%BD%B2%E4%B8%8E%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Ceph部署与故障排除</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAmichael-michelle"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主讲人：Michael Michelle</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BA%E7%AE%80%E4%BB%8B"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">主讲人简介：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议结束语：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%8F%8D%E9%A6%88"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">会议反馈：</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">会议纪要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E4%B8%BB%E9%A2%98cephadm%E9%83%A8%E7%BD%B2%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">会议主题：Cephadm部署故障排除</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%85%B7%E4%BD%93%E6%97%A5%E6%9C%9F"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">会议时间：[具体日期]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%9C%B0%E7%82%B9%E5%85%B7%E4%BD%93%E5%9C%B0%E7%82%B9"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">会议地点：[具体地点]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BAmichael-raabe"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">主讲人：Michael Raabe</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%BB%E8%AE%B2%E4%BA%BA%E7%AE%80%E4%BB%8B"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">主讲人简介：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">会议内容总结：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">决定事项：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%8E%E7%BB%AD%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">后续行动计划：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">会议结束语：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BC%9A%E8%AE%AE%E5%8F%8D%E9%A6%88"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">会议反馈：</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,67 +190,66 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="会议纪要">会议纪要</h3>
-<h4 id="会议主题ceph部署与故障排除">会议主题：Ceph部署与故障排除</h4>
+            <p>[改进后的中文总结内容]</p>
+<h3 id="会议纪要">会议纪要</h3>
+<h4 id="会议主题cephadm部署故障排除">会议主题：Cephadm部署故障排除</h4>
 <h4 id="会议时间具体日期">会议时间：[具体日期]</h4>
 <h4 id="会议地点具体地点">会议地点：[具体地点]</h4>
-<h4 id="主讲人michael-michelle">主讲人：Michael Michelle</h4>
+<h4 id="主讲人michael-raabe">主讲人：Michael Raabe</h4>
 <h4 id="主讲人简介">主讲人简介：</h4>
 <ul>
 <li>职位：云解决方案架构师</li>
 <li>公司：B1 Systems（德国公司，位于Ingelstadt，拥有140名员工）</li>
-<li>业务范围：提供咨询、培训和支持服务，涉及多个开源产品，如Ceph和OpenStack</li>
+<li>业务范围：提供咨询、培训和支持服务，专注于开源产品，如Ceph和OpenStack</li>
 </ul>
 <h4 id="会议内容总结">会议内容总结：</h4>
 <ol type="1">
-<li><strong>Ceph部署概述</strong>
+<li><strong>Cephadm部署概述</strong>
 <ul>
-<li>Ceph Idiom是一个自动化部署工具，相比传统手动部署有显著改进。</li>
-<li>最新版本的Ceph Idiom支持更多功能，如部署Ceph集群和NFS。</li>
-<li>讨论了容器化安装的优缺点，但本次会议主要关注如何从集群中获取日志文件和监控部署。</li>
+<li>Cephadm是一个自动化部署工具，相较于手动部署，效率更高。</li>
+<li>Cephadm的最新版本支持更多功能，如集群部署和NFS。</li>
+<li>会议主要关注如何从集群中获取日志文件和监控部署，而不是讨论容器化安装的优缺点。</li>
 </ul></li>
 <li><strong>故障排除挑战</strong>
 <ul>
-<li>Ceph
-Idiom的部署过程自动化程度高，但缺乏详细的默认输出，使得故障排除变得困难。</li>
-<li>提到了一些用户在遇到无法解决的错误时，选择丢弃整个集群并重新部署的极端做法。</li>
+<li>虽然Cephadm的部署过程自动化程度高，但缺乏详细的默认输出，使得故障排除变得困难。</li>
+<li>有用户在遇到无法解决的错误时，会选择重新部署整个集群作为解决方案。</li>
 </ul></li>
 <li><strong>日志和监控方法</strong>
 <ul>
-<li>介绍了多种从Ceph集群中收集数据的方法，包括使用Ceph工具、Ceph
-ADM工具和日志文件。</li>
+<li>介绍了多种从Ceph集群中收集数据的方法，包括使用Ceph工具、Cephadm工具和日志文件。</li>
 <li>强调了设置适当的日志级别的重要性，建议至少设置为5以获取更多详细信息。</li>
 </ul></li>
 <li><strong>工具和技巧</strong>
 <ul>
-<li>推荐使用Snoopy和Audit工具来监控和记录命令执行情况，特别是在非交互式shell中。</li>
+<li>推荐使用Snoopy和Audit工具来监控和记录命令执行情况。</li>
 <li>讨论了如何通过手动拉取和启动容器来验证问题，并检查日志文件。</li>
 </ul></li>
 <li><strong>最佳实践和建议</strong>
 <ul>
 <li>强调了正确配置Python、容器、网络和DNS的重要性。</li>
-<li>建议避免使用Ansible与Ceph ADM冲突，坚持使用Ceph ADM以避免问题。</li>
-<li>提到了一个客户从Ceph
+<li>建议避免使用Ansible与Cephadm冲突，坚持使用Cephadm以避免问题。</li>
+<li>分享了一个客户从Ceph
 Storage版本4升级到5的案例，强调了自动化和手动配置的平衡。</li>
 </ul></li>
 </ol>
 <h4 id="决定事项">决定事项：</h4>
 <ul>
-<li>确认了Ceph Idiom在自动化部署方面的优势和挑战。</li>
+<li>确认了Cephadm在自动化部署方面的优势和挑战。</li>
 <li>确定了多种故障排除和监控的方法，特别是使用Snoopy和Audit工具。</li>
 </ul>
 <h4 id="后续行动计划">后续行动计划：</h4>
 <ul>
-<li>继续优化Ceph Idiom的日志输出和监控功能。</li>
+<li>继续优化Cephadm的日志输出和监控功能。</li>
 <li>探索更多自动化和手动配置的平衡方法，以提高部署和故障排除的效率。</li>
 </ul>
 <h4 id="会议结束语">会议结束语：</h4>
 <ul>
-<li>主讲人感谢大家的参与，并鼓励大家继续探索和优化Ceph部署和故障排除的方法。</li>
+<li>主讲人感谢大家的参与，并鼓励大家继续探索和优化Cephadm部署和故障排除的方法。</li>
 </ul>
 <h4 id="会议反馈">会议反馈：</h4>
 <ul>
-<li>与会者对Ceph Idiom的讨论表示赞赏，并期待未来更多的优化和改进。</li>
+<li>与会者对Cephadm的讨论表示赞赏，并期待未来更多的优化和改进。</li>
 </ul>
 <p>[会议结束]</p>
 
@@ -278,6 +282,8 @@ Storage版本4升级到5的案例，强调了自动化和手动配置的平衡�
 
         <div class="post-footer">
             
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Cephadm/" rel="tag">Cephadm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BA%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">云解决方案</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" rel="tag">故障排除</a></li></ul>
+
 
             
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -337,18 +343,18 @@ Storage版本4升级到5的案例，强调了自动化和手动配置的平衡�
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/VideoSummary/2023/05/05/Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements/" id="post-prev" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/05/Using_EBPF_to_Develop_a_Powerful_Tool_for_Diagnosing_Ceph_Performance_Issues/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Stretch Clusters in Ceph: Algorithms, Use Cases, and Improvements</h4>
+        <h4 class="title">使用 eBPF 开发强大的 Ceph 性能诊断工具</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2023/05/05/Using_EBPF_to_Develop_a_Powerful_Tool_for_Diagnosing_Ceph_Performance_Issues/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2023/05/03/Ceph_Crimson_SeaStore_Meeting_2023-04-26/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Using EBPF to Develop a Powerful Tool for Diagnosing Ceph Performance Issues</h4>
+        <h4 class="title">Ceph Crimson/SeaStore Meeting 2023-04-26</h4>
       </a>
     </div>
   
