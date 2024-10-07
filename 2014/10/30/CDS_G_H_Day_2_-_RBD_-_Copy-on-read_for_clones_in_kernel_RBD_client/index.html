@@ -24,12 +24,12 @@
     <meta name="description" content="[改进后的中文总结内容] 本次会议主要讨论了在内核RBD客户端中实现RBD克隆的复制和读取功能。Min介绍了其蓝图，提出使用Carbon读取邻居BD的算法，并使用escrow覆盖方法将数据写入克隆。与会人员就实现位置、配置方式、用户空间复制和读取功能、复杂性问题、同步与异步、RBD客户端稳定性、锁机制、数据传输、obj_i_eq和device_flags等议题进行了深入讨论。 主要讨论点：  实现">
 <meta property="og:type" content="article">
 <meta property="og:title" content="  CDS G&#x2F;H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  ">
-<meta property="og:url" content="https://sean10.github.io/VideoSummary/2024/10/07/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/index.html">
+<meta property="og:url" content="https://sean10.github.io/VideoSummary/2014/10/30/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/index.html">
 <meta property="og:site_name" content="ceph视频总结">
 <meta property="og:description" content="[改进后的中文总结内容] 本次会议主要讨论了在内核RBD客户端中实现RBD克隆的复制和读取功能。Min介绍了其蓝图，提出使用Carbon读取邻居BD的算法，并使用escrow覆盖方法将数据写入克隆。与会人员就实现位置、配置方式、用户空间复制和读取功能、复杂性问题、同步与异步、RBD客户端稳定性、锁机制、数据传输、obj_i_eq和device_flags等议题进行了深入讨论。 主要讨论点：  实现">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-10-07T14:56:53.000Z">
-<meta property="article:modified_time" content="2024-10-07T14:56:53.000Z">
+<meta property="article:published_time" content="2014-10-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2014-10-29T16:00:00.000Z">
 <meta property="article:author" content="sean10">
 <meta property="article:tag" content="Ceph">
 <meta property="article:tag" content="RBD">
@@ -144,8 +144,8 @@
         <h1 class="title">  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  </h1>
         <h5 class="subtitle">
             
-                <time datetime="2024-10-07T14:56:53.000Z" itemprop="datePublished" class="page-time">
-  2024-10-07
+                <time datetime="2014-10-29T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2014-10-30
 </time>
 
 
@@ -170,7 +170,7 @@
     <div class="post-card">
         <h1 class="post-card-title">  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  </h1>
         <div class="post-meta">
-            <time class="post-time" title="2024-10-07 22:56:53" datetime="2024-10-07T14:56:53.000Z"  itemprop="datePublished">2024-10-07</time>
+            <time class="post-time" title="2014-10-30 00:00:00" datetime="2014-10-29T16:00:00.000Z"  itemprop="datePublished">2014-10-30</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">会议纪要</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/">存储技术</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/Ceph-%E6%9E%B6%E6%9E%84/">Ceph 架构</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/Ceph-%E6%9E%B6%E6%9E%84/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/">分布式存储</a></li></ul></li></ul></li></ul></li></ul>
@@ -229,7 +229,7 @@ request仍存在问题，需要进一步改进。</li>
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2024-10-07T14:56:53.000Z" itemprop="dateUpdated">2024-10-07 22:56:53</time>
+    最后更新时间：<time datetime="2014-10-29T16:00:00.000Z" itemprop="dateUpdated">2014-10-30 00:00:00</time>
 </span><br>
 
 
@@ -264,7 +264,7 @@ request仍存在问题，需要进一步改进。</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/10/07/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/&title=《  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/10/30/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/&title=《  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -274,22 +274,22 @@ request仍存在问题，需要进一步改进。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/10/07/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/&title=《  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/10/30/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/&title=《  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2024/10/07/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2014/10/30/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/10/07/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/10/30/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2024/10/07/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2014/10/30/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -309,14 +309,21 @@ request仍存在问题，需要进一步改进。</li>
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/VideoSummary/2014/10/30/CDS_G_H_Day_2_-_CephFS_-_forward_scrub/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">&#39;CDS G/H (Day 2) - CephFS: forward scrub&#39;</h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/VideoSummary/2024/10/04/Ceph_Days_Asia_-_MicroCeph_-_Flexible_Ceph_Orchestration/" id="post-next" class="post-nav-link">
+      <a href="/VideoSummary/2014/10/30/CDS_Hammer_Day_2_-_Calamari_Localization/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ceph Days Asia- MicroCeph- Flexible Ceph Orchestration</h4>
+        <h4 class="title">CDS Hammer (Day 2) - Calamari Localization</h4>
       </a>
     </div>
   
@@ -416,7 +423,7 @@ request仍存在问题，需要进一步改进。</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2024/10/07/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/&title=《  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://sean10.github.io/VideoSummary/2014/10/30/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/&title=《  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  》 — ceph视频总结&pic=https://sean10.github.io/VideoSummary/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -426,22 +433,22 @@ request仍存在问题，需要进一步改进。</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2024/10/07/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/&title=《  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sean10.github.io/VideoSummary/2014/10/30/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/&title=《  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  》 — ceph视频总结&source=youtube频道总结" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2024/10/07/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sean10.github.io/VideoSummary/2014/10/30/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2024/10/07/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  》 — ceph视频总结&url=https://sean10.github.io/VideoSummary/2014/10/30/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/&via=https://sean10.github.io/VideoSummary" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2024/10/07/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://sean10.github.io/VideoSummary/2014/10/30/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -452,7 +459,7 @@ request仍存在问题，需要进一步改进。</li>
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2024/10/07/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://sean10.github.io/VideoSummary/2014/10/30/CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client/" alt="微信分享二维码">
 </div>
 
 

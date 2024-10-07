@@ -150,62 +150,6 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-Ceph_Orchestrator_Meeting_2022-07-12"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2022-07-19 00:00:00" datetime="2022-07-18T16:00:00.000Z"  itemprop="datePublished">2022-07-19</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/VideoSummary/2022/07/19/Ceph_Orchestrator_Meeting_2022-07-12/">Ceph Orchestrator Meeting 2022-07-12</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        [改进后的中文总结内容]
-本次会议主要讨论了Ceph分布式存储系统中的网络过滤机制、日志配置以及二进制重构等方面的问题。
-关键细节：
-
-fb filtering机制优化：
-
-讨论了当前fb
-filtering机制对网络匹配的严格要求，以及如何放宽匹配规则以允许更宽泛的子网匹配。
-研究了使用Python标准库中的ipaddress库进行子网匹配检查的可行性。
-决定尝试放宽匹配规则，并评估其对系...
-    
-
-        <a href="/VideoSummary/2022/07/19/Ceph_Orchestrator_Meeting_2022-07-12/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%87%8D%E6%9E%84/" rel="tag">二进制重构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/" rel="tag">分布式存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE/" rel="tag">日志配置</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E7%BD%91%E7%BB%9C%E8%BF%87%E6%BB%A4/" rel="tag">网络过滤</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
             <article id="post-Ceph_Performance_Meeting_2022-07-14"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -713,6 +657,64 @@ snapmapper相关讨论：
     <div class="post-footer">
         
 	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Arbitrary-Mirror/" rel="tag">Arbitrary Mirror</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Distributed-Storage/" rel="tag">Distributed Storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Performance-Optimization/" rel="tag">Performance Optimization</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Snapshot-Mapper/" rel="tag">Snapshot Mapper</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ceph_Performance_Meeting_2022-06-23"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2022-06-27 00:00:00" datetime="2022-06-26T16:00:00.000Z"  itemprop="datePublished">2022-06-27</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/VideoSummary/categories/video-summary/">视频总结</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/">Ceph 性能会议 2022-06-23</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        [改进后的中文总结内容]
+会议纪要：
+
+更新情况：
+
+移除statifus的更新已通过Adam审查并被批准，Igor进行了修改，但仍需核心团队再次审查。
+将kodell添加到Blue
+Store以缓解缓冲区膨胀问题的更新正在积极审查中，Sam提出了多项更改请求。
+
+讨论主题：
+
+关于RocksDB调优，测试显示调整内存缓冲区数量和大小，并允许累积两次写入，并未产生预期中的放大增加。通过调整L...
+    
+
+        <a href="/VideoSummary/2022/06/27/Ceph_Performance_Meeting_2022-06-23/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Ceph/" rel="tag">Ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/RocksDB/" rel="tag">RocksDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/Snapmapper/" rel="tag">Snapmapper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/" rel="tag">代码重构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/VideoSummary/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li></ul>
 
     </div>
     
