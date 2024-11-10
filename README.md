@@ -45,19 +45,20 @@ python run.py --reflect
 ```
 cd youtube_subtitle_summary
 ```
-1. **下载字幕**
+
+1. [必选]**下载字幕**
    使用以下命令从指定的 YouTube 频道下载频道字幕信息：
    ```bash
    python run.py --fetch
    ```
 
-2. **下载新增字幕**
+2. **[必选]下载新增字幕**
    使用以下命令下载新增的字幕, 自动根据上面的频道视频信息元数据分析差异增量：
    ```bash
    python run.py --fetch-diff
    ```
 
-3. **处字幕**
+3. **[必选]处理字幕**
    下载完成后，使用以下命令处理字幕并生成总结：
    ```bash
    python run.py --summarize
@@ -93,7 +94,7 @@ cd youtube_subtitle_summary
    python run.py --add-metadata
    ```
 
-9. **反思和改进总结**
+9. **[必选]反思和改进总结**
    使用以下命令对现有的总结进行反思和改进, 并生成yaml front matter：
    ```bash
    python run.py --reflect
@@ -105,13 +106,18 @@ cd youtube_subtitle_summary
     python run.py --quarterly-summary
     ```
 
-11. **部署 Hexo 博客**
+11. **[必选]部署 Hexo 博客**
     最后，使用以下命令触发 Hexo 部署：
     ```bash
-    hexo deploy
+    # 复制生成的增量文件到发布目录中
+    rsync -av temp_posts/* ../source/_posts
+    cd ..
+    # 注意生成过程中, 由于文章数过多(1300+, tag对应页面4000+), 需指定内存大小, 否则会触发oom
+    node --max-old-space-size=8192 node_modules/hexo-cli/bin/hexo gen -c 100  -d
     ```
+   
 
-   注意生成过程中, 由于文章数过多, 需指定内存大小, 否则会触发oom
+   注意生成过程中, 由于文章数过多(1300+, tag对应页面4000+), 需指定内存大小, 否则会触发oom
    node --max-old-space-size=8192 node_modules/hexo-cli/bin/hexo gen -c 100  -d
    生成测试用
    node --max-old-space-size=8192 node_modules/hexo-cli/bin/hexo gen -c 100 
