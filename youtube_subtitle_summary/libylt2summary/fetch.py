@@ -95,17 +95,38 @@ def main_fectch_subtitle():
             downloaded[item['webpage_url']] = item
     urls = []
     for entry in channel_info['entries']:
-        if entry is not None:
+        if entry is None:
+            continue
+        
+        if entry.get('_type') == 'playlist' and 'entries' in entry:
+            for sub_entry in entry['entries']:
+                if sub_entry is None or 'url' not in sub_entry:
+                    continue
+                url = sub_entry['url']
+                if url not in downloaded:
+                    urls.append(url)
+                    logger.info(f"新视频: Title: {sub_entry.get('title', '')}, URL: {url}")
+            continue
+        
+        try:
+            url = entry.get('url')
+            if url is None:
+                logger.warning(f"条目缺少url字段，跳过: {entry.get('title', 'Unknown')}")
+                continue
+        except Exception as e:
+            logger.error(f"处理视频时出错: {e}")
+            logger.info(f"跳过此视频并继续: {entry}")
+            continue
+        
+        if url not in downloaded:
             video_info = {
                 'title': entry.get('title', ''),
                 'upload_date': entry.get('upload_date', ''),
-                'webpage_url': entry.get('url', ''),
+                'webpage_url': url,
                 'playlist_title': entry.get('playlist_title', ''),
                 'timestamp': entry.get('timestamp', '')
             }
-        
-        if entry['url'] not in downloaded:
-            urls.append(entry['url'])
+            urls.append(url)
             logger.info(f"新视频: Title: {video_info['title']}, Upload Date: {video_info['upload_date']}, URL: {video_info['webpage_url']}")
     
     logger.info(f"找到 {len(urls)} 个新视频需要处理")

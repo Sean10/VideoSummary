@@ -2,7 +2,7 @@ import json
 import os
 import asyncio
 from asyncio import Semaphore
-from .utils import call_openai_api
+from .utils import call_openai_api, get_openai_client
 
 async def generate_quarterly_summary(quarter, post_titles, semaphore):
     async with semaphore:
@@ -36,7 +36,7 @@ async def generate_quarterly_summary(quarter, post_titles, semaphore):
 
         try:
             completion = await call_openai_api(
-                client.chat.completions.create,
+                get_openai_client().chat.completions.create,
                 model="THUDM/glm-4-9b-chat",
                 messages=messages,
                 temperature=0.7,

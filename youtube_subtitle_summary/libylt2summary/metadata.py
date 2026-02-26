@@ -3,7 +3,7 @@ import json
 import datetime
 import asyncio
 from asyncio import Semaphore
-from .utils import call_openai_api, sanitize_filename, logger, render_template
+from .utils import call_openai_api, sanitize_filename, logger, render_template, get_openai_client
 
 async def generate_tags(content, semaphore):
     async with semaphore:
@@ -23,7 +23,7 @@ async def generate_tags(content, semaphore):
 
         try:
             completion = await call_openai_api(
-                client.chat.completions.create,
+                get_openai_client().chat.completions.create,
                 model="THUDM/glm-4-9b-chat",
                 messages=messages,
                 temperature=0.7,

@@ -1,6 +1,7 @@
 import asyncio
 import argparse
 import os
+import logging
 from pathlib import Path
 from libylt2summary import (
     get_channel_videos,
@@ -16,25 +17,41 @@ from libylt2summary import (
     collect_prompt_info,
     split_reference_files,
     process_retry_queue,
-    github_fetch_prs,
     load_metadata_to_dict,
     generate_article,
     html_to_markdown,
 )
-from libylt2summary.pdf_to_markdown import convert_pdfs_in_directory
+from libylt2summary import claude_workflow
 
-# 设置OpenAI API密钥和基础URL
+# API keys are loaded lazily — only required for legacy (non-Claude) code paths
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-if not OPENAI_API_KEY:
-    raise ValueError("OPENAI_API_KEY environment variable is not set")
-
-# 设置Kimi API密钥
 KIMI_API_KEY = os.getenv("KIMI_API_KEY")
-if not KIMI_API_KEY:
-    raise ValueError("KIMI_API_KEY environment variable is not set")
 
 model = "moonshot-v1-32k"
 base_url = "https://api.moonshot.cn/v1"
+
+
+def _configure_logging(verbose: int) -> None:
+    """Configure root logging level from CLI verbosity."""
+    if verbose >= 2:
+        level = logging.DEBUG
+    elif verbose == 1:
+        level = logging.INFO
+    else:
+        level = logging.WARNING
+
+    logging.basicConfig(
+        level=level,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
+
+
+def _require_api_keys():
+    """Validate that legacy API keys are set before using legacy code paths."""
+    if not OPENAI_API_KEY:
+        raise ValueError("OPENAI_API_KEY environment variable is not set")
+    if not KIMI_API_KEY:
+        raise ValueError("KIMI_API_KEY environment variable is not set")
 
 async def main():
     global metadata_dict
@@ -59,10 +76,45 @@ async def main():
     parser.add_argument('--pdf-input-dir', type=str, default='pdf_input', help='Input directory for PDF files')
     parser.add_argument('--html-to-md', nargs=2, metavar=('INPUT', 'OUTPUT'),
                         help='Convert HTML file to Markdown. Specify input and output file paths.')
+    # Claude Code based processing options
+    parser.add_argument('--claude-summarize', action='store_true',
+                        help='Summarize using Claude Code CLI (instead of direct API)')
+    parser.add_argument('--claude-reflect', action='store_true',
+                        help='Reflect using Claude Code CLI (instead of direct API)')
+    parser.add_argument('--claude-classify', action='store_true',
+                        help='Classify using Claude Code CLI (instead of direct API)')
+    parser.add_argument('--batch-size', type=int, default=10,
+                        help='Batch size for Claude Code processing (default: 10)')
+    parser.add_argument('--timeout', type=int, default=300,
+                        help='Timeout per batch in seconds (default: 300)')
+    parser.add_argument('-v', '--verbose', action='count', default=0,
+                        help='Increase logging verbosity (-v: INFO, -vv: DEBUG)')
     args = parser.parse_args()
+    _configure_logging(args.verbose)
 
-    # 检查是否有任何参数被指定
-    if not any(vars(args).values()):
+    # 检查是否有任何实际业务动作被指定（verbose/batch/timeout等不算动作）
+    has_action = any((
+        args.fetch,
+        args.fetch_diff,
+        args.summarize,
+        args.show_summarize_diff,
+        args.translate,
+        args.classify_content,
+        args.classify_quarter,
+        args.add_metadata,
+        args.reflect,
+        args.quarterly_summary,
+        args.collect_prompt,
+        args.split_reference,
+        args.fetch_github_prs,
+        args.generate_article,
+        args.convert_pdfs,
+        args.html_to_md,
+        args.claude_summarize,
+        args.claude_reflect,
+        args.claude_classify,
+    ))
+    if not has_action:
         parser.print_help()
         return
 
@@ -73,6 +125,15 @@ async def main():
         main_fectch_subtitle()
     if args.show_summarize_diff:
         show_summary_diff()
+    # Legacy paths that require API keys
+    legacy_api_actions = (
+        args.summarize or args.translate or args.classify_content or
+        args.add_metadata or args.reflect or args.quarterly_summary or
+        args.generate_article
+    )
+    if legacy_api_actions:
+        _require_api_keys()
+
     if args.summarize:
         await main_summary()
     if args.translate:
@@ -107,12 +168,15 @@ async def main():
     if args.split_reference:
         split_reference_files()
     if args.fetch_github_prs:
+        from libylt2summary import github_fetch_prs
         await github_fetch_prs()
     if args.generate_article:
         reference_dir = Path("reference_md")  # 使用转换后的 Markdown 文件
         reference_files = [str(reference_dir / file) for file in os.listdir(reference_dir) if file.endswith('.md')]
         await generate_article(args.generate_article, KIMI_API_KEY, base_url, model, reference_files)
     if args.convert_pdfs:
+        from libylt2summary.pdf_to_markdown import convert_pdfs_in_directory
+
         input_directory = args.pdf_input_dir
         output_directory = "reference_md"
         convert_pdfs_in_directory(input_directory, output_directory)
@@ -127,6 +191,23 @@ async def main():
             print(f"HTML文件已成功转换为Markdown。输出文件: {output_file}")
         except Exception as e:
             print(f"转换过程中发生错误: {str(e)}")
+
+    # Claude Code based processing
+    if args.claude_summarize:
+        await claude_workflow.main_claude_summarize(
+            batch_size=args.batch_size,
+            timeout=args.timeout
+        )
+    if args.claude_reflect:
+        await claude_workflow.main_claude_reflect(
+            batch_size=args.batch_size,
+            timeout=args.timeout
+        )
+    if args.claude_classify:
+        await claude_workflow.main_claude_classify(
+            batch_size=args.batch_size,
+            timeout=args.timeout
+        )
 
     await process_retry_queue()
 

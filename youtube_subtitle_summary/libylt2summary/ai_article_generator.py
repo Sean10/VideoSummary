@@ -8,15 +8,8 @@ import json
 import time
 import re
 
-# 设置OpenAI API密钥和基础URL
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-if not OPENAI_API_KEY:
-    raise ValueError("OPENAI_API_KEY environment variable is not set")
-
-# 设置Kimi API密钥
 KIMI_API_KEY = os.getenv("KIMI_API_KEY")
-if not KIMI_API_KEY:
-    raise ValueError("KIMI_API_KEY environment variable is not set")
 
 # model = "moonshot-v1-32k"
 model = "ep-20240926005025-6ght9"
@@ -28,7 +21,17 @@ MAX_RETRIES = 50
 INITIAL_RETRY_DELAY = 1
 MAX_RETRY_DELAY = 60
 
-client = AsyncOpenAI(api_key=KIMI_API_KEY, base_url=base_url)
+_article_client = None
+
+
+def _get_article_client() -> AsyncOpenAI:
+    global _article_client
+    if _article_client is None:
+        if not KIMI_API_KEY:
+            raise ValueError("KIMI_API_KEY environment variable is not set")
+        _article_client = AsyncOpenAI(api_key=KIMI_API_KEY, base_url=base_url)
+    return _article_client
+
 
 async def retry_with_exponential_backoff(func, *args, **kwargs):
     retries = 0
@@ -102,8 +105,8 @@ async def upload_files(files, cache_tag=None):
     """
     messages = []
     for file in files:
-        file_object = await client.files.create(file=Path(file), purpose="file-extract")
-        file_content = (await client.files.content(file_id=file_object.id)).text
+        file_object = await _get_article_client().files.create(file=Path(file), purpose="file-extract")
+        file_content = (await _get_article_client().files.content(file_id=file_object.id)).text
         messages.append({
             "role": "system",
             "content": file_content,
@@ -111,9 +114,9 @@ async def upload_files(files, cache_tag=None):
 
     if cache_tag:
         async with httpx.AsyncClient() as async_client:
-            r = await async_client.post(
-                f"{client.base_url}caching",
-                headers={"Authorization": f"Bearer {client.api_key}"},
+            r = await async__get_article_client().post(
+                f"{_get_article_client().base_url}caching",
+                headers={"Authorization": f"Bearer {_get_article_client().api_key}"},
                 json={
                     "model": model,
                     "messages": messages,
@@ -154,7 +157,7 @@ async def generate_outline(topic, client, model, KIMI_API_KEY, base_url, referen
         messages = file_messages + messages
 
     response = await retry_with_exponential_backoff(
-        client.chat.completions.create,
+        _get_article_client().chat.completions.create,
         model=model,
         messages=messages,
         temperature=1.0,
@@ -206,7 +209,7 @@ async def generate_section_content(section_title, section_outline, full_outline,
         print(f"file upload: {file_messages}")
     print(messages)
     response = await retry_with_exponential_backoff(
-        client.chat.completions.create,
+        _get_article_client().chat.completions.create,
         model=model,
         messages=messages,
         temperature=1.0,

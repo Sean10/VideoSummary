@@ -6,18 +6,20 @@ import asyncio
 from openai import AsyncOpenAI
 import datetime
 
-# 设置OpenAI API密钥
-YOUR_OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-if YOUR_OPENAI_API_KEY is None:
-    raise ValueError("OPENAI_API_KEY environment variable is not set")
-
-client = AsyncOpenAI(
-    api_key = f"{YOUR_OPENAI_API_KEY}",
-    base_url = "http://localhost:3000/v1",
-)
-
-model = "deepseek-ai/DeepSeek-V2-Chat"
+model = "deepseek-ai/DeepSeek-V3.2"
 # model = "THUDM/glm-4-9b-chat"
+
+_summary_client = None
+
+
+def _get_client() -> AsyncOpenAI:
+    global _summary_client
+    if _summary_client is None:
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            raise ValueError("OPENAI_API_KEY environment variable is not set")
+        _summary_client = AsyncOpenAI(api_key=api_key, base_url="https://api.siliconflow.cn/v1")
+    return _summary_client
 
 async def call_openai_api(func, *args, **kwargs):
     MAX_RETRIES = 10
@@ -105,7 +107,7 @@ async def summary(subtitle_file, mode="summary", history=None):
     history = messages
 
     completion = await call_openai_api(
-        client.chat.completions.create,
+        _get_client().chat.completions.create,
         model=model,
         messages=messages,
         temperature=0.5,

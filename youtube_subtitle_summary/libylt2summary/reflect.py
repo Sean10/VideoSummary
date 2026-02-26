@@ -5,17 +5,20 @@ from .utils import call_openai_api, get_metadata_from_jsonl, logger, sanitize_fi
 import time
 from openai import AsyncOpenAI
 
-# 设置OpenAI API密钥
-YOUR_OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-if YOUR_OPENAI_API_KEY is None:
-    raise ValueError("OPENAI_API_KEY environment variable is not set")
+# model = "THUDM/glm-4-9b-chat"
+model = "deepseek-ai/DeepSeek-V3.2"
+
+_reflect_client = None
 
 
-model = "THUDM/glm-4-9b-chat"
-client = AsyncOpenAI(
-    api_key=f"{YOUR_OPENAI_API_KEY}",
-    base_url="http://localhost:3000/v1",
-)
+def _get_client() -> AsyncOpenAI:
+    global _reflect_client
+    if _reflect_client is None:
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            raise ValueError("OPENAI_API_KEY environment variable is not set")
+        _reflect_client = AsyncOpenAI(api_key=api_key, base_url="https://api.siliconflow.cn/v1")
+    return _reflect_client
 
 async def reflect_and_summarize(summary_file, original_file, semaphore):
     start_time = time.time()
@@ -70,8 +73,9 @@ subtitle: {os.path.basename(summary_file).replace('.md', '')}
 [改进后的中文总结内容]
 
 请确保你的回答是 Markdown 格式，并包含上述所有元素。
-不要修改---中间模板的date,updated和title,subtitle内容。但如果标题中含有双引号或单引号导致无法满足yaml语法时, 需要去除或替换为适当的字符. 
+不要修改`---`中间模板的date,updated和title,subtitle内容。但如果标题中含有双引号或单引号导致无法满足yaml语法时, 需要去除或替换为适当的字符. 
 也不要重复我的问题。
+注意`---`这个分隔符 只允许上面的yaml模板中有, 后面的[改进后的中文总结内容]中不允许包含这个分隔符
 确保生成的tag不包含任何引号或特殊字符。
 除了上面样例的yaml front matter外, 请不要额外添加---标记
 
@@ -98,7 +102,7 @@ compression, deduplication, tiering, performance tuning, benchmarking, testing, 
         try:
             api_start_time = time.time()
             completion = await call_openai_api(
-                client.chat.completions.create,
+                _get_client().chat.completions.create,
                 model="THUDM/glm-4-9b-chat",
                 messages=messages,
                 temperature=0.7,
@@ -177,10 +181,16 @@ def clean_front_matter(content):
     lines = content.split('\n')
     in_front_matter = False
     cleaned_lines = []
+    delimiter_count = 0  # 记录 --- 分隔符的数量
+
     for line in lines:
         if line.strip() == '---':
-            in_front_matter = not in_front_matter
-            cleaned_lines.append(line)
+            delimiter_count += 1
+            if delimiter_count <= 2:
+                # 只保留前两个 --- 作为 front matter 分隔符
+                in_front_matter = not in_front_matter
+                cleaned_lines.append(line)
+            # 超过2个的 --- 直接跳过，不添加到结果中
         elif in_front_matter:
             if ':' in line:
                 key, value = line.split(':', 1)

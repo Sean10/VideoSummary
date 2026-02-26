@@ -9,12 +9,18 @@ from githubkit import GitHub
 from githubkit.exception import RequestFailed
 from .utils import escape_title
 
-# 设置 GitHub 访问令牌
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-if not GITHUB_TOKEN:
-    raise ValueError("GITHUB_TOKEN environment variable is not set")
 
-github = GitHub(GITHUB_TOKEN)
+_github_instance = None
+
+
+def _get_github():
+    global _github_instance
+    if _github_instance is None:
+        if not GITHUB_TOKEN:
+            raise ValueError("GITHUB_TOKEN environment variable is not set")
+        _github_instance = GitHub(GITHUB_TOKEN)
+    return _github_instance
 
 # 设置限速参数
 MAX_CONCURRENT_REQUESTS = 2
@@ -41,8 +47,9 @@ async def fetch_pr_content(pr_url: str, semaphore: asyncio.Semaphore, output_dir
         
         try:
             print(f"开始获取 PR {pr_number} 的内容和评论")
-            pr = await github.rest.pulls.async_get(owner=owner, repo=repo, pull_number=pr_number)
-            comments = await github.rest.issues.async_list_comments(owner=owner, repo=repo, issue_number=pr_number)
+            gh = _get_github()
+            pr = await gh.rest.pulls.async_get(owner=owner, repo=repo, pull_number=pr_number)
+            comments = await gh.rest.issues.async_list_comments(owner=owner, repo=repo, issue_number=pr_number)
             # with open("temp.json", "w") as f:
             #     f.write(json.dumps(pr.json(), indent=4))
 

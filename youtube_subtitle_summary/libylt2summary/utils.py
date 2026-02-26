@@ -12,14 +12,23 @@ from markdownify import markdownify as md  # 新增导入
 
 YOUR_OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-if YOUR_OPENAI_API_KEY is None:
-    raise ValueError("OPENAI_API_KEY environment variable is not set")
+model = "deepseek-ai/DeepSeek-V3.2"
+# model = "THUDM/glm-4-9b-chat"
 
-model = "THUDM/glm-4-9b-chat"
-client = AsyncOpenAI(
-    api_key=f"{YOUR_OPENAI_API_KEY}",
-    base_url="http://localhost:3000/v1",
-)
+_client = None
+
+
+def get_openai_client() -> AsyncOpenAI:
+    """Lazy-initialize the OpenAI client; raises if API key is missing."""
+    global _client
+    if _client is None:
+        if not YOUR_OPENAI_API_KEY:
+            raise ValueError("OPENAI_API_KEY environment variable is not set")
+        _client = AsyncOpenAI(
+            api_key=YOUR_OPENAI_API_KEY,
+            base_url="https://api.siliconflow.cn/v1",
+        )
+    return _client
 
 MAX_RETRIES = 10
 RETRY_DELAY = 10

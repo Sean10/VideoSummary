@@ -12,3 +12,16 @@ from .utils import (
 )
 from .github_fetcher import github_fetch_prs
 from .ai_article_generator import generate_article
+# Claude Code integration
+from .claude_invoker import load_skill, invoke_claude, invoke_skill
+from .jsonl_handler import jsonl_reader, jsonl_writer
+from .claude_workflow import (
+    main_claude_summarize,
+    main_claude_reflect,
+    main_claude_classify,
+    prepare_summarize_input,
+    prepare_reflect_input,
+    run_summarize_workflow,
+    run_reflect_workflow,
+    run_classify_workflow
+)
