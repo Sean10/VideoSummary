@@ -1,0 +1,113 @@
+# Reflect Skill - Improve Summary with Metadata
+# Version: 1.0.0
+# Extracts from: libylt2summary/reflect.py
+
+name: reflect
+version: 1.0.0
+description: >
+  审阅并改进已有总结, 添加Hexo元数据,
+  生成标签, 确保内容准确性
+
+system_prompt: |
+  作为专业的存储领域分布式存储Ceph的研发人员和内容审核专家，请仔细审阅以下内容：
+
+  0. 原文件名: {{video_title}}
+
+  1. 现有总结：
+  {{summary_content}}
+
+  2. 原始字幕内容：
+  {{original_content}}
+
+  请执行以下任务：
+  1. 检查总结是否准确反映了原始内容的要点，涵盖会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。
+  2. 识别任何可能的错误、误解或遗漏的重要信息。
+  3. 提供一个改进的、更准确的中文总结，确保保留计算机科学/ceph相关领域的英文原文关键词。
+  4. 生成 3-5 个相关的标签，反映文章的主要主题和技术焦点。
+
+  请以以下格式返回你的分析和改进后的总结：
+
+  ---
+  title: {{date_title}}
+  date: {{date}}
+  updated: {{updated}}
+  tags:
+  - tag1
+  - tag2
+  - tag3
+  categories:
+  - "视频总结"
+  subtitle: {{subtitle}}
+  ---
+
+  [改进后的中文总结内容]
+
+  请确保你的回答是 Markdown 格式，并包含上述所有元素。
+  不要修改`---`中间模板的date,updated和title,subtitle内容。但如果标题中含有双引号或单引号导致无法满足yaml语法时, 需要去除或替换为适当的字符.
+  也不要重复我的问题。
+  注意`---`这个分隔符 只允许上面的yaml模板中有, 后面的[改进后的中文总结内容]中不允许包含这个分隔符
+  确保生成的tag不包含任何引号或特殊字符。
+  除了上面样例的yaml front matter外, 请不要额外添加---标记
+
+  注意原始字幕是音译, 可能有错误的文本关键词, 其实际是下文中给出的关键词.
+  在总结中，请注意保留以下 Ceph 相关的关键字（如果出现）：
+  {{ceph_keywords}}
+
+input_schema:
+  type: object
+  properties:
+    summary_content:
+      type: string
+      description: Existing summary to improve
+    original_content:
+      type: string
+      description: Original subtitle content for reference
+    video_title:
+      type: string
+      description: Video title
+    date:
+      type: string
+      description: Publication date (YYYY-MM-DD)
+    updated:
+      type: string
+      description: Last updated date (YYYY-MM-DD)
+    subtitle:
+      type: string
+      description: Subtitle identifier
+  required: [summary_content, original_content, video_title, date, updated, subtitle]
+
+output_schema:
+  type: object
+  properties:
+    front_matter:
+      type: object
+      properties:
+        title: { type: string }
+        date: { type: string }
+        updated: { type: string }
+        tags: { type: array, items: { type: string } }
+        categories: { type: array, items: { type: string } }
+        subtitle: { type: string }
+    improved_summary:
+      type: string
+      description: Improved Chinese summary
+
+variables:
+  - name: ceph_keywords
+    description: Ceph-specific keywords to preserve in English
+    default: |
+      Ceph, distributed storage, CRUSH algorithm, high availability, scalability, object storage,
+      block storage, file system storage, consistency, decentralization, performance, bluestore,
+      bluefs, rocksdb, OSD, MON, MDS, PG, RADOS, librados, libcephfs, cephfs, rbd, radosgw, RGW,
+      RESTful API, authentication, authorization, encryption, erasure coding, replication,
+      snapshots, clones, thin provisioning, iSCSI, Fibre Channel, NFS, CIFS, POSIX, monitoring,
+      dashboard, management, orchestration, automation, integration, containerization,
+      Kubernetes, Docker, virtualization, cloud computing, AWS, Azure, Google Cloud,
+      hybrid cloud, multi-cloud, storage cluster, node, disk, SSD, HDD, JBOD, SAN, NAS,
+      network, topology, failure domain, recovery, resilience, load balancing, caching,
+      compression, deduplication, tiering, performance tuning, benchmarking, testing, validation
+
+metadata:
+  author: VideoSummary Team
+  tags: [ceph, reflect, metadata, hexo]
+  source: libylt2summary/reflect.py

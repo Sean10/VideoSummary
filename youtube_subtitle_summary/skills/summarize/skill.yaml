@@ -1,0 +1,69 @@
+# Summarize Skill - YouTube Video Subtitle Summary
+# Version: 1.0.0
+# Extracts from: libylt2summary/summary.py
+
+name: summarize
+version: 1.0.0
+description: >
+  将YouTube视频字幕内容总结为中文会议纪要,
+  保留Ceph存储领域专业术语的英文原文
+
+system_prompt: |
+  你是专业的存储领域分布式存储Ceph的研发人员, 也是视频会议字幕翻译(负责英译中)及总结人员, 麻烦将下文内容用中文总结, 编写出优质的会议纪要（会议记录）
+  注意保留部分计算机科学/ceph相关领域英文原文的关键词.
+  需要涵盖会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划.
+  再次重复, 必须用中文回答.
+
+  以下是ceph相关的保留关键字.
+  {{ceph_keywords}}
+
+input_schema:
+  type: object
+  properties:
+    content:
+      type: string
+      description: Video subtitle content to summarize
+    video_title:
+      type: string
+      description: Video title for context
+    metadata:
+      type: object
+      description: Additional video metadata
+  required: [content]
+
+output_schema:
+  type: object
+  properties:
+    summary:
+      type: string
+      description: Generated Chinese meeting minutes
+    key_topics:
+      type: array
+      description: Key discussion topics
+      items:
+        type: string
+    action_items:
+      type: array
+      description: Action items identified
+      items:
+        type: string
+
+variables:
+  - name: ceph_keywords
+    description: Ceph-specific keywords to preserve in English
+    default: |
+      Ceph, distributed storage, CRUSH algorithm, high availability, scalability, object storage,
+      block storage, file system storage, consistency, decentralization, performance, bluestore,
+      bluefs, rocksdb, OSD, MON, MDS, PG, RADOS, librados, libcephfs, cephfs, rbd, radosgw, RGW,
+      RESTful API, authentication, authorization, encryption, erasure coding, replication,
+      snapshots, clones, thin provisioning, iSCSI, Fibre Channel, NFS, CIFS, POSIX, monitoring,
+      dashboard, management, orchestration, automation, integration, containerization,
+      Kubernetes, Docker, virtualization, cloud computing, AWS, Azure, Google Cloud,
+      hybrid cloud, multi-cloud, storage cluster, node, disk, SSD, HDD, JBOD, SAN, NAS,
+      network, topology, failure domain, recovery, resilience, load balancing, caching,
+      compression, deduplication, tiering, performance tuning, benchmarking, testing, validation
+
+metadata:
+  author: VideoSummary Team
+  tags: [ceph, summary, youtube, meeting-minutes]
+  source: libylt2summary/summary.py

@@ -1,0 +1,56 @@
+# Classify Skill - Content Classification
+# Version: 1.0.0
+# Extracts from: main.py (classify_batch)
+
+name: classify
+version: 1.0.0
+description: >
+  将Ceph相关文章按照内容类型、组件、应用场景等维度进行分类
+
+system_prompt: |
+  你是一个专业的 Ceph 存储专家和内容分类专家。请根据以下文章标题列表，将它们分类到适当的类别中。使用以下分类方案：
+
+  1. 内容类型：技术深度探讨、新特性介绍、用户案例分享、社区更新和路线图、性能优化和调优、故障排除和最佳实践、集成和互操作性
+  2. Ceph 组件：RADOS 核心、RGW (对象存储)、RBD (块存储)、CephFS (文件系统)、监控和管理工具
+  3. 应用场景：云原生存储、大数据和分析、备份和归档、高性能计算 (HPC)、边缘计算存储
+  4. 技术主题：扩展性和性能、数据安全和加密、多站点和灾难恢复、自动化和编排、监控和可观察性
+  5. 会议类型：Ceph 月度社区会议、Ceph 开发者峰会、用户组会议、技术研讨会、行业会议演讲
+  6. 时间线：季度更新、年度总结、版本发布说明
+
+  返回一个 JSON 格式的结果，其中键是上述分类方案中的具体类别，值是属于该类别的文章标题列表。每篇文章应至少分到一个类别，但可以分到多个相关类别。
+
+  以下是文章标题列表：
+
+  {{post_titles}}
+
+  请确保返回有效的 JSON 格式。
+
+input_schema:
+  type: object
+  properties:
+    post_titles:
+      type: array
+      description: List of article titles to classify
+      items:
+        type: string
+  required: [post_titles]
+
+output_schema:
+  type: object
+  description: JSON object with categories as keys and arrays of post titles as values
+  example: |
+    {
+      "技术深度探讨": ["Ceph OSD Deep Dive.md"],
+      "RADOS 核心": ["Ceph OSD Deep Dive.md", "CRUSH Algorithm Explained.md"],
+      "性能优化和调优": ["Ceph Performance Tuning Guide.md"]
+    }
+
+variables:
+  - name: post_titles
+    description: List of article titles to classify
+    type: array
+
+metadata:
+  author: VideoSummary Team
+  tags: [ceph, classify, content-categorization]
+  source: main.py

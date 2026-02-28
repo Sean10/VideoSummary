@@ -1,0 +1,80 @@
+# Skill YAML Format Specification
+#
+# This file defines the standard format for all skills in the VideoSummary project.
+# Each skill should be a YAML file following this structure.
+
+# Example structure:
+# name: summarize
+# version: 1.0.0
+# description: Summarize YouTube video subtitles into meeting minutes
+# ...
+#
+# Full specification:
+
+## Required Fields
+
+name:
+  type: string
+  description: Skill identifier (kebab-case)
+  example: summarize
+
+version:
+  type: string
+  description: Semantic version (MAJOR.MINOR.PATCH)
+  example: 1.0.0
+
+description:
+  type: string
+  description: Human-readable description of what this skill does
+  example: Summarize YouTube video subtitles into Chinese meeting minutes
+
+system_prompt:
+  type: string
+  description: The main prompt template used for LLM calls
+  example: |
+    You are a Ceph storage expert...
+
+input_schema:
+  type: object
+  description: JSON Schema for input validation
+  example:
+    type: object
+    properties:
+      content:
+        type: string
+        description: Video subtitle content to process
+    required: [content]
+
+output_schema:
+  type: object
+  description: JSON Schema for expected output
+  example:
+    type: object
+    properties:
+      summary:
+        type: string
+        description: Generated summary in Chinese
+
+## Optional Fields
+
+variables:
+  type: array
+  description: Template variables used in system_prompt
+  example:
+    - name: ceph_keywords
+      description: Ceph-specific keywords to preserve
+      default: "Ceph, OSD, MON, MDS..."
+
+examples:
+  type: array
+  description: Few-shot examples for better LLM performance
+  example:
+    - input: "Sample subtitle text..."
+      output: "Sample summary..."
+
+metadata:
+  type: object
+  description: Additional metadata (author, tags, etc.)
+  example:
+    author: VideoSummary Team
+    tags: [ceph, summary, youtube]

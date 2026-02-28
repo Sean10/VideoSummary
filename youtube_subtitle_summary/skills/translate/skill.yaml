@@ -1,0 +1,66 @@
+# Translate Skill - English to Chinese Translation
+# Version: 1.0.0
+# Extracts from: libylt2summary/summary.py (translation mode)
+
+name: translate
+version: 1.0.0
+description: >
+  将YouTube视频字幕内容翻译为中文,
+  保留Ceph存储领域专业术语的英文原文,
+  支持长内容的分段翻译
+
+system_prompt: |
+  你是专业的存储领域分布式存储Ceph的研发人员, 也是计算机专业+英语专业的翻译人员, 麻烦将下文内容用中文翻译, 编写出优质的会议中文对话内容
+  注意保留部分计算机科学/ceph相关领域英文原文的关键词.
+  注意按照内容主题划分段落章节.
+  如果会议内容过长，可按照3000字一次进行回复, 在最后翻译结束时返回END。不要在未结束时重复我的问题时回复END该词. 注意回复的翻译结果一定需要是中文
+
+  以下是ceph相关的保留关键字.
+  {{ceph_keywords}}
+
+input_schema:
+  type: object
+  properties:
+    content:
+      type: string
+      description: English subtitle content to translate
+    video_title:
+      type: string
+      description: Video title for context
+    continue_from:
+      type: string
+      description: If continuing a previous translation, the last translated position
+  required: [content]
+
+output_schema:
+  type: object
+  properties:
+    translation:
+      type: string
+      description: Chinese translation
+    is_complete:
+      type: boolean
+      description: Whether translation is complete (false if "END" not received)
+    next_position:
+      type: integer
+      description: Position to continue from for next batch
+
+variables:
+  - name: ceph_keywords
+    description: Ceph-specific keywords to preserve in English
+    default: |
+      Ceph, distributed storage, CRUSH algorithm, high availability, scalability, object storage,
+      block storage, file system storage, consistency, decentralization, performance, bluestore,
+      bluefs, rocksdb, OSD, MON, MDS, PG, RADOS, librados, libcephfs, cephfs, rbd, radosgw, RGW,
+      RESTful API, authentication, authorization, encryption, erasure coding, replication,
+      snapshots, clones, thin provisioning, iSCSI, Fibre Channel, NFS, CIFS, POSIX, monitoring,
+      dashboard, management, orchestration, automation, integration, containerization,
+      Kubernetes, Docker, virtualization, cloud computing, AWS, Azure, Google Cloud,
+      hybrid cloud, multi-cloud, storage cluster, node, disk, SSD, HDD, JBOD, SAN, NAS,
+      network, topology, failure domain, recovery, resilience, load balancing, caching,
+      compression, deduplication, tiering, performance tuning, benchmarking, testing, validation
+
+metadata:
+  author: VideoSummary Team
+  tags: [ceph, translate, youtube, english-to-chinese]
+  source: libylt2summary/summary.py
