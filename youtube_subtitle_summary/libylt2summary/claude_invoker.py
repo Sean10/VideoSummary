@@ -265,6 +265,57 @@ def invoke_claude(
         }
 
 
+def _process_one_batch_claude(
+    batch_idx: int,
+    batch: List[Dict[str, Any]],
+    base_prompt: str,
+    timeout: int,
+    max_retries: int,
+    total_batches: int,
+) -> List[Dict[str, Any]]:
+    """处理单个 batch，带重试。返回该 batch 的结果列表。"""
+    logger.info(f"Processing batch {batch_idx + 1}/{total_batches} ({len(batch)} items)")
+
+    batch_content = "\n\n".join([
+        f"Item {i+1}:\n{json.dumps(item, ensure_ascii=False)}"
+        for i, item in enumerate(batch)
+    ])
+
+    full_prompt = f"""{base_prompt}
+
+请处理以下数据，每条数据生成一个结果：
+
+{batch_content}
+
+请返回JSONL格式的结果，每行一个结果，格式如下：
+{{"id": "item_id", "status": "success", "result": {{...}}}}
+或
+{{"id": "item_id", "status": "error", "error": "错误信息"}}
+"""
+
+    for attempt in range(max_retries):
+        response = invoke_claude(prompt=full_prompt, timeout=timeout)
+
+        if response['success']:
+            try:
+                parsed = _extract_json_from_response(response['output'])
+                batch_results = [r for r in parsed if 'id' in r]
+                if batch_results:
+                    return batch_results
+                logger.warning(f"No valid JSON found in response (attempt {attempt + 1})")
+            except Exception as e:
+                logger.error(f"Error parsing response: {e}")
+        else:
+            logger.warning(f"Attempt {attempt + 1} failed: {response.get('error')}")
+            time.sleep(2)
+
+    # 所有重试都失败
+    return [
+        create_error_entry(item.get('id', 'unknown'), "All retries exhausted")
+        for item in batch
+    ]
+
+
 def invoke_skill(
     skill_name: str,
     input_data: List[Dict[str, Any]],
@@ -273,7 +324,8 @@ def invoke_skill(
     skills_dir: str = None,
     batch_size: int = 100,
     timeout: int = DEFAULT_TIMEOUT,
-    max_retries: int = 3
+    max_retries: int = 3,
+    max_workers: int = 1
 ) -> Dict[str, Any]:
     """
     Invoke a skill to process input data.
@@ -287,10 +339,13 @@ def invoke_skill(
         batch_size: Items per batch
         timeout: Timeout per batch
         max_retries: Number of retries on failure
+        max_workers: 并发进程数。1 = 串行 (默认)，>1 = 同时跑多个 CLI 进程。
 
     Returns:
         Dictionary with 'success', 'processed', 'errors' counts
     """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
     if skills_dir is None:
         skills_dir = _resolve_skills_dir()
 
@@ -312,76 +367,55 @@ def invoke_skill(
 
     from .jsonl_handler import split_batches
     batches = split_batches(input_data, batch_size)
+    total_batches = len(batches)
 
     results = []
     total_processed = 0
     total_errors = 0
 
-    for batch_idx, batch in enumerate(batches):
-        logger.info(f"Processing batch {batch_idx + 1}/{len(batches)} ({len(batch)} items)")
+    effective_workers = min(max_workers, total_batches) if max_workers > 1 else 1
+    logger.info(f"Running {total_batches} batches with max_workers={effective_workers}")
 
-        batch_content = "\n\n".join([
-            f"Item {i+1}:\n{json.dumps(item, ensure_ascii=False)}"
-            for i, item in enumerate(batch)
-        ])
-
-        full_prompt = f"""{base_prompt}
-
-请处理以下数据，每条数据生成一个结果：
-
-{batch_content}
-
-请返回JSONL格式的结果，每行一个结果，格式如下：
-{{"id": "item_id", "status": "success", "result": {{...}}}}
-或
-{{"id": "item_id", "status": "error", "error": "错误信息"}}
-"""
-
-        for attempt in range(max_retries):
-            response = invoke_claude(
-                prompt=full_prompt,
-                timeout=timeout
+    if effective_workers <= 1:
+        # 串行路径 (向后兼容)
+        for batch_idx, batch in enumerate(batches):
+            batch_results = _process_one_batch_claude(
+                batch_idx, batch, base_prompt, timeout, max_retries, total_batches
             )
-
-            if response['success']:
+            for r in batch_results:
+                results.append(r)
+                if is_error_entry(r):
+                    total_errors += 1
+                else:
+                    total_processed += 1
+    else:
+        # 并发路径
+        with ThreadPoolExecutor(max_workers=effective_workers) as executor:
+            future_to_idx = {
+                executor.submit(
+                    _process_one_batch_claude,
+                    idx, batch, base_prompt, timeout, max_retries, total_batches
+                ): idx
+                for idx, batch in enumerate(batches)
+            }
+            for future in as_completed(future_to_idx):
+                batch_idx = future_to_idx[future]
                 try:
-                    parsed = _extract_json_from_response(response['output'])
-                    for result_item in parsed:
-                        if 'id' in result_item:
-                            results.append(result_item)
-                            if is_error_entry(result_item):
-                                total_errors += 1
-                            else:
-                                total_processed += 1
-                    if parsed:
-                        break
-                    logger.warning(f"No valid JSON found in response (attempt {attempt + 1})")
-                    if attempt == max_retries - 1:
-                        for item in batch:
-                            results.append(create_error_entry(
-                                item.get('id', 'unknown'),
-                                f"No parseable JSON in response"
-                            ))
-                            total_errors += 1
+                    batch_results = future.result()
                 except Exception as e:
-                    logger.error(f"Error parsing response: {e}")
-                    if attempt == max_retries - 1:
-                        for item in batch:
-                            results.append(create_error_entry(
-                                item.get('id', 'unknown'),
-                                f"Parse error: {e}"
-                            ))
-                            total_errors += 1
-            else:
-                logger.warning(f"Attempt {attempt + 1} failed: {response.get('error')}")
-                if attempt == max_retries - 1:
-                    for item in batch:
-                        results.append(create_error_entry(
-                            item.get('id', 'unknown'),
-                            response.get('error', 'Unknown error')
-                        ))
+                    logger.error(f"Batch {batch_idx} raised exception: {e}")
+                    batch_results = [
+                        create_error_entry(
+                            item.get('id', 'unknown'), str(e)
+                        )
+                        for item in batches[batch_idx]
+                    ]
+                for r in batch_results:
+                    results.append(r)
+                    if is_error_entry(r):
                         total_errors += 1
-                time.sleep(2)
+                    else:
+                        total_processed += 1
 
     if output_file is not None:
         jsonl_writer(output_file, results)

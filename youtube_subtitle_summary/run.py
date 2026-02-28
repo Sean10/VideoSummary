@@ -85,12 +85,20 @@ async def main():
                         help='Classify using Claude Code CLI (instead of direct API)')
     parser.add_argument('--batch-size', type=int, default=10,
                         help='Batch size for Claude Code processing (default: 10)')
+    parser.add_argument('--max-workers', type=int, default=1,
+                        help='并发 CLI 进程数 (default: 1 串行)')
     parser.add_argument('--timeout', type=int, default=300,
                         help='Timeout per batch in seconds (default: 300)')
+    parser.add_argument('--backend', type=str, default='claude',
+                        choices=['claude', 'kiro'],
+                        help='AI CLI backend: claude (default) or kiro')
     parser.add_argument('-v', '--verbose', action='count', default=0,
                         help='Increase logging verbosity (-v: INFO, -vv: DEBUG)')
     args = parser.parse_args()
     _configure_logging(args.verbose)
+
+    # 设置 AI CLI 后端
+    claude_workflow.set_backend(args.backend)
 
     # 检查是否有任何实际业务动作被指定（verbose/batch/timeout等不算动作）
     has_action = any((
@@ -196,17 +204,20 @@ async def main():
     if args.claude_summarize:
         await claude_workflow.main_claude_summarize(
             batch_size=args.batch_size,
-            timeout=args.timeout
+            timeout=args.timeout,
+            max_workers=args.max_workers
         )
     if args.claude_reflect:
         await claude_workflow.main_claude_reflect(
             batch_size=args.batch_size,
-            timeout=args.timeout
+            timeout=args.timeout,
+            max_workers=args.max_workers
         )
     if args.claude_classify:
         await claude_workflow.main_claude_classify(
             batch_size=args.batch_size,
-            timeout=args.timeout
+            timeout=args.timeout,
+            max_workers=args.max_workers
         )
 
     await process_retry_queue()

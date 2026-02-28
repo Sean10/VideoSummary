@@ -10,11 +10,46 @@ from pathlib import Path
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 
-from .claude_invoker import invoke_skill, load_skill, build_skill_prompt, invoke_claude
+from . import claude_invoker as _claude_backend
+from . import kiro_invoker as _kiro_backend
 from .jsonl_handler import jsonl_reader, jsonl_writer, create_error_entry
 from .utils import sanitize_filename
 
 logger = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# Backend 切换: "claude" (默认) 或 "kiro"
+# 通过 set_backend() 在 run.py 中设置，workflow 函数内部透明使用
+# ---------------------------------------------------------------------------
+_backend_name: str = "claude"
+
+
+def set_backend(name: str) -> None:
+    """设置 AI CLI 后端 ("claude" 或 "kiro")。"""
+    global _backend_name
+    if name not in ("claude", "kiro"):
+        raise ValueError(f"Unknown backend: {name!r}, expected 'claude' or 'kiro'")
+    _backend_name = name
+    logger.info(f"AI backend set to: {name}")
+
+
+def _backend():
+    """返回当前后端模块 (claude_invoker 或 kiro_invoker)。"""
+    return _kiro_backend if _backend_name == "kiro" else _claude_backend
+
+
+# 便捷访问 — 这些函数签名在两个 invoker 中完全一致
+def invoke_claude(**kwargs):
+    return _backend().invoke_claude(**kwargs)
+
+def invoke_skill(**kwargs):
+    return _backend().invoke_skill(**kwargs)
+
+def load_skill(*args, **kwargs):
+    return _backend().load_skill(*args, **kwargs)
+
+def build_skill_prompt(*args, **kwargs):
+    return _backend().build_skill_prompt(*args, **kwargs)
 
 # Change to the youtube_subtitle_summary directory
 WORK_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -100,11 +135,53 @@ def prepare_summarize_input(
     return items
 
 
+def _summarize_one_item(item, base_prompt, output_dir, timeout):
+    """处理单条 summarize 任务，返回 (result_dict, is_error)。"""
+    item_id = item.get("id", "unknown")
+    subtitle_content = item.get("content", "")
+    video_title = item.get("video_title", item_id)
+    metadata = item.get("metadata", {})
+
+    full_prompt = f"""{base_prompt}
+
+请基于以下输入生成完整会议纪要，并严格遵循：
+1) 只输出 Markdown 正文，不要输出 JSON，不要用 ``` 包裹。
+2) 必须包含这些二级标题：## 摘要、## 关键议题、## 决定事项、## 行动项。
+3) 对每个议题给出充分细节，优先使用条目列表表达技术讨论点。
+4) 若某信息缺失，请在对应小节写"未在字幕中明确提及"。
+5) 保留 Ceph/计算机领域关键英文术语（如 RGW、S3、ETag、KMS）。
+
+视频标题: {video_title}
+元数据: {json.dumps(metadata, ensure_ascii=False)}
+
+字幕内容:
+{subtitle_content}
+"""
+    response = invoke_claude(prompt=full_prompt, timeout=timeout)
+    if not response.get("success"):
+        return create_error_entry(item_id, response.get("error", "Unknown error")), True
+
+    markdown_content = (response.get("output") or "").strip()
+    if not markdown_content:
+        return create_error_entry(item_id, "Empty markdown output"), True
+
+    output_path = os.path.join(output_dir, f"{item_id}.md")
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(markdown_content + "\n")
+
+    return {
+        "id": item_id,
+        "status": "success",
+        "result": {"summary_markdown": markdown_content}
+    }, False
+
+
 def run_summarize_workflow(
     input_file: str = "temp_input/summarize_input.jsonl",
     output_dir: str = "summary",
     batch_size: int = 10,
-    timeout: int = 300
+    timeout: int = 300,
+    max_workers: int = 1,
 ) -> Dict[str, Any]:
     """
     Run the summarize workflow using Claude Code.
@@ -114,10 +191,13 @@ def run_summarize_workflow(
         output_dir: Directory for output summaries
         batch_size: Items per batch
         timeout: Timeout per batch
+        max_workers: 并发 CLI 进程数 (默认 1 串行)
 
     Returns:
         Processing result statistics
     """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
     os.makedirs(output_dir, exist_ok=True)
 
     if not os.path.exists(input_file):
@@ -144,52 +224,37 @@ def run_summarize_workflow(
     processed = 0
     errors = 0
 
-    # 直接生成 Markdown 并原样写入，避免结构化字段漂移导致信息遗漏
-    for item in input_data:
-        item_id = item.get("id", "unknown")
-        subtitle_content = item.get("content", "")
-        video_title = item.get("video_title", item_id)
-        metadata = item.get("metadata", {})
+    effective_workers = min(max_workers, len(input_data)) if max_workers > 1 else 1
+    logger.info(f"Summarizing {len(input_data)} items with max_workers={effective_workers}")
 
-        full_prompt = f"""{base_prompt}
-
-请基于以下输入生成完整会议纪要，并严格遵循：
-1) 只输出 Markdown 正文，不要输出 JSON，不要用 ``` 包裹。
-2) 必须包含这些二级标题：## 摘要、## 关键议题、## 决定事项、## 行动项。
-3) 对每个议题给出充分细节，优先使用条目列表表达技术讨论点。
-4) 若某信息缺失，请在对应小节写“未在字幕中明确提及”。
-5) 保留 Ceph/计算机领域关键英文术语（如 RGW、S3、ETag、KMS）。
-
-视频标题: {video_title}
-元数据: {json.dumps(metadata, ensure_ascii=False)}
-
-字幕内容:
-{subtitle_content}
-"""
-        response = invoke_claude(prompt=full_prompt, timeout=timeout)
-        if not response.get("success"):
-            errors += 1
-            results.append(create_error_entry(item_id, response.get("error", "Unknown error")))
-            continue
-
-        markdown_content = (response.get("output") or "").strip()
-        if not markdown_content:
-            errors += 1
-            results.append(create_error_entry(item_id, "Empty markdown output"))
-            continue
-
-        output_path = os.path.join(output_dir, f"{item_id}.md")
-        with open(output_path, 'w', encoding='utf-8') as f:
-            f.write(markdown_content + "\n")
-
-        processed += 1
-        results.append({
-            "id": item_id,
-            "status": "success",
-            "result": {
-                "summary_markdown": markdown_content
+    if effective_workers <= 1:
+        for item in input_data:
+            result_item, is_err = _summarize_one_item(item, base_prompt, output_dir, timeout)
+            results.append(result_item)
+            if is_err:
+                errors += 1
+            else:
+                processed += 1
+    else:
+        with ThreadPoolExecutor(max_workers=effective_workers) as executor:
+            future_to_item = {
+                executor.submit(
+                    _summarize_one_item, item, base_prompt, output_dir, timeout
+                ): item
+                for item in input_data
             }
-        })
+            for future in as_completed(future_to_item):
+                try:
+                    result_item, is_err = future.result()
+                except Exception as e:
+                    item = future_to_item[future]
+                    result_item = create_error_entry(item.get("id", "unknown"), str(e))
+                    is_err = True
+                results.append(result_item)
+                if is_err:
+                    errors += 1
+                else:
+                    processed += 1
 
     jsonl_writer(output_file, results)
     result = {
@@ -297,7 +362,8 @@ def run_reflect_workflow(
     input_file: str = "temp_input/reflect_input.jsonl",
     output_dir: str = "temp_posts",
     batch_size: int = 10,
-    timeout: int = 300
+    timeout: int = 300,
+    max_workers: int = 1,
 ) -> Dict[str, Any]:
     """
     Run the reflect workflow using Claude Code.
@@ -333,7 +399,8 @@ def run_reflect_workflow(
         output_file=output_file,
         batch_size=batch_size,
         timeout=timeout,
-        max_retries=3
+        max_retries=3,
+        max_workers=max_workers,
     )
 
     # Process results - write individual post files
@@ -356,7 +423,8 @@ def run_classify_workflow(
     posts_dir: str = "source/_posts",
     output_file: str = "post_classification_by_content.json",
     batch_size: int = 50,
-    timeout: int = 300
+    timeout: int = 300,
+    max_workers: int = 1,
 ) -> Dict[str, Any]:
     """
     Run the classify workflow using Claude Code.
@@ -399,7 +467,8 @@ def run_classify_workflow(
         output_file=temp_output,
         batch_size=1,  # Each batch is already grouped
         timeout=timeout,
-        max_retries=3
+        max_retries=3,
+        max_workers=max_workers,
     )
 
     # Merge batch results into final output
@@ -423,7 +492,7 @@ def run_classify_workflow(
     return result
 
 
-async def main_claude_summarize(batch_size: int = 10, timeout: int = 300):
+async def main_claude_summarize(batch_size: int = 10, timeout: int = 300, max_workers: int = 1):
     """Main function for Claude Code-based summarization."""
     logger.info("Starting Claude Code summarize workflow...")
 
@@ -434,12 +503,12 @@ async def main_claude_summarize(batch_size: int = 10, timeout: int = 300):
         return
 
     # Step 2: Run workflow
-    result = run_summarize_workflow(batch_size=batch_size, timeout=timeout)
+    result = run_summarize_workflow(batch_size=batch_size, timeout=timeout, max_workers=max_workers)
 
     logger.info(f"Summarize workflow result: {result}")
 
 
-async def main_claude_reflect(batch_size: int = 10, timeout: int = 300):
+async def main_claude_reflect(batch_size: int = 10, timeout: int = 300, max_workers: int = 1):
     """Main function for Claude Code-based reflection."""
     logger.info("Starting Claude Code reflect workflow...")
 
@@ -450,15 +519,15 @@ async def main_claude_reflect(batch_size: int = 10, timeout: int = 300):
         return
 
     # Step 2: Run workflow
-    result = run_reflect_workflow(batch_size=batch_size, timeout=timeout)
+    result = run_reflect_workflow(batch_size=batch_size, timeout=timeout, max_workers=max_workers)
 
     logger.info(f"Reflect workflow result: {result}")
 
 
-async def main_claude_classify(batch_size: int = 50, timeout: int = 300):
+async def main_claude_classify(batch_size: int = 50, timeout: int = 300, max_workers: int = 1):
     """Main function for Claude Code-based classification."""
     logger.info("Starting Claude Code classify workflow...")
 
-    result = run_classify_workflow(batch_size=batch_size, timeout=timeout)
+    result = run_classify_workflow(batch_size=batch_size, timeout=timeout, max_workers=max_workers)
 
     logger.info(f"Classify workflow result: {result}")
