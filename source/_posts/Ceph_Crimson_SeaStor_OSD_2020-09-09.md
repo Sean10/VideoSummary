@@ -1,12 +1,19 @@
 ---
-title: "Ceph Crimson/SeaStor OSD 2020-09-09"
-date: 2020-09-10
-updated: 2020-09-11
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-09-10
+subtitle: Ceph_Crimson_SeaStor_OSD_2020-09-09
+tags:
+- Ceph
+- Distributed Storage
+- CRUSH Algorithm
+- High Availability
+- Scalability
+title: "Ceph Crimson/SeaStor OSD 2020-09-09"
+updated: 2020-09-11
 ---
+
+
 
 
 ### 会议纪要
@@ -18,7 +25,7 @@ subtitle: tech
 
 #### 讨论的主要议题
 1. **Ratio Test 进展**:
-   - 讨论了Ratio Test的失败情况，分为自动响应失败和恢复阶段跟踪问题。
+   - 讨论了Ratio Test的失败情况，包括自动响应失败和恢复阶段跟踪问题。
    - 增加了功能以在转储前符号化电池信息，以便直接获取函数名而不是地址。
 
 2. **Subversion Submodule 更新**:

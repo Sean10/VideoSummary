@@ -1,31 +1,38 @@
 ---
-title: "Ceph Orchestrator Meeting 2022-02-01"
-date: 2022-02-02
-updated: 2022-02-02
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-02-02
+subtitle: Ceph_Orchestrator_Meeting_2022-02-01
+tags:
+- Ceph
+- Orchestrator
+- Distributed Storage
+- Documentation
+- NFS Manager
+title: "Ceph Orchestrator Meeting 2022-02-01"
+updated: 2022-02-02
 ---
+
+
 
 
 ### 会议纪要
 
 #### 关键细节
-- **日期**: [具体日期]
+- **日期**: 2022-02-01
 - **参会人员**: [参会人员名单]
 - **主持人**: [主持人姓名]
 
 #### 讨论的主要议题
 1. **文档更新**
-   - 讨论了在文档中明确提及和记录每个功能的引入时间、版本和贡献者的重要性。
-   - 决定开始在新的功能引入时添加文档注释，以便追踪功能的历史和来源。
+   - 讨论了在文档中记录每个功能的引入时间、版本和贡献者的必要性。
+   - 决定开始在新功能引入时添加文档注释，以便追踪功能的历史和来源。
 
 2. **NFS Manager模块的使用**
-   - 讨论了如何在不启用Orchestration模块的情况下使用NFS Manager模块。
-   - 确定了Rook团队的需求，即他们希望在不依赖Orchestration模块的情况下管理NFS导出。
-   - 提出了两种解决方案：添加新的命令（如`nfs cluster register`和`unregister`）或使用现有的命令但添加一个选项（如`--no-orchestration`）。
-   - 最终决定简化流程，仅移除导出命令对Orchestration模块的依赖，并处理集群ID验证。
+   - 讨论了在不启用Orchestration模块的情况下使用NFS Manager模块。
+   - 确定了Rook团队的需求，他们希望在无需依赖Orchestration模块的情况下管理NFS导出。
+   - 提出了两种解决方案：添加新的命令（如`nfs cluster register`和`unregister`）或使用现有命令并添加一个选项（如`--no-orchestration`）。
+   - 最终决定简化流程，只移除导出命令对Orchestration模块的依赖，并处理集群ID验证。
 
 3. **自然排序问题**
    - 讨论了在某些命令中使用自然排序（如`ceph osd tree`）以提高用户体验。
@@ -47,7 +54,3 @@ subtitle: tech
 
 #### 下次会议
 - 下次会议预定于[具体日期]举行。
-
----
-
-**注意**: 本次会议记录涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划，确保了会议内容的准确性和完整性。

@@ -1,11 +1,16 @@
 ---
-title: "CDS Tentacle - Documentation"
+title: "  CDS Tentacle - Documentation  "
 date: 2024-08-22
 updated: 2024-08-23
 tags:
+- 分布式存储
+- Ceph
+- 文档改进
+- 社区协作
+- Seth项目
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: CDS_Tentacle_-_Documentation
 ---
 
 

@@ -1,25 +1,31 @@
 ---
-title: "Ceph Performance Meeting 2023-03-09"
-date: 2023-03-14
-updated: 2023-03-15
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-03-14
+subtitle: Ceph_Performance_Meeting_2023-03-09
+tags:
+- Ceph
+- 分布式存储
+- 性能优化
+- PR审查
+- 蓝店缓冲IO
+title: "Ceph Performance Meeting 2023-03-09"
+updated: 2023-03-15
 ---
+
 
 
 ### 会议纪要
 
-**会议时间：** [具体日期]  
+**会议时间：** 2023年3月9日  
 **参会人员：** [参会人员列表]  
 **会议主持：** [主持人姓名]  
 
 #### 关键细节
-- 会议开始时，主持人因与Josh讨论碎片整理而迟到。
+- 主持人因与Josh讨论碎片整理而迟到。
 - 讨论了本周的两个新PR，均与Crimson Suite相关。
-- 讨论了更新PR，包括qat batch PR、Corey的PR（roxdb iterator bounds for collection list）和Igor的PR（pr4 not resetting the pre-fetched buffer while doing multi-chunk reads）。
-- 讨论了关于Blue Store buffered IO的性能问题，特别是与roxdb的交互和预取缓冲区的使用。
+- 讨论了更新PR，包括qat batch PR、Corey的PR（roxdb迭代器边界）和Igor的PR（预取缓冲区重置）。
+- 讨论了Blue Store buffered IO的性能问题，特别是与roxdb的交互和预取缓冲区的使用。
 - 讨论了CBT的一个PR，关于禁用现有结果目录检查的问题。
 
 #### 讨论的主要议题

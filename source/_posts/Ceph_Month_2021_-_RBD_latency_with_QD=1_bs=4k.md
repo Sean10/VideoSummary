@@ -1,11 +1,16 @@
 ---
-title: "Ceph Month 2021: RBD latency with QD=1 bs=4k"
-date: 2021-06-15
-updated: 2021-06-16
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-06-15
+subtitle: Ceph_Month_2021_-_RBD_latency_with_QD=1_bs=4k
+tags:
+- Ceph
+- RBD
+- 性能优化
+- 低延迟
+- 硬件配置
+title: "'Ceph Month 2021: RBD latency with QD=1 bs=4k'"
+updated: 2021-06-16
 ---
 
 
@@ -20,11 +25,12 @@ subtitle: tech
 **参会人员：** [具体人员未提供]
 
 **主要议题：**
-1. **RBD性能测试配置：** 讨论了使用Q Depth（队列深度）为1和块大小为4K的RBD性能测试。
+1. **RBD性能测试配置：** 讨论了使用队列深度（Q Depth）为1和块大小为4K的RBD性能测试。
 2. **单线程IO延迟的重要性：** 强调了单线程IO延迟对于许多应用程序的重要性，特别是在PHP Web服务器、MariaDB数据库和Redis缓存等场景中。
-3. **Ceph的性能与设计目标：** 解释了Ceph的设计目标（冗余性、可扩展性和数据安全）与低延迟之间的权衡。
-4. **硬件配置与优化：** 分享了使用特定硬件配置（如Super Micro系统、Epic 16核CPU、256GB内存、Samsung PM SSDs和100 Gigabit网络）进行性能测试的经验。
-5. **Ceph Crimson项目与RBD持久化缓存：** 讨论了Ceph Crimson项目和RBD持久化缓存对未来性能提升的潜在影响。
+3. **Ceph的设计目标与性能：** 解释了Ceph的设计目标（冗余性、可扩展性和数据安全）与低延迟之间的权衡，并讨论了硬件配置对性能的影响。
+4. **Ceph Crimson项目与RBD缓存：** 讨论了Ceph Crimson项目和RBD持久化缓存对未来性能提升的潜在影响。
+5. **硬件配置与优化：** 分享了使用特定硬件配置（如Super Micro系统、Epic 16核CPU、256GB内存、Samsung PM SSDs和100 Gigabit网络）进行性能测试的经验。
+6. **性能测试结果：** 展示了使用Fio进行基准测试的结果，包括IOPS和延迟数据。
 
 **决定事项：**
 1. **性能测试基准：** 确定以Q Depth为1和4K块大小作为性能测试的起点。

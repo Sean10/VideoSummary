@@ -1,31 +1,36 @@
 ---
-title: "2020-01-22 :: Ceph Science User Group Meeting"
+title: " 2020-01-22 :: Ceph Science User Group Meeting "
 date: 2020-01-23
 updated: 2020-01-24
 tags:
+- Ceph
+- 科学计算
+- 分布式存储
+- 社区活动
+- 用户组会议
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: 2020-01-22_-_-_Ceph_Science_User_Group_Meeting
 ---
 
 
 ### 会议纪要
 
 #### 会议概述
-本次会议是一个虚拟用户组会议，由Kevin主持，主要讨论了Ceph在科学计算和大型集群中的应用案例。会议参与者包括Liam Monahan、Tom Bennett等，讨论了Ceph的使用经验、问题和未来计划。
+本次Ceph科学用户组虚拟会议由Kevin主持，聚焦于Ceph在科学计算和大型集群中的应用。与会者包括Liam Monahan、Tom Bennett等，共同分享了使用经验、遇到的问题以及未来的计划。
 
 #### 主要议题
-1. **Ceph集群的使用经验分享**
-   - Liam Monahan介绍了他们维护的一个拥有3.5 PB原始存储的Ceph集群，主要用于科学计算，特别是机器学习。
-   - Tom Bennett分享了他们使用Ceph存储来自Meerkat望远镜的数据，目前有数亿个对象。
+1. **Ceph集群使用经验分享**
+   - Liam Monahan介绍了其维护的3.5PB Ceph集群，主要应用于科学计算和机器学习。
+   - Tom Bennett分享了使用Ceph存储Meerkat望远镜数据的经验，目前存储了数亿个对象。
 
 2. **Ceph版本升级和问题讨论**
-   - 讨论了从Luminous到Nautilus的升级过程，以及在升级到14.2.5和14.2.6版本时遇到的心跳问题和OMAP对象问题。
-   - 提到了Ceph集群在扩展时遇到的OSD映射创建延迟问题，以及如何通过调整参数来解决。
+   - 讨论了从Luminous到Nautilus的升级过程，以及在升级至14.2.5和14.2.6版本时遇到的心跳问题和OMAP对象问题。
+   - 讨论了Ceph集群在扩展时遇到的OSD映射创建延迟问题，并分享了通过调整参数来解决的经验。
 
 3. **Ceph集群管理和优化**
    - 讨论了在多代硬件上运行Ceph集群的挑战，特别是从文件存储迁移到BlueStore时的问题。
-   - 分享了关于Ceph集群中PG（Placement Groups）的自动缩放和客户端扩展的经验。
+   - 分享了关于Ceph集群中PG的自动缩放和客户端扩展的经验。
 
 4. **未来计划和社区活动**
    - 讨论了即将到来的Ceph社区活动，如Ceph Day和Cephalocon，以及如何组织“Birds of a Feather”会议。
@@ -44,4 +49,4 @@ subtitle: tech
 - 会议中提到的Ceph相关工具和参数调整将在后续的邮件和文档中进一步详细说明。
 - 鼓励社区成员在会议后继续通过邮件列表和私人邮件进行交流和讨论。
 
-本次会议为Ceph用户提供了一个宝贵的交流平台，促进了经验分享和技术问题的解决，同时也加强了社区成员之间的联系。
+本次会议为Ceph用户提供了宝贵的交流平台，促进了经验的分享和技术问题的解决，同时也加强了社区成员之间的联系。

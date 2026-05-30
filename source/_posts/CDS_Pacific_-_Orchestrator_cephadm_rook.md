@@ -1,26 +1,33 @@
 ---
-title: "CDS Pacific: Orchestrator, cephadm, rook"
+title: "  CDS Pacific: Orchestrator, cephadm, rook  "
 date: 2020-03-31
 updated: 2020-04-01
 tags:
+- 分布式存储
+- Ceph Pacific
+- Cephadm
+- Rook
+- 自动化部署
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: CDS_Pacific_-_Orchestrator_cephadm_rook
 ---
 
 
-### 会议纪要
+
+本次会议主要讨论了Ceph Pacific版本的重点工作，以及对Ceph Octopus版本中存在的问题的修复。以下是会议的关键细节和主要议题：
 
 #### 会议概述
-本次会议主要讨论了Ceph Pacific版本的重点工作，强调了当前Ceph Octopus版本的许多未解决问题，并决定在Pacific版本中主要关注于修复bug和解决工作流程中的缺陷，而不是增加新功能。
+- Ceph Pacific版本将重点关注修复bug和改进现有功能，而不是增加新功能。
+- 会议强调了Ceph Octopus版本中存在的问题，如粗糙的边缘和未解决的问题。
 
 #### 主要议题
 1. **Ceph Octopus版本的现状**
-   - Ceph Octopus版本存在许多粗糙的边缘和未解决的问题。
-   - 建议在Pacific版本中优先解决这些问题，而不是增加新功能。
+   - Ceph Octopus版本存在许多未解决的问题，如粗糙的边缘和功能缺陷。
+   - 会议建议在Pacific版本中优先解决这些问题。
 
 2. **开发者体验和文档改进**
-   - 讨论了改进Ceph的开发者体验，特别是在使用Ceph的ATM（自动化测试模块）时。
+   - 讨论了改进Ceph的开发者体验，特别是使用ATM（自动化测试模块）时。
    - 强调了改进CLI文档的必要性，确保其与最新的功能和变化保持同步。
 
 3. **功能和改进的优先级**
@@ -32,7 +39,7 @@ subtitle: tech
    - 强调了持续集成测试的重要性，以确保代码的质量和稳定性。
 
 #### 决定事项
-- 在Pacific版本中，将重点放在修复bug和改进现有功能上，而不是增加新功能。
+- 在Pacific版本中，将重点放在修复bug和改进现有功能上。
 - 改进开发者体验和文档，确保开发者能够更容易地使用和理解Ceph的功能。
 - 优先考虑关键的改进领域，如OSD管理、升级流程和功能增强。
 

@@ -1,56 +1,37 @@
 ---
-title: "CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client"
-date: 2014-06-26
-updated: 2014-06-26
+title: "  CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client  "
+date: 2014-10-30
+updated: 2014-10-30
 tags:
+- Ceph
+- RBD
+- Kernel RBD Client
+- Copy
+- on
+- read
+- Clone
 categories:
-- "视频总结"
-subtitle: tech
+- "会议纪要"
+- "存储技术"
+- "Ceph 架构"
+- "分布式存储"
+subtitle: CDS_G_H_Day_2_-_RBD_-_Copy-on-read_for_clones_in_kernel_RBD_client
 ---
 
 
+本次会议主要讨论了在内核RBD客户端中实现RBD克隆的复制和读取功能。Min介绍了其蓝图，提出使用Carbon读取邻居BD的算法，并使用escrow覆盖方法将数据写入克隆。与会人员就实现位置、配置方式、用户空间复制和读取功能、复杂性问题、同步与异步、RBD客户端稳定性、锁机制、数据传输、obj_i_eq和device_flags等议题进行了深入讨论。
 
-**会议纪要**
+**主要讨论点**：
 
-**会议时间**： 2023年11月[具体日期]
-
-**会议地点**： 线上会议
-
-**参会人员**： Min、Ostensibly Lee、Josh、Elia等
-
-**会议主题**： RBD（Radial Bulletproof Disk）的复制和读取克隆功能实现讨论
-
-**会议内容**：
-
-1. **Min介绍了其蓝图**： 在RBD客户端中实现RBD克隆的复制和读取功能，降低读取非克隆对象时的延迟。他提出使用Carbon读取邻居BD的算法，并使用escrow覆盖方法将数据写入克隆。
-
-2. **讨论实现位置**： 
-    * Josh建议在处理RBD图像对象请求提交的功能中实现Carbon读取，这是启动最高级别操作的函数。
-    * Elia提到用户空间客户端不支持驱动程序版本2，因此无需担心用户空间中的额外条带化操作。
-
-3. **配置方式**： 
-    * 关于配置方式，讨论了是否在映射图像时添加选项，以及如何与现有选项机制兼容。
-
-4. **用户空间复制和读取功能**： 
-    * Josh提到用户空间复制和读取功能的v2 pull request仍存在问题，需要进一步改进。
-
-5. **复杂性问题**： 
-    * 讨论了在内核侧实现复杂条带化可能遇到的挑战，以及是否应先实现复制和读取功能。
-
-6. **同步与异步**： 
-    * 讨论了在满足读取请求之前是否应先执行整个提升操作，以及是否应使用同步或异步方式。
-
-7. **RBD客户端稳定性**： 
-    * 确认RBD客户端非常稳定，但Min提到liberty覆盖与窃取相关的错误问题。
-
-8. **锁机制**： 
-    * 讨论了当多个客户端访问同一图像时如何避免冲突，以及如何处理锁定。
-
-9. **数据传输**： 
-    * 讨论了rbd_image_object_callback如何将数据返回给bio和vfs。
-
-10. **obj_i_eq和device_flags**： 
-    * 讨论了obj_i_eq和device_flags的作用，以及如何区分页面列表和bio列表。
+1. **实现位置**： Josh建议在处理RBD图像对象请求提交的功能中实现Carbon读取，这是启动最高级别操作的函数。
+2. **配置方式**： 讨论了是否在映射图像时添加选项，以及如何与现有选项机制兼容。
+3. **用户空间复制和读取功能**： Josh提到用户空间复制和读取功能的v2 pull request仍存在问题，需要进一步改进。
+4. **复杂性问题**： 讨论了在内核侧实现复杂条带化可能遇到的挑战，以及是否应先实现复制和读取功能。
+5. **同步与异步**： 讨论了在满足读取请求之前是否应先执行整个提升操作，以及是否应使用同步或异步方式。
+6. **RBD客户端稳定性**： 确认RBD客户端非常稳定，但Min提到liberty覆盖与窃取相关的错误问题。
+7. **锁机制**： 讨论了当多个客户端访问同一图像时如何避免冲突，以及如何处理锁定。
+8. **数据传输**： 讨论了rbd_image_object_callback如何将数据返回给bio和vfs。
+9. **obj_i_eq和device_flags**： 讨论了obj_i_eq和device_flags的作用，以及如何区分页面列表和bio列表。
 
 **决定事项**：
 

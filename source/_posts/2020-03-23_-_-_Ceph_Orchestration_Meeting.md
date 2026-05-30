@@ -1,12 +1,19 @@
 ---
-title: "2020-03-23 :: Ceph Orchestration Meeting"
-date: 2020-04-03
-updated: 2020-04-04
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-04-03
+subtitle: 2020-03-23_-_-_Ceph_Orchestration_Meeting
+tags:
+- Ceph
+- Orchestration
+- Pull Request
+- NFS Integration
+- Project Updates
+title: "'2020-03-23 :: Ceph Orchestration Meeting'"
+updated: 2020-04-04
 ---
+
+
 
 
 ### 会议纪要
@@ -17,14 +24,14 @@ subtitle: tech
 
 #### 主要议题：
 1. **Pull Request 进展**  
-   - 目前有一个关于“doubling in nights”的Pull Request正在进行中，该请求已进入测试阶段。
+   - 目前有一个关于“doubling in nights”的Pull Request正在进行中，该请求已经进入测试阶段。
 
 2. **项目更新**  
    - 讨论了近期的工作进展，包括等待审查的PR和正在处理的小改动及bug修复。
-   - 特别提到了为即将到来的optimism准备相关工作。
+   - 特别提到了为即将到来的optimism做准备的相关工作。
 
 3. **技术关注点**  
-   - 提到了正在进行的NFS集成工作。
+   - 提到了正在进行中的NFS集成工作。
 
 #### 决定事项：
 - 继续推进当前的Pull Request测试和审查工作。
@@ -38,3 +45,11 @@ subtitle: tech
 **下次会议预定：** [具体日期和时间]  
 
 **备注：** 会议中提到的具体技术细节和项目名称（如“doubling in nights”和“NFS integration”）需要进一步的技术文档或代码审查来详细了解。
+
+在原始字幕中，有以下几个要点没有被包含在现有总结中，但应被纳入改进后的总结：
+- 会议开始时，主持人提到可能不会有很多人员参加。
+- 参会人员提到了他们过去一周的工作，包括等待审查的PR和正在处理的小改动及bug修复。
+- 参会人员表示正在尝试完成这些小改动，并准备"octopus up"（可能是指部署或升级）。
+- 参会人员询问了NFS集成的进展。
+
+这些信息对于理解会议的背景和讨论内容是非常重要的。

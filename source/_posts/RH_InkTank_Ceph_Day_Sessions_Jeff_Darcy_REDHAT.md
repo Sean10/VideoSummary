@@ -1,11 +1,16 @@
 ---
-title: "RH InkTank Ceph Day Sessions Jeff Darcy REDHAT"
-date: 2014-07-25
-updated: 2014-07-26
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2014-07-25
+subtitle: RH_InkTank_Ceph_Day_Sessions_Jeff_Darcy_REDHAT
+tags:
+- Ceph
+- 分布式存储
+- Gluster
+- 性能测试
+- 实验性研究
+title: "RH InkTank Ceph Day Sessions Jeff Darcy REDHAT"
+updated: 2014-07-26
 ---
 
 
@@ -22,16 +27,16 @@ subtitle: tech
 
 **会议内容**：
 
-1. **会议背景**： 
-   - 介绍者分享了在Inktank收购后，关于将Gluster和Ceph技术结合的实验性想法，这一想法已有两年之久。
-   - 强调这是一个科学探索，而非工程应用，目的在于发现可能性，而非满足特定需求。
+1. **背景介绍**： 
+   - 介绍者Jeff Darcy分享了自Inktank收购后，关于将Gluster和Ceph技术结合的实验性想法，这一想法已有两年之久。
+   - 强调这是一个科学探索，而非工程应用，旨在发现可能性，而非满足特定需求。
 
 2. **关键点说明**：
    - 针对市场上关于收购后Gluster和Ceph技术将被拆分的传闻，澄清了这是实验性的探索，并非官方路线图。
    - 介绍者试图通过混合匹配组件，了解liberatos API和组件对性能、故障处理等方面的贡献。
 
 3. **个人背景**：
-   - 介绍者拥有丰富的分布式网络集群和文件系统经验，曾运行过多种分布式文件系统，包括extremeFS、mooseFS、HDFS等。
+   - Jeff Darcy拥有丰富的分布式网络集群和文件系统经验，曾运行过多种分布式文件系统，包括extremeFS、mooseFS、HDFS等。
 
 4. **Gluster工作原理**：
    - Gluster的核心概念是“翻译器”，它接收I/O请求并转换为相同的I/O请求形式。

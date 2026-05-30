@@ -1,18 +1,25 @@
 ---
-title: "Ceph Orchestrator Meeting 2021-08-24"
-date: 2021-08-24
-updated: 2021-08-25
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-08-24
+subtitle: Ceph_Orchestrator_Meeting_2021-08-24
+tags:
+- Ceph
+- Orchestrator
+- Integration Testing
+- Async SSH
+- Cephadm
+title: "Ceph Orchestrator Meeting 2021-08-24"
+updated: 2021-08-25
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概述
-本次会议为每周一次的Orchestrator会议，主要内容包括两个项目的更新报告。会议由主持人开场，随后分别由Aaron和Melissa进行项目进展的展示。
+本次会议为每周一次的Ceph Orchestrator会议，主要内容包括两个项目的更新报告。会议由主持人开场，随后分别由Aaron和Melissa进行项目进展的展示。
 
 #### 第一个项目：Aaron的周二项目更新
 - **项目背景**：Aaron介绍了他在过去几个月中致力于开发一个新的集成测试框架，使用Jacqueline语言来确保Orchestrator操作的安全性。

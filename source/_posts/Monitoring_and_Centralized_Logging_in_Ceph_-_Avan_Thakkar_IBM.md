@@ -1,22 +1,28 @@
 ---
-title: "Monitoring and Centralized Logging in Ceph - Avan Thakkar, IBM"
+title: "  Monitoring and Centralized Logging in Ceph - Avan Thakkar, IBM  "
 date: 2023-05-05
 updated: 2023-05-05
 tags:
+- Ceph
+- Monitoring
+- Centralized Logging
+- Prometheus
+- Grafana
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Monitoring_and_Centralized_Logging_in_Ceph_-_Avan_Thakkar_IBM
 ---
+
 
 
 ### 会议纪要
 
 #### 会议概述
-本次会议由IBM软件工程师主持，讨论了Chef中的监控和集中式日志系统，以及它们在Ceph Dashboard中的集成。由于一些参会者因签证问题未能出席，会议由主持人独自进行。
+本次会议由IBM软件工程师Avan Thakkar主持，讨论了Ceph中的监控和集中式日志系统，以及它们在Ceph Dashboard中的集成。由于部分参会者因签证问题未能出席，会议由主持人独自进行。
 
 #### 关键细节
 - **主持人背景**：IBM软件工程师，拥有三年Ceph维护经验，参与过Ceph Dashboard的监控和安全管理模块，近期贡献于Rook项目。
-- **监控的重要性**：监控帮助跟踪集群的健康和性能，确保可靠性和可扩展性，便于故障排查。
+- **监控的重要性**：监控对于跟踪集群的健康和性能至关重要，确保高可用性和可扩展性，并便于故障排查。
 
 #### 讨论的主要议题
 - **监控工具**：
@@ -37,4 +43,4 @@ subtitle: tech
 - **监控和日志系统的持续优化**：根据用户反馈和需求，不断优化监控和日志系统的功能和性能。
 
 #### 会议总结
-本次会议详细讨论了Chef中的监控和集中式日志系统的当前状态和未来改进计划。通过引入新的Prometheus exporter和升级Loki版本，旨在提高系统的性能和易用性。会议最后，主持人准备接受任何问题和反馈，以便进一步优化系统。
+本次会议详细讨论了Ceph中的监控和集中式日志系统的当前状态和未来改进计划。通过引入新的Prometheus exporter和升级Loki版本，旨在提高系统的性能和易用性。会议最后，主持人准备接受任何问题和反馈，以便进一步优化系统。

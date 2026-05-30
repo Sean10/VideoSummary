@@ -1,29 +1,41 @@
 ---
-title: "Ceph Performance Meeting 2023-03-30"
-date: 2023-04-05
-updated: 2023-04-06
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-04-05
+subtitle: Ceph_Performance_Meeting_2023-03-30
+tags:
+- Ceph
+- 分布式存储
+- 性能优化
+- CRUSH算法
+- 高可用性
+- 可伸缩性
+- 对象存储
+- 块存储
+- 文件系统存储
+- 一致性
+- 去中心化
+title: Ceph Performance Meeting 2023-03-30
+updated: 2023-04-06
 ---
+
 
 
 ### 会议纪要
 
-**会议主题：** 性能会议
+**会议主题：** Ceph 性能会议
 **日期：** 2023年3月30日
 **主持人：** Marcus
 
 #### 关键细节：
-1. **新PR介绍：** 新增了一个零API到RW Casey，目的是创建一个没有后端存储的REST API，用于隔离HTTP前端的基准测试，优化Boost前端，并对比HTTP/3前端的工作。
+1. **新PR介绍：** 介绍了新增的零API到RW Casey，旨在创建一个无后端存储的REST API，用于隔离HTTP前端基准测试，优化Boost前端，并对比HTTP/3前端的工作。
 2. **性能优化：**
    - Mark Kogan进行了一些初步的HS基准测试，显示了较好的改进。
-   - 针对Beast前端的SSL连接开销进行了讨论，特别是高负载或多客户端情况下的瓶颈。
+   - 讨论了Beast前端的SSL连接开销，特别是在高负载或多客户端情况下的瓶颈。
 3. **其他更新PR：**
    - 推进了Mark提出的booster accumulation想法，旨在批量处理键值存储更新，以提高整体吞吐量。
    - 解决了BlueFS的碎片问题，相关方法已批准，等待QA。
-   - 新的Crimson性能套件表现良好，可以开始收集数据并与Amazon进行比较。
+   - 新的Crimson性能套件表现良好，可开始收集数据并与Amazon进行比较。
    - 更新了M clock恢复和backfill成本，特别是在小对象工作负载下的性能改进。
 4. **会议工具变更：** 从下周开始，会议将切换到Jitsi进行。
 

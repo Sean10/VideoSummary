@@ -1,13 +1,17 @@
 ---
-title: "Crimson Project Updates | Ceph Days London 2024"
+title: "  Crimson Project Updates | Ceph Days London 2024  "
 date: 2024-08-23
 updated: 2024-08-24
 tags:
+- [Ceph]
+- [Crimson 项目]
+- [分布式存储]
+- [性能优化]
+- [异步编程]
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Crimson_Project_Updates_Ceph_Days_London_2024
 ---
-
 
 
 **会议纪要**
@@ -24,13 +28,12 @@ subtitle: tech
 
 **一、Crimson项目背景**
 
-* 随着存储技术的发展，从硬盘到NVMe，存储速度和吞吐量有了显著提升。
-* 传统Ceph架构在处理高吞吐量存储设备时，存在CPU开销大的问题。
-* Crimson项目旨在优化Ceph架构，提高CPU效率，更好地利用新型存储设备。
+* 随着存储技术的发展，从硬盘到NVMe，存储速度和吞吐量显著提升，对CPU效率提出了更高要求。
+* 传统Ceph架构在处理高吞吐量存储设备时，存在CPU开销大的问题，Crimson项目旨在优化此问题。
 
 **二、Crimson项目核心思想**
 
-* Crimson项目采用异步编程模型，避免线程切换带来的开销。
+* 采用异步编程模型，避免线程切换带来的开销。
 * 使用Sear框架实现异步编程，提高CPU效率。
 * 采用单线程每核心架构，避免线程间的竞争和同步开销。
 

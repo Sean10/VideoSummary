@@ -1,12 +1,19 @@
 ---
-title: "Ceph Crimson/Seastore Meeting 2022-11-30"
-date: 2022-12-02
-updated: 2022-12-03
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-12-02
+subtitle: Ceph_Crimson_Seastore_Meeting_2022-11-30
+tags:
+- Ceph
+- 代码审查
+- 性能优化
+- 分布式存储
+- 功能实现
+title: "Ceph Crimson/Seastore Meeting 2022-11-30"
+updated: 2022-12-03
 ---
+
+
 
 
 ### 会议纪要
@@ -18,6 +25,7 @@ subtitle: tech
 1. **代码审查和功能迁移**
    - 上周主要进行了代码审查工作。
    - 计划迁移Oh Map功能，并推进Split Protocol V2 Messenger和Handshake的开发。
+   - 讨论了在对象存储接口添加注释的必要性。
 
 2. **性能回归问题**
    - 发现共享存储支持下的性能有所下降，目前正在解决这一问题。
@@ -35,7 +43,7 @@ subtitle: tech
 - 继续推进Split Protocol V2 Messenger和Handshake的开发。
 - 解决共享存储支持下的性能回归问题。
 - 完成Picture Remove代码的调试和单元测试，并提交PR进行审查。
-- 探讨并实现缓存数据提升功能，评估其对性能的影响和重要性。
+- 探讨并实现缓存数据提升功能，评估其对性能的影响，并考虑架构上的调整。
 
 #### 后续行动计划
 - 完成Oh Map功能的迁移工作。

@@ -1,12 +1,19 @@
 ---
-title: "2020-05-14 :: Ceph Performance Meeting"
-date: 2020-05-14
-updated: 2020-05-15
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-05-14
+subtitle: 2020-05-14_-_-_Ceph_Performance_Meeting
+tags:
+- Ceph
+- RocksDB
+- BlueStore
+- Performance Testing
+- PR Review
+title: "'2020-05-14 :: Ceph Performance Meeting'"
+updated: 2020-05-15
 ---
+
+
 
 
 ### 会议纪要
@@ -14,15 +21,14 @@ subtitle: tech
 #### 主要议题与讨论内容
 
 1. **RocksDB 升级**
-   - 讨论了升级到最新版本的 RocksDB，该版本包含多项修复，包括数据损坏修复和崩溃启动修复。
-   - 预计会有性能提升，特别是迭代器速度和缓存改进。
-   - 决定由 Keefe 使用新的 Jenkins PvP 测试框架进行测试，即使性能有所提升或下降，也倾向于升级以获得修复。
+   - 讨论了升级到最新版本的 RocksDB，包括数据损坏修复和崩溃启动修复等多项修复，预期将提升性能，尤其是迭代器速度和缓存改进。
+   - Keefe 将使用新的 Jenkins PvP 测试框架进行测试，即使性能有所波动，也倾向于升级以获得修复。
 
 2. **Classic OSD 测试脚本更新**
-   - Keefe 合并了用于经典 OSD 测试的脚本，现在可以使用 BlueStore 进行测试，这是一个积极的进展。
+   - Keefe 合并了用于经典 OSD 测试的脚本，现在支持使用 BlueStore 进行测试，这是一个积极的进展。
 
 3. **并行 Crush 计算**
-   - 关于平衡器的并行 Crush 计算 PR 被关闭，原因不明，可能是因为长时间无人审查。
+   - 平衡器的并行 Crush 计算 PR 被关闭，原因不明，可能是因为长时间无人审查。
 
 4. **更新 PR**
    - Adam 的 PR 更新，涉及 SEPA fest 测试，但由于 fest 测试未运行，具体效果不明。
@@ -48,6 +54,6 @@ subtitle: tech
 
 - 会议提前结束，团队成员将在下周再次集合，讨论新的进展和问题。
 
----
+
 
 **会议结束**

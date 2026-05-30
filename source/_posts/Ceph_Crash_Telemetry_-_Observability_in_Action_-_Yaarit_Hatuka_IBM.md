@@ -1,23 +1,29 @@
 ---
-title: "Ceph Crash Telemetry - Observability in Action - Yaarit Hatuka, IBM"
-date: 2023-05-05
-updated: 2023-05-05
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-05-05
+subtitle: Ceph_Crash_Telemetry_-_Observability_in_Action_-_Yaarit_Hatuka_IBM
+tags:
+- Ceph
+- Telemetry
+- Observability
+- Distributed Storage
+- Data Analysis
+title: "Ceph Crash Telemetry - Observability in Action - Yaarit Hatuka, IBM"
+updated: 2023-05-05
 ---
+
 
 
 ### 会议纪要
 
-**会议主题：** Telemetry 项目概述与讨论
+**会议主题：** Ceph Crash Telemetry 项目概述与讨论
 
 **会议时间：** [具体日期]
 
 **会议地点：** [具体地点]
 
-**主讲人：** Yarit（Telemetry 技术负责人）
+**主讲人：** Yaarit（Telemetry 技术负责人，IBM）
 
 **参会人员：** [列出主要参会人员]
 
@@ -26,10 +32,10 @@ subtitle: tech
 1. **Telemetry 项目概述**
    - **动机：** 了解社区中 Ceph 集群的分布、版本、存储容量、驱动模型以及用户体验等问题。
    - **架构：** Telemetry 模块允许集群匿名报告安装和配置数据，数据在后端聚合并通过公共仪表板（telemetry-public.sef.com）展示。
-   - **功能：** 自 2019 年 Mimic 版本引入以来，已有约 2500 个集群参与，报告了近 1 Exabyte 的存储容量。
+   - **功能：** 自 Mimic 版本引入以来，已有约 2500 个集群参与，报告了近 1 Exabyte 的存储容量。
 
 2. **数据报告与隐私**
-   - **默认设置：** Telemetry 报告默认关闭，用户需通过 CLI 命令（如 `ceph telemetry on`）或 Ceph 仪表板向导明确选择加入。
+   - **默认设置：** Telemetry 报告默认关闭，用户需通过 CLI 命令或 Ceph 仪表板向导明确选择加入。
    - **隐私保护：** 报告不包含敏感或识别信息，如用户名、主机名、对象名或内容。集群通过随机 UUID 标识，不报告 FSID，并剔除驱动序列 ID 和 IP 地址。
 
 3. **报告渠道与数据处理**
@@ -44,6 +50,8 @@ subtitle: tech
    - **增强用户可见性：** 考虑在公共仪表板中为用户提供特定视图，显示其集群的崩溃状态和修复信息。
    - **改进数据收集：** 继续添加新的数据收集项，并考虑用户的具体需求和反馈。
    - **提高项目可见性：** 在 Redmine 跟踪器顶部添加 Telemetry 链接，提高项目在社区中的知名度。
+   - **改进崩溃报告跟踪：** 考虑为用户提供更详细的集群崩溃报告跟踪和反馈机制。
+   - **扩展性能指标收集：** 考虑收集更多性能指标，以便更好地了解集群性能并优化 Telemetry 数据集。
 
 **会议结束：** [具体时间]
 
@@ -51,6 +59,8 @@ subtitle: tech
 - 继续优化 Telemetry 数据收集和处理流程。
 - 增强用户界面和报告功能，提高用户参与度。
 - 在社区中推广 Telemetry 项目，收集更多用户反馈和建议。
+- 探索新的数据收集项和性能指标，以改善 Telemetry 数据集。
+- 改进崩溃报告的跟踪和反馈机制，提高问题解决效率。
 
 **备注：**
 - 会议中提到的具体命令和链接需在实际操作中验证其准确性和可用性。

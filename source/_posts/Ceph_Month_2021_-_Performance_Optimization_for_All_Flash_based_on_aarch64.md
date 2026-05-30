@@ -1,12 +1,18 @@
 ---
-title: "Ceph Month 2021: Performance Optimization for All Flash based on aarch64"
+title: "  Ceph Month 2021: Performance Optimization for All Flash based on aarch64  "
 date: 2021-06-11
 updated: 2021-06-12
 tags:
+- Ceph
+- Performance Optimization
+- All Flash Storage
+- aarch64
+- Distributed Storage
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Month_2021_-_Performance_Optimization_for_All_Flash_based_on_aarch64
 ---
+
 
 
 ### 会议纪要
@@ -24,47 +30,36 @@ subtitle: tech
 #### 会议内容总结：
 
 1. **介绍与背景**
-   - Chenzon介绍了基于Oculus X46的Wolfram性能优化方案，该方案基于Queen Pong 920和Common 920平台。
-   - 强调了Queen Pong 920的核心配置，包括32、48和64核心，以及Prolink技术（2.6或3 GHz）。
-
-2. **技术架构与硬件**
+   - Chenzon介绍了基于Oculus X46的Wolfram性能优化方案，重点介绍了Queen Pong 920和Common 920平台的核心配置，包括32、48和64核心，以及2.6或3 GHz的Prolink技术。
    - 讨论了基于Cranbone芯片的技术架构，包括Tesla硬件的高质量CPU、SSD等。
-   - 提到了在Openonline平台上进行的测试，优化了CPU使用和并发槽数量。
+   - 在Openonline平台上进行了测试，优化了CPU使用和并发槽数量。
 
-3. **性能优化措施**
+2. **性能优化措施**
    - 通过中断核心绑定、MTU调整和TCP参数调整优化了网络性能。
    - 进行了IO性能优化，包括使用34页大小和opt message clc 32c。
    - 测试了4k和54k的优化效果，显示了显著的性能提升和延迟降低。
 
-4. **多技术部署与优化**
+3. **多技术部署与优化**
    - 讨论了多技术部署，包括DDR多通道部署和消息加载槽的优化。
    - 强调了数据流在同一NUMA节点内的完整性，以提高数据处理效率。
 
-5. **后续行动计划**
+4. **后续行动计划**
    - 计划进一步测试和优化，包括对4k和64k页面大小的进一步测试。
    - 考虑将优化措施自动化，以便在不同配置下自动调整性能。
 
 #### 讨论与问题：
-
 - **CPU分区与线程管理**：讨论了CPU分区的概念，以及是否可以自动进行线程管理以优化性能。
 - **页面大小与内存管理**：讨论了页面大小对性能的影响，以及如何减少内存浪费。
 - **RocksDB与CRC校验**：讨论了RocksDB的CRC校验问题，以及是否应将其包含在未来的版本中。
 
 #### 决定事项：
-
 - 将继续进行性能测试和优化，特别是在不同页面大小和配置下的测试。
 - 考虑将某些优化措施自动化，以简化配置和管理。
 
 #### 后续行动：
-
 - 发送详细的CPU分区设置指南给相关团队。
 - 提交页面大小优化的补丁或拉取请求。
 - 考虑将RocksDB的CRC校验修复包含在未来的版本中。
 
 #### 会议结束：
-
 - 会议在感谢Chenzon和Kevin的贡献后结束，准备进行下一场演讲。
-
----
-
-以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

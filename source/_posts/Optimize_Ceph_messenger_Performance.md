@@ -1,12 +1,19 @@
 ---
-title: "Optimize Ceph messenger Performance"
-date: 2022-11-15
-updated: 2022-11-15
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-11-15
+subtitle: Optimize_Ceph_messenger_Performance
+tags:
+- Ceph 性能优化
+- 分布式存储
+- Crimson 与 Seastar
+- LSE 技术应用
+- 多工作负载平衡
+title: "Optimize Ceph messenger Performance"
+updated: 2022-11-15
 ---
+
+
 
 
 ### 会议纪要
@@ -14,14 +21,12 @@ subtitle: tech
 #### 关键细节与讨论议题
 
 1. **APK vs TCP 性能优化**
-   - 讨论了APK与TCP在性能优化方面的比较。
-   - 进行了压缩测试，使用了Snappy压缩算法。
-   - 结果显示，RDMA在某些测试中并未显示出比TCP明显的优势。
+   - 会议讨论了APK与TCP在性能优化方面的比较，并进行了压缩测试，使用了Snappy压缩算法。
+   - 结果表明，RDMA在某些测试中并未显示出比TCP明显的优势。
 
 2. **Crimson与Seastar集成问题**
-   - 讨论了启用Crimson与Seastar时遇到的一些问题。
-   - 测试了经典OSD消息的处理，使用了RDMA作为公共网络，TCP作为集群网络。
-   - 发现了一些网络配置和性能问题，特别是在高并发情况下。
+   - 讨论了启用Crimson与Seastar时遇到的一些问题，特别是在经典OSD消息处理时。
+   - 使用RDMA作为公共网络，TCP作为集群网络，测试中发现了一些网络配置和性能问题。
 
 3. **LSE（Large System Extensions）优化**
    - 介绍了LSE在8.1版本中的新特性，如何在L1缓存中加载和修改原子变量以减少缓存一致性成本。
@@ -36,8 +41,8 @@ subtitle: tech
    - 通过动态选择数据大小，优化了性能。
 
 6. **Ceph消息处理优化**
-   - 讨论了Ceph消息处理的一些优化措施，包括使用RDMA和TCP的比较。
-   - 发现了一些网络配置和性能问题，特别是在高并发情况下。
+   - 讨论了Ceph消息处理的优化措施，包括使用RDMA和TCP的比较。
+   - 发现了一些网络配置和性能问题，尤其是在高并发情况下。
 
 #### 决定事项
 
@@ -58,7 +63,7 @@ subtitle: tech
 #### 其他讨论
 
 - 讨论了Ceph消息处理的一些优化措施，包括使用RDMA和TCP的比较。
-- 发现了一些网络配置和性能问题，特别是在高并发情况下。
+- 发现了一些网络配置和性能问题，尤其是在高并发情况下。
 
 #### 结论
 
@@ -83,6 +88,3 @@ subtitle: tech
 
 - 会议结束前，进行了提问环节，讨论了一些具体的技术问题和建议。
 
----
-
-以上是本次会议的纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

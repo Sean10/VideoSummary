@@ -1,27 +1,33 @@
 ---
-title: "Ceph Performance Meeting 2022-01-20"
-date: 2022-01-20
-updated: 2022-01-21
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-01-20
+subtitle: Ceph_Performance_Meeting_2022-01-20
+tags:
+- Ceph
+- 性能测试
+- Quincy 版本
+- 存储优化
+- 故障恢复
+title: "Ceph Performance Meeting 2022-01-20"
+updated: 2022-01-21
 ---
+
 
 
 ### 会议纪要
 
 #### 关键细节
-- **Ceph Quincy 版本准备**：团队正在为 Quincy 版本的发布做准备，重点是完成各项任务和修复 bug。
-- **合并的修复**：
-  - 解决了 RGW（RADOS Gateway）的 bucket loading 统计问题。
-  - 优化了 shared blob fsck 的内存使用，使其更加高效。
+- **Ceph Quincy 版本准备**：团队正在为 Quincy 版本的发布做准备，重点关注任务完成和 bug 修复。
+- **已合并的修复**：
+  - 解决了 RGW 的 bucket loading 统计问题。
+  - 优化了 shared blob fsck 的内存使用。
 - **PR 更新**：
   - 简化了 pinning logic 和 blue store cache 的 PR 更新。
-  - 针对 FreeBSD 的 huge page based read buffers 问题进行了修复，等待测试反馈。
-  - 优化 PG（Placement Group）移除的 PR 更新。
+  - 修复了 FreeBSD 的 huge page based read buffers 问题，等待测试反馈。
+  - 优化了 PG 移除的 PR 更新。
 - **性能测试**：
-  - 正在进行 Quincy 版本的性能测试，主要集中在 Pacific 版本的测试上。
+  - 正在进行 Quincy 版本的性能测试，主要针对 Pacific 版本。
   - 决定跳过 iSCSI 测试，因为其重要性不高。
   - 讨论了是否继续在大规模测试中收集性能指标，初步决定可能禁用部分测试的性能指标收集。
 
@@ -43,6 +49,3 @@ subtitle: tech
 #### 其他事项
 - 提到了正在进行的大规模测试，使用了一个包含 975 个 OSD 的集群，以覆盖更多的测试场景。
 - 鼓励团队成员如果有任何测试需求或问题，及时与核心团队沟通。
-
-### 结论
-会议主要围绕 Quincy 版本的准备工作和性能测试进行讨论，团队成员正在努力确保版本的稳定性和性能。会议结束时，鼓励大家继续专注于任务，并保持沟通，确保所有问题和需求得到及时处理。

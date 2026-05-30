@@ -1,12 +1,21 @@
 ---
-title: "Ceph Crimson/SeaStore 2021-10-20"
+title: "  Ceph Crimson/SeaStore 2021-10-20  "
 date: 2021-10-21
 updated: 2021-10-22
 tags:
+- Ceph
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可伸缩性
+- 物理存储
+- 块存储
+- 文件系统存储
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Crimson_SeaStore_2021-10-20
 ---
+
 
 
 ### 会议纪要
@@ -57,7 +66,3 @@ subtitle: tech
 #### 会议结束
 - 会议在确认所有议题讨论完毕后结束。
 - 祝愿所有参与者有一个愉快的一周。
-
----
-
-以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

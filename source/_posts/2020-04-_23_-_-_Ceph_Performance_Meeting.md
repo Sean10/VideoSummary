@@ -1,12 +1,19 @@
 ---
-title: "2020-04- 23 :: Ceph Performance Meeting"
-date: 2020-04-29
-updated: 2020-04-30
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-04-29
+subtitle: 2020-04-_23_-_-_Ceph_Performance_Meeting
+tags:
+- Ceph
+- Performance Testing
+- Distributed Storage
+- BlueStore
+- RocksDB
+title: "'2020-04- 23 :: Ceph Performance Meeting'"
+updated: 2020-04-30
 ---
+
+
 
 
 ### 会议纪要
@@ -14,33 +21,28 @@ subtitle: tech
 #### 主要议题与讨论内容
 
 1. **Ceph PR更新**
-   - 本周有一个新的PR，涉及改进Ceph的测试基础设施，以减少由于随机变异导致的测试结果失败。
-   - 关闭的两个PR包括：使用全带宽进行填充和合并Keef的PR，后者移除了NVMe设备中的data buffman pool，据称这是一个性能改进。
+   - 本次会议讨论了Ceph项目的多个PR，包括改进测试基础设施的PR，旨在减少因随机变异导致测试失败的几率。还讨论了关闭的PR，比如使用全带宽进行填充和合并Keef的PR，后者移除了NVMe设备中的data buffman pool，据称这是一个性能改进。
 
 2. **BlueStore与Allocator讨论**
-   - 讨论了关于BlueStore在Alex的设置中使用4K的问题，以及如何测试新的混合分配器。
-   - 计划随机切换分配器并进行测试，但此计划将推迟至后续讨论。
+   - 讨论了BlueStore在Alex的设置中使用4K的问题，以及如何测试新的混合分配器。计划随机切换分配器并进行测试，但该计划将推迟至后续讨论。
 
 3. **MDS目录预分割PR更新**
-   - 更新了MDS目录预分割的PR，收到了反馈，建议减少添加的12字节，可能会减少到1字节，但会牺牲一些功能。
+   - 更新了MDS目录预分割的PR，收到反馈后建议减少添加的12字节，可能会减少到1字节，但会牺牲一些功能。
 
 4. **性能改进与PR更新**
-   - Margie和ping的PR进行了讨论，涉及通过不减少线程或分片来提高性能的简单修复。
-   - Adam的RocksDB分片PR也进行了更新。
+   - 讨论了Margie和ping的PR，涉及通过不减少线程或分片来提高性能的简单修复。同时，Adam的RocksDB分片PR也进行了更新。
 
 5. **Ceph CI性能CI更新**
-   - 讨论了Ceph CI性能CI的进展，包括启用非经典OSD设置的测试。
-   - 讨论了硬件资源的分配和使用，包括可能的重用Smitty机器和Jenkins节点的重新分配。
+   - 讨论了Ceph CI性能CI的进展，包括启用非经典OSD设置的测试。同时，讨论了硬件资源的分配和使用，包括可能的重用Smitty机器和Jenkins节点的重新分配。
 
 6. **Jenkins与性能测试**
-   - 讨论了如何在Jenkins中集成更多性能测试，包括使用FIO和Rados bench等工具。
-   - 讨论了如何处理硬件资源的争用问题，包括使用标签和预定的调度策略。
+   - 讨论了如何在Jenkins中集成更多性能测试，包括使用FIO和Rados bench等工具。同时，讨论了如何处理硬件资源的争用问题，包括使用标签和预定的调度策略。
 
 #### 决定事项
 
-- 将继续推进Ceph的测试基础设施改进，特别是在减少测试结果的变异性方面。
-- 将考虑在Jenkins中集成更多的性能测试，特别是使用FIO和Rados bench。
-- 将探索硬件资源的更有效分配，包括可能的重用现有机器和优化测试流程。
+- 继续推进Ceph的测试基础设施改进，特别是在减少测试结果的变异性方面。
+- 考虑在Jenkins中集成更多的性能测试，特别是使用FIO和Rados bench。
+- 探索硬件资源的更有效分配，包括可能的重用现有机器和优化测试流程。
 
 #### 后续行动计划
 

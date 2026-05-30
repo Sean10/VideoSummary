@@ -1,21 +1,25 @@
 ---
-title: "2020-01-21 :: Ceph Testing Meeting"
+title: "  2020-01-21 :: Ceph Testing Meeting  "
 date: 2020-01-23
 updated: 2020-01-24
 tags:
+- [Ceph测试]
+- [版本升级]
+- [安全更新]
+- [Jenkins流程]
+- [openSUSE支持]
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: 2020-01-21_-_-_Ceph_Testing_Meeting
 ---
-
 
 ### 会议纪要
 
 #### 关键细节
-- **Ceph版本迁移**: 会议讨论了从CentOS 7迁移到CentOS 8的测试环境，以及相关的失败问题。
-- **Luminous版本**: 讨论了Luminous版本的测试和发布，强调了尽快完成该版本的必要性。
-- **安全更新**: 提到了即将发布的Nautilus版本的安全更新，包括两个CVE（Common Vulnerabilities and Exposures）。
-- **Jenkins流程改进**: 讨论了Jenkins发布流程的改进，特别是关于如何处理分支和发布的问题。
+- **Ceph版本迁移**: 会议讨论了从CentOS 7迁移到CentOS 8的测试环境，并指出在迁移过程中存在的失败问题，特别是在下游测试中。
+- **Luminous版本**: 强调了尽快完成Luminous版本的测试和发布的重要性，并讨论了如何处理在测试中发现的打包问题。
+- **安全更新**: 提到了即将发布的Nautilus版本的两个CVE，并讨论了热修复流程。
+- **Jenkins流程改进**: 讨论了Jenkins发布流程的改进，包括如何处理分支和发布的问题。
 - **openSUSE支持**: 讨论了在Sepia中支持openSUSE 15.1的进展，包括内核任务的更新和测试。
 
 #### 讨论的主要议题

@@ -1,18 +1,26 @@
 ---
-title: "Ceph Orchestrator Meeting 2021-03-30"
-date: 2021-03-30
-updated: 2021-03-31
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-03-30
+subtitle: Ceph_Orchestrator_Meeting_2021-03-30
+tags:
+- Ceph
+- Orchestrator
+- Storage
+- Distributed Storage
+- CephFS
+title: "Ceph Orchestrator Meeting 2021-03-30"
+updated: 2021-03-31
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概要
-本次会议主要讨论了Ceph存储系统的几个关键议题，包括网络配置、虚拟IP服务、NFS服务的配置和管理，以及Ceph Dashboard的发展路线图。会议还涉及了Ceph与Rook集成的具体问题，以及如何优化NFS和RGW服务的部署和管理。
+
+本次Ceph Orchestrator会议主要讨论了Ceph存储系统的关键议题，包括网络配置、虚拟IP服务、NFS服务的配置和管理，以及Ceph Dashboard的发展路线图。会议还涉及了Ceph与Rook集成的具体问题，以及如何优化NFS和RGW服务的部署和管理。
 
 #### 主要议题
 
@@ -26,7 +34,7 @@ subtitle: tech
 
 3. **NFS服务配置**
    - 讨论了NFS服务的配置问题，特别是RGW块在NFS配置中的必要性和如何与Rook集成。
-   - 决定将RGW配置提升到 orchestrator 层，以便于统一管理和避免在Rook和Cephadm中的重复配置。
+   - 决定将RGW配置提升到orchestrator层，以便于统一管理和避免在Rook和Cephadm中的重复配置。
 
 4. **Ceph Dashboard发展**
    - 讨论了Ceph Dashboard的发展路线图，特别是在即将到来的CDS会议中的讨论安排。
@@ -36,14 +44,14 @@ subtitle: tech
 
 - 合并`list networks`和`gather facts`命令的功能。
 - 扩展VIP服务的放置规范，以简化其配置和管理。
-- 将RGW配置提升到 orchestrator 层，以统一管理和避免重复。
+- 将RGW配置提升到orchestrator层，以统一管理和避免重复。
 - 在即将到来的CDS会议中安排关于Ceph Dashboard的讨论。
 
 #### 后续行动计划
 
 - 实施`list networks`和`gather facts`命令的合并。
 - 开发和测试VIP服务的扩展放置规范。
-- 在 orchestrator 层实现RGW配置的管理。
+- 在orchestrator层实现RGW配置的管理。
 - 准备在CDS会议中关于Ceph Dashboard的讨论材料。
 
 #### 其他讨论点

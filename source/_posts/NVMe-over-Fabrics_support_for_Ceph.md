@@ -1,13 +1,19 @@
 ---
-title: "NVMe-over-Fabrics support for Ceph"
+title: " NVMe-over-Fabrics support for Ceph "
 date: 2022-11-23
 updated: 2022-11-24
 tags:
+- Ceph
+- NVMe
+- over
+- Fabrics
+- Storage
+- Distributed Storage
+- CephFS
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: NVMe-over-Fabrics支持在Ceph中的实现
 ---
-
 
 ### 会议纪要
 
@@ -22,18 +28,17 @@ subtitle: tech
 **会议内容总结：**
 
 1. **背景介绍：**
-   - Jonas Pfefferle 和 Scott Bauer 介绍了他们在 Ceph 中实现 NVMe over Fabrics 支持的工作。
-   - 强调了这是一个社区合作项目，多家公司参与其中。
+   - Jonas Pfefferle 和 Scott Bauer 介绍了 NVMe over Fabrics 在 Ceph 中的支持工作，强调这是一个社区合作项目，多家公司参与其中。
 
 2. **NVMe over Fabrics 的重要性：**
-   - 解释了为什么需要在 Ceph 中支持 NVMe over Fabrics，包括行业标准的使用、生态系统的兼容性以及利用 DPUs 等硬件优势。
+   - 解释了支持 NVMe over Fabrics 的原因，包括行业标准的使用、生态系统的兼容性以及利用 DPUs 等硬件优势。
 
 3. **架构概述：**
    - 展示了从 NVMe initiators 到 Ceph 集群的高层次架构图，介绍了 Ceph NVMe over Fabrics Gateway 组件。
    - 讨论了 Gateway 的部署方式，可以是独立节点或与 OSDs 共存。
 
 4. **技术细节：**
-   - 详细介绍了 Gateway 的工作原理，包括使用 SPDK（Storage Performance Development Kit）处理数据路径。
+   - 详细介绍了 Gateway 的工作原理，包括使用 SPDK 处理数据路径。
    - 讨论了控制路径的配置，包括使用 gRPC API 进行配置管理和持久化配置。
 
 5. **演示环节：**
@@ -65,6 +70,6 @@ subtitle: tech
 **附件：**
 - 会议演示文稿和相关链接已上传至 Etherpad。
 
----
+
 
 以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

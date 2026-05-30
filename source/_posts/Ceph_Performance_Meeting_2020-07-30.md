@@ -1,18 +1,24 @@
 ---
-title: "Ceph Performance Meeting 2020-07-30"
+title: "  Ceph Performance Meeting 2020-07-30  "
 date: 2020-07-30
 updated: 2020-07-31
 tags:
+- Ceph
+- Distributed Storage
+- Performance Optimization
+- BlueStore
+- MDS
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Performance_Meeting_2020-07-30
 ---
+
 
 
 ### 会议纪要
 
 #### 会议概述
-本次会议是自上次会议以来的几周后的定期会议，由于夏季，活动相对较慢。会议主要回顾了近期Ceph项目的开发进展，特别是关于RGW（RADOS Gateway）和MDS（Metadata Server）的改进。
+本次Ceph性能会议于2020年7月30日举行，由于正值夏季，会议进度相对较慢。会议主要回顾了近期Ceph项目的开发进展，重点讨论了RGW（RADOS Gateway）和MDS（Metadata Server）的改进。
 
 #### 主要议题
 1. **RGW改进**：
@@ -21,12 +27,12 @@ subtitle: tech
 
 2. **MDS改进**：
    - Majiang Ping提交了两个与BlueStore相关的PR，涉及小规模的改进。
-   - 一个关于MDS的PR已经合并，主要修复了在大量子树情况下的缓存修剪问题。
-   - 另一个PR涉及ceph-adm工具，改进了OSD的并行创建，显著提升了性能。
+   - 一个修复了在大量子树情况下的缓存修剪问题的MDS PR已合并。
+   - 另一个PR改进了ceph-adm工具，提升了OSD的并行创建性能。
 
 3. **性能优化**：
-   - Majiang Peng的另一个PR涉及启用RocksDB管道，可能带来性能提升。
-   - Radek和Mark正在研究MDS中的缓冲列表（buffer list）和环形缓冲区（ring buffers），以减少CPU使用和内存分配成本。
+   - Majiang Peng提交了一个PR，涉及启用RocksDB管道，可能带来性能提升。
+   - Radek和Mark正在研究MDS中的缓冲列表和环形缓冲区，以减少CPU使用和内存分配成本。
 
 #### 决定事项
 - 继续审查和测试所有新的和更新的PR。
@@ -44,6 +50,6 @@ subtitle: tech
 #### 结论
 会议强调了持续改进Ceph项目的重要性，特别是在性能优化和代码质量方面。团队将继续努力，以实现长期目标，即在不改变现有编码解码框架的情况下，提高MDS的效率。
 
----
+
 
 本次会议纪要由专业的存储领域分布式存储Ceph研发人员和视频会议字幕总结人员共同完成，确保了内容的准确性和专业性。

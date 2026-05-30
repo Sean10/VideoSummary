@@ -1,28 +1,33 @@
 ---
-title: "Ceph Performance Meeting 2020-09-10"
-date: 2020-09-11
-updated: 2020-09-11
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-09-11
+subtitle: Ceph_Performance_Meeting_2020-09-10
+tags:
+- Ceph
+- Distributed Storage
+- Performance Optimization
+- BlueStore
+- OSD
+title: "Ceph Performance Meeting 2020-09-10"
+updated: 2020-09-11
 ---
+
 
 
 ### 会议纪要
 
-#### 会议时间：[具体日期]
+#### 会议时间：2020-09-10
 #### 参会人员：Josh, Kifu, Igor 等
-
 #### 主要议题：
 1. **Ceph项目进展更新**
 2. **讨论和优化Ceph中的OSD异步恢复机制**
 3. **改进Ceph中的BlueStore删除流程**
 
 #### 讨论内容：
-- **Josh** 报告了关闭和合并的PR（Pull Request）情况，特别是关于off-monitor PR的进展。
-- **讨论了OSD异步恢复机制**，目前考虑保持默认设置，但仍有讨论空间。
-- **发现之前的测试可能因错误的crash规则导致结果不可靠**，需要等待进一步的测试结果。
+- **Josh** 报告了Ceph项目的PR进展，特别是关于off-monitor PR的关闭和合并情况。
+- **讨论了OSD异步恢复机制**，目前考虑保持默认设置，但仍需进一步讨论。
+- **发现测试结果可能因错误的crash规则导致结果不可靠**，需等待进一步测试结果。
 - **Kifu** 提到了优化BlueStore的PR，该PR曾被关闭后又重新打开，但目前没有新的进展。
 
 #### 重点讨论：
@@ -44,9 +49,3 @@ subtitle: tech
 #### 备注：
 - **Igor** 将分享他的测试结果和幻灯片，供团队成员进一步分析和讨论。
 - **会议时间** 已充分利用，下一次会议将继续深入讨论Ceph的优化和改进。
-
----
-
-**会议结束时间：[具体时间]**
-
-**下次会议预定时间：[具体日期和时间]**

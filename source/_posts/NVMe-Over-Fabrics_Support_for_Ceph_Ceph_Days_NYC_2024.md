@@ -1,26 +1,32 @@
 ---
-title: "NVMe-Over-Fabrics Support for Ceph | Ceph Days NYC 2024"
+title: " NVMe-Over-Fabrics Support for Ceph | Ceph Days NYC 2024 "
 date: 2024-05-24
 updated: 2024-05-24
 tags:
-categories:
-- "视频总结"
-subtitle: tech
+- Ceph
+- NVMe
+- oF
+- Storage Performance
+- Distributed Storage
+- Cloud Computing
 ---
 
+categories:
+- "视频总结"
+subtitle: NVMe-Over-Fabrics_Support_for_Ceph_Ceph_Days_NYC_2024
 
-### 会议纪要
+会议纪要
 
-#### 会议主题：NVMe over TCP 和 NVMe-oF Gateway 的集成与性能优化
+### 会议主题：NVMe over TCP 和 NVMe-oF Gateway 的集成与性能优化
 
-#### 会议时间：[具体时间]
+### 会议时间：[具体时间]
 
-#### 会议地点：[具体地点]
+### 会议地点：[具体地点]
 
-#### 参会人员：
+### 参会人员：
 - **Mike Burkhart** - IBM 产品经理，负责 NVMe over TCP 和 VMware 集成
 
-#### 会议内容概要：
+### 会议内容概要：
 
 1. **NVMe 驱动介绍**
    - NVMe 驱动具有高耐用性、并行处理能力和高度可扩展性。
@@ -56,17 +62,13 @@ subtitle: tech
 9. **VMware 集成**
    - 支持通过 VMware vSphere APIs for Storage Awareness (VASA) 进行存储加速和卸载。
 
-#### 决定事项：
+### 决定事项：
 - 确认 NVMe over TCP 作为下一代存储解决方案的技术优势和性能表现。
 - 继续推进与 VMware 的集成工作，优化存储性能和效率。
 
-#### 后续行动计划：
+### 后续行动计划：
 - 完成 NVMe over TCP 与现有 RBD 接口的完全映射。
 - 继续进行性能测试和优化，确保在不同工作负载下的稳定性和高效性。
 - 推进与 VMware 的深度集成，实现更高效的存储管理和优化。
 
-#### 会议结束时间：[具体时间]
-
----
-
-以上为本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。
+### 会议结束时间：[具体时间]

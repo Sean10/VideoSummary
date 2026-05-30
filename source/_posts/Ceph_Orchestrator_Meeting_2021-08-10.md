@@ -1,29 +1,35 @@
 ---
-title: "Ceph Orchestrator Meeting 2021-08-10"
-date: 2021-08-20
-updated: 2021-08-21
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-08-20
+subtitle: Ceph_Orchestrator_Meeting_2021-08-10
+tags:
+- Ceph
+- Orchestrator
+- Rook
+- CI/CD
+- Integration Testing
+title: "Ceph Orchestrator Meeting 2021-08-10"
+updated: 2021-08-21
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议主题：Orchestrator 会议
 
-#### 日期：[具体日期]
+#### 日期：2021年8月10日
 
 #### 参会人员：[具体人员名单]
 
 #### 主要议题：
 
 1. **Rook CI 中 Manager Rook 模块的测试**
-   - 讨论了如何在 Rook CI 中测试 Manager Rook 模块。
-   - 介绍了测试框架的使用，包括使用 Kubeadm、Minikube、Kcli 等工具设置固定集群。
-   - 强调了集成测试的重要性，特别是在 Rook 项目中自动检测潜在问题。
-   - 提出了未来测试的改进方向，特别是关于 OSD 的管理和创建。
+   - 讨论了在 Rook CI 中对 Manager Rook 模块的测试方法，包括使用 Kubeadm、Minikube、Kcli 等工具创建固定集群。
+   - 强调了集成测试的重要性，特别是在自动检测 Rook 项目中的潜在问题。
+   - 讨论了未来测试的改进方向，特别是关于 OSD 的管理和创建。
 
 2. **重置设计设置 OC Flex**
    - 讨论了在重启 OSD 时是否应设置 noout 标志。
@@ -47,7 +53,7 @@ subtitle: tech
 - 确认了在维护模式下设置 noout 的做法，并在一定时间后重置。
 - 提出了改进存储私钥的方法，但认为这不是最高优先级。
 - 确认了需要引入 YAML 文档来简化区域和区域组的创建。
-- 提出了关于本地存储操作符的需求和设计，以及是否需要创建新的操作符。
+- 提出了关于本地存储操作符的需求和设计，并决定是否需要创建新的操作符。
 
 #### 后续行动计划：
 
@@ -63,7 +69,3 @@ subtitle: tech
 #### 会议结束：
 
 - 会议在讨论完所有议题后结束，并安排了下次会议的时间。
-
----
-
-以上是本次 Orchestrator 会议的详细纪要，涵盖了会议的主要议题、决定事项和后续行动计划。

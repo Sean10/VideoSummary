@@ -1,11 +1,16 @@
 ---
-title: "2020-02-10 :: Ceph Orchestration Meeting"
-date: 2020-04-03
-updated: 2020-04-04
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-04-03
+subtitle: 2020-02-10_-_-_Ceph_Orchestration_Meeting
+tags:
+- Ceph
+- Orchestrator
+- CLI
+- Code Generation
+- Storage Management
+title: "'2020-02-10 :: Ceph Orchestration Meeting'"
+updated: 2020-04-04
 ---
 
 
@@ -15,20 +20,14 @@ subtitle: tech
 - Daniel
 
 #### 主要议题
-1. **Ceph Orchestrator CLI 的命名和使用问题**
-   - 讨论了关于Ceph Orchestrator（简称Orchestrator）的CLI命令的命名和使用问题。
-   - 讨论了是否可以使用缩写“orc”来替代“Orchestrator”，以及是否应该支持全称和缩写两种输入方式。
-   - 讨论了CLI命令的统一性和简化问题，提出了一些改进建议，如使用“service apply”和“demon add”等命令。
+1. **Ceph Orchestrator CLI的命名和使用问题**
+   - 讨论了Ceph Orchestrator的CLI命令命名和使用问题，包括是否使用缩写“orc”以及命令的统一性和简化。
+   - 讨论了代码生成文件的管理问题，特别是是否应该将生成的文件存储在Git仓库中，以及依赖外部仓库或第三方工具来管理。
+   - 讨论了CLI命令的具体实现，如“service apply”和“demon add”等命令的实现细节，以及如何处理不同服务类型的命令和简化命令的使用。
 
-2. **代码生成和存储库管理问题**
-   - 讨论了代码生成文件的管理问题，特别是是否应该将生成的文件存储在Git仓库中。
-   - 讨论了是否应该依赖外部仓库或第三方工具来管理这些生成的文件。
-   - 提出了一些解决方案，如将生成的Python类文件存储在仓库中，或者使用外部工具来管理。
-
-3. **CLI命令的具体实现和改进**
-   - 讨论了CLI命令的具体实现，如“service apply”和“demon add”等命令的实现细节。
-   - 讨论了如何处理不同服务类型的命令，以及如何简化命令的使用。
-   - 提出了一些改进建议，如统一命令的参数命名，简化命令的使用等。
+2. **CLI命令的具体实现和改进**
+   - 讨论了如何统一命令的参数命名，简化命令的使用，以及如何处理不同服务类型的命令。
+   - 提出了一些改进建议，如使用“service apply”和“demon add”等命令来统一和简化操作。
 
 #### 决定事项
 1. **CLI命令的命名和使用**

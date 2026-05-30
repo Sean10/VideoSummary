@@ -1,12 +1,18 @@
 ---
-title: "2020-Jan-23 :: Ceph Tech Talk - Ceph for Storing MeerKAT Radio Telescope Data"
+title: "  2020-Jan-23 :: Ceph Tech Talk - Ceph for Storing MeerKAT Radio Telescope Data  "
 date: 2020-02-12
 updated: 2020-02-12
 tags:
+- [Ceph]
+- [MeerKAT]
+- [射电望远镜]
+- [数据存储]
+- [分布式存储系统]
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: 2020-Jan-23_-_-_Ceph_Tech_Talk_-_Ceph_for_Storing_MeerKAT_Radio_Telescope_Data
 ---
+
 
 
 ### 会议纪要
@@ -18,7 +24,7 @@ subtitle: tech
 - **会议形式**: 在线会议
 
 #### 会议内容概述
-Thomas Bennett在会议上介绍了南非的MeerKAT射电望远镜及其数据存储解决方案，特别是Ceph分布式存储系统的应用。他详细讨论了MeerKAT望远镜的科学应用、数据处理流程以及Ceph在其中的角色。
+Thomas Bennett在会议上分享了南非MeerKAT射电望远镜的数据存储解决方案，重点介绍了Ceph分布式存储系统的应用。他详细讨论了MeerKAT的科学应用、数据处理流程以及Ceph在其中的关键角色。
 
 #### 关键细节
 1. **MeerKAT射电望远镜**:

@@ -1,18 +1,25 @@
 ---
-title: "Ceph Orchestrator Meeting 2020-07-13"
-date: 2020-07-13
-updated: 2020-07-14
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-07-13
+subtitle: Ceph_Orchestrator_Meeting_2020-07-13
+tags:
+- Ceph
+- Orchestrator
+- Rook
+- Integration Test
+- Container Images
+title: "Ceph Orchestrator Meeting 2020-07-13"
+updated: 2020-07-14
 ---
+
+
 
 
 ### 会议纪要
 
-**会议时间：** [具体日期]  
-**参会人员：** Fezzik, Travis, Oh, Mike, 以及其他相关人员  
+**会议时间：** 2020年7月13日  
+**参会人员：** Fezzik, Travis, Oh, Mike, Karen Norma 以及其他相关人员  
 **会议主持：** [主持人姓名]  
 
 #### 主要议题及讨论内容：
@@ -43,7 +50,7 @@ subtitle: tech
    - Karen将专注于Ceph ADM和安装程序的文档，以及与Orchestrator相关的部分。
    - 后续行动：与Karen建立联系，提供必要的资源和支持。
 
-6. **其他事项**
+6. **SEF ADM安装指南**
    - 讨论了SEF ADM安装指南的编写，建议与现有文档进行整合。
    - 后续行动：安排会议，讨论具体细节。
 

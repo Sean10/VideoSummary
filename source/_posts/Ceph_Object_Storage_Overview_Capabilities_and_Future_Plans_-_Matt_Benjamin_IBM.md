@@ -1,22 +1,32 @@
 ---
-title: "Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM"
-date: 2023-05-05
-updated: 2023-05-05
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-05-05
+subtitle: Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM
+tags:
+- Ceph
+- Object Storage
+- Distributed Storage
+- RGW
+- CephFS
+- BlueStore
+- BlueFS
+- RocksDB
+title: "Ceph Object Storage Overview, Capabilities and Future Plans - Matt Benjamin, IBM"
+updated: 2023-05-05
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概述
-本次会议由Matt Benjamin主持，他目前担任IBM的Program Director，负责Seth对象存储项目。会议主要讨论了Seth对象存储的能力、路线图和未来计划。
+本次会议由IBM的Program Director Matt Benjamin主持，主要讨论了Ceph对象存储的能力、路线图和未来计划。
 
 #### 主要议题
 1. **Seth对象存储的能力**
-   - **RGW (RADOS Gateway)** 是一个高保真的S3和Swift兼容的HTTP对象存储，构建在Ceph集群之上。
+   - **RGW (RADOS Gateway)** 作为Ceph集群之上的S3和Swift兼容的HTTP对象存储，具备高保真度。
    - 主要能力包括：
      - 单集群容量可达数百PB。
      - 支持数十万个S3桶或容器。
@@ -24,24 +34,23 @@ subtitle: tech
      - 动态桶索引缩放。
 
 2. **近期开发和改进**
-   - 过去两年中，对多站点复制能力进行了大规模重构和重写，以提高规模和鲁棒性。
+   - 重构和重写了多站点复制能力，提高规模和鲁棒性。
    - 实现了S3 Select，支持结构化数据操作。
-   - 对内部API进行了重大重构，称为“Zipper”。
+   - 重构内部API为“Zipper”。
    - 支持所有Amazon兼容的加密API。
    - 将计算密集型操作从索引存储移至RADOS上的队列操作。
 
 3. **未来计划和路线图**
-   - 计划在2023年及以后更新C++20协程。
+   - 更新C++20协程。
    - 增强多站点复制功能，包括并行同步和同步公平性。
-   - 开发S3 Inventory，一种预生成的桶列表。
-   - 开发D4N缓存层，与麻省开放云合作。
+   - 开发S3 Inventory，预生成的桶列表。
+   - 开发D4N缓存层。
    - 扩展S3 Select功能，支持Parquet和JSON。
    - 实现端到端跟踪，使用Jaeger。
-   - 实现索引恢复功能，用于版本和非版本桶。
+   - 实现索引恢复功能。
 
 4. **新前端协议**
-   - 计划支持HTTP/3和Apache Arrow Flight。
-   - 开发动态脚本和安全脚本，允许用户注入脚本进行调试和复杂工作负载管理。
+   - 支持HTTP/3和Apache Arrow Flight。
 
 5. **其他增强功能**
    - 增强S3过渡能力，支持远程S3的数据恢复。
@@ -53,10 +62,10 @@ subtitle: tech
 - 确定了即将实施的关键功能和技术改进。
 
 #### 后续行动计划
-- 继续推进C++20协程的更新。
+- 推进C++20协程的更新。
 - 完成多站点复制功能的增强。
-- 开发和测试新前端协议，如HTTP/3和Apache Arrow Flight。
-- 完善文档和社区支持，确保新功能的顺利实施和用户采用。
+- 开发和测试新前端协议。
+- 完善文档和社区支持。
 
 #### 其他讨论
 - 讨论了文档更新、过滤器编译、动态脚本插入等技术细节。

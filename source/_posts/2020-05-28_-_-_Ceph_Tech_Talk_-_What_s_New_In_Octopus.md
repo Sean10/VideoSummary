@@ -1,19 +1,27 @@
 ---
-title: "2020-05-28 :: Ceph Tech Talk - What's New In Octopus"
-date: 2020-05-28
-updated: 2020-05-29
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-05-28
+subtitle: 2020-05-28_-_-_Ceph_Tech_Talk_-_What_s_New_In_Octopus
+tags:
+- Ceph
+- Octopus 版本
+- distributed storage
+- BlueStore
+- Kubernetes
+- CSI
+title: "'2020-05-28 :: Ceph Tech Talk - What''s New In Octopus'"
+updated: 2020-05-29
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概要
-- **日期**: 2023年5月28日
-- **主题**: Seth Tech Talk - Ceph Octopus 版本更新及新功能介绍
+- **日期**: 2020年5月28日
+- **主题**: Ceph Tech Talk - Octopus 版本更新及新功能介绍
 - **主讲人**: Josh Durgan (Red Hat) 和 Lance Kramer (Sousa)
 - **参会人员**: Ceph 社区成员及技术爱好者
 
@@ -23,16 +31,16 @@ subtitle: tech
    - **支持与升级**: 支持从 Luminous、Mimic 和 Nautilus 升级到 Octopus，但 Luminous 需要先升级到 Mimic 或 Nautilus。
 
 2. **主要改进与新功能**
-   - **可操作性提升**:
+   - **可操作性提升**: 
      - **Orchestrator API**: 实现统一部署和管理，支持容器化部署，简化集群管理。
      - **Ceph Dashboard**: 界面布局调整，增强用户管理功能，改进 OSD 部署流程。
-   - **性能与稳定性**:
-     - **BlueStore 优化**: 改进预取和压缩机制，优化内存使用和TRIM行为。
+   - **性能与稳定性**: 
+     - **BlueStore 优化**: 改进预取和压缩机制，优化内存使用和 TRIM 行为。
      - **健康监控**: 新增网络监控健康警报，改进内部健康警报处理。
-   - **多站点支持**:
+   - **多站点支持**: 
      - **RBD 镜像**: 基于快照的灾难恢复，减少 I/O 开销。
      - **Garbage Collection**: 使用简单块用于垃圾回收，减少 RocksDB 瓶颈。
-   - **生态系统集成**:
+   - **生态系统集成**: 
      - **Ceph CSI 和 Rook**: 增强与 Kubernetes 的集成，支持更多存储模式和操作。
 
 3. **用户提问与回答**

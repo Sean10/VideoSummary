@@ -1,12 +1,19 @@
 ---
-title: "Ceph Month 2021: Call for Participation: Ceph Stable Releases Team"
-date: 2021-06-01
-updated: 2021-06-02
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-06-01
+subtitle: Ceph_Month_2021_-_Call_for_Participation_-_Ceph_Stable_Releases_Team
+tags:
+- Ceph
+- 分布式存储
+- 稳定版本发布
+- 社区参与
+- 版本管理
+title: Ceph Month 2021- Call for Participation- Ceph Stable Releases Team
+updated: 2021-06-02
 ---
+
+
 
 
 ### 会议纪要
@@ -16,12 +23,12 @@ subtitle: tech
 **主讲人：** Louis Desjardins
 
 **会议概要：**
-Louis Desjardins 介绍了 Ceph 稳定版本发布团队的工作流程，强调了社区参与的重要性，并讨论了如何优先处理回溯补丁（backport）。
+Louis Desjardins 介绍了 Ceph 稳定版本发布团队的工作流程，强调了社区参与的重要性，并讨论了如何优先处理回溯补丁。
 
 **主要议题：**
 1. **Ceph 版本管理：**
-   - 目前最新的稳定版本是 Pacific，用户升级到 Pacific 点发布版本时，期望获得已回溯的 bug 修复和安全修复。
-   - 回溯补丁的过程涉及在旧版本上应用修复，这可能因代码变化而失败，需要手动调整。
+   - 目前最新的稳定版本是 Pacific，用户在升级到 Pacific 点发布版本时，期望获得已回溯的 bug 修复和安全修复。
+   - 回溯补丁的过程涉及在旧版本上应用修复，这可能导致因代码变化而失败，需要手动调整。
 
 2. **测试流程：**
    - 每个回溯补丁在应用到 Pacific 之前，必须通过单元测试和大规模测试实验室的实际集群测试，以确保不会引入回归错误。
@@ -29,7 +36,7 @@ Louis Desjardins 介绍了 Ceph 稳定版本发布团队的工作流程，强调
 
 3. **社区参与：**
    - 鼓励社区成员通过加入稳定版本发布团队来参与回溯补丁的工作。
-   - 新成员可以通过应用感兴趣的补丁到 Octopus 版本，并创建 Pull Request 来开始参与。
+   - 新成员可以通过将感兴趣的补丁应用到 Octopus 版本，并创建 Pull Request 来开始参与。
    - 社区提供 IRC 频道（#ceph-backports）来协助新成员解决测试失败等问题。
 
 4. **公司参与：**

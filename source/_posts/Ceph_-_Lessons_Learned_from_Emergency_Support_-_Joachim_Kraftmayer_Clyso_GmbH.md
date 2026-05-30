@@ -1,43 +1,44 @@
 ---
-title: "Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH"
-date: 2023-05-05
-updated: 2023-05-05
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-05-05
+subtitle: Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Clyso_GmbH
+tags:
+- Ceph
+- 分布式存储
+- 紧急支持
+- 高可用性
+- 性能优化
+title: "'Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH'"
+updated: 2023-05-05
 ---
+
 
 
 ### 会议纪要
 
 #### 会议主题：紧急支持中的经验教训
 
-#### 主讲人：[主讲人姓名]
-- **背景介绍**：
-  - 公司创始人，公司名为Glyzone。
-  - 曾担任Red Hat存储的高级顾问。
-  - 自2012年开始涉足Ceph，2014年起在生产环境中运行Ceph。
+#### 主讲人：Joachim Kraftmayer，Clyso GmbH
 
 #### 会议内容总结：
 
-1. **Ceph的使用案例和经验分享**：
-   - 过去两三年中，Ceph在各种环境中的应用案例。
-   - 强调了Ceph在虚拟环境（如VMware、OpenStack、超大规模环境）中的多样性。
-   - 讨论了Ceph在不同硬件和部署工具（如DeepSea、SaltStack、Ansible）中的应用。
+1. **Ceph使用案例和经验分享**：
+   - Joachim Kraftmayer分享了Ceph在过去两三年中的多种应用案例，强调了其在虚拟环境、大型集群和超大规模环境中的多样性。
+   - 讨论了Ceph在不同硬件和部署工具中的应用，如VMware、OpenStack、DeepSea、SaltStack、Ansible等。
 
 2. **具体案例分析**：
-   - **性能问题**：一个只有三个OSD的集群出现性能问题，原因是使用了较旧的Ceph版本（Luminous）。
-   - **配置和管理问题**：讨论了PG（Placement Groups）的重要性，以及如何在不中断服务的情况下动态调整集群配置。
-   - **硬件和网络问题**：提到了消费者级SSD和桌面旋转磁盘的不适用性，以及网络接口（如1Gbps）的瓶颈问题。
+   - **性能问题**：一个仅含三个OSD的集群因使用较旧的Ceph版本（Luminous）而出现性能问题。
+   - **配置和管理问题**：强调了PG（Placement Groups）的重要性，并讨论了如何在不中断服务的情况下动态调整集群配置。
+   - **硬件和网络问题**：指出消费者级SSD、桌面旋转磁盘、CPU功率不足和网络接口带宽瓶颈等问题。
 
 3. **功能和配置建议**：
-   - **MDS服务**：建议根据负载合理配置MDS的数量，避免过度配置。
+   - **MDS服务**：建议根据负载合理配置MDS数量，避免过度配置。
    - **PG Auto Scaler**：建议禁用自动缩放，手动预定义PG数量以确保性能。
    - **缓存层**：不建议使用RBD缓存层，因其不稳定且难以管理。
 
 4. **数据恢复和备份策略**：
-   - 强调了备份策略的重要性，特别是在生产环境中。
+   - 强调了备份策略的重要性，尤其是在生产环境中。
    - 讨论了数据恢复的复杂性和潜在风险，特别是在使用大容量磁盘时。
 
 5. **操作和管理建议**：
@@ -54,8 +55,4 @@ subtitle: tech
 - 主讲人强调了Ceph在大型集群中的应用和管理挑战，以及如何通过合理的配置和策略来应对这些挑战。
 
 #### 结束语：
-- 主讲人感谢与会者的参与，并鼓励大家继续关注Ceph的发展和最佳实践。
-
----
-
-以上是对会议内容的详细总结，涵盖了关键细节、讨论的主要议题、决定的事项以及后续的行动计划。
+- Joachim Kraftmayer感谢与会者的参与，并鼓励大家继续关注Ceph的发展和最佳实践。

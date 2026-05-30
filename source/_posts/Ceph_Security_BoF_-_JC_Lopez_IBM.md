@@ -1,38 +1,40 @@
 ---
-title: "Ceph Security BoF - JC Lopez, IBM"
-date: 2023-05-05
-updated: 2023-05-05
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-05-05
+subtitle: Ceph_Security_BoF_-_JC_Lopez_IBM
+tags:
+- Ceph
+- 安全性
+- 分布式存储
+- Rook
+- 开源
+title: "Ceph Security BoF - JC Lopez, IBM"
+updated: 2023-05-05
 ---
-
-
 ### 会议纪要
 
 #### 参会人员
-- **JC Lopez**：与Seth有长期合作历史，曾被IBM收购后离开，现回归IBM，继续从事Fusion和Seth相关工作。
+- **JC Lopez**：IBM研发人员，长期从事Ceph和Seth相关工作。
 
 #### 会议主题
-- 数据安全
+- Ceph安全
 - 存储强化
 - Rook项目
 - Ceph存储系统
 
 #### 主要讨论内容
 1. **Ceph的未来与现状**：
-   - Seth（Ceph）被认为是存储的未来，支持块存储和对象存储。
-   - Ceph在Kubernetes和OpenShift环境中显示出极高的灵活性、高可用性和可扩展性。
+   - Ceph作为存储的未来，支持块存储和对象存储。
+   - Ceph在Kubernetes和OpenShift环境中表现出高灵活性、高可用性和可扩展性。
 
 2. **Rook项目**：
-   - Rook是由CNCF孵化的项目，旨在通过操作符模型在Kubernetes环境中部署Ceph集群。
-   - Rook已被用于OpenShift Data Foundation和IBM的Fusion Data Foundation。
+   - Rook项目旨在通过操作符模型在Kubernetes环境中部署Ceph集群。
+   - Rook已用于OpenShift Data Foundation和IBM的Fusion Data Foundation。
 
 3. **Ceph与Rook的安全性**：
-   - IBM在产品生命周期中进行安全活动，旨在减少风险并提高Ceph和Rook的安全性。
-   - 使用安全开发生命周期（SDL）进行代码审计和渗透测试。
-   - IBM的PSIRT（产品安全事件响应团队）将文档化所有开源材料，确保使用的库和组件的安全性。
+   - IBM通过安全开发生命周期（SDL）进行代码审计和渗透测试。
+   - IBM的PSIRT（产品安全事件响应团队）负责文档化所有开源材料，确保使用的库和组件的安全性。
 
 4. **加密与密钥管理**：
    - 支持在OSD级别进行数据静态加密，可以使用自管理密钥或外部密钥管理系统。

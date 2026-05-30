@@ -1,23 +1,30 @@
 ---
-title: "Keynote: Ceph: The Future of the Storage TODAY"
-date: 2023-05-05
-updated: 2023-05-05
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-05-05
+subtitle: Keynote_-_Ceph_-_The_Future_of_the_Storage_TODAY
+tags:
+- Ceph
+- 分布式存储
+- IBM
+- Red Hat
+- 开源
+title: "'Keynote: Ceph: The Future of the Storage TODAY'"
+updated: 2023-05-05
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概述
-会议在Cephalicon举行，由IBM的Danny Mace主持。Danny是IBM存储软件业务的工程团队负责人，介绍了IBM与Red Hat在Ceph项目上的合作和未来计划。Kyle加入讨论，分享了IBM对Ceph社区的贡献和未来发展方向。
+在Cephalicon会议上，IBM的Danny Mace介绍了IBM与Red Hat在Ceph项目上的合作及未来计划。Kyle参与了讨论，分享了IBM对Ceph社区的贡献和未来发展方向。
 
 #### 讨论的主要议题
 1. **IBM与Red Hat的合作**：
-   - IBM从Red Hat接管了Ceph团队的工程师，以加强软件定义存储的能力。
-   - IBM和Red Hat认为这一合作对Ceph和相关开源项目的发展有利。
+   - IBM接手了Red Hat的Ceph团队工程师，以加强软件定义存储能力。
+   - IBM和Red Hat认为这一合作对Ceph和相关开源项目的发展有益。
 
 2. **IBM的存储业务战略**：
    - IBM在存储业务中同时拥有硬件和软件，致力于发展软件定义存储业务。

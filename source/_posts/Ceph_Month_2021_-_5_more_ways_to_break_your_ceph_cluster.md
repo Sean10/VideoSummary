@@ -1,18 +1,24 @@
 ---
-title: "Ceph Month 2021: 5 more ways to break your ceph cluster"
+title: "  Ceph Month 2021: 5 more ways to break your ceph cluster  "
 date: 2021-06-14
 updated: 2021-06-15
 tags:
+- [Ceph集群管理]
+- [故障案例分析]
+- [最佳实践]
+- [存储技术]
+- [分布式存储]
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster
 ---
+
 
 
 ### 会议纪要
 
 #### 会议概述
-本次会议由Vito，421的创始人，主持，主题为“破坏你的Ceph集群的五种新方法及一个额外提示”。会议回顾了Vito几年前关于“破坏Ceph集群的十种方法”的演讲，并分享了新的研究成果和经验教训。
+Vito，421的创始人，主持了本次Ceph Month 2021会议，主题为“破坏你的Ceph集群的五种新方法及一个额外提示”。本次会议回顾了Vito之前关于“破坏Ceph集群的十种方法”的演讲，并分享了新的研究和经验教训。
 
 #### 讨论的主要议题
 1. **自动化工具的误用**：

@@ -1,37 +1,46 @@
 ---
-title: "Ceph Docubetter Meeting 2021-04-14"
-date: 2021-04-15
-updated: 2021-04-15
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-04-15
+subtitle: Ceph_Docubetter_Meeting_2021-04-14
+tags:
+- Ceph
+- 文档项目
+- 开发者贡献
+- Google Season of Docs
+- 文档编辑
+- 上游文档
+title: "Ceph Docubetter Meeting 2021-04-14"
+updated: 2021-04-15
 ---
+
+
 
 
 ### 会议纪要
 
 #### 关键细节：
-1. **SEP Idiom Rewrite Project**：正在进行中，旨在重写SEP ADM指南中的所有字符串，共19个部分。项目虽落后于计划，但进展顺利。
-2. **Google Season of Docs**：目前有六名申请者，项目提案为创建一个全面的“用户贡献指南”，解释如何使用Git以及处理各种错误信息。结果将于17日揭晓。
-3. **M Clock Documentation**：Neha提交的文档已由会议参与者重新编辑，以改善语法和内容表达，这是第三次采用这种模式，效果良好。
+1. **SEP Idiom Rewrite Project**：该项目旨在重写SEP ADM指南中的所有字符串，由于内容量超出预期，项目进度落后于计划，但仍在继续进行。
+2. **Google Season of Docs**：有六名申请者参与，项目提案为创建一个全面的“用户贡献指南”，结果将在4月17日揭晓。
+3. **M Clock Documentation**：Neha提交的文档经过会议参与者重新编辑，以改善语法和内容表达。
 
 #### 讨论的主要议题：
-- 文档重写项目的进展和挑战。
-- Google Season of Docs的申请情况和预期结果。
-- 文档编辑和开发者贡献流程的优化。
+- **文档重写项目的进展和挑战**。
+- **Google Season of Docs的申请情况和预期结果**。
+- **文档编辑和开发者贡献流程的优化**。
+- **邮件列表的使用和管理，以及如何更有效地处理大量信息**。
 
 #### 决定的事项：
 - 继续推进SEP Idiom Rewrite Project和Google Season of Docs项目。
 - 维持现有的文档编辑流程，鼓励开发者直接提交初稿，后续由专业人员进行优化。
 
 #### 后续的行动计划：
-- 17日等待Google Season of Docs的申请结果，并根据结果调整后续行动。
+- 4月17日等待Google Season of Docs的申请结果，并根据结果调整后续行动。
 - 继续优化文档编辑流程，特别是对于非英语母语的开发者，简化他们的贡献流程。
 - 探索新的志愿者来源，如即将参加的Right-to-Doc会议。
 
 #### 其他讨论点：
-- 会议参与者分享了个人的工作习惯和时间管理，强调了非传统工作时间对于创造性工作的益处。
+- 会议参与者分享了个人工作习惯和时间管理，强调非传统工作时间对于创造性工作的益处。
 - 讨论了邮件列表的使用和管理，以及如何更有效地处理大量信息。
 
 #### 结论：

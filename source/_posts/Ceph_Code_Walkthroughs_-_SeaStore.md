@@ -1,11 +1,88 @@
 ---
-title: "Ceph Code Walkthroughs: SeaStore"
-date: 2023-07-03
-updated: 2023-07-04
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-07-03
+subtitle: Ceph_Code_Walkthroughs_-_SeaStore
+tags:
+- Ceph
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可伸缩性
+- 对象存储
+- 块存储
+- 文件系统存储
+- 一致性
+- 去中心化
+- 性能
+- Bluestore
+- BlueFS
+- RocksDB
+- OSD
+- MON
+- MDS
+- PG
+- RADOS
+- librados
+- libcephfs
+- cephfs
+- rbd
+- radosgw
+- RGW
+- RESTful API
+- 认证
+- 授权
+- 加密
+- 纠错码
+- 复制
+- 快照
+- 克隆
+- 瘦化配置
+- iSCSI
+- Fibre Channel
+- NFS
+- CIFS
+- POSIX
+- 监控
+- 仪表板
+- 管理
+- 编排
+- 自动化
+- 集成
+- 容器化
+- Kubernetes
+- Docker
+- 虚拟化
+- 云计算
+- AWS
+- Azure
+- Google Cloud
+- 混合云
+- 多云
+- 存储集群
+- 节点
+- 硬盘
+- SSD
+- HDD
+- JBOD
+- SAN
+- NAS
+- 网络
+- 拓扑
+- 失败域
+- 恢复
+- 弹性
+- 负载均衡
+- 缓存
+- 压缩
+- 去重
+- 分层
+- 性能调优
+- 基准测试
+- 测试
+- 验证
+title: "'Ceph Code Walkthroughs: SeaStore'"
+updated: 2023-07-04
 ---
 
 
@@ -19,26 +96,28 @@ subtitle: tech
 
 #### 会议内容总结：
 
+本次会议深入探讨了Ceph存储系统中新对象存储实现c-store的设计和架构。以下为会议关键点：
+
 1. **c-store简介**：
-   - c-store是一个新的对象存储实现，专为Crimson的线程和回调模型设计。
-   - 目标：避免CPU密集型的元数据设计，如roxdb，并提供灵活的架构以支持多种存储配置和工作负载。
+   - c-store是为Crimson的线程和回调模型设计的对象存储实现。
+   - 目标是避免CPU密集型的元数据设计，提供灵活的架构，支持多种存储配置和工作负载。
 
 2. **设计目标**：
    - 支持多种存储配置，包括QLC或ZNS闪存设备、硬盘以及高性能的NVMe设备。
-   - 实现内部层级管理（tiering），以减轻集群设置的设计参数压力，并允许更好地结合不同类型的存储池（如RGW和RBD）。
+   - 实现内部层级管理，减轻集群设置的设计参数压力，允许更好地结合不同类型的存储池。
 
 3. **对象存储接口**：
    - 对象存储是OSD与其本地存储通信的接口，具有事务性和平面对象命名空间特性。
-   - 对象包含键值映射（omap）和数据负载，支持对象克隆和RADOS快照。
+   - 支持对象克隆和RADOS快照。
 
 4. **内部元数据结构**：
-   - 包括LBA B树和back ref B树，这些结构通过逻辑偏移量进行管理，允许透明地移动数据块。
+   - 包括LBA B树和back ref B树，通过逻辑偏移量进行管理，允许透明地移动数据块。
 
 5. **日志记录机制**：
-   - c-store的日志记录机制在块级别上进行一致性处理，记录包括Delta和新的逻辑及物理块的完整记录。
+   - 在块级别上进行一致性处理，记录包括Delta和新的逻辑及物理块的完整记录。
 
 6. **架构组件**：
-   - 主要组件包括onode manager、omap manager、object data handler、transaction manager等，这些组件处理逻辑地址并管理元数据结构。
+   - 主要组件包括onode manager、omap manager、object data handler、transaction manager等，处理逻辑地址并管理元数据结构。
 
 7. **缓存管理**：
    - c-store包含一个缓存，用于性能优化和确保事务进行中的正确性。
@@ -47,19 +126,15 @@ subtitle: tech
    - 通过extent placement manager管理不同性能级别的设备，支持垃圾收集和层级管理。
 
 9. **未来工作**：
-   - 继续优化多核支持，测试随机读写工作负载，并改进内部元数据结构。
+   - 优化多核支持，测试随机读写工作负载，并改进内部元数据结构。
 
 #### 决定事项：
 - c-store已集成到Crimson实验版本中，未来六个月内将优先考虑其稳定性和性能优化。
 
 #### 后续行动计划：
-- 继续测试c-store在不同工作负载下的表现，特别是RBD的随机读写性能。
+- 测试c-store在不同工作负载下的表现，特别是RBD的随机读写性能。
 - 收集社区反馈，特别是关于内部元数据结构的改进建议。
 - 完成多核支持的开发，并确保c-store的稳定性和可靠性。
 
 #### 会议结束：
 - 感谢所有参会人员的参与和贡献，期待社区的进一步反馈和支持。
-
----
-
-**备注**：本次会议记录涵盖了c-store的主要设计目标、架构组件、设备管理和未来工作计划，确保了会议的关键细节和讨论成果得到准确记录。

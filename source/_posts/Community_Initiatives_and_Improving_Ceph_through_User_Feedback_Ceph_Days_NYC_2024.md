@@ -1,12 +1,18 @@
 ---
-title: "Community Initiatives and Improving Ceph through User Feedback | Ceph Days NYC 2024"
+title: "  Community Initiatives and Improving Ceph through User Feedback | Ceph Days NYC 2024  "
 date: 2024-05-23
 updated: 2024-05-24
 tags:
+- Ceph 用户反馈
+- 分布式存储
+- 性能优化
+- 社区协作
+- 用户开发会议
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Community_Initiatives_and_Improving_Ceph_through_User_Feedback_Ceph_Days_NYC_2024
 ---
+
 
 
 ### 会议纪要
@@ -26,9 +32,9 @@ subtitle: tech
 **会议内容总结：**
 
 1. **目标介绍：**
-   - SEF用户委员会旨在收集更多用户反馈，改进SEF项目。
+   - SEF用户委员会旨在收集用户反馈，改进SEF项目，提高性能和编排部署。
    - 历史活动包括SEF Days、SEF Lons、虚拟论坛和用户开发者会议。
-   - 新倡议希望通过用户委员会集中反馈，转化为具体行动项。
+   - 新倡议希望集中用户反馈，转化为具体行动项。
 
 2. **工作流程：**
    - 用户委员会将聚焦于性能和编排部署两大支柱。
@@ -62,3 +68,15 @@ subtitle: tech
 **备注：**
 - 会议记录和相关资料将通过邮件列表和社区平台共享。
 - 如有关于会议的任何疑问或建议，请及时联系会议组织者。
+
+**关键字保留：**
+- Ceph, distributed storage, CRUSH algorithm, high availability, scalability, object storage,
+block storage, file system storage, consistency, decentralization, performance, bluestore,
+bluefs, rocksdb, OSD, MON, MDS, PG, RADOS, librados, libcephfs, cephfs, rbd, radosgw, RGW,
+RESTful API, authentication, authorization, encryption, erasure coding, replication, 
+snapshots, clones, thin provisioning, iSCSI, Fibre Channel, NFS, CIFS, POSIX, monitoring, 
+dashboard, management, orchestration, automation, integration, containerization, 
+Kubernetes, Docker, virtualization, cloud computing, AWS, Azure, Google Cloud, 
+hybrid cloud, multi-cloud, storage cluster, node, disk, SSD, HDD, JBOD, SAN, NAS, 
+network, topology, failure domain, recovery, resilience, load balancing, caching, 
+compression, deduplication, tiering, performance tuning, benchmarking, testing, validation

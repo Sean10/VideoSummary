@@ -1,12 +1,18 @@
 ---
-title: "External Rook Ceph Cluster - Parth Arora & Subham Rai, IBM"
-date: 2023-05-05
-updated: 2023-05-05
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-05-05
+subtitle: External_Rook_Ceph_Cluster_-_Parth_Arora_Subham_Rai_IBM
+tags:
+- Ceph
+- Kubernetes
+- Rook Operator
+- Distributed Storage
+- Storage Orchestration
+title: "External Rook Ceph Cluster - Parth Arora & Subham Rai, IBM"
+updated: 2023-05-05
 ---
+
 
 
 ### 会议纪要
@@ -15,7 +21,7 @@ subtitle: tech
 - **Parth** 和 **Shubham**，IBM 存储部门的研发人员，主要负责 Rook operator 的开发。
 
 #### 会议主题
-- 讨论外部 Ceph 集群（external Ceph cluster）的需求、使用场景、实现方式以及未来的工作计划。
+- 讨论外部 Ceph 集群的需求、使用场景、实现方式以及未来的工作计划。
 
 #### 主要讨论内容
 1. **外部 Ceph 集群的需求和使用场景**
@@ -48,10 +54,3 @@ subtitle: tech
 - 继续开发和测试外部 Ceph 集群的功能。
 - 更新和改进相关文档，确保用户能够顺利使用外部 Ceph 集群。
 - 监控和收集用户反馈，以便进一步优化和扩展功能。
-
-#### 会议结束
-- 感谢与会者的参与和提问。
-
----
-
-以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

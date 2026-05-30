@@ -1,12 +1,19 @@
 ---
-title: "Ceph Orchestrator Meeting 2022-06-28"
-date: 2022-06-28
-updated: 2022-06-29
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-06-28
+subtitle: Ceph_Orchestrator_Meeting_2022-06-28
+tags:
+- Ceph
+- 分布式存储
+- OpenStack
+- API测试
+- 监控与安全
+title: "Ceph Orchestrator Meeting 2022-06-28"
+updated: 2022-06-29
 ---
+
+
 
 
 ### 会议纪要

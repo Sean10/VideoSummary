@@ -1,18 +1,25 @@
 ---
-title: "2019-11-25 :: Ceph Orchestration Meeting"
-date: 2019-11-27
-updated: 2019-11-28
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2019-11-27
+subtitle: 2019-11-25_-_-_Ceph_Orchestration_Meeting
+tags:
+- Ceph Orchestration
+- Distributed Storage
+- Kubernetes
+- Rook
+- SSH Orchestrator
+title: "'2019-11-25 :: Ceph Orchestration Meeting'"
+updated: 2019-11-28
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议时间
-- 会议日期：具体日期未提及
+- 会议日期：2019年11月25日
 - 会议时间：具体时间未提及
 
 #### 参会人员
@@ -25,20 +32,19 @@ subtitle: tech
 
 #### 会议议题
 1. **KubeCon 回顾**
-   - 上周由于KubeCon活动，部分成员不在场。
-   - Juan Miguel因父亲住院，返回故乡照顾，希望他父亲早日康复。
+   - 由于KubeCon活动，部分成员缺席。
+   - Juan Miguel因家事返回故乡。
 
 2. **SSH Orchestrator 更新**
-   - 上周在SSH Orchestrator方面进行了大量工作，包括bug修复和权限问题处理。
-   - Zach负责编写安装文档，改进了安装模式，支持通过RPM包安装ceph。
-   - 讨论了增加Python客户端库到Rook，并在Rook Orchestrator中使用。
+   - 上周在SSH Orchestrator方面进行了大量工作，包括bug修复、权限问题处理和安装模式改进。
+   - 讨论了将Python客户端库添加到Rook，并在Rook Orchestrator中使用。
 
 3. **感恩节假期安排**
-   - 本周美国感恩节，许多成员将休假，特别是周四和周五。
+   - 本周美国感恩节假期，许多成员将休假。
 
 4. **SSH Orchestrator 功能扩展**
    - 讨论了增加主机标签功能，类似于Rook的节点标签。
-   - 探讨了使SSH Orchestrator更加声明性，类似于Rook的工作方式。
+   - 探讨了使SSH Orchestrator更加声明性。
    - 讨论了增加调度算法，以随机或基于服务数量的方式分配服务。
 
 5. **并行处理和升级问题**
@@ -84,6 +90,6 @@ subtitle: tech
 #### 备注
 - 会议中提到的具体技术细节和代码变更需要进一步的技术文档和代码审查。
 
----
+
 
 以上是本次会议的纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

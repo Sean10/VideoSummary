@@ -1,12 +1,18 @@
 ---
-title: "Ceph Crimson Verification on AArch64 - Rixin Luo, Huawei"
-date: 2023-05-18
-updated: 2023-05-19
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-05-18
+subtitle: Ceph_Crimson_Verification_on_AArch64_-_Rixin_Luo_Huawei
+tags:
+- Ceph
+- Crimson
+- AArch64
+- ARM
+- Performance Optimization
+title: "Ceph Crimson Verification on AArch64 - Rixin Luo, Huawei"
+updated: 2023-05-19
 ---
+
 
 
 ### 会议纪要
@@ -32,7 +38,7 @@ subtitle: tech
    - **解决计划**：将问题贡献给社区，并继续优化。
 
 3. **性能优化**
-   - **瓶颈分析**：发现原子操作在内存端口模块中占用近35%的 overhead，建议禁用lse指令以减少争用。
+   - **瓶颈分析**：发现原子操作在内存端口模块中占用近35%的overhead，建议禁用lse指令以减少争用。
    - **测试结果**：禁用lse后，使用2MB页面大小，对于小包和大包分别获得50%和8%的性能提升。
 
 4. **多节点集群测试**

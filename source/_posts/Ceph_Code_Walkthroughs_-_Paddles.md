@@ -1,50 +1,51 @@
 ---
-title: "Ceph Code Walkthroughs: Paddles"
+title: "  Ceph Code Walkthroughs: Paddles  "
 date: 2021-10-07
 updated: 2021-10-08
 tags:
+- [Ceph]
+- [Distributed Storage]
+- [Integration Testing]
+- [Paddles Framework]
+- [Database Wrapper]
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Code_Walkthroughs_-_Paddles
 ---
-
 
 ### 会议纪要
 
 #### 会议概要
-本次会议是一个代码走查，主要介绍Paddles，这是我们集成测试框架的关键组件。Paddles是一个数据库包装器，用于存储和处理测试节点信息、任务状态更新等。
+本次会议对Ceph的Paddles代码进行了详细的走查，重点是介绍Paddles作为集成测试框架关键组件的作用和结构。
 
 #### 讨论的主要议题
 1. **Paddles简介**：
-   - Paddles是一个数据库包装器，用于存储Toothology运行和任务信息，以及所有测试节点信息。
-   - 使用PostgreSQL作为数据库。
-
+   - Paddles是一个数据库包装器，用于存储和处理测试节点信息、任务状态更新等。
+   - 使用PostgreSQL作为后端数据库。
+   
 2. **Toothology任务调度流程**：
-   - Toothology调度器将任务添加到Beanstalk队列，并返回一个唯一的任务ID。
-   - 任务ID和任务配置参数存储在PostgreSQL中。
+   - Toothology调度器将任务添加到Beanstalk队列，并通过Paddles存储任务ID和配置参数。
    - 任务状态更新也通过Paddles进行。
 
 3. **Paddles的模块结构**：
    - 使用轻量级Web框架Pecan，遵循MVC模式。
-   - 主要关注模型和控制器部分。
-   - 模型定义数据库操作函数，如启动事务、提交和回滚。
-   - 控制器使用对象分派路由策略，将HTTP请求映射到控制器和方法。
+   - 模型定义数据库操作，控制器处理HTTP请求。
 
 4. **Paddles的配置和启动**：
-   - 配置文件包含服务器特定配置，如主机、端口、Pecan应用配置等。
+   - 配置文件包含服务器配置，如主机、端口、Pecan应用配置等。
    - 使用Pecan的transaction hook处理数据库事务。
 
 5. **模型和控制器详细介绍**：
-   - 模型部分定义了节点、任务和运行的表结构和操作。
-   - 控制器部分处理HTTP请求，如获取节点信息、锁定和解锁节点、创建和更新任务等。
+   - 模型定义节点、任务和运行的表结构和操作。
+   - 控制器处理HTTP请求，如获取节点信息、锁定和解锁节点、创建和更新任务等。
 
 6. **Alembic数据迁移框架**：
    - 用于在不停止运行的情况下修改数据库模式。
    - 通过创建修订号来管理数据库模式的版本。
 
 7. **测试和部署**：
-   - 使用Green Unicorn作为生产环境的服务器，启动多个进程处理请求。
-   - 编写了多个测试用例，包括模型测试和控制器测试，以及复杂的并发更新测试。
+   - 使用Green Unicorn作为生产环境的服务器。
+   - 编写了多个测试用例，包括模型测试和控制器测试。
 
 8. **Paddles的持续改进**：
    - 正在添加排队机制，以消除对Beanstalk的依赖。
@@ -63,7 +64,3 @@ subtitle: tech
 #### 其他
 - 鼓励团队成员在会议录像中留下问题或评论，以便进一步讨论和澄清。
 - 计划在下个月进行另一个代码走查，具体主题待定。
-
----
-
-本次会议详细介绍了Paddles的架构和功能，以及其在Toothology集成测试框架中的应用。通过本次会议，团队成员对Paddles有了更深入的了解，并为后续的开发和优化工作奠定了基础。

@@ -1,13 +1,21 @@
 ---
-title: "What's new with Crimson and Seastore?"
-date: 2022-11-10
-updated: 2022-11-11
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-11-10
+subtitle: What_s_new_with_Crimson_and_Seastore
+tags:
+- Ceph
+- Crimson
+- Seastore
+- Distributed Storage
+- Scalability
+title: "What's new with Crimson and Seastore?"
+updated: 2022-11-11
 ---
 
+
+
+Ceph项目中的Crimson和Seastore是两个重要的研发方向，旨在提升Ceph存储系统的性能和可伸缩性。以下是会议内容的改进总结：
 
 ### 会议纪要
 
@@ -18,40 +26,32 @@ subtitle: tech
 #### 会议内容总结：
 
 1. **Crimson项目概述**：
-   - Crimson项目的主要驱动因素是存储技术正朝着更高的IOP密度和更低的延迟发展，但CPU吞吐量并未同步提升。
-   - 项目目标：最小化每I/O的CPU开销，包括跨核心通信、拷贝和上下文切换，并利用新兴存储技术如NVMe。
+   - Crimson项目旨在减少每I/O的CPU开销，特别是针对新兴存储技术如NVMe。
+   - 项目重点在于优化CPU使用，提升每核心的IOPs，而非原始IOPs。
 
-2. **Crimson项目目标**：
-   - 重写OSD守护进程，以解决CPU开销和利用新兴存储技术的问题。
-   - 关键指标是每核心的IOPs，而非原始IOPs。
+2. **Crimson架构设计**：
+   - 通过预分配每个核心的单个线程和分区数据结构，避免核心切换，减少锁的使用。
+   - 使用C-star用户空间调度库，利用异步I/O结果，减少回调的使用。
 
-3. **Crimson架构设计**：
-   - 避免传统OSD线程模型中的核心切换，通过预分配每个核心的单个线程和分区数据结构来减少锁的使用。
-   - 使用C-star用户空间调度库来处理异步I/O结果，减少回调的使用。
+3. **C-store组件**：
+   - C-store是针对Crimson的线程模型设计的对象存储实现，旨在避免CPU密集型元数据设计。
+   - 利用Zone Namespace Storage（ZNS）减少写放大和尾延迟。
 
-4. **C-store组件**：
-   - C-store是一个新的对象存储实现，旨在避免CPU密集型的元数据设计，并利用新兴技术如NVMe和Zone Namespace Storage。
-   - ZNS是一种新的NVMe规范，旨在解决传统FTL闪存设计中的垃圾收集问题，减少写放大和尾延迟。
-
-5. **近期开发工作**：
-   - 稳定化Blue Store RBD RADOS测试，分割病理学套件为Crimson RADOS和Crimson RADOS实验版。
-   - 多核心支持：初始阶段专注于单核心实现，现已开始多核心数据结构分区和消息路由架构的开发。
+4. **近期开发工作**：
+   - 稳定化Blue Store RBD RADOS测试，实现多核心数据结构分区和消息路由架构。
    - 快照支持：基本I/O路径组件已实现，修剪和恢复组件正在进行中。
-   - 用户保护措施：添加了实验性功能标志，防止用户意外创建Crimson OSDs。
+   - 用户保护措施：添加实验性功能标志，防止用户意外创建Crimson OSDs。
 
-6. **下一步计划**：
-   - 继续扩展测试覆盖范围，实现scrub功能以增强正确性验证。
+5. **下一步计划**：
+   - 扩展测试覆盖范围，实现scrub功能，提升正确性验证。
    - 多核心支持的进一步改进，包括多反应器支持和性能测试。
    - C-store的稳定性提升，包括多核心反应器支持和快照功能的实现。
 
-7. **问答环节**：
-   - 对于想要尝试Crimson的开发者，建议使用vstart命令和Crimson标志进行部署。
+6. **问答环节**：
+   - 建议使用vstart命令和Crimson标志进行部署。
    - Crimson未来将支持EC（Erasure Coding），但具体时间取决于后续工作进展。
 
 #### 后续行动计划：
-- 继续推进Crimson和C-store的开发，特别是在多核心支持和性能优化方面。
-- 完善文档和测试，确保Crimson能够安全地用于特定生产环境中。
-- 定期发布性能测试数据，以便社区了解Crimson的进展和性能表现。
-
-#### 会议结束语：
-- Sam感谢大家的参与，并期待在Reef版本中进一步测试和使用Crimson。
+- 继续推进Crimson和Seastore的开发，特别是在多核心支持和性能优化方面。
+- 完善文档和测试，确保Crimson和Seastore能够安全地用于特定生产环境中。
+- 定期发布性能测试数据，以便社区了解Crimson和Seastore的进展和性能表现。

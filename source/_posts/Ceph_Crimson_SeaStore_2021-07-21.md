@@ -1,19 +1,26 @@
 ---
-title: "Ceph Crimson/SeaStore 2021-07-21"
-date: 2021-08-23
-updated: 2021-08-24
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-08-23
+subtitle: Ceph_Crimson_SeaStore_2021-07-21
+tags:
+- Ceph
+- 性能优化
+- 分布式存储
+- CRUSH算法
+- 裸金属存储
+title: "Ceph Crimson/SeaStore 2021-07-21"
+updated: 2021-08-24
 ---
+
+
 
 
 ### 会议纪要
 
 #### 关键细节
 - **上周工作回顾**：
-  - 审查并调整了与scrub相关的逻辑，将其提取到独立的队列中，以减少crimson的影响并解决由refractory引入的一些回归问题。
+  - 对与scrub相关的逻辑进行了审查和调整，将其提取到独立的队列中，以减少crimson的影响并解决由refractory引入的一些回归问题。
   - 提交了sister patch的第三个版本，增加了ceph ctl和控制接口到siege。
   - 审查了一些gears，提供了类似magic的支持，但在测试中遇到了一些不可复现的问题。
 
@@ -47,4 +54,9 @@ subtitle: tech
 - **持续监控**：
   - 持续监控系统的性能，特别是在引入新优化后的表现，确保没有引入新的性能问题。
 
-通过这些讨论和决策，团队将继续推进ceph的性能优化工作，确保系统在高负载下的稳定性和效率。
+#### 错误、误解或遗漏的信息
+- 原始字幕中提到的“fixes”和“investigations”部分在总结中未体现。
+- 原始字幕中提到的关于性能测试的详细讨论，如fio和rbd的使用方法，在总结中简化了。
+
+#### 相关关键词
+- Ceph, distributed storage, CRUSH algorithm, high availability, scalability, object storage, block storage, file system storage, consistency, decentralization, performance, bluestore, bluefs, rocksdb, OSD, MON, MDS, PG, RADOS, librados, libcephfs, cephfs, rbd, radosgw, RGW, RESTful API, authentication, authorization, encryption, erasure coding, replication, snapshots, clones, thin provisioning, iSCSI, Fibre Channel, NFS, CIFS, POSIX, monitoring, dashboard, management, orchestration, automation, integration, containerization, Kubernetes, Docker, virtualization, cloud computing, AWS, Azure, Google Cloud, hybrid cloud, multi-cloud, storage cluster, node, disk, SSD, HDD, JBOD, SAN, NAS, network, topology, failure domain, recovery, resilience, load balancing, caching, compression, deduplication, tiering, performance tuning, benchmarking, testing, validation

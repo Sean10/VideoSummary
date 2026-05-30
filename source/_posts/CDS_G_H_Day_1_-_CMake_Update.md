@@ -1,13 +1,17 @@
 ---
-title: "CDS G/H (Day 1) - CMake Update"
+title: "  CDS G/H (Day 1) - CMake Update  "
 date: 2014-06-24
-updated: 2014-06-25
+updated: 2014-06-24
 tags:
+- [Ceph]
+- [CMake]
+- [CI/CD]
+- [Distributed Storage]
+- [CephFS]
 categories:
-- "视频总结"
-subtitle: tech
+- "会议纪要"
+subtitle: CDS_G_H_Day_1___CMake_Update
 ---
-
 
 
 ### 会议纪要
@@ -22,9 +26,9 @@ subtitle: tech
 
 **一、CMake 更新**
 
-*   **项目背景**： 为了提高构建速度，特别是多核机器上的构建速度，项目组开始将构建系统从 Autoconf/Makefile 转换为 CMake。
+*   **项目背景**： 为提升构建速度，特别是多核机器上的构建速度，项目组将构建系统从 Autoconf/Makefile 转换为 CMake。
 *   **进展情况**：
-    *   Ali（实习生）完成了初步的转换工作，但后续人员在不同分支上进行了修改。
+    *   实习生 Ali 完成了初步的转换工作，但后续人员在不同分支上进行了修改。
     *   第一版 CMake 构建系统与 Autoconf/Makefile 基本一致，但缺少了测试等部分。
     *   项目组通过减少重复构建的对象数量和简化文件结构，提高了构建速度。
     *   目前，CMake 版本已合并到 Firefly 分支，并添加了测试。

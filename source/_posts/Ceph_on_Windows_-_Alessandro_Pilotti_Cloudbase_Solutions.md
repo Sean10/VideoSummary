@@ -1,11 +1,16 @@
 ---
-title: "Ceph on Windows - Alessandro Pilotti, Cloudbase Solutions"
-date: 2023-05-05
-updated: 2023-05-05
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-05-05
+subtitle: Ceph_on_Windows_-_Alessandro_Pilotti_Cloudbase_Solutions
+tags:
+- Ceph
+- Windows集成
+- 分布式存储
+- 开源技术
+- 云存储
+title: "Ceph on Windows - Alessandro Pilotti, Cloudbase Solutions"
+updated: 2023-05-05
 ---
 
 
@@ -13,18 +18,18 @@ subtitle: tech
 
 **会议主题：** Ceph与Windows集成解决方案介绍
 
-**主讲人：** Alessandra Pilotti, CEO at Cloud-based Solutions
+**主讲人：** Alessandra Pilotti, Cloudbase Solutions CEO
 
 **会议内容总结：**
 
 1. **背景介绍：**
-   - Ceph是最受欢迎的开源存储解决方案之一。
-   - Windows Server在企业市场中占有很大份额。
-   - 传统的Ceph iSCSI Gateway在性能上存在问题。
+   - Ceph作为开源分布式存储解决方案，在Linux环境中表现出色。
+   - Windows Server在企业市场中占据重要地位。
+   - 传统Ceph iSCSI Gateway在性能上存在局限。
 
 2. **合作伙伴关系：**
-   - Cloud-based Solutions与Ceph合作，旨在改善Windows环境下的Ceph性能。
-   - 合作成果已开源，并集成到Ceph社区中。
+   - Cloud-based Solutions与Ceph合作，致力于改善Windows环境下的Ceph性能。
+   - 合作成果开源，并已集成到Ceph社区中。
 
 3. **技术目标：**
    - 提供与Linux环境下相似的用户体验和命令行接口。
@@ -34,7 +39,7 @@ subtitle: tech
 4. **架构与实现：**
    - OSD运行在Linux上，Windows上运行一个用户空间进程（RBD Windows）。
    - 开发了一个新的内核驱动（wimbd.sys）来处理磁盘操作。
-   - 支持的Windows版本包括Windows Server 2016, 2019, 2022，以及Windows 10和11用于开发。
+   - 支持的Windows版本包括Windows Server 2016, 2019, 2022，以及Windows 10和11。
 
 5. **性能优化：**
    - 通过实现Device I/O Control和改进I/O并发性来提升性能。

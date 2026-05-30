@@ -1,11 +1,16 @@
 ---
-title: "2020-01-13 :: Ceph Orchestration Meeting"
-date: 2020-01-13
-updated: 2020-01-14
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-01-13
+subtitle: 2020-01-13_-_-_Ceph_Orchestration_Meeting
+tags:
+- Ceph
+- Orchestrator
+- Distributed Storage
+- OSD Management
+- CephFS
+title: "2020-01-13 -- Ceph Orchestration Meeting"
+updated: 2020-01-14
 ---
 
 
@@ -13,21 +18,21 @@ subtitle: tech
 
 #### 会议主题：Ceph Orchestrator 会议
 
-#### 日期：[具体日期]
+#### 日期：2020年1月13日
 
 #### 参会人员：[具体人员名单]
 
 #### 主要议题：
 
 1. **OSD 移除与替换**
-   - 讨论了关于移除和替换 OSD 的流程和责任分配。
-   - 提出了一个新的管理模块，用于处理 OSD 的排空（draining）操作，该模块可以被 Rook 和 Self ADM 直接消费，也可能被仪表盘独立使用。
-   - 讨论了排空 OSD 的具体步骤，包括设置权重为零、等待 OSD 为空等。
+   - 讨论了移除和替换 OSD 的流程，包括责任分配和排空操作。
+   - 提出了一个新的管理模块，用于处理 OSD 的排空操作，该模块可以被 Rook 和 Self ADM 直接消费，也可能被仪表盘独立使用。
+   - 讨论了排空 OSD 的具体步骤，如设置权重为零、等待 OSD 为空等。
    - 提出了一个新的安全命令（safe command）来管理排空功能，并可能提供 API 供仪表盘或其他组件使用。
 
 2. **依赖问题与改进**
    - 讨论了 Promoter 依赖的 `exact-net` 库不再活跃开发的问题，以及可能的替代方案。
-   - 提出了改进 Safe ADM 的可执行文件结构，避免单一文件的复杂性，并提出了使用 pip 安装的建议。
+   - 提出了改进 Safe ADM 的可执行文件结构，避免单一文件的复杂性，并建议使用 pip 安装。
 
 3. **日常运营与更新**
    - 讨论了取消每日 Orchestrator 站立会议，改为每周会议。
@@ -35,7 +40,7 @@ subtitle: tech
 
 #### 决定事项：
 
-- 将开发一个新的管理模块来处理 OSD 排空操作，以简化流程并提高效率。
+- 开发一个新的管理模块来处理 OSD 排空操作，以简化流程并提高效率。
 - 考虑替换 `exact-net` 库，以解决其不再活跃开发带来的问题。
 - 改进 Safe ADM 的文件结构，使其更易于维护和管理。
 - 取消每日 Orchestrator 站立会议，改为每周会议。
@@ -58,6 +63,6 @@ subtitle: tech
 - 时间：[具体时间]
 - 地点：[具体地点或在线会议链接]
 
----
+
 
 **会议结束**

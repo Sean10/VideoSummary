@@ -1,22 +1,26 @@
 ---
-title: "Ceph RGW Refactoring Meeting 2022-11-09"
-date: 2023-01-30
-updated: 2023-01-31
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-11-09
+subtitle: Ceph_RGW_Refactoring_Meeting_2022-11-09
+tags:
+- Ceph
+- RGW
+- 模块化
+- 版本控制
+- 代码清理
+title: Ceph RGW Refactoring Meeting 2022-11-09
+updated: 2022-11-09
 ---
 
 
-# Ceph 开发会议纪要
 
-## 会议概要
-本次会议主要讨论了关于Ceph存储系统中Sal（存储抽象层）的依赖管理和组织结构问题，特别是如何处理外部树（out-of-tree）驱动程序的依赖关系。会议还涉及了代码清理、模块化以及版本控制等议题。
+本次会议主要讨论了Ceph存储系统中RGW（Rados Gateway）的代码重构问题，包括依赖管理、模块化、版本控制、代码清理等方面。
 
 ## 主要议题
+
 1. **依赖管理与组织结构**
-   - 讨论了如何组织Sal的依赖，特别是外部树驱动程序的依赖问题。
+   - 讨论了如何组织RGW的依赖，特别是处理外部树（out-of-tree）驱动程序的依赖关系。
    - 探讨了是否应该让外部树驱动程序依赖于self common库，以及如何避免这种依赖。
    - 讨论了如何处理编码解码（encode/decode）和配置（config）相关的依赖。
 
@@ -29,6 +33,7 @@ subtitle: tech
    - 探讨了如何通过分离文件和模块来优化代码结构，特别是如何处理DB store与rgw的循环依赖问题。
 
 ## 决定事项
+
 1. **依赖管理**
    - 决定避免外部树驱动程序直接依赖于self common库，考虑通过分离和标准化部分功能来减少依赖。
 
@@ -41,6 +46,7 @@ subtitle: tech
    - 决定通过分离文件和模块来优化代码结构，特别是将rados specific的代码移动到store rados目录下。
 
 ## 后续行动计划
+
 1. **依赖管理**
    - 继续研究和实施如何避免外部树驱动程序依赖于self common库。
    - 考虑将部分功能从self common库中分离出来，形成独立的模块。
@@ -52,17 +58,3 @@ subtitle: tech
 3. **代码清理**
    - 继续清理不必要的头文件包含，提高编译速度和代码质量。
    - 通过分离文件和模块来优化代码结构，特别是处理DB store与rgw的循环依赖问题。
-
-## 关键词
-- Ceph
-- Sal
-- 外部树驱动程序（out-of-tree drivers）
-- self common库
-- 编码解码（encode/decode）
-- 配置（config）
-- 模块化
-- 版本控制
-- 代码清理
-
-## 结论
-本次会议明确了Ceph存储系统中Sal层的依赖管理和组织结构问题，特别是如何处理外部树驱动程序的依赖关系。通过模块化和版本控制策略，以及代码清理工作，将有助于提高系统的稳定性和可维护性。

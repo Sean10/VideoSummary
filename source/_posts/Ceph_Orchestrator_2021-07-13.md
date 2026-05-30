@@ -1,11 +1,16 @@
 ---
-title: "Ceph Orchestrator 2021-07-13"
-date: 2021-08-23
-updated: 2021-08-24
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-08-23
+subtitle: Ceph_Orchestrator_2021-07-13
+tags:
+- Ceph Orchestrator
+- Kubernetes 集成
+- 存储管理
+- Rook
+- 本地存储
+title: "Ceph Orchestrator 2021-07-13"
+updated: 2021-08-24
 ---
 
 
@@ -13,20 +18,20 @@ subtitle: tech
 
 **会议主题：** Ceph Orchestrator 会议
 
-**日期：** [具体日期]
+**日期：** 2021年7月13日
 
 **参会人员：** [参会人员名单]
 
 **会议内容总结：**
 
 1. **ISCSI 问题讨论：**
-   - **容器名称问题：** 讨论了容器名称中包含点（dot）的问题。建议避免使用不含点的容器名称，因为这会导致 DNS 解析问题。具体来说，Python 的 `socket` 模块中的 `getfqdn` 函数在找不到主机名时会扫描 `/etc/hosts` 文件中的别名，如果容器名称包含点，会导致解析失败。
-   - **Cgroups 共享问题：** 讨论了容器和系统之间的 cgroups 不共享的问题。这个问题已经有人贡献了解决方案，并且已经合并到 pacific 版本中。
+   - **容器名称问题：** 讨论了容器名称中包含点（dot）的问题，建议避免使用不含点的容器名称，因为这会导致 DNS 解析问题。
+   - **Cgroups 共享问题：** 讨论了容器和系统之间的 cgroups 不共享的问题，已有人贡献了解决方案并合并到 pacific 版本中。
 
 2. **LSO（Local Storage Operator）讨论：**
-   - **安装和支持问题：** 讨论了 LSO 在 vanilla Kubernetes 环境中的安装和支持问题。目前 LSO 的 README 文件不够友好，需要澄清其在上游的支持情况。
-   - **LSO 集成到 Rook 组织：** 讨论了是否有可能将 LSO 集成到 Rook 的 GitHub 仓库中。目前 LSO 团队对保持所有权感兴趣，因此可能不会接受这个提议。
-   - **LSO 功能需求：** 讨论了 LSO 的功能需求，包括硬件库存检查、动态 PV 分配、原始设备支持等。目前没有完全满足这些需求的存储运营商。
+   - **安装和支持问题：** 讨论了 LSO 在 vanilla Kubernetes 环境中的安装和支持问题，目前 LSO 的 README 文件不够友好，需要澄清其在上游的支持情况。
+   - **LSO 集成到 Rook 组织：** 讨论了是否有可能将 LSO 集成到 Rook 的 GitHub 仓库中，LSO 团队对保持所有权感兴趣，因此可能不会接受这个提议。
+   - **LSO 功能需求：** 讨论了 LSO 的功能需求，包括硬件库存检查、动态 PV 分配、原始设备支持等，目前没有完全满足这些需求的存储运营商。
    - **Rook 本地存储运营商：** 提出了创建一个新的 Rook 本地存储运营商的想法，以满足上述需求，并可能从 LSO 和 TopoLVM 中学习。
 
 3. **后续行动计划：**

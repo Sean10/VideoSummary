@@ -1,11 +1,17 @@
 ---
-title: "2020-04-07 :: Ceph Testing Meeting"
-date: 2020-04-13
-updated: 2020-04-14
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-04-13
+subtitle: 2020-04-07_-_-_Ceph_Testing_Meeting
+tags:
+- Ceph
+- 分布式存储
+- CRUSH 算法
+- 高可用性
+- 可伸缩性
+- 对象存储
+title: 2020-04-07 -- Ceph Testing Meeting
+updated: 2020-04-14
 ---
 
 
@@ -13,12 +19,12 @@ subtitle: tech
 
 **会议参与者：** Yuri, Undine
 
-**会议日期：** [具体日期未提供]
+**会议日期：** 2020年4月7日
 
 **会议主要议题：**
 1. **Ceph项目新功能讨论**
-   - Yuri正在测试一个由Nathan引入的新功能，该功能允许在集群关闭前无限期睡眠。
-   - 该功能旨在允许用户在集群部署后进行调试或实验，通过在任务调度时添加“sleep before tear down”选项实现。
+   - Yuri正在测试一个名为“sleep before tear down”的新功能，该功能由Nathan引入，旨在允许在集群关闭前无限期睡眠。
+   - 该功能通过在任务调度时添加“sleep before tear down”选项实现，以允许用户在集群部署后进行调试或实验。
    - 目前该功能尚未合并到主分支，Yuri正在对其进行审查和测试。
 
 **决定事项：**
@@ -34,4 +40,4 @@ subtitle: tech
 - 分享了个人的健康状况和家庭情况，以及疫情对个人和家庭的影响。
 
 **会议总结：**
-会议主要围绕Ceph项目的新功能“sleep before tear down”进行了讨论，Yuri负责该功能的测试和后续通知工作。此外，会议还涉及了疫情期间的工作和生活状态，以及个人和家庭的情况。
+本次会议主要围绕Ceph项目的新功能“sleep before tear down”进行了讨论，Yuri负责该功能的测试和后续通知工作。此外，会议还涉及了疫情期间的工作和生活状态，以及个人和家庭的情况。

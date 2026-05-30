@@ -1,12 +1,18 @@
 ---
-title: "CDS G/H (Day 2) - RBD: Database Performance"
-date: 2014-06-26
-updated: 2014-06-26
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2014-06-26
+subtitle: CDS_G_H_Day_2_-_RBD_-_Database_Performance
+tags:
+- Ceph
+- RBD
+- Database Performance
+- CephFS
+- Benchmarking
+title: "'CDS G/H (Day 2) - RBD: Database Performance'"
+updated: 2014-06-26
 ---
+
 
 
 
@@ -24,14 +30,14 @@ subtitle: tech
 
 **1. 会议背景**
 
-* 旨在探讨如何在Ceph上运行数据库，尤其是RBD上的数据库性能优化。
-* 希望通过优化，实现跨广域网络的数据库运行，而非多站点复制。
+* 探讨在Ceph上运行数据库，特别是RBD上的数据库性能优化。
+* 目标是实现跨广域网络的数据库运行，而非多站点复制。
 
 **2. 讨论议题**
 
 * **数据库性能问题**：
     * 使用Ceph作为后端存储的数据库（如PostgreSQL、MySQL等）性能不如预期。
-    * 原因可能包括：
+    * 可能的原因包括：
         * RBD的striping策略导致小写入操作堆积在单个对象上，影响性能。
         * 数据库的写前日志（WAL）可能导致性能瓶颈。
         * 网络延迟和复制开销。
@@ -62,14 +68,14 @@ subtitle: tech
 
 **5. 关键词**
 
-* RBD
-* PostgreSQL
-* MySQL
-* WAL
-* Striping
-* SSD
-* Cache
-* Performance
-* Benchmark
-* Test
-* Community
+- RBD
+- PostgreSQL
+- MySQL
+- WAL
+- Striping
+- SSD
+- Cache
+- Performance
+- Benchmark
+- Test
+- Community

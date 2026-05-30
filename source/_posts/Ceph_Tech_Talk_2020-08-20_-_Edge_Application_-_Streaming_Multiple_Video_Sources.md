@@ -1,19 +1,24 @@
 ---
-title: "Ceph Tech Talk 2020-08-20: Edge Application - Streaming Multiple Video Sources"
-date: 2020-08-20
-updated: 2020-08-21
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 技术会议
+date: 2020-08-20
+subtitle: Ceph_Tech_Talk_2020-08-20_-_Edge_Application_-_Streaming_Multiple_Video_Sources
+tags:
+- 边缘计算
+- Ceph
+- 视频流
+- 分布式存储
+- OpenCV
+title: Ceph Tech Talk 2020-08-20- Edge Application - Streaming Multiple Video Sources
+updated: 2020-08-21
 ---
 
 
 ### 会议纪要
 
-#### 会议主题：Seth Tech Talk - 边缘应用视频流项目介绍
+#### 会议主题：Ceph Tech Talk - 边缘应用多视频源流式传输项目介绍
 
-#### 会议时间：具体时间未提供
+#### 会议时间：2020年8月20日
 
 #### 会议地点：线上会议
 
@@ -24,12 +29,12 @@ subtitle: tech
 #### 会议内容总结：
 
 1. **项目介绍**：
-   - Jason Wang和Niharika Kompala作为Red Hat的实习生，介绍了他们夏季实习期间开发的边缘应用项目，该项目涉及多视频源的流媒体处理。
-   - 项目目标是通过边缘计算技术改善视频流的质量和延迟问题，特别是在处理大量摄像头数据时。
+   - Jason Wang和Niharika Kompala作为Red Hat的实习生，介绍了他们在夏季实习期间开发的边缘应用项目，该项目涉及多视频源的流式传输。
+   - 项目目标是通过边缘计算技术改善视频流的质量和延迟问题，特别是处理大量摄像头数据时。
 
 2. **技术背景**：
-   - 讨论了边缘计算的重要性，特别是在处理预计到2025年将达到750亿连接设备的庞大数据量时。
-   - 强调了边缘计算在提供低延迟和高速度处理方面的优势，特别是在5G技术和物联网（IoT）的背景下。
+   - 讨论了边缘计算的重要性，特别是在预计到2025年将有750亿连接设备的大数据量背景下。
+   - 强调了边缘计算在提供低延迟和高速度处理方面的优势。
 
 3. **项目架构与技术实现**：
    - 项目使用了GStreamer框架来处理视频流，并开发了自定义的GStreamer插件来上传视频到Ceph存储系统。
@@ -54,6 +59,6 @@ subtitle: tech
 #### 备注：
 - 会议中提到的GitHub项目URL未在纪要中提供，建议后续补充。
 
----
 
-以上是本次Seth Tech Talk的会议纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。
+
+以上是本次Ceph Tech Talk的会议纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

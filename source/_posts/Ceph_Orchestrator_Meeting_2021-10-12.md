@@ -1,24 +1,26 @@
 ---
-title: "Ceph Orchestrator Meeting 2021-10-12"
-date: 2021-10-12
-updated: 2021-10-13
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-10-12
+subtitle: Ceph Orchestrator_Meeting_2021-10-12
+tags:
+- Ceph Orchestrator
+- Cephadm
+- Container Registry Management
+- Manila Integration
+- Ganesha Interaction
+title: "Ceph Orchestrator Meeting 2021-10-12"
+updated: 2021-10-13
 ---
 
 
-### 会议纪要
 
-#### 会议概览
-本次会议主要讨论了Ceph Orchestrator的多个议题，包括Cephadm集成、容器注册表管理、Manila与Ceph及Ganesha的交互等。
 
-#### 主要议题及讨论内容
+本次Ceph Orchestrator会议主要围绕Ceph Orchestrator的多个议题展开讨论，包括Cephadm集成、容器注册表管理、Manila与Ceph及Ganesha的交互等。
 
 1. **Cephadm集成**
-   - 冬季项目已经开始，Cephadm已添加了新的集成功能。
-   - 已有两名学生对项目感兴趣，期待更多集成到视频中的可能性。
+   - 冬季项目已启动，Cephadm新增了新的集成功能。
+   - 已有两名学生加入项目，并期待更多功能集成到视频演示中。
 
 2. **容器注册表管理**
    - 讨论了如何处理容器注册表版本列表，特别是自定义注册表与上游注册表的差异。
@@ -48,11 +50,4 @@ subtitle: tech
 - 讨论了Ingress demon的状态和其在生产环境中的适用性。
 - 探讨了如何处理Orchestrator命令的异步性质，以及如何确保数据路径的连续性。
 
-#### 会议结束
-
-- 会议在讨论了所有议题后圆满结束，参与者对未来的工作方向有了更清晰的认识。
-- 感谢所有参与者的贡献，并期待下周的进一步讨论和进展。
-
----
-
-以上是本次Ceph Orchestrator会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。
+本次会议对Ceph Orchestrator的未来发展方向提供了清晰的指引，并确定了后续的工作重点。

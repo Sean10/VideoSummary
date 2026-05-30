@@ -1,31 +1,47 @@
 ---
-title: "Ceph Developer Monthly 2022-03-02"
-date: 2022-06-03
-updated: 2022-06-03
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-06-03
+subtitle: Ceph_Developer_Monthly_2022-03-02
+tags:
+- Ceph
+- 分布式存储
+- Prometheus
+- 日志管理
+- 可观察性
+title: "Ceph Developer Monthly 2022-03-02"
+updated: 2022-06-03
 ---
 
 
-1. **Centralized Logging Solutions**:
-   - **Graylog**: Has to be configured manually, lacks dynamic log collection.
-   - **Elasticsearch and Logstash**: Offer customization and better visualization, but require running beats daemon on every node.
-   - **Loki**: Simpler integration with native grafana interface.
 
-2. **Traceability and Observability**:
-   - Trace points can help in reducing the overhead of processing logs.
-   - Tracing gives the possibility of focusing on specific flows and turning on traces under certain conditions.
 
-3. **Dynamic Filtering and Conditional Tracing**:
-   - The idea of conditional tracing based on observed conditions to reduce the volume of logs.
-   - Dynamic filtering capabilities like those seen in dtrace for efficient log management and debugging.
+本次Ceph开发者月度会议主要讨论了以下几个方面：
 
-4. **Future Work**:
-   - Explore integrating dynamic code or scripting into logging and tracing to allow for flexible condition injection.
-   - Consider the feasibility and safety of such dynamic capabilities in a C++ environment.
+1. **集中式日志解决方案**：
+   - 讨论了现有的集中式日志解决方案，包括Graylog、Elasticsearch和Logstash、Loki等，并比较了它们的优缺点。
+   - 讨论了集中式日志对于多集群管理和调试的重要性。
+   - 讨论了如何通过配置参数和模式识别来减少日志的冗余，并利用条件触发来优化日志管理。
 
-5. **Community Feedback**:
-   - Send out emails to both dev list and user list to gather more feedback on centralized logging solutions.
-   - Understand different use cases and roles these solutions can serve.
+2. **指标收集和可观察性**：
+   - 讨论了Prometheus在收集和监控Ceph集群指标方面的作用。
+   - 讨论了如何解决Prometheus在扩展到大规模集群时的性能问题。
+   - 讨论了如何将更多指标和计数器暴露给Prometheus，并考虑了使用C++代码直接收集指标的方法。
+
+3. **未来工作**：
+   - 讨论了将动态代码或脚本集成到日志和跟踪中的可能性，以实现更灵活的条件注入。
+   - 讨论了在C++环境中实现这些动态功能的安全性和可行性。
+   - 讨论了通过社区反馈来了解不同的使用案例和角色，以便更好地设计日志和跟踪系统。
+
+4. **社区反馈**：
+   - 讨论了通过向开发者列表和用户列表发送邮件来收集更多反馈。
+   - 讨论了理解不同的使用案例和角色，以便这些解决方案可以更好地服务于社区。
+
+本次会议还讨论了其他一些话题，例如：
+
+- 指标收集的拓扑结构，特别是关于如何收集计数器和指标的讨论。
+- 将Prometheus作为主端点收集指标的可行性。
+- 如何解决现有指标的冗余问题，并考虑减少高频数据流。
+- 利用DTrace等工具实现动态过滤和条件跟踪的可能性。
+
+会议决定将讨论的结果整理成文档，并通过邮件列表和邮件发送给更广泛的社区，以便进一步讨论和改进。

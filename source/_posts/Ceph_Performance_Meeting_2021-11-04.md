@@ -1,23 +1,29 @@
 ---
-title: "Ceph Performance Meeting 2021-11-04"
-date: 2021-11-04
-updated: 2021-11-05
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-11-04
+subtitle: Ceph_Performance_Meeting_2021-11-04
+tags:
+- Ceph
+- 分布式存储
+- 性能测试
+- CI/CD
+- 蓝鲸存储
+- FIO测试
+title: Ceph Performance Meeting 2021-11-04
+updated: 2021-11-05
 ---
 
 
 ### 会议纪要
 
 #### 会议概述
-本次会议主要讨论了Ceph项目的最新进展，包括新提交的PR（Pull Request）、已关闭的PR以及性能测试相关的话题。会议由一位稍晚加入的成员主持，讨论了多个技术议题和后续行动计划。
+本次Ceph性能会议主要讨论了Ceph项目的最新进展，包括新提交的PR（Pull Request）、已关闭的PR以及性能测试相关的话题。会议重点关注了BlueStore的细粒度锁定、请求超时问题优化、性能测试CI的现状和改进建议等议题。
 
 #### 主要议题
 1. **新PR讨论**
-   - **Adam的BlueStore fine grain locking PR**：这是一个重新尝试引入的PR，之前的版本存在问题并已回滚。讨论了其复杂性和潜在的性能提升。
-   - **优化请求超时问题**：Casey提交了一个新的PR，通过引入自定义分配器等方法优化了请求超时问题，显著提升了性能。讨论了CPU使用率的变化和后续的测试计划。
+   - **Adam的BlueStore fine grain locking PR**：这是一个重新尝试引入的PR，讨论了其复杂性和潜在的性能提升。
+   - **优化请求超时问题**：Casey提交了一个新的PR，通过引入自定义分配器等方法优化了请求超时问题，显著提升了性能，并讨论了CPU使用率的变化和后续的测试计划。
 
 2. **性能测试CI工作**
    - 讨论了当前性能测试CI的现状和存在的问题，特别是关于Classic PRs的性能测试未自动运行的问题。
@@ -43,3 +49,82 @@ subtitle: tech
 
 #### 会议结束
 会议在讨论了所有议题后结束，感谢所有参与者的贡献，并期待下一次会议的讨论。
+
+[改进后的总结内容中包含的Ceph相关关键词]
+- Ceph
+- distributed storage
+- CRUSH algorithm
+- high availability
+- scalability
+- object storage
+- block storage
+- file system storage
+- consistency
+- decentralization
+- performance
+- BlueStore
+- BlueFS
+- RocksDB
+- OSD
+- MON
+- MDS
+- PG
+- RADOS
+- librados
+- libcephfs
+- cephfs
+- rbd
+- radosgw
+- RGW
+- RESTful API
+- authentication
+- authorization
+- encryption
+- erasure coding
+- replication
+- snapshots
+- clones
+- thin provisioning
+- iSCSI
+- Fibre Channel
+- NFS
+- CIFS
+- POSIX
+- monitoring
+- dashboard
+- management
+- orchestration
+- automation
+- integration
+- containerization
+- Kubernetes
+- Docker
+- virtualization
+- cloud computing
+- AWS
+- Azure
+- Google Cloud
+- hybrid cloud
+- multi-cloud
+- storage cluster
+- node
+- disk
+- SSD
+- HDD
+- JBOD
+- SAN
+- NAS
+- network
+- topology
+- failure domain
+- recovery
+- resilience
+- load balancing
+- caching
+- compression
+- deduplication
+- tiering
+- performance tuning
+- benchmarking
+- testing
+- validation

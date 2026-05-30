@@ -1,23 +1,30 @@
 ---
-title: "Ceph Orchestrator Meeting 2021-09-21"
-date: 2021-10-06
-updated: 2021-10-07
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-10-06
+subtitle: Ceph_Orchestrator_Meeting_2021-09-21
+tags:
+- Ceph
+- Orchestrator
+- Rook
+- Monitoring Stack
+- Kubernetes
+title: "Ceph Orchestrator Meeting 2021-09-21"
+updated: 2021-10-07
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概述
-本次会议主要讨论了两个主要议题：Rook Orchestrator的功能实现和监控堆栈的自动部署问题。会议由一位正在恢复中的主持人主持，他强调了自己不会过多发言，但会确保会议顺利进行。
+本次Ceph Orchestrator会议主要讨论了两个议题：Rook Orchestrator的功能实现和监控堆栈的自动部署问题。会议由一位正在恢复中的主持人主持，他强调自己将减少发言，以确保会议顺利进行。
 
 #### 主要议题及讨论内容
 
 1. **Rook Orchestrator的功能实现**
-   - **当前状态**：讨论了Rook Orchestrator的基本功能，包括网络管理和监控器管理等方面。提出了一些细节问题，如是否值得实现某些功能，因为Rook和Ceph的管理方式存在差异。
+   - **当前状态**：讨论了Rook Orchestrator的基本功能，包括网络管理、监控器管理等。提出了一些细节问题，如是否值得实现某些功能，因为Rook和Ceph的管理方式存在差异。
    - **ISCSI支持**：讨论了在Rook Operator中实现ISCSI支持的问题。虽然有一些功能请求，但由于需求不高，目前尚未有实质性进展。会议中提到了可能需要为Windows节点集成实现ISCSI支持，但目前还没有明确的行动计划。
    - **监控堆栈的自动部署**：讨论了是否应在Rook Operator中包含自动部署和配置监控堆栈的功能。虽然Rook Operator目前不负责部署第三方应用，但为了提供更好的用户体验，可能会考虑在文档中提供指导和配置说明。
 

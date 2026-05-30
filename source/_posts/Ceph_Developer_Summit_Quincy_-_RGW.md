@@ -1,13 +1,17 @@
 ---
-title: "Ceph Developer Summit Quincy: RGW"
+title: " Ceph Developer Summit Quincy: RGW "
 date: 2021-04-09
 updated: 2021-04-10
 tags:
+- Ceph
+- RGW
+- Distributed Storage
+- Storage Cluster
+- Cloud Computing
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: "Ceph开发者峰会Quincy：RGW"
 ---
-
 
 ### 会议纪要
 
@@ -20,20 +24,17 @@ subtitle: tech
 #### 主要议题：
 
 1. **Swift API 与 S3 API 的支持情况**
-   - Swift API 允许更新桶的元数据，但 S3 API 不支持特定操作。
-   - 讨论了是否应该扩展 S3 API 以支持这些操作。
+   - 讨论了 Swift API 允许更新桶的元数据，但 S3 API 不支持特定操作，并探讨了扩展 S3 API 的可能性。
 
 2. **Dashboard 和 RGW 的功能更新**
    - 展示了 Dashboard 的最新功能，包括多站点配置下的性能图表、用户容量限制的可视化、桶配额管理等。
    - 讨论了增强桶策略和后端管理的必要性，特别是配额管理和加密通知。
 
 3. **管理模块与 RGW 命令行接口**
-   - 讨论了将所有 RGW 管理命令集成到 CLI 的可能性。
-   - 探讨了管理模块与 RGW 管理 API 的关系，以及如何处理多站点配置的问题。
+   - 讨论了将所有 RGW 管理命令集成到 CLI 的可能性，以及管理模块与 RGW 管理 API 的关系。
 
 4. **Bucket 索引方案的改进**
-   - 讨论了使用 SQLite 作为 Bucket 索引的可行性。
-   - 探讨了 Bucket 索引性能的问题，特别是对于大型 Bucket 的索引性能。
+   - 讨论了使用 SQLite 作为 Bucket 索引的可行性，以及 Bucket 索引性能的问题。
 
 5. **RGW 的 CLI 统一**
    - 讨论了将 RGW 管理命令统一到 CLI 的必要性和实施方案。
@@ -61,7 +62,7 @@ subtitle: tech
 
 #### 决定事项：
 
-- 需要进一步讨论和规划如何扩展 S3 API 以支持更多操作。
+- 需要进一步讨论和规划如何扩展 S3 API。
 - 确定增强 Dashboard 功能的具体需求，包括配额管理和加密通知。
 - 需要对 RGW 管理命令进行重构，以便更好地集成到 CLI 中。
 - 确定 Zipper 项目的下一步行动计划，包括 API 的稳定性和外部实现的兼容性。
@@ -83,8 +84,8 @@ subtitle: tech
 - 会议中提到的具体技术细节和实现方案需要在后续的会议或工作中进一步细化和确认。
 - 需要定期回顾和更新这些行动计划，确保项目的顺利进行。
 
----
 
-**会议结束时间：[具体时间]**
 
-**下次会议预定：[具体时间]**
+**会议结束时间：[具体时间**]
+
+**下次会议预定：[具体时间**]

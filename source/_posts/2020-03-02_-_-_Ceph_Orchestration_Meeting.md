@@ -1,37 +1,40 @@
 ---
-title: "2020-03-02 :: Ceph Orchestration Meeting"
-date: 2020-04-03
-updated: 2020-04-04
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-04-03
+subtitle: 2020-03-02_-_-_Ceph_Orchestration_Meeting
+tags:
+- Ceph
+- 分布式存储
+- Rook项目
+- Octopus版本
+- 集群部署
+title: "'2020-03-02 :: Ceph Orchestration Meeting'"
+updated: 2020-04-04
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概要
-本次会议主要讨论了分布式存储系统Ceph的相关开发进展，特别是与Rook项目和Octopus版本的集成测试。会议中还涉及了天气闲聊、个人健康状况以及一些技术问题的讨论。
+本次Ceph Orchestration会议主要讨论了Ceph分布式存储系统的开发进展，特别是与Rook项目和Octopus版本的集成测试。会议还涉及了非技术话题，如天气和个人健康状况。
 
 #### 主要议题
-1. **天气与个人状况**：
-   - 与会者讨论了各自地区的天气情况，包括雪和春天的到来。
-   - Sebastian因病未能参加会议，会议对此表示遗憾。
-
-2. **Rook项目进展**：
+1. **Rook项目进展**：
    - 讨论了在Rook项目中创建新的Python客户端仓库的决策，并将Python客户端代码从现有仓库迁移到Rook中。
-   - 提到了Rook项目中对Octopus RC版本的测试，已有PR（Pull Request）开放进行集成测试。
+   - 讨论了Rook项目中对Octopus RC版本的测试，已有PR（Pull Request）开放进行集成测试。
 
-3. **Ceph Octopus测试**：
+2. **Ceph Octopus测试**：
    - 讨论了如何对Octopus版本进行更频繁的测试，包括设置夜间构建以便持续测试最新主分支。
    - 强调了需要一个可靠的镜像来进行测试。
 
-4. **技术问题与解决方案**：
+3. **技术问题与解决方案**：
    - 讨论了在设置Ceph集群时遇到的问题，特别是与监控节点和操作符的连接问题。
    - 提到了一些正在进行的技术改进，如改进调度器和服务描述的更新。
 
-5. **后续行动计划**：
+4. **后续行动计划**：
    - 继续进行Octopus版本的测试，并确保所有相关的PR得到适当的审查和合并。
    - 解决技术问题，如改进Ceph集群的部署和管理，以及优化Rook项目的集成。
 

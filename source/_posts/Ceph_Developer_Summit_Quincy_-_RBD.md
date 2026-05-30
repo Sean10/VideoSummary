@@ -1,49 +1,52 @@
 ---
-title: "Ceph Developer Summit Quincy: RBD"
+title: " Ceph Developer Summit Quincy: RBD "
 date: 2021-04-12
 updated: 2021-04-13
 tags:
+- [Ceph]
+- [分布式存储]
+- [RBD]
+- [监控]
+- [加密]
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Developer_Summit_Quincy_-_RBD
 ---
-
 
 ### 会议纪要
 
-#### 会议主题：Ceph Dashboard、NVMe over Fabrics、RBD Mirroring Monitoring、Volume Groups on Snap Mirroring、Prometheus Scale Out、Image Encryption
+#### 会议主题：Ceph Dashboard、NVMe over Fabrics、RBD 镜像监控、快照镜像卷组、Prometheus 扩展、图像加密
 
 #### 会议时间：[具体日期]
 
-#### 参会人员：Jeff, Ernesto, Ilias, Michael, Danny, Orr, 以及其他相关人员
+#### 参会人员：Jeff, Ernesto, Ilias, Michael, Danny, Orr 以及其他相关人员
 
 #### 会议内容总结：
 
 1. **Ceph Dashboard 演示**
    - Ernesto 展示了 Ceph Dashboard 的功能，重点介绍了 RBD 镜像和 RBD 镜像功能。
-   - 演示了如何在 Dashboard 中创建 RBD 镜像、启用日志记录、设置条带化选项和 QoS 选项。
-   - 讨论了 RBD 镜像的配置和操作，包括镜像保护和克隆。
-   - 提到了命名空间支持和对旧版本 RBD 镜像的兼容性。
+   - 讨论了在 Dashboard 中创建 RBD 镜像、启用日志记录、设置条带化选项和 QoS 选项。
+   - 提到了 RBD 镜像的配置和操作，包括镜像保护和克隆，以及命名空间支持和旧版本 RBD 镜像的兼容性。
 
 2. **NVMe over Fabrics 状态和下一步计划**
    - 讨论了 NVMe over Fabrics 的工作进展，包括设置网关和使用 SPDK。
    - 提到了需要实现发现服务，以便在集群中找到目标和命名空间。
    - 预计未来几个月会有更多工作进展。
 
-3. **RBD Mirroring Monitoring**
+3. **RBD 镜像监控**
    - Ilias 介绍了 RBD 镜像监控的目标，包括改进和统一不同镜像解决方案的指标。
    - 讨论了 Prometheus 指标的暴露和收集，以及如何解决管理器过载的问题。
    - 提到了需要实现每个镜像守护进程的独立 Prometheus 端点。
 
-4. **Volume Groups on Snap Mirroring**
+4. **快照镜像卷组**
    - Michael 讨论了在快照镜像中使用卷组的可能性，以便创建一致性快照组进行镜像。
    - 提到了现有的快照镜像功能和未来的扩展计划。
 
-5. **Prometheus Scale Out**
+5. **Prometheus 扩展**
    - 讨论了 Prometheus 的扩展问题，特别是在 Kubernetes 环境中直接从客户端收集指标的可行性。
    - 提到了需要避免管理器过载，并考虑客户端直接发送指标到 Prometheus 的方案。
 
-6. **Image Encryption**
+6. **图像加密**
    - Danny 和 Orr 介绍了在 librbd 中添加加密功能的工作，特别是基于 Lux 格式的加密。
    - 讨论了加密功能的性能优势和未来的改进方向，包括支持不同密钥的克隆功能。
 
@@ -65,7 +68,3 @@ subtitle: tech
 
 #### 会议结束：
 - 会议在讨论完所有议题后结束，参会人员感谢彼此的参与，并期待明天的会议。
-
----
-
-以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

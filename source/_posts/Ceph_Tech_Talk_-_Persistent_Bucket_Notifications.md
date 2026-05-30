@@ -1,12 +1,18 @@
 ---
-title: "Ceph Tech Talk: Persistent Bucket Notifications"
-date: 2021-04-01
-updated: 2021-04-02
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-04-01
+subtitle: Ceph_Tech_Talk_-_Persistent_Bucket_Notifications
+tags:
+- Ceph
+- 分布式存储
+- 持久化桶通知
+- 异步通知
+- 两阶段提交
+title: "'Ceph Tech Talk: Persistent Bucket Notifications'"
+updated: 2021-04-02
 ---
+
 
 
 ### 会议纪要：Ceph Tech Talk - 持久化桶通知功能介绍

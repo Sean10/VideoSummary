@@ -1,13 +1,18 @@
 ---
-title: "CDS Tentacle - Cephadm"
-date: 2024-08-22
-updated: 2024-08-23
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2024-08-22
+subtitle: Cephadm项目T版本改进讨论
+tags:
+- Ceph
+- Cephadm
+- 分布式存储
+- 安全性
+- 服务器管理
+- 云计算
+title: "CDS Tentacle - Cephadm"
+updated: 2024-08-23
 ---
-
 
 
 ### 会议纪要

@@ -1,39 +1,44 @@
 ---
-title: "Ceph Crimson/SeaStore 2021-06-16"
+title: " Ceph Crimson/SeaStore 2021-06-16 "
 date: 2021-06-16
 updated: 2021-06-17
 tags:
+- Ceph
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可伸缩性
+- 对象存储
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Crimson_SeaStore_2021-06-16
 ---
-
 
 ### 会议纪要
 
 #### 关键细节
 1. **设备管理支持**：
-   - 需要定义zone space和其他结构以支持设备管理。
+   - 讨论了为支持设备管理而定义zone space和其他结构的需求。
    - 参考了FTL库和SPDK中的定义，以获取灵感。
 
 2. **PR审查与更新**：
-   - 审查了一个成熟的PR，涉及管理多个zones。
-   - 更新了PR，修复了单元测试中的bug，并移除了catch extent。
+   - 审查并更新了一个成熟的PR，涉及管理多个zones的支持。
+   - 修复了单元测试中的bug，并移除了catch extent。
 
 3. **单元测试问题**：
-   - 发现一个单元测试存在问题，但系统API测试未报告此问题。
-   - 讨论了使用计数器等于1的问题，计划后续处理。
+   - 发现单元测试存在问题，但系统API测试未报告此问题。
+   - 讨论了使用计数器等于1的问题，并计划后续处理。
 
 4. **构建问题**：
-   - 在release build中发现parent pointer问题，debug build未触发此问题。
-   - 讨论了垃圾收集行为，建议使用mbd测试工具。
+   - 在release build中发现parent pointer问题，而debug build未触发此问题。
+   - 讨论了垃圾收集行为，并建议使用mbd测试工具。
 
 5. **Ceph Master分支问题**：
    - 在当前master分支中，创建pool时出现问题，但在旧分支中可以正常工作。
    - 建议其他人验证是否存在问题。
 
 6. **接口要求**：
-   - 讨论了zone设备的接口要求，建议参考c-store中的segment manager.h。
+   - 讨论了zone设备的接口要求，并建议参考c-store中的segment manager.h。
    - 需要创建适配器以暴露设备信息。
 
 7. **fmt库更新**：
@@ -50,7 +55,7 @@ subtitle: tech
 
 #### 决定事项
 1. **设备管理支持**：
-   - 需要定义zone space和其他结构以支持设备管理。
+   - 定义zone space和其他结构以支持设备管理。
    - 参考FTL库和SPDK中的定义，以获取灵感。
 
 2. **PR审查与更新**：

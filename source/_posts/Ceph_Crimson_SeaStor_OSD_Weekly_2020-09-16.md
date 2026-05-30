@@ -1,23 +1,29 @@
 ---
-title: "Ceph Crimson/SeaStor OSD Weekly 2020-09-16"
-date: 2020-09-16
-updated: 2020-09-17
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-09-16
+subtitle: Ceph_Crimson_SeaStor_OSD_Weekly_2020-09-16
+tags:
+- Ceph
+- BlueStore
+- CRUSH algorithm
+- Performance Testing
+- Distributed Storage
+title: "Ceph Crimson/SeaStor OSD Weekly 2020-09-16"
+updated: 2020-09-17
 ---
+
 
 
 ### 会议纪要
 
 #### 关键细节
 - **Thresha Totology Basis Threat Test**: 上周仍在进行相关工作，最新问题涉及BlueStore中的一个段错误。
-- **DIO Errors PR**: David Zaffman已审核并批准，但仍有需要解决的关注点。
-- **Snapshots in CStore**: 讨论了在CStore中支持快照的可能性，需要进一步学习和讨论。
+- **DIO Errors PR**: David Zaffman已审核并批准，但提出了一些需要解决的问题。
+- **Snapshots in CStore**: 讨论了在CStore中支持快照的可能性，需要进一步研究和讨论。
 - **Test Case for Tree and Debug**: 正在编写测试用例，并考虑使用reader's bench重现问题。
 - **Scrubbing**: 完成了昨天的scrubbing工作，有一个测试案例需要修复。
-- **GC Stuff Debugging**: 正在调试GC相关问题，预计几天内完成，之后将打包成PR。
+- **GC Stuff Debugging**: 正在调试GC相关问题，预计几天内完成。
 - **Transaction Manager Layer**: 正在进行性能测试，预计会有很多改进空间。
 - **HSE Implementation**: 阅读了HSE的实现，计划在详细测试后评估其CPU开销。
 - **Piafano 3**: 已经发送了初始版本，正在确保架构和设计决策的正确性。
@@ -30,7 +36,7 @@ subtitle: tech
 
 #### 决定的事项
 - **BlueStore段错误**: 建议查看崩溃时的日志信息，而不是尝试重现。
-- **CStore快照支持**: 需要进一步学习和讨论，以决定是否采用不同的方法。
+- **CStore快照支持**: 需要进一步研究和讨论，以决定是否采用不同的方法。
 - **Transaction Manager Layer**: 确认可以开始性能测试，尽管性能可能不佳。
 
 #### 后续的行动计划

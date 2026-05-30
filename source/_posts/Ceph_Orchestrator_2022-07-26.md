@@ -1,24 +1,30 @@
 ---
-title: "Ceph Orchestrator 2022-07-26"
-date: 2022-08-01
-updated: 2022-08-01
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-08-01
+subtitle: Ceph_Orchestrator_2022-07-26
+tags:
+- Ceph
+- 分布式存储
+- 管理标签
+- Ceph Orchestrator
+- 会议纪要
+title: "Ceph Orchestrator 2022-07-26"
+updated: 2022-08-01
 ---
+
+
 
 
 ### 会议纪要
 
 #### 主要议题
 1. **管理标签（admin label）功能讨论**
-   - 讨论了管理标签的作用，主要涉及在所有主机上部署`ceph.conf`和`admin keyring`文件。
-   - 讨论了在移除标签时自动移除这些文件的机制，以及可能引发的问题。
-   - 提出了使用哈希文件来管理这些文件的方法，以确保只有通过特定流程部署的文件才会被移除。
+   - 讨论了管理标签在部署`ceph.conf`和`admin keyring`文件中的作用，以及移除标签时自动移除这些文件的机制。
+   - 讨论了使用哈希文件来管理这些文件的方法，以确保只有通过特定流程部署的文件才会被移除。
 
 2. **NFS Keep Alive功能改进**
-   - 讨论了如何改进NFS Keep Alive功能的命令行参数，提出了使用模式（mode）标志来区分不同的部署策略。
+   - 讨论了改进NFS Keep Alive功能的命令行参数，提出了使用模式（mode）标志来区分不同的部署策略。
    - 讨论了如何通过模式标志来管理不同的部署场景，如HA代理模式和Keep Alive Only模式。
 
 3. **会议记录归档**
@@ -38,3 +44,6 @@ subtitle: tech
 - 讨论了关于编译相关PR的处理，决定等待一周以获取反馈，如果无反馈则考虑创建新的PR。
 
 会议持续了140分钟，涉及了深入的设计和技术讨论。
+
+
+[总结内容结束]

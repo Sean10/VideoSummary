@@ -1,18 +1,26 @@
 ---
-title: "Ceph Orchestrator Meeting 2021-08-17"
-date: 2021-08-20
-updated: 2021-08-21
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-08-20
+subtitle: Ceph_Orchestrator_Meeting_2021-08-17
+tags:
+- Ceph
+- 分布式存储
+- Podman
+- 客户端管理
+- Rook
+- 集成测试
+title: "Ceph Orchestrator Meeting 2021-08-17"
+updated: 2021-08-21
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议基本信息
-- **日期**: [具体日期]
+- **日期**: 2021-08-17
 - **时间**: [具体时间]
 - **参会人员**: Karen, Sebastian, Travis, Arun 等
 - **主持人**: [主持人姓名]
@@ -61,7 +69,3 @@ subtitle: tech
 - **会议总结**: 会议讨论了多个关键议题，包括 Podman 问题、客户端管理需求、Rook 更新和集成测试新方法，并制定了相应的后续行动计划。
 
 **会议结束时间**: [具体时间]
-
----
-
-以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

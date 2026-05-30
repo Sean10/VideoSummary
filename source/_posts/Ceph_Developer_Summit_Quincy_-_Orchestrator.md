@@ -1,23 +1,29 @@
 ---
-title: "Ceph Developer Summit Quincy: Orchestrator"
-date: 2021-04-09
-updated: 2021-04-09
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-04-09
+subtitle: Ceph_Developer_Summit_Quincy_-_Orchestrator
+tags:
+- Ceph
+- Orchestrator
+- Dashboard
+- Kubernetes
+- Development Environment
+title: "'Ceph Developer Summit Quincy: Orchestrator'"
+updated: 2021-04-09
 ---
+
 
 
 ### 会议纪要
 
 #### 会议概述
-本次会议主要围绕Ceph分布式存储系统的管理工具Orchestra SDS的仪表盘演示和功能讨论展开。会议由一位研发人员主持，重点介绍了仪表盘的新功能和与Ceph管理工具的集成。
+本次Ceph开发者峰会Quincy会议重点讨论了Ceph分布式存储系统管理工具Orchestrator的仪表盘功能，包括新功能展示、维护模式、服务管理以及开发环境优化等方面。
 
 #### 主要议题
 1. **仪表盘功能演示**：
    - 展示了集群主机列表及其上运行的服务。
-   - 演示了如何编辑、删除主机，或将主机置于维护模式。
+   - 介绍了如何编辑、删除主机，或将主机置于维护模式。
    - 讨论了添加和删除主机标签的功能。
 
 2. **维护模式**：
@@ -61,5 +67,12 @@ subtitle: tech
 3. **用户反馈和文档**：
    - 收集用户反馈，持续改进用户体验。
    - 更新和完善相关文档，确保用户和开发者能够轻松理解和使用新功能。
+
+#### 会议亮点
+- 会议重点关注了Orchestrator仪表盘的新功能和集成。
+- 讨论了维护模式和主机管理的改进，以及服务管理的高可用性配置。
+- 提出了开发环境优化的需求，以提高开发效率和简化部署流程。
+- 强调了资源调度、自动调整OSD和MDS内存等高级功能的重要性。
+- 定下了后续功能开发、开发环境优化和用户反馈等方面的行动计划。
 
 本次会议为Ceph分布式存储系统的管理和开发提供了明确的方向和行动计划，有助于推动项目的进一步发展和完善。

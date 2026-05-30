@@ -1,12 +1,19 @@
 ---
-title: "Ceph RGW Refactoring Meeting 2023-06-07"
-date: 2023-07-03
-updated: 2023-07-03
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-07-03
+subtitle: Ceph_RGW_Refactoring_Meeting_2023-06-07
+tags:
+- Ceph
+- RGW
+- Bug修复
+- 分布式存储
+- 软件开发
+title: "Ceph RGW Refactoring Meeting 2023-06-07"
+updated: 2023-07-03
 ---
+
+
 
 
 ### 会议纪要
@@ -16,15 +23,15 @@ subtitle: tech
 #### 参会人员：[参会人员名单]
 
 #### 会议议程：
-1. **修复版本到对象一致性Bug的工作进展**
-   - 讨论了由Corey Snyder负责的关于resharding相关的一致性Bug修复工作。
-   - 提到了相关Bug的讨论邮件已在用户列表中发布，并分享了一个指向Pull Request的链接，其中包含修复和检查工具。
+1. **resharding相关一致性Bug修复进展**
+   - 讨论了Corey Snyder负责的resharding一致性Bug修复工作。
+   - 发布了相关Bug的讨论邮件并在用户列表中共享，提供了Pull Request链接，其中包含修复和检查工具。
    - 表达了对Bloomberg等公司参与测试或开发的兴趣。
 
 2. **技术细节和后续行动**
    - 确认了Pull Request 51700的相关工作。
    - 讨论了新resharding逻辑中已修复的Bug，并计划将特定修复回溯到Pacific和Quincy版本。
-   - 工具的修复将合并到Main中，并进行回溯。
+   - 工具的修复将合并到主分支，并进行回溯。
 
 3. **其他讨论事项**
    - 提到了即将举行的CPP会议，Bernie Straw Troop将参加。
@@ -41,7 +48,7 @@ subtitle: tech
 #### 会议结束语：
 会议在简短的讨论后结束，感谢所有参与者的贡献和时间。
 
----
+
 
 **会议记录人：[记录人姓名]**
 **会议日期：[具体日期]**

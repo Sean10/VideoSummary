@@ -1,12 +1,18 @@
 ---
-title: "How we Operate Ceph at Scale | Ceph Days NYC 2024"
-date: 2024-06-18
-updated: 2024-06-19
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2024-06-18
+subtitle: How_we_Operate_Ceph_at_Scale_Ceph_Days_NYC_2024
+tags:
+- Ceph
+- 分布式存储
+- 自动化
+- 性能优化
+- 监控与告警
+title: "How we Operate Ceph at Scale | Ceph Days NYC 2024"
+updated: 2024-06-19
 ---
+
 
 
 ### 会议纪要
@@ -22,21 +28,20 @@ subtitle: tech
 #### 会议内容总结：
 
 1. **DigitalOcean 简介**
-   - DigitalOcean 是一家成立于2012年的云服务提供商，以简单性为核心理念。
-   - 最初提供5美元的SSD后端虚拟机（Droplet），后续产品线扩展至包括Spaces（Ceph支持的S3兼容对象存储）、DBaaS、App Platform、LBaaS等。
-   - 拥有9个不同区域的数据中心，为客户提供多样化的资源部署选择。
+   - DigitalOcean 是一家成立于2012年的云服务提供商，以简单性为核心理念，提供包括Spaces（Ceph支持的S3兼容对象存储）在内的多种服务。
+   - DigitalOcean 在全球拥有多个数据中心，提供多样化的资源部署选择。
 
 2. **Ceph 在 DigitalOcean 的应用**
-   - DigitalOcean 持续扩展Ceph的使用，主要用于块存储和对象存储，支持Volumes和Spaces等服务。
-   - 统计数据：58个集群，其中47个生产集群运行Pacific版本，8个测试集群，超过200PB的原始存储，最大集群超过12PB，28,000个OSDs，1,600台服务器运行Ceph。
+   - DigitalOcean 大规模使用 Ceph 用于块存储和对象存储，支持Volumes和Spaces等服务。
+   - 统计数据：58个集群，包括47个生产集群，超过200PB的原始存储，最大集群超过12PB，28,000个OSDs，1,600台服务器运行Ceph。
 
 3. **自动化与配置管理**
    - 使用Chef进行核心操作系统配置管理，Ansible用于Ceph特定任务，如集群部署和节点扩充。
-   - AWX作为开源的自托管解决方案，用于运行Ansible playbooks，确保团队共享故障模式、保密信息并记录运行历史。
+   - 使用AWX作为开源的自托管解决方案，运行Ansible playbooks，确保团队共享故障模式、保密信息并记录运行历史。
 
 4. **集群操作与维护**
    - 自动化工具支持新集群部署、节点扩充、节点预检、安全重启、配置管理和Ceph升级。
-   - 集群扩容通过PG Remapper进行，优化了对象存储的恢复过程，减少了块存储的并发控制以适应工作负载的延迟敏感性。
+   - 使用PG Remapper进行集群扩容，优化了对象存储的恢复过程，减少了块存储的并发控制以适应工作负载的延迟敏感性。
 
 5. **性能监控与优化**
    - 使用自研工具Marigraph进行集群延迟测量，优化了OSD启动和PG peering过程，减少了延迟敏感应用的影响。

@@ -1,12 +1,18 @@
 ---
-title: "Ceph Month 2021: RADOS Update"
-date: 2021-06-01
-updated: 2021-06-02
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-06-01
+subtitle: Ceph_Month_2021_-_RADOS_Update
+tags:
+- Ceph
+- Distributed Storage
+- RADOS
+- Quincy
+- Pacific
+title: "'Ceph Month 2021: RADOS Update'"
+updated: 2021-06-02
 ---
+
 
 
 ### 会议纪要
@@ -24,7 +30,7 @@ subtitle: tech
 
 1. **Ceph Pacific 更新**
    - **可用性增强**：
-     - Upmap 平衡器默认开启。
+     - Upmap 平衡器默认开启，提升数据平衡效率。
      - 新增健康警告，检测不同版本的守护进程并提醒用户。
      - 支持取消正在进行的数据一致性检查（scrubs）。
      - 改进恢复进度显示，提供更全面的恢复进度信息。
@@ -42,7 +48,6 @@ subtitle: tech
      - 改进缓存效率，引入 mempools 概念，便于内存使用追踪。
    - **生态系统**：
      - 支持扩展集群配置，跨数据中心配置带有仲裁器的集群。
-
 2. **Quincy 展望**
    - **可用性增强**：
      - mClock 调度器将成为默认设置，简化配置。

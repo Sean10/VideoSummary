@@ -1,48 +1,47 @@
 ---
-title: "Ceph Crimson/SeaStor OSD 2020-08-12"
-date: 2020-08-12
-updated: 2020-08-13
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-08-12
+subtitle: Ceph_Crimson_SeaStor_OSD_2020-08-12
+tags:
+- Ceph
+- 分布式存储
+- 代码审查
+- 性能测试
+- 缓存管理
+title: "Ceph Crimson/SeaStor OSD 2020-08-12"
+updated: 2020-08-13
 ---
-
-
 ### 会议纪要
 
 #### 关键细节
-- **参会人员**: 会议涉及多名研发人员，包括但不限于Sam、Tremaine等。
+- **参会人员**: 多名研发人员，包括Sam、Tremaine等。
 - **会议时间**: 最近一周。
 
 #### 讨论的主要议题
 1. **结构测试与技术门槛测试**:
-   - Tremaine上周在进行基于技术的门槛测试和修复工作。
-   - 发现存储检测器在Cremation启动时发出警告，原因是使用了阻塞API读取配置文件。
-   - 已改为使用异步IO（Async IO）来消除警告。
+   - Tremaine进行了技术门槛测试和修复工作，发现并解决了Cremation启动时存储检测器发出警告的问题。
+   - 问题原因为使用阻塞API读取配置文件，已改为使用异步IO（Async IO）解决。
 
 2. **代码审查与PR更新**:
-   - Tremaine本周将完成对Sam创建的PR的审查。
-   - 根据Sam的评论修改了外部map3pr，并更新了PR。
-   - 仍在处理omap3布局操作。
+   - Tremaine将完成对Sam创建的PR的审查，并进行了相应的修改。
+   - 目前仍在处理omap3布局操作。
 
 3. **中断可处理的未来**:
-   - 替换了所有sister future为aerator future，沿IO执行路径。
-   - 正在将中断逻辑嵌入到aero radio creator中，预计几天内提交PR。
+   - 替换了所有sister future为aerator future，并正在将中断逻辑嵌入到aero radio creator中。
 
 4. **性能回归测试**:
    - 讨论了使用pet market进行性能回归测试，但数据尚未准备好。
 
 5. **子树管理与内存解决方案**:
    - 实施并测试了带有子树管理的corporate tracking facility。
-   - 正在寻找将当前基于内存的解决方案转移到systole的方法。
+   - 正在寻找将基于内存的解决方案转移到systole的方法。
 
 6. **异步own entry**:
-   - 开始处理异步own entry，有一些问题通过邮件讨论。
+   - 开始处理异步own entry，并解决相关问题。
 
 7. **缓存驱逐**:
-   - 正在编写缓存层的缓存驱逐实现。
-   - 首先需要编写脏块写出，以便可以修剪日志。
+   - 正在编写缓存层的缓存驱逐实现，首先需要编写脏块写出。
 
 #### 决定的事项
 - **配置文件读取**: 从阻塞API改为异步IO。
@@ -57,7 +56,7 @@ subtitle: tech
 - **异步own entry**: 继续处理异步own entry，并解决相关问题。
 
 #### 其他讨论点
-- **逻辑地址空间的使用**: 讨论了逻辑地址空间的使用，指出当前的用法较为简单，未来可能需要更复杂的策略。
+- **逻辑地址空间的使用**: 讨论了逻辑地址空间的使用，指出当前用法简单，未来可能需要更复杂的策略。
 - **多核支持**: 讨论了多核支持的问题，包括多进程和多线程的策略。
 
 #### 结论

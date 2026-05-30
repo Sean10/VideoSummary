@@ -1,17 +1,25 @@
 ---
-title: "Real-Time Data Anonymization the Serverless Way Demo"
-date: 2021-10-18
-updated: 2021-10-19
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-10-18
+subtitle: Real-Time_Data_Anonymization_the_Serverless_Way_Demo
+tags:
+- Ceph
+- Serverless
+- Data Anonymization
+- Real
+- Time Processing
+- MicroShift
+title: "Real-Time Data Anonymization the Serverless Way Demo"
+updated: 2021-10-19
 ---
+
+
 
 
 ### 会议纪要
 
-#### 会议主题：CubeCon 2021实时数据项化演示
+#### 会议主题：CubeCon 2021 实时数据匿名化演示
 
 #### 会议时间：2021年
 
@@ -22,23 +30,23 @@ subtitle: tech
 #### 会议内容总结：
 
 1. **演示目的**：
-   - 展示如何在将图像上传到Ceph存储系统时，自动模糊人脸和车牌。
+   - 展示如何在Ceph存储系统中实时自动模糊图像中的人脸和车牌。
 
 2. **技术栈与工具**：
    - **存储系统**：Ceph
-   - **配置与部署**：使用Rook Operator
-   - **服务器less函数**：基于KDA Serverless框架
+   - **配置与部署**：Rook Operator
+   - **无服务器函数**：基于KDA无服务器框架
    - **消息通知**：通过RabbitMQ消息总线传递，由Private MQ Operator部署
 
 3. **系统配置与部署流程**：
    - 从干净的MicroShift节点开始，使用GitHub上的代码进行配置和部署。
-   - 安装Rook Operator，包括基础组件和开发者构建的YAML文件。
-   - 部署Steph集群，包括OSDs和其他存储后端。
+   - 安装Rook Operator，包括基础组件和自定义YAML文件。
+   - 部署Ceph集群，包括OSDs和其他存储后端。
    - 安装Redis网关和对象存储前端，以及必要的工具箱。
 
 4. **创建存储桶**：
-   - 创建存储桶需要先定义存储类，然后通过对象存储桶声明（Object Bucket Claim）进行配置。
-   - 配置特殊标签以关联通知，使用开发者构建以允许明文传输RabbitMQ用户和密码。
+   - 定义存储类，并通过对象存储桶声明（Object Bucket Claim）配置存储桶。
+   - 配置特殊标签以关联通知，允许明文传输RabbitMQ用户和密码。
 
 5. **配置环境参数**：
    - 设置Redis网关服务名称和访问密钥。
@@ -49,8 +57,8 @@ subtitle: tech
    - 创建Ceph存储桶主题的CRD，定义通知的端点和参数。
 
 7. **安装和配置KDA**：
-   - 使用Helm安装KDA，定义服务器less函数以执行模糊处理。
-   - 创建必要的秘密文件以提供凭证，确保服务器less函数能够访问Redis网关。
+   - 使用Helm安装KDA，定义无服务器函数以执行模糊处理。
+   - 创建秘密文件以提供凭证，确保无服务器函数能够访问Redis网关。
 
 8. **演示上传图像**：
    - 上传图像后，系统会发送通知到RabbitMQ，KDA会启动RabbitMQ消费者进行模糊处理。
@@ -65,7 +73,3 @@ subtitle: tech
 
 #### 会议结束语：
 - 主讲人感谢大家的参与，并欢迎提出任何问题和反馈。
-
----
-
-**注：** 会议中提到的技术术语和工具（如Ceph, Rook, KDA, RabbitMQ等）均为计算机科学和分布式存储领域的专业术语，保留原文以确保准确性。

@@ -1,12 +1,22 @@
 ---
-title: "2019-11-26 :: Crimson SeaStor OSD Weekly Meeting"
-date: 2019-11-27
-updated: 2019-11-28
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2019-11-27
+subtitle: 2019-11-26_-_-_Crimson_SeaStor_OSD_Weekly_Meeting
+tags:
+- Ceph
+- 分布式存储
+- CRUSH算法
+- 性能优化
+- 蓝鲸存储
+- 用户空间驱动程序
+- 多进程设计
+- 错误处理
+title: "'2019-11-26 :: Crimson SeaStor OSD Weekly Meeting'"
+updated: 2019-11-28
 ---
+
+
 
 
 ### 会议纪要
@@ -14,12 +24,12 @@ subtitle: tech
 #### 主要议题与讨论内容
 
 1. **Ceph存储系统开发进展**
-   - **初步放置实现**：会议开始时，团队成员讨论了关于Ceph存储系统中初步放置实现的进展，特别是接口设计和Zinnias API的影响。
-   - **性能测试**：团队决定进行性能测试，以评估Chromaticity的性能，并与Farsi进行比较，以便决定是否继续开发该系统。
+   - **初步放置实现**：会议重点讨论了Ceph存储系统中的初步放置实现，特别是在接口设计和Zinnias API对系统设计的影响。
+   - **性能测试**：团队决定进行性能测试，以评估Chromaticity的性能，并与Farsi进行比较，以决定是否继续开发该系统。
 
 2. **Ceph存储系统的优化与改进**
-   - **Crimson OSD与Alien Blue Star的性能比较**：讨论了如何证明Alien Blue Star在性能模型或对快速闪存的支持上存在问题，以及如何通过性能测试来展示Crimson OSD的优势。
-   - **Ceph存储系统的错误处理和清理**：团队成员分享了他们在错误处理和代码清理方面的工作，包括对aerator接口的改进和错误方法的添加。
+   - **Crimson OSD与Alien Blue Star的性能比较**：会议探讨了如何证明Alien Blue Star在性能上存在问题，并通过性能测试展示Crimson OSD的优势。
+   - **错误处理和代码清理**：团队成员分享了他们在错误处理和代码清理方面的工作，包括对aerator接口的改进和错误方法的添加。
 
 3. **Ceph存储系统的未来计划**
    - **会议和文档准备**：团队讨论了即将到来的会议和文档准备工作，包括准备演讲主题和相关技术文档的编写。
@@ -27,12 +37,12 @@ subtitle: tech
 
 #### 决定事项
 
-- 决定进行性能测试，以评估Chromaticity的性能，并与Farsi进行比较。
+- 决定进行性能测试，评估Chromaticity性能，并与Farsi进行比较。
 - 确定需要进一步研究和文档化的领域，包括用户空间驱动程序的使用和Ceph存储系统的多进程设计。
 
 #### 后续行动计划
 
-- 进行性能测试，并准备相关报告，以展示Chromaticity相对于Farsi的性能优势。
+- 进行性能测试，并准备相关报告，展示Chromaticity相对于Farsi的性能优势。
 - 继续研究和改进Ceph存储系统的错误处理和代码清理工作。
 - 准备即将到来的会议和文档，包括编写技术文档和准备演讲主题。
 

@@ -1,20 +1,29 @@
 ---
-title: "2020-01-14 :: Crimson SeaStor OSD Weekly Meeting"
-date: 2020-01-16
-updated: 2020-01-16
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-01-16
+subtitle: 2020-01-14_-_-_Crimson_SeaStor_OSD_Weekly_Meeting
+tags:
+- Ceph
+- B+树
+- 异步版本
+- B+树实现
+- 事务处理
+- 写放大
+- Ceph存储系统
+- OSD
+title: "'2020-01-14 :: Crimson SeaStor OSD Weekly Meeting'"
+updated: 2020-01-16
 ---
+
 
 
 ### 会议纪要
 
 #### 主要议题
 1. **Ceph存储系统的B+树异步版本开发**
-   - Sammy正在基于最新的episode版本重构B+树的实现，并尝试开发异步版本。
-   - 讨论了B+树与DoStore集成的问题，特别是关于键值布局、指针和地址处理的细节。
+   - Sammy正在重构B+树的实现，并尝试开发异步版本。
+   - 讨论了B+树与DoStore的集成，特别是关于键值布局、指针和地址处理的细节。
 
 2. **B+树的物理和逻辑地址处理**
    - 需要至少两个版本的B+树实现：一个物理地址处理，一个逻辑地址处理。
@@ -30,7 +39,7 @@ subtitle: tech
 
 #### 决定事项
 1. **B+树的实现策略**
-   - 决定从零开始实现B+树，但会参考现有的Petri设计，并进行高度定制化。
+   - 决定从零开始实现B+树，但会参考Petri设计，并进行高度定制化。
    - 确定了不使用外部库，而是自行开发B+树实现，以更好地适应Ceph的特定需求。
 
 2. **事务处理和写放大问题的解决方案**

@@ -1,17 +1,23 @@
 ---
-title: "Ceph Days NYC 2023: Ceph at CERN: A Ten-Year Retrospective"
+title: "  Ceph Days NYC 2023: Ceph at CERN: A Ten-Year Retrospective  "
 date: 2023-05-17
 updated: 2023-05-18
 tags:
+- Ceph
+- 分布式存储
+- CERN
+- 存储
+- OpenStack
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Days_NYC_2023_-_Ceph_at_CERN_-_A_Ten-Year_Retrospective
 ---
 
+## 改进后的中文总结内容
 
 ### 会议纪要
 
-**会议主题：** 10年回顾：在CERN运营Ceph的经验
+**会议主题：** Ceph在CERN的十年回顾：经验与挑战
 
 **主讲人：** 来自加拿大维多利亚大学的工程师，自2008年起在CERN工作，曾管理Ceph项目，现为CERN的首席IT架构师，同时也是Ceph基金会的董事会成员和执行委员会成员。
 
@@ -26,7 +32,7 @@ subtitle: tech
    - 展示了CERN的大型强子对撞机（LHC）的照片，解释了CERN的主要研究活动。
    - 讨论了Ceph在CERN的存储解决方案中的重要性，特别是在处理大量物理数据时的应用。
 
-3. **Ceph在CERN的10年回顾：**
+3. **Ceph在CERN的十年回顾：**
    - 从2013年开始，Ceph在CERN的使用从300TB的试点项目发展到2016年的6PB集群。
    - 2016年后，Ceph集群规模持续扩大，目前拥有约17个集群和100PB的存储容量。
    - 强调了Ceph在CERN基础设施中的关键作用，特别是在OpenStack和CFS的生产环境中。
@@ -48,4 +54,4 @@ subtitle: tech
 - CERN将继续与Ceph社区合作，参与会议和研讨会，以推动Ceph技术的进一步发展。
 
 **总结：**
-主讲人通过其在CERN的10年经验，分享了Ceph在大型科研环境中的应用和挑战，强调了Ceph作为分布式存储解决方案的强大功能和社区支持的重要性。通过持续的技术改进和社区协作，Ceph有望在未来继续在科研和工业领域发挥关键作用。
+主讲人通过其在CERN的十年经验，分享了Ceph在大型科研环境中的应用和挑战，强调了Ceph作为分布式存储解决方案的强大功能和社区支持的重要性。通过持续的技术改进和社区协作，Ceph有望在未来继续在科研和工业领域发挥关键作用。

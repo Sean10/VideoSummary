@@ -1,11 +1,16 @@
 ---
-title: "RH InkTank Ceph Day Sessions Matt Benjamin COHORTFS"
-date: 2014-07-25
-updated: 2014-07-26
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2014-07-25
+subtitle: RH_InkTank_Ceph_Day_Sessions_Matt_Benjamin_COHORTFS
+tags:
+- Ceph
+- Accelio
+- 分布式存储
+- 高性能I/O
+- XIO Messenger
+title: "RH InkTank Ceph Day Sessions Matt Benjamin COHORTFS"
+updated: 2014-07-26
 ---
 
 
@@ -13,25 +18,19 @@ subtitle: tech
 **会议纪要**
 
 **会议时间**： [请填写会议时间]
-
 **会议地点**： [请填写会议地点]
-
-**参会人员**： Matt Benjamin（CTO of Word and），其他与会人员
-
+**参会人员**： Matt Benjamin（Word and的CTO），其他与会人员
 **会议主题**： Ceph项目进展及Accelio集成
 
 **会议内容**：
 
 **一、项目背景**
 
-- Word and是一家位于密歇根州安阿伯的初创公司，专注于将新功能引入并行NFS，以应对新的应用工作负载。
-- 该项目最初由NSF资助，后来扩展到SAP存储堆栈，以增强其功能。
+Word and是一家位于密歇根州安阿伯的初创公司，专注于提升并行NFS的功能以应对新的应用工作负载。项目最初由NSF资助，后扩展至SAP存储堆栈。
 
 **二、Accelio集成**
 
-- Accelio是一个高性能异步和可靠的消息库，支持硬件加速，旨在构建高性能RPC传输。
-- 该项目与Melanox合作，将Ceph代码库与Accelio集成，以实现高效的传输和消息传递。
-- 该项目的主要目标是提高Ceph的性能，特别是在单位级别的高性能I/O性能。
+Accelio是一个高性能异步和可靠的消息库，支持硬件加速，旨在构建高性能RPC传输。项目与Melanox合作，将Ceph代码库与Accelio集成，以提升Ceph的性能，特别是在单位级别的高性能I/O性能。
 
 **三、Accelio关键特性**
 
@@ -43,25 +42,19 @@ subtitle: tech
 
 **四、XIO Messenger**
 
-- XIO Messenger是Accelio的适配器，用于将Ceph网络或消息传递映射到Infiniband。
-- 它是一个可插入的替代品，可以与当前的TCP消息封装一起使用。
-- XIO Messenger旨在实现零拷贝和线程级别的并行。
+XIO Messenger是Accelio的适配器，用于将Ceph网络或消息传递映射到Infiniband。它旨在实现零拷贝和线程级别的并行。
 
 **五、Ceph代码库重构**
 
-- 为了更好地集成Accelio，Ceph代码库正在进行重构。
-- 重构的目标是提取通用代码，以便所有消息传递器都可以使用。
+为了更好地集成Accelio，Ceph代码库正在进行重构。目标是提取通用代码，以便所有消息传递器都可以使用。
 
 **六、性能测试**
 
-- 使用Accelio进行性能测试，结果表明其性能良好。
-- 在64k消息大小下，几乎饱和了XIO的可用带宽。
+使用Accelio进行性能测试，结果表明其性能良好。在64k消息大小下，几乎饱和了XIO的可用带宽。
 
 **七、项目状态**
 
-- XIO Messenger堆栈已完成，已集成到Ceph中。
-- 项目正在进行中，旨在使Ceph集群能够在XIO上运行。
-- 项目代码可在Accelio和Ceph的GitHub仓库中找到。
+XIO Messenger堆栈已完成，已集成到Ceph中。项目正在进行中，旨在使Ceph集群能够在XIO上运行。项目代码可在Accelio和Ceph的GitHub仓库中找到。
 
 **八、后续行动计划**
 
@@ -71,7 +64,7 @@ subtitle: tech
 
 **九、其他事项**
 
-- 项目团队将继续关注Ceph和Accelio的最新动态，以确保项目的顺利进行。
+项目团队将继续关注Ceph和Accelio的最新动态，以确保项目的顺利进行。
 
 **总结**：
 

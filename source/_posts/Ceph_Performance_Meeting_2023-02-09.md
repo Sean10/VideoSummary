@@ -1,35 +1,41 @@
 ---
-title: "Ceph Performance Meeting 2023-02-09"
-date: 2023-02-14
-updated: 2023-02-15
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-02-14
+subtitle: Ceph_Performance_Meeting_2023-02-09
+tags:
+- Ceph
+- 分布式存储
+- 性能优化
+- 代码审查
+- 集群配置
+title: Ceph Performance Meeting 2023-02-09
+updated: 2023-02-15
 ---
+
 
 
 ### 会议纪要
 
 #### 主要议题
-1. **Ceph存储系统的更新与优化**
-   - 讨论了新的PR（Pull Request），包括分配器格式版本2（allocator format version 2）的实现和性能改进。
-   - 探讨了混合分配器（Hybrid allocator）的工作原理和可能的改进方向。
+1. **Ceph存储系统更新与优化**
+   - 讨论了新的分配器格式版本2 (allocator format version 2) 的实现与性能改进。
+   - 探讨了混合分配器（Hybrid allocator）的工作原理及可能的改进方向。
 
 2. **性能优化与测试**
-   - 讨论了如何通过改进分配器格式来减少磁盘空间的使用和提高性能。
-   - 提到了单元测试的结果，显示在特定条件下新方法比旧方法快。
+   - 讨论了通过改进分配器格式减少磁盘空间使用和提高性能的方法。
+   - 提到了单元测试结果，显示新方法在特定条件下性能优于旧方法。
 
 3. **代码审查与合并**
-   - 讨论了几个PR的审查状态和合并计划，包括一个关于避免使用整个空间迭代器的PR。
-   - 提到了一个关于禁用QAT（Quick Assist Technology）忙轮询的简单PR，考虑了其合并的可能性。
+   - 讨论了多个Pull Request（PR）的审查状态和合并计划，包括避免使用整个空间迭代器的PR。
+   - 讨论了禁用QAT（Quick Assist Technology）忙轮询的简单PR，考虑其合并的可能性。
 
 4. **集群性能和配置更新**
-   - 分享了Corey和David Orman的集群在应用了一些优化后的良好表现。
+   - 分享了Corey和David Orman的集群在应用优化后的良好表现。
    - 讨论了RocksDB调优和BlueFS增量日志更新的效果。
 
 #### 决定事项
-- 计划合并几个PR，特别是那些已经通过审查并显示出性能改进的PR。
+- 计划合并几个PR，特别是那些经过审查并显示性能改进的PR。
 - 决定继续测试和评估RocksDB的新调优设置，以确定其在生产环境中的效果。
 
 #### 后续行动计划

@@ -1,11 +1,16 @@
 ---
-title: "Ceph Crimson/SeaStore 2021-09-15"
+title: "  Ceph Crimson/SeaStore 2021-09-15  "
 date: 2021-09-15
 updated: 2021-09-16
 tags:
+- Ceph
+- 分布式存储
+- CRUSH算法
+- 性能优化
+- 故障排除
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Crimson_SeaStore_2021-09-15
 ---
 
 
@@ -64,7 +69,3 @@ subtitle: tech
 
 #### 会议结束
 - 会议结束，提醒大家关注RADOS Q&A会议，并祝大家有美好的一天。
-
----
-
-以上是本次会议的纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

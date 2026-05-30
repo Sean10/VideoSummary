@@ -1,30 +1,36 @@
 ---
-title: "2020-10-21 :: Crimson SeaStor OSD Weekly Meeting"
+title: "  2020-10-21 :: Crimson SeaStor OSD Weekly Meeting  "
 date: 2020-01-23
 updated: 2020-01-24
 tags:
+- Ceph
+- Distributed Storage
+- Crimson
+- Recovery Mechanism
+- Code Formatting
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: 2020-10-21_-_-_Crimson_SeaStor_OSD_Weekly_Meeting
 ---
+
 
 
 ### 会议纪要
 
 #### 关键细节
-- **会议日期**: [具体日期]
+- **会议日期**: 2020年10月21日
 - **参会人员**: [参会人员名单]
 - **会议主持**: [主持人]
 
 #### 讨论的主要议题
 1. **Ceph相关开发工作**
-   - 审查了Horns Part-2编辑器，PR已准备好合并。
+   - 审查了Horns Part-2编辑器，准备合并。
    - 正在审查Retakes变更，以支持Crimson。
-   - 阅读了RFS源代码和相关文档，如PTR论文。
+   - 阅读了RFS源代码和相关文档，包括PTR论文。
    - 正在进行Crimson的内存设计，包括Petrie支持。
 
 2. **项目进展与问题**
-   - 讨论了ScyllaDB的Slack注册问题，计划联系并获取意见。
+   - 讨论了ScyllaDB的Slack注册问题，计划联系获取意见。
    - 讨论了性能问题，特别是原生与塑料堆栈的行为差异。
    - 讨论了Crimson的恢复机制，包括日志处理、基于日志的恢复和回填。
 
@@ -43,7 +49,7 @@ subtitle: tech
 - 决定更新Sister版本以解决已知问题。
 - 确定代码格式规则，简化开发流程。
 
-#### 后续的行动计划
+#### 后续行动计划
 - 继续推进Crimson的恢复机制实现。
 - 更新Sister版本以解决已知问题。
 - 确定代码格式规则，简化开发流程。
@@ -55,6 +61,6 @@ subtitle: tech
 #### 会议结束
 - 会议于[具体时间]结束，下一次会议定于[具体日期]。
 
----
+
 
 以上是本次会议的纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

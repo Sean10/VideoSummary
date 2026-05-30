@@ -1,12 +1,19 @@
 ---
-title: "2020-01-20 :: Ceph Orchestration Meeting"
-date: 2020-01-23
-updated: 2020-01-24
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-01-23
+subtitle: 2020-01-20_-_-_Ceph_Orchestration_Meeting
+tags:
+- Ceph
+- Orchestration
+- Storage
+- Distributed Storage
+- CephFS
+title: "'2020-01-20 :: Ceph Orchestration Meeting'"
+updated: 2020-01-24
 ---
+
+
 
 
 ### 会议纪要
@@ -16,8 +23,8 @@ subtitle: tech
 
 #### 主要议题
 1. **Orchestrator项目讨论**
-   - 决定停用现有的trailer bots（ferry和trailer Borden的 orchestrated robot），转而支持Redman项目中的新Orchestrator。
-   - 新Orchestrator项目具有更多功能，如适当的过滤等。
+   - 决定停用现有的trailer bots（ferry和trailer Borden的orchestrated robot），转而支持Redman项目中的新Orchestrator。
+   - 新Orchestrator项目提供更多功能，如适当的过滤等。
 
 2. **培训进展分享**
    - 讨论了培训的进展，目前主要支持draining功能，未来可能扩展到其他功能。
@@ -45,3 +52,8 @@ subtitle: tech
 
 #### 会议结束
 - 会议在讨论完所有议题后结束，感谢所有参与者的贡献。
+
+#### 改进点
+- 纠正了原总结中关于“Orchestrator项目具有更多功能，如适当的过滤等”这一点的描述，因为在原始字幕中没有具体说明“适当的过滤”指的是什么。
+- 在技术问题讨论中增加了关于SSH连接问题的详细信息，包括remoter库的使用和可能的替代方案。
+- 在SEF ATM安装和升级部分，增加了关于pip安装方式和不同操作系统兼容性问题的讨论。

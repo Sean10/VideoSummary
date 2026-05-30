@@ -1,23 +1,28 @@
 ---
-title: "Ceph Crimson/SeaStore Meeting 2023-02-22"
-date: 2023-02-23
-updated: 2023-02-24
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-02-23
+subtitle: Ceph_Crimson_SeaStore_Meeting_2023-02-22
+tags:
+- Ceph
+- distributed storage
+- Crimson
+- SeaStore
+- storage cluster
+title: Ceph Crimson/SeaStore Meeting 2023-02-22
+updated: 2023-02-24
 ---
 
 
 ### 会议纪要
 
-**日期：** [具体日期]
+**日期：** 2023-02-22
 **参会人员：** [参会人员名单]
 
 #### 1. 研发进展报告
-- **scrub 和 crimson 工作：** 目前主要集中在 scrub 工作上，未来将转向 crimson 相关工作。
-- **弱事务问题审查：** 正在审查 Johan 发现的弱事务问题，目前有四到五个相关的 PR 待处理。
-- **多信使扩展工作：** 正在进行 socket 和 socket 测试的扩展工作，并继续进行清理工作。
+- **scrub 和 crimson 工作进展：** 目前研发团队专注于 scrub 工作和 crimson 相关的开发。
+- **弱事务问题：** 正在审查 Johan 发现的弱事务问题，目前有四到五个相关的 Pull Request (PR) 待处理。
+- **多信使扩展：** 正在进行 socket 和 socket 测试的扩展工作，并继续进行清理工作。
 
 #### 2. QE 部门更新
 - **物理节点测试：** 由于物理节点设置存在问题，已收到新机器并开始进行基本随机测试。初步测试运行良好，未见重大故障。
@@ -37,3 +42,5 @@ subtitle: tech
 **下次会议：** [具体日期]
 
 **备注：** 下次会议将讨论如何使用 ceph-ansible 部署 crimson，并寻求社区的帮助和反馈。
+
+[改进后的中文总结内容结束]

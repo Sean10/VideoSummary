@@ -1,27 +1,34 @@
 ---
-title: "Ceph Orchestrator Meeting 2023-03-21"
-date: 2023-03-21
-updated: 2023-03-22
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-03-21
+subtitle: Ceph_Orchestrator_Meeting_2023-03-21
+tags:
+- Ceph
+- 分布式存储
+- 迁移计划
+- 技术讨论
+- 超时处理
+title: "Ceph Orchestrator Meeting 2023-03-21"
+updated: 2023-03-22
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议主题：视频会议平台迁移与技术讨论
 
-#### 会议时间：[具体日期]
+#### 会议时间：2023年3月21日
 
 #### 参会人员：[参会人员名单]
 
 #### 会议内容总结：
 
 1. **视频会议平台迁移计划**
-   - **当前问题**：Blue Jeans视频会议平台将于4月1日关闭，需要寻找替代方案。
-   - **讨论内容**：在CLT会议中讨论了Google Meet和Jitsi作为替代方案，但由于Google Meet存在权限问题和需要Google账户，倾向于使用Jitsi。
+   - **当前问题**：Blue Jeans视频会议平台将于4月1日关闭，需寻找替代方案。
+   - **讨论内容**：在CLT会议中讨论了Google Meet和Jitsi作为替代方案，由于Google Meet存在权限问题和需要Google账户，倾向于使用Jitsi。
    - **决定事项**：计划迁移到已有的Jitsi会议室，但需要解决录音问题，目前录音需手动触发，不同于Blue Jeans的自动录音。
    - **后续行动**：预计会有几周时间没有录音，直到问题解决。下周将继续使用Blue Jeans，之后迁移到Jitsi。
 

@@ -1,12 +1,19 @@
 ---
-title: "Ceph Crimson/SeaStore 2021-05-05"
+title: "  Ceph Crimson/SeaStore 2021-05-05  "
 date: 2021-05-05
 updated: 2021-05-06
 tags:
+- Ceph
+- 分布式存储
+- OSD优化
+- C
+- Store
+- 设备映射器接口
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Crimson_SeaStore_2021-05-05
 ---
+
 
 
 ### 会议纪要
@@ -21,11 +28,11 @@ subtitle: tech
 
 #### 主要议题
 1. **PR审查与讨论**
-   - 主持人回顾了上周的PR审查工作，包括来自Redtech的PR以及与Redec的讨论。
-   - 讨论了关于未来商店订单的进一步讨论，并提供了PR和防抖动PR的审查。
+   - 回顾了上周的PR审查工作，涉及Redtech和Redec的PR，并讨论了未来商店订单的顺序问题。
+   - 提供了防抖动PR的审查。
 
 2. **OSD优化与改进**
-   - Greg分享了在经典OSD中关于秘密处理器的改进，特别是在Crimson中进行的优化，旨在通过优化复制消息来减少延迟。
+   - Greg分享了在经典OSD中关于秘密处理器的改进，特别是在Crimson中的优化，旨在通过优化复制消息来减少延迟。
    - 讨论了Crimson后端的改进，特别是在异步存储中的段观察。
 
 3. **Scrub功能的实现与测试**
@@ -59,7 +66,3 @@ subtitle: tech
 
 #### 会议结束
 - 会议在[结束时间]结束，所有参会人员表示感谢并期待下次会议。
-
----
-
-以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

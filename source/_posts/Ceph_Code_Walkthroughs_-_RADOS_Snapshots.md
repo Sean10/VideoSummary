@@ -1,12 +1,19 @@
 ---
-title: "Ceph Code Walkthroughs: RADOS Snapshots"
-date: 2021-04-01
-updated: 2021-04-01
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-04-01
+subtitle: Ceph_Code_Walkthroughs_-_RADOS_Snapshots
+tags:
+- Ceph
+- 分布式存储
+- 快照技术
+- RBD
+- CephFS
+title: "'Ceph Code Walkthroughs: RADOS Snapshots'"
+updated: 2021-04-01
 ---
+
+
 
 
 ### 会议纪要：Ceph Snapshot 技术详解
@@ -56,7 +63,3 @@ subtitle: tech
 #### 会议结束
 - 感谢 Samuel Just 的详细讲解和社区成员的积极参与。
 - 期待下一次的 Ceph 技术分享会议。
-
----
-
-以上为本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

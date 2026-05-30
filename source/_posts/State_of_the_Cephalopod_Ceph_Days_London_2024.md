@@ -1,14 +1,17 @@
 ---
-title: "State of the Cephalopod| Ceph Days London 2024"
-date: 2024-08-23
-updated: 2024-08-24
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2024-08-23
+subtitle: State_of_the_Cephalopod_Ceph_Days_London_2024
+tags:
+- Ceph社区
+- Ceph技术进展
+- 分布式存储
+- Ceph Days
+- 存储解决方案
+title: "State of the Cephalopod| Ceph Days London 2024"
+updated: 2024-08-24
 ---
-
-
 
 
 ### 会议纪要
@@ -27,8 +30,7 @@ subtitle: tech
 
 **二、Ceph 项目历史与现状**
 
-- Ceph 项目始于加州大学圣克鲁兹大学的博士项目，至今已有17年历史。
-- 目前，Ceph 拥有超过1300位贡献者，700,000多行代码，超过146,000次提交。
+- Ceph 项目始于加州大学圣克鲁兹大学的博士项目，已有17年历史，拥有超过1300位贡献者，700,000多行代码，超过146,000次提交。
 - Ceph 社区在过去几年举办了多次会议，包括 Ceph Days Amsterdam、Ceph Day New York、Ceph Day Bangalore 和 Ceph Day London。
 - Ceph 的存储足迹不断增长，接近1.5艾字节（EB）。
 - 最新版本为 Squid，其中包含了多个优化和改进。

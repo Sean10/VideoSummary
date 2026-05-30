@@ -1,36 +1,42 @@
 ---
-title: "2020-01-16 :: Ceph Performance Meeting"
-date: 2020-01-23
-updated: 2020-01-24
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 会议纪要
+date: 2020-01-23
+subtitle: 2020-01-16_-_-_Ceph_Performance_Meeting
+tags:
+- Ceph
+- 分布式存储
+- 性能优化
+- 自动缩放
+- CRUSH 算法
+title: 2020-01-16 -- Ceph Performance Meeting
+updated: 2020-01-24
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议时间
-- 日期：具体日期未提供
+- 日期：2020年1月16日
 - 时长：约1小时
 
 #### 参会人员
-- 主要参与者：Josh, Stage, Alex, 以及其他未提及的核心成员
+- 主要参与者：Josh, Stage, Alex 以及其他未提及的核心成员
 
 #### 主要议题
-1. **Ceph Balancer相关PR讨论**
-   - 并行crush计算的PR需要审查。
-   - 另一个关于upmap模式使用MS基础设施的balancer PR已经关闭。
-   - 性能改进相关的balancer PR，特别是与manager相关的性能问题。
+1. **Ceph Balancer相关讨论**
+   - 审查并行CRUSH计算的PR。
+   - 关闭了使用MS基础设施的balancer PR。
+   - 讨论了与manager相关的性能问题。
 
 2. **硬件推荐文档更新**
-   - 当前文档质量不佳，需要更新。
-   - 透明大页（transparent huge pages）的设置需要根据版本进行调整。
+   - 更新文档，特别是关于透明大页（THP）的设置。
 
-3. **PG（Placement Group）相关讨论**
-   - 默认的PG数量需要调整，建议增加到11。
-   - PG log长度的调整和PG数量的关系需要进一步测试。
+3. **PG（放置组）相关讨论**
+   - 增加默认的PG数量到11。
+   - 测试并调整PG log长度。
 
 4. **Autoscaler测试结果**
    - Alex分享了在OpenShift中使用Steph的测试结果，发现数据分布不均的问题。

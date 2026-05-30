@@ -1,12 +1,20 @@
 ---
-title: "CDS Squid: NVMe-oF-Gateway"
-date: 2023-07-25
-updated: 2023-07-26
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-07-25
+subtitle: CDS_Squid_-_NVMe-oF-Gateway
+tags:
+- Ceph
+- NVMe
+- oF
+- Gateway
+- High Availability
+- Scalability
+title: "'CDS Squid: NVMe-oF-Gateway'"
+updated: 2023-07-26
 ---
+
+
 
 
 ### 会议纪要
@@ -22,7 +30,7 @@ subtitle: tech
 #### 主要议题：
 
 1. **高可用性和可扩展性**
-   - **讨论内容**：团队讨论了如何通过使用 getter groups 来实现 RBD 卷的高可用性和可扩展性。目标是允许从不同的 gateway 访问相同的 RBD 卷。
+   - **讨论内容**：团队讨论了如何使用 Getter Groups 来实现 RBD 卷的高可用性和可扩展性，目标是允许从不同的 gateway 访问相同的 RBD 卷。
    - **关键问题**：如何进行负载均衡，即如何决定哪个 gateway 服务于哪个卷。
    - **决定事项**：初步决定不自动进行负载均衡，而是通过 Gateway CLI 允许用户指定哪个 gateway 是某个卷的首选。未来可能会考虑自动化。
 
@@ -53,7 +61,3 @@ subtitle: tech
 
 #### 会议结束语：
 感谢所有与会者的参与，下一次会议将继续讨论未完成的技术议题。
-
----
-
-以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

@@ -1,26 +1,33 @@
 ---
-title: "Ceph Performance Meeting 2022-03-31"
-date: 2022-03-31
-updated: 2022-04-01
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 会议纪要
+- 技术讨论
+date: 2022-03-31
+subtitle: Ceph_Performance_Meeting_2022-03-31
+tags:
+- Ceph
+- 性能优化
+- 分布式存储
+- AVL分配器
+- 测试与验证
+- PR
+title: Ceph Performance Meeting 2022-03-31
+updated: 2022-04-01
 ---
+
 
 
 ### 会议纪要
 
 #### 关键细节
-- **Pull Requests (PRs) 动态**: 本周PR活动不多，主要因为团队正忙于在Quincy版本中修复问题。
-- **RGW Multi-Site Resharding PR**: 该PR已合并到另一个分支，最终将合并到主分支。
-- **性能相关PR**: Gabby的PR主要是代码清理，不影响性能。另一个关于tracer的PR正在进行更多测试，以确保其稳定性。
+- **Pull Requests (PRs) 动态**: 本次会议讨论了Quincy版本中的一些PR，包括RGW多站点resharding和性能相关的PR。Gabby的PR主要涉及代码清理，不影响性能。另一个关于tracer的PR正在进行更多测试以确保稳定性。
 - **性能回归问题**: 团队正在追踪Quincy版本中的写入性能回归问题，初步怀疑与AVL分配器的更改有关。
+- **分配器行为变化**: 讨论了分配器在First Fit和Best Fit模式下的行为差异，以及这些模式如何影响性能。
 
 #### 讨论的主要议题
 - **性能回归问题分析**: 通过二分法定位到特定提交，该提交涉及AVL分配器的更改。团队正在测试回滚该更改后的性能影响。
-- **分配器行为变化**: 讨论了分配器在First Fit和Best Fit模式下的行为差异，以及这些模式如何影响性能。
 - **硬件差异对性能的影响**: 讨论了不同硬件（如AMD和Intel）上性能表现的差异，以及如何通过测试来验证这些差异。
+- **分配器行为对性能的影响**: 分析了AVL分配器在First Fit和Best Fit模式下的行为差异，探讨了其对性能的可能影响。
 
 #### 决定的事项
 - **继续测试和分析**: 团队将继续测试回滚AVL分配器更改后的性能，并探索其他可能影响性能的因素。
@@ -43,5 +50,3 @@ subtitle: tech
 - Performance Regression
 - fio
 - Performance Histogram
-
-本次会议主要围绕Ceph存储系统的性能问题展开深入讨论，团队成员通过详细的测试和分析，逐步定位问题并制定相应的解决方案。

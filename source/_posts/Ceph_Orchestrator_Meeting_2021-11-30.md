@@ -1,21 +1,100 @@
 ---
-title: "Ceph Orchestrator Meeting 2021-11-30"
-date: 2021-11-30
-updated: 2021-12-01
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-11-30
+subtitle: Ceph_Orchestrator_Meeting_2021-11-30
+tags:
+- Ceph
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可伸缩性
+- 对象存储
+- 块存储
+- 文件系统存储
+- 一致性
+- 去中心化
+- 性能
+- Bluestore
+- Bluefs
+- Rocksdb
+- OSD
+- MON
+- MDS
+- PG
+- RADOS
+- librados
+- libcephfs
+- cephfs
+- rbd
+- radosgw
+- RGW
+- RESTful API
+- 认证
+- 授权
+- 加密
+- 损坏码
+- 复制
+- 快照
+- 克隆
+- 薄分配
+- iSCSI
+- Fibre Channel
+- NFS
+- CIFS
+- POSIX
+- 监控
+- 仪表板
+- 管理
+- 编排
+- 自动化
+- 集成
+- 容器化
+- Kubernetes
+- Docker
+- 虚拟化
+- 云计算
+- AWS
+- Azure
+- Google Cloud
+- 混合云
+- 多云
+- 存储集群
+- 节点
+- 磁盘
+- SSD
+- HDD
+- JBOD
+- SAN
+- NAS
+- 网络
+- 拓扑
+- 故障域
+- 恢复
+- 弹性
+- 负载均衡
+- 缓存
+- 压缩
+- 去重
+- 分级
+- 性能调优
+- 基准测试
+- 测试
+- 验证
+title: "Ceph Orchestrator Meeting 2021-11-30"
+updated: 2021-12-01
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概要
-- **日期**: [具体日期]
+- **日期**: 2021-11-30
 - **主持人**: [主持人姓名]
 - **参会人员**: [参会人员列表]
-- **主要议题**: 
+- **主要议题**:
   1. 集群状态更新
   2. Topo LVM 状态更新
   3. 放置规范（Placement Spec）的使用问题
@@ -23,7 +102,6 @@ subtitle: tech
   5. HFNFS 相关问题
 
 #### 讨论内容
-
 1. **集群状态更新**
    - 集群目前存在锁定问题，正在尝试修复。
    - 正在进行一些更改以减少代理报告的工作量，并增加日志记录以监控代理与管理器的响应时间。

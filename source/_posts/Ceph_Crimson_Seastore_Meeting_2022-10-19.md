@@ -1,45 +1,54 @@
 ---
-title: "Ceph Crimson/Seastore Meeting 2022-10-19"
-date: 2022-10-20
-updated: 2022-10-21
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-10-20
+subtitle: Ceph_Crimson_Seastore_Meeting_2022-10-19
+tags:
+- Ceph
+- Crimson Suite
+- distributed storage
+- scrub
+- performance
+title: "Ceph Crimson/Seastore Meeting 2022-10-19"
+updated: 2022-10-21
 ---
 
 
-### 会议纪要
+
+
+### 改进后的中文总结内容
+
+本次会议主要讨论了Ceph Crimson Suite的开发进度和相关议题。以下是会议的主要内容：
 
 #### 主要议题与讨论内容
 
 1. **Crimson Suite 重组**
-   - 本周已合并一个 PR，将 c-store 相关内容移至 Crimson rados experimental Suite。
-   - 目前 RBD 测试尚未通过，主要涉及额外快照支持问题，Erratic 正在处理。
+   - 已合并一个PR，将c-store相关内容移至Crimson rados experimental Suite。
+   - RBD测试尚未通过，主要涉及额外快照支持问题，Erratic正在处理。
 
 2. **安全特性增强**
-   - 提交了一个 PR，增加了 Crimson 和非 Corpson 用户的安全特性。
-   - 添加了 OSD map 标志和 pool 标志，以防止 Crimson osds 在未设置标志的情况下创建 pgs。
-   - 正在研究添加配置选项，以便在不传递命令行参数的情况下更改 `--s p` 选项。
+   - 提交了一个PR，增加了Crimson和非Corpson用户的安全特性。
+   - 添加了OSD map标志和pool标志，以防止Crimson osds在未设置标志的情况下创建pgs。
+   - 研究添加配置选项，以便在不传递命令行参数的情况下更改`--s p`选项。
 
-3. **Scrub 工作进展**
-   - 计划继续推进 scrub 工作。
+3. **Scrub工作进展**
+   - 计划继续推进scrub工作。
 
-4. **Messenger V2 协议实现**
-   - King John 正在审查随机块管理器和 Messenger V2 协议实现。
-   - 需要将协议握手阶段和协议就绪阶段分离，以支持 mod core。
+4. **Messenger V2协议实现**
+   - King John正在审查随机块管理器和Messenger V2协议实现。
+   - 需要将协议握手阶段和协议就绪阶段分离，以支持mod core。
 
-5. **Crimson Loop 优化**
-   - Junior 发现 Crimson Loop 可能导致栈溢出，正在研究 Sister Loop 的实现并尝试应用到 Crimson。
+5. **Crimson Loop优化**
+   - Junior发现Crimson Loop可能导致栈溢出，正在研究Sister Loop的实现并尝试应用到Crimson。
 
-6. **Open SSO 和 Segmentation 问题**
-   - Jensen 发现重复的 Humanity 问题，怀疑是配置差异导致，询问是否有关于 Open SSO 或 Segmentation 的更新。
+6. **Open SSO和Segmentation问题**
+   - Jensen发现重复的 Humanity问题，怀疑是配置差异导致，询问是否有关于Open SSO或Segmentation的更新。
 
 7. **内存管理问题**
-   - 讨论了关于内存存储的 PR，涉及使用分区或多设备的问题，存在一些 bug 需要调试。
+   - 讨论了关于内存存储的PR，涉及使用分区或多设备的问题，存在一些bug需要调试。
 
-8. **LBA 树指针问题**
-   - 完成了 LBA 树指针的调试，正在尝试添加 LBA 叶子节点和逻辑扩展之间的指针。
+8. **LBA树指针问题**
+   - 完成了LBA树指针的调试，正在尝试添加LBA叶子节点和逻辑扩展之间的指针。
 
 #### 决定事项
 

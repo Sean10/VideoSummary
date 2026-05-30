@@ -1,12 +1,18 @@
 ---
-title: "Ceph RGW Refactoring Meeting 2024-09-04"
-date: 2024-09-04
-updated: 2024-09-05
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2024-09-04
+subtitle: Ceph_RGW_Refactoring_Meeting_2024-09-04
+tags:
+- Ceph
+- RGW
+- 数据去重
+- 分片
+- 可扩展性
+title: Ceph RGW Refactoring Meeting 2024-09-04
+updated: 2024-09-05
 ---
+
 
 
 

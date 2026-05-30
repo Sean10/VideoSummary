@@ -1,12 +1,18 @@
 ---
-title: "Ceph Performance Meeting 2021-06-10"
-date: 2021-06-10
-updated: 2021-06-11
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-06-10
+subtitle: Ceph_Performance_Meeting_2021-06-10
+tags:
+- Ceph
+- 性能分析
+- RGW
+- OSD内存目标
+- TC Malloc
+title: Ceph Performance Meeting 2021-06-10
+updated: 2021-06-11
 ---
+
 
 
 ### 会议纪要
@@ -18,18 +24,19 @@ subtitle: tech
 #### 会议时间：待定
 
 #### 主要议题：
+
 1. **Ceph性能对比分析**：
    - 对比了Nautilus和Pacific版本在RGW工作负载下的性能。
-   - 使用了两种不同的工作负载：一种是主要针对较小对象（1KB至256KB）的cost bench，另一种是混合了小对象和大对象（最大1GB）的gauss bench。
+   - 使用了两种不同的工作负载：一种是针对较小对象（1KB至256KB）的cost bench，另一种是混合小对象和大对象（最大1GB）的gauss bench。
    - 发现Pacific在处理小对象工作负载时性能优于Nautilus，但在处理混合对象工作负载时性能不如Nautilus。
 
 2. **问题分析与讨论**：
    - **OSD内存目标设置问题**：
-     - 在Pacific版本中，OSD内存目标（OSD memory target）未被任何部署方法覆盖，特别是cephadm目前无法覆盖OSD内存目标。
+     - 在Pacific版本中，OSD内存目标未被任何部署方法覆盖，特别是cephadm无法覆盖OSD内存目标。
      - Nautilus版本中，OSD内存目标应根据主机内存自动计算，但实际上实验中使用的内存远低于预期。
    - **TC Malloc环境变量设置问题**：
      - 讨论了TC Malloc环境变量（PC Malloc Max Total Thread Cache Bytes）的设置问题，发现即使在Nautilus中，该变量也未正确设置。
-     - 提出了两个相关的PR（Pull Request）来解决这个问题，一个是全局设置，另一个是通过优先级缓存管理器设置。
+     - 提出了两个相关的PR来解决这个问题，一个是全局设置，另一个是通过优先级缓存管理器设置。
 
 3. **后续行动计划**：
    - 重新进行实验以验证结果，特别是Nautilus版本的实验。
@@ -46,8 +53,6 @@ subtitle: tech
 
 #### 会议结束：
 - 会议在无其他议题讨论的情况下结束，感谢所有参与者的贡献。
-
----
 
 **备注**：会议中提到的关键术语和工具包括：
 - **Ceph**：分布式存储系统。

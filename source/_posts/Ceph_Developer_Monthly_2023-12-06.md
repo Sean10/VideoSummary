@@ -1,11 +1,87 @@
 ---
-title: "Ceph Developer Monthly 2023-12-06"
-date: 2023-12-13
-updated: 2023-12-14
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-12-13
+subtitle: Ceph_Developer_Monthly_2023-12-06
+tags:
+- Ceph
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可伸缩性
+- 对象存储
+- 块存储
+- 文件系统存储
+- 一致性
+- 去中心化
+- 性能
+- bluestore
+- bluefs
+- rocksdb
+- OSD
+- MON
+- MDS
+- PG
+- RADOS
+- librados
+- libcephfs
+- cephfs
+- rbd
+- radosgw
+- RGW
+- RESTful API
+- 认证
+- 授权
+- 加密
+- 损坏纠正码
+- 复制
+- 快照
+- 克隆
+- 瘦分配
+- iSCSI
+- Fibre Channel
+- NFS
+- CIFS
+- POSIX
+- 监控
+- 仪表板
+- 管理
+- 自动化
+- 集成
+- 容器化
+- Kubernetes
+- Docker
+- 虚拟化
+- 云计算
+- AWS
+- Azure
+- Google Cloud
+- 混合云
+- 多云
+- 存储集群
+- 节点
+- 磁盘
+- SSD
+- HDD
+- JBOD
+- SAN
+- NAS
+- 网络
+- 拓扑
+- 失败域
+- 恢复
+- 弹性
+- 负载均衡
+- 缓存
+- 压缩
+- 去重
+- 分层
+- 性能调整
+- 基准测试
+- 测试
+- 验证
+title: "Ceph Developer Monthly 2023-12-06"
+updated: 2023-12-14
 ---
 
 
@@ -22,8 +98,7 @@ subtitle: tech
 **会议内容总结：**
 
 1. **问题描述：**
-   - 当Ceph Manager启动时，所有Manager模块类会被加载，命令会被发现。命令的发现和命令注册的过程是分开的，从加载模块到启动解释器的过程是异步的。
-   - 当Manager接收到一个命令时，虽然知道命令存在，但模块可能尚未加载完成，导致错误。
+   - 在Ceph Manager启动时，所有Manager模块会被加载，命令被发现。由于命令的发现和命令注册的过程是分开的，当Manager接收到一个命令时，可能尚未加载完成，导致错误。
 
 2. **讨论议题：**
    - **错误处理：** 讨论了客户端在Manager模块未完全加载时接收到的错误信息，以及如何处理这些错误。

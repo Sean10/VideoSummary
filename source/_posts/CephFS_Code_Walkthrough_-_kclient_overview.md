@@ -1,12 +1,18 @@
 ---
-title: "CephFS Code Walkthrough: kclient overview"
-date: 2021-12-06
-updated: 2021-12-07
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-12-06
+subtitle: CephFS_Code_Walkthrough_-_kclient_overview
+tags:
+- Ceph
+- 分布式存储
+- k客户端
+- 内核组件
+- 文件系统
+title: CephFS Code Walkthrough- kclient overview
+updated: 2021-12-07
 ---
+
 
 
 ### 会议纪要
@@ -22,7 +28,7 @@ subtitle: tech
 #### 会议内容总结：
 
 1. **Ceph客户端代码概述**
-   - 演讲者简要介绍了Ceph客户端（k client）的代码结构，强调了其与用户空间客户端（user land client）的区别，主要在于共享的只是一些头文件。
+   - 演讲者简要介绍了Ceph客户端（k client）的代码结构，强调了其与用户空间客户端的区别，主要在于共享的只是一些头文件。
    - 详细介绍了内核中的几个关键组件，包括libsep（内核模块，作为Ceph的底层传输层）、rbd驱动（主要调用libsep实现）和cephfs代码所在的fsf。
 
 2. **内核组件详细介绍**
@@ -54,7 +60,3 @@ subtitle: tech
 
 #### 会议结束语：
 - 演讲者感谢大家的参与，并祝愿大家有一个愉快的一天。
-
----
-
-以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

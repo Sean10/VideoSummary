@@ -1,12 +1,18 @@
 ---
-title: "CDS G/H (Day 1) - Erasure Coding Update"
-date: 2014-06-24
-updated: 2014-06-25
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2014-06-24
+subtitle: CDS_G_H_Day_1_-_Erasure_Coding_Update
+tags:
+- Erasure Coding
+- Ceph
+- Distributed Storage
+- Optimization
+- Performance
+title: "CDS G/H (Day 1) - Erasure Coding Update"
+updated: 2014-06-25
 ---
+
 
 
 
@@ -28,8 +34,8 @@ subtitle: tech
 
 1. **Erasure Coding插件优化**
    - **初始问题**：Erasure Coding的初始代码支持方式较为奇怪，因为没有初始配置文件。
-   - **改进计划**：提交了一个pending pull request，添加对通用AR配置文件的支持，以便定义针对QA、本地可修复代码或其他参数变体的作业。
-   - **插件优化**：目前主要关注稳定化插件并进行了基准测试，但尚未对性能不佳的部分进行优化。
+   - **改进计划**：将提交一个pending pull request，添加对通用AR配置文件的支持，以便定义针对QA、本地可修复代码或其他参数变体的作业。
+   - **插件性能**：目前主要关注稳定化插件并进行了基准测试，但尚未对性能不佳的部分进行优化。
    - **ARM处理器性能**：讨论了ARM处理器上的性能问题，特别是对于冷存储应用。希望有人能够提供ARM机器进行基准测试。
 
 2. **JF Complete维护和贡献**
@@ -54,7 +60,7 @@ subtitle: tech
 - 继续维护和贡献JF Complete。
 - 对本地可修复代码进行基准测试和分析。
 - 将Isa插件原型集成到JF中。
-- Veronia将继续研究可靠性模型和代码。
+- Veronica将继续研究可靠性模型和代码。
 
 #### 后续行动计划：
 

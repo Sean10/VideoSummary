@@ -1,22 +1,29 @@
 ---
-title: "Ceph Performance Meeting 2020-08-28"
+title: "  Ceph Performance Meeting 2020-08-28  "
 date: 2020-08-27
 updated: 2020-08-28
 tags:
+- Ceph
+- 性能优化
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可扩展性
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Performance_Meeting_2020-08-28
 ---
+
 
 
 ### 会议纪要
 
 #### 会议概述
-本次会议由于主持人迟到，会议开始时人数较少。会议主要讨论了Ceph项目的进展、待处理的Pull Requests（PRs）、以及一些性能相关的问题。
+本次Ceph性能会议由于主持人迟到，开始时人数较少。会议主要讨论了Ceph项目的进展、待处理的Pull Requests（PRs）、性能回归问题以及未来的行动计划。
 
 #### 主要议题
 1. **PRs更新**
-   - 本周关闭了一个PR，该PR旨在避免从machine ping一次性刷新过多数据，效果良好。
+   - 会议讨论了本周关闭的一个PR，该PR旨在避免从machine ping一次性刷新过多数据，效果良好。
    - 另一个PR由majianpeng更新，radik批准了减少buffer list重建的更改。
 
 2. **性能回归问题**
@@ -43,7 +50,5 @@ subtitle: tech
 
 #### 会议结束
 会议在讨论了性能测试和CI构建的重要性后结束，主持人因时间限制提前离开。
-
----
 
 本次会议虽然人数不多，但讨论的内容非常深入和具体，涉及到了Ceph项目的多个关键技术点和未来的发展方向。通过这次会议，团队对当前的工作有了更清晰的认识，并为接下来的工作制定了具体的行动计划。

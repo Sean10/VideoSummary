@@ -1,48 +1,46 @@
 ---
-title: "Ceph Performance Meeting 2020-06-18"
-date: 2020-06-19
-updated: 2020-06-20
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-06-19
+subtitle: Ceph_Performance_Meeting_2020-06-18
+tags:
+- Ceph
+- 性能优化
+- 分布式存储
+- IO 500 测试
+- MDS
+title: Ceph Performance Meeting 2020-06-18
+updated: 2020-06-20
 ---
 
 
-### 会议纪要
 
-#### 关键细节
-- **UPR** 本周无特别事项。
-- **PR关闭情况**：
-  - Adams的PR与rocks TV sharding工作相关，防止大型读取日志大小被使用，设置了最大上限。
-  - 另一个PR涉及buffer lists编码工作的测试，原计划在测试目录中进行，但建议移至项目外部。
-  - 旧PR来自ma Jinping，关于mocking，因无人跟进被关闭，考虑重新开启。
-- **更新PR**：
-  - 关于blocking traces的PR，Egor自分配但尚未有时间处理。
-  - mem pools splitting PR，改进内存池的粒度，更细致地管理内存使用。
-  - blue store walking PR，仍在解决QA中发现的问题。
-  - MVS中的PR，旨在优化大量读写器和写入器访问单个目录时的性能。
+在 2020 年 6 月 18 日举行的 Ceph 性能会议上，团队讨论了一系列关键议题和更新：
 
-#### 讨论的主要议题
-- **IO 500测试**：
-  - 初步怀疑MDS中目录的碎片化和导出导致性能下降和停滞。
-  - 通过预碎片化和预导出片段进行优化，但在高MDS数量下仍存在低吞吐量和周期性停滞。
-  - 使用GB PNP分析发现，大量工作与Southwest journaling相关，特别是e meta blob数据结构的解码过程缓慢。
-  - 尝试使用unordered map和vector进行优化，但发现问题可能在于buffer list本身的小分配问题。
-  - 讨论了MDS多线程化的必要性，以提高性能。
+### 关键细节
+- UPR 本周没有特别事项。
+- PR 关闭情况包括：Adams 的 PR 与 rocks TV sharding 有关，防止读取日志大小过大，设置最大上限；buffer lists 编码测试 PR 建议移至项目外部；ma Jinping 的 mocking PR 因无人跟进被关闭，考虑重新开启。
+- 更新 PR 包括：blocking traces PR，Egor 自分配但尚未处理；mem pools splitting PR，改进内存池粒度；blue store walking PR，解决 QA 发现的问题；MVS PR，优化大量读写器访问单个目录时的性能。
 
-#### 决定的事项
-- 需要进一步优化buffer list的编码过程，可能通过切换到新的编码方案来预留空间，减少内存分配和碎片化。
-- 考虑MDS的多线程化，以利用多核优势。
+### 讨论的主要议题
+- IO 500 测试显示，MDS 中目录碎片化和导出可能导致性能下降。
+- 优化方案包括预碎片化和预导出片段，但在高 MDS 数量下仍存在低吞吐量和周期性停滞。
+- GB PNP 分析指出，Southwest journaling 和 e meta blob 数据结构解码缓慢。
+- 讨论了使用 unordered map 和 vector 进行优化，但问题可能在于 buffer list 的小分配。
+- 提出MDS多线程化的必要性，以提高性能。
 
-#### 后续行动计划
-- 继续优化IO 500测试中的性能问题，特别是buffer list的编码和内存管理。
-- 探索MDS的多线程化方案，以提高整体性能。
-- 持续跟进和更新相关PR的状态，确保项目进展顺利。
+### 决定的事项
+- 进一步优化 buffer list 的编码过程，可能通过切换到新的编码方案来预留空间，减少内存分配和碎片化。
+- 考虑 MDS 的多线程化，以利用多核优势。
 
-#### 其他事项
+### 后续行动计划
+- 继续优化 IO 500 测试中的性能问题，特别是 buffer list 的编码和内存管理。
+- 探索 MDS 的多线程化方案，以提高整体性能。
+- 持续跟进和更新相关 PR 的状态，确保项目进展顺利。
+
+### 其他事项
 - 讨论了内存 footprint 减少和依赖逻辑简化的重要性，希望在下一个版本中实现。
-- 会议结束时，鼓励团队成员继续努力，期待下周有新的进展。
+- 鼓励团队成员继续努力，期待下周有新的进展。
 
 ### 结束语
 会议结束，感谢大家的参与，祝大家下周工作顺利。

@@ -1,23 +1,26 @@
 ---
-title: "Critical Troubleshooting Tools for Rook Clusters - Subham Kumar Rai & Parth Arora, IBM"
+title: " Critical Troubleshooting Tools for Rook Clusters - Subham Kumar Rai & Parth Arora, IBM "
 date: 2023-05-05
 updated: 2023-05-05
 tags:
+- Rook
+- Ceph
+- Kubernetes
+- 分布式存储
+- 故障排除
 categories:
 - "视频总结"
-subtitle: tech
 ---
 
+会议纪要
 
-### 会议纪要
+会议主题：Rook 集群的故障排除与调试
 
-#### 会议主题：Rook 集群的故障排除与调试
-
-#### 参会人员：
+参会人员：
 - Bharat Lohar (IBM 存储部门，Rook 开发者)
 - 其他 IBM 存储部门成员及社区开发者
 
-#### 会议议程：
+会议议程：
 1. **Rook 简介**
 2. **Rook Ceph 插件介绍**
 3. **Rook 支持的命令**
@@ -25,11 +28,11 @@ subtitle: tech
 5. **调试模式**
 6. **演示与未来工作**
 
-#### 讨论内容：
+讨论内容：
 
 1. **Rook 简介**
-   - Rook 是一个 Kubernetes 项目，用于简化 Rook 插件的安装和管理。
-   - Rook 可以用于安装、发现和管理集群中的插件。
+   - Rook 是一个 Kubernetes 项目，旨在简化 Ceph 插件的安装和管理。
+   - Rook 可用于安装、发现和管理集群中的插件。
 
 2. **Rook Ceph 插件介绍**
    - Rook Ceph 插件用于运行基本命令、管理集群、简化运维操作。
@@ -69,6 +72,3 @@ subtitle: tech
 #### 会议结束：
 - 会议在积极的氛围中结束，参会者对 Rook Ceph 插件的未来发展充满期待。
 
----
-
-以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

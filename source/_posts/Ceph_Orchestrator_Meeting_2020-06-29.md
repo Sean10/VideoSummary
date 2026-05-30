@@ -1,18 +1,26 @@
 ---
-title: "Ceph Orchestrator Meeting 2020-06-29"
-date: 2020-06-29
-updated: 2020-06-30
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-06-29
+subtitle: Ceph Orchestrator Meeting 2020-06-29
+tags:
+- Ceph
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可扩展性
+- 对象存储
+title: "Ceph Orchestrator Meeting 2020-06-29"
+updated: 2020-06-30
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概要
-- **日期与时间**: [具体日期]
+- **日期与时间**: 2020年6月29日
 - **参会人员**: [参会人员名单]
 - **主持人**: [主持人姓名]
 
@@ -20,12 +28,12 @@ subtitle: tech
 1. **CI系统恢复**
    - CI系统已恢复正常运行，这是一个积极的进展。
 
-2. **Alice的替换问题**
-   - 讨论了在行业中测试的Alice替换问题，涉及使用hominids属性创建OSD时的问题。
+2. **Alice替换问题**
+   - 讨论了使用hominids属性创建OSD时的问题，特别是在测试Alice替换时。
    - 决定明确要求用户将unmanned instructor参数设置为true，以防止集群中的STI重读。
    - 需要进一步的信息来确定问题的具体情况，计划创建一个影响报告。
 
-3. **Rook的拖拽组（drag groups）**
+3. **Rook拖拽组（drag groups）**
    - 讨论了Rook的节点亲和性和节点选择问题，决定采用社区的placement方法。
    - 创建了一个相关的pull request（编号3552442），并计划与Blaine同步以获取更多关于高级Cuban a displacement规范的信息。
 

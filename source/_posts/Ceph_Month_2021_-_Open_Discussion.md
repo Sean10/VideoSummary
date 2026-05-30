@@ -1,57 +1,62 @@
 ---
-title: "Ceph Month 2021: Open Discussion"
+title: "  Ceph Month 2021: Open Discussion  "
 date: 2021-06-01
 updated: 2021-06-02
 tags:
+- Ceph
+- Distributed Storage
+- Open Discussion
+- CephFS
+- RBD
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Month_2021_-_Open_Discussion
 ---
+
 
 
 ### 会议纪要
 
 #### 会议目的
-本次会议旨在让与会者听取相关演讲，并进行自由形式的讨论，以便就任何相关议题进行交流。
+本次会议旨在通过听取相关演讲和自由形式的讨论，促进与会者就Ceph相关议题进行交流。
 
 #### 主要议题
 1. **File Store 状态讨论**
-   - 讨论了何时停止对 File Store 的支持。
-   - 通过 Grafana 仪表板上的遥测数据，显示目前仍有约 1500 个 File Store OSDs 在使用，占总数的 4%。
-   - 决定是否继续支持 File Store 的讨论，以及可能对代码简化和对象存储接口清理的影响。
+   - 讨论了何时停止对File Store的支持，通过Grafana仪表板的数据显示，目前仍有约1500个File Store OSDs在使用，占总数的4%。
+   - 决定是否继续支持File Store的讨论，以及对代码简化和对象存储接口清理的影响。
 
-2. **Crimson 和 File Store 的未来**
-   - Crimson 将不再支持 File Store，这可能导致未来无法继续支持。
-   - 提出了对仍在使用 File Store 的 OSDs 发出警告的建议。
+2. **Crimson和File Store的未来**
+   - Crimson将不再支持File Store，这可能导致未来无法继续支持。
+   - 提出了对仍在使用File Store的OSDs发出警告的建议。
 
-3. **Dedupe 更新**
-   - 讨论了 Dedupe 功能的三个部分：RADOS 类、RADOS 分层代码的更改以及 RADOS 网关直接存储数据的支持。
-   - 目前 Dedupe 功能尚未完全稳定，仍在开发中。
+3. **Dedupe更新**
+   - 讨论了Dedupe功能的三个部分：RADOS类、RADOS分层代码的更改以及RADOS网关直接存储数据的支持。
+   - 目前Dedupe功能尚未完全稳定，仍在开发中。
 
-4. **Cepheidium 对大型集群的支持**
-   - 讨论了 Cepheidium 的扩展限制和计划中的重构，以提高其可扩展性。
+4. **Cepheidium对大型集群的支持**
+   - 讨论了Cepheidium的扩展限制和计划中的重构，以提高其可扩展性。
 
-5. **Ceph 部署和管理方式的未来**
-   - 讨论了是否继续构建容器和包，以及如何管理通过包安装的 Ceph 集群。
+5. **Ceph部署和管理方式的未来**
+   - 讨论了是否继续构建容器和包，以及如何管理通过包安装的Ceph集群。
    - 强调了尽管有对容器的抵触，但目前没有具体的技术理由反对使用容器。
 
 6. **其他议题**
-   - 讨论了 CephFS 和 RBD 在 macOS 上的支持情况，以及可能的改进。
+   - 讨论了CephFS和RBD在macOS上的支持情况，以及可能的改进。
 
 #### 决定事项
-- 决定继续讨论并最终决定是否停止对 File Store 的支持。
-- 计划对仍在使用 File Store 的 OSDs 发出警告。
-- 将继续开发和完善 Dedupe 功能。
+- 决定继续讨论并最终决定是否停止对File Store的支持。
+- 计划对仍在使用File Store的OSDs发出警告。
+- 将继续开发和完善Dedupe功能。
 - 将继续支持包和容器的构建，但可能减少对多个发行版的支持。
 
 #### 后续行动计划
-- 发送跟进邮件到 Ceph 用户列表，收集对停止 File Store 支持的反馈。
-- 继续开发和测试 Dedupe 功能，确保其稳定性和可用性。
-- 继续改进 Cepheidium 的可扩展性。
+- 发送跟进邮件到Ceph用户列表，收集对停止File Store支持的反馈。
+- 继续开发和测试Dedupe功能，确保其稳定性和可用性。
+- 继续改进Cepheidium的可扩展性。
 - 准备一篇博客文章，讨论容器使用的议题，并收集更多反馈。
 
 #### 下次会议安排
-- 下次会议将于 6 月 10 日举行，将包括 RGW 更新和其他相关议题的讨论。
+- 下次会议将于6月10日举行，将包括RGW更新和其他相关议题的讨论。
 
 #### 会议结束
 感谢所有参与者的参与和贡献，期待下次会议再见。

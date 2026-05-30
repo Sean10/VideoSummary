@@ -1,12 +1,19 @@
 ---
-title: "Ceph Month 2021: CephFS update"
-date: 2021-06-23
-updated: 2021-06-24
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-06-23
+subtitle: Ceph_Month_2021_-_CephFS_update
+tags:
+- CephFS
+- Ceph Pacific版本
+- 分布式存储
+- CephFS更新
+- CephFS功能改进
+title: "'Ceph Month 2021: CephFS update'"
+updated: 2021-06-24
 ---
+
+
 
 
 ### 会议纪要
@@ -60,7 +67,3 @@ subtitle: tech
 #### 备注：
 - 会议中提到的详细内容和博客文章将在稍后分发。
 - 欢迎随时提问和提供反馈。
-
----
-
-以上是本次会议的纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

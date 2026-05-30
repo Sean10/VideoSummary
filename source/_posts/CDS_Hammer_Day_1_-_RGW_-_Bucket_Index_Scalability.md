@@ -1,11 +1,16 @@
 ---
-title: "CDS Hammer (Day 1) - RGW: Bucket Index Scalability"
-date: 2014-10-29
-updated: 2014-10-30
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2014-10-29
+subtitle: CDS_Hammer_Day_1_-_RGW_-_Bucket_Index_Scalability
+tags:
+- Ceph
+- 分布式存储
+- Bucket Index Scalability
+- RGW
+- 多区域
+title: "'CDS Hammer (Day 1) - RGW: Bucket Index Scalability'"
+updated: 2014-10-30
 ---
 
 
@@ -16,15 +21,15 @@ subtitle: tech
 
 **会议时间**： 2023年11月（具体日期未提及）
 
-**参会人员**： 未提及具体姓名，但提到了 Guang、Patrick 等人
+**参会人员**： Guang、Patrick 等人
 
 **会议内容**：
 
 **一、bucket 可扩展性**
 
-*   **背景**： bucket 可扩展性是 Ceph 分布式存储项目的一个重要议题，涉及 bucket 索引的扩展性。
-*   **进展**： 目前该功能进展顺利，已经完成了大部分工作，但与多区域、多区的功能集成尚未完成。主要问题在于后台索引中存在一些日志，需要确保多区域环境下一切正常工作。
-*   **解决方案**： 可以通过使用不同类型的标记来实现多区域下的 bucket 索引，或者在 bucket 列表中使用标记来识别不同 bucket 的位置。
+*   **背景**： 探讨了 bucket 可扩展性，特别是 bucket 索引的扩展性。
+*   **进展**： 该功能进展顺利，已完成大部分工作，但与多区域、多区域功能的集成尚未完成。主要问题在于后台索引中存在一些日志，需要确保多区域环境下的正常工作。
+*   **解决方案**： 通过使用不同类型的标记或标记来识别不同 bucket 的位置，实现多区域下的 bucket 索引。
 *   **下一步**： 等待 Guang 回来后，进一步讨论该功能的细节。
 
 **二、list 命令**
@@ -57,8 +62,8 @@ subtitle: tech
 
 *   **讨论**： 讨论了 bucket 分片的实现方式。
 *   **结论**： 可以通过以下步骤实现 bucket 分片：
-    1.  在 bucket 创建之前进行分片。
-    2.  对于已经存在的 bucket，可以将其转换为新的分片 bucket。
+    1. 在 bucket 创建之前进行分片。
+    2. 对于已经存在的 bucket，可以将其转换为新的分片 bucket。
 
 **八、行动计划**
 

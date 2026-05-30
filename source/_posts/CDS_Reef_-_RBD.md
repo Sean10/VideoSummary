@@ -1,16 +1,52 @@
 ---
-title: "CDS Reef: RBD"
-date: 2022-04-22
-updated: 2022-04-23
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-04-22
+subtitle: CDS_Reef_-_RBD
+tags:
+- Ceph
+- RBD
+- Distributed Storage
+- Storage Cluster
+- Scalability
+title: "'CDS Reef: RBD'"
+updated: 2022-04-23
 ---
 
 
-1. **Mirroring Schedule Stagger**：尝试错开快照计划和镜像计划，以在一段时间内产生一致的性能影响。
-2. **State Machine Documentation**：改善关于rbd mirroring的状态机文档，以便更好地为开发者提供一些部分的文档。
-3. **Rbd Suite Movement to Using Sap Area**：将rbd套件迁移到使用sap area，目前仍在进行中，但需要完成多集群支持的工作。
-4. **Lack of State Machine Diagrams**：在rv mirror代码库中缺少状态机图，这是一个相对容易解决的问题，并且对于刚熟悉代码库的人来说也是一个好任务，因为它有助于从高层次了解代码并整合这些高级状态图。
-5. **Sfadm Migration for the Qa Suite**：关于qa套件的sfadm迁移，有一个pr正在进行中，但启动它的人已经不再参与其中。将来，这也可以作为新手参与topology和rbd套件的一个很好的起点。
+
+
+本次会议主要讨论了Ceph RBD（块存储）在CDS Reef版本中的开发计划和改进方向。以下是会议的关键点：
+
+1. **RBD镜像相关问题和改进**：
+   - 优化快照和镜像计划，以减少性能影响。
+   - 改善rbd mirroring的状态机文档，方便开发者理解。
+   - 迁移rbd套件至使用sap area，并实现多集群支持。
+   - 在rv mirror代码库中添加状态机图，方便新手理解代码。
+   - 处理和解决rbd mirroring的bug，包括错误和边缘情况处理、脑裂条件处理等。
+
+2. **日志记录和监控**：
+   - 改进日志配置，使其更易于在Kubernetes环境中配置。
+   - 优化日志流，使日志更易于识别和跟踪。
+   - 提供一致的图像级别指标，并通过admin socket暴露给性能监控工具。
+
+3. **性能测试和优化**：
+   - 扩展RBD镜像的性能测试，支持更多图像数量。
+   - 检查和修复多副本镜像中可能存在的问题。
+
+4. **功能增强**：
+   - 支持加密克隆，允许使用不同的密码和加密格式。
+   - 支持NBD流，改进RBD实时迁移功能。
+   - 改进持久性宽背缓存，使用pmem模式。
+
+5. **测试套件改进**：
+   - 修复测试不稳定的问题，确保测试套件的稳定性。
+
+6. **容器化和自动化**：
+   - 改进容器化部署，优化用户交互体验。
+   - 探索将客户端组件运行在容器中的可能性。
+
+7. **NVMe和 fabrics网关**：
+   - 开发新的NVMe和 fabrics网关，以替代现有的iSCSI网关。
+
+本次会议明确了CDS Reef版本中RBD开发的主要方向和任务，为后续的开发工作提供了指导。

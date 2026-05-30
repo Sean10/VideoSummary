@@ -1,20 +1,25 @@
 ---
-title: "Ceph Developer Summit Quincy: Crimson"
+title: " Ceph Developer Summit Quincy: Crimson "
 date: 2021-04-08
 updated: 2021-04-08
 tags:
+- Ceph
+- Distributed Storage
+- CephFS
+- BlueStore
+- Crimson
 categories:
-- "视频总结"
-subtitle: tech
+- "会议纪要"
+- "技术讨论"
+subtitle: Ceph_Developer_Summit_Quincy_-_Crimson
 ---
-
 
 ### 会议纪要
 
 #### 主题一：适应Ceph的Boost ASIO代码到C-Star Reactor
 - **讨论内容**：
-  - 现有代码依赖Boost ASIO，讨论如何将其适配到C-Star Reactor中。
-  - 探讨是否可以通过包装和适当的回调函数来直接在Reactor中运行。
+  - 讨论如何将现有依赖Boost ASIO的代码适配到C-Star Reactor中。
+  - 探讨是否可以通过包装和适当的回调函数直接在Reactor中运行。
   - 初步认为需要进一步调查是否需要进行此项工作，特别是对于实时RBD（Live RBD）。
 
 - **决定事项**：

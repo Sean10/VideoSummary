@@ -1,24 +1,21 @@
 ---
-title: "CDS Tentacle - RGW"
+title: "  CDS Tentacle - RGW  "
 date: 2024-08-22
 updated: 2024-08-23
 tags:
+- Ceph
+- 分布式存储
+- RGW
+- S3 Select
+- Resharding
+- 多站点
+- Zipper
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: CDS_Tentacle_-_RGW
 ---
 
-
-
-### 会议纪要
-
-**会议时间**： 2023年（具体日期未提及）
-
-**参会人员**： Casey, Adam Emerson, Daniel, Caleb, Mark Hogan, Shila, Val, CH, Bloomberg 等
-
-**会议主题**： 讨论Ceph分布式存储项目的进展和未来计划
-
-**主要议题**：
+本次会议主要讨论了Ceph分布式存储项目RGW的部分进展和未来计划，以下为会议关键内容：
 
 **1. 扩展接口**
 
@@ -45,7 +42,7 @@ subtitle: tech
 * **Lua强化**： 讨论了Lua强化，包括防止Lua脚本消耗过多内存和CPU，以及防止Lua脚本修改操作系统或文件系统。
 * **C++ 20协程原型**： 讨论了C++ 20协程原型，用于元数据同步，这将使多站点功能更容易实现。
 
-**行动计划**：
+**行动计划**
 
 * 完成d4n缓存的优化和集成。
 * 实现S3 Select的进一步增强。
@@ -58,12 +55,8 @@ subtitle: tech
 * 强化Lua功能。
 * 开发C++ 20协程原型。
 
-**后续行动**：
+**后续行动**
 
 * 将会议纪要中的讨论内容转化为Redmine跟踪问题。
 * 继续推进各个议题的进展。
 * 定期召开会议，讨论项目的进展和问题。
-
-**总结**：
-
-本次会议讨论了Ceph分布式存储项目的多个重要议题，并制定了详细的行动计划。会议气氛积极，参会人员积极参与讨论，为项目的进展做出了贡献。

@@ -1,12 +1,18 @@
 ---
-title: "2020-04-27 :: Ceph Orchestration Meeting"
-date: 2020-04-29
-updated: 2020-04-30
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-04-29
+subtitle: 2020-04-27_-_-_Ceph_Orchestration_Meeting
+tags:
+- Ceph
+- Orchestration
+- Daily Test Suite
+- CI/CD
+- Rook
+title: "'2020-04-27 :: Ceph Orchestration Meeting'"
+updated: 2020-04-30
 ---
+
 
 
 ### 会议纪要
@@ -17,11 +23,11 @@ subtitle: tech
 
 #### 会议议题：
 1. **每日测试套件的进展**
-   - 讨论了SEF manager的每日测试套件，特别是与ha Miguel相关的工作。
-   - 确认CI（持续集成）是否通过，以便进行合并。
+   - 讨论了Ceph Manager的每日测试套件，特别是与ha Miguel相关的工作。
+   - 确认了持续集成（CI）测试是否通过，以确定是否进行代码合并。
 
 2. **测试套件的运行策略**
-   - 讨论了测试套件应运行在set master上，以测试manager模块的编排功能。
+   - 讨论了测试套件应在set master上运行，以测试manager模块的编排功能。
    - 决定不在master或release builds上运行此测试，以避免不可靠性。
    - 短期计划是将测试添加到mr. rook PRs中，以监控PR是否触发问题，但不阻塞master builder。
 
@@ -30,7 +36,7 @@ subtitle: tech
    - 确认需要一个新的工作项来创建每日测试套件管道。
 
 4. **技术支持和学习**
-   - 讨论了团队成员对Yankees（可能是某种技术或工具）的经验有限，但愿意学习。
+   - 讨论了团队成员对Yankees（可能指某种技术或工具）的经验有限，但愿意学习。
    - 提到Adam Kreitman作为技术支持，他位于以色列，便于时区协调。
 
 #### 决定事项：

@@ -1,26 +1,26 @@
 ---
-title: "Ceph Orchestrator Meeting 2022-04-26"
-date: 2022-04-26
-updated: 2022-04-27
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-04-26
+subtitle: Ceph_Orchestrator_Meeting_2022-04-26
+tags:
+- Ceph
+- Orchestrator
+- Rook
+- Kubernetes
+- Code Review
+title: "Ceph Orchestrator Meeting 2022-04-26"
+updated: 2022-04-27
 ---
 
 
-会议纪要：
 
-1. **议题一**：关于代码审查和功能开发进度的更新，具体如下：
-   - 提及了需要重新审视和可能推迟的议题。
-   - 讨论了站立会议的频率，提出可能减少会议次数以提高效率。
-   - 对HNFS (Highly Non-homogeneous Storage System) 的更新进行了简要讨论，确认了其基本功能正常，但存在一个与OpenStack团队相关的bug。
-   - 讨论了升级顺序的问题，强调了核心组件如OSD和MDS的重要性，并提出了放宽对非核心组件的升级顺序限制。
 
-2. **议题二**：关于Rook项目的更新，具体如下：
-   - 讨论了通过Orchestrator模块进行工作的策略，并提出在Rook中添加新功能。
-   - 强调了为Kubernetes用户提供更有用的功能的目标，以及如何实现这一点。
-   - 提到了现有Rook Python客户端库的问题，包括其维护和使用方式，以及可能的改进方向。
+本次Ceph Orchestrator会议主要讨论了以下议题：
+
+1. **代码审查和功能开发进度**：会议中提到需要重新审视和可能推迟的议题，讨论了站立会议的频率，并考虑减少会议次数以提高效率。同时，对HNFS（Highly Non-homogeneous Storage System）的更新进行了简要讨论，确认了其基本功能正常，但存在一个与OpenStack团队相关的bug。
+
+2. **Rook项目更新**：讨论了通过Orchestrator模块进行工作的策略，提出在Rook中添加新功能。强调了为Kubernetes用户提供更有用的功能的目标，以及如何实现这一点。同时，提到了现有Rook Python客户端库的问题，包括其维护和使用方式，以及可能的改进方向。
 
 3. **决定和行动计划**：
    - 同意减少站立会议频率，建议每周一和周四举行。

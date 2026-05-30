@@ -1,18 +1,25 @@
 ---
-title: "Ceph Orchestrator Meeting 2023-02-07"
-date: 2023-02-08
-updated: 2023-02-08
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-02-08
+subtitle: Ceph_Orchestrator_Meeting_2023-02-07
+tags:
+- Ceph
+- Keepalived
+- High Availability
+- Manager
+- Virtual IP
+title: "Ceph Orchestrator Meeting 2023-02-07"
+updated: 2023-02-08
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概述
-本次会议主要讨论了Ceph存储系统中关于管理器（manager）的高可用性（HA）实现，特别是通过使用keepalived来管理虚拟IP的问题。会议中涉及了多个技术细节和潜在的解决方案，以及后续的行动计划。
+本次会议主要讨论了Ceph存储系统中管理器（manager）的高可用性（HA）实现，特别是通过使用keepalived来管理虚拟IP（Virtual IP）的问题。会议中涉及了多个技术细节和潜在的解决方案，以及后续的行动计划。
 
 #### 主要议题
 1. **Keepalived与管理器集成**：

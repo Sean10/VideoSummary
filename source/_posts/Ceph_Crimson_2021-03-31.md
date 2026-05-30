@@ -1,11 +1,49 @@
 ---
-title: "Ceph Crimson 2021-03-31"
-date: 2021-04-01
-updated: 2021-04-01
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-04-01
+subtitle: Ceph Crimson 2021-03-31 会议纪要
+tags:
+- Ceph
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可伸缩性
+- 对象存储
+- 块存储
+- 文件系统存储
+- 一致性
+- 去中心化
+- 性能
+- Bluestore
+- Bluefs
+- Rocksdb
+- OSD
+- MON
+- MDS
+- PG
+- RADOS
+- librados
+- libcephfs
+- cephfs
+- rbd
+- radosgw
+- RGW
+- RESTful API
+- 认证
+- 授权
+- 加密
+- 擦除编码
+- 复制
+- 快照
+- 克隆
+- 虚拟化
+- 云计算
+- 存储
+- 测试
+- 验证
+title: "Ceph Crimson 2021-03-31"
+updated: 2021-04-01
 ---
 
 
@@ -20,7 +58,7 @@ subtitle: tech
 1. **MBD测试问题**:
    - 使用Sam的新PR进行MBD测试，但存在间歇性的segmentation fault问题。
    - 尝试复现问题，但条件不明确，仍在追踪中。
-   - 阅读Sam的segmentation clear代码和journal代码，发现并修复了一个小问题。
+   - 阅读Sam的segmentation fault代码和journal代码，发现并修复了一个小问题。
 
 2. **FIO测试问题**:
    - 设置较大的offset（例如50GB）时，FIO无法运行。
@@ -66,6 +104,3 @@ subtitle: tech
 
 #### 其他事项
 - 下周将举行CTS会议，欢迎大家添加感兴趣的话题。
-
-### 结束语
-会议结束，感谢大家的参与，祝大家工作顺利。

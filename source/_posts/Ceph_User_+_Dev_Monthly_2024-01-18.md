@@ -1,31 +1,38 @@
 ---
-title: "Ceph User + Dev Monthly 2024-01-18"
-date: 2024-01-22
-updated: 2024-01-23
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2024-01-22
+subtitle: Ceph_User_+_Dev_Monthly_2024-01-18
+tags:
+- Ceph
+- 分布式存储
+- 对象存储
+- 磁带存储
+- 功能请求
+title: "Ceph User + Dev Monthly 2024-01-18"
+updated: 2024-01-23
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概要
-本次用户开发会议邀请了来自国家太阳能天文台的SEF操作员Joel Davido，他提出了一项关于在对象存储中使用磁带作为存储类的功能请求。会议中，Joel详细介绍了该请求的背景、优势、潜在用途以及当前的技术选项，并讨论了可能的实施方案和面临的挑战。
+本次Ceph用户开发会议中，国家太阳能天文台的SEF操作员Joel Davido提出了使用磁带作为对象存储类功能请求。Joel详细介绍了该请求的背景、优势、潜在用途以及当前的技术选项，并讨论了可能的实施方案和挑战。
 
 #### 主要议题
 1. **背景介绍**：
-   - Joel介绍了DEIS项目，特别是Daniel K. Inouye太阳望远镜，这是一个位于夏威夷的4米口径太阳望远镜，收集的数据通过Globus传输到位于Boulder的数据中心，存储在S3桶中，并最终存档在AWS Glacier。
+   - Joel介绍了DEIS项目，特别是Daniel K. Inouye太阳望远镜的数据收集、存储和归档过程。
 
 2. **功能请求**：
-   - 请求在Ceph中添加一个由磁带支持的服务，类似于AWS Glacier，以实现长期数据存储和降低成本。
+   - 在Ceph中添加一个由磁带支持的服务，类似于AWS Glacier，以实现长期数据存储和降低成本。
 
 3. **优势与用途**：
    - 磁带存储可以减少存储成本、空间利用、电力消耗和冷却负荷，主要用于长期存档和防止勒索软件攻击。
 
 4. **当前技术选项**：
-   - 讨论了几种第三方应用程序和方法，如Spectra Logic的Black Pearl和StoreCycle，以及Nodiam的产品，但各有优缺点。
+   - 讨论了第三方应用程序和方法，如Spectra Logic的Black Pearl、StoreCycle和Nodiam的产品，以及S3 API拦截等。
 
 5. **期望的功能**：
    - 需要原生集成、透明媒体转换、避免单点故障、程序化管理S3请求等功能。

@@ -1,12 +1,21 @@
 ---
-title: "Ceph Orchestrator Meeting 2021-05-18"
-date: 2021-05-18
-updated: 2021-05-19
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-05-18
+subtitle: Ceph_Orchestrator_Meeting_2021-05-18
+tags:
+- Ceph
+- Orchestrator
+- Self
+- adm Agent
+- Reconciliation Loop
+- Push Model
+- Architecture Improvement
+title: "Ceph Orchestrator Meeting 2021-05-18"
+updated: 2021-05-19
 ---
+
+
 
 
 ### 会议纪要
@@ -15,19 +24,19 @@ subtitle: tech
 
 #### 参会人员：全体成员
 
-#### 会议日期：[具体日期]
+#### 会议日期：2021-05-18
 
 #### 会议内容总结：
 
 1. **主要议题**：
-   - 深入探讨 self-adm agent 的功能和必要性。
+   - 探讨 self-adm agent 的功能和必要性。
    - 讨论 cephadm 中的 reconciliation loop 的扩展性和性能问题。
    - 评估是否需要改进架构以支持更快的故障转移。
 
 2. **讨论细节**：
-   - **self-adm agent**：讨论了 self-adm agent 的潜在收益和架构影响。提出了是否需要实施该代理，以及如何实施的问题。
-   - **reconciliation loop**：指出了当前 cephadm 中的 reconciliation loop 在扩展性上的限制，特别是在创建 SSH 连接和执行远程命令时的性能问题。
-   - **架构改进**：讨论了如何改进架构以支持更快的故障转移，包括考虑使用 push 模型而不是 pull 模型，以及如何处理潜在的竞争条件和失败模式。
+   - **self-adm agent**：会议重点讨论了 self-adm agent 的潜在收益和架构影响，包括是否需要实施该代理及其对架构的影响。
+   - **reconciliation loop**：讨论了当前 cephadm 中 reconciliation loop 的扩展性限制，特别是在创建 SSH 连接和执行远程命令时的性能问题。
+   - **架构改进**：会议讨论了如何改进架构以支持更快的故障转移，包括考虑使用 push 模型而不是 pull 模型，以及如何处理潜在的竞争条件和失败模式。
 
 3. **决定事项**：
    - 确认改进 reconciliation loop 和引入 self-adm agent 的必要性。
@@ -47,6 +56,6 @@ subtitle: tech
 - 会议在接近预定时间结束，未有其他紧急议题需要讨论。
 - 全体成员祝大家有一个愉快的周末。
 
----
 
-本次会议重点在于优化 ceph 的 orchestration 功能，特别是通过引入新的 self-adm agent 来解决现有的性能瓶颈问题。会议强调了详细的实施计划和考虑潜在的架构影响的重要性。
+
+本次会议重点在于优化 Ceph 的 orchestration 功能，特别是通过引入新的 self-adm agent 来解决现有的性能瓶颈问题。会议强调了详细的实施计划和考虑潜在的架构影响的重要性，并确定了后续的行动计划。

@@ -1,20 +1,28 @@
 ---
-title: "Ceph Orchestrator Meeting 2022-04-18"
-date: 2022-04-22
-updated: 2022-04-22
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-04-22
+subtitle: Ceph_Orchestrator_Meeting_2022-04-18
+tags:
+- Ceph
+- 分布式存储
+- 配置文件
+- 镜像选择算法
+- 镜像版本
+title: "Ceph Orchestrator Meeting 2022-04-18"
+updated: 2022-04-22
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概述
-本次会议由于参与人数较少，原计划讨论的问题优先级排序被推迟。会议主要讨论了两个相关议题，并计划在后续会议中继续讨论。
+本次Ceph Orchestrator会议由于参与人数较少，原计划讨论的问题优先级排序被推迟。会议主要讨论了两个相关议题，并计划在后续会议中继续讨论。
 
 #### 主要议题
+
 1. **配置文件的使用**
    - **讨论内容**：讨论了当前使用的配置文件（如 `etcsef.com`）的重要性。由于大多数守护进程（demons）从监视器（monitor）获取配置信息，因此对于配置文件的需求进行了质疑。
    - **主要观点**：

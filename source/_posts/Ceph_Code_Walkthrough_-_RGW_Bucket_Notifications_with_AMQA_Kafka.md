@@ -1,30 +1,37 @@
 ---
-title: "Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka"
-date: 2021-04-28
-updated: 2021-04-28
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-04-28
+subtitle: Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka
+tags:
+- Ceph
+- RGW
+- Bucket Notifications
+- AMQP
+- Kafka
+title: "'Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka'"
+updated: 2021-04-28
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概述
-本次会议由Mike Perez主持，Yuval主讲，主题为Reno的Gateway Bucket Notifications，特别是与AMQP和Kafka相关的实现细节。会议主要通过代码走查的方式，详细介绍了如何配置和发送通知。
+本次会议由Mike Perez主持，Yuval主讲，主题为Ceph的Reno版本中Gateway的Bucket Notifications功能，特别关注了与AMQP和Kafka的集成实现。会议通过代码走查的方式，深入探讨了配置和发送通知的细节。
 
 #### 主要议题
 1. **Bucket Notifications概述**
-   - 功能简介：当对象创建或删除时，发送通知到预配置的端点。
+   - 功能简介：当对象在存储中创建或删除时，系统会向预配置的端点发送通知。
    - 两种模式：
      - **Push模式**：事件发生时立即发送通知。
-     - **Pull模式**：所有通知存储在特殊的pub sub zone中，计划未来弃用。
+     - **Pull模式**：所有通知存储在特殊的pub/sub区域中，计划未来弃用。
 
 2. **配置流程**
    - 主要涉及的文件：`rgw_rest_pubsub`和`rgw_rest_pubsub_common`。
-   - 配置API：创建、删除、列出主题和通知。
-   - 系统对象存储：所有配置信息作为系统对象存储。
+   - 配置API：包括创建、删除、列出主题和通知等。
+   - 系统对象存储：所有配置信息以系统对象的形式存储。
 
 3. **数据结构**
    - 定义在`rgw_pubsub.h`中，包括主题、通知、过滤器等。
@@ -57,6 +64,6 @@ subtitle: tech
 #### 会议结束
 感谢Yuval的详细讲解和所有参与者的积极参与。希望大家有一个愉快的剩余时间。
 
----
+
 
 以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

@@ -1,27 +1,33 @@
 ---
-title: "Ceph Crimson/SeaStar-OSD 2023-04-12 Meeting"
-date: 2023-04-12
-updated: 2023-04-12
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-04-12
+subtitle: Ceph_Crimson_SeaStar-OSD_2023-04-12_Meeting
+tags:
+- Ceph
+- Crimson 项目
+- RBD 测试
+- 系统调试
+- 会议安排
+title: Ceph Crimson/SeaStar-OSD 2023-04-12 Meeting
+updated: 2023-04-12
 ---
+
 
 
 ### 会议纪要
 
 #### 参会人员
-- 未提及具体姓名，但涉及Ceph开发和质量保证（QE）团队成员。
+- Ceph开发和质量保证（QE）团队成员。
 
 #### 主要议题
 1. **Crimson项目进展**
-   - 某成员未在Crimson项目上做太多工作，主要关注Classic Q Quality Service，计划将这部分工作移植到Crimson。
-   - 讨论了LBA优化和parent-child link优化，提出了后续改进的可能性。
+   - 讨论了将Classic Q Quality Service工作移植到Crimson的计划。
+   - 探讨了LBA优化和parent-child link优化，提出后续改进的可能性。
 
 2. **RBD测试结果**
-   - QE团队在最近的RBD测试中发现了五个失败案例，其中两个被确认为误报。
-   - 需要进一步讨论和调查其余的失败案例，并可能提出新的bug报告。
+   - QE团队在RBD测试中发现了五个失败案例，其中两个确认为误报。
+   - 计划进一步调查其余失败案例，并可能提出新的bug报告。
 
 3. **系统调试与更新**
    - 更新了医疗系统，并在垂直OST上进行调试，特别是单个和多个OSD的调试。
@@ -30,9 +36,9 @@ subtitle: tech
    - 下一周的会议将照常进行，之后可能会切换到新的会议软件。
 
 #### 决定事项
-- 确认了Classic Q Quality Service的工作将移植到Crimson。
-- 对RBD测试中的失败案例进行了初步分析，并计划进一步讨论和调查。
-- 确认了下一周的会议将继续使用当前的会议软件。
+- 确认将Classic Q Quality Service工作移植到Crimson。
+- 对RBD测试中的失败案例进行初步分析，并计划进一步讨论和调查。
+- 确认下一周的会议将继续使用当前的会议软件。
 
 #### 后续行动计划
 - 继续进行LBA优化和parent-child link优化的工作。
@@ -41,12 +47,8 @@ subtitle: tech
 - 准备切换到新的会议软件，并提前通知参会人员。
 
 #### 备注
-- 会议中提到了一些技术细节，如LBA优化、parent-child link优化等，这些是Ceph存储系统中的关键技术点。
+- 会议中提到了技术细节，如LBA优化、parent-child link优化等，这些是Ceph存储系统中的关键技术点。
 - 会议还涉及了RBD（RADOS Block Device）的测试，这是Ceph提供的一种块存储服务。
 
 #### 会议结束
 - 会议在确认了后续行动计划和会议安排后结束。
-
----
-
-以上是本次会议的纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

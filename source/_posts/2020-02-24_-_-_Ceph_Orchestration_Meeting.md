@@ -1,39 +1,59 @@
 ---
-title: "2020-02-24 :: Ceph Orchestration Meeting"
-date: 2020-04-03
-updated: 2020-04-04
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 会议纪要
+- Ceph 存储
+- 分布式系统
+- 存储架构
+- 存储优化
+date: 2020-04-03
+subtitle: 2020-02-24_-_-_Ceph_Orchestration_Meeting
+tags:
+- Ceph
+- Distributed Storage
+- CRUSH Algorithm
+- High Availability
+- Scalability
+- Object Storage
+- Block Storage
+- File System Storage
+- Consistency
+- Decentralization
+- Performance
+- Monitoring
+- Orchestration
+- Automation
+title: "'2020-02-24 :: Ceph Orchestration Meeting'"
+updated: 2020-04-04
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概要
-- **日期**: [具体日期]
+- **日期**: 2020-02-24
 - **参会人员**: [参会人员名单]
 - **主持人**: [主持人姓名]
 - **记录人**: [记录人姓名]
 
 #### 主要议题
 1. **Pull Request讨论**
-   - **PR 33442**: 讨论了关于在生产环境中添加P trace标志的问题，该标志用于调试容器。会议中提出了安全性考虑，认为不应无条件地在所有生产环境容器中添加此标志。
-   - **PR 大Rhenium**: 讨论了将“no”重命名为“host”的请求，从通用Orchestrator的角度来看是有意义的，但可能会增加Ceph的复杂性。
+   - **PR 33442**: 讨论了在生产环境中添加P trace标志的可行性，考虑到安全性和调试需求，决定不无条件添加。
+   - **PR 大Rhenium**: 讨论了将“no”重命名为“host”的请求，认为会增加Ceph的复杂性。
 
 2. **测试流程改进**
-   - **Brookside测试**: 讨论了如何改进对Orchestrator接口变更的测试。提出了使用现有的持续集成系统进行命令行测试的方案，并计划本周内完成初步测试。
-   - **Nightly Builds**: 讨论了建立nightly builds的必要性，以检测最新的稳定版本是否存在问题，而不影响正常的PR和主构建流程。
+   - **Brookside测试**: 讨论了如何改进对Orchestrator接口变更的测试，计划使用现有的持续集成系统进行命令行测试。
+   - **Nightly Builds**: 讨论了建立nightly builds的必要性，以检测最新稳定版本的问题。
 
 3. **Blinking Lights功能**
    - 讨论了在Python中指定参数和函数结果的改进，以及在实际硬件上测试该功能的必要性。
 
 4. **Rook Client迁移**
-   - 讨论了将Rook Client从ESF组织迁移到Rook组织的进展，目前尚未开始，需要先解决一些关于存储提供者的重构问题。
+   - 讨论了将Rook Client从ESF组织迁移到Rook组织的进展，需先解决存储提供者的重构问题。
 
 5. **Safe to Fail功能**
-   - 讨论了关于Safe to Fail功能的进展，目前没有新的信息，计划暂时保持现状。
+   - 讨论了关于Safe to Fail功能的进展，没有新的信息，计划暂时保持现状。
 
 #### 决定事项
 - 对于PR 33442，决定不在生产环境中无条件添加P trace标志。
@@ -60,9 +80,3 @@ subtitle: tech
 
 #### 备注
 - 会议中提到的具体PR编号和技术细节需要进一步的技术文档和代码审查。
-
----
-
-**记录人**: [记录人姓名]  
-**审核人**: [审核人姓名]  
-**日期**: [具体日期]

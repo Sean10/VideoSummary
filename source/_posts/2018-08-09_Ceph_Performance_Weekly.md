@@ -1,42 +1,38 @@
 ---
-title: "2018-08-09 Ceph Performance Weekly"
-date: 2020-08-26
-updated: 2020-08-26
+title: "  2018-08-09 Ceph Performance Weekly  "
+date: 2018-08-09
+updated: 2018-08-09
 tags:
+- Ceph
+- 分布式存储
+- 性能优化
+- 存储集群
+- 蓝店（Blue Store）
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: 2018-08-09_Ceph_Performance_Weekly
 ---
+
 
 
 ### 会议纪要
 
 #### 参会人员
-- Casey
-- Mark
-- Sage
-- Igor
-- Radek
-- Gregor
-- Jason
-- Braddock
-- Shawn Peng
-- Alfredo
-- Ari
+- Casey, Mark, Sage, Igor, Radek, Gregor, Jason, Braddock, Shawn Peng, Alfredo, Ari
 
 #### 会议时间
-- 日期：具体日期未提供
-- 时间：具体时间未提供
+- 日期：未提供
+- 时间：未提供
 
 #### 主要议题
-1. **旧的Pull Request复活**
-   - 讨论了复活一个旧的Pull Request，该请求涉及重新启动一个复杂的实现，主要关于维护顺序的问题。
+1. **Pull Request 复活**
+   - 讨论了复活一个旧的Pull Request，该请求涉及重新启动一个关于维护顺序的复杂实现。
 
 2. **Radek的加密工作**
-   - Radek介绍了他在加密方面的工作，特别是关于使用低级AES实现的问题，该实现不使用硬件加速。讨论了与设置成本和实际加速之间的关系。
+   - Radek介绍了他在加密方面的工作，特别是关于使用低级AES实现的问题，讨论了与设置成本和实际加速之间的关系。
 
 3. **Igor的Tiny Appends Pull Request**
-   - Igor介绍了他的Tiny Appends Pull Request，该请求涉及在数据库中直接存储小对象，而不是将它们存储在磁盘上。讨论了性能结果和潜在的改进。
+   - Igor介绍了他的Tiny Appends Pull Request，该请求涉及在数据库中直接存储小对象，讨论了性能结果和潜在的改进。
 
 4. **EC Partial Stripe Reads**
    - 讨论了新的EC Partial Stripe Reads，需要进一步的审查。

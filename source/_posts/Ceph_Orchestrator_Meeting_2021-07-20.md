@@ -1,18 +1,24 @@
 ---
-title: "Ceph Orchestrator Meeting 2021-07-20"
-date: 2021-08-23
-updated: 2021-08-24
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-08-23
+subtitle: Ceph_Orchestrator_Meeting_2021-07-20
+tags:
+- Ceph
+- Orchestrator
+- Meeting summary
+- Template management
+- Manager performance
+title: "Ceph Orchestrator Meeting 2021-07-20"
+updated: 2021-08-24
 ---
+
 
 
 ### 会议纪要
 
 #### 会议基本信息
-- **日期**: [具体日期]
+- **日期**: 2021-07-20
 - **时间**: [具体时间]
 - **主持人**: [主持人姓名]
 - **参会人员**: [参会人员名单]
@@ -45,6 +51,6 @@ subtitle: tech
 #### 其他事项
 - 会议结束，下次会议再见。
 
----
 
-**备注**: 本次会议讨论了Ceph Orchestrator的模板管理和Manager的性能问题，提出了多种解决方案和改进建议，但决定暂时不采取具体行动，等待后续技术改进。
+
+**备注**: 本次会议讨论了Ceph Orchestrator的模板管理和Manager的性能问题，提出了多种解决方案和改进建议，但决定暂时不采取具体行动，等待后续技术改进。会议还涉及了会议录像的访问问题和Manager卡顿问题的解决方案讨论。

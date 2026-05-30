@@ -1,26 +1,31 @@
 ---
-title: "Ceph Month 2021: Qemu: librbd vs krbd performance"
+title: "  Ceph Month 2021: Qemu: librbd vs krbd performance  "
 date: 2021-06-21
 updated: 2021-06-22
 tags:
+- [Ceph]
+- [librbd]
+- [krbd]
+- [性能比较]
+- [客户端]
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Month_2021_-_Qemu_-_librbd_vs_krbd_performance
 ---
 
 
 ### 会议纪要
 
 #### 会议主题：
-讨论和比较Ceph的两种主要客户端（librbd和krbd）的性能表现。
+本次会议主要讨论和比较了Ceph存储系统中librbd和krbd两种客户端在不同场景下的性能表现。
 
 #### 会议目的：
 为了解答客户关于librbd和krbd性能差异的疑问，特别是针对特定工作负载（Kimu workloads），会议旨在通过数据收集和比较，展示这两种客户端的性能特点。
 
 #### 主要讨论内容：
 1. **测试目标和方法**：
-   - 定义了四个主要测试场景，包括使用librbd和krbd的虚拟机测试，以及在物理主机上使用librbd和krbd的测试。
-   - 测试包括随机读写，块大小为4k、64k和4MB，使用不同的I/O引擎。
+   - 定义了四个主要测试场景，包括在虚拟机中使用librbd和krbd，以及在物理主机上使用librbd和krbd的测试。
+   - 测试采用随机读写，块大小为4k、64k和4MB，使用不同的I/O引擎。
    - 每个场景进行了五次非连续运行，以确保结果的可比性。
 
 2. **测试结果**：
@@ -41,4 +46,4 @@ subtitle: tech
 - 公开fio配置，促进社区的进一步测试和验证。
 
 #### 会议总结：
-会议成功地定义了测试场景和方法，收集并分析了librbd和krbd的性能数据，为解答客户疑问提供了科学依据。后续将继续进行深入测试和分析，以更好地理解性能差异的原因，并探索可能的优化方案。
+会议通过定义测试场景和方法，收集并分析了librbd和krbd的性能数据，为解答客户疑问提供了科学依据。后续将继续进行深入测试和分析，以更好地理解性能差异的原因，并探索可能的优化方案。

@@ -1,17 +1,23 @@
 ---
-title: "Ceph Month 2021: CephFS + fscrypt: filename and content encryption"
-date: 2021-06-24
-updated: 2021-06-25
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-06-24
+subtitle: Ceph_Month_2021_-_CephFS_+_fscrypt_-_filename_and_content_encryption
+tags:
+- CephFS
+- fscrypt
+- transparent encryption
+- encryption
+- Ceph
+title: "'Ceph Month 2021: CephFS + fscrypt: filename and content encryption'"
+updated: 2021-06-25
 ---
+
 
 
 ### 会议纪要
 
-#### 会议主题：Ceph分布式存储系统中的透明加密支持
+#### 会议主题：CephFS与fscrypt透明加密支持
 
 #### 主讲人：Jeff
 
@@ -24,12 +30,12 @@ subtitle: tech
 #### 会议内容总结：
 
 1. **项目背景与目标**：
-   - Jeff自一年前开始着手一个项目，旨在为Ceph文件系统提供透明加密支持。
-   - 该项目涉及的核心组件是`fscrypt`，一个内核库，文件系统可以调用它来实现文件名、文件内容和符号链接目标的透明加密。
+   - Jeff自一年前开始开发fscrypt项目，旨在为Ceph文件系统提供透明加密支持。
+   - fscrypt是一个内核库，允许文件系统调用以实现文件名、文件内容和符号链接目标的透明加密。
 
 2. **技术细节**：
-   - `fscrypt`在文件系统级别操作，不需要密钥来挂载文件系统，但需要密钥来访问和操作加密的目录树。
-   - 目前支持`fscrypt`的文件系统包括ext4、f2fs和ubifs，Jeff正在努力使其适用于网络文件系统。
+   - fscrypt在文件系统级别操作，不需要密钥来挂载文件系统，但需要密钥来访问和操作加密的目录树。
+   - 目前支持fscrypt的文件系统包括ext4、f2fs和ubifs，Jeff正在努力使其适用于网络文件系统。
 
 3. **加密机制**：
    - 每个加密的目录树有一个主密钥，每个加密的inode有一个关联的加密上下文。
@@ -41,7 +47,7 @@ subtitle: tech
 
 5. **inode数据存储**：
    - 每个inode关联一个40字节的blob，包含加密模式、主密钥ID和随机数据（nonce）等信息。
-   - 为了确保文件名的合法性，使用base64编码，并在必要时对文件名进行截断和哈希处理。
+   - 使用base64编码来确保文件名的合法性，并在必要时对文件名进行截断和哈希处理。
 
 6. **MDS（元数据服务器）支持**：
    - 引入了一个新的fs crypt auth属性，挂载在inode上，MDS将其视为不透明的blob。
@@ -69,7 +75,3 @@ subtitle: tech
 
 #### 会议结束语：
 - Jeff感谢大家的参与和反馈，并期待在未来的版本中看到这一功能的完整实现。
-
----
-
-**注：** 以上纪要涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划，保留了部分计算机科学/Ceph相关领域英文原文的关键词。

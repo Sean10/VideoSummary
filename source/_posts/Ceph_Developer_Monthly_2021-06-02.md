@@ -1,72 +1,100 @@
 ---
-title: "Ceph Developer Monthly 2021-06-02"
-date: 2021-06-02
-updated: 2021-06-03
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-06-02
+subtitle: Ceph_Developer_Monthly_2021-06-02
+tags:
+- Ceph
+- 分布式存储
+- CRUSH算法
+- 安全性
+- 可伸缩性
+- 对象存储
+- 块存储
+- 文件系统存储
+- 一致性
+- 去中心化
+- 性能
+- Bluestore
+- BlueFS
+- RocksDB
+- OSD
+- MON
+- MDS
+- PG
+- RADOS
+- librados
+- libcephfs
+- CephFS
+- RBD
+- RadosGW
+- RGW
+- RESTful API
+- 认证
+- 授权
+- 加密
+- 纠错码
+- 复制
+- 快照
+- 克隆
+- 薄配额
+- iSCSI
+- Fibre Channel
+- NFS
+- CIFS
+- POSIX
+- 监控
+- 仪表板
+- 管理
+- 编排
+- 自动化
+- 集成
+- 容器化
+- Kubernetes
+- Docker
+- 虚拟化
+- 云计算
+- AWS
+- Azure
+- Google Cloud
+- 混合云
+- 多云
+- 存储集群
+- 节点
+- 硬盘
+- SSD
+- HDD
+- JBOD
+- SAN
+- NAS
+- 网络
+- 拓扑
+- 失效域
+- 恢复
+- 弹性
+- 负载均衡
+- 缓存
+- 压缩
+- 去重
+- 分层
+- 性能调优
+- 基准测试
+- 测试
+- 验证
+title: "Ceph Developer Monthly 2021-06-02"
+updated: 2021-06-03
 ---
 
 
-### 会议纪要
 
-#### 主题一：Ceph中的故障条件处理
-- **问题描述**：在Ceph中，当发现未找到对象时，会进入backfill unfound状态（PG）。在重启primary OSD时，可能会发生异常情况。
-- **已知问题**：
-  - 在某些情况下，可能会导致崩溃，已有修复措施（移除断言）。
-  - 重启primary OSD时，如果另一个OSD成为临时的primary，并且该OSD没有该对象，可能会重新开始backfill过程，但不会找到该对象，导致PG进入clean状态。
-- **讨论内容**：
-  - 是否应该继续使用旧的行为，即重启OSD后忘记对象的不可读状态。
-  - 是否应该在backfill过程中记录缺失的对象，并在replica上强制添加到missing set。
-- **决定事项**：
-  - 对于旧版本，应加强现有行为，避免崩溃，但不尝试修复。
-  - 对于master版本，可以记录缺失集中的对象，并在backfill过程中处理。
-- **后续行动**：
-  - 进一步讨论和确定具体的修复方案。
-  - 增加对这些情况的测试覆盖，包括错误注入测试。
+本次会议主要讨论了Ceph分布式存储系统的多个重要议题，包括故障条件处理、加密策略设计、Manager模块的性能优化以及OSD Map的缓存策略。
 
-#### 主题二：加密策略设计讨论
-- **目标**：讨论Ceph中的加密策略，特别是SSE-S3的支持。
-- **现有支持**：
-  - 客户端加密
-  - SSE-C（客户端提供密钥）
-  - SSE-KMS（使用KMS）
-- **待支持**：
-  - SSE-S3（服务器管理密钥）
-- **讨论内容**：
-  - 如何实现SSE-S3，包括密钥管理、密钥轮换等。
-  - 如何与现有的KMS基础设施集成。
-- **决定事项**：
-  - 开始实现SSE-S3，包括支持put bucket encryption API。
-  - 考虑使用Vault作为KMS，并讨论其使用细节。
-- **后续行动**：
-  - 实现SSE-S3功能。
-  - 在refactoring会议上进一步讨论具体实现细节。
+1. **故障条件处理**：讨论了当Ceph发现未找到对象时，进入backfill unfound状态的问题，以及重启primary OSD时可能出现的异常情况。会议决定对旧版本加强现有行为，避免崩溃，但不尝试修复。对于master版本，将记录缺失集中的对象，并在backfill过程中处理。
 
-#### 主题三：Manager模块的性能优化
-- **问题描述**：Manager模块在处理依赖关系时可能会遇到性能瓶颈。
-- **讨论内容**：
-  - 短期解决方案：合并所有模块到一个解释器中，避免多进程通信开销。
-  - 长期解决方案：探索使用Python的multi-isolated sub-interpreters。
-- **决定事项**：
-  - 尝试合并所有模块到一个解释器中，观察是否能解决性能问题。
-  - 关注Python新版本中的multi-isolated sub-interpreters的发展。
-- **后续行动**：
-  - 实施短期解决方案并测试其效果。
-  - 持续关注Python新特性的发展。
+2. **加密策略设计**：讨论了Ceph中的加密策略，特别是SSE-S3的支持。会议决定开始实现SSE-S3，包括支持put bucket encryption API，并考虑使用Vault作为KMS。
 
-#### 主题四：OSD Map的缓存策略
-- **问题描述**：OSD Map的频繁更新可能导致性能问题。
-- **讨论内容**：
-  - 使用缓存策略减少重复的序列化和反序列化操作。
-  - 考虑使用immutable对象和copy-on-write策略。
-- **决定事项**：
-  - 尝试使用缓存策略减少性能开销。
-  - 探索使用immutable对象和copy-on-write策略。
-- **后续行动**：
-  - 实施缓存策略并测试其效果。
-  - 进一步优化OSD Map的处理逻辑。
+3. **Manager模块的性能优化**：讨论了Manager模块在处理依赖关系时可能遇到的性能瓶颈。会议决定尝试合并所有模块到一个解释器中，以减少多进程通信开销，并关注Python新版本中的multi-isolated sub-interpreters的发展。
 
-### 总结
-本次会议主要讨论了Ceph中的故障条件处理、加密策略设计、Manager模块的性能优化以及OSD Map的缓存策略。会议确定了各个主题的后续行动计划，并强调了增加测试覆盖和持续优化的重要性。
+4. **OSD Map的缓存策略**：讨论了OSD Map的频繁更新可能导致性能问题。会议决定尝试使用缓存策略减少性能开销，并探索使用immutable对象和copy-on-write策略。
+
+会议强调了增加测试覆盖和持续优化的重要性，并确定了各个主题的后续行动计划。

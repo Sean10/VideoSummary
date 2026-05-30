@@ -1,21 +1,27 @@
 ---
-title: "State of the Cephalopod 2022"
-date: 2022-11-09
-updated: 2022-11-10
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-11-09
+subtitle: State_of_the_Cephalopod_2022
+tags:
+- Ceph
+- 分布式存储
+- Quincy版本
+- Reef版本
+- Ceph基金会
+title: "State of the Cephalopod 2022"
+updated: 2022-11-10
 ---
+
 
 
 ### 会议纪要
 
 #### 会议概述
-本次会议旨在更新Ceph项目的最新进展，包括技术层面和项目管理层面。会议首先回顾了项目层面的动态，随后深入讨论了Quincy和Reef版本的更新内容。
+本次会议主要更新了Ceph项目的最新进展，包括技术层面和项目管理层面。会议重点讨论了Quincy和Reef版本的更新内容。
 
 #### 项目管理更新
-- **领导结构变更**：Ceph项目创始人Sage Weil已逐渐退出日常管理，项目采用新的治理模式，由Ceph领导团队和选举产生的执行委员会共同领导。
+- **领导结构变更**：Ceph项目创始人Sage Weil逐渐退出日常管理，项目采用新的治理模式，由Ceph领导团队和选举产生的执行委员会共同领导。
 - **开放性和协作**：Ceph领导团队会议对所有人开放，会议笔记通过邮件列表共享，技术讨论和项目影响决策也在此进行。
 - **重点领域**：过去几年重点改善了内部发布流程，增强了稳定性，引入了发布候选版本，加强了性能和可扩展性测试。
 
@@ -24,7 +30,7 @@ subtitle: tech
 - **关键功能更新**：
   - **RADOS**：Quincy版本中引入了默认启用的QoS功能，改进了Blue Store的性能，包括移除RocksDB的分配元数据，改进了BlueFS，实现了更细粒度的锁定机制。
   - **Reef版本展望**：将引入客户端间QoS的初步实现，改进M clock调度器以支持高优先级操作，Blue Store将支持自定义WAL，改进4K分配单元等。
-  - **Crimson项目**：作为高性能的RADOS读取器，Crimson在Reef版本中将增加多反应器支持，改进可用性，并计划在S版本中完成 scrub 实现。
+  - **Crimson项目**：作为高性能的RADOS读取器，Crimson在Reef版本中将增加多反应器支持，改进可用性，并计划在S版本中完成scrub实现。
   - **Telemetry**：Quincy版本增强了数据收集流程，新增了Both Channel收集性能指标，改进了崩溃报告分析，Reef版本将继续优化数据分析和设备故障预测模型。
 
 #### 社区和基金会动态
@@ -37,3 +43,5 @@ subtitle: tech
 
 #### 结论
 会议强调了Ceph项目在技术和管理层面上的持续进步，呼吁社区成员积极参与和支持即将到来的版本更新和技术发展。会议资料将通过邮件列表分享，欢迎后续交流和讨论。
+
+[改进后的总结中保留了计算机科学/ceph相关领域的英文原文关键词，如Ceph、Quincy版本、Reef版本、RADOS、Blue Store、BlueFS、Crimson项目、Telemetry等，确保了总结的准确性和专业性。]

@@ -1,28 +1,37 @@
 ---
-title: "Making RBD Snapshot-based Mirroring Robust for Disaster Recovery | Ceph Days NYC 2024"
-date: 2024-06-18
-updated: 2024-06-18
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2024-06-18
+subtitle: Making_RBD_Snapshot-based_Mirroring_Robust_for_Disaster_Recovery_Ceph_Days_NYC_2024
+tags:
+- Ceph
+- RBD
+- Disaster Recovery
+- Kubernetes
+- Snapshot
+- based Mirroring
+title: "Making RBD Snapshot-based Mirroring Robust for Disaster Recovery | Ceph Days NYC 2024"
+updated: 2024-06-18
 ---
 
 
-### 会议纪要
 
-#### 会议主题：RBD快照基础镜像功能的改进与灾难恢复解决方案
+会议纪要
 
-#### 主讲人：Raman Raja，IBM软件工程师
+### 会议主题：RBD快照基础镜像功能改进与灾难恢复解决方案
 
-#### 会议内容概述：
-Raman Raja介绍了RBD（RADOS Block Device）快照基础镜像功能的最新改进，旨在使其更加健壮，适用于灾难恢复场景。他首先概述了RBD镜像功能，然后详细讨论了如何设置、整体架构、以及在严格测试中发现的快照基础镜像功能的缺陷和解决方案。
+### 主讲人：Raman Raja，IBM软件工程师
 
-#### 主要讨论点：
+### 会议内容概述：
+
+Raman Raja在Ceph Days NYC 2024会议上介绍了RBD（RADOS Block Device）快照基础镜像功能的最新改进，旨在增强其在灾难恢复场景下的健壮性。他详细介绍了RBD镜像功能，包括异步复制、两种模式（日志基础镜像和快照基础镜像），以及如何设置和架构。此外，他还讨论了在严格测试中发现的缺陷及其解决方案。
+
+### 主要讨论点：
+
 1. **RBD镜像功能概述**：
-   - RBD镜像功能包括异步复制图像，由RBD镜像守护进程执行。
+   - RBD镜像功能支持异步复制图像，由RBD镜像守护进程执行。
    - 支持两种模式：日志基础镜像和快照基础镜像。
-   - 快照基础镜像模式下，在主图像上拍摄崩溃一致的镜像快照，镜像守护进程识别数据和元数据变化，并复制快照增量到非主图像。
+   - 快照基础镜像模式下，在主图像上拍摄崩溃一致的镜像快照，并复制快照增量到非主图像。
 
 2. **架构与配置**：
    - 支持单向和双向复制配置，便于故障切换和故障恢复协调。
@@ -45,20 +54,16 @@ Raman Raja介绍了RBD（RADOS Block Device）快照基础镜像功能的最新�
    - 支持镜像组和RBD克隆的镜像。
    - 优化强制提升时的数据同步效率。
 
-#### 决定事项：
+### 决定事项：
 - RBD快照基础镜像功能已进行多项改进，提高了灾难恢复场景下的健壮性。
 - 继续开发镜像组和RBD克隆的镜像支持。
 
-#### 后续行动计划：
+### 后续行动计划：
 - 继续测试和优化RBD快照基础镜像功能。
 - 完成镜像组和RBD克隆的镜像支持开发。
 
-#### 致谢：
+### 致谢：
 - 感谢Ilia和Sham作为RBD和ramen操作符的维护者。
 
-#### 结束语：
+### 结束语：
 Raman Raja感谢大家的参与和贡献，并期待未来的进一步合作和改进。
-
----
-
-以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

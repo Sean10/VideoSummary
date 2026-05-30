@@ -1,36 +1,48 @@
 ---
-title: "2020-03-26 :: Ceph Performance Meeting"
-date: 2020-04-03
-updated: 2020-04-04
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-04-03
+subtitle: 2020-03-26_-_-_Ceph_Performance_Meeting
+tags:
+- Ceph性能优化
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可伸缩性
+- 对象存储
+- 块存储
+- 文件系统存储
+- 一致性
+- 去中心化
+- 性能
+title: "'2020-03-26 :: Ceph Performance Meeting'"
+updated: 2020-04-04
 ---
+
+
 
 
 ### 会议纪要
 
 #### 关键细节
-- **会议时间**: [具体日期]
-- **参会人员**: Greg, Igor, Ilya, Mark Cogan, 以及其他相关人员
-- **会议主题**: 讨论Ceph存储系统的性能优化和相关PR（Pull Request）的进展
+- **会议时间**: 2020年3月26日
+- **参会人员**: Greg, Igor, Ilya, Mark Cogan 等相关人员
+- **会议主题**: 讨论Ceph存储系统性能优化和相关PR（Pull Request）的进展
 
 #### 讨论的主要议题
 1. **Ephemeral Sharding PR**:
-   - Greg询问关于Ephemeral Sharding PR的进展，是否已经可以正常工作。
-   - 目前还在更新中，尚未完全确认其状态。
+   - Greg询问Ephemeral Sharding PR的进展，目前还在更新中，尚未完全确认其状态。
 
 2. **Locking Improvement PR**:
-   - 讨论了一个改变锁定机制的PR，该PR旨在减少全局锁的生命周期并引入适当的文件锁定。
+   - 讨论了一个改变锁定机制的PR，旨在减少全局锁的生命周期并引入适当的文件锁定。
    - Igor表达了对该PR的担忧，担心在当前架构下难以实现。
 
-3. **Performance Issues with OSD and Cache Management**:
+3. **OSD和缓存管理性能问题**:
    - 讨论了OSD在处理大量数据时，由于缓存管理不当导致的性能下降问题。
    - 发现OSD在达到缓存限制后，开始从磁盘读取数据，导致页面缓存增加，最终引发内核交换，严重影响性能。
    - 提出解决方案包括禁用BlueFS的缓冲I/O，以避免使用页面缓存作为辅助缓存。
 
-4. **Kernel RBD Performance Bottleneck**:
+4. **Kernel RBD性能瓶颈**:
    - Ilya和Greg讨论了Kernel RBD在单客户端进行顺序读取时的性能瓶颈。
    - 发现当I/O深度超过64时，内核中的内存复制操作时间增加，影响性能。
    - 讨论了可能的解决方案，包括检查内核锁的状态和网络堆栈的行为。
@@ -58,7 +70,3 @@ subtitle: tech
 
 #### 结论
 - 会议结束时，Greg感谢所有参与者的贡献，并期待在下一次会议中能有更多的进展和解决方案。
-
----
-
-以上是本次会议的详细纪要，涵盖了会议的主要讨论内容、决定的事项以及后续的行动计划。

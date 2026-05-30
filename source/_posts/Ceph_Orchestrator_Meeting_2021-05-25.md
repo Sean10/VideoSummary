@@ -1,19 +1,23 @@
 ---
-title: "Ceph Orchestrator Meeting 2021-05-25"
+title: " Ceph Orchestrator Meeting 2021-05-25 "
 date: 2021-05-26
 updated: 2021-05-26
 tags:
+- Ceph
+- Orchestrator
+- Etsy Hosts
+- Ganesha
+- NFS EdgeRW
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: "Ceph Orchestrator Meeting 2021-05-25"
 ---
-
 
 ### 会议纪要
 
 #### 会议主题：Orchestrator 会议
 
-#### 日期：[具体日期]
+#### 日期：2021-05-25
 
 #### 参会人员：[具体人员名单]
 
@@ -25,7 +29,7 @@ subtitle: tech
    - 讨论了 Podman 和 Docker 的行为差异，特别是关于 get fqdn 的处理。
    - 发现 Podman 在特定配置下返回回环地址，导致配置文件生成问题。
    - 讨论了如何处理 DNS 和 Etsy Hosts 的依赖问题，建议在添加主机时强制指定 IP 地址。
-   - 提出了在文档中明确说明使用 IP 地址的必要性，并更新相关代码以支持这一变化。
+   - 提出在文档中明确说明使用 IP 地址的必要性，并更新相关代码以支持这一变化。
 
 2. **Ganesha 模板冲突问题**
    - 讨论了 Ganesha 模板中的冲突标志问题，该问题导致 NFS EdgeRW 损坏。
@@ -66,3 +70,4 @@ subtitle: tech
 #### 会议总结：
 
 本次会议主要解决了 Etsy Hosts 文件的回归问题和 Ganesha 模板冲突问题，明确了后续的行动计划和改进方向。通过与 Ganesha 开发者的进一步沟通，将有助于确定最佳的技术方案。
+

@@ -1,12 +1,19 @@
 ---
-title: "Ceph Month 2021: Cephadm Update"
-date: 2021-06-23
-updated: 2021-06-24
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-06-23
+subtitle: Ceph_Month_2021_-_Cephadm_Update
+tags:
+- Ceph存储系统
+- Cephadm更新
+- 分布式存储
+- Ceph集群管理
+- 自动化部署
+title: "'Ceph Month 2021: Cephadm Update'"
+updated: 2021-06-24
 ---
+
+
 
 
 ### 会议纪要
@@ -32,7 +39,7 @@ subtitle: tech
 3. **系统升级与维护**：
    - 讨论了Ceph集群的自动升级策略，特别是在使用Octopus版本时的具体操作。
    - 强调了升级过程中的监控和数据展示的重要性。
-   - 提到了通过集成和 daycare 中心来优化接口和服务的实施。
+   - 提到了通过集成和daycare中心来优化接口和服务的实施。
 
 4. **安全与性能优化**：
    - 讨论了通过优化内存管理和性能提升来增强Ceph集群的性能。
@@ -56,6 +63,6 @@ subtitle: tech
 
 #### 会议结束时间：[具体时间]
 
----
+
 
 **备注**：本次会议纪要基于会议讨论的内容进行了总结，具体的技术细节和实施方案需要进一步的技术文档和实施计划来支持。

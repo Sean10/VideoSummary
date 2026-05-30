@@ -1,19 +1,25 @@
 ---
-title: "Chasing Bad Checksums: A Journey Through Ceph, TCMalloc, and the Linux Kernel - Dan Hill, Canonical"
-date: 2023-05-05
-updated: 2023-05-05
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-05-05
+subtitle: Chasing_Bad_Checksums_-_A_Journey_Through_Ceph_TCMalloc_and_the_Linux_Kernel_-_Dan_Hill_Canonical
+tags:
+- Ceph
+- Linux Kernel
+- TCMalloc
+- Memory Management
+- Distributed Storage
+title: "'Chasing Bad Checksums: A Journey Through Ceph, TCMalloc, and the Linux Kernel - Dan Hill, Canonical'"
+updated: 2023-05-05
 ---
+
 
 
 ### 会议纪要
 
 **会议主题：** Ceph性能问题及解决方案探讨
 
-**主讲人：** Dan Hill, Canonical 公司持续工程部门
+**主讲人：** Dan Hill, Canonical公司持续工程部门
 
 **会议日期：** [具体日期未提供]
 
@@ -31,7 +37,7 @@ subtitle: tech
 **问题描述：**
 - 客户报告了一个Ceph集群的性能问题，集群规模庞大，包含数十个节点，数百个OSDs，存储容量约10PB，运行在Ubuntu Bionic LTS上，使用Ceph的Octopus版本。
 - 集群被用作大型环形缓冲区，持续进行数据摄取和探索，读取活动较少且随时间变化。
-- 初始问题是多个OSDs随机崩溃，原因是校验和错误（checksum errors）。
+- 初始问题是多个OSDs随机崩溃，原因是校验和错误。
 
 **问题分析与解决过程：**
 - 初步怀疑是硬件问题，但系统日志、固件级别和SMART数据均未发现异常。

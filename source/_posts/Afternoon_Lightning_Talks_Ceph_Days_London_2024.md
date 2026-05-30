@@ -1,11 +1,16 @@
 ---
-title: "Afternoon Lightning Talks | Ceph Days London 2024"
+title: "  Afternoon Lightning Talks | Ceph Days London 2024  "
 date: 2024-08-23
 updated: 2024-08-24
 tags:
+- Ceph
+- 分布式存储
+- 性能分析
+- VMware集成
+- HPC集群
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Afternoon_Lightning_Talks_Ceph_Days_London_2024
 ---
 
 
@@ -57,4 +62,4 @@ subtitle: tech
 
 **会议总结**：
 
-本次会议探讨了分布式存储Ceph在HPC集群中的应用、Ceph性能分析工具CBT以及Ceph与VMware集成等技术。参会人员分享了各自的经验和见解，并提出了改进和发展的建议。
+本次会议探讨了分布式存储Ceph在HPC集群中的应用、Ceph性能分析工具CBT以及Ceph与VMware集成等技术。参会人员分享了各自的经验和见解，并提出了改进和发展的建议。会议重点讨论了DistTrack、CBT和Ceph与VMware集成的改进方向和未来计划，旨在提高Ceph的性能和易用性。

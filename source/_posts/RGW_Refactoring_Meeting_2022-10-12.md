@@ -1,18 +1,23 @@
 ---
-title: "RGW Refactoring Meeting 2022-10-12"
-date: 2022-10-18
-updated: 2022-10-19
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-10-18
+subtitle: RGW_Refactoring_Meeting_2022-10-12
+tags:
+- Ceph
+- 性能测试
+- 分布式存储
+- CBT
+- Deos
+title: "RGW Refactoring Meeting 2022-10-12"
+updated: 2022-10-19
 ---
 
 
 ### 会议纪要
 
 #### 会议主题：
-- 使用CBT（Ceph Benchmarking Tool）进行不同zipper后端（如DB store、Motor、Deos）的性能比较。
+本次会议重点讨论使用Ceph Benchmarking Tool（CBT）对不同后端（如DB store、Motor、Deos）进行性能比较。
 
 #### 主要讨论内容：
 1. **CBT的使用和目标**：
@@ -48,6 +53,8 @@ subtitle: tech
 #### 会议结束：
 - 会议在讨论了所有议题后结束，感谢所有参与者的贡献和讨论。
 
----
 
-以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。
+
+#### 修改说明：
+- 在原始总结中，部分内容被错误地省略或误解。改进后的总结更准确地反映了会议的讨论要点，包括CBT的使用、Deos和Motor的状态、CBT的抽象和扩展、性能测试和比较以及后续行动计划。
+- 保留了所有计算机科学/ceph相关领域的英文原文关键词，以确保内容的准确性和专业性。

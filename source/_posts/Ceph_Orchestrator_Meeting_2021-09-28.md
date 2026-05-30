@@ -1,26 +1,31 @@
 ---
-title: "Ceph Orchestrator Meeting 2021-09-28"
-date: 2021-10-07
-updated: 2021-10-08
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-10-07
+subtitle: Ceph_Orchestrator_Meeting_2021-09-28
+tags:
+- Ceph
+- Orchestrator
+- Storage Classes
+- Rook
+- IPVS
+title: "Ceph Orchestrator Meeting 2021-09-28"
+updated: 2021-10-08
 ---
+
 
 
 ### 会议纪要
 
 #### 会议概要
-- **日期**: [具体日期]
+- **日期**: 2021-09-28
 - **参与者**: [参与者名单]
 - **主持人**: [主持人姓名]
 
 #### 主要议题
-1. **Rook 和存储类（Storage Classes）**
-   - **讨论内容**:
+1. **Rook和存储类（Storage Classes）**
+   - **讨论内容**: 
      - 需要创建支持存储类的OSD（Object Storage Daemon）。
-     - 当前设备清单不足以满足需求，需要新的Orchestrator API来暴露存储类的名称。
      - 讨论了如何在Rook中实现存储类，包括在CRD（Custom Resource Definition）中的存储部分设置存储类。
    - **决定事项**:
      - 需要一个新的Orchestrator API来列出集群中可用的存储类。
@@ -30,7 +35,7 @@ subtitle: tech
      - 与Dashboard团队讨论如何在界面上展示存储类。
 
 2. **Rook与Ceph的兼容性测试**
-   - **讨论内容**:
+   - **讨论内容**: 
      - 过去一年中，Ceph的某些更改导致Rook出现问题。
      - 需要确保Ceph发布前能够进行Rook的兼容性测试。
    - **决定事项**:
@@ -70,7 +75,3 @@ subtitle: tech
 #### 会议结束
 - **时间**: [具体结束时间]
 - **下次会议**: [下次会议的具体日期和时间]
-
----
-
-以上是本次会议的纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

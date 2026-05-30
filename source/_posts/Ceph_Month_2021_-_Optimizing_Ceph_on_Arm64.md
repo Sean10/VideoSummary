@@ -1,24 +1,31 @@
 ---
-title: "Ceph Month 2021: Optimizing Ceph on Arm64"
-date: 2021-06-23
-updated: 2021-06-24
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-06-23
+subtitle: Ceph_Month_2021_-_Optimizing_Ceph_on_Arm64
+tags:
+- Ceph
+- Arm64
+- Optimization
+- Storage
+- Server
+title: "'Ceph Month 2021: Optimizing Ceph on Arm64'"
+updated: 2021-06-24
 ---
+
+
 
 
 ### 会议纪要
 
-#### 会议主题：M64上的安全存储生态系统实践
+#### 会议主题：M64上的Ceph优化实践
 
 #### 主讲人：Rachel
 
 #### 会议内容概述：
 
 1. **自我相关工作概述**：
-   - 在AMP服务器上进行了安全存储生态系统的实践，包括使用特定指令或特性进行通用优化，如UTF-8 DRC ISA。
+   - Rachel介绍了在AMP服务器上进行安全存储生态系统实践的经验，包括使用UTF-8 DRC ISA等通用优化指令。
    - 在M64平台上启用了多个服务器项目，如SPDK系统、Safe CSI等，并进行了优化。
    - 支持使用Safe作为OpenStack和Kubernetes的存储后端。
 
@@ -29,7 +36,7 @@ subtitle: tech
 
 3. **64KB内核页面的启用和基准测试**：
    - 在M64平台上支持64KB内核页面，通过移除一级页表，提高了TLB查找速度和TLB命中率。
-   - 使用一个包含一个监控器、一个管理器和三个OSD的测试集群进行了基准测试，结果显示使用64KB内核页面可以带来3%到11%的性能提升。
+   - 使用包含一个监控器、一个管理器和三个OSD的测试集群进行基准测试，结果显示使用64KB内核页面可以带来3%到11%的性能提升。
 
 4. **SPDK和DPDK的优化**：
    - SPDK通过将所有必要驱动程序移到用户空间并采用轮询模式，避免了内核上下文切换和中断处理开销。
@@ -56,7 +63,3 @@ subtitle: tech
 #### 会议结束：
 
 - Rachel感谢大家的参与和提问，并表示将继续进行相关研究和优化工作。
-
----
-
-**注：** 会议中提到的技术术语和项目名称如SPDK、DPDK、Ceph、ISA等，均为计算机科学和存储领域的关键技术，保留原文以确保准确性。

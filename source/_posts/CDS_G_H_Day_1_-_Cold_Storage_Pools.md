@@ -1,11 +1,18 @@
 ---
-title: "CDS G/H (Day 1) - Cold Storage Pools"
+title: "  CDS G/H (Day 1) - Cold Storage Pools  "
 date: 2014-06-24
 updated: 2014-06-25
 tags:
+- Ceph
+- 冷存储池
+- 数据移动
+- 冗余性
+- PG温映射
+- PG强制映射
+- Silo架构
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: CDS_G_H_Day_1_-_Cold_Storage_Pools
 ---
 
 
@@ -20,7 +27,7 @@ subtitle: tech
 
 * **背景**： 
     * 讨论如何实现一个存储池，其中的数据可以被写入且几乎不会进行重平衡或重写，或者重写非常不频繁。
-    * 旨在为冷存储提供解决方案，即介于磁带和活跃访问数据之间的存储层。
+    * 目的是为冷存储提供解决方案，即介于磁带和活跃访问数据之间的存储层。
     * 目标是提高数据访问速度，同时减少数据移动和存储成本。
 * **主要议题**：
     * 如何实现数据在写入后几乎不会移动？

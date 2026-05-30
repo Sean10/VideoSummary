@@ -1,12 +1,18 @@
 ---
-title: "Ceph Crimson/SeaStor OSD 2020-10-28"
-date: 2020-11-03
-updated: 2020-11-03
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-11-03
+subtitle: Ceph_Crimson_SeaStor_OSD_2020-10-28
+tags:
+- Ceph
+- 分布式存储
+- 性能优化
+- 代码审查
+- 测试验证
+title: "Ceph Crimson/SeaStor OSD 2020-10-28"
+updated: 2020-11-03
 ---
+
 
 
 ### 会议纪要

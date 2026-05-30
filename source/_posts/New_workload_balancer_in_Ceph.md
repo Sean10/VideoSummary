@@ -1,47 +1,52 @@
 ---
-title: "New workload balancer in Ceph"
-date: 2022-11-15
-updated: 2022-11-16
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-11-15
+subtitle: New_workload_balancer_in_Ceph
+tags:
+- Ceph
+- Distributed Storage
+- CRUSH Algorithm
+- Workload Balancer
+- Performance Optimization
+title: "New workload balancer in Ceph"
+updated: 2022-11-16
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议参与者
-- **Joe Solomon**: 前架构师，现为Red Hat的CTO办公室新兴技术团队成员。
-- **Laura Flores**: Red Hat的RADOS核心团队成员，曾参与Telemetry管理模块、BlueStore等工作，目前专注于上游测试。
+- Joe Solomon：前架构师，现为Red Hat的CTO办公室新兴技术团队成员。
+- Laura Flores：Red Hat的RADOS核心团队成员，专注于上游测试。
 
 #### 会议主题
-- 介绍即将在Reef版本中引入的新rebalancer。
+- 介绍Reef版本中即将引入的新工作负载平衡器。
 
 #### 讨论内容
 1. **动机与背景**
-   - 在分布式存储系统中，高负载下性能受限于最弱环节。
-   - 现有容量平衡器确保OSD间容量均匀分布，但未解决读取平衡问题。
+   - 当前Ceph在高负载下性能受限于最弱环节。
+   - 现有容量平衡器保证OSD间容量均匀分布，但未解决读取平衡问题。
    - CRUSH算法在大型集群中平衡读取，但在小型集群中表现不佳。
 
 2. **现有问题与改进**
-   - 收集了多种系统的OSD Mark文件进行测试。
-   - 重构了现有平衡器代码，使其更易于理解和修改。
-   - 创建了新的工作负载平衡器，考虑读取操作。
+   - 对多种系统OSD Mark文件进行测试。
+   - 重构现有平衡器代码，提高可读性和可修改性。
+   - 创建新的工作负载平衡器，考虑读取操作。
 
 3. **新rebalancer设计**
-   - 新rebalancer将在Reef版本中引入，主要针对小型集群。
-   - 设计基于池的读取平衡，考虑读写工作负载的差异。
-   - 未来版本计划考虑设备大小和动态响应性能波动。
+   - 新rebalancer主要针对小型集群，设计基于池的读取平衡。
+   - 考虑读写工作负载差异，未来版本将考虑设备大小和性能波动。
 
 4. **功能与实现**
-   - 引入新的命令来改变PG的主OSD，不涉及数据移动。
+   - 引入新命令改变PG的主OSD，不涉及数据移动。
    - 实现两个主要函数：`calc desired primary distribution`和`balanced primaries`。
-   - 这些函数位于OSD map代码中，便于未来贡献和优化。
 
 5. **演示与测试**
-   - 展示了如何在不同场景下使用新rebalancer改善读取平衡。
-   - 强调了未来将进行更多的上游测试和性能测试。
+   - 展示了新rebalancer在不同场景下改善读取平衡。
+   - 强调未来将进行更多上游测试和性能测试。
 
 #### 决定事项
 - 新rebalancer将在Reef版本中作为离线工具提供，未来计划集成到自动平衡模块中。
@@ -60,6 +65,6 @@ subtitle: tech
 - 感谢所有参与者的提问和讨论。
 - 分享了相关GitHub仓库链接，以便进一步交流和反馈。
 
----
 
-此会议纪要涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划，确保了信息的完整性和准确性。
+
+本次会议纪要准确反映了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划，并保留了Ceph相关领域的英文原文关键词。

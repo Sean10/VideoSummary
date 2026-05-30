@@ -1,17 +1,26 @@
 ---
-title: "2019-11-27 :: Ceph Orchestration Meeting"
-date: 2019-11-27
-updated: 2019-11-28
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2019-11-27
+subtitle: 2019-11-27_-_-_Ceph_Orchestration_Meeting
+tags:
+- Ceph
+- 分布式存储
+- Ceph Orchestrator
+- 性能问题
+- 线程池
+- parallel SSH
+- pssh
+- Dashboard
+title: "'2019-11-27 :: Ceph Orchestration Meeting'"
+updated: 2019-11-28
 ---
+
 
 
 ### 会议纪要
 
-**日期：** [未提供具体日期]
+**日期：** 2019-11-27
 
 **参会人员：** Sebastian, Keifa, 以及其他相关人员
 
@@ -20,8 +29,8 @@ subtitle: tech
 **主要议题及讨论内容：**
 
 1. **会议时间调整：**
-   - Sebastian提出由于Paul无法参加晚间会议，建议调整会议时间或取消。
-   - 决定取消当前会议，后续会议将在Sebastian休假回来后重新安排。
+   - 由于Paul无法参加晚间会议，Sebastian提出调整会议时间或取消。
+   - 会议决定取消当前会议，后续会议将在Sebastian休假回来后重新安排。
 
 2. **Ceph Orchestrator性能问题：**
    - 当前Orchestrator使用单线程池（kernel threads）处理后台操作，导致性能受限。

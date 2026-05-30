@@ -1,12 +1,18 @@
 ---
-title: "CDS G/H (Day 1) - RBD review"
-date: 2014-06-24
-updated: 2014-06-25
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2014-06-24
+subtitle: CDS_G_H_Day_1_-_RBD_review
+tags:
+- Ceph
+- RBD
+- 分布式存储
+- 性能优化
+- 多站点复制
+title: "CDS G/H (Day 1) - RBD review"
+updated: 2014-06-24
 ---
+
 
 
 
@@ -66,7 +72,7 @@ subtitle: tech
 
 **后续行动计划**：
 
-*  Josh 将负责 RBD 日志记录和镜像功能的设计和实现。
+*   Josh 将负责 RBD 日志记录和镜像功能的设计和实现。
 *   其他开发人员将负责 RBD 其他功能的改进和优化。
 *   将继续进行 RBD 丢弃功能的测试和修复。
 *   将讨论 RBD 的格式化、条带化等功能。

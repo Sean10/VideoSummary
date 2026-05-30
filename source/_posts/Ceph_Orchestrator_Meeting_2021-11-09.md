@@ -1,19 +1,27 @@
 ---
-title: "Ceph Orchestrator Meeting 2021-11-09"
-date: 2021-11-09
-updated: 2021-11-10
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-11-09
+subtitle: Ceph_Orchestrator_Meeting_2021-11-09
+tags:
+- Ceph
+- 会议纪要
+- 分布式存储
+- 开发环境
+- 配置文件
+- 控制台
+title: "Ceph Orchestrator Meeting 2021-11-09"
+updated: 2021-11-10
 ---
+
+
 
 
 ### 会议纪要
 
 #### 会议概要
 - **会议类型**: 每周协调会议
-- **日期**: [具体日期]
+- **日期**: 2021年11月9日
 - **参会人员**: [列出参会人员]
 
 #### 主要议题
@@ -59,7 +67,3 @@ subtitle: tech
 #### 会议结束
 - **下次会议**: 下周同一时间
 - **结束语**: 祝大家周二愉快，下次会议再见。
-
----
-
-**备注**: 会议中提到的具体技术细节和术语，如 Topo LVM、LSO、OSDs 等，是 Ceph 分布式存储系统中的关键组件和技术，保留这些术语有助于专业人员理解会议内容。

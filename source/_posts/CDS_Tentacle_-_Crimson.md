@@ -1,16 +1,21 @@
 ---
-title: "CDS Tentacle - Crimson"
+title: "  CDS Tentacle - Crimson  "
 date: 2024-08-22
 updated: 2024-08-23
 tags:
+- Ceph
+- Crimson
+- Squid
+- Storage Engine
+- Performance Optimization
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: CDS_Tentacle_-_Crimson
 ---
 
 
 
-**会议纪要**
+CDS Tentacle - Crimson 会议纪要
 
 **会议时间**： 2023年11月某日
 
@@ -24,8 +29,8 @@ subtitle: tech
 
 **一、Squid 项目当前状态**
 
-* Squid 项目已实现多核支持，包括 Reactor 和 Messenger。
-* 支持在复制的存储池中使用 Blue Store、C Store 和 CN Store 作为后端，主要处理 RBD 工作负载。
+* Squid 已实现多核支持，包括 Reactor 和 Messenger。
+* 支持 Blue Store、C Store 和 CN Store 作为后端，主要处理 RBD 工作负载。
 * 支持通过 saadm 或重启快速部署集群。
 * 提供初始的 Scrub 支持，可通过 SEF tell 命令启动 Scrub 或 Deep Scrub。
 * 在恢复和备份方面进行了大量工作，提高了稳定性。
@@ -35,9 +40,8 @@ subtitle: tech
 
 **二、Crimson 存储引擎优化**
 
-* 评估了 RBD 4K 随机读写性能，这是衡量 Crimson OSD 基本性能的关键指标。
-* 分析了 Crimson 的扩展性，结果表明其性能随着核心数的增加而提高。
-* 对 Crimson 进行了优化，包括计算效率、I/O 效率和减少饥饿和内部竞争。
+* 评估了 RBD 4K 随机读写性能，分析了扩展性。
+* 优化了计算效率、I/O 效率和减少饥饿和内部竞争。
 * 优化了 C Store，提高了随机读写的性能。
 * C Store 的核心功能已实现，包括数据读写、元数据索引、事务支持和背景任务等。
 * 优化了性能，包括 FGC 缓存和 128 位逻辑块地址支持。
@@ -59,8 +63,8 @@ subtitle: tech
 
 **五、其他事项**
 
-* 会议讨论了异步消息传递的性能问题，并探讨了可能的解决方案。
-* 会议讨论了 C Store 的扩展性，并探讨了如何提高其性能。
+* 讨论了异步消息传递的性能问题，并探讨了可能的解决方案。
+* 讨论了 C Store 的扩展性，并探讨了如何提高其性能。
 
 **总结**：
 

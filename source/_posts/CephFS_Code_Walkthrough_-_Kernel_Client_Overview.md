@@ -1,14 +1,37 @@
 ---
-title: "CephFS Code Walkthrough: Kernel Client Overview"
-date: 2022-05-24
-updated: 2022-05-25
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-05-24
+subtitle: CephFS_Code_Walkthrough_-_Kernel_Client_Overview
+tags:
+- CephFS
+- 内核客户端
+- 文件系统
+- Ceph 存储系统
+- 分布式存储
+title: CephFS Code Walkthrough- Kernel Client Overview
+updated: 2022-05-25
 ---
 
 
-The question was about the comment in the function `self atomic open` which said "if the file or sim link is non-existent, the vfs3 tries". The questioner wanted to know if VFS keeps retrying and what's the idea behind that.
 
-Answer: The comment appears to be outdated and may not be correct. When a file is non-existent, VFS doesn't really retry; it just returns at that point. The calling convention for atomic open has changed, and this comment is likely no longer accurate. If an atomic open is called under very specific circumstances (like not having a cached entry for something or having a negative entry), it allows instantiating an entry if needed. It also handles situations where there might have been changes on the MDS that the client wasn't aware of. In such cases, if it turns out the file does exist and no create operation is being performed, an open call will be issued to the NBS, and the entry can be instantiated accordingly.
+
+本次视频讨论了 CephFS 内核客户端的代码解析，主要涉及以下几个方面：
+
+1. **VFS 驱动和对象导向设计**：CephFS 的测试驱动首先是一个 VFS 驱动，Linux 的核心优势之一是拥有统一的 BFS，可以以相同的方式访问不同类型的文件系统，无需使用特定库。
+
+2. **超级块和 iNode 结构**：超级块描述已挂载的文件系统，而 iNode 代表磁盘上的文件或目录。iNode 结构关联着一系列操作，如配额、导出和加密等。
+
+3. **路径名解析**：Linux 内部对路径名解析进行了高度优化，通过 `entry` 结构跟踪路径组件，并关联相应的 iNode。
+
+4. **文件描述符和文件操作**：`struct file` 代表打开的文件描述符，记录文件打开方式、读写位置等信息，并包含一系列文件操作函数。
+
+5. **原子打开和文件读取**：视频详细解释了如何通过 `do_open` 函数进行文件的打开和读取操作，包括路径解析、原子打开、读取数据等过程。
+
+6. **文件关闭**：关闭文件时，释放相关的资源，包括文件描述符、iNode 和缓存等。
+
+7. **网络文件系统与网络请求处理**：视频还涉及了网络文件系统与网络请求处理，包括网络请求的提交、回复处理等。
+
+8. **性能优化**：视频讨论了 Linux 内部的一些优化措施，例如使用更大的页面来减少内存占用，以及新的网络请求处理层 `netfs`。
+
+本次讨论涵盖了 CephFS 内核客户端的多个关键方面，对于理解 CephFS 的工作原理和性能优化具有重要意义。

@@ -1,31 +1,34 @@
 ---
-title: "MicroCeph: What, Why and Who Is It for - Peter Sabaini & Utkarsh Bhatt, Canonical"
-date: 2023-05-05
-updated: 2023-05-05
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-05-05
+subtitle: MicroCeph_-_What_Why_and_Who_Is_It_for_-_Peter_Sabaini_Utkarsh_Bhatt_Canonical
+tags:
+- Ceph集群
+- 分布式存储
+- 简化部署
+- 管理工具
+- 容器化
+title: "'MicroCeph: What, Why and Who Is It for - Peter Sabaini & Utkarsh Bhatt, Canonical'"
+updated: 2023-05-05
 ---
-
-
 ### 会议纪要
 
-**会议主题：** Microsoft - Ceph集群的简化部署与管理
+**会议主题：** 微型Ceph：是什么、为什么以及适用于谁 - Peter Sabaini & Utkarsh Bhatt, Canonical
 
-**主讲人：** Peter Sabini（来自Canonical）
+**主讲人：** Peter Sabaini（来自Canonical）
 
 **会议内容概述：**
 
 1. **产品介绍：**
-   - **Microsoft**是一个针对小型用例设计的Ceph集群解决方案，以snap包形式提供，确保隔离性。
-   - 该产品专注于特定的小型用例，并非全功能存储解决方案。
+   - 微型Ceph是一个针对小型用例设计的Ceph集群解决方案，以snap包形式提供，确保隔离性。
+   - 该产品专注于特定的小型用例，并非全功能的存储解决方案。
 
 2. **动机与问题陈述：**
-   - Ceph的安装和操作通常复杂，需要专业用户。Microsoft旨在简化这一过程，使其更易于广泛使用。
+   - Ceph的安装和操作通常复杂，需要专业用户。微型Ceph旨在简化这一过程，使其更易于广泛使用。
 
 3. **技术实现：**
-   - 基于snap包构建，确保软件包自包含，避免依赖冲突（如DLL hell）。
+   - 基于snap包构建，确保软件包自包含，避免依赖冲突。
    - 提供沙箱环境，简化部署和管理，增强安全性和可重复性。
    - 引入轻量级管理层，基于分布式SQLite数据库存储配置和管理信息。
 
@@ -33,18 +36,18 @@ subtitle: tech
    - 适用于边缘存储、实验室环境、个人开发设置等，特别是非专家用户需要简单可靠的存储解决方案的场景。
 
 5. **演示环节：**
-   - 展示了如何在三台VM上部署Microsoft，设置S3 Gateway，并进行基本的数据存储操作。
+   - 展示了如何在三台虚拟机（VM）上部署微型Ceph，设置S3网关，并进行基本的数据存储操作。
 
 6. **未来发展计划：**
    - 计划增加自动OSD加密、网络配置的便利层、轻松升级功能、自动伸缩控制等。
-   - 考虑自动化S3 Gateway用户的创建等便利功能。
+   - 考虑自动化S3网关用户的创建等便利功能。
 
 7. **问答环节：**
    - 讨论了集群扩展性、网络配置、与现有Ceph功能的潜在重复等问题。
    - 确认当前基于Ceph的Quincy版本，并计划支持即将发布的Reef版本。
 
 **决定事项：**
-- 继续开发和完善Microsoft，特别是增强其自动化和便利性功能。
+- 继续开发和完善微型Ceph，特别是增强其自动化和便利性功能。
 
 **后续行动计划：**
 - 继续推进自动OSD加密、网络配置便利层、轻松升级和自动伸缩控制等功能的开发。

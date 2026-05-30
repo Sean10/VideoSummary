@@ -1,27 +1,31 @@
 ---
-title: "2019-12-04 :: Ceph Developer Monthly"
+title: " 2019-12-04 :: Ceph Developer Monthly "
 date: 2019-12-05
 updated: 2019-12-06
 tags:
+- Ceph
+- Orchestrator
+- 自动化
+- 分布式存储
+- 集群管理
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: 2019-12-04_-_-_Ceph_Developer_Monthly
 ---
-
 
 ### 会议纪要
 
 #### 会议概要
-本次会议主要围绕Ceph的Orchestrator功能展开讨论，涉及其与NDS交付内容的交互方式、部署流程、监控系统集成等多个方面。
+本次会议主要围绕Ceph的Orchestrator功能展开讨论，重点关注其与NDS交付内容的交互方式、部署流程、监控系统集成等多个方面，旨在简化Ceph集群的部署和管理流程。
 
 #### 主要议题
 1. **Orchestrator功能介绍**：
-   - Orchestrator在Ceph管理器中提供了一个通用的API和代码层，支持通过Rook或SSH实现守护进程的部署。
-   - 目标是简化集群安装流程，减少步骤，提供完整的集群安装体验，并支持磁盘更换、节点添加/移除等操作。
+   - Orchestrator提供了一个通用的API和代码层，支持通过Rook或SSH部署守护进程，简化集群安装和日常运维。
+   - 目标是减少步骤，提供完整的集群安装体验，并支持磁盘更换、节点添加/移除等操作。
 
 2. **部署流程简化**：
-   - 讨论了如何通过Orchestrator API标准化部署流程，减少对第三方工具的依赖，使部署和维护更加容易。
-   - 提出了使用容器化部署的优势，简化了包管理过程。
+   - 讨论了使用Orchestrator API标准化部署流程，减少对第三方工具的依赖，使部署和维护更加容易。
+   - 探讨了容器化部署的优势，简化了包管理过程。
 
 3. **监控系统集成**：
    - 讨论了Prometheus和Grafana的部署和集成，以及如何通过Orchestrator管理这些监控组件。
@@ -45,4 +49,4 @@ subtitle: tech
 - 讨论了MDS（Metadata Server）的亲和性和可用性区域的配置。
 - 探讨了如何在Ceph集群中集成外部监控系统，以及如何处理容器和物理主机之间的监控数据。
 
-本次会议为Ceph的Orchestrator功能的发展和集成提供了明确的方向和行动计划，旨在进一步简化Ceph集群的部署和管理流程。
+本次会议为Ceph的Orchestrator功能的发展和集成提供了明确的方向和行动计划，旨在进一步简化Ceph集群的部署和管理流程，提高效率和可靠性。

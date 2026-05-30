@@ -1,14 +1,17 @@
 ---
-title: "Ceph Docubetter Meeting 2021-08-11"
-date: 2021-08-20
-updated: 2021-08-21
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-08-20
+subtitle: Ceph_Docubetter_Meeting_2021-08-11
+tags:
+- Ceph
+- 分布式存储
+- 文档
+- 性能
+- 开发
+title: "Ceph Docubetter Meeting 2021-08-11"
+updated: 2021-08-21
 ---
-
-
 ### 会议纪要
 
 #### 会议参与者：
@@ -48,7 +51,7 @@ subtitle: tech
 #### 后续行动计划：
 - Laura将继续处理RADOS文档的重写，并监控PR的合并进度。
 - 继续审查和改进Tautology文档，确保其准确性和易用性。
-- 实习生Laura将在9月以全职身份回归，继续参与文档和团队工作。
+- 实习生Laura将于9月以全职身份回归，继续参与文档和团队工作。
 
 #### 其他备注：
 - 会议中提到了Etherpad的故障，影响了文档的访问。
@@ -56,3 +59,8 @@ subtitle: tech
 
 #### 会议结束：
 - 会议在Laura的祝福和其他参与者的感谢中结束。
+
+### 修改说明：
+- 原总结中未提及Laura的实习即将结束，以及Keifu的离职情况，已在改进后的总结中补充。
+- 原总结中对文档质量与风格讨论的描述较为简略，已在改进后的总结中进行细化。
+- 原总结中对后续行动计划的描述不够具体，已在改进后的总结中进行补充。

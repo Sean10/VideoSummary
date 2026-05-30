@@ -1,35 +1,38 @@
 ---
-title: "Ceph Month 2021: Project Aquarium - An easy-to-use storage appliance wrapped around Ceph"
+title: "  Ceph Month 2021: Project Aquarium - An easy-to-use storage appliance wrapped around Ceph  "
 date: 2021-06-16
 updated: 2021-06-17
 tags:
+- Ceph
+- Storage Appliance
+- Project Aquarium
+- Distributed Storage
+- Ceph Management
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Month_2021_-_Project_Aquarium_-_An_easy-to-use_storage_appliance_wrapped_around_Ceph
 ---
+
 
 
 ### 会议纪要：Project Aquarium 介绍与讨论
 
 #### 会议概述
-本次会议由Alex Saddle主持，他作为软件工程经理在Souza公司工作，同时也是Project Aquarium的产品负责人。会议主要介绍了Project Aquarium的目标、架构、演示以及未来的发展计划。
+本次会议由Alex Saddle主持，他是Souza公司的软件工程经理和Project Aquarium的产品负责人。会议重点介绍了Project Aquarium的目标、架构、演示以及未来发展规划。
 
 #### 关键细节
 - **项目名称**：Project Aquarium
 - **项目目标**：简化Ceph的开发、部署和管理，提供一个开源的存储设备解决方案。
 - **项目团队**：由Souza公司的存储团队开发，Alex Saddle担任产品负责人，另一位高级工程师担任后端负责人。
-- **项目架构**：分为两个主要部分，后端称为“Gravel”，前端称为“Glass”。后端使用Python，前端使用Angular。
-- **技术选择**：Aquarium作为系统服务运行，不采用容器化，依赖于fadm等系统工具。使用WebSockets进行节点间通信，并利用fcd来维护集群状态。
-- **用户界面**：目标是提供一个简化的、引导式的安装和操作界面，抽象复杂概念，如不直接暴露Ceph的底层配置细节。
-
-#### 演示内容
-- **安装过程**：通过Web界面引导用户创建集群，选择存储设备，配置服务等。
-- **集群管理**：展示如何在现有集群中添加新节点，以及如何在不同节点间进行数据操作和管理。
+- **项目架构**：分为后端“Gravel”和前端“Glass”，后端使用Python，前端使用Angular。
+- **技术选择**：作为系统服务运行，依赖fadm等系统工具，使用WebSockets进行通信，并利用fcd维护集群状态。
+- **用户界面**：提供简化的、引导式的安装和操作界面，抽象复杂概念，不直接暴露底层配置细节。
+- **演示内容**：展示了安装过程、集群管理以及数据操作和管理。
 
 #### 后续行动计划
-- **短期目标**：改进仪表板，实现对象服务，测试USB启动和实际硬件上的Pixie booting。
+- **短期目标**：改进仪表板，实现对象服务，测试USB启动和Pixie booting。
 - **中期目标**：关注升级过程，开发块服务和资源约束求解器。
-- **长期目标**：社区发展和项目扩展，希望实现“世界统治”（幽默提及）。
+- **长期目标**：社区发展和项目扩展，实现“世界统治”（幽默提及）。
 
 #### 讨论与问答
 - **经验教训**：从Ceph Dashboard的经验中学习，但Aquarium项目有其独特性，不直接竞争，而是提供不同的使用场景。
@@ -39,10 +42,3 @@ subtitle: tech
 
 #### 结论
 Project Aquarium是一个新兴的开源项目，旨在简化Ceph的使用和管理。团队欢迎社区的参与和反馈，并计划通过一系列的改进和扩展来推动项目的发展。
-
-#### 联系方式
-- **社区交流**：通过Slack和GitHub讨论板进行。
-- **会议安排**：每周三次，覆盖不同时区。
-- **入门指南**：提供从零开始的入门指南。
-
-感谢所有参与者的关注和提问，期待社区的进一步参与和支持。

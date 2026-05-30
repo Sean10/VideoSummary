@@ -1,12 +1,19 @@
 ---
-title: "Best UADK Acceleration Practice on Ceph Storage - Dai Zhiwei, Huawei"
-date: 2023-05-05
-updated: 2023-05-05
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-05-05
+subtitle: Best_UADK_Acceleration_Practice_on_Ceph_Storage_-_Dai_Zhiwei_Huawei
+tags:
+- Ceph
+- UADK
+- Storage Optimization
+- Security Acceleration
+- Blue Store
+title: "Best UADK Acceleration Practice on Ceph Storage - Dai Zhiwei, Huawei"
+updated: 2023-05-05
 ---
+
+
 
 
 ### 会议纪要
@@ -56,6 +63,6 @@ subtitle: tech
 **会议地点：** [具体地点]
 **参会人员：** [参会人员名单]
 
----
+
 
 以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

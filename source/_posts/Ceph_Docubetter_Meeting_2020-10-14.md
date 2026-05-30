@@ -1,12 +1,19 @@
 ---
-title: "Ceph Docubetter Meeting 2020-10-14"
-date: 2020-10-14
-updated: 2020-10-15
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-10-14
+subtitle: Ceph_Docubetter_Meeting_2020-10-14
+tags:
+- Ceph
+- 文档更新
+- 分布式存储
+- 开发指南
+- GitHub
+title: "Ceph Docubetter Meeting 2020-10-14"
+updated: 2020-10-15
 ---
+
+
 
 
 ### 会议纪要

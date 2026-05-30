@@ -1,30 +1,33 @@
 ---
-title: "Ceph Performance Meeting 2021-07-01"
-date: 2021-08-24
-updated: 2021-08-25
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-08-24
+subtitle: Ceph_Performance_Meeting_2021-07-01
+tags:
+- Ceph性能优化
+- 分布式存储
+- BlueFS
+- 流控制
+- CPU分区
+title: "Ceph Performance Meeting 2021-07-01"
+updated: 2021-08-25
 ---
+
+
 
 
 ### 会议纪要
 
 #### 主要议题
 1. **新Pull Request讨论**
-   - 本周仅有一个新的Pull Request，由Adam提交，涉及在BlueFS中实现细粒度锁定（fine grain locking）。此PR尚未准备好合并，因为存在死锁的可能性，需要进一步审查。
-   - 另一个小的PR涉及将long double改为double，对性能有一定提升。
+   - 本次会议讨论了两个新的Pull Request。Adam提交的PR旨在BlueFS中实现细粒度锁定，但尚未准备好合并，因为存在死锁的可能性，需要进一步审查。另一个小的PR涉及将long double改为double，对性能有一定提升。
+   - Patrick在MDS中合并了一个PR，用于在请求读锁时刷新MD Log，而Kifu的B树分配器PR已经通过审查并合并。
 
-2. **已合并的PR**
-   - Patrick在MDS中合并了一个PR，用于在请求读锁时刷新MD Log。
-   - Kifu的B树分配器PR已经通过审查并合并。
+2. **性能优化和后续行动**
+   - 讨论了将数据定位器与混合合金和位图分配器结合形成混合模式的继续开发。
+   - 对OSD客户端消息容量（OSD client message cap）参数的调整进行了讨论，建议将其默认值设为256。
 
-3. **性能优化和后续行动**
-   - 正在等待将数据定位器与混合合金和位图分配器结合形成混合模式的继续开发。
-   - 讨论了OSD客户端消息容量（OSD client message cap）参数的调整，建议将其默认值设为256。
-
-4. **流控制和CPU分区**
+3. **流控制和CPU分区**
    - 讨论了在客户端实现更精细的流控制机制的可能性，以及CPU分区的优化策略。
    - 提到了在ARM架构上的测试结果，显示通过CPU分区可以获得性能提升。
 
@@ -43,4 +46,4 @@ subtitle: tech
 - 提到了在AWS上进行Graviton测试的可能性，以获取更多ARM架构的性能数据。
 
 ### 结论
-会议涵盖了多个技术议题，包括新PR的审查、性能优化、流控制机制的改进以及CPU分区的策略。决定了一系列后续行动计划，以确保Ceph项目的持续改进和发展。
+本次会议重点讨论了Ceph项目的性能优化，包括新Pull Request的审查、性能参数的调整、流控制和CPU分区的策略。会议决定了后续行动计划，以确保Ceph项目的持续改进和发展。

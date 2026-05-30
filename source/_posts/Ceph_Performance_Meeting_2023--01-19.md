@@ -1,12 +1,19 @@
 ---
-title: "Ceph Performance Meeting 2023--01-19"
-date: 2023-01-20
-updated: 2023-01-20
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-01-20
+subtitle: Ceph_Performance_Meeting_2023--01-19
+tags:
+- Ceph
+- 分布式存储
+- 性能优化
+- RBD
+- 写放大
+title: Ceph Performance Meeting 2023--01-19
+updated: 2023-01-20
 ---
+
+
 
 
 ### 会议纪要
@@ -14,22 +21,23 @@ subtitle: tech
 #### 关键细节与讨论主题
 
 1. **构建问题修复**：
-   - 会议开始时，提到了一个与性能无关的构建问题已经修复，这是一个长期存在的问题，之前一直在使用Luster系统。
+   - 会议开始时，提到了一个长期存在的构建问题已修复，该问题与Luster系统相关。
 
 2. **Pull Requests (PRs) 讨论**：
-   - **有界迭代器 (Bounded Iterators)**：Igor提出了一个关于ARM范围键的有界迭代器的PR，涉及RocksDB性能下降问题，特别是与map clear函数和多个列族的迭代有关。
-   - **Arrow Flight功能**：讨论了添加Arrow Flight功能的初始提交，这是一个RPC框架，用于低延迟数据传输，尽管当前实现方式有些粗糙，但提供了实验的基础。
+   - **有界迭代器 (Bounded Iterators)**：Igor提出了一个关于ARM范围键的有界迭代器的PR，该PR旨在解决RocksDB性能下降问题，特别是与map clear函数和多个列族的迭代有关。
+   - **Arrow Flight功能**：讨论了添加Arrow Flight功能的初始提交，这是一个RPC框架，用于低延迟数据传输。
    - **硬件文档重写**：一个关于重写硬件文档的旧PR被关闭，可能已被新文档取代。
 
 3. **性能与优化讨论**：
-   - **RBD镜像快照性能**：Adam的工作显著提高了RBD镜像和快照的速度，可能使得之前的工作变得不必要。
-   - **写放大问题**：Josh提到了在从Nautilus升级到Pacific时观察到的写放大问题，特别是在RBD方面，尽管在RGW方面没有观察到类似问题。
+   - **RBD镜像快照性能**：Adam的工作显著提高了RBD镜像和快照的速度。
+   - **写放大问题**：Josh提到了在从Nautilus升级到Pacific时观察到的写放大问题，特别是在RBD方面。
 
 #### 决定事项
 
 - 对于有界迭代器的PR，决定继续测试并可能进行后向移植。
 - 对于Arrow Flight功能的PR，决定继续实验并寻找更好的实现模型。
 - 对于硬件文档重写的PR，决定关闭，因为可能已被新文档取代。
+- 对于写放大问题，Josh计划在staging环境中进行更多测试。
 
 #### 后续行动计划
 
@@ -41,7 +49,6 @@ subtitle: tech
 #### 其他备注
 
 - 会议超时，决定将未讨论完的话题推迟到下一次会议。
-- 对于写放大问题，Josh计划在staging环境中进行更多测试，特别是关于小块写操作的影响。
 
 #### 参会人员
 

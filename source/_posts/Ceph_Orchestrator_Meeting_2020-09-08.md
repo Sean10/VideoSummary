@@ -1,27 +1,33 @@
 ---
-title: "Ceph Orchestrator Meeting 2020-09-08"
-date: 2020-09-08
-updated: 2020-09-09
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-09-08
+subtitle: Ceph_Orchestrator_Meeting_2020-09-08
+tags:
+- Ceph
+- Distributed Storage
+- CRUSH Algorithm
+- High Availability
+- Scalability
+title: "Ceph Orchestrator Meeting 2020-09-08"
+updated: 2020-09-09
 ---
+
 
 
 ### 会议纪要
 
 #### 会议概要
-- **日期**: 2023年8月
+- **日期**: 2020年9月
 - **参与者**: 团队成员
 - **会议主题**: 讨论Ceph项目的更新、问题和改进
 
 #### 主要议题
 1. **Ceph版本更新**
-   - **15.2.5版本发布**: 预计很快发布，解决了从旧版本升级时OSD支持模块导致的健康警告问题。
+   - **15.2.5版本发布**: 即将发布，解决了从旧版本升级时OSD支持模块导致的健康警告问题。
 
 2. **QA问题讨论**
-   - **问题编号47336**: 讨论了由Paul创建的PR引起的测试套件失败问题。具体错误为“unexpected argument --y”，需要进一步调查。
+   - **问题编号47336**: 讨论了由Paul创建的PR引起的测试套件失败问题，具体错误为“unexpected argument --y”，需要进一步调查。
 
 3. **优化PR审查**
    - **优化PR**: Paul提交了一个大型优化PR，旨在改进Ceph的cfdmls实现，提高效率，但需要团队审查。
@@ -33,7 +39,7 @@ subtitle: tech
    - **Dashboard与Cephadm交互**: 讨论了Dashboard与Cephadm的集成问题，提出了修复方案。
 
 6. **文档构建错误**
-   - **文档构建错误**: 讨论了在构建包含2300行 restructuredText 文件的文档时遇到的错误，需要进一步的技术调查。
+   - **文档构建错误**: 讨论了在构建包含2300行restructuredText文件的文档时遇到的错误，需要进一步的技术调查。
 
 #### 决定事项
 - **15.2.5版本发布**: 团队确认将尽快发布15.2.5版本，解决已知问题。

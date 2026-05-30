@@ -1,18 +1,47 @@
 ---
-title: "CDS Reef: RADOS"
+title: "  CDS Reef: RADOS  "
 date: 2022-04-22
 updated: 2022-04-23
 tags:
+- Ceph
+- 分布式存储
+- 自动化
+- 测试
+- 可扩展性
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: CDS_Reef_-_RADOS
 ---
 
 
-1. **Configuration Profiles**: PR link provided for implementation of configuration profiles on a pool level, aimed at reef but backportable to quincy.
-2. **Automatic Key Rotation**: Outstanding PR exists, with work done for quincy enabling backporting, close to completion for reef.
-3. **Balancer Improvements**: Work on the workload or primary balancer focusing on balancing read requests based on pool workloads, with refactored capacity balancer code for clarity and future maintainability.
-4. **Autoscaler Checks and Balances**: Addition of "dash bulk" flag in quincy to manage pgs effectively, and "no auto scale global" flag to turn off the autoscaler globally. Addressing recent issues where autoscaler actions impact cluster performance.
-5. **OSD Map Trimming**: Case identified where millions of OSD maps remain untrimmed due to a trigger in map generation. To be discussed further post understanding the issue.
-6. **Partial Stripe Breeds**: Implementation of partial stripes to efficiently read subsets of data without accessing every OSD, beneficial for CPU load reduction especially for small reads in large objects.
-7. **Testing Improvements and Board Cleanup**: Discussing testing coverage improvement, particularly for stretch mode, netsplit subsuite, and logical skill testing at larger scales. Also, addressing upgrade test coverage, tracking test improvements, reducing raiders suite run time, and cleanup/deprecation tasks including legacy watches and mdr module usage.
+
+本次会议主要讨论了Ceph分布式存储系统Reef版本的多个改进和功能，包括：
+
+**配置配置文件**：提供了配置配置文件的实现链接，旨在Reef版本中实施，但也可回滚到Quincy版本。
+
+**自动密钥轮换**：存在一个待解决的PR，用于Quincy版本实现自动密钥轮换，Reef版本的实现接近完成。
+
+**均衡器改进**：对工作负载或主要均衡器进行改进，重点关注根据池工作负载平衡读取请求，重构了容量均衡器代码以提高清晰度和可维护性。
+
+**自动缩放检查和平衡**：在Quincy版本中添加了“dash bulk”标志来管理PG，并添加了“no auto scale global”标志来全局关闭自动缩放。解决自动缩放操作影响集群性能的近期问题。
+
+**OSD映射修剪**：确定了由于映射生成中的触发器，数百万个OSD映射未被修剪。需要进一步讨论以了解问题。
+
+**部分条带**：实现了部分条带，以有效地读取数据的子集而无需访问每个OSD，这对于减少CPU负载，特别是对于大型对象中的小读取尤其有益。
+
+**测试改进和董事会清理**：讨论了测试覆盖率的改进，特别是对于stretch模式、netsplit子套件和大型规模的逻辑技能测试。还解决了升级测试覆盖率、跟踪测试改进、减少raiders套件运行时间以及清理/弃用任务，包括遗留监视器和mdr模块的使用。
+
+**其他讨论主题**：
+
+- **性能计数器收集**：讨论了为Rook部署收集所需数据的问题，以及是否需要收集其他组件的指标。
+- **数据可用性得分**：讨论了在基本通道中收集数据可用性得分并包括该得分的问题。
+- **OSD性能异常检测**：讨论了在管理器中识别OSD性能异常的想法，并利用性能通道收集的性能信息。
+- **C++ API保证**：讨论了C++ API保证的适用性，以及是否需要更新API以支持C++ 17或其他版本。
+- **带压缩的锁定设备**：讨论了支持具有内部压缩功能的块设备的补丁。
+- **QoS**：讨论了客户端和客户端视图QoS的当前工作，以及如何改进QoS配置文件管理器和客户端注册表。
+- **高优先级操作处理**：讨论了处理高优先级操作的需求，以及如何改进uncle调度器以优先处理某些操作。
+- **恢复改进**：讨论了EC编码、缺失对象恢复和PG日志相关改进的PR。
+- **BlueStore**：讨论了BlueStore分配器测试的改进、自定义Right Ahead日志、蓝存储稳健性增强和擦除码池的潜在实现。
+- **测试和清理**：讨论了测试覆盖率改进、升级测试、测试改进跟踪机制、raiders套件运行时间减少和遗留组件的清理。
+
+会议还讨论了后续行动计划，包括在邮件列表上询问关于Rook和遗留监视器的用户，以及在未来会议中进一步讨论某些主题。

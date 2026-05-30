@@ -1,11 +1,16 @@
 ---
-title: "CDS Tentacle - Telemetry"
+title: "  CDS Tentacle - Telemetry  "
 date: 2024-08-22
 updated: 2024-08-23
 tags:
+- Ceph
+- Telemetry
+- Storage Metrics
+- Ceph Stretch Mode
+- Ceph Monitoring
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: CDS_Tentacle_-_Telemetry
 ---
 
 
@@ -22,12 +27,12 @@ subtitle: tech
 
 **一、Stretch 模式指标收集**
 
-*   **讨论背景**： 为了了解 Stretch 模式的实际使用情况，需要收集相关指标。
-*   **解决方案**： 
+*   **讨论背景**： 为了解 Stretch 模式的使用情况，需要收集相关指标。
+*   **解决方案**：
     *   通过 OSD 映射中的标志位收集 Stretch 模式状态信息。
-    *   使用 Telemetry 模块收集相关数据，甚至可以追溯到几代版本。
-    *   讨论了 Stretch 模式和 Stretch 集群的区别，以及进入 Stretch 模式所需的准备工作和配置。
-*   **行动计划**： 
+    *   使用 Telemetry 模块收集数据，可追溯到几代版本。
+    *   讨论了 Stretch 模式和 Stretch 集群的差异，以及进入 Stretch 模式所需的准备工作和配置。
+*   **行动计划**：
     *   Junior 将研究是否需要收集其他相关信息。
     *   在 Stretch 集群上进行测试，验证指标收集是否正确。
 

@@ -1,12 +1,19 @@
 ---
-title: "2019-12-12 :: Ceph Performance Meeting"
-date: 2019-12-12
-updated: 2019-12-13
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2019-12-12
+subtitle: 2019-12-12_-_-_Ceph_Performance_Meeting
+tags:
+- Ceph
+- Performance Optimization
+- BlueStore
+- Distributed Storage
+- Storage Cluster
+title: "'2019-12-12 :: Ceph Performance Meeting'"
+updated: 2019-12-13
 ---
+
+
 
 
 ### 会议纪要
@@ -24,7 +31,7 @@ subtitle: tech
    - **CLS桶列表过滤优化**：减少了数据传输量，已进入测试阶段。
 
 #### 性能优化讨论
-- **PG Log优化**：通过移除PG Log的OMAP写入和完全禁用PG Log，观察到性能和尾部延迟的显著改善。具体测试结果显示在EtherPad中。
+- **PG Log优化**：通过移除PG Log的OMAP写入和完全禁用PG Log，观察到性能和尾部延迟的显著改善。
 - **内存目标调整**：增加内存目标以减少映射条目读取，提高吞吐量。
 - **BlueStore优化**：讨论了BlueStore中PG Log和OMAP的优化策略，包括简化数据结构和直接写入对象数据的可能性。
 
@@ -39,3 +46,5 @@ subtitle: tech
 
 #### 结论
 会议强调了持续优化Ceph存储系统的必要性，特别是在性能和资源管理方面。团队将继续进行深入测试和分析，以实现更高效的存储解决方案。
+
+会议详细讨论了Ceph存储系统的性能优化，包括文档更新、已关闭的PR、其他更新、性能优化讨论以及后续行动计划。重点优化了PG Log、内存目标和BlueStore，并计划进行更多测试和分析。

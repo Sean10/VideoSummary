@@ -1,18 +1,24 @@
 ---
-title: "CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete"
-date: 2014-06-24
-updated: 2014-06-25
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2014-06-24
+subtitle: CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete
+tags:
+- Ceph
+- Monitor
+- I/O操作
+- 异步化
+- Paxos
+- Work Queue
+title: "'CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete'"
+updated: 2014-06-25
 ---
 
 
 
 ### 会议纪要
 
-**会议时间**： [请填写会议时间]
+**会议时间**： 2014-06-24
 
 **参会人员**： [请填写参会人员名单]
 
@@ -22,7 +28,7 @@ subtitle: tech
 
 **1. 问题背景**
 
-- Ceph Monitor在重负载下，执行I/O操作时，处理消息的能力受限，导致等待时间长，影响整体性能。
+- Ceph Monitor在执行I/O操作时，处理消息的能力受限，导致等待时间长，影响整体性能。
 - 主要问题在于单线程处理所有消息，当执行I/O操作时，其他消息处理被阻塞。
 
 **2. 解决方案**
@@ -33,8 +39,8 @@ subtitle: tech
 
 **3. 实施步骤**
 
-- 首先，将I/O操作异步化，将任务提交给Key-Value存储，并等待回调。
-- 使用现有的Work Queue类创建工作线程，将事务指针传递给工作线程。
+- 异步化I/O操作，将任务提交给Key-Value存储，并等待回调。
+- 使用Work Queue类创建工作线程，将事务指针传递给工作线程。
 - 在安全的地方异步执行工作，并在完成后进行清理。
 - 使用Work Queue的flush方法，等待异步操作完成。
 
@@ -50,7 +56,7 @@ subtitle: tech
 - 测试新方案，评估性能提升效果。
 - 根据测试结果，进一步优化方案。
 
-**6. 关键词**
+**关键词**
 
 - Monitor
 - 消息派发
@@ -60,7 +66,3 @@ subtitle: tech
 - 读写锁
 - Work Queue
 - Key-Value存储
-
-**7. 总结**
-
-本次会议讨论了Ceph Monitor消息派发及I/O操作优化方案，并制定了后续行动计划。通过异步化I/O操作和读写锁机制，可以有效提高Monitor的处理性能。

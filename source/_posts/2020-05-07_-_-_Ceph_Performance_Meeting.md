@@ -1,20 +1,27 @@
 ---
-title: "2020-05-07 :: Ceph Performance Meeting"
-date: 2020-05-12
-updated: 2020-05-13
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2020-05-12
+subtitle: 2020-05-07_-_-_Ceph_Performance_Meeting
+tags:
+- Ceph
+- 分布式存储
+- 性能优化
+- 持续集成
+- Jenkins
+title: 2020-05-07 -- Ceph Performance Meeting
+updated: 2020-05-13
 ---
+
+
 
 
 ### 会议纪要
 
 #### 关键细节
 - **新PR讨论**：
-  - Adam提交的PR，关于在RADOS对象上实现队列段，以替代数据日志和元数据日志。
-  - Sam的C store工作PR，Keith正在审查。
+  - Adam提交的PR，关于在RADOS对象上实现队列段，旨在替代数据日志和元数据日志。
+  - Sam的C Store工作PR，由Keith审查。
 
 - **已关闭的PR**：
   - 监控器优先级缓存管理器的修复，确保内存释放和重新平衡。

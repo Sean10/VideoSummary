@@ -1,15 +1,23 @@
 ---
-title: "Ceph Crimson/SeaStor OSD 2021-01-26"
-date: 2021-01-27
-updated: 2021-01-27
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-01-27
+subtitle: Ceph_Crimson_SeaStor_OSD_2021-01-26
+tags:
+- Ceph
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 性能测试
+- OSD
+title: "Ceph Crimson/SeaStor OSD 2021-01-26"
+updated: 2021-01-27
 ---
 
 
-### 会议纪要
+
+
+会议纪要
 
 **会议时间：** [具体日期]
 
@@ -22,17 +30,17 @@ subtitle: tech
 1. **上周工作回顾：**
    - **Ceph相关工作：**
      - 修复了Ceph管理工具（ceph-adm）中的问题，该问题被认为是Pacific版本发布的阻塞点。
-     - 重新审视了流水线文档，并根据Sam的评论进行了修改。
+     - 根据Sam的评论，对流水线文档进行了重新审视和修改。
      - 提供了Collection Manager的代码，以便审查和研究流水线设计文档。
    - **其他工作：**
-     - 进行了3DS培训和性能测试工作，特别是针对Ceph的OSD（Object Storage Daemon）进行性能测试。
+     - 完成了3DS培训和性能测试工作，特别是针对Ceph的OSD（Object Storage Daemon）进行性能测试。
 
 2. **本周工作计划：**
    - 继续完成Sam的pian和Evernote提供的代码的审查。
    - 专注于性能测试和3DS培训。
 
 3. **代码更新与问题讨论：**
-   - 替换了biosequential代码到master分支，并实施了针对非幂等客户端请求重复问题的修复。
+   - 将biosequential代码替换到master分支，并实施了针对非幂等客户端请求重复问题的修复。
    - 发现master分支的恢复代码存在一些bug，正在尝试调试以验证修复是否有效。
    - 讨论了关于master分支的bug问题，可能与某些恢复优化有关，但尚未找到根本原因。
 

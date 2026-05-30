@@ -1,17 +1,24 @@
 ---
-title: "2019-05-24 :: Ceph Code Walkthrough: RGW Multisite Replication"
-date: 2020-06-22
-updated: 2020-06-23
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2019-05-24
+subtitle: 2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication
+tags:
+- Ceph
+- RGW
+- Multi
+- site Replication
+- Distributed Storage
+- CephFS
+title: "'2019-05-24 :: Ceph Code Walkthrough: RGW Multisite Replication'"
+updated: 2019-05-24
 ---
+
 
 
 ### 会议纪要
 
-#### 会议主题：Ceph多站点代码走查
+#### 会议主题：Ceph RGW 多站点代码走查
 
 #### 主讲人：[主讲人姓名]
 
@@ -24,8 +31,8 @@ subtitle: tech
    - 讨论了元数据和数据同步的代码细节。
 
 2. **日志基础复制**：
-   - 在两个不同集群（位于世界不同地区）之间，每个集群上放置一个Zone，并将它们链接在一起。
-   - 当一个Zone（Zone A）进行更改时，它会在本地将更改写入日志，另一个Zone（Zone B）会从Zone A读取日志并获取最新副本。
+   - 在两个不同集群之间，每个集群上放置一个Zone，并将它们链接在一起。
+   - 当一个Zone进行更改时，它会在本地将更改写入日志，另一个Zone会从Zone读取日志并获取最新副本。
 
 3. **主要日志类型**：
    - **元数据日志**：记录用户和桶的所有更改。
@@ -71,7 +78,3 @@ subtitle: tech
 
 #### 会议结束：
 - 会议在预定时间内圆满结束，感谢所有参与者的积极参与和提问。
-
----
-
-**注：** 以上纪要涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。涉及的计算机科学/Ceph相关领域英文原文关键词已保留。

@@ -1,13 +1,17 @@
 ---
-title: "2020-01-27 :: Ceph Orchestration Meeting"
+title: " 2020-01-27 :: Ceph Orchestration Meeting "
 date: 2020-01-30
 updated: 2020-01-30
 tags:
+- Ceph
+- 分布式存储
+- Rook
+- Python 客户端库
+- CI/CD
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: 2020-01-27_-_-_Ceph_Orchestration_Meeting
 ---
-
 
 ### 会议纪要
 
@@ -23,8 +27,7 @@ subtitle: tech
 1. **Ceph Python客户端库的存储位置**
    - **讨论内容**：
      - Ostia提出将Ceph Python客户端库作为外部依赖，而不是合并到Rook项目中。
-     - 讨论了将库放在Rook组织下的单独仓库的利弊。
-     - 讨论了版本管理和CI的复杂性。
+     - 讨论了将库放在Rook组织下的单独仓库的利弊，包括版本管理和CI的复杂性。
    - **决定**：
      - 同意将Ceph Python客户端库作为一个独立的仓库，以增加灵活性并减少问题。
      - 将创建一个新的仓库在Rook组织下，并由Sebastian负责管理。
@@ -52,7 +55,3 @@ subtitle: tech
 
 #### 会议结束
 - 会议在讨论了所有议题后结束，期待后续的进展和实施。
-
----
-
-以上是本次会议的详细纪要，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

@@ -1,21 +1,27 @@
 ---
-title: "Making CephFS (Much More) Great! - Patrick Donnelly & Greg Farnum, IBM"
-date: 2023-05-09
-updated: 2023-05-09
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-05-09
+subtitle: Making_CephFS_Much_More_Great_-_Patrick_Donnelly_Greg_Farnum_IBM
+tags:
+- CephFS
+- 分布式存储
+- Ceph
+- 高可用性
+- 可扩展性
+- 故障恢复
+title: "Making CephFS (Much More) Great! - Patrick Donnelly & Greg Farnum, IBM"
+updated: 2023-05-09
 ---
 
 
-### 会议纪要
+会议纪要
 
-#### 会议基本信息
-- **主持人**: Patrick（前CFS团队负责人，现参与Sepafest项目）
-- **参与者**: Greg（SEF Fest团队经理，前STL长期贡献者）及其他与会者
+### 会议基本信息
+- 主持人：Patrick（前CFS团队负责人，现参与Sepafest项目）
+- 参与者：Greg（SEF Fest团队经理，前STL长期贡献者）及其他与会者
 
-#### 会议议题
+### 会议议题
 1. **CFS多集群恢复能力**
    - 讨论了多集群故障恢复的难度和当前的不完善状态。
    - 提出了改进建议，包括查看相关故障报告、社区讨论以及配置或升级解决方案。
@@ -36,21 +42,20 @@ subtitle: tech
    - 讨论了MDS缓存大小、客户端性能问题以及如何通过配置调整来改善。
    - 提出了关于CephFS top工具的改进，以及如何更好地监控和收集客户端性能数据。
 
-#### 决定事项
+### 决定事项
 - 需要进一步研究和改进CephFS的多集群恢复能力和MDS故障恢复机制。
 - 需要关注和解决SMB与CephFS集成中的问题。
 - 需要改进升级过程，特别是多活动MDS的升级策略。
 - 需要增强CephFS的监控和性能数据收集能力。
 
-#### 后续行动计划
+### 后续行动计划
 - 继续研究和开发多集群恢复和MDS故障恢复的解决方案。
 - 关注和解决SMB与CephFS集成中的具体问题。
 - 改进和优化CephFS的升级流程。
 - 增强CephFS的监控和性能数据收集功能，特别是在客户端性能方面。
 
-#### 其他讨论点
+### 其他讨论点
 - 讨论了CephFS的快照和克隆功能的限制和改进建议。
 - 讨论了CephFS的扩展属性和统计功能的实际应用和潜在改进。
 
-#### 会议总结
-会议主要围绕CephFS的多个关键问题进行了深入讨论，包括故障恢复、集成问题、升级挑战和性能监控。会议强调了持续改进和用户反馈的重要性，并提出了具体的改进方向和行动计划。感谢所有参与者的积极讨论和贡献。
+会议主要围绕CephFS的多个关键问题进行了深入讨论，包括故障恢复、集成问题、升级挑战和性能监控。会议强调了持续改进和用户反馈的重要性，并提出了具体的改进方向和行动计划。

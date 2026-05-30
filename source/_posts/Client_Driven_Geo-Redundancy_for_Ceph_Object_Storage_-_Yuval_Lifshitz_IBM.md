@@ -1,17 +1,24 @@
 ---
-title: "Client Driven Geo-Redundancy for Ceph Object Storage - Yuval Lifshitz, IBM"
-date: 2023-05-05
-updated: 2023-05-05
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-05-05
+subtitle: Client_Driven_Geo-Redundancy_for_Ceph_Object_Storage_-_Yuval_Lifshitz_IBM
+tags:
+- Ceph Object Storage
+- Geo
+- Redundancy
+- Client Notifications
+- Distributed Storage
+- Data Replication
+title: "Client Driven Geo-Redundancy for Ceph Object Storage - Yuval Lifshitz, IBM"
+updated: 2023-05-05
 ---
+
 
 
 ### 会议纪要
 
-#### 会议主题：Redis Gateway在IBM中的应用及多站点复制改进
+#### 会议主题：基于客户端的Ceph对象存储地理冗余 - Yuval Lifshitz, IBM
 
 #### 会议时间：[具体日期]
 
@@ -27,21 +34,19 @@ subtitle: tech
    - 感谢Liave和Omar两位学生在该项目中的贡献。
 
 2. **多站点复制的挑战**：
-   - 多站点（multi-site）设置在集群中是一个复杂且常有问题的系统。
-   - 地理复制（Geo replication）和地理冗余（Geo redundancies）面临网络问题、性能问题、数据日志和集群间通信问题。
-   - 动态重分片（dynamic resharding）和其他问题增加了系统的复杂性。
+   - 多站点设置在集群中复杂且问题常出，包括网络、性能、数据同步和集群间通信问题。
+   - 动态重分片等增加了系统的复杂性。
 
 3. **用户控制的需求**：
    - 当前系统高度异步，用户难以了解数据何时安全同步。
-   - 项目旨在通过增加新的桶通知（bucket notifications）来增强用户对复制系统的控制。
+   - 项目旨在通过增加新的桶通知来增强用户对复制系统的控制。
 
 4. **解决方案介绍**：
-   - 在Redis Gateway中增加新的桶通知类型，通知用户对象何时安全同步到一个区域（Zone）。
+   - 在Redis Gateway中增加新的桶通知类型，通知用户对象何时安全同步到一个区域。
    - 通过Kafka或其他通知机制，用户可以订阅这些通知并据此采取行动。
 
 5. **演示和实施细节**：
-   - 演示了如何在两个站点（Zone A和Zone B）之间设置主题（topic）和通知。
-   - 展示了对象上传到主站点（Zone A）后，如何在备份站点（Zone B）同步并发送通知。
+   - 演示了如何在两个站点之间设置主题和通知，以及对象上传后如何在备份站点同步并发送通知。
 
 6. **后续改进和行动计划**：
    - 需要改进多站点间的信息同步，特别是主题和通知的配置。
@@ -62,7 +67,5 @@ subtitle: tech
 #### 会议结束：
 - Yuval感谢大家的参与，并鼓励大家提出问题和建议。
 - 会议在掌声中结束。
-
----
 
 **备注**：本会议纪要基于Yuval的介绍和讨论内容整理，旨在记录会议的关键细节和后续行动计划。

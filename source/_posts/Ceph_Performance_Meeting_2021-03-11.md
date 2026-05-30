@@ -1,27 +1,34 @@
 ---
-title: "Ceph Performance Meeting 2021-03-11"
+title: "  Ceph Performance Meeting 2021-03-11  "
 date: 2021-03-18
 updated: 2021-03-18
 tags:
+- Ceph
+- Performance
+- BlueStore
+- RocksDB
+- Benchmarking
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: Ceph_Performance_Meeting_2021-03-11
 ---
+
 
 
 ### 会议纪要
 
 #### 主要议题
 1. **OMAP性能基准测试**
-   - 会议开始时，讨论了两个新的Pull Request (PR)。第一个PR是由会议主持人提出的，旨在为对象存储测试套件实现一个快速且简单的OMAP基准测试。该测试基于现有的简单OMAP测试，增加了写入多个对象和大量键的能力，并进行时间测试。
-   - 第二个PR来自Gabby，目的是从RocksDB中移除分配。Josh和Igor已经进行了审查，并提出了一些改进建议。
+   - 会议讨论了两个新的Pull Request (PR)，一个由会议主持人提出，旨在为对象存储测试套件实现一个快速且简单的OMAP基准测试，另一个由Gabby提出，目的是从RocksDB中移除分配。
+   - 会议主持人提出了增加写入多个对象和大量键的能力，并进行时间测试的改进建议。
 
 2. **其他PR更新**
-   - 讨论了其他几个PR，包括Shuhan提交的PR，该PR涉及将Alien存储线程分散到不同的CPU核心，以及Adam的PR，用于区分BlueFS中的Buffered和Direct IO。
+   - 讨论了Shuhan提交的PR，该PR涉及将Alien存储线程分散到不同的CPU核心，以及Adam的PR，用于区分BlueFS中的Buffered和Direct IO。
    - 还讨论了Seth的PR，该PR涉及并发检索设备数据，目前仍在讨论和改进中。
 
 3. **BlueStore性能问题**
-   - 会议中详细讨论了BlueStore的性能问题，特别是在OMAP迭代和RocksDB代码路径方面。讨论了可能的性能瓶颈，如块缓存争用和RocksDB的迭代性能。
+   - 会议重点讨论了BlueStore的性能问题，特别是在OMAP迭代和RocksDB代码路径方面。
+   - 讨论了可能的性能瓶颈，如块缓存争用和RocksDB的迭代性能。
    - 提出了一些理论，如内存使用情况可能影响性能，特别是BlueStore和FileStore之间的差异。
 
 4. **后续行动计划**

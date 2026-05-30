@@ -1,23 +1,33 @@
 ---
-title: "Ceph Orchestrator Meeting 2022-06-14"
-date: 2022-06-28
-updated: 2022-06-29
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-06-28
+subtitle: Ceph_Orchestrator_Meeting_2022-06-14
+tags:
+- Ceph
+- 分布式存储
+- CRUSH algorithm
+- 高可用性
+- 可扩展性
+- 对象存储
+title: Ceph Orchestrator Meeting 2022-06-14
+updated: 2022-06-29
 ---
 
 
-### 会议纪要
+
+
+### 改进后的中文总结内容
+
+在2022年6月14日的Ceph Orchestrator会议中，讨论了以下主要议题：
 
 #### 主要议题
 
 1. **Paul的磁盘重扫描功能**
-   - 讨论了Paul的磁盘重扫描功能，该功能可能作为替代现有staff volume inventory的方案。目前有一个相关的Pull Request（PR）已经开放一段时间，但尚未被审查。会议建议团队成员提供直接反馈，并计划下周讨论该议题。
+   - 讨论了Paul提出的磁盘重扫描功能，该功能可能作为现有staff volume inventory的替代方案。目前有一个相关的Pull Request（PR）已开放，但尚未被审查。会议建议团队成员提供直接反馈，并计划下周继续讨论该议题。
 
 2. **HNFS for OpenStack的概念验证**
-   - Ramana更新了关于HNFS for OpenStack的概念验证进展。Francisco主要负责，已经成功手动复制和编辑了现有的NFS Ganesha服务的脚本，并进行了一些代码修改。Ramana请求Francisco分享详细步骤的Google文档，并计划将其链接到跟踪票证。
+   - Ramana提供了关于HNFS for OpenStack的概念验证进展更新。Francisco主要负责，已成功手动复制和编辑了现有的NFS Ganesha服务的脚本，并进行了一些代码修改。Ramana请求Francisco分享详细步骤的Google文档，并计划将其链接到跟踪票证。
 
 3. **FADM重构工作**
    - John将开始关注FADM的重构工作。他计划首先本地拉取分支，运行现有代码，以了解PR实施的工作流程。John提到他正在处理GoTheft的发布周期，因此今天没有时间处理此事。
@@ -52,7 +62,3 @@ subtitle: tech
 ### 会议结束
 
 - 会议在确认无其他议题后结束，并计划下周继续讨论相关事宜。
-
-**会议时间：** [具体日期]  
-**参会人员：** [参会人员名单]  
-**记录人：** [记录人姓名]

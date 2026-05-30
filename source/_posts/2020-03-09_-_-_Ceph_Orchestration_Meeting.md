@@ -1,12 +1,18 @@
 ---
-title: "2020-03-09 :: Ceph Orchestration Meeting"
+title: "  2020-03-09 :: Ceph Orchestration Meeting  "
 date: 2020-04-03
 updated: 2020-04-04
 tags:
+- Ceph
+- 存储
+- 分布式存储
+- Kubernetes
+- 自动化
 categories:
 - "视频总结"
-subtitle: tech
+subtitle: 2020-03-09_-_-_Ceph_Orchestration_Meeting
 ---
+
 
 
 ### 会议纪要
@@ -21,21 +27,21 @@ subtitle: tech
    - Sebastian表示可以适应新的会议时间。
 
 2. **管理员密码问题**
-   - 讨论了如何在命令中隐藏管理员密码信息，避免在文档文件中暴露敏感信息。
-   - 提出了两种解决方案：添加新参数或按参数隐藏信息。
+   - 讨论了如何在命令中隐藏管理员密码，以避免在文档文件中暴露敏感信息。
+   - 提出两种解决方案：添加新参数或按参数隐藏信息。
    - 决定首先明确解决方案，然后开始实施。
 
 3. **Python客户端集成**
    - 讨论了将Python客户端集成到rook组织中的进展。
-   - 确认了相关文件已经迁移到新的仓库，并计划后续跟进。
+   - 确认相关文件已迁移到新的仓库，并计划后续跟进。
 
 4. **网络配置问题**
    - 讨论了在Kubernetes集群中网络配置的问题，特别是在使用不同网络提供商（如calico、flannel）时的兼容性问题。
-   - 确认了在某些情况下，网络配置可能导致无法与服务通信的问题。
+   - 确认了某些情况下，网络配置可能导致无法与服务通信的问题。
 
 5. **集群状态与配置**
    - 讨论了如何在Kubernetes中配置和管理Ceph集群的守护进程（demons）。
-   - 涉及到了CRD（Custom Resource Definition）的使用和守护进程的自动管理。
+   - 涉及到CRD（Custom Resource Definition）的使用和守护进程的自动管理。
 
 6. **数据安全与清理**
    - 讨论了在删除守护进程时如何处理数据，特别是监控器（monitors）的数据。

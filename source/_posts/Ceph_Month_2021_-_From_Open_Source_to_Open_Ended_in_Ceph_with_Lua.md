@@ -1,12 +1,19 @@
 ---
-title: "Ceph Month 2021: From Open Source  to Open Ended in Ceph with Lua"
-date: 2021-06-15
-updated: 2021-06-16
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2021-06-15
+subtitle: Ceph_Month_2021_-_From_Open_Source_to_Open_Ended_in_Ceph_with_Lua
+tags:
+- Ceph
+- Lua
+- Distributed Storage
+- Open Source
+- CephFS
+title: "'Ceph Month 2021: From Open Source to Open Ended in Ceph with Lua'"
+updated: 2021-06-16
 ---
+
+
 
 
 ### 会议纪要
@@ -23,7 +30,7 @@ subtitle: tech
 
 1. **Seth简介**：
    - Seth是一个开源且免费的工具，旨在提供灵活的存储解决方案。
-   - Ceph作为一个包含2.5百万行C++代码的大型项目，具有复杂的架构和依赖关系。
+   - Ceph作为一个包含250万行C++代码的大型项目，具有复杂的架构和依赖关系。
 
 2. **Ceph的开放性**：
    - 尽管Ceph是开源的，但并非所有用户都有能力或意愿对其核心代码进行修改。
@@ -59,7 +66,3 @@ subtitle: tech
 #### 会议结束时间：[具体时间]
 
 #### 下次会议安排：[具体时间]
-
----
-
-以上是对本次会议内容的详细总结，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。

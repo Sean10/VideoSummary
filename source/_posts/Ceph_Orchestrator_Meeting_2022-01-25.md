@@ -1,21 +1,26 @@
 ---
-title: "Ceph Orchestrator Meeting 2022-01-25"
-date: 2022-02-01
-updated: 2022-02-02
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2022-02-01
+subtitle: Ceph_Orchestrator_Meeting_2022-01-25
+tags:
+- Ceph
+- 分布式存储
+- Orchestrator
+- 超时机制
+- 离线主机检测
+title: "Ceph Orchestrator Meeting 2022-01-25"
+updated: 2022-02-02
 ---
+
 
 
 ### 会议纪要
 
 #### 关键细节
 - **议题一：SSH命令超时问题**
-  - 讨论了在管理模块中，如果SSH命令（如set volume命令）挂起，整个服务器循环会永久挂起的问题。
-  - 提出了引入超时机制的必要性，但存在设置全局超时的困难，因为不同命令需要不同的超时时间。
-  - 讨论了使用异步SSH库的超时选项，以及cephadm内置的超时参数。
+  - 讨论了在Ceph Orchestrator管理模块中，SSH命令（如`set volume`命令）挂起导致服务器循环永久挂起的问题。
+  - 提出了引入超时机制的必要性，并讨论了使用异步SSH库的超时选项和cephadm内置的超时参数。
   - 决定尝试使用cephadm的超时参数，并设置一个较高的默认超时时间，同时提供配置选项。
 
 - **议题二：离线主机检测**

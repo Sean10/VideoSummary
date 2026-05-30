@@ -1,12 +1,18 @@
 ---
-title: "Kubernetes Stateful Application Disaster Recovery with Zero Data Loss - Daniel Parkes, IBM"
-date: 2023-05-05
-updated: 2023-05-05
-tags:
 categories:
-- "视频总结"
-subtitle: tech
+- 视频总结
+date: 2023-05-05
+subtitle: Kubernetes_Stateful_Application_Disaster_Recovery_with_Zero_Data_Loss_-_Daniel_Parkes_IBM
+tags:
+- Kubernetes
+- 灾难恢复
+- Ceph
+- 同步复制
+- 状态应用
+title: Kubernetes Stateful Application Disaster Recovery with Zero Data Loss - Daniel Parkes, IBM
+updated: 2023-05-05
 ---
+
 
 
 ### 会议纪要
@@ -24,10 +30,10 @@ subtitle: tech
 2. **备份与恢复**：
    - 使用Velero API进行备份和恢复，适用于逻辑故障的覆盖，但RPO（恢复点目标）和RTO（恢复时间目标）容忍度较高。
 
-3. **异步复制（Regional DR）**：
+3. **异步复制（区域DR）**：
    - 使用Open Cluster Manager进行应用的故障转移和恢复，RPO在几分钟范围内，RTO依赖于应用启动时间等因素。
 
-4. **同步复制（Metro DR）**：
+4. **同步复制（地铁DR）**：
    - 提供了零数据丢失的同步复制解决方案，主要依赖于Ceph的stretch模式。
    - 使用Rook在Kubernetes集群中部署Ceph，并通过RBD镜像进行块卷的同步复制。
    - 需要低延迟（约10毫秒）以保证性能，适用于非常关键的应用。
@@ -54,3 +60,14 @@ subtitle: tech
 
 #### 会议结束：
 - 会议在感谢和掌声中结束，Daniel Parks鼓励大家如果有任何问题或需要进一步的信息，可以随时联系。
+
+[改进后的总结包含以下Ceph相关关键词]：
+- Ceph
+- stretch模式
+- Rook
+- RBD
+- Open Cluster Manager
+- Metro DR
+- 同步复制
+-灾难恢复
+-高可用性
