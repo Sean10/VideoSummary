@@ -13,7 +13,7 @@ from datetime import datetime
 from . import claude_invoker as _claude_backend
 from . import kiro_invoker as _kiro_backend
 from .jsonl_handler import jsonl_reader, jsonl_writer, create_error_entry
-from .utils import sanitize_filename
+from .utils import sanitize_filename, sanitize_yaml_string, clean_front_matter
 
 logger = logging.getLogger(__name__)
 
@@ -531,3 +531,364 @@ async def main_claude_classify(batch_size: int = 50, timeout: int = 300, max_wor
     result = run_classify_workflow(batch_size=batch_size, timeout=timeout, max_workers=max_workers)
 
     logger.info(f"Classify workflow result: {result}")
+
+
+# ---------------------------------------------------------------------------
+# Process workflow: subtitle → hexo post (one-step, replaces summarize+reflect)
+# ---------------------------------------------------------------------------
+
+import re as _re
+
+
+def prepare_process_input(
+    subtitles_dir: str = "subtitles_origin",
+    videos_meta: str = "videos_meta.jsonl",
+    output_file: str = "temp_input/process_input.jsonl",
+) -> List[Dict[str, Any]]:
+    """
+    Prepare input JSONL for the process skill (subtitle → hexo post).
+    Skips files already present in temp_posts/.
+    """
+    import datetime as _dt
+
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+
+    # 已处理过的文件（temp_posts 里已有的）
+    processed = set()
+    if os.path.exists("temp_posts"):
+        processed = {f.replace(".md", "") for f in os.listdir("temp_posts") if f.endswith(".md")}
+
+    # 读取 video metadata
+    video_metadata = {}
+    if os.path.exists(videos_meta):
+        for item in jsonl_reader(videos_meta):
+            raw_title = item.get("title", "")
+            key = sanitize_filename(raw_title)
+            upload_date = item.get("upload_date", "")
+            timestamp = item.get("timestamp")
+            try:
+                date_str = _dt.datetime.strptime(upload_date, "%Y%m%d").strftime("%Y-%m-%d")
+            except (ValueError, TypeError):
+                date_str = _dt.datetime.now().strftime("%Y-%m-%d")
+            updated_str = (
+                _dt.datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d")
+                if timestamp
+                else date_str
+            )
+            video_metadata[key] = {
+                "title": sanitize_yaml_string(raw_title),
+                "date": date_str,
+                "updated": updated_str,
+            }
+
+    items = []
+    subtitles_path = Path(subtitles_dir)
+    if not subtitles_path.exists():
+        logger.warning(f"Subtitles directory not found: {subtitles_dir}")
+        return items
+
+    for subtitle_file in subtitles_path.glob("*.ttml"):
+        # 文件名格式: <name>.en.ttml → id = <name>
+        title_id = subtitle_file.stem.removesuffix(".en")
+
+        if title_id in processed:
+            logger.info(f"Skipping already processed: {title_id}")
+            continue
+
+        try:
+            content = subtitle_file.read_text(encoding="utf-8")
+        except Exception as e:
+            logger.error(f"Error reading {subtitle_file}: {e}")
+            continue
+
+        meta = video_metadata.get(title_id, {})
+        today = datetime.now().strftime("%Y-%m-%d")
+
+        items.append({
+            "id": title_id,
+            "content": content[:50000],
+            "video_title": meta.get("title", title_id),
+            "date": meta.get("date", today),
+            "updated": meta.get("updated", today),
+            "subtitle": title_id,
+        })
+
+    if items:
+        jsonl_writer(output_file, items)
+        logger.info(f"Prepared {len(items)} items for processing: {output_file}")
+
+    return items
+
+
+def _process_one_item(
+    item: Dict[str, Any],
+    base_prompt: str,
+    output_dir: str,
+    timeout: int,
+) -> tuple:
+    """处理单条 process 任务，返回 (result_dict, is_error)。"""
+    item_id = item.get("id", "unknown")
+
+    response = invoke_claude(prompt=base_prompt, timeout=timeout)
+    if not response.get("success"):
+        return create_error_entry(item_id, response.get("error", "Unknown error")), True
+
+    raw = (response.get("output") or "").strip()
+    if not raw:
+        return create_error_entry(item_id, "Empty output"), True
+
+    # 后处理
+    raw = _re.sub(r"\x1b\[[0-9;]*m", "", raw)   # strip ANSI
+    raw = raw.lstrip("\n")
+    raw = clean_front_matter(raw)
+
+    # 检查残留占位符
+    if "[改进后的中文总结内容]" in raw or "[此处直接输出" in raw:
+        return create_error_entry(item_id, "Output contains unfilled placeholder"), True
+
+    output_path = os.path.join(output_dir, f"{item_id}.md")
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(raw + "\n")
+
+    return {"id": item_id, "status": "success"}, False
+
+
+def run_process_workflow(
+    input_file: str = "temp_input/process_input.jsonl",
+    output_dir: str = "temp_posts",
+    timeout: int = 300,
+    max_workers: int = 1,
+) -> Dict[str, Any]:
+    """
+    Run the one-step process workflow: subtitle → hexo post.
+    Each item is processed individually (not batched JSONL) so Claude
+    outputs plain Markdown directly.
+    """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    os.makedirs(output_dir, exist_ok=True)
+
+    if not os.path.exists(input_file):
+        logger.error(f"Input file not found: {input_file}")
+        return {"success": False, "error": "Input file not found"}
+
+    input_data = jsonl_reader(input_file)
+    if not input_data:
+        logger.info("No items to process")
+        return {"success": True, "processed": 0, "errors": 0}
+
+    skill = load_skill("process")
+    skill_vars = {
+        var["name"]: var.get("default", "")
+        for var in skill.get("variables", [])
+    }
+    base_prompt_template = build_skill_prompt(skill, skill_vars)
+
+    processed = 0
+    errors = 0
+    effective_workers = min(max_workers, len(input_data)) if max_workers > 1 else 1
+    logger.info(f"Processing {len(input_data)} items with max_workers={effective_workers}")
+
+    def _run_item(item):
+        # 把 item 的字段替换进 prompt 模板
+        from .claude_invoker import substitute_variables
+        item_vars = {**skill_vars, **{k: str(v) for k, v in item.items()
+                                       if k in ("video_title", "date", "updated", "subtitle")}}
+        item_vars["subtitle_content"] = item.get("content", "")
+        prompt = substitute_variables(base_prompt_template, item_vars)
+        return _process_one_item(item, prompt, output_dir, timeout)
+
+    if effective_workers <= 1:
+        for item in input_data:
+            result, is_err = _run_item(item)
+            if is_err:
+                errors += 1
+                logger.error(f"Error processing {item.get('id')}: {result.get('error')}")
+            else:
+                processed += 1
+    else:
+        with ThreadPoolExecutor(max_workers=effective_workers) as executor:
+            future_to_item = {executor.submit(_run_item, item): item for item in input_data}
+            for future in as_completed(future_to_item):
+                item = future_to_item[future]
+                try:
+                    result, is_err = future.result()
+                except Exception as e:
+                    is_err = True
+                    logger.error(f"Exception for {item.get('id')}: {e}")
+                if is_err:
+                    errors += 1
+                else:
+                    processed += 1
+
+    result = {"success": errors == 0, "processed": processed, "errors": errors, "total": len(input_data)}
+    logger.info(f"Process workflow complete: {result}")
+    return result
+
+
+async def main_claude_process(timeout: int = 300, max_workers: int = 1):
+    """Main function for one-step subtitle → hexo post processing."""
+    logger.info("Starting Claude Code process workflow...")
+
+    items = prepare_process_input()
+    if not items:
+        logger.info("No new videos to process")
+        return
+
+    result = run_process_workflow(timeout=timeout, max_workers=max_workers)
+    logger.info(f"Process workflow result: {result}")
+
+
+# ---------------------------------------------------------------------------
+# Quarterly / Monthly summary workflow
+# ---------------------------------------------------------------------------
+
+def _get_quarter(year: int, month: int) -> str:
+    return f"{year}Q{(month - 1) // 3 + 1}"
+
+
+def _quarter_date(quarter: str) -> str:
+    """Return the last month of the quarter as YYYY-MM-01."""
+    year = int(quarter[:4])
+    q = int(quarter[5])
+    last_month = q * 3
+    return f"{year}-{last_month:02d}-01"
+
+
+def run_quarterly_workflow(
+    posts_dir: str = None,
+    output_dir: str = None,
+    quarters: list = None,
+    timeout: int = 600,
+    max_chars_per_quarter: int = 60000,
+) -> Dict[str, Any]:
+    """
+    Generate quarterly summary posts from existing temp_posts.
+
+    Args:
+        posts_dir: Directory with processed posts (default: temp_posts)
+        output_dir: Where to write quarterly posts (default: ../source/_posts)
+        quarters: List of quarter strings to generate, e.g. ['2025Q1']. None = all missing.
+        timeout: Timeout per Claude call
+        max_chars_per_quarter: Max chars of post content fed to Claude per quarter
+    """
+    import re as _re2
+
+    if posts_dir is None:
+        posts_dir = "temp_posts"
+    if output_dir is None:
+        output_dir = os.path.join(WORK_DIR, "..", "source", "_posts")
+    output_dir = os.path.normpath(output_dir)
+    os.makedirs(output_dir, exist_ok=True)
+
+    # 按季度分组 temp_posts 文件
+    by_quarter: Dict[str, list] = {}
+    for fname in os.listdir(posts_dir):
+        if not fname.endswith(".md"):
+            continue
+        content = open(os.path.join(posts_dir, fname), encoding="utf-8").read()
+        m = _re2.search(r"^date:\s*(\d{4})-(\d{2})", content, _re2.MULTILINE)
+        if not m:
+            continue
+        year, month = int(m.group(1)), int(m.group(2))
+        q = _get_quarter(year, month)
+        by_quarter.setdefault(q, []).append(fname)
+
+    # 已存在的季度总结
+    existing = {
+        f.replace("_Ceph社区季度总结.md", "")
+        for f in os.listdir(output_dir)
+        if "季度总结" in f
+    }
+
+    target_quarters = quarters if quarters else [
+        q for q in sorted(by_quarter) if q not in existing
+    ]
+
+    if not target_quarters:
+        logger.info("All quarters already have summaries")
+        return {"success": True, "processed": 0, "skipped": len(existing)}
+
+    skill = load_skill("quarterly")
+    # 直接用原始模板，不预先替换默认值（否则占位符会被空字符串覆盖）
+    base_template = skill.get("system_prompt", "")
+
+    from .claude_invoker import substitute_variables
+
+    processed = 0
+    errors = 0
+
+    for quarter in target_quarters:
+        post_files = by_quarter.get(quarter, [])
+        if not post_files:
+            logger.warning(f"No posts found for {quarter}, skipping")
+            continue
+
+        logger.info(f"Generating quarterly summary for {quarter} ({len(post_files)} posts)")
+
+        # 拼接文章内容，截断到 max_chars
+        parts = []
+        total = 0
+        for fname in sorted(post_files):
+            path = os.path.join(posts_dir, fname)
+            try:
+                text = open(path, encoding="utf-8").read()
+                # 去掉 front matter，只取正文
+                body = text.split("---", 2)[-1].strip() if text.count("---") >= 2 else text
+                snippet = f"### {fname.replace('.md','')}\n{body[:2000]}\n"
+                if total + len(snippet) > max_chars_per_quarter:
+                    break
+                parts.append(snippet)
+                total += len(snippet)
+            except Exception as e:
+                logger.warning(f"Could not read {fname}: {e}")
+
+        posts_content = "\n\n".join(parts)
+        item_vars = {
+            "quarter": quarter,
+            "post_count": str(len(post_files)),
+            "posts_content": posts_content,
+        }
+        prompt = substitute_variables(base_template, item_vars)
+
+        response = invoke_claude(prompt=prompt, timeout=timeout)
+        if not response.get("success"):
+            logger.error(f"Failed to generate {quarter}: {response.get('error')}")
+            errors += 1
+            continue
+
+        body = (response.get("output") or "").strip()
+        body = _re.sub(r"\x1b\[[0-9;]*m", "", body).lstrip("\n")
+
+        date_str = _quarter_date(quarter)
+        front_matter = f"""---
+title: "{quarter} Ceph社区季度进展报告"
+date: {date_str}
+updated: {date_str}
+categories:
+- 季度总结
+tags:
+- Ceph
+- 社区动态
+- 季度报告
+subtitle: {quarter}_quarterly_summary
+---
+
+"""
+        out_path = os.path.join(output_dir, f"{quarter}_Ceph社区季度总结.md")
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(front_matter + body + "\n")
+
+        logger.info(f"Written: {out_path}")
+        processed += 1
+
+    result = {"success": errors == 0, "processed": processed, "errors": errors}
+    logger.info(f"Quarterly workflow complete: {result}")
+    return result
+
+
+async def main_claude_quarterly(quarters: list = None, timeout: int = 600):
+    """Generate missing quarterly summary posts."""
+    logger.info("Starting quarterly summary workflow...")
+    result = run_quarterly_workflow(quarters=quarters, timeout=timeout)
+    logger.info(f"Quarterly result: {result}")

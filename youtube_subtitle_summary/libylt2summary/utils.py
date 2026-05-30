@@ -200,8 +200,43 @@ def get_quarter(date):
 def html_to_markdown(html_content):
     """
     将HTML内容转换为Markdown格式。
-    
+
     :param html_content: HTML格式的字符串
     :return: Markdown格式的字符串
     """
     return md(html_content, heading_style="ATX")
+
+
+def sanitize_yaml_string(s: str) -> str:
+    """移除或替换可能导致YAML解析错误的字符。"""
+    return s.replace('"', '').replace("'", "").replace(":", "-").strip()
+
+
+def clean_front_matter(content: str) -> str:
+    """
+    清理 LLM 输出的 front matter：
+    - 只保留前两个 --- 分隔符
+    - 对 front matter 内的 YAML 值做 sanitize
+    """
+    lines = content.split('\n')
+    in_front_matter = False
+    cleaned_lines = []
+    delimiter_count = 0
+
+    for line in lines:
+        if line.strip() == '---':
+            delimiter_count += 1
+            if delimiter_count <= 2:
+                in_front_matter = not in_front_matter
+                cleaned_lines.append(line)
+            # 超过2个的 --- 直接跳过
+        elif in_front_matter:
+            if ':' in line:
+                key, value = line.split(':', 1)
+                cleaned_value = sanitize_yaml_string(value)
+                cleaned_lines.append(f"{key}: {cleaned_value}")
+            else:
+                cleaned_lines.append(line)
+        else:
+            cleaned_lines.append(line)
+    return '\n'.join(cleaned_lines)

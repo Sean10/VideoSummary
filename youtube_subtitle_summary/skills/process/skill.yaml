@@ -1,0 +1,97 @@
+# Process Skill - Subtitle to Hexo Post (one-step)
+# Merges summarize + reflect into a single LLM call.
+# Version: 1.0.0
+
+name: process
+version: 1.0.0
+description: >
+  直接将视频字幕转换为带 Hexo front matter 的中文博客文章，
+  一步完成总结、审阅和元数据生成。
+
+system_prompt: |
+  你是专业的分布式存储 Ceph 研发人员，同时也是视频会议字幕的中文总结专家。
+
+  请将以下视频字幕内容处理成一篇完整的中文博客文章，要求：
+  1. 用中文编写高质量的会议纪要，涵盖关键细节、主要议题、决定事项和后续行动计划
+  2. 保留 Ceph/计算机领域的英文关键词（见下方列表）
+  3. 生成 3-5 个相关标签，标签不得包含引号或特殊字符
+
+  注意原始字幕是音译，可能有错误的文本关键词，请结合上下文判断实际含义。
+
+  Ceph 相关保留关键词：
+  {{ceph_keywords}}
+
+  视频标题：{{video_title}}
+
+  字幕内容：
+  {{subtitle_content}}
+
+  请严格按照以下格式输出，不要输出任何其他内容：
+
+  ---
+  title: {{video_title}}
+  date: {{date}}
+  updated: {{updated}}
+  tags:
+  - tag1
+  - tag2
+  - tag3
+  categories:
+  - 视频总结
+  subtitle: {{subtitle}}
+  ---
+
+  [此处直接输出中文会议纪要正文，不要有任何占位符]
+
+  输出规则（必须严格遵守）：
+  - 只输出上面格式的内容，不要重复问题，不要解释
+  - front matter 中的 title/date/updated/subtitle 值不要修改
+  - 如果 title 中含有引号，去除它们
+  - 正文中绝对不允许出现 --- 分隔符
+  - tags 中每个标签单独一行，格式为 "- 标签名"，不含引号
+  - categories 固定为 "- 视频总结"，不加引号
+  - 除了开头的 front matter 之外，不要再添加任何 --- 标记
+
+input_schema:
+  type: object
+  properties:
+    subtitle_content:
+      type: string
+      description: 视频字幕原文
+    video_title:
+      type: string
+      description: 视频标题（已 sanitize）
+    date:
+      type: string
+      description: 发布日期 YYYY-MM-DD
+    updated:
+      type: string
+      description: 更新日期 YYYY-MM-DD
+    subtitle:
+      type: string
+      description: 文件名标识符（= id）
+  required: [subtitle_content, video_title, date, updated, subtitle]
+
+output_schema:
+  type: string
+  description: 完整的 Hexo Markdown 文章（front matter + 中文正文）
+
+variables:
+  - name: ceph_keywords
+    description: Ceph 相关保留关键词列表
+    default: |
+      Ceph, distributed storage, CRUSH algorithm, high availability, scalability, object storage,
+      block storage, file system storage, consistency, decentralization, performance, bluestore,
+      bluefs, rocksdb, OSD, MON, MDS, PG, RADOS, librados, libcephfs, cephfs, rbd, radosgw, RGW,
+      RESTful API, authentication, authorization, encryption, erasure coding, replication,
+      snapshots, clones, thin provisioning, iSCSI, Fibre Channel, NFS, CIFS, POSIX, monitoring,
+      dashboard, management, orchestration, automation, integration, containerization,
+      Kubernetes, Docker, virtualization, cloud computing, AWS, Azure, Google Cloud,
+      hybrid cloud, multi-cloud, storage cluster, node, disk, SSD, HDD, JBOD, SAN, NAS,
+      network, topology, failure domain, recovery, resilience, load balancing, caching,
+      compression, deduplication, tiering, performance tuning, benchmarking, testing, validation
+
+metadata:
+  author: VideoSummary Team
+  tags: [ceph, process, hexo, one-step]
+  source: merged from summarize + reflect skills

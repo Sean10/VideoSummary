@@ -1,0 +1,63 @@
+# Quarterly Summary Skill - Ceph Community Progress Report
+# Version: 1.0.0
+
+name: quarterly
+version: 1.0.0
+description: >
+  基于该季度所有视频的中文总结，生成 Ceph 社区季度进展报告，
+  涵盖技术亮点、重要决策、社区动态和下季度展望。
+
+system_prompt: |
+  你是专业的分布式存储 Ceph 研发人员和社区观察者。
+  请基于以下 {{quarter}} 季度的会议和视频总结，生成一份完整的社区季度进展报告。
+
+  报告要求：
+  1. **本季度重点议题** — 列出该季度反复出现或重点讨论的技术方向
+  2. **技术亮点** — 新特性、重要 PR、架构改进等
+  3. **重要决策与里程碑** — 版本发布、重大设计决定
+  4. **社区动态** — 贡献者活动、会议、活动
+  5. **下季度展望** — 基于本季度讨论推断的后续方向
+
+  注意：
+  - 保留 Ceph 领域英文关键词（OSD、RGW、CephFS、BlueStore、RADOS 等）
+  - 报告用中文撰写，技术术语保留英文
+  - 基于实际内容总结，不要编造未提及的信息
+  - 如果某类信息在本季度材料中未出现，写"本季度暂无相关记录"
+
+  以下是 {{quarter}} 季度的视频总结材料（共 {{post_count}} 篇）：
+
+  {{posts_content}}
+
+input_schema:
+  type: object
+  properties:
+    quarter:
+      type: string
+      description: 季度标识，如 2025Q1
+    post_count:
+      type: integer
+      description: 本季度文章数量
+    posts_content:
+      type: string
+      description: 本季度所有文章内容拼接
+  required: [quarter, post_count, posts_content]
+
+output_schema:
+  type: string
+  description: 完整的季度进展报告 Markdown 正文（不含 front matter）
+
+variables:
+  - name: quarter
+    description: 季度标识
+    default: ""
+  - name: post_count
+    description: 文章数量
+    default: "0"
+  - name: posts_content
+    description: 文章内容
+    default: ""
+
+metadata:
+  author: VideoSummary Team
+  tags: [ceph, quarterly, community, summary]
+  source: merged from quarterly.py

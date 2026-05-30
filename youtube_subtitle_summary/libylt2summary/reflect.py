@@ -1,7 +1,7 @@
 import os
 import asyncio
 from asyncio import Semaphore
-from .utils import call_openai_api, get_metadata_from_jsonl, logger, sanitize_filename
+from .utils import call_openai_api, get_metadata_from_jsonl, logger, sanitize_filename, sanitize_yaml_string, clean_front_matter
 import time
 from openai import AsyncOpenAI
 
@@ -124,10 +124,6 @@ compression, deduplication, tiering, performance tuning, benchmarking, testing, 
             total_duration = end_time - start_time
             logger.info(f"处理文件 {summary_file} 总耗时: {total_duration:.2f} 秒")
 
-def sanitize_yaml_string(s):
-    # 移除或替换可能导致YAML解析错误的字符
-    return s.replace('"', '').replace("'", "").replace(":", "-").strip()
-
 async def process_reflections():
     summary_dir = "summary"
     original_dir = "subtitles_origin"
@@ -177,27 +173,3 @@ async def process_reflections():
     logger.info(f"处理所有新文件总耗时: {total_duration:.2f} 秒")
     logger.info(f"平均每个新文件耗时: {total_duration / len(tasks):.2f} 秒")
 
-def clean_front_matter(content):
-    lines = content.split('\n')
-    in_front_matter = False
-    cleaned_lines = []
-    delimiter_count = 0  # 记录 --- 分隔符的数量
-
-    for line in lines:
-        if line.strip() == '---':
-            delimiter_count += 1
-            if delimiter_count <= 2:
-                # 只保留前两个 --- 作为 front matter 分隔符
-                in_front_matter = not in_front_matter
-                cleaned_lines.append(line)
-            # 超过2个的 --- 直接跳过，不添加到结果中
-        elif in_front_matter:
-            if ':' in line:
-                key, value = line.split(':', 1)
-                cleaned_value = sanitize_yaml_string(value)
-                cleaned_lines.append(f"{key}: {cleaned_value}")
-            else:
-                cleaned_lines.append(line)
-        else:
-            cleaned_lines.append(line)
-    return '\n'.join(cleaned_lines)

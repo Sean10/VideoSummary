@@ -83,6 +83,12 @@ async def main():
                         help='Reflect using Claude Code CLI (instead of direct API)')
     parser.add_argument('--claude-classify', action='store_true',
                         help='Classify using Claude Code CLI (instead of direct API)')
+    parser.add_argument('--claude-process', action='store_true',
+                        help='One-step: subtitle → hexo post via Claude (replaces --claude-summarize + --claude-reflect)')
+    parser.add_argument('--claude-quarterly', action='store_true',
+                        help='Generate missing quarterly summary posts via Claude')
+    parser.add_argument('--quarters', type=str, default=None,
+                        help='Comma-separated quarters to generate, e.g. 2025Q1,2025Q2 (default: all missing)')
     parser.add_argument('--batch-size', type=int, default=10,
                         help='Batch size for Claude Code processing (default: 10)')
     parser.add_argument('--max-workers', type=int, default=1,
@@ -121,6 +127,8 @@ async def main():
         args.claude_summarize,
         args.claude_reflect,
         args.claude_classify,
+        args.claude_process,
+        args.claude_quarterly,
     ))
     if not has_action:
         parser.print_help()
@@ -218,6 +226,17 @@ async def main():
             batch_size=args.batch_size,
             timeout=args.timeout,
             max_workers=args.max_workers
+        )
+    if args.claude_process:
+        await claude_workflow.main_claude_process(
+            timeout=args.timeout,
+            max_workers=args.max_workers
+        )
+    if args.claude_quarterly:
+        quarters = [q.strip() for q in args.quarters.split(',')] if args.quarters else None
+        await claude_workflow.main_claude_quarterly(
+            quarters=quarters,
+            timeout=args.timeout,
         )
 
     await process_retry_queue()
