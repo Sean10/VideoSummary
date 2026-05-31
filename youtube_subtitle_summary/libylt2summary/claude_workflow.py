@@ -747,6 +747,54 @@ def _get_quarter(year: int, month: int) -> str:
     return f"{year}Q{(month - 1) // 3 + 1}"
 
 
+def _build_post_url(fname: str, posts_dir: str, site_root: str = "/VideoSummary") -> str:
+    """根据文件名和 front matter date 构建 hexo permalink。"""
+    path = os.path.join(posts_dir, fname)
+    try:
+        content = open(path, encoding="utf-8").read()
+        m = _re.search(r"^date:\s*(\d{4})-(\d{2})-(\d{2})", content, _re.MULTILINE)
+        if not m:
+            return ""
+        year, month, day = m.group(1), m.group(2), m.group(3)
+        title = fname.replace(".md", "")
+        return f"{site_root}/{year}/{month}/{day}/{title}/"
+    except Exception:
+        return ""
+
+
+def _get_post_title(fname: str, posts_dir: str) -> str:
+    """从 front matter 读取 title 字段，fallback 到文件名。"""
+    try:
+        content = open(os.path.join(posts_dir, fname), encoding="utf-8").read()
+        m = _re.search(r'^title:\s*["\']?(.+?)["\']?\s*$', content, _re.MULTILINE)
+        if m:
+            return m.group(1).strip().strip('"').strip("'")
+    except Exception:
+        pass
+    return fname.replace(".md", "").replace("_", " ")
+
+
+def _replace_placeholder_links(body: str, post_files: list, posts_dir: str) -> str:
+    """
+    把 Claude 输出中的占位符链接 [title](filename) 替换为真实 hexo URL。
+    只替换 href 部分是纯文件名（不含 / 和 http）的链接。
+    """
+    fname_to_url = {
+        fname.replace(".md", ""): _build_post_url(fname, posts_dir)
+        for fname in post_files
+    }
+
+    def replace_link(m):
+        text, href = m.group(1), m.group(2)
+        if "/" not in href and not href.startswith("http"):
+            url = fname_to_url.get(href, "")
+            if url:
+                return f"[{text}]({url})"
+        return m.group(0)
+
+    return _re.sub(r'\[([^\]]+)\]\(([^)]+)\)', replace_link, body)
+
+
 def _quarter_date(quarter: str) -> str:
     """Return the last month of the quarter as YYYY-MM-01."""
     year = int(quarter[:4])
@@ -860,6 +908,19 @@ def run_quarterly_workflow(
         body = (response.get("output") or "").strip()
         body = _re.sub(r"\x1b\[[0-9;]*m", "", body).lstrip("\n")
 
+        # 替换正文中的占位符链接为真实 hexo URL
+        body = _replace_placeholder_links(body, post_files, posts_dir)
+
+        # 构建末尾全量参考文章列表
+        ref_lines = ["\n\n---\n\n## 参考文章\n"]
+        for fname in sorted(post_files):
+            url = _build_post_url(fname, posts_dir)
+            if not url:
+                continue
+            title = _get_post_title(fname, posts_dir)
+            ref_lines.append(f"- [{title}]({url})")
+        ref_section = "\n".join(ref_lines)
+
         date_str = _quarter_date(quarter)
         front_matter = f"""---
 title: "{quarter} Ceph社区季度进展报告"
@@ -877,7 +938,7 @@ subtitle: {quarter}_quarterly_summary
 """
         out_path = os.path.join(output_dir, f"{quarter}_Ceph社区季度总结.md")
         with open(out_path, "w", encoding="utf-8") as f:
-            f.write(front_matter + body + "\n")
+            f.write(front_matter + body + ref_section + "\n")
 
         logger.info(f"Written: {out_path}")
         processed += 1
