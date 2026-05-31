@@ -23,6 +23,14 @@ system_prompt: |
   - 报告用中文撰写，技术术语保留英文
   - 基于实际内容总结，不要编造未提及的信息
   - 如果某类信息在本季度材料中未出现，写"本季度暂无相关记录"
+  - front matter 的 tags 必须从以下白名单中选 3-5 个，不得使用白名单以外的标签：
+    Ceph, RGW, CephFS, OSD, MON, MDS, RBD, RADOS, BlueStore, BlueFS, RocksDB, Crimson, Cephadm,
+    分布式存储, 对象存储, 块存储, 文件系统存储, 存储集群, 存储优化,
+    性能优化, 高可用性, 可扩展性, CRUSH算法, Erasure Coding, 加密, 快照, 克隆, 复制, 认证, 授权, 压缩, 去重, 缓存, 分层,
+    PG, librados, libcephfs, RESTful API, NFS, iSCSI, POSIX, CIFS,
+    Kubernetes, Rook, OpenStack, Docker, AWS, Azure, Google Cloud, 云计算, 混合云, 多云, 容器化, 虚拟化,
+    监控, 自动化, 编排, Dashboard, Teuthology, CI/CD, 负载均衡, 恢复, 弹性, 网络, NVMe, HDD, SSD, SAN, NAS,
+    社区动态, 季度报告, 开源, 安全性, 性能, 测试, 存储, CERN, 软件定义存储
 
   链接格式说明（重要）：
   - 当正文中提到某篇具体会议或视频时，用 markdown 链接格式引用：[文章标题](文件名)
