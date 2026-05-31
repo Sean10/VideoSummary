@@ -803,12 +803,97 @@ def _quarter_date(quarter: str) -> str:
     return f"{year}-{last_month:02d}-01"
 
 
+def _get_month(year: int, month: int) -> str:
+    return f"{year}-{month:02d}"
+
+
+def _month_date(month_str: str) -> str:
+    return f"{month_str}-01"
+
+
+def _year_date(year: str) -> str:
+    return f"{year}-12-01"
+
+
+def _is_summary_stale(summary_path: str, post_files: list, posts_dir: str) -> bool:
+    """
+    检测总结文件是否过期：temp_posts 中该时间段内有任何文章的 mtime 比总结更新则过期。
+    """
+    if not os.path.exists(summary_path):
+        return True
+    summary_mtime = os.path.getmtime(summary_path)
+    for fname in post_files:
+        fpath = os.path.join(posts_dir, fname)
+        if os.path.exists(fpath) and os.path.getmtime(fpath) > summary_mtime:
+            return True
+    return False
+
+
+def _build_summary_body(
+    skill_name: str,
+    period_key: str,
+    period_var: str,
+    post_files: list,
+    posts_dir: str,
+    timeout: int,
+    max_chars: int,
+) -> tuple:
+    """
+    共用的 Claude 调用逻辑：加载 skill、拼接内容、调用 Claude、后处理。
+    返回 (body, ref_section) 或 (None, None) 表示失败。
+    """
+    from .claude_invoker import substitute_variables
+
+    skill = load_skill(skill_name)
+    base_template = skill.get("system_prompt", "")
+
+    parts = []
+    total = 0
+    for fname in sorted(post_files):
+        path = os.path.join(posts_dir, fname)
+        try:
+            text = open(path, encoding="utf-8").read()
+            body_text = text.split("---", 2)[-1].strip() if text.count("---") >= 2 else text
+            snippet = f"### {fname.replace('.md', '')}\n{body_text[:2000]}\n"
+            if total + len(snippet) > max_chars:
+                break
+            parts.append(snippet)
+            total += len(snippet)
+        except Exception as e:
+            logger.warning(f"Could not read {fname}: {e}")
+
+    posts_content = "\n\n".join(parts)
+    item_vars = {period_var: period_key, "post_count": str(len(post_files)), "posts_content": posts_content}
+    prompt = substitute_variables(base_template, item_vars)
+
+    response = invoke_claude(prompt=prompt, timeout=timeout)
+    if not response.get("success"):
+        logger.error(f"Failed to generate {period_key}: {response.get('error')}")
+        return None, None
+
+    body = (response.get("output") or "").strip()
+    body = _re.sub(r"\x1b\[[0-9;]*m", "", body).lstrip("\n")
+    body = _replace_placeholder_links(body, post_files, posts_dir)
+
+    ref_lines = ["\n\n---\n\n## 参考文章\n"]
+    for fname in sorted(post_files):
+        url = _build_post_url(fname, posts_dir)
+        if not url:
+            continue
+        title = _get_post_title(fname, posts_dir)
+        ref_lines.append(f"- [{title}]({url})")
+    ref_section = "\n".join(ref_lines)
+
+    return body, ref_section
+
+
 def run_quarterly_workflow(
     posts_dir: str = None,
     output_dir: str = None,
     quarters: list = None,
     timeout: int = 600,
     max_chars_per_quarter: int = 60000,
+    force_update: bool = False,
 ) -> Dict[str, Any]:
     """
     Generate quarterly summary posts from existing temp_posts.
@@ -835,7 +920,7 @@ def run_quarterly_workflow(
         if not fname.endswith(".md"):
             continue
         content = open(os.path.join(posts_dir, fname), encoding="utf-8").read()
-        m = _re2.search(r"^date:\s*(\d{4})-(\d{2})", content, _re2.MULTILINE)
+        m = _re.search(r"^date:\s*(\d{4})-(\d{2})", content, _re.MULTILINE)
         if not m:
             continue
         year, month = int(m.group(1)), int(m.group(2))
@@ -849,19 +934,21 @@ def run_quarterly_workflow(
         if "季度总结" in f
     }
 
+    def _should_gen(q: str) -> bool:
+        if q not in existing:
+            return True
+        if force_update:
+            return True
+        summary_path = os.path.join(output_dir, f"{q}_Ceph社区季度总结.md")
+        return _is_summary_stale(summary_path, by_quarter.get(q, []), posts_dir)
+
     target_quarters = quarters if quarters else [
-        q for q in sorted(by_quarter) if q not in existing
+        q for q in sorted(by_quarter) if _should_gen(q)
     ]
 
     if not target_quarters:
-        logger.info("All quarters already have summaries")
+        logger.info("All quarters already have summaries (and none are stale)")
         return {"success": True, "processed": 0, "skipped": len(existing)}
-
-    skill = load_skill("quarterly")
-    # 直接用原始模板，不预先替换默认值（否则占位符会被空字符串覆盖）
-    base_template = skill.get("system_prompt", "")
-
-    from .claude_invoker import substitute_variables
 
     processed = 0
     errors = 0
@@ -874,52 +961,12 @@ def run_quarterly_workflow(
 
         logger.info(f"Generating quarterly summary for {quarter} ({len(post_files)} posts)")
 
-        # 拼接文章内容，截断到 max_chars
-        parts = []
-        total = 0
-        for fname in sorted(post_files):
-            path = os.path.join(posts_dir, fname)
-            try:
-                text = open(path, encoding="utf-8").read()
-                # 去掉 front matter，只取正文
-                body = text.split("---", 2)[-1].strip() if text.count("---") >= 2 else text
-                snippet = f"### {fname.replace('.md','')}\n{body[:2000]}\n"
-                if total + len(snippet) > max_chars_per_quarter:
-                    break
-                parts.append(snippet)
-                total += len(snippet)
-            except Exception as e:
-                logger.warning(f"Could not read {fname}: {e}")
-
-        posts_content = "\n\n".join(parts)
-        item_vars = {
-            "quarter": quarter,
-            "post_count": str(len(post_files)),
-            "posts_content": posts_content,
-        }
-        prompt = substitute_variables(base_template, item_vars)
-
-        response = invoke_claude(prompt=prompt, timeout=timeout)
-        if not response.get("success"):
-            logger.error(f"Failed to generate {quarter}: {response.get('error')}")
+        body, ref_section = _build_summary_body(
+            "quarterly", quarter, "quarter", post_files, posts_dir, timeout, max_chars_per_quarter
+        )
+        if body is None:
             errors += 1
             continue
-
-        body = (response.get("output") or "").strip()
-        body = _re.sub(r"\x1b\[[0-9;]*m", "", body).lstrip("\n")
-
-        # 替换正文中的占位符链接为真实 hexo URL
-        body = _replace_placeholder_links(body, post_files, posts_dir)
-
-        # 构建末尾全量参考文章列表
-        ref_lines = ["\n\n---\n\n## 参考文章\n"]
-        for fname in sorted(post_files):
-            url = _build_post_url(fname, posts_dir)
-            if not url:
-                continue
-            title = _get_post_title(fname, posts_dir)
-            ref_lines.append(f"- [{title}]({url})")
-        ref_section = "\n".join(ref_lines)
 
         date_str = _quarter_date(quarter)
         front_matter = f"""---
@@ -948,8 +995,219 @@ subtitle: {quarter}_quarterly_summary
     return result
 
 
-async def main_claude_quarterly(quarters: list = None, timeout: int = 600):
-    """Generate missing quarterly summary posts."""
+async def main_claude_quarterly(quarters: list = None, timeout: int = 600, force_update: bool = False):
+    """Generate quarterly summary posts (missing or stale)."""
     logger.info("Starting quarterly summary workflow...")
-    result = run_quarterly_workflow(quarters=quarters, timeout=timeout)
+    result = run_quarterly_workflow(quarters=quarters, timeout=timeout, force_update=force_update)
     logger.info(f"Quarterly result: {result}")
+
+
+# ---------------------------------------------------------------------------
+# Monthly summary workflow
+# ---------------------------------------------------------------------------
+
+def run_monthly_workflow(
+    posts_dir: str = None,
+    output_dir: str = None,
+    months: list = None,
+    timeout: int = 600,
+    max_chars_per_month: int = 40000,
+    force_update: bool = False,
+) -> Dict[str, Any]:
+    """Generate monthly summary posts from existing temp_posts."""
+    if posts_dir is None:
+        posts_dir = "temp_posts"
+    if output_dir is None:
+        output_dir = os.path.join(WORK_DIR, "..", "source", "_posts")
+    output_dir = os.path.normpath(output_dir)
+    os.makedirs(output_dir, exist_ok=True)
+
+    by_month: Dict[str, list] = {}
+    for fname in os.listdir(posts_dir):
+        if not fname.endswith(".md"):
+            continue
+        content = open(os.path.join(posts_dir, fname), encoding="utf-8").read()
+        m = _re.search(r"^date:\s*(\d{4})-(\d{2})", content, _re.MULTILINE)
+        if not m:
+            continue
+        year, month = int(m.group(1)), int(m.group(2))
+        key = _get_month(year, month)
+        by_month.setdefault(key, []).append(fname)
+
+    existing = {
+        f.replace("_Ceph社区月度总结.md", "")
+        for f in os.listdir(output_dir)
+        if "月度总结" in f
+    }
+
+    def _should_gen(k: str) -> bool:
+        if k not in existing:
+            return True
+        if force_update:
+            return True
+        return _is_summary_stale(
+            os.path.join(output_dir, f"{k}_Ceph社区月度总结.md"),
+            by_month.get(k, []), posts_dir
+        )
+
+    target_months = months if months else [k for k in sorted(by_month) if _should_gen(k)]
+
+    if not target_months:
+        logger.info("All months already have summaries (and none are stale)")
+        return {"success": True, "processed": 0, "skipped": len(existing)}
+
+    processed = 0
+    errors = 0
+
+    for month_key in target_months:
+        post_files = by_month.get(month_key, [])
+        if not post_files:
+            logger.warning(f"No posts found for {month_key}, skipping")
+            continue
+
+        logger.info(f"Generating monthly summary for {month_key} ({len(post_files)} posts)")
+
+        body, ref_section = _build_summary_body(
+            "monthly", month_key, "month", post_files, posts_dir, timeout, max_chars_per_month
+        )
+        if body is None:
+            errors += 1
+            continue
+
+        date_str = _month_date(month_key)
+        front_matter = f"""---
+title: "{month_key} Ceph社区月度进展报告"
+date: {date_str}
+updated: {date_str}
+categories:
+- 月度总结
+tags:
+- Ceph
+- 社区动态
+- 月度报告
+subtitle: {month_key}_monthly_summary
+---
+
+"""
+        out_path = os.path.join(output_dir, f"{month_key}_Ceph社区月度总结.md")
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(front_matter + body + ref_section + "\n")
+
+        logger.info(f"Written: {out_path}")
+        processed += 1
+
+    result = {"success": errors == 0, "processed": processed, "errors": errors}
+    logger.info(f"Monthly workflow complete: {result}")
+    return result
+
+
+async def main_claude_monthly(months: list = None, timeout: int = 600, force_update: bool = False):
+    """Generate monthly summary posts (missing or stale)."""
+    logger.info("Starting monthly summary workflow...")
+    result = run_monthly_workflow(months=months, timeout=timeout, force_update=force_update)
+    logger.info(f"Monthly result: {result}")
+
+
+# ---------------------------------------------------------------------------
+# Yearly summary workflow
+# ---------------------------------------------------------------------------
+
+def run_yearly_workflow(
+    posts_dir: str = None,
+    output_dir: str = None,
+    years: list = None,
+    timeout: int = 900,
+    max_chars_per_year: int = 80000,
+    force_update: bool = False,
+) -> Dict[str, Any]:
+    """Generate yearly summary posts from existing temp_posts."""
+    if posts_dir is None:
+        posts_dir = "temp_posts"
+    if output_dir is None:
+        output_dir = os.path.join(WORK_DIR, "..", "source", "_posts")
+    output_dir = os.path.normpath(output_dir)
+    os.makedirs(output_dir, exist_ok=True)
+
+    by_year: Dict[str, list] = {}
+    for fname in os.listdir(posts_dir):
+        if not fname.endswith(".md"):
+            continue
+        content = open(os.path.join(posts_dir, fname), encoding="utf-8").read()
+        m = _re.search(r"^date:\s*(\d{4})-(\d{2})", content, _re.MULTILINE)
+        if not m:
+            continue
+        year = m.group(1)
+        by_year.setdefault(year, []).append(fname)
+
+    existing = {
+        f.replace("_Ceph社区年度总结.md", "")
+        for f in os.listdir(output_dir)
+        if "年度总结" in f
+    }
+
+    def _should_gen(k: str) -> bool:
+        if k not in existing:
+            return True
+        if force_update:
+            return True
+        return _is_summary_stale(
+            os.path.join(output_dir, f"{k}_Ceph社区年度总结.md"),
+            by_year.get(k, []), posts_dir
+        )
+
+    target_years = years if years else [k for k in sorted(by_year) if _should_gen(k)]
+
+    if not target_years:
+        logger.info("All years already have summaries (and none are stale)")
+        return {"success": True, "processed": 0, "skipped": len(existing)}
+
+    processed = 0
+    errors = 0
+
+    for year_key in target_years:
+        post_files = by_year.get(year_key, [])
+        if not post_files:
+            logger.warning(f"No posts found for {year_key}, skipping")
+            continue
+
+        logger.info(f"Generating yearly summary for {year_key} ({len(post_files)} posts)")
+
+        body, ref_section = _build_summary_body(
+            "yearly", year_key, "year", post_files, posts_dir, timeout, max_chars_per_year
+        )
+        if body is None:
+            errors += 1
+            continue
+
+        date_str = _year_date(year_key)
+        front_matter = f"""---
+title: "{year_key} Ceph社区年度进展报告"
+date: {date_str}
+updated: {date_str}
+categories:
+- 年度总结
+tags:
+- Ceph
+- 社区动态
+- 年度报告
+subtitle: {year_key}_yearly_summary
+---
+
+"""
+        out_path = os.path.join(output_dir, f"{year_key}_Ceph社区年度总结.md")
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(front_matter + body + ref_section + "\n")
+
+        logger.info(f"Written: {out_path}")
+        processed += 1
+
+    result = {"success": errors == 0, "processed": processed, "errors": errors}
+    logger.info(f"Yearly workflow complete: {result}")
+    return result
+
+
+async def main_claude_yearly(years: list = None, timeout: int = 900, force_update: bool = False):
+    """Generate yearly summary posts (missing or stale)."""
+    logger.info("Starting yearly summary workflow...")
+    result = run_yearly_workflow(years=years, timeout=timeout, force_update=force_update)
+    logger.info(f"Yearly result: {result}")

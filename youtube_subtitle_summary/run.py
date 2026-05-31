@@ -86,9 +86,19 @@ async def main():
     parser.add_argument('--claude-process', action='store_true',
                         help='One-step: subtitle → hexo post via Claude (replaces --claude-summarize + --claude-reflect)')
     parser.add_argument('--claude-quarterly', action='store_true',
-                        help='Generate missing quarterly summary posts via Claude')
+                        help='Generate quarterly summary posts via Claude')
     parser.add_argument('--quarters', type=str, default=None,
-                        help='Comma-separated quarters to generate, e.g. 2025Q1,2025Q2 (default: all missing)')
+                        help='Comma-separated quarters to generate, e.g. 2025Q1,2025Q2 (default: all missing/stale)')
+    parser.add_argument('--claude-monthly', action='store_true',
+                        help='Generate monthly summary posts via Claude')
+    parser.add_argument('--months', type=str, default=None,
+                        help='Comma-separated months to generate, e.g. 2026-04,2026-05 (default: all missing/stale)')
+    parser.add_argument('--claude-yearly', action='store_true',
+                        help='Generate yearly summary posts via Claude')
+    parser.add_argument('--years', type=str, default=None,
+                        help='Comma-separated years to generate, e.g. 2025,2026 (default: all missing/stale)')
+    parser.add_argument('--force-update', action='store_true',
+                        help='Force regenerate summaries even if they exist (triggers stale detection)')
     parser.add_argument('--batch-size', type=int, default=10,
                         help='Batch size for Claude Code processing (default: 10)')
     parser.add_argument('--max-workers', type=int, default=1,
@@ -129,6 +139,8 @@ async def main():
         args.claude_classify,
         args.claude_process,
         args.claude_quarterly,
+        args.claude_monthly,
+        args.claude_yearly,
     ))
     if not has_action:
         parser.print_help()
@@ -237,6 +249,21 @@ async def main():
         await claude_workflow.main_claude_quarterly(
             quarters=quarters,
             timeout=args.timeout,
+            force_update=args.force_update,
+        )
+    if args.claude_monthly:
+        months = [m.strip() for m in args.months.split(',')] if args.months else None
+        await claude_workflow.main_claude_monthly(
+            months=months,
+            timeout=args.timeout,
+            force_update=args.force_update,
+        )
+    if args.claude_yearly:
+        years = [y.strip() for y in args.years.split(',')] if args.years else None
+        await claude_workflow.main_claude_yearly(
+            years=years,
+            timeout=args.timeout,
+            force_update=args.force_update,
         )
 
     await process_retry_queue()

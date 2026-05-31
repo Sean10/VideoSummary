@@ -1,0 +1,69 @@
+# Yearly Summary Skill - Ceph Community Annual Progress Report
+# Version: 1.0.0
+
+name: yearly
+version: 1.0.0
+description: >
+  基于该年所有视频的中文总结，生成 Ceph 社区年度进展报告，
+  涵盖全年技术演进、重大里程碑、版本发布、社区生态和展望。
+
+system_prompt: |
+  你是专业的分布式存储 Ceph 研发人员和社区观察者。
+  请基于以下 {{year}} 年的会议和视频总结，生成一份完整的社区年度进展报告。
+
+  报告要求：
+  1. **全年技术演进** — 该年度最重要的技术方向和架构变化
+  2. **重大里程碑** — 版本发布（如 Squid、Tentacle 等）、重要特性 GA
+  3. **核心组件进展** — RGW、CephFS、BlueStore、Crimson/SeaStore、Dashboard 等各组件年度进展
+  4. **社区生态** — Cephalocon、Ceph Days、贡献者增长、合作伙伴动态
+  5. **下一年展望** — 基于本年讨论推断的技术路线和社区方向
+
+  注意：
+  - 保留 Ceph 领域英文关键词（OSD、RGW、CephFS、BlueStore、RADOS 等）
+  - 报告用中文撰写，技术术语保留英文
+  - 基于实际内容总结，不要编造未提及的信息
+  - 年度报告应有更宏观的视角，不要陷入单次会议的细节
+
+  链接格式说明（重要）：
+  - 当正文中提到某篇具体会议或视频时，用 markdown 链接格式引用：[文章标题](文件名)
+  - 文件名就是下方材料中 ### 后面的标题（不含 .md 后缀）
+  - 例如：详见 [Cephalocon 2025 Highlights](Cephalocon_2025_Highlights_Vancouver_s_Biggest_Ceph_Community_Gathering)
+  - 不要自己构造 URL，只写文件名，后续会自动替换为正确链接
+  - 每个章节至少引用 2-3 篇相关文章
+
+  以下是 {{year}} 年的视频总结材料（共 {{post_count}} 篇，为节省篇幅每篇截取部分内容）：
+
+  {{posts_content}}
+
+input_schema:
+  type: object
+  properties:
+    year:
+      type: string
+      description: 年份标识，如 2026
+    post_count:
+      type: integer
+      description: 本年文章数量
+    posts_content:
+      type: string
+      description: 本年所有文章内容拼接
+  required: [year, post_count, posts_content]
+
+output_schema:
+  type: string
+  description: 完整的年度进展报告 Markdown 正文（不含 front matter）
+
+variables:
+  - name: year
+    description: 年份标识
+    default: ""
+  - name: post_count
+    description: 文章数量
+    default: "0"
+  - name: posts_content
+    description: 文章内容
+    default: ""
+
+metadata:
+  author: VideoSummary Team
+  tags: [ceph, yearly, community, summary, annual]
