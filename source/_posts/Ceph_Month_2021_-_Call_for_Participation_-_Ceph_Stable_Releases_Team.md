@@ -6,9 +6,6 @@ subtitle: Ceph_Month_2021_-_Call_for_Participation_-_Ceph_Stable_Releases_Team
 tags:
 - Ceph
 - 分布式存储
-- 稳定版本发布
-- 社区参与
-- 版本管理
 title: Ceph Month 2021- Call for Participation- Ceph Stable Releases Team
 updated: 2021-06-02
 ---

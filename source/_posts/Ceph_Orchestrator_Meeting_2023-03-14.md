@@ -5,10 +5,6 @@ updated: 2023-03-15
 tags:
 - Ceph
 - 分布式存储
-- OSD Flags
-- 升级过程
-- OpenStack Manila
-- Ceph NFS服务
 categories:
 - "视频总结"
 subtitle: Ceph_Orchestrator_Meeting_2023-03-14

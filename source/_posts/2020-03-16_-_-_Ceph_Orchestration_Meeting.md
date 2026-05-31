@@ -6,9 +6,7 @@ subtitle: 2020-03-16_-_-_Ceph_Orchestration_Meeting
 tags:
 - Ceph
 - 分布式存储
-- 开发
 - 测试
-- 项目管理
 title: "'2020-03-16 :: Ceph Orchestration Meeting'"
 updated: 2020-04-04
 ---

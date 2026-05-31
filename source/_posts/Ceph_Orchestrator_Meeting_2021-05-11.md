@@ -5,9 +5,6 @@ date: 2021-05-11
 subtitle: Ceph_Orchestrator_Meeting_2021-05-11
 tags:
 - Ceph
-- OpenStack集成
-- NFS模块
-- 存储解决方案
 - 分布式存储
 title: "Ceph Orchestrator Meeting 2021-05-11"
 updated: 2021-05-12

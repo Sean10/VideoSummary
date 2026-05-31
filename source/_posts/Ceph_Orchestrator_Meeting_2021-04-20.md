@@ -6,9 +6,6 @@ subtitle: Ceph_Orchestrator_Meeting_2021-04-20
 tags:
 - Ceph
 - 分布式存储
-- 管理工具
-- Ganesha
-- NVMe over Fabrics
 title: "Ceph Orchestrator Meeting 2021-04-20"
 updated: 2021-04-21
 ---

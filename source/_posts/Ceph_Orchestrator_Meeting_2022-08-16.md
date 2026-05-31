@@ -5,10 +5,7 @@ date: 2022-08-17
 subtitle: Ceph_Orchestrator_Meeting_2022-08-16
 tags:
 - Ceph
-- Distributed Storage
-- RGW Multi
-- Site
-- Configuration Automation
+- 分布式存储
 - Cephadm
 title: "Ceph Orchestrator Meeting 2022-08-16"
 updated: 2022-08-17

@@ -6,9 +6,6 @@ subtitle: 2020-03-02_-_-_Ceph_Orchestration_Meeting
 tags:
 - Ceph
 - 分布式存储
-- Rook项目
-- Octopus版本
-- 集群部署
 title: "'2020-03-02 :: Ceph Orchestration Meeting'"
 updated: 2020-04-04
 ---

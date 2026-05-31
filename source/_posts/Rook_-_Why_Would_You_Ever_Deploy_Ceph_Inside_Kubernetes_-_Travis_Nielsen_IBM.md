@@ -7,8 +7,7 @@ tags:
 - Ceph
 - Kubernetes
 - Rook
-- Distributed Storage
-- Container Orchestration
+- 分布式存储
 title: "'Rook: Why Would You Ever Deploy Ceph Inside Kubernetes? - Travis Nielsen, IBM'"
 updated: 2023-05-05
 ---

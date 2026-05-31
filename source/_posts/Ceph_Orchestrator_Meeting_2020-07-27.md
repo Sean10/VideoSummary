@@ -5,10 +5,9 @@ date: 2020-07-27
 subtitle: Ceph_Orchestrator_Meeting_2020-07-27
 tags:
 - Ceph
-- Orchestrator
+- 编排
 - Rook
-- Distributed Storage
-- Bug Fixes
+- 分布式存储
 title: "Ceph Orchestrator Meeting 2020-07-27"
 updated: 2020-07-28
 ---

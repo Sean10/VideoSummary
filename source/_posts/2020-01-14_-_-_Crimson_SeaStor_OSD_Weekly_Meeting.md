@@ -5,12 +5,6 @@ date: 2020-01-16
 subtitle: 2020-01-14_-_-_Crimson_SeaStor_OSD_Weekly_Meeting
 tags:
 - Ceph
-- B+树
-- 异步版本
-- B+树实现
-- 事务处理
-- 写放大
-- Ceph存储系统
 - OSD
 title: "'2020-01-14 :: Crimson SeaStor OSD Weekly Meeting'"
 updated: 2020-01-16

@@ -4,9 +4,7 @@ date: 2020-07-14
 updated: 2020-07-15
 tags:
 - Ceph
-- dmclock算法
 - 分布式存储
-- QoS
 - OSD
 categories:
 - "视频总结"

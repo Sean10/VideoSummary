@@ -8,7 +8,6 @@ tags:
 - 分布式存储
 - CRUSH算法
 - 性能优化
-- 代码架构
 title: "'2020-03-03 :: Ceph Crimson Meeting'"
 updated: 2020-04-04
 ---

@@ -6,8 +6,6 @@ subtitle: Ceph_Performance_Meeting_2022-12-01
 tags:
 - Ceph
 - 分布式存储
-- 版本控制
-- 自动化工具
 - 测试
 title: Ceph Performance Meeting 2022-12-01
 updated: 2022-12-03

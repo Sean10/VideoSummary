@@ -5,9 +5,6 @@ date: 2014-10-30
 subtitle: CephFS forward scrub 方案讨论会议总结
 tags:
 - CephFS
-- 一致性检查
-- forward scrub
-- 数据完整性
 - 分布式存储
 title: "'CDS G/H (Day 2) - CephFS: forward scrub'"
 updated: 2014-10-30

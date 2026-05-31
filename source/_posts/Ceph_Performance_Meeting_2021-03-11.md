@@ -4,10 +4,9 @@ date: 2021-03-18
 updated: 2021-03-18
 tags:
 - Ceph
-- Performance
+- 性能
 - BlueStore
 - RocksDB
-- Benchmarking
 categories:
 - "视频总结"
 subtitle: Ceph_Performance_Meeting_2021-03-11

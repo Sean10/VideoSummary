@@ -4,9 +4,7 @@ date: 2020-11-24
 updated: 2020-11-25
 tags:
 - Ceph
-- 用户调查
 - 分布式存储
-- 调查问卷
 categories:
 - "会议纪要"
 subtitle: Ceph_User_Survey_Working_Group_2020-11-12

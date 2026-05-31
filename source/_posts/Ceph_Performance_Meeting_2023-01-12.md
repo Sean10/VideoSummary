@@ -8,7 +8,6 @@ tags:
 - 分布式存储
 - RocksDB
 - 性能优化
-- 研究讨论
 title: Ceph Performance Meeting 2023-01-12
 updated: 2023-01-13
 ---

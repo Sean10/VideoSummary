@@ -5,10 +5,9 @@ date: 2021-04-20
 subtitle: Ceph_Developer_Summit_Quincy_-_RADOS_Follow-up
 tags:
 - Ceph
-- distributed storage
+- 分布式存储
 - RADOS
 - BlueStore
-- performance improvement
 title: "'Ceph Developer Summit Quincy: RADOS Follow-up'"
 updated: 2021-04-21
 ---

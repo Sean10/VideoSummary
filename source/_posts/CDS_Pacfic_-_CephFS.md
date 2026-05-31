@@ -5,7 +5,6 @@ date: 2020-04-02
 subtitle: CDS_Pacfic_-_CephFS
 tags:
 - CephFS
-- 快照复制
 - 分布式存储
 - Ceph
 - 存储集群

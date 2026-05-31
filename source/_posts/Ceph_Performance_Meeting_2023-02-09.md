@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 代码审查
-- 集群配置
 title: Ceph Performance Meeting 2023-02-09
 updated: 2023-02-15
 ---

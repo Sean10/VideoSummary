@@ -4,10 +4,8 @@ date: 2020-01-23
 updated: 2020-01-24
 tags:
 - Ceph
-- Distributed Storage
+- 分布式存储
 - Crimson
-- Recovery Mechanism
-- Code Formatting
 categories:
 - "视频总结"
 subtitle: 2020-10-21_-_-_Crimson_SeaStor_OSD_Weekly_Meeting

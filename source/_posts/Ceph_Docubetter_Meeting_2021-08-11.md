@@ -6,9 +6,7 @@ subtitle: Ceph_Docubetter_Meeting_2021-08-11
 tags:
 - Ceph
 - 分布式存储
-- 文档
 - 性能
-- 开发
 title: "Ceph Docubetter Meeting 2021-08-11"
 updated: 2021-08-21
 ---

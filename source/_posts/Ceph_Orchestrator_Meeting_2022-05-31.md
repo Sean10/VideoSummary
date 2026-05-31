@@ -7,7 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 自动化
-- 磁盘管理
 - 监控
 title: "Ceph Orchestrator Meeting 2022-05-31"
 updated: 2022-06-01

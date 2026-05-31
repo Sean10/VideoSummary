@@ -6,10 +6,6 @@ tags:
 - Ceph
 - 分布式存储
 - CRUSH算法
-- 监控系统
-- 自动化部署
-- 功能开发
-- 用户启用
 categories:
 - "视频总结"
 subtitle: 2020-02-05_-_-_Ceph_Developer_Monthly

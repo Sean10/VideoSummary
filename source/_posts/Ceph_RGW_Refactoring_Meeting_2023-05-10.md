@@ -5,10 +5,8 @@ date: 2023-05-10
 subtitle: Ceph_RGW_Refactoring_Meeting_2023-05-10
 tags:
 - Ceph
-- Kafka
 - RGW
-- Code Review
-- Distributed Storage
+- 分布式存储
 title: "Ceph RGW Refactoring Meeting 2023-05-10"
 updated: 2023-05-11
 ---

@@ -5,10 +5,7 @@ date: 2023-05-17
 subtitle: Ceph_Days_NYC_2023_-_Why_We_Built_A_Message-Driven_Telemetry_System_At_Scale_Ceph_Cluster
 tags:
 - Ceph
-- Telemetry System
-- Distributed Storage
-- Storage Engineering
-- Bloomberg
+- 分布式存储
 title: "'Ceph Days NYC 2023: Why We Built A “Message-Driven Telemetry System At Scale” Ceph Cluster'"
 updated: 2023-05-18
 ---

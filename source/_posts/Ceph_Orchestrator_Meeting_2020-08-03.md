@@ -4,8 +4,8 @@ date: 2020-08-03
 updated: 2020-08-04
 tags:
 - Ceph
-- Orchestrator
-- Distributed Storage
+- 编排
+- 分布式存储
 - CephFS
 - Rook
 categories:

@@ -8,7 +8,6 @@ tags:
 - OpenStack
 - 分布式存储
 - 安全性
-- 云服务
 title: Ceph Day CERN 2019- Ceph storage for openstack in a security - Etienne Chabrerie
 updated: 2020-08-26
 ---

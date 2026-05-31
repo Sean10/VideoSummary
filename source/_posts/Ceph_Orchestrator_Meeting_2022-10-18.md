@@ -4,11 +4,7 @@ categories:
 date: 2022-10-18
 subtitle: Ceph_Orchestrator_Meeting_2022-10-18
 tags:
-- Ceph基准测试
-- 存储后端比较
-- CBT工具
-- Ceph性能
-- 后端兼容性
+- 性能
 title: "Ceph Orchestrator Meeting 2022-10-18"
 updated: 2022-10-19
 ---

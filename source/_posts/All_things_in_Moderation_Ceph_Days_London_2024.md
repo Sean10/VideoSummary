@@ -4,10 +4,7 @@ date: 2024-08-23
 updated: 2024-08-24
 tags:
 - Ceph
-- QoS技术
-- SEF对象存储
 - 分布式存储
-- 质量服务
 categories:
 - "视频总结"
 subtitle: All_things_in_Moderation_Ceph_Days_London_2024

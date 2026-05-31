@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- PR 讨论
-- 协作开发
 title: Ceph Performance Meeting 2022-08-04
 updated: 2022-08-06
 ---

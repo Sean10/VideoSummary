@@ -5,8 +5,6 @@ updated: 2014-06-24
 tags:
 - Ceph
 - 分布式存储
-- scrub
-- repair
 - OSD
 categories:
 - "视频总结"

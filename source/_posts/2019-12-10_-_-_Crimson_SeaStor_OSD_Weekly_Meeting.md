@@ -6,8 +6,7 @@ subtitle: 2019-12-10_-_-_Crimson_SeaStor_OSD_Weekly_Meeting
 tags:
 - Ceph
 - BlueStore
-- Storage Design
-- Distributed Storage
+- 分布式存储
 - CephFS
 title: "'2019-12-10 :: Crimson SeaStor OSD Weekly Meeting'"
 updated: 2019-12-12

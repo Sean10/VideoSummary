@@ -3,11 +3,8 @@ title: "  CDS G/H (Day 1) - librados review  "
 date: 2014-06-24
 updated: 2014-06-25
 tags:
-- [Ceph]
-- [librados]
-- [分布式存储]
-- [开发流程]
-- [性能优化]
+- Ceph
+- 分布式存储
 categories:
 - "视频总结"
 subtitle: CDS_G_H_Day_1_-_librados_review

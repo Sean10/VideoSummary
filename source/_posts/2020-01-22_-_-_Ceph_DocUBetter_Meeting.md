@@ -4,11 +4,7 @@ categories:
 date: 2020-01-23
 subtitle: 2020-01-22_-_-_Ceph_DocUBetter_Meeting
 tags:
-- Ceph 文档更新
 - 分布式存储
-- PG 修复
-- 开发者指南
-- 文档请求热线
 title: "'2020-01-22:: Ceph DocUBetter Meeting'"
 updated: 2020-01-24
 ---

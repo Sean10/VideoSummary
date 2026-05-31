@@ -5,10 +5,9 @@ date: 2022-04-14
 subtitle: CDS_Reef_-_Rados_Gateway
 tags:
 - Ceph
-- Distributed Storage
-- RADOS Gateway
+- 分布式存储
 - RGW
-- Scalability
+- 可扩展性
 title: "'CDS Reef: Rados Gateway'"
 updated: 2022-04-14
 ---

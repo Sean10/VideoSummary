@@ -8,7 +8,6 @@ tags:
 - 分布式存储
 - CRUSH算法
 - 高可用性
-- 扩展性
 - 对象存储
 title: "Ceph Orchestrator Meeting 2023-01-03"
 updated: 2023-01-07

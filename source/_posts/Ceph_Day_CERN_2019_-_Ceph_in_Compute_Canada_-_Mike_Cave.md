@@ -5,10 +5,9 @@ date: 2020-08-25
 subtitle: Ceph_Day_CERN_2019_-_Ceph_in_Compute_Canada_-_Mike_Cave
 tags:
 - Ceph
-- Distributed Storage
-- Compute Canada
-- High Availability
-- Scalability
+- 分布式存储
+- 高可用性
+- 可扩展性
 title: "'Ceph Day CERN 2019: Ceph in Compute Canada - Mike Cave'"
 updated: 2020-08-26
 ---

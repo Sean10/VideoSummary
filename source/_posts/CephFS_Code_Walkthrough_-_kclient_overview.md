@@ -6,9 +6,6 @@ subtitle: CephFS_Code_Walkthrough_-_kclient_overview
 tags:
 - Ceph
 - 分布式存储
-- k客户端
-- 内核组件
-- 文件系统
 title: CephFS Code Walkthrough- kclient overview
 updated: 2021-12-07
 ---

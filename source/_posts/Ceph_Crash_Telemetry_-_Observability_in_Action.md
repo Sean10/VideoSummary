@@ -5,10 +5,6 @@ date: 2022-11-09
 subtitle: Ceph_Crash_Telemetry_-_Observability_in_Action
 tags:
 - Ceph
-- Telemetry
-- Crash Reporting
-- Observability
-- Data Analysis
 title: "Ceph Crash Telemetry - Observability in Action"
 updated: 2022-11-10
 ---

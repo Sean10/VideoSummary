@@ -5,10 +5,7 @@ date: 2021-04-27
 subtitle: CephFS_Code_Walkthrough_-_CephFS_Mirroring_Part_2
 tags:
 - CephFS
-- Mirroring
-- Demurrer Daemon
-- Snapshot Synchronization
-- Distributed Storage
+- 分布式存储
 title: "'CephFS Code Walkthrough: CephFS Mirroring Part 2'"
 updated: 2021-04-27
 ---

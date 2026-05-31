@@ -3,11 +3,7 @@ title: " CDS Pacific: RADOS "
 date: 2020-04-03
 updated: 2020-04-04
 tags:
-- [Ceph]
-- [Distributed Storage]
-- [RADOS]
-- [Data Replication]
-- [Scalability]
+- Ceph
 categories:
 - "视频总结"
 subtitle: CDS_Pacific_-_RADOS

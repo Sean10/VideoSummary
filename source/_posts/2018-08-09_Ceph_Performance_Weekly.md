@@ -7,7 +7,6 @@ tags:
 - 分布式存储
 - 性能优化
 - 存储集群
-- 蓝店（Blue Store）
 categories:
 - "视频总结"
 subtitle: 2018-08-09_Ceph_Performance_Weekly

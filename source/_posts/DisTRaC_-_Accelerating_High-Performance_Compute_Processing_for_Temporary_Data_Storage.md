@@ -4,12 +4,7 @@ categories:
 date: 2022-11-15
 subtitle: DisTRaC_-_Accelerating_High-Performance_Compute_Processing_for_Temporary_Data_Storage
 tags:
-- Distract
-- High
-- Performance Computing
-- Temporary Data Storage
 - Ceph
-- HPC Cluster
 title: "'DisTRaC: Accelerating High-Performance Compute Processing for Temporary Data Storage'"
 updated: 2022-11-16
 ---

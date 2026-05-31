@@ -4,8 +4,8 @@ date: 2020-07-30
 updated: 2020-07-31
 tags:
 - Ceph
-- Distributed Storage
-- Performance Optimization
+- 分布式存储
+- 性能优化
 - BlueStore
 - MDS
 categories:

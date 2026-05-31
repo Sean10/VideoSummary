@@ -6,9 +6,7 @@ subtitle: Ceph_Crimson_SeaStor_OSD_2020-09-02
 tags:
 - Ceph
 - 分布式存储
-- 代码审查
 - 性能优化
-- 装饰器
 - Kubernetes
 - Docker
 - 虚拟化

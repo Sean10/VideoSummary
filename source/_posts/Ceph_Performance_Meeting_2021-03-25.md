@@ -6,8 +6,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 缓存管理
-- 数据结构
 categories:
 - "视频总结"
 subtitle: Ceph_Performance_Meeting_2021-03-25

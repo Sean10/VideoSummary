@@ -5,9 +5,7 @@ date: 2023-05-17
 subtitle: Ceph_Days_NYC_2023_-_Ceph_Telemetry_-_Observability_in_Action
 tags:
 - Ceph
-- Telemetry
-- Observability
-- Distributed Storage
+- 分布式存储
 - CephFS
 title: "'Ceph Days NYC 2023: Ceph Telemetry - Observability in Action'"
 updated: 2023-05-18

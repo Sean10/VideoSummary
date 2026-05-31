@@ -4,10 +4,8 @@ date: 2022-06-03
 updated: 2022-06-03
 tags:
 - Ceph
-- Distributed Storage
-- Plugin System
-- Security
-- IBM Storage
+- 分布式存储
+- 安全性
 categories:
 - "视频总结"
 subtitle: Ceph_Developer_Monthly_2022-05-04

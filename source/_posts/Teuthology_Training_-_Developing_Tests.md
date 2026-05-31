@@ -4,11 +4,8 @@ categories:
 date: 2021-03-16
 subtitle: Teuthology_Training_-_Developing_Tests
 tags:
-- Ceph测试
 - Teuthology
 - 分布式存储
-- Ceph集群
-- 测试开发
 title: "'Teuthology Training: Developing Tests'"
 updated: 2021-03-16
 ---

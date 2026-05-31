@@ -5,10 +5,9 @@ date: 2021-08-20
 subtitle: Ceph_Orchestrator_Meeting_2021-08-10
 tags:
 - Ceph
-- Orchestrator
+- 编排
 - Rook
 - CI/CD
-- Integration Testing
 title: "Ceph Orchestrator Meeting 2021-08-10"
 updated: 2021-08-21
 ---

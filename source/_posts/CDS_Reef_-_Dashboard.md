@@ -4,11 +4,7 @@ categories:
 date: 2022-04-22
 subtitle: CDS_Reef_-_Dashboard
 tags:
-- Ceph Dashboard
-- Ceph 开发
 - 分布式存储
-- 多集群监控
-- 用户反馈
 title: "'CDS Reef: Dashboard'"
 updated: 2022-04-22
 ---

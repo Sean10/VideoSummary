@@ -6,9 +6,7 @@ subtitle: Ceph_Orchestrator_2023-03-07
 tags:
 - 分布式存储
 - Ceph
-- 安全证书管理
 - Kubernetes
-- Secret store
 title: "Ceph Orchestrator 2023-03-07"
 updated: 2023-03-08
 ---

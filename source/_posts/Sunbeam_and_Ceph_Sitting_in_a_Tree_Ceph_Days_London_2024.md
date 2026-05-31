@@ -6,7 +6,6 @@ subtitle: Sunbeam_and_Ceph_Sitting_in_a_Tree_Ceph_Days_London_2024
 tags:
 - Ceph
 - OpenStack
-- Sunbeam项目
 - 分布式存储
 - Kubernetes
 title: "Sunbeam and Ceph Sitting in a Tree | Ceph Days London 2024"

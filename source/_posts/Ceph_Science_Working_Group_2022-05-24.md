@@ -5,7 +5,6 @@ updated: 2022-05-26
 tags:
 - Ceph
 - 分布式存储
-- scrubbing
 - 高可用性
 - 自动化
 - 性能优化

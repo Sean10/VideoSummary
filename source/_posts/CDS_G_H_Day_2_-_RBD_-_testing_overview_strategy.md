@@ -5,10 +5,7 @@ updated: 2014-06-26
 tags:
 - Ceph
 - RBD
-- 测试策略
 - 分布式存储
-- Ceph测试工具
-- Ceph特性测试
 categories:
 - "视频总结"
 subtitle: "CDS_G_H_Day_2_-_RBD_-_testing_overview_strategy"

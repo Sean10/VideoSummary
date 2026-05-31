@@ -5,10 +5,8 @@ date: 2023-04-07
 subtitle: Ceph_Developer_Monthly_2023-04-05
 tags:
 - Ceph
-- Distributed Storage
-- OpenEuler
+- 分布式存储
 - CI/CD
-- Performance Counters
 title: "Ceph Developer Monthly 2023-04-05"
 updated: 2023-04-08
 ---

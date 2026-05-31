@@ -7,7 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 数据恢复
 - RocksDB
 title: Ceph Performance Meeting 2022-10-20
 updated: 2022-10-21

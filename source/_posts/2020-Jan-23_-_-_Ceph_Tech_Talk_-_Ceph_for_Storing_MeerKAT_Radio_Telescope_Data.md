@@ -3,11 +3,7 @@ title: "  2020-Jan-23 :: Ceph Tech Talk - Ceph for Storing MeerKAT Radio Telesco
 date: 2020-02-12
 updated: 2020-02-12
 tags:
-- [Ceph]
-- [MeerKAT]
-- [射电望远镜]
-- [数据存储]
-- [分布式存储系统]
+- Ceph
 categories:
 - "视频总结"
 subtitle: 2020-Jan-23_-_-_Ceph_Tech_Talk_-_Ceph_for_Storing_MeerKAT_Radio_Telescope_Data

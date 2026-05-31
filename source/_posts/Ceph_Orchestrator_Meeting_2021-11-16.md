@@ -6,9 +6,7 @@ subtitle: Ceph_Orchestrator_Meeting_2021-11-16
 tags:
 - Ceph
 - 分布式存储
-- Orchestrator
-- 集群部署
-- 大规模集群
+- 编排
 title: "Ceph Orchestrator Meeting 2021-11-16"
 updated: 2021-11-17
 ---
@@ -37,7 +35,7 @@ updated: 2021-11-17
 
 3. **集群测试和资源利用**
    - 讨论了如何优化集群的测试和资源利用，包括重用现有集群和有效管理NVMe设备。
-   - 确认了Patrick已经对self-FFS进行了研究，并期待其他组件也能利用这一集群。
+   - 确认了Patrick已经对self-CephFS进行了研究，并期待其他组件也能利用这一集群。
 
 4. **技术细节和改进**
    - 讨论了从runC切换到crun以改善上游生育测试中的组错误问题。

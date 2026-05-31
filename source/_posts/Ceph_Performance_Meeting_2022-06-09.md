@@ -5,10 +5,9 @@ date: 2022-06-27
 subtitle: Ceph_Performance_Meeting_2022-06-09
 tags:
 - Ceph
-- Performance Optimization
-- Distributed Storage
-- CRUSH Algorithm
-- Snap Mapper
+- 性能优化
+- 分布式存储
+- CRUSH算法
 title: "Ceph Performance Meeting 2022-06-09"
 updated: 2022-06-28
 ---

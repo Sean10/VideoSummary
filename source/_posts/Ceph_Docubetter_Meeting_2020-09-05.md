@@ -4,9 +4,7 @@ date: 2020-09-10
 updated: 2020-09-11
 tags:
 - Ceph
-- 文档开发
 - 分布式存储
-- 开发者指南
 categories:
 - "会议纪要"
 subtitle: Ceph_Docubetter_Meeting_2020-09-05

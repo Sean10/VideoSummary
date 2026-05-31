@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 开源
-- 企业应用
-- Bloomberg
 title: "'Keynote: The Road to Open Source Ceph: Bloomberg’s Enterprise Ceph Journey'"
 updated: 2023-05-05
 ---

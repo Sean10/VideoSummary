@@ -6,9 +6,7 @@ subtitle: Ceph_Developer_Summit_Quincy_-_Orchestrator_Follow-up
 tags:
 - Ceph
 - 分布式存储
-- Quincy
-- Orchestrator
-- 开发者峰会
+- 编排
 title: "'Ceph Developer Summit Quincy: Orchestrator Follow-up'"
 updated: 2021-04-28
 ---

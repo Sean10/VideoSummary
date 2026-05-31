@@ -5,8 +5,8 @@ date: 2023-05-05
 subtitle: Ceph_Object_Storage_Overview_Capabilities_and_Future_Plans_-_Matt_Benjamin_IBM
 tags:
 - Ceph
-- Object Storage
-- Distributed Storage
+- 对象存储
+- 分布式存储
 - RGW
 - CephFS
 - BlueStore

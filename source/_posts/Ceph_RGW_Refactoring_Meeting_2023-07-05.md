@@ -5,10 +5,7 @@ date: 2023-07-05
 subtitle: Ceph_RGW_Refactoring_Meeting_2023-07-05
 tags:
 - Ceph
-- RGW重构
-- 存储桶扩展
-- Lua包重载
-- Ceph RGW
+- RGW
 title: Ceph RGW Refactoring Meeting 2023-07-05
 updated: 2023-07-06
 ---

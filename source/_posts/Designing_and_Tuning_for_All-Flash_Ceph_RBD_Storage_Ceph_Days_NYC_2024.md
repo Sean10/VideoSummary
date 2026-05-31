@@ -5,9 +5,6 @@ date: 2024-05-15
 subtitle: Designing_and_Tuning_for_All-Flash_Ceph_RBD_Storage_Ceph_Days_NYC_2024
 tags:
 - Ceph
-- All
-- Flash Storage
-- Performance Tuning
 - RBD
 - CephFS
 title: "Designing and Tuning for All-Flash Ceph RBD Storage | Ceph Days NYC 2024"

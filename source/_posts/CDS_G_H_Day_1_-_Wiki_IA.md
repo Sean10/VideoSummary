@@ -4,11 +4,7 @@ categories:
 date: 2014-06-24
 subtitle: CDS_G/H_Day_1_-_Wiki_IA
 tags:
-- Ceph社区
-- Wiki页面建设
-- 资源整合
-- Ceph资源
-- Ceph开发
+- Ceph
 title: "CDS G/H (Day 1) - Wiki IA"
 updated: 2014-06-24
 ---

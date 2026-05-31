@@ -6,7 +6,6 @@ subtitle: Unlocking_Ceph_s_Potential_with_NVMe_oF_Integration_Ceph_Days_London_2
 tags:
 - Ceph
 - NVMe
-- oF
 - 存储优化
 - 分布式存储
 - 云计算

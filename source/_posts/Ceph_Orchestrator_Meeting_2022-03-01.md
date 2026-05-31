@@ -6,7 +6,6 @@ subtitle: Ceph_Orchestrator_Meeting_2022-03-01
 tags:
 - 分布式存储
 - Ceph
-- 开发者文档
 - CRUSH算法
 - 高可用性
 - 可扩展性

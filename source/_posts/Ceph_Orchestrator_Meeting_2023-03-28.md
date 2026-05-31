@@ -6,9 +6,6 @@ subtitle: Ceph_Orchestrator_Meeting_2023-03-28
 tags:
 - Ceph
 - 分布式存储
-- ORchestration
-- 技术讨论
-- 软件打包
 title: "Ceph Orchestrator Meeting 2023-03-28"
 updated: 2023-03-29
 ---

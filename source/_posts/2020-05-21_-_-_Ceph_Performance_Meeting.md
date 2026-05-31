@@ -4,11 +4,8 @@ categories:
 date: 2020-05-21
 subtitle: 2020-05-21_-_-_Ceph_Performance_Meeting
 tags:
-- Ceph性能
-- AVX2编码
+- 性能
 - RocksDB
-- 内存增长
-- OSD性能
 title: "'2020-05-21 :: Ceph Performance Meeting'"
 updated: 2020-05-22
 ---

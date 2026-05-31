@@ -5,7 +5,6 @@ updated: 2021-06-02
 tags:
 - Ceph
 - 分布式存储
-- Windows服务器集成
 - 性能优化
 - 虚拟化
 categories:

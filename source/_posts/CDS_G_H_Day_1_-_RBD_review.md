@@ -8,7 +8,6 @@ tags:
 - RBD
 - 分布式存储
 - 性能优化
-- 多站点复制
 title: "CDS G/H (Day 1) - RBD review"
 updated: 2014-06-24
 ---

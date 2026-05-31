@@ -7,9 +7,9 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- CRUSH 算法
+- CRUSH算法
 - 高可用性
-- 可伸缩性
+- 可扩展性
 title: 2019-12-19 -- Ceph Performance Meeting
 updated: 2019-12-19
 ---

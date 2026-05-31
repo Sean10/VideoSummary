@@ -6,9 +6,6 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-03-29
 tags:
 - Ceph
 - RGW
-- 性能计数器
-- 配额管理
-- GitHub 2FA
 title: "Ceph RGW Refactoring Meeting 2023-03-29"
 updated: 2023-03-30
 ---

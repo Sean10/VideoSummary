@@ -4,8 +4,6 @@ date: 2023-05-05
 updated: 2023-05-05
 tags:
 - Ceph
-- CSI
-- 容器存储
 - Kubernetes
 - 分布式存储
 categories:

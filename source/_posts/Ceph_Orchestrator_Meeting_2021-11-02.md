@@ -5,12 +5,8 @@ date: 2021-11-03
 subtitle: Ceph_Orchestrator_Meeting_2021-11-02
 tags:
 - Ceph
-- Orchestrator
+- 编排
 - 分布式存储
-- 升级问题
-- 监控堆栈
-- Agent
-- Backport
 title: "Ceph Orchestrator Meeting 2021-11-02"
 updated: 2021-11-04
 ---

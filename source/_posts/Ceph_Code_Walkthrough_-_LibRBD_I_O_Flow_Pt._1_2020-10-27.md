@@ -5,10 +5,7 @@ date: 2020-11-02
 subtitle: Ceph_Code_Walkthrough_-_LibRBD_I_O_Flow_Pt._1_2020-10-27
 tags:
 - Ceph
-- LibRBD
-- I/O流程
 - 分布式存储
-- Ceph存储集群
 title: "'Ceph Code Walkthrough: LibRBD I/O Flow Pt. 1 2020-10-27'"
 updated: 2020-11-03
 ---

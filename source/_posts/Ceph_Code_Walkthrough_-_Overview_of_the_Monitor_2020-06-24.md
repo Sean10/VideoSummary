@@ -5,11 +5,8 @@ date: 2020-06-25
 subtitle: Ceph_Code_Walkthrough_-_Overview_of_the_Monitor_2020-06-24
 tags:
 - Ceph
-- Monitor
-- Distributed Storage
-- CRUSH Algorithm
-- Election Mechanism
-- Paxos Algorithm
+- 分布式存储
+- CRUSH算法
 title: "'Ceph Code Walkthrough: Overview of the Monitor 2020-06-24'"
 updated: 2020-06-25
 ---

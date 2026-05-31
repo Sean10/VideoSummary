@@ -5,8 +5,8 @@ updated: 2020-04-03
 tags:
 - Ceph
 - RBD
-- Distributed Storage
-- Storage Cluster
+- 分布式存储
+- 存储集群
 - CephFS
 categories:
 - "视频总结"

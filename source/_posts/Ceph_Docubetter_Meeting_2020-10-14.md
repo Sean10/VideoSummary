@@ -5,10 +5,7 @@ date: 2020-10-14
 subtitle: Ceph_Docubetter_Meeting_2020-10-14
 tags:
 - Ceph
-- 文档更新
 - 分布式存储
-- 开发指南
-- GitHub
 title: "Ceph Docubetter Meeting 2020-10-14"
 updated: 2020-10-15
 ---
@@ -32,7 +29,7 @@ updated: 2020-10-15
 3. **CFDF细节PR更新**
    - 主持人正在处理一个CFDF相关的Pull Request，预计将在接下来几小时内或最迟明天完成。
 
-4. **文档系统（FFS）的改进**
+4. **文档系统（CephFS）的改进**
    - 针对Josh Cullen提出的关于侧边栏顶级链接无法正常工作的bug，主持人已通过将链接集合到restructuredText文档中的toctree来解决。同时，移除了之前注释掉的HTML代码，并添加了`:hidden:`选项以避免toctree在文档中显示。
    - 主持人请求Patrick检查这些更改是否影响了他们的需求。
 
@@ -56,7 +53,7 @@ updated: 2020-10-15
 #### 后续行动计划：
 
 - 完成CFDF细节PR。
-- 继续更新和维护文档，特别是FFS和开发指南。
+- 继续更新和维护文档，特别是CephFS和开发指南。
 - 探索自动化工具以解决defio与docs.ceph.com的同步问题。
 - 确保Pacific版本发布时，文档集是全面、准确且易于导航的。
 

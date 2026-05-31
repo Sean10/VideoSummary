@@ -6,9 +6,8 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2022-11-23
 tags:
 - Ceph
 - RGW
-- Object Lambda
 - AWS
-- Distributed Storage
+- 分布式存储
 title: "Ceph RGW Refactoring Meeting 2022-11-23"
 updated: 2022-11-23
 ---

@@ -6,10 +6,7 @@ subtitle: Ceph_Orchestrator_Meeting_2021-08-17
 tags:
 - Ceph
 - 分布式存储
-- Podman
-- 客户端管理
 - Rook
-- 集成测试
 title: "Ceph Orchestrator Meeting 2021-08-17"
 updated: 2021-08-21
 ---

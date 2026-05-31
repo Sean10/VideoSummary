@@ -7,10 +7,8 @@ tags:
 - Ceph
 - 分布式存储
 - 高可用性
-- 自动化测试
-- 灾难恢复
+- 测试
 - Rook
-- Def ADM
 title: "'2020-04-13 :: Ceph Orchestration Meeting'"
 updated: 2020-04-14
 ---

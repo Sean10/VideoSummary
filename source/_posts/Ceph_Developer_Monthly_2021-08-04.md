@@ -4,10 +4,6 @@ categories:
 date: 2021-08-23
 subtitle: Ceph_Developer_Monthly_2021-08-04
 tags:
-- Ceph Dashboard
-- GSoC 实习生项目
-- Ceph 开发者会议
-- Ceph 性能优化
 - 分布式存储
 title: "Ceph Developer Monthly 2021-08-04"
 updated: 2021-08-24

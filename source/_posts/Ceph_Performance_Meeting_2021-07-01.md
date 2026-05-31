@@ -4,11 +4,9 @@ categories:
 date: 2021-08-24
 subtitle: Ceph_Performance_Meeting_2021-07-01
 tags:
-- Ceph性能优化
+- 性能优化
 - 分布式存储
 - BlueFS
-- 流控制
-- CPU分区
 title: "Ceph Performance Meeting 2021-07-01"
 updated: 2021-08-25
 ---

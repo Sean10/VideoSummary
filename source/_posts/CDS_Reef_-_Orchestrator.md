@@ -5,7 +5,7 @@ date: 2022-04-13
 subtitle: CDS_Reef_-_Orchestrator
 tags:
 - Ceph
-- Orchestrator
+- 编排
 - 分布式存储
 - 自动化
 - 高可用性

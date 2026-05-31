@@ -6,8 +6,6 @@ subtitle: Ceph_Crimson_SeaStore_2021-03-10
 tags:
 - Ceph
 - 分布式存储
-- 单元测试
-- 垃圾收集
 - 性能优化
 title: "Ceph Crimson/SeaStore 2021-03-10"
 updated: 2021-03-10

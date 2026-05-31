@@ -4,10 +4,7 @@ categories:
 date: 2023-05-05
 subtitle: MicroCeph_-_What_Why_and_Who_Is_It_for_-_Peter_Sabaini_Utkarsh_Bhatt_Canonical
 tags:
-- Ceph集群
 - 分布式存储
-- 简化部署
-- 管理工具
 - 容器化
 title: "'MicroCeph: What, Why and Who Is It for - Peter Sabaini & Utkarsh Bhatt, Canonical'"
 updated: 2023-05-05

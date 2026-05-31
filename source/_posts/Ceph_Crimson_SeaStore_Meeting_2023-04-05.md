@@ -8,10 +8,6 @@ tags:
 - 分布式存储
 - Crimson
 - OSD
-- MGR
-- CI
-- 日志级别
-- 池压缩
 title: Ceph Crimson/SeaStore Meeting 2023-04-05
 updated: 2023-04-06
 ---

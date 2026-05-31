@@ -6,9 +6,7 @@ subtitle: CDS_G_H_Day_2_-_RBD_-_Database_Performance
 tags:
 - Ceph
 - RBD
-- Database Performance
 - CephFS
-- Benchmarking
 title: "'CDS G/H (Day 2) - RBD: Database Performance'"
 updated: 2014-06-26
 ---

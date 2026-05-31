@@ -4,11 +4,7 @@ categories:
 date: 2024-08-23
 subtitle: State_of_the_Cephalopod_Ceph_Days_London_2024
 tags:
-- Ceph社区
-- Ceph技术进展
 - 分布式存储
-- Ceph Days
-- 存储解决方案
 title: "State of the Cephalopod| Ceph Days London 2024"
 updated: 2024-08-24
 ---

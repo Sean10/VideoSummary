@@ -5,10 +5,8 @@ date: 2020-06-01
 subtitle: Ceph_Orchestrator_Meeting_2020-06-01
 tags:
 - Ceph
-- Drive Groups
 - Rook
-- Ceph Manager
-- Ceph Orchestrator
+- 编排
 title: "Ceph Orchestrator Meeting 2020-06-01"
 updated: 2020-06-02
 ---

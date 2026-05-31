@@ -7,9 +7,6 @@ tags:
 - Ceph
 - 会议纪要
 - 分布式存储
-- 开发环境
-- 配置文件
-- 控制台
 title: "Ceph Orchestrator Meeting 2021-11-09"
 updated: 2021-11-10
 ---

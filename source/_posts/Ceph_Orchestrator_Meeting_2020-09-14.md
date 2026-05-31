@@ -5,10 +5,8 @@ date: 2020-09-14
 subtitle: Ceph_Orchestrator_Meeting_2020-09-14
 tags:
 - Ceph
-- Distributed Storage
-- Orchestrator
-- Pull Request
-- Documentation
+- 分布式存储
+- 编排
 title: "Ceph Orchestrator Meeting 2020-09-14"
 updated: 2020-09-15
 ---

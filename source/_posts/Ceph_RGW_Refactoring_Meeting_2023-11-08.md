@@ -6,9 +6,8 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-11-08
 tags:
 - Ceph
 - 分布式存储
-- librdkafka
 - librados
-- Ceph RGW
+- RGW
 title: Ceph RGW Refactoring Meeting 2023-11-08
 updated: 2023-11-21
 ---

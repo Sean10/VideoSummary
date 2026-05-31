@@ -5,10 +5,8 @@ date: 2021-08-20
 subtitle: Ceph_Crimson_SeaStore_2021-08-11
 tags:
 - Ceph
-- distributed storage
+- 分布式存储
 - CI/CD
-- performance testing
-- software development
 title: "Ceph Crimson/SeaStore 2021-08-11"
 updated: 2021-08-21
 ---

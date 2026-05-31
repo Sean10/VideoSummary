@@ -4,11 +4,9 @@ date: 2024-08-22
 updated: 2024-08-23
 tags:
 - CephFS
-- Ceph 分布式存储
-- CRUSH 算法
+- CRUSH算法
 - 高可用性
 - 可扩展性
-- 物理存储
 categories:
 - "视频总结"
 subtitle: CDS_Tentacle_-_CephFS

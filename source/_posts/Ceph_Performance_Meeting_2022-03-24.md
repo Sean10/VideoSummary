@@ -7,7 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- PG日志
 - BlueStore
 title: Ceph Performance Meeting 2022-03-24
 updated: 2022-03-30

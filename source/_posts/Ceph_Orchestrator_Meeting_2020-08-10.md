@@ -6,9 +6,6 @@ subtitle: Ceph_Orchestrator_Meeting_2020-08-10
 tags:
 - Ceph
 - 分布式存储
-- 文档管理
-- Rook 项目
-- OSD 移除设计
 title: Ceph Orchestrator Meeting 2020-08-10
 updated: 2020-08-11
 ---

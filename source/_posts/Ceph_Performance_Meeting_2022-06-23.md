@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 性能优化
 - RocksDB
-- Snapmapper
-- 代码重构
 title: Ceph Performance Meeting 2022-06-23
 updated: 2022-06-28
 ---

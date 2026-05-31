@@ -5,10 +5,7 @@ date: 2022-01-11
 subtitle: Ceph_Orchestrator_Meeting_2022-01-04
 tags:
 - Ceph
-- CPU限制
-- NFS服务
-- OSD内存
-- Ceph Orchestrator
+- 编排
 title: "Ceph Orchestrator Meeting 2022-01-04"
 updated: 2022-01-12
 ---

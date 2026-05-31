@@ -6,9 +6,7 @@ subtitle: 2020-05-13_-_-_Ceph_DocUBetter_Meeting
 tags:
 - Ceph
 - 分布式存储
-- 文档编写
 - 会议纪要
-- 社区发展
 title: "'2020-05-13:: Ceph DocUBetter Meeting'"
 updated: 2020-05-14
 ---

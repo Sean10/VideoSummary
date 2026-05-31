@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 内存管理
-- 配置管理
 title: Ceph Performance Meeting 2021-06-17
 updated: 2021-06-23
 ---

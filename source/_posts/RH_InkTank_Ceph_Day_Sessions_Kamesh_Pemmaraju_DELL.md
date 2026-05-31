@@ -7,7 +7,6 @@ tags:
 - OpenStack
 - 分布式存储
 - 云计算
-- 存储解决方案
 categories:
 - "视频总结"
 subtitle: RH_InkTank_Ceph_Day_Sessions_Kamesh_Pemmaraju_DELL

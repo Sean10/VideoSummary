@@ -6,8 +6,6 @@ tags:
 - Ceph
 - RGW
 - 分布式存储
-- 跟踪技术
-- 代码重构
 - 测试
 categories:
 - "视频总结"

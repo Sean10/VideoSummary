@@ -5,11 +5,9 @@ date: 2021-04-30
 subtitle: 2021年4月29日Ceph性能会议纪要
 tags:
 - Ceph
-- Performance Optimization
-- Distributed Storage
-- Blue Store
-- Deadlock
-- Cache Optimization
+- 性能优化
+- 分布式存储
+- BlueStore
 title: "Ceph Performance Meeting 2021-04-29"
 updated: 2021-04-30
 ---

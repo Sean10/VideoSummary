@@ -6,9 +6,7 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-11-22
 tags:
 - Ceph
 - RGW
-- Distributed Storage
-- Refactoring
-- Meeting Summary
+- 分布式存储
 title: "Ceph RGW Refactoring Meeting 2023-11-22"
 updated: 2023-11-29
 ---

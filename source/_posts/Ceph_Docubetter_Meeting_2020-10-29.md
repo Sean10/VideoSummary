@@ -5,10 +5,7 @@ date: 2020-10-29
 subtitle: Ceph_Docubetter_Meeting_2020-10-29
 tags:
 - Ceph
-- 文档改进
 - 分布式存储
-- RADOS协议
-- 文档结构
 title: "Ceph Docubetter Meeting 2020-10-29"
 updated: 2020-10-30
 ---

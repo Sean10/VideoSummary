@@ -5,9 +5,6 @@ updated: 2024-05-24
 tags:
 - Ceph
 - 分布式存储
-- 中小型数据中心
-- 实际应用案例
-- 存储解决方案
 categories:
 - "视频总结"
 subtitle: Practical_Business_Ceph_Examples_Ceph_Days_NYC_2024

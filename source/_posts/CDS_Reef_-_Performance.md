@@ -6,8 +6,6 @@ subtitle: CDS_Reef_-_Performance
 tags:
 - Ceph
 - RocksDB
-- AVL分配器
-- PG日志
 - 性能优化
 title: "'CDS Reef: Performance'"
 updated: 2022-04-15

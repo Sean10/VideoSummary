@@ -8,12 +8,12 @@ tags:
 - Rook
 - NFS
 - OpenStack
-- Distributed Storage
-- CRUSH Algorithm
-- High Availability
+- 分布式存储
+- CRUSH算法
+- 高可用性
 - Kubernetes
 - Docker
-- Cloud Computing
+- 云计算
 title: "Ceph Orchestrator Meeting 2022-05-17"
 updated: 2022-05-26
 ---

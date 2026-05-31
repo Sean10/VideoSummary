@@ -5,9 +5,7 @@ updated: 2023-01-24
 tags:
 - Ceph
 - RGW
-- Refactoring
-- Distributed Storage
-- C++20
+- 分布式存储
 categories:
 - "视频总结"
 subtitle: Ceph_RGW_Refactoring_Meeting_2023-01-08

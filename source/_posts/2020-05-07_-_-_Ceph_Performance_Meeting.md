@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 持续集成
-- Jenkins
 title: 2020-05-07 -- Ceph Performance Meeting
 updated: 2020-05-13
 ---

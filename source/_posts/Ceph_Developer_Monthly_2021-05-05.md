@@ -6,10 +6,6 @@ subtitle: Ceph_Developer_Monthly_2021-05-05
 tags:
 - Ceph
 - 分布式存储
-- OSD Map优化
-- 客户端使用效率
-- 灾难恢复
-- 集群隔离
 title: "Ceph Developer Monthly 2021-05-05"
 updated: 2021-05-07
 ---

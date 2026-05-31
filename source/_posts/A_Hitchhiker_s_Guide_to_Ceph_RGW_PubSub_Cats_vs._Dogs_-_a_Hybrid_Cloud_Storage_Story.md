@@ -1,0 +1,74 @@
+---
+categories:
+- 技术文章
+date: 2019-05-24
+subtitle: A_Hitchhiker_s_Guide_to_Ceph_RGW_PubSub_Cats_vs._Dogs_-_a_Hybrid_Cloud_Storage_Story
+tags:
+- Ceph
+- 混合云
+- 分布式存储
+title: A Hitchhikers Guide to Ceph RGW PubSub & Cats vs. Dogs - a Hybrid Cloud Storage Story
+updated: 2019-05-24
+---
+
+
+
+
+### 会议纪要
+
+**会议主题**： Ceph RGW PubSub 新功能介绍及混合云应用案例
+
+**会议时间**： 2023年X月X日
+
+**参会人员**： 未知
+
+**会议内容**：
+
+**一、会议背景**
+
+本次会议主要介绍了 Ceph RGW PubSub 的新功能，该功能已存在数月，并具有以下特点：
+
+*   **关键技术**： Kubernetes、Canary、PUPs
+*   **应用场景**： 混合云、数据存储、事件发布/订阅
+
+**二、会议关键细节**
+
+1.  **Kubernetes 与 Canary**：
+    *   Kubernetes 是一种容器编排平台，Canary 是 Kubernetes 中的一种框架，用于实现无服务器功能。
+    *   Ceph 利用 Kubernetes 的功能，实现了事件发布/订阅机制。
+2.  **PUPs 功能介绍**：
+    *   PUPs 是 Ceph 中的事件发布/订阅机制，它允许用户将事件发布到不同的主题，并订阅感兴趣的事件。
+    *   PUPs 支持多种消息传递协议，包括 HTTP、AMQP、Kafka 等。
+3.  **数据模型**：
+    *   主题：用于分类消息的术语，类似于 Kafka 和 AMQP。
+    *   订阅：将特定主题与存储桶关联，以便将事件推送到目标位置。
+    *   过滤器：允许用户订阅特定类型的事件，例如对象创建或删除。
+4.  **混合云应用案例**：
+    *   会议演示了一个将图像分类算法部署在公共云上的案例。
+    *   当用户上传图像到 Ceph 存储桶时，PUPs 会将事件发布到主题，并触发相应的处理流程。
+    *   处理流程包括从 Ceph 获取图像、调用分类算法、将结果存储回 Ceph 等。
+
+**三、讨论的主要议题**
+
+*   如何利用 PUPs 实现混合云应用？
+*   如何在 Ceph 中集成其他消息传递协议？
+*   如何优化 PUPs 的性能和可靠性？
+
+**四、决定的事项**
+
+*   未来将支持更多消息传递协议，例如 Kafka、ActiveMQ 等。
+*   将考虑实现“推送模式”，以便直接将消息发送到外部系统。
+*   将优化 PUPs 的性能和可靠性。
+
+**五、后续行动计划**
+
+*   完善文档，介绍 PUPs 的使用方法。
+*   开发更多示例，展示 PUPs 在混合云中的应用。
+*   优化 PUPs 的性能和可靠性。
+
+**六、其他**
+
+*   会议演示了如何使用 PUPs 实现图像分类，并展示了相关代码。
+*   会议还讨论了如何将 PUPs 与其他技术（例如 Lambda 函数、服务函数等）集成。
+
+**关键词**： Ceph、PUPs、Kubernetes、Canary、混合云、事件发布/订阅、消息传递协议

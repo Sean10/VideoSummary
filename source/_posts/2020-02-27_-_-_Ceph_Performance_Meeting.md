@@ -8,7 +8,6 @@ tags:
 - 性能优化
 - 分布式存储
 - BlueStore
-- IO 500
 title: 2020-02-27 -- Ceph Performance Meeting
 updated: 2020-04-04
 ---

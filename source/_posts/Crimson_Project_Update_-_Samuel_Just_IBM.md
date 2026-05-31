@@ -5,10 +5,8 @@ date: 2023-05-05
 subtitle: Crimson_Project_Update_-_Samuel_Just_IBM
 tags:
 - Ceph
-- Crimson项目
 - 分布式存储
 - OSD
-- 物理存储
 - 虚拟化
 - 云计算
 title: Crimson Project Update - Samuel Just, IBM

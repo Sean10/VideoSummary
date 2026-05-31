@@ -4,10 +4,7 @@ date: 2023-05-05
 updated: 2023-05-05
 tags:
 - Ceph
-- Memory Leak
-- Storage Systems
-- Bug Fixes
-- Open Source
+- 开源
 categories:
 - "视频总结"
 subtitle: Bug_of_the_Year_-_A_Memory_Leak_Reboot_Could"Not_Help_with_-_Radoslaw_Zarzynski_IBM

@@ -6,7 +6,6 @@ tags:
 - Ceph
 - 分布式存储
 - 开源
-- Red Hat
 - 存储集群
 categories:
 - "会议纪要"

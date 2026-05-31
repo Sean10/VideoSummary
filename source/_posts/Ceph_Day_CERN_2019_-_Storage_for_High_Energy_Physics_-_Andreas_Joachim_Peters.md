@@ -4,10 +4,8 @@ date: 2020-08-25
 updated: 2020-08-26
 tags:
 - Ceph
-- Distributed Storage
-- High Energy Physics
-- Data Management
-- Storage Optimization
+- 分布式存储
+- 存储优化
 categories:
 - "视频总结"
 subtitle: Ceph_Day_CERN_2019_-_Storage_for_High_Energy_Physics_-_Andreas_Joachim_Peters

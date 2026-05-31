@@ -3,11 +3,7 @@ title: "  Optimizing Ceph IO for High Throughput Particle Physics Workflows  "
 date: 2023-05-05
 updated: 2023-05-05
 tags:
-- [Ceph]
-- [High Throughput]
-- [Particle Physics]
-- [IO Optimization]
-- [Storage Cluster]
+- Ceph
 categories:
 - "视频总结"
 subtitle: Optimizing_Ceph_IO_for_High_Throughput_Particle_Physics_Workflows

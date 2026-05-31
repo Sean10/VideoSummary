@@ -3,11 +3,8 @@ title: " Ceph Developer Summit Quincy: RBD "
 date: 2021-04-12
 updated: 2021-04-13
 tags:
-- [Ceph]
-- [分布式存储]
-- [RBD]
-- [监控]
-- [加密]
+- Ceph
+- 分布式存储
 categories:
 - "视频总结"
 subtitle: Ceph_Developer_Summit_Quincy_-_RBD

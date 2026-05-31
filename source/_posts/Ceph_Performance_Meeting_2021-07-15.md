@@ -9,7 +9,7 @@ tags:
 - 性能优化
 - CRUSH算法
 - 高可用性
-- 可伸缩性
+- 可扩展性
 title: Ceph Performance Meeting 2021-07-15
 updated: 2021-08-24
 ---

@@ -5,10 +5,8 @@ date: 2021-10-07
 subtitle: Ceph_Tech_Talk_-_Ceph_at_DigitalOcean
 tags:
 - Ceph
-- Distributed Storage
-- DigitalOcean
-- Cloud Computing
-- Storage Systems
+- 分布式存储
+- 云计算
 title: "'Ceph Tech Talk: Ceph at DigitalOcean'"
 updated: 2021-10-08
 ---

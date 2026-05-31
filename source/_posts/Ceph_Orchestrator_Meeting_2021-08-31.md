@@ -6,8 +6,6 @@ subtitle: Ceph_Orchestrator_Meeting_2021-08-31
 tags:
 - Ceph
 - 分布式存储
-- LVM
-- TopoLVM
 - Rook
 title: "Ceph Orchestrator Meeting 2021-08-31"
 updated: 2021-09-03

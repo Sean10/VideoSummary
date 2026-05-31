@@ -7,7 +7,6 @@ tags:
 - Ceph
 - 性能优化
 - 分布式存储
-- 蓝鲸存储
 - RBD
 title: "Ceph Performance Meeting 2022-11-03"
 updated: 2022-11-10

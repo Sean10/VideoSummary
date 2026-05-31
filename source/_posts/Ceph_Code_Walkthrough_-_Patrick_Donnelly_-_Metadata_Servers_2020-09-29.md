@@ -5,10 +5,8 @@ date: 2020-09-30
 subtitle: Ceph_Code_Walkthrough_-_Patrick_Donnelly_-_Metadata_Servers_2020-09-29
 tags:
 - Ceph
-- Metadata Servers
 - CephFS
-- Distributed Storage
-- Ceph Code Walkthrough
+- 分布式存储
 title: "'Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29'"
 updated: 2020-10-01
 ---

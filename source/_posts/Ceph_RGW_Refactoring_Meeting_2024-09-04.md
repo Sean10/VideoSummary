@@ -6,8 +6,6 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2024-09-04
 tags:
 - Ceph
 - RGW
-- 数据去重
-- 分片
 - 可扩展性
 title: Ceph RGW Refactoring Meeting 2024-09-04
 updated: 2024-09-05

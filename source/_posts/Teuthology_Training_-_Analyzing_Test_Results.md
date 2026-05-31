@@ -6,7 +6,6 @@ subtitle: Teuthology_Training_-_Analyzing_Test_Results
 tags:
 - Ceph
 - 分布式存储
-- 测试分析
 - Teuthology
 - 存储集群
 title: Teuthology Training- Analyzing Test Results

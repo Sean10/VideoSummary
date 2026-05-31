@@ -8,7 +8,6 @@ tags:
 - 分布式存储
 - 自动化
 - 性能优化
-- IPv6
 title: "Ceph Orchestrator 2023-02-14"
 updated: 2023-02-15
 ---

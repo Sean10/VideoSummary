@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 测试改进
-- Windows支持
 title: "Ceph Developer Monthly 2021-03-03"
 updated: 2021-04-21
 ---

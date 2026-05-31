@@ -5,9 +5,8 @@ date: 2020-10-26
 subtitle: Ceph_Orchestrator_Meeting_2020-10-26
 tags:
 - Ceph
-- High Availability
-- Documentation
-- Distributed Storage
+- 高可用性
+- 分布式存储
 title: "Ceph Orchestrator Meeting 2020-10-26"
 updated: 2020-10-27
 ---

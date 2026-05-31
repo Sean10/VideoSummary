@@ -4,10 +4,8 @@ date: 2019-11-25
 updated: 2019-11-26
 tags:
 - Ceph
-- Orchestrator
-- Distributed Storage
-- Code Review
-- Test Framework
+- 编排
+- 分布式存储
 categories:
 - "视频总结"
 subtitle: 2019-11-20_-_-_Ceph_Orchestration_Meeting

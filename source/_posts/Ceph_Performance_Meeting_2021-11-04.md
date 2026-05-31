@@ -6,10 +6,8 @@ subtitle: Ceph_Performance_Meeting_2021-11-04
 tags:
 - Ceph
 - 分布式存储
-- 性能测试
+- 测试
 - CI/CD
-- 蓝鲸存储
-- FIO测试
 title: Ceph Performance Meeting 2021-11-04
 updated: 2021-11-05
 ---

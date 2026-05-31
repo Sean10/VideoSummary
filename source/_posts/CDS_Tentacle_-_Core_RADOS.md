@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - RADOS
-- E优化
-- QoS
 title: "CDS Tentacle - Core RADOS"
 updated: 2024-08-23
 ---

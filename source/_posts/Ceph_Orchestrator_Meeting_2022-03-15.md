@@ -4,10 +4,7 @@ date: 2022-03-18
 updated: 2022-03-18
 tags:
 - Ceph
-- Orchestrator
-- 防火墙管理
-- 监控配置
-- 代码结构
+- 编排
 categories:
 - "视频总结"
 subtitle: "Ceph Orchestrator 会议 2022-03-15"

@@ -5,7 +5,6 @@ date: 2024-08-23
 subtitle: Next_Generation_Erasure_Coding_Ceph_Days_London_2024
 tags:
 - Ceph
-- 纠删码
 - 性能优化
 - 分布式存储
 - Erasure Coding

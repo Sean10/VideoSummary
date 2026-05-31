@@ -8,7 +8,7 @@ tags:
 - 分布式存储
 - CRUSH算法
 - 高可用性
-- 可伸缩性
+- 可扩展性
 title: "'2020-04-28 :: Ceph Crimson Meeting'"
 updated: 2020-04-30
 ---

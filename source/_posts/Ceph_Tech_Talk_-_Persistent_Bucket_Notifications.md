@@ -6,9 +6,6 @@ subtitle: Ceph_Tech_Talk_-_Persistent_Bucket_Notifications
 tags:
 - Ceph
 - 分布式存储
-- 持久化桶通知
-- 异步通知
-- 两阶段提交
 title: "'Ceph Tech Talk: Persistent Bucket Notifications'"
 updated: 2021-04-02
 ---

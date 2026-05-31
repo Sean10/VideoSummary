@@ -6,8 +6,6 @@ subtitle: Ceph_Tech_Talk_-_A_Different_Scale_Running_Small_Ceph_Clusters_in_Mult
 tags:
 - Ceph
 - 分布式存储
-- 小型集群
-- 多数据中心
 - 存储优化
 title: "'Ceph Tech Talk: A Different Scale, Running Small Ceph Clusters in Multiple Data Centers 20200723'"
 updated: 2020-07-29

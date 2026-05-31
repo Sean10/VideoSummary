@@ -6,10 +6,6 @@ date: 2014-07-25
 subtitle: HGST在Ceph Day会议上的技术分享
 tags:
 - Ceph
-- HGST
-- Open Ethernet Drive Architecture
-- Software
-- defined Storage
 - OpenStack
 title: "RH InkTank Ceph Day Sessions Mario Blandini HGST"
 updated: 2014-07-25

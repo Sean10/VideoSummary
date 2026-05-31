@@ -5,9 +5,7 @@ updated: 2014-06-26
 tags:
 - RBD
 - Ceph
-- Object Map
-- Performance Optimization
-- Storage Efficiency
+- 性能优化
 categories:
 - "视频总结"
 subtitle: CDS_G_H_Day_2_-_RBD_-_Shared_flag_object_map

@@ -4,10 +4,6 @@ date: 2020-08-12
 updated: 2020-08-13
 tags:
 - Ceph
-- 文档更新
-- 开发流程
-- 视频教程
-- 文档管理
 categories:
 - "视频总结"
 subtitle: Ceph_DocuBetter_Meeting_2020-08-12

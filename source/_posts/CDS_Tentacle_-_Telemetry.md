@@ -4,10 +4,6 @@ date: 2024-08-22
 updated: 2024-08-23
 tags:
 - Ceph
-- Telemetry
-- Storage Metrics
-- Ceph Stretch Mode
-- Ceph Monitoring
 categories:
 - "视频总结"
 subtitle: CDS_Tentacle_-_Telemetry
@@ -40,7 +36,7 @@ subtitle: CDS_Tentacle_-_Telemetry
 
 *   **讨论背景**： 讨论了其他需要收集的指标，例如：
     *   用户对其他功能的使用情况。
-    *   其他未收集的指标，例如 RBD、RGW 和 FFS 的应用层指标。
+    *   其他未收集的指标，例如 RBD、RGW 和 CephFS 的应用层指标。
     *   RGW 多站点集群的统计信息。
     *   蓝存储分配器性能指标。
 *   **解决方案**：

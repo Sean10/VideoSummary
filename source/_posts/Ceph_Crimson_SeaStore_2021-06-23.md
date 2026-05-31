@@ -4,12 +4,12 @@ categories:
 date: 2021-06-24
 subtitle: Ceph_Crimson_SeaStore_2021-06-23
 tags:
-- distributed storage
+- 分布式存储
 - Ceph
-- CRUSH algorithm
-- high availability
-- scalability
-- performance
+- CRUSH算法
+- 高可用性
+- 可扩展性
+- 性能
 title: "Ceph Crimson/SeaStore 2021-06-23"
 updated: 2021-06-25
 ---

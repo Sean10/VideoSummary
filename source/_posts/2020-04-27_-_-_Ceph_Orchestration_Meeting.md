@@ -5,8 +5,7 @@ date: 2020-04-29
 subtitle: 2020-04-27_-_-_Ceph_Orchestration_Meeting
 tags:
 - Ceph
-- Orchestration
-- Daily Test Suite
+- 编排
 - CI/CD
 - Rook
 title: "'2020-04-27 :: Ceph Orchestration Meeting'"

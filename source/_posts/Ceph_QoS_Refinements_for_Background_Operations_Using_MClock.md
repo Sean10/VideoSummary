@@ -5,10 +5,7 @@ date: 2023-05-05
 subtitle: Ceph_QoS_Refinements_for_Background_Operations_Using_MClock
 tags:
 - Ceph
-- QoS Optimization
-- MClock Algorithm
-- Distributed Storage
-- Ceph Storage
+- 分布式存储
 title: "Ceph QoS Refinements for Background Operations Using MClock"
 updated: 2023-05-05
 ---

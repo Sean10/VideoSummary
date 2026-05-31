@@ -6,10 +6,7 @@ subtitle: Ceph_Month_2021_-_Evaluating_CephFS_Performance_vs._Cost_on_High-Densi
 tags:
 - Ceph
 - CephFS
-- High
-- Density Commodity Disk Servers
-- Performance Evaluation
-- Distributed Storage
+- 分布式存储
 title: "'Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers'"
 updated: 2021-06-25
 ---

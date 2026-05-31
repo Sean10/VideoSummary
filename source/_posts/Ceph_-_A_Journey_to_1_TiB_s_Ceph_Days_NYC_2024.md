@@ -4,11 +4,8 @@ categories:
 date: 2024-05-16
 subtitle: Ceph_-_A_Journey_to_1_TiB_s_Ceph_Days_NYC_2024
 tags:
-- Ceph性能优化
+- 性能优化
 - 分布式存储
-- 高速存储集群
-- NVMe存储
-- Ceph Days NYC 2024
 title: "'Ceph: A Journey to 1 TiB/s | Ceph Days NYC 2024'"
 updated: None
 ---

@@ -4,10 +4,9 @@ date: 2023-01-06
 updated: 2023-01-07
 tags:
 - Ceph
-- Performance Testing
+- 测试
 - RocksDB
-- Distributed Storage
-- Database Optimization
+- 分布式存储
 categories:
 - "视频总结"
 subtitle: Ceph_Performance_Meeting_2023-01-05

@@ -5,10 +5,9 @@ date: 2022-11-15
 subtitle: New_workload_balancer_in_Ceph
 tags:
 - Ceph
-- Distributed Storage
-- CRUSH Algorithm
-- Workload Balancer
-- Performance Optimization
+- 分布式存储
+- CRUSH算法
+- 性能优化
 title: "New workload balancer in Ceph"
 updated: 2022-11-16
 ---

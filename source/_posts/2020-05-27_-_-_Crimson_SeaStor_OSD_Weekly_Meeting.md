@@ -6,7 +6,6 @@ subtitle: 2020-05-27_-_-_Crimson_SeaStor_OSD_Weekly_Meeting
 tags:
 - Ceph
 - 分布式存储
-- 代码优化
 - 会议纪要
 - OSD
 title: "'2020-05-27 :: Crimson SeaStor OSD Weekly Meeting'"

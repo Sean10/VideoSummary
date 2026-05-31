@@ -5,9 +5,6 @@ updated: 2023-02-21
 tags:
 - Ceph
 - RGW
-- IAM账户功能
-- 复制状态头设计
-- Kafka客户端库变更
 categories:
 - "视频总结"
 subtitle: Ceph_RGW_Refactoring_Meeting_2023-02-21

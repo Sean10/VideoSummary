@@ -5,11 +5,6 @@ updated: 2023-12-14
 tags:
 - Ceph
 - RGW
-- Bucket Notification
-- Multi
-- Site Support
-- Lifecycle Management
-- Role Ownership
 categories:
 - "视频总结"
 subtitle: Ceph_RGW_Refactoring_Meeting_2023-12-13

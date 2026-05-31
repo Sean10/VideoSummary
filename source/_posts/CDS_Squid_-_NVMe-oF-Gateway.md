@@ -6,10 +6,8 @@ subtitle: CDS_Squid_-_NVMe-oF-Gateway
 tags:
 - Ceph
 - NVMe
-- oF
-- Gateway
-- High Availability
-- Scalability
+- 高可用性
+- 可扩展性
 title: "'CDS Squid: NVMe-oF-Gateway'"
 updated: 2023-07-26
 ---

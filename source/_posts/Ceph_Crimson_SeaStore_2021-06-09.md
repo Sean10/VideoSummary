@@ -8,7 +8,7 @@ tags:
 - 分布式存储
 - CRUSH算法
 - 高可用性
-- 可伸缩性
+- 可扩展性
 title: "Ceph Crimson/SeaStore 2021-06-09"
 updated: 2021-06-10
 ---

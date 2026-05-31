@@ -12,10 +12,8 @@ tags:
 - 对象存储
 - 块存储
 - 文件系统存储
-- 一致性
-- 去中心化
 - 性能
-- Bluestore
+- BlueStore
 - BlueFS
 - RocksDB
 - OSD
@@ -25,30 +23,23 @@ tags:
 - RADOS
 - librados
 - libcephfs
-- cephfs
-- rbd
-- radosgw
+- RBD
 - RGW
 - RESTful API
 - 认证
 - 授权
 - 加密
-- 纠错码
 - 复制
 - 快照
 - 克隆
-- 虚拟化存储
 - iSCSI
-- Fibre Channel
 - NFS
 - CIFS
 - POSIX
 - 监控
-- 仪表板
-- 管理
+- Dashboard
 - 编排
 - 自动化
-- 集成
 - 容器化
 - Kubernetes
 - Docker
@@ -59,25 +50,17 @@ tags:
 - 混合云
 - 多云
 - 存储集群
-- 节点
-- 硬盘
 - SSD
-- JBOD
 - SAN
 - NAS
 - 网络
-- 拓扑
-- 失败域
-- 恢复
 - 弹性
+- 恢复
 - 负载均衡
 - 缓存
 - 压缩
 - 去重
-- 分级存储
-- 性能调优
-- 基准测试
-- 验证
+- 性能优化
 title: "'2020-02-18 :: Ceph Crimson Meeting'"
 updated: 2020-04-04
 ---

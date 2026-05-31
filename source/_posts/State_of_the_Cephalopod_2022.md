@@ -6,9 +6,6 @@ subtitle: State_of_the_Cephalopod_2022
 tags:
 - Ceph
 - 分布式存储
-- Quincy版本
-- Reef版本
-- Ceph基金会
 title: "State of the Cephalopod 2022"
 updated: 2022-11-10
 ---

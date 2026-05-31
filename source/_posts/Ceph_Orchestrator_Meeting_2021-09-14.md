@@ -7,7 +7,6 @@ tags:
 - 分布式存储
 - 自动化
 - 监控
-- 决策
 categories:
 - "会议纪要"
 subtitle: "Ceph Orchestrator 会议 2021-09-14"

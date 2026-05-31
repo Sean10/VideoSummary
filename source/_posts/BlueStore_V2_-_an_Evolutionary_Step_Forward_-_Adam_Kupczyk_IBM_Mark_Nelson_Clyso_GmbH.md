@@ -8,7 +8,6 @@ tags:
 - BlueStore
 - 存储优化
 - 分布式存储
-- 性能提升
 title: "BlueStore V2 - an Evolutionary Step Forward - Adam Kupczyk, IBM & Mark Nelson, Clyso GmbH"
 updated: 2023-05-05
 ---

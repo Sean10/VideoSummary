@@ -9,19 +9,15 @@ date: 2020-04-03
 subtitle: 2020-02-24_-_-_Ceph_Orchestration_Meeting
 tags:
 - Ceph
-- Distributed Storage
-- CRUSH Algorithm
-- High Availability
-- Scalability
-- Object Storage
-- Block Storage
-- File System Storage
-- Consistency
-- Decentralization
-- Performance
-- Monitoring
-- Orchestration
-- Automation
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可扩展性
+- 对象存储
+- 性能
+- 监控
+- 编排
+- 自动化
 title: "'2020-02-24 :: Ceph Orchestration Meeting'"
 updated: 2020-04-04
 ---

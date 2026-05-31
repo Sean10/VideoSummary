@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 持久化
-- 软件开发
 title: "Ceph Developer Monthly | 2024-08-07"
 updated: 2024-08-16
 ---
@@ -20,7 +18,7 @@ updated: 2024-08-16
 **主要议题及讨论**：
 
 * **Crimson性能建议**： Jose Perez分享了Crimson性能建议的研究，比较了基本配置和手动配置的性能差异，并提出了推荐配置。
-* **SEFS不区分大小写的目录树**： Patrick讨论了SEFS中不区分大小写的目录树，该功能将提高Samba等网关的性能。
+* **CephFS不区分大小写的目录树**： Patrick讨论了CephFS中不区分大小写的目录树，该功能将提高Samba等网关的性能。
 * **Pine Manager**： 提议为Pine Manager添加禁用始终开启模块的功能，以解决某些模块性能问题。
 * **CBT未来愿景**： Lee Sanders介绍了CBT的未来愿景，包括改进自动化、数据后处理和性能评估标准。
 * **Erasure Coding性能**： Bill讨论了Erasure Coding性能优化，以提高小读写I/O和随机读写性能。
@@ -30,7 +28,7 @@ updated: 2024-08-16
 **关键决定**：
 
 * 继续研究Crimson性能建议，并制定推荐配置。
-* 在SEFS中实现不区分大小写的目录树。
+* 在CephFS中实现不区分大小写的目录树。
 * 为Pine Manager添加禁用始终开启模块的功能，并考虑将其推广到其他模块。
 * 改进CBT，以提供更自动化和标准化的性能评估。
 * 优化Erasure Coding性能。
@@ -40,7 +38,7 @@ updated: 2024-08-16
 **后续行动计划**：
 
 * 讨论Crimson性能建议的幻灯片。
-* 更新SEFS不区分大小写的目录树的跟踪器。
+* 更新CephFS不区分大小写的目录树的跟踪器。
 * 审查Pine Manager禁用始终开启模块的功能。
 * 继续改进CBT。
 * 进行Erasure Coding性能优化。

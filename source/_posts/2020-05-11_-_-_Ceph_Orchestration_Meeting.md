@@ -5,10 +5,8 @@ date: 2020-05-12
 subtitle: 2020-05-11_-_-_Ceph_Orchestration_Meeting
 tags:
 - Ceph
-- Orchestration
-- ADM
-- Automation
-- CephADM
+- 编排
+- 自动化
 title: "'2020-05-11 :: Ceph Orchestration Meeting'"
 updated: 2020-05-13
 ---

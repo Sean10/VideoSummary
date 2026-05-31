@@ -6,8 +6,6 @@ tags:
 - Ceph
 - 分布式存储
 - 测试
-- 开发
-- 虚拟IP分配
 categories:
 - "视频总结"
 subtitle: Ceph_Orchestrator_Meeting_2021-04-13

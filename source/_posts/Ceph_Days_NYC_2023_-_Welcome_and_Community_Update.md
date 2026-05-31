@@ -6,9 +6,7 @@ subtitle: Ceph_Days_NYC_2023_-_Welcome_and_Community_Update
 tags:
 - Ceph
 - 分布式存储
-- 社区更新
 - 会议纪要
-- Bloomberg
 title: "'Ceph Days NYC 2023: Welcome and Community Update'"
 updated: 2023-05-17
 ---

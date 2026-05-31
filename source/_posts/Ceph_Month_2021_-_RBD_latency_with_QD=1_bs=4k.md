@@ -7,8 +7,6 @@ tags:
 - Ceph
 - RBD
 - 性能优化
-- 低延迟
-- 硬件配置
 title: "'Ceph Month 2021: RBD latency with QD=1 bs=4k'"
 updated: 2021-06-16
 ---

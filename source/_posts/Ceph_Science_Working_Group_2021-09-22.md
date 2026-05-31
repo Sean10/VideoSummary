@@ -5,10 +5,6 @@ updated: 2021-10-07
 tags:
 - Ceph
 - 分布式存储
-- 科学工作组
-- 集群管理
-- 硬件问题
-- 软件升级
 categories:
 - "视频总结"
 subtitle: Ceph_Science_Working_Group_2021-09-22

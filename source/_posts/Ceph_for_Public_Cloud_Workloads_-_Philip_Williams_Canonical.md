@@ -6,9 +6,6 @@ subtitle: Ceph_for_Public_Cloud_Workloads_-_Philip_Williams_Canonical
 tags:
 - Ceph
 - 分布式存储
-- 公共云
-- 私有云
-- 成本效益
 title: "Ceph for Public Cloud Workloads - Philip Williams, Canonical"
 updated: 2023-05-05
 ---

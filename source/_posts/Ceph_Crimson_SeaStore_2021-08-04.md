@@ -4,11 +4,7 @@ categories:
 date: 2021-08-23
 subtitle: Ceph_Crimson_SeaStore_2021-08-04
 tags:
-- Ceph存储系统
 - 分布式存储
-- 性能指标
-- 系统更新
-- 设备管理
 title: "Ceph Crimson/SeaStore 2021-08-04"
 updated: 2021-08-24
 ---

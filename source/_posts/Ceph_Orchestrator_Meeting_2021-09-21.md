@@ -5,9 +5,8 @@ date: 2021-10-06
 subtitle: Ceph_Orchestrator_Meeting_2021-09-21
 tags:
 - Ceph
-- Orchestrator
+- 编排
 - Rook
-- Monitoring Stack
 - Kubernetes
 title: "Ceph Orchestrator Meeting 2021-09-21"
 updated: 2021-10-07

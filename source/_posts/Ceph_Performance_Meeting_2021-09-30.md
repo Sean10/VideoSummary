@@ -6,8 +6,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- SPDK
-- I/O调度
 categories:
 - "会议总结"
 subtitle: Ceph_Performance_Meeting_2021-09-30

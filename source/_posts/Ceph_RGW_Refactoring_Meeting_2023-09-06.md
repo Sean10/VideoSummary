@@ -5,10 +5,6 @@ date: 2023-10-04
 subtitle: Ceph_RGW_Refactoring_Meeting_2023-09-06
 tags:
 - Ceph
-- RGW重构
-- AWS SNS
-- 主题策略
-- 多站点通知复制
 title: Ceph RGW Refactoring Meeting 2023-09-06
 updated: 2023-10-04
 ---

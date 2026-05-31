@@ -7,7 +7,6 @@ tags:
 - Ceph
 - Kubernetes
 - 分布式存储
-- 故障排除
 categories:
 - "视频总结"
 ---

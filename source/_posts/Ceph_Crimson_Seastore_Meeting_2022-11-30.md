@@ -5,10 +5,8 @@ date: 2022-12-02
 subtitle: Ceph_Crimson_Seastore_Meeting_2022-11-30
 tags:
 - Ceph
-- 代码审查
 - 性能优化
 - 分布式存储
-- 功能实现
 title: "Ceph Crimson/Seastore Meeting 2022-11-30"
 updated: 2022-12-03
 ---

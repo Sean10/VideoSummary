@@ -6,8 +6,6 @@ subtitle: CephFS_Code_Walkthrough_-_MDS_Journal_Machinery
 tags:
 - Ceph
 - MDS
-- Journal
-- Metadata
 - CephFS
 title: "'CephFS Code Walkthrough: MDS Journal Machinery'"
 updated: 2021-10-08

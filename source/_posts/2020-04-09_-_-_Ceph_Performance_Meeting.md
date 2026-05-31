@@ -7,7 +7,6 @@ tags:
 - 分布式存储
 - Ceph
 - 性能优化
-- PR审核
 - CI/CD
 title: 2020-04-09 -- Ceph Performance Meeting
 updated: 2020-04-14

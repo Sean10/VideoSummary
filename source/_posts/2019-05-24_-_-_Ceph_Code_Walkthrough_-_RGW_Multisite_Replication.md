@@ -6,9 +6,7 @@ subtitle: 2019-05-24_-_-_Ceph_Code_Walkthrough_-_RGW_Multisite_Replication
 tags:
 - Ceph
 - RGW
-- Multi
-- site Replication
-- Distributed Storage
+- 分布式存储
 - CephFS
 title: "'2019-05-24 :: Ceph Code Walkthrough: RGW Multisite Replication'"
 updated: 2019-05-24

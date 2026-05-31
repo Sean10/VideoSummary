@@ -5,10 +5,6 @@ date: 2023-04-12
 subtitle: Ceph_Crimson_SeaStar-OSD_2023-04-12_Meeting
 tags:
 - Ceph
-- Crimson 项目
-- RBD 测试
-- 系统调试
-- 会议安排
 title: Ceph Crimson/SeaStar-OSD 2023-04-12 Meeting
 updated: 2023-04-12
 ---

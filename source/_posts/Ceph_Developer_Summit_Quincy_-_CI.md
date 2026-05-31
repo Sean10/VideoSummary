@@ -6,8 +6,6 @@ subtitle: Ceph_Developer_Summit_Quincy_-_CI
 tags:
 - Ceph
 - CI/CD
-- 测试基础设施
-- Jenkins
 - Cephadm
 title: Ceph Developer Summit Quincy- CI
 updated: 2021-04-13

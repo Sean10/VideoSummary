@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 测试
-- 依赖管理
-- 故障排查
 title: "Ceph Orchestrator Meeting 2022-12-01"
 updated: 2022-12-02
 ---

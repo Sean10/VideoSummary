@@ -5,10 +5,9 @@ date: 2020-07-02
 subtitle: Ceph_Developer_Monthly_2020-07-02
 tags:
 - Ceph
-- distributed storage
-- Crimson OST
-- containerization
-- testing
+- 分布式存储
+- 容器化
+- 测试
 title: "Ceph Developer Monthly 2020-07-02"
 updated: 2020-07-02
 ---

@@ -7,9 +7,6 @@ tags:
 - Ceph
 - Kubernetes
 - Rook
-- Multi
-- cluster management
-- Cloud Native
 title: "Dynamic multi-cluster management with Rook for cloud native IaaS providers for the private clouds"
 updated: 2023-05-20
 ---

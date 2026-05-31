@@ -4,10 +4,7 @@ date: 2022-05-06
 updated: 2022-05-07
 tags:
 - Ceph
-- Telemetry
 - Dashboard
-- Data Analysis
-- Crash Reporting
 categories:
 - "视频总结"
 ---

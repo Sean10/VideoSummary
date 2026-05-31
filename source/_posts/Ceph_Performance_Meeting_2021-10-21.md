@@ -6,8 +6,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- PR审查
-- 库存管理
 categories:
 - "视频总结"
 subtitle: "Ceph 性能会议 2021-10-21"

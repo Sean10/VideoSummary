@@ -6,9 +6,9 @@ subtitle: Ceph_Performance_Meeting_2020-09-24
 tags:
 - Ceph
 - RocksDB
-- Performance Optimization
-- Object Storage
-- Distributed Storage
+- 性能优化
+- 对象存储
+- 分布式存储
 title: Ceph Performance Meeting 2020-09-24
 updated: 2020-09-25
 ---

@@ -4,10 +4,6 @@ categories:
 date: 2014-06-24
 subtitle: CDS_G_H_Day_1_-_RDMA_Update
 tags:
-- RDMA更新
-- Ceph存储
-- Firefly升级
-- IO链式操作
 - 性能优化
 title: "CDS G/H (Day 1) - RDMA Update"
 updated: 2014-06-24

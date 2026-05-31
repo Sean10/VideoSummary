@@ -5,9 +5,7 @@ updated: 2022-09-22
 tags:
 - Ceph
 - BlueStore
-- Shared Blob
-- Performance Optimization
-- RBD Mirroring
+- 性能优化
 categories:
 - "视频总结"
 subtitle: Ceph_Performance_Meeting_2022-09-15

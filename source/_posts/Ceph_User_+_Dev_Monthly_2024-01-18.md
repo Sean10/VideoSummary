@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 对象存储
-- 磁带存储
-- 功能请求
 title: "Ceph User + Dev Monthly 2024-01-18"
 updated: 2024-01-23
 ---

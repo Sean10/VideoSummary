@@ -5,10 +5,7 @@ date: 2024-05-24
 subtitle: Ceph_Data_Placement_with_Upmap_Introducing_Chorus_Ceph_Days_NYC_2024
 tags:
 - Ceph
-- 数据分布
 - 自动化
-- Chorus工具
-- Upmap
 title: "Ceph Data Placement with Upmap / Introducing Chorus | Ceph Days NYC 2024"
 updated: 2024-05-24
 ---

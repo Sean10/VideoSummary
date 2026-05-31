@@ -5,9 +5,8 @@ date: 2021-11-23
 subtitle: Ceph_Orchestrator_Meeting_2021-11-23
 tags:
 - Ceph
-- Orchestrator
-- Meeting
-- Distributed Storage
+- 编排
+- 分布式存储
 - OpenStack
 title: "Ceph Orchestrator Meeting 2021-11-23"
 updated: 2021-11-24

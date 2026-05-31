@@ -6,10 +6,6 @@ tags:
 - Ceph
 - 分布式存储
 - RGW
-- S3 Select
-- Resharding
-- 多站点
-- Zipper
 categories:
 - "视频总结"
 subtitle: CDS_Tentacle_-_RGW

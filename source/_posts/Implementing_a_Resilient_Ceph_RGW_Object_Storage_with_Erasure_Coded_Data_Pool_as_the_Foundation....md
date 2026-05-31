@@ -5,10 +5,9 @@ date: 2023-05-05
 subtitle: 在容错的Ceph RGW对象存储中实现纠错码数据池作为基础...
 tags:
 - Ceph
-- Object Storage
+- 对象存储
 - Erasure Coding
-- High Availability
-- Cloud Storage
+- 高可用性
 title: "Implementing a Resilient Ceph RGW Object Storage with Erasure Coded Data Pool as the Foundation..."
 updated: 2023-05-05
 ---

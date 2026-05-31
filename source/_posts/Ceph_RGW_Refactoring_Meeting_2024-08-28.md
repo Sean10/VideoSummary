@@ -6,9 +6,7 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2024-08-28
 tags:
 - Ceph
 - RGW
-- Bucket 日志
 - 分布式存储
-- Ceph RGW
 title: Ceph RGW Refactoring Meeting 2024-08-28
 updated: 2024-09-04
 ---

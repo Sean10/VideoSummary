@@ -4,10 +4,6 @@ date: 2020-06-10
 updated: 2020-06-11
 tags:
 - Ceph
-- 文档更新
-- 社区贡献
-- Git管理
-- Ceph ATM指南
 categories:
 - "视频总结"
 subtitle: Ceph_DocuBetter_Meeting_2020-06-10

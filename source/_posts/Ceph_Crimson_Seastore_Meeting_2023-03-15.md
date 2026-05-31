@@ -4,11 +4,7 @@ categories:
 date: 2023-03-15
 subtitle: Ceph_Crimson_Seastore_Meeting_2023-03-15
 tags:
-- Ceph存储引擎
-- 快照与克隆操作
-- Blue Store
-- 系统设计与优化
-- 代码审查与验证
+- BlueStore
 title: "Ceph Crimson/Seastore Meeting 2023-03-15"
 updated: 2023-03-16
 ---

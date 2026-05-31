@@ -6,9 +6,7 @@ subtitle: Ceph_Developer_Monthly_2024-04-17
 tags:
 - Ceph
 - 分布式存储
-- 用户调查
 - 性能优化
-- 可用性改进
 title: "Ceph Developer Monthly 2024-04-17"
 updated: 2024-05-14
 ---

@@ -5,10 +5,7 @@ date: 2020-04-03
 subtitle: 2020-02-12_-_-_Ceph_Docubetter_Meeting
 tags:
 - Ceph
-- 文档更新
-- PG修复
 - 分布式存储
-- Cephfs
 title: "'2020-02-12 :: Ceph Docubetter Meeting'"
 updated: 2020-04-04
 ---

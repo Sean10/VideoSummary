@@ -6,9 +6,7 @@ subtitle: Ceph_Tech_Talk_-_RGW_Lua_Scripting_Code_Walkthrough
 tags:
 - Ceph
 - RGW
-- Lua Scripting
-- Ceph Storage Gateway
-- Open Source
+- 开源
 title: "'Ceph Tech Talk: RGW Lua Scripting Code Walkthrough'"
 updated: 2023-05-25
 ---

@@ -5,10 +5,6 @@ date: 2023-08-30
 subtitle: Ceph_Orchestrator_Meeting_2023-08-29
 tags:
 - Ceph
-- 重构
-- 命名规范
-- 代码格式化
-- Python Black
 title: "Ceph Orchestrator Meeting 2023-08-29"
 updated: 2023-08-31
 ---

@@ -7,10 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - CRUSH算法
-- 内存泄漏
-- B+树
-- 数据压缩
-- 项目管理
 title: "'2020-03-24 :: Ceph Crimson Meeting'"
 updated: 2020-04-04
 ---

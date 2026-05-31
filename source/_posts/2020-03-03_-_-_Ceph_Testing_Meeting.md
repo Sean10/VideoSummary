@@ -7,7 +7,7 @@ tags:
 - Ceph
 - 测试
 - 分布式存储
-- CRUSH 算法
+- CRUSH算法
 - 高可用性
 title: 2020-03-03 -- Ceph Testing Meeting
 updated: 2020-04-04

@@ -6,9 +6,6 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-09-27
 tags:
 - Ceph
 - RGW
-- 代码质量
-- 数据一致性
-- 系统稳定性
 title: Ceph RGW Refactoring Meeting 2023-09-27
 updated: 2023-10-05
 ---

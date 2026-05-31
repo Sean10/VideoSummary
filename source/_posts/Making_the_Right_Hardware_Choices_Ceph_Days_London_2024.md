@@ -4,8 +4,6 @@ date: 2024-08-23
 updated: 2024-08-24
 tags:
 - Ceph
-- 存储系统
-- 硬件选型
 - 性能优化
 - 分布式存储
 categories:

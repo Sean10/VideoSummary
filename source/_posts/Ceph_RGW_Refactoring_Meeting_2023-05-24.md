@@ -6,9 +6,7 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-05-24
 tags:
 - Ceph
 - RGW
-- 重构
 - 分布式存储
-- 多站点测试
 title: Ceph RGW Refactoring Meeting 2023-05-24
 updated: 2023-05-25
 ---

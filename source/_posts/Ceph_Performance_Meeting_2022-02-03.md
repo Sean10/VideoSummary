@@ -6,11 +6,8 @@ subtitle: Ceph_Performance_Meeting_2022-02-03
 tags:
 - Ceph
 - 性能优化
-- 内存管理
 - 分布式存储
 - CRUSH算法
-- Quincy
-- MClock
 title: Ceph Performance Meeting 2022-02-03
 updated: 2022-02-04
 ---

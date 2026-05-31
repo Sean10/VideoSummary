@@ -5,10 +5,8 @@ date: 2022-05-05
 subtitle: Ceph_User_+_Dev_Meeting_2022-05-04
 tags:
 - Ceph
-- NVM
-- Plugin System
-- Security
-- Storage Optimization
+- 安全性
+- 存储优化
 title: "Ceph User + Dev Meeting 2022-05-04"
 updated: 2022-05-06
 ---

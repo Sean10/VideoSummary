@@ -5,13 +5,10 @@ date: 2020-04-03
 subtitle: CDS_Pacific_-_Performance
 tags:
 - Ceph
-- Pacific版本
 - 性能优化
 - 分布式存储
 - BlueStore
-- PG balancer
-- 持续集成
-- 性能测试
+- 测试
 title: "'CDS Pacific: Performance'"
 updated: 2020-04-04
 ---

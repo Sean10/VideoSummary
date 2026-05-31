@@ -4,11 +4,8 @@ categories:
 date: 2021-03-16
 subtitle: Teuthology_Training_-_Introduction
 tags:
-- Ceph测试
 - Teuthology
 - 分布式存储
-- 测试框架
-- Ceph集群
 title: "'Teuthology Training: Introduction'"
 updated: 2021-03-16
 ---

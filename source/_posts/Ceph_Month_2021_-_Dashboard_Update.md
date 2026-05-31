@@ -6,9 +6,7 @@ subtitle: Ceph_Month_2021_-_Dashboard_Update
 tags:
 - Ceph
 - Dashboard
-- Pacific 版本
-- Quincy 版本
-- Orchestration
+- 编排
 title: "'Ceph Month 2021: Dashboard Update'"
 updated: 2021-06-16
 ---

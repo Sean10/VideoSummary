@@ -8,7 +8,6 @@ tags:
 - RGW
 - 分布式存储
 - CephFS
-- RadosGW
 title: "'CDS Squid: RGW'"
 updated: 2023-07-26
 ---

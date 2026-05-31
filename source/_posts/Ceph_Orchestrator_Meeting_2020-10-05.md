@@ -4,10 +4,9 @@ date: 2020-10-06
 updated: 2020-10-07
 tags:
 - Ceph
-- Orchestrator
+- 编排
 - Rook
 - Kubernetes
-- Storage Management
 categories:
 - "视频总结"
 subtitle: "Ceph Orchestrator Meeting 2020-10-05"

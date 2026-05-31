@@ -6,12 +6,10 @@ subtitle: NVMe-Over-Fabrics_Support_for_Ceph_-_Jonas_Pfefferle_IBM
 tags:
 - Ceph
 - NVMe
-- oF
 - 分布式存储
 - 高可用性
 - 存储集群
 - 软件定义存储
-- 网络存储
 title: "NVMe-Over-Fabrics Support for Ceph - Jonas Pfefferle, IBM"
 updated: 2023-05-05
 ---

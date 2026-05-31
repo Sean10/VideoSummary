@@ -5,12 +5,7 @@ date: 2021-05-18
 subtitle: Ceph_Orchestrator_Meeting_2021-05-18
 tags:
 - Ceph
-- Orchestrator
-- Self
-- adm Agent
-- Reconciliation Loop
-- Push Model
-- Architecture Improvement
+- 编排
 title: "Ceph Orchestrator Meeting 2021-05-18"
 updated: 2021-05-19
 ---

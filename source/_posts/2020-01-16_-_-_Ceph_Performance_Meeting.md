@@ -7,8 +7,7 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 自动缩放
-- CRUSH 算法
+- CRUSH算法
 title: 2020-01-16 -- Ceph Performance Meeting
 updated: 2020-01-24
 ---

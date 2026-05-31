@@ -3,11 +3,7 @@ title: "  Ceph Code Walkthroughs: Paddles  "
 date: 2021-10-07
 updated: 2021-10-08
 tags:
-- [Ceph]
-- [Distributed Storage]
-- [Integration Testing]
-- [Paddles Framework]
-- [Database Wrapper]
+- Ceph
 categories:
 - "视频总结"
 subtitle: Ceph_Code_Walkthroughs_-_Paddles

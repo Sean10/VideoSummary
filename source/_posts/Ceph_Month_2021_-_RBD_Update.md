@@ -8,7 +8,7 @@ tags:
 - RBD
 - 分布式存储
 - 高可用性
-- 可伸缩性
+- 可扩展性
 title: "'Ceph Month 2021: RBD Update'"
 updated: 2021-06-15
 ---

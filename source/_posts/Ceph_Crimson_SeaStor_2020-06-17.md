@@ -5,12 +5,6 @@ date: 2020-06-17
 subtitle: Ceph Crimson/SeaStor 2020-06-17
 tags:
 - Ceph
-- 内存分配器
-- Bluestar
-- Sea Star
-- 线程管理
-- 线程池
-- 线程数量限制
 title: "Ceph Crimson/SeaStor 2020-06-17"
 updated: 2020-06-17
 ---

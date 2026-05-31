@@ -5,10 +5,6 @@ date: 2020-11-26
 subtitle: Ceph_User_Survey_Working_Group_2020-11-25
 tags:
 - Ceph
-- 用户调查
-- 问卷修订
-- 社区参与
-- 存储技术
 title: Ceph User Survey Working Group 2020-11-25
 updated: 2020-11-26
 ---

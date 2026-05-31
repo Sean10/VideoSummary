@@ -5,18 +5,12 @@ date: 2022-04-22
 subtitle: CDS_Reef_-_Crimson
 tags:
 - Ceph
-- Distributed Storage
-- Storage Cluster
-- C
-- Store
+- 分布式存储
+- 存储集群
 - BlueStore
-- Quincy Version
-- Reef Version
-- High Availability
-- Scalability
-- Object Storage
-- Block Storage
-- File System Storage
+- 高可用性
+- 可扩展性
+- 对象存储
 title: "'CDS Reef: Crimson'"
 updated: 2022-04-23
 ---

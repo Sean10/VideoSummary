@@ -7,7 +7,6 @@ tags:
 - Dashboard
 - CephFS
 - RGW
-- Cluster Upgrade
 categories:
 - "视频总结"
 ---

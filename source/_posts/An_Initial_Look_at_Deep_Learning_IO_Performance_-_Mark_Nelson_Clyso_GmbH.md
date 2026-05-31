@@ -4,11 +4,8 @@ categories:
 date: 2023-05-18
 subtitle: An_Initial_Look_at_Deep_Learning_IO_Performance_-_Mark_Nelson_Clyso_GmbH
 tags:
-- Deep Learning
-- Storage Optimization
+- 存储优化
 - Ceph
-- Data Processing
-- AI Performance
 title: "An Initial Look at Deep Learning IO Performance - Mark Nelson, Clyso GmbH"
 updated: 2023-05-19
 ---

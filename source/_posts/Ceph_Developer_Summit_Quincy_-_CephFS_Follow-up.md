@@ -5,10 +5,6 @@ date: 2021-04-28
 subtitle: Ceph开发者峰会Quincy：CephFS跟进
 tags:
 - CephFS
-- Quincy版本
-- Trello Backlog
-- 开发者会议
-- Ceph生态系统
 title: "'Ceph Developer Summit Quincy: CephFS Follow-up'"
 updated: 2021-04-29
 ---
@@ -32,13 +28,13 @@ Ceph开发者峰会的Quincy版本跟进会议主要讨论了CephFS项目的上�
     * Multi-FS Shared Pools因技术限制和需求变化，决定关闭此需求。
     * Snapshots File Level Snapshots因技术挑战和实际需求，决定暂时不作为Quincy版本的工作内容。
     * Background Fored Scrub Scheduling计划在Quincy版本中实现。
-    * FFS Notify Support因在VFS层实现通知支持的难度，决定暂时不作为Quincy版本的工作内容。
+    * CephFS Notify Support因在VFS层实现通知支持的难度，决定暂时不作为Quincy版本的工作内容。
     * MDS Star因需要大规模重写MDS，决定暂时不作为Quincy版本的工作内容。
-    * Libs FFS PP因C API与C++ API分离的需求，决定暂时不作为Quincy版本的工作内容。
+    * Libs CephFS PP因C API与C++ API分离的需求，决定暂时不作为Quincy版本的工作内容。
     * Ceph Top MultiFS Support需改进mgr stats模块以支持多文件系统，计划在Quincy版本中实现。
     * Recursive Unlink RPC计划在Quincy版本中实现。
     * AHA Support计划在Quincy版本中实现。
-    * SFS Cache等待内核补丁的进展，计划在Quincy版本中实现。
+    * CephFS Cache等待内核补丁的进展，计划在Quincy版本中实现。
     * Client Expose Auth MDS for Fileder讨论了在客户端暴露权威MDS的需求，决定暂时不作为Quincy版本的工作内容。
 * **后续行动计划**： 
     * 继续跟踪和更新Trello board，确保所有工作内容和进度得到准确反映。

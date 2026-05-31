@@ -6,8 +6,6 @@ tags:
 - Ceph
 - RGW
 - 分布式存储
-- 同步策略
-- SSL兼容性
 categories:
 - "视频总结"
 subtitle: Ceph_RGW_Refactoring_Meeting_2023-03-01

@@ -4,10 +4,7 @@ date: 2021-06-22
 updated: 2021-06-22
 tags:
 - Ceph
-- RBD Replication
 - CERN
-- OpenStack Cinder
-- Disaster Recovery
 categories:
 - "视频总结"
 subtitle: Ceph_Month_2021_-_Evaluation_of_RBD_replication_options_@CERN

@@ -5,10 +5,7 @@ date: 2021-06-10
 subtitle: Ceph_Performance_Meeting_2021-06-10
 tags:
 - Ceph
-- 性能分析
 - RGW
-- OSD内存目标
-- TC Malloc
 title: Ceph Performance Meeting 2021-06-10
 updated: 2021-06-11
 ---

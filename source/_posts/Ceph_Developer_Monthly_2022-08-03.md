@@ -6,9 +6,7 @@ subtitle: Ceph_Developer_Monthly_2022-08-03
 tags:
 - Ceph
 - 分布式存储
-- 测试与发布流程
 - 性能优化
-- 社区生态建设
 title: "Ceph Developer Monthly 2022-08-03"
 updated: 2022-08-06
 ---

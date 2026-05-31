@@ -5,9 +5,7 @@ date: 2021-08-23
 subtitle: Ceph_Orchestrator_Meeting_2021-08-03
 tags:
 - Ceph
-- Orchestrator
-- Container Images
-- LSO Project
+- 编排
 - CephFS
 title: "Ceph Orchestrator Meeting 2021-08-03"
 updated: 2021-08-24

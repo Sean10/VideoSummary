@@ -3,11 +3,7 @@ title: "  Ceph Science Working Group 2020-07-23  "
 date: 2020-07-28
 updated: 2020-07-28
 tags:
-- Ceph用户组
 - 分布式存储
-- Ceph集群
-- 故障分析
-- 升级与部署
 categories:
 - "视频总结"
 subtitle: Ceph Science Working Group 2020-07-23

@@ -6,9 +6,7 @@ subtitle: Ceph_Orchestrator_Meeting_2021-06-29
 tags:
 - Ceph
 - 分布式存储
-- OpenShift
 - Rook
-- Self Orchestrator
 title: "Ceph Orchestrator Meeting 2021-06-29"
 updated: 2021-08-25
 ---

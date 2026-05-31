@@ -5,8 +5,8 @@ date: 2021-04-26
 subtitle: Ceph_Tech_Talk_-_Cephadm
 tags:
 - Ceph
-- Distributed Storage
-- Containerization
+- 分布式存储
+- 容器化
 - Cephadm
 title: "'Ceph Tech Talk: Cephadm'"
 updated: 2021-04-26

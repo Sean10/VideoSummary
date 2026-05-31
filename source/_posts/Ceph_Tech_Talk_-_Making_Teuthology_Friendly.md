@@ -6,9 +6,7 @@ subtitle: Ceph_Tech_Talk_-_Making_Teuthology_Friendly
 tags:
 - Ceph
 - Teuthology
-- User Interface
-- Automation
-- Testing Framework
+- 自动化
 title: "'Ceph Tech Talk: Making Teuthology Friendly'"
 updated: 2023-08-17
 ---

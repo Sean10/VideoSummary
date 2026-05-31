@@ -6,9 +6,7 @@ subtitle: Ceph_Performance_Meeting_2022-06-02
 tags:
 - Ceph
 - 性能优化
-- 代码审查
 - 测试
-- Ford合作
 title: Ceph Performance Meeting 2022-06-02
 updated: 2022-06-03
 ---

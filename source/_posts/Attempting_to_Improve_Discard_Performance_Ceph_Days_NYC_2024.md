@@ -7,7 +7,6 @@ tags:
 - Ceph
 - 性能优化
 - RBD
-- 固件更新
 - 分布式存储
 title: "Attempting to Improve Discard Performance | Ceph Days NYC 2024"
 updated: 2024-06-19

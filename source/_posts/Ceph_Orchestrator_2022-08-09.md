@@ -5,13 +5,8 @@ date: 2022-08-09
 subtitle: Ceph Orchestrator 会议纪要
 tags:
 - Ceph
-- PR审查
 - 测试
 - OpenStack
-- Manila团队
-- 虚拟IP
-- 故障转移
-- 网络文件系统
 title: "Ceph Orchestrator 2022-08-09"
 updated: 2022-08-10
 ---

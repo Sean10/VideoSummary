@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 持久内存
-- 自动标量
 title: 2019-12-05 -- Ceph Performance Meeting
 updated: 2019-12-06
 ---

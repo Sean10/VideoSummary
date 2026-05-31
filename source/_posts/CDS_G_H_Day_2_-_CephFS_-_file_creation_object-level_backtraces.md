@@ -4,8 +4,6 @@ date: 2014-06-26
 updated: 2014-06-26
 tags:
 - CephFS
-- 文件创建
-- 对象级回溯
 - Ceph
 - 分布式存储
 categories:
@@ -54,7 +52,7 @@ subtitle: CDS_G_H_Day_2_-_CephFS_-_file_creation_object-level_backtraces
 
 **四、关键术语**
 
-- **CFS**： Ceph 文件系统
+- **CephFS**： Ceph 文件系统
 - **OSD**： 块设备
 - **MDS**： 元数据服务器
 - **inode**： 文件系统中的节点，包含文件属性和指针

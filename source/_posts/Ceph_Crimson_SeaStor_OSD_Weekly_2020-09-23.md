@@ -6,9 +6,6 @@ subtitle: Ceph_Crimson_SeaStor_OSD_Weekly_2020-09-23
 tags:
 - Ceph
 - 分布式存储
-- 结构测试与修复
-- 垃圾收集
-- 请求处理流程
 title: "Ceph Crimson/SeaStor OSD Weekly 2020-09-23"
 updated: 2020-09-24
 ---

@@ -5,11 +5,6 @@ date: 2023-05-18
 subtitle: Enabling_Near-Data_Processing_in_Ceph_-_Rixin_Luo_Huawei
 tags:
 - Ceph
-- Near
-- Data Processing
-- Erasure Code
-- Storage Pool
-- Aggregate Module
 title: "Enabling Near-Data Processing in Ceph - Rixin Luo, Huawei"
 updated: 2023-05-19
 ---

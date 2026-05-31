@@ -4,10 +4,7 @@ date: 2023-05-05
 updated: 2023-05-05
 tags:
 - Ceph
-- Monitoring
-- Centralized Logging
-- Prometheus
-- Grafana
+- 监控
 categories:
 - "视频总结"
 subtitle: Monitoring_and_Centralized_Logging_in_Ceph_-_Avan_Thakkar_IBM

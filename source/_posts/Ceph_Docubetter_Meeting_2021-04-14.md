@@ -5,11 +5,6 @@ date: 2021-04-15
 subtitle: Ceph_Docubetter_Meeting_2021-04-14
 tags:
 - Ceph
-- 文档项目
-- 开发者贡献
-- Google Season of Docs
-- 文档编辑
-- 上游文档
 title: "Ceph Docubetter Meeting 2021-04-14"
 updated: 2021-04-15
 ---

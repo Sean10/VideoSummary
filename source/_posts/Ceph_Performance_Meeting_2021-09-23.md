@@ -9,9 +9,7 @@ tags:
 - RocksDB
 - BlueStore
 - RGW
-- PR审查
 - 性能优化
-- Linux存储栈
 title: Ceph Performance Meeting 2021-09-23
 updated: 2021-10-07
 ---

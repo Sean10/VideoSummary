@@ -6,11 +6,9 @@ subtitle: Ceph Orchestrator Meeting 2021-10-19
 tags:
 - Ceph
 - 分布式存储
-- Orchestrator
+- 编排
 - NFS
-- CLI
 - Rook
-- ELSO
 title: "Ceph Orchestrator Meeting 2021-10-19"
 updated: 2021-10-20
 ---

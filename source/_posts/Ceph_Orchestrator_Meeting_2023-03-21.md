@@ -6,9 +6,6 @@ subtitle: Ceph_Orchestrator_Meeting_2023-03-21
 tags:
 - Ceph
 - 分布式存储
-- 迁移计划
-- 技术讨论
-- 超时处理
 title: "Ceph Orchestrator Meeting 2023-03-21"
 updated: 2023-03-22
 ---

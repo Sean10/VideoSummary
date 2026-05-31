@@ -6,7 +6,6 @@ subtitle: A_10-Year_Retrospective_Operating_Ceph_for_Particle_Physics_-_Dan_van_
 tags:
 - Ceph
 - 分布式存储
-- 粒子物理
 - CERN
 - OpenStack
 title: "A 10-Year Retrospective Operating Ceph for Particle Physics - Dan van der Ster, Clyso GmbH"

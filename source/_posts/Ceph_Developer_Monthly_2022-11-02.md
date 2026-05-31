@@ -5,10 +5,6 @@ date: 2022-11-23
 subtitle: Ceph_Developer_Monthly_2022-11-02
 tags:
 - Ceph
-- Crimson OSD
-- User Interface
-- Documentation
-- Debugging
 title: "Ceph Developer Monthly 2022-11-02"
 updated: 2022-11-24
 ---

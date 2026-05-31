@@ -8,7 +8,6 @@ tags:
 - Ceph
 - 性能优化
 - NVMe
-- AVL分配器
 - 分布式存储
 title: Ceph Performance Meeting 2022-04-07
 updated: 2022-04-08

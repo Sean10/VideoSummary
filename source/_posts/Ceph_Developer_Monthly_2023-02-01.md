@@ -8,14 +8,11 @@ tags:
 - 分布式存储
 - CRUSH算法
 - 高可用性
-- 扩展性
 - 对象存储
 - 块存储
 - 文件系统存储
-- 一致性
-- 去中心化
 - 性能
-- Bluestore
+- BlueStore
 - BlueFS
 - RocksDB
 - OSD
@@ -25,15 +22,12 @@ tags:
 - RADOS
 - librados
 - libcephfs
-- cephfs
-- rbd
-- radosgw
+- RBD
 - RGW
 - RESTful API
 - 认证
 - 授权
 - 加密
-- 损坏码
 - 复制
 - 快照
 - 克隆
@@ -45,27 +39,19 @@ tags:
 - 混合云
 - 多云
 - 存储集群
-- 节点
-- 硬盘
 - SSD
 - HDD
-- JBOD
 - SAN
 - NAS
 - 网络
-- 网络拓扑
-- 故障域
-- 恢复
 - 弹性
+- 恢复
 - 负载均衡
 - 缓存
 - 压缩
 - 去重
 - 分层
-- 性能调整
-- 基准测试
 - 测试
-- 验证
 title: "Ceph Developer Monthly 2023-02-01"
 updated: 2023-02-02
 ---

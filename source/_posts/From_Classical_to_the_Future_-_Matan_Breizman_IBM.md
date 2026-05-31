@@ -5,10 +5,6 @@ date: 2023-05-05
 subtitle: From_Classical_to_the_Future_-_Matan_Breizman_IBM
 tags:
 - Ceph
-- Crimson项目
-- 异步编程
-- C
-- star框架
 - 分布式存储
 title: "From Classical to the Future - Matan Breizman, IBM"
 updated: 2023-05-05

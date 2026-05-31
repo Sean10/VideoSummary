@@ -4,11 +4,10 @@ categories:
 date: 2023-05-18
 subtitle: Ceph_Performance_Tuning_-_From_Bluestore_to_RBD_-_Mark_Nelson_Clyso_GmbH
 tags:
-- Ceph性能调优
-- Bluestore
+- BlueStore
 - RBD
 - 分布式存储
-- Ceph性能
+- 性能
 title: Ceph Performance Tuning- From Bluestore to RBD - Mark Nelson, Clyso GmbH
 updated: 2023-05-19
 ---

@@ -5,10 +5,7 @@ date: 2023-05-05
 subtitle: Using_EBPF_to_Develop_a_Powerful_Tool_for_Diagnosing_Ceph_Performance_Issues
 tags:
 - Ceph
-- eBPF
-- 性能诊断
 - 分布式存储
-- 系统架构
 title: Using EBPF to Develop a Powerful Tool for Diagnosing Ceph Performance Issues
 updated: 2023-05-05
 ---

@@ -6,10 +6,6 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-05-03
 tags:
 - Ceph
 - RGW
-- Config Variables
-- Multi
-- Site Projects
-- Documentation
 title: "Ceph RGW Refactoring Meeting 2023-05-03"
 updated: 2023-05-04
 ---

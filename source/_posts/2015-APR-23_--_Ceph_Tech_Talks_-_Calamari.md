@@ -5,10 +5,6 @@ date: 2015-05-04
 subtitle: 2015-APR-23_--_Ceph_Tech_Talks_-_Calamari
 tags:
 - Ceph
-- Calamari
-- Ramona
-- Storage Management
-- Ceph Monitoring
 title: "'2015-APR-23 -- Ceph Tech Talks: Calamari'"
 updated: 2015-05-04
 ---

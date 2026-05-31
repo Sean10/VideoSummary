@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 用户反馈
-- 社区发展
 title: "Ceph User + Dev Monthly Meeting 2024-05-23"
 updated: 2024-05-31
 ---

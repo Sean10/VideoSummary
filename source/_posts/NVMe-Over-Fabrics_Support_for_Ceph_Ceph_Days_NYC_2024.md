@@ -5,10 +5,8 @@ updated: 2024-05-24
 tags:
 - Ceph
 - NVMe
-- oF
-- Storage Performance
-- Distributed Storage
-- Cloud Computing
+- 分布式存储
+- 云计算
 ---
 
 categories:

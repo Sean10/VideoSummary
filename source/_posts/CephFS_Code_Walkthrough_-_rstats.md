@@ -5,11 +5,7 @@ date: 2021-08-20
 subtitle: CephFS_Code_Walkthrough_-_rstats
 tags:
 - CephFS
-- R
-- Stats
-- scrubbing
-- distributed storage
-- file system check
+- 分布式存储
 title: "'CephFS Code Walkthrough: rstats'"
 updated: 2021-08-21
 ---

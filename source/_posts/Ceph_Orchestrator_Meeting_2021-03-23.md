@@ -5,10 +5,8 @@ date: 2021-03-23
 subtitle: Ceph_Orchestrator_Meeting_2021-03-23
 tags:
 - Ceph
-- Orchestrator
-- Distributed Storage
-- Meeting Summary
-- Technical Discussion
+- 编排
+- 分布式存储
 title: "Ceph Orchestrator Meeting 2021-03-23"
 updated: 2021-03-24
 ---

@@ -4,10 +4,9 @@ date: 2020-05-07
 updated: 2020-05-08
 tags:
 - Ceph
-- Orchestrator
+- 编排
 - CI/CD
-- Automation
-- Testing
+- 自动化
 categories:
 - "视频总结"
 subtitle: 2020-05-04_-_-_Ceph_Orchestration_Meeting

@@ -4,11 +4,8 @@ categories:
 date: 2023-05-17
 subtitle: Ceph_Days_NYC_-_Optimizing_RGW_Object_Storage_Mixed_Media_through_Storage_Classes_and_Lua_Scripting
 tags:
-- Ceph RGW
-- Object Storage
-- Storage Classes
-- Lua Scripting
-- TCO Analysis
+- RGW
+- 对象存储
 title: "'Ceph Days NYC: Optimizing RGW Object Storage Mixed Media through Storage Classes and Lua Scripting'"
 updated: 2023-05-18
 ---

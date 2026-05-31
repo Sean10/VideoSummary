@@ -8,7 +8,6 @@ tags:
 - 分布式存储
 - 性能优化
 - BlueStore
-- IOU Ring
 title: Ceph Performance Meeting 2021-09-11
 updated: 2021-09-12
 ---

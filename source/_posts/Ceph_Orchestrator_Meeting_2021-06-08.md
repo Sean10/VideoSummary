@@ -5,10 +5,7 @@ date: 2021-06-08
 subtitle: Ceph_Orchestrator_Meeting_2021-06-08
 tags:
 - Ceph
-- Orchestrator
-- Rook Manager
-- 测试框架
-- 集成
+- 编排
 title: "Ceph Orchestrator Meeting 2021-06-08"
 updated: 2021-06-09
 ---

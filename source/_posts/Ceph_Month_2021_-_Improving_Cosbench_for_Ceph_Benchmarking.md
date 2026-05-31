@@ -4,10 +4,7 @@ date: 2021-06-23
 updated: 2021-06-24
 tags:
 - Ceph
-- Cosbench
-- Benchmarking
-- Storage Testing
-- Open Source
+- 开源
 categories:
 - "视频总结"
 subtitle: Ceph_Month_2021_-_Improving_Cosbench_for_Ceph_Benchmarking

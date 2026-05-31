@@ -7,8 +7,7 @@ tags:
 - Ceph
 - Teuthology
 - Docker
-- Containerization
-- DevOps
+- 容器化
 title: "'2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally'"
 updated: 2022-03-30
 ---

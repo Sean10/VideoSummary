@@ -5,8 +5,7 @@ date: 2020-08-25
 subtitle: Ceph_Day_CERN_2019_-_Ceph_Supporting_Genetic_Research_at_Wellcome_Sanger_Institute_-_Matthew_Vernon
 tags:
 - Ceph
-- Distributed Storage
-- Genomic Research
+- 分布式存储
 - OpenStack
 - RGW
 title: "'Ceph Day CERN 2019: Ceph Supporting Genetic Research at Wellcome Sanger Institute - Matthew Vernon'"

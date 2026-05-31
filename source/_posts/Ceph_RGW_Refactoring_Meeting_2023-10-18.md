@@ -5,9 +5,7 @@ updated: 2023-10-19
 tags:
 - Ceph
 - RGW
-- Refactoring
-- Data Logging
-- Distributed Storage
+- 分布式存储
 categories:
 - "视频总结"
 subtitle: Ceph_RGW_Refactoring_Meeting_2023-10-18

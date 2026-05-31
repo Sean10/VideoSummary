@@ -5,11 +5,6 @@ date: 2023-05-05
 subtitle: 优化Ceph文件系统：结合MDS QoS调度和静态-动态子树分区
 tags:
 - CephFS
-- MDS QoS Scheduling
-- Static
-- Dynamic Subtree Partitioning
-- Ceph Optimization
-- Ceph Performance
 title: "Optimizing CephFS with Combining MDS QoS Scheduling and Static-Dynamic Subtree Partitioning"
 updated: 2023-05-05
 ---
@@ -47,7 +42,7 @@ updated: 2023-05-05
    - 介绍了基于M Clock算法的QoS调度器，用于控制MDS的请求处理速度，确保稳定性和性能。
 
 #### 决定事项
-- 确定了结合静态-动态分区策略的新架构，以优化CFS的性能和稳定性。
+- 确定了结合静态-动态分区策略的新架构，以优化CephFS的性能和稳定性。
 - 实施了MDS QoS调度器，以更好地管理MDS的请求处理和资源分配。
 
 #### 后续行动计划

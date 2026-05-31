@@ -6,8 +6,6 @@ subtitle: Keynote_-_Ceph_-_The_Future_of_the_Storage_TODAY
 tags:
 - Ceph
 - 分布式存储
-- IBM
-- Red Hat
 - 开源
 title: "'Keynote: Ceph: The Future of the Storage TODAY'"
 updated: 2023-05-05

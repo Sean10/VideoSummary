@@ -4,11 +4,7 @@ categories:
 date: 2021-12-14
 subtitle: Ceph_Code_Walkthroughs_-_Ceph.Manager
 tags:
-- Ceph Manager
 - 分布式存储
-- 代码实现
-- Ceph 架构
-- Python 模块
 title: "'Ceph Code Walkthroughs: Ceph Manager'"
 updated: 2021-12-14
 ---

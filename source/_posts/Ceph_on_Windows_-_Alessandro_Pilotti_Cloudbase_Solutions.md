@@ -5,10 +5,7 @@ date: 2023-05-05
 subtitle: Ceph_on_Windows_-_Alessandro_Pilotti_Cloudbase_Solutions
 tags:
 - Ceph
-- Windows集成
 - 分布式存储
-- 开源技术
-- 云存储
 title: "Ceph on Windows - Alessandro Pilotti, Cloudbase Solutions"
 updated: 2023-05-05
 ---

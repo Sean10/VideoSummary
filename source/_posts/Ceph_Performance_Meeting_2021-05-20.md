@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 自动调优
-- 数据收集
 title: Ceph Performance Meeting 2021-05-20
 updated: 2021-05-21
 ---

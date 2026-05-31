@@ -7,8 +7,6 @@ tags:
 - Ceph
 - RGW
 - 分布式存储
-- 数据模型
-- 配置初始化
 title: "Ceph RGW Refactoring Meeting 2023-11-15"
 updated: 2023-11-21
 ---

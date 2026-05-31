@@ -4,11 +4,10 @@ categories:
 date: 2022-09-28
 subtitle: Walkthrough_-_Ceph_Release_Process
 tags:
-- Ceph 发布流程
 - 分布式存储
-- CRUSH 算法
+- CRUSH算法
 - 高可用性
-- 可伸缩性
+- 可扩展性
 title: Walkthrough- Ceph Release Process
 updated: 2022-09-29
 ---

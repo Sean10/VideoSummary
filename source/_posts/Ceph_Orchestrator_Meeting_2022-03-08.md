@@ -6,9 +6,6 @@ subtitle: Ceph_Orchestrator_Meeting_2022-03-08
 tags:
 - Ceph
 - 分布式存储
-- 版本降级
-- NF
-- 系统稳定性
 title: "Ceph Orchestrator Meeting 2022-03-08"
 updated: 2022-03-09
 ---

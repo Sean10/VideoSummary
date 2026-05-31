@@ -6,9 +6,7 @@ subtitle: Ceph 2022年7月14日性能会议纪要
 tags:
 - Ceph
 - 性能优化
-- 内存管理
 - 分布式存储
-- 蓝图存储
 title: "Ceph Performance Meeting 2022-07-14"
 updated: 2022-07-19
 ---

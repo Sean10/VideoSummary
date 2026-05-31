@@ -7,7 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 自动化
-- 管理模块
 - Rook
 title: "'2020 02 03 :: Ceph Orchestration Meeting'"
 updated: 2020-04-01

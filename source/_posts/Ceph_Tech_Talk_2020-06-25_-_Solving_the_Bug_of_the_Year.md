@@ -4,10 +4,7 @@ date: 2020-06-25
 updated: 2020-06-26
 tags:
 - Ceph
-- Bug修复
 - 分布式存储
-- 内存ECC错误
-- LZ4压缩算法
 categories:
 - "视频总结"
 subtitle: Ceph_Tech_Talk_2020-06-25_-_Solving_the_Bug_of_the_Year

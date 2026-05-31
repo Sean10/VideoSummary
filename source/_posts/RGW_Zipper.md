@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - RGW
-- S3 API
-- 存储集成
 title: "RGW Zipper"
 updated: 2022-11-16
 ---

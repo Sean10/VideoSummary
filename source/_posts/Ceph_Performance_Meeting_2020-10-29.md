@@ -6,9 +6,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 自动缩放
-- 内存管理
-- 缓存策略
 categories:
 - "视频总结"
 subtitle: Ceph_Performance_Meeting_2020-10-29

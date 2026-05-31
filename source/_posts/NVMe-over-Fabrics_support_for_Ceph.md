@@ -5,10 +5,8 @@ updated: 2022-11-24
 tags:
 - Ceph
 - NVMe
-- over
-- Fabrics
-- Storage
-- Distributed Storage
+- 存储
+- 分布式存储
 - CephFS
 categories:
 - "视频总结"

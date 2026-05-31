@@ -4,14 +4,8 @@ date: 2024-05-14
 updated: 2024-05-15
 tags:
 - Ceph
-- Squid版本
 - 分布式存储
-- 社区活动
-- 蓝图存储
-- Rados
-- 薄存卷
-- 磁盘摘要
-- RADOS Gateway
+- RADOS
 - CephFS
 - RBD
 categories:

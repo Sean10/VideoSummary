@@ -5,10 +5,7 @@ date: 2023-05-05
 subtitle: Kubernetes_Stateful_Application_Disaster_Recovery_with_Zero_Data_Loss_-_Daniel_Parkes_IBM
 tags:
 - Kubernetes
-- 灾难恢复
 - Ceph
-- 同步复制
-- 状态应用
 title: Kubernetes Stateful Application Disaster Recovery with Zero Data Loss - Daniel Parkes, IBM
 updated: 2023-05-05
 ---
@@ -55,7 +52,7 @@ updated: 2023-05-05
 - 提供更多文档和资源，帮助用户理解和部署这些高可用性解决方案。
 
 #### 其他讨论点：
-- 讨论了CFS（Ceph File System）在同步复制中的应用潜力和可能的改进。
+- 讨论了CephFS（Ceph File System）在同步复制中的应用潜力和可能的改进。
 - 确认了所有演示和讨论的组件均为开源项目，鼓励社区参与和贡献。
 
 #### 会议结束：

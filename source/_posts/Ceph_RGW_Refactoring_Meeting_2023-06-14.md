@@ -6,12 +6,6 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-06-14
 tags:
 - Ceph
 - RGW
-- MD5优化
-- E
-- Tag计算
-- 多重Zipper后端
-- OLH修复
-- 通知重试机制
 - 测试
 title: "Ceph RGW Refactoring Meeting 2023-06-14"
 updated: 2023-07-03

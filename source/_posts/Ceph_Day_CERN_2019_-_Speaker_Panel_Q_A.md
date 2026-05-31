@@ -6,8 +6,7 @@ subtitle: Ceph_Day_CERN_2019_-_Speaker_Panel_Q_A
 tags:
 - Ceph
 - 分布式存储
-- Ceph Dashboard
-- CRUSH 算法
+- CRUSH算法
 - 高可用性
 title: "'Ceph Day CERN 2019: Speaker Panel Q/A'"
 updated: 2020-08-26

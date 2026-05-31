@@ -5,10 +5,7 @@ date: 2021-06-23
 subtitle: Ceph_Month_2021_-_CephFS_update
 tags:
 - CephFS
-- Ceph Pacific版本
 - 分布式存储
-- CephFS更新
-- CephFS功能改进
 title: "'Ceph Month 2021: CephFS update'"
 updated: 2021-06-24
 ---

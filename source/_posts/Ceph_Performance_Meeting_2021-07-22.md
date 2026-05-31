@@ -7,7 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- PR审查
 - RBD
 title: Ceph Performance Meeting 2021-07-22
 updated: 2021-08-24

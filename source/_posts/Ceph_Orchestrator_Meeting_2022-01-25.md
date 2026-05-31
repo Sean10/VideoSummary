@@ -6,9 +6,7 @@ subtitle: Ceph_Orchestrator_Meeting_2022-01-25
 tags:
 - Ceph
 - 分布式存储
-- Orchestrator
-- 超时机制
-- 离线主机检测
+- 编排
 title: "Ceph Orchestrator Meeting 2022-01-25"
 updated: 2022-02-02
 ---

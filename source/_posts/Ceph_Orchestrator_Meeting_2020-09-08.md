@@ -5,10 +5,10 @@ date: 2020-09-08
 subtitle: Ceph_Orchestrator_Meeting_2020-09-08
 tags:
 - Ceph
-- Distributed Storage
-- CRUSH Algorithm
-- High Availability
-- Scalability
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可扩展性
 title: "Ceph Orchestrator Meeting 2020-09-08"
 updated: 2020-09-09
 ---

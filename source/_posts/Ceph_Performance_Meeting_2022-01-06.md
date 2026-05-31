@@ -6,9 +6,7 @@ subtitle: Ceph_Performance_Meeting_2022-01-06
 tags:
 - Ceph
 - 分布式存储
-- Pull Request
 - 性能优化
-- 内存管理
 title: Ceph Performance Meeting 2022-01-06
 updated: 2022-01-12
 ---

@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - Crimson
-- 开发与调试
-- 单元测试
 title: "'2020-04-14 :: Ceph Crimson Meeting'"
 updated: 2020-04-29
 ---

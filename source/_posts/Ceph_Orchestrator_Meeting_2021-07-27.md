@@ -7,10 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - Rook
-- LSO
-- 代码审查
-- 文档更新
-- 用户集成测试
 title: "Ceph Orchestrator Meeting 2021-07-27"
 updated: 2021-08-24
 ---

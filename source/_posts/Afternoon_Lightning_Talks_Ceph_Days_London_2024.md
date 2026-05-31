@@ -5,9 +5,6 @@ updated: 2024-08-24
 tags:
 - Ceph
 - 分布式存储
-- 性能分析
-- VMware集成
-- HPC集群
 categories:
 - "视频总结"
 subtitle: Afternoon_Lightning_Talks_Ceph_Days_London_2024

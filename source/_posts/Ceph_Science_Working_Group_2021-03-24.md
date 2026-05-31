@@ -6,10 +6,8 @@ subtitle: Ceph_Science_Working_Group_2021-03-24
 tags:
 - Ceph
 - 分布式存储
-- 版本升级
 - 高可用性
 - 自动化
-- 社区活动
 title: Ceph Science Working Group 2021-03-24
 updated: 2021-03-27
 ---

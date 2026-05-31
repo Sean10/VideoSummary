@@ -4,10 +4,9 @@ date: 2021-09-11
 updated: 2021-09-12
 tags:
 - Ceph
-- Distributed Storage
-- CRUSH Algorithm
-- Performance Optimization
-- Bug Fixes
+- 分布式存储
+- CRUSH算法
+- 性能优化
 categories:
 - "视频总结"
 subtitle: Ceph_Crimson_SeaStore_2021-09-08

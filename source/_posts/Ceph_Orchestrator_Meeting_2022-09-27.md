@@ -5,10 +5,8 @@ date: 2022-09-29
 subtitle: Ceph_Orchestrator_Meeting_2022-09-27
 tags:
 - Ceph
-- Orchestrator
-- Storage Cluster
-- Upgrade
-- Error Handling
+- 编排
+- 存储集群
 title: "Ceph Orchestrator Meeting 2022-09-27"
 updated: 2022-09-30
 ---

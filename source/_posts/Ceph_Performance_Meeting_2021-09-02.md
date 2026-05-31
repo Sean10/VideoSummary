@@ -8,8 +8,6 @@ subtitle: Ceph_Performance_Meeting_2021-09-02
 tags:
 - Ceph
 - 分布式存储
-- Crimson性能优化
-- 小对象存储方案
 - CephFS
 - RBD
 - RADOS

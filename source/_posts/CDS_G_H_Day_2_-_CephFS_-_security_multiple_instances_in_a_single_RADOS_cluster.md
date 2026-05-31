@@ -5,9 +5,7 @@ date: 2014-06-26
 subtitle: CDS_G_H_Day_2_-_CephFS_-_security_multiple_instances_in_a_single_RADOS_cluster
 tags:
 - CephFS
-- 多实例
 - 安全性
-- Rados集群
 - Ceph
 title: "'CDS G/H (Day 2) - CephFS: security & multiple instances in a single RADOS cluster'"
 updated: 2014-06-26

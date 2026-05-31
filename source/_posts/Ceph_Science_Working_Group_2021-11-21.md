@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 升级部署
-- 硬件与部署
 title: "Ceph Science Working Group 2021-11-21"
 updated: 2021-11-25
 ---

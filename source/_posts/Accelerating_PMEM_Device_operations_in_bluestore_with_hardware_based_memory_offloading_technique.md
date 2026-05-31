@@ -5,10 +5,8 @@ date: 2022-11-14
 subtitle: 通过基于硬件内存卸载技术加速Ceph中持久内存设备操作
 tags:
 - Ceph
-- PMEM
-- hardware offloading
-- performance optimization
-- bluestore
+- 性能优化
+- BlueStore
 title: "Accelerating PMEM Device operations in bluestore with hardware based memory offloading technique"
 updated: 2022-11-15
 ---

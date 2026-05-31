@@ -7,8 +7,6 @@ tags:
 - Ceph
 - RGW
 - 分布式存储
-- 代码重构
-- 持久化通知
 title: Ceph RGW Refactoring Meeting 2024-01-31
 updated: 2024-02-02
 ---

@@ -5,11 +5,6 @@ date: 2021-10-18
 subtitle: Real-Time_Data_Anonymization_the_Serverless_Way_Demo
 tags:
 - Ceph
-- Serverless
-- Data Anonymization
-- Real
-- Time Processing
-- MicroShift
 title: "Real-Time Data Anonymization the Serverless Way Demo"
 updated: 2021-10-19
 ---

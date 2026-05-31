@@ -6,9 +6,6 @@ subtitle: Ceph_Day_2019_-_What_s_Coming_in_Octopus_-_Sage_Weil
 tags:
 - Ceph
 - 分布式存储
-- Octopus 版本
-- Sage Weil
-- 存储技术
 title: "'Ceph Day 2019: What''s Coming in Octopus - Sage Weil'"
 updated: 2020-08-26
 ---

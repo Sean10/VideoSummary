@@ -5,9 +5,7 @@ date: 2021-08-24
 subtitle: Ceph_Orchestrator_Meeting_2021-08-24
 tags:
 - Ceph
-- Orchestrator
-- Integration Testing
-- Async SSH
+- 编排
 - Cephadm
 title: "Ceph Orchestrator Meeting 2021-08-24"
 updated: 2021-08-25

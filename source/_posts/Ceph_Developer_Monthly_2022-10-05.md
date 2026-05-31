@@ -6,9 +6,7 @@ subtitle: Ceph_Developer_Monthly_2022-10-05
 tags:
 - Ceph
 - 分布式存储
-- 用户体验
 - 性能优化
-- 可访问性
 title: Ceph Developer Monthly 2022-10-05
 updated: 2022-10-05
 ---

@@ -5,10 +5,10 @@ date: 2019-12-12
 subtitle: 2019-12-12_-_-_Ceph_Performance_Meeting
 tags:
 - Ceph
-- Performance Optimization
+- 性能优化
 - BlueStore
-- Distributed Storage
-- Storage Cluster
+- 分布式存储
+- 存储集群
 title: "'2019-12-12 :: Ceph Performance Meeting'"
 updated: 2019-12-13
 ---

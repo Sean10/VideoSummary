@@ -6,9 +6,6 @@ subtitle: Ceph_Orchestrator_Meeting_2022-05-04
 tags:
 - Ceph
 - NFS
-- HAProxy
-- 透明代理
-- Ganesha服务
 title: "Ceph Orchestrator Meeting 2022-05-04"
 updated: 2022-05-05
 ---

@@ -6,9 +6,6 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-11-29
 tags:
 - Ceph
 - RGW
-- HTTP通信优化
-- Lua集成
-- LDAP弃用
 title: Ceph RGW Refactoring Meeting 2023-11-29
 updated: 2023-11-30
 ---

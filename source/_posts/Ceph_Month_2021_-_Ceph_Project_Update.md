@@ -6,9 +6,6 @@ subtitle: Ceph_Month_2021_-_Ceph_Project_Update
 tags:
 - Ceph
 - 分布式存储
-- 软件开发
-- 开源社区
-- 技术更新
 title: "'Ceph Month 2021: Ceph Project Update'"
 updated: 2021-06-02
 ---

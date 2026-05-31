@@ -7,7 +7,7 @@ tags:
 - Ceph
 - Cephadm
 - 分布式存储
-- Orchestration
+- 编排
 - Kubernetes
 title: "'CDS Squid: Cephadm'"
 updated: 2023-07-26

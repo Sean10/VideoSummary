@@ -4,11 +4,7 @@ categories:
 date: 2023-05-05
 subtitle: Keynote_-_Welcome_Back_Remarks
 tags:
-- Ceph社区
 - 会议纪要
-- Ceph文档改进
-- Ceph技术交流
-- Ceph会议日程
 title: "'Keynote: Welcome Back & Remarks'"
 updated: 2023-05-05
 ---

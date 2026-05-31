@@ -3,11 +3,7 @@ title: "  S3select: Computational Storage in S3  "
 date: 2022-11-14
 updated: 2022-11-15
 tags:
-- [S3 Select]
-- [数据存储]
-- [SQL查询]
-- [性能优化]
-- [AWS服务]
+- Ceph
 categories:
 - "视频总结"
 subtitle: S3select_-_Computational_Storage_in_S3

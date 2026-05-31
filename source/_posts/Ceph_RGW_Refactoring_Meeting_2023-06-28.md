@@ -5,11 +5,6 @@ date: 2023-07-03
 subtitle: Ceph_RGW_Refactoring_Meeting_2023-06-28
 tags:
 - Ceph
-- RGW重构
-- 异步请求
-- 线程池优化
-- Neo
-- rados迁移
 title: Ceph RGW Refactoring Meeting 2023-06-28
 updated: 2023-07-03
 ---

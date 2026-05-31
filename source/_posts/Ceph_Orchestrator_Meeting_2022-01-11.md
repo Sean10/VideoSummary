@@ -5,10 +5,8 @@ date: 2022-01-11
 subtitle: Ceph_Orchestrator_Meeting_2022-01-11
 tags:
 - Ceph
-- Orchestrator
-- Quincy 版本
+- 编排
 - Rook
-- 回归问题
 title: "Ceph Orchestrator Meeting 2022-01-11"
 updated: 2022-01-12
 ---
@@ -25,7 +23,7 @@ updated: 2022-01-12
 #### 主要议题：
 
 1. **Quincy 版本特性冻结**
-   - 讨论了 Quincy 版本的特性冻结时间，原计划是在本周结束，但具体时间取决于 RBG 和 FFS 等组件的完成情况。
+   - 讨论了 Quincy 版本的特性冻结时间，原计划是在本周结束，但具体时间取决于 RBG 和 CephFS 等组件的完成情况。
    - 强调了 self-adm 二进制文件的重构需要在 Quincy 发布前完成。
 
 2. **Quincy 版本的待办事项**

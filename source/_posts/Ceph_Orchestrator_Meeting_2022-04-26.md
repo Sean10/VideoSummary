@@ -5,10 +5,9 @@ date: 2022-04-26
 subtitle: Ceph_Orchestrator_Meeting_2022-04-26
 tags:
 - Ceph
-- Orchestrator
+- 编排
 - Rook
 - Kubernetes
-- Code Review
 title: "Ceph Orchestrator Meeting 2022-04-26"
 updated: 2022-04-27
 ---

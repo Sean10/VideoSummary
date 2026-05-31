@@ -5,10 +5,8 @@ date: 2019-12-16
 subtitle: 2019-12-16_-_-_Ceph_Orchestration_Meeting
 tags:
 - Ceph
-- Distributed Storage
-- ORchestration
-- Ceph Manager
-- Ceph Orchestrator
+- 分布式存储
+- 编排
 title: "'2019-12-16 :: Ceph Orchestration Meeting'"
 updated: 2019-12-16
 ---

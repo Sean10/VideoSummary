@@ -5,10 +5,8 @@ date: 2020-07-13
 subtitle: Ceph_Orchestrator_Meeting_2020-07-13
 tags:
 - Ceph
-- Orchestrator
+- 编排
 - Rook
-- Integration Test
-- Container Images
 title: "Ceph Orchestrator Meeting 2020-07-13"
 updated: 2020-07-14
 ---

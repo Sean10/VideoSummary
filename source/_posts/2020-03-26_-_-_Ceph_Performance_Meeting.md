@@ -4,16 +4,14 @@ categories:
 date: 2020-04-03
 subtitle: 2020-03-26_-_-_Ceph_Performance_Meeting
 tags:
-- Ceph性能优化
+- 性能优化
 - 分布式存储
 - CRUSH算法
 - 高可用性
-- 可伸缩性
+- 可扩展性
 - 对象存储
 - 块存储
 - 文件系统存储
-- 一致性
-- 去中心化
 - 性能
 title: "'2020-03-26 :: Ceph Performance Meeting'"
 updated: 2020-04-04

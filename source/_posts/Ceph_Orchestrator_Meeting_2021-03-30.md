@@ -5,9 +5,9 @@ date: 2021-03-30
 subtitle: Ceph_Orchestrator_Meeting_2021-03-30
 tags:
 - Ceph
-- Orchestrator
-- Storage
-- Distributed Storage
+- 编排
+- 存储
+- 分布式存储
 - CephFS
 title: "Ceph Orchestrator Meeting 2021-03-30"
 updated: 2021-03-31

@@ -6,9 +6,7 @@ subtitle: Ceph_Orchestrator_Meeting_2022-03-29
 tags:
 - Ceph
 - 分布式存储
-- vstart
 - NFS
-- 开发工具
 title: "Ceph Orchestrator Meeting 2022-03-29"
 updated: 2022-03-31
 ---

@@ -5,10 +5,8 @@ date: 2021-10-07
 subtitle: Ceph_Orchestrator_Meeting_2021-09-28
 tags:
 - Ceph
-- Orchestrator
-- Storage Classes
+- 编排
 - Rook
-- IPVS
 title: "Ceph Orchestrator Meeting 2021-09-28"
 updated: 2021-10-08
 ---

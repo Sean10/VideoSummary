@@ -9,7 +9,6 @@ tags:
 - Ceph
 - 高可用性
 - 可扩展性
-- 故障恢复
 title: "Making CephFS (Much More) Great! - Patrick Donnelly & Greg Farnum, IBM"
 updated: 2023-05-09
 ---
@@ -18,11 +17,11 @@ updated: 2023-05-09
 会议纪要
 
 ### 会议基本信息
-- 主持人：Patrick（前CFS团队负责人，现参与Sepafest项目）
+- 主持人：Patrick（前CephFS团队负责人，现参与Sepafest项目）
 - 参与者：Greg（SEF Fest团队经理，前STL长期贡献者）及其他与会者
 
 ### 会议议题
-1. **CFS多集群恢复能力**
+1. **CephFS多集群恢复能力**
    - 讨论了多集群故障恢复的难度和当前的不完善状态。
    - 提出了改进建议，包括查看相关故障报告、社区讨论以及配置或升级解决方案。
 

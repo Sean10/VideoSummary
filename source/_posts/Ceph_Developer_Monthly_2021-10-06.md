@@ -6,10 +6,7 @@ subtitle: Ceph_Developer_Monthly_2021-10-06
 tags:
 - Ceph
 - 分布式存储
-- 遥测
 - 性能优化
-- SMR 驱动器
-- RBD 镜像复制
 title: "Ceph Developer Monthly 2021-10-06"
 updated: 2021-10-09
 ---

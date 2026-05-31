@@ -5,9 +5,9 @@ date: 2020-01-23
 subtitle: 2020-01-20_-_-_Ceph_Orchestration_Meeting
 tags:
 - Ceph
-- Orchestration
-- Storage
-- Distributed Storage
+- 编排
+- 存储
+- 分布式存储
 - CephFS
 title: "'2020-01-20 :: Ceph Orchestration Meeting'"
 updated: 2020-01-24

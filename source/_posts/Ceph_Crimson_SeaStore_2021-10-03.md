@@ -5,17 +5,13 @@ date: 2021-11-04
 subtitle: Ceph_Crimson_SeaStore_2021-10-03
 tags:
 - Ceph
-- Distributed Storage
-- CRUSH Algorithm
-- High Availability
-- Scalability
-- Object Storage
-- Block Storage
-- File System Storage
-- Consistency
-- Decentralization
-- Performance
-- Bluestore
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可扩展性
+- 对象存储
+- 性能
+- BlueStore
 - BlueFS
 - RocksDB
 - OSD
@@ -25,63 +21,30 @@ tags:
 - RADOS
 - librados
 - libcephfs
-- cephfs
-- rbd
-- radosgw
+- RBD
 - RGW
 - RESTful API
-- Authentication
-- Authorization
-- Encryption
 - Erasure Coding
-- Replication
-- Snapshots
-- Clones
-- Thin Provisioning
 - iSCSI
-- Fibre Channel
 - NFS
 - CIFS
 - POSIX
-- Monitoring
+- 监控
 - Dashboard
-- Management
-- Orchestration
-- Automation
-- Integration
-- Containerization
+- 编排
+- 自动化
+- 容器化
 - Kubernetes
 - Docker
-- Virtualization
-- Cloud Computing
+- 云计算
 - AWS
 - Azure
 - Google Cloud
-- Hybrid Cloud
-- Multi
-- cloud
-- Storage Cluster
-- Node
-- Disk
+- 存储集群
 - SSD
 - HDD
-- JBOD
 - SAN
 - NAS
-- Network
-- Topology
-- Failure Domain
-- Recovery
-- Resilience
-- Load Balancing
-- Caching
-- Compression
-- Deduplication
-- Tiering
-- Performance Tuning
-- Benchmarking
-- Testing
-- Validation
 title: "Ceph Crimson/SeaStore 2021-10-03"
 updated: 2021-11-05
 ---

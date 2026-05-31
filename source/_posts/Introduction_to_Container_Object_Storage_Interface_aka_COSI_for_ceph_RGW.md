@@ -4,10 +4,9 @@ date: 2022-11-23
 updated: 2022-11-24
 tags:
 - Ceph
-- Object Storage
-- CSI (Container Storage Interface)
+- 对象存储
 - Kubernetes
-- Containerization
+- 容器化
 categories:
 - "视频总结"
 subtitle: Introduction_to_Container_Object_Storage_Interface_aka_COSI_for_ceph_RGW

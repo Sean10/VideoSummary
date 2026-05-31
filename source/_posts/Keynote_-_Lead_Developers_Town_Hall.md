@@ -6,10 +6,8 @@ subtitle: Keynote_-_Lead_Developers_Town_Hall
 tags:
 - Ceph
 - 分布式存储
-- 升级
 - 认证
 - 性能优化
-- 文档改进
 title: "'Keynote: Lead Developers Town Hall'"
 updated: 2023-05-05
 ---

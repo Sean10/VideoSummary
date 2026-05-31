@@ -6,7 +6,6 @@ subtitle: Ceph_Days_NYC_2023_-_100_Years_of_Sports_on_Ceph
 tags:
 - Ceph
 - 分布式存储
-- 体育数据存储
 - 高可用性
 - 自动化
 title: "'Ceph Days NYC 2023: 100 Years of Sports on Ceph'"

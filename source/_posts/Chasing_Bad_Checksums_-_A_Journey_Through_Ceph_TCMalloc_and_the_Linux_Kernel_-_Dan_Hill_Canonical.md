@@ -5,10 +5,7 @@ date: 2023-05-05
 subtitle: Chasing_Bad_Checksums_-_A_Journey_Through_Ceph_TCMalloc_and_the_Linux_Kernel_-_Dan_Hill_Canonical
 tags:
 - Ceph
-- Linux Kernel
-- TCMalloc
-- Memory Management
-- Distributed Storage
+- 分布式存储
 title: "'Chasing Bad Checksums: A Journey Through Ceph, TCMalloc, and the Linux Kernel - Dan Hill, Canonical'"
 updated: 2023-05-05
 ---

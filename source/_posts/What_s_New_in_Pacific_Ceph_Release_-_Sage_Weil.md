@@ -5,7 +5,6 @@ date: 2021-03-09
 subtitle: What_s_New_in_Pacific_Ceph_Release_-_Sage_Weil
 tags:
 - Ceph
-- Pacific版本
 - 分布式存储
 - 软件定义存储
 - 存储集群

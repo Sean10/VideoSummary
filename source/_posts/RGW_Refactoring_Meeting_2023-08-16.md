@@ -6,9 +6,6 @@ subtitle: RGW_Refactoring_Meeting_2023-08-16
 tags:
 - Ceph
 - RGW
-- 性能计数器
-- Prometheus
-- S3测试
 title: RGW Refactoring Meeting 2023-08-16
 updated: 2023-08-17
 ---

@@ -8,7 +8,6 @@ tags:
 - 分布式存储
 - 性能优化
 - RBD
-- 写放大
 title: Ceph Performance Meeting 2023--01-19
 updated: 2023-01-20
 ---

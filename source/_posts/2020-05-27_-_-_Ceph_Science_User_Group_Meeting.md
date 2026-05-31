@@ -6,8 +6,6 @@ subtitle: 2020-05-27_-_-_Ceph_Science_User_Group_Meeting
 tags:
 - Ceph
 - 分布式存储
-- 故障与解决方案
-- 集群管理
 - 容器化
 title: "'2020-05-27 :: Ceph Science User Group Meeting'"
 updated: 2020-05-29

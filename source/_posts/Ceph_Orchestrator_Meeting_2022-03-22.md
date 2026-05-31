@@ -5,8 +5,7 @@ date: 2022-03-29
 subtitle: Ceph_Orchestrator_Meeting_2022-03-22
 tags:
 - Ceph
-- Service Discovery
-- High Availability
+- 高可用性
 - Rook
 - NFS
 title: "Ceph Orchestrator Meeting 2022-03-22"

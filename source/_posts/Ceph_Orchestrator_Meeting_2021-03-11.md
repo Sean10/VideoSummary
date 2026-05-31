@@ -6,9 +6,7 @@ subtitle: Ceph_Orchestrator_Meeting_2021-03-11
 tags:
 - Ceph
 - 分布式存储
-- Orchestrator
-- 多站点配置
-- 用户界面设计
+- 编排
 title: "Ceph Orchestrator Meeting 2021-03-11"
 updated: 2021-03-30
 ---

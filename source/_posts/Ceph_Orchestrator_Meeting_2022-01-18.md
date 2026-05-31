@@ -5,15 +5,7 @@ date: 2022-01-18
 subtitle: Ceph_Orchestrator_Meeting_2022-01-18
 tags:
 - Ceph
-- Orchestrator
-- Quincy 版本
-- 回溯策略
-- Pacific 版本
-- Surf Loop
-- 数据一致性
-- 线程管理
-- 超时机制
-- 团队变动
+- 编排
 title: "Ceph Orchestrator Meeting 2022-01-18"
 updated: 2022-01-19
 ---

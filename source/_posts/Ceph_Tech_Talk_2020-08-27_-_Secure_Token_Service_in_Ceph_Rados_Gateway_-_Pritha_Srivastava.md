@@ -5,10 +5,6 @@ date: 2020-08-27
 subtitle: Ceph_Tech_Talk_2020-08-27_-_Secure_Token_Service_in_Ceph_Rados_Gateway_-_Pritha_Srivastava
 tags:
 - Ceph
-- Secure Token Service
-- Rados Gateway
-- Ceph Rados
-- Storage Security
 title: "'Ceph Tech Talk 2020-08-27: Secure Token Service in Ceph Rados Gateway - Pritha Srivastava'"
 updated: 2020-08-28
 ---

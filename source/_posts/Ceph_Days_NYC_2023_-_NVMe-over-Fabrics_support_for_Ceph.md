@@ -5,9 +5,7 @@ date: 2023-05-17
 subtitle: Ceph_Days_NYC_2023_-_NVMe-over-Fabrics_support_for_Ceph
 tags:
 - Ceph
-- NVMe over Fabrics
-- Distributed Storage
-- Storage Performance
+- 分布式存储
 - CephFS
 title: "'Ceph Days NYC 2023: NVMe-over-Fabrics support for Ceph'"
 updated: 2023-05-18

@@ -5,10 +5,8 @@ date: 2022-10-20
 subtitle: Ceph_Crimson_Seastore_Meeting_2022-10-19
 tags:
 - Ceph
-- Crimson Suite
-- distributed storage
-- scrub
-- performance
+- 分布式存储
+- 性能
 title: "Ceph Crimson/Seastore Meeting 2022-10-19"
 updated: 2022-10-21
 ---

@@ -8,7 +8,6 @@ tags:
 - 分布式存储
 - CRUSH算法
 - 性能优化
-- 研发会议
 title: "Ceph Performance Meeting 2020-08-13"
 updated: 2020-08-14
 ---

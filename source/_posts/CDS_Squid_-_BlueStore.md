@@ -5,9 +5,9 @@ updated: 2023-07-26
 tags:
 - Ceph
 - BlueStore
-- Distributed Storage
-- Performance Optimization
-- Storage Cluster
+- 分布式存储
+- 性能优化
+- 存储集群
 categories:
 - "视频总结"
 subtitle: CDS_Squid_-_BlueStore

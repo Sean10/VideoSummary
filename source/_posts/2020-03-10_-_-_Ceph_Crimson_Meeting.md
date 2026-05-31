@@ -7,11 +7,7 @@ tags:
 - Ceph
 - 会议纪要
 - 分布式存储
-- 代码审查
 - 性能优化
-- 事务处理
-- 状态图
-- 内存管理
 title: "'2020-03-10 :: Ceph Crimson Meeting'"
 updated: 2020-04-04
 ---

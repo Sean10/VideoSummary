@@ -5,10 +5,8 @@ date: 2022-10-18
 subtitle: RGW_Refactoring_Meeting_2022-10-12
 tags:
 - Ceph
-- 性能测试
+- 测试
 - 分布式存储
-- CBT
-- Deos
 title: "RGW Refactoring Meeting 2022-10-12"
 updated: 2022-10-19
 ---

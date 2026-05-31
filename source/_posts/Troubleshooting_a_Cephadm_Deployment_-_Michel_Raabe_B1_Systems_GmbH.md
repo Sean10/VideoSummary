@@ -5,10 +5,8 @@ date: 2023-05-05
 subtitle: Troubleshooting_a_Cephadm_Deployment_-_Michel_Raabe_B1_Systems_GmbH
 tags:
 - Cephadm
-- 故障排除
 - 分布式存储
 - Ceph
-- 云解决方案
 title: "Troubleshooting a Cephadm Deployment - Michel Raabe, B1 Systems GmbH"
 updated: 2023-05-05
 ---

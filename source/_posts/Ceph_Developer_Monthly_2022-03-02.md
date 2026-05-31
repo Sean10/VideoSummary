@@ -6,9 +6,6 @@ subtitle: Ceph_Developer_Monthly_2022-03-02
 tags:
 - Ceph
 - 分布式存储
-- Prometheus
-- 日志管理
-- 可观察性
 title: "Ceph Developer Monthly 2022-03-02"
 updated: 2022-06-03
 ---

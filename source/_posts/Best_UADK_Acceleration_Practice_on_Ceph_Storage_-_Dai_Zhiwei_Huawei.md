@@ -5,10 +5,8 @@ date: 2023-05-05
 subtitle: Best_UADK_Acceleration_Practice_on_Ceph_Storage_-_Dai_Zhiwei_Huawei
 tags:
 - Ceph
-- UADK
-- Storage Optimization
-- Security Acceleration
-- Blue Store
+- 存储优化
+- BlueStore
 title: "Best UADK Acceleration Practice on Ceph Storage - Dai Zhiwei, Huawei"
 updated: 2023-05-05
 ---

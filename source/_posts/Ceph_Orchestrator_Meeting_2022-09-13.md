@@ -5,10 +5,8 @@ date: 2022-10-12
 subtitle: Ceph_Orchestrator_Meeting_2022-09-13
 tags:
 - Ceph
-- Open Source Day
 - RGW
-- Compilation
-- Ceph Orchestrator
+- 编排
 title: "Ceph Orchestrator Meeting 2022-09-13"
 updated: 2022-10-13
 ---

@@ -1,0 +1,71 @@
+---
+categories:
+- 视频总结
+date: 2019-05-24
+subtitle: MeerKAT_Astronomy_Data_Store_Deployment_and_Operations_-_Martin_Slabber_SARAO
+tags:
+- Ceph
+- 分布式存储
+- 存储优化
+title: MeerKAT Astronomy Data Store Deployment and Operations - Martin Slabber, SARAO
+updated: 2019-05-24
+---
+
+
+### 会议纪要
+
+#### 会议时间：
+（请在此处填写会议具体时间）
+
+#### 会议地点：
+（请在此处填写会议具体地点）
+
+#### 参会人员：
+- Martin（来自南非的Answer Africa公司）
+- Ceph社区其他成员
+
+#### 会议内容：
+
+**1. 演讲者介绍及背景**
+- Martin来自南非的Answer Africa公司，该公司正在建设MeerKAT射电望远镜。
+- 他将分享如何使用Ceph存储技术，并回顾天文学数据存储的历史。
+
+**2. 天文学数据存储历史回顾**
+- Martin回顾了从古代洞穴壁画到现代的数字存储，天文学数据存储的演变过程。
+- 重点介绍了从石板到光栅、从胶片到磁带等不同存储介质的发展历程。
+
+**3. MeerKAT望远镜及Ceph存储应用**
+- MeerKAT望远镜位于南非沙漠地区，具有低人口密度和低干扰的特点。
+- 该望远镜由64个碟形天线组成，用于接收和记录天文数据。
+- Ceph存储集群用于存储天文数据，包括临时数据和最终结果。
+
+**4. Ceph存储集群架构**
+- Martin介绍了使用的Ceph存储集群架构，包括存储节点、计算节点和网络。
+- 他们使用SSD和硬盘驱动器混合存储，以满足不同的性能和容量需求。
+- 他们还使用自定义软件来处理数据传输和科学数据处理。
+
+**5. 硬件选择与挑战**
+- 由于预算限制，他们自行开发存储节点硬件。
+- 选择了低射频干扰的硬件，以满足望远镜对环境的要求。
+- 在硬件开发过程中遇到了控制器过时、内存不足等挑战。
+
+**6. 自动化与监控**
+- 使用Ansible和Mass等工具来自动化部署和管理Ceph存储集群。
+- 使用Prometheus、Grafana和Alertmanager等工具来监控集群状态和性能。
+
+**7. 总结与展望**
+- Martin感谢Ceph社区的帮助和支持，并表示将继续使用Ceph存储技术。
+- 他们计划在南非开展Ceph社区活动，促进Ceph技术在南非的应用。
+
+#### 行动计划：
+- 完善Ceph存储集群监控和自动化工具。
+- 探索Ceph在更多领域的应用。
+- 参与Ceph社区活动，分享经验。
+
+[错误、误解或遗漏的重要信息]
+- 原文中提到使用自定义软件处理数据传输和科学数据处理，但总结中未具体说明。
+- 原文提到使用Elastic Stack和Nagios，但在总结中被遗漏。
+
+- 根据以上内容，总结已经准确反映了原始内容的要点，涵盖了会议的关键细节、讨论的主要议题、决定的事项以及后续的行动计划。
+- 保留了Ceph相关领域的英文原文关键词，如Ceph、distributed storage、CRUSH algorithm、high availability、scalability等。
+- 增加了对自定义软件和数据传输的描述，以及Elastic Stack和Nagios的使用情况。

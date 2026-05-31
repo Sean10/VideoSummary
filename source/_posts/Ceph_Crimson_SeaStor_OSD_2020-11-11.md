@@ -5,9 +5,8 @@ date: 2020-11-24
 subtitle: Ceph_Crimson_SeaStor_OSD_2020-11-11
 tags:
 - Ceph
-- Distributed Storage
-- Code Refactoring
-- Performance Optimization
+- 分布式存储
+- 性能优化
 - CephFS
 title: "Ceph Crimson/SeaStor OSD 2020-11-11"
 updated: 2020-11-24

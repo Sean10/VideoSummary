@@ -5,10 +5,10 @@ date: 2021-05-26
 subtitle: Ceph_Crimson_SeaStore_2021-05-26
 tags:
 - Ceph
-- CRUSH algorithm
-- distributed storage
-- performance tuning
-- scalability
+- CRUSH算法
+- 分布式存储
+- 性能优化
+- 可扩展性
 title: "Ceph Crimson/SeaStore 2021-05-26"
 updated: 2021-05-27
 ---

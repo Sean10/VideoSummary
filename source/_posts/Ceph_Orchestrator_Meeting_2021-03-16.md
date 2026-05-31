@@ -6,9 +6,6 @@ subtitle: Ceph_Orchestrator_Meeting_2021-03-16
 tags:
 - Ceph
 - 分布式存储
-- 监控工具
-- 代码实现
-- 升级流程
 title: "Ceph Orchestrator Meeting 2021-03-16"
 updated: 2021-03-30
 ---

@@ -3,11 +3,8 @@ title: "  2019-12-24 :: Crimson SeaStor OSD Weekly Meeting  "
 date: 2019-12-24
 updated: 2019-12-24
 tags:
-- [Ceph]
-- [分布式存储]
-- [存储优化]
-- [性能提升]
-- [软件开发]
+- Ceph
+- 分布式存储
 categories:
 - "视频总结"
 subtitle: 2019-12-24_-_-_Crimson_SeaStor_OSD_Weekly_Meeting

@@ -5,9 +5,6 @@ updated: 2021-08-24
 tags:
 - CephFS
 - MDS
-- Path traversal
-- CephFS 数据结构
-- CephFS 代码实现
 categories:
 - "视频总结"
 subtitle: CephFS_Code_Walkthrough_-_MDS_path_traversal

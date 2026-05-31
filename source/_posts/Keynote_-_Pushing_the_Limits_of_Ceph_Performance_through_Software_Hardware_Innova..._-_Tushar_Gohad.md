@@ -1,0 +1,55 @@
+---
+title: "  Keynote: Pushing the Limits of Ceph Performance through Software & Hardware Innovation... - Tushar Gohad  "
+date: 2019-05-24
+updated: 2019-05-24
+tags:
+- Ceph
+- 性能优化
+categories:
+- "视频总结"
+subtitle: Keynote_-_Pushing_the_Limits_of_Ceph_Performance_through_Software_Hardware_Innova..._-_Tushar_Gohad
+---
+
+
+
+### 改进后的中文总结
+
+**会议主题**： 推动Ceph性能极限：软件与硬件创新
+
+**会议时间**： 2019年5月24日
+
+**参会人员**： Tushar Gohad（英特尔），Ceph社区成员
+
+**会议内容**：
+
+**一、会议概述**
+
+Tushar Gohad代表英特尔介绍了英特尔在Ceph社区的贡献和发展历程，重点阐述了英特尔在Ceph性能提升方面的努力以及与社区的合作成果。
+
+**二、英特尔在Ceph社区的贡献**
+
+1. **长期贡献历史**： 英特尔自2014年以来一直积极参与Ceph社区，早期主要关注可管理性和企业级功能，近年来则专注于性能提升。
+2. **性能提升**： 英特尔是BlueStore的早期贡献者，并持续优化其通信路径和相关功能。此外，英特尔还参与了Crimson OST项目，并取得了显著进展。
+3. **客户端缓存**： 英特尔正在开发持久双向缓存，并改进了DMA通信，以提升性能。
+4. **容器化支持**： 英特尔是Ceph Container和OpenStack Helm项目的早期参与者，并继续贡献相关技术。
+
+**三、硬件与软件结合**
+
+英特尔通过硬件和软件创新，为Ceph性能提升做出了贡献：
+
+1. **QLC SSD**： QLC SSD是成本优化的存储解决方案，适用于读密集型工作负载，可扩展至30TB，实现500PB的存储能力。
+2. **高耐用性SSD**： 与标准TLC SSD相比，高耐用性SSD具有更高的耐用性，适用于高性能工作负载。
+3. **第二代Z系列处理器**： 第二代Z系列处理器为Ceph提供了强大的计算能力。
+4. **持久内存**： 持久内存可提升存储和内存之间的性能。
+
+**四、合作成果**
+
+英特尔与合作伙伴和客户合作，共同构建了基于Ceph的新工作负载架构，例如OVH与英特尔合作构建的基于Ceph的存储解决方案。
+
+**五、后续行动计划**
+
+英特尔将继续与Ceph社区合作，推动Ceph性能提升，并探索更多合作机会。
+
+**六、总结**
+
+英特尔在Ceph社区中发挥着重要作用，通过硬件和软件创新，为Ceph性能提升做出了贡献，并与社区共同推动Ceph的发展。

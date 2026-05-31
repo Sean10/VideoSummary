@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 代码审查
-- 错误修复
 title: "Ceph Crimson/SeaStore 2021-07-28"
 updated: 2021-08-24
 ---

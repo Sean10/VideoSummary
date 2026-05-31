@@ -5,9 +5,7 @@ updated: 2023-05-18
 tags:
 - Ceph
 - 分布式存储
-- SQLite
-- Rados
-- Ceph Manager
+- RADOS
 categories:
 - "视频总结"
 subtitle: Ceph_Days_NYC_2023_-_SQL_on_Ceph
@@ -24,7 +22,7 @@ subtitle: Ceph_Days_NYC_2023_-_SQL_on_Ceph
 Patrick Donnelly 介绍了如何在 Ceph 上使用 SQLite，特别是通过 libsef sqlite 库将 SQLite 数据库分布式存储在 Ceph 的 RADOS 上。他详细讨论了 Ceph 管理器（Ceph Manager）如何利用 SQLite 进行持久化存储，并深入解析了实现这一功能的架构和技术细节。
 
 **关键讨论点：**
-1. **Ceph 管理器架构：** Ceph Manager 通过模块化设计，允许运行 Python 脚本管理集群操作，包括编排、升级、设备健康监控等。这些模块独立于 CFS、RBD 等服务。
+1. **Ceph 管理器架构：** Ceph Manager 通过模块化设计，允许运行 Python 脚本管理集群操作，包括编排、升级、设备健康监控等。这些模块独立于 CephFS、RBD 等服务。
 2. **SQLite 与 Ceph 的结合：** 通过 libsef sqlite，SQLite 数据库可以分布式存储在 Ceph 的 RADOS 上，无需修改应用程序代码。这通过 SQLite 的 VFS 接口实现，允许数据库文件分布在多个 OSD 上。
 3. **性能优化：** 讨论了性能优化建议，如增加页面大小、使用更大的缓存、避免删除数据库文件等，以减少对 RADOS 的 IO 操作。
 

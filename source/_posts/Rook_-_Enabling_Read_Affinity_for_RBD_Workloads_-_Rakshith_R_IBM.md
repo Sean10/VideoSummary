@@ -5,7 +5,6 @@ updated: 2023-05-05
 tags:
 - Ceph
 - RBD
-- Read Affinity
 - Rook
 - Kubernetes
 categories:

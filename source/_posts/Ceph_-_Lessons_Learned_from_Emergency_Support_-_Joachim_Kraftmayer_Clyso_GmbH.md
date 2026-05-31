@@ -6,7 +6,6 @@ subtitle: Ceph_-_Lessons_Learned_from_Emergency_Support_-_Joachim_Kraftmayer_Cly
 tags:
 - Ceph
 - 分布式存储
-- 紧急支持
 - 高可用性
 - 性能优化
 title: "'Ceph: Lessons Learned from Emergency Support - Joachim Kraftmayer, Clyso GmbH'"

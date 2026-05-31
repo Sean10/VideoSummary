@@ -5,9 +5,8 @@ date: 2020-01-13
 subtitle: 2020-01-13_-_-_Ceph_Orchestration_Meeting
 tags:
 - Ceph
-- Orchestrator
-- Distributed Storage
-- OSD Management
+- 编排
+- 分布式存储
 - CephFS
 title: "2020-01-13 -- Ceph Orchestration Meeting"
 updated: 2020-01-14

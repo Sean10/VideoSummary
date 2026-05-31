@@ -8,7 +8,6 @@ tags:
 - Cephadm
 - 分布式存储
 - 安全性
-- 服务器管理
 - 云计算
 title: "CDS Tentacle - Cephadm"
 updated: 2024-08-23

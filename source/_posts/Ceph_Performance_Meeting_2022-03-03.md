@@ -5,8 +5,6 @@ updated: 2022-03-04
 tags:
 - 分布式存储
 - Ceph
-- 缓存技术
-- Opencast
 - 性能优化
 categories:
 - "会议总结"

@@ -5,10 +5,9 @@ date: 2019-12-10
 subtitle: 2019-12-09_-_-_Ceph_Orchestration_Meeting
 tags:
 - Ceph
-- Distributed Storage
-- Orchestration
-- System Unit
-- Containerization
+- 分布式存储
+- 编排
+- 容器化
 title: "'2019-12-09 :: Ceph Orchestration Meeting'"
 updated: 2019-12-10
 ---

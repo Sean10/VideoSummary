@@ -4,11 +4,8 @@ categories:
 date: 2020-08-20
 subtitle: Ceph_Tech_Talk_2020-08-20_-_Edge_Application_-_Streaming_Multiple_Video_Sources
 tags:
-- 边缘计算
 - Ceph
-- 视频流
 - 分布式存储
-- OpenCV
 title: Ceph Tech Talk 2020-08-20- Edge Application - Streaming Multiple Video Sources
 updated: 2020-08-21
 ---

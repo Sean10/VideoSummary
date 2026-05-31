@@ -6,9 +6,6 @@ subtitle: RGW_Refactoring_Meeting_2023-07-26
 tags:
 - Ceph
 - RGW
-- API重构
-- D3N项目
-- 原子化存储
 title: RGW Refactoring Meeting 2023-07-26
 updated: 2023-08-16
 ---

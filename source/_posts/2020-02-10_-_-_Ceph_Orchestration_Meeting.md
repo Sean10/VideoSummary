@@ -5,10 +5,7 @@ date: 2020-04-03
 subtitle: 2020-02-10_-_-_Ceph_Orchestration_Meeting
 tags:
 - Ceph
-- Orchestrator
-- CLI
-- Code Generation
-- Storage Management
+- 编排
 title: "'2020-02-10 :: Ceph Orchestration Meeting'"
 updated: 2020-04-04
 ---

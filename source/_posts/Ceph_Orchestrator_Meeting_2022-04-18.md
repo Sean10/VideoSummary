@@ -6,9 +6,6 @@ subtitle: Ceph_Orchestrator_Meeting_2022-04-18
 tags:
 - Ceph
 - 分布式存储
-- 配置文件
-- 镜像选择算法
-- 镜像版本
 title: "Ceph Orchestrator Meeting 2022-04-18"
 updated: 2022-04-22
 ---

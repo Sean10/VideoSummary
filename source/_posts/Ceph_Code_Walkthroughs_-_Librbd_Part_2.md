@@ -5,10 +5,7 @@ date: 2021-03-10
 subtitle: Ceph_Code_Walkthroughs_-_Librbd_Part_2
 tags:
 - Ceph
-- Librbd
 - 分布式存储
-- 代码走读
-- 状态机
 title: "'Ceph Code Walkthroughs: Librbd Part 2'"
 updated: 2021-03-10
 ---

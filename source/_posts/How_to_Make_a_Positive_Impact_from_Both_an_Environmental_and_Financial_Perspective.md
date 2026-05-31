@@ -4,10 +4,6 @@ date: 2023-05-05
 updated: 2023-05-05
 tags:
 - Ceph
-- 环境影响
-- 财务优化
-- 可持续发展
-- 数据中心
 categories:
 - "视频总结"
 subtitle: How_to_Make_a_Positive_Impact_from_Both_an_Environmental_and_Financial_Perspective

@@ -9,7 +9,6 @@ tags:
 - 分布式存储
 - 性能优化
 - RocksDB
-- PG 日志
 title: Ceph Performance Meeting 2020-10-01
 updated: 2020-10-02
 ---

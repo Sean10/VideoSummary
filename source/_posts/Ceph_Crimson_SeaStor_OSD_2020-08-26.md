@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 存储优化
-- 技术测试
-- 垃圾回收
 title: "Ceph Crimson / SeaStor OSD 2020-08-26"
 updated: 2020-08-26
 ---

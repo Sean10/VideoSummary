@@ -6,9 +6,7 @@ subtitle: Ceph_Code_Walkthrough_2020-08-25_-_kRBD_I_O_Flow
 tags:
 - Ceph
 - RBD
-- I/O Flow
-- Kernel Driver
-- Distributed Storage
+- 分布式存储
 title: "'Ceph Code Walkthrough 2020-08-25: kRBD I/O Flow'"
 updated: 2020-08-26
 ---

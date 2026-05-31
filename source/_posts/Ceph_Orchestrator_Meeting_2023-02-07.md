@@ -5,10 +5,7 @@ date: 2023-02-08
 subtitle: Ceph_Orchestrator_Meeting_2023-02-07
 tags:
 - Ceph
-- Keepalived
-- High Availability
-- Manager
-- Virtual IP
+- 高可用性
 title: "Ceph Orchestrator Meeting 2023-02-07"
 updated: 2023-02-08
 ---

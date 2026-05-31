@@ -6,7 +6,6 @@ tags:
 - Ceph
 - 分布式存储
 - Rook
-- Python 客户端库
 - CI/CD
 categories:
 - "视频总结"

@@ -5,11 +5,9 @@ date: 2020-05-28
 subtitle: 2020-05-28_-_-_Ceph_Tech_Talk_-_What_s_New_In_Octopus
 tags:
 - Ceph
-- Octopus 版本
-- distributed storage
+- 分布式存储
 - BlueStore
 - Kubernetes
-- CSI
 title: "'2020-05-28 :: Ceph Tech Talk - What''s New In Octopus'"
 updated: 2020-05-29
 ---

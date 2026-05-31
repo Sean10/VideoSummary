@@ -5,10 +5,7 @@ date: 2023-05-05
 subtitle: Ceph_Crash_Telemetry_-_Observability_in_Action_-_Yaarit_Hatuka_IBM
 tags:
 - Ceph
-- Telemetry
-- Observability
-- Distributed Storage
-- Data Analysis
+- 分布式存储
 title: "Ceph Crash Telemetry - Observability in Action - Yaarit Hatuka, IBM"
 updated: 2023-05-05
 ---

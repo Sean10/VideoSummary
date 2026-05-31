@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 存储池
-- 开发进度
 title: Ceph Performance Meeting 2021-08-19
 updated: 2021-08-21
 ---

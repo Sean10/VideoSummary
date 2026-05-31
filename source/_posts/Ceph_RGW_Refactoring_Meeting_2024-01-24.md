@@ -5,9 +5,6 @@ updated: 2024-01-25
 tags:
 - Ceph
 - RGW
-- Topic 授权
-- Topic 迁移
-- Ceph RGW
 categories:
 - "视频总结"
 subtitle: Ceph_RGW_Refactoring_Meeting_2024-01-24

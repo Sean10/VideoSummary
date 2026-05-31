@@ -6,11 +6,6 @@ subtitle: Ceph_Developer_Monthly_2022-02-02
 tags:
 - Ceph
 - 分布式存储
-- 扩展性
-- 指标收集
-- Prometheus
-- 管理器
-- 蓝图
 title: "Ceph Developer Monthly 2022-02-02"
 updated: 2022-02-04
 ---

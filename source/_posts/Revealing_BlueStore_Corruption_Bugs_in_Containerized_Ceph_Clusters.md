@@ -6,9 +6,7 @@ subtitle: 揭示容器化Ceph集群中BlueStore数据损坏问题
 tags:
 - Ceph
 - BlueStore
-- Data Corruption
-- Containerization
-- Storage Systems
+- 容器化
 title: "Revealing BlueStore Corruption Bugs in Containerized Ceph Clusters"
 updated: 2022-11-16
 ---

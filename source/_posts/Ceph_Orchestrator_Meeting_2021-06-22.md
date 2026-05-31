@@ -5,10 +5,9 @@ date: 2021-06-24
 subtitle: 2021-06-22 Ceph Orchestrator 周例会纪要
 tags:
 - Ceph
-- Orchestrator
+- 编排
 - Kubernetes
 - Rook
-- SSH
 title: "Ceph Orchestrator Meeting 2021-06-22"
 updated: 2021-06-24
 ---

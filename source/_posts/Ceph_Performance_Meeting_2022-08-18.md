@@ -6,9 +6,8 @@ subtitle: Ceph_Performance_Meeting_2022-08-18
 tags:
 - Ceph
 - RocksDB
-- PRS
-- Performance
-- Distributed Storage
+- 性能
+- 分布式存储
 title: "Ceph Performance Meeting 2022-08-18"
 updated: 2022-10-21
 ---

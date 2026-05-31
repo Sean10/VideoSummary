@@ -5,10 +5,6 @@ date: 2024-08-21
 subtitle: Ceph_User_+_Dev_Monthly_Meeting_2024-08-21
 tags:
 - Ceph
-- 用户体验
-- 功能改进
-- Crush Map
-- upmap
 title: Ceph User + Dev Monthly Meeting 2024-08-21
 updated: 2024-08-22
 ---

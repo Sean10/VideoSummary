@@ -5,10 +5,7 @@ date: 2020-04-03
 subtitle: 2020-02-26_-_-_Ceph_Docubetter_Meeting
 tags:
 - Ceph
-- 文档更新
-- 版本特定更改
 - 会议纪要
-- 问题修复
 title: "'2020-02-26 :: Ceph Docubetter Meeting'"
 updated: 2020-04-04
 ---

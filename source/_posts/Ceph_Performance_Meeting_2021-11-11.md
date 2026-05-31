@@ -6,18 +6,10 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 构建时间
-- 快速关闭
-- 客户端请求大小
-- 代码审查
-- 拉取请求
 - RBD
 - RGW
 - librados
 - libcephfs
-- cephfs
-- rbd
-- radosgw
 categories:
 - "视频总结"
 subtitle: Ceph_Performance_Meeting_2021-11-11

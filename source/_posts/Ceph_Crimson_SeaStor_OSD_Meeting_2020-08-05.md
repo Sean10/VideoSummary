@@ -6,9 +6,7 @@ subtitle: Ceph_Crimson_SeaStor_OSD_Meeting_2020-08-05
 tags:
 - Ceph
 - 分布式存储
-- Bluestore
-- Pull Request
-- 内存数据结构管理
+- BlueStore
 title: "Ceph Crimson/SeaStor OSD Meeting 2020-08-05"
 updated: 2020-08-06
 ---

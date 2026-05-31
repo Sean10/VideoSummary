@@ -5,9 +5,8 @@ date: 2021-06-15
 subtitle: Ceph_Month_2021_-_From_Open_Source_to_Open_Ended_in_Ceph_with_Lua
 tags:
 - Ceph
-- Lua
-- Distributed Storage
-- Open Source
+- 分布式存储
+- 开源
 - CephFS
 title: "'Ceph Month 2021: From Open Source to Open Ended in Ceph with Lua'"
 updated: 2021-06-16

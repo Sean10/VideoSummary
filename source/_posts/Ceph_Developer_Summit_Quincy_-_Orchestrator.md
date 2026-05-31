@@ -5,10 +5,9 @@ date: 2021-04-09
 subtitle: Ceph_Developer_Summit_Quincy_-_Orchestrator
 tags:
 - Ceph
-- Orchestrator
+- 编排
 - Dashboard
 - Kubernetes
-- Development Environment
 title: "'Ceph Developer Summit Quincy: Orchestrator'"
 updated: 2021-04-09
 ---

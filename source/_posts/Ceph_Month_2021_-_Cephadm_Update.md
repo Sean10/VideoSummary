@@ -4,11 +4,7 @@ categories:
 date: 2021-06-23
 subtitle: Ceph_Month_2021_-_Cephadm_Update
 tags:
-- Ceph存储系统
-- Cephadm更新
 - 分布式存储
-- Ceph集群管理
-- 自动化部署
 title: "'Ceph Month 2021: Cephadm Update'"
 updated: 2021-06-24
 ---

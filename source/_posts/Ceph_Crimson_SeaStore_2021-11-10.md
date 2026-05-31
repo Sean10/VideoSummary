@@ -8,16 +8,14 @@ tags:
 - 分布式存储
 - CRUSH算法
 - 高可用性
-- 可伸缩性
+- 可扩展性
 - 对象存储
 - 块存储
 - 文件系统存储
-- 一致性
-- 去中心化
 - 性能
-- Bluestore
-- Bluefs
-- Rocksdb
+- BlueStore
+- BlueFS
+- RocksDB
 - OSD
 - MON
 - MDS
@@ -25,15 +23,12 @@ tags:
 - RADOS
 - librados
 - libcephfs
-- cephfs
-- rbd
-- radosgw
+- RBD
 - RGW
 - RESTful API
 - 认证
 - 授权
 - 加密
-- 消息码
 - 复制
 - 快照
 - 克隆
@@ -45,26 +40,19 @@ tags:
 - 混合云
 - 多云
 - 存储集群
-- 节点
-- 磁盘
 - SSD
 - HDD
-- JBOD
 - SAN
 - NAS
 - 网络
-- 拓扑
-- 故障域
-- 恢复
 - 弹性
+- 恢复
 - 负载均衡
 - 缓存
 - 压缩
 - 去重
 - 分层
-- 性能调优
-- 基准测试
-- 验证
+- 性能优化
 title: "Ceph Crimson/SeaStore 2021-11-10"
 updated: 2021-11-11
 ---

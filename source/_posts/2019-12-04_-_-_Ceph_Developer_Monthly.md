@@ -4,10 +4,9 @@ date: 2019-12-05
 updated: 2019-12-06
 tags:
 - Ceph
-- Orchestrator
+- 编排
 - 自动化
 - 分布式存储
-- 集群管理
 categories:
 - "视频总结"
 subtitle: 2019-12-04_-_-_Ceph_Developer_Monthly

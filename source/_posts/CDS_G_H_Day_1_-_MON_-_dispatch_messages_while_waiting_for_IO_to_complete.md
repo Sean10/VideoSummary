@@ -5,11 +5,6 @@ date: 2014-06-24
 subtitle: CDS_G_H_Day_1_-_MON_-_dispatch_messages_while_waiting_for_IO_to_complete
 tags:
 - Ceph
-- Monitor
-- I/O操作
-- 异步化
-- Paxos
-- Work Queue
 title: "'CDS G/H (Day 1) - MON: dispatch messages while waiting for IO to complete'"
 updated: 2014-06-25
 ---

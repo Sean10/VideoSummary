@@ -6,8 +6,6 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-02-08
 tags:
 - Ceph
 - RGW
-- Refactoring
-- Cloud Transition
 - OpenStack
 title: "Ceph RGW Refactoring Meeting 2023-02-08"
 updated: 2023-02-15

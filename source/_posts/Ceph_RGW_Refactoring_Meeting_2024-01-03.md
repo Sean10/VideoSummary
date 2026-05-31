@@ -7,8 +7,7 @@ tags:
 - Ceph
 - RGW
 - 分布式存储
-- 通知系统
-- 一致性
+- 高可用性
 title: Ceph RGW Refactoring Meeting 2024-01-03
 updated: 2024-01-06
 ---

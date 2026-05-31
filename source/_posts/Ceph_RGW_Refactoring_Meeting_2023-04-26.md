@@ -7,8 +7,6 @@ tags:
 - Ceph
 - RGW
 - 分布式存储
-- 删除竞赛问题
-- 解决方案讨论
 title: Ceph RGW Refactoring Meeting 2023-04-26
 updated: 2023-05-04
 ---

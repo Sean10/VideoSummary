@@ -7,7 +7,7 @@ tags:
 - Ceph
 - Rook
 - Kubernetes
-- Distributed Storage
+- 分布式存储
 - CephFS
 title: "'Ceph Developer Summit Quincy: Rook'"
 updated: 2021-04-10

@@ -3,11 +3,7 @@ title: "  Ceph Month 2021: 5 more ways to break your ceph cluster  "
 date: 2021-06-14
 updated: 2021-06-15
 tags:
-- [Ceph集群管理]
-- [故障案例分析]
-- [最佳实践]
-- [存储技术]
-- [分布式存储]
+- 分布式存储
 categories:
 - "视频总结"
 subtitle: Ceph_Month_2021_-_5_more_ways_to_break_your_ceph_cluster

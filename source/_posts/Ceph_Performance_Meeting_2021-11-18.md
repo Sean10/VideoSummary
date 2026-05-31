@@ -8,7 +8,6 @@ tags:
 - 分布式存储
 - CRUSH算法
 - 性能优化
-- 稳定性
 - 自动化
 title: Ceph Performance Meeting 2021-11-18
 updated: 2021-11-20

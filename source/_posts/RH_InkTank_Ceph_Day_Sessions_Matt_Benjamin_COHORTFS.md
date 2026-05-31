@@ -5,10 +5,7 @@ date: 2014-07-25
 subtitle: RH_InkTank_Ceph_Day_Sessions_Matt_Benjamin_COHORTFS
 tags:
 - Ceph
-- Accelio
 - 分布式存储
-- 高性能I/O
-- XIO Messenger
 title: "RH InkTank Ceph Day Sessions Matt Benjamin COHORTFS"
 updated: 2014-07-26
 ---

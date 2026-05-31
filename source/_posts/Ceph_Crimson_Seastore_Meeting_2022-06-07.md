@@ -5,10 +5,7 @@ date: 2022-06-10
 subtitle: Ceph_Crimson_Seastore_Meeting_2022-06-07
 tags:
 - Ceph
-- Distributed Storage
-- Storage Performance
-- Code Review
-- Build Automation
+- 分布式存储
 title: "Ceph Crimson/Seastore Meeting 2022-06-07"
 updated: 2022-06-11
 ---

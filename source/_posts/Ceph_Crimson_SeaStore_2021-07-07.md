@@ -6,9 +6,6 @@ subtitle: Ceph_Crimson_SeaStore_2021-07-07
 tags:
 - Ceph
 - 分布式存储
-- Crimson项目
-- MLIS案例分析
-- Extent Placement Manager
 title: "Ceph Crimson/SeaStore 2021-07-07"
 updated: 2021-08-25
 ---

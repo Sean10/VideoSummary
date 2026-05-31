@@ -5,10 +5,9 @@ date: 2020-04-03
 subtitle: 2020-02-20_-_-_Ceph_Performance_Meeting
 tags:
 - Ceph
-- Performance Optimization
-- Distributed Storage
-- IO Benchmark
-- Storage Cluster
+- 性能优化
+- 分布式存储
+- 存储集群
 title: "'2020-02-20 :: Ceph Performance Meeting'"
 updated: 2020-04-04
 ---

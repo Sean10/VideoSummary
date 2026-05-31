@@ -1,0 +1,50 @@
+---
+categories:
+- 视频总结
+date: 2019-05-24
+subtitle: CephFS_as_a_Scalable_Filer_-_Rafael_Lopez_Brett_Milford_Monash_University
+tags:
+- CephFS
+- 测试
+title: "CephFS as a Scalable Filer - Rafael Lopez & Brett Milford, Monash University"
+updated: 2019-05-24
+---
+
+
+
+
+### 改进后的中文总结
+
+莫纳什大学的研究人员和工程师Rafael Lopez和Brett Milford在会议上分享了他们在Ceph文件系统（CephFS）方面的应用与实践。以下是对会议内容的总结：
+
+**莫纳什大学简介**
+
+莫纳什大学是澳大利亚的一所大型研究型大学，拥有超过70,000名学生和44,000名研究生。学校的研究数据中心提供高性能计算和可扩展存储服务，支持医学、药学、信息技术和商业等多个领域的研究。
+
+**Ceph文件系统（CephFS）在莫纳什大学的应用**
+
+莫纳什大学在CephFS方面的应用主要集中在以下几个方面：
+
+* **CephFS集群**： 学校拥有多个CephFS集群，用于存储和共享数据。
+* **虚拟文件服务器**： 使用CephFS和RBD构建虚拟文件服务器，提供NFS和SMB服务。
+* **对象存储**： 利用CephFS对象存储服务，存储大量数据。
+
+**CephFS性能测试**
+
+Rafael对CephFS在不同场景下的性能进行了测试，并与虚拟文件服务器进行了比较。主要测试结果显示，CephFS在NFS和SMB性能方面优于虚拟文件服务器，特别是在读写带宽和IOPS方面。对于元数据密集型任务，如文件复制和目录遍历，CephFS的性能也明显优于虚拟文件服务器。
+
+**CephFS在莫纳什大学的挑战**
+
+* **Ceph版本**： 莫纳什大学使用的是Red Hat Enterprise Ceph，存在一些包装问题。
+* **Ceph访问**： 提供原生Ceph访问和强制配额存在一些挑战。
+* **备份**： 备份大型文件系统存在一些挑战。
+
+**后续行动计划**
+
+* **升级Ceph版本**： 考虑升级Ceph版本，以解决包装问题。
+* **优化Ceph配置**： 优化Ceph配置，以提高性能和可靠性。
+* **测试Ceph功能**： 测试Ceph的新功能，以进一步提高其可用性和可靠性。
+
+**会议总结**
+
+莫纳什大学在Ceph文件系统方面取得了显著成果，并成功将其应用于研究数据存储和共享。CephFS在莫纳什大学的性能表现良好，但还存在一些挑战需要解决。莫纳什大学将继续优化Ceph配置，并探索新的技术，以进一步提高Ceph的性能和可靠性。

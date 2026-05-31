@@ -4,10 +4,8 @@ date: 2021-06-25
 updated: 2021-06-25
 tags:
 - Ceph
-- 市场发展
 - 分布式存储
 - 软件定义存储
-- 开源社区
 categories:
 - "视频总结"
 subtitle: Ceph_Month_2021_-_Ceph_Market_Development_Working_Group_BoF

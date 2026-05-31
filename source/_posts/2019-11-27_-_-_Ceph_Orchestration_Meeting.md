@@ -6,11 +6,7 @@ subtitle: 2019-11-27_-_-_Ceph_Orchestration_Meeting
 tags:
 - Ceph
 - 分布式存储
-- Ceph Orchestrator
-- 性能问题
-- 线程池
-- parallel SSH
-- pssh
+- 编排
 - Dashboard
 title: "'2019-11-27 :: Ceph Orchestration Meeting'"
 updated: 2019-11-28

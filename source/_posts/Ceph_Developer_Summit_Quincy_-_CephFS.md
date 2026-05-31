@@ -5,10 +5,8 @@ date: 2021-04-12
 subtitle: Ceph_Developer_Summit_Quincy_-_CephFS
 tags:
 - CephFS
-- CephDeveloperSummit
 - 分布式存储
-- CephFS开发
-- Ceph性能
+- 性能
 title: "'Ceph Developer Summit Quincy: CephFS'"
 updated: 2021-04-13
 ---

@@ -6,9 +6,7 @@ subtitle: Ceph_Performance_Meeting_2021-10-28
 tags:
 - Ceph
 - 性能优化
-- 内存分配
 - 分布式存储
-- Pull Requests
 title: Ceph Performance Meeting 2021-10-28
 updated: 2021-11-04
 ---

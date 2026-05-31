@@ -6,9 +6,6 @@ subtitle: Ceph_Day_CERN_2019_-_Scale_out_Sync_Share_with_Seafile_on_Ceph_-_Sonke
 tags:
 - Ceph
 - 分布式存储
-- Seafile
-- 同步与共享
-- Sönke Schippmann
 title: "'Ceph Day CERN 2019: Scale out Sync & Share with Seafile on Ceph - Sönke Schippmann'"
 updated: 2020-08-26
 ---

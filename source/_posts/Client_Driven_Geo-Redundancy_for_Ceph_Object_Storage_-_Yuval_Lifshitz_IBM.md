@@ -4,12 +4,7 @@ categories:
 date: 2023-05-05
 subtitle: Client_Driven_Geo-Redundancy_for_Ceph_Object_Storage_-_Yuval_Lifshitz_IBM
 tags:
-- Ceph Object Storage
-- Geo
-- Redundancy
-- Client Notifications
-- Distributed Storage
-- Data Replication
+- 分布式存储
 title: "Client Driven Geo-Redundancy for Ceph Object Storage - Yuval Lifshitz, IBM"
 updated: 2023-05-05
 ---

@@ -4,10 +4,8 @@ date: 2022-06-27
 updated: 2022-06-28
 tags:
 - Ceph
-- Performance Optimization
-- Distributed Storage
-- Snapshot Mapper
-- Arbitrary Mirror
+- 性能优化
+- 分布式存储
 categories:
 - "视频总结"
 subtitle: Ceph_Performance_Meeting_2022-06-16

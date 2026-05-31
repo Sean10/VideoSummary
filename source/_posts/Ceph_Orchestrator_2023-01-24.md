@@ -5,10 +5,8 @@ date: 2023-01-25
 subtitle: Ceph_Orchestrator_2023-01-24
 tags:
 - Ceph
-- Distributed Storage
-- Systemd
+- 分布式存储
 - iSCSI
-- SSH
 title: "Ceph Orchestrator 2023-01-24"
 updated: 2023-01-26
 ---

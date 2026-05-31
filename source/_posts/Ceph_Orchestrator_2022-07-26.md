@@ -6,8 +6,7 @@ subtitle: Ceph_Orchestrator_2022-07-26
 tags:
 - Ceph
 - 分布式存储
-- 管理标签
-- Ceph Orchestrator
+- 编排
 - 会议纪要
 title: "Ceph Orchestrator 2022-07-26"
 updated: 2022-08-01

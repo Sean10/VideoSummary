@@ -8,7 +8,7 @@ tags:
 - 分布式存储
 - 测试
 - NFS
-- Orchestrator
+- 编排
 title: "Ceph Orchestrator Meeting 2022-07-05"
 updated: 2022-08-10
 ---

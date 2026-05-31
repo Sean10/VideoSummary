@@ -6,9 +6,7 @@ subtitle: New_Read_Balancer_in_Ceph_-_Laura_Flores_IBM
 tags:
 - Ceph
 - 分布式存储
-- 读平衡器
 - 性能优化
-- 算法改进
 title: New Read Balancer in Ceph - Laura Flores, IBM
 updated: 2023-05-05
 ---

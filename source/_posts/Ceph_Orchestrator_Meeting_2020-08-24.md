@@ -5,10 +5,6 @@ date: 2020-08-24
 subtitle: Ceph_Orchestrator_Meeting_2020-08-24
 tags:
 - Ceph
-- 日志处理
-- Python版本支持
-- 硬件信息收集
-- 文档更新
 title: "Ceph Orchestrator Meeting 2020-08-24"
 updated: 2020-08-25
 ---

@@ -6,9 +6,6 @@ subtitle: 2019-12-11_-_-_Ceph_DocUBetter_Meeting
 tags:
 - Ceph
 - 分布式存储
-- 文档更新
-- 软件集成
-- 版本迁移
 title: "'2019-12-11:: Ceph DocUBetter Meeting'"
 updated: 2019-12-12
 ---

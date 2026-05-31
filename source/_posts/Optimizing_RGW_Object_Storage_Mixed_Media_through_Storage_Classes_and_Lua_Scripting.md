@@ -5,10 +5,7 @@ date: 2022-11-10
 subtitle: Optimizing_RGW_Object_Storage_Mixed_Media_through_Storage_Classes_and_Lua_Scripting
 tags:
 - Ceph
-- Distributed Storage
-- RGW Optimization
-- Lua Scripting
-- Storage Class
+- 分布式存储
 title: "Optimizing RGW Object Storage Mixed Media through Storage Classes and Lua Scripting"
 updated: 2022-11-11
 ---

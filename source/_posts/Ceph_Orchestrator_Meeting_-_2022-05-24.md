@@ -5,9 +5,8 @@ updated: 2022-05-25
 tags:
 - Ceph
 - 分布式存储
-- Orchestrator
+- 编排
 - Docker
-- 版本控制
 categories:
 - "视频总结"
 subtitle: Ceph_Orchestrator_Meeting_-_2022-05-24

@@ -5,10 +5,7 @@ date: 2022-11-15
 subtitle: Data_Security_and_Storage_Hardening_In_Rook_and_Ceph
 tags:
 - Ceph
-- Red Hat
-- Storage Security
 - Rook
-- Data Encryption
 title: "Data Security and Storage Hardening In Rook and Ceph"
 updated: 2022-11-16
 ---

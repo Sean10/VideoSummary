@@ -4,9 +4,9 @@ date: 2024-08-23
 updated: 2024-08-24
 tags:
 - Ceph
-- Distributed Storage
-- Performance Optimization
-- Storage Cluster
+- 分布式存储
+- 性能优化
+- 存储集群
 - Crimson
 categories:
 - "视频总结"

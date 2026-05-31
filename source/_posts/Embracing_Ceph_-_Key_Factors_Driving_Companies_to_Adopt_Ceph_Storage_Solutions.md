@@ -4,10 +4,8 @@ categories:
 date: 2023-05-05
 subtitle: Embracing_Ceph_-_Key_Factors_Driving_Companies_to_Adopt_Ceph_Storage_Solutions
 tags:
-- Ceph存储
 - 分布式存储
 - OpenStack
-- 开源社区
 - 存储集群
 title: Embracing Ceph- Key Factors Driving Companies to Adopt Ceph Storage Solutions
 updated: 2023-05-05

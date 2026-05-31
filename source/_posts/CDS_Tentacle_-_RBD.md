@@ -8,7 +8,7 @@ tags:
 - RBD
 - 分布式存储
 - 高可用性
-- 可伸缩性
+- 可扩展性
 title: "CDS Tentacle - RBD"
 updated: 2024-08-23
 ---

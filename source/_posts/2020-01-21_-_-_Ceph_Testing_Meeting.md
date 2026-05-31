@@ -3,11 +3,7 @@ title: "  2020-01-21 :: Ceph Testing Meeting  "
 date: 2020-01-23
 updated: 2020-01-24
 tags:
-- [Ceph测试]
-- [版本升级]
-- [安全更新]
-- [Jenkins流程]
-- [openSUSE支持]
+- Ceph
 categories:
 - "视频总结"
 subtitle: 2020-01-21_-_-_Ceph_Testing_Meeting

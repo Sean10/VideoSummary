@@ -3,11 +3,7 @@ title: "  Enhancing Observability in Rook Ceph - Deepika Upadhyay & Gaurav Sitla
 date: 2023-05-05
 updated: 2023-05-05
 tags:
-- [Ceph]
-- [Distributed Storage]
-- [Observability]
-- [Rook]
-- [Tracing]
+- Ceph
 categories:
 - "视频总结"
 subtitle: Enhancing_Observability_in_Rook_Ceph_-_Deepika_Upadhyay_Gaurav_Sitlani_Koor_Technologies_Inc.

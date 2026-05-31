@@ -6,9 +6,7 @@ subtitle: Ceph_Developer_Summit_Quincy_-_Dashboard_Follow-up
 tags:
 - Ceph
 - Dashboard
-- Developer Summit
-- Quincy
-- Distributed Storage
+- 分布式存储
 title: "'Ceph Developer Summit Quincy: Dashboard Follow-up'"
 updated: 2021-04-23
 ---
@@ -29,7 +27,7 @@ updated: 2021-04-23
    - 确定了嵌入式CLI工具的开发优先级。
 
 2. **多集群管理**
-   - 探讨了Ceph Dashboard管理多个Ceph集群的能力，包括RGW多站点和CFS镜像。
+   - 探讨了Ceph Dashboard管理多个Ceph集群的能力，包括RGW多站点和CephFS镜像。
    - 与核心团队合作，以确保安全性和权限管理的细粒度控制。
 
 3. **性能和可扩展性**

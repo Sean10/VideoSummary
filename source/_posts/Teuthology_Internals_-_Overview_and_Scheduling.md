@@ -5,10 +5,9 @@ date: 2021-03-16
 subtitle: Teuthology_Internals_-_Overview_and_Scheduling
 tags:
 - Teuthology
-- Distributed Storage
+- 分布式存储
 - Ceph
-- Scheduling
-- Automation
+- 自动化
 title: "'Teuthology Internals: Overview and Scheduling'"
 updated: 2021-03-16
 ---

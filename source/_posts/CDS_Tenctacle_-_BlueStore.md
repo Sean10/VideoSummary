@@ -8,7 +8,6 @@ tags:
 - BlueStore
 - 性能优化
 - 分布式存储
-- 数据管理
 title: "CDS Tenctacle - BlueStore"
 updated: 2024-08-23
 ---

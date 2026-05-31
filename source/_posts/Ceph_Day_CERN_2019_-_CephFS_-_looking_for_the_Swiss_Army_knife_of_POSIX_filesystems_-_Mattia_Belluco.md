@@ -4,10 +4,8 @@ date: 2020-08-25
 updated: 2020-08-26
 tags:
 - CephFS
-- POSIX 文件系统
 - 分布式存储
 - Ceph
-- HPC 环境
 categories:
 - "视频总结"
 subtitle: Ceph_Day_CERN_2019_-_CephFS_-_looking_for_the_Swiss_Army_knife_of_POSIX_filesystems_-_Mattia_Belluco

@@ -6,10 +6,6 @@ subtitle: 2020-05-12_-_-_Crimson_SeaStor_OSD_Weekly_Meeting
 tags:
 - Ceph
 - 分布式存储
-- 代码重构
-- 单元测试
-- 内存泄漏
-- 优雅关机
 title: "'2020-05-12 :: Crimson SeaStor OSD Weekly Meeting'"
 updated: 2020-05-14
 ---

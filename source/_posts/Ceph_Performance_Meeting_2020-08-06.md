@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 性能优化
 - BlueStore
-- 缓存策略
-- 压缩测试
 title: Ceph Performance Meeting 2020-08-06
 updated: 2020-08-07
 ---

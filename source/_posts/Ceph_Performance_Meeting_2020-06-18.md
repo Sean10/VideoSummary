@@ -7,7 +7,6 @@ tags:
 - Ceph
 - 性能优化
 - 分布式存储
-- IO 500 测试
 - MDS
 title: Ceph Performance Meeting 2020-06-18
 updated: 2020-06-20

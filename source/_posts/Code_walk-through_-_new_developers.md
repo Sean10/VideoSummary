@@ -1,0 +1,53 @@
+---
+title: "  Code walk-through: new developers  "
+date: 2018-07-31
+updated: 2018-08-01
+tags:
+- 分布式存储
+categories:
+- "视频总结"
+---
+
+subtitle: Code_walk-through_-_new_developers
+
+会议纪要
+
+**会议时间**： [请填写会议时间]
+
+**会议地点**： [请填写会议地点]
+
+**参会人员**： [请填写参会人员名单]
+
+**会议主题**： Ceph 源代码组织结构及关键组件介绍
+
+**会议内容**：
+
+1. **Ceph 源代码组织结构**：
+    * Ceph 源代码主要分为顶层目录、源代码目录、文档目录和测试目录。
+    * 顶层目录包括许可证、编码风格文件和提交补丁流程等文档。
+    * 源代码目录包含所有源代码，包括守护进程、库和工具等。
+    * 文档目录包含使用文档和开发文档。
+    * 测试目录包含测试脚本和测试用例。
+    * 重要目录包括 common、global、message、osd、mon、rgw、librados 和 librgw 等。
+
+2. **重要组件**：
+    * 消息传递：Ceph 使用消息传递机制在守护进程之间进行通信，包括消息类、消息格式、消息发送和接收等。
+    * 对象存储：Ceph 使用对象存储来存储数据，包括对象存储类、对象存储接口和对象存储后端（如文件存储、块存储、内存存储等）。
+    * 守护进程：Ceph 包含多个守护进程，如 OSD、MON、RGW 等，负责不同的功能。
+    * librados：librados 库提供与对象存储交互的 API，用于读取、写入、删除对象等操作。
+
+3. **数据完整性**：
+    * Ceph 通过网络层和后端存储层保证数据完整性，包括使用 CRC 检查和不同后端存储类型的机制。
+
+4. **对象存储**：
+    * Ceph 使用对象存储来存储数据，包括对象存储类、对象存储接口和对象存储后端。
+
+**行动计划**：
+
+* 将会议内容整理成文档，并在 Ceph 社区网站上发布。
+* 持续举办类似的技术分享会，帮助开发者更好地了解 Ceph。
+
+**备注**：
+
+* 本次会议纪要仅供参考，具体内容请以会议录音或视频为准。
+* 会议中提到的英文关键词包括：source code organization, message passing, object storage, OSD, MON, RGW, librados, data integrity, attribute, object store, backend, message, messenger, dispatcher, protocol, configuration, context, transaction, operation, read, write, cache, CRC, checksum, RocksDB, Luminous, BlueStore, PG, pool, placement group, backend, replication, erasure coding, data integrity, object context, object info, transaction ID, payload, callback, context, lambda, C++11, OSD client, object ER, transaction, lease, lock, profile system, client API, kernel, RBAC, authentication, Kerberos, class, Lua, journal, transaction, key-value database, LevelDB, RocksDB, MDB, transaction, in-memory benchmarking, shared library, wrapper, library, interface, API, read, write, object, collection, metadata, object store interface, object store backend, file store, block store, memory store, key-value store, object info, key-value pair, byte stream, attribute, OMAP, object context, object info, CRC, checksum, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, RocksDB, transaction, write, flush, object context, cache, attribute, read, write, object store, RocksDB, SST, index, key-value pair, BlueStore, object store, RocksDB, SST, index, cache, bloom filter, cache miss, transaction log, commit, disk, flush, metadata, object table, Roc

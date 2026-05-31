@@ -3,11 +3,7 @@ title: "  A Welcoming Ceph Experience Improvements for First-Time Users or: How 
 date: 2023-05-05
 updated: 2023-05-05
 tags:
-- Ceph用户体验
 - 分布式存储
-- 初学者教程
-- 文档优化
-- 用户支持
 categories:
 - "视频总结"
 subtitle: A_Welcoming_Ceph_Experience_Improvements_for_First-Time_Users_or_-_How_to_Make_Beginners_Love_Ceph

@@ -5,10 +5,7 @@ date: 2023-05-05
 subtitle: Sponsored_Lightning_Talk_-_The_Enterprise_Ceph_Spectrum_-_Philip_Williams_Canonical
 tags:
 - Ceph
-- Canonical
-- Distributed Storage
-- MicroCloud
-- Ubuntu
+- 分布式存储
 title: "'Sponsored Lightning Talk: The Enterprise Ceph Spectrum - Philip Williams, Canonical'"
 updated: 2023-05-05
 ---

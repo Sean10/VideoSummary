@@ -6,9 +6,6 @@ subtitle: Ceph_Crimson_Seastore_Meeting_2023-03-22
 tags:
 - Ceph
 - 分布式存储
-- 代码审查
-- 开发进展
-- 内存优化
 title: "Ceph Crimson/Seastore Meeting 2023-03-22"
 updated: 2023-03-23
 ---

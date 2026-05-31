@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - Crimson
-- SeaStore
-- 构建问题
 title: Ceph Crimson/SeaStore Meeting 2023-01-11
 updated: 2023-01-13
 ---

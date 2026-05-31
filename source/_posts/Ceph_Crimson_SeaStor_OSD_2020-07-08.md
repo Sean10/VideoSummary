@@ -6,7 +6,6 @@ subtitle: Ceph_Crimson_SeaStor_OSD_2020-07-08
 tags:
 - Ceph
 - 分布式存储
-- Crimson 存储引擎
 - RocksDB
 - 测试
 title: "Ceph Crimson/SeaStor OSD 2020-07-08"

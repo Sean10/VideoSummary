@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 代码审查
-- 测试验证
 title: "Ceph Crimson/SeaStor OSD 2020-10-28"
 updated: 2020-11-03
 ---

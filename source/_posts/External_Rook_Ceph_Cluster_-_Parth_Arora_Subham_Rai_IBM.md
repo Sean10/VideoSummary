@@ -6,9 +6,7 @@ subtitle: External_Rook_Ceph_Cluster_-_Parth_Arora_Subham_Rai_IBM
 tags:
 - Ceph
 - Kubernetes
-- Rook Operator
-- Distributed Storage
-- Storage Orchestration
+- 分布式存储
 title: "External Rook Ceph Cluster - Parth Arora & Subham Rai, IBM"
 updated: 2023-05-05
 ---

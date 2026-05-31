@@ -5,10 +5,7 @@ date: 2020-07-08
 subtitle: Ceph_DocuBetter_Meeting_2020-07-08
 tags:
 - Ceph
-- 文档更新
-- 开发者指南
 - 会议纪要
-- 负载均衡器
 title: Ceph DocuBetter Meeting 2020-07-08
 updated: 2020-07-09
 ---

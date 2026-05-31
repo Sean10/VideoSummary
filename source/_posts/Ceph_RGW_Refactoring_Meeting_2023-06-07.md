@@ -6,9 +6,7 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-06-07
 tags:
 - Ceph
 - RGW
-- Bug修复
 - 分布式存储
-- 软件开发
 title: "Ceph RGW Refactoring Meeting 2023-06-07"
 updated: 2023-07-03
 ---

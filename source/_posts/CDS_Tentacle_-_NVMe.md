@@ -6,10 +6,7 @@ subtitle: CDS_Tentacle_-_NVMe
 tags:
 - Ceph
 - 分布式存储
-- 优化
-- 功能增强
 - 安全性
-- 可用性
 - 快照
 - 复制
 title: "CDS Tentacle - NVMe"

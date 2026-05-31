@@ -8,8 +8,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- SMR存储技术
-- 蓝鲸存储
 title: Ceph Performance Meeting 2021-07-29
 updated: 2021-08-24
 ---

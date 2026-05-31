@@ -8,10 +8,6 @@ tags:
 - 分布式存储
 - CRUSH算法
 - 性能优化
-- 蓝鲸存储
-- 用户空间驱动程序
-- 多进程设计
-- 错误处理
 title: "'2019-11-26 :: Crimson SeaStor OSD Weekly Meeting'"
 updated: 2019-11-28
 ---

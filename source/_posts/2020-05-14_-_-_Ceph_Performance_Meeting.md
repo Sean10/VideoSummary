@@ -7,8 +7,7 @@ tags:
 - Ceph
 - RocksDB
 - BlueStore
-- Performance Testing
-- PR Review
+- 测试
 title: "'2020-05-14 :: Ceph Performance Meeting'"
 updated: 2020-05-15
 ---

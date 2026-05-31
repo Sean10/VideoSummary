@@ -6,7 +6,6 @@ subtitle: Ceph_Performance_Meeting_2022-11-17
 tags:
 - Ceph
 - BlueStore
-- 删除范围
 - RGW
 - 性能优化
 - RocksDB

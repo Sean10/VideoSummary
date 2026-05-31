@@ -6,9 +6,7 @@ subtitle: RH_InkTank_Ceph_Day_Sessions_Jeff_Darcy_REDHAT
 tags:
 - Ceph
 - 分布式存储
-- Gluster
-- 性能测试
-- 实验性研究
+- 测试
 title: "RH InkTank Ceph Day Sessions Jeff Darcy REDHAT"
 updated: 2014-07-26
 ---
@@ -49,14 +47,14 @@ updated: 2014-07-26
 
 6. **实验结果**：
    - 在64k顺序写入测试中，GLaDOS版本在低线程计数时性能较差，但在高线程计数时逐渐赶上。
-   - 在4K同步随机写入测试中，GLaDOS版本在性能上优于Ceph文件系统（SEFS）。
+   - 在4K同步随机写入测试中，GLaDOS版本在性能上优于Ceph文件系统（CephFS）。
 
 7. **后续行动**：
    - 对低线程计数时性能较差的问题进行进一步调查。
-   - 探索GLaDOS版本在性能上优于SEFS的原因。
+   - 探索GLaDOS版本在性能上优于CephFS的原因。
    - 将实验代码分享到GitHub或Gluster Forge。
 
 **会议结论**：
 
 - Gluster与Ceph技术的结合是一个有趣的实验性探索，有助于了解两种技术的性能差异和潜在优势。
-- 需要进一步研究低线程计数时性能较差的问题，并探索GLaDOS版本在性能上优于SEFS的原因。
+- 需要进一步研究低线程计数时性能较差的问题，并探索GLaDOS版本在性能上优于CephFS的原因。

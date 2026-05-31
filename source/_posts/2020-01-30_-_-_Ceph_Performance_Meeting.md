@@ -6,9 +6,7 @@ subtitle: 2020-01-30_-_-_Ceph_Performance_Meeting
 tags:
 - Ceph
 - 性能优化
-- CI系统改进
 - 分布式存储
-- 代码逻辑简化
 title: 2020-01-30 -- Ceph Performance Meeting
 updated: 2020-04-01
 ---

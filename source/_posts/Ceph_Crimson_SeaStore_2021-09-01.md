@@ -5,11 +5,8 @@ date: 2021-09-01
 subtitle: Ceph_Crimson_SeaStore_2021-09-01
 tags:
 - Ceph
-- Distributed Storage
-- Performance Optimization
-- C
-- Store
-- Rook Integration
+- 分布式存储
+- 性能优化
 title: "Ceph Crimson/SeaStore 2021-09-01"
 updated: 2021-09-02
 ---

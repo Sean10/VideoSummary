@@ -5,12 +5,11 @@ updated: 2021-04-07
 tags:
 - Ceph
 - Dashboard
-- Rados
-- Distributed Storage
+- RADOS
+- 分布式存储
 - CephFS
-- RADOSGW
-- Monitoring
-- Automation
+- 监控
+- 自动化
 categories:
 - "视频总结"
 subtitle: Ceph_Developer_Summit_Quincy_-_RADOS

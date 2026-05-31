@@ -5,10 +5,10 @@ date: 2020-09-10
 subtitle: Ceph_Crimson_SeaStor_OSD_2020-09-09
 tags:
 - Ceph
-- Distributed Storage
-- CRUSH Algorithm
-- High Availability
-- Scalability
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可扩展性
 title: "Ceph Crimson/SeaStor OSD 2020-09-09"
 updated: 2020-09-11
 ---

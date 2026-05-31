@@ -5,10 +5,7 @@ date: 2021-06-23
 subtitle: Ceph_Month_2021_-_Optimizing_Ceph_on_Arm64
 tags:
 - Ceph
-- Arm64
-- Optimization
-- Storage
-- Server
+- 存储
 title: "'Ceph Month 2021: Optimizing Ceph on Arm64'"
 updated: 2021-06-24
 ---

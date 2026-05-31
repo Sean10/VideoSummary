@@ -5,10 +5,6 @@ updated: 2021-06-11
 tags:
 - Ceph
 - 分布式存储
-- 科学计算
-- RBD镜像
-- CephFS快照
-- Ceph升级
 categories:
 - "视频总结"
 subtitle: Ceph_Month_2021_-_Ceph_in_Research_Scientific_Computing_BoF

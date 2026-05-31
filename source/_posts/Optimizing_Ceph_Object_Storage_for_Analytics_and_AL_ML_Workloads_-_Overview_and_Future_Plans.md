@@ -5,10 +5,9 @@ date: 2023-05-18
 subtitle: Optimizing_Ceph_Object_Storage_for_Analytics_and_AL_ML_Workloads_-_Overview_and_Future_Plans
 tags:
 - Ceph
-- Object Storage
-- AI & ML Workloads
-- Storage Optimization
-- Distributed Storage
+- 对象存储
+- 存储优化
+- 分布式存储
 title: "Optimizing Ceph Object Storage for Analytics and AL/ML Workloads - Overview and Future Plans"
 updated: 2023-05-19
 ---

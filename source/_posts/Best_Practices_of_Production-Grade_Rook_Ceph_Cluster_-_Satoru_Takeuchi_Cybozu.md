@@ -7,8 +7,6 @@ tags:
 - Ceph
 - Kubernetes
 - Rook
-- Storage Orchestration
-- Cloud Native
 title: "Best Practices of Production-Grade Rook/Ceph Cluster - Satoru Takeuchi, Cybozu"
 updated: 2023-05-05
 ---

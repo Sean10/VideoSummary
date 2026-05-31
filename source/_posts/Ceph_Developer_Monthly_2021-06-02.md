@@ -8,14 +8,13 @@ tags:
 - 分布式存储
 - CRUSH算法
 - 安全性
-- 可伸缩性
+- 可扩展性
 - 对象存储
 - 块存储
 - 文件系统存储
-- 一致性
-- 去中心化
+- 高可用性
 - 性能
-- Bluestore
+- BlueStore
 - BlueFS
 - RocksDB
 - OSD
@@ -27,28 +26,22 @@ tags:
 - libcephfs
 - CephFS
 - RBD
-- RadosGW
 - RGW
 - RESTful API
 - 认证
 - 授权
 - 加密
-- 纠错码
 - 复制
 - 快照
 - 克隆
-- 薄配额
 - iSCSI
-- Fibre Channel
 - NFS
 - CIFS
 - POSIX
 - 监控
-- 仪表板
-- 管理
+- Dashboard
 - 编排
 - 自动化
-- 集成
 - 容器化
 - Kubernetes
 - Docker
@@ -60,16 +53,11 @@ tags:
 - 混合云
 - 多云
 - 存储集群
-- 节点
-- 硬盘
 - SSD
 - HDD
-- JBOD
 - SAN
 - NAS
 - 网络
-- 拓扑
-- 失效域
 - 恢复
 - 弹性
 - 负载均衡
@@ -77,10 +65,8 @@ tags:
 - 压缩
 - 去重
 - 分层
-- 性能调优
-- 基准测试
+- 性能优化
 - 测试
-- 验证
 title: "Ceph Developer Monthly 2021-06-02"
 updated: 2021-06-03
 ---

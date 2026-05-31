@@ -5,10 +5,7 @@ date: 2020-05-26
 subtitle: 2020-05-25_-_-_Ceph_Orchestration_Meeting
 tags:
 - Ceph
-- Monitoring
-- Upgrade Strategy
-- Documentation
-- Configuration Optimization
+- 监控
 title: "'2020-05-25 :: Ceph Orchestration Meeting'"
 updated: 2020-05-26
 ---

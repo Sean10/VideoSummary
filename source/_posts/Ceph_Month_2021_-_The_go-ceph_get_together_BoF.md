@@ -5,7 +5,6 @@ date: 2021-06-10
 subtitle: Ceph_Month_2021_-_The_go-ceph_get_together_BoF
 tags:
 - Ceph
-- GoCeph
 - 分布式存储
 - CephFS
 - RBD
@@ -29,7 +28,7 @@ updated: 2021-06-11
 1. **项目历史回顾**
    - GoCeph项目始于2014年，由Noah Watkins发起，John Mulligan和其他维护者于2019年加入。
    - 项目自2020年2月发布第一个官方版本0.2以来，每两个月发布一次新版本。
-   - 主要模块包括FFS、RADOS和RBD，提供Ceph API的Go语言封装。
+   - 主要模块包括CephFS、RADOS和RBD，提供Ceph API的Go语言封装。
 
 2. **项目现状**
    - 主要目标是提供与Go函数类似的Ceph API，简化C语言的复杂性。

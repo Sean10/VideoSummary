@@ -5,7 +5,6 @@ updated: 2021-09-17
 tags:
 - Ceph
 - 分布式存储
-- 代码审查
 - 性能优化
 - RocksDB
 categories:

@@ -5,10 +5,8 @@ date: 2020-07-20
 subtitle: Ceph_Orchestrator_Meeting_2020-07-20
 tags:
 - Ceph
-- Orchestrator
+- 编排
 - Cephadm
-- Upgrade Experience
-- Container Storage
 title: "Ceph Orchestrator Meeting 2020-07-20"
 updated: 2020-07-21
 ---

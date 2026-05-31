@@ -6,9 +6,6 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-10-25
 tags:
 - Ceph
 - 分布式存储
-- IAM
-- 账户管理
-- 配额管理
 title: Ceph RGW Refactoring Meeting 2023-10-25
 updated: 2023-11-21
 ---

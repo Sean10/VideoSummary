@@ -7,8 +7,7 @@ tags:
 - Ceph
 - 性能优化
 - 分布式存储
-- 调试工具
-- 自动化测试
+- 测试
 title: Ceph Performance Meeting 2021-08-26
 updated: 2021-08-27
 ---

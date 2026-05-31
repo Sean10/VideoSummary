@@ -4,7 +4,7 @@ date: 2021-04-08
 updated: 2021-04-08
 tags:
 - Ceph
-- Distributed Storage
+- 分布式存储
 - CephFS
 - BlueStore
 - Crimson

@@ -5,9 +5,7 @@ updated: 2022-06-03
 tags:
 - Ceph
 - BlueStore
-- Zero Block Detection
-- Storage Optimization
-- Performance Counters
+- 存储优化
 categories:
 - "视频总结"
 subtitle: Ceph_Developer_Monthly_2022-06-01

@@ -6,9 +6,7 @@ subtitle: CDS_Hammer_Day_1_-_RGW_-_Bucket_Index_Scalability
 tags:
 - Ceph
 - 分布式存储
-- Bucket Index Scalability
 - RGW
-- 多区域
 title: "'CDS Hammer (Day 1) - RGW: Bucket Index Scalability'"
 updated: 2014-10-30
 ---

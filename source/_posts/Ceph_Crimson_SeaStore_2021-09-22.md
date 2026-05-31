@@ -5,11 +5,7 @@ date: 2021-10-06
 subtitle: Ceph_Crimson_SeaStore_2021-09-22
 tags:
 - Ceph
-- C
-- Store
 - 性能优化
-- Bug修复
-- Ceph存储系统
 title: "Ceph Crimson/SeaStore 2021-09-22"
 updated: 2021-10-07
 ---

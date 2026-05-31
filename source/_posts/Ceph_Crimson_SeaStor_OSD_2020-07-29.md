@@ -6,9 +6,6 @@ subtitle: Ceph_Crimson_SeaStor_OSD_2020-07-29
 tags:
 - Ceph
 - 分布式存储
-- 测试与调试
-- 代码审查
-- 单元测试
 title: "Ceph Crimson/SeaStor OSD 2020-07-29"
 updated: 2020-07-30
 ---

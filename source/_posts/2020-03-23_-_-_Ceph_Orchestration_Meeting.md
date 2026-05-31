@@ -5,10 +5,7 @@ date: 2020-04-03
 subtitle: 2020-03-23_-_-_Ceph_Orchestration_Meeting
 tags:
 - Ceph
-- Orchestration
-- Pull Request
-- NFS Integration
-- Project Updates
+- 编排
 title: "'2020-03-23 :: Ceph Orchestration Meeting'"
 updated: 2020-04-04
 ---

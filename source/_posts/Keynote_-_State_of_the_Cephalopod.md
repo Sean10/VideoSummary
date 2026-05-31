@@ -6,9 +6,8 @@ subtitle: Keynote_-_State_of_the_Cephalopod
 tags:
 - Ceph
 - 分布式存储
-- 弹性存储
 - 高可用性
-- 可伸缩性
+- 可扩展性
 title: "'Keynote: State of the Cephalopod'"
 updated: 2023-05-05
 ---

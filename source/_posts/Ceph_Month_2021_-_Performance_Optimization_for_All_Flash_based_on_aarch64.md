@@ -4,10 +4,8 @@ date: 2021-06-11
 updated: 2021-06-12
 tags:
 - Ceph
-- Performance Optimization
-- All Flash Storage
-- aarch64
-- Distributed Storage
+- 性能优化
+- 分布式存储
 categories:
 - "视频总结"
 subtitle: Ceph_Month_2021_-_Performance_Optimization_for_All_Flash_based_on_aarch64

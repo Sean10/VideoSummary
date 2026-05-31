@@ -3,11 +3,7 @@ title: "  Ceph Month 2021: Qemu: librbd vs krbd performance  "
 date: 2021-06-21
 updated: 2021-06-22
 tags:
-- [Ceph]
-- [librbd]
-- [krbd]
-- [性能比较]
-- [客户端]
+- Ceph
 categories:
 - "视频总结"
 subtitle: Ceph_Month_2021_-_Qemu_-_librbd_vs_krbd_performance

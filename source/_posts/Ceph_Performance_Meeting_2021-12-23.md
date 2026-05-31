@@ -6,7 +6,6 @@ tags:
 - Ceph
 - 性能优化
 - BlueStore
-- 内存管理
 - 分布式存储
 categories:
 - "会议纪要"

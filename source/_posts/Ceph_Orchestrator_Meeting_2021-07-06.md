@@ -5,10 +5,7 @@ date: 2021-08-24
 subtitle: Ceph_Orchestrator_Meeting_2021-07-06
 tags:
 - Ceph
-- Orchestrator
-- 设计文档
-- 工具和流程
-- 技术问题
+- 编排
 title: "Ceph Orchestrator Meeting 2021-07-06"
 updated: 2021-08-25
 ---

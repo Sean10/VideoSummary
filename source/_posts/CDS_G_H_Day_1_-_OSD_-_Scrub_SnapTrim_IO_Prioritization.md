@@ -5,9 +5,6 @@ updated: 2014-06-25
 tags:
 - Ceph
 - OSD
-- IO优先级
-- Scrub
-- SnapTrim
 categories:
 - "视频总结"
 subtitle: CDS_G_H_Day_1_-_OSD_-_Scrub_SnapTrim_IO_Prioritization

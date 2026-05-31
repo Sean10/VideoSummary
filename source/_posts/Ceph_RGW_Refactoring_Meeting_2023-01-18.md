@@ -7,8 +7,6 @@ tags:
 - Ceph
 - RGW
 - 分布式存储
-- 软件重构
-- 同步策略
 title: Ceph RGW Refactoring Meeting 2023-01-18
 updated: 2023-01-20
 ---

@@ -12,10 +12,8 @@ tags:
 - 对象存储
 - 块存储
 - 文件系统存储
-- 一致性
-- 去中心化
 - 性能
-- Bluestore
+- BlueStore
 - BlueFS
 - RocksDB
 - OSD
@@ -25,30 +23,22 @@ tags:
 - RADOS
 - librados
 - libcephfs
-- cephfs
-- rbd
-- radosgw
+- RBD
 - RGW
 - RESTful API
-- 身份验证
 - 授权
 - 加密
-- 摧毁编码
 - 复制
 - 快照
 - 克隆
-- 瘦分配
 - iSCSI
-- Fibre Channel
 - NFS
 - CIFS
 - POSIX
 - 监控
-- 仪表板
-- 管理
+- Dashboard
 - 编排
 - 自动化
-- 集成
 - 容器化
 - Kubernetes
 - Docker
@@ -60,26 +50,17 @@ tags:
 - 混合云
 - 多云
 - 存储集群
-- 节点
-- 磁盘
 - SSD
 - HDD
-- JBOD
 - SAN
 - NAS
 - 网络
-- 拓扑
-- 故障域
-- 恢复
 - 弹性
+- 恢复
 - 负载均衡
 - 缓存
 - 压缩
-- 数据去重
 - 分层
-- 性能调整
-- 基准测试
-- 验证
 title: "Ceph Crimson/SeaStore 2021-11-17"
 updated: 2021-11-18
 ---

@@ -6,9 +6,9 @@ subtitle: CDS_Reef_-_RBD
 tags:
 - Ceph
 - RBD
-- Distributed Storage
-- Storage Cluster
-- Scalability
+- 分布式存储
+- 存储集群
+- 可扩展性
 title: "'CDS Reef: RBD'"
 updated: 2022-04-23
 ---

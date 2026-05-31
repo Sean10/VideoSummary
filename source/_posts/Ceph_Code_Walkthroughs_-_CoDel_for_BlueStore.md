@@ -6,7 +6,6 @@ subtitle: Ceph_Code_Walkthroughs_-_CoDel_for_BlueStore
 tags:
 - Ceph
 - BlueStore
-- CoDel算法
 - 分布式存储
 - 性能优化
 title: "'Ceph Code Walkthroughs: CoDel for BlueStore'"

@@ -6,9 +6,8 @@ subtitle: Ceph_Performance_Meeting_2022-07-28
 tags:
 - Ceph
 - RocksDB
-- Performance Optimization
-- Tombstone Management
-- Distributed Storage
+- 性能优化
+- 分布式存储
 title: "Ceph Performance Meeting 2022-07-28"
 updated: 2022-07-29
 ---

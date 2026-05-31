@@ -5,11 +5,6 @@ updated: 2014-10-30
 tags:
 - Ceph
 - RBD
-- Kernel RBD Client
-- Copy
-- on
-- read
-- Clone
 categories:
 - "会议纪要"
 - "存储技术"

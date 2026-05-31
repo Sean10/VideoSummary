@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - RGW
-- 复制可靠性
-- 一致性保证
 title: Ceph RGW Refactoring Meeting 2023-01-04
 updated: 2023-01-24
 ---

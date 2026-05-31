@@ -6,9 +6,6 @@ subtitle: Ceph_User_+_Dev_Monthly_2022-06-01
 tags:
 - Ceph
 - 分布式存储
-- 算法
-- PG Remapper
-- Ceph Dashboard
 title: "Ceph User + Dev Monthly 2022-06-01"
 updated: 2022-06-01
 ---

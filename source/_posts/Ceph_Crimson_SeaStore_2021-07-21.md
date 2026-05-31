@@ -8,7 +8,6 @@ tags:
 - 性能优化
 - 分布式存储
 - CRUSH算法
-- 裸金属存储
 title: "Ceph Crimson/SeaStore 2021-07-21"
 updated: 2021-08-24
 ---

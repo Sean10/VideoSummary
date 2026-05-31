@@ -5,9 +5,6 @@ date: 2023-10-11
 subtitle: Ceph_RGW_Refactoring_Meeting_2023-10-11
 tags:
 - Ceph
-- RGW重构
-- 生命周期处理
-- 日志记录
 - 性能优化
 title: Ceph RGW Refactoring Meeting 2023-10-11
 updated: 2023-10-12

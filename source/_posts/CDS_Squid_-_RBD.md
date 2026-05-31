@@ -6,9 +6,7 @@ subtitle: CDS_Squid_-_RBD
 tags:
 - Ceph
 - RBD
-- Subdeveloper Planning Summit
-- Storage Optimization
-- Data Corruption
+- 存储优化
 title: "'CDS Squid: RBD'"
 updated: 2023-07-26
 ---

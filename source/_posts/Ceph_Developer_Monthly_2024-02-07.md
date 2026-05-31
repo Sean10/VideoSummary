@@ -5,10 +5,8 @@ date: 2024-02-13
 subtitle: Ceph_Developer_Monthly_2024-02-07
 tags:
 - Ceph
-- DevOps
 - 分布式存储
 - NVMe
-- oF
 - 高可用性
 title: "Ceph Developer Monthly 2024-02-07"
 updated: 2024-02-14

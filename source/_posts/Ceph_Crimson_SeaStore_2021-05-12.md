@@ -5,10 +5,7 @@ date: 2021-05-12
 subtitle: Ceph_Crimson_SeaStore_2021-05-12
 tags:
 - Ceph
-- 代码审查
 - 性能优化
-- 错误调试
-- 系统指标
 title: "Ceph Crimson/SeaStore 2021-05-12"
 updated: 2021-05-13
 ---

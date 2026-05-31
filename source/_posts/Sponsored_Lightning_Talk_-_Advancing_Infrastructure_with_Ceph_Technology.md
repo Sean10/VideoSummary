@@ -6,7 +6,6 @@ subtitle: Sponsored_Lightning_Talk_-_Advancing_Infrastructure_with_Ceph_Technolo
 tags:
 - Ceph
 - 分布式存储
-- Cliso公司
 - 云计算
 - 开源
 title: "'Sponsored Lightning Talk: Advancing Infrastructure with Ceph Technology'"

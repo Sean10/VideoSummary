@@ -5,8 +5,6 @@ date: 2023-05-05
 subtitle: Improving_Business_Continuity_for_an_Existing_Large_Scale_Ceph_Infrastructure
 tags:
 - Ceph
-- Business Continuity
-- Disaster Recovery
 - CERN
 - OpenStack
 title: "Improving Business Continuity for an Existing Large Scale Ceph Infrastructure"

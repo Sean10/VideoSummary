@@ -5,10 +5,6 @@ updated: 2021-05-06
 tags:
 - Ceph
 - 分布式存储
-- OSD优化
-- C
-- Store
-- 设备映射器接口
 categories:
 - "视频总结"
 subtitle: Ceph_Crimson_SeaStore_2021-05-05

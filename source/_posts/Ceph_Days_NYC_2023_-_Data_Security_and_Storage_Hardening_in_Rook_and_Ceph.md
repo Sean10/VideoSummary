@@ -5,8 +5,6 @@ date: 2023-05-17
 subtitle: Ceph_Days_NYC_2023_-_Data_Security_and_Storage_Hardening_in_Rook_and_Ceph
 tags:
 - Ceph
-- 数据安全
-- 存储加固
 - Rook
 - CephFS
 title: Ceph Days NYC 2023- Data Security and Storage Hardening in Rook and Ceph

@@ -5,10 +5,9 @@ date: 2022-12-06
 subtitle: Ceph_Orchestrator_2022-12-06
 tags:
 - Ceph
-- Distributed Storage
+- 分布式存储
 - OpenStack
 - NFS
-- Regression
 title: "Ceph Orchestrator 2022-12-06"
 updated: 2022-12-06
 ---

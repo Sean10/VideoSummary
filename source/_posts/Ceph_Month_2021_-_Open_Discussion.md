@@ -4,8 +4,7 @@ date: 2021-06-01
 updated: 2021-06-02
 tags:
 - Ceph
-- Distributed Storage
-- Open Discussion
+- 分布式存储
 - CephFS
 - RBD
 categories:

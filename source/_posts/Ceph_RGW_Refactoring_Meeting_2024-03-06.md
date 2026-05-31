@@ -7,7 +7,6 @@ tags:
 - Ceph
 - RGW
 - 分布式存储
-- 存储重构
 - 会议纪要
 title: Ceph RGW Refactoring Meeting 2024-03-06
 updated: 2024-03-07

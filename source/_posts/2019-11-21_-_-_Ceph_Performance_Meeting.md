@@ -4,11 +4,9 @@ categories:
 date: 2019-11-25
 subtitle: 2019-11-21_-_-_Ceph_Performance_Meeting
 tags:
-- Ceph性能优化
-- Ceph存储系统
+- 性能优化
 - CRUSH算法
 - 分布式存储
-- 上线测试
 title: 2019-11-21 -- Ceph Performance Meeting
 updated: 2019-11-26
 ---

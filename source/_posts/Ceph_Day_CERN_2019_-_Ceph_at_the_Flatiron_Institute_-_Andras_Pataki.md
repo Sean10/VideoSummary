@@ -5,10 +5,8 @@ date: 2020-08-25
 subtitle: Ceph_Day_CERN_2019_-_Ceph_at_the_Flatiron_Institute_-_Andras_Pataki
 tags:
 - Ceph
-- Distributed Storage
-- Flatiron Institute
-- Performance
-- Data Recovery
+- 分布式存储
+- 性能
 title: "'Ceph Day CERN 2019: Ceph at the Flatiron Institute - Andras Pataki'"
 updated: 2020-08-26
 ---

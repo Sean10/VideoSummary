@@ -5,8 +5,6 @@ updated: 2023-05-05
 tags:
 - Ceph
 - 分布式存储
-- QoS平台
-- 质量服务
 - 软件定义存储
 categories:
 - "视频总结"

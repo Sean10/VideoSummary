@@ -4,10 +4,7 @@ date: 2021-09-11
 updated: 2021-09-12
 tags:
 - Ceph
-- Orchestrator
-- Agent
-- Repaving Oasis
-- Log Aggregation
+- 编排
 categories:
 - "视频总结"
 subtitle: "Ceph Orchestrator Meeting 2021-09-07"

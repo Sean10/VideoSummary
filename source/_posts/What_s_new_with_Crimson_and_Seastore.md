@@ -6,9 +6,8 @@ subtitle: What_s_new_with_Crimson_and_Seastore
 tags:
 - Ceph
 - Crimson
-- Seastore
-- Distributed Storage
-- Scalability
+- 分布式存储
+- 可扩展性
 title: "What's new with Crimson and Seastore?"
 updated: 2022-11-11
 ---

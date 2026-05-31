@@ -4,11 +4,7 @@ categories:
 date: 2022-04-22
 subtitle: CDS_Reef_-_Governance
 tags:
-- Ceph 治理
-- 社区发展
-- 代码审查
-- 持续集成
-- 版本控制
+- Ceph
 title: "'CDS Reef: Governance'"
 updated: 2022-04-23
 ---

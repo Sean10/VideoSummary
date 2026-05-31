@@ -6,8 +6,6 @@ tags:
 - Ceph
 - 分布式存储
 - Dashboard
-- 用户界面
-- 开发计划
 categories:
 - "视频总结"
 subtitle: "Ceph开发者峰会Quincy：Dashboard"

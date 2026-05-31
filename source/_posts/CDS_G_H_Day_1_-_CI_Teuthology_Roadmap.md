@@ -4,11 +4,9 @@ categories:
 date: 2014-06-24
 subtitle: CDS_G_H_Day_1_-_CI_Teuthology_Roadmap
 tags:
-- Ceph CI
 - Teuthology
-- 自动化测试
+- 测试
 - 分布式存储
-- Ceph测试
 title: "CDS G/H (Day 1) - CI & Teuthology Roadmap"
 updated: 2014-06-25
 ---

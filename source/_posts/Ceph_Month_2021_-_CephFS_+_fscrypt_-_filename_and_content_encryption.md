@@ -5,9 +5,7 @@ date: 2021-06-24
 subtitle: Ceph_Month_2021_-_CephFS_+_fscrypt_-_filename_and_content_encryption
 tags:
 - CephFS
-- fscrypt
-- transparent encryption
-- encryption
+- 加密
 - Ceph
 title: "'Ceph Month 2021: CephFS + fscrypt: filename and content encryption'"
 updated: 2021-06-25

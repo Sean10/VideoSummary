@@ -6,9 +6,6 @@ subtitle: 2020-03-24_-_-_Ceph_Testing_Meeting
 tags:
 - Ceph
 - CI/CD
-- 持续集成
-- 测试改进
-- Ceph CI
 title: "'2020-03-24 :: Ceph Testing Meeting'"
 updated: 2020-04-04
 ---

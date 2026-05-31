@@ -7,7 +7,6 @@ tags:
 - Ceph
 - Dashboard
 - RGW
-- Configuration Optimization
 - Rook
 title: "Ceph Orchestrator Meeting 2021-06-15"
 updated: 2021-06-16

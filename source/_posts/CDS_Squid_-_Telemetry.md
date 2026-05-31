@@ -5,12 +5,7 @@ updated: 2023-07-21
 tags:
 - Ceph
 - 分布式存储
-- 遥测
-- 蓝店
-- 崩溃报告
-- 仪表板
-- 配置分析
-- 用户反馈
+- Dashboard
 categories:
 - "视频总结"
 subtitle: Ceph_Squid_-_Telemetry

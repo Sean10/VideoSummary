@@ -5,10 +5,7 @@ date: 2021-08-23
 subtitle: Ceph_Orchestrator_Meeting_2021-07-20
 tags:
 - Ceph
-- Orchestrator
-- Meeting summary
-- Template management
-- Manager performance
+- 编排
 title: "Ceph Orchestrator Meeting 2021-07-20"
 updated: 2021-08-24
 ---

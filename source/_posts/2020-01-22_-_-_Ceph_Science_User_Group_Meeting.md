@@ -4,10 +4,7 @@ date: 2020-01-23
 updated: 2020-01-24
 tags:
 - Ceph
-- 科学计算
 - 分布式存储
-- 社区活动
-- 用户组会议
 categories:
 - "视频总结"
 subtitle: 2020-01-22_-_-_Ceph_Science_User_Group_Meeting

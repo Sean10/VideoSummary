@@ -5,9 +5,6 @@ updated: 2020-05-19
 tags:
 - Ceph
 - 分布式存储
-- CLI重构
-- 代码重构
-- 管理与自动化
 categories:
 - "视频总结"
 subtitle: 2020-05-18_-_-_Ceph_Orchestration_Meeting

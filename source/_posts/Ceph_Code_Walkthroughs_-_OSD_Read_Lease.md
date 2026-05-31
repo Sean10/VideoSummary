@@ -6,8 +6,6 @@ subtitle: Ceph_Code_Walkthroughs_-_OSD_Read_Lease
 tags:
 - Ceph
 - 分布式存储
-- 读写一致性
-- 租约机制
 - OSD
 title: "'Ceph Code Walkthroughs: OSD Read Lease'"
 updated: 2021-12-03

@@ -6,11 +6,9 @@ subtitle: Ceph_Developer_Monthly_2021-02-03
 tags:
 - Ceph
 - Kubernetes
-- Monitoring
+- 监控
 - RGW
 - RBD
-- Prometheus
-- Alerting
 title: "Ceph Developer Monthly 2021-02-03"
 updated: 2021-03-10
 ---

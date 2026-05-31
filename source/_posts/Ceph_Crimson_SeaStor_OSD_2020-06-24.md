@@ -4,10 +4,9 @@ date: 2020-06-24
 updated: 2020-06-25
 tags:
 - Ceph
-- Distributed Storage
+- 分布式存储
 - CephFS
-- Performance Optimization
-- Automated Testing
+- 性能优化
 categories:
 - "视频总结"
 subtitle: Ceph_Crimson_SeaStor_OSD_2020-06-24

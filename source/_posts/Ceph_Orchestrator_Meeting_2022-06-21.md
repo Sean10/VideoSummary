@@ -5,10 +5,8 @@ date: 2022-06-27
 subtitle: Ceph_Orchestrator_Meeting_2022-06-21
 tags:
 - Ceph
-- Distributed Storage
-- GANESHA
+- 分布式存储
 - NFS
-- Failover
 title: "Ceph Orchestrator Meeting 2022-06-21"
 updated: 2022-06-28
 ---

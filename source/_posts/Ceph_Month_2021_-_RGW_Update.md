@@ -6,10 +6,6 @@ subtitle: Ceph_Month_2021_-_RGW_Update
 tags:
 - Ceph
 - RGW
-- S3 Select
-- S3 Bucket Inventory
-- Multi
-- site Support
 title: "'Ceph Month 2021: RGW Update'"
 updated: 2021-06-11
 ---

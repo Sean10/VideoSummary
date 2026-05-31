@@ -7,9 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - Cephadm
-- 管理工具
-- IPv6
-- 开发
 - 容器化
 title: "Ceph Orchestrator 2023-05-02"
 updated: 2023-05-03

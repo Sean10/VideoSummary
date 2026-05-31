@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 延迟问题
-- 写放大问题
 title: Ceph Performance Meeting 2023-01-26
 updated: 2023-02-01
 ---

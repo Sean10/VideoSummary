@@ -4,11 +4,7 @@ categories:
 date: 2021-09-02
 subtitle: Ceph_Developer_Monthly_2021-09-01
 tags:
-- Ceph配置文件
 - 性能优化
-- EIO问题
-- 大规模集群测试
-- 资源受限环境
 title: "Ceph Developer Monthly 2021-09-01"
 updated: 2021-09-03
 ---

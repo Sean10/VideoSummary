@@ -4,10 +4,8 @@ categories:
 date: 2022-02-02
 subtitle: Ceph_Performance_Meeting_2022-01-27
 tags:
-- Ceph 性能
 - RocksDB
-- Scrub 优化
-- 性能测试
+- 测试
 - RBD
 title: Ceph Performance Meeting 2022-01-27
 updated: 2022-02-03

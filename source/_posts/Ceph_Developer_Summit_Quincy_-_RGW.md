@@ -5,9 +5,9 @@ updated: 2021-04-10
 tags:
 - Ceph
 - RGW
-- Distributed Storage
-- Storage Cluster
-- Cloud Computing
+- 分布式存储
+- 存储集群
+- 云计算
 categories:
 - "视频总结"
 subtitle: "Ceph开发者峰会Quincy：RGW"

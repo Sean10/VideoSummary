@@ -4,11 +4,7 @@ categories:
 date: 2021-06-25
 subtitle: Ceph_Month_2021_-_Ceph_Community_Ambassador_BoF
 tags:
-- Ceph社区
-- 社区大使计划
 - 分布式存储
-- Ceph活动组织
-- Ceph用户交流
 title: "'Ceph Month 2021: Ceph Community Ambassador BoF'"
 updated: 2021-06-25
 ---

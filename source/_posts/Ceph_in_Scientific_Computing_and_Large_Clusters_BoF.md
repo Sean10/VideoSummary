@@ -4,10 +4,8 @@ date: 2023-05-05
 updated: 2023-05-05
 tags:
 - Ceph
-- Scientific Computing
-- Large Clusters
-- Distributed Storage
-- CRUSH Algorithm
+- 分布式存储
+- CRUSH算法
 categories:
 - "视频总结"
 subtitle: Ceph_in_Scientific_Computing_and_Large_Clusters_BoF

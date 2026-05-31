@@ -4,10 +4,7 @@ date: 2021-05-26
 updated: 2021-05-26
 tags:
 - Ceph
-- Orchestrator
-- Etsy Hosts
-- Ganesha
-- NFS EdgeRW
+- 编排
 categories:
 - "视频总结"
 subtitle: "Ceph Orchestrator Meeting 2021-05-25"

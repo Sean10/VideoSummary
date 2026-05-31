@@ -5,9 +5,7 @@ updated: 2022-05-25
 tags:
 - Ceph
 - 分布式存储
-- 代码审查
 - 性能优化
-- 问题解决
 categories:
 - "视频总结"
 subtitle: Ceph_Crimson_Seastore_Meeting_2022-05-11

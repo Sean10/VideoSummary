@@ -5,11 +5,10 @@ date: 2023-03-24
 subtitle: Ceph_Performance_Meeting_2023-03-23
 tags:
 - Ceph
-- 性能测试
+- 测试
 - 分布式存储
-- CRUSH 算法
+- CRUSH算法
 - 负载均衡
-- 自动缩放
 title: Ceph Performance Meeting 2023-03-23
 updated: 2023-03-25
 ---

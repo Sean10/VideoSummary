@@ -5,18 +5,15 @@ date: 2020-11-24
 subtitle: Ceph_User_Survey_Working_Group_2020-11-05
 tags:
 - Ceph
-- 用户调查
 - 分布式存储
-- CRUSH 算法
+- CRUSH算法
 - 高可用性
-- 可伸缩性
+- 可扩展性
 - 对象存储
 - 块存储
 - 文件系统存储
-- 一致性
-- 去中心化
 - 性能
-- Bluestore
+- BlueStore
 - BlueFS
 - RocksDB
 - OSD
@@ -26,15 +23,11 @@ tags:
 - RADOS
 - librados
 - libcephfs
-- cephfs
-- rbd
-- radosgw
+- RBD
 - RGW
 - RESTful API
-- 身份验证
 - 授权
 - 加密
-- 纠错码
 - 复制
 - 快照
 - 克隆
@@ -46,26 +39,20 @@ tags:
 - 混合云
 - 多云
 - 存储集群
-- 节点
 - 存储
 - SSD
 - HDD
-- JBOD
 - SAN
 - NAS
 - 网络
-- 网络拓扑
-- 失败域
-- 恢复
 - 弹性
+- 恢复
 - 负载均衡
 - 缓存
 - 压缩
 - 去重
 - 分层
-- 性能调优
-- 基准测试
-- 验证
+- 性能优化
 title: Ceph User Survey Working Group 2020-11-05
 updated: 2020-11-24
 ---

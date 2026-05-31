@@ -6,7 +6,6 @@ subtitle: Ceph_Code_Walkthroughs_-_RADOS_Snapshots
 tags:
 - Ceph
 - 分布式存储
-- 快照技术
 - RBD
 - CephFS
 title: "'Ceph Code Walkthroughs: RADOS Snapshots'"

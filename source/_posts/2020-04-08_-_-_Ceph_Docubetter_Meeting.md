@@ -4,11 +4,7 @@ categories:
 date: 2020-04-13
 subtitle: 2020-04-08_-_-_Ceph_Docubetter_Meeting
 tags:
-- Ceph文档改进
 - 分布式存储
-- 文档组织
-- 团队协作
-- 搜索功能
 title: "2020-04-08 -- Ceph Docubetter Meeting"
 updated: 2020-04-14
 ---

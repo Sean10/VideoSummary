@@ -5,10 +5,7 @@ date: 2021-06-11
 subtitle: Ceph_Month_2021_-_Intel_QLC_SSD_-_Cost-Effective_Ceph_Deployments
 tags:
 - Ceph
-- Intel QLC SSD
 - 分布式存储
-- 成本效益
-- SSD vs HDD
 title: "'Ceph Month 2021: Intel QLC SSD: Cost-Effective Ceph Deployments'"
 updated: 2021-06-12
 ---

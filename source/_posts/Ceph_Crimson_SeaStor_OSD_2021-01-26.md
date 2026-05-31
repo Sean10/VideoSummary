@@ -8,7 +8,7 @@ tags:
 - 分布式存储
 - CRUSH算法
 - 高可用性
-- 性能测试
+- 测试
 - OSD
 title: "Ceph Crimson/SeaStor OSD 2021-01-26"
 updated: 2021-01-27

@@ -5,10 +5,7 @@ date: 2020-08-25
 subtitle: Ceph_Day_CERN_2019_-_Utilising_Ceph_for_large_scale_to_support_the_LHC_experiments_-_Tom_Byrne
 tags:
 - Ceph
-- LHC实验
 - 分布式存储
-- 高吞吐量
-- 数据处理
 title: Ceph Day CERN 2019- Utilising Ceph for large scale to support the LHC experiments - Tom Byrne
 updated: 2020-08-26
 ---

@@ -5,10 +5,8 @@ date: 2021-06-01
 subtitle: Ceph_Month_2021_-_RADOS_Update
 tags:
 - Ceph
-- Distributed Storage
+- 分布式存储
 - RADOS
-- Quincy
-- Pacific
 title: "'Ceph Month 2021: RADOS Update'"
 updated: 2021-06-02
 ---

@@ -4,11 +4,7 @@ categories:
 date: 2022-10-20
 subtitle: Ceph_Performance_Meeting_2022-10-13
 tags:
-- Ceph性能测试
-- CBT工具
-- 存储后端比较
-- Seagate Motor
-- Deos
+- Ceph
 title: "Ceph Performance Meeting 2022-10-13"
 updated: 2022-10-21
 ---

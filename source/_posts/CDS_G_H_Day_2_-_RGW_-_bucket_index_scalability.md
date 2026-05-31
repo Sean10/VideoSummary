@@ -5,10 +5,8 @@ date: 2014-06-26
 subtitle: CDS_G_H_Day_2_-_RGW_-_bucket_index_scalability
 tags:
 - Ceph
-- bucket index scalability
 - RGW
-- distributed storage
-- storage systems
+- 分布式存储
 title: "'CDS G/H (Day 2) - RGW: bucket index scalability'"
 updated: 2014-06-26
 ---

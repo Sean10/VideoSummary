@@ -3,11 +3,7 @@ title: "  CDS G/H (Day 1) - CMake Update  "
 date: 2014-06-24
 updated: 2014-06-24
 tags:
-- [Ceph]
-- [CMake]
-- [CI/CD]
-- [Distributed Storage]
-- [CephFS]
+- Ceph
 categories:
 - "会议纪要"
 subtitle: CDS_G_H_Day_1___CMake_Update

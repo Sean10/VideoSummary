@@ -7,10 +7,8 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 分区自动缩放
-- 空间放大
 - OSD
-- Rados
+- RADOS
 - CephFS
 title: 2020-01-23 -- Ceph Performance Meeting
 updated: 2020-01-30

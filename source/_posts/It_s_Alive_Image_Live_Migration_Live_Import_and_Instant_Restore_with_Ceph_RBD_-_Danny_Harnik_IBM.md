@@ -5,9 +5,6 @@ date: 2023-05-05
 subtitle: It_s_Alive_Image_Live_Migration_Live_Import_and_Instant_Restore_with_Ceph_RBD_-_Danny_Harnik_IBM
 tags:
 - Ceph
-- Live Migration
-- Image Import
-- Instant Restore
 - RBD
 title: "It’s Alive! Image Live Migration, Live Import and Instant Restore with Ceph RBD - Danny Harnik, IBM"
 updated: 2023-05-05

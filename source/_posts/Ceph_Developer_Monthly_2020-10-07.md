@@ -5,14 +5,12 @@ date: 2020-10-10
 subtitle: Ceph_Developer_Monthly_2020-10-07
 tags:
 - Ceph
-- 高效追踪
 - 分布式存储
 - CephFS
 - RocksDB
 - CRUSH算法
 - 高可用性
-- 可伸缩性
-- 分布式NVMe命名空间
+- 可扩展性
 title: "Ceph Developer Monthly 2020-10-07"
 updated: 2020-10-10
 ---

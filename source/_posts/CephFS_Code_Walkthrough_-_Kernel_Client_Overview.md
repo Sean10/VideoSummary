@@ -5,9 +5,6 @@ date: 2022-05-24
 subtitle: CephFS_Code_Walkthrough_-_Kernel_Client_Overview
 tags:
 - CephFS
-- 内核客户端
-- 文件系统
-- Ceph 存储系统
 - 分布式存储
 title: CephFS Code Walkthrough- Kernel Client Overview
 updated: 2022-05-25

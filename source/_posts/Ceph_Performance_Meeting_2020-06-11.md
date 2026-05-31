@@ -6,9 +6,9 @@ subtitle: Ceph_Performance_Meeting_2020-06-11
 tags:
 - Ceph
 - 分布式存储
-- CRUSH 算法
+- CRUSH算法
 - 高可用性
-- 可伸缩性
+- 可扩展性
 - 对象存储
 title: Ceph Performance Meeting 2020-06-11
 updated: 2020-06-12

@@ -6,8 +6,6 @@ subtitle: Ceph_Performance_Meeting_2021-08-05
 tags:
 - Ceph
 - 性能优化
-- 蓝店 (BlueStore)
-- 写放大
 - 分布式存储
 title: Ceph Performance Meeting 2021-08-05
 updated: 2021-08-21

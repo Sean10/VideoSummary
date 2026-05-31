@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - CRUSH算法
-- Availability
-- 开发环境优化
 title: "'2020-04-06 :: Ceph Orchestration Meeting'"
 updated: 2020-04-14
 ---

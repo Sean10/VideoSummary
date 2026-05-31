@@ -5,10 +5,6 @@ date: 2022-11-14
 subtitle: Understanding_SeaStore_through_profiling
 tags:
 - Ceph
-- 性能分析
-- 系统优化
-- 存储系统
-- Crimson 项目
 title: "Understanding SeaStore through profiling"
 updated: 2022-11-15
 ---

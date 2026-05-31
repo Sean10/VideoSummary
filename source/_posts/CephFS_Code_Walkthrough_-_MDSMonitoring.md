@@ -5,10 +5,7 @@ date: 2021-05-03
 subtitle: CephFS_Code_Walkthrough_-_MDSMonitoring
 tags:
 - CephFS
-- MDS Monitoring
-- Paxos
-- Distributed Storage
-- Ceph Architecture
+- 分布式存储
 title: "'CephFS Code Walkthrough: MDSMonitoring'"
 updated: 2021-05-04
 ---

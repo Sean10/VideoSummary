@@ -5,9 +5,7 @@ updated: 2021-08-21
 tags:
 - Ceph
 - BlueStore
-- SMR
-- Distributed Storage
-- Code Optimization
+- 分布式存储
 categories:
 - "视频总结"
 subtitle: Ceph_Code_Walkthroughs_-_BlueStore_SMR

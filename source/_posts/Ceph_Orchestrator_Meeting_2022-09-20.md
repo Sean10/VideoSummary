@@ -5,10 +5,6 @@ date: 2022-09-21
 subtitle: Ceph_Orchestrator_Meeting_2022-09-20
 tags:
 - Ceph
-- 测试覆盖
-- 视频编译
-- 文档更新
-- 代码质量
 title: "Ceph Orchestrator Meeting 2022-09-20"
 updated: 2022-09-22
 ---

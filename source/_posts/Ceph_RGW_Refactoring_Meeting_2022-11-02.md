@@ -7,7 +7,6 @@ tags:
 - Ceph
 - RGW
 - 分布式存储
-- 多对象删除
 - 性能优化
 title: Ceph RGW Refactoring Meeting 2022-11-02
 updated: 2022-11-02

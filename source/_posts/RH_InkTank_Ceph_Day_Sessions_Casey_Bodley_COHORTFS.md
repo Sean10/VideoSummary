@@ -6,9 +6,7 @@ subtitle: RH_InkTank_Ceph_Day_Sessions_Casey_Bodley_COHORTFS
 tags:
 - Ceph
 - NFS
-- Scalability
-- Parallel NFS
-- Metadata
+- 可扩展性
 title: "RH InkTank Ceph Day Sessions Casey Bodley COHORTFS"
 updated: 2014-07-26
 ---

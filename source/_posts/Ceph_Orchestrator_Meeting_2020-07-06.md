@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - Rook
-- Saif EDM
-- 管理与运维
 title: "Ceph Orchestrator Meeting 2020-07-06"
 updated: 2020-07-07
 ---

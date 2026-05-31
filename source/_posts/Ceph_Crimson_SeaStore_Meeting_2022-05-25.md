@@ -6,8 +6,7 @@ subtitle: Ceph_Crimson_SeaStore_Meeting_2022-05-25
 tags:
 - Ceph
 - 分布式存储
-- CRUSH 算法
-- 垃圾回收
+- CRUSH算法
 - 性能优化
 title: Ceph Crimson/SeaStore Meeting 2022-05-25
 updated: 2022-05-25

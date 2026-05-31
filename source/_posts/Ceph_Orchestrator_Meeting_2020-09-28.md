@@ -5,10 +5,6 @@ date: 2020-09-28
 subtitle: Ceph_Orchestrator_Meeting_2020-09-28
 tags:
 - Ceph
-- Pull Request
-- 代码审核
-- 测试流程
-- 团队协作
 title: "Ceph Orchestrator Meeting 2020-09-28"
 updated: 2020-09-29
 ---

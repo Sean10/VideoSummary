@@ -6,10 +6,7 @@ subtitle: CDS_Tentacle_-_Dashboard
 tags:
 - Ceph
 - Dashboard
-- Development
-- Storage
-- Multi
-- Cluster
+- 存储
 title: "CDS Tentacle - Dashboard"
 updated: 2024-08-23
 ---
@@ -31,7 +28,7 @@ updated: 2024-08-23
 
 **一、Scripx 和 Squid 改进**
 
-*   Scripx：改进了导航布局，增加了 SFS 相关功能，包括快照和克隆管理、快照调度、文件系统管理助手等，修复了一些 bug。
+*   Scripx：改进了导航布局，增加了 CephFS 相关功能，包括快照和克隆管理、快照调度、文件系统管理助手等，修复了一些 bug。
 *   Squid：增加了 RGW 存储桶策略管理，支持添加和删除存储桶标签，改进了 UI/UX，实现了 RGW 分析功能，可视化存储桶和用户分析数据。
 
 **二、Tentacle 计划**

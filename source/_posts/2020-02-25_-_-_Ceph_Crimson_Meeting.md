@@ -12,8 +12,6 @@ tags:
 - 对象存储
 - 块存储
 - 文件系统存储
-- 一致性
-- 去中心化
 - 性能
 title: "'2020-02-25 :: Ceph Crimson Meeting'"
 updated: 2020-04-04

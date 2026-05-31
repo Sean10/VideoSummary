@@ -6,9 +6,7 @@ subtitle: Ceph_Crimson_Verification_on_AArch64_-_Rixin_Luo_Huawei
 tags:
 - Ceph
 - Crimson
-- AArch64
-- ARM
-- Performance Optimization
+- 性能优化
 title: "Ceph Crimson Verification on AArch64 - Rixin Luo, Huawei"
 updated: 2023-05-19
 ---

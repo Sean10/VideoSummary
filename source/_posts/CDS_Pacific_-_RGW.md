@@ -6,10 +6,8 @@ subtitle: CDS_Pacific_-_RGW
 tags:
 - Ceph
 - RGW
-- Multi
-- site
-- Performance Optimization
-- Monitoring
+- 性能优化
+- 监控
 title: "'CDS Pacific: RGW'"
 updated: 2020-04-02
 ---

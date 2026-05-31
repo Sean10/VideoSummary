@@ -4,9 +4,8 @@ date: 2020-06-15
 updated: 2020-06-16
 tags:
 - Ceph
-- Orchestrator
-- Distributed Storage
-- DevOps
+- 编排
+- 分布式存储
 - Kubernetes
 categories:
 - "视频总结"

@@ -6,7 +6,6 @@ subtitle: Data_Security_and_Storage_Hardening_in_Rook_and_Ceph_Ceph_Days_NYC_202
 tags:
 - 分布式存储
 - Ceph
-- 安全实践
 - 软件定义存储
 - Rook
 title: "Data Security and Storage Hardening in Rook and Ceph | Ceph Days NYC 2024"

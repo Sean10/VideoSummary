@@ -3,11 +3,8 @@ title: "  Community Initiatives and Improving Ceph through User Feedback | Ceph 
 date: 2024-05-23
 updated: 2024-05-24
 tags:
-- Ceph 用户反馈
 - 分布式存储
 - 性能优化
-- 社区协作
-- 用户开发会议
 categories:
 - "视频总结"
 subtitle: Community_Initiatives_and_Improving_Ceph_through_User_Feedback_Ceph_Days_NYC_2024

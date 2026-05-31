@@ -4,11 +4,8 @@ categories:
 date: 2022-09-29
 subtitle: RGW_Refactoring_Meeting_2022-09-28
 tags:
-- Ceph分布式存储
 - 性能优化
-- 模块化
 - RGW
-- 性能计数器
 title: RGW Refactoring Meeting 2022-09-28
 updated: 2022-09-30
 ---

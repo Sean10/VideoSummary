@@ -5,9 +5,7 @@ date: 2020-04-03
 subtitle: 2020-03-30_-_-_Ceph_Orchestration_Meeting
 tags:
 - Ceph
-- distributed storage
-- SAP EWM
-- integration testing
+- 分布式存储
 - CephFS
 - RBD
 - librados

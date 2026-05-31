@@ -6,9 +6,6 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2022-11-09
 tags:
 - Ceph
 - RGW
-- 模块化
-- 版本控制
-- 代码清理
 title: Ceph RGW Refactoring Meeting 2022-11-09
 updated: 2022-11-09
 ---

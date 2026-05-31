@@ -6,9 +6,6 @@ subtitle: Ceph_Code_Walkthrough_-_RGW_Bucket_Notifications_with_AMQA_Kafka
 tags:
 - Ceph
 - RGW
-- Bucket Notifications
-- AMQP
-- Kafka
 title: "'Ceph Code Walkthrough: RGW Bucket Notifications with AMQA/Kafka'"
 updated: 2021-04-28
 ---

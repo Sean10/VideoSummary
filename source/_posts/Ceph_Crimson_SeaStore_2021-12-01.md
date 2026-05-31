@@ -8,11 +8,9 @@ tags:
 - 分布式存储
 - CRUSH算法
 - 高可用性
-- 可伸缩性
+- 可扩展性
 - 对象存储
 - 性能优化
-- 蓝图存储
-- 数据库
 - 监控
 title: "Ceph Crimson/SeaStore 2021-12-01"
 updated: 2021-12-03

@@ -5,8 +5,8 @@ date: 2020-04-29
 subtitle: 2020-04-_23_-_-_Ceph_Performance_Meeting
 tags:
 - Ceph
-- Performance Testing
-- Distributed Storage
+- 测试
+- 分布式存储
 - BlueStore
 - RocksDB
 title: "'2020-04- 23 :: Ceph Performance Meeting'"

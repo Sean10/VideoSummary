@@ -6,9 +6,6 @@ subtitle: Ceph_Multi-Site_at_Scale_-_Bloomberg_s_Disaster_Recovery_Journey
 tags:
 - Ceph
 - 分布式存储
-- 灾难恢复
-- 多站点部署
-- Bloomberg
 title: "'Ceph Multi-Site at Scale: Bloomberg’s Disaster Recovery Journey'"
 updated: 2023-05-05
 ---

@@ -6,10 +6,7 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-01-22
 tags:
 - Ceph
 - RGW
-- Code Analysis
-- Security
-- Multi
-- Site Synchronization
+- 安全性
 title: "Ceph RGW Refactoring Meeting 2023-01-22"
 updated: 2023-02-24
 ---

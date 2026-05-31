@@ -6,9 +6,8 @@ subtitle: CDS_G_H_Day_1_-_Erasure_Coding_Update
 tags:
 - Erasure Coding
 - Ceph
-- Distributed Storage
-- Optimization
-- Performance
+- 分布式存储
+- 性能
 title: "CDS G/H (Day 1) - Erasure Coding Update"
 updated: 2014-06-25
 ---

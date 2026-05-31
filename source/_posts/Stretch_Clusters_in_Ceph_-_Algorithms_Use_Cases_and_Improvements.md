@@ -5,10 +5,9 @@ updated: 2023-05-05
 tags:
 - Ceph
 - 分布式存储
-- 扩展集群
 - CRUSH算法
 - 高可用性
-- 可伸缩性
+- 可扩展性
 categories:
 - "视频总结"
 subtitle: Stretch_Clusters_in_Ceph_-_Algorithms_Use_Cases_and_Improvements

@@ -7,11 +7,9 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 日志处理
-- 缓存管理
 - CRUSH算法
 - 高可用性
-- 可伸缩性
+- 可扩展性
 title: "Ceph Crimson/SeaStore 2021-09-29"
 updated: 2021-10-08
 ---

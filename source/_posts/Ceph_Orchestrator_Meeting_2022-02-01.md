@@ -5,10 +5,8 @@ date: 2022-02-02
 subtitle: Ceph_Orchestrator_Meeting_2022-02-01
 tags:
 - Ceph
-- Orchestrator
-- Distributed Storage
-- Documentation
-- NFS Manager
+- 编排
+- 分布式存储
 title: "Ceph Orchestrator Meeting 2022-02-01"
 updated: 2022-02-02
 ---

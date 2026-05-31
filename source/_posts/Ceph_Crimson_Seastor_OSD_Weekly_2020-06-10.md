@@ -5,10 +5,8 @@ date: 2020-06-10
 subtitle: Ceph_Crimson_Seastor_OSD_Weekly_2020-06-10
 tags:
 - Ceph
-- Distributed Storage
-- Performance Optimization
-- Memory Allocator
-- System Failures
+- 分布式存储
+- 性能优化
 - CephFS
 title: "Ceph Crimson/Seastor OSD Weekly 2020-06-10"
 updated: 2020-06-10

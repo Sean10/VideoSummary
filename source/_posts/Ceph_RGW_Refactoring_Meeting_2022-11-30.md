@@ -6,9 +6,7 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2022-11-30
 tags:
 - Ceph
 - RGW
-- 配置变量
 - RADOS
-- 测试和重构
 title: Ceph RGW Refactoring Meeting 2022-11-30
 updated: 2022-11-30
 ---

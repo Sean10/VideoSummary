@@ -5,10 +5,7 @@ date: 2021-11-04
 subtitle: Ceph_Developer_Monthly_2021-11-03
 tags:
 - Ceph
-- Distributed Storage
-- Crimson Update
-- Ceph Store
-- Telemetry
+- 分布式存储
 title: "Ceph Developer Monthly 2021-11-03"
 updated: 2021-11-05
 ---

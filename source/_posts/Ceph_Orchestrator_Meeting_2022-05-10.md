@@ -6,9 +6,6 @@ subtitle: Ceph Orchestrator Meeting 2022-05-10
 tags:
 - Ceph
 - 分布式存储
-- 指标收集
-- 调试与优化
-- 开源社区
 title: "Ceph Orchestrator Meeting 2022-05-10"
 updated: 2022-05-25
 ---

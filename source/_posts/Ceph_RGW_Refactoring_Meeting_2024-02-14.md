@@ -5,9 +5,7 @@ updated: 2024-02-15
 tags:
 - Ceph
 - RGW
-- IAM策略
 - 分布式存储
-- 代码审查
 categories:
 - "视频总结"
 subtitle: Ceph_RGW_Refactoring_Meeting_2024-02-14

@@ -12,8 +12,6 @@ tags:
 - 对象存储
 - 块存储
 - 文件系统存储
-- 一致性
-- 去中心化
 - 性能
 - BlueStore
 - BlueFS
@@ -25,15 +23,12 @@ tags:
 - RADOS
 - librados
 - libcephfs
-- cephfs
-- rbd
-- radosgw
+- RBD
 - RGW
 - RESTful API
 - 认证
 - 授权
 - 加密
-- 擦除编码
 - 复制
 - 快照
 - 克隆

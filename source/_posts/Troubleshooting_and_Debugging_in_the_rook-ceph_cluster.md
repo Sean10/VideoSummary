@@ -6,8 +6,6 @@ tags:
 - Ceph
 - Rook
 - Kubernetes
-- Debugging
-- Cluster Management
 categories:
 - "视频总结"
 subtitle: "Rook Ceph集群的故障排查和调试"

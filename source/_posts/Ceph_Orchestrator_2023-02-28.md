@@ -5,10 +5,8 @@ date: 2023-03-02
 subtitle: Ceph_Orchestrator_2023-02-28
 tags:
 - Ceph
-- Orchestrator
-- 单元测试
+- 编排
 - 性能优化
-- Bug修复
 title: "Ceph Orchestrator 2023-02-28"
 updated: 2023-03-02
 ---

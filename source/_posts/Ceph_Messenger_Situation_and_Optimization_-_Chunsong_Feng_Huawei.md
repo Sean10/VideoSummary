@@ -9,10 +9,8 @@ date: 2023-05-05
 subtitle: Ceph_Messenger_Situation_and_Optimization_-_Chunsong_Feng_Huawei
 tags:
 - Ceph
-- Distributed Storage
-- Performance Optimization
-- RDMA
-- UCX
+- 分布式存储
+- 性能优化
 title: "Ceph Messenger Situation and Optimization - Chunsong Feng, Huawei"
 updated: 2023-05-05
 ---

@@ -5,12 +5,7 @@ date: 2020-05-20
 subtitle: 2020-05-20_-_-_Crimson_SeaStor_OSD_Weekly_Meeting
 tags:
 - Ceph
-- 分支管理
-- 性能测试
-- 代码审查
-- CBT工具
-- B3节点
-- layout.h
+- 测试
 - Crimson
 title: "'2020-05-20 :: Crimson SeaStor OSD Weekly Meeting'"
 updated: 2020-05-20

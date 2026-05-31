@@ -5,10 +5,8 @@ date: 2023-05-07
 subtitle: Ceph_RBD_Integration_with_DPUs_-_Varada_Raja_Kumar_Kari_AMD_India_Pvt_Limited
 tags:
 - Ceph
-- DPU
 - NVMe
-- Storage Optimization
-- Ceph RBD
+- 存储优化
 title: "Ceph RBD Integration with DPUs - Varada Raja Kumar Kari, AMD India Pvt Limited"
 updated: 2023-05-08
 ---

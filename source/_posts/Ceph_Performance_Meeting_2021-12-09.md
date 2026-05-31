@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- 内存管理
-- PR 审查
 title: Ceph Performance Meeting 2021-12-09
 updated: 2021-12-14
 ---

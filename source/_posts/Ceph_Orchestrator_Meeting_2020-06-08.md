@@ -4,11 +4,7 @@ categories:
 date: 2020-06-08
 subtitle: Ceph_Orchestrator_Meeting_2020-06-08
 tags:
-- Ceph升级流程
-- Ceph计划功能
-- 容器版本管理
-- Kubernetes集成
-- Ceph监控
+- Ceph
 title: "Ceph Orchestrator Meeting 2020-06-08"
 updated: 2020-06-09
 ---

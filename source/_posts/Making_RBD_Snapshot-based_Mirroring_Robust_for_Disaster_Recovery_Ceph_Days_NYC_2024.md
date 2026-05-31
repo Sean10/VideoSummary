@@ -6,10 +6,7 @@ subtitle: Making_RBD_Snapshot-based_Mirroring_Robust_for_Disaster_Recovery_Ceph_
 tags:
 - Ceph
 - RBD
-- Disaster Recovery
 - Kubernetes
-- Snapshot
-- based Mirroring
 title: "Making RBD Snapshot-based Mirroring Robust for Disaster Recovery | Ceph Days NYC 2024"
 updated: 2024-06-18
 ---

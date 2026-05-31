@@ -5,8 +5,6 @@ date: 2023-05-05
 subtitle: Scrubs_Scheduling_in_Reef_and_Beyond_-_Ronen_Friedman_IBM
 tags:
 - Ceph
-- Scrub 代码
-- Ceph 存储系统
 - 性能优化
 - 分布式存储
 title: "Scrubs Scheduling in Reef and Beyond - Ronen Friedman, IBM"

@@ -4,11 +4,9 @@ categories:
 date: 2020-09-02
 subtitle: Ceph_Orchestrator_Meeting_2020-08-31
 tags:
-- Ceph Orchestrator
+- 编排
 - 分布式存储
-- Ceph配置
 - 容器化
-- 配置模板
 title: "Ceph Orchestrator Meeting 2020-08-31"
 updated: 2020-09-03
 ---

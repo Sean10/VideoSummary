@@ -5,11 +5,7 @@ date: 2024-05-23
 subtitle: Designing_a_Multitenancy_File_System_for_Cloud_Environment_Ceph_Days_NYC_2024
 tags:
 - Ceph
-- Multi
-- tenancy
-- Cloud Storage
-- Data Security
-- Automation
+- 自动化
 title: "Designing a Multitenancy File System for Cloud Environment | Ceph Days NYC 2024"
 updated: 2024-05-23
 ---

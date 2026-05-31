@@ -6,9 +6,6 @@ subtitle: Ceph_Crimson_SeaStore_Meeting_2023-01-25
 tags:
 - Ceph
 - 分布式存储
-- 故障排查
-- 软件构建
-- 开发团队
 title: Ceph Crimson/SeaStore Meeting 2023-01-25
 updated: 2023-01-25
 ---

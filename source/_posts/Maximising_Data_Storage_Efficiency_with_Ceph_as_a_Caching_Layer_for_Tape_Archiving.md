@@ -5,10 +5,7 @@ date: 2023-05-05
 subtitle: Maximising_Data_Storage_Efficiency_with_Ceph_as_a_Caching_Layer_for_Tape_Archiving
 tags:
 - Ceph
-- Tape Archiving
-- Data Storage Efficiency
-- Object Storage
-- Storage Solutions
+- 对象存储
 title: "Maximising Data Storage Efficiency with Ceph as a Caching Layer for Tape Archiving"
 updated: 2023-05-05
 ---

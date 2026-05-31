@@ -4,10 +4,7 @@ date: 2021-06-16
 updated: 2021-06-17
 tags:
 - Ceph
-- Storage Appliance
-- Project Aquarium
-- Distributed Storage
-- Ceph Management
+- 分布式存储
 categories:
 - "视频总结"
 subtitle: Ceph_Month_2021_-_Project_Aquarium_-_An_easy-to-use_storage_appliance_wrapped_around_Ceph

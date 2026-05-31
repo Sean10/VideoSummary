@@ -4,10 +4,8 @@ date: 2020-03-31
 updated: 2020-04-01
 tags:
 - 分布式存储
-- Ceph Pacific
 - Cephadm
 - Rook
-- 自动化部署
 categories:
 - "视频总结"
 subtitle: CDS_Pacific_-_Orchestrator_cephadm_rook

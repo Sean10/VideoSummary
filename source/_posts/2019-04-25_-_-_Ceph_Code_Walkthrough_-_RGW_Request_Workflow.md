@@ -6,8 +6,7 @@ subtitle: 2019-04-25_-_-_Ceph_Code_Walkthrough_-_RGW_Request_Workflow
 tags:
 - Ceph
 - RGW
-- Request Workflow
-- Object Storage
+- 对象存储
 - CephFS
 title: "'2019-04-25 :: Ceph Code Walkthrough: RGW Request Workflow'"
 updated: 2019-04-25

@@ -5,9 +5,6 @@ date: 2020-09-24
 subtitle: Ceph_DocuBetter_Meeting_2020-09-24
 tags:
 - Ceph
-- 文档改进
-- API 文档
-- 开发者指南
 - 会议纪要
 title: Ceph DocuBetter Meeting 2020-09-24
 updated: 2020-09-24

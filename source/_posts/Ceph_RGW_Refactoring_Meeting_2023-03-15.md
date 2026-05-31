@@ -7,9 +7,6 @@ tags:
 - Ceph
 - RGW
 - 分布式存储
-- 测试覆盖率
-- 多部分上传修复
-- 归档区域
 title: Ceph RGW Refactoring Meeting 2023-03-15
 updated: 2023-03-16
 ---

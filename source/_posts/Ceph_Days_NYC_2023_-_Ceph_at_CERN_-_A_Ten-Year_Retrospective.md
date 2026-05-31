@@ -35,7 +35,7 @@ subtitle: Ceph_Days_NYC_2023_-_Ceph_at_CERN_-_A_Ten-Year_Retrospective
 3. **Ceph在CERN的十年回顾：**
    - 从2013年开始，Ceph在CERN的使用从300TB的试点项目发展到2016年的6PB集群。
    - 2016年后，Ceph集群规模持续扩大，目前拥有约17个集群和100PB的存储容量。
-   - 强调了Ceph在CERN基础设施中的关键作用，特别是在OpenStack和CFS的生产环境中。
+   - 强调了Ceph在CERN基础设施中的关键作用，特别是在OpenStack和CephFS的生产环境中。
 
 4. **挑战与成功故事：**
    - 讨论了实施Ceph时面临的挑战，包括硬件兼容性、网络配置和性能优化。

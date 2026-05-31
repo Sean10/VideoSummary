@@ -5,10 +5,8 @@ date: 2014-06-24
 subtitle: CDS_G_H_Day_1_-_Calamari_Development
 tags:
 - Ceph
-- Calamari
-- Distributed Storage
-- Development
-- Open Source
+- 分布式存储
+- 开源
 title: "CDS G/H (Day 1) - Calamari Development"
 updated: 2014-06-24
 ---

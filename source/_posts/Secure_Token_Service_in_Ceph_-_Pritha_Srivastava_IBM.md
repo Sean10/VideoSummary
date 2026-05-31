@@ -4,10 +4,7 @@ date: 2023-05-15
 updated: 2023-05-16
 tags:
 - Ceph
-- Security Token Service (STS)
 - RGW
-- Access Control
-- Authentication
 categories:
 - "视频总结"
 subtitle: "Secure Token Service in Ceph by Pritha Srivastava, IBM"

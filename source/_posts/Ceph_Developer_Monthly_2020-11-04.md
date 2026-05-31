@@ -5,9 +5,6 @@ updated: 2020-11-18
 tags:
 - Ceph
 - 分布式存储
-- Manager 可扩展性
-- Replicated Writeback Cache (RWD)
-- Dashboard 设计改进
 categories:
 - "视频总结"
 subtitle: Ceph_Developer_Monthly_2020-11-04

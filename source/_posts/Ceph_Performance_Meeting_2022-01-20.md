@@ -5,10 +5,8 @@ date: 2022-01-20
 subtitle: Ceph_Performance_Meeting_2022-01-20
 tags:
 - Ceph
-- 性能测试
-- Quincy 版本
+- 测试
 - 存储优化
-- 故障恢复
 title: "Ceph Performance Meeting 2022-01-20"
 updated: 2022-01-21
 ---

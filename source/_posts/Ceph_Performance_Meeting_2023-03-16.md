@@ -7,7 +7,6 @@ tags:
 - Ceph
 - 性能优化
 - 分布式存储
-- HTTP 3
 - RocksDB
 title: Ceph Performance Meeting 2023-03-16
 updated: 2023-03-17

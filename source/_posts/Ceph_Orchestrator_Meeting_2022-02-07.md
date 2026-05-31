@@ -3,10 +3,8 @@ title: "  Ceph Orchestrator Meeting 2022-02-07  "
 date: 2022-02-12
 updated: 2022-02-12
 tags:
-- Ceph升级
 - 分布式存储
-- Ceph集群管理
-- Ceph性能优化
+- 性能优化
 - 自动化
 categories:
 - "视频总结"

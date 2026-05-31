@@ -4,11 +4,7 @@ categories:
 date: 2020-04-29
 subtitle: 2020-04-22_-_-_Ceph_Docubetter_Meeting
 tags:
-- Ceph文档更新
-- Google Season of Docs
-- Ceph网站改进
-- 信息检索倡议
-- Ceph社区
+- Ceph
 title: "'2020-04-22 :: Ceph Docubetter Meeting'"
 updated: 2020-04-30
 ---

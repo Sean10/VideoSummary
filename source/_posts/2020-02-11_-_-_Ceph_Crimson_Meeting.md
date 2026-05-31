@@ -4,16 +4,13 @@ date: 2020-04-03
 updated: 2020-04-04
 tags:
 - Ceph
-- distributed storage
-- CRUSH algorithm
-- high availability
-- scalability
-- object storage
-- block storage
-- file system storage
-- consistency
-- decentralization
-- performance
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可扩展性
+- 对象存储
+- 块存储
+- 性能
 categories:
 - "视频总结"
 subtitle: 2020-02-11_-_-_Ceph_Crimson_Meeting

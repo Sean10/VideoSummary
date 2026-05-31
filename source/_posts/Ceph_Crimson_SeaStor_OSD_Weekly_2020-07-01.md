@@ -6,7 +6,7 @@ subtitle: Ceph_Crimson_SeaStor_OSD_Weekly_2020-07-01
 tags:
 - Ceph
 - 分布式存储
-- CRUSH 算法
+- CRUSH算法
 - 高可用性
 - 可扩展性
 - 对象存储

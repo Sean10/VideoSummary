@@ -21,6 +21,9 @@ db.json
 
 **/*.md
 
+# 例外：source/_posts/ 里的文章需要追踪
+!source/_posts/*.md
+
 **/channel_info.json
 **/videos_meta.jsonl
 **/temp_posts/

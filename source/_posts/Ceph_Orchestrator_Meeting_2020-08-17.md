@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 自动化
-- 文档整合
-- 构建问题
 title: "Ceph Orchestrator Meeting 2020-08-17"
 updated: 2020-08-18
 ---

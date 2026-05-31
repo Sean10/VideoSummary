@@ -5,10 +5,10 @@ date: 2022-06-27
 subtitle: Ceph_Crimson_SeaStore_Meeting_2022-06-22
 tags:
 - Ceph
-- Distributed Storage
-- CRUSH Algorithm
-- High Availability
-- Scalability
+- 分布式存储
+- CRUSH算法
+- 高可用性
+- 可扩展性
 title: "Ceph Crimson/SeaStore Meeting 2022-06-22"
 updated: 2022-06-28
 ---

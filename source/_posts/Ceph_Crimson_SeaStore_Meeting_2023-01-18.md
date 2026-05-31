@@ -6,18 +6,16 @@ subtitle: Ceph_Crimson_SeaStore_Meeting_2023-01-18
 tags:
 - Ceph
 - 分布式存储
-- CRUSH 算法
+- CRUSH算法
 - 高可用性
 - 可扩展性
 - 对象存储
 - 块存储
 - 文件系统存储
-- 一致性
-- 去中心化
 - 性能
-- bluestore
-- bluefs
-- rocksdb
+- BlueStore
+- BlueFS
+- RocksDB
 - OSD
 - MON
 - MDS
@@ -25,28 +23,21 @@ tags:
 - RADOS
 - librados
 - libcephfs
-- cephfs
-- rbd
-- radosgw
+- RBD
 - RGW
 - RESTful API
 - 认证
 - 授权
 - 加密
-- 损坏纠正码
 - 复制
 - 快照
 - 克隆
-- 虚拟化存储
 - iSCSI
-- 网络存储
-- 网络文件系统
 - POSIX
 - 监控
-- 仪表板
-- 管理
+- Dashboard
+- 编排
 - 自动化
-- 集成
 - 容器化
 - Kubernetes
 - Docker
@@ -57,27 +48,19 @@ tags:
 - 混合云
 - 多云
 - 存储集群
-- 节点
 - 存储
 - SSD
 - HDD
-- JBOD
 - SAN
 - NAS
 - 网络
-- 网络拓扑
-- 故障域
-- 恢复
 - 弹性
+- 恢复
 - 负载均衡
 - 缓存
 - 压缩
-- 数据去重
-- 分层存储
-- 性能调优
-- 基准测试
+- 性能优化
 - 测试
-- 验证
 title: Ceph Crimson/SeaStore Meeting 2023-01-18
 updated: 2023-01-20
 ---

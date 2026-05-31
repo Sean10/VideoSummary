@@ -4,11 +4,8 @@ categories:
 date: 2021-08-23
 subtitle: Ceph_Orchestrator_2021-07-13
 tags:
-- Ceph Orchestrator
-- Kubernetes 集成
-- 存储管理
+- 编排
 - Rook
-- 本地存储
 title: "Ceph Orchestrator 2021-07-13"
 updated: 2021-08-24
 ---

@@ -5,9 +5,6 @@ updated: 2021-05-07
 tags:
 - Ceph
 - 性能优化
-- 缓存策略
-- Intel合作
-- 代码审查
 categories:
 - "视频总结"
 subtitle: Ceph_Performance_Meeting_2021-05-06

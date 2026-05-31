@@ -4,11 +4,8 @@ categories:
 date: 2020-04-03
 subtitle: 2020-03-12_-_-_Ceph_Performance_Meeting
 tags:
-- Ceph 性能
 - 分布式存储
-- IO 500 测试
 - 性能优化
-- 存储系统
 title: "'2020-03-12 :: Ceph Performance Meeting'"
 updated: 2020-04-04
 ---

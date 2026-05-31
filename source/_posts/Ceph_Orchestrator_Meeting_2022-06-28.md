@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - OpenStack
-- API测试
-- 监控与安全
 title: "Ceph Orchestrator Meeting 2022-06-28"
 updated: 2022-06-29
 ---

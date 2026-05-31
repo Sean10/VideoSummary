@@ -4,11 +4,8 @@ categories:
 date: 2021-10-12
 subtitle: Ceph Orchestrator_Meeting_2021-10-12
 tags:
-- Ceph Orchestrator
+- 编排
 - Cephadm
-- Container Registry Management
-- Manila Integration
-- Ganesha Interaction
 title: "Ceph Orchestrator Meeting 2021-10-12"
 updated: 2021-10-13
 ---

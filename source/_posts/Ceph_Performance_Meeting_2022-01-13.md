@@ -4,11 +4,9 @@ categories:
 date: 2022-01-17
 subtitle: Ceph_Performance_Meeting_2022-01-13
 tags:
-- Ceph性能
+- 性能
 - 分布式存储
-- 代码审查
-- Quincy版本
-- 性能测试
+- 测试
 title: Ceph Performance Meeting 2022-01-13
 updated: 2022-01-18
 ---

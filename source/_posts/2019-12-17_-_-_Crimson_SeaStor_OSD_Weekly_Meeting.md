@@ -6,8 +6,8 @@ subtitle: 2019-12-17_-_Crimson_SeaStor_OSD_Weekly_Meeting
 tags:
 - Ceph
 - BlueStore
-- Performance Optimization
-- Distributed Storage
+- 性能优化
+- 分布式存储
 - CephFS
 title: "'2019-12-17 :: Crimson SeaStor OSD Weekly Meeting'"
 updated: 2019-12-17

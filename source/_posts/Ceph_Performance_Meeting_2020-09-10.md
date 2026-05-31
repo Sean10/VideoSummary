@@ -5,8 +5,8 @@ date: 2020-09-11
 subtitle: Ceph_Performance_Meeting_2020-09-10
 tags:
 - Ceph
-- Distributed Storage
-- Performance Optimization
+- 分布式存储
+- 性能优化
 - BlueStore
 - OSD
 title: "Ceph Performance Meeting 2020-09-10"

@@ -5,10 +5,8 @@ date: 2021-11-03
 subtitle: Ceph_Code_Walkthroughs_-_CRUSH
 tags:
 - Ceph
-- CRUSH algorithm
-- distributed storage
-- Ceph存储系统
-- Ceph社区
+- CRUSH算法
+- 分布式存储
 title: "'Ceph Code Walkthroughs: CRUSH'"
 updated: 2021-11-04
 ---

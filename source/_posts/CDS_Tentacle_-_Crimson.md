@@ -5,9 +5,7 @@ updated: 2024-08-23
 tags:
 - Ceph
 - Crimson
-- Squid
-- Storage Engine
-- Performance Optimization
+- 性能优化
 categories:
 - "视频总结"
 subtitle: CDS_Tentacle_-_Crimson

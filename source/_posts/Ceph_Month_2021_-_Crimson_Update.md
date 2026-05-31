@@ -5,11 +5,8 @@ date: 2021-06-24
 subtitle: Ceph_Month_2021_-_Crimson_Update
 tags:
 - Ceph
-- Crimson OSD
-- C
-- Store
-- Distributed Storage
-- Object Storage
+- 分布式存储
+- 对象存储
 title: "'Ceph Month 2021: Crimson Update'"
 updated: 2021-06-25
 ---

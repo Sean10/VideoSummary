@@ -6,9 +6,9 @@ subtitle: Ceph_Crimson_SeaStor_OSD_Weekly_2020-09-16
 tags:
 - Ceph
 - BlueStore
-- CRUSH algorithm
-- Performance Testing
-- Distributed Storage
+- CRUSH算法
+- 测试
+- 分布式存储
 title: "Ceph Crimson/SeaStor OSD Weekly 2020-09-16"
 updated: 2020-09-17
 ---

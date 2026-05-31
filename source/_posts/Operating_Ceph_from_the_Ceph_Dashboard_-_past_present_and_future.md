@@ -6,8 +6,7 @@ subtitle: Ceph Dashboard：过去、现在与未来
 tags:
 - Ceph
 - Dashboard
-- Distributed Storage
-- Management UI
+- 分布式存储
 - CephFS
 title: "'Operating Ceph from the Ceph Dashboard: past, present and future'"
 updated: 2022-11-23

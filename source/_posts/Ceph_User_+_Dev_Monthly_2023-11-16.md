@@ -6,9 +6,6 @@ subtitle: Ceph_User_+_Dev_Monthly_2023-11-16
 tags:
 - Ceph
 - 分布式存储
-- 文档编写
-- 社区反馈
-- 开发者会议
 title: "Ceph User + Dev Monthly 2023-11-16"
 updated: 2023-11-16
 ---

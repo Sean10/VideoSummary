@@ -4,12 +4,6 @@ date: 2014-06-24
 updated: 2014-06-25
 tags:
 - Ceph
-- 冷存储池
-- 数据移动
-- 冗余性
-- PG温映射
-- PG强制映射
-- Silo架构
 categories:
 - "视频总结"
 subtitle: CDS_G_H_Day_1_-_Cold_Storage_Pools

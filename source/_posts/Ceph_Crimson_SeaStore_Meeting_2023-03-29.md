@@ -5,10 +5,6 @@ date: 2023-03-29
 subtitle: Ceph_Crimson_SeaStore_Meeting_2023-03-29
 tags:
 - Ceph
-- Crimson 项目
-- 多核messenger
-- 医疗助手PR
-- Albion指针PR
 title: Ceph Crimson/SeaStore Meeting 2023-03-29
 updated: 2023-03-30
 ---

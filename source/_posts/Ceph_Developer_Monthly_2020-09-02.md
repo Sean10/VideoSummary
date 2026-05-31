@@ -5,8 +5,6 @@ date: 2020-09-04
 subtitle: Ceph_Developer_Monthly_2020-09-02
 tags:
 - Ceph
-- 故障排查
-- 日志分析
 - 分布式存储
 - 性能优化
 title: "Ceph Developer Monthly 2020-09-02"

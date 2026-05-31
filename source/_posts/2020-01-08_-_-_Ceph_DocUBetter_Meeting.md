@@ -5,10 +5,6 @@ date: 2020-01-11
 subtitle: 2020-01-08_-_-_Ceph_DocUBetter_Meeting
 tags:
 - Ceph
-- 文档更新
-- 文档审查
-- Rados命令
-- 文档管理
 title: "'2020-01-08:: Ceph DocUBetter Meeting'"
 updated: 2020-01-11
 ---

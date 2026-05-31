@@ -6,9 +6,6 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-09-20
 tags:
 - Ceph
 - RGW
-- SNS 主题策略
-- 持久通知性能
-- Kafka
 title: Ceph RGW Refactoring Meeting 2023-09-20
 updated: 2023-10-04
 ---

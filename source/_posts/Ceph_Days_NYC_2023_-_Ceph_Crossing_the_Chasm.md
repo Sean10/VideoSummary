@@ -6,7 +6,6 @@ subtitle: Ceph_Days_NYC_2023_-_Ceph_Crossing_the_Chasm
 tags:
 - Ceph
 - 分布式存储
-- IBM
 - 开源
 - 存储
 title: "'Ceph Days NYC 2023: Ceph Crossing the Chasm'"

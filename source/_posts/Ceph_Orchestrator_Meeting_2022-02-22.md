@@ -5,10 +5,9 @@ date: 2022-02-22
 subtitle: Ceph_Orchestrator_Meeting_2022-02-22
 tags:
 - Ceph
-- Monitoring
-- Prometheus
-- Storage Optimization
-- High Availability
+- 监控
+- 存储优化
+- 高可用性
 title: "Ceph Orchestrator Meeting 2022-02-22"
 updated: 2022-02-23
 ---

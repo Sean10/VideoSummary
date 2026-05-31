@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - 性能优化
-- PR审查
-- 蓝店缓冲IO
 title: "Ceph Performance Meeting 2023-03-09"
 updated: 2023-03-15
 ---

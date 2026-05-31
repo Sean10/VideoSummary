@@ -4,11 +4,7 @@ categories:
 date: 2020-08-25
 subtitle: Ceph_Day_CERN_2019_-_What_s_New_In_Nautilus_Community_News_-_Mike_Perez
 tags:
-- Ceph社区
-- Nautilus版本更新
 - 分布式存储
-- 文档改进
-- Kubernetes集成
 title: "'Ceph Day CERN 2019: What’s New In Nautilus & Community News - Mike Perez'"
 updated: 2020-08-26
 ---

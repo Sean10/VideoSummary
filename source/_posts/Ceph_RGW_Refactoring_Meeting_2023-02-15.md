@@ -6,8 +6,6 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-02-15
 tags:
 - Ceph
 - RGW
-- S3代理
-- Zipper API
 - 分布式存储
 title: Ceph RGW Refactoring Meeting 2023-02-15
 updated: 2023-02-17

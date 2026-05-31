@@ -5,10 +5,7 @@ date: 2014-06-24
 subtitle: CDS_G_H_Day_1_-_Calamari_Intro
 tags:
 - Ceph
-- Calamari
-- Distributed Storage
-- User Interface
-- API Integration
+- 分布式存储
 title: "CDS G/H (Day 1) -  Calamari Intro"
 updated: 2014-06-24
 ---

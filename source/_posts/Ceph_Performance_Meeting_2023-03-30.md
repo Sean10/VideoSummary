@@ -9,12 +9,10 @@ tags:
 - 性能优化
 - CRUSH算法
 - 高可用性
-- 可伸缩性
+- 可扩展性
 - 对象存储
 - 块存储
 - 文件系统存储
-- 一致性
-- 去中心化
 title: Ceph Performance Meeting 2023-03-30
 updated: 2023-04-06
 ---

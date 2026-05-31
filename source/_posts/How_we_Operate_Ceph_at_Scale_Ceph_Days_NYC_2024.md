@@ -8,7 +8,6 @@ tags:
 - 分布式存储
 - 自动化
 - 性能优化
-- 监控与告警
 title: "How we Operate Ceph at Scale | Ceph Days NYC 2024"
 updated: 2024-06-19
 ---

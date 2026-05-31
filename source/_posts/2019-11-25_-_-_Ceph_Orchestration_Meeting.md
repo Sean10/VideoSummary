@@ -4,11 +4,9 @@ categories:
 date: 2019-11-27
 subtitle: 2019-11-25_-_-_Ceph_Orchestration_Meeting
 tags:
-- Ceph Orchestration
-- Distributed Storage
+- 分布式存储
 - Kubernetes
 - Rook
-- SSH Orchestrator
 title: "'2019-11-25 :: Ceph Orchestration Meeting'"
 updated: 2019-11-28
 ---

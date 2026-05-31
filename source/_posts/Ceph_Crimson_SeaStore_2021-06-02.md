@@ -5,13 +5,6 @@ updated: 2021-06-03
 tags:
 - Ceph
 - 分布式存储
-- Crimson OSD
-- 错误报告
-- Scrubbing PR
-- Clang 编译问题
-- 可中断分配器
-- 扩展放置管理器
-- 键值大小限制
 categories:
 - "视频总结"
 subtitle: Ceph_Crimson_SeaStore_2021-06-02

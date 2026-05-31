@@ -6,10 +6,8 @@ subtitle: 2019-12-03_-_-_Crimson_SeaStor_OSD_Weekly_Meeting
 tags:
 - Ceph
 - 分布式存储
-- 代码优化
-- 性能测试
-- 内存管理
-- 新设计方案
+- 测试
+- 性能优化
 title: "2019-12-03 -- Crimson SeaStor OSD Weekly Meeting"
 updated: 2019-12-06
 ---

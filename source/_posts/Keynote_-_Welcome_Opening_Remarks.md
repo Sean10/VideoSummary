@@ -5,10 +5,7 @@ date: 2023-05-05
 subtitle: Keynote_-_Welcome_Opening_Remarks
 tags:
 - Ceph
-- 会议
-- 开发者
 - 分布式存储
-- Ceph 社区
 title: "'Keynote: Welcome & Opening Remarks'"
 updated: 2023-05-05
 ---

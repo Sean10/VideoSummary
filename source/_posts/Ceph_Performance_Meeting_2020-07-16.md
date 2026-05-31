@@ -8,7 +8,6 @@ tags:
 - 分布式存储
 - 性能优化
 - RocksDB
-- 自动压缩
 title: Ceph Performance Meeting 2020-07-16
 updated: 2020-07-17
 ---

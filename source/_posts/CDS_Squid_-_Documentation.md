@@ -3,11 +3,7 @@ title: "  CDS Squid: Documentation  "
 date: 2023-07-20
 updated: 2023-07-21
 tags:
-- Ceph 文档
 - 分布式存储
-- Ceph 文档改进
-- Ceph 社区
-- Ceph 发展
 categories:
 - "视频总结"
 subtitle: CDS_Squid_-_Documentation

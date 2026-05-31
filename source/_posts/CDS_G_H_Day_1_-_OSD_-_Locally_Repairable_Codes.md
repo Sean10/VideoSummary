@@ -6,9 +6,6 @@ subtitle: CDS_G_H_Day_1_-_OSD_-_Locally_Repairable_Codes
 tags:
 - Ceph
 - 分布式存储
-- 本地可修复代码
-- Erasure Code
-- 数据恢复
 title: "'CDS G/H (Day 1) - OSD: Locally Repairable Codes'"
 updated: 2014-06-24
 ---

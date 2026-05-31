@@ -6,9 +6,6 @@ subtitle: Ceph_Performance_Meeting_2023-07-03
 tags:
 - Ceph
 - RocksDB
-- Snappy库
-- RBD性能
-- Elastic Shared Blobs
 title: Ceph Performance Meeting 2023-07-03
 updated: 2023-07-04
 ---

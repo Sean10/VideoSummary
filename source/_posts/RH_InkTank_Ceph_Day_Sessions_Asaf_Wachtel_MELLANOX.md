@@ -4,10 +4,7 @@ date: 2014-07-25
 updated: 2014-07-26
 tags:
 - Ceph
-- 高性能网络
 - 分布式存储
-- Melanox
-- Hadoop
 categories:
 - "视频总结"
 subtitle: "RH_InkTank_Ceph_Day_Sessions_Asaf_Wachtel_MELLANOX"
@@ -45,8 +42,8 @@ subtitle: "RH_InkTank_Ceph_Day_Sessions_Asaf_Wachtel_MELLANOX"
 
 #### Hadoop与Ceph的协同
 - Melanox一直在研究如何优化Hadoop的网络配置，以提高性能。
-- 他们发现，将HDFS替换为Ceph的SEFS可以提供统一的存储体验，并提高性能。
-- 他们还进行了一项研究，展示了SEFS在Terasort基准测试中的性能提升。
+- 他们发现，将HDFS替换为Ceph的CephFS可以提供统一的存储体验，并提高性能。
+- 他们还进行了一项研究，展示了CephFS在Terasort基准测试中的性能提升。
 
 #### 硬件优化
 - Melanox开发了Excelo API，用于简化RDMA编程，并支持多种传输方式。

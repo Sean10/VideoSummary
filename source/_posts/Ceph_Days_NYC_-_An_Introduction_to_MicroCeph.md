@@ -5,10 +5,6 @@ date: 2023-05-19
 subtitle: Ceph_Days_NYC_-_An_Introduction_to_MicroCeph
 tags:
 - Ceph
-- MicroCeph
-- Cluster Management
-- Snap
-- Ubuntu
 title: "Ceph Days NYC- An Introduction to MicroCeph"
 updated: 2023-05-20
 ---

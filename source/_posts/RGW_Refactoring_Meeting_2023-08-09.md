@@ -6,8 +6,6 @@ subtitle: RGW_Refactoring_Meeting_2023-08-09
 tags:
 - Ceph
 - RGW
-- 通知系统
-- 队列管理
 - 性能优化
 title: "RGW Refactoring Meeting 2023-08-09"
 updated: 2023-08-16

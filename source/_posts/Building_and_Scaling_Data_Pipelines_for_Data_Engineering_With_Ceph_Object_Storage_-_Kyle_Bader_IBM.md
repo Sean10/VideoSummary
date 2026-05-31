@@ -4,11 +4,7 @@ categories:
 date: 2023-05-05
 subtitle: Building_and_Scaling_Data_Pipelines_for_Data_Engineering_With_Ceph_Object_Storage_-_Kyle_Bader_IBM
 tags:
-- Ceph对象存储
-- 数据管道
-- 数据工程
-- 事件驱动架构
-- 无服务器框架
+- Ceph
 title: "Building and Scaling Data Pipelines for Data Engineering With Ceph Object Storage - Kyle Bader, IBM"
 updated: 2023-05-05
 ---

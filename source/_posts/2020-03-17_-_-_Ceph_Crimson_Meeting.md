@@ -7,7 +7,7 @@ tags:
 - Ceph
 - BlueStore
 - OSD
-- Distributed Storage
+- 分布式存储
 - BlueFS
 title: "'2020-03-17 :: Ceph Crimson Meeting'"
 updated: 2020-04-04

@@ -5,10 +5,6 @@ date: 2014-06-26
 subtitle: CDS_G_H_Day_2_-_Calamari_Localization
 tags:
 - Ceph
-- Calamari
-- Localization
-- Gettext
-- User Interface
 title: "CDS G/H (Day 2) - Calamari Localization"
 updated: 2014-06-26
 ---

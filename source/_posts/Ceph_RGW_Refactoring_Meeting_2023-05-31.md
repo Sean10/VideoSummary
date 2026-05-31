@@ -6,8 +6,6 @@ subtitle: Ceph_RGW_Refactoring_Meeting_2023-05-31
 tags:
 - Ceph
 - RGW
-- 字符串优化
-- 通知重试清理
 - 分布式存储
 title: Ceph RGW Refactoring Meeting 2023-05-31
 updated: 2023-06-01

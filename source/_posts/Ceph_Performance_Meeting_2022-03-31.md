@@ -8,9 +8,6 @@ tags:
 - Ceph
 - 性能优化
 - 分布式存储
-- AVL分配器
-- 测试与验证
-- PR
 title: Ceph Performance Meeting 2022-03-31
 updated: 2022-04-01
 ---

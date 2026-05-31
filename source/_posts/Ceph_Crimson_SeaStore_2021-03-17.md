@@ -6,11 +6,8 @@ subtitle: Ceph_Crimson_SeaStore_2021-03-17
 tags:
 - Ceph
 - 分布式存储
-- 代码重构
 - 性能优化
 - 测试
-- 智能指针
-- GC修改
 title: "Ceph Crimson/SeaStore 2021-03-17"
 updated: 2021-03-18
 ---

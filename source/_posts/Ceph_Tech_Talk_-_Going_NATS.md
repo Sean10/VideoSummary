@@ -5,10 +5,6 @@ date: 2021-08-26
 subtitle: Ceph_Tech_Talk_-_Going_NATS
 tags:
 - Ceph
-- Lua scripting
-- NATS
-- Storage notifications
-- Open source
 title: "'Ceph Tech Talk: Going NATS'"
 updated: 2021-08-27
 ---

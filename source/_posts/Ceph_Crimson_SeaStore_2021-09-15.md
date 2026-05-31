@@ -7,7 +7,6 @@ tags:
 - 分布式存储
 - CRUSH算法
 - 性能优化
-- 故障排除
 categories:
 - "视频总结"
 subtitle: Ceph_Crimson_SeaStore_2021-09-15

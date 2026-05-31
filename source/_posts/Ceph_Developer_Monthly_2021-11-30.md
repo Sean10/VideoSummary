@@ -6,9 +6,7 @@ subtitle: Ceph_Developer_Monthly_2021-11-30
 tags:
 - Ceph
 - 分布式存储
-- 跟踪系统
 - Docker
-- 自动扩展
 title: "Ceph Developer Monthly 2021-11-30"
 updated: 2021-12-03
 ---

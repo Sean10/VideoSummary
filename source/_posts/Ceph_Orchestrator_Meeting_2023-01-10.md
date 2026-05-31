@@ -6,9 +6,6 @@ subtitle: Ceph_Orchestrator_Meeting_2023-01-10
 tags:
 - Ceph
 - 分布式存储
-- 文档恢复
-- 编译工作
-- 测试与构建流程
 title: "Ceph Orchestrator Meeting 2023-01-10"
 updated: 2023-01-11
 ---

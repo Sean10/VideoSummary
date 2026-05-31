@@ -4,11 +4,7 @@ categories:
 date: 2023-05-19
 subtitle: Introducing_Sibench_-_A_New_Open_Source_Benchmarking_Tool_Optimized_for_Ceph
 tags:
-- Ceph基准测试
-- Sibench工具
 - 分布式存储
-- 性能分析
-- 开源软件
 title: Introducing Sibench- A New Open Source Benchmarking Tool Optimized for Ceph
 updated: 2023-05-20
 ---

@@ -5,10 +5,8 @@ date: 2023-02-23
 subtitle: Ceph_Crimson_SeaStore_Meeting_2023-02-22
 tags:
 - Ceph
-- distributed storage
+- 分布式存储
 - Crimson
-- SeaStore
-- storage cluster
 title: Ceph Crimson/SeaStore Meeting 2023-02-22
 updated: 2023-02-24
 ---

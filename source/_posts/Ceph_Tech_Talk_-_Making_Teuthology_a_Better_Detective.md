@@ -5,9 +5,7 @@ updated: 2022-09-29
 tags:
 - Ceph
 - Teuthology
-- Distributed Storage
-- Test Automation
-- Error Detection
+- 分布式存储
 categories:
 - "视频总结"
 subtitle: Ceph_Tech_Talk_-_Making_Teuthology_a_Better_Detective

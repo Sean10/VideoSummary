@@ -7,8 +7,6 @@ tags:
 - Ceph
 - 分布式存储
 - CRUSH算法
-- 可用性
-- 扩展性
 title: "'Ceph Days NYC: State of the Cephalopod'"
 updated: 2023-05-20
 ---

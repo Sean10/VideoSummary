@@ -5,12 +5,7 @@ date: 2021-05-19
 subtitle: Ceph_Crimson_SeaStore_2021-05-19
 tags:
 - Ceph
-- 自我管理代理
-- 推模型
-- 拉模型
 - 安全性
-- 可靠性
-- 架构设计
 title: "Ceph Crimson/SeaStore 2021-05-19"
 updated: 2021-05-19
 ---

@@ -6,9 +6,6 @@ subtitle: CephFS_Code_Walkthrough_-_MDS_Locker_Part_1
 tags:
 - Ceph
 - 分布式存储
-- MDS Locker
-- 代码解析
-- 文件系统
 title: CephFS Code Walkthrough- MDS Locker, Part 1
 updated: 2021-08-24
 ---

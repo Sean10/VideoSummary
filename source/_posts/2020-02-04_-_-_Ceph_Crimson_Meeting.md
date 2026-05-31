@@ -6,9 +6,7 @@ subtitle: 2020-02-04_-_-_Ceph_Crimson_Meeting
 tags:
 - Ceph
 - 分布式存储
-- Crimson 引擎
 - 性能优化
-- 项目管理
 title: "'2020-02-04 :: Ceph Crimson Meeting'"
 updated: 2020-04-03
 ---

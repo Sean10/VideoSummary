@@ -3,11 +3,8 @@ title: "  Crimson Project Updates | Ceph Days London 2024  "
 date: 2024-08-23
 updated: 2024-08-24
 tags:
-- [Ceph]
-- [Crimson 项目]
-- [分布式存储]
-- [性能优化]
-- [异步编程]
+- Ceph
+- 分布式存储
 categories:
 - "视频总结"
 subtitle: Crimson_Project_Updates_Ceph_Days_London_2024

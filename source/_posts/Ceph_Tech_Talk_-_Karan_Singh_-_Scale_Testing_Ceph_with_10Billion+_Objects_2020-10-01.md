@@ -6,10 +6,6 @@ subtitle: Ceph_Tech_Talk_-_Karan_Singh_-_Scale_Testing_Ceph_with_10Billion+_Obje
 tags:
 - Ceph
 - 分布式存储
-- 规模测试
-- 性能评估
-- 蓝存储
-- Red Hat
 title: "'Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01'"
 updated: 2020-10-03
 ---
