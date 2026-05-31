@@ -55,6 +55,8 @@ cd youtube_subtitle_summary
 2. **[必选]下载新增字幕**
    使用以下命令下载新增的字幕, 自动根据上面的频道视频信息元数据分析差异增量：
    ```bash
+   # 注意定期升级yt-dlp, 否则可能提示反爬限制
+   pip install --upgrade yt-dlp
    python run.py --fetch-diff
    ```
 

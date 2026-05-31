@@ -40,7 +40,7 @@ start=0
 TIME_INTERVAL=30
 client = AsyncOpenAI(
     api_key = f"{YOUR_OPENAI_API_KEY}",
-    base_url = "http://localhost:3000/v1",
+    base_url = "https://api.siliconflow.cn/v1",
 )
 
 MAX_RETRIES = 10

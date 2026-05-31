@@ -12,7 +12,23 @@ error.log
 **/video_meta.jsonl
 **/init
 
+__pycache__
+reference**
 env.sh
 **/db.json
 db.json
 .deploy_git
+
+**/*.md
+
+**/channel_info.json
+**/videos_meta.jsonl
+**/temp_posts/
+**/temp_input/
+**/temp*.json
+**/ylt2summary.log
+**/fetched_prs.json
+**/tokenizer.json
+worktrees/
+openspec/
+post_classification*.json
