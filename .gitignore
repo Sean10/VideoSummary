@@ -35,3 +35,10 @@ db.json
 worktrees/
 openspec/
 post_classification*.json
+
+# 临时/工作文件
+youtube_subtitle_summary/outline*.txt
+"youtube_subtitle_summary/outline copy.txt"
+youtube_subtitle_summary/temp_pr.txt
+youtube_subtitle_summary/summary_20260301/
+.claude/
