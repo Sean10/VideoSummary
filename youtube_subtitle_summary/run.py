@@ -99,6 +99,8 @@ async def main():
                         help='Comma-separated years to generate, e.g. 2025,2026 (default: all missing/stale)')
     parser.add_argument('--force-update', action='store_true',
                         help='Force regenerate summaries even if they exist (triggers stale detection)')
+    parser.add_argument('--summary-workers', type=int, default=4,
+                        help='Parallel workers for summary generation (default: 4)')
     parser.add_argument('--batch-size', type=int, default=10,
                         help='Batch size for Claude Code processing (default: 10)')
     parser.add_argument('--max-workers', type=int, default=1,
@@ -250,6 +252,7 @@ async def main():
             quarters=quarters,
             timeout=args.timeout,
             force_update=args.force_update,
+            max_workers=args.summary_workers,
         )
     if args.claude_monthly:
         months = [m.strip() for m in args.months.split(',')] if args.months else None
@@ -257,6 +260,7 @@ async def main():
             months=months,
             timeout=args.timeout,
             force_update=args.force_update,
+            max_workers=args.summary_workers,
         )
     if args.claude_yearly:
         years = [y.strip() for y in args.years.split(',')] if args.years else None
@@ -264,6 +268,7 @@ async def main():
             years=years,
             timeout=args.timeout,
             force_update=args.force_update,
+            max_workers=args.summary_workers,
         )
 
     await process_retry_queue()

@@ -829,6 +829,72 @@ def _is_summary_stale(summary_path: str, post_files: list, posts_dir: str) -> bo
     return False
 
 
+def _run_period_parallel(
+    targets: list,
+    by_period: dict,
+    skill_name: str,
+    period_var: str,
+    posts_dir: str,
+    output_dir: str,
+    suffix: str,
+    make_front_matter,
+    timeout: int,
+    max_chars: int,
+    max_workers: int,
+) -> Dict[str, Any]:
+    """
+    通用并行执行器：对 targets 列表中的每个 period 并行调用 Claude 生成总结。
+    make_front_matter(period_key) → front_matter str
+    suffix: 输出文件名后缀，如 "_Ceph社区季度总结.md"
+    """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    def _process_one(period_key: str):
+        post_files = by_period.get(period_key, [])
+        if not post_files:
+            logger.warning(f"No posts found for {period_key}, skipping")
+            return period_key, False
+        logger.info(f"Generating {period_key} ({len(post_files)} posts)")
+        body, ref_section = _build_summary_body(
+            skill_name, period_key, period_var, post_files, posts_dir, timeout, max_chars
+        )
+        if body is None:
+            return period_key, False
+        fm = make_front_matter(period_key)
+        out_path = os.path.join(output_dir, f"{period_key}{suffix}")
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(fm + body + ref_section + "\n")
+        logger.info(f"Written: {out_path}")
+        return period_key, True
+
+    processed = 0
+    errors = 0
+    effective = min(max_workers, len(targets)) if max_workers > 1 else 1
+
+    if effective <= 1:
+        for key in targets:
+            _, ok = _process_one(key)
+            if ok:
+                processed += 1
+            else:
+                errors += 1
+    else:
+        with ThreadPoolExecutor(max_workers=effective) as executor:
+            futures = {executor.submit(_process_one, k): k for k in targets}
+            for future in as_completed(futures):
+                try:
+                    _, ok = future.result()
+                except Exception as e:
+                    logger.error(f"Exception for {futures[future]}: {e}")
+                    ok = False
+                if ok:
+                    processed += 1
+                else:
+                    errors += 1
+
+    return {"success": errors == 0, "processed": processed, "errors": errors}
+
+
 def _build_summary_body(
     skill_name: str,
     period_key: str,
@@ -894,6 +960,7 @@ def run_quarterly_workflow(
     timeout: int = 600,
     max_chars_per_quarter: int = 60000,
     force_update: bool = False,
+    max_workers: int = 4,
 ) -> Dict[str, Any]:
     """
     Generate quarterly summary posts from existing temp_posts.
@@ -950,26 +1017,9 @@ def run_quarterly_workflow(
         logger.info("All quarters already have summaries (and none are stale)")
         return {"success": True, "processed": 0, "skipped": len(existing)}
 
-    processed = 0
-    errors = 0
-
-    for quarter in target_quarters:
-        post_files = by_quarter.get(quarter, [])
-        if not post_files:
-            logger.warning(f"No posts found for {quarter}, skipping")
-            continue
-
-        logger.info(f"Generating quarterly summary for {quarter} ({len(post_files)} posts)")
-
-        body, ref_section = _build_summary_body(
-            "quarterly", quarter, "quarter", post_files, posts_dir, timeout, max_chars_per_quarter
-        )
-        if body is None:
-            errors += 1
-            continue
-
+    def _make_fm(quarter: str) -> str:
         date_str = _quarter_date(quarter)
-        front_matter = f"""---
+        return f"""---
 title: "{quarter} Ceph社区季度进展报告"
 date: {date_str}
 updated: {date_str}
@@ -983,22 +1033,20 @@ subtitle: {quarter}_quarterly_summary
 ---
 
 """
-        out_path = os.path.join(output_dir, f"{quarter}_Ceph社区季度总结.md")
-        with open(out_path, "w", encoding="utf-8") as f:
-            f.write(front_matter + body + ref_section + "\n")
 
-        logger.info(f"Written: {out_path}")
-        processed += 1
-
-    result = {"success": errors == 0, "processed": processed, "errors": errors}
+    result = _run_period_parallel(
+        target_quarters, by_quarter, "quarterly", "quarter",
+        posts_dir, output_dir, "_Ceph社区季度总结.md",
+        _make_fm, timeout, max_chars_per_quarter, max_workers,
+    )
     logger.info(f"Quarterly workflow complete: {result}")
     return result
 
 
-async def main_claude_quarterly(quarters: list = None, timeout: int = 600, force_update: bool = False):
+async def main_claude_quarterly(quarters: list = None, timeout: int = 600, force_update: bool = False, max_workers: int = 4):
     """Generate quarterly summary posts (missing or stale)."""
     logger.info("Starting quarterly summary workflow...")
-    result = run_quarterly_workflow(quarters=quarters, timeout=timeout, force_update=force_update)
+    result = run_quarterly_workflow(quarters=quarters, timeout=timeout, force_update=force_update, max_workers=max_workers)
     logger.info(f"Quarterly result: {result}")
 
 
@@ -1013,6 +1061,7 @@ def run_monthly_workflow(
     timeout: int = 600,
     max_chars_per_month: int = 40000,
     force_update: bool = False,
+    max_workers: int = 4,
 ) -> Dict[str, Any]:
     """Generate monthly summary posts from existing temp_posts."""
     if posts_dir is None:
@@ -1056,26 +1105,9 @@ def run_monthly_workflow(
         logger.info("All months already have summaries (and none are stale)")
         return {"success": True, "processed": 0, "skipped": len(existing)}
 
-    processed = 0
-    errors = 0
-
-    for month_key in target_months:
-        post_files = by_month.get(month_key, [])
-        if not post_files:
-            logger.warning(f"No posts found for {month_key}, skipping")
-            continue
-
-        logger.info(f"Generating monthly summary for {month_key} ({len(post_files)} posts)")
-
-        body, ref_section = _build_summary_body(
-            "monthly", month_key, "month", post_files, posts_dir, timeout, max_chars_per_month
-        )
-        if body is None:
-            errors += 1
-            continue
-
+    def _make_fm(month_key: str) -> str:
         date_str = _month_date(month_key)
-        front_matter = f"""---
+        return f"""---
 title: "{month_key} Ceph社区月度进展报告"
 date: {date_str}
 updated: {date_str}
@@ -1089,22 +1121,20 @@ subtitle: {month_key}_monthly_summary
 ---
 
 """
-        out_path = os.path.join(output_dir, f"{month_key}_Ceph社区月度总结.md")
-        with open(out_path, "w", encoding="utf-8") as f:
-            f.write(front_matter + body + ref_section + "\n")
 
-        logger.info(f"Written: {out_path}")
-        processed += 1
-
-    result = {"success": errors == 0, "processed": processed, "errors": errors}
+    result = _run_period_parallel(
+        target_months, by_month, "monthly", "month",
+        posts_dir, output_dir, "_Ceph社区月度总结.md",
+        _make_fm, timeout, max_chars_per_month, max_workers,
+    )
     logger.info(f"Monthly workflow complete: {result}")
     return result
 
 
-async def main_claude_monthly(months: list = None, timeout: int = 600, force_update: bool = False):
+async def main_claude_monthly(months: list = None, timeout: int = 600, force_update: bool = False, max_workers: int = 4):
     """Generate monthly summary posts (missing or stale)."""
     logger.info("Starting monthly summary workflow...")
-    result = run_monthly_workflow(months=months, timeout=timeout, force_update=force_update)
+    result = run_monthly_workflow(months=months, timeout=timeout, force_update=force_update, max_workers=max_workers)
     logger.info(f"Monthly result: {result}")
 
 
@@ -1119,6 +1149,7 @@ def run_yearly_workflow(
     timeout: int = 900,
     max_chars_per_year: int = 80000,
     force_update: bool = False,
+    max_workers: int = 4,
 ) -> Dict[str, Any]:
     """Generate yearly summary posts from existing temp_posts."""
     if posts_dir is None:
@@ -1161,26 +1192,9 @@ def run_yearly_workflow(
         logger.info("All years already have summaries (and none are stale)")
         return {"success": True, "processed": 0, "skipped": len(existing)}
 
-    processed = 0
-    errors = 0
-
-    for year_key in target_years:
-        post_files = by_year.get(year_key, [])
-        if not post_files:
-            logger.warning(f"No posts found for {year_key}, skipping")
-            continue
-
-        logger.info(f"Generating yearly summary for {year_key} ({len(post_files)} posts)")
-
-        body, ref_section = _build_summary_body(
-            "yearly", year_key, "year", post_files, posts_dir, timeout, max_chars_per_year
-        )
-        if body is None:
-            errors += 1
-            continue
-
+    def _make_fm(year_key: str) -> str:
         date_str = _year_date(year_key)
-        front_matter = f"""---
+        return f"""---
 title: "{year_key} Ceph社区年度进展报告"
 date: {date_str}
 updated: {date_str}
@@ -1194,20 +1208,18 @@ subtitle: {year_key}_yearly_summary
 ---
 
 """
-        out_path = os.path.join(output_dir, f"{year_key}_Ceph社区年度总结.md")
-        with open(out_path, "w", encoding="utf-8") as f:
-            f.write(front_matter + body + ref_section + "\n")
 
-        logger.info(f"Written: {out_path}")
-        processed += 1
-
-    result = {"success": errors == 0, "processed": processed, "errors": errors}
+    result = _run_period_parallel(
+        target_years, by_year, "yearly", "year",
+        posts_dir, output_dir, "_Ceph社区年度总结.md",
+        _make_fm, timeout, max_chars_per_year, max_workers,
+    )
     logger.info(f"Yearly workflow complete: {result}")
     return result
 
 
-async def main_claude_yearly(years: list = None, timeout: int = 900, force_update: bool = False):
+async def main_claude_yearly(years: list = None, timeout: int = 900, force_update: bool = False, max_workers: int = 4):
     """Generate yearly summary posts (missing or stale)."""
     logger.info("Starting yearly summary workflow...")
-    result = run_yearly_workflow(years=years, timeout=timeout, force_update=force_update)
+    result = run_yearly_workflow(years=years, timeout=timeout, force_update=force_update, max_workers=max_workers)
     logger.info(f"Yearly result: {result}")
