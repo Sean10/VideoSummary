@@ -178,13 +178,12 @@ def generate_tag_index(tag_articles):
         color = calc_color(len(arts))
         weight = '700' if len(arts) >= 100 else '500' if len(arts) >= 30 else '400'
         cloud_items.append(
-            f'<a href="./{slug}.md" '
-            f'style="font-size:{size}px;color:{color};font-weight:{weight};'
-            f'text-decoration:none;display:inline-block;margin:4px 8px;'
-            f'line-height:1.4;transition:opacity 0.2s" '
+            f'<a href="./{slug}" '
+            f'class="tag-cloud-link" '
+            f'style="font-size:{size}px;color:{color};font-weight:{weight}" '
             f'title="{tag} ({len(arts)} 篇)">{tag}</a>'
         )
-    cloud_html = '<div style="text-align:center;padding:24px 0 32px;line-height:2.2">' + '\n'.join(cloud_items) + '</div>'
+    cloud_html = '<div class="tag-cloud">' + '\n'.join(cloud_items) + '</div>'
 
     lines = [
         '---',
@@ -211,7 +210,7 @@ def generate_tag_index(tag_articles):
         lines.append('')
         for tag, arts in hot_tags:
             slug = tag_to_slug(tag)
-            lines.append(f'- [{tag}](./{slug}.md) — {len(arts)} 篇')
+            lines.append(f'- [{tag}](./{slug}) — {len(arts)} 篇')
         lines.append('')
 
     if medium_tags:
@@ -219,7 +218,7 @@ def generate_tag_index(tag_articles):
         lines.append('')
         for tag, arts in medium_tags:
             slug = tag_to_slug(tag)
-            lines.append(f'- [{tag}](./{slug}.md) — {len(arts)} 篇')
+            lines.append(f'- [{tag}](./{slug}) — {len(arts)} 篇')
         lines.append('')
 
     if niche_tags:
@@ -227,7 +226,7 @@ def generate_tag_index(tag_articles):
         lines.append('')
         for tag, arts in niche_tags:
             slug = tag_to_slug(tag)
-            lines.append(f'- [{tag}](./{slug}.md) — {len(arts)} 篇')
+            lines.append(f'- [{tag}](./{slug}) — {len(arts)} 篇')
         lines.append('')
 
     return '\n'.join(lines)
@@ -251,7 +250,7 @@ def generate_tag_page(tag, articles):
         '',
         f'共 **{len(sorted_arts)}** 篇文章',
         '',
-        f'[← 返回标签列表](./index.md)',
+        f'[← 返回标签列表](./)',
         '',
     ]
 
@@ -268,7 +267,7 @@ def generate_tag_page(tag, articles):
             lines.append(f'- [{art["title"]}]({art["link"]}){date_str}')
         lines.append('')
 
-    lines.append('[← 返回标签列表](./index.md)')
+    lines.append('[← 返回标签列表](./)')
     lines.append('')
 
     return '\n'.join(lines)

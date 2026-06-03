@@ -280,6 +280,31 @@
 }
 
 /* =============================================
+   Tag Cloud
+   ============================================= */
+.tag-cloud {
+  text-align: center;
+  padding: 24px 0 32px;
+  line-height: 2.2;
+}
+
+.tag-cloud .tag-cloud-link {
+  display: inline-block;
+  margin: 4px 8px;
+  line-height: 1.4;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.tag-cloud .tag-cloud-link:hover {
+  opacity: 0.75;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  transform: scale(1.05);
+}
+
+/* =============================================
    Hero action buttons — Indigo styled
    ============================================= */
 .VPButton.brand {
