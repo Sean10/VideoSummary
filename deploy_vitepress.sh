@@ -68,7 +68,7 @@ cd "$TMPDIR"
 git init
 git add -A
 git commit -m "VitePress deploy $(date +%Y-%m-%d\ %H:%M:%S)"
-git push -f git@github.com:Sean10/VideoSummary.git master:gh-pages
+git push -f git@github.com:Sean10/VideoSummary.git HEAD:gh-pages
 
 # 清理
 cd "$PROJECT_DIR"
