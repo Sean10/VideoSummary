@@ -113,6 +113,31 @@ export function getSidebar() {
     ]
   }
 
+  // === Tags sidebar ===
+  const tagsDir = path.join(docsDir, 'tags')
+  if (fs.existsSync(tagsDir)) {
+    const tagFiles = fs.readdirSync(tagsDir).filter(f => f.endsWith('.md') && f !== 'index.md')
+    const tagItems = tagFiles.map(f => {
+      const content = fs.readFileSync(path.join(tagsDir, f), 'utf-8')
+      const title = extractTitle(content, f)
+      const countMatch = content.match(/共 \*\*(\d+)\*\* 篇文章/)
+      const count = countMatch ? parseInt(countMatch[1]) : 0
+      return { text: `${title} (${count})`, link: `/tags/${f}`, _count: count }
+    })
+    tagItems.sort((a, b) => b._count - a._count)
+    // Clean up internal _count field
+    tagItems.forEach(item => delete item._count)
+
+    sidebar['/tags/'] = [
+      {
+        text: '所有标签',
+        link: '/tags/',
+        collapsed: false,
+        items: tagItems,
+      }
+    ]
+  }
+
   // === Home page sidebar ===
   sidebar['/'] = [
     {
@@ -120,6 +145,7 @@ export function getSidebar() {
       collapsed: false,
       items: [
         { text: '季度报告汇总', link: '/quarterly/' },
+        { text: '按标签浏览', link: '/tags/' },
       ]
     }
   ]

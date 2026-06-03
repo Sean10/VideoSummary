@@ -30,6 +30,7 @@ db.json
 !vitepress-site/docs/**/*.mjs
 !vitepress-site/docs/**/*.js
 !vitepress-site/docs/**/*.css
+vitepress-site/docs/tags/
 vitepress-site/docs/.vitepress/dist/
 vitepress-site/docs/.vitepress/cache/
 vitepress-site/node_modules/

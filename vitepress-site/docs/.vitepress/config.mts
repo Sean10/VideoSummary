@@ -39,6 +39,7 @@ export default defineConfig({
         ]
       },
       { text: '季度报告', link: '/quarterly/' },
+      { text: '按标签', link: '/tags/' },
     ],
 
     sidebar: getSidebar(),

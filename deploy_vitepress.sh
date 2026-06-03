@@ -27,19 +27,23 @@ echo "项目目录: $PROJECT_DIR"
 echo ""
 
 # 1. 同步新文章到 VitePress 目录
-echo "--- [1/4] 同步文章到 VitePress ---"
+echo "--- [1/5] 同步文章到 VitePress ---"
 python3 "$VITEPRESS_DIR/migrate.py"
 
 # 2. 修复内部链接 (年度/季度总结中的旧 Hexo 链接)
-echo "--- [2/4] 修复内部链接 ---"
+echo "--- [2/5] 修复内部链接 ---"
 python3 "$VITEPRESS_DIR/fix_links.py"
 
 # 3. 修正日期 (混合策略: 标题日期优先, YouTube 上传日期兜底)
-echo "--- [3/4] 修正文章日期 ---"
+echo "--- [3/5] 修正文章日期 ---"
 python3 "$VITEPRESS_DIR/fix_dates_hybrid.py"
 
-# 4. 构建
-echo "--- [4/4] 构建 VitePress ---"
+# 4. 生成标签索引页
+echo "--- [4/5] 生成标签索引 ---"
+python3 "$VITEPRESS_DIR/generate_tags.py"
+
+# 5. 构建
+echo "--- [5/5] 构建 VitePress ---"
 cd "$VITEPRESS_DIR"
 npm run build
 
