@@ -12,4 +12,9 @@ python run.py --claude-quarterly --backend claude --summary-workers 4 --timeout 
 python run.py --claude-yearly --backend claude --summary-workers 4 --timeout 900 -v
 
 cd ..
-node --max-old-space-size=8192 node_modules/hexo-cli/bin/hexo gen -c 100  -d
+
+# [已弃用] Hexo 构建+部署，已迁移到 VitePress
+# node --max-old-space-size=8192 node_modules/hexo-cli/bin/hexo gen -c 100  -d
+
+# 使用 VitePress 构建+部署
+bash deploy_vitepress.sh

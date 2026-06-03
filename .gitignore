@@ -24,6 +24,16 @@ db.json
 # 例外：source/_posts/ 里的文章需要追踪
 !source/_posts/*.md
 
+# 例外：VitePress 文档需要追踪
+!vitepress-site/docs/**/*.md
+!vitepress-site/docs/**/*.mts
+!vitepress-site/docs/**/*.mjs
+!vitepress-site/docs/**/*.js
+!vitepress-site/docs/**/*.css
+vitepress-site/docs/.vitepress/dist/
+vitepress-site/docs/.vitepress/cache/
+vitepress-site/node_modules/
+
 **/channel_info.json
 **/videos_meta.jsonl
 **/temp_posts/

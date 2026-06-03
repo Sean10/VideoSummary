@@ -1,0 +1,294 @@
+/*
+ * hexo-theme-indigo → VitePress 配色还原
+ *
+ * Indigo 色板 (Material Palette - indigo/pink):
+ *   darkPrimary:  #303f9f    primary:     #3f51b5
+ *   lightPrimary: #c5cae9    accent:      #ff4081
+ *   textPrimary:  #212121    textSecondary: #727272
+ *   divider:      #b6b6b6    border:      #dadada
+ *   background:   #f6f6f6    codeBg:      #f5f5f5
+ */
+
+/* =============================================
+   Light Mode
+   ============================================= */
+:root {
+  /* Brand colors */
+  --vp-c-brand-1: #3f51b5;
+  --vp-c-brand-2: #5c6bc0;
+  --vp-c-brand-3: #7986cb;
+  --vp-c-brand-soft: rgba(63, 81, 181, 0.14);
+
+  /* Text */
+  --vp-c-text-1: #212121;
+  --vp-c-text-2: #727272;
+  --vp-c-text-3: #9e9e9e;
+
+  /* Backgrounds */
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-soft: #f6f6f6;
+  --vp-c-bg-mute: #f0f0f0;
+  --vp-c-bg-alt: #f6f6f6;
+
+  /* Borders / Dividers */
+  --vp-c-divider: #dadada;
+  --vp-c-border: #b6b6b6;
+
+  /* Code */
+  --vp-code-color: #ff4081;
+  --vp-code-bg-color: #f5f5f5;
+
+  /* Home page */
+  --vp-home-hero-name-color: #3f51b5;
+  --vp-home-hero-name-background: linear-gradient(120deg, #303f9f 30%, #7986cb);
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background-clip: text;
+
+  /* Indigo custom variables */
+  --indigo-dark: #303f9f;
+  --indigo-primary: #3f51b5;
+  --indigo-light: #c5cae9;
+  --indigo-accent: #ff4081;
+  --indigo-accent-soft: rgba(255, 64, 129, 0.12);
+  --indigo-code-bg: #f5f5f5;
+}
+
+/* =============================================
+   Dark Mode
+   ============================================= */
+.dark {
+  --vp-c-brand-1: #7986cb;
+  --vp-c-brand-2: #9fa8da;
+  --vp-c-brand-3: #c5cae9;
+  --vp-c-brand-soft: rgba(121, 134, 203, 0.16);
+
+  --vp-c-text-1: #e0e0e0;
+  --vp-c-text-2: #9e9e9e;
+  --vp-c-text-3: #757575;
+
+  --vp-c-bg: #1a1a2e;
+  --vp-c-bg-soft: #1e1e36;
+  --vp-c-bg-mute: #252545;
+  --vp-c-bg-alt: #16162a;
+
+  --vp-c-divider: rgba(197, 202, 233, 0.16);
+  --vp-c-border: rgba(197, 202, 233, 0.24);
+
+  --vp-code-color: #ff80ab;
+  --vp-code-bg-color: #252545;
+
+  --indigo-dark: #9fa8da;
+  --indigo-primary: #7986cb;
+  --indigo-light: #c5cae9;
+  --indigo-accent: #ff80ab;
+  --indigo-accent-soft: rgba(255, 128, 171, 0.14);
+  --indigo-code-bg: #252545;
+}
+
+/* =============================================
+   Heading Color Hierarchy (Indigo gradient)
+   ============================================= */
+
+/* h1: Darkest indigo — the strongest heading */
+.vp-doc h1 {
+  color: var(--indigo-dark);
+  font-size: 24px;
+  border-bottom: 2px solid var(--indigo-light);
+  padding-bottom: 8px;
+}
+
+/* h2: Primary indigo */
+.vp-doc h2 {
+  color: var(--indigo-primary);
+  font-size: 22px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding-bottom: 6px;
+}
+
+/* h3: Medium indigo */
+.vp-doc h3 {
+  color: var(--indigo-primary);
+  font-size: 20px;
+  opacity: 0.92;
+}
+
+/* h4: Lighter indigo */
+.vp-doc h4 {
+  color: var(--vp-c-brand-2);
+  font-size: 18px;
+}
+
+/* h5: Even lighter */
+.vp-doc h5 {
+  color: var(--vp-c-brand-3);
+  font-size: 16px;
+}
+
+/* h6: Secondary text color (gray) */
+.vp-doc h6 {
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Header anchor link — light indigo # like original */
+.vp-doc h1 .header-anchor,
+.vp-doc h2 .header-anchor,
+.vp-doc h3 .header-anchor,
+.vp-doc h4 .header-anchor,
+.vp-doc h5 .header-anchor,
+.vp-doc h6 .header-anchor {
+  color: var(--indigo-light);
+}
+
+/* =============================================
+   Inline Code — accent pink (like Indigo theme)
+   ============================================= */
+.vp-doc :not(pre) > code {
+  color: var(--indigo-accent);
+  background: var(--indigo-code-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-size: 85%;
+}
+
+/* =============================================
+   Links — accent pink with dotted underline
+   ============================================= */
+.vp-doc p a,
+.vp-doc li a {
+  color: var(--indigo-accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--indigo-accent);
+  transition: opacity 0.2s, border-bottom-style 0.2s;
+}
+
+.vp-doc p a:hover,
+.vp-doc li a:hover {
+  opacity: 0.8;
+  border-bottom-style: solid;
+  text-decoration: none;
+}
+
+/* =============================================
+   Strong text — primary indigo color
+   ============================================= */
+.vp-doc strong {
+  color: var(--indigo-primary);
+  font-weight: 600;
+}
+
+/* =============================================
+   Blockquote — left border primary, light bg
+   ============================================= */
+.vp-doc blockquote {
+  border-left: 4px solid var(--indigo-primary);
+  background: var(--indigo-code-bg);
+  border-radius: 0 4px 4px 0;
+  padding: 12px 20px;
+  font-size: 14px;
+}
+
+.vp-doc blockquote > p {
+  color: var(--vp-c-text-2);
+  margin: 0;
+}
+
+/* =============================================
+   Tables — Indigo style
+   ============================================= */
+.vp-doc table {
+  border: 1px solid var(--vp-c-divider);
+  border-collapse: collapse;
+}
+
+.vp-doc thead tr {
+  background: var(--indigo-code-bg);
+}
+
+.vp-doc tbody tr:hover {
+  background: var(--vp-c-bg-soft);
+}
+
+.vp-doc th,
+.vp-doc td {
+  border: 1px solid var(--vp-c-divider);
+  padding: 6px 12px;
+}
+
+/* =============================================
+   Selection — light indigo highlight
+   ============================================= */
+::selection {
+  background: rgba(197, 202, 233, 0.4);
+}
+
+/* =============================================
+   Sidebar — subtle active state
+   ============================================= */
+.VPSidebarItem.is-active > .item > .link > .text {
+  color: var(--indigo-primary);
+  font-weight: 600;
+}
+
+/* =============================================
+   Nav bar — match Indigo header feel
+   ============================================= */
+.VPNav {
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.VPNavBarTitle .title {
+  color: var(--indigo-primary);
+  font-weight: 500;
+}
+
+/* =============================================
+   Search button — indigo accent
+   ============================================= */
+.DocSearch-Button {
+  border-color: var(--vp-c-divider) !important;
+}
+
+.DocSearch-Button:hover {
+  border-color: var(--indigo-primary) !important;
+}
+
+/* =============================================
+   Content area — slightly wider for long articles
+   ============================================= */
+.VPDoc .content-container {
+  max-width: 820px;
+}
+
+/* =============================================
+   Custom scrollbar (matching Indigo)
+   ============================================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-divider);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-border);
+}
+
+/* =============================================
+   Hero action buttons — Indigo styled
+   ============================================= */
+.VPButton.brand {
+  background-color: var(--indigo-primary);
+  border-color: var(--indigo-primary);
+  color: #fff;
+}
+
+.VPButton.brand:hover {
+  background-color: var(--indigo-dark);
+  border-color: var(--indigo-dark);
+}
