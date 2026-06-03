@@ -134,8 +134,58 @@ def scan_articles():
     return tag_articles
 
 
+import math
+
+
 def generate_tag_index(tag_articles):
-    """Generate the main tags/index.md overview page."""
+    """Generate the main tags/index.md overview page with tag cloud."""
+    sorted_tags = sorted(tag_articles.items(), key=lambda x: -len(x[1]))
+    counts = [len(arts) for _, arts in sorted_tags]
+    min_count = min(counts) if counts else 1
+    max_count = max(counts) if counts else 1
+
+    # Font size range (px): small tags 14px, biggest 48px
+    MIN_SIZE = 14
+    MAX_SIZE = 48
+
+    def calc_size(count):
+        if max_count == min_count:
+            return (MIN_SIZE + MAX_SIZE) / 2
+        # Logarithmic scale for smoother distribution
+        log_min = math.log(min_count)
+        log_max = math.log(max_count)
+        ratio = (math.log(count) - log_min) / (log_max - log_min)
+        return round(MIN_SIZE + ratio * (MAX_SIZE - MIN_SIZE))
+
+    # Color tiers based on popularity
+    def calc_color(count):
+        if count >= 200:
+            return 'var(--indigo-dark)'      # Deep indigo
+        elif count >= 100:
+            return 'var(--indigo-primary)'    # Primary indigo
+        elif count >= 50:
+            return 'var(--vp-c-brand-2)'     # Medium
+        elif count >= 20:
+            return 'var(--vp-c-text-2)'      # Gray
+        else:
+            return 'var(--vp-c-text-3)'      # Light gray
+
+    # Build tag cloud HTML
+    cloud_items = []
+    for tag, arts in sorted_tags:
+        slug = tag_to_slug(tag)
+        size = calc_size(len(arts))
+        color = calc_color(len(arts))
+        weight = '700' if len(arts) >= 100 else '500' if len(arts) >= 30 else '400'
+        cloud_items.append(
+            f'<a href="./{slug}.md" '
+            f'style="font-size:{size}px;color:{color};font-weight:{weight};'
+            f'text-decoration:none;display:inline-block;margin:4px 8px;'
+            f'line-height:1.4;transition:opacity 0.2s" '
+            f'title="{tag} ({len(arts)} 篇)">{tag}</a>'
+        )
+    cloud_html = '<div style="text-align:center;padding:24px 0 32px;line-height:2.2">' + '\n'.join(cloud_items) + '</div>'
+
     lines = [
         '---',
         'title: "按标签浏览"',
@@ -147,12 +197,11 @@ def generate_tag_index(tag_articles):
         '',
         f'共 **{len(tag_articles)}** 个标签，涵盖 Ceph 各个技术方向。',
         '',
+        cloud_html,
+        '',
     ]
 
-    # Sort tags by article count (descending)
-    sorted_tags = sorted(tag_articles.items(), key=lambda x: -len(x[1]))
-
-    # Group into tiers for better readability
+    # Group into tiers for detailed listing
     hot_tags = [(t, arts) for t, arts in sorted_tags if len(arts) >= 50]
     medium_tags = [(t, arts) for t, arts in sorted_tags if 10 <= len(arts) < 50]
     niche_tags = [(t, arts) for t, arts in sorted_tags if len(arts) < 10]
