@@ -188,7 +188,6 @@ def generate_tag_index(tag_articles):
     lines = [
         '---',
         'title: "按标签浏览"',
-        'layout: page',
         'outline: deep',
         '---',
         '',
@@ -242,7 +241,6 @@ def generate_tag_page(tag, articles):
     lines = [
         '---',
         f'title: "{tag}"',
-        'layout: page',
         'outline: deep',
         '---',
         '',
