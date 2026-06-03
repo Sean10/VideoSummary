@@ -1,6 +1,6 @@
 ---
 title: "2019-12-03 -- Ceph Testing Meeting"
-date: 2019-12-04
+date: 2019-12-03
 updated: 2019-12-05
 tags:
   - "Ceph"

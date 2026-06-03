@@ -1,6 +1,6 @@
 ---
 title: "Ceph Orchestrator Meeting 2022-02-07"
-date: 2022-02-12
+date: 2022-02-07
 updated: 2022-02-12
 tags:
   - "分布式存储"

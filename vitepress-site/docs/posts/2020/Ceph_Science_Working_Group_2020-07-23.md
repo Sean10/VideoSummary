@@ -1,6 +1,6 @@
 ---
 title: "Ceph Science Working Group 2020-07-23"
-date: 2020-07-28
+date: 2020-07-23
 updated: 2020-07-28
 tags:
   - "分布式存储"

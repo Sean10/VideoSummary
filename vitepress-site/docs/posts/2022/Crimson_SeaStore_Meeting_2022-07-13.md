@@ -1,6 +1,6 @@
 ---
 title: "Crimson/SeaStore Meeting 2022-07-13"
-date: 2022-07-19
+date: 2022-07-13
 updated: 2022-07-20
 tags:
   - "Ceph"

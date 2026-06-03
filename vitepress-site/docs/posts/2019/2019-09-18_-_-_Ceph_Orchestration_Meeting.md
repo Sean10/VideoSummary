@@ -1,6 +1,6 @@
 ---
 title: "2019-09-18 :: Ceph Orchestration Meeting"
-date: 2019-09-30
+date: 2019-09-18
 updated: 2019-10-01
 tags:
   - "Rook"

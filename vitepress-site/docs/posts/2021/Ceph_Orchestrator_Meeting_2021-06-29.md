@@ -1,6 +1,6 @@
 ---
 title: "Ceph Orchestrator Meeting 2021-06-29"
-date: 2021-08-24
+date: 2021-06-29
 updated: 2021-08-25
 tags:
   - "Ceph"

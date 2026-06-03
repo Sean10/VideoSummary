@@ -1,6 +1,6 @@
 ---
 title: "2019-02-19:: Crimson SeaStor/OSD Weekly Meeting"
-date: 2019-02-24
+date: 2019-02-19
 updated: 2019-02-24
 tags:
   - "分布式存储"

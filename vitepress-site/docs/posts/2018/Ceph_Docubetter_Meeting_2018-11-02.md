@@ -1,6 +1,6 @@
 ---
 title: "Ceph Docubetter Meeting 2018-11-02"
-date: 2018-11-03
+date: 2018-11-02
 updated: 2018-11-03
 tags:
   - "Ceph"

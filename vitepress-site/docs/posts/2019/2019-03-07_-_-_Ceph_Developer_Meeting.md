@@ -1,6 +1,6 @@
 ---
 title: "2019-03-07 :: Ceph Developer Meeting"
-date: 2019-04-15
+date: 2019-03-07
 updated: 2019-04-15
 tags:
   - "Ceph"

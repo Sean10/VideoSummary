@@ -1,6 +1,6 @@
 ---
 title: "2018-10-23 :: Ceph Code walk-through: Consistency with OSD Peering"
-date: 2018-11-02
+date: 2018-10-23
 updated: 2018-11-03
 tags:
   - "Ceph"

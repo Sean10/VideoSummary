@@ -1,6 +1,6 @@
 ---
 title: "Ceph Crimson/SeaStore Meeting 2022-06-22"
-date: 2022-06-27
+date: 2022-06-22
 updated: 2022-06-28
 tags:
   - "Ceph"

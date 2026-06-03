@@ -1,6 +1,6 @@
 ---
 title: "Ceph Developer Monthly 2021-08-04"
-date: 2021-08-23
+date: 2021-08-04
 updated: 2021-08-24
 tags:
   - "分布式存储"

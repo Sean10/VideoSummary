@@ -1,6 +1,6 @@
 ---
 title: "Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01"
-date: 2020-10-02
+date: 2020-10-01
 updated: 2020-10-03
 tags:
   - "Ceph"

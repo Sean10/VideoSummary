@@ -1,6 +1,6 @@
 ---
 title: "Ceph Science Working Group 2020-09-23"
-date: 2020-09-24
+date: 2020-09-23
 updated: 2020-09-25
 tags:
   - "Ceph"

@@ -1,6 +1,6 @@
 ---
 title: "Ceph Crimson/SeaStore 2021-06-23"
-date: 2021-06-24
+date: 2021-06-23
 updated: 2021-06-25
 tags:
   - "分布式存储"

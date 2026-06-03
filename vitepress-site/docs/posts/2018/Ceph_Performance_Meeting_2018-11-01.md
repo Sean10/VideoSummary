@@ -1,6 +1,6 @@
 ---
 title: "Ceph Performance Meeting 2018-11-01"
-date: 2018-11-02
+date: 2018-11-01
 updated: 2018-11-03
 tags:
   - "Ceph"

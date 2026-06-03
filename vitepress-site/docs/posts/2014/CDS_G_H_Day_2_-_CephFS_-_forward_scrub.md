@@ -1,6 +1,6 @@
 ---
 title: "CDS G/H (Day 2) - CephFS: forward scrub"
-date: 2014-10-30
+date: 2014-06-26
 updated: 2014-10-30
 tags:
   - "CephFS"

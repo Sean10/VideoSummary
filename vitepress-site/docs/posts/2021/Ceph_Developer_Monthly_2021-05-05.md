@@ -1,6 +1,6 @@
 ---
 title: "Ceph Developer Monthly 2021-05-05"
-date: 2021-05-06
+date: 2021-05-05
 updated: 2021-05-07
 tags:
   - "Ceph"

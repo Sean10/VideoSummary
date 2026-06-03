@@ -1,6 +1,6 @@
 ---
 title: "2019-11-02 :: Ceph Orchestration Meeting"
-date: 2019-12-03
+date: 2019-11-02
 updated: 2019-12-04
 tags:
   - "Ceph"

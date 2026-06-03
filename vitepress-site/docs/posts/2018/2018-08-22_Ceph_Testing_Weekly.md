@@ -1,6 +1,6 @@
 ---
 title: "2018-08-22 Ceph Testing Weekly"
-date: 2018-08-23
+date: 2018-08-22
 updated: 2018-08-24
 tags:
   - "Ceph"

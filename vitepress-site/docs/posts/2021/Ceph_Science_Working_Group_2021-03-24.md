@@ -1,6 +1,6 @@
 ---
 title: "Ceph Science Working Group 2021-03-24"
-date: 2021-03-26
+date: 2021-03-24
 updated: 2021-03-27
 tags:
   - "Ceph"

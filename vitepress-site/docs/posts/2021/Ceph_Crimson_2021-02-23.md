@@ -1,6 +1,6 @@
 ---
 title: "Ceph Crimson 2021-02-23"
-date: 2021-02-26
+date: 2021-02-23
 updated: 2021-02-26
 tags:
   - "Ceph"

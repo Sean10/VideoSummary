@@ -1,6 +1,6 @@
 ---
 title: "Ceph Code Walkthrough: Patrick Donnelly - Metadata Servers 2020-09-29"
-date: 2020-09-30
+date: 2020-09-29
 updated: 2020-10-01
 tags:
   - "Ceph"

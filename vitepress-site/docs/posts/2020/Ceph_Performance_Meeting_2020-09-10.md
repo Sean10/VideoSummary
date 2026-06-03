@@ -1,6 +1,6 @@
 ---
 title: "Ceph Performance Meeting 2020-09-10"
-date: 2020-09-11
+date: 2020-09-10
 updated: 2020-09-11
 tags:
   - "Ceph"

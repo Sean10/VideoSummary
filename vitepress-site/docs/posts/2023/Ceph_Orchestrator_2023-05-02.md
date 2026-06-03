@@ -1,6 +1,6 @@
 ---
 title: "Ceph Orchestrator 2023-05-02"
-date: 2023-05-03
+date: 2023-05-02
 updated: 2023-05-03
 tags:
   - "Ceph"

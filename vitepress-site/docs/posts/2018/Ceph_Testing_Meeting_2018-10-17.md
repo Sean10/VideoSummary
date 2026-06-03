@@ -1,6 +1,6 @@
 ---
 title: "Ceph Testing Meeting 2018-10-17"
-date: 2018-10-18
+date: 2018-10-17
 updated: 2018-10-19
 tags:
   - "Ceph"

@@ -1,6 +1,6 @@
 ---
 title: "2020-03-31 :: Ceph Crimson Meeting"
-date: 2020-04-03
+date: 2020-03-31
 updated: 2020-04-04
 tags:
   - "Ceph"

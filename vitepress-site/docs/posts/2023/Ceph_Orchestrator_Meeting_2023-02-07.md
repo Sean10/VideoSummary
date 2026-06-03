@@ -1,6 +1,6 @@
 ---
 title: "Ceph Orchestrator Meeting 2023-02-07"
-date: 2023-02-08
+date: 2023-02-07
 updated: 2023-02-08
 tags:
   - "Ceph"

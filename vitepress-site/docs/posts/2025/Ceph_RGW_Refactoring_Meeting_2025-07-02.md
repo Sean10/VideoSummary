@@ -1,6 +1,6 @@
 ---
 title: "Ceph RGW Refactoring Meeting 2025-07-02"
-date: 2025-07-09
+date: 2025-07-02
 updated: 2025-07-09
 tags:
   - "Ceph"

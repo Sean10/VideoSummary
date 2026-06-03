@@ -1,6 +1,6 @@
 ---
 title: "Ceph User Survey Working Group 2020-11-12"
-date: 2020-11-24
+date: 2020-11-12
 updated: 2020-11-25
 tags:
   - "Ceph"

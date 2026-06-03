@@ -1,6 +1,6 @@
 ---
 title: "Ceph Science Working Group 2022-05-24"
-date: 2022-05-26
+date: 2022-05-24
 updated: 2022-05-26
 tags:
   - "Ceph"

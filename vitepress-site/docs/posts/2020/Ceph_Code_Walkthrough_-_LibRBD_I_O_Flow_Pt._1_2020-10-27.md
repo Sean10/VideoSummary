@@ -1,6 +1,6 @@
 ---
 title: "Ceph Code Walkthrough: LibRBD I/O Flow Pt. 1 2020-10-27"
-date: 2020-11-02
+date: 2020-10-27
 updated: 2020-11-03
 tags:
   - "Ceph"

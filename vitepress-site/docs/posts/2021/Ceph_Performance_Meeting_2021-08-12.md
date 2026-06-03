@@ -1,6 +1,6 @@
 ---
 title: "Ceph Performance Meeting 2021-08-12"
-date: 2021-08-20
+date: 2021-08-12
 updated: 2021-08-21
 tags:
   - "Ceph"

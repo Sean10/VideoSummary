@@ -1,6 +1,6 @@
 ---
 title: "Ceph Developer Monthly 2021-11-30"
-date: 2021-12-02
+date: 2021-11-30
 updated: 2021-12-03
 tags:
   - "Ceph"

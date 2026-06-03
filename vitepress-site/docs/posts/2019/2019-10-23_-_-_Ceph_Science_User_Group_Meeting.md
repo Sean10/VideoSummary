@@ -1,6 +1,6 @@
 ---
 title: "2019-10-23 :: Ceph Science User Group Meeting"
-date: 2019-10-31
+date: 2019-10-23
 updated: 2019-11-01
 tags:
   - "Ceph"

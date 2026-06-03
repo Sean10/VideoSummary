@@ -1,6 +1,6 @@
 ---
 title: "Crimson/Seastar OSD 2018-10-30"
-date: 2018-11-02
+date: 2018-10-30
 updated: 2018-11-02
 tags:
   - "Ceph"

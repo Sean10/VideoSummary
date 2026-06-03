@@ -1,6 +1,6 @@
 ---
 title: "Ceph Performance Meeting 2023-03-23"
-date: 2023-03-24
+date: 2023-03-23
 updated: 2023-03-25
 tags:
   - "Ceph"

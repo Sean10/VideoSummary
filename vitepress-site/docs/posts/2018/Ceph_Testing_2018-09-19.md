@@ -1,6 +1,6 @@
 ---
 title: "Ceph Testing 2018-09-19"
-date: 2018-09-21
+date: 2018-09-19
 updated: 2018-09-22
 tags:
   - "Ceph"

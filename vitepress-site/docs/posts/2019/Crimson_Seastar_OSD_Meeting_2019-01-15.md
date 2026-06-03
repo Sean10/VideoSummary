@@ -1,6 +1,6 @@
 ---
 title: "Crimson/Seastar OSD Meeting 2019-01-15"
-date: 2019-01-16
+date: 2019-01-15
 updated: 2019-01-17
 tags:
   - "Ceph"

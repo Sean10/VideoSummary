@@ -1,6 +1,6 @@
 ---
 title: "Ceph Orchestrator 2021-07-13"
-date: 2021-08-23
+date: 2021-07-13
 updated: 2021-08-24
 tags:
   - "编排"

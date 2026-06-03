@@ -1,6 +1,6 @@
 ---
 title: "Ceph Orchestrator Meeting 2021-10-05"
-date: 2021-10-07
+date: 2021-10-05
 updated: 2021-10-08
 tags:
   - "Ceph"

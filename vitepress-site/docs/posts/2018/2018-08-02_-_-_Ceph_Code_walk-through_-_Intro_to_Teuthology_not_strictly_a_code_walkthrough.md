@@ -1,6 +1,6 @@
 ---
 title: "2018-08-02 :: Ceph Code walk-through: Intro to Teuthology (not strictly a code walkthrough)"
-date: 2018-08-03
+date: 2018-08-02
 updated: 2018-08-03
 tags:
   - "Ceph"

@@ -1,6 +1,6 @@
 ---
 title: "2019-08-08 -- Ceph Performance Meeting"
-date: 2019-08-12
+date: 2019-08-08
 updated: 2019-08-12
 tags:
   - "性能"

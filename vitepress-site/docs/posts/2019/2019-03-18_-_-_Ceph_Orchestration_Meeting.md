@@ -1,6 +1,6 @@
 ---
 title: "2019-03-18:: Ceph Orchestration Meeting"
-date: 2019-04-15
+date: 2019-03-18
 updated: 2019-04-15
 tags:
   - "分布式存储"

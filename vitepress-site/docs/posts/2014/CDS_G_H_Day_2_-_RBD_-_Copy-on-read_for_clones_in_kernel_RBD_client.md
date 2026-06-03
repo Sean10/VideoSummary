@@ -1,6 +1,6 @@
 ---
 title: "CDS G/H (Day 2) - RBD: Copy-on-read for clones in kernel RBD client"
-date: 2014-10-30
+date: 2014-06-26
 updated: 2014-10-30
 tags:
   - "Ceph"

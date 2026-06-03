@@ -1,6 +1,6 @@
 ---
 title: "Ceph DocuBetter Meeting 2019-01-18"
-date: 2019-02-02
+date: 2019-01-18
 updated: 2019-02-03
 tags:
   - "Ceph"

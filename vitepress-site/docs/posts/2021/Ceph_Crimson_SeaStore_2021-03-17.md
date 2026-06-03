@@ -1,6 +1,6 @@
 ---
 title: "Ceph Crimson/SeaStore 2021-03-17"
-date: 2021-03-18
+date: 2021-03-17
 updated: 2021-03-18
 tags:
   - "Ceph"

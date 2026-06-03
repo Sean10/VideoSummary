@@ -1,6 +1,6 @@
 ---
 title: "2020-01-22:: Ceph DocUBetter Meeting"
-date: 2020-01-23
+date: 2020-01-22
 updated: 2020-01-24
 tags:
   - "分布式存储"

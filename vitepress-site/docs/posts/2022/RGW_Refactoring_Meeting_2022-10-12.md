@@ -1,6 +1,6 @@
 ---
 title: "RGW Refactoring Meeting 2022-10-12"
-date: 2022-10-18
+date: 2022-10-12
 updated: 2022-10-19
 tags:
   - "Ceph"

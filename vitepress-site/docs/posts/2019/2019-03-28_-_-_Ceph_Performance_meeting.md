@@ -1,6 +1,6 @@
 ---
 title: "2019-03-28 :: Ceph Performance meeting"
-date: 2019-04-09
+date: 2019-03-28
 updated: 2019-04-10
 tags:
   - "Ceph"

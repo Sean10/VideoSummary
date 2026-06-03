@@ -1,6 +1,6 @@
 ---
 title: "Ceph Developer Monthly 2024-02-07"
-date: 2024-02-13
+date: 2024-02-07
 updated: 2024-02-14
 tags:
   - "Ceph"

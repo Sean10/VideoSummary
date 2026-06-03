@@ -1,6 +1,6 @@
 ---
 title: "Ceph Crimson/SeaStore Meeting 2023-04-26"
-date: 2023-05-03
+date: 2023-04-26
 updated: 2023-05-03
 tags:
   - "Ceph"

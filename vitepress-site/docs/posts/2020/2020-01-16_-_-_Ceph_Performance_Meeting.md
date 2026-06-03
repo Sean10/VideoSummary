@@ -1,6 +1,6 @@
 ---
 title: "2020-01-16 -- Ceph Performance Meeting"
-date: 2020-01-23
+date: 2020-01-16
 updated: 2020-01-24
 tags:
   - "Ceph"

@@ -1,6 +1,6 @@
 ---
 title: "2018-09-25 :: Ceph code walk-through :: ceph-objectstore-tool"
-date: 2018-10-25
+date: 2018-09-25
 updated: 2018-10-26
 tags:
   - "Ceph"

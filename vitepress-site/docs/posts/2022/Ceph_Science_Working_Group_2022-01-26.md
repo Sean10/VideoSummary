@@ -1,6 +1,6 @@
 ---
 title: "Ceph Science Working Group 2022-01-26"
-date: 2022-02-01
+date: 2022-01-26
 updated: 2022-02-02
 tags:
   - "Ceph"

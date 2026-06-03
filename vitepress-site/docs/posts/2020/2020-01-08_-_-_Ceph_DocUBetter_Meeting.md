@@ -1,6 +1,6 @@
 ---
 title: "2020-01-08:: Ceph DocUBetter Meeting"
-date: 2020-01-11
+date: 2020-01-08
 updated: 2020-01-11
 tags:
   - "Ceph"

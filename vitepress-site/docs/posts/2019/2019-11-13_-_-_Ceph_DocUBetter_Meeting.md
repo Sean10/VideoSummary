@@ -1,6 +1,6 @@
 ---
 title: "2019-11-13:: Ceph DocUBetter Meeting"
-date: 2019-11-17
+date: 2019-11-13
 updated: 2019-11-18
 tags:
   - "分布式存储"

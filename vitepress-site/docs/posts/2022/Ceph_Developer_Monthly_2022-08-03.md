@@ -1,6 +1,6 @@
 ---
 title: "Ceph Developer Monthly 2022-08-03"
-date: 2022-08-05
+date: 2022-08-03
 updated: 2022-08-06
 tags:
   - "Ceph"

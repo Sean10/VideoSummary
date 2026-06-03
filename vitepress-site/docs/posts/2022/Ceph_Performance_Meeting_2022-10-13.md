@@ -1,6 +1,6 @@
 ---
 title: "Ceph Performance Meeting 2022-10-13"
-date: 2022-10-20
+date: 2022-10-13
 updated: 2022-10-21
 tags:
   - "Ceph"

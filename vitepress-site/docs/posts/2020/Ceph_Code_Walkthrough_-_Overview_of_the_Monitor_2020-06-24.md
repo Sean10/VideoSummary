@@ -1,6 +1,6 @@
 ---
 title: "Ceph Code Walkthrough: Overview of the Monitor 2020-06-24"
-date: 2020-06-25
+date: 2020-06-24
 updated: 2020-06-25
 tags:
   - "Ceph"

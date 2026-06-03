@@ -1,6 +1,6 @@
 ---
 title: "Ceph Crimson/SeaStor OSD 2020-09-09"
-date: 2020-09-10
+date: 2020-09-09
 updated: 2020-09-11
 tags:
   - "Ceph"

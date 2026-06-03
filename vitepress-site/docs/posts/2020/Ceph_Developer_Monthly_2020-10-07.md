@@ -1,6 +1,6 @@
 ---
 title: "Ceph Developer Monthly 2020-10-07"
-date: 2020-10-10
+date: 2020-10-07
 updated: 2020-10-10
 tags:
   - "Ceph"

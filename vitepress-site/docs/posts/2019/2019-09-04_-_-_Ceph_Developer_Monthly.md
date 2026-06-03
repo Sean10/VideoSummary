@@ -1,6 +1,6 @@
 ---
 title: "2019-09-04 :: Ceph Developer Monthly"
-date: 2019-09-06
+date: 2019-09-04
 updated: 2019-09-07
 tags:
   - "Ceph"

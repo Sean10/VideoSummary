@@ -1,6 +1,6 @@
 ---
 title: "2022-03-24 :: Ceph Tech Talk - Running Teuthology Locally"
-date: 2022-03-30
+date: 2022-03-24
 updated: 2022-03-30
 tags:
   - "Ceph"

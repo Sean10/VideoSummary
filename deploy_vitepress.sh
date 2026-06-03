@@ -5,12 +5,22 @@
 # 用法:
 #   1) 单独运行 (已有新文章在 source/_posts/):  ./deploy_vitepress.sh
 #   2) 完整流程 (拉取+生成+部署):                ./update_vitepress.sh
+#   3) 仅构建不部署:                             ./deploy_vitepress.sh --no-deploy
 
 set -e
+
+# 加载 nvm (确保 npm/node 可用)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 VITEPRESS_DIR="$PROJECT_DIR/vitepress-site"
 DOCS_DIR="$VITEPRESS_DIR/docs"
+
+SKIP_DEPLOY=false
+if [[ "$1" == "--no-deploy" ]]; then
+    SKIP_DEPLOY=true
+fi
 
 echo "=== VitePress 部署流程 ==="
 echo "项目目录: $PROJECT_DIR"
@@ -42,35 +52,28 @@ echo "体积: $DIST_SIZE"
 echo ""
 
 # 5. 部署到 gh-pages
-read -p "是否部署到 gh-pages? [y/N] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    echo "--- 部署到 gh-pages ---"
-
-    # 保存当前分支
-    CURRENT_BRANCH=$(git -C "$PROJECT_DIR" branch --show-current)
-
-    # 使用 git worktree 或直接 push
-    # 方案: 用 subtree push 把 dist 目录推到 gh-pages 分支
-    cd "$PROJECT_DIR"
-
-    # 创建临时目录, 拷贝 dist 内容
-    TMPDIR=$(mktemp -d)
-    cp -r "$DIST_DIR"/* "$TMPDIR"/
-
-    # 初始化 git 并推送
-    cd "$TMPDIR"
-    git init
-    git add -A
-    git commit -m "VitePress deploy $(date +%Y-%m-%d\ %H:%M:%S)"
-    git push -f git@github.com:Sean10/VideoSummary.git master:gh-pages
-
-    # 清理
-    cd "$PROJECT_DIR"
-    rm -rf "$TMPDIR"
-
-    echo "=== 部署完成 ==="
-    echo "站点地址: https://sean10.github.io/VideoSummary/"
-else
-    echo "跳过部署。手动部署: cd vitepress-site && npm run build, 然后推送 dist 到 gh-pages"
+if [[ "$SKIP_DEPLOY" == "true" ]]; then
+    echo "跳过部署 (--no-deploy)"
+    exit 0
 fi
+
+echo "--- 部署到 gh-pages ---"
+
+# 创建临时目录, 拷贝 dist 内容
+TMPDIR=$(mktemp -d)
+cp -r "$DIST_DIR"/* "$TMPDIR"/
+
+# 初始化 git 并推送
+cd "$TMPDIR"
+git init
+git add -A
+git commit -m "VitePress deploy $(date +%Y-%m-%d\ %H:%M:%S)"
+git push -f git@github.com:Sean10/VideoSummary.git master:gh-pages
+
+# 清理
+cd "$PROJECT_DIR"
+rm -rf "$TMPDIR"
+
+echo ""
+echo "=== 部署完成 ==="
+echo "站点地址: https://sean10.github.io/VideoSummary/"

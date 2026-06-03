@@ -1,6 +1,6 @@
 ---
 title: "2019-02-12:: Crimson SeaStor/OSD Meeting"
-date: 2019-02-22
+date: 2019-02-12
 updated: 2019-02-23
 tags:
   - "Ceph"

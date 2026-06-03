@@ -1,6 +1,6 @@
 ---
 title: "Ceph Orchestrator Meeting 2022-09-20"
-date: 2022-09-21
+date: 2022-09-20
 updated: 2022-09-22
 tags:
   - "Ceph"

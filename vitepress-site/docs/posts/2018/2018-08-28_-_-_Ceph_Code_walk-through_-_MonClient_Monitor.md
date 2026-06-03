@@ -1,6 +1,6 @@
 ---
 title: "2018-08-28 :: Ceph Code walk-through: MonClient/Monitor"
-date: 2018-10-10
+date: 2018-08-28
 updated: 2018-10-10
 tags:
   - "Ceph"

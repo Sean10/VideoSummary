@@ -1,6 +1,6 @@
 ---
 title: "Ceph User + Dev Monthly 2024-01-18"
-date: 2024-01-22
+date: 2024-01-18
 updated: 2024-01-23
 tags:
   - "Ceph"

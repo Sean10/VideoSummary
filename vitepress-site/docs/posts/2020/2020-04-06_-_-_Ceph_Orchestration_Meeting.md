@@ -1,6 +1,6 @@
 ---
 title: "2020-04-06 :: Ceph Orchestration Meeting"
-date: 2020-04-13
+date: 2020-04-06
 updated: 2020-04-14
 tags:
   - "Ceph"

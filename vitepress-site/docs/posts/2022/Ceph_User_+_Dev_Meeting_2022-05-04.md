@@ -1,6 +1,6 @@
 ---
 title: "Ceph User + Dev Meeting 2022-05-04"
-date: 2022-05-05
+date: 2022-05-04
 updated: 2022-05-06
 tags:
   - "Ceph"

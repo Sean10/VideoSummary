@@ -1,6 +1,6 @@
 ---
 title: "2019-05-07 :: Crimson SeaStor OSD Weekly Meeting"
-date: 2019-05-28
+date: 2019-05-07
 updated: 2019-05-28
 tags:
   - "Ceph"

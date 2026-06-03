@@ -1,6 +1,6 @@
 ---
 title: "Keynote - State of Ceph"
-date: 2025-06-24
+date: 2026-04-21
 updated: 2025-06-24
 tags:
   - "Ceph"
