@@ -967,7 +967,7 @@ def run_quarterly_workflow(
 
     Args:
         posts_dir: Directory with processed posts (default: temp_posts)
-        output_dir: Where to write quarterly posts (default: ../source/_posts)
+        output_dir: Where to write quarterly posts (default: vitepress-site/docs/quarterly)
         quarters: List of quarter strings to generate, e.g. ['2025Q1']. None = all missing.
         timeout: Timeout per Claude call
         max_chars_per_quarter: Max chars of post content fed to Claude per quarter
@@ -977,7 +977,7 @@ def run_quarterly_workflow(
     if posts_dir is None:
         posts_dir = "temp_posts"
     if output_dir is None:
-        output_dir = os.path.join(WORK_DIR, "..", "source", "_posts")
+        output_dir = os.path.join(WORK_DIR, "..", "vitepress-site", "docs", "quarterly")
     output_dir = os.path.normpath(output_dir)
     os.makedirs(output_dir, exist_ok=True)
 
@@ -1030,6 +1030,7 @@ tags:
 - 社区动态
 - 季度报告
 subtitle: {quarter}_quarterly_summary
+outline: deep
 ---
 
 """
@@ -1067,7 +1068,7 @@ def run_monthly_workflow(
     if posts_dir is None:
         posts_dir = "temp_posts"
     if output_dir is None:
-        output_dir = os.path.join(WORK_DIR, "..", "source", "_posts")
+        output_dir = os.path.join(WORK_DIR, "..", "vitepress-site", "docs", "quarterly")
     output_dir = os.path.normpath(output_dir)
     os.makedirs(output_dir, exist_ok=True)
 
@@ -1155,7 +1156,7 @@ def run_yearly_workflow(
     if posts_dir is None:
         posts_dir = "temp_posts"
     if output_dir is None:
-        output_dir = os.path.join(WORK_DIR, "..", "source", "_posts")
+        output_dir = os.path.join(WORK_DIR, "..", "vitepress-site", "docs", "quarterly")
     output_dir = os.path.normpath(output_dir)
     os.makedirs(output_dir, exist_ok=True)
 
@@ -1205,6 +1206,7 @@ tags:
 - 社区动态
 - 年度报告
 subtitle: {year_key}_yearly_summary
+outline: deep
 ---
 
 """
