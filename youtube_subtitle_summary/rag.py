@@ -1,5 +1,7 @@
 # import logging
 import os
+from dotenv import load_dotenv
+load_dotenv()
 os.environ["UNSTRUCTURED_TELEMETRY_ENABLED"] = "false"
 os.environ["DO_NOT_TRACK"] = "true"
 os.environ["SCARF_NO_ANALYTICS"] = "true"
@@ -35,9 +37,9 @@ logging.debug(f"Split into {len(texts)} chunks.")
 # 初始化OpenAI嵌入模型，添加endpoint和模型参数
 logging.debug("Initializing OpenAI embeddings...")
 embeddings = OpenAIEmbeddings(
-    openai_api_key="REDACTED_API_KEY",
-    openai_api_base="https://api.siliconflow.cn/v1",  # 添加自定义endpoint
-    model="BAAI/bge-m3"  # 添加模型参数
+    openai_api_key=os.environ["OPENAI_API_KEY"],
+    openai_api_base=os.environ.get("OPENAI_API_BASE", "https://api.siliconflow.cn/v1"),
+    model=os.environ.get("EMBEDDING_MODEL", "BAAI/bge-m3")
 )
 
 # 创建向量数据库，指定持久化路径
@@ -59,9 +61,9 @@ if os.path.exists("db"):
 logging.debug("Initializing OpenAI language model...")
 llm = OpenAI(
     temperature=0.5,
-    openai_api_key="REDACTED_API_KEY",
-    openai_api_base="https://api.siliconflow.cn/v1",  # 添加自定义endpoint
-    model="Qwen/Qwen2.5-7B-Instruct"  # 添加模型参数
+    openai_api_key=os.environ["OPENAI_API_KEY"],
+    openai_api_base=os.environ.get("OPENAI_API_BASE", "https://api.siliconflow.cn/v1"),
+    model=os.environ.get("LLM_MODEL", "Qwen/Qwen2.5-7B-Instruct")
 )
 
 # 创建检索问答链
