@@ -272,9 +272,16 @@ def generate_tag_page(tag, articles):
 
 
 # === Main ===
+MIN_ARTICLES = 5  # Only generate pages for tags with at least this many articles
+
 print('Scanning articles for tags...')
 tag_articles = scan_articles()
 print(f'Found {len(tag_articles)} unique tags across {sum(len(v) for v in tag_articles.values())} tag-article pairs')
+
+# Filter tags by minimum article count
+filtered_tags = {tag: arts for tag, arts in tag_articles.items() if len(arts) >= MIN_ARTICLES}
+skipped = len(tag_articles) - len(filtered_tags)
+print(f'Keeping {len(filtered_tags)} tags with >= {MIN_ARTICLES} articles (skipping {skipped} low-frequency tags)')
 
 # Create tags directory
 os.makedirs(TAGS_DIR, exist_ok=True)
@@ -284,17 +291,17 @@ for f in os.listdir(TAGS_DIR):
     if f.endswith('.md'):
         os.remove(os.path.join(TAGS_DIR, f))
 
-# Generate index page
+# Generate index page (use filtered tags)
 print('Generating tags/index.md...')
-index_content = generate_tag_index(tag_articles)
+index_content = generate_tag_index(filtered_tags)
 with open(os.path.join(TAGS_DIR, 'index.md'), 'w', encoding='utf-8') as f:
     f.write(index_content)
 
-# Generate per-tag pages
-for tag, articles in tag_articles.items():
+# Generate per-tag pages (only for filtered tags)
+for tag, articles in filtered_tags.items():
     slug = tag_to_slug(tag)
     content = generate_tag_page(tag, articles)
     with open(os.path.join(TAGS_DIR, f'{slug}.md'), 'w', encoding='utf-8') as f:
         f.write(content)
 
-print(f'Generated {len(tag_articles) + 1} tag pages in {TAGS_DIR}')
+print(f'Generated {len(filtered_tags) + 1} tag pages in {TAGS_DIR}')
